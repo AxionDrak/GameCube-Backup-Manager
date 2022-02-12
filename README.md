@@ -1,7 +1,7 @@
 # GameCube Backup Manager 0.0.0-2022-ALPHA
 **Welcome to the official Wii Backup Manager Website**
 
-GameCube Backup Manager is a program to work with FAT32 (and NTFS) drives to convert Full ISO files.
+GameCube Backup Manager is a program for working with FAT32 (and NTFS) drives to convert ISO files for use in Nintendont.
 
 A partial list of (planned) features is below:
 
