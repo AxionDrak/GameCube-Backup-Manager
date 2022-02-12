@@ -43,6 +43,10 @@ namespace GameCube_Backup_Manager
             this.tsmiMainBoxArtDisable = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiMainOptions = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiMainSettings = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsmiMainLanguage = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiMainLanguagePortugueseBrazil = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiMainLanguageEnglishUSA = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiMainTools = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiMainHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStripMain = new System.Windows.Forms.StatusStrip();
@@ -52,7 +56,6 @@ namespace GameCube_Backup_Manager
             this.pictureBoxGameCover3D = new System.Windows.Forms.PictureBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabMainFile = new System.Windows.Forms.TabPage();
-            this.labelPasta = new System.Windows.Forms.Label();
             this.labelOpenFolder = new System.Windows.Forms.Label();
             this.grpStatistics = new System.Windows.Forms.GroupBox();
             this.lblSizeTotal = new System.Windows.Forms.Label();
@@ -249,7 +252,9 @@ namespace GameCube_Backup_Manager
             // tsmiMainOptions
             // 
             this.tsmiMainOptions.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiMainSettings});
+            this.tsmiMainSettings,
+            this.toolStripMenuItem2,
+            this.tsmiMainLanguage});
             this.tsmiMainOptions.Name = "tsmiMainOptions";
             this.tsmiMainOptions.Size = new System.Drawing.Size(59, 20);
             this.tsmiMainOptions.Text = "Opções";
@@ -259,6 +264,34 @@ namespace GameCube_Backup_Manager
             this.tsmiMainSettings.Name = "tsmiMainSettings";
             this.tsmiMainSettings.Size = new System.Drawing.Size(160, 22);
             this.tsmiMainSettings.Text = "Configurações...";
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(157, 6);
+            // 
+            // tsmiMainLanguage
+            // 
+            this.tsmiMainLanguage.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiMainLanguagePortugueseBrazil,
+            this.tsmiMainLanguageEnglishUSA});
+            this.tsmiMainLanguage.Name = "tsmiMainLanguage";
+            this.tsmiMainLanguage.Size = new System.Drawing.Size(160, 22);
+            this.tsmiMainLanguage.Text = "Idiomas";
+            // 
+            // tsmiMainLanguagePortugueseBrazil
+            // 
+            this.tsmiMainLanguagePortugueseBrazil.Checked = true;
+            this.tsmiMainLanguagePortugueseBrazil.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.tsmiMainLanguagePortugueseBrazil.Name = "tsmiMainLanguagePortugueseBrazil";
+            this.tsmiMainLanguagePortugueseBrazil.Size = new System.Drawing.Size(167, 22);
+            this.tsmiMainLanguagePortugueseBrazil.Text = "Português (Brasil)";
+            // 
+            // tsmiMainLanguageEnglishUSA
+            // 
+            this.tsmiMainLanguageEnglishUSA.Name = "tsmiMainLanguageEnglishUSA";
+            this.tsmiMainLanguageEnglishUSA.Size = new System.Drawing.Size(167, 22);
+            this.tsmiMainLanguageEnglishUSA.Text = "Inglês (EUA)";
             // 
             // tsmiMainTools
             // 
@@ -316,19 +349,21 @@ namespace GameCube_Backup_Manager
             // 
             // pictureBoxGameDisc
             // 
+            this.pictureBoxGameDisc.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxGameDisc.Image")));
             this.pictureBoxGameDisc.Location = new System.Drawing.Point(7, 43);
             this.pictureBoxGameDisc.Name = "pictureBoxGameDisc";
             this.pictureBoxGameDisc.Size = new System.Drawing.Size(250, 258);
-            this.pictureBoxGameDisc.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxGameDisc.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxGameDisc.TabIndex = 8;
             this.pictureBoxGameDisc.TabStop = false;
             // 
             // pictureBoxGameCover3D
             // 
+            this.pictureBoxGameCover3D.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxGameCover3D.Image")));
             this.pictureBoxGameCover3D.Location = new System.Drawing.Point(7, 322);
             this.pictureBoxGameCover3D.Name = "pictureBoxGameCover3D";
             this.pictureBoxGameCover3D.Size = new System.Drawing.Size(250, 369);
-            this.pictureBoxGameCover3D.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxGameCover3D.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxGameCover3D.TabIndex = 31;
             this.pictureBoxGameCover3D.TabStop = false;
             // 
@@ -344,12 +379,11 @@ namespace GameCube_Backup_Manager
             this.tabControl1.Location = new System.Drawing.Point(3, 3);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1181, 721);
+            this.tabControl1.Size = new System.Drawing.Size(1187, 721);
             this.tabControl1.TabIndex = 12;
             // 
             // tabMainFile
             // 
-            this.tabMainFile.Controls.Add(this.labelPasta);
             this.tabMainFile.Controls.Add(this.labelOpenFolder);
             this.tabMainFile.Controls.Add(this.grpStatistics);
             this.tabMainFile.Controls.Add(this.grpDetails);
@@ -358,30 +392,22 @@ namespace GameCube_Backup_Manager
             this.tabMainFile.Location = new System.Drawing.Point(4, 22);
             this.tabMainFile.Name = "tabMainFile";
             this.tabMainFile.Padding = new System.Windows.Forms.Padding(3);
-            this.tabMainFile.Size = new System.Drawing.Size(1173, 695);
+            this.tabMainFile.Size = new System.Drawing.Size(1179, 695);
             this.tabMainFile.TabIndex = 0;
             this.tabMainFile.Text = "Arquivos";
             this.tabMainFile.UseVisualStyleBackColor = true;
-            // 
-            // labelPasta
-            // 
-            this.labelPasta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelPasta.AutoSize = true;
-            this.labelPasta.Location = new System.Drawing.Point(739, 515);
-            this.labelPasta.Name = "labelPasta";
-            this.labelPasta.Size = new System.Drawing.Size(16, 13);
-            this.labelPasta.TabIndex = 7;
-            this.labelPasta.Text = "...";
             // 
             // labelOpenFolder
             // 
             this.labelOpenFolder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.labelOpenFolder.AutoSize = true;
-            this.labelOpenFolder.Location = new System.Drawing.Point(739, 629);
+            this.labelOpenFolder.Location = new System.Drawing.Point(739, 641);
+            this.labelOpenFolder.MaximumSize = new System.Drawing.Size(230, 0);
             this.labelOpenFolder.Name = "labelOpenFolder";
-            this.labelOpenFolder.Size = new System.Drawing.Size(16, 13);
+            this.labelOpenFolder.Size = new System.Drawing.Size(229, 39);
             this.labelOpenFolder.TabIndex = 6;
-            this.labelOpenFolder.Text = "...";
+            this.labelOpenFolder.Text = "Clique no ícone ao lado e selecione uma pasta para listar todos os arquivos ISO e" +
+    " GCM contidos em seu interior.";
             // 
             // grpStatistics
             // 
@@ -562,11 +588,12 @@ namespace GameCube_Backup_Manager
             // pictureBoxGameID
             // 
             this.pictureBoxGameID.Enabled = false;
+            this.pictureBoxGameID.Image = global::GameCube_Backup_Manager.Properties.Resources.globe_earth_grayscale_64;
             this.pictureBoxGameID.InitialImage = null;
             this.pictureBoxGameID.Location = new System.Drawing.Point(146, 79);
             this.pictureBoxGameID.Name = "pictureBoxGameID";
             this.pictureBoxGameID.Size = new System.Drawing.Size(27, 27);
-            this.pictureBoxGameID.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxGameID.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxGameID.TabIndex = 8;
             this.pictureBoxGameID.TabStop = false;
             // 
@@ -599,6 +626,7 @@ namespace GameCube_Backup_Manager
             this.btnGameInstallScrub.Text = "Instalar Jogo (Scrub)";
             this.btnGameInstallScrub.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnGameInstallScrub.UseVisualStyleBackColor = true;
+            this.btnGameInstallScrub.Click += new System.EventHandler(this.btnGameInstallScrub_Click);
             // 
             // btnGameInstallExactCopy
             // 
@@ -612,6 +640,7 @@ namespace GameCube_Backup_Manager
             this.btnGameInstallExactCopy.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnGameInstallExactCopy.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnGameInstallExactCopy.UseVisualStyleBackColor = true;
+            this.btnGameInstallExactCopy.Click += new System.EventHandler(this.btnGameInstallExactCopy_Click);
             // 
             // btnCheatEditor
             // 
@@ -625,7 +654,6 @@ namespace GameCube_Backup_Manager
             this.btnCheatEditor.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCheatEditor.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCheatEditor.UseVisualStyleBackColor = true;
-            this.btnCheatEditor.Visible = false;
             // 
             // btnManagerART
             // 
@@ -639,7 +667,6 @@ namespace GameCube_Backup_Manager
             this.btnManagerART.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnManagerART.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnManagerART.UseVisualStyleBackColor = true;
-            this.btnManagerART.Visible = false;
             // 
             // btnEditGameCFG
             // 
@@ -653,7 +680,6 @@ namespace GameCube_Backup_Manager
             this.btnEditGameCFG.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEditGameCFG.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEditGameCFG.UseVisualStyleBackColor = true;
-            this.btnEditGameCFG.Visible = false;
             // 
             // btnHashGame
             // 
@@ -693,6 +719,7 @@ namespace GameCube_Backup_Manager
             this.btnDeleteGame.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDeleteGame.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDeleteGame.UseVisualStyleBackColor = true;
+            this.btnDeleteGame.Click += new System.EventHandler(this.btnDeleteGame_Click);
             // 
             // labelGameID
             // 
@@ -780,12 +807,16 @@ namespace GameCube_Backup_Manager
             // 
             this.btnSelectFolder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSelectFolder.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnSelectFolder.Location = new System.Drawing.Point(930, 629);
+            this.btnSelectFolder.Image = global::GameCube_Backup_Manager.Properties.Resources.open_folder_32;
+            this.btnSelectFolder.Location = new System.Drawing.Point(971, 629);
             this.btnSelectFolder.Name = "btnSelectFolder";
-            this.btnSelectFolder.Size = new System.Drawing.Size(180, 60);
+            this.btnSelectFolder.Size = new System.Drawing.Size(140, 60);
             this.btnSelectFolder.TabIndex = 3;
             this.btnSelectFolder.Text = "Procurar...";
+            this.btnSelectFolder.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSelectFolder.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSelectFolder.UseVisualStyleBackColor = true;
+            this.btnSelectFolder.Click += new System.EventHandler(this.btnSelectFolder_Click);
             // 
             // tabMainDisc
             // 
@@ -796,7 +827,7 @@ namespace GameCube_Backup_Manager
             this.tabMainDisc.Controls.Add(this.menuStripMainDisc);
             this.tabMainDisc.Location = new System.Drawing.Point(4, 22);
             this.tabMainDisc.Name = "tabMainDisc";
-            this.tabMainDisc.Size = new System.Drawing.Size(1173, 695);
+            this.tabMainDisc.Size = new System.Drawing.Size(1179, 695);
             this.tabMainDisc.TabIndex = 6;
             this.tabMainDisc.Text = "Disco";
             this.tabMainDisc.UseVisualStyleBackColor = true;
@@ -929,7 +960,7 @@ namespace GameCube_Backup_Manager
             this.tsmiMainDiscTools});
             this.menuStripMainDisc.Location = new System.Drawing.Point(0, 0);
             this.menuStripMainDisc.Name = "menuStripMainDisc";
-            this.menuStripMainDisc.Size = new System.Drawing.Size(1173, 27);
+            this.menuStripMainDisc.Size = new System.Drawing.Size(1179, 27);
             this.menuStripMainDisc.TabIndex = 0;
             this.menuStripMainDisc.Text = "menuStrip2";
             // 
@@ -1041,7 +1072,7 @@ namespace GameCube_Backup_Manager
             this.tabMainDatabase.Controls.Add(this.dgvMainDatabase);
             this.tabMainDatabase.Location = new System.Drawing.Point(4, 22);
             this.tabMainDatabase.Name = "tabMainDatabase";
-            this.tabMainDatabase.Size = new System.Drawing.Size(1173, 695);
+            this.tabMainDatabase.Size = new System.Drawing.Size(1179, 695);
             this.tabMainDatabase.TabIndex = 5;
             this.tabMainDatabase.Text = "Base de Dados";
             this.tabMainDatabase.UseVisualStyleBackColor = true;
@@ -1053,7 +1084,7 @@ namespace GameCube_Backup_Manager
             this.tsddbMainDatabaseTools});
             this.toolStripMainDatabase.Location = new System.Drawing.Point(0, 0);
             this.toolStripMainDatabase.Name = "toolStripMainDatabase";
-            this.toolStripMainDatabase.Size = new System.Drawing.Size(1173, 25);
+            this.toolStripMainDatabase.Size = new System.Drawing.Size(1179, 25);
             this.toolStripMainDatabase.TabIndex = 1;
             this.toolStripMainDatabase.Text = "Database";
             // 
@@ -1114,7 +1145,7 @@ namespace GameCube_Backup_Manager
             this.tabMainLog.Location = new System.Drawing.Point(4, 22);
             this.tabMainLog.Name = "tabMainLog";
             this.tabMainLog.Padding = new System.Windows.Forms.Padding(3);
-            this.tabMainLog.Size = new System.Drawing.Size(1173, 695);
+            this.tabMainLog.Size = new System.Drawing.Size(1179, 695);
             this.tabMainLog.TabIndex = 2;
             this.tabMainLog.Text = "Log";
             this.tabMainLog.UseVisualStyleBackColor = true;
@@ -1128,7 +1159,7 @@ namespace GameCube_Backup_Manager
             this.toolStripMainLog.Location = new System.Drawing.Point(3, 3);
             this.toolStripMainLog.Name = "toolStripMainLog";
             this.toolStripMainLog.ShowItemToolTips = false;
-            this.toolStripMainLog.Size = new System.Drawing.Size(1167, 25);
+            this.toolStripMainLog.Size = new System.Drawing.Size(1173, 25);
             this.toolStripMainLog.TabIndex = 2;
             this.toolStripMainLog.Text = "Log";
             // 
@@ -1284,7 +1315,6 @@ namespace GameCube_Backup_Manager
         private System.Windows.Forms.PictureBox pictureBoxGameCover3D;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabMainFile;
-        private System.Windows.Forms.Label labelPasta;
         private System.Windows.Forms.Label labelOpenFolder;
         private System.Windows.Forms.GroupBox grpStatistics;
         private System.Windows.Forms.Label lblSizeTotal;
@@ -1366,6 +1396,10 @@ namespace GameCube_Backup_Manager
         private System.Windows.Forms.ToolStripMenuItem tsddbMainLogDebugNormal;
         private System.Windows.Forms.ToolStripMenuItem tsddbMainLogDebugComplete;
         private System.Windows.Forms.TextBox txtDebugLog;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem tsmiMainLanguage;
+        private System.Windows.Forms.ToolStripMenuItem tsmiMainLanguagePortugueseBrazil;
+        private System.Windows.Forms.ToolStripMenuItem tsmiMainLanguageEnglishUSA;
     }
 }
 
