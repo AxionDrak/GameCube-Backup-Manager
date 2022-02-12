@@ -1,7 +1,16 @@
 # GameCube Backup Manager 0.0.0-2022-ALPHA
+*I start the front page of the year 2022 by rewriting the entire GameCube Backup Manager program from scratch.*
+*With absolutely no release forecast, the only certainty is that the program will be released in 2022 (if an apocalypse doesn't happen!).*
+
 **Welcome to the official Wii Backup Manager Website**
 
 GameCube Backup Manager is a program for working with FAT32 (and NTFS) drives to convert ISO files for use in Nintendont.
+
+Project base definitions:
+
+- Microsoft Visual Studio 2019
+- Microsoft C# 7.3 programming language
+- .NET Framework 4.7.2
 
 A partial list of (planned) features is below:
 
@@ -11,6 +20,8 @@ A partial list of (planned) features is below:
 - Format drives to FAT32 or ExFAT.
 - Extract archives files when adding to the files list, or automatically when needed for transfer/conversion.
 - Add folders recursively.
+- Online update system.
+- Plugins system, aiming to make the program more modular, easy to update and insert new functionalities.
 - Download covers for each game listed.
 - View all additional information regarding a selected game.
 - Select Display unit size (auto, MB, GB).
