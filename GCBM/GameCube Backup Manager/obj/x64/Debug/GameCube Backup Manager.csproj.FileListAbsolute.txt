@@ -1,0 +1,10 @@
+D:\Desenvolvimento\GitHub\GameCube-Backup-Manager\GCBM\GameCube Backup Manager\bin\x64\Debug\GameCube Backup Manager.exe.config
+D:\Desenvolvimento\GitHub\GameCube-Backup-Manager\GCBM\GameCube Backup Manager\bin\x64\Debug\GameCube Backup Manager.exe
+D:\Desenvolvimento\GitHub\GameCube-Backup-Manager\GCBM\GameCube Backup Manager\bin\x64\Debug\GameCube Backup Manager.pdb
+D:\Desenvolvimento\GitHub\GameCube-Backup-Manager\GCBM\GameCube Backup Manager\obj\x64\Debug\GameCube_Backup_Manager.frmMain.resources
+D:\Desenvolvimento\GitHub\GameCube-Backup-Manager\GCBM\GameCube Backup Manager\obj\x64\Debug\GameCube_Backup_Manager.Properties.Resources.resources
+D:\Desenvolvimento\GitHub\GameCube-Backup-Manager\GCBM\GameCube Backup Manager\obj\x64\Debug\GameCube Backup Manager.csproj.GenerateResource.cache
+D:\Desenvolvimento\GitHub\GameCube-Backup-Manager\GCBM\GameCube Backup Manager\obj\x64\Debug\GameCube Backup Manager.csproj.CoreCompileInputs.cache
+D:\Desenvolvimento\GitHub\GameCube-Backup-Manager\GCBM\GameCube Backup Manager\obj\x64\Debug\GameCube Backup Manager.exe
+D:\Desenvolvimento\GitHub\GameCube-Backup-Manager\GCBM\GameCube Backup Manager\obj\x64\Debug\GameCube Backup Manager.pdb
+D:\Desenvolvimento\GitHub\GameCube-Backup-Manager\GCBM\GameCube Backup Manager\obj\x64\Debug\GameCube Backup Manager.csproj.AssemblyReference.cache
