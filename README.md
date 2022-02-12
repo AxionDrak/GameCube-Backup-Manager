@@ -11,6 +11,8 @@ A partial list of (planned) features is below:
 - Format drives to FAT32 or ExFAT.
 - Extract archives files when adding to the files list, or automatically when needed for transfer/conversion.
 - Add folders recursively.
+- Download covers for each game listed.
+- View all additional information regarding a selected game.
 - Select Display unit size (auto, MB, GB).
 - Hide any drive you don't want to see in the drive menus, format dialog etc.
 - Set friendly display names for drives.
