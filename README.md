@@ -6,6 +6,7 @@ GameCube Backup Manager is a program for working with FAT32 (and NTFS) drives to
 A partial list of (planned) features is below:
 
 - Write Full ISO, Scrub ISO (DiscEx and GCReEx).
+- Read and write Full size (scrubbed) or trimmed ISO/GCM, GCReEx and DiscEx formats with direct conversion.
 - Multiboot ISO support.
 - Format drives to FAT32 or ExFAT.
 - Extract archives files when adding to the files list, or automatically when needed for transfer/conversion.
@@ -25,6 +26,8 @@ A partial list of (planned) features is below:
 - Enable WiiTDB/Custom titles in the settings dialog.
 - Auto rename titles during drive/ISO file transfers.
 - Use on-the-fly titles for FAT32/ExFAT files/folders, without changing the internal titles.
+- Extract games from GCOS multiboot ISOs to any of the supported formats.
+- Save the original file layout to trimmed ISOs, allowing full size ISOs to be rebuilt at a later date with the same file layout as the original.
 - Direct drive to drive transfers.
 - Multiple folder layouts. Title [GameID], Title_[GameID], GameID_Title
 - Multilingual interface.
