@@ -113,6 +113,16 @@ namespace GameCube_Backup_Manager.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap globe_earth_grayscale_64 {
+            get {
+                object obj = ResourceManager.GetObject("globe-earth-grayscale_64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap hash_key_32 {
             get {
                 object obj = ResourceManager.GetObject("hash_key_32", resourceCulture);
@@ -126,6 +136,16 @@ namespace GameCube_Backup_Manager.Properties {
         internal static System.Drawing.Bitmap install_iso_32 {
             get {
                 object obj = ResourceManager.GetObject("install_iso_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap open_folder_32 {
+            get {
+                object obj = ResourceManager.GetObject("open_folder_32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
