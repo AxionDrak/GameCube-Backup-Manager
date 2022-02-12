@@ -145,6 +145,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="gcbm.ico" />
+    <Content Include="media\covers\3d.png" />
+    <Content Include="media\covers\disc.png" />
+    <Content Include="media\covers\front.png" />
+    <Content Include="media\covers\full.png" />
+    <None Include="Resources\open_folder_32.png" />
+    <None Include="Resources\globe-earth-grayscale_64.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
