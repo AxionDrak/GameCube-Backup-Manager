@@ -1,38 +1,34 @@
 
-GCBM - GameCube Backup Manager
+**GCBM - GameCube Backup Manager**
 
-v2.0.0.0 - Initial Release
+**v2.1.0.0 - Release**
 
-Finished systems:
++ Added Scrub support (GCReEx and DiscEx).
++ Added WiiTDB support.
++ Added support for automatic update system.
++ Added Proxy support.
++ Added support for Plugins system (Experimental).
++ Added support for transferring skins to devices.
+= Adjustments to the program layout.
+= Improvements to the registry system.
+* Fixed crash in file transfer system (1:1).
 
-+ Automatic creation of the 'games' folder (if it doesn't exist);
-+ Read ISO and GCM files;
-+ Transfer any ISO/GCM readable format to FAT32 or NTFS devices;
-+ Transfer game files with the correct nomenclature (Game Name+ID or ID only);
-+ Erase unwanted game files (source device only);
-+ Display game information (region, publisher, genre, etc.);
-+ Download game covers (Disc, 2D, 3D, FullHQ);
-+ Individual skin download (for the selected game);
-+ Global skin download (for all games listed!);
-+ Download titles.txt (via GameTDB);
-+ Download wiitdb.xml (via GameTDB);
-+ Display game's ESRB rating;
-+ MD5 Hash Calculation;
-+ SHA-1 Hash Calculation;
-+ Improved GameCube ISO detection system (99% accuracy);
-+ XCopy system (allows 1:1 copies of files - STANDARD);
-+ More polished, pleasant and less polluted interface;
+**v2.0.0.0 - Initial Release**
 
-Systems being tested:
-
-* Plugins (now everything is customized);
-* GameCube ISO detection system using NKit (99% accuracy);
-* Creation of a custom Nincfg.bin file (Nincfg app configuration file);
-* Nintendont app installer (download from the official website and install the app);
-* Wipe system (similar to XCopy);
-* Scrub system (removes unnecessary data - garbage);
-* FST system (extraction of ISO files to virtual ISO);
-* Transfer skins for WiiFlow, WiiFlow Lite, WiiFlow Fusion apps;
-* Cover transfer for USB Loader GX, USB Loader GX Tab MOD apps;
-* Automatic program update system;
-* And a bunch of other things...
++ Added support for automatic creation of 'games' folder (if it doesn't exist).
++ Added support for ISO and GCM files.
++ Added support for transferring any ISO/GCM readable format to FAT32 or NTFS devices.
++ Added support for transferring game files with the correct nomenclature (Game Name+ID or ID only).
++ Added support for deleting game files.
++ Added support for displaying game information (region, publisher, genre, etc).
++ Added support for downloading game skins (Disc, 2D, 3D, FullHQ).
++ Added support for individual skin download (for selected game).
++ Added global skin download support (for all listed games!).
++ Added support for downloading titles.txt (GameTDB).
++ Added support for downloading wiitdb.xml (GameTDB).
++ Added support for displaying ESRB ratings.
++ Added support for MD5 Hash calculation.
++ Added SHA-1 Hash calculation support.
++ Added support for improved GameCube ISO detection system (75% accuracy).
++ Added XCopy system support (1:1 copies of files - DEFAULT).
+= More polished, pleasant and less polluted interface (UI).
