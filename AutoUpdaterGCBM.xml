@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <item>
   <version>2.1.0.0</version>
-  <url>https://rbsoft.org/downloads/AutoUpdaterTest.zip</url>
-  <changelog>https://github.com/ravibpatel/AutoUpdater.NET/releases</changelog>
+  <url>https://github.com/AxionDrak/GameCube-Backup-Manager/blob/main/AutoUpdaterGCBM.xml</url>
+  <changelog>https://github.com/AxionDrak/GameCube-Backup-Manager</changelog>
   <mandatory>false</mandatory>
 </item>
