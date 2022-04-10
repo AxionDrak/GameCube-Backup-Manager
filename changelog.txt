@@ -1,0 +1,38 @@
+
+GCBM - GameCube Backup Manager
+
+v2.0.0.0 - Initial Release
+
+Finished systems:
+
++ Automatic creation of the 'games' folder (if it doesn't exist);
++ Read ISO and GCM files;
++ Transfer any ISO/GCM readable format to FAT32 or NTFS devices;
++ Transfer game files with the correct nomenclature (Game Name+ID or ID only);
++ Erase unwanted game files (source device only);
++ Display game information (region, publisher, genre, etc.);
++ Download game covers (Disc, 2D, 3D, FullHQ);
++ Individual skin download (for the selected game);
++ Global skin download (for all games listed!);
++ Download titles.txt (via GameTDB);
++ Download wiitdb.xml (via GameTDB);
++ Display game's ESRB rating;
++ MD5 Hash Calculation;
++ SHA-1 Hash Calculation;
++ Improved GameCube ISO detection system (99% accuracy);
++ XCopy system (allows 1:1 copies of files - STANDARD);
++ More polished, pleasant and less polluted interface;
+
+Systems being tested:
+
+* Plugins (now everything is customized);
+* GameCube ISO detection system using NKit (99% accuracy);
+* Creation of a custom Nincfg.bin file (Nincfg app configuration file);
+* Nintendont app installer (download from the official website and install the app);
+* Wipe system (similar to XCopy);
+* Scrub system (removes unnecessary data - garbage);
+* FST system (extraction of ISO files to virtual ISO);
+* Transfer skins for WiiFlow, WiiFlow Lite, WiiFlow Fusion apps;
+* Cover transfer for USB Loader GX, USB Loader GX Tab MOD apps;
+* Automatic program update system;
+* And a bunch of other things...
