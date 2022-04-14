@@ -1,10 +1,4 @@
 
-### GameCube Backup Manager 2.0.1.0 (April 21, 2022)
-
-[Fixed] link in Disc tab to GameTDB page with selected game data.
-[Fixed] empty data detection in 'Database' tab.
-[Fixed] MD5 and SHA-1 signature verification.
-
 ### GameCube Backup Manager 2.0.0.0 (April 18, 2022)
 
 [Added] new time interval for polling updates (5 minutes).
