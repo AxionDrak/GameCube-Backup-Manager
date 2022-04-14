@@ -1,42 +1,32 @@
 # GameCube Backup Manager
-*The program has just entered the Pre-Release stage, and if everything is in order, it should be launched by the end of April/2022 (if an apocalypse doesn't happen!).*
 
 **GCBM (GameCube Backup Manager)** is a program for working with FAT32 *(and NTFS)* drives to convert ISO files for use in Nintendont.
 
-**Project base definitions:**
+**GCBM Supports:**
 
-- Microsoft Visual Studio 2019
-- Microsoft C# 7.3 programming language
-- .NET Framework 4.7.2
-
-**v2.1.0.0 - Release (end of April/2022)**
-
-+ Added Scrub support *(GCReEx and DiscEx)*.
-+ Added WiiTDB support.
-+ Added support for automatic update system.
-+ Added Proxy support.
-+ Added support for Plugins system *(Experimental)*.
-+ Added support for transferring covers to devices.
-  + Adjustments to the program layout.
-  + Improvements to the registry system.
-+ Fixed crash in file transfer system *(1:1)*.
-
-**v2.0.0.0 - Initial Release (Internal tests with selected people)**
-
-+ Added support for automatic creation of 'games' folder *(if it doesn't exist)*.
-+ Added support for ISO and GCM files.
-+ Added support for transferring any ISO/GCM readable format to FAT32 or NTFS devices.
-+ Added support for transferring game files with the correct nomenclature *(Game Name+ID or ID only)*.
-+ Added support for deleting game files.
-+ Added support for displaying game information *(region, publisher, genre, etc)*.
-+ Added support for downloading game covers *(Disc, 2D, 3D, FullHQ)*.
-+ Added support for individual cover download *(for selected game)*.
-+ Added global cover download support *(for all listed games!)*.
-+ Added support for downloading titles.txt *(GameTDB)*.
-+ Added support for downloading wiitdb.xml *(GameTDB)*.
-+ Added support for displaying ESRB ratings.
-+ Added support for MD5 Hash calculation.
-+ Added SHA-1 Hash calculation support.
-+ Added support for improved GameCube ISO detection system *(75% accuracy)*.
-+ Added XCopy system support *(1:1 copies of files - DEFAULT)*.
-  + More polished, pleasant and less polluted interface *(UI)*.
++ Execution of multiple instances of the program.
++ Upload the 'wiitdb.xml' file in the 'Database' tab.
++ Automatic update system.
++ Proxy system.
++ Cover transfer (WiiFlow, WiiFlow Lite, WiiFlow Fusion).
++ Cover transfer (USB Loader GX, USB Loader GX Tab MOD).
++ ISO/GCM readable format transfer (FAT32 or NTFS devices).
++ Transferring games with the correct nomenclature (Game Name+ID or ID only).
++ Game transfer via Scrub (GCReEx and DiscEx).
++ Deleting game files (Source and Destination).
++ Display of game information (region, publisher, genre, etc).
++ ESRB ratings display.
++ WiiTDB support for naming.
++ Improved GameCube ISO detection (70% accuracy) in 'internal' (Standard) mode.
++ Improved GameCube ISO detection (100% accuracy) in 'business' mode (GameTDB).
++ Global download of Disco and 3D skins (for all games listed!).
++ Individual download of skins for the selected game (Disc and 3D).
++ Game transfer via XCopy (1:1 copies - Standard).
++ Download the file 'wiitdb.xml' (GameTDB).
++ Plugin System (Experimental).
++ MD5 hash calculation.
++ SHA-1 Hash Calculation.
++ Automatic creation of 'games' folder (if it doesn't exist).
++ Support for ISO and GCM files.
++ Registration system.
++ More polished and functional graphical interface (UI).
