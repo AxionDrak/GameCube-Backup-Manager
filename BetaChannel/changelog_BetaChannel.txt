@@ -1,9 +1,0 @@
-﻿
-### GameCube Backup Manager 2.0.0.1-Beta (April 21, 2022)
-
-[Added] plugin for CD/DVD burning.
-[Added] plugin to convert ELF files to DOL.
-[Added] plugin to create ZIP and NWB packages.
-[Added] plugin for game testing (via Dolphin emulator).
-[Added] plugin to manage apps.
-[Added] plugin for editing 'meta.xml' files.
