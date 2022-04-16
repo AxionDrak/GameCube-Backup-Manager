@@ -1,11 +1,3 @@
-﻿
-### GameCube Backup Manager 2.0.1.0 (21 de abril de 2022)
-
-[Corrigido] tempo de carregamento de abertura (splash screen).
-[Corrigido] indicador de versão para plugins instalados.
-[Corrigido] link na aba Disco para a página no GameTDB com dados do jogo selecionado.
-[Corrigido] detecção de dados vazios na aba 'Base de Dados'.
-[Corrigido] verificação de assinaturas MD5 e SHA-1.
 
 ### GameCube Backup Manager 2.0.0.0 (18 de abril de 2022)
 
