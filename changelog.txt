@@ -1,56 +1,56 @@
 
-### GameCube Backup Manager 2.1.0.0 (April 19, 2022)
+### GameCube Backup Manager 2.1.0.0 (19 de abril de 2022)
 
-[Added] Plugin (built-in) to Read/Edit meta.xml files
-[Fixed] opening loading time (splash screen).
-[Fixed] link in Disc tab to GameTDB page with selected game data.
-[Fixed] empty data detection in 'Database' tab.
-[Fixed] MD5 and SHA-1 signature verification.
+[Adicionado] Plugin (incorporado) para Ler/Editar arquivos meta.xml
+[Corrigido] tempo de carregamento de abertura (splash screen).
+[Corrigido] link na aba Disco para a página no GameTDB com dados do jogo selecionado.
+[Corrigido] detecção de dados vazios na aba 'Base de Dados'.
+[Corrigido] verificação de assinaturas MD5 e SHA-1.
 
-### GameCube Backup Manager 2.0.0.0 (April 18, 2022)
+### GameCube Backup Manager 2.0.0.0 (18 de abril de 2022)
 
-[Added] new time interval for polling updates (5 minutes).
-[Added] permission to run multiple instances of the program.
-[Added] auto-update system.
-[Added] system for proxy.
-[Added] cover transfer (WiiFlow, WiiFlow Lite, WiiFlow Fusion).
-[Added] cover transfer (USB Loader GX, USB Loader GX Tab MOD).
-[Added] ISO/GCM readable format transfer (FAT32 or NTFS devices).
-[Added] game transfer with correct nomenclature (Game Name+ID or ID only).
-[Added] game transfer via Scrub (GCReEx and DiscEx).
-[Added] game files deletion (Source and Destination).
-[Added] game information display (region, publisher, genre, etc).
-[Added] ESRB ratings display.
-[Added] WiiTDB support.
-[Added] improved GameCube ISO detection (70% accuracy) in 'internal' (Default) mode.
-[Added] improved GameCube ISO detection (100% accuracy) in 'business' mode (GameTDB).
-[Added] global download of Disco and 3D skins (for all games listed!).
-[Added] individual download of skins for the selected game (Disc and 3D).
-[Fixed] file transfer system crash (1:1).
-[Fixed] loading 'wiitdb.xml' file in 'Database' tab.
-[Fixed] 'Restore Settings' now correctly deletes the 'config.ini' file.
+[Adicionado] novo intervalo de tempo para pesquisa de atualizações (5 minutos).
+[Adicionado] permissão para execução de múltiplas instâncias do programa.
+[Adicionado] sistema de atualização automática.
+[Adicionado] sistema para proxy.
+[Adicionado] transferência de capas (WiiFlow, WiiFlow Lite, WiiFlow Fusion).
+[Adicionado] transferência de capas (USB Loader GX, USB Loader GX Tab MOD).
+[Adicionado] transferência de formato legível ISO/GCM (dispositivos FAT32 ou NTFS).
+[Adicionado] transferência de jogos com a nomenclatura correta (Nome do Jogo+ID ou somente ID).
+[Adicionado] transferência de jogos via Scrub (GCReEx e DiscEx).
+[Adicionado] exclusão de arquivos de jogos (Origem e Destino).
+[Adicionado] exibição de informações do jogo (região, editora, gênero, etc).
+[Adicionado] exibição de classificações ESRB.
+[Adicionado] suporte WiiTDB.
+[Adicionado] detecção ISO GameCube aprimorado (70% de precisão) no modo 'interno' (Padrão).
+[Adicionado] detecção ISO GameCube aprimorado (100% de precisão) no modo 'comercial' (GameTDB).
+[Adicionado] download global de capas Disco e 3D (para todos os jogos listados!).
+[Adicionado] download individual de capas para o jogo selecionado (Disco e 3D).
+[Corrigido] falha no sistema de transferência de arquivos (1:1).
+[Corrigido] carregamento de arquivo 'wiitdb.xml' na aba 'Base de Dados'.
+[Corrigido] 'Restaurar Configurações' agora exclui corretamente o arquivo 'config.ini'.
 
-### GameCube Backup Manager 1.0.0.0-RC (April 11, 2022)
+### GameCube Backup Manager 1.0.0.0-RC (11 de abril de 2022)
 
-[Added] game transfer via XCopy (1:1 copies - Default).
-[Added] 'wiitdb.xml' file download (GameTDB).
+[Adicionado] transferência de jogos via XCopy (cópias 1:1 - Padrão).
+[Adicionado] download do arquivo 'wiitdb.xml' (GameTDB).
 
-### GameCube Backup Manage 0.90.0.0-Beta (March 25, 2022)
+### GameCube Backup Manage 0.90.0.0-Beta (25 de março de 2022)
 
-[Added] Plugins system (Experimental).
+[Adicionado] sistema de Plugins (Experimental).
 
-### GameCube Backup Manager 0.50.0.0-Beta (Feb 12, 2022)
+### GameCube Backup Manager 0.50.0.0-Beta (12 de fevereiro de 2022)
 
-[Added] MD5 hash calculation.
-[Added] SHA-1 Hash calculation.
-[Added] automatic creation of 'games' folder (if it doesn't exist).
-[Added] support for ISO and GCM files.
+[Adicionado] cálculo de hash MD5.
+[Adicionado] cálculo de Hash SHA-1.
+[Adicionado] criação automática de pasta 'games' (se não existir).
+[Adicionado] suporte para arquivos ISO e GCM.
 
-### GameCube Backup Manager 0.10.0.0-Alpha (January 23, 2022)
+### GameCube Backup Manager 0.10.0.0-Alpha (23 de janeiro de 2022)
 
-[Fixed] program layout tweaks.
-[Added] registration system.
+[Corrigido] ajustes no layout do programa.
+[Adicionado] sistema de registro.
 
-### GameCube Backup Manager 0.1.0.0-Alpha (January 5, 2022)
+### GameCube Backup Manager 0.1.0.0-Alpha (5 de janeiro de 2022)
 
-[Added] more polished and functional graphical interface (UI).
+[Adicionado] interface gráfica (UI) mais polida e funcional.
