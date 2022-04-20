@@ -2,7 +2,7 @@
 
 **GCBM (GameCube Backup Manager)** is a program for working with FAT32 *(and NTFS)* drives to convert ISO files for use in Nintendont.
 
-**GCBM Supports:**
+**Features:**
 
 + Execution of multiple instances of the program.
 + Upload the 'wiitdb.xml' file in the 'Database' tab.
