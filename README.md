@@ -2,7 +2,7 @@
 
 **GCBM (GameCube Backup Manager)** is a program for working with FAT32 *(and NTFS)* drives to convert ISO files for use in Nintendont.
 
-**Features:**
+### Features:
 
 + Execution of multiple instances of the program.
 + Upload the 'wiitdb.xml' file in the 'Database' tab.
@@ -30,3 +30,11 @@
 + Support for ISO and GCM files.
 + Registration system.
 + More polished and functional graphical interface (UI).
+
+### Notes
+
++ The Wii and Wii U SD card slot is known to be slow. If you're using an SD card and are having performance issues, consider either using a USB SD reader or a USB hard drive.
++ USB flash drives are known to be problematic.
++ Nintendont runs best with storage devices formatted with 32 KB clusters. (Use either FAT32 or exFAT.)
+
+
