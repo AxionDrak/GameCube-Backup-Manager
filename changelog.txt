@@ -1,4 +1,10 @@
 
+### GameCube Backup Manager 2.2.0.0 (April 22, 2022)
+
+[Added] English (US) language translation.
+[Added] Spanish (Spain) language translation.
+[Added] extra option for checking for updates, available in the Help tab.
+
 ### GameCube Backup Manager 2.1.0.0 (April 19, 2022)
 
 [Added] Plugin (built-in) to Read/Edit meta.xml files
