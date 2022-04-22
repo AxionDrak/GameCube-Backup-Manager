@@ -29,6 +29,7 @@
 + Automatic creation of 'games' folder (if it doesn't exist).
 + Support for ISO and GCM files.
 + Registration system.
++ Support for Portuguese (Brazil), English (United States) and Spanish (Spain) languages.
 + More polished and functional graphical interface (UI).
 
 ### Notes
