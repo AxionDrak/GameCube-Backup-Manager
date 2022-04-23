@@ -27,7 +27,7 @@
 + SHA-1 Hash Calculation.
 + Automatic creation of 'games' folder (if it doesn't exist).
 + Support for ISO and GCM files.
-+ Registration system.
++ LOG system.
 + Support for Portuguese (Brazil), English (United States) and Spanish (Spain) languages.
 + More polished and functional graphical interface (UI).
 
