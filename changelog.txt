@@ -1,4 +1,11 @@
 
+### GameCube Backup Manager 2.3.0.0 (April 23, 2022)
+
+[Removed] Plugin installation screen.
+  - Plugins will now be merged into the main program.
+[Corrected/Adjusted] English (US) and Spanish (Spain) language translations.
+  - Text corrections and inclusion of new texts.
+
 ### GameCube Backup Manager 2.2.0.0 (April 22, 2022)
 
 [Added] English (US) language translation.
