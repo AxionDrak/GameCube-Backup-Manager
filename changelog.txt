@@ -1,4 +1,12 @@
 
+### GameCube Backup Manager 2.4.0.0 (April 24, 2022)
+
+[Added] ELF to DOL converter.
+[Added] link to official page (GitHub) in Help menu.
+[Added] link to official post (GBATemp) in Help menu.
+[Fixed] temp folder cleanup system.
+[Improved] code cleanup.
+
 ### GameCube Backup Manager 2.3.0.0 (April 23, 2022)
 
 [Removed] Plugin installation screen.
