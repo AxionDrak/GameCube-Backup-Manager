@@ -75,3 +75,5 @@
 ### GameCube Backup Manager 0.1.0.0-Alpha (January 5, 2022)
 
 [Added] more polished and functional graphical interface (UI).
+
+.
