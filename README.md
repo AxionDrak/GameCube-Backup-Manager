@@ -13,10 +13,6 @@ All Releases: https://github.com/AxionDrak/GameCube-Backup-Manager/releases
 * [Fixed] Portuguese (Brazil), English (US) and Spanish (Spain) translations.
 * [Improved] more code cleanup. ;D
 
-### Requirements
-* .NET Framework 4.6
-* Microsoft Windows 64-bit (32-bit not supported!)
-
 ### Features:
 
 + Execution of multiple instances of the program.
@@ -45,6 +41,16 @@ All Releases: https://github.com/AxionDrak/GameCube-Backup-Manager/releases
 + LOG system.
 + Support for Portuguese (Brazil), English (United States) and Spanish (Spain) languages.
 + More polished and functional graphical interface (UI).
+
+### Requirements
+* .NET Framework 4.6
+* Microsoft Windows 64-bit (32-bit not supported!)
+
+### Screenshots
+
+![main](imgs/gcbm_0012.png)
+![main](imgs/gcbm_0013.png)
+![main](imgs/gcbm_0014.png)
 
 ### Notes
 
