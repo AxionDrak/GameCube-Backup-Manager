@@ -1,0 +1,709 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ServerReportedOneCoverOrBothNotFound" xml:space="preserve">
+    <value>O servidor informou: Uma das capas (ou ambas) não foi localizada!</value>
+  </data>
+  <data name="NoInternetConnectionFound_String2" xml:space="preserve">
+    <value>Verifique se a conexão está ativada nas configurações do programa.</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="ESRB_RP_grayscale" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ESRB_RP_grayscale.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AboutBox_String1" xml:space="preserve">
+    <value>Sobre {0}</value>
+  </data>
+  <data name="GameListExportedTXT" xml:space="preserve">
+    <value>Lista de jogos exportada para TXT!</value>
+  </data>
+  <data name="PluginDisplay_String1" xml:space="preserve">
+    <value>Tem certeza de que deseja excluir o plugin?</value>
+  </data>
+  <data name="EmptyGamesList" xml:space="preserve">
+    <value>A lista de jogos está vazia!</value>
+  </data>
+  <data name="Download3DCoverError" xml:space="preserve">
+    <value> [ERRO] Falha ao efetuar download da capa (3D)!</value>
+  </data>
+  <data name="image_not_found_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\image_not_found_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RequiredDirectories_String2" xml:space="preserve">
+    <value> [INFO] O diretório temporário padrão já existe... ignorando criação!</value>
+  </data>
+  <data name="ClearTemp_String2" xml:space="preserve">
+    <value>Não foi possível limpar a pasta temporária!</value>
+  </data>
+  <data name="RecommendedDeleteOrMoveFile" xml:space="preserve">
+    <value>É recomendável excluir ou mover o arquivo para outro local.</value>
+  </data>
+  <data name="FoundIsoGcmFiles" xml:space="preserve">
+    <value> [INFO] Arquivo(s) ISO/GCM encontrado(s): </value>
+  </data>
+  <data name="frmMain_Resize_Program" xml:space="preserve">
+    <value>Programa sendo executado em segundo plano!</value>
+  </data>
+  <data name="gbatemp_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gbatemp_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="InstallGameScrub_String3" xml:space="preserve">
+    <value>Status: Não respondendo!</value>
+  </data>
+  <data name="format_dvd_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\format_dvd_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="save_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\save_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="install_software_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\install_software_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ClearLogNotFound" xml:space="preserve">
+    <value>Não existem dados de registro para limpar!</value>
+  </data>
+  <data name="ConvertElfDol_String2" xml:space="preserve">
+    <value>&gt;&gt; Status: Não respondendo!</value>
+  </data>
+  <data name="NoInternetConnectionFound_String1" xml:space="preserve">
+    <value>Nenhuma conexão com a internet encontrada!</value>
+  </data>
+  <data name="CannotOpenTwoInstances" xml:space="preserve">
+    <value>Não é possível abrir duas instâncias deste programa!</value>
+  </data>
+  <data name="ConvertElfDol_String4" xml:space="preserve">
+    <value>&gt;&gt; Status [ERRO]: Formato de arquivo não reconhecido!</value>
+  </data>
+  <data name="InvalidDrive_String3" xml:space="preserve">
+    <value>O app Nintendont suporta somente os sistemas de arquivos FAT32 e exFAT.</value>
+  </data>
+  <data name="ReadImage_String1" xml:space="preserve">
+    <value>A imagem é muito pequena!</value>
+  </data>
+  <data name="install_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\install_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="config" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\config.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LoadDatabase_Region" xml:space="preserve">
+    <value>Região</value>
+  </data>
+  <data name="SelectTargetDrive" xml:space="preserve">
+    <value>Por favor, selecione uma unidade de destino!</value>
+  </data>
+  <data name="additional_information_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\additional_information_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HashesAreNotSame" xml:space="preserve">
+    <value> [INFO] Os hashes não são os mesmos!</value>
+  </data>
+  <data name="DisplayFilesSelected_Size" xml:space="preserve">
+    <value>Tamanho</value>
+  </data>
+  <data name="ProcessTaskDelay_String2" xml:space="preserve">
+    <value>Por favor, faça o download do arquivo!</value>
+  </data>
+  <data name="hash_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\hash_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="InvalidDrive_String1" xml:space="preserve">
+    <value>Este não é um dispositivo válido!</value>
+  </data>
+  <data name="InstallGameScrub_String2" xml:space="preserve">
+    <value>Status: Scrubbing... </value>
+  </data>
+  <data name="Attention" xml:space="preserve">
+    <value>ATENÇÃO!</value>
+  </data>
+  <data name="ReadImage_String3" xml:space="preserve">
+    <value>Arquivo '{0}' não encontrado!</value>
+  </data>
+  <data name="refresh_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\refresh_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value> [ERRO] </value>
+  </data>
+  <data name="PluginDisplay_String2" xml:space="preserve">
+    <value>Desinstalar</value>
+  </data>
+  <data name="globe-earth-color_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\globe-earth-color_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RegisterHeaderLog_CurrentProgramDirectory" xml:space="preserve">
+    <value> [INFO] Diretório atual do programa: </value>
+  </data>
+  <data name="ListHash_String2" xml:space="preserve">
+    <value> hash do arquivo: </value>
+  </data>
+  <data name="Information" xml:space="preserve">
+    <value>Informação</value>
+  </data>
+  <data name="UnknownRegion" xml:space="preserve">
+    <value>Região desconhecida!</value>
+  </data>
+  <data name="website" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\website.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="compact_file_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\compact_file_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sync_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sync_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ESRB_Early_Childhood" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ESRB_Early_Childhood.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="open_folder_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\open_folder_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="csv_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\csv_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LoadDatabase_Editor" xml:space="preserve">
+    <value>Editor</value>
+  </data>
+  <data name="image_not_found_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\image_not_found_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RecordExportedFailed" xml:space="preserve">
+    <value>Nenhum dado disponível para ser exportado!</value>
+  </data>
+  <data name="ConvertElfDol_String1" xml:space="preserve">
+    <value>&gt;&gt; Status: Trabalhando...</value>
+  </data>
+  <data name="ESRB_Early_Childhood_grayscale" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ESRB_Early_Childhood_grayscale.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ESRB_Adults_Only_18+_grayscale" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ESRB_Adults_Only_18+_grayscale.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="add_file_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\add_file_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="transfer_0002" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\transfer_0002.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="information_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\information_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="InvalidDrive_String2" xml:space="preserve">
+    <value>O sistema de arquivos detectado é: </value>
+  </data>
+  <data name="add_folder_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\add_folder_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="open_folder_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\open_folder_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="delete_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\delete_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ReadImage_String4" xml:space="preserve">
+    <value>ERRO!</value>
+  </data>
+  <data name="DownloadingWiiTDB_String1" xml:space="preserve">
+    <value>&gt;&gt; Baixando WiiTDB.zip ... </value>
+  </data>
+  <data name="ServerReportedDiscCoverNotFound" xml:space="preserve">
+    <value>O servidor informou: Capa Disco não encontrada!</value>
+  </data>
+  <data name="ProcessTaskDelay_String3" xml:space="preserve">
+    <value>Algumas funções que dependem desse arquivo não irão funcionar até seja efetuado o download do arquivo!</value>
+  </data>
+  <data name="gcbm_logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gcbm_logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="burn-cd_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\burn-cd_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ESRB_Adults_Only_18_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ESRB_Adults_Only_18+.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dolphin_emulator_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dolphin_emulator_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ReadImage_String2" xml:space="preserve">
+    <value>Várias imagens FST?\r\nPor favor, envie-me informações sobre esta imagem.</value>
+  </data>
+  <data name="InstallGameScrub_String6" xml:space="preserve">
+    <value>Disco 2 transferido com sucesso!</value>
+  </data>
+  <data name="not_conected_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\not_conected_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MetaXml_String2" xml:space="preserve">
+    <value>Dados gravados com sucesso!</value>
+  </data>
+  <data name="manager_apps_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\manager_apps_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="xml_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\xml_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RegisterHeaderLog_WorkingSet" xml:space="preserve">
+    <value> Conjunto de Trabalho: </value>
+  </data>
+  <data name="AllFilesSuccessfullyDeleted" xml:space="preserve">
+    <value>Todos os arquivos foram excluídos com sucesso!</value>
+  </data>
+  <data name="ClearLog" xml:space="preserve">
+    <value>Deseja realmente limpar os dados de registro?</value>
+  </data>
+  <data name="InvalidDrive_String6" xml:space="preserve">
+    <value> como armazenamento de BACKUP para arquivos ISO/GCM.</value>
+  </data>
+  <data name="RegisterHeaderLog_OSVersion" xml:space="preserve">
+    <value> OS Versão: </value>
+  </data>
+  <data name="LoadISOInfo_String2" xml:space="preserve">
+    <value>Disco secundário: (disc2)</value>
+  </data>
+  <data name="config_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\config_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ListHash_String1" xml:space="preserve">
+    <value>O </value>
+  </data>
+  <data name="RegisterHeaderLog_ApplicationVersion" xml:space="preserve">
+    <value> Versão da Aplicação: </value>
+  </data>
+  <data name="RegisterHeaderLog_LogicalUnits" xml:space="preserve">
+    <value> Unidades Lógicas: </value>
+  </data>
+  <data name="FilesDestinationUnit" xml:space="preserve">
+    <value>Arquivos (Destino) - Unidade (</value>
+  </data>
+  <data name="ESRB_Mature_17_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ESRB_Mature_17+.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rename_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rename_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="update_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\update_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cancel_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cancel_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CheckUSBGXFlow_String1" xml:space="preserve">
+    <value>Por favor, vá em 'Opções'-&gt; 'Configurações</value>
+  </data>
+  <data name="FilterDatabase_String2" xml:space="preserve">
+    <value>Se o arquivo 'wiitdb.xml' estiver instalado corretamente, faça os ajustes necessários nas configurações do programa.</value>
+  </data>
+  <data name="MetaXml_String1" xml:space="preserve">
+    <value>Arquivo 'meta.xml' inválido ou danificado!</value>
+  </data>
+  <data name="ESRB_Mature_17+_grayscale" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ESRB_Mature_17+_grayscale.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="log_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\log_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CreateGamesFolder" xml:space="preserve">
+    <value>Não existe pasta GAMES, criar pasta agora?</value>
+  </data>
+  <data name="conected_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\conected_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DisplayFilesSelected_Found_String2" xml:space="preserve">
+    <value> arquivo(s) com extensão .</value>
+  </data>
+  <data name="ESRB_RP" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ESRB_RP.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="box_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\box_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="plugin_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\plugin_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RecordExportedSuccessfully" xml:space="preserve">
+    <value>Registro exportado com sucesso!</value>
+  </data>
+  <data name="CopyTask_String3" xml:space="preserve">
+    <value>Tranferência finalizada!</value>
+  </data>
+  <data name="ESRB_Everyone" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ESRB_Everyone.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LoadDatabase_Type" xml:space="preserve">
+    <value>Tipo</value>
+  </data>
+  <data name="convert_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\convert_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="exit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\exit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ProcessTaskDelay_String4" xml:space="preserve">
+    <value>Para efetuar o download do arquivo (requer conexão com a internet), vá até a aba 'Base de Dados', depois em 'Ferramentas' -&gt; 'Atualização do GameTDB'.</value>
+  </data>
+  <data name="CopyTask_String5" xml:space="preserve">
+    <value>100% Completo!</value>
+  </data>
+  <data name="compact_file_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\compact_file_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DownloadingWiiTDB_String2" xml:space="preserve">
+    <value>&gt;&gt; Extraindo WiiTDB.xml ...</value>
+  </data>
+  <data name="SelectFolderContainingIsoGcmFiles" xml:space="preserve">
+    <value>Selecione uma pasta contendo arquivos ISO/GCM:</value>
+  </data>
+  <data name="ESRB_Teen_grayscale" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ESRB_Teen_grayscale.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RequiredDirectories_String4" xml:space="preserve">
+    <value> [INFO] Os diretórios de capas foram criados...</value>
+  </data>
+  <data name="manager_apps_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\manager_apps_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Download3DCover" xml:space="preserve">
+    <value> [INFO] Baixando capas (3D)... </value>
+  </data>
+  <data name="InvalidDrive_String5" xml:space="preserve">
+    <value>Entretanto, você pode utilizar dispositivos </value>
+  </data>
+  <data name="LoadDatabase_Developer" xml:space="preserve">
+    <value>Desenvolvedor</value>
+  </data>
+  <data name="CopyTask_String1" xml:space="preserve">
+    <value>Transferindo arquivo...</value>
+  </data>
+  <data name="InstallGameScrub_String5" xml:space="preserve">
+    <value>Jogo instalado com sucesso!</value>
+  </data>
+  <data name="LoadISOInfo_String1" xml:space="preserve">
+    <value>Disco primário: (disc1)</value>
+  </data>
+  <data name="DialogResultDeleteGame_ReallyDeleteFile_String1" xml:space="preserve">
+    <value>Deseja realmente excluir o(s) arquivo(s) ? </value>
+  </data>
+  <data name="ESRB_Everyone_10_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ESRB_Everyone_10+.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CreateGamesFolderNow" xml:space="preserve">
+    <value>Este é um dispositivo válido, mas não existe pasta GAMES, criar pasta agora?</value>
+  </data>
+  <data name="box_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\box_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="plugin_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\plugin_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="open_folder_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\open_folder_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="xml_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\xml_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="eye_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\eye_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SelectGameFromList" xml:space="preserve">
+    <value>Por favor, selecione um jogo da lista!</value>
+  </data>
+  <data name="NetworkCheck_NetStatus_Offline" xml:space="preserve">
+    <value>Conexão com a internet desativada!</value>
+  </data>
+  <data name="DownloadDiscCoverError" xml:space="preserve">
+    <value> [ERRO] Falha ao efetuar download da capa (Disco)!</value>
+  </data>
+  <data name="CheckUSBGXFlow_String2" xml:space="preserve">
+    <value>Depois vá em 'Capas' -&gt; 'Sincronizar' e marque a opção 'Ativar transferência de capas entre dispositivos'.</value>
+  </data>
+  <data name="info_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\info_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FilterDatabase_String1" xml:space="preserve">
+    <value>A lista da Base de Dados está vazia!</value>
+  </data>
+  <data name="eraser_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\eraser_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DisplayFilesSelected_FileName" xml:space="preserve">
+    <value>Nome do Arquivo</value>
+  </data>
+  <data name="CopyTask_String6" xml:space="preserve">
+    <value>Transferência finalizada!</value>
+  </data>
+  <data name="update_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\update_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DownloadingWiiTDB_String3" xml:space="preserve">
+    <value>&gt;&gt; Processo concluído!</value>
+  </data>
+  <data name="DisplayFilesSelected_Found_String3" xml:space="preserve">
+    <value>Encontrado(s) </value>
+  </data>
+  <data name="ESRB_Teen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ESRB_Teen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Info" xml:space="preserve">
+    <value> [INFO] </value>
+  </data>
+  <data name="RequiredDirectories_String5" xml:space="preserve">
+    <value> [INFO] Os diretórios de capas já existem... ignorando criação!</value>
+  </data>
+  <data name="InvalidDrive_String4" xml:space="preserve">
+    <value>É altamente recomendado utilizar o sistema de arquivos FAT32 com 32K clusters para garantir o máximo de compatibilidade com jogos de GameCube, Wii, ROM's, apps, emuladores e tudo mais!</value>
+  </data>
+  <data name="txt_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\txt_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CopyTask_String2" xml:space="preserve">
+    <value>Instalando jogo... </value>
+  </data>
+  <data name="InstallGameScrub_String4" xml:space="preserve">
+    <value>Status: Completo!</value>
+  </data>
+  <data name="DisplayFilesSelected_Found_String1" xml:space="preserve">
+    <value> [INFO] Encontrado(s) </value>
+  </data>
+  <data name="AboutBox_String2" xml:space="preserve">
+    <value>Versão {0}</value>
+  </data>
+  <data name="ESRB_Everyone_grayscale" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ESRB_Everyone_grayscale.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LoadDatabase_GameTitle" xml:space="preserve">
+    <value>Título do Jogo</value>
+  </data>
+  <data name="CopyTask_String4" xml:space="preserve">
+    <value>Jogo instalado!</value>
+  </data>
+  <data name="DialogResultDeleteGame_ReallyDeleteFile_String2" xml:space="preserve">
+    <value>Esse procedimento é irreversível e não será possivel recuperar o(s) arquivo(s)!</value>
+  </data>
+  <data name="InstallGameScrub_String1" xml:space="preserve">
+    <value>Transferindo...</value>
+  </data>
+  <data name="ServerReported3DCoverNotFound" xml:space="preserve">
+    <value>O servidor informou: Capa 3D não encontrada!</value>
+  </data>
+  <data name="DisplayFilesSelected_FilePath" xml:space="preserve">
+    <value>Caminho do Arquivo</value>
+  </data>
+  <data name="ProcessTaskDelay_String1" xml:space="preserve">
+    <value>O arquivo 'wiitdb.xml' não foi encontrado!</value>
+  </data>
+  <data name="RequiredDirectories_String3" xml:space="preserve">
+    <value> [INFO] Utilizando diretório temporário personalizado!</value>
+  </data>
+  <data name="ClearTemp_String1" xml:space="preserve">
+    <value> [INFO] Não foi possível limpar a pasta temporária!</value>
+  </data>
+  <data name="Remove" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Remove.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="globe-earth-grayscale_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\globe-earth-grayscale_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="html_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\html_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="facebook_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\facebook_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LoadDatabase_IDGameCode" xml:space="preserve">
+    <value>ID (Código do Jogo)</value>
+  </data>
+  <data name="Notice" xml:space="preserve">
+    <value>AVISO</value>
+  </data>
+  <data name="website_grayscale" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\website_grayscale.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="burn-cd_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\burn-cd_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="search_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\search_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NotNintendoGameCubeFile" xml:space="preserve">
+    <value> [ERRO] Não é um arquivo de Nintendo GameCube.</value>
+  </data>
+  <data name="UnableWriteDataDisk" xml:space="preserve">
+    <value>Não foi possível gravar os dados no disco!</value>
+  </data>
+  <data name="RequiredDirectories_String1" xml:space="preserve">
+    <value> [INFO] O diretório temporário padrão foi criado...</value>
+  </data>
+  <data name="NetworkCheck_NetStatus_Online" xml:space="preserve">
+    <value>Conexão com a internet estabelecida!</value>
+  </data>
+  <data name="ConvertElfDol_String3" xml:space="preserve">
+    <value>&gt;&gt; Status: Completo!</value>
+  </data>
+  <data name="DownloadDiscCover" xml:space="preserve">
+    <value> [INFO] Baixando capas (Disco)... </value>
+  </data>
+  <data name="RegisterHeaderLog_GcbmLogCreated" xml:space="preserve">
+    <value> gcbm.log é criado.</value>
+  </data>
+  <data name="RegisterHeaderLog_CLRVersion" xml:space="preserve">
+    <value> CLR Versão: </value>
+  </data>
+  <data name="gcbm_splash_screen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gcbm-splash-screen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CheckUSBGXFlow_String3" xml:space="preserve">
+    <value>Depois, na mesma aba, vá em 'Configuração do carregador USB (Transferir Capas)' e ajuste os diretórios das capas (Disco, 2D, 3D e Completo) do USB Loader GX ou WiiFlow em 'Configuração do carregador USB (Transferir Capas)', apontando para os respectivos diretórios dentro do dispositivo de destino.</value>
+  </data>
+  <data name="GetAllDrives_Inactive" xml:space="preserve">
+    <value>Inativo</value>
+  </data>
+  <data name="convert_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\convert_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RegisterHeaderLog_ProgramName" xml:space="preserve">
+    <value> Nome do Programa: </value>
+  </data>
+  <data name="MetaXml_String_ERRO" xml:space="preserve">
+    <value>ERRO</value>
+  </data>
+  <data name="eraser_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\eraser_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cancel-16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cancel-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GameListExportedCSV" xml:space="preserve">
+    <value>Lista de jogos exportada para CSV!</value>
+  </data>
+  <data name="ESRB_Everyone_10+_grayscale" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ESRB_Everyone_10+_grayscale.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="delete_file_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\delete_file_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="github_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\github_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AssemblyInfo_Description" xml:space="preserve">
+    <value>Software gerenciador de arquivos ISO e GCM de Nintendo GameCube.</value>
+  </data>
+</root>
