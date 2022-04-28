@@ -1,0 +1,484 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FC3F3E82-283B-4CA0-B076-9B2737CB2773}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>GCBM</RootNamespace>
+    <AssemblyName>GCBM</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <DocumentationFile>bin\Debug\GCBM.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>gcbm.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>bin\Debug\GCBM.xml</DocumentationFile>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>false</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoUpdater.NET">
+      <HintPath>..\AutoUpdater.NET-1.7.0\net45\AutoUpdater.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FileInfoExtension.cs" />
+    <Compile Include="frmAboutBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAboutBox.Designer.cs">
+      <DependentUpon>frmAboutBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConfig.Designer.cs">
+      <DependentUpon>frmConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDownloadGameTDB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDownloadGameTDB.Designer.cs">
+      <DependentUpon>frmDownloadGameTDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInfoAdditional.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInfoAdditional.Designer.cs">
+      <DependentUpon>frmInfoAdditional.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInformation.Designer.cs">
+      <DependentUpon>frmInformation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRenameISO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRenameISO.Designer.cs">
+      <DependentUpon>frmRenameISO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSplashScreen.Designer.cs">
+      <DependentUpon>frmSplashScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTransferCover.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTransferCover.Designer.cs">
+      <DependentUpon>frmTransferCover.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Hardworker.cs" />
+    <Compile Include="image.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="info.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IniFile.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TOC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="tools\frmBurnMedia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="tools\frmBurnMedia.Designer.cs">
+      <DependentUpon>frmBurnMedia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="tools\frmConvertELFtoDOL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="tools\frmConvertELFtoDOL.Designer.cs">
+      <DependentUpon>frmConvertELFtoDOL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="tools\frmCreateAppPackage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="tools\frmCreateAppPackage.Designer.cs">
+      <DependentUpon>frmCreateAppPackage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="tools\frmCreatePackage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="tools\frmCreatePackage.Designer.cs">
+      <DependentUpon>frmCreatePackage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="tools\frmDolphinEmulator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="tools\frmDolphinEmulator.Designer.cs">
+      <DependentUpon>frmDolphinEmulator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="tools\frmInstallApp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="tools\frmInstallApp.Designer.cs">
+      <DependentUpon>frmInstallApp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="tools\frmManageApp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="tools\frmManageApp.Designer.cs">
+      <DependentUpon>frmManageApp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="tools\frmMetaXml.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="tools\frmMetaXml.Designer.cs">
+      <DependentUpon>frmMetaXml.cs</DependentUpon>
+    </Compile>
+    <Compile Include="tools\Interop\BurnData.cs" />
+    <Compile Include="tools\Interop\imapi2Interop.cs" />
+    <Compile Include="tools\MediaItem\DirectoryItem.cs" />
+    <Compile Include="tools\MediaItem\FileItem.cs" />
+    <Compile Include="tools\MediaItem\IMediaItem.cs" />
+    <Compile Include="tools\MediaItem\Win32.cs" />
+    <EmbeddedResource Include="frmAboutBox.en-US.resx">
+      <DependentUpon>frmAboutBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAboutBox.es.resx">
+      <DependentUpon>frmAboutBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAboutBox.resx">
+      <DependentUpon>frmAboutBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConfig.en-US.resx">
+      <DependentUpon>frmConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConfig.es.resx">
+      <DependentUpon>frmConfig.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConfig.resx">
+      <DependentUpon>frmConfig.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDownloadGameTDB.en-US.resx">
+      <DependentUpon>frmDownloadGameTDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDownloadGameTDB.es.resx">
+      <DependentUpon>frmDownloadGameTDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDownloadGameTDB.resx">
+      <DependentUpon>frmDownloadGameTDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInfoAdditional.en-US.resx">
+      <DependentUpon>frmInfoAdditional.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInfoAdditional.es.resx">
+      <DependentUpon>frmInfoAdditional.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInfoAdditional.resx">
+      <DependentUpon>frmInfoAdditional.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInformation.en-US.resx">
+      <DependentUpon>frmInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInformation.es.resx">
+      <DependentUpon>frmInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInformation.resx">
+      <DependentUpon>frmInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.en-US.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.es.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRenameISO.en-US.resx">
+      <DependentUpon>frmRenameISO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRenameISO.es.resx">
+      <DependentUpon>frmRenameISO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRenameISO.resx">
+      <DependentUpon>frmRenameISO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSplashScreen.en-US.resx">
+      <DependentUpon>frmSplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSplashScreen.es.resx">
+      <DependentUpon>frmSplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSplashScreen.resx">
+      <DependentUpon>frmSplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTransferCover.en-US.resx">
+      <DependentUpon>frmTransferCover.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTransferCover.es.resx">
+      <DependentUpon>frmTransferCover.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTransferCover.resx">
+      <DependentUpon>frmTransferCover.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.en-US.resx" />
+    <EmbeddedResource Include="Properties\Resources.es.resx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="tools\frmBurnMedia.resx">
+      <DependentUpon>frmBurnMedia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tools\frmConvertELFtoDOL.en-US.resx">
+      <DependentUpon>frmConvertELFtoDOL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tools\frmConvertELFtoDOL.es.resx">
+      <DependentUpon>frmConvertELFtoDOL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tools\frmConvertELFtoDOL.resx">
+      <DependentUpon>frmConvertELFtoDOL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tools\frmCreateAppPackage.resx">
+      <DependentUpon>frmCreateAppPackage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tools\frmCreatePackage.resx">
+      <DependentUpon>frmCreatePackage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tools\frmDolphinEmulator.resx">
+      <DependentUpon>frmDolphinEmulator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tools\frmInstallApp.resx">
+      <DependentUpon>frmInstallApp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tools\frmManageApp.resx">
+      <DependentUpon>frmManageApp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tools\frmMetaXml.en-US.resx">
+      <DependentUpon>frmMetaXml.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tools\frmMetaXml.es.resx">
+      <DependentUpon>frmMetaXml.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tools\frmMetaXml.resx">
+      <DependentUpon>frmMetaXml.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\elf2dol.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="bin\gcit.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="gcbm.ico" />
+    <Content Include="media\covers\3d.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="media\covers\disc.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="media\covers\front.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="media\covers\full.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\github_16.png" />
+    <None Include="Resources\gbatemp_16.png" />
+    <None Include="Resources\convert_16.png" />
+    <None Include="Resources\dolphin_emulator_16.png" />
+    <None Include="Resources\manager_apps_16.png" />
+    <None Include="Resources\xml_16.png" />
+    <None Include="Resources\burn-cd_16.png" />
+    <None Include="Resources\format_dvd_32.png" />
+    <None Include="Resources\delete_file_32.png" />
+    <None Include="Resources\add_folder_32.png" />
+    <None Include="Resources\add_file_32.png" />
+    <None Include="Resources\burn-cd_32.png" />
+    <None Include="Resources\cancel-162.png" />
+    <None Include="Resources\box_16.png" />
+    <None Include="Resources\eraser_16.png" />
+    <None Include="Resources\convert_32.png" />
+    <None Include="Resources\dolphin_emulator.png" />
+    <None Include="Resources\cancel-161.png" />
+    <None Include="Resources\install_16.png" />
+    <None Include="Resources\open_folder_16.png" />
+    <None Include="Resources\cancel-16.png" />
+    <None Include="Resources\compact_file_16.png" />
+    <None Include="Resources\box_32.png" />
+    <None Include="Resources\manager_apps_32.png" />
+    <None Include="Resources\xml_32.png" />
+    <None Include="Resources\compact_file_32.png" />
+    <None Include="Resources\install_software_32.png" />
+    <None Include="Resources\image_not_found_1.png" />
+    <None Include="Resources\image_not_found_2.png" />
+    <None Include="Resources\cancel_32.png" />
+    <None Include="Resources\eraser_32.png" />
+    <None Include="Resources\save_32.png" />
+    <None Include="Resources\open_folder_32.png" />
+    <None Include="Resources\hash_16.png" />
+    <None Include="Resources\log_64.png" />
+    <None Include="Resources\update_16.png" />
+    <None Include="Resources\update_64.png" />
+    <None Include="Resources\update_32.png" />
+    <None Include="Resources\search_16.png" />
+    <None Include="Resources\csv_16.png" />
+    <None Include="Resources\html_16.png" />
+    <None Include="Resources\txt_16.png" />
+    <None Include="Resources\gcbm_logo.png" />
+    <None Include="Resources\gcbm-splash-screen.png" />
+    <None Include="Resources\config_16.png" />
+    <None Include="Resources\eye_16.png" />
+    <None Include="Resources\rename_16.png" />
+    <None Include="Resources\delete_16.png" />
+    <None Include="Resources\additional_information_16.png" />
+    <None Include="Resources\not_conected_16.png" />
+    <None Include="Resources\conected_16.png" />
+    <None Include="Resources\facebook_16.png" />
+    <None Include="Resources\plugin_32.png" />
+    <None Include="Resources\Remove.png" />
+    <None Include="Resources\add.png" />
+    <None Include="Resources\cyber-security_32.png" />
+    <None Include="Resources\ESRB_Teen.png" />
+    <None Include="Resources\ESRB_RP.png" />
+    <None Include="Resources\ESRB_Mature_17+.png" />
+    <None Include="Resources\ESRB_Everyone_10+.png" />
+    <None Include="Resources\ESRB_Everyone.png" />
+    <None Include="Resources\ESRB_Early_Childhood.png" />
+    <None Include="Resources\ESRB_Adults_Only_18+.png" />
+    <None Include="Resources\website.png" />
+    <None Include="Resources\website_grayscale.png" />
+    <None Include="Resources\ESRB_RP_grayscale.png" />
+    <None Include="Resources\ESRB_Adults_Only_18+_grayscale.png" />
+    <None Include="Resources\ESRB_Mature_17+_grayscale.png" />
+    <None Include="Resources\ESRB_Teen_grayscale.png" />
+    <None Include="Resources\ESRB_Everyone_10+_grayscale.png" />
+    <None Include="Resources\ESRB_Everyone_grayscale.png" />
+    <None Include="Resources\ESRB_Early_Childhood_grayscale.png" />
+    <None Include="Resources\globe-earth-color_64.png" />
+    <None Include="Resources\globe-earth-grayscale_64.png" />
+    <None Include="Resources\transfer_0002.png" />
+    <None Include="Resources\plugin_16.png" />
+    <None Include="Resources\refresh_32.png" />
+    <None Include="Resources\information_16.png" />
+    <None Include="Resources\sync_16.png" />
+    <None Include="Resources\config.png" />
+    <None Include="Resources\info_16.png" />
+    <None Include="Resources\exit.png" />
+    <None Include="Resources\open_folder_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 e x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
