@@ -9,11 +9,9 @@
 ### Download:
 All Releases: https://github.com/AxionDrak/GameCube-Backup-Manager/releases
 
-### Current Release - 2.4.1.0 (April 25, 2022)
+### Current Release - 2.4.2.0 (April 28, 2022)
 
-* [Added] new texts for all officially supported languages.
-* [Fixed] Portuguese (Brazil), English (US) and Spanish (Spain) translations.
-* [Improved] more code cleanup. ;D
+* [Added] Korean language translation (Thanks to DDinghoya)
 
 ### Features:
 
