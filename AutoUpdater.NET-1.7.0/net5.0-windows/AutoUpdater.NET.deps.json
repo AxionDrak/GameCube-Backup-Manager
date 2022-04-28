@@ -1,0 +1,85 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "AutoUpdater.NET/1.7.0.0": {
+        "runtime": {
+          "AutoUpdater.NET.dll": {}
+        },
+        "resources": {
+          "ar/AutoUpdater.NET.resources.dll": {
+            "locale": "ar"
+          },
+          "cs/AutoUpdater.NET.resources.dll": {
+            "locale": "cs"
+          },
+          "da/AutoUpdater.NET.resources.dll": {
+            "locale": "da"
+          },
+          "de/AutoUpdater.NET.resources.dll": {
+            "locale": "de"
+          },
+          "es/AutoUpdater.NET.resources.dll": {
+            "locale": "es"
+          },
+          "fr/AutoUpdater.NET.resources.dll": {
+            "locale": "fr"
+          },
+          "it/AutoUpdater.NET.resources.dll": {
+            "locale": "it"
+          },
+          "ja-JP/AutoUpdater.NET.resources.dll": {
+            "locale": "ja-JP"
+          },
+          "ko/AutoUpdater.NET.resources.dll": {
+            "locale": "ko"
+          },
+          "nl/AutoUpdater.NET.resources.dll": {
+            "locale": "nl"
+          },
+          "pl/AutoUpdater.NET.resources.dll": {
+            "locale": "pl"
+          },
+          "pt-BR/AutoUpdater.NET.resources.dll": {
+            "locale": "pt-BR"
+          },
+          "pt/AutoUpdater.NET.resources.dll": {
+            "locale": "pt"
+          },
+          "ru/AutoUpdater.NET.resources.dll": {
+            "locale": "ru"
+          },
+          "sk/AutoUpdater.NET.resources.dll": {
+            "locale": "sk"
+          },
+          "sv/AutoUpdater.NET.resources.dll": {
+            "locale": "sv"
+          },
+          "th/AutoUpdater.NET.resources.dll": {
+            "locale": "th"
+          },
+          "tr/AutoUpdater.NET.resources.dll": {
+            "locale": "tr"
+          },
+          "zh-tw/AutoUpdater.NET.resources.dll": {
+            "locale": "zh-tw"
+          },
+          "zh/AutoUpdater.NET.resources.dll": {
+            "locale": "zh"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "AutoUpdater.NET/1.7.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
