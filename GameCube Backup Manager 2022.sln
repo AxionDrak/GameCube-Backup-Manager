@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31613.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GCBM", "GCBM\GCBM.csproj", "{FC3F3E82-283B-4CA0-B076-9B2737CB2773}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FC3F3E82-283B-4CA0-B076-9B2737CB2773}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC3F3E82-283B-4CA0-B076-9B2737CB2773}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC3F3E82-283B-4CA0-B076-9B2737CB2773}.Debug|x64.ActiveCfg = Debug|x64
+		{FC3F3E82-283B-4CA0-B076-9B2737CB2773}.Debug|x64.Build.0 = Debug|x64
+		{FC3F3E82-283B-4CA0-B076-9B2737CB2773}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC3F3E82-283B-4CA0-B076-9B2737CB2773}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC3F3E82-283B-4CA0-B076-9B2737CB2773}.Release|x64.ActiveCfg = Release|x64
+		{FC3F3E82-283B-4CA0-B076-9B2737CB2773}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		RESX_NeutralResourcesLanguage = pt-BR
+		SolutionGuid = {11AF1734-B56F-491E-99F1-E6DCF1F9701B}
+	EndGlobalSection
+EndGlobal
