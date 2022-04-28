@@ -91,7 +91,7 @@ namespace GCBM
             configIniFile.IniWriteString("GCBM", "Language", "Portuguese");
             configIniFile.IniWriteString("GCBM", "TranslatedBy", "Laete Meireles");
             configIniFile.IniWriteString("GCBM", "TranslatorContact", "laetemn@hotmail.com");
-            configIniFile.IniWriteString("GCBM", "LastUpdated", "22/04/2022");
+            configIniFile.IniWriteString("GCBM", "LastUpdated", "28/04/2022");
             configIniFile.IniWriteString("GCBM", "ProgVersion", _version.ToString());
 
             // General          
