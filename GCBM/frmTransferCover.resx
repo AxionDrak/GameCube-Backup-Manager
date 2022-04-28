@@ -1,0 +1,544 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="&gt;&gt;rbJapan.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>349, 201</value>
+  </data>
+  <data name="&gt;&gt;lblTransferStatus.Name" xml:space="preserve">
+    <value>lblTransferStatus</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="rbUsa.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="btnTaskCancel.Text" xml:space="preserve">
+    <value>Cancelar Transferência</value>
+  </data>
+  <data name="rbUsa.Text" xml:space="preserve">
+    <value>USA</value>
+  </data>
+  <data name="lblTransferStatus.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 126</value>
+  </data>
+  <data name="pbCoverCopy.Size" type="System.Drawing.Size, System.Drawing">
+    <value>324, 23</value>
+  </data>
+  <data name="btnTaskIndeterminate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 171</value>
+  </data>
+  <data name="lblTransferStatus.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="chkTransferAllRegions.Size" type="System.Drawing.Size, System.Drawing">
+    <value>197, 17</value>
+  </data>
+  <data name="&gt;&gt;rbEurope.Name" xml:space="preserve">
+    <value>rbEurope</value>
+  </data>
+  <data name="rbEurope.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>365, 240</value>
+  </data>
+  <data name="rbJapan.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="pbCoverCopy.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="rbJapan.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 72</value>
+  </data>
+  <data name="&gt;&gt;rbUsa.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;pbCoverCopy.Name" xml:space="preserve">
+    <value>pbCoverCopy</value>
+  </data>
+  <data name="&gt;&gt;btnClose.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblTransferStatus.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="btnTaskCancel.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;btnTaskCancel.Name" xml:space="preserve">
+    <value>btnTaskCancel</value>
+  </data>
+  <data name="rbEurope.Text" xml:space="preserve">
+    <value>Europa</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="&gt;&gt;pbCoverCopy.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;lblTransferStatus.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;rbEurope.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="notifyIcon.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAICAAAAEAIACoEAAAFgAAACgAAAAgAAAAQAAAAAEAIAAAAAAAABAAAN0AAADdAAAAAAAAAAAA
+        AAD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8AAAAAEgIEB+kAAAD/AAAA/wEBAvsAAAA8////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wAAAAA7AAAAF////wAAAAApAAAA/zl+rf8/i7//CBAY+QAAAGn///8AAAAABgAA
+        AEcAAAAG////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8AAAICeQAAAP8CBgfhAAAAggEDBesGDRL6ULH0/1S5//8YM0f4AQID+AAA
+        AJoBBAa4AAAA/wMEB7YAAAAG////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AAACAnkBAgL9NXSg/xcxRPkIExn3K1+D/0yo6P9Uuf//VLn//1Gy
+        9v80c57/DiEt+AsYIfg6gLH/Bg4T+gMEB7YAAAAG////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wAAAAAHAAAA/yVScf9Uuf//VLn//1S5//9Uuf//VLn//1S5
+        //9Uuf//VLn//1S5//9Uuf//VLn//1S5//86f6//AAAA/wAAAEf///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wAAAgJ7AQID/Uqk4v9Uuf//VLn//1K1
+        +v8yb5n/IUZf/x4+U/8sYYb/Tarr/1S5//9Uuf//VLn//woXH/gBBAa4AAAABv///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AAAAAFoBAwT9Tarq/1S5
+        //9Jot//FCQv/xIUFv9eX2D/bGxs/yQnKf8LERX/PYe6/1S5//9Uuf//DiEt+AAAAJr///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AAAAACIAAABoAQQF1B1C
+        WvxUuf//VLj+/xkvP/84Ojv/6+vr////////////+/v7/2tra/8MExj/T67w/1S5//80cp3/AQID+AAA
+        AGkAAAA8////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8AAwcJwAUL
+        D/sOIS33R53Y/1S5//9BjsT/AwQE/+Hh4f//////////////////////+vr6/yUoKv8tY4j/VLn//1Gy
+        9v8YM0f4CBAY+QEBAvv///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wAECArIKlx//1S5//9Uuf//VLn//zBrk/8mKiz/////////////////////////////////aWlp/yNI
+        Yf9Uuf//VLn//1S5//8/i7//AAAA/////wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AAQICsgmU3P/Tq3u/1S5//9Uuf//NHOe/xseIP//////////////////////////////
+        //+9vsD/MmqQ/1S5//9Uuf//ULH0/zl+rf8AAAD/////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8AAwYJqQAAAP8BAgP9PYe6/1S5//9Gm9b/AQEB/8HBwf//////////////
+        /////////////9Ds//9Uuf//VLn//0yo6P8GDRL6AAAA/wIEB+n///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wAAAAAIAAAAKAEBA7MULT75VLn//1S5//8kTGf/Fxka/8HB
+        wf////////////////+MkZT/RX2k/1S5//9Uuf//LGKH/wIDBewAAAApAAAAEv///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8AAAAAQgAAAP9Jot//VLn//1Gy
+        9f8kTGf/AQEB/xseIP+NmqP/t+H//1uw6/9Ore7/VLn//1S5//8KFx/2AAAAif///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AAAAAAEDBAe2Bw8U+U6t
+        7v9Uuf//VLn//1S5//9Gm9b/NHOe/0WX0P9Uuf//VLn//1S5//9Uuf//VLn//xYvQvkCBAfkAAAAF///
+        /wD///8A////AP///wD///8A////AP///wAAAAA8AAAAoAAAAKAAAACTAAAADP///wD///8AAAAABQEC
+        A/gfRV/+VLn//06s7f9Jot//VLn//1S5//9Uuf//VLn//1S5//9Uuf//T67w/0ul4/9Uuf//NHOf/wAA
+        AP8AAAA7////AP///wD///8A////AAAAABoAAAAO////AAcGBLUpJRz/X1VA/wMDAv0AAABQ////AAAA
+        AB0AAAALAAAAQgEDBPkfRV/+Bg4T+gAAAP8ULT75PYe6/1S5//9Uuf//R53Z/x5EXvwCBQb7AQIC/SVR
+        b/8BAgL9AAICef///wD///8A////AP///wAAAABIAgIC+gcHBd0CAgKnAgIB/Ip8Xv//5a3/JCAY+AQE
+        A+oAAACXAgEB/QcHBdQAAAASAAAAQgECA/gDBAe2AAAAQgEBA7MBAgP9Tq3u/1S5//8OIS33AQIE2AAA
+        AGIAAAB/AAAA/wACAnn///8A////AP///wD///8AAAAARAMCAvt5bFL/SkMy+DozJ/ipmHP//eOs///l
+        rf/q0p//hHda/ysnHfWGeFv/LCge+QcHBdQAAAAOAAAABQAAAAH///8AAAAAKAAAAP8mU3P/Klx//wUL
+        D/sAAABo////AP///wAAAAAH////AP///wD///8A////AP///wACAgCMCQgG/NrElP//5a3//+Wt///l
+        rf/23af/38iX//7krP//5a3//+Wt///lrf+GeFv/AQEB/QAAAC////8A////AP///wAAAAAIAwYJqQQI
+        CsgECArIAwcJwAAAACL///8A////AP///wD///8A////AP///wD///8A////AAAAAAYCAgLzjX9g///l
+        rf/o0J3/VU07/wQEA/8AAAD/EhEO/5KDY//+5Kz//+Wt/ysnHfUAAACd////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8AAwMLnwICBfUCAgX1BAQMr////wD///8A////AP///wAAAAAqAAAAeAEB
+        Af7ex5f//OKr/zUwJv8lJST/l5eX/9HR0f9vb2//CAgH/5KDY///5a3/hHda/wQEA+sAAABQAAAADP//
+        /wD///8A////AP///wAAAAAcAAAAKwAAAEcBAQT0KCht/ywseP8BAQP6AAAAUAAAACEAAAAQ////AAMD
+        AvYIBwX8a19I+f/lrf+xn3j/AAAA/8/Pz/////////////////9vb2//EhEO//7krP/q0p//JiIa+AMD
+        Av0AAACT////AP///wD///8AAAAAAgICB9IAAAD+AAAA/x8fV/tZWfX/W1v6/yMjYvwAAAH+AAAA/gIC
+        COAAAAAFAAAA/7+sgv//5a3//+Wt/39yVv8xMC///////////////////////9HR0f8AAAD/38iX///l
+        rf//5a3/X1VA/wAAAKD///8A////AP///wAAAABjAwMJ+0FBsf9LS87/SkrK/yYmYP8kJFn/R0fE/01N
+        0/9CQrT/BgYP+QAAAHMAAAD/U0s4/76rgf//5a3/m4tp/wkJCP/u7u7/////////////////l5eX/wQE
+        A//23af//eOs/4x+X/8pJRz/AAAAn////wD///8A////AAMDCKoICBf7VVXp/0pKyv8DAwX/XV1g/2Vl
+        Z/8FBQj/RES6/1hY8f8LCx77AgIGzgYGBIEEBAPLDQwJ+fbdp//mz5z/Dw4M/2ZmZv/u7u7//////8/P
+        z/8lJST/VU07///lrf+tm3X/AgIB/AcGBLUAAAA8////AP///wD///8AAAAAEgAAAf5BQbP/JiZg/11d
+        YP///////////25ucP8iIlD/R0fD/wAAAP8AAAAf////AAAAABEDAwL4n49s///lrf+vnXf/Dw4M/wkJ
+        CP8xMC//AAAA/zUwJv/o0J3//+Wt/0Q8LfkDAwGt////AP///wD///8A////AP///wAAAAALAAAB/kFB
+        s/8kJFn/ZWVn////////////dnZ3/x8fSf9HR8P/AAAA/wAAABj///8AAAAATgICAf2vnXf//+Wt///l
+        rf/mz5z/m4tp/39yVv+xn3j//OKr///lrf//5a3/TUU0+QcHBeAAAAAS////AP///wD///8A////AAMD
+        CKUHBxP6VFTm/0dHxP8FBQj/bm5w/3Z2d/8JCQz/QkK0/1dX7/8JCRr6AwMGyf///wACAgCECAcF/M24
+        i/+wnnf/ppVx//jfqP//5a3//+Wt///lrf/jzJr/lIVk/9rElP95bFL/AgIC+gAAACv///8A////AP//
+        /wD///8AAAAAbAUFDfpGRsH/UFDb/0REuv8iIlD/Hx9J/0JCtP9RUd7/R0fE/wgIFvkAAAB8////AAAA
+        AAIFBQOhCAcF/AEBAf0CAgH6Dw0K+sCsgv//5a3/bmNK+gICAf4CAgH3CQgG/AMCAvsAAABI////AP//
+        /wD///8A////AP///wAAAAADAgII2wAAAP8AAAH+IyNi/Fpa9/9cXPz/KCht/QEBA/0AAAD/AgIH5QAA
+        AAj///8A////AAAAAAICAgJzAAAATAAAABMEBAPLU0s4/7+sgv8IBwX8AAAAeQAAAAgCAgJ6AAAAQf//
+        /wD///8A////AP///wD///8A////AP///wAAAAAiAAAANAAAAFcBAQT2LCx5/zExhf8BAQL6AAAAYAAA
+        ACwAAAAY////AP///wD///8A////AP///wD///8A////AAYGBIEAAAD/AAAA/wMDAvYAAAAq////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AAQECq0AAAD/AAAA/wQE
+        C77///8A////AP///wD///8A///gf///IEf//gAD//wAAf/4AAH//AAB//wAA//wAAD/8AAA//AAAP/w
+        AAD/8AAA//AAAP/8AAP/+AAB/BgAAeQQAAPAAAAHgAAgb4AA4H+AAf8PAAB4AQAAcAAAAHAAAABwAAAA
+        cACAAfAAgADwAIAA8ACAAfAAwAP4Afwf/w8=
+</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterParent</value>
+  </data>
+  <data name="&gt;&gt;rbUsa.Name" xml:space="preserve">
+    <value>rbUsa</value>
+  </data>
+  <data name="rbUsa.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;rbUsa.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Regiões</value>
+  </data>
+  <data name="btnTaskCancel.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;btnClose.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkTransferAllRegions.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="btnTaskCancel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>93, 171</value>
+  </data>
+  <data name="rbJapan.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="$this.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>365, 240</value>
+  </data>
+  <data name="&gt;&gt;notifyIcon.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NotifyIcon, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblTransferStatus.Size" type="System.Drawing.Size, System.Drawing">
+    <value>74, 13</value>
+  </data>
+  <data name="&gt;&gt;rbJapan.Name" xml:space="preserve">
+    <value>rbJapan</value>
+  </data>
+  <data name="&gt;&gt;btnTaskIndeterminate.Name" xml:space="preserve">
+    <value>btnTaskIndeterminate</value>
+  </data>
+  <data name="btnClose.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="lblTransferStatus.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;btnClose.Name" xml:space="preserve">
+    <value>btnClose</value>
+  </data>
+  <data name="rbEurope.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;btnTaskIndeterminate.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;btnTaskCancel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkTransferAllRegions.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;rbUsa.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="chkTransferAllRegions.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="btnTaskCancel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>130, 23</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 12</value>
+  </data>
+  <data name="pbCoverCopy.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 142</value>
+  </data>
+  <data name="chkTransferAllRegions.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>324, 101</value>
+  </data>
+  <data name="rbJapan.Text" xml:space="preserve">
+    <value>Japão</value>
+  </data>
+  <data name="&gt;&gt;pbCoverCopy.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="btnTaskIndeterminate.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="btnClose.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="btnTaskIndeterminate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="&gt;&gt;chkTransferAllRegions.Name" xml:space="preserve">
+    <value>chkTransferAllRegions</value>
+  </data>
+  <data name="&gt;&gt;btnTaskCancel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;rbEurope.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;bgWorkerIndeterminate.Name" xml:space="preserve">
+    <value>bgWorkerIndeterminate</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rbJapan.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;chkTransferAllRegions.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>frmTransferCover</value>
+  </data>
+  <data name="btnClose.Text" xml:space="preserve">
+    <value>Fechar</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Transferir Capas</value>
+  </data>
+  <data name="&gt;&gt;rbJapan.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="rbUsa.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 17</value>
+  </data>
+  <data name="lblTransferStatus.Text" xml:space="preserve">
+    <value>Aguardando...</value>
+  </data>
+  <data name="chkTransferAllRegions.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="rbEurope.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 49</value>
+  </data>
+  <data name="&gt;&gt;btnTaskCancel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="btnTaskCancel.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;bgWorkerIndeterminate.Type" xml:space="preserve">
+    <value>System.ComponentModel.BackgroundWorker, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnClose.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="rbUsa.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 26</value>
+  </data>
+  <data name="btnTaskIndeterminate.Text" xml:space="preserve">
+    <value>Transferir</value>
+  </data>
+  <data name="&gt;&gt;btnTaskIndeterminate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="notifyIcon.Visible" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;rbEurope.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;notifyIcon.Name" xml:space="preserve">
+    <value>notifyIcon</value>
+  </data>
+  <data name="rbJapan.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 17</value>
+  </data>
+  <data name="&gt;&gt;pbCoverCopy.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ProgressBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="chkTransferAllRegions.Text" xml:space="preserve">
+    <value>Transferir capas de todas as regiões</value>
+  </data>
+  <data name="rbEurope.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 17</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnTaskIndeterminate.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="btnClose.Location" type="System.Drawing.Point, System.Drawing">
+    <value>261, 171</value>
+  </data>
+  <data name="&gt;&gt;lblTransferStatus.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="chkTransferAllRegions.Location" type="System.Drawing.Point, System.Drawing">
+    <value>109, 50</value>
+  </data>
+  <metadata name="notifyIcon.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>199, 7</value>
+  </metadata>
+  <metadata name="rbUsa.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="bgWorkerIndeterminate.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>16, 7</value>
+  </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="pbCoverCopy.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="chkTransferAllRegions.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>41</value>
+  </metadata>
+  <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="groupBox1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="btnClose.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="btnTaskCancel.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="rbEurope.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="btnTaskIndeterminate.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="lblTransferStatus.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="rbJapan.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+</root>
