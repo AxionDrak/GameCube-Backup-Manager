@@ -213,10 +213,12 @@ namespace GCBM
             // 
             // spcMain.Panel1
             // 
+            resources.ApplyResources(this.spcMain.Panel1, "spcMain.Panel1");
             this.spcMain.Panel1.Controls.Add(this.groupBox1);
             // 
             // spcMain.Panel2
             // 
+            resources.ApplyResources(this.spcMain.Panel2, "spcMain.Panel2");
             this.spcMain.Panel2.Controls.Add(this.tabControlMain);
             // 
             // groupBox1
@@ -251,6 +253,7 @@ namespace GCBM
             // 
             // tabMainFile
             // 
+            resources.ApplyResources(this.tabMainFile, "tabMainFile");
             this.tabMainFile.Controls.Add(this.lblInstallGame);
             this.tabMainFile.Controls.Add(this.lblPercent);
             this.tabMainFile.Controls.Add(this.lblCopy);
@@ -260,7 +263,6 @@ namespace GCBM
             this.tabMainFile.Controls.Add(this.grpDetails);
             this.tabMainFile.Controls.Add(this.dgvGameList);
             this.tabMainFile.Controls.Add(this.mstripFile);
-            resources.ApplyResources(this.tabMainFile, "tabMainFile");
             this.tabMainFile.Name = "tabMainFile";
             this.tabMainFile.UseVisualStyleBackColor = true;
             // 
@@ -354,9 +356,9 @@ namespace GCBM
             // 
             // grpOperations
             // 
+            resources.ApplyResources(this.grpOperations, "grpOperations");
             this.grpOperations.Controls.Add(this.btnGameInstallScrub);
             this.grpOperations.Controls.Add(this.btnGameInstallExactCopy);
-            resources.ApplyResources(this.grpOperations, "grpOperations");
             this.grpOperations.Name = "grpOperations";
             this.grpOperations.TabStop = false;
             // 
@@ -409,9 +411,9 @@ namespace GCBM
             // 
             // dgvGameList
             // 
+            resources.ApplyResources(this.dgvGameList, "dgvGameList");
             this.dgvGameList.AllowUserToAddRows = false;
             this.dgvGameList.AllowUserToDeleteRows = false;
-            resources.ApplyResources(this.dgvGameList, "dgvGameList");
             this.dgvGameList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvGameList.BackgroundColor = System.Drawing.Color.White;
             this.dgvGameList.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
@@ -434,110 +436,110 @@ namespace GCBM
             // 
             // cmsMain
             // 
+            resources.ApplyResources(this.cmsMain, "cmsMain");
             this.cmsMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiInfoGame});
             this.cmsMain.Name = "cmsMain";
-            resources.ApplyResources(this.cmsMain, "cmsMain");
             // 
             // tsmiInfoGame
             // 
-            this.tsmiInfoGame.Name = "tsmiInfoGame";
             resources.ApplyResources(this.tsmiInfoGame, "tsmiInfoGame");
+            this.tsmiInfoGame.Name = "tsmiInfoGame";
             this.tsmiInfoGame.Click += new System.EventHandler(this.tsmiInfoGame_Click);
             // 
             // mstripFile
             // 
+            resources.ApplyResources(this.mstripFile, "mstripFile");
             this.mstripFile.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiReloadGameList,
             this.tsmiSelectGameList,
             this.tsmiRemoveGameList,
             this.tsmiToolsGameList});
-            resources.ApplyResources(this.mstripFile, "mstripFile");
             this.mstripFile.Name = "mstripFile";
             // 
             // tsmiReloadGameList
             // 
+            resources.ApplyResources(this.tsmiReloadGameList, "tsmiReloadGameList");
             this.tsmiReloadGameList.Image = global::GCBM.Properties.Resources.refresh_32;
             this.tsmiReloadGameList.Name = "tsmiReloadGameList";
-            resources.ApplyResources(this.tsmiReloadGameList, "tsmiReloadGameList");
             this.tsmiReloadGameList.Click += new System.EventHandler(this.tsmiReloadGameList_Click);
             // 
             // tsmiSelectGameList
             // 
+            resources.ApplyResources(this.tsmiSelectGameList, "tsmiSelectGameList");
             this.tsmiSelectGameList.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiGameListSelectAll,
             this.tsmiGameListSelectNone});
-            resources.ApplyResources(this.tsmiSelectGameList, "tsmiSelectGameList");
             this.tsmiSelectGameList.Name = "tsmiSelectGameList";
             // 
             // tsmiGameListSelectAll
             // 
-            this.tsmiGameListSelectAll.Name = "tsmiGameListSelectAll";
             resources.ApplyResources(this.tsmiGameListSelectAll, "tsmiGameListSelectAll");
+            this.tsmiGameListSelectAll.Name = "tsmiGameListSelectAll";
             this.tsmiGameListSelectAll.Click += new System.EventHandler(this.tsmiGameSelectAll_Click);
             // 
             // tsmiGameListSelectNone
             // 
-            this.tsmiGameListSelectNone.Name = "tsmiGameListSelectNone";
             resources.ApplyResources(this.tsmiGameListSelectNone, "tsmiGameListSelectNone");
+            this.tsmiGameListSelectNone.Name = "tsmiGameListSelectNone";
             this.tsmiGameListSelectNone.Click += new System.EventHandler(this.tsmiGameSelectNone_Click);
             // 
             // tsmiRemoveGameList
             // 
+            resources.ApplyResources(this.tsmiRemoveGameList, "tsmiRemoveGameList");
             this.tsmiRemoveGameList.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiGameListDeleteAllFiles,
             this.tsmiGameListDeleteSelectedFile});
             this.tsmiRemoveGameList.Name = "tsmiRemoveGameList";
-            resources.ApplyResources(this.tsmiRemoveGameList, "tsmiRemoveGameList");
             // 
             // tsmiGameListDeleteAllFiles
             // 
-            this.tsmiGameListDeleteAllFiles.Name = "tsmiGameListDeleteAllFiles";
             resources.ApplyResources(this.tsmiGameListDeleteAllFiles, "tsmiGameListDeleteAllFiles");
+            this.tsmiGameListDeleteAllFiles.Name = "tsmiGameListDeleteAllFiles";
             this.tsmiGameListDeleteAllFiles.Click += new System.EventHandler(this.tsmiGameListDeleteAllFiles_Click);
             // 
             // tsmiGameListDeleteSelectedFile
             // 
-            this.tsmiGameListDeleteSelectedFile.Name = "tsmiGameListDeleteSelectedFile";
             resources.ApplyResources(this.tsmiGameListDeleteSelectedFile, "tsmiGameListDeleteSelectedFile");
+            this.tsmiGameListDeleteSelectedFile.Name = "tsmiGameListDeleteSelectedFile";
             this.tsmiGameListDeleteSelectedFile.Click += new System.EventHandler(this.tsmiDeleteSelectedFile_Click);
             // 
             // tsmiToolsGameList
             // 
+            resources.ApplyResources(this.tsmiToolsGameList, "tsmiToolsGameList");
             this.tsmiToolsGameList.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiGameListSignatureSHA1,
             this.exportarListaToolStripMenuItem});
             this.tsmiToolsGameList.Name = "tsmiToolsGameList";
-            resources.ApplyResources(this.tsmiToolsGameList, "tsmiToolsGameList");
             // 
             // tsmiGameListSignatureSHA1
             // 
+            resources.ApplyResources(this.tsmiGameListSignatureSHA1, "tsmiGameListSignatureSHA1");
             this.tsmiGameListSignatureSHA1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiGameListHashSHA1});
             this.tsmiGameListSignatureSHA1.Name = "tsmiGameListSignatureSHA1";
-            resources.ApplyResources(this.tsmiGameListSignatureSHA1, "tsmiGameListSignatureSHA1");
             // 
             // tsmiGameListHashSHA1
             // 
+            resources.ApplyResources(this.tsmiGameListHashSHA1, "tsmiGameListHashSHA1");
             this.tsmiGameListHashSHA1.Image = global::GCBM.Properties.Resources.search_16;
             this.tsmiGameListHashSHA1.Name = "tsmiGameListHashSHA1";
-            resources.ApplyResources(this.tsmiGameListHashSHA1, "tsmiGameListHashSHA1");
             this.tsmiGameListHashSHA1.Click += new System.EventHandler(this.tsmiGameHashSHA1_Click);
             // 
             // exportarListaToolStripMenuItem
             // 
+            resources.ApplyResources(this.exportarListaToolStripMenuItem, "exportarListaToolStripMenuItem");
             this.exportarListaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiExportTXT,
             this.tsmiExportHTML,
             this.tsmiExportCSV});
             this.exportarListaToolStripMenuItem.Name = "exportarListaToolStripMenuItem";
-            resources.ApplyResources(this.exportarListaToolStripMenuItem, "exportarListaToolStripMenuItem");
             // 
             // tsmiExportTXT
             // 
+            resources.ApplyResources(this.tsmiExportTXT, "tsmiExportTXT");
             this.tsmiExportTXT.Image = global::GCBM.Properties.Resources.txt_16;
             this.tsmiExportTXT.Name = "tsmiExportTXT";
-            resources.ApplyResources(this.tsmiExportTXT, "tsmiExportTXT");
             this.tsmiExportTXT.Click += new System.EventHandler(this.tsmiExportTXT_Click);
             // 
             // tsmiExportHTML
@@ -556,12 +558,12 @@ namespace GCBM
             // 
             // tabMainDisc
             // 
+            resources.ApplyResources(this.tabMainDisc, "tabMainDisc");
             this.tabMainDisc.Controls.Add(this.label3);
             this.tabMainDisc.Controls.Add(this.label2);
             this.tabMainDisc.Controls.Add(this.groupBox2);
             this.tabMainDisc.Controls.Add(this.dgvGameListDisc);
             this.tabMainDisc.Controls.Add(this.mstripDisc);
-            resources.ApplyResources(this.tabMainDisc, "tabMainDisc");
             this.tabMainDisc.Name = "tabMainDisc";
             this.tabMainDisc.UseVisualStyleBackColor = true;
             // 
@@ -631,9 +633,9 @@ namespace GCBM
             // 
             // dgvGameListDisc
             // 
+            resources.ApplyResources(this.dgvGameListDisc, "dgvGameListDisc");
             this.dgvGameListDisc.AllowUserToAddRows = false;
             this.dgvGameListDisc.AllowUserToDeleteRows = false;
-            resources.ApplyResources(this.dgvGameListDisc, "dgvGameListDisc");
             this.dgvGameListDisc.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvGameListDisc.BackgroundColor = System.Drawing.Color.White;
             this.dgvGameListDisc.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
@@ -655,6 +657,7 @@ namespace GCBM
             // 
             // mstripDisc
             // 
+            resources.ApplyResources(this.mstripDisc, "mstripDisc");
             this.mstripDisc.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tscbDiscDrive,
             this.tsmiReloadDeviceDrive,
@@ -662,13 +665,12 @@ namespace GCBM
             this.tsmiSelectGameDisc,
             this.tsmiRemoveGameDisc,
             this.tsmiToolsGameDisc});
-            resources.ApplyResources(this.mstripDisc, "mstripDisc");
             this.mstripDisc.Name = "mstripDisc";
             // 
             // tscbDiscDrive
             // 
-            this.tscbDiscDrive.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             resources.ApplyResources(this.tscbDiscDrive, "tscbDiscDrive");
+            this.tscbDiscDrive.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.tscbDiscDrive.Items.AddRange(new object[] {
             resources.GetString("tscbDiscDrive.Items")});
             this.tscbDiscDrive.Name = "tscbDiscDrive";
@@ -676,65 +678,65 @@ namespace GCBM
             // 
             // tsmiReloadDeviceDrive
             // 
+            resources.ApplyResources(this.tsmiReloadDeviceDrive, "tsmiReloadDeviceDrive");
             this.tsmiReloadDeviceDrive.Image = global::GCBM.Properties.Resources.refresh_32;
             this.tsmiReloadDeviceDrive.Name = "tsmiReloadDeviceDrive";
-            resources.ApplyResources(this.tsmiReloadDeviceDrive, "tsmiReloadDeviceDrive");
             this.tsmiReloadDeviceDrive.Click += new System.EventHandler(this.tsmiReloadDeviceDrive_Click);
             // 
             // tsmiReloadGameListDisc
             // 
+            resources.ApplyResources(this.tsmiReloadGameListDisc, "tsmiReloadGameListDisc");
             this.tsmiReloadGameListDisc.Image = global::GCBM.Properties.Resources.refresh_32;
             this.tsmiReloadGameListDisc.Name = "tsmiReloadGameListDisc";
-            resources.ApplyResources(this.tsmiReloadGameListDisc, "tsmiReloadGameListDisc");
             this.tsmiReloadGameListDisc.Click += new System.EventHandler(this.tsmiReloadGameListDisc_Click);
             // 
             // tsmiSelectGameDisc
             // 
+            resources.ApplyResources(this.tsmiSelectGameDisc, "tsmiSelectGameDisc");
             this.tsmiSelectGameDisc.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiGameDiscSelectAll,
             this.tsmiGameDiscSelectNone});
             this.tsmiSelectGameDisc.Name = "tsmiSelectGameDisc";
-            resources.ApplyResources(this.tsmiSelectGameDisc, "tsmiSelectGameDisc");
             // 
             // tsmiGameDiscSelectAll
             // 
-            this.tsmiGameDiscSelectAll.Name = "tsmiGameDiscSelectAll";
             resources.ApplyResources(this.tsmiGameDiscSelectAll, "tsmiGameDiscSelectAll");
+            this.tsmiGameDiscSelectAll.Name = "tsmiGameDiscSelectAll";
             // 
             // tsmiGameDiscSelectNone
             // 
-            this.tsmiGameDiscSelectNone.Name = "tsmiGameDiscSelectNone";
             resources.ApplyResources(this.tsmiGameDiscSelectNone, "tsmiGameDiscSelectNone");
+            this.tsmiGameDiscSelectNone.Name = "tsmiGameDiscSelectNone";
             // 
             // tsmiRemoveGameDisc
             // 
+            resources.ApplyResources(this.tsmiRemoveGameDisc, "tsmiRemoveGameDisc");
             this.tsmiRemoveGameDisc.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiGameDiscDeleteAllFiles,
             this.tsmiGameDiscDeleteSelectedFile});
             this.tsmiRemoveGameDisc.Name = "tsmiRemoveGameDisc";
-            resources.ApplyResources(this.tsmiRemoveGameDisc, "tsmiRemoveGameDisc");
             // 
             // tsmiGameDiscDeleteAllFiles
             // 
-            this.tsmiGameDiscDeleteAllFiles.Name = "tsmiGameDiscDeleteAllFiles";
             resources.ApplyResources(this.tsmiGameDiscDeleteAllFiles, "tsmiGameDiscDeleteAllFiles");
+            this.tsmiGameDiscDeleteAllFiles.Name = "tsmiGameDiscDeleteAllFiles";
             this.tsmiGameDiscDeleteAllFiles.Click += new System.EventHandler(this.tsmiGameDiscDeleteAllFiles_Click);
             // 
             // tsmiGameDiscDeleteSelectedFile
             // 
-            this.tsmiGameDiscDeleteSelectedFile.Name = "tsmiGameDiscDeleteSelectedFile";
             resources.ApplyResources(this.tsmiGameDiscDeleteSelectedFile, "tsmiGameDiscDeleteSelectedFile");
+            this.tsmiGameDiscDeleteSelectedFile.Name = "tsmiGameDiscDeleteSelectedFile";
             this.tsmiGameDiscDeleteSelectedFile.Click += new System.EventHandler(this.tsmiDeleteSelectedFileDisc_Click);
             // 
             // tsmiToolsGameDisc
             // 
+            resources.ApplyResources(this.tsmiToolsGameDisc, "tsmiToolsGameDisc");
             this.tsmiToolsGameDisc.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiGameDiscExportList,
             this.toolStripMenuItem3,
             this.tsmiGameDiscSignatureSHA1,
             this.tsmiGameDiscSignatureMD5});
             this.tsmiToolsGameDisc.Name = "tsmiToolsGameDisc";
-            resources.ApplyResources(this.tsmiToolsGameDisc, "tsmiToolsGameDisc");
             // 
             // tsmiGameDiscExportList
             // 
@@ -743,32 +745,33 @@ namespace GCBM
             // 
             // toolStripMenuItem3
             // 
-            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
             resources.ApplyResources(this.toolStripMenuItem3, "toolStripMenuItem3");
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
             // 
             // tsmiGameDiscSignatureSHA1
             // 
+            resources.ApplyResources(this.tsmiGameDiscSignatureSHA1, "tsmiGameDiscSignatureSHA1");
             this.tsmiGameDiscSignatureSHA1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiGameDiscAllHashSHA1,
             this.tsmiGameDiscHashSHA1});
             this.tsmiGameDiscSignatureSHA1.Name = "tsmiGameDiscSignatureSHA1";
-            resources.ApplyResources(this.tsmiGameDiscSignatureSHA1, "tsmiGameDiscSignatureSHA1");
             // 
             // tsmiGameDiscAllHashSHA1
             // 
+            resources.ApplyResources(this.tsmiGameDiscAllHashSHA1, "tsmiGameDiscAllHashSHA1");
             this.tsmiGameDiscAllHashSHA1.Image = global::GCBM.Properties.Resources.search_16;
             this.tsmiGameDiscAllHashSHA1.Name = "tsmiGameDiscAllHashSHA1";
-            resources.ApplyResources(this.tsmiGameDiscAllHashSHA1, "tsmiGameDiscAllHashSHA1");
             // 
             // tsmiGameDiscHashSHA1
             // 
+            resources.ApplyResources(this.tsmiGameDiscHashSHA1, "tsmiGameDiscHashSHA1");
             this.tsmiGameDiscHashSHA1.Image = global::GCBM.Properties.Resources.search_16;
             this.tsmiGameDiscHashSHA1.Name = "tsmiGameDiscHashSHA1";
-            resources.ApplyResources(this.tsmiGameDiscHashSHA1, "tsmiGameDiscHashSHA1");
             this.tsmiGameDiscHashSHA1.Click += new System.EventHandler(this.tsmiGameDiscHashSHA1_Click);
             // 
             // tsmiGameDiscSignatureMD5
             // 
+            resources.ApplyResources(this.tsmiGameDiscSignatureMD5, "tsmiGameDiscSignatureMD5");
             this.tsmiGameDiscSignatureMD5.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiGameDiscAllHashMD5,
             this.tsmiGameDiscHashMD5,
@@ -776,46 +779,45 @@ namespace GCBM
             this.tsmiGameDiscRecalculateAllMD5,
             this.tsmiGameDiscRecalculateSelectedGameMD5});
             this.tsmiGameDiscSignatureMD5.Name = "tsmiGameDiscSignatureMD5";
-            resources.ApplyResources(this.tsmiGameDiscSignatureMD5, "tsmiGameDiscSignatureMD5");
             // 
             // tsmiGameDiscAllHashMD5
             // 
+            resources.ApplyResources(this.tsmiGameDiscAllHashMD5, "tsmiGameDiscAllHashMD5");
             this.tsmiGameDiscAllHashMD5.Image = global::GCBM.Properties.Resources.search_16;
             this.tsmiGameDiscAllHashMD5.Name = "tsmiGameDiscAllHashMD5";
-            resources.ApplyResources(this.tsmiGameDiscAllHashMD5, "tsmiGameDiscAllHashMD5");
             // 
             // tsmiGameDiscHashMD5
             // 
+            resources.ApplyResources(this.tsmiGameDiscHashMD5, "tsmiGameDiscHashMD5");
             this.tsmiGameDiscHashMD5.Image = global::GCBM.Properties.Resources.search_16;
             this.tsmiGameDiscHashMD5.Name = "tsmiGameDiscHashMD5";
-            resources.ApplyResources(this.tsmiGameDiscHashMD5, "tsmiGameDiscHashMD5");
             this.tsmiGameDiscHashMD5.Click += new System.EventHandler(this.tsmiGameDiscHashMD5_Click);
             // 
             // toolStripMenuItem4
             // 
-            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
             resources.ApplyResources(this.toolStripMenuItem4, "toolStripMenuItem4");
+            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
             // 
             // tsmiGameDiscRecalculateAllMD5
             // 
+            resources.ApplyResources(this.tsmiGameDiscRecalculateAllMD5, "tsmiGameDiscRecalculateAllMD5");
             this.tsmiGameDiscRecalculateAllMD5.Image = global::GCBM.Properties.Resources.hash_16;
             this.tsmiGameDiscRecalculateAllMD5.Name = "tsmiGameDiscRecalculateAllMD5";
-            resources.ApplyResources(this.tsmiGameDiscRecalculateAllMD5, "tsmiGameDiscRecalculateAllMD5");
             // 
             // tsmiGameDiscRecalculateSelectedGameMD5
             // 
+            resources.ApplyResources(this.tsmiGameDiscRecalculateSelectedGameMD5, "tsmiGameDiscRecalculateSelectedGameMD5");
             this.tsmiGameDiscRecalculateSelectedGameMD5.Image = global::GCBM.Properties.Resources.hash_16;
             this.tsmiGameDiscRecalculateSelectedGameMD5.Name = "tsmiGameDiscRecalculateSelectedGameMD5";
-            resources.ApplyResources(this.tsmiGameDiscRecalculateSelectedGameMD5, "tsmiGameDiscRecalculateSelectedGameMD5");
             // 
             // tabMainDatabase
             // 
+            resources.ApplyResources(this.tabMainDatabase, "tabMainDatabase");
             this.tabMainDatabase.Controls.Add(this.lblDatabaseTotal);
             this.tabMainDatabase.Controls.Add(this.cbFilterDatabase);
             this.tabMainDatabase.Controls.Add(this.label7);
             this.tabMainDatabase.Controls.Add(this.lvDatabase);
             this.tabMainDatabase.Controls.Add(this.mstripDatabase);
-            resources.ApplyResources(this.tabMainDatabase, "tabMainDatabase");
             this.tabMainDatabase.Name = "tabMainDatabase";
             this.tabMainDatabase.UseVisualStyleBackColor = true;
             // 
@@ -864,29 +866,29 @@ namespace GCBM
             // 
             // mstripDatabase
             // 
+            resources.ApplyResources(this.mstripDatabase, "mstripDatabase");
             this.mstripDatabase.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiToolDatabase});
-            resources.ApplyResources(this.mstripDatabase, "mstripDatabase");
             this.mstripDatabase.Name = "mstripDatabase";
             // 
             // tsmiToolDatabase
             // 
+            resources.ApplyResources(this.tsmiToolDatabase, "tsmiToolDatabase");
             this.tsmiToolDatabase.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiDatabaseUpdateGameTDB});
             this.tsmiToolDatabase.Name = "tsmiToolDatabase";
-            resources.ApplyResources(this.tsmiToolDatabase, "tsmiToolDatabase");
             // 
             // tsmiDatabaseUpdateGameTDB
             // 
-            this.tsmiDatabaseUpdateGameTDB.Name = "tsmiDatabaseUpdateGameTDB";
             resources.ApplyResources(this.tsmiDatabaseUpdateGameTDB, "tsmiDatabaseUpdateGameTDB");
+            this.tsmiDatabaseUpdateGameTDB.Name = "tsmiDatabaseUpdateGameTDB";
             this.tsmiDatabaseUpdateGameTDB.Click += new System.EventHandler(this.tsmiDatabaseUpdateGameTDB_Click);
             // 
             // tabMainLog
             // 
+            resources.ApplyResources(this.tabMainLog, "tabMainLog");
             this.tabMainLog.Controls.Add(this.tbLog);
             this.tabMainLog.Controls.Add(this.mstripLog);
-            resources.ApplyResources(this.tabMainLog, "tabMainLog");
             this.tabMainLog.Name = "tabMainLog";
             this.tabMainLog.UseVisualStyleBackColor = true;
             // 
@@ -902,52 +904,53 @@ namespace GCBM
             // 
             // mstripLog
             // 
+            resources.ApplyResources(this.mstripLog, "mstripLog");
             this.mstripLog.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiToolLog});
-            resources.ApplyResources(this.mstripLog, "mstripLog");
             this.mstripLog.Name = "mstripLog";
             // 
             // tsmiToolLog
             // 
+            resources.ApplyResources(this.tsmiToolLog, "tsmiToolLog");
             this.tsmiToolLog.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiClearLog,
             this.toolStripMenuItem2,
             this.tsmiExportLog});
             this.tsmiToolLog.Name = "tsmiToolLog";
-            resources.ApplyResources(this.tsmiToolLog, "tsmiToolLog");
             // 
             // tsmiClearLog
             // 
-            this.tsmiClearLog.Name = "tsmiClearLog";
             resources.ApplyResources(this.tsmiClearLog, "tsmiClearLog");
+            this.tsmiClearLog.Name = "tsmiClearLog";
             this.tsmiClearLog.Click += new System.EventHandler(this.tsmiClearLog_Click);
             // 
             // toolStripMenuItem2
             // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
             resources.ApplyResources(this.toolStripMenuItem2, "toolStripMenuItem2");
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
             // 
             // tsmiExportLog
             // 
-            this.tsmiExportLog.Name = "tsmiExportLog";
             resources.ApplyResources(this.tsmiExportLog, "tsmiExportLog");
+            this.tsmiExportLog.Name = "tsmiExportLog";
             this.tsmiExportLog.Click += new System.EventHandler(this.tsmiExportLog_Click);
             // 
             // sstripMain
             // 
+            resources.ApplyResources(this.sstripMain, "sstripMain");
             this.sstripMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsslCurrentYear});
-            resources.ApplyResources(this.sstripMain, "sstripMain");
             this.sstripMain.Name = "sstripMain";
             this.sstripMain.SizingGrip = false;
             // 
             // tsslCurrentYear
             // 
-            this.tsslCurrentYear.Name = "tsslCurrentYear";
             resources.ApplyResources(this.tsslCurrentYear, "tsslCurrentYear");
+            this.tsslCurrentYear.Name = "tsslCurrentYear";
             // 
             // mstripMain
             // 
+            resources.ApplyResources(this.mstripMain, "mstripMain");
             this.mstripMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiFile,
             this.tsmiCovers,
@@ -955,25 +958,25 @@ namespace GCBM
             this.tsmiOptions,
             this.tsmiTools,
             this.tsmiHelp});
-            resources.ApplyResources(this.mstripMain, "mstripMain");
             this.mstripMain.Name = "mstripMain";
             // 
             // tsmiFile
             // 
+            resources.ApplyResources(this.tsmiFile, "tsmiFile");
             this.tsmiFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiExit});
             this.tsmiFile.Name = "tsmiFile";
-            resources.ApplyResources(this.tsmiFile, "tsmiFile");
             // 
             // tsmiExit
             // 
+            resources.ApplyResources(this.tsmiExit, "tsmiExit");
             this.tsmiExit.Image = global::GCBM.Properties.Resources.exit;
             this.tsmiExit.Name = "tsmiExit";
-            resources.ApplyResources(this.tsmiExit, "tsmiExit");
             this.tsmiExit.Click += new System.EventHandler(this.tsmiExit_Click);
             // 
             // tsmiCovers
             // 
+            resources.ApplyResources(this.tsmiCovers, "tsmiCovers");
             this.tsmiCovers.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiDownloadCoversSelectedGame,
             this.tsmiSyncDownloadDiscOnly3DCovers,
@@ -983,26 +986,25 @@ namespace GCBM
             this.toolStripMenuItem6,
             this.tsmiTransferDeviceCovers});
             this.tsmiCovers.Name = "tsmiCovers";
-            resources.ApplyResources(this.tsmiCovers, "tsmiCovers");
             // 
             // tsmiDownloadCoversSelectedGame
             // 
+            resources.ApplyResources(this.tsmiDownloadCoversSelectedGame, "tsmiDownloadCoversSelectedGame");
             this.tsmiDownloadCoversSelectedGame.Image = global::GCBM.Properties.Resources.sync_16;
             this.tsmiDownloadCoversSelectedGame.Name = "tsmiDownloadCoversSelectedGame";
-            resources.ApplyResources(this.tsmiDownloadCoversSelectedGame, "tsmiDownloadCoversSelectedGame");
             this.tsmiDownloadCoversSelectedGame.Click += new System.EventHandler(this.tsmiDownloadCoversSelectedGame_Click);
             // 
             // tsmiSyncDownloadDiscOnly3DCovers
             // 
+            resources.ApplyResources(this.tsmiSyncDownloadDiscOnly3DCovers, "tsmiSyncDownloadDiscOnly3DCovers");
             this.tsmiSyncDownloadDiscOnly3DCovers.Image = global::GCBM.Properties.Resources.sync_16;
             this.tsmiSyncDownloadDiscOnly3DCovers.Name = "tsmiSyncDownloadDiscOnly3DCovers";
-            resources.ApplyResources(this.tsmiSyncDownloadDiscOnly3DCovers, "tsmiSyncDownloadDiscOnly3DCovers");
             this.tsmiSyncDownloadDiscOnly3DCovers.Click += new System.EventHandler(this.tsmiSyncDownloadDiscOnly3DCovers_Click);
             // 
             // toolStripMenuItem5
             // 
-            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
             resources.ApplyResources(this.toolStripMenuItem5, "toolStripMenuItem5");
+            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
             // 
             // tsmiSyncDownloadAllDiscOnly3DCovers
             // 
@@ -1018,84 +1020,85 @@ namespace GCBM
             // 
             // toolStripMenuItem6
             // 
-            this.toolStripMenuItem6.Name = "toolStripMenuItem6";
             resources.ApplyResources(this.toolStripMenuItem6, "toolStripMenuItem6");
+            this.toolStripMenuItem6.Name = "toolStripMenuItem6";
             // 
             // tsmiTransferDeviceCovers
             // 
+            resources.ApplyResources(this.tsmiTransferDeviceCovers, "tsmiTransferDeviceCovers");
             this.tsmiTransferDeviceCovers.Image = global::GCBM.Properties.Resources.transfer_0002;
             this.tsmiTransferDeviceCovers.Name = "tsmiTransferDeviceCovers";
-            resources.ApplyResources(this.tsmiTransferDeviceCovers, "tsmiTransferDeviceCovers");
             this.tsmiTransferDeviceCovers.Click += new System.EventHandler(this.tsmiTransferDeviceCovers_Click);
             // 
             // tsmiDisplay
             // 
+            resources.ApplyResources(this.tsmiDisplay, "tsmiDisplay");
             this.tsmiDisplay.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiGameInfo,
             this.boxArtToolStripMenuItem});
             this.tsmiDisplay.Name = "tsmiDisplay";
-            resources.ApplyResources(this.tsmiDisplay, "tsmiDisplay");
             // 
             // tsmiGameInfo
             // 
+            resources.ApplyResources(this.tsmiGameInfo, "tsmiGameInfo");
             this.tsmiGameInfo.Image = global::GCBM.Properties.Resources.additional_information_16;
             this.tsmiGameInfo.Name = "tsmiGameInfo";
-            resources.ApplyResources(this.tsmiGameInfo, "tsmiGameInfo");
             this.tsmiGameInfo.Click += new System.EventHandler(this.tsmiGameInfo_Click);
             // 
             // boxArtToolStripMenuItem
             // 
+            resources.ApplyResources(this.boxArtToolStripMenuItem, "boxArtToolStripMenuItem");
             this.boxArtToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiEnableCoverPanel,
             this.tsmiDisableCoverPanel});
             this.boxArtToolStripMenuItem.Name = "boxArtToolStripMenuItem";
-            resources.ApplyResources(this.boxArtToolStripMenuItem, "boxArtToolStripMenuItem");
             // 
             // tsmiEnableCoverPanel
             // 
+            resources.ApplyResources(this.tsmiEnableCoverPanel, "tsmiEnableCoverPanel");
             this.tsmiEnableCoverPanel.Checked = true;
             this.tsmiEnableCoverPanel.CheckState = System.Windows.Forms.CheckState.Checked;
             this.tsmiEnableCoverPanel.Name = "tsmiEnableCoverPanel";
-            resources.ApplyResources(this.tsmiEnableCoverPanel, "tsmiEnableCoverPanel");
             this.tsmiEnableCoverPanel.Click += new System.EventHandler(this.tsmiEnableCoverPanel_Click);
             // 
             // tsmiDisableCoverPanel
             // 
-            this.tsmiDisableCoverPanel.Name = "tsmiDisableCoverPanel";
             resources.ApplyResources(this.tsmiDisableCoverPanel, "tsmiDisableCoverPanel");
+            this.tsmiDisableCoverPanel.Name = "tsmiDisableCoverPanel";
             this.tsmiDisableCoverPanel.Click += new System.EventHandler(this.tsmiDisableCoverPanel_Click);
             // 
             // tsmiOptions
             // 
+            resources.ApplyResources(this.tsmiOptions, "tsmiOptions");
             this.tsmiOptions.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiConfigurationMain});
             this.tsmiOptions.Name = "tsmiOptions";
-            resources.ApplyResources(this.tsmiOptions, "tsmiOptions");
             // 
             // tsmiConfigurationMain
             // 
+            resources.ApplyResources(this.tsmiConfigurationMain, "tsmiConfigurationMain");
             this.tsmiConfigurationMain.Image = global::GCBM.Properties.Resources.config;
             this.tsmiConfigurationMain.Name = "tsmiConfigurationMain";
-            resources.ApplyResources(this.tsmiConfigurationMain, "tsmiConfigurationMain");
             this.tsmiConfigurationMain.Click += new System.EventHandler(this.tsmiConfigurationMain_Click);
             // 
             // tsmiTools
             // 
+            resources.ApplyResources(this.tsmiTools, "tsmiTools");
             this.tsmiTools.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiRenameISO,
             this.tsmiMainPlugins});
             this.tsmiTools.Name = "tsmiTools";
-            resources.ApplyResources(this.tsmiTools, "tsmiTools");
             // 
             // tsmiRenameISO
             // 
+            resources.ApplyResources(this.tsmiRenameISO, "tsmiRenameISO");
             this.tsmiRenameISO.Image = global::GCBM.Properties.Resources.rename_16;
             this.tsmiRenameISO.Name = "tsmiRenameISO";
-            resources.ApplyResources(this.tsmiRenameISO, "tsmiRenameISO");
             this.tsmiRenameISO.Click += new System.EventHandler(this.tsmiRenameISO_Click);
             // 
             // tsmiMainPlugins
             // 
+            resources.ApplyResources(this.tsmiMainPlugins, "tsmiMainPlugins");
             this.tsmiMainPlugins.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiMetaXml,
             this.tsmiManageApp,
@@ -1105,52 +1108,52 @@ namespace GCBM
             this.tsmiBurnMedia});
             this.tsmiMainPlugins.Image = global::GCBM.Properties.Resources.plugin_16;
             this.tsmiMainPlugins.Name = "tsmiMainPlugins";
-            resources.ApplyResources(this.tsmiMainPlugins, "tsmiMainPlugins");
             // 
             // tsmiMetaXml
             // 
+            resources.ApplyResources(this.tsmiMetaXml, "tsmiMetaXml");
             this.tsmiMetaXml.Image = global::GCBM.Properties.Resources.xml_16;
             this.tsmiMetaXml.Name = "tsmiMetaXml";
-            resources.ApplyResources(this.tsmiMetaXml, "tsmiMetaXml");
             this.tsmiMetaXml.Click += new System.EventHandler(this.tsmiMetaXml_Click);
             // 
             // tsmiManageApp
             // 
+            resources.ApplyResources(this.tsmiManageApp, "tsmiManageApp");
             this.tsmiManageApp.Image = global::GCBM.Properties.Resources.manager_apps_16;
             this.tsmiManageApp.Name = "tsmiManageApp";
-            resources.ApplyResources(this.tsmiManageApp, "tsmiManageApp");
             this.tsmiManageApp.Click += new System.EventHandler(this.tsmiManageApp_Click);
             // 
             // tsmiDolphinEmulator
             // 
+            resources.ApplyResources(this.tsmiDolphinEmulator, "tsmiDolphinEmulator");
             this.tsmiDolphinEmulator.Image = global::GCBM.Properties.Resources.dolphin_emulator_16;
             this.tsmiDolphinEmulator.Name = "tsmiDolphinEmulator";
-            resources.ApplyResources(this.tsmiDolphinEmulator, "tsmiDolphinEmulator");
             this.tsmiDolphinEmulator.Click += new System.EventHandler(this.tsmiDolphinEmulator_Click);
             // 
             // tsmiElfDol
             // 
+            resources.ApplyResources(this.tsmiElfDol, "tsmiElfDol");
             this.tsmiElfDol.Image = global::GCBM.Properties.Resources.convert_16;
             this.tsmiElfDol.Name = "tsmiElfDol";
-            resources.ApplyResources(this.tsmiElfDol, "tsmiElfDol");
             this.tsmiElfDol.Click += new System.EventHandler(this.tsmiElfDol_Click);
             // 
             // tsmiCreatePackage
             // 
+            resources.ApplyResources(this.tsmiCreatePackage, "tsmiCreatePackage");
             this.tsmiCreatePackage.Image = global::GCBM.Properties.Resources.box_16;
             this.tsmiCreatePackage.Name = "tsmiCreatePackage";
-            resources.ApplyResources(this.tsmiCreatePackage, "tsmiCreatePackage");
             this.tsmiCreatePackage.Click += new System.EventHandler(this.tsmiCreatePackage_Click);
             // 
             // tsmiBurnMedia
             // 
+            resources.ApplyResources(this.tsmiBurnMedia, "tsmiBurnMedia");
             this.tsmiBurnMedia.Image = global::GCBM.Properties.Resources.burn_cd_16;
             this.tsmiBurnMedia.Name = "tsmiBurnMedia";
-            resources.ApplyResources(this.tsmiBurnMedia, "tsmiBurnMedia");
             this.tsmiBurnMedia.Click += new System.EventHandler(this.tsmiBurnMedia_Click);
             // 
             // tsmiHelp
             // 
+            resources.ApplyResources(this.tsmiHelp, "tsmiHelp");
             this.tsmiHelp.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiWebsiteFacebook,
             this.tsmiOfficialGitHub,
@@ -1160,60 +1163,65 @@ namespace GCBM
             this.toolStripMenuItem1,
             this.tsmiMenuAbout});
             this.tsmiHelp.Name = "tsmiHelp";
-            resources.ApplyResources(this.tsmiHelp, "tsmiHelp");
             // 
             // tsmiWebsiteFacebook
             // 
+            resources.ApplyResources(this.tsmiWebsiteFacebook, "tsmiWebsiteFacebook");
             this.tsmiWebsiteFacebook.Image = global::GCBM.Properties.Resources.facebook_16;
             this.tsmiWebsiteFacebook.Name = "tsmiWebsiteFacebook";
-            resources.ApplyResources(this.tsmiWebsiteFacebook, "tsmiWebsiteFacebook");
             this.tsmiWebsiteFacebook.Click += new System.EventHandler(this.tsmiWebsiteFacebook_Click);
             // 
             // tsmiOfficialGitHub
             // 
+            resources.ApplyResources(this.tsmiOfficialGitHub, "tsmiOfficialGitHub");
             this.tsmiOfficialGitHub.Image = global::GCBM.Properties.Resources.github_16;
             this.tsmiOfficialGitHub.Name = "tsmiOfficialGitHub";
-            resources.ApplyResources(this.tsmiOfficialGitHub, "tsmiOfficialGitHub");
             this.tsmiOfficialGitHub.Click += new System.EventHandler(this.tsmiOfficialGitHub_Click);
             // 
             // tsmiOfficialGBATemp
             // 
+            resources.ApplyResources(this.tsmiOfficialGBATemp, "tsmiOfficialGBATemp");
             this.tsmiOfficialGBATemp.Image = global::GCBM.Properties.Resources.gbatemp_16;
             this.tsmiOfficialGBATemp.Name = "tsmiOfficialGBATemp";
-            resources.ApplyResources(this.tsmiOfficialGBATemp, "tsmiOfficialGBATemp");
             this.tsmiOfficialGBATemp.Click += new System.EventHandler(this.tsmiOfficialGBATemp_Click);
             // 
             // toolStripMenuItem7
             // 
-            this.toolStripMenuItem7.Name = "toolStripMenuItem7";
             resources.ApplyResources(this.toolStripMenuItem7, "toolStripMenuItem7");
+            this.toolStripMenuItem7.Name = "toolStripMenuItem7";
             // 
             // tsmiVerifyUpdate
             // 
+            resources.ApplyResources(this.tsmiVerifyUpdate, "tsmiVerifyUpdate");
             this.tsmiVerifyUpdate.Image = global::GCBM.Properties.Resources.update_16;
             this.tsmiVerifyUpdate.Name = "tsmiVerifyUpdate";
-            resources.ApplyResources(this.tsmiVerifyUpdate, "tsmiVerifyUpdate");
             this.tsmiVerifyUpdate.Click += new System.EventHandler(this.tsmiVerifyUpdate_Click);
             // 
             // toolStripMenuItem1
             // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             resources.ApplyResources(this.toolStripMenuItem1, "toolStripMenuItem1");
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             // 
             // tsmiMenuAbout
             // 
+            resources.ApplyResources(this.tsmiMenuAbout, "tsmiMenuAbout");
             this.tsmiMenuAbout.Image = global::GCBM.Properties.Resources.info_16;
             this.tsmiMenuAbout.Name = "tsmiMenuAbout";
-            resources.ApplyResources(this.tsmiMenuAbout, "tsmiMenuAbout");
             this.tsmiMenuAbout.Click += new System.EventHandler(this.tsmiMenuAbout_Click);
             // 
             // fbd1
             // 
+            resources.ApplyResources(this.fbd1, "fbd1");
             this.fbd1.RootFolder = System.Environment.SpecialFolder.MyComputer;
             // 
             // fbd2
             // 
+            resources.ApplyResources(this.fbd2, "fbd2");
             this.fbd2.RootFolder = System.Environment.SpecialFolder.MyComputer;
+            // 
+            // ofd1
+            // 
+            resources.ApplyResources(this.ofd1, "ofd1");
             // 
             // lblNetStatus
             // 
@@ -1223,37 +1231,37 @@ namespace GCBM
             // 
             // notifyIcon
             // 
-            this.notifyIcon.ContextMenuStrip = this.cmsNotifyIcon;
             resources.ApplyResources(this.notifyIcon, "notifyIcon");
+            this.notifyIcon.ContextMenuStrip = this.cmsNotifyIcon;
             // 
             // cmsNotifyIcon
             // 
+            resources.ApplyResources(this.cmsNotifyIcon, "cmsNotifyIcon");
             this.cmsNotifyIcon.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiNotifyConfig,
             this.tsmiNotifyDisplay,
             this.tsmiNotifyExit});
             this.cmsNotifyIcon.Name = "cmsNotifyIcon";
-            resources.ApplyResources(this.cmsNotifyIcon, "cmsNotifyIcon");
             // 
             // tsmiNotifyConfig
             // 
+            resources.ApplyResources(this.tsmiNotifyConfig, "tsmiNotifyConfig");
             this.tsmiNotifyConfig.Image = global::GCBM.Properties.Resources.config_16;
             this.tsmiNotifyConfig.Name = "tsmiNotifyConfig";
-            resources.ApplyResources(this.tsmiNotifyConfig, "tsmiNotifyConfig");
             this.tsmiNotifyConfig.Click += new System.EventHandler(this.tsmiNotifyConfig_Click);
             // 
             // tsmiNotifyDisplay
             // 
+            resources.ApplyResources(this.tsmiNotifyDisplay, "tsmiNotifyDisplay");
             this.tsmiNotifyDisplay.Image = global::GCBM.Properties.Resources.eye_16;
             this.tsmiNotifyDisplay.Name = "tsmiNotifyDisplay";
-            resources.ApplyResources(this.tsmiNotifyDisplay, "tsmiNotifyDisplay");
             this.tsmiNotifyDisplay.Click += new System.EventHandler(this.tsmiNotifyDisplay_Click);
             // 
             // tsmiNotifyExit
             // 
+            resources.ApplyResources(this.tsmiNotifyExit, "tsmiNotifyExit");
             this.tsmiNotifyExit.Image = global::GCBM.Properties.Resources.exit;
             this.tsmiNotifyExit.Name = "tsmiNotifyExit";
-            resources.ApplyResources(this.tsmiNotifyExit, "tsmiNotifyExit");
             this.tsmiNotifyExit.Click += new System.EventHandler(this.tsmiNotifyExit_Click);
             // 
             // pbNetStatus
