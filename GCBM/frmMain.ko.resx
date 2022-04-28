@@ -118,6 +118,9 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="tabControlMain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>878, 540</value>
+  </data>
   <data name="pbGameCover3D.ErrorImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAALAAAAD4CAYAAABMvGxfAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
@@ -648,11 +651,26 @@
         n3322V7suxX6ASKjfQ71h8j4/4Z4I7FIJPofI1bqEdzG6zMAAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="tabMainFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>870, 514</value>
+  </data>
+  <data name="tabMainFile.Text" xml:space="preserve">
+    <value>파일 (소스)</value>
+  </data>
+  <data name="lblInstallGame.Location" type="System.Drawing.Point, System.Drawing">
+    <value>519, 332</value>
+  </data>
   <data name="lblInstallGame.Size" type="System.Drawing.Size, System.Drawing">
     <value>77, 13</value>
   </data>
   <data name="lblInstallGame.Text" xml:space="preserve">
     <value>게임 설치 중...</value>
+  </data>
+  <data name="lblPercent.Location" type="System.Drawing.Point, System.Drawing">
+    <value>665, 314</value>
+  </data>
+  <data name="lblCopy.Location" type="System.Drawing.Point, System.Drawing">
+    <value>519, 314</value>
   </data>
   <data name="lblCopy.Size" type="System.Drawing.Size, System.Drawing">
     <value>52, 13</value>
@@ -660,14 +678,29 @@
   <data name="lblCopy.Text" xml:space="preserve">
     <value>대기 중...</value>
   </data>
+  <data name="pbCopy.Location" type="System.Drawing.Point, System.Drawing">
+    <value>516, 348</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>519, 436</value>
+  </data>
   <data name="label1.Text" xml:space="preserve">
     <value>옆에 있는 아이콘을 클릭하고 폴더를 선택하여 내부에 포함된 모든 ISO 및 GCM 파일을 나열합니다.</value>
+  </data>
+  <data name="btnSelectFolder.Location" type="System.Drawing.Point, System.Drawing">
+    <value>783, 416</value>
+  </data>
+  <data name="grpDetails.Text" xml:space="preserve">
+    <value>상세사항</value>
   </data>
   <data name="lblTypeDisc.Size" type="System.Drawing.Size, System.Drawing">
     <value>49, 13</value>
   </data>
   <data name="lblTypeDisc.Text" xml:space="preserve">
     <value>디스크...</value>
+  </data>
+  <data name="grpOperations.Text" xml:space="preserve">
+    <value>운영</value>
   </data>
   <data name="btnGameInstallScrub.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -724,9 +757,6 @@
   <data name="btnGameInstallExactCopy.Text" xml:space="preserve">
     <value>게임 설치 (1:1)</value>
   </data>
-  <data name="grpOperations.Text" xml:space="preserve">
-    <value>운영</value>
-  </data>
   <data name="labelFile.Size" type="System.Drawing.Size, System.Drawing">
     <value>32, 13</value>
   </data>
@@ -739,8 +769,8 @@
   <data name="labelTitle.Text" xml:space="preserve">
     <value>제목:</value>
   </data>
-  <data name="grpDetails.Text" xml:space="preserve">
-    <value>상세사항</value>
+  <data name="cmsMain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>126, 26</value>
   </data>
   <data name="tsmiInfoGame.Size" type="System.Drawing.Size, System.Drawing">
     <value>125, 22</value>
@@ -748,14 +778,20 @@
   <data name="tsmiInfoGame.Text" xml:space="preserve">
     <value>게임 정보</value>
   </data>
-  <data name="cmsMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 26</value>
+  <data name="mstripFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>864, 24</value>
   </data>
   <data name="tsmiReloadGameList.Size" type="System.Drawing.Size, System.Drawing">
     <value>110, 20</value>
   </data>
   <data name="tsmiReloadGameList.Text" xml:space="preserve">
     <value>목록 새로고침</value>
+  </data>
+  <data name="tsmiSelectGameList.Size" type="System.Drawing.Size, System.Drawing">
+    <value>43, 20</value>
+  </data>
+  <data name="tsmiSelectGameList.Text" xml:space="preserve">
+    <value>선택</value>
   </data>
   <data name="tsmiGameListSelectAll.Size" type="System.Drawing.Size, System.Drawing">
     <value>98, 22</value>
@@ -769,11 +805,11 @@
   <data name="tsmiGameListSelectNone.Text" xml:space="preserve">
     <value>없음</value>
   </data>
-  <data name="tsmiSelectGameList.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="tsmiRemoveGameList.Size" type="System.Drawing.Size, System.Drawing">
     <value>43, 20</value>
   </data>
-  <data name="tsmiSelectGameList.Text" xml:space="preserve">
-    <value>선택</value>
+  <data name="tsmiRemoveGameList.Text" xml:space="preserve">
+    <value>제거</value>
   </data>
   <data name="tsmiGameListDeleteAllFiles.Size" type="System.Drawing.Size, System.Drawing">
     <value>110, 22</value>
@@ -787,17 +823,11 @@
   <data name="tsmiGameListDeleteSelectedFile.Text" xml:space="preserve">
     <value>선택된</value>
   </data>
-  <data name="tsmiRemoveGameList.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="tsmiToolsGameList.Size" type="System.Drawing.Size, System.Drawing">
     <value>43, 20</value>
   </data>
-  <data name="tsmiRemoveGameList.Text" xml:space="preserve">
-    <value>제거</value>
-  </data>
-  <data name="tsmiGameListHashSHA1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>164, 22</value>
-  </data>
-  <data name="tsmiGameListHashSHA1.Text" xml:space="preserve">
-    <value>선택한 항목 확인</value>
+  <data name="tsmiToolsGameList.Text" xml:space="preserve">
+    <value>도구</value>
   </data>
   <data name="tsmiGameListSignatureSHA1.Size" type="System.Drawing.Size, System.Drawing">
     <value>209, 22</value>
@@ -805,26 +835,26 @@
   <data name="tsmiGameListSignatureSHA1.Text" xml:space="preserve">
     <value>SHA-1 서명</value>
   </data>
+  <data name="tsmiGameListHashSHA1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>164, 22</value>
+  </data>
+  <data name="tsmiGameListHashSHA1.Text" xml:space="preserve">
+    <value>선택한 항목 확인</value>
+  </data>
   <data name="exportarListaToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>209, 22</value>
   </data>
   <data name="exportarListaToolStripMenuItem.Text" xml:space="preserve">
     <value>다음으로 목록 내보내기...</value>
   </data>
-  <data name="tsmiToolsGameList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>43, 20</value>
+  <data name="tabMainDisc.Size" type="System.Drawing.Size, System.Drawing">
+    <value>870, 514</value>
   </data>
-  <data name="tsmiToolsGameList.Text" xml:space="preserve">
-    <value>도구</value>
+  <data name="tabMainDisc.Text" xml:space="preserve">
+    <value>파일 (대상)</value>
   </data>
-  <data name="mstripFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>876, 24</value>
-  </data>
-  <data name="tabMainFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>882, 514</value>
-  </data>
-  <data name="tabMainFile.Text" xml:space="preserve">
-    <value>파일 (소스)</value>
+  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>510, 185</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
     <value>348, 39</value>
@@ -832,11 +862,17 @@
   <data name="label3.Text" xml:space="preserve">
     <value>전체 파일 목록과 전체 파일 크기는 디스크 1(game.iso)과 디스크 2(disc2.iso) 파일을 구분하지 않습니다. 데이터는 샘플링 목적으로만 사용됩니다.</value>
   </data>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>510, 167</value>
+  </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>33, 13</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>참고:</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>세부</value>
   </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
     <value>32, 13</value>
@@ -850,8 +886,8 @@
   <data name="label6.Text" xml:space="preserve">
     <value>제목:</value>
   </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>세부</value>
+  <data name="mstripDisc.Size" type="System.Drawing.Size, System.Drawing">
+    <value>864, 27</value>
   </data>
   <data name="tscbDiscDrive.Items" xml:space="preserve">
     <value>비활성</value>
@@ -868,6 +904,12 @@
   <data name="tsmiReloadGameListDisc.Text" xml:space="preserve">
     <value>목록 새로고침</value>
   </data>
+  <data name="tsmiSelectGameDisc.Size" type="System.Drawing.Size, System.Drawing">
+    <value>43, 23</value>
+  </data>
+  <data name="tsmiSelectGameDisc.Text" xml:space="preserve">
+    <value>선택</value>
+  </data>
   <data name="tsmiGameDiscSelectAll.Size" type="System.Drawing.Size, System.Drawing">
     <value>98, 22</value>
   </data>
@@ -880,11 +922,11 @@
   <data name="tsmiGameDiscSelectNone.Text" xml:space="preserve">
     <value>없음</value>
   </data>
-  <data name="tsmiSelectGameDisc.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="tsmiRemoveGameDisc.Size" type="System.Drawing.Size, System.Drawing">
     <value>43, 23</value>
   </data>
-  <data name="tsmiSelectGameDisc.Text" xml:space="preserve">
-    <value>선택</value>
+  <data name="tsmiRemoveGameDisc.Text" xml:space="preserve">
+    <value>제거</value>
   </data>
   <data name="tsmiGameDiscDeleteAllFiles.Size" type="System.Drawing.Size, System.Drawing">
     <value>110, 22</value>
@@ -898,11 +940,11 @@
   <data name="tsmiGameDiscDeleteSelectedFile.Text" xml:space="preserve">
     <value>선택된</value>
   </data>
-  <data name="tsmiRemoveGameDisc.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="tsmiToolsGameDisc.Size" type="System.Drawing.Size, System.Drawing">
     <value>43, 23</value>
   </data>
-  <data name="tsmiRemoveGameDisc.Text" xml:space="preserve">
-    <value>제거</value>
+  <data name="tsmiToolsGameDisc.Text" xml:space="preserve">
+    <value>도구</value>
   </data>
   <data name="tsmiGameDiscExportList.Size" type="System.Drawing.Size, System.Drawing">
     <value>176, 22</value>
@@ -912,6 +954,12 @@
   </data>
   <data name="toolStripMenuItem3.Size" type="System.Drawing.Size, System.Drawing">
     <value>173, 6</value>
+  </data>
+  <data name="tsmiGameDiscSignatureSHA1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>176, 22</value>
+  </data>
+  <data name="tsmiGameDiscSignatureSHA1.Text" xml:space="preserve">
+    <value>SHA-1 서명</value>
   </data>
   <data name="tsmiGameDiscAllHashSHA1.Size" type="System.Drawing.Size, System.Drawing">
     <value>164, 22</value>
@@ -925,11 +973,11 @@
   <data name="tsmiGameDiscHashSHA1.Text" xml:space="preserve">
     <value>선택한 항목 확인</value>
   </data>
-  <data name="tsmiGameDiscSignatureSHA1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="tsmiGameDiscSignatureMD5.Size" type="System.Drawing.Size, System.Drawing">
     <value>176, 22</value>
   </data>
-  <data name="tsmiGameDiscSignatureSHA1.Text" xml:space="preserve">
-    <value>SHA-1 서명</value>
+  <data name="tsmiGameDiscSignatureMD5.Text" xml:space="preserve">
+    <value>MD5 서명</value>
   </data>
   <data name="tsmiGameDiscAllHashMD5.Size" type="System.Drawing.Size, System.Drawing">
     <value>164, 22</value>
@@ -958,38 +1006,26 @@
   <data name="tsmiGameDiscRecalculateSelectedGameMD5.Text" xml:space="preserve">
     <value>선택 재계산</value>
   </data>
-  <data name="tsmiGameDiscSignatureMD5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>176, 22</value>
+  <data name="tabMainDatabase.Size" type="System.Drawing.Size, System.Drawing">
+    <value>870, 514</value>
   </data>
-  <data name="tsmiGameDiscSignatureMD5.Text" xml:space="preserve">
-    <value>MD5 서명</value>
-  </data>
-  <data name="tsmiToolsGameDisc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>43, 23</value>
-  </data>
-  <data name="tsmiToolsGameDisc.Text" xml:space="preserve">
-    <value>도구</value>
-  </data>
-  <data name="mstripDisc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>876, 27</value>
-  </data>
-  <data name="tabMainDisc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>882, 514</value>
-  </data>
-  <data name="tabMainDisc.Text" xml:space="preserve">
-    <value>파일 (대상)</value>
+  <data name="tabMainDatabase.Text" xml:space="preserve">
+    <value>데이터베이스</value>
   </data>
   <data name="cbFilterDatabase.Items" xml:space="preserve">
     <value>아이템을 선택하세요...</value>
   </data>
+  <data name="cbFilterDatabase.Location" type="System.Drawing.Point, System.Drawing">
+    <value>521, 5</value>
+  </data>
+  <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>483, 8</value>
+  </data>
   <data name="label7.Text" xml:space="preserve">
     <value>필터:</value>
   </data>
-  <data name="tsmiDatabaseUpdateGameTDB.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 22</value>
-  </data>
-  <data name="tsmiDatabaseUpdateGameTDB.Text" xml:space="preserve">
-    <value>GameTDB 업데이트</value>
+  <data name="mstripDatabase.Size" type="System.Drawing.Size, System.Drawing">
+    <value>864, 24</value>
   </data>
   <data name="tsmiToolDatabase.Size" type="System.Drawing.Size, System.Drawing">
     <value>43, 20</value>
@@ -997,14 +1033,23 @@
   <data name="tsmiToolDatabase.Text" xml:space="preserve">
     <value>도구</value>
   </data>
-  <data name="mstripDatabase.Size" type="System.Drawing.Size, System.Drawing">
-    <value>876, 24</value>
+  <data name="tsmiDatabaseUpdateGameTDB.Size" type="System.Drawing.Size, System.Drawing">
+    <value>177, 22</value>
   </data>
-  <data name="tabMainDatabase.Size" type="System.Drawing.Size, System.Drawing">
-    <value>882, 514</value>
+  <data name="tsmiDatabaseUpdateGameTDB.Text" xml:space="preserve">
+    <value>GameTDB 업데이트</value>
   </data>
-  <data name="tabMainDatabase.Text" xml:space="preserve">
-    <value>데이터베이스</value>
+  <data name="tabMainLog.Size" type="System.Drawing.Size, System.Drawing">
+    <value>870, 514</value>
+  </data>
+  <data name="mstripLog.Size" type="System.Drawing.Size, System.Drawing">
+    <value>864, 24</value>
+  </data>
+  <data name="tsmiToolLog.Size" type="System.Drawing.Size, System.Drawing">
+    <value>43, 20</value>
+  </data>
+  <data name="tsmiToolLog.Text" xml:space="preserve">
+    <value>도구</value>
   </data>
   <data name="tsmiClearLog.Size" type="System.Drawing.Size, System.Drawing">
     <value>158, 22</value>
@@ -1021,20 +1066,11 @@
   <data name="tsmiExportLog.Text" xml:space="preserve">
     <value>로그 내보내기...</value>
   </data>
-  <data name="tsmiToolLog.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="tsmiFile.Size" type="System.Drawing.Size, System.Drawing">
     <value>43, 20</value>
   </data>
-  <data name="tsmiToolLog.Text" xml:space="preserve">
-    <value>도구</value>
-  </data>
-  <data name="mstripLog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>876, 24</value>
-  </data>
-  <data name="tabMainLog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>882, 514</value>
-  </data>
-  <data name="tabControlMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>890, 540</value>
+  <data name="tsmiFile.Text" xml:space="preserve">
+    <value>파일</value>
   </data>
   <data name="tsmiExit.Size" type="System.Drawing.Size, System.Drawing">
     <value>98, 22</value>
@@ -1042,11 +1078,11 @@
   <data name="tsmiExit.Text" xml:space="preserve">
     <value>종료</value>
   </data>
-  <data name="tsmiFile.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="tsmiCovers.Size" type="System.Drawing.Size, System.Drawing">
     <value>43, 20</value>
   </data>
-  <data name="tsmiFile.Text" xml:space="preserve">
-    <value>파일</value>
+  <data name="tsmiCovers.Text" xml:space="preserve">
+    <value>커버</value>
   </data>
   <data name="tsmiDownloadCoversSelectedGame.Size" type="System.Drawing.Size, System.Drawing">
     <value>435, 22</value>
@@ -1084,17 +1120,20 @@
   <data name="tsmiTransferDeviceCovers.Text" xml:space="preserve">
     <value>다운로드한 스킨을 기기로 전송</value>
   </data>
-  <data name="tsmiCovers.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="tsmiDisplay.Size" type="System.Drawing.Size, System.Drawing">
     <value>43, 20</value>
   </data>
-  <data name="tsmiCovers.Text" xml:space="preserve">
-    <value>커버</value>
+  <data name="tsmiDisplay.Text" xml:space="preserve">
+    <value>표시</value>
   </data>
   <data name="tsmiGameInfo.Size" type="System.Drawing.Size, System.Drawing">
     <value>211, 22</value>
   </data>
   <data name="tsmiGameInfo.Text" xml:space="preserve">
     <value>(선택한 게임의) 상세 정보</value>
+  </data>
+  <data name="boxArtToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>211, 22</value>
   </data>
   <data name="tsmiEnableCoverPanel.Size" type="System.Drawing.Size, System.Drawing">
     <value>122, 22</value>
@@ -1108,14 +1147,11 @@
   <data name="tsmiDisableCoverPanel.Text" xml:space="preserve">
     <value>비활성화</value>
   </data>
-  <data name="boxArtToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>211, 22</value>
-  </data>
-  <data name="tsmiDisplay.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="tsmiOptions.Size" type="System.Drawing.Size, System.Drawing">
     <value>43, 20</value>
   </data>
-  <data name="tsmiDisplay.Text" xml:space="preserve">
-    <value>표시</value>
+  <data name="tsmiOptions.Text" xml:space="preserve">
+    <value>옵션</value>
   </data>
   <data name="tsmiConfigurationMain.Size" type="System.Drawing.Size, System.Drawing">
     <value>107, 22</value>
@@ -1123,17 +1159,20 @@
   <data name="tsmiConfigurationMain.Text" xml:space="preserve">
     <value>설정...</value>
   </data>
-  <data name="tsmiOptions.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="tsmiTools.Size" type="System.Drawing.Size, System.Drawing">
     <value>43, 20</value>
   </data>
-  <data name="tsmiOptions.Text" xml:space="preserve">
-    <value>옵션</value>
+  <data name="tsmiTools.Text" xml:space="preserve">
+    <value>도구</value>
   </data>
   <data name="tsmiRenameISO.Size" type="System.Drawing.Size, System.Drawing">
     <value>190, 22</value>
   </data>
   <data name="tsmiRenameISO.Text" xml:space="preserve">
     <value>ISO/GCM 이름 바꾸기</value>
+  </data>
+  <data name="tsmiMainPlugins.Size" type="System.Drawing.Size, System.Drawing">
+    <value>190, 22</value>
   </data>
   <data name="tsmiMetaXml.Size" type="System.Drawing.Size, System.Drawing">
     <value>235, 22</value>
@@ -1171,14 +1210,11 @@
   <data name="tsmiBurnMedia.Text" xml:space="preserve">
     <value>CD/DVD 미디어 굽기</value>
   </data>
-  <data name="tsmiMainPlugins.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 22</value>
+  <data name="tsmiHelp.Size" type="System.Drawing.Size, System.Drawing">
+    <value>55, 20</value>
   </data>
-  <data name="tsmiTools.Size" type="System.Drawing.Size, System.Drawing">
-    <value>43, 20</value>
-  </data>
-  <data name="tsmiTools.Text" xml:space="preserve">
-    <value>도구</value>
+  <data name="tsmiHelp.Text" xml:space="preserve">
+    <value>도움말</value>
   </data>
   <data name="tsmiWebsiteFacebook.Size" type="System.Drawing.Size, System.Drawing">
     <value>237, 22</value>
@@ -1213,35 +1249,11 @@
   <data name="tsmiMenuAbout.Text" xml:space="preserve">
     <value>게임큐브 백업 관리자 정보</value>
   </data>
-  <data name="tsmiHelp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 20</value>
-  </data>
-  <data name="tsmiHelp.Text" xml:space="preserve">
-    <value>도움말</value>
-  </data>
   <data name="lblNetStatus.Size" type="System.Drawing.Size, System.Drawing">
     <value>181, 13</value>
   </data>
   <data name="lblNetStatus.Text" xml:space="preserve">
     <value>인터넷 연결이 비활성화되었습니다!</value>
-  </data>
-  <data name="tsmiNotifyConfig.Size" type="System.Drawing.Size, System.Drawing">
-    <value>107, 22</value>
-  </data>
-  <data name="tsmiNotifyConfig.Text" xml:space="preserve">
-    <value>설정...</value>
-  </data>
-  <data name="tsmiNotifyDisplay.Size" type="System.Drawing.Size, System.Drawing">
-    <value>107, 22</value>
-  </data>
-  <data name="tsmiNotifyDisplay.Text" xml:space="preserve">
-    <value>복원</value>
-  </data>
-  <data name="tsmiNotifyExit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>107, 22</value>
-  </data>
-  <data name="tsmiNotifyExit.Text" xml:space="preserve">
-    <value>종료</value>
   </data>
   <data name="cmsNotifyIcon.Size" type="System.Drawing.Size, System.Drawing">
     <value>108, 70</value>
@@ -1340,6 +1352,24 @@
         Af8BAQH/AAAAAAAAAAAAAAAAAAAAAAAAAADgBwAAwAMAAMADAADAAwAAwAMAAMADAADAAwAAwAMAAMAD
         AADAAwAAwAMAAMADAADAAwAAwAMAAMADAAD4HwAA
 </value>
+  </data>
+  <data name="tsmiNotifyConfig.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 22</value>
+  </data>
+  <data name="tsmiNotifyConfig.Text" xml:space="preserve">
+    <value>설정...</value>
+  </data>
+  <data name="tsmiNotifyDisplay.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 22</value>
+  </data>
+  <data name="tsmiNotifyDisplay.Text" xml:space="preserve">
+    <value>복원</value>
+  </data>
+  <data name="tsmiNotifyExit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 22</value>
+  </data>
+  <data name="tsmiNotifyExit.Text" xml:space="preserve">
+    <value>종료</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
