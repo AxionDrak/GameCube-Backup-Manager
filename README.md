@@ -17,13 +17,15 @@ All Releases: https://github.com/AxionDrak/GameCube-Backup-Manager/releases
 
 ### Features:
 
++ Retail / Non-Retail (e.g. System images / Action Replay) / Customs
++ Reads ISO / GCM / NKit (ISO )
++ Writes ISO
 + Execution of multiple instances of the program.
 + Upload the 'wiitdb.xml' file in the 'Database' tab.
 + Automatic update system.
 + Proxy system.
 + Cover transfer (WiiFlow, WiiFlow Lite, WiiFlow Fusion).
 + Cover transfer (USB Loader GX, USB Loader GX Tab MOD).
-+ ISO/GCM readable format transfer (FAT32 or NTFS devices).
 + Transferring games with the correct nomenclature (Game Name+ID or ID only).
 + Game transfer via Scrub (GCReEx and DiscEx).
 + Deleting game files (Source and Destination).
@@ -39,7 +41,6 @@ All Releases: https://github.com/AxionDrak/GameCube-Backup-Manager/releases
 + MD5 hash calculation.
 + SHA-1 Hash Calculation.
 + Automatic creation of 'games' folder (if it doesn't exist).
-+ Support for ISO and GCM files.
 + LOG system.
 + Support for Portuguese (Brazil), English (United States) and Spanish (Spain) languages.
 + More polished and functional graphical interface (UI).
