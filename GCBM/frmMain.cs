@@ -243,6 +243,11 @@ namespace GCBM
                     this.Controls.Clear();
                     InitializeComponent();
                     break;
+                case 3:
+                    Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("ko");
+                    this.Controls.Clear();
+                    InitializeComponent();
+                    break;
             }
         }
         #endregion
