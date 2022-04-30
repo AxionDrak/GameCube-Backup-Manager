@@ -465,4 +465,22 @@
   <data name="GameListExportedCSV" xml:space="preserve">
     <value>게임 목록을 CSV로 내보냈습니다!</value>
   </data>
+  <data name="AboutVersion" xml:space="preserve">
+    <value>버전 </value>
+  </data>
+  <data name="AboutCurrentLanguage" xml:space="preserve">
+    <value>현재 언어: </value>
+  </data>
+  <data name="AboutTranslator" xml:space="preserve">
+    <value>번역가: </value>
+  </data>
+  <data name="AboutTranslatorContact" xml:space="preserve">
+    <value>연락하다: </value>
+  </data>
+  <data name="GCBM_TranslatedBy" xml:space="preserve">
+    <value>DDinghoya</value>
+  </data>
+  <data name="GCBM_Language" xml:space="preserve">
+    <value>Korean [Korea]</value>
+  </data>
 </root>
