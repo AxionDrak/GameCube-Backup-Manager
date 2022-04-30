@@ -465,4 +465,25 @@
   <data name="ConvertElfDol_String4" xml:space="preserve">
     <value>&gt;&gt; Status [ERROR]: Unrecognized file format!</value>
   </data>
+  <data name="AboutVersion" xml:space="preserve">
+    <value>Version </value>
+  </data>
+  <data name="AboutCurrentLanguage" xml:space="preserve">
+    <value>Current Language: </value>
+  </data>
+  <data name="AboutTranslator" xml:space="preserve">
+    <value>Translator: </value>
+  </data>
+  <data name="AboutTranslatorContact" xml:space="preserve">
+    <value>Contact: </value>
+  </data>
+  <data name="GCBM_TranslatedBy" xml:space="preserve">
+    <value>Laete Meireles</value>
+  </data>
+  <data name="GCBM_TranslatorContact" xml:space="preserve">
+    <value>laetemn@hotmail.com</value>
+  </data>
+  <data name="GCBM_Language" xml:space="preserve">
+    <value>English [US]</value>
+  </data>
 </root>
