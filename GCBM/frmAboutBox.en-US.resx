@@ -283,6 +283,92 @@
   <data name="textBoxDescription.Text" xml:space="preserve">
     <value>Description</value>
   </data>
+  <data name="tabControl1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>435, 302</value>
+  </data>
+  <data name="tpGCBM.Size" type="System.Drawing.Size, System.Drawing">
+    <value>427, 276</value>
+  </data>
+  <data name="tbTranslator.Size" type="System.Drawing.Size, System.Drawing">
+    <value>427, 276</value>
+  </data>
+  <data name="tbTranslator.Text" xml:space="preserve">
+    <value>Translation</value>
+  </data>
+  <data name="lblAboutCurrentLanguage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>100, 160</value>
+  </data>
+  <data name="lblAboutCurrentLanguage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 13</value>
+  </data>
+  <data name="lblAboutCurrentLanguage.Text" xml:space="preserve">
+    <value>Current Language: </value>
+  </data>
+  <data name="lblAboutTranslator.Location" type="System.Drawing.Point, System.Drawing">
+    <value>138, 183</value>
+  </data>
+  <data name="lblAboutTranslator.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 13</value>
+  </data>
+  <data name="lblAboutTranslator.Text" xml:space="preserve">
+    <value>Translator: </value>
+  </data>
+  <data name="tbGameTDB.Size" type="System.Drawing.Size, System.Drawing">
+    <value>427, 276</value>
+  </data>
+  <data name="rtbAboutGameTDB.Text" xml:space="preserve">
+    <value>GameTDB is a collaborative game database for anyone to contribute and anyone to use in any game project.
+
+On the website you can browse the database, download it and contribute to it by adding game information and uploading skins.
+
+On your Wii or your computer, you can use GameTDB to do the following:
+
+- display appropriate titles for your game ("Wii Sports" instead of "SPORTS PACK FOR REVOLUTION"), without ever having to rename yourself.
+
+- display the cover art that matches your region.
+
+- display additional information about your games (players, online modes, accessories, publisher, developer...).
+
+- if you have a large library, you cold sort games, for example, by number of players to quickly group your multiplayer titles.
+
+- search for GameCube and Wii games, by publisher, developer, that match a certain rating or released in a certain year.</value>
+  </data>
+  <data name="tbThanks.Size" type="System.Drawing.Size, System.Drawing">
+    <value>427, 276</value>
+  </data>
+  <data name="tbThanks.Text" xml:space="preserve">
+    <value>Thanks</value>
+  </data>
+  <data name="rtbAboutThanks.Text" xml:space="preserve">
+    <value>Thanks to the following people for testing, translating and general help during development:
+
+- Valclark Junior - Testing / User Experience
+- Dolphin Emulator Team - GameCube / Wii / RVZ Information
+- Wiim
+- WIT (Wiimms ISO Tools)
+- Wii Brew
+- DDinghoya - official Korean language translator
+
+In addition to everyone involved in the game preservation community.</value>
+  </data>
+  <data name="tbDonate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>427, 276</value>
+  </data>
+  <data name="tbDonate.Text" xml:space="preserve">
+    <value>Donations</value>
+  </data>
+  <data name="rtbAboutDonations.Text" xml:space="preserve">
+    <value>GameCube Backup Manager is free software.
+
+A lot of effort has been and will be put into making it as stable and feature-rich as possible. If you find it helpful and want to show your appreciation, feel free to drop me a dollar or two. Any money received will help me a lot!
+
+You can also send donations to laetemn@gmail.com via PayPal if the above link doesn't work for you.
+
+Don't forget to send me an email so I can thank you.</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>455, 320</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>About...</value>
   </data>
