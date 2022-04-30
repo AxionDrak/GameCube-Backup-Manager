@@ -79,6 +79,42 @@ namespace GCBM.Properties {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Idioma Atual: .
+        /// </summary>
+        internal static string AboutCurrentLanguage {
+            get {
+                return ResourceManager.GetString("AboutCurrentLanguage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Tradutor: .
+        /// </summary>
+        internal static string AboutTranslator {
+            get {
+                return ResourceManager.GetString("AboutTranslator", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Contato: .
+        /// </summary>
+        internal static string AboutTranslatorContact {
+            get {
+                return ResourceManager.GetString("AboutTranslatorContact", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Versão .
+        /// </summary>
+        internal static string AboutVersion {
+            get {
+                return ResourceManager.GetString("AboutVersion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap add {
@@ -568,6 +604,16 @@ namespace GCBM.Properties {
         }
         
         /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap donate {
+            get {
+                object obj = ResourceManager.GetObject("donate", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a  [INFO] Baixando capas (3D)... .
         /// </summary>
         internal static string Download3DCover {
@@ -914,10 +960,29 @@ namespace GCBM.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap GameTDB_400 {
+            get {
+                object obj = ResourceManager.GetObject("GameTDB-400", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap gbatemp_16 {
             get {
                 object obj = ResourceManager.GetObject("gbatemp_16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Portuguese [Brazil].
+        /// </summary>
+        internal static string GCBM_Language {
+            get {
+                return ResourceManager.GetString("GCBM_Language", resourceCulture);
             }
         }
         
@@ -938,6 +1003,24 @@ namespace GCBM.Properties {
             get {
                 object obj = ResourceManager.GetObject("gcbm_splash_screen", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Laete Meireles.
+        /// </summary>
+        internal static string GCBM_TranslatedBy {
+            get {
+                return ResourceManager.GetString("GCBM_TranslatedBy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a laetemn@hotmail.com.
+        /// </summary>
+        internal static string GCBM_TranslatorContact {
+            get {
+                return ResourceManager.GetString("GCBM_TranslatorContact", resourceCulture);
             }
         }
         
