@@ -37,8 +37,32 @@ namespace GCBM
             this.labelCompanyName = new System.Windows.Forms.Label();
             this.textBoxDescription = new System.Windows.Forms.TextBox();
             this.okButton = new System.Windows.Forms.Button();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tpGCBM = new System.Windows.Forms.TabPage();
+            this.tbTranslator = new System.Windows.Forms.TabPage();
+            this.lbl_DataAtualizacao = new System.Windows.Forms.Label();
+            this.lblAboutCurrentLanguage = new System.Windows.Forms.Label();
+            this.lblAboutTranslator = new System.Windows.Forms.Label();
+            this.lblAboutVersion = new System.Windows.Forms.Label();
+            this.lblAboutProgramName = new System.Windows.Forms.Label();
+            this.tbGameTDB = new System.Windows.Forms.TabPage();
+            this.rtbAboutGameTDB = new System.Windows.Forms.RichTextBox();
+            this.pbGameTDB = new System.Windows.Forms.PictureBox();
+            this.tbThanks = new System.Windows.Forms.TabPage();
+            this.rtbAboutThanks = new System.Windows.Forms.RichTextBox();
+            this.tbDonate = new System.Windows.Forms.TabPage();
+            this.pbDonations = new System.Windows.Forms.PictureBox();
+            this.rtbAboutDonations = new System.Windows.Forms.RichTextBox();
             this.tableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).BeginInit();
+            this.tabControl1.SuspendLayout();
+            this.tpGCBM.SuspendLayout();
+            this.tbTranslator.SuspendLayout();
+            this.tbGameTDB.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbGameTDB)).BeginInit();
+            this.tbThanks.SuspendLayout();
+            this.tbDonate.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDonations)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel
@@ -93,12 +117,131 @@ namespace GCBM
             this.okButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.okButton.Name = "okButton";
             // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tpGCBM);
+            this.tabControl1.Controls.Add(this.tbTranslator);
+            this.tabControl1.Controls.Add(this.tbGameTDB);
+            this.tabControl1.Controls.Add(this.tbThanks);
+            this.tabControl1.Controls.Add(this.tbDonate);
+            resources.ApplyResources(this.tabControl1, "tabControl1");
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            // 
+            // tpGCBM
+            // 
+            this.tpGCBM.Controls.Add(this.tableLayoutPanel);
+            resources.ApplyResources(this.tpGCBM, "tpGCBM");
+            this.tpGCBM.Name = "tpGCBM";
+            this.tpGCBM.UseVisualStyleBackColor = true;
+            // 
+            // tbTranslator
+            // 
+            this.tbTranslator.Controls.Add(this.lbl_DataAtualizacao);
+            this.tbTranslator.Controls.Add(this.lblAboutCurrentLanguage);
+            this.tbTranslator.Controls.Add(this.lblAboutTranslator);
+            this.tbTranslator.Controls.Add(this.lblAboutVersion);
+            this.tbTranslator.Controls.Add(this.lblAboutProgramName);
+            resources.ApplyResources(this.tbTranslator, "tbTranslator");
+            this.tbTranslator.Name = "tbTranslator";
+            this.tbTranslator.UseVisualStyleBackColor = true;
+            // 
+            // lbl_DataAtualizacao
+            // 
+            resources.ApplyResources(this.lbl_DataAtualizacao, "lbl_DataAtualizacao");
+            this.lbl_DataAtualizacao.Name = "lbl_DataAtualizacao";
+            // 
+            // lblAboutCurrentLanguage
+            // 
+            resources.ApplyResources(this.lblAboutCurrentLanguage, "lblAboutCurrentLanguage");
+            this.lblAboutCurrentLanguage.Name = "lblAboutCurrentLanguage";
+            // 
+            // lblAboutTranslator
+            // 
+            resources.ApplyResources(this.lblAboutTranslator, "lblAboutTranslator");
+            this.lblAboutTranslator.Name = "lblAboutTranslator";
+            // 
+            // lblAboutVersion
+            // 
+            resources.ApplyResources(this.lblAboutVersion, "lblAboutVersion");
+            this.lblAboutVersion.Name = "lblAboutVersion";
+            // 
+            // lblAboutProgramName
+            // 
+            resources.ApplyResources(this.lblAboutProgramName, "lblAboutProgramName");
+            this.lblAboutProgramName.Name = "lblAboutProgramName";
+            // 
+            // tbGameTDB
+            // 
+            this.tbGameTDB.Controls.Add(this.rtbAboutGameTDB);
+            this.tbGameTDB.Controls.Add(this.pbGameTDB);
+            resources.ApplyResources(this.tbGameTDB, "tbGameTDB");
+            this.tbGameTDB.Name = "tbGameTDB";
+            this.tbGameTDB.UseVisualStyleBackColor = true;
+            // 
+            // rtbAboutGameTDB
+            // 
+            this.rtbAboutGameTDB.BackColor = System.Drawing.Color.White;
+            this.rtbAboutGameTDB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.rtbAboutGameTDB, "rtbAboutGameTDB");
+            this.rtbAboutGameTDB.Name = "rtbAboutGameTDB";
+            this.rtbAboutGameTDB.ReadOnly = true;
+            // 
+            // pbGameTDB
+            // 
+            this.pbGameTDB.Image = global::GCBM.Properties.Resources.GameTDB_400;
+            resources.ApplyResources(this.pbGameTDB, "pbGameTDB");
+            this.pbGameTDB.Name = "pbGameTDB";
+            this.pbGameTDB.TabStop = false;
+            this.pbGameTDB.Click += new System.EventHandler(this.pbGameTDB_Click);
+            this.pbGameTDB.MouseEnter += new System.EventHandler(this.pbGameTDB_MouseEnter);
+            // 
+            // tbThanks
+            // 
+            this.tbThanks.Controls.Add(this.rtbAboutThanks);
+            resources.ApplyResources(this.tbThanks, "tbThanks");
+            this.tbThanks.Name = "tbThanks";
+            this.tbThanks.UseVisualStyleBackColor = true;
+            // 
+            // rtbAboutThanks
+            // 
+            this.rtbAboutThanks.BackColor = System.Drawing.Color.White;
+            this.rtbAboutThanks.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.rtbAboutThanks, "rtbAboutThanks");
+            this.rtbAboutThanks.Name = "rtbAboutThanks";
+            this.rtbAboutThanks.ReadOnly = true;
+            // 
+            // tbDonate
+            // 
+            this.tbDonate.Controls.Add(this.pbDonations);
+            this.tbDonate.Controls.Add(this.rtbAboutDonations);
+            resources.ApplyResources(this.tbDonate, "tbDonate");
+            this.tbDonate.Name = "tbDonate";
+            this.tbDonate.UseVisualStyleBackColor = true;
+            // 
+            // pbDonations
+            // 
+            this.pbDonations.Image = global::GCBM.Properties.Resources.donate;
+            resources.ApplyResources(this.pbDonations, "pbDonations");
+            this.pbDonations.Name = "pbDonations";
+            this.pbDonations.TabStop = false;
+            this.pbDonations.Click += new System.EventHandler(this.pbDonations_Click);
+            this.pbDonations.MouseEnter += new System.EventHandler(this.pbDonations_MouseEnter);
+            // 
+            // rtbAboutDonations
+            // 
+            this.rtbAboutDonations.BackColor = System.Drawing.Color.White;
+            this.rtbAboutDonations.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.rtbAboutDonations, "rtbAboutDonations");
+            this.rtbAboutDonations.Name = "rtbAboutDonations";
+            this.rtbAboutDonations.ReadOnly = true;
+            // 
             // frmAboutBox
             // 
             this.AcceptButton = this.okButton;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.tableLayoutPanel);
+            this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -108,6 +251,15 @@ namespace GCBM
             this.tableLayoutPanel.ResumeLayout(false);
             this.tableLayoutPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).EndInit();
+            this.tabControl1.ResumeLayout(false);
+            this.tpGCBM.ResumeLayout(false);
+            this.tbTranslator.ResumeLayout(false);
+            this.tbTranslator.PerformLayout();
+            this.tbGameTDB.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbGameTDB)).EndInit();
+            this.tbThanks.ResumeLayout(false);
+            this.tbDonate.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbDonations)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -122,5 +274,21 @@ namespace GCBM
         private System.Windows.Forms.Label labelCompanyName;
         private System.Windows.Forms.TextBox textBoxDescription;
         private System.Windows.Forms.Button okButton;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tpGCBM;
+        private System.Windows.Forms.TabPage tbGameTDB;
+        private System.Windows.Forms.TabPage tbThanks;
+        private System.Windows.Forms.TabPage tbDonate;
+        private System.Windows.Forms.PictureBox pbGameTDB;
+        private System.Windows.Forms.RichTextBox rtbAboutGameTDB;
+        private System.Windows.Forms.RichTextBox rtbAboutThanks;
+        private System.Windows.Forms.RichTextBox rtbAboutDonations;
+        private System.Windows.Forms.PictureBox pbDonations;
+        private System.Windows.Forms.TabPage tbTranslator;
+        private System.Windows.Forms.Label lblAboutTranslator;
+        private System.Windows.Forms.Label lblAboutVersion;
+        private System.Windows.Forms.Label lblAboutProgramName;
+        private System.Windows.Forms.Label lblAboutCurrentLanguage;
+        private System.Windows.Forms.Label lbl_DataAtualizacao;
     }
 }
