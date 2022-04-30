@@ -271,17 +271,78 @@
         YNEMgUUzBBbNEFg0Q2DRDIFFMwQWzRBYNENg0QyBRTNC3Mz/D3DDro2vUH9DAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="textBoxDescription.Text" xml:space="preserve">
-    <value>Descripción</value>
+  <data name="labelProductName.Text" xml:space="preserve">
+    <value>Nombre del Producto</value>
   </data>
   <data name="labelVersion.Text" xml:space="preserve">
     <value>Versión</value>
   </data>
-  <data name="labelProductName.Text" xml:space="preserve">
-    <value>Nombre del Producto</value>
-  </data>
   <data name="labelCompanyName.Text" xml:space="preserve">
     <value>Nombre de Empresa</value>
+  </data>
+  <data name="textBoxDescription.Text" xml:space="preserve">
+    <value>Descripción</value>
+  </data>
+  <data name="tbTranslator.Text" xml:space="preserve">
+    <value>Traducción</value>
+  </data>
+  <data name="lblAboutCurrentLanguage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>77, 13</value>
+  </data>
+  <data name="lblAboutCurrentLanguage.Text" xml:space="preserve">
+    <value>Idioma Actual: </value>
+  </data>
+  <data name="lblAboutTranslator.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 13</value>
+  </data>
+  <data name="lblAboutTranslator.Text" xml:space="preserve">
+    <value>Traductor: </value>
+  </data>
+  <data name="rtbAboutGameTDB.Text" xml:space="preserve">
+    <value>GameTDB es una base de datos de juegos colaborativos para que cualquiera pueda contribuir y cualquiera pueda usar en cualquier proyecto de juego.
+
+En el sitio web, puede navegar por la base de datos, descargarla y contribuir agregando información del juego y cargando máscaras.
+
+En tu Wii o tu computadora, puedes usar GameTDB para hacer lo siguiente:
+
+- muestra títulos apropiados para tu juego ("Wii Sports" en lugar de "SPORTS PACK FOR REVOLUTION"), sin tener que cambiarte el nombre.
+
+- mostrar la portada que coincida con su región.
+
+- mostrar información adicional sobre tus juegos (jugadores, modos en línea, accesorios, editor, desarrollador...).
+
+- si tiene una gran biblioteca, clasifica los juegos en frío, por ejemplo, por número de jugadores para agrupar rápidamente sus títulos multijugador.
+
+
+
+- busque juegos de GameCube y Wii, por editor, desarrollador, que coincidan con una calificación determinada o lanzados en un año determinado.</value>
+  </data>
+  <data name="tbThanks.Text" xml:space="preserve">
+    <value>Agradecimientos</value>
+  </data>
+  <data name="rtbAboutThanks.Text" xml:space="preserve">
+    <value>Gracias a las siguientes personas por las pruebas, la traducción y la ayuda general durante el desarrollo:
+
+- Valclark Junior - Pruebas / Experiencia de usuario
+- Equipo Dolphin Emulator - Información de GameCube / Wii / RVZ
+- Wiim
+- WIT (herramientas Wiimms ISO)
+- Cerveza de Wii
+- DDinghoya - traductor oficial de idioma coreano
+
+Además de todos los involucrados en la comunidad de preservación de juegos.</value>
+  </data>
+  <data name="tbDonate.Text" xml:space="preserve">
+    <value>Donaciones</value>
+  </data>
+  <data name="rtbAboutDonations.Text" xml:space="preserve">
+    <value>GameCube Backup Manager es un software gratuito.
+
+Se ha realizado y se realizará un gran esfuerzo para que sea lo más estable y rico en funciones posible. Si lo encuentra útil y quiere mostrar su aprecio, siéntase libre de dejarme un dólar o dos. ¡Cualquier dinero recibido me ayudará mucho!
+
+También puede enviar donaciones a laetemn@gmail.com a través de PayPal si el enlace anterior no le funciona.
+
+No olvides enviarme un correo electrónico para que pueda agradecerte.</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Acerca de...</value>
