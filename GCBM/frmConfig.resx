@@ -126,10 +126,879 @@
   <metadata name="grbGeneralTemporaryFolder.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <metadata name="grbGeneralFiles.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="grbGeneralFileSize.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="grbGeneralPartitions.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="&gt;&gt;grbGeneralTemporaryFolder.Name" xml:space="preserve">
+    <value>grbGeneralTemporaryFolder</value>
+  </data>
+  <data name="&gt;&gt;grbGeneralTemporaryFolder.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grbGeneralTemporaryFolder.Parent" xml:space="preserve">
+    <value>tabSettingsGeneral</value>
+  </data>
+  <data name="&gt;&gt;grbGeneralTemporaryFolder.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;grbGeneralFiles.Name" xml:space="preserve">
+    <value>grbGeneralFiles</value>
+  </data>
+  <data name="&gt;&gt;grbGeneralFiles.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grbGeneralFiles.Parent" xml:space="preserve">
+    <value>tabSettingsGeneral</value>
+  </data>
+  <data name="&gt;&gt;grbGeneralFiles.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;grbGeneralFileSize.Name" xml:space="preserve">
+    <value>grbGeneralFileSize</value>
+  </data>
+  <data name="&gt;&gt;grbGeneralFileSize.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grbGeneralFileSize.Parent" xml:space="preserve">
+    <value>tabSettingsGeneral</value>
+  </data>
+  <data name="&gt;&gt;grbGeneralFileSize.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;grbGeneralPartitions.Name" xml:space="preserve">
+    <value>grbGeneralPartitions</value>
+  </data>
+  <data name="&gt;&gt;grbGeneralPartitions.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grbGeneralPartitions.Parent" xml:space="preserve">
+    <value>tabSettingsGeneral</value>
+  </data>
+  <data name="&gt;&gt;grbGeneralPartitions.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="tabSettingsGeneral.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="tabSettingsGeneral.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabSettingsGeneral.Size" type="System.Drawing.Size, System.Drawing">
+    <value>554, 363</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="tabSettingsGeneral.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="tabSettingsGeneral.Text" xml:space="preserve">
+    <value>Geral</value>
+  </data>
+  <data name="&gt;&gt;tabSettingsGeneral.Name" xml:space="preserve">
+    <value>tabSettingsGeneral</value>
+  </data>
+  <data name="&gt;&gt;tabSettingsGeneral.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabSettingsGeneral.Parent" xml:space="preserve">
+    <value>tabSettings</value>
+  </data>
+  <data name="&gt;&gt;tabSettingsGeneral.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="tabSettingsNomenclature.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="lblCommentsScrubCopy.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="lblCommentsScrubCopy.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblCommentsScrubCopy.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 152</value>
+  </data>
+  <data name="lblCommentsScrubCopy.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>540, 0</value>
+  </data>
+  <data name="lblCommentsScrubCopy.Size" type="System.Drawing.Size, System.Drawing">
+    <value>537, 52</value>
+  </data>
+  <data name="lblCommentsScrubCopy.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="lblCommentsScrubCopy.Text" xml:space="preserve">
+    <value>Para o método Scrub, será sempre utilizado o padrão "Título [Código do Jogo]", baseando-se no nome interno (definido pela desenvolvedora). No modo de cópia Scrub, os discos 1 e 2 sempre serão arnazenados em pastas separadas, exceto em casos específicos, onde o método de detecção consegue identificar nomes comuns dados pela desenvolvedora, nesses casos, os discos 1 e 2 serão armazenados na mesma pasta.</value>
+  </data>
+  <data name="&gt;&gt;lblCommentsScrubCopy.Name" xml:space="preserve">
+    <value>lblCommentsScrubCopy</value>
+  </data>
+  <data name="&gt;&gt;lblCommentsScrubCopy.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblCommentsScrubCopy.Parent" xml:space="preserve">
+    <value>tabSettingsNomenclature</value>
+  </data>
+  <data name="&gt;&gt;lblCommentsScrubCopy.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="lblCommentsExactCopy.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="lblCommentsExactCopy.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblCommentsExactCopy.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 107</value>
+  </data>
+  <data name="lblCommentsExactCopy.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>540, 0</value>
+  </data>
+  <data name="lblCommentsExactCopy.Size" type="System.Drawing.Size, System.Drawing">
+    <value>534, 39</value>
+  </data>
+  <data name="lblCommentsExactCopy.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="lblCommentsExactCopy.Text" xml:space="preserve">
+    <value>O estilo de nomeação atualmente funciona somente com a cópia exata de arquivos (1:1), e pode utilizar tanto o nome interno, quanto o nome comercial (via wiitdb.xml). Essa opção pode ser configurada pelo usuário, na aba 'Títulos'. No modo de cópia exata (1:1), os discos 1 e 2 sempre serão arnazenados na mesma pasta.</value>
+  </data>
+  <data name="&gt;&gt;lblCommentsExactCopy.Name" xml:space="preserve">
+    <value>lblCommentsExactCopy</value>
+  </data>
+  <data name="&gt;&gt;lblCommentsExactCopy.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblCommentsExactCopy.Parent" xml:space="preserve">
+    <value>tabSettingsNomenclature</value>
+  </data>
+  <data name="&gt;&gt;lblCommentsExactCopy.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <metadata name="lblComments.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="lblComments.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblComments.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 88</value>
+  </data>
+  <data name="lblComments.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>510, 0</value>
+  </data>
+  <data name="lblComments.Size" type="System.Drawing.Size, System.Drawing">
+    <value>90, 13</value>
+  </data>
+  <data name="lblComments.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="lblComments.Text" xml:space="preserve">
+    <value>OBSERVAÇÕES:</value>
+  </data>
+  <data name="&gt;&gt;lblComments.Name" xml:space="preserve">
+    <value>lblComments</value>
+  </data>
+  <data name="&gt;&gt;lblComments.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblComments.Parent" xml:space="preserve">
+    <value>tabSettingsNomenclature</value>
+  </data>
+  <data name="&gt;&gt;lblComments.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <metadata name="grpNomenclatureFolderFormat.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="cbAdjustNamingStyle.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="lblNomenclature.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="&gt;&gt;cbAdjustNamingStyle.Name" xml:space="preserve">
+    <value>cbAdjustNamingStyle</value>
+  </data>
+  <data name="&gt;&gt;cbAdjustNamingStyle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbAdjustNamingStyle.Parent" xml:space="preserve">
+    <value>grpNomenclatureFolderFormat</value>
+  </data>
+  <data name="&gt;&gt;cbAdjustNamingStyle.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lblNomenclature.Name" xml:space="preserve">
+    <value>lblNomenclature</value>
+  </data>
+  <data name="&gt;&gt;lblNomenclature.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblNomenclature.Parent" xml:space="preserve">
+    <value>grpNomenclatureFolderFormat</value>
+  </data>
+  <data name="&gt;&gt;lblNomenclature.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="grpNomenclatureFolderFormat.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 6</value>
+  </data>
+  <data name="grpNomenclatureFolderFormat.Size" type="System.Drawing.Size, System.Drawing">
+    <value>539, 74</value>
+  </data>
+  <data name="grpNomenclatureFolderFormat.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="grpNomenclatureFolderFormat.Text" xml:space="preserve">
+    <value>Formato das pastas</value>
+  </data>
+  <data name="&gt;&gt;grpNomenclatureFolderFormat.Name" xml:space="preserve">
+    <value>grpNomenclatureFolderFormat</value>
+  </data>
+  <data name="&gt;&gt;grpNomenclatureFolderFormat.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grpNomenclatureFolderFormat.Parent" xml:space="preserve">
+    <value>tabSettingsNomenclature</value>
+  </data>
+  <data name="&gt;&gt;grpNomenclatureFolderFormat.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="tabSettingsNomenclature.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tabSettingsNomenclature.Size" type="System.Drawing.Size, System.Drawing">
+    <value>554, 363</value>
+  </data>
+  <data name="tabSettingsNomenclature.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="tabSettingsNomenclature.Text" xml:space="preserve">
+    <value>Nomenclatura</value>
+  </data>
+  <data name="&gt;&gt;tabSettingsNomenclature.Name" xml:space="preserve">
+    <value>tabSettingsNomenclature</value>
+  </data>
+  <data name="&gt;&gt;tabSettingsNomenclature.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabSettingsNomenclature.Parent" xml:space="preserve">
+    <value>tabSettings</value>
+  </data>
+  <data name="&gt;&gt;tabSettingsNomenclature.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <metadata name="tabSettingsSeveral.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="grbGeneralDiverse.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="&gt;&gt;grbGeneralDiverse.Name" xml:space="preserve">
+    <value>grbGeneralDiverse</value>
+  </data>
+  <data name="&gt;&gt;grbGeneralDiverse.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grbGeneralDiverse.Parent" xml:space="preserve">
+    <value>tabSettingsSeveral</value>
+  </data>
+  <data name="&gt;&gt;grbGeneralDiverse.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tabSettingsSeveral.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tabSettingsSeveral.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabSettingsSeveral.Size" type="System.Drawing.Size, System.Drawing">
+    <value>554, 363</value>
+  </data>
+  <data name="tabSettingsSeveral.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tabSettingsSeveral.Text" xml:space="preserve">
+    <value>Diversos</value>
+  </data>
+  <data name="&gt;&gt;tabSettingsSeveral.Name" xml:space="preserve">
+    <value>tabSettingsSeveral</value>
+  </data>
+  <data name="&gt;&gt;tabSettingsSeveral.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabSettingsSeveral.Parent" xml:space="preserve">
+    <value>tabSettings</value>
+  </data>
+  <data name="&gt;&gt;tabSettingsSeveral.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <metadata name="tabSettingsTransfer.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="grbGeneralScrub.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="label28.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="label31.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="label20.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="lblScrub.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="lblWipe.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="lblFST.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="lblXCopy.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="label17.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="grbTransferSystem.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="&gt;&gt;grbGeneralScrub.Name" xml:space="preserve">
+    <value>grbGeneralScrub</value>
+  </data>
+  <data name="&gt;&gt;grbGeneralScrub.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grbGeneralScrub.Parent" xml:space="preserve">
+    <value>tabSettingsTransfer</value>
+  </data>
+  <data name="&gt;&gt;grbGeneralScrub.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;label28.Name" xml:space="preserve">
+    <value>label28</value>
+  </data>
+  <data name="&gt;&gt;label28.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label28.Parent" xml:space="preserve">
+    <value>tabSettingsTransfer</value>
+  </data>
+  <data name="&gt;&gt;label28.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;label31.Name" xml:space="preserve">
+    <value>label31</value>
+  </data>
+  <data name="&gt;&gt;label31.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label31.Parent" xml:space="preserve">
+    <value>tabSettingsTransfer</value>
+  </data>
+  <data name="&gt;&gt;label31.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;label20.Name" xml:space="preserve">
+    <value>label20</value>
+  </data>
+  <data name="&gt;&gt;label20.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label20.Parent" xml:space="preserve">
+    <value>tabSettingsTransfer</value>
+  </data>
+  <data name="&gt;&gt;label20.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;lblScrub.Name" xml:space="preserve">
+    <value>lblScrub</value>
+  </data>
+  <data name="&gt;&gt;lblScrub.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblScrub.Parent" xml:space="preserve">
+    <value>tabSettingsTransfer</value>
+  </data>
+  <data name="&gt;&gt;lblScrub.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;lblWipe.Name" xml:space="preserve">
+    <value>lblWipe</value>
+  </data>
+  <data name="&gt;&gt;lblWipe.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblWipe.Parent" xml:space="preserve">
+    <value>tabSettingsTransfer</value>
+  </data>
+  <data name="&gt;&gt;lblWipe.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;lblFST.Name" xml:space="preserve">
+    <value>lblFST</value>
+  </data>
+  <data name="&gt;&gt;lblFST.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblFST.Parent" xml:space="preserve">
+    <value>tabSettingsTransfer</value>
+  </data>
+  <data name="&gt;&gt;lblFST.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;lblXCopy.Name" xml:space="preserve">
+    <value>lblXCopy</value>
+  </data>
+  <data name="&gt;&gt;lblXCopy.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblXCopy.Parent" xml:space="preserve">
+    <value>tabSettingsTransfer</value>
+  </data>
+  <data name="&gt;&gt;lblXCopy.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;label17.Name" xml:space="preserve">
+    <value>label17</value>
+  </data>
+  <data name="&gt;&gt;label17.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label17.Parent" xml:space="preserve">
+    <value>tabSettingsTransfer</value>
+  </data>
+  <data name="&gt;&gt;label17.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;grbTransferSystem.Name" xml:space="preserve">
+    <value>grbTransferSystem</value>
+  </data>
+  <data name="&gt;&gt;grbTransferSystem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grbTransferSystem.Parent" xml:space="preserve">
+    <value>tabSettingsTransfer</value>
+  </data>
+  <data name="&gt;&gt;grbTransferSystem.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="tabSettingsTransfer.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tabSettingsTransfer.Size" type="System.Drawing.Size, System.Drawing">
+    <value>554, 363</value>
+  </data>
+  <data name="tabSettingsTransfer.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="tabSettingsTransfer.Text" xml:space="preserve">
+    <value>Transferir Jogo</value>
+  </data>
+  <data name="&gt;&gt;tabSettingsTransfer.Name" xml:space="preserve">
+    <value>tabSettingsTransfer</value>
+  </data>
+  <data name="&gt;&gt;tabSettingsTransfer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabSettingsTransfer.Parent" xml:space="preserve">
+    <value>tabSettings</value>
+  </data>
+  <data name="&gt;&gt;tabSettingsTransfer.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <metadata name="tabSettingsCovers.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="grpTitlesCoverFolder.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="grbCoverTransfer.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="grpCoversSynchronize.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="tabSettingsCovers.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;grpTitlesCoverFolder.Name" xml:space="preserve">
+    <value>grpTitlesCoverFolder</value>
+  </data>
+  <data name="&gt;&gt;grpTitlesCoverFolder.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grpTitlesCoverFolder.Parent" xml:space="preserve">
+    <value>tabSettingsCovers</value>
+  </data>
+  <data name="&gt;&gt;grpTitlesCoverFolder.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;grbCoverTransfer.Name" xml:space="preserve">
+    <value>grbCoverTransfer</value>
+  </data>
+  <data name="&gt;&gt;grbCoverTransfer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grbCoverTransfer.Parent" xml:space="preserve">
+    <value>tabSettingsCovers</value>
+  </data>
+  <data name="&gt;&gt;grbCoverTransfer.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;grpCoversSynchronize.Name" xml:space="preserve">
+    <value>grpCoversSynchronize</value>
+  </data>
+  <data name="&gt;&gt;grpCoversSynchronize.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grpCoversSynchronize.Parent" xml:space="preserve">
+    <value>tabSettingsCovers</value>
+  </data>
+  <data name="&gt;&gt;grpCoversSynchronize.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="tabSettingsCovers.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tabSettingsCovers.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabSettingsCovers.Size" type="System.Drawing.Size, System.Drawing">
+    <value>554, 363</value>
+  </data>
+  <data name="tabSettingsCovers.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="tabSettingsCovers.Text" xml:space="preserve">
+    <value>Capas</value>
+  </data>
+  <data name="&gt;&gt;tabSettingsCovers.Name" xml:space="preserve">
+    <value>tabSettingsCovers</value>
+  </data>
+  <data name="&gt;&gt;tabSettingsCovers.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabSettingsCovers.Parent" xml:space="preserve">
+    <value>tabSettings</value>
+  </data>
+  <data name="&gt;&gt;tabSettingsCovers.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <metadata name="tabSettingsTitle.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="grbTitleLanguage.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="grbTitleFileLocation.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="grbTitleDiverse.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="&gt;&gt;grbTitleLanguage.Name" xml:space="preserve">
+    <value>grbTitleLanguage</value>
+  </data>
+  <data name="&gt;&gt;grbTitleLanguage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grbTitleLanguage.Parent" xml:space="preserve">
+    <value>tabSettingsTitle</value>
+  </data>
+  <data name="&gt;&gt;grbTitleLanguage.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;grbTitleFileLocation.Name" xml:space="preserve">
+    <value>grbTitleFileLocation</value>
+  </data>
+  <data name="&gt;&gt;grbTitleFileLocation.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grbTitleFileLocation.Parent" xml:space="preserve">
+    <value>tabSettingsTitle</value>
+  </data>
+  <data name="&gt;&gt;grbTitleFileLocation.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;grbTitleDiverse.Name" xml:space="preserve">
+    <value>grbTitleDiverse</value>
+  </data>
+  <data name="&gt;&gt;grbTitleDiverse.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grbTitleDiverse.Parent" xml:space="preserve">
+    <value>tabSettingsTitle</value>
+  </data>
+  <data name="&gt;&gt;grbTitleDiverse.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="tabSettingsTitle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tabSettingsTitle.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabSettingsTitle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>554, 363</value>
+  </data>
+  <data name="tabSettingsTitle.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="tabSettingsTitle.Text" xml:space="preserve">
+    <value>Títulos</value>
+  </data>
+  <data name="&gt;&gt;tabSettingsTitle.Name" xml:space="preserve">
+    <value>tabSettingsTitle</value>
+  </data>
+  <data name="&gt;&gt;tabSettingsTitle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabSettingsTitle.Parent" xml:space="preserve">
+    <value>tabSettings</value>
+  </data>
+  <data name="&gt;&gt;tabSettingsTitle.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <metadata name="tabSettingsUpdates.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="grbUpdate.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="&gt;&gt;grbUpdate.Name" xml:space="preserve">
+    <value>grbUpdate</value>
+  </data>
+  <data name="&gt;&gt;grbUpdate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grbUpdate.Parent" xml:space="preserve">
+    <value>tabSettingsUpdates</value>
+  </data>
+  <data name="&gt;&gt;grbUpdate.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tabSettingsUpdates.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tabSettingsUpdates.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabSettingsUpdates.Size" type="System.Drawing.Size, System.Drawing">
+    <value>554, 363</value>
+  </data>
+  <data name="tabSettingsUpdates.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="tabSettingsUpdates.Text" xml:space="preserve">
+    <value>Atualizações</value>
+  </data>
+  <data name="&gt;&gt;tabSettingsUpdates.Name" xml:space="preserve">
+    <value>tabSettingsUpdates</value>
+  </data>
+  <data name="&gt;&gt;tabSettingsUpdates.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabSettingsUpdates.Parent" xml:space="preserve">
+    <value>tabSettings</value>
+  </data>
+  <data name="&gt;&gt;tabSettingsUpdates.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <metadata name="tabSettingsLanguage.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="lblLanguageComments.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="grbLanguage.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="&gt;&gt;lblLanguageComments.Name" xml:space="preserve">
+    <value>lblLanguageComments</value>
+  </data>
+  <data name="&gt;&gt;lblLanguageComments.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblLanguageComments.Parent" xml:space="preserve">
+    <value>tabSettingsLanguage</value>
+  </data>
+  <data name="&gt;&gt;lblLanguageComments.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;grbLanguage.Name" xml:space="preserve">
+    <value>grbLanguage</value>
+  </data>
+  <data name="&gt;&gt;grbLanguage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grbLanguage.Parent" xml:space="preserve">
+    <value>tabSettingsLanguage</value>
+  </data>
+  <data name="&gt;&gt;grbLanguage.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tabSettingsLanguage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tabSettingsLanguage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>554, 363</value>
+  </data>
+  <data name="tabSettingsLanguage.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="tabSettingsLanguage.Text" xml:space="preserve">
+    <value>Idiomas</value>
+  </data>
+  <data name="&gt;&gt;tabSettingsLanguage.Name" xml:space="preserve">
+    <value>tabSettingsLanguage</value>
+  </data>
+  <data name="&gt;&gt;tabSettingsLanguage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabSettingsLanguage.Parent" xml:space="preserve">
+    <value>tabSettings</value>
+  </data>
+  <data name="&gt;&gt;tabSettingsLanguage.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <metadata name="tabSettingsLog.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="grbLog.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="&gt;&gt;grbLog.Name" xml:space="preserve">
+    <value>grbLog</value>
+  </data>
+  <data name="&gt;&gt;grbLog.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grbLog.Parent" xml:space="preserve">
+    <value>tabSettingsLog</value>
+  </data>
+  <data name="&gt;&gt;grbLog.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tabSettingsLog.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tabSettingsLog.Size" type="System.Drawing.Size, System.Drawing">
+    <value>554, 363</value>
+  </data>
+  <data name="tabSettingsLog.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="tabSettingsLog.Text" xml:space="preserve">
+    <value>Registro</value>
+  </data>
+  <data name="&gt;&gt;tabSettingsLog.Name" xml:space="preserve">
+    <value>tabSettingsLog</value>
+  </data>
+  <data name="&gt;&gt;tabSettingsLog.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabSettingsLog.Parent" xml:space="preserve">
+    <value>tabSettings</value>
+  </data>
+  <data name="&gt;&gt;tabSettingsLog.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="tabSettings.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 12</value>
+  </data>
+  <data name="tabSettings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>562, 389</value>
+  </data>
+  <data name="tabSettings.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;tabSettings.Name" xml:space="preserve">
+    <value>tabSettings</value>
+  </data>
+  <data name="&gt;&gt;tabSettings.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabSettings.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tabSettings.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <metadata name="grbGeneralTemporaryFolder.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <metadata name="btnTemporaryFolder.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <metadata name="tbGeneralTempPath.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="&gt;&gt;btnTemporaryFolder.Name" xml:space="preserve">
+    <value>btnTemporaryFolder</value>
+  </data>
+  <data name="&gt;&gt;btnTemporaryFolder.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnTemporaryFolder.Parent" xml:space="preserve">
+    <value>grbGeneralTemporaryFolder</value>
+  </data>
+  <data name="&gt;&gt;btnTemporaryFolder.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tbGeneralTempPath.Name" xml:space="preserve">
+    <value>tbGeneralTempPath</value>
+  </data>
+  <data name="&gt;&gt;tbGeneralTempPath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbGeneralTempPath.Parent" xml:space="preserve">
+    <value>grbGeneralTemporaryFolder</value>
+  </data>
+  <data name="&gt;&gt;tbGeneralTempPath.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="grbGeneralTemporaryFolder.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="grbGeneralTemporaryFolder.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 282</value>
+  </data>
+  <data name="grbGeneralTemporaryFolder.Size" type="System.Drawing.Size, System.Drawing">
+    <value>539, 57</value>
+  </data>
+  <data name="grbGeneralTemporaryFolder.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="grbGeneralTemporaryFolder.Text" xml:space="preserve">
+    <value>Pasta temporária</value>
+  </data>
+  <data name="&gt;&gt;grbGeneralTemporaryFolder.Name" xml:space="preserve">
+    <value>grbGeneralTemporaryFolder</value>
+  </data>
+  <data name="&gt;&gt;grbGeneralTemporaryFolder.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grbGeneralTemporaryFolder.Parent" xml:space="preserve">
+    <value>tabSettingsGeneral</value>
+  </data>
+  <data name="&gt;&gt;grbGeneralTemporaryFolder.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="btnTemporaryFolder.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="btnTemporaryFolder.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
   </data>
@@ -139,7 +1008,6 @@
   <data name="btnTemporaryFolder.Size" type="System.Drawing.Size, System.Drawing">
     <value>31, 27</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="btnTemporaryFolder.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
@@ -182,36 +1050,144 @@
   <data name="&gt;&gt;tbGeneralTempPath.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="grbGeneralTemporaryFolder.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="grbGeneralTemporaryFolder.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 282</value>
-  </data>
-  <data name="grbGeneralTemporaryFolder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>539, 57</value>
-  </data>
-  <data name="grbGeneralTemporaryFolder.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="grbGeneralTemporaryFolder.Text" xml:space="preserve">
-    <value>Pasta temporária</value>
-  </data>
-  <data name="&gt;&gt;grbGeneralTemporaryFolder.Name" xml:space="preserve">
-    <value>grbGeneralTemporaryFolder</value>
-  </data>
-  <data name="&gt;&gt;grbGeneralTemporaryFolder.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;grbGeneralTemporaryFolder.Parent" xml:space="preserve">
-    <value>tabSettingsGeneral</value>
-  </data>
-  <data name="&gt;&gt;grbGeneralTemporaryFolder.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <metadata name="grbGeneralFiles.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <metadata name="chkGeneralExtractNwb.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="chkGeneralExtractSplitFile.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="chkGeneralExtractBZip2.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="chkGeneralExtractRar.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="chkGeneralExtract7z.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="chkGeneralExtractZip.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="lblGeneralExtract.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="&gt;&gt;chkGeneralExtractNwb.Name" xml:space="preserve">
+    <value>chkGeneralExtractNwb</value>
+  </data>
+  <data name="&gt;&gt;chkGeneralExtractNwb.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkGeneralExtractNwb.Parent" xml:space="preserve">
+    <value>grbGeneralFiles</value>
+  </data>
+  <data name="&gt;&gt;chkGeneralExtractNwb.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;chkGeneralExtractSplitFile.Name" xml:space="preserve">
+    <value>chkGeneralExtractSplitFile</value>
+  </data>
+  <data name="&gt;&gt;chkGeneralExtractSplitFile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkGeneralExtractSplitFile.Parent" xml:space="preserve">
+    <value>grbGeneralFiles</value>
+  </data>
+  <data name="&gt;&gt;chkGeneralExtractSplitFile.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;chkGeneralExtractBZip2.Name" xml:space="preserve">
+    <value>chkGeneralExtractBZip2</value>
+  </data>
+  <data name="&gt;&gt;chkGeneralExtractBZip2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkGeneralExtractBZip2.Parent" xml:space="preserve">
+    <value>grbGeneralFiles</value>
+  </data>
+  <data name="&gt;&gt;chkGeneralExtractBZip2.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;chkGeneralExtractRar.Name" xml:space="preserve">
+    <value>chkGeneralExtractRar</value>
+  </data>
+  <data name="&gt;&gt;chkGeneralExtractRar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkGeneralExtractRar.Parent" xml:space="preserve">
+    <value>grbGeneralFiles</value>
+  </data>
+  <data name="&gt;&gt;chkGeneralExtractRar.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;chkGeneralExtract7z.Name" xml:space="preserve">
+    <value>chkGeneralExtract7z</value>
+  </data>
+  <data name="&gt;&gt;chkGeneralExtract7z.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkGeneralExtract7z.Parent" xml:space="preserve">
+    <value>grbGeneralFiles</value>
+  </data>
+  <data name="&gt;&gt;chkGeneralExtract7z.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;chkGeneralExtractZip.Name" xml:space="preserve">
+    <value>chkGeneralExtractZip</value>
+  </data>
+  <data name="&gt;&gt;chkGeneralExtractZip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkGeneralExtractZip.Parent" xml:space="preserve">
+    <value>grbGeneralFiles</value>
+  </data>
+  <data name="&gt;&gt;chkGeneralExtractZip.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;lblGeneralExtract.Name" xml:space="preserve">
+    <value>lblGeneralExtract</value>
+  </data>
+  <data name="&gt;&gt;lblGeneralExtract.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblGeneralExtract.Parent" xml:space="preserve">
+    <value>grbGeneralFiles</value>
+  </data>
+  <data name="&gt;&gt;lblGeneralExtract.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="grbGeneralFiles.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="grbGeneralFiles.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="grbGeneralFiles.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 153</value>
+  </data>
+  <data name="grbGeneralFiles.Size" type="System.Drawing.Size, System.Drawing">
+    <value>539, 123</value>
+  </data>
+  <data name="grbGeneralFiles.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="grbGeneralFiles.Text" xml:space="preserve">
+    <value>Arquivos</value>
+  </data>
+  <data name="&gt;&gt;grbGeneralFiles.Name" xml:space="preserve">
+    <value>grbGeneralFiles</value>
+  </data>
+  <data name="&gt;&gt;grbGeneralFiles.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grbGeneralFiles.Parent" xml:space="preserve">
+    <value>tabSettingsGeneral</value>
+  </data>
+  <data name="&gt;&gt;grbGeneralFiles.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <metadata name="chkGeneralExtractNwb.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -422,66 +1398,12 @@
   <data name="&gt;&gt;lblGeneralExtract.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="grbGeneralFiles.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="grbGeneralFiles.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="grbGeneralFiles.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 153</value>
-  </data>
-  <data name="grbGeneralFiles.Size" type="System.Drawing.Size, System.Drawing">
-    <value>539, 123</value>
-  </data>
-  <data name="grbGeneralFiles.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="grbGeneralFiles.Text" xml:space="preserve">
-    <value>Arquivos</value>
-  </data>
-  <data name="&gt;&gt;grbGeneralFiles.Name" xml:space="preserve">
-    <value>grbGeneralFiles</value>
-  </data>
-  <data name="&gt;&gt;grbGeneralFiles.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;grbGeneralFiles.Parent" xml:space="preserve">
-    <value>tabSettingsGeneral</value>
-  </data>
-  <data name="&gt;&gt;grbGeneralFiles.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <metadata name="grbGeneralFileSize.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="cbGeneralFileSize.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="cbGeneralFileSize.Items" xml:space="preserve">
-    <value>Automático</value>
-  </data>
-  <data name="cbGeneralFileSize.Items1" xml:space="preserve">
-    <value>Kilobyte</value>
-  </data>
-  <data name="cbGeneralFileSize.Items2" xml:space="preserve">
-    <value>Megabytes</value>
-  </data>
-  <data name="cbGeneralFileSize.Items3" xml:space="preserve">
-    <value>Gigabytes</value>
-  </data>
-  <data name="cbGeneralFileSize.Items4" xml:space="preserve">
-    <value>Terabyte</value>
-  </data>
-  <data name="cbGeneralFileSize.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 22</value>
-  </data>
-  <data name="cbGeneralFileSize.Size" type="System.Drawing.Size, System.Drawing">
-    <value>524, 21</value>
-  </data>
-  <data name="cbGeneralFileSize.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
   <data name="&gt;&gt;cbGeneralFileSize.Name" xml:space="preserve">
     <value>cbGeneralFileSize</value>
   </data>
@@ -521,9 +1443,108 @@
   <data name="&gt;&gt;grbGeneralFileSize.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <metadata name="cbGeneralFileSize.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="cbGeneralFileSize.Items" xml:space="preserve">
+    <value>Automático</value>
+  </data>
+  <data name="cbGeneralFileSize.Items1" xml:space="preserve">
+    <value>Kilobyte</value>
+  </data>
+  <data name="cbGeneralFileSize.Items2" xml:space="preserve">
+    <value>Megabytes</value>
+  </data>
+  <data name="cbGeneralFileSize.Items3" xml:space="preserve">
+    <value>Gigabytes</value>
+  </data>
+  <data name="cbGeneralFileSize.Items4" xml:space="preserve">
+    <value>Terabyte</value>
+  </data>
+  <data name="cbGeneralFileSize.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 22</value>
+  </data>
+  <data name="cbGeneralFileSize.Size" type="System.Drawing.Size, System.Drawing">
+    <value>524, 21</value>
+  </data>
+  <data name="cbGeneralFileSize.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;cbGeneralFileSize.Name" xml:space="preserve">
+    <value>cbGeneralFileSize</value>
+  </data>
+  <data name="&gt;&gt;cbGeneralFileSize.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbGeneralFileSize.Parent" xml:space="preserve">
+    <value>grbGeneralFileSize</value>
+  </data>
+  <data name="&gt;&gt;cbGeneralFileSize.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <metadata name="grbGeneralPartitions.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <metadata name="rbGeneralDiscDelete.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="rbGeneralDiscClean.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="&gt;&gt;rbGeneralDiscDelete.Name" xml:space="preserve">
+    <value>rbGeneralDiscDelete</value>
+  </data>
+  <data name="&gt;&gt;rbGeneralDiscDelete.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rbGeneralDiscDelete.Parent" xml:space="preserve">
+    <value>grbGeneralPartitions</value>
+  </data>
+  <data name="&gt;&gt;rbGeneralDiscDelete.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;rbGeneralDiscClean.Name" xml:space="preserve">
+    <value>rbGeneralDiscClean</value>
+  </data>
+  <data name="&gt;&gt;rbGeneralDiscClean.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rbGeneralDiscClean.Parent" xml:space="preserve">
+    <value>grbGeneralPartitions</value>
+  </data>
+  <data name="&gt;&gt;rbGeneralDiscClean.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="grbGeneralPartitions.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="grbGeneralPartitions.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="grbGeneralPartitions.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 6</value>
+  </data>
+  <data name="grbGeneralPartitions.Size" type="System.Drawing.Size, System.Drawing">
+    <value>539, 76</value>
+  </data>
+  <data name="grbGeneralPartitions.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="grbGeneralPartitions.Text" xml:space="preserve">
+    <value>Ajustar diretórios dos jogos</value>
+  </data>
+  <data name="&gt;&gt;grbGeneralPartitions.Name" xml:space="preserve">
+    <value>grbGeneralPartitions</value>
+  </data>
+  <data name="&gt;&gt;grbGeneralPartitions.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grbGeneralPartitions.Parent" xml:space="preserve">
+    <value>tabSettingsGeneral</value>
+  </data>
+  <data name="&gt;&gt;grbGeneralPartitions.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
   <metadata name="rbGeneralDiscDelete.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -587,169 +1608,6 @@
   <data name="&gt;&gt;rbGeneralDiscClean.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="grbGeneralPartitions.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="grbGeneralPartitions.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="grbGeneralPartitions.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 6</value>
-  </data>
-  <data name="grbGeneralPartitions.Size" type="System.Drawing.Size, System.Drawing">
-    <value>539, 76</value>
-  </data>
-  <data name="grbGeneralPartitions.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="grbGeneralPartitions.Text" xml:space="preserve">
-    <value>Ajustar diretórios dos jogos</value>
-  </data>
-  <data name="&gt;&gt;grbGeneralPartitions.Name" xml:space="preserve">
-    <value>grbGeneralPartitions</value>
-  </data>
-  <data name="&gt;&gt;grbGeneralPartitions.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;grbGeneralPartitions.Parent" xml:space="preserve">
-    <value>tabSettingsGeneral</value>
-  </data>
-  <data name="&gt;&gt;grbGeneralPartitions.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="tabSettingsGeneral.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="tabSettingsGeneral.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tabSettingsGeneral.Size" type="System.Drawing.Size, System.Drawing">
-    <value>554, 363</value>
-  </data>
-  <data name="tabSettingsGeneral.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="tabSettingsGeneral.Text" xml:space="preserve">
-    <value>Geral</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsGeneral.Name" xml:space="preserve">
-    <value>tabSettingsGeneral</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsGeneral.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsGeneral.Parent" xml:space="preserve">
-    <value>tabSettings</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsGeneral.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <metadata name="tabSettingsNomenclature.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="lblCommentsScrubCopy.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="lblCommentsScrubCopy.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblCommentsScrubCopy.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 152</value>
-  </data>
-  <data name="lblCommentsScrubCopy.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>540, 0</value>
-  </data>
-  <data name="lblCommentsScrubCopy.Size" type="System.Drawing.Size, System.Drawing">
-    <value>537, 52</value>
-  </data>
-  <data name="lblCommentsScrubCopy.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="lblCommentsScrubCopy.Text" xml:space="preserve">
-    <value>Para o método Scrub, será sempre utilizado o padrão "Título [Código do Jogo]", baseando-se no nome interno (definido pela desenvolvedora). No modo de cópia Scrub, os discos 1 e 2 sempre serão arnazenados em pastas separadas, exceto em casos específicos, onde o método de detecção consegue identificar nomes comuns dados pela desenvolvedora, nesses casos, os discos 1 e 2 serão armazenadso na mesma pasta.</value>
-  </data>
-  <data name="&gt;&gt;lblCommentsScrubCopy.Name" xml:space="preserve">
-    <value>lblCommentsScrubCopy</value>
-  </data>
-  <data name="&gt;&gt;lblCommentsScrubCopy.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblCommentsScrubCopy.Parent" xml:space="preserve">
-    <value>tabSettingsNomenclature</value>
-  </data>
-  <data name="&gt;&gt;lblCommentsScrubCopy.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <metadata name="lblCommentsExactCopy.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="lblCommentsExactCopy.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblCommentsExactCopy.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 107</value>
-  </data>
-  <data name="lblCommentsExactCopy.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>540, 0</value>
-  </data>
-  <data name="lblCommentsExactCopy.Size" type="System.Drawing.Size, System.Drawing">
-    <value>534, 39</value>
-  </data>
-  <data name="lblCommentsExactCopy.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="lblCommentsExactCopy.Text" xml:space="preserve">
-    <value>O estilo de nomeação atualmente funciona somente com a cópia exata de arquivos (1:1), e pode utilizar tanto o nome interno, quanto o nome comercial (via wiitdb.xml). Essa opção pode ser configurada pelo usuário, na aba 'Títulos'. No modo de cópia exata (1:1), os discos 1 e 2 sempre serão arnazenados na mesma pasta.</value>
-  </data>
-  <data name="&gt;&gt;lblCommentsExactCopy.Name" xml:space="preserve">
-    <value>lblCommentsExactCopy</value>
-  </data>
-  <data name="&gt;&gt;lblCommentsExactCopy.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblCommentsExactCopy.Parent" xml:space="preserve">
-    <value>tabSettingsNomenclature</value>
-  </data>
-  <data name="&gt;&gt;lblCommentsExactCopy.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <metadata name="lblComments.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="lblComments.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblComments.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 88</value>
-  </data>
-  <data name="lblComments.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>510, 0</value>
-  </data>
-  <data name="lblComments.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 13</value>
-  </data>
-  <data name="lblComments.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="lblComments.Text" xml:space="preserve">
-    <value>OBSERVAÇÕES:</value>
-  </data>
-  <data name="&gt;&gt;lblComments.Name" xml:space="preserve">
-    <value>lblComments</value>
-  </data>
-  <data name="&gt;&gt;lblComments.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblComments.Parent" xml:space="preserve">
-    <value>tabSettingsNomenclature</value>
-  </data>
-  <data name="&gt;&gt;lblComments.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <metadata name="grpNomenclatureFolderFormat.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <metadata name="cbAdjustNamingStyle.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -810,60 +1668,216 @@
   <data name="&gt;&gt;lblNomenclature.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="grpNomenclatureFolderFormat.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 6</value>
-  </data>
-  <data name="grpNomenclatureFolderFormat.Size" type="System.Drawing.Size, System.Drawing">
-    <value>539, 74</value>
-  </data>
-  <data name="grpNomenclatureFolderFormat.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="grpNomenclatureFolderFormat.Text" xml:space="preserve">
-    <value>Formato das pastas</value>
-  </data>
-  <data name="&gt;&gt;grpNomenclatureFolderFormat.Name" xml:space="preserve">
-    <value>grpNomenclatureFolderFormat</value>
-  </data>
-  <data name="&gt;&gt;grpNomenclatureFolderFormat.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;grpNomenclatureFolderFormat.Parent" xml:space="preserve">
-    <value>tabSettingsNomenclature</value>
-  </data>
-  <data name="&gt;&gt;grpNomenclatureFolderFormat.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="tabSettingsNomenclature.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tabSettingsNomenclature.Size" type="System.Drawing.Size, System.Drawing">
-    <value>554, 363</value>
-  </data>
-  <data name="tabSettingsNomenclature.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="tabSettingsNomenclature.Text" xml:space="preserve">
-    <value>Nomenclatura</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsNomenclature.Name" xml:space="preserve">
-    <value>tabSettingsNomenclature</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsNomenclature.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsNomenclature.Parent" xml:space="preserve">
-    <value>tabSettings</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsNomenclature.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <metadata name="tabSettingsSeveral.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <metadata name="grbGeneralDiverse.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <metadata name="chkMultipleInstances.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="chkLoadDatabase.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="chkNotify.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="chkScreensaver.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="chkWelcome.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="chkNetVerify.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="chkStartWindowMaximized.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="chkEnableSupportNkit.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="chkGeneralSHA1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="chkGeneralRecursiva.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="chkGeneralTemporaryBuffer.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="chkGeneralMD5.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="&gt;&gt;chkMultipleInstances.Name" xml:space="preserve">
+    <value>chkMultipleInstances</value>
+  </data>
+  <data name="&gt;&gt;chkMultipleInstances.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkMultipleInstances.Parent" xml:space="preserve">
+    <value>grbGeneralDiverse</value>
+  </data>
+  <data name="&gt;&gt;chkMultipleInstances.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;chkLoadDatabase.Name" xml:space="preserve">
+    <value>chkLoadDatabase</value>
+  </data>
+  <data name="&gt;&gt;chkLoadDatabase.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkLoadDatabase.Parent" xml:space="preserve">
+    <value>grbGeneralDiverse</value>
+  </data>
+  <data name="&gt;&gt;chkLoadDatabase.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;chkNotify.Name" xml:space="preserve">
+    <value>chkNotify</value>
+  </data>
+  <data name="&gt;&gt;chkNotify.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkNotify.Parent" xml:space="preserve">
+    <value>grbGeneralDiverse</value>
+  </data>
+  <data name="&gt;&gt;chkNotify.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;chkScreensaver.Name" xml:space="preserve">
+    <value>chkScreensaver</value>
+  </data>
+  <data name="&gt;&gt;chkScreensaver.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkScreensaver.Parent" xml:space="preserve">
+    <value>grbGeneralDiverse</value>
+  </data>
+  <data name="&gt;&gt;chkScreensaver.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;chkWelcome.Name" xml:space="preserve">
+    <value>chkWelcome</value>
+  </data>
+  <data name="&gt;&gt;chkWelcome.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkWelcome.Parent" xml:space="preserve">
+    <value>grbGeneralDiverse</value>
+  </data>
+  <data name="&gt;&gt;chkWelcome.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;chkNetVerify.Name" xml:space="preserve">
+    <value>chkNetVerify</value>
+  </data>
+  <data name="&gt;&gt;chkNetVerify.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkNetVerify.Parent" xml:space="preserve">
+    <value>grbGeneralDiverse</value>
+  </data>
+  <data name="&gt;&gt;chkNetVerify.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;chkStartWindowMaximized.Name" xml:space="preserve">
+    <value>chkStartWindowMaximized</value>
+  </data>
+  <data name="&gt;&gt;chkStartWindowMaximized.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkStartWindowMaximized.Parent" xml:space="preserve">
+    <value>grbGeneralDiverse</value>
+  </data>
+  <data name="&gt;&gt;chkStartWindowMaximized.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;chkEnableSupportNkit.Name" xml:space="preserve">
+    <value>chkEnableSupportNkit</value>
+  </data>
+  <data name="&gt;&gt;chkEnableSupportNkit.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkEnableSupportNkit.Parent" xml:space="preserve">
+    <value>grbGeneralDiverse</value>
+  </data>
+  <data name="&gt;&gt;chkEnableSupportNkit.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;chkGeneralSHA1.Name" xml:space="preserve">
+    <value>chkGeneralSHA1</value>
+  </data>
+  <data name="&gt;&gt;chkGeneralSHA1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkGeneralSHA1.Parent" xml:space="preserve">
+    <value>grbGeneralDiverse</value>
+  </data>
+  <data name="&gt;&gt;chkGeneralSHA1.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;chkGeneralRecursiva.Name" xml:space="preserve">
+    <value>chkGeneralRecursiva</value>
+  </data>
+  <data name="&gt;&gt;chkGeneralRecursiva.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkGeneralRecursiva.Parent" xml:space="preserve">
+    <value>grbGeneralDiverse</value>
+  </data>
+  <data name="&gt;&gt;chkGeneralRecursiva.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;chkGeneralTemporaryBuffer.Name" xml:space="preserve">
+    <value>chkGeneralTemporaryBuffer</value>
+  </data>
+  <data name="&gt;&gt;chkGeneralTemporaryBuffer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkGeneralTemporaryBuffer.Parent" xml:space="preserve">
+    <value>grbGeneralDiverse</value>
+  </data>
+  <data name="&gt;&gt;chkGeneralTemporaryBuffer.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;chkGeneralMD5.Name" xml:space="preserve">
+    <value>chkGeneralMD5</value>
+  </data>
+  <data name="&gt;&gt;chkGeneralMD5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkGeneralMD5.Parent" xml:space="preserve">
+    <value>grbGeneralDiverse</value>
+  </data>
+  <data name="&gt;&gt;chkGeneralMD5.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="grbGeneralDiverse.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="grbGeneralDiverse.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 6</value>
+  </data>
+  <data name="grbGeneralDiverse.Size" type="System.Drawing.Size, System.Drawing">
+    <value>539, 301</value>
+  </data>
+  <data name="grbGeneralDiverse.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="grbGeneralDiverse.Text" xml:space="preserve">
+    <value>Diversos</value>
+  </data>
+  <data name="&gt;&gt;grbGeneralDiverse.Name" xml:space="preserve">
+    <value>grbGeneralDiverse</value>
+  </data>
+  <data name="&gt;&gt;grbGeneralDiverse.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grbGeneralDiverse.Parent" xml:space="preserve">
+    <value>tabSettingsSeveral</value>
+  </data>
+  <data name="&gt;&gt;grbGeneralDiverse.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <metadata name="chkMultipleInstances.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -1245,66 +2259,111 @@
   <data name="&gt;&gt;chkGeneralMD5.ZOrder" xml:space="preserve">
     <value>11</value>
   </data>
-  <data name="grbGeneralDiverse.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="grbGeneralDiverse.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 6</value>
-  </data>
-  <data name="grbGeneralDiverse.Size" type="System.Drawing.Size, System.Drawing">
-    <value>539, 301</value>
-  </data>
-  <data name="grbGeneralDiverse.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="grbGeneralDiverse.Text" xml:space="preserve">
-    <value>Diversos</value>
-  </data>
-  <data name="&gt;&gt;grbGeneralDiverse.Name" xml:space="preserve">
-    <value>grbGeneralDiverse</value>
-  </data>
-  <data name="&gt;&gt;grbGeneralDiverse.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;grbGeneralDiverse.Parent" xml:space="preserve">
-    <value>tabSettingsSeveral</value>
-  </data>
-  <data name="&gt;&gt;grbGeneralDiverse.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="tabSettingsSeveral.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tabSettingsSeveral.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tabSettingsSeveral.Size" type="System.Drawing.Size, System.Drawing">
-    <value>554, 363</value>
-  </data>
-  <data name="tabSettingsSeveral.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="tabSettingsSeveral.Text" xml:space="preserve">
-    <value>Diversos</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsSeveral.Name" xml:space="preserve">
-    <value>tabSettingsSeveral</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsSeveral.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsSeveral.Parent" xml:space="preserve">
-    <value>tabSettings</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsSeveral.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <metadata name="tabSettingsTransfer.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <metadata name="grbGeneralScrub.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <metadata name="lblFormat.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="lblAlignment.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="cbScrubFormat.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="cbScrubAlign.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="chkGeneralScrubFlushSD.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="&gt;&gt;lblFormat.Name" xml:space="preserve">
+    <value>lblFormat</value>
+  </data>
+  <data name="&gt;&gt;lblFormat.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblFormat.Parent" xml:space="preserve">
+    <value>grbGeneralScrub</value>
+  </data>
+  <data name="&gt;&gt;lblFormat.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lblAlignment.Name" xml:space="preserve">
+    <value>lblAlignment</value>
+  </data>
+  <data name="&gt;&gt;lblAlignment.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblAlignment.Parent" xml:space="preserve">
+    <value>grbGeneralScrub</value>
+  </data>
+  <data name="&gt;&gt;lblAlignment.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;cbScrubFormat.Name" xml:space="preserve">
+    <value>cbScrubFormat</value>
+  </data>
+  <data name="&gt;&gt;cbScrubFormat.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbScrubFormat.Parent" xml:space="preserve">
+    <value>grbGeneralScrub</value>
+  </data>
+  <data name="&gt;&gt;cbScrubFormat.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;cbScrubAlign.Name" xml:space="preserve">
+    <value>cbScrubAlign</value>
+  </data>
+  <data name="&gt;&gt;cbScrubAlign.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbScrubAlign.Parent" xml:space="preserve">
+    <value>grbGeneralScrub</value>
+  </data>
+  <data name="&gt;&gt;cbScrubAlign.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;chkGeneralScrubFlushSD.Name" xml:space="preserve">
+    <value>chkGeneralScrubFlushSD</value>
+  </data>
+  <data name="&gt;&gt;chkGeneralScrubFlushSD.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkGeneralScrubFlushSD.Parent" xml:space="preserve">
+    <value>grbGeneralScrub</value>
+  </data>
+  <data name="&gt;&gt;chkGeneralScrubFlushSD.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="grbGeneralScrub.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="grbGeneralScrub.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 107</value>
+  </data>
+  <data name="grbGeneralScrub.Size" type="System.Drawing.Size, System.Drawing">
+    <value>539, 81</value>
+  </data>
+  <data name="grbGeneralScrub.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="grbGeneralScrub.Text" xml:space="preserve">
+    <value>Scrub</value>
+  </data>
+  <data name="&gt;&gt;grbGeneralScrub.Name" xml:space="preserve">
+    <value>grbGeneralScrub</value>
+  </data>
+  <data name="&gt;&gt;grbGeneralScrub.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grbGeneralScrub.Parent" xml:space="preserve">
+    <value>tabSettingsTransfer</value>
+  </data>
+  <data name="&gt;&gt;grbGeneralScrub.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <metadata name="lblFormat.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -1460,33 +2519,6 @@
   </data>
   <data name="&gt;&gt;chkGeneralScrubFlushSD.ZOrder" xml:space="preserve">
     <value>4</value>
-  </data>
-  <data name="grbGeneralScrub.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="grbGeneralScrub.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 107</value>
-  </data>
-  <data name="grbGeneralScrub.Size" type="System.Drawing.Size, System.Drawing">
-    <value>539, 81</value>
-  </data>
-  <data name="grbGeneralScrub.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
-  </data>
-  <data name="grbGeneralScrub.Text" xml:space="preserve">
-    <value>Scrub</value>
-  </data>
-  <data name="&gt;&gt;grbGeneralScrub.Name" xml:space="preserve">
-    <value>grbGeneralScrub</value>
-  </data>
-  <data name="&gt;&gt;grbGeneralScrub.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;grbGeneralScrub.Parent" xml:space="preserve">
-    <value>tabSettingsTransfer</value>
-  </data>
-  <data name="&gt;&gt;grbGeneralScrub.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <metadata name="label28.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -1761,6 +2793,75 @@
   <metadata name="rbTransferSystemFST.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <metadata name="rbTransferSystemWipe.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="rbTransferSystemXCopy.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="&gt;&gt;rbTransferSystemFST.Name" xml:space="preserve">
+    <value>rbTransferSystemFST</value>
+  </data>
+  <data name="&gt;&gt;rbTransferSystemFST.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rbTransferSystemFST.Parent" xml:space="preserve">
+    <value>grbTransferSystem</value>
+  </data>
+  <data name="&gt;&gt;rbTransferSystemFST.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;rbTransferSystemWipe.Name" xml:space="preserve">
+    <value>rbTransferSystemWipe</value>
+  </data>
+  <data name="&gt;&gt;rbTransferSystemWipe.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rbTransferSystemWipe.Parent" xml:space="preserve">
+    <value>grbTransferSystem</value>
+  </data>
+  <data name="&gt;&gt;rbTransferSystemWipe.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;rbTransferSystemXCopy.Name" xml:space="preserve">
+    <value>rbTransferSystemXCopy</value>
+  </data>
+  <data name="&gt;&gt;rbTransferSystemXCopy.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rbTransferSystemXCopy.Parent" xml:space="preserve">
+    <value>grbTransferSystem</value>
+  </data>
+  <data name="&gt;&gt;rbTransferSystemXCopy.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="grbTransferSystem.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 6</value>
+  </data>
+  <data name="grbTransferSystem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>539, 95</value>
+  </data>
+  <data name="grbTransferSystem.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="grbTransferSystem.Text" xml:space="preserve">
+    <value>Sistema de transferência a ser utilizado</value>
+  </data>
+  <data name="&gt;&gt;grbTransferSystem.Name" xml:space="preserve">
+    <value>grbTransferSystem</value>
+  </data>
+  <data name="&gt;&gt;grbTransferSystem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grbTransferSystem.Parent" xml:space="preserve">
+    <value>tabSettingsTransfer</value>
+  </data>
+  <data name="&gt;&gt;grbTransferSystem.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <metadata name="rbTransferSystemFST.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="rbTransferSystemFST.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1854,63 +2955,63 @@
   <data name="&gt;&gt;rbTransferSystemXCopy.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="grbTransferSystem.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 6</value>
-  </data>
-  <data name="grbTransferSystem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>539, 95</value>
-  </data>
-  <data name="grbTransferSystem.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="grbTransferSystem.Text" xml:space="preserve">
-    <value>Sistema de transferência a ser utilizado</value>
-  </data>
-  <data name="&gt;&gt;grbTransferSystem.Name" xml:space="preserve">
-    <value>grbTransferSystem</value>
-  </data>
-  <data name="&gt;&gt;grbTransferSystem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;grbTransferSystem.Parent" xml:space="preserve">
-    <value>tabSettingsTransfer</value>
-  </data>
-  <data name="&gt;&gt;grbTransferSystem.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="tabSettingsTransfer.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tabSettingsTransfer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>554, 363</value>
-  </data>
-  <data name="tabSettingsTransfer.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="tabSettingsTransfer.Text" xml:space="preserve">
-    <value>Transferir Jogo</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsTransfer.Name" xml:space="preserve">
-    <value>tabSettingsTransfer</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsTransfer.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsTransfer.Parent" xml:space="preserve">
-    <value>tabSettings</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsTransfer.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <metadata name="tabSettingsCovers.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="tabSettingsCovers.AutoScroll" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <metadata name="grpTitlesCoverFolder.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <metadata name="btnCoverDirectory.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="tbDirectoryCoverCache.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="&gt;&gt;btnCoverDirectory.Name" xml:space="preserve">
+    <value>btnCoverDirectory</value>
+  </data>
+  <data name="&gt;&gt;btnCoverDirectory.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnCoverDirectory.Parent" xml:space="preserve">
+    <value>grpTitlesCoverFolder</value>
+  </data>
+  <data name="&gt;&gt;btnCoverDirectory.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tbDirectoryCoverCache.Name" xml:space="preserve">
+    <value>tbDirectoryCoverCache</value>
+  </data>
+  <data name="&gt;&gt;tbDirectoryCoverCache.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbDirectoryCoverCache.Parent" xml:space="preserve">
+    <value>grpTitlesCoverFolder</value>
+  </data>
+  <data name="&gt;&gt;tbDirectoryCoverCache.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="grpTitlesCoverFolder.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 107</value>
+  </data>
+  <data name="grpTitlesCoverFolder.Size" type="System.Drawing.Size, System.Drawing">
+    <value>539, 57</value>
+  </data>
+  <data name="grpTitlesCoverFolder.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="grpTitlesCoverFolder.Text" xml:space="preserve">
+    <value>Pasta das capas (Cache -&gt; Origem)</value>
+  </data>
+  <data name="&gt;&gt;grpTitlesCoverFolder.Name" xml:space="preserve">
+    <value>grpTitlesCoverFolder</value>
+  </data>
+  <data name="&gt;&gt;grpTitlesCoverFolder.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grpTitlesCoverFolder.Parent" xml:space="preserve">
+    <value>tabSettingsCovers</value>
+  </data>
+  <data name="&gt;&gt;grpTitlesCoverFolder.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <metadata name="btnCoverDirectory.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -1962,33 +3063,81 @@
   <data name="&gt;&gt;tbDirectoryCoverCache.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="grpTitlesCoverFolder.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 107</value>
-  </data>
-  <data name="grpTitlesCoverFolder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>539, 57</value>
-  </data>
-  <data name="grpTitlesCoverFolder.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="grpTitlesCoverFolder.Text" xml:space="preserve">
-    <value>Pasta das capas (Cache -&gt; Origem)</value>
-  </data>
-  <data name="&gt;&gt;grpTitlesCoverFolder.Name" xml:space="preserve">
-    <value>grpTitlesCoverFolder</value>
-  </data>
-  <data name="&gt;&gt;grpTitlesCoverFolder.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;grpTitlesCoverFolder.Parent" xml:space="preserve">
-    <value>tabSettingsCovers</value>
-  </data>
-  <data name="&gt;&gt;grpTitlesCoverFolder.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <metadata name="grbCoverTransfer.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <metadata name="rbCoverUSBLoaderGX.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="tabControl2.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="rbCoverWiiFlow.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="&gt;&gt;rbCoverUSBLoaderGX.Name" xml:space="preserve">
+    <value>rbCoverUSBLoaderGX</value>
+  </data>
+  <data name="&gt;&gt;rbCoverUSBLoaderGX.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rbCoverUSBLoaderGX.Parent" xml:space="preserve">
+    <value>grbCoverTransfer</value>
+  </data>
+  <data name="&gt;&gt;rbCoverUSBLoaderGX.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tabControl2.Name" xml:space="preserve">
+    <value>tabControl2</value>
+  </data>
+  <data name="&gt;&gt;tabControl2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabControl2.Parent" xml:space="preserve">
+    <value>grbCoverTransfer</value>
+  </data>
+  <data name="&gt;&gt;tabControl2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;rbCoverWiiFlow.Name" xml:space="preserve">
+    <value>rbCoverWiiFlow</value>
+  </data>
+  <data name="&gt;&gt;rbCoverWiiFlow.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rbCoverWiiFlow.Parent" xml:space="preserve">
+    <value>grbCoverTransfer</value>
+  </data>
+  <data name="&gt;&gt;rbCoverWiiFlow.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="grbCoverTransfer.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="grbCoverTransfer.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 170</value>
+  </data>
+  <data name="grbCoverTransfer.Size" type="System.Drawing.Size, System.Drawing">
+    <value>539, 179</value>
+  </data>
+  <data name="grbCoverTransfer.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="grbCoverTransfer.Text" xml:space="preserve">
+    <value>Configuração do carregador USB (Transferir Capas -&gt; Destino)</value>
+  </data>
+  <data name="&gt;&gt;grbCoverTransfer.Name" xml:space="preserve">
+    <value>grbCoverTransfer</value>
+  </data>
+  <data name="&gt;&gt;grbCoverTransfer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grbCoverTransfer.Parent" xml:space="preserve">
+    <value>tabSettingsCovers</value>
+  </data>
+  <data name="&gt;&gt;grbCoverTransfer.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <metadata name="rbCoverUSBLoaderGX.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -2025,6 +3174,159 @@
   <metadata name="tabCoverDisc.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <metadata name="tabCoverFront.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="tabCover3D.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="tabCoverFull.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="&gt;&gt;tabCoverDisc.Name" xml:space="preserve">
+    <value>tabCoverDisc</value>
+  </data>
+  <data name="&gt;&gt;tabCoverDisc.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabCoverDisc.Parent" xml:space="preserve">
+    <value>tabControl2</value>
+  </data>
+  <data name="&gt;&gt;tabCoverDisc.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tabCoverFront.Name" xml:space="preserve">
+    <value>tabCoverFront</value>
+  </data>
+  <data name="&gt;&gt;tabCoverFront.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabCoverFront.Parent" xml:space="preserve">
+    <value>tabControl2</value>
+  </data>
+  <data name="&gt;&gt;tabCoverFront.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;tabCover3D.Name" xml:space="preserve">
+    <value>tabCover3D</value>
+  </data>
+  <data name="&gt;&gt;tabCover3D.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabCover3D.Parent" xml:space="preserve">
+    <value>tabControl2</value>
+  </data>
+  <data name="&gt;&gt;tabCover3D.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;tabCoverFull.Name" xml:space="preserve">
+    <value>tabCoverFull</value>
+  </data>
+  <data name="&gt;&gt;tabCoverFull.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabCoverFull.Parent" xml:space="preserve">
+    <value>tabControl2</value>
+  </data>
+  <data name="&gt;&gt;tabCoverFull.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="tabControl2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 73</value>
+  </data>
+  <data name="tabControl2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>526, 98</value>
+  </data>
+  <data name="tabControl2.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;tabControl2.Name" xml:space="preserve">
+    <value>tabControl2</value>
+  </data>
+  <data name="&gt;&gt;tabControl2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabControl2.Parent" xml:space="preserve">
+    <value>grbCoverTransfer</value>
+  </data>
+  <data name="&gt;&gt;tabControl2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <metadata name="tabCoverDisc.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="btnDirectoryCoverDisc.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="tbDirectoryCoverDisc.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="label8.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="&gt;&gt;btnDirectoryCoverDisc.Name" xml:space="preserve">
+    <value>btnDirectoryCoverDisc</value>
+  </data>
+  <data name="&gt;&gt;btnDirectoryCoverDisc.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnDirectoryCoverDisc.Parent" xml:space="preserve">
+    <value>tabCoverDisc</value>
+  </data>
+  <data name="&gt;&gt;btnDirectoryCoverDisc.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tbDirectoryCoverDisc.Name" xml:space="preserve">
+    <value>tbDirectoryCoverDisc</value>
+  </data>
+  <data name="&gt;&gt;tbDirectoryCoverDisc.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbDirectoryCoverDisc.Parent" xml:space="preserve">
+    <value>tabCoverDisc</value>
+  </data>
+  <data name="&gt;&gt;tbDirectoryCoverDisc.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;label8.Name" xml:space="preserve">
+    <value>label8</value>
+  </data>
+  <data name="&gt;&gt;label8.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label8.Parent" xml:space="preserve">
+    <value>tabCoverDisc</value>
+  </data>
+  <data name="&gt;&gt;label8.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="tabCoverDisc.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tabCoverDisc.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabCoverDisc.Size" type="System.Drawing.Size, System.Drawing">
+    <value>518, 72</value>
+  </data>
+  <data name="tabCoverDisc.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="tabCoverDisc.Text" xml:space="preserve">
+    <value>Disco</value>
+  </data>
+  <data name="&gt;&gt;tabCoverDisc.Name" xml:space="preserve">
+    <value>tabCoverDisc</value>
+  </data>
+  <data name="&gt;&gt;tabCoverDisc.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabCoverDisc.Parent" xml:space="preserve">
+    <value>tabControl2</value>
+  </data>
+  <data name="&gt;&gt;tabCoverDisc.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <metadata name="btnDirectoryCoverDisc.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -2106,36 +3408,81 @@
   <data name="&gt;&gt;label8.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="tabCoverDisc.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tabCoverDisc.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tabCoverDisc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>518, 72</value>
-  </data>
-  <data name="tabCoverDisc.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="tabCoverDisc.Text" xml:space="preserve">
-    <value>Disco</value>
-  </data>
-  <data name="&gt;&gt;tabCoverDisc.Name" xml:space="preserve">
-    <value>tabCoverDisc</value>
-  </data>
-  <data name="&gt;&gt;tabCoverDisc.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabCoverDisc.Parent" xml:space="preserve">
-    <value>tabControl2</value>
-  </data>
-  <data name="&gt;&gt;tabCoverDisc.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <metadata name="tabCoverFront.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <metadata name="btnDirectoryCover2D.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="tbDirectoryCover2D.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="label6.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="&gt;&gt;btnDirectoryCover2D.Name" xml:space="preserve">
+    <value>btnDirectoryCover2D</value>
+  </data>
+  <data name="&gt;&gt;btnDirectoryCover2D.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnDirectoryCover2D.Parent" xml:space="preserve">
+    <value>tabCoverFront</value>
+  </data>
+  <data name="&gt;&gt;btnDirectoryCover2D.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tbDirectoryCover2D.Name" xml:space="preserve">
+    <value>tbDirectoryCover2D</value>
+  </data>
+  <data name="&gt;&gt;tbDirectoryCover2D.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbDirectoryCover2D.Parent" xml:space="preserve">
+    <value>tabCoverFront</value>
+  </data>
+  <data name="&gt;&gt;tbDirectoryCover2D.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;label6.Name" xml:space="preserve">
+    <value>label6</value>
+  </data>
+  <data name="&gt;&gt;label6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label6.Parent" xml:space="preserve">
+    <value>tabCoverFront</value>
+  </data>
+  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="tabCoverFront.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tabCoverFront.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabCoverFront.Size" type="System.Drawing.Size, System.Drawing">
+    <value>518, 72</value>
+  </data>
+  <data name="tabCoverFront.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tabCoverFront.Text" xml:space="preserve">
+    <value>2D</value>
+  </data>
+  <data name="&gt;&gt;tabCoverFront.Name" xml:space="preserve">
+    <value>tabCoverFront</value>
+  </data>
+  <data name="&gt;&gt;tabCoverFront.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabCoverFront.Parent" xml:space="preserve">
+    <value>tabControl2</value>
+  </data>
+  <data name="&gt;&gt;tabCoverFront.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <metadata name="btnDirectoryCover2D.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -2217,36 +3564,78 @@
   <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="tabCoverFront.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tabCoverFront.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tabCoverFront.Size" type="System.Drawing.Size, System.Drawing">
-    <value>518, 72</value>
-  </data>
-  <data name="tabCoverFront.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="tabCoverFront.Text" xml:space="preserve">
-    <value>2D</value>
-  </data>
-  <data name="&gt;&gt;tabCoverFront.Name" xml:space="preserve">
-    <value>tabCoverFront</value>
-  </data>
-  <data name="&gt;&gt;tabCoverFront.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabCoverFront.Parent" xml:space="preserve">
-    <value>tabControl2</value>
-  </data>
-  <data name="&gt;&gt;tabCoverFront.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <metadata name="tabCover3D.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <metadata name="btnDirectoryCover3D.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="tbDirectoryCover3D.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="label9.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="&gt;&gt;btnDirectoryCover3D.Name" xml:space="preserve">
+    <value>btnDirectoryCover3D</value>
+  </data>
+  <data name="&gt;&gt;btnDirectoryCover3D.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnDirectoryCover3D.Parent" xml:space="preserve">
+    <value>tabCover3D</value>
+  </data>
+  <data name="&gt;&gt;btnDirectoryCover3D.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tbDirectoryCover3D.Name" xml:space="preserve">
+    <value>tbDirectoryCover3D</value>
+  </data>
+  <data name="&gt;&gt;tbDirectoryCover3D.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbDirectoryCover3D.Parent" xml:space="preserve">
+    <value>tabCover3D</value>
+  </data>
+  <data name="&gt;&gt;tbDirectoryCover3D.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;label9.Name" xml:space="preserve">
+    <value>label9</value>
+  </data>
+  <data name="&gt;&gt;label9.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label9.Parent" xml:space="preserve">
+    <value>tabCover3D</value>
+  </data>
+  <data name="&gt;&gt;label9.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="tabCover3D.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tabCover3D.Size" type="System.Drawing.Size, System.Drawing">
+    <value>518, 72</value>
+  </data>
+  <data name="tabCover3D.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="tabCover3D.Text" xml:space="preserve">
+    <value>3D</value>
+  </data>
+  <data name="&gt;&gt;tabCover3D.Name" xml:space="preserve">
+    <value>tabCover3D</value>
+  </data>
+  <data name="&gt;&gt;tabCover3D.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabCover3D.Parent" xml:space="preserve">
+    <value>tabControl2</value>
+  </data>
+  <data name="&gt;&gt;tabCover3D.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <metadata name="btnDirectoryCover3D.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -2328,33 +3717,78 @@
   <data name="&gt;&gt;label9.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="tabCover3D.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tabCover3D.Size" type="System.Drawing.Size, System.Drawing">
-    <value>518, 72</value>
-  </data>
-  <data name="tabCover3D.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="tabCover3D.Text" xml:space="preserve">
-    <value>3D</value>
-  </data>
-  <data name="&gt;&gt;tabCover3D.Name" xml:space="preserve">
-    <value>tabCover3D</value>
-  </data>
-  <data name="&gt;&gt;tabCover3D.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabCover3D.Parent" xml:space="preserve">
-    <value>tabControl2</value>
-  </data>
-  <data name="&gt;&gt;tabCover3D.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <metadata name="tabCoverFull.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <metadata name="btnDirectoryCoverFull.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="tbDirectoryCoverFull.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="label35.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="&gt;&gt;btnDirectoryCoverFull.Name" xml:space="preserve">
+    <value>btnDirectoryCoverFull</value>
+  </data>
+  <data name="&gt;&gt;btnDirectoryCoverFull.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnDirectoryCoverFull.Parent" xml:space="preserve">
+    <value>tabCoverFull</value>
+  </data>
+  <data name="&gt;&gt;btnDirectoryCoverFull.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tbDirectoryCoverFull.Name" xml:space="preserve">
+    <value>tbDirectoryCoverFull</value>
+  </data>
+  <data name="&gt;&gt;tbDirectoryCoverFull.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbDirectoryCoverFull.Parent" xml:space="preserve">
+    <value>tabCoverFull</value>
+  </data>
+  <data name="&gt;&gt;tbDirectoryCoverFull.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;label35.Name" xml:space="preserve">
+    <value>label35</value>
+  </data>
+  <data name="&gt;&gt;label35.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label35.Parent" xml:space="preserve">
+    <value>tabCoverFull</value>
+  </data>
+  <data name="&gt;&gt;label35.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="tabCoverFull.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tabCoverFull.Size" type="System.Drawing.Size, System.Drawing">
+    <value>518, 72</value>
+  </data>
+  <data name="tabCoverFull.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="tabCoverFull.Text" xml:space="preserve">
+    <value>Completo</value>
+  </data>
+  <data name="&gt;&gt;tabCoverFull.Name" xml:space="preserve">
+    <value>tabCoverFull</value>
+  </data>
+  <data name="&gt;&gt;tabCoverFull.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabCoverFull.Parent" xml:space="preserve">
+    <value>tabControl2</value>
+  </data>
+  <data name="&gt;&gt;tabCoverFull.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
   <metadata name="btnDirectoryCoverFull.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -2436,51 +3870,6 @@
   <data name="&gt;&gt;label35.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="tabCoverFull.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tabCoverFull.Size" type="System.Drawing.Size, System.Drawing">
-    <value>518, 72</value>
-  </data>
-  <data name="tabCoverFull.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="tabCoverFull.Text" xml:space="preserve">
-    <value>Completo</value>
-  </data>
-  <data name="&gt;&gt;tabCoverFull.Name" xml:space="preserve">
-    <value>tabCoverFull</value>
-  </data>
-  <data name="&gt;&gt;tabCoverFull.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabCoverFull.Parent" xml:space="preserve">
-    <value>tabControl2</value>
-  </data>
-  <data name="&gt;&gt;tabCoverFull.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="tabControl2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 73</value>
-  </data>
-  <data name="tabControl2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>526, 98</value>
-  </data>
-  <data name="tabControl2.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;tabControl2.Name" xml:space="preserve">
-    <value>tabControl2</value>
-  </data>
-  <data name="&gt;&gt;tabControl2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabControl2.Parent" xml:space="preserve">
-    <value>grbCoverTransfer</value>
-  </data>
-  <data name="&gt;&gt;tabControl2.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <metadata name="rbCoverWiiFlow.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -2511,36 +3900,78 @@
   <data name="&gt;&gt;rbCoverWiiFlow.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="grbCoverTransfer.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="grbCoverTransfer.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 170</value>
-  </data>
-  <data name="grbCoverTransfer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>539, 179</value>
-  </data>
-  <data name="grbCoverTransfer.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="grbCoverTransfer.Text" xml:space="preserve">
-    <value>Configuração do carregador USB (Transferir Capas -&gt; Destino)</value>
-  </data>
-  <data name="&gt;&gt;grbCoverTransfer.Name" xml:space="preserve">
-    <value>grbCoverTransfer</value>
-  </data>
-  <data name="&gt;&gt;grbCoverTransfer.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;grbCoverTransfer.Parent" xml:space="preserve">
-    <value>tabSettingsCovers</value>
-  </data>
-  <data name="&gt;&gt;grbCoverTransfer.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <metadata name="grpCoversSynchronize.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <metadata name="chkCoverRecursiveSearch.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="chkCoverEnableTransfer.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="chkCoverSynchronizeDelete.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="&gt;&gt;chkCoverRecursiveSearch.Name" xml:space="preserve">
+    <value>chkCoverRecursiveSearch</value>
+  </data>
+  <data name="&gt;&gt;chkCoverRecursiveSearch.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkCoverRecursiveSearch.Parent" xml:space="preserve">
+    <value>grpCoversSynchronize</value>
+  </data>
+  <data name="&gt;&gt;chkCoverRecursiveSearch.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;chkCoverEnableTransfer.Name" xml:space="preserve">
+    <value>chkCoverEnableTransfer</value>
+  </data>
+  <data name="&gt;&gt;chkCoverEnableTransfer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkCoverEnableTransfer.Parent" xml:space="preserve">
+    <value>grpCoversSynchronize</value>
+  </data>
+  <data name="&gt;&gt;chkCoverEnableTransfer.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;chkCoverSynchronizeDelete.Name" xml:space="preserve">
+    <value>chkCoverSynchronizeDelete</value>
+  </data>
+  <data name="&gt;&gt;chkCoverSynchronizeDelete.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkCoverSynchronizeDelete.Parent" xml:space="preserve">
+    <value>grpCoversSynchronize</value>
+  </data>
+  <data name="&gt;&gt;chkCoverSynchronizeDelete.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="grpCoversSynchronize.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 6</value>
+  </data>
+  <data name="grpCoversSynchronize.Size" type="System.Drawing.Size, System.Drawing">
+    <value>539, 95</value>
+  </data>
+  <data name="grpCoversSynchronize.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="grpCoversSynchronize.Text" xml:space="preserve">
+    <value>Sincronizar</value>
+  </data>
+  <data name="&gt;&gt;grpCoversSynchronize.Name" xml:space="preserve">
+    <value>grpCoversSynchronize</value>
+  </data>
+  <data name="&gt;&gt;grpCoversSynchronize.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grpCoversSynchronize.Parent" xml:space="preserve">
+    <value>tabSettingsCovers</value>
+  </data>
+  <data name="&gt;&gt;grpCoversSynchronize.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <metadata name="chkCoverRecursiveSearch.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -2637,63 +4068,66 @@
   <data name="&gt;&gt;chkCoverSynchronizeDelete.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="grpCoversSynchronize.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 6</value>
-  </data>
-  <data name="grpCoversSynchronize.Size" type="System.Drawing.Size, System.Drawing">
-    <value>539, 95</value>
-  </data>
-  <data name="grpCoversSynchronize.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="grpCoversSynchronize.Text" xml:space="preserve">
-    <value>Sincronizar</value>
-  </data>
-  <data name="&gt;&gt;grpCoversSynchronize.Name" xml:space="preserve">
-    <value>grpCoversSynchronize</value>
-  </data>
-  <data name="&gt;&gt;grpCoversSynchronize.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;grpCoversSynchronize.Parent" xml:space="preserve">
-    <value>tabSettingsCovers</value>
-  </data>
-  <data name="&gt;&gt;grpCoversSynchronize.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="tabSettingsCovers.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tabSettingsCovers.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tabSettingsCovers.Size" type="System.Drawing.Size, System.Drawing">
-    <value>554, 363</value>
-  </data>
-  <data name="tabSettingsCovers.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="tabSettingsCovers.Text" xml:space="preserve">
-    <value>Capas</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsCovers.Name" xml:space="preserve">
-    <value>tabSettingsCovers</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsCovers.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsCovers.Parent" xml:space="preserve">
-    <value>tabSettings</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsCovers.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <metadata name="tabSettingsTitle.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <metadata name="grbTitleLanguage.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <metadata name="btnTitleDownload.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="cbTitleLanguage.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="&gt;&gt;btnTitleDownload.Name" xml:space="preserve">
+    <value>btnTitleDownload</value>
+  </data>
+  <data name="&gt;&gt;btnTitleDownload.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnTitleDownload.Parent" xml:space="preserve">
+    <value>grbTitleLanguage</value>
+  </data>
+  <data name="&gt;&gt;btnTitleDownload.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;cbTitleLanguage.Name" xml:space="preserve">
+    <value>cbTitleLanguage</value>
+  </data>
+  <data name="&gt;&gt;cbTitleLanguage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbTitleLanguage.Parent" xml:space="preserve">
+    <value>grbTitleLanguage</value>
+  </data>
+  <data name="&gt;&gt;cbTitleLanguage.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="grbTitleLanguage.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="grbTitleLanguage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 250</value>
+  </data>
+  <data name="grbTitleLanguage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>539, 80</value>
+  </data>
+  <data name="grbTitleLanguage.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="grbTitleLanguage.Text" xml:space="preserve">
+    <value>Idioma dos títulos</value>
+  </data>
+  <data name="&gt;&gt;grbTitleLanguage.Name" xml:space="preserve">
+    <value>grbTitleLanguage</value>
+  </data>
+  <data name="&gt;&gt;grbTitleLanguage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grbTitleLanguage.Parent" xml:space="preserve">
+    <value>tabSettingsTitle</value>
+  </data>
+  <data name="&gt;&gt;grbTitleLanguage.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <metadata name="btnTitleDownload.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -2781,36 +4215,126 @@
   <data name="&gt;&gt;cbTitleLanguage.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="grbTitleLanguage.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="grbTitleLanguage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 250</value>
-  </data>
-  <data name="grbTitleLanguage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>539, 80</value>
-  </data>
-  <data name="grbTitleLanguage.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="grbTitleLanguage.Text" xml:space="preserve">
-    <value>Idioma dos títulos</value>
-  </data>
-  <data name="&gt;&gt;grbTitleLanguage.Name" xml:space="preserve">
-    <value>grbTitleLanguage</value>
-  </data>
-  <data name="&gt;&gt;grbTitleLanguage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;grbTitleLanguage.Parent" xml:space="preserve">
-    <value>tabSettingsTitle</value>
-  </data>
-  <data name="&gt;&gt;grbTitleLanguage.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <metadata name="grbTitleFileLocation.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <metadata name="label5.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="label4.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="btnTitleCustom.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="btnTitle.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="tbTitleCustom.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="tbTitle.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="&gt;&gt;label5.Name" xml:space="preserve">
+    <value>label5</value>
+  </data>
+  <data name="&gt;&gt;label5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
+    <value>grbTitleFileLocation</value>
+  </data>
+  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;label4.Name" xml:space="preserve">
+    <value>label4</value>
+  </data>
+  <data name="&gt;&gt;label4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
+    <value>grbTitleFileLocation</value>
+  </data>
+  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;btnTitleCustom.Name" xml:space="preserve">
+    <value>btnTitleCustom</value>
+  </data>
+  <data name="&gt;&gt;btnTitleCustom.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnTitleCustom.Parent" xml:space="preserve">
+    <value>grbTitleFileLocation</value>
+  </data>
+  <data name="&gt;&gt;btnTitleCustom.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;btnTitle.Name" xml:space="preserve">
+    <value>btnTitle</value>
+  </data>
+  <data name="&gt;&gt;btnTitle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnTitle.Parent" xml:space="preserve">
+    <value>grbTitleFileLocation</value>
+  </data>
+  <data name="&gt;&gt;btnTitle.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;tbTitleCustom.Name" xml:space="preserve">
+    <value>tbTitleCustom</value>
+  </data>
+  <data name="&gt;&gt;tbTitleCustom.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbTitleCustom.Parent" xml:space="preserve">
+    <value>grbTitleFileLocation</value>
+  </data>
+  <data name="&gt;&gt;tbTitleCustom.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;tbTitle.Name" xml:space="preserve">
+    <value>tbTitle</value>
+  </data>
+  <data name="&gt;&gt;tbTitle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbTitle.Parent" xml:space="preserve">
+    <value>grbTitleFileLocation</value>
+  </data>
+  <data name="&gt;&gt;tbTitle.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="grbTitleFileLocation.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="grbTitleFileLocation.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 124</value>
+  </data>
+  <data name="grbTitleFileLocation.Size" type="System.Drawing.Size, System.Drawing">
+    <value>539, 120</value>
+  </data>
+  <data name="grbTitleFileLocation.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="grbTitleFileLocation.Text" xml:space="preserve">
+    <value>Localização de arquivos</value>
+  </data>
+  <data name="&gt;&gt;grbTitleFileLocation.Name" xml:space="preserve">
+    <value>grbTitleFileLocation</value>
+  </data>
+  <data name="&gt;&gt;grbTitleFileLocation.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grbTitleFileLocation.Parent" xml:space="preserve">
+    <value>tabSettingsTitle</value>
+  </data>
+  <data name="&gt;&gt;grbTitleFileLocation.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <metadata name="label5.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -2979,36 +4503,93 @@
   <data name="&gt;&gt;tbTitle.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="grbTitleFileLocation.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="grbTitleFileLocation.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 124</value>
-  </data>
-  <data name="grbTitleFileLocation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>539, 120</value>
-  </data>
-  <data name="grbTitleFileLocation.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="grbTitleFileLocation.Text" xml:space="preserve">
-    <value>Localização de arquivos</value>
-  </data>
-  <data name="&gt;&gt;grbTitleFileLocation.Name" xml:space="preserve">
-    <value>grbTitleFileLocation</value>
-  </data>
-  <data name="&gt;&gt;grbTitleFileLocation.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;grbTitleFileLocation.Parent" xml:space="preserve">
-    <value>tabSettingsTitle</value>
-  </data>
-  <data name="&gt;&gt;grbTitleFileLocation.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <metadata name="grbTitleDiverse.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <metadata name="rbGameXmlName.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="rbGameInternalName.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="chkGameTitleCustom.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="chkGameTitle.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="&gt;&gt;rbGameXmlName.Name" xml:space="preserve">
+    <value>rbGameXmlName</value>
+  </data>
+  <data name="&gt;&gt;rbGameXmlName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rbGameXmlName.Parent" xml:space="preserve">
+    <value>grbTitleDiverse</value>
+  </data>
+  <data name="&gt;&gt;rbGameXmlName.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;rbGameInternalName.Name" xml:space="preserve">
+    <value>rbGameInternalName</value>
+  </data>
+  <data name="&gt;&gt;rbGameInternalName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rbGameInternalName.Parent" xml:space="preserve">
+    <value>grbTitleDiverse</value>
+  </data>
+  <data name="&gt;&gt;rbGameInternalName.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;chkGameTitleCustom.Name" xml:space="preserve">
+    <value>chkGameTitleCustom</value>
+  </data>
+  <data name="&gt;&gt;chkGameTitleCustom.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkGameTitleCustom.Parent" xml:space="preserve">
+    <value>grbTitleDiverse</value>
+  </data>
+  <data name="&gt;&gt;chkGameTitleCustom.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;chkGameTitle.Name" xml:space="preserve">
+    <value>chkGameTitle</value>
+  </data>
+  <data name="&gt;&gt;chkGameTitle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkGameTitle.Parent" xml:space="preserve">
+    <value>grbTitleDiverse</value>
+  </data>
+  <data name="&gt;&gt;chkGameTitle.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="grbTitleDiverse.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 6</value>
+  </data>
+  <data name="grbTitleDiverse.Size" type="System.Drawing.Size, System.Drawing">
+    <value>539, 112</value>
+  </data>
+  <data name="grbTitleDiverse.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="grbTitleDiverse.Text" xml:space="preserve">
+    <value>Diversos (necessário reiniciar programa para ter efeito)</value>
+  </data>
+  <data name="&gt;&gt;grbTitleDiverse.Name" xml:space="preserve">
+    <value>grbTitleDiverse</value>
+  </data>
+  <data name="&gt;&gt;grbTitleDiverse.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grbTitleDiverse.Parent" xml:space="preserve">
+    <value>tabSettingsTitle</value>
+  </data>
+  <data name="&gt;&gt;grbTitleDiverse.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <metadata name="rbGameXmlName.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -3135,66 +4716,234 @@
   <data name="&gt;&gt;chkGameTitle.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="grbTitleDiverse.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 6</value>
-  </data>
-  <data name="grbTitleDiverse.Size" type="System.Drawing.Size, System.Drawing">
-    <value>539, 112</value>
-  </data>
-  <data name="grbTitleDiverse.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="grbTitleDiverse.Text" xml:space="preserve">
-    <value>Diversos (necessário reiniciar programa para ter efeito)</value>
-  </data>
-  <data name="&gt;&gt;grbTitleDiverse.Name" xml:space="preserve">
-    <value>grbTitleDiverse</value>
-  </data>
-  <data name="&gt;&gt;grbTitleDiverse.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;grbTitleDiverse.Parent" xml:space="preserve">
-    <value>tabSettingsTitle</value>
-  </data>
-  <data name="&gt;&gt;grbTitleDiverse.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="tabSettingsTitle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tabSettingsTitle.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tabSettingsTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>554, 363</value>
-  </data>
-  <data name="tabSettingsTitle.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="tabSettingsTitle.Text" xml:space="preserve">
-    <value>Títulos</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsTitle.Name" xml:space="preserve">
-    <value>tabSettingsTitle</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsTitle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsTitle.Parent" xml:space="preserve">
-    <value>tabSettings</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsTitle.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <metadata name="tabSettingsUpdates.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <metadata name="grbUpdate.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="cbVerificationInterval.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <metadata name="lblUpdateInterval.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="tbPassProxy.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="tbUserProxy.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="tbServerProxy.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="lblPass.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="lblUser.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="lblServerProxy.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="pictureBox1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="chkUpdateServerProxy.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="chkUpdateFileLog.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="chkUpdateBetaChannel.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="chkUpdateVerifyStart.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="&gt;&gt;cbVerificationInterval.Name" xml:space="preserve">
+    <value>cbVerificationInterval</value>
+  </data>
+  <data name="&gt;&gt;cbVerificationInterval.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbVerificationInterval.Parent" xml:space="preserve">
+    <value>grbUpdate</value>
+  </data>
+  <data name="&gt;&gt;cbVerificationInterval.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lblUpdateInterval.Name" xml:space="preserve">
+    <value>lblUpdateInterval</value>
+  </data>
+  <data name="&gt;&gt;lblUpdateInterval.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblUpdateInterval.Parent" xml:space="preserve">
+    <value>grbUpdate</value>
+  </data>
+  <data name="&gt;&gt;lblUpdateInterval.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;tbPassProxy.Name" xml:space="preserve">
+    <value>tbPassProxy</value>
+  </data>
+  <data name="&gt;&gt;tbPassProxy.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbPassProxy.Parent" xml:space="preserve">
+    <value>grbUpdate</value>
+  </data>
+  <data name="&gt;&gt;tbPassProxy.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;tbUserProxy.Name" xml:space="preserve">
+    <value>tbUserProxy</value>
+  </data>
+  <data name="&gt;&gt;tbUserProxy.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbUserProxy.Parent" xml:space="preserve">
+    <value>grbUpdate</value>
+  </data>
+  <data name="&gt;&gt;tbUserProxy.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;tbServerProxy.Name" xml:space="preserve">
+    <value>tbServerProxy</value>
+  </data>
+  <data name="&gt;&gt;tbServerProxy.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbServerProxy.Parent" xml:space="preserve">
+    <value>grbUpdate</value>
+  </data>
+  <data name="&gt;&gt;tbServerProxy.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;lblPass.Name" xml:space="preserve">
+    <value>lblPass</value>
+  </data>
+  <data name="&gt;&gt;lblPass.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblPass.Parent" xml:space="preserve">
+    <value>grbUpdate</value>
+  </data>
+  <data name="&gt;&gt;lblPass.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;lblUser.Name" xml:space="preserve">
+    <value>lblUser</value>
+  </data>
+  <data name="&gt;&gt;lblUser.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblUser.Parent" xml:space="preserve">
+    <value>grbUpdate</value>
+  </data>
+  <data name="&gt;&gt;lblUser.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;lblServerProxy.Name" xml:space="preserve">
+    <value>lblServerProxy</value>
+  </data>
+  <data name="&gt;&gt;lblServerProxy.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblServerProxy.Parent" xml:space="preserve">
+    <value>grbUpdate</value>
+  </data>
+  <data name="&gt;&gt;lblServerProxy.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.Name" xml:space="preserve">
+    <value>pictureBox1</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.Parent" xml:space="preserve">
+    <value>grbUpdate</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;chkUpdateServerProxy.Name" xml:space="preserve">
+    <value>chkUpdateServerProxy</value>
+  </data>
+  <data name="&gt;&gt;chkUpdateServerProxy.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkUpdateServerProxy.Parent" xml:space="preserve">
+    <value>grbUpdate</value>
+  </data>
+  <data name="&gt;&gt;chkUpdateServerProxy.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;chkUpdateFileLog.Name" xml:space="preserve">
+    <value>chkUpdateFileLog</value>
+  </data>
+  <data name="&gt;&gt;chkUpdateFileLog.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkUpdateFileLog.Parent" xml:space="preserve">
+    <value>grbUpdate</value>
+  </data>
+  <data name="&gt;&gt;chkUpdateFileLog.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;chkUpdateBetaChannel.Name" xml:space="preserve">
+    <value>chkUpdateBetaChannel</value>
+  </data>
+  <data name="&gt;&gt;chkUpdateBetaChannel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkUpdateBetaChannel.Parent" xml:space="preserve">
+    <value>grbUpdate</value>
+  </data>
+  <data name="&gt;&gt;chkUpdateBetaChannel.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;chkUpdateVerifyStart.Name" xml:space="preserve">
+    <value>chkUpdateVerifyStart</value>
+  </data>
+  <data name="&gt;&gt;chkUpdateVerifyStart.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkUpdateVerifyStart.Parent" xml:space="preserve">
+    <value>grbUpdate</value>
+  </data>
+  <data name="&gt;&gt;chkUpdateVerifyStart.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="grbUpdate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 6</value>
+  </data>
+  <data name="grbUpdate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>539, 232</value>
+  </data>
+  <data name="grbUpdate.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="grbUpdate.Text" xml:space="preserve">
+    <value>Configurações de Atualização</value>
+  </data>
+  <data name="&gt;&gt;grbUpdate.Name" xml:space="preserve">
+    <value>grbUpdate</value>
+  </data>
+  <data name="&gt;&gt;grbUpdate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grbUpdate.Parent" xml:space="preserve">
+    <value>tabSettingsUpdates</value>
+  </data>
+  <data name="&gt;&gt;grbUpdate.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="cbVerificationInterval.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="cbVerificationInterval.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="cbVerificationInterval.Items" xml:space="preserve">
     <value>5 minutos</value>
   </data>
@@ -3597,60 +5346,6 @@
   <data name="&gt;&gt;chkUpdateVerifyStart.ZOrder" xml:space="preserve">
     <value>12</value>
   </data>
-  <data name="grbUpdate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 6</value>
-  </data>
-  <data name="grbUpdate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>539, 232</value>
-  </data>
-  <data name="grbUpdate.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="grbUpdate.Text" xml:space="preserve">
-    <value>Configurações de Atualização</value>
-  </data>
-  <data name="&gt;&gt;grbUpdate.Name" xml:space="preserve">
-    <value>grbUpdate</value>
-  </data>
-  <data name="&gt;&gt;grbUpdate.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;grbUpdate.Parent" xml:space="preserve">
-    <value>tabSettingsUpdates</value>
-  </data>
-  <data name="&gt;&gt;grbUpdate.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="tabSettingsUpdates.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tabSettingsUpdates.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tabSettingsUpdates.Size" type="System.Drawing.Size, System.Drawing">
-    <value>554, 363</value>
-  </data>
-  <data name="tabSettingsUpdates.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="tabSettingsUpdates.Text" xml:space="preserve">
-    <value>Atualizações</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsUpdates.Name" xml:space="preserve">
-    <value>tabSettingsUpdates</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsUpdates.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsUpdates.Parent" xml:space="preserve">
-    <value>tabSettings</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsUpdates.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <metadata name="tabSettingsLanguage.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <metadata name="lblLanguageComments.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -3687,6 +5382,57 @@
   <metadata name="grbLanguage.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <metadata name="cbLanguage.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="&gt;&gt;lblLanguage.Name" xml:space="preserve">
+    <value>lblLanguage</value>
+  </data>
+  <data name="&gt;&gt;lblLanguage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblLanguage.Parent" xml:space="preserve">
+    <value>grbLanguage</value>
+  </data>
+  <data name="&gt;&gt;lblLanguage.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;cbLanguage.Name" xml:space="preserve">
+    <value>cbLanguage</value>
+  </data>
+  <data name="&gt;&gt;cbLanguage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbLanguage.Parent" xml:space="preserve">
+    <value>grbLanguage</value>
+  </data>
+  <data name="&gt;&gt;cbLanguage.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="grbLanguage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 6</value>
+  </data>
+  <data name="grbLanguage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>539, 64</value>
+  </data>
+  <data name="grbLanguage.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="grbLanguage.Text" xml:space="preserve">
+    <value>Selecionar idioma padrão:</value>
+  </data>
+  <data name="&gt;&gt;grbLanguage.Name" xml:space="preserve">
+    <value>grbLanguage</value>
+  </data>
+  <data name="&gt;&gt;grbLanguage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grbLanguage.Parent" xml:space="preserve">
+    <value>tabSettingsLanguage</value>
+  </data>
+  <data name="&gt;&gt;grbLanguage.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="lblLanguage.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -3750,60 +5496,141 @@
   <data name="&gt;&gt;cbLanguage.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="grbLanguage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 6</value>
-  </data>
-  <data name="grbLanguage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>539, 64</value>
-  </data>
-  <data name="grbLanguage.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="grbLanguage.Text" xml:space="preserve">
-    <value>Selecionar idioma padrão:</value>
-  </data>
-  <data name="&gt;&gt;grbLanguage.Name" xml:space="preserve">
-    <value>grbLanguage</value>
-  </data>
-  <data name="&gt;&gt;grbLanguage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;grbLanguage.Parent" xml:space="preserve">
-    <value>tabSettingsLanguage</value>
-  </data>
-  <data name="&gt;&gt;grbLanguage.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="tabSettingsLanguage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tabSettingsLanguage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>554, 363</value>
-  </data>
-  <data name="tabSettingsLanguage.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
-  </data>
-  <data name="tabSettingsLanguage.Text" xml:space="preserve">
-    <value>Idiomas</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsLanguage.Name" xml:space="preserve">
-    <value>tabSettingsLanguage</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsLanguage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsLanguage.Parent" xml:space="preserve">
-    <value>tabSettings</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsLanguage.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <metadata name="tabSettingsLog.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <metadata name="grbLog.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <metadata name="pictureBox2.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="lblLOG.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="chkManagerLogFile.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="chkManagerLogWindow.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="chkManagerLogDebugConsole.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="chkManagerLogSystemConsole.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="cbLevelLog.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="&gt;&gt;pictureBox2.Name" xml:space="preserve">
+    <value>pictureBox2</value>
+  </data>
+  <data name="&gt;&gt;pictureBox2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pictureBox2.Parent" xml:space="preserve">
+    <value>grbLog</value>
+  </data>
+  <data name="&gt;&gt;pictureBox2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lblLOG.Name" xml:space="preserve">
+    <value>lblLOG</value>
+  </data>
+  <data name="&gt;&gt;lblLOG.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblLOG.Parent" xml:space="preserve">
+    <value>grbLog</value>
+  </data>
+  <data name="&gt;&gt;lblLOG.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;chkManagerLogFile.Name" xml:space="preserve">
+    <value>chkManagerLogFile</value>
+  </data>
+  <data name="&gt;&gt;chkManagerLogFile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkManagerLogFile.Parent" xml:space="preserve">
+    <value>grbLog</value>
+  </data>
+  <data name="&gt;&gt;chkManagerLogFile.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;chkManagerLogWindow.Name" xml:space="preserve">
+    <value>chkManagerLogWindow</value>
+  </data>
+  <data name="&gt;&gt;chkManagerLogWindow.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkManagerLogWindow.Parent" xml:space="preserve">
+    <value>grbLog</value>
+  </data>
+  <data name="&gt;&gt;chkManagerLogWindow.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;chkManagerLogDebugConsole.Name" xml:space="preserve">
+    <value>chkManagerLogDebugConsole</value>
+  </data>
+  <data name="&gt;&gt;chkManagerLogDebugConsole.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkManagerLogDebugConsole.Parent" xml:space="preserve">
+    <value>grbLog</value>
+  </data>
+  <data name="&gt;&gt;chkManagerLogDebugConsole.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;chkManagerLogSystemConsole.Name" xml:space="preserve">
+    <value>chkManagerLogSystemConsole</value>
+  </data>
+  <data name="&gt;&gt;chkManagerLogSystemConsole.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkManagerLogSystemConsole.Parent" xml:space="preserve">
+    <value>grbLog</value>
+  </data>
+  <data name="&gt;&gt;chkManagerLogSystemConsole.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;cbLevelLog.Name" xml:space="preserve">
+    <value>cbLevelLog</value>
+  </data>
+  <data name="&gt;&gt;cbLevelLog.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbLevelLog.Parent" xml:space="preserve">
+    <value>grbLog</value>
+  </data>
+  <data name="&gt;&gt;cbLevelLog.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="grbLog.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="grbLog.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 6</value>
+  </data>
+  <data name="grbLog.Size" type="System.Drawing.Size, System.Drawing">
+    <value>539, 123</value>
+  </data>
+  <data name="grbLog.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="grbLog.Text" xml:space="preserve">
+    <value>Registro</value>
+  </data>
+  <data name="&gt;&gt;grbLog.Name" xml:space="preserve">
+    <value>grbLog</value>
+  </data>
+  <data name="&gt;&gt;grbLog.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grbLog.Parent" xml:space="preserve">
+    <value>tabSettingsLog</value>
+  </data>
+  <data name="&gt;&gt;grbLog.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <metadata name="pictureBox2.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -4013,78 +5840,6 @@
   </data>
   <data name="&gt;&gt;cbLevelLog.ZOrder" xml:space="preserve">
     <value>6</value>
-  </data>
-  <data name="grbLog.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="grbLog.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 6</value>
-  </data>
-  <data name="grbLog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>539, 123</value>
-  </data>
-  <data name="grbLog.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="grbLog.Text" xml:space="preserve">
-    <value>Registro</value>
-  </data>
-  <data name="&gt;&gt;grbLog.Name" xml:space="preserve">
-    <value>grbLog</value>
-  </data>
-  <data name="&gt;&gt;grbLog.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;grbLog.Parent" xml:space="preserve">
-    <value>tabSettingsLog</value>
-  </data>
-  <data name="&gt;&gt;grbLog.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="tabSettingsLog.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tabSettingsLog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>554, 363</value>
-  </data>
-  <data name="tabSettingsLog.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="tabSettingsLog.Text" xml:space="preserve">
-    <value>Registro</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsLog.Name" xml:space="preserve">
-    <value>tabSettingsLog</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsLog.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsLog.Parent" xml:space="preserve">
-    <value>tabSettings</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsLog.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="tabSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 12</value>
-  </data>
-  <data name="tabSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>562, 389</value>
-  </data>
-  <data name="tabSettings.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;tabSettings.Name" xml:space="preserve">
-    <value>tabSettings</value>
-  </data>
-  <data name="&gt;&gt;tabSettings.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabSettings.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;tabSettings.ZOrder" xml:space="preserve">
-    <value>4</value>
   </data>
   <metadata name="btnRestore.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
