@@ -418,6 +418,8 @@
     <Content Include="media\covers\full.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\donate.gif" />
+    <None Include="Resources\GameTDB-400.png" />
     <None Include="Resources\github_16.png" />
     <None Include="Resources\gbatemp_16.png" />
     <None Include="Resources\convert_16.png" />
