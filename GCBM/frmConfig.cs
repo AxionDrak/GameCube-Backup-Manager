@@ -65,17 +65,6 @@ namespace GCBM
         #endregion
 
         #region Notifications
-        private void UpdateProgram()
-        {
-            notifyIcon.ShowBalloonTip(10, "GameCube Backup Manager", "Nova atualização disponível!", ToolTipIcon.Info);
-        }
-
-        private void NetVerify()
-        {
-            notifyIcon.ShowBalloonTip(10, "GameCube Backup Manager", "Por favor, reinicie o programa para que a " +
-                "configuração seja aplicada corretamente.", ToolTipIcon.Info);
-        }
-
         private void AdjustNotify(string text)
         {
             notifyIcon.ShowBalloonTip(10, "GameCube Backup Manager", "As notificações na barra de tarefas foram " + text + "!", ToolTipIcon.Info);
@@ -88,11 +77,22 @@ namespace GCBM
             var _version = assembly.GetName().Version;
 
             // GCBM
-            configIniFile.IniWriteString("GCBM", "Language", "Portuguese");
-            configIniFile.IniWriteString("GCBM", "TranslatedBy", "Laete Meireles");
-            configIniFile.IniWriteString("GCBM", "TranslatorContact", "laetemn@hotmail.com");
-            configIniFile.IniWriteString("GCBM", "LastUpdated", "28/04/2022");
+            configIniFile.IniWriteString("GCBM", "ProgUpdated", "30/04/2022");
             configIniFile.IniWriteString("GCBM", "ProgVersion", _version.ToString());
+            configIniFile.IniWriteString("GCBM", "ConfigUpdated", DateTime.Now.ToString("dd/MM/yyyy"));
+
+            if (configIniFile.IniReadString("GCBM", "Language", "") != GCBM.Properties.Resources.GCBM_Language)
+            {
+                configIniFile.IniWriteString("GCBM", "Language", GCBM.Properties.Resources.GCBM_Language);
+            }
+
+            if (configIniFile.IniReadString("GCBM", "TranslatedBy", "") != GCBM.Properties.Resources.GCBM_TranslatedBy)
+            {
+                configIniFile.IniWriteString("GCBM", "TranslatedBy", GCBM.Properties.Resources.GCBM_TranslatedBy);
+            }
+
+            //configIniFile.IniWriteString("GCBM", "Language", GCBM.Properties.Resources.GCBM_Language);
+            //configIniFile.IniWriteString("GCBM", "TranslatedBy", GCBM.Properties.Resources.GCBM_TranslatedBy);
 
             // General          
             configIniFile.IniWriteBool("GENERAL", "DiscClean", rbGeneralDiscClean.Checked);
@@ -525,6 +525,7 @@ namespace GCBM
             {
                 //chkUpdateBetaChannel.Enabled = true;
                 chkUpdateServerProxy.Enabled = true;
+                cbVerificationInterval.Enabled = true;
             }
             else
             {
@@ -532,9 +533,9 @@ namespace GCBM
                 chkUpdateServerProxy.Enabled = false;
                 //chkUpdateBetaChannel.Checked = false;
                 chkUpdateServerProxy.Checked = false;
+                cbVerificationInterval.Enabled = false;
             }
         }
         #endregion
-
     }
 }
