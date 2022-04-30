@@ -990,6 +990,7 @@ namespace GCBM
             // cbVerificationInterval
             // 
             this.cbVerificationInterval.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            resources.ApplyResources(this.cbVerificationInterval, "cbVerificationInterval");
             this.cbVerificationInterval.FormattingEnabled = true;
             this.cbVerificationInterval.Items.AddRange(new object[] {
             resources.GetString("cbVerificationInterval.Items"),
@@ -1000,7 +1001,6 @@ namespace GCBM
             resources.GetString("cbVerificationInterval.Items5"),
             resources.GetString("cbVerificationInterval.Items6"),
             resources.GetString("cbVerificationInterval.Items7")});
-            resources.ApplyResources(this.cbVerificationInterval, "cbVerificationInterval");
             this.cbVerificationInterval.Name = "cbVerificationInterval";
             // 
             // lblUpdateInterval
