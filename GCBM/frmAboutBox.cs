@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
@@ -12,7 +14,17 @@ namespace GCBM
     partial class frmAboutBox : Form
     {
         #region Properties
+        /// <summary>
+        /// Invoke Assembly
+        /// </summary>
+        Assembly assembly = Assembly.GetExecutingAssembly();
+
         DateTime _currentYear = DateTime.Now;
+
+        /// <summary>
+        /// IniFile
+        /// </summary>
+        private readonly IniFile configIniFile = new IniFile("config.ini");
         #endregion
 
         #region Main Form
@@ -20,12 +32,37 @@ namespace GCBM
         {
             InitializeComponent();
 
+            var _version = assembly.GetName().Version;
+
             this.Text = String.Format(GCBM.Properties.Resources.AboutBox_String1, AssemblyTitle);
             this.labelProductName.Text = AssemblyProduct;
             this.labelVersion.Text = String.Format(GCBM.Properties.Resources.AboutBox_String2, AssemblyVersion);
             this.labelCopyright.Text = AssemblyCopyright;
             this.labelCompanyName.Text = AssemblyCompany;
             this.textBoxDescription.Text = AssemblyDescription;
+            this.lblAboutVersion.Text = GCBM.Properties.Resources.AboutVersion + _version.ToString() + " (x64)";
+
+            lbl_DataAtualizacao.Text = String.Format("Version: {0} " + " | " + " Last Update: {1}", 
+                System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString(),
+                System.IO.File.GetLastWriteTime(System.Reflection.Assembly.GetExecutingAssembly().Location).ToShortDateString());
+
+            AboutTranslator();
+        }
+        #endregion
+
+        #region About Translator
+        private void AboutTranslator()
+        {
+            if (File.Exists("config.ini"))
+            {
+                this.lblAboutCurrentLanguage.Text = GCBM.Properties.Resources.AboutCurrentLanguage + configIniFile.IniReadString("GCBM", "Language", "");
+                this.lblAboutTranslator.Text = GCBM.Properties.Resources.AboutTranslator + configIniFile.IniReadString("GCBM", "TranslatedBy", "");
+            }
+            else
+            {
+                this.lblAboutCurrentLanguage.Text = "Idioma Atual: Português [Brasil]";
+                this.lblAboutTranslator.Text = "Tradutor: Laete Meireles";
+            }
         }
         #endregion
 
@@ -108,5 +145,52 @@ namespace GCBM
             }
         }
         #endregion
+
+        #region External Site
+        /// <summary>
+        /// Function to load websites in the default browser.
+        /// </summary>
+        /// <param name="targetLink"></param>
+        /// <param name="targetID"></param>
+        private void ExternalSite(string targetLink)
+        {
+            try
+            {
+                Process.Start(targetLink);
+            }
+            catch (Win32Exception noBrowser)
+            {
+                if (noBrowser.ErrorCode == -2147467259)
+                {
+                    MessageBox.Show("Erro ao acessar site.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        #endregion
+
+        private void pbDonations_Click(object sender, EventArgs e)
+        {            
+            ExternalSite("https://www.paypal.com/donate/?hosted_button_id=MP4WGLJHAP8H2");
+        }
+
+        private void pbGameTDB_Click(object sender, EventArgs e)
+        {
+            
+            ExternalSite("https://www.gametdb.com/");
+        }
+
+        private void pbGameTDB_MouseEnter(object sender, EventArgs e)
+        {
+            pbGameTDB.Cursor = System.Windows.Forms.Cursors.Hand;
+        }
+
+        private void pbDonations_MouseEnter(object sender, EventArgs e)
+        {
+            pbDonations.Cursor = System.Windows.Forms.Cursors.Hand;
+        }
     }
 }
