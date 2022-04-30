@@ -167,6 +167,7 @@ namespace GCBM
                 NetworkCheck();
             }
 
+            AboutTranslator();
             AdjustLanguage();
             UpdateProgram();
             LoadDatabaseXML();
@@ -222,6 +223,25 @@ namespace GCBM
             }
         }
         #endregion
+
+        #region About Translator
+        private void AboutTranslator()
+        {
+            if (File.Exists("config.ini"))
+            {
+                if (configIniFile.IniReadString("GCBM", "Language", "") != GCBM.Properties.Resources.GCBM_Language)
+                {
+                    configIniFile.IniWriteString("GCBM", "Language", GCBM.Properties.Resources.GCBM_Language);
+                }
+
+                if (configIniFile.IniReadString("GCBM", "TranslatedBy", "") != GCBM.Properties.Resources.GCBM_TranslatedBy)
+                {
+                    configIniFile.IniWriteString("GCBM", "TranslatedBy", GCBM.Properties.Resources.GCBM_TranslatedBy);
+                }
+            }
+        }
+        #endregion
+
 
         #region Adjust Language
         private void AdjustLanguage()
