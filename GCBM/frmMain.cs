@@ -227,8 +227,15 @@ namespace GCBM
         #region About Translator
         private void AboutTranslator()
         {
+            var _version = assembly.GetName().Version;
+
             if (File.Exists("config.ini"))
             {
+                if (configIniFile.IniReadString("GCBM", "ProgVersion", "") != _version.ToString())
+                {
+                    configIniFile.IniWriteString("GCBM", "ProgVersion", _version.ToString());
+                }
+
                 if (configIniFile.IniReadString("GCBM", "Language", "") != GCBM.Properties.Resources.GCBM_Language)
                 {
                     configIniFile.IniWriteString("GCBM", "Language", GCBM.Properties.Resources.GCBM_Language);
@@ -241,7 +248,6 @@ namespace GCBM
             }
         }
         #endregion
-
 
         #region Adjust Language
         private void AdjustLanguage()
@@ -545,7 +551,7 @@ namespace GCBM
             else
             {
                 // Main Menu Game Disc
-                tsmiReloadGameListDisc.Enabled = false;
+                //tsmiReloadGameListDisc.Enabled = false;
                 tsmiSelectGameDisc.Enabled = false;
                 tsmiGameDiscDeleteAllFiles.Enabled = false;
                 tsmiGameDiscDeleteSelectedFile.Enabled = false;
@@ -818,12 +824,20 @@ namespace GCBM
             }
 
             string[] files = GetFilesFolder(sourceFolder, filters, isRecursive);
-
+            
             if (dgv == dgvGameListDisc)
             {
-                if (dgv.RowCount == 0)
+                //tsmiReloadGameListDisc.Enabled = true;
+                try
                 {
-                    tsmiReloadGameListDisc.Enabled = true;
+                    if (dgv.RowCount == 0)
+                    {
+                        tsmiReloadGameListDisc.Enabled = true;
+                    }
+                }
+                catch (Exception ex)
+                {
+
                 }
             }
 
@@ -927,7 +941,14 @@ namespace GCBM
             var optionSearch = isRecursive ? SearchOption.AllDirectories : SearchOption.TopDirectoryOnly;
             foreach (var filter in filters)
             {
-                filesFound.AddRange(Directory.GetFiles(rootFolder, string.Format("*.{0}", filter), optionSearch));
+                try
+                {
+                    filesFound.AddRange(Directory.GetFiles(rootFolder, string.Format("*.{0}", filter), optionSearch));
+                }
+                catch (Exception ex)
+                {
+
+                }
             }
             return filesFound.ToArray();
         }
@@ -1627,7 +1648,7 @@ namespace GCBM
                     //    }
                     //}
 
-                    var _source = new FileInfo(Path.Combine(fbd1.SelectedPath, dgvGameList.CurrentRow.Cells[1].Value.ToString()));
+                    var _source = new FileInfo(Path.Combine(fbd1.SelectedPath, dgvGameList.CurrentRow.Cells[4].Value.ToString()));
 
                     // Disc 1 (0 -> 0) - Title [ID Game]
                     if (tbIDDiscID.Text == "0x00" && configIniFile.IniReadInt("SEVERAL", "AppointmentStyle") == 0)
