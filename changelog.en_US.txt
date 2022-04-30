@@ -1,4 +1,9 @@
 ﻿
+### GameCube Backup Manager 2.4.3.0 (April 30, 2022)
+
+[Fixed] file transfer error in 'Install Game (1:1)' mode.
+[Fixed] Translation errors on 'About GameCube Backup Manager' screen.
+
 ### GameCube Backup Manager 2.4.2.0 (April 28, 2022)
 
 [Added] Korean language translation (Thanks to DDinghoya)
