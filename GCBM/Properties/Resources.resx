@@ -127,6 +127,9 @@
   <data name="ESRB_RP_grayscale" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ESRB_RP_grayscale.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="GetAllDrives_Inactive" xml:space="preserve">
+    <value>Inativo</value>
+  </data>
   <data name="AboutBox_String1" xml:space="preserve">
     <value>Sobre {0}</value>
   </data>
@@ -181,8 +184,8 @@
   <data name="ConvertElfDol_String2" xml:space="preserve">
     <value>&gt;&gt; Status: Não respondendo!</value>
   </data>
-  <data name="NoInternetConnectionFound_String1" xml:space="preserve">
-    <value>Nenhuma conexão com a internet encontrada!</value>
+  <data name="RecordExportedSuccessfully" xml:space="preserve">
+    <value>Registro exportado com sucesso!</value>
   </data>
   <data name="CannotOpenTwoInstances" xml:space="preserve">
     <value>Não é possível abrir duas instâncias deste programa!</value>
@@ -193,14 +196,11 @@
   <data name="InvalidDrive_String3" xml:space="preserve">
     <value>O app Nintendont suporta somente os sistemas de arquivos FAT32 e exFAT.</value>
   </data>
-  <data name="ReadImage_String1" xml:space="preserve">
-    <value>A imagem é muito pequena!</value>
+  <data name="NetworkCheck_NetStatus_Offline" xml:space="preserve">
+    <value>Conexão com a internet desativada!</value>
   </data>
   <data name="install_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\install_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="config" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\config.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="LoadDatabase_Region" xml:space="preserve">
     <value>Região</value>
@@ -258,6 +258,9 @@
   </data>
   <data name="UnknownRegion" xml:space="preserve">
     <value>Região desconhecida!</value>
+  </data>
+  <data name="github_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\github_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="website" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\website.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -352,6 +355,9 @@
   <data name="not_conected_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\not_conected_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="gcbm_splash_screen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gcbm-splash-screen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="MetaXml_String2" xml:space="preserve">
     <value>Dados gravados com sucesso!</value>
   </data>
@@ -361,8 +367,8 @@
   <data name="xml_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\xml_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="RegisterHeaderLog_WorkingSet" xml:space="preserve">
-    <value> Conjunto de Trabalho: </value>
+  <data name="NoInternetConnectionFound_String1" xml:space="preserve">
+    <value>Nenhuma conexão com a internet encontrada!</value>
   </data>
   <data name="AllFilesSuccessfullyDeleted" xml:space="preserve">
     <value>Todos os arquivos foram excluídos com sucesso!</value>
@@ -394,6 +400,9 @@
   <data name="FilesDestinationUnit" xml:space="preserve">
     <value>Arquivos (Destino) - Unidade (</value>
   </data>
+  <data name="AssemblyInfo_Description" xml:space="preserve">
+    <value>Software gerenciador de arquivos ISO e GCM de Nintendo GameCube.</value>
+  </data>
   <data name="ESRB_Mature_17_" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ESRB_Mature_17+.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -411,6 +420,9 @@
   </data>
   <data name="FilterDatabase_String2" xml:space="preserve">
     <value>Se o arquivo 'wiitdb.xml' estiver instalado corretamente, faça os ajustes necessários nas configurações do programa.</value>
+  </data>
+  <data name="GameTDB-400" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GameTDB-400.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="MetaXml_String1" xml:space="preserve">
     <value>Arquivo 'meta.xml' inválido ou danificado!</value>
@@ -439,20 +451,17 @@
   <data name="plugin_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\plugin_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="RecordExportedSuccessfully" xml:space="preserve">
-    <value>Registro exportado com sucesso!</value>
+  <data name="convert_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\convert_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="CopyTask_String3" xml:space="preserve">
-    <value>Tranferência finalizada!</value>
+  <data name="RegisterHeaderLog_WorkingSet" xml:space="preserve">
+    <value> Conjunto de Trabalho: </value>
   </data>
   <data name="ESRB_Everyone" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ESRB_Everyone.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="LoadDatabase_Type" xml:space="preserve">
     <value>Tipo</value>
-  </data>
-  <data name="convert_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\convert_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="exit" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\exit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -496,9 +505,6 @@
   <data name="InstallGameScrub_String5" xml:space="preserve">
     <value>Jogo instalado com sucesso!</value>
   </data>
-  <data name="LoadISOInfo_String1" xml:space="preserve">
-    <value>Disco primário: (disc1)</value>
-  </data>
   <data name="DialogResultDeleteGame_ReallyDeleteFile_String1" xml:space="preserve">
     <value>Deseja realmente excluir o(s) arquivo(s) ? </value>
   </data>
@@ -525,9 +531,6 @@
   </data>
   <data name="SelectGameFromList" xml:space="preserve">
     <value>Por favor, selecione um jogo da lista!</value>
-  </data>
-  <data name="NetworkCheck_NetStatus_Offline" xml:space="preserve">
-    <value>Conexão com a internet desativada!</value>
   </data>
   <data name="DownloadDiscCoverError" xml:space="preserve">
     <value> [ERRO] Falha ao efetuar download da capa (Disco)!</value>
@@ -589,6 +592,9 @@
   <data name="ESRB_Everyone_grayscale" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ESRB_Everyone_grayscale.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="CopyTask_String3" xml:space="preserve">
+    <value>Tranferência finalizada!</value>
+  </data>
   <data name="LoadDatabase_GameTitle" xml:space="preserve">
     <value>Título do Jogo</value>
   </data>
@@ -610,8 +616,8 @@
   <data name="ProcessTaskDelay_String1" xml:space="preserve">
     <value>O arquivo 'wiitdb.xml' não foi encontrado!</value>
   </data>
-  <data name="RequiredDirectories_String3" xml:space="preserve">
-    <value> [INFO] Utilizando diretório temporário personalizado!</value>
+  <data name="config" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\config.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ClearTemp_String1" xml:space="preserve">
     <value> [INFO] Não foi possível limpar a pasta temporária!</value>
@@ -658,8 +664,8 @@
   <data name="ConvertElfDol_String3" xml:space="preserve">
     <value>&gt;&gt; Status: Completo!</value>
   </data>
-  <data name="DownloadDiscCover" xml:space="preserve">
-    <value> [INFO] Baixando capas (Disco)... </value>
+  <data name="RequiredDirectories_String3" xml:space="preserve">
+    <value> [INFO] Utilizando diretório temporário personalizado!</value>
   </data>
   <data name="RegisterHeaderLog_GcbmLogCreated" xml:space="preserve">
     <value> gcbm.log é criado.</value>
@@ -667,20 +673,23 @@
   <data name="RegisterHeaderLog_CLRVersion" xml:space="preserve">
     <value> CLR Versão: </value>
   </data>
-  <data name="gcbm_splash_screen" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\gcbm-splash-screen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ReadImage_String1" xml:space="preserve">
+    <value>A imagem é muito pequena!</value>
   </data>
   <data name="CheckUSBGXFlow_String3" xml:space="preserve">
     <value>Depois, na mesma aba, vá em 'Configuração do carregador USB (Transferir Capas)' e ajuste os diretórios das capas (Disco, 2D, 3D e Completo) do USB Loader GX ou WiiFlow em 'Configuração do carregador USB (Transferir Capas)', apontando para os respectivos diretórios dentro do dispositivo de destino.</value>
   </data>
-  <data name="GetAllDrives_Inactive" xml:space="preserve">
-    <value>Inativo</value>
+  <data name="LoadISOInfo_String1" xml:space="preserve">
+    <value>Disco primário: (disc1)</value>
   </data>
   <data name="convert_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\convert_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="RegisterHeaderLog_ProgramName" xml:space="preserve">
     <value> Nome do Programa: </value>
+  </data>
+  <data name="DownloadDiscCover" xml:space="preserve">
+    <value> [INFO] Baixando capas (Disco)... </value>
   </data>
   <data name="MetaXml_String_ERRO" xml:space="preserve">
     <value>ERRO</value>
@@ -700,10 +709,28 @@
   <data name="delete_file_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\delete_file_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="github_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\github_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="donate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\donate.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="AssemblyInfo_Description" xml:space="preserve">
-    <value>Software gerenciador de arquivos ISO e GCM de Nintendo GameCube.</value>
+  <data name="AboutVersion" xml:space="preserve">
+    <value>Versão </value>
+  </data>
+  <data name="AboutCurrentLanguage" xml:space="preserve">
+    <value>Idioma Atual: </value>
+  </data>
+  <data name="AboutTranslator" xml:space="preserve">
+    <value>Tradutor: </value>
+  </data>
+  <data name="AboutTranslatorContact" xml:space="preserve">
+    <value>Contato: </value>
+  </data>
+  <data name="GCBM_TranslatedBy" xml:space="preserve">
+    <value>Laete Meireles</value>
+  </data>
+  <data name="GCBM_TranslatorContact" xml:space="preserve">
+    <value>laetemn@hotmail.com</value>
+  </data>
+  <data name="GCBM_Language" xml:space="preserve">
+    <value>Portuguese [Brazil]</value>
   </data>
 </root>
