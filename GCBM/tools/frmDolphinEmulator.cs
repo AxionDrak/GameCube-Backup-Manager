@@ -12,8 +12,8 @@ namespace GCBM.tools
 {
     public partial class frmDolphinEmulator : Form
     {
-        private string gameName { get; set; }
-        private string pathGame { get; set; }
+        private string GAME_NAME { get; set; }
+        private string GAME_PATH { get; set; }
 
         public frmDolphinEmulator()
         {
