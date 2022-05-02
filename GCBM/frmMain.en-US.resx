@@ -119,7 +119,7 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="tabControlMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>893, 540</value>
+    <value>878, 540</value>
   </data>
   <data name="pbGameCover3D.ErrorImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -652,10 +652,13 @@
 </value>
   </data>
   <data name="tabMainFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>885, 514</value>
+    <value>870, 514</value>
   </data>
   <data name="tabMainFile.Text" xml:space="preserve">
     <value>Files (Source)</value>
+  </data>
+  <data name="lblInstallGame.Location" type="System.Drawing.Point, System.Drawing">
+    <value>519, 330</value>
   </data>
   <data name="lblInstallGame.Size" type="System.Drawing.Size, System.Drawing">
     <value>86, 13</value>
@@ -663,11 +666,20 @@
   <data name="lblInstallGame.Text" xml:space="preserve">
     <value>Installing game...</value>
   </data>
+  <data name="lblPercent.Location" type="System.Drawing.Point, System.Drawing">
+    <value>665, 312</value>
+  </data>
+  <data name="lblCopy.Location" type="System.Drawing.Point, System.Drawing">
+    <value>519, 312</value>
+  </data>
   <data name="lblCopy.Size" type="System.Drawing.Size, System.Drawing">
     <value>52, 13</value>
   </data>
   <data name="lblCopy.Text" xml:space="preserve">
     <value>Waiting...</value>
+  </data>
+  <data name="pbCopy.Location" type="System.Drawing.Point, System.Drawing">
+    <value>516, 346</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Click on the icon to the side and select a folder to list all the ISO and GCM files contained inside.</value>
@@ -758,7 +770,7 @@
     <value>Game Information</value>
   </data>
   <data name="mstripFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>879, 24</value>
+    <value>864, 24</value>
   </data>
   <data name="tsmiReloadGameList.Size" type="System.Drawing.Size, System.Drawing">
     <value>92, 20</value>
@@ -827,16 +839,22 @@
     <value>Export list as...</value>
   </data>
   <data name="tabMainDisc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>885, 514</value>
+    <value>870, 514</value>
   </data>
   <data name="tabMainDisc.Text" xml:space="preserve">
     <value>Files (Destination)</value>
+  </data>
+  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>511, 182</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
     <value>347, 39</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
     <value>The total file listing and total file size do not distinguish between Disc 1 (game.iso) and Disc 2 (disc2.iso) files. The data is for sampling purposes only.</value>
+  </data>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>511, 164</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>45, 13</value>
@@ -857,7 +875,7 @@
     <value>Title:</value>
   </data>
   <data name="mstripDisc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>879, 27</value>
+    <value>864, 27</value>
   </data>
   <data name="tscbDiscDrive.Items" xml:space="preserve">
     <value>Inactive</value>
@@ -977,7 +995,7 @@
     <value>Recalculate selected</value>
   </data>
   <data name="tabMainDatabase.Size" type="System.Drawing.Size, System.Drawing">
-    <value>885, 514</value>
+    <value>870, 514</value>
   </data>
   <data name="tabMainDatabase.Text" xml:space="preserve">
     <value>Database</value>
@@ -985,11 +1003,20 @@
   <data name="cbFilterDatabase.Items" xml:space="preserve">
     <value>Select an item...</value>
   </data>
+  <data name="cbFilterDatabase.Location" type="System.Drawing.Point, System.Drawing">
+    <value>503, 5</value>
+  </data>
+  <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>465, 8</value>
+  </data>
   <data name="label7.Text" xml:space="preserve">
     <value>Filter:</value>
   </data>
+  <data name="lvDatabase.Size" type="System.Drawing.Size, System.Drawing">
+    <value>858, 465</value>
+  </data>
   <data name="mstripDatabase.Size" type="System.Drawing.Size, System.Drawing">
-    <value>879, 24</value>
+    <value>864, 24</value>
   </data>
   <data name="tsmiToolDatabase.Size" type="System.Drawing.Size, System.Drawing">
     <value>46, 20</value>
@@ -1004,10 +1031,13 @@
     <value>GameTDB update</value>
   </data>
   <data name="tabMainLog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>885, 514</value>
+    <value>870, 514</value>
+  </data>
+  <data name="tbLog.Size" type="System.Drawing.Size, System.Drawing">
+    <value>858, 481</value>
   </data>
   <data name="mstripLog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>879, 24</value>
+    <value>864, 24</value>
   </data>
   <data name="tsmiToolLog.Size" type="System.Drawing.Size, System.Drawing">
     <value>46, 20</value>
