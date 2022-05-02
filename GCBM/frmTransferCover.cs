@@ -20,18 +20,9 @@ namespace GCBM
     public partial class frmTransferCover : Form
     {
         #region Properties
-        /// <summary>
-        /// Exposes static methods for creating, moving, and enumerating through directories and subdirectories.
-        /// Gets the current working directory of the application.
-        /// </summary>
-        private static string getCurrentPath = Directory.GetCurrentDirectory();
-
-        /// <summary>
-        /// IniFile
-        /// </summary>
-        readonly IniFile configIniFile = new IniFile("config.ini");
-
-        string _region = "";
+        private static string REGION_GAME = "";
+        private const string INI_FILE = "config.ini";
+        private readonly IniFile CONFIG_INI_FILE = new IniFile(INI_FILE);
         #endregion
 
         #region Main Constructor
@@ -84,37 +75,37 @@ namespace GCBM
         private void CopyAllCovers()
         {
             // USB Loader GX - Diretórios de destino das capas
-            string _targetDisc = configIniFile.IniReadString("COVERS", "GXCoverDirectoryDisc", "");
-            string _target2D = configIniFile.IniReadString("COVERS", "GXCoverDirectory2D", "");
-            string _target3D = configIniFile.IniReadString("COVERS", "GXCoverDirectory3D", "");
-            string _targetFull = configIniFile.IniReadString("COVERS", "GXCoverDirectoryFull", "");
+            string _targetDisc = CONFIG_INI_FILE.IniReadString("COVERS", "GXCoverDirectoryDisc", "");
+            string _target2D = CONFIG_INI_FILE.IniReadString("COVERS", "GXCoverDirectory2D", "");
+            string _target3D = CONFIG_INI_FILE.IniReadString("COVERS", "GXCoverDirectory3D", "");
+            string _targetFull = CONFIG_INI_FILE.IniReadString("COVERS", "GXCoverDirectoryFull", "");
             // WiiFlow - Diretórios de destino das capas
-            string _target3DCovers = configIniFile.IniReadString("COVERS", "WiiFlowCoverDirectory3D", "");
-            string _targetBoxCovers = configIniFile.IniReadString("COVERS", "WiiFlowCoverDirectoryFull", "");
+            string _target3DCovers = CONFIG_INI_FILE.IniReadString("COVERS", "WiiFlowCoverDirectory3D", "");
+            string _targetBoxCovers = CONFIG_INI_FILE.IniReadString("COVERS", "WiiFlowCoverDirectoryFull", "");
 
             if (rbUsa.Checked == true)
             {
-                _region = "US";
+                REGION_GAME = "US";
             }
             else if (rbEurope.Checked == true)
             {
-                _region = "EN";
+                REGION_GAME = "EN";
             }
             else if (rbJapan.Checked == true)
             {
-                _region = "JA";
+                REGION_GAME = "JA";
             }
 
             //USB Loader GX
-            if (configIniFile.IniReadBool("COVERS", "GXCoverUSBLoader") == true)
+            if (CONFIG_INI_FILE.IniReadBool("COVERS", "GXCoverUSBLoader") == true)
             {
                 // Disc covers
                 try
                 {
-                    var _filesDisc = Directory.GetFiles(configIniFile.IniReadString("COVERS", "CoverDirectoryCache", "") + @"\" + _region + @"\disc");
-                    var _files2D = Directory.GetFiles(configIniFile.IniReadString("COVERS", "CoverDirectoryCache", "") + @"\" + _region + @"\2d");
-                    var _files3D = Directory.GetFiles(configIniFile.IniReadString("COVERS", "CoverDirectoryCache", "") + @"\" + _region + @"\3d");
-                    var _filesFull = Directory.GetFiles(configIniFile.IniReadString("COVERS", "CoverDirectoryCache", "") + @"\" + _region + @"\full");
+                    var _filesDisc = Directory.GetFiles(CONFIG_INI_FILE.IniReadString("COVERS", "CoverDirectoryCache", "") + @"\" + REGION_GAME + @"\disc");
+                    var _files2D = Directory.GetFiles(CONFIG_INI_FILE.IniReadString("COVERS", "CoverDirectoryCache", "") + @"\" + REGION_GAME + @"\2d");
+                    var _files3D = Directory.GetFiles(CONFIG_INI_FILE.IniReadString("COVERS", "CoverDirectoryCache", "") + @"\" + REGION_GAME + @"\3d");
+                    var _filesFull = Directory.GetFiles(CONFIG_INI_FILE.IniReadString("COVERS", "CoverDirectoryCache", "") + @"\" + REGION_GAME + @"\full");
 
                     var _destFiles = "";
                     // Disc
@@ -151,12 +142,12 @@ namespace GCBM
                     GlobalNotifications("Falha: " + ex.Message);
                 }
             }// WiiFlow
-            else if (configIniFile.IniReadBool("COVERS", "WiiFlowCoverUSBLoader") == true)
+            else if (CONFIG_INI_FILE.IniReadBool("COVERS", "WiiFlowCoverUSBLoader") == true)
             {
                 // 3D covers
                 try
                 {
-                    var _files = Directory.GetFiles(configIniFile.IniReadString("COVERS", "CoverDirectoryCache", "") + @"\" + _region + @"\3d");
+                    var _files = Directory.GetFiles(CONFIG_INI_FILE.IniReadString("COVERS", "CoverDirectoryCache", "") + @"\" + REGION_GAME + @"\3d");
                     var _destFiles = "";
 
                     foreach (var source in _files)
@@ -173,7 +164,7 @@ namespace GCBM
                 // Full covers
                 try
                 {
-                    var _files = Directory.GetFiles(configIniFile.IniReadString("COVERS", "CoverDirectoryCache", "") + @"\" + _region + @"\full");
+                    var _files = Directory.GetFiles(CONFIG_INI_FILE.IniReadString("COVERS", "CoverDirectoryCache", "") + @"\" + REGION_GAME + @"\full");
                     var _destFiles = "";
 
                     foreach (var source in _files)
@@ -199,34 +190,34 @@ namespace GCBM
             //}
 
             // USB Loader GX - Diretórios de destino das capas
-            string _targetDisc = configIniFile.IniReadString("COVERS", "GXCoverDirectoryDisc", "");
-            string _target2D = configIniFile.IniReadString("COVERS", "GXCoverDirectory2D", "");
-            string _target3D = configIniFile.IniReadString("COVERS", "GXCoverDirectory3D", "");
-            string _targetFull = configIniFile.IniReadString("COVERS", "GXCoverDirectoryFull", "");
+            string _targetDisc = CONFIG_INI_FILE.IniReadString("COVERS", "GXCoverDirectoryDisc", "");
+            string _target2D = CONFIG_INI_FILE.IniReadString("COVERS", "GXCoverDirectory2D", "");
+            string _target3D = CONFIG_INI_FILE.IniReadString("COVERS", "GXCoverDirectory3D", "");
+            string _targetFull = CONFIG_INI_FILE.IniReadString("COVERS", "GXCoverDirectoryFull", "");
             // WiiFlow - Diretórios de destino das capas
-            string _target3DCovers = configIniFile.IniReadString("COVERS", "WiiFlowCoverDirectory3D", "");
-            string _targetBoxCovers = configIniFile.IniReadString("COVERS", "WiiFlowCoverDirectoryFull", "");
+            string _target3DCovers = CONFIG_INI_FILE.IniReadString("COVERS", "WiiFlowCoverDirectory3D", "");
+            string _targetBoxCovers = CONFIG_INI_FILE.IniReadString("COVERS", "WiiFlowCoverDirectoryFull", "");
 
             if (rbUsa.Checked == true)
             {
-                _region = "US";
+                REGION_GAME = "US";
             }
             else if (rbEurope.Checked == true)
             {
-                _region = "EN";
+                REGION_GAME = "EN";
             }
             else if (rbJapan.Checked == true)
             {
-                _region = "JA";
+                REGION_GAME = "JA";
             }
 
             //USB Loader GX
-            if (configIniFile.IniReadBool("COVERS", "GXCoverUSBLoader") == true)
+            if (CONFIG_INI_FILE.IniReadBool("COVERS", "GXCoverUSBLoader") == true)
             {
                 // Disc covers
                 try
                 {
-                    var _files = Directory.GetFiles(configIniFile.IniReadString("COVERS", "CoverDirectoryCache", "") + @"\" + _region + @"\disc");
+                    var _files = Directory.GetFiles(CONFIG_INI_FILE.IniReadString("COVERS", "CoverDirectoryCache", "") + @"\" + REGION_GAME + @"\disc");
                     var _destFiles = "";
 
                     foreach (var source in _files)
@@ -243,7 +234,7 @@ namespace GCBM
                 // 2D covers
                 try
                 {
-                    var _files = Directory.GetFiles(configIniFile.IniReadString("COVERS", "CoverDirectoryCache", "") + @"\" + _region + @"\2d");
+                    var _files = Directory.GetFiles(CONFIG_INI_FILE.IniReadString("COVERS", "CoverDirectoryCache", "") + @"\" + REGION_GAME + @"\2d");
                     var _destFiles = "";
 
                     foreach (var source in _files)
@@ -260,7 +251,7 @@ namespace GCBM
                 // 3D covers
                 try
                 {
-                    var _files = Directory.GetFiles(configIniFile.IniReadString("COVERS", "CoverDirectoryCache", "") + @"\" + _region + @"\3d");
+                    var _files = Directory.GetFiles(CONFIG_INI_FILE.IniReadString("COVERS", "CoverDirectoryCache", "") + @"\" + REGION_GAME + @"\3d");
                     var _destFiles = "";
 
                     foreach (var source in _files)
@@ -277,7 +268,7 @@ namespace GCBM
                 // Full Boxcovers
                 try
                 {
-                    var _files = Directory.GetFiles(configIniFile.IniReadString("COVERS", "CoverDirectoryCache", "") + @"\" + _region + @"\full");
+                    var _files = Directory.GetFiles(CONFIG_INI_FILE.IniReadString("COVERS", "CoverDirectoryCache", "") + @"\" + REGION_GAME + @"\full");
                     var _destFiles = "";
 
                     foreach (var source in _files)
@@ -291,12 +282,12 @@ namespace GCBM
                     GlobalNotifications("Falha: " + ex.Message);
                 }
             }// WiiFlow
-            else if (configIniFile.IniReadBool("COVERS", "WiiFlowCoverUSBLoader") == true)
+            else if (CONFIG_INI_FILE.IniReadBool("COVERS", "WiiFlowCoverUSBLoader") == true)
             {
                 // 3D covers
                 try
                 {
-                    var _files = Directory.GetFiles(configIniFile.IniReadString("COVERS", "CoverDirectoryCache", "") + @"\" + _region + @"\3d");
+                    var _files = Directory.GetFiles(CONFIG_INI_FILE.IniReadString("COVERS", "CoverDirectoryCache", "") + @"\" + REGION_GAME + @"\3d");
                     var _destFiles = "";
 
                     foreach (var source in _files)
@@ -313,7 +304,7 @@ namespace GCBM
                 // Full covers
                 try
                 {
-                    var _files = Directory.GetFiles(configIniFile.IniReadString("COVERS", "CoverDirectoryCache", "") + @"\" + _region + @"\full");
+                    var _files = Directory.GetFiles(CONFIG_INI_FILE.IniReadString("COVERS", "CoverDirectoryCache", "") + @"\" + REGION_GAME + @"\full");
                     var _destFiles = "";
 
                     foreach (var source in _files)
