@@ -142,7 +142,7 @@ namespace GCBM
             for (int cnt = 0; cnt < dirs.Length; cnt++)
             {
                 tif = new TOCItemFil(itemNum, tocDirIdx, tocDirIdx, 0, true,
-                    dirs[cnt].Name, dirs[cnt].FullName.Replace(resPath, ""), dirs[cnt].FullName);
+                    dirs[cnt].Name, dirs[cnt].FullName.Replace(RES_PATH, ""), dirs[cnt].FullName);
                 toc.fils.Add(tif);
                 itemNum += 1;
                 toc.dirCount += 1;
@@ -153,7 +153,7 @@ namespace GCBM
             for (int cnt = 0; cnt < fils.Length; cnt++)
             {
                 tif = new TOCItemFil(itemNum, tocDirIdx, filePos, (int)fils[cnt].Length, false,
-                    fils[cnt].Name, fils[cnt].FullName.Replace(resPath, ""), fils[cnt].FullName);
+                    fils[cnt].Name, fils[cnt].FullName.Replace(RES_PATH, ""), fils[cnt].FullName);
                 toc.fils.Add(tif);
                 toc.fils[0].len = toc.fils.Count;
                 filePos += 2;
@@ -173,7 +173,7 @@ namespace GCBM
 
             tn = new TreeNode(toc.fils[0].name, 0, 0);
             tn.Name = toc.fils[0].TOCIdx.ToString();
-            tn.ToolTipText = resPath;
+            tn.ToolTipText = RES_PATH;
             toc.fils[0].node = tn;
             tns.Add(tn);
 
