@@ -14,17 +14,12 @@ namespace GCBM
     partial class frmAboutBox : Form
     {
         #region Properties
-        /// <summary>
-        /// Invoke Assembly
-        /// </summary>
-        Assembly assembly = Assembly.GetExecutingAssembly();
 
-        DateTime _currentYear = DateTime.Now;
+        Assembly assembly                        = Assembly.GetExecutingAssembly();
+        DateTime CURRENT_YEAR                    = DateTime.Now;
 
-        /// <summary>
-        /// IniFile
-        /// </summary>
-        private readonly IniFile configIniFile = new IniFile("config.ini");
+        private const string INI_FILE            = "config.ini";
+        private readonly IniFile CONFIG_INI_FILE = new IniFile(INI_FILE);
         #endregion
 
         #region Main Form
@@ -55,8 +50,8 @@ namespace GCBM
         {
             if (File.Exists("config.ini"))
             {
-                this.lblAboutCurrentLanguage.Text = GCBM.Properties.Resources.AboutCurrentLanguage + configIniFile.IniReadString("GCBM", "Language", "");
-                this.lblAboutTranslator.Text = GCBM.Properties.Resources.AboutTranslator + configIniFile.IniReadString("GCBM", "TranslatedBy", "");
+                this.lblAboutCurrentLanguage.Text = GCBM.Properties.Resources.AboutCurrentLanguage + CONFIG_INI_FILE.IniReadString("GCBM", "Language", "");
+                this.lblAboutTranslator.Text = GCBM.Properties.Resources.AboutTranslator + CONFIG_INI_FILE.IniReadString("GCBM", "TranslatedBy", "");
             }
             else
             {
@@ -128,7 +123,7 @@ namespace GCBM
                 //    return "";
                 //}
                 //return ((AssemblyCopyrightAttribute)attributes[0]).Copyright;
-                return "Axion Drak © 2019 - " + _currentYear.Year.ToString();
+                return "Axion Drak © 2019 - " + CURRENT_YEAR.Year.ToString();
             }
         }
 

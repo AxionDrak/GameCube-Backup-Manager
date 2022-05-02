@@ -40,7 +40,7 @@ namespace GCBM
 
         private void LoadISOInfo(bool image)
         {
-            loadPath = (image) ? imgPath : toc.fils[2].path;
+            loadPath = (image) ? IMAGE_PATH : toc.fils[2].path;
 
             fs = new sio.FileStream(loadPath, sio.FileMode.Open, sio.FileAccess.Read, sio.FileShare.Read);
             br = new sio.BinaryReader(fs, ste.Default);
@@ -55,19 +55,19 @@ namespace GCBM
             {
                 case "e":
                     tbIDRegion.Text = "USA/NTSC-U";
-                    region = 'u';
+                    REGION = 'u';
                     break;
                 case "j":
                     tbIDRegion.Text = "JAP/NTSC-J";
-                    region = 'j';
+                    REGION = 'j';
                     break;
                 case "p":
                     tbIDRegion.Text = "EUR/PAL";
-                    region = 'e';
+                    REGION = 'e';
                     break;
                 default:
                     tbIDRegion.Text = "UNK";
-                    region = 'n';
+                    REGION = 'n';
                     break;
             }
             bb = br.ReadBytes(2); // 2
@@ -88,13 +88,13 @@ namespace GCBM
                 lblTypeDisc.Text = GCBM.Properties.Resources.LoadISOInfo_String2;
             }
 
-            if (configIniFile.IniReadBool("TITLES", "GameInternalName") == true)
+            if (CONFIG_INI_FILE.IniReadBool("TITLES", "GameInternalName") == true)
             {
                 tbIDName.Text = br.ReadStringNT();
                 _oldNameInternal = br.ReadStringNT();   
             }
 
-            if (configIniFile.IniReadBool("TITLES", "GameXmlName") == true)
+            if (CONFIG_INI_FILE.IniReadBool("TITLES", "GameXmlName") == true)
             {
                 _oldNameInternal = br.ReadStringNT();
             }
@@ -102,7 +102,7 @@ namespace GCBM
             br.Close();
             fs.Close();
 
-            loadPath = (image) ? imgPath : toc.fils[3].path;
+            loadPath = (image) ? IMAGE_PATH : toc.fils[3].path;
 
             fs = new sio.FileStream(loadPath, sio.FileMode.Open, sio.FileAccess.Read, sio.FileShare.Read);
             br = new sio.BinaryReader(fs, ste.Default);
@@ -120,7 +120,7 @@ namespace GCBM
 
         private void LoadISOInfoDisc(bool image)
         {
-            loadPath = (image) ? imgPath : toc.fils[2].path;
+            loadPath = (image) ? IMAGE_PATH : toc.fils[2].path;
 
             fs = new sio.FileStream(loadPath, sio.FileMode.Open, sio.FileAccess.Read, sio.FileShare.Read);
             br = new sio.BinaryReader(fs, ste.Default);
@@ -135,19 +135,19 @@ namespace GCBM
             {
                 case "e":
                     tbIDRegionDisc.Text = "USA/NTSC-U";
-                    region = 'u';
+                    REGION = 'u';
                     break;
                 case "j":
                     tbIDRegionDisc.Text = "JAP/NTSC-J";
-                    region = 'j';
+                    REGION = 'j';
                     break;
                 case "p":
                     tbIDRegionDisc.Text = "EUR/PAL";
-                    region = 'e';
+                    REGION = 'e';
                     break;
                 default:
                     tbIDRegionDisc.Text = "UNK";
-                    region = 'n';
+                    REGION = 'n';
                     break;
             }
             bb = br.ReadBytes(2); // 2
@@ -157,13 +157,13 @@ namespace GCBM
             //tbIDDiscID.Text = string.Format("0x{0:x2}", b);
             fs.Position += 0x19;
 
-            if (configIniFile.IniReadBool("TITLES", "GameInternalName") == true)
+            if (CONFIG_INI_FILE.IniReadBool("TITLES", "GameInternalName") == true)
             {
                 tbIDNameDisc.Text = br.ReadStringNT();
                 _oldNameInternal = br.ReadStringNT();
             }
 
-            if (configIniFile.IniReadBool("TITLES", "GameXmlName") == true)
+            if (CONFIG_INI_FILE.IniReadBool("TITLES", "GameXmlName") == true)
             {
                 _oldNameInternal = br.ReadStringNT();
             }
@@ -171,7 +171,7 @@ namespace GCBM
             br.Close();
             fs.Close();
 
-            loadPath = (image) ? imgPath : toc.fils[3].path;
+            loadPath = (image) ? IMAGE_PATH : toc.fils[3].path;
 
             fs = new sio.FileStream(loadPath, sio.FileMode.Open, sio.FileAccess.Read, sio.FileShare.Read);
             br = new sio.BinaryReader(fs, ste.Default);

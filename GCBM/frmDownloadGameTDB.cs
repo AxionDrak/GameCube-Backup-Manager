@@ -19,14 +19,13 @@ namespace GCBM
 {
     public partial class frmDownloadGameTDB : Form
     {
-        private static string getCurrentPath   = Directory.GetCurrentDirectory();
-
-        private static string downloadFile     = GCBM.Properties.Resources.DownloadingWiiTDB_String1;
-        private static string extractFile      = GCBM.Properties.Resources.DownloadingWiiTDB_String2;
-        private static string processCompleted = GCBM.Properties.Resources.DownloadingWiiTDB_String3;
-        // IniFile 
-        private readonly IniFile configIniFile = new IniFile("config.ini");
-        public int _returnConfirm { get; set; }
+        private static string GET_CURRENT_PATH   = Directory.GetCurrentDirectory();
+        private static string DOWNLOAD_FILE      = GCBM.Properties.Resources.DownloadingWiiTDB_String1;
+        private static string EXTRACT_FILE       = GCBM.Properties.Resources.DownloadingWiiTDB_String2;
+        private static string PROCESS_COMPLETED  = GCBM.Properties.Resources.DownloadingWiiTDB_String3;
+        private const string WIITDB_FILE         = "wiitdb.xml";
+        private const string WIITDB_ZIP_FILE     = "wiitdb.zip";
+        public int RETURN_CONFIRM { get; set; }
 
         public frmDownloadGameTDB()
         {
@@ -43,7 +42,7 @@ namespace GCBM
                 WebClient webClient = new WebClient();
                 webClient.DownloadFileCompleted += new AsyncCompletedEventHandler(Completed);
                 webClient.DownloadProgressChanged += new DownloadProgressChangedEventHandler(ProgressChanged);
-                webClient.DownloadFileAsync(new Uri("https://www.gametdb.com/wiitdb.zip"), "wiitdb.zip");
+                webClient.DownloadFileAsync(new Uri("https://www.gametdb.com/wiitdb.zip"), WIITDB_ZIP_FILE);
             }
             catch (Exception ex)
             {
@@ -54,18 +53,18 @@ namespace GCBM
         private void ProgressChanged(object sender, DownloadProgressChangedEventArgs e)
         {
             lblDownload.Font = new Font(lblDownload.Font, FontStyle.Bold);
-            lblDownload.Text = downloadFile + e.ProgressPercentage + "%";
+            lblDownload.Text = DOWNLOAD_FILE + e.ProgressPercentage + "%";
             pbGameTDB.Value = e.ProgressPercentage;
         }
 
         private async void Completed(object sender, AsyncCompletedEventArgs e)
         {
             lblExtracting.Font = new Font(lblExtracting.Font, FontStyle.Bold);
-            lblExtracting.Text = extractFile; 
+            lblExtracting.Text = EXTRACT_FILE; 
             
             try
             {
-                ZipFile.ExtractToDirectory(getCurrentPath + @"\wiitdb.zip", getCurrentPath);
+                ZipFile.ExtractToDirectory(GET_CURRENT_PATH + @"\" + WIITDB_ZIP_FILE, GET_CURRENT_PATH);
             }
             catch (Exception ex)
             {
@@ -73,14 +72,14 @@ namespace GCBM
             }
             finally
             {
-                File.Delete(getCurrentPath + @"\wiitdb.zip");
+                File.Delete(GET_CURRENT_PATH + @"\" + WIITDB_ZIP_FILE);
 
                 await ProcessTaskDelay();
-                FileInfo fileinfo = new FileInfo(getCurrentPath + @"\wiitdb.xml");
+                FileInfo fileinfo = new FileInfo(GET_CURRENT_PATH + @"\" + WIITDB_FILE);
                 if (fileinfo.Length >= 31035000) //31035596
                 {
                     lblConverting.Font = new Font(lblConverting.Font, FontStyle.Bold);
-                    lblConverting.Text = processCompleted;
+                    lblConverting.Text = PROCESS_COMPLETED;
                     btnCancelWork.Enabled = true;
                 }
             }
@@ -97,7 +96,7 @@ namespace GCBM
 
             //MessageBox.Show("Deseja mesmo sair?", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.DialogResult = DialogResult.OK;
-            this._returnConfirm = 1;
+            this.RETURN_CONFIRM = 1;
             this.Close();
             this.Dispose();
         }

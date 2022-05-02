@@ -16,8 +16,8 @@ namespace GCBM.tools
     {
         // ProcessStartInfo
         #region Properties
+        private static string GET_CURRENT_PATH = Directory.GetCurrentDirectory();
         readonly ProcessStartInfo startInfo = new ProcessStartInfo();
-        private readonly string getCurrentPath = Directory.GetCurrentDirectory();
         #endregion
 
         #region Main form
@@ -54,7 +54,7 @@ namespace GCBM.tools
             startInfo.CreateNoWindow = true;
             startInfo.UseShellExecute = true;
             // Elf2Dol
-            startInfo.FileName = getCurrentPath + @"\bin\elf2dol.exe ";
+            startInfo.FileName = GET_CURRENT_PATH + @"\bin\elf2dol.exe ";
             // Argumentos
             startInfo.Arguments = " -O binary " + textBoxELF.Text + " " + textBoxDOL.Text;
             startInfo.WindowStyle = ProcessWindowStyle.Hidden;

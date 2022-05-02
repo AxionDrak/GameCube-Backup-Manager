@@ -13,10 +13,10 @@ namespace GCBM
 {
     public partial class frmSplashScreen : Form
     {
+        private const string INI_FILE            = "config.ini";
+        private readonly IniFile CONFIG_INI_FILE = new IniFile(INI_FILE);
         private delegate void ProgressDelegate(int progress);
         private ProgressDelegate del;
-        // IniFile 
-        private readonly IniFile configIniFile = new IniFile("config.ini");
 
         public frmSplashScreen()
         {
@@ -30,7 +30,7 @@ namespace GCBM
 
         private void AdjustLanguage()
         {
-            switch (configIniFile.IniReadInt("LANGUAGE", "ConfigLanguage"))
+            switch (CONFIG_INI_FILE.IniReadInt("LANGUAGE", "ConfigLanguage"))
             {
                 case 0:
                     Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("pt-BR");

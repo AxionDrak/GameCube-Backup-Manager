@@ -18,9 +18,9 @@ namespace GCBM
     public partial class frmInfoAdditional : Form
     {
         #region Properties
-        private readonly string fileXML = @"wiitdb.xml";
-        // IniFile 
-        private readonly IniFile configIniFile = new IniFile("config.ini");
+        private const string WIITDB_FILE         = "wiitdb.xml";
+        //private const string INI_FILE            = "config.ini";
+        //private readonly IniFile CONFIG_INI_FILE = new IniFile(INI_FILE);
         #endregion
 
         #region Main Form
@@ -61,7 +61,7 @@ namespace GCBM
 
             try
             {
-                XElement root = XElement.Load(fileXML);
+                XElement root = XElement.Load(WIITDB_FILE);
                 IEnumerable<XElement> tests = from el in root.Elements("game") where (string)el.Element("id") == tbIDGame select el;
 
                 foreach (XElement el in tests)

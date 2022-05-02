@@ -15,11 +15,11 @@ namespace GCBM.tools
     public partial class frmCreatePackage : Form
     {
         #region Properties
-        public string dgvFile { get; private set; }
-        public string dgvDirectory { get; private set; }
-        public string fbdDirectory { get; private set; }
-        public string packType { get; private set; }
-        public string newFile { get; private set; }
+        public string DGV_FILE { get; private set; }
+        public string DGV_DIRECTORY { get; private set; }
+        public string FBD_DIRECTORY { get; private set; }
+        public string PACK_TYPE { get; private set; }
+        public string NEW_FILE { get; private set; }
         #endregion
 
         #region Main Form
@@ -32,9 +32,9 @@ namespace GCBM.tools
         {
             InitializeComponent();
 
-            dgvFile = dgvSourceFile;
-            dgvDirectory = dgvSourceDirectory;
-            fbdDirectory = fbdSourceDirectory;
+            DGV_FILE = dgvSourceFile;
+            DGV_DIRECTORY = dgvSourceDirectory;
+            FBD_DIRECTORY = fbdSourceDirectory;
         }
         #endregion
 
@@ -52,12 +52,12 @@ namespace GCBM.tools
                 //Tipo de pacote.
                 if (rbFileZip.Checked)
                 {
-                    packType = ".zip";
-                    newFile = dgvFile + packType;
+                    PACK_TYPE = ".zip";
+                    NEW_FILE = dgvFile + PACK_TYPE;
 
-                    if (File.Exists(newFile))
+                    if (File.Exists(NEW_FILE))
                     {
-                        File.Delete(newFile);
+                        File.Delete(NEW_FILE);
                         CompressType();
                     }
                     else
@@ -67,12 +67,12 @@ namespace GCBM.tools
                 }
                 else
                 {
-                    packType = ".nwb";
-                    newFile = dgvFile + packType;
+                    PACK_TYPE = ".nwb";
+                    NEW_FILE = dgvFile + PACK_TYPE;
 
-                    if (File.Exists(newFile))
+                    if (File.Exists(NEW_FILE))
                     {
-                        File.Delete(newFile);
+                        File.Delete(NEW_FILE);
                         CompressType();
                     }
                     else
@@ -93,17 +93,17 @@ namespace GCBM.tools
             {
                 if (rbNoCompression.Checked)
                 {
-                    ZipFile.CreateFromDirectory(Path.GetDirectoryName(dgvDirectory), fbdDirectory + @"\" + newFile, CompressionLevel.NoCompression, true);
+                    ZipFile.CreateFromDirectory(Path.GetDirectoryName(DGV_DIRECTORY), FBD_DIRECTORY + @"\" + NEW_FILE, CompressionLevel.NoCompression, true);
                     SuccessCompressingFile();
                 }
                 else if (rbFastCompression.Checked)
                 {
-                    ZipFile.CreateFromDirectory(Path.GetDirectoryName(dgvDirectory), fbdDirectory + @"\" + newFile, CompressionLevel.Fastest, true);
+                    ZipFile.CreateFromDirectory(Path.GetDirectoryName(DGV_DIRECTORY), FBD_DIRECTORY + @"\" + NEW_FILE, CompressionLevel.Fastest, true);
                     SuccessCompressingFile();
                 }
                 else
                 {
-                    ZipFile.CreateFromDirectory(Path.GetDirectoryName(dgvDirectory), fbdDirectory + @"\" + newFile, CompressionLevel.Optimal, true);
+                    ZipFile.CreateFromDirectory(Path.GetDirectoryName(DGV_DIRECTORY), FBD_DIRECTORY + @"\" + NEW_FILE, CompressionLevel.Optimal, true);
                     SuccessCompressingFile();
                 }
             }
@@ -130,7 +130,7 @@ namespace GCBM.tools
         private void btnCompress_Click(object sender, EventArgs e)
         {
             //CompressFolder(dgvFile, dgvDirectory);
-            CompressFolder(dgvFile);
+            CompressFolder(DGV_FILE);
         }
 
         private void btnClose_Click(object sender, EventArgs e)
