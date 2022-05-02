@@ -118,9 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="tabControlMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>878, 540</value>
-  </data>
   <data name="pbGameCover3D.ErrorImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAALAAAAD4CAYAAABMvGxfAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
@@ -651,14 +648,11 @@
         n3322V7suxX6ASKjfQ71h8j4/4Z4I7FIJPofI1bqEdzG6zMAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="tabMainFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>870, 514</value>
-  </data>
   <data name="tabMainFile.Text" xml:space="preserve">
     <value>파일 (소스)</value>
   </data>
   <data name="lblInstallGame.Location" type="System.Drawing.Point, System.Drawing">
-    <value>519, 332</value>
+    <value>519, 328</value>
   </data>
   <data name="lblInstallGame.Size" type="System.Drawing.Size, System.Drawing">
     <value>77, 13</value>
@@ -667,10 +661,10 @@
     <value>게임 설치 중...</value>
   </data>
   <data name="lblPercent.Location" type="System.Drawing.Point, System.Drawing">
-    <value>665, 314</value>
+    <value>665, 310</value>
   </data>
   <data name="lblCopy.Location" type="System.Drawing.Point, System.Drawing">
-    <value>519, 314</value>
+    <value>519, 310</value>
   </data>
   <data name="lblCopy.Size" type="System.Drawing.Size, System.Drawing">
     <value>52, 13</value>
@@ -679,16 +673,10 @@
     <value>대기 중...</value>
   </data>
   <data name="pbCopy.Location" type="System.Drawing.Point, System.Drawing">
-    <value>516, 348</value>
-  </data>
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>519, 436</value>
+    <value>516, 344</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>옆에 있는 아이콘을 클릭하고 폴더를 선택하여 내부에 포함된 모든 ISO 및 GCM 파일을 나열합니다.</value>
-  </data>
-  <data name="btnSelectFolder.Location" type="System.Drawing.Point, System.Drawing">
-    <value>783, 416</value>
   </data>
   <data name="grpDetails.Text" xml:space="preserve">
     <value>상세사항</value>
@@ -778,9 +766,6 @@
   <data name="tsmiInfoGame.Text" xml:space="preserve">
     <value>게임 정보</value>
   </data>
-  <data name="mstripFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>864, 24</value>
-  </data>
   <data name="tsmiReloadGameList.Size" type="System.Drawing.Size, System.Drawing">
     <value>110, 20</value>
   </data>
@@ -854,7 +839,7 @@
     <value>파일 (대상)</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>510, 185</value>
+    <value>510, 193</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
     <value>348, 39</value>
@@ -863,7 +848,7 @@
     <value>전체 파일 목록과 전체 파일 크기는 디스크 1(game.iso)과 디스크 2(disc2.iso) 파일을 구분하지 않습니다. 데이터는 샘플링 목적으로만 사용됩니다.</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>510, 167</value>
+    <value>510, 175</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>33, 13</value>
@@ -1016,10 +1001,10 @@
     <value>아이템을 선택하세요...</value>
   </data>
   <data name="cbFilterDatabase.Location" type="System.Drawing.Point, System.Drawing">
-    <value>521, 5</value>
+    <value>515, 5</value>
   </data>
   <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>483, 8</value>
+    <value>477, 8</value>
   </data>
   <data name="label7.Text" xml:space="preserve">
     <value>필터:</value>
