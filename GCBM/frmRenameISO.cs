@@ -16,11 +16,9 @@ namespace GCBM
     public partial class frmRenameISO : Form
     {
         #region Properties
-        public string _newName { get; private set; }
-        public string _oldName { get; private set; }
-        public int _returnConfirm { get; set; }
-        // IniFile 
-        private readonly IniFile configIniFile = new IniFile("config.ini");
+        public string NEW_NAME { get; private set; }
+        public string OLD_NAME { get; private set; }
+        public int RETURN_CONFIRM { get; set; }
         #endregion
 
         #region Main Form
@@ -33,9 +31,9 @@ namespace GCBM
         {
             InitializeComponent();
 
-            _newName = pathImage;
-            _oldName = fbd;
-            tbRenameISO.Text = Path.GetFileName(_newName);
+            NEW_NAME = pathImage;
+            OLD_NAME = fbd;
+            tbRenameISO.Text = Path.GetFileName(NEW_NAME);
         }
         #endregion
 
@@ -57,26 +55,26 @@ namespace GCBM
         #region Rename ISO
         private void RenameISO()
         {
-            string _directoryName = Path.GetDirectoryName(_newName);
-            string _fileName = Path.GetFileName(_newName);
+            string _directoryName = Path.GetDirectoryName(NEW_NAME);
+            string _fileName = Path.GetFileName(NEW_NAME);
             string ret = Regex.Replace(_fileName, @"[^0-9a-zA-ZéúíóáÉÚÍÓÁèùìòàÈÙÌÒÀõãñÕÃÑêûîôâÊÛÎÔÂëÿüïöäËYÜÏÖÄçÇ[\]\-().]+?", string.Empty);
 
             if (chkRenameISO.Checked)
             {
-                if (File.Exists(_newName))
+                if (File.Exists(NEW_NAME))
                 {
                     string newFilename = ret;
                     
                     if (!string.IsNullOrEmpty(newFilename))
                     {
                         //File.Move(_oldName + @"\" + _newName, _oldName + @"\" + newFilename);
-                        File.Move(_newName, _directoryName + @"\" + newFilename);
+                        File.Move(NEW_NAME, _directoryName + @"\" + newFilename);
                         if (File.Exists(_directoryName + @"\" + newFilename))
                         {
                             ConfirmRename(newFilename);
 
                             this.DialogResult = DialogResult.OK;
-                            this._returnConfirm = 1;
+                            this.RETURN_CONFIRM = 1;
                             this.Close();
                         }
                     }
@@ -84,18 +82,18 @@ namespace GCBM
             }
             else
             {
-                if (File.Exists(_newName))
+                if (File.Exists(NEW_NAME))
                 {
                     string newFilename = tbRenameISO.Text;
                     if (!string.IsNullOrEmpty(newFilename))
                     {
-                        File.Move(_newName, _directoryName + @"\" + newFilename);
+                        File.Move(NEW_NAME, _directoryName + @"\" + newFilename);
                         if (File.Exists(_directoryName + @"\" + newFilename))
                         {
                             ConfirmRename(newFilename);
 
                             this.DialogResult = DialogResult.OK;
-                            this._returnConfirm = 1;
+                            this.RETURN_CONFIRM = 1;
                             this.Close();
                         }
                     }
