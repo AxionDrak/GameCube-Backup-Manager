@@ -44,11 +44,11 @@ namespace GCBM
             string errorText = "";
             int i, j;
 
-            toc = new TOCClass(resPath);
+            toc = new TOCClass(RES_PATH);
             itemNum = toc.fils.Count;
             shift = toc.fils.Count - 1;
 
-            fsr = new sio.FileStream(imgPath, sio.FileMode.Open, sio.FileAccess.Read, sio.FileShare.Read);
+            fsr = new sio.FileStream(IMAGE_PATH, sio.FileMode.Open, sio.FileAccess.Read, sio.FileShare.Read);
             brr = new sio.BinaryReader(fsr, ste.Default);
 
             if (fsr.Length > 0x0438)
@@ -139,7 +139,7 @@ namespace GCBM
                         if (j == 0)
                         {
                             itemGamePath = itemPath;
-                            itemPath = resPath + itemPath;
+                            itemPath = RES_PATH + itemPath;
                             break;
                         }
                         else
@@ -151,7 +151,7 @@ namespace GCBM
                     if (itemIsDir)
                         itemPath += '\\';
 
-                    if (retrieveFilesInfo)
+                    if (RETRIEVE_FILES_INFO)
                     {
                         if (!itemIsDir)
                             if (fsr.Length < itemPos + itemLen)
@@ -191,10 +191,10 @@ namespace GCBM
                 return false;
             }
 
-            error = GenerateTreeView(fileNameSort);
+            error = GenerateTreeView(FILENAME_SORT);
 
-            rootOpened = false;
-            LoadInfo(!rootOpened);
+            ROOT_OPENED = false;
+            LoadInfo(!ROOT_OPENED);
 
             return error;
         }
@@ -229,11 +229,11 @@ namespace GCBM
             string errorText = "";
             int i, j;
 
-            toc = new TOCClass(resPath);
+            toc = new TOCClass(RES_PATH);
             itemNum = toc.fils.Count;
             shift = toc.fils.Count - 1;
 
-            fsr = new sio.FileStream(imgPath, sio.FileMode.Open, sio.FileAccess.Read, sio.FileShare.Read);
+            fsr = new sio.FileStream(IMAGE_PATH, sio.FileMode.Open, sio.FileAccess.Read, sio.FileShare.Read);
             brr = new sio.BinaryReader(fsr, ste.Default);
 
             if (fsr.Length > 0x0438)
@@ -324,7 +324,7 @@ namespace GCBM
                         if (j == 0)
                         {
                             itemGamePath = itemPath;
-                            itemPath = resPath + itemPath;
+                            itemPath = RES_PATH + itemPath;
                             break;
                         }
                         else
@@ -336,7 +336,7 @@ namespace GCBM
                     if (itemIsDir)
                         itemPath += '\\';
 
-                    if (retrieveFilesInfo)
+                    if (RETRIEVE_FILES_INFO)
                     {
                         if (!itemIsDir)
                             if (fsr.Length < itemPos + itemLen)
@@ -376,10 +376,10 @@ namespace GCBM
                 return false;
             }
 
-            error = GenerateTreeView(fileNameSort);
+            error = GenerateTreeView(FILENAME_SORT);
 
-            rootOpened = false;
-            LoadInfoDisc(!rootOpened);
+            ROOT_OPENED = false;
+            LoadInfoDisc(!ROOT_OPENED);
 
             return error;
         }
