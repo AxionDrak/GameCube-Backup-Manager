@@ -33,100 +33,54 @@ namespace GCBM
     public partial class frmMain : Form
     {
         #region Properties
-        /// <summary>
-        /// Invoke Assembly
-        /// </summary>
-        Assembly assembly = Assembly.GetExecutingAssembly();
 
-        /// <summary>
-        /// Invoke Splash Screen
-        /// </summary>
-        private frmSplashScreen splashScreen;
-        private bool done = false;
+        Assembly assembly                            = Assembly.GetExecutingAssembly();
 
-        /// <summary>
-        /// Provides common methods for sending data to and receiving data from a resource identified by a URI.
-        /// </summary>
-        private readonly WebClient _netClient = new WebClient();
-
-        /// <summary>
-        /// Provides a response from a Uniform Resource Identifier (URI).
-        /// </summary>
-        private HttpWebResponse _netResponse = null;
-
-        /// <summary>
-        /// Provides information about a specific culture (called a locale for unmanaged code development). 
-        /// The information includes the names for the culture, the writing system, the calendar used, 
-        /// the sort order of strings, and formatting for dates and numbers.
-        /// </summary>
-        private readonly CultureInfo myCulture = new CultureInfo("pt-BR", false);
-
-        /// <summary>
-        /// Exposes static methods for creating, moving, and enumerating through directories and subdirectories.
-        /// Gets the current working directory of the application.
-        /// </summary>
-        private string getCurrentPath = Directory.GetCurrentDirectory();
-
-        /// <summary>
-        /// Specifies a set of values that are used when you start a process.
-        /// </summary>
-        private readonly ProcessStartInfo startInfo = new ProcessStartInfo();
-
-        /// <summary>
-        /// GCIT
-        /// </summary>
-        private string flushSD;
-        private string scrubAlign;
-
-        /// <summary>
-        /// IniFile
-        /// </summary>
-        private readonly IniFile configIniFile = new IniFile("config.ini");
-
-        /// <summary>
-        /// Variable to get the TOC path.
-        /// </summary>
-        public string resPath = "";
-
-        /// <summary>
-        /// Variable to indicate the path of an image.
-        /// </summary>
-        public string imgPath = "";
-
-        /// <summary>
-        /// Boolean variable to indicate error.
-        /// </summary>
-        private bool error = false;
-
-        /// <summary>
-        /// Boolean variable to indicate the root directory to be analyzed.
-        /// </summary>
-        private bool rootOpened = true;
-
-        /// <summary>
-        /// Boolean variable for file name sorting.
-        /// </summary>
-        private bool fileNameSort = true;
-
-        /// <summary>
-        /// Boolean variable to retrieve information from files.
-        /// </summary>
-        private bool retrieveFilesInfo = true;
-
-        /// <summary>
-        /// Variable to indicate the region of the ISO/GCM file.
-        /// </summary>
-        private char region = 'n';
-
-        /// <summary>
-        /// Variable to indicate the wiitdb.xml file.
-        /// </summary>
-        private readonly string fileXML = @"wiitdb.xml";
-
-        /// <summary>
-        /// variable to indicate the language of the ISO/GCM file.
-        /// </summary>
-        private string _linkDomain = "";
+        private static string GET_CURRENT_PATH       = Directory.GetCurrentDirectory();
+        private static string CURRENT_DIRECTORY      = "";
+        private static string STANDARD_DIRECTORY     = "";
+        private static string TEMP_DIR               = "temp";
+        private static string COVERS_DIR             = "";
+        private static string FILE_TDBXML            = "";
+        private static string LOG_LEVEL              = "";
+        private static string CULTURE_LANG           = "";
+        private static string CULTURE_CURRENT        = "pt-BR";
+        private static string TRANSLATOR             = "";
+        private static string RES_PATH               = "";
+        private static string IMAGE_PATH             = "";
+        private static string LINK_DOMAIN            = "";
+        private static string FLUSH_SD;
+        private static string SCRUB_ALIGN;
+        private static char REGION = 'n';
+        private const string VERSION                 = "2.4.3.0";
+        private const string MIN_DB_VERSION          = "1.2.0.0";
+        private const string INI_FILE                = "config.ini";
+        private const string GLOBAL_INI_FILE         = "gc_global.ini";
+        private const string LOG_FILE                = "gcbm.log";
+        private const string CACHE_DIR               = "cache";
+        private const string LOCAL_FILES_DB          = "gcbm_Local.xml";
+        private const string WIITDB_FILE             = "wiitdb.xml";
+        private const string WIITDB_DOWNLOAD_SITE    = "https://www.gametdb.com/";
+        private const string TITLES_FILE             = "titles.txt";
+        private bool ENABLE_INTERNET                 = true;
+        private bool ENABLE_UPDATE_PROGRAM           = true;
+        private bool UPDATE_LOG                      = true;
+        private bool ERROR                           = false;
+        private bool NETWORK_CHECK                   = true;
+        private bool EXPORT_LOG_CHECK                = true;
+        private bool CLEAR_TEMP_CHECK                = true;
+        private bool WIITDBXML_CHECK                 = true;
+        private bool SPLASH_SCREEN_DONE              = false;
+        private bool ROOT_OPENED                     = true;
+        private bool FILENAME_SORT                   = true;
+        private bool RETRIEVE_FILES_INFO             = true;
+        private int Reserved;
+        private readonly IniFile CONFIG_INI_FILE     = new IniFile(INI_FILE);
+        private readonly CultureInfo MY_CULTURE      = new CultureInfo(CULTURE_CURRENT, false);
+        private readonly ProcessStartInfo START_INFO = new ProcessStartInfo();
+        private readonly WebClient NET_CLIENT        = new WebClient();
+        private HttpWebResponse NET_RESPONSE         = null;
+        private frmSplashScreen SPLASH_SCREEN;
 
         [DllImport("kernel32.dll")]
         static extern EXECUTION_STATE SetThreadExecutionState(EXECUTION_STATE esFlags);
@@ -156,11 +110,11 @@ namespace GCBM
             this.Text = "GameCube Backup Manager 2022 - " + _version.ToString() + " - 64-bit";
 
             // Splash Screen
-            if (configIniFile.IniReadBool("SEVERAL", "Welcome") == false)
+            if (CONFIG_INI_FILE.IniReadBool("SEVERAL", "Welcome") == false)
             {
                 // Splash Screen
                 this.Load += new EventHandler(HandleFormLoad);
-                this.splashScreen = new frmSplashScreen();
+                this.SPLASH_SCREEN = new frmSplashScreen();
             }
             else
             {
@@ -181,7 +135,7 @@ namespace GCBM
             cbFilterDatabase.SelectedIndex = 0;
             LoadConfigFile();
 
-            if (!File.Exists(fileXML))
+            if (!File.Exists(WIITDB_FILE))
             {
                 CheckWiiTdbXml();
             }
@@ -231,19 +185,19 @@ namespace GCBM
 
             if (File.Exists("config.ini"))
             {
-                if (configIniFile.IniReadString("GCBM", "ProgVersion", "") != _version.ToString())
+                if (CONFIG_INI_FILE.IniReadString("GCBM", "ProgVersion", "") != _version.ToString())
                 {
-                    configIniFile.IniWriteString("GCBM", "ProgVersion", _version.ToString());
+                    CONFIG_INI_FILE.IniWriteString("GCBM", "ProgVersion", _version.ToString());
                 }
 
-                if (configIniFile.IniReadString("GCBM", "Language", "") != GCBM.Properties.Resources.GCBM_Language)
+                if (CONFIG_INI_FILE.IniReadString("GCBM", "Language", "") != GCBM.Properties.Resources.GCBM_Language)
                 {
-                    configIniFile.IniWriteString("GCBM", "Language", GCBM.Properties.Resources.GCBM_Language);
+                    CONFIG_INI_FILE.IniWriteString("GCBM", "Language", GCBM.Properties.Resources.GCBM_Language);
                 }
 
-                if (configIniFile.IniReadString("GCBM", "TranslatedBy", "") != GCBM.Properties.Resources.GCBM_TranslatedBy)
+                if (CONFIG_INI_FILE.IniReadString("GCBM", "TranslatedBy", "") != GCBM.Properties.Resources.GCBM_TranslatedBy)
                 {
-                    configIniFile.IniWriteString("GCBM", "TranslatedBy", GCBM.Properties.Resources.GCBM_TranslatedBy);
+                    CONFIG_INI_FILE.IniWriteString("GCBM", "TranslatedBy", GCBM.Properties.Resources.GCBM_TranslatedBy);
                 }
             }
         }
@@ -252,7 +206,7 @@ namespace GCBM
         #region Adjust Language
         private void AdjustLanguage()
         {
-            switch (configIniFile.IniReadInt("LANGUAGE", "ConfigLanguage"))
+            switch (CONFIG_INI_FILE.IniReadInt("LANGUAGE", "ConfigLanguage"))
             {
                 case 0:
                     Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("pt-BR");
@@ -292,13 +246,13 @@ namespace GCBM
             Hardworker worker = new Hardworker();
             worker.ProgressChanged += (o, ex) =>
             {
-                this.splashScreen.UpdateProgress(ex.Progress);
+                this.SPLASH_SCREEN.UpdateProgress(ex.Progress);
             };
             worker.HardWorkDone += (o, ex) =>
             {
-                done = true;
+                SPLASH_SCREEN_DONE = true;
                 //this.Show();
-                if (done == true)
+                if (SPLASH_SCREEN_DONE == true)
                 {
                     this.Show();
                     NetworkCheck();
@@ -312,64 +266,64 @@ namespace GCBM
         /// </summary>
         private void ShowSplashScreen()
         {
-            splashScreen.Show();
-            while (!done)
+            SPLASH_SCREEN.Show();
+            while (!SPLASH_SCREEN_DONE)
             {
                 Application.DoEvents();
             }
-            splashScreen.Close();
-            this.splashScreen.Dispose();
+            SPLASH_SCREEN.Close();
+            this.SPLASH_SCREEN.Dispose();
         }
         #endregion
 
         #region Update Program
         private void UpdateProgram()
         {
-            if (configIniFile.IniReadBool("UPDATES", "UpdateServerProxy") == true)
+            if (CONFIG_INI_FILE.IniReadBool("UPDATES", "UpdateServerProxy") == true)
             {
-                if (configIniFile.IniReadString("UPDATES", "ServerProxy", "") != string.Empty &&
-                    configIniFile.IniReadString("UPDATES", "UserProxy", "") != string.Empty &&
-                    configIniFile.IniReadString("UPDATES", "PassProxy", "") != string.Empty)
+                if (CONFIG_INI_FILE.IniReadString("UPDATES", "ServerProxy", "") != string.Empty &&
+                    CONFIG_INI_FILE.IniReadString("UPDATES", "UserProxy", "") != string.Empty &&
+                    CONFIG_INI_FILE.IniReadString("UPDATES", "PassProxy", "") != string.Empty)
                 {
-                    var proxy = new WebProxy(configIniFile.IniReadString("UPDATES", "ServerProxy", ""), true)
+                    var proxy = new WebProxy(CONFIG_INI_FILE.IniReadString("UPDATES", "ServerProxy", ""), true)
                     {
-                        Credentials = new NetworkCredential(configIniFile.IniReadString("UPDATES", "UserProxy", ""),
-                        configIniFile.IniReadString("UPDATES", "PassProxy", ""))
+                        Credentials = new NetworkCredential(CONFIG_INI_FILE.IniReadString("UPDATES", "UserProxy", ""),
+                        CONFIG_INI_FILE.IniReadString("UPDATES", "PassProxy", ""))
                     };
                     AutoUpdater.Proxy = proxy;
                 }
             }
 
             // Ativa o suporte as atualizações
-            if (configIniFile.IniReadBool("UPDATES", "UpdateVerifyStart") == true)
+            if (CONFIG_INI_FILE.IniReadBool("UPDATES", "UpdateVerifyStart") == true)
             {
                 int timeInterval = 0;
 
-                if (configIniFile.IniReadInt("UPDATES", "VerificationInterval") == 0)
+                if (CONFIG_INI_FILE.IniReadInt("UPDATES", "VerificationInterval") == 0)
                 {
                     timeInterval = 10; // 5 minutos
                 }
-                else if (configIniFile.IniReadInt("UPDATES", "VerificationInterval") == 1)
+                else if (CONFIG_INI_FILE.IniReadInt("UPDATES", "VerificationInterval") == 1)
                 {
                     timeInterval = 20; // 10 minutos
                 }
-                else if (configIniFile.IniReadInt("UPDATES", "VerificationInterval") == 2)
+                else if (CONFIG_INI_FILE.IniReadInt("UPDATES", "VerificationInterval") == 2)
                 {
                     timeInterval = 30; // 30 minutos
                 }
-                else if (configIniFile.IniReadInt("UPDATES", "VerificationInterval") == 3)
+                else if (CONFIG_INI_FILE.IniReadInt("UPDATES", "VerificationInterval") == 3)
                 {
                     timeInterval = 60; // 30 minutos
                 }
-                else if (configIniFile.IniReadInt("UPDATES", "VerificationInterval") == 4)
+                else if (CONFIG_INI_FILE.IniReadInt("UPDATES", "VerificationInterval") == 4)
                 {
                     timeInterval = 120; // 1 hora
                 }
-                else if (configIniFile.IniReadInt("UPDATES", "VerificationInterval") == 5)
+                else if (CONFIG_INI_FILE.IniReadInt("UPDATES", "VerificationInterval") == 5)
                 {
                     timeInterval = 240; // 2 horas
                 }
-                else if (configIniFile.IniReadInt("UPDATES", "VerificationInterval") == 6)
+                else if (CONFIG_INI_FILE.IniReadInt("UPDATES", "VerificationInterval") == 6)
                 {
                     timeInterval = 360; // 3 horas
                 }
@@ -379,7 +333,7 @@ namespace GCBM
                 }
 
                 // Suporte as atualizações do canal Beta
-                if (configIniFile.IniReadBool("UPDATES", "UpdateBetaChannel") == true)
+                if (CONFIG_INI_FILE.IniReadBool("UPDATES", "UpdateBetaChannel") == true)
                 {
                     System.Timers.Timer timer = new System.Timers.Timer
                     {
@@ -433,7 +387,7 @@ namespace GCBM
         #region Disable Screensaver
         private void DisabeScreensaver()
         {
-            if (configIniFile.IniReadBool("SEVERAL", "Screensaver") == true)
+            if (CONFIG_INI_FILE.IniReadBool("SEVERAL", "Screensaver") == true)
             {
                 // Desativa o screensaver
                 SetThreadExecutionState(EXECUTION_STATE.ES_DISPLAY_REQUIRED | EXECUTION_STATE.ES_CONTINUOUS);
@@ -452,7 +406,7 @@ namespace GCBM
         /// </summary>
         private void NetworkCheck()
         {
-            if (configIniFile.IniReadBool("SEVERAL", "NetVerify") == true)
+            if (CONFIG_INI_FILE.IniReadBool("SEVERAL", "NetVerify") == true)
             {
                 if (!NetworkInterface.GetIsNetworkAvailable())
                 {
@@ -503,7 +457,7 @@ namespace GCBM
             // Gets the program version.
             tbLog.AppendText("[" + DateString() + "]" + GCBM.Properties.Resources.RegisterHeaderLog_ApplicationVersion + _version + Environment.NewLine);
             // Gets the current program directory.
-            tbLog.AppendText("[" + DateString() + "]" + GCBM.Properties.Resources.RegisterHeaderLog_CurrentProgramDirectory + getCurrentPath + Environment.NewLine);
+            tbLog.AppendText("[" + DateString() + "]" + GCBM.Properties.Resources.RegisterHeaderLog_CurrentProgramDirectory + GET_CURRENT_PATH + Environment.NewLine);
         }
         #endregion
 
@@ -598,8 +552,8 @@ namespace GCBM
             tbIDGame.Clear();
             tbIDDiscID.Clear();
             tbIDMakerCode.Clear();
-            pbGameDisc.LoadAsync(getCurrentPath + @"\media\covers\disc.png");
-            pbGameCover3D.LoadAsync(getCurrentPath + @"\media\covers\3d.png");
+            pbGameDisc.LoadAsync(GET_CURRENT_PATH + @"\media\covers\disc.png");
+            pbGameCover3D.LoadAsync(GET_CURRENT_PATH + @"\media\covers\3d.png");
             pbWebGameID.Enabled = false;
             pbWebGameID.Image = Resources.globe_earth_grayscale_64;
             dgvGameList.DataSource = null;
@@ -634,9 +588,9 @@ namespace GCBM
         #region Load Database XML
         private void LoadDatabaseXML()
         {
-            if (File.Exists(fileXML))
+            if (File.Exists(WIITDB_FILE))
             {
-                if (configIniFile.IniReadBool("SEVERAL", "LoadDatabase") == true)
+                if (CONFIG_INI_FILE.IniReadBool("SEVERAL", "LoadDatabase") == true)
                 {
                     // PERFEITO - NÃO ALTERAR!!!
                     try
@@ -707,9 +661,9 @@ namespace GCBM
         /// </summary>
         private void LoadConfigFile()
         {
-            if (File.Exists(getCurrentPath + @"\config.ini"))
+            if (File.Exists(GET_CURRENT_PATH + @"\config.ini"))
             {
-                if (configIniFile.IniReadBool("SEVERAL", "WindowMaximized") == true)
+                if (CONFIG_INI_FILE.IniReadBool("SEVERAL", "WindowMaximized") == true)
                 {
                     this.WindowState = FormWindowState.Maximized;
                 }
@@ -730,7 +684,7 @@ namespace GCBM
                 {
                     DirectoryOpenGameList(dgvGameList.CurrentRow.Cells[4].Value.ToString());
 
-                    if (error == false)
+                    if (ERROR == false)
                     {
                         LoadCover(tbIDGame.Text);
                     }
@@ -761,7 +715,7 @@ namespace GCBM
                 {
                     DirectoryOpenDiscList(dgvGameListDisc.CurrentRow.Cells[4].Value.ToString());
 
-                    if (error == false)
+                    if (ERROR == false)
                     {
                         //LoadCover();
                         LoadCover(tbIDGameDisc.Text);
@@ -843,16 +797,18 @@ namespace GCBM
 
             // Groups files in the folder by extension.
             var filesGroupedByExtension = files.Select(
-                arq => Path.GetExtension(arq).TrimStart('.').ToLower(myCulture)).GroupBy(x => x, (ext, extCnt) =>
+                arq => Path.GetExtension(arq).TrimStart('.').ToLower(MY_CULTURE)).GroupBy(x => x, (ext, extCnt) =>
                 new { _fileExtension = ext, Counter = extCnt.Count() });
 
             // Scroll through the result and display the values.
             foreach (var _files in filesGroupedByExtension)
             {
-                tbLog.AppendText("[" + DateString() + "]" + GCBM.Properties.Resources.DisplayFilesSelected_Found_String1 + _files.Counter + GCBM.Properties.Resources.DisplayFilesSelected_Found_String2
-                    + _files._fileExtension.ToUpper(myCulture) + Environment.NewLine);
+                tbLog.AppendText("[" + DateString() + "]" + GCBM.Properties.Resources.DisplayFilesSelected_Found_String1 + _files.Counter + 
+                    GCBM.Properties.Resources.DisplayFilesSelected_Found_String2
+                    + _files._fileExtension.ToUpper(MY_CULTURE) + Environment.NewLine);
 
-                GlobalNotifications(GCBM.Properties.Resources.DisplayFilesSelected_Found_String3 + _files.Counter + GCBM.Properties.Resources.DisplayFilesSelected_Found_String2 + _files._fileExtension.ToUpper(myCulture));
+                GlobalNotifications(GCBM.Properties.Resources.DisplayFilesSelected_Found_String3 + _files.Counter + 
+                    GCBM.Properties.Resources.DisplayFilesSelected_Found_String2 + _files._fileExtension.ToUpper(MY_CULTURE));
 
             }
             //txtLog.AppendText(Environment.NewLine + Environment.NewLine);
@@ -869,10 +825,10 @@ namespace GCBM
             {
                 //FileInfo _file = new FileInfo(files[i]);
                 _file = new FileInfo(files[i]);
-                string _getSize = DisplayFormatFileSize(_file.Length, configIniFile.IniReadInt("GENERAL", "FileSize"));
+                string _getSize = DisplayFormatFileSize(_file.Length, CONFIG_INI_FILE.IniReadInt("GENERAL", "FileSize"));
                 //string _getSize = BytesToGB(_file.Length);                
                 // 4° coluna
-                _table.Rows.Add(_file.Name, _file.Extension.Substring(1, 3).Trim().ToUpper(myCulture), _getSize, _file.FullName);
+                _table.Rows.Add(_file.Name, _file.Extension.Substring(1, 3).Trim().ToUpper(MY_CULTURE), _getSize, _file.FullName);
                 //_table.Rows.Add(_file.Name, _file.Extension.Substring(1, 3).Trim().ToUpper(myCulture), _getSize);
             }
 
@@ -929,7 +885,7 @@ namespace GCBM
             List<string> filesFound = new List<string>();
             // Sets options for displaying root folder images.
 
-            if (configIniFile.IniReadBool("SEVERAL", "RecursiveMode") == true)
+            if (CONFIG_INI_FILE.IniReadBool("SEVERAL", "RecursiveMode") == true)
             {
                 isRecursive = true;
             }
@@ -1133,17 +1089,17 @@ namespace GCBM
             if (path.Length == 0)
                 return;
 
-            imgPath = path;
+            IMAGE_PATH = path;
 
             if (CheckImage())
             {
                 if (ReadImageTOC())
                 {
-                    if (configIniFile.IniReadBool("TITLES", "GameXmlName") == true)
+                    if (CONFIG_INI_FILE.IniReadBool("TITLES", "GameXmlName") == true)
                     {
-                        if (File.Exists(fileXML))
+                        if (File.Exists(WIITDB_FILE))
                         {
-                            XElement root = XElement.Load(fileXML);
+                            XElement root = XElement.Load(WIITDB_FILE);
                             IEnumerable<XElement> tests = from el in root.Elements("game") where (string)el.Element("id") == tbIDGame.Text select el;
                             foreach (XElement el in tests)
                             {
@@ -1156,7 +1112,7 @@ namespace GCBM
                         }
                     }
                     //miImageOpen.ToolTipText = imgPath;
-                    rootOpened = false;
+                    ROOT_OPENED = false;
                 }
             }
         }
@@ -1170,17 +1126,17 @@ namespace GCBM
             if (path.Length == 0)
                 return;
 
-            imgPath = path;
+            IMAGE_PATH = path;
 
             if (CheckImage())
             {
                 if (ReadImageDiscTOC())
                 {
-                    if (configIniFile.IniReadBool("TITLES", "GameXmlName") == true)
+                    if (CONFIG_INI_FILE.IniReadBool("TITLES", "GameXmlName") == true)
                     {
-                        if (File.Exists(fileXML))
+                        if (File.Exists(WIITDB_FILE))
                         {
-                            XElement root = XElement.Load(fileXML);
+                            XElement root = XElement.Load(WIITDB_FILE);
                             IEnumerable<XElement> tests = from el in root.Elements("game") where (string)el.Element("id") == tbIDGameDisc.Text select el;
                             foreach (XElement el in tests)
                             {
@@ -1193,7 +1149,7 @@ namespace GCBM
                         }
                     }
                     //miImageOpen.ToolTipText = imgPath;
-                    rootOpened = false;
+                    ROOT_OPENED = false;
                 }
             }
         }
@@ -1211,7 +1167,7 @@ namespace GCBM
 
             try
             {
-                fs = new sio.FileStream(imgPath, sio.FileMode.Open, sio.FileAccess.Read, sio.FileShare.Read);
+                fs = new sio.FileStream(IMAGE_PATH, sio.FileMode.Open, sio.FileAccess.Read, sio.FileShare.Read);
                 br = new sio.BinaryReader(fs, ste.Default);
 
                 fs.Position = 0x1c;
@@ -1221,20 +1177,20 @@ namespace GCBM
                     GlobalNotifications(GCBM.Properties.Resources.NotNintendoGameCubeFile + Environment.NewLine + 
                         GCBM.Properties.Resources.RecommendedDeleteOrMoveFile);
 
-                    pbGameDisc.LoadAsync(getCurrentPath + @"\media\covers\disc.png");
-                    pbGameCover3D.LoadAsync(getCurrentPath + @"\media\covers\3d.png");
+                    pbGameDisc.LoadAsync(GET_CURRENT_PATH + @"\media\covers\disc.png");
+                    pbGameCover3D.LoadAsync(GET_CURRENT_PATH + @"\media\covers\3d.png");
 
-                    error = true;
+                    ERROR = true;
                 }
                 else
                 {
-                    error = false;
+                    ERROR = false;
                 }
             }
             catch (Exception ex)
             {
                 GlobalNotifications(ex.Message);
-                error = true;
+                ERROR = true;
             }
             finally
             {
@@ -1242,7 +1198,7 @@ namespace GCBM
                 if (fs != null) fs.Close();
             }
 
-            return !error;
+            return !ERROR;
         }
         #endregion
 
@@ -1258,15 +1214,15 @@ namespace GCBM
             {
                 if (_IDRegionCode.Equals("e"))
                 {
-                    _linkDomain = "US";
+                    LINK_DOMAIN = "US";
                 }
                 else if (_IDRegionCode.Equals("p"))
                 {
-                    _linkDomain = "EN";
+                    LINK_DOMAIN = "EN";
                 }
                 else if (_IDRegionCode.Equals("j"))
                 {
-                    _linkDomain = "JA";
+                    LINK_DOMAIN = "JA";
                 }
                 else
                 {
@@ -1279,22 +1235,22 @@ namespace GCBM
                 //GlobalNotifications(ex.Message);
             }
 
-            if (File.Exists(getCurrentPath + @"\covers\cache\" + _linkDomain + @"\disc\" + _idGame + ".png"))
+            if (File.Exists(GET_CURRENT_PATH + @"\covers\cache\" + LINK_DOMAIN + @"\disc\" + _idGame + ".png"))
             {
-                pbGameDisc.LoadAsync(getCurrentPath + @"\covers\cache\" + _linkDomain + @"\disc\" + _idGame + ".png");
+                pbGameDisc.LoadAsync(GET_CURRENT_PATH + @"\covers\cache\" + LINK_DOMAIN + @"\disc\" + _idGame + ".png");
             }
             else
             {
-                pbGameDisc.LoadAsync(getCurrentPath + @"\media\covers\disc.png");
+                pbGameDisc.LoadAsync(GET_CURRENT_PATH + @"\media\covers\disc.png");
             }
 
-            if (File.Exists(getCurrentPath + @"\covers\cache\" + _linkDomain + @"\3d\" + _idGame + ".png"))
+            if (File.Exists(GET_CURRENT_PATH + @"\covers\cache\" + LINK_DOMAIN + @"\3d\" + _idGame + ".png"))
             {
-                pbGameCover3D.LoadAsync(getCurrentPath + @"\covers\cache\" + _linkDomain + @"\3d\" + _idGame + ".png");
+                pbGameCover3D.LoadAsync(GET_CURRENT_PATH + @"\covers\cache\" + LINK_DOMAIN + @"\3d\" + _idGame + ".png");
             }
             else
             {
-                pbGameCover3D.LoadAsync(getCurrentPath + @"\media\covers\3d.png");
+                pbGameCover3D.LoadAsync(GET_CURRENT_PATH + @"\media\covers\3d.png");
             }
         }
         #endregion
@@ -1313,15 +1269,15 @@ namespace GCBM
 
                 if (_IDRegionCode.Equals("e"))
                 {
-                    _linkDomain = "US";
+                    LINK_DOMAIN = "US";
                 }
                 else if (_IDRegionCode.Equals("p"))
                 {
-                    _linkDomain = "EN";
+                    LINK_DOMAIN = "EN";
                 }
                 else if (_IDRegionCode.Equals("j"))
                 {
-                    _linkDomain = "JA";
+                    LINK_DOMAIN = "JA";
                 }
                 else
                 {
@@ -1331,16 +1287,16 @@ namespace GCBM
                 try
                 {
                     // Download Disc cover
-                    Uri myLinkCoverDisc = new Uri(@"https://art.gametdb.com/wii/disc/" + _linkDomain + "/" + _IDMakerCode + ".png");
+                    Uri myLinkCoverDisc = new Uri(@"https://art.gametdb.com/wii/disc/" + LINK_DOMAIN + "/" + _IDMakerCode + ".png");
                     var request = (HttpWebRequest)WebRequest.Create(myLinkCoverDisc);
                     request.Method = "HEAD";
-                    _netResponse = (HttpWebResponse)request.GetResponse();
+                    NET_RESPONSE = (HttpWebResponse)request.GetResponse();
 
-                    if (_netResponse.StatusCode == HttpStatusCode.OK)
+                    if (NET_RESPONSE.StatusCode == HttpStatusCode.OK)
                     {
                         tbLog.AppendText("[" + DateString() + "]" + GCBM.Properties.Resources.DownloadDiscCover + _IDMakerCode + ".png" + Environment.NewLine);
-                        _netClient.DownloadFileAsync(myLinkCoverDisc, getCurrentPath + @"\covers\cache\" + _linkDomain + @"\disc\" + _IDMakerCode + ".png");
-                        while (_netClient.IsBusy) { Application.DoEvents(); }
+                        NET_CLIENT.DownloadFileAsync(myLinkCoverDisc, GET_CURRENT_PATH + @"\covers\cache\" + LINK_DOMAIN + @"\disc\" + _IDMakerCode + ".png");
+                        while (NET_CLIENT.IsBusy) { Application.DoEvents(); }
                     }
                 }
                 catch (WebException ex)
@@ -1350,25 +1306,25 @@ namespace GCBM
                 }
                 finally
                 {
-                    if (_netResponse != null)
+                    if (NET_RESPONSE != null)
                     {
-                        _netResponse.Close();
+                        NET_RESPONSE.Close();
                     }
                 }
 
                 try
                 {
                     // Download 3D cover
-                    Uri myLinkCover3D = new Uri(@"https://art.gametdb.com/wii/cover3D/" + _linkDomain + "/" + _IDMakerCode + ".png");
+                    Uri myLinkCover3D = new Uri(@"https://art.gametdb.com/wii/cover3D/" + LINK_DOMAIN + "/" + _IDMakerCode + ".png");
                     var request3D = (HttpWebRequest)WebRequest.Create(myLinkCover3D);
                     request3D.Method = "HEAD";
-                    _netResponse = (HttpWebResponse)request3D.GetResponse();
+                    NET_RESPONSE = (HttpWebResponse)request3D.GetResponse();
 
-                    if (_netResponse.StatusCode == HttpStatusCode.OK)
+                    if (NET_RESPONSE.StatusCode == HttpStatusCode.OK)
                     {
                         tbLog.AppendText("[" + DateString() + "]" + GCBM.Properties.Resources.Download3DCover + _IDMakerCode + ".png" + Environment.NewLine);
-                        _netClient.DownloadFileAsync(myLinkCover3D, getCurrentPath + @"\covers\cache\" + _linkDomain + @"\3d\" + _IDMakerCode + ".png");
-                        while (_netClient.IsBusy) { Application.DoEvents(); }
+                        NET_CLIENT.DownloadFileAsync(myLinkCover3D, GET_CURRENT_PATH + @"\covers\cache\" + LINK_DOMAIN + @"\3d\" + _IDMakerCode + ".png");
+                        while (NET_CLIENT.IsBusy) { Application.DoEvents(); }
                     }
                 }
                 catch (WebException ex)
@@ -1378,9 +1334,9 @@ namespace GCBM
                 }
                 finally
                 {
-                    if (_netResponse != null)
+                    if (NET_RESPONSE != null)
                     {
-                        _netResponse.Close();
+                        NET_RESPONSE.Close();
                     }
                 }
             }
@@ -1407,15 +1363,15 @@ namespace GCBM
 
                 if (_IDRegionCode.Equals("e"))
                 {
-                    _linkDomain = "US";
+                    LINK_DOMAIN = "US";
                 }
                 else if (_IDRegionCode.Equals("p"))
                 {
-                    _linkDomain = "EN";
+                    LINK_DOMAIN = "EN";
                 }
                 else if (_IDRegionCode.Equals("j"))
                 {
-                    _linkDomain = "JA";
+                    LINK_DOMAIN = "JA";
                 }
                 else
                 {
@@ -1425,16 +1381,16 @@ namespace GCBM
                 try
                 {
                     // Download Disc cover
-                    Uri myLinkCoverDisc = new Uri(@"https://art.gametdb.com/wii/disc/" + _linkDomain + "/" + _IDMakerCode + ".png");
+                    Uri myLinkCoverDisc = new Uri(@"https://art.gametdb.com/wii/disc/" + LINK_DOMAIN + "/" + _IDMakerCode + ".png");
                     var request = (HttpWebRequest)WebRequest.Create(myLinkCoverDisc);
                     request.Method = "HEAD";
-                    _netResponse = (HttpWebResponse)request.GetResponse();
+                    NET_RESPONSE = (HttpWebResponse)request.GetResponse();
 
-                    if (_netResponse.StatusCode == HttpStatusCode.OK)
+                    if (NET_RESPONSE.StatusCode == HttpStatusCode.OK)
                     {
                         tbLog.AppendText("[" + DateString() + "]" + GCBM.Properties.Resources.DownloadDiscCover + _IDMakerCode + ".png" + Environment.NewLine);
-                        _netClient.DownloadFileAsync(myLinkCoverDisc, getCurrentPath + @"\covers\cache\" + _IDMakerCode + @"\disc\" + _IDMakerCode + ".png");
-                        while (_netClient.IsBusy) { Application.DoEvents(); }
+                        NET_CLIENT.DownloadFileAsync(myLinkCoverDisc, GET_CURRENT_PATH + @"\covers\cache\" + _IDMakerCode + @"\disc\" + _IDMakerCode + ".png");
+                        while (NET_CLIENT.IsBusy) { Application.DoEvents(); }
                     }
                 }
                 catch (WebException ex)
@@ -1445,25 +1401,25 @@ namespace GCBM
                 }
                 finally
                 {
-                    if (_netResponse != null)
+                    if (NET_RESPONSE != null)
                     {
-                        _netResponse.Close();
+                        NET_RESPONSE.Close();
                     }
                 }
 
                 try
                 {
                     // Download 3D cover
-                    Uri myLinkCover3D = new Uri(@"https://art.gametdb.com/wii/cover3D/" + _linkDomain + "/" + _IDMakerCode + ".png");
+                    Uri myLinkCover3D = new Uri(@"https://art.gametdb.com/wii/cover3D/" + LINK_DOMAIN + "/" + _IDMakerCode + ".png");
                     var request3D = (HttpWebRequest)WebRequest.Create(myLinkCover3D);
                     request3D.Method = "HEAD";
-                    _netResponse = (HttpWebResponse)request3D.GetResponse();
+                    NET_RESPONSE = (HttpWebResponse)request3D.GetResponse();
 
-                    if (_netResponse.StatusCode == HttpStatusCode.OK)
+                    if (NET_RESPONSE.StatusCode == HttpStatusCode.OK)
                     {
                         tbLog.AppendText("[" + DateString() + "]" + GCBM.Properties.Resources.Download3DCover + _IDMakerCode + ".png" + Environment.NewLine);
-                        _netClient.DownloadFileAsync(myLinkCover3D, getCurrentPath + @"\covers\cache\" + _linkDomain + @"\3d\" + _IDMakerCode + ".png");
-                        while (_netClient.IsBusy) { Application.DoEvents(); }
+                        NET_CLIENT.DownloadFileAsync(myLinkCover3D, GET_CURRENT_PATH + @"\covers\cache\" + LINK_DOMAIN + @"\3d\" + _IDMakerCode + ".png");
+                        while (NET_CLIENT.IsBusy) { Application.DoEvents(); }
                     }
                 }
                 catch (WebException ex)
@@ -1474,9 +1430,9 @@ namespace GCBM
                 }
                 finally
                 {
-                    if (_netResponse != null)
+                    if (NET_RESPONSE != null)
                     {
-                        _netResponse.Close();
+                        NET_RESPONSE.Close();
                     }
                 }
             }
@@ -1491,9 +1447,9 @@ namespace GCBM
         {
             try
             {
-                if (configIniFile.IniReadString("GENERAL", "TemporaryFolder", "") == string.Empty)
+                if (CONFIG_INI_FILE.IniReadString("GENERAL", "TemporaryFolder", "") == string.Empty)
                 {
-                    DirectoryInfo dir = new DirectoryInfo(getCurrentPath + @"\temp");
+                    DirectoryInfo dir = new DirectoryInfo(GET_CURRENT_PATH + @"\temp");
                     foreach (FileInfo fi in dir.GetFiles("*.*", SearchOption.AllDirectories))
                     {
                         fi.Delete();
@@ -1502,7 +1458,7 @@ namespace GCBM
                 }
                 else
                 {
-                    DirectoryInfo dir = new DirectoryInfo(configIniFile.IniReadString("GENERAL", "TemporaryFolder", ""));
+                    DirectoryInfo dir = new DirectoryInfo(CONFIG_INI_FILE.IniReadString("GENERAL", "TemporaryFolder", ""));
                     foreach (FileInfo fi in dir.GetFiles("*.*", SearchOption.AllDirectories))
                     {
                         fi.Delete();
@@ -1525,11 +1481,11 @@ namespace GCBM
         private void RequiredDirectories()
         {
             // Temporary directory default
-            if (configIniFile.IniReadString("GENERAL", "TemporaryFolder", "") == string.Empty)
+            if (CONFIG_INI_FILE.IniReadString("GENERAL", "TemporaryFolder", "") == string.Empty)
             {
-                if (!Directory.Exists(getCurrentPath + @"\temp"))
+                if (!Directory.Exists(GET_CURRENT_PATH + @"\temp"))
                 {
-                    Directory.CreateDirectory(getCurrentPath + @"\temp");
+                    Directory.CreateDirectory(GET_CURRENT_PATH + @"\temp");
                     tbLog.AppendText("[" + DateString() + "]" + GCBM.Properties.Resources.RequiredDirectories_String1 + Environment.NewLine);
                 }
                 else
@@ -1543,23 +1499,23 @@ namespace GCBM
             }
 
             // Cover Directory
-            if (!Directory.Exists(getCurrentPath + @"\covers\"))
+            if (!Directory.Exists(GET_CURRENT_PATH + @"\covers\"))
             {
                 // US - Covers Directory
-                Directory.CreateDirectory(getCurrentPath + @"\covers\cache\US\2d\"); // 2D
-                Directory.CreateDirectory(getCurrentPath + @"\covers\cache\US\3d\"); // 3D
-                Directory.CreateDirectory(getCurrentPath + @"\covers\cache\US\disc\"); // Disc
-                Directory.CreateDirectory(getCurrentPath + @"\covers\cache\US\full\"); // Full
+                Directory.CreateDirectory(GET_CURRENT_PATH + @"\covers\cache\US\2d\"); // 2D
+                Directory.CreateDirectory(GET_CURRENT_PATH + @"\covers\cache\US\3d\"); // 3D
+                Directory.CreateDirectory(GET_CURRENT_PATH + @"\covers\cache\US\disc\"); // Disc
+                Directory.CreateDirectory(GET_CURRENT_PATH + @"\covers\cache\US\full\"); // Full
                 // JA - Covers Directory
-                Directory.CreateDirectory(getCurrentPath + @"\covers\cache\JA\2d\"); // 2D
-                Directory.CreateDirectory(getCurrentPath + @"\covers\cache\JA\3d\"); // 3D
-                Directory.CreateDirectory(getCurrentPath + @"\covers\cache\JA\disc\"); // Disc
-                Directory.CreateDirectory(getCurrentPath + @"\covers\cache\JA\full\"); // Full
+                Directory.CreateDirectory(GET_CURRENT_PATH + @"\covers\cache\JA\2d\"); // 2D
+                Directory.CreateDirectory(GET_CURRENT_PATH + @"\covers\cache\JA\3d\"); // 3D
+                Directory.CreateDirectory(GET_CURRENT_PATH + @"\covers\cache\JA\disc\"); // Disc
+                Directory.CreateDirectory(GET_CURRENT_PATH + @"\covers\cache\JA\full\"); // Full
                 // EN - Covers Directory
-                Directory.CreateDirectory(getCurrentPath + @"\covers\cache\EN\2d\"); // 2D
-                Directory.CreateDirectory(getCurrentPath + @"\covers\cache\EN\3d\"); // 3D
-                Directory.CreateDirectory(getCurrentPath + @"\covers\cache\EN\disc\"); // Disc
-                Directory.CreateDirectory(getCurrentPath + @"\covers\cache\EN\full\"); // Full
+                Directory.CreateDirectory(GET_CURRENT_PATH + @"\covers\cache\EN\2d\"); // 2D
+                Directory.CreateDirectory(GET_CURRENT_PATH + @"\covers\cache\EN\3d\"); // 3D
+                Directory.CreateDirectory(GET_CURRENT_PATH + @"\covers\cache\EN\disc\"); // Disc
+                Directory.CreateDirectory(GET_CURRENT_PATH + @"\covers\cache\EN\full\"); // Full
 
                 tbLog.AppendText("[" + DateString() + "]" + GCBM.Properties.Resources.RequiredDirectories_String4 + Environment.NewLine);
             }
@@ -1651,25 +1607,25 @@ namespace GCBM
                     var _source = new FileInfo(Path.Combine(fbd1.SelectedPath, dgvGameList.CurrentRow.Cells[4].Value.ToString()));
 
                     // Disc 1 (0 -> 0) - Title [ID Game]
-                    if (tbIDDiscID.Text == "0x00" && configIniFile.IniReadInt("SEVERAL", "AppointmentStyle") == 0)
+                    if (tbIDDiscID.Text == "0x00" && CONFIG_INI_FILE.IniReadInt("SEVERAL", "AppointmentStyle") == 0)
                     {
                         Directory.CreateDirectory(tscbDiscDrive.SelectedItem + @"games\" + _SwapCharacter + " [" + tbIDGame.Text + "]");
                         var _destination = new FileInfo(tscbDiscDrive.SelectedItem + @"games\" + _SwapCharacter + " [" + tbIDGame.Text + "]" + @"\" + "game.iso");
                         CopyTask(_source, _destination);
                     } // Disc 2 (1 -> 0) - Title [ID Game]
-                    else if (tbIDDiscID.Text == "0x01" && configIniFile.IniReadInt("SEVERAL", "AppointmentStyle") == 0)
+                    else if (tbIDDiscID.Text == "0x01" && CONFIG_INI_FILE.IniReadInt("SEVERAL", "AppointmentStyle") == 0)
                     {
                         Directory.CreateDirectory(tscbDiscDrive.SelectedItem + @"games\" + _SwapCharacter + " [" + tbIDGame.Text + "]");
                         var _destination = new FileInfo(tscbDiscDrive.SelectedItem + @"games\" + _SwapCharacter + " [" + tbIDGame.Text + "]" + @"\" + "disc2.iso");
                         CopyTask(_source, _destination);
                     }// Disc 1 (0 -> 1) - [ID Game]
-                    else if (tbIDDiscID.Text == "0x00" && configIniFile.IniReadInt("SEVERAL", "AppointmentStyle") == 1)
+                    else if (tbIDDiscID.Text == "0x00" && CONFIG_INI_FILE.IniReadInt("SEVERAL", "AppointmentStyle") == 1)
                     {
                         Directory.CreateDirectory(tscbDiscDrive.SelectedItem + @"games\[" + tbIDGame.Text + "]");
                         var _destination = new FileInfo(tscbDiscDrive.SelectedItem + @"games\[" + tbIDGame.Text + "]" + @"\" + "game.iso");
                         CopyTask(_source, _destination);
                     } // Disc 2 (1 -> 1) - [ID Game]
-                    else if (tbIDDiscID.Text == "0x01" && configIniFile.IniReadInt("SEVERAL", "AppointmentStyle") == 1)
+                    else if (tbIDDiscID.Text == "0x01" && CONFIG_INI_FILE.IniReadInt("SEVERAL", "AppointmentStyle") == 1)
                     {
                         Directory.CreateDirectory(tscbDiscDrive.SelectedItem + @"games\[" + tbIDGame.Text + "]");
                         var _destination = new FileInfo(tscbDiscDrive.SelectedItem + @"games\[" + tbIDGame.Text + "]" + @"\" + "disc2.iso");
@@ -1695,42 +1651,44 @@ namespace GCBM
             const string quote = "\"";
             var _source = dgvGameList.CurrentRow.Cells[4].Value.ToString();
 
-            startInfo.CreateNoWindow = true;
-            startInfo.UseShellExecute = true;
+            START_INFO.CreateNoWindow = true;
+            START_INFO.UseShellExecute = true;
             // GCIT
-            startInfo.FileName = getCurrentPath + @"\bin\gcit.exe ";
+            START_INFO.FileName = GET_CURRENT_PATH + @"\bin\gcit.exe ";
 
-            if (configIniFile.IniReadBool("TRANSFERSYSTEM", "ScrubFlushSD") == true)
+            if (CONFIG_INI_FILE.IniReadBool("TRANSFERSYSTEM", "ScrubFlushSD") == true)
             {
-                flushSD = " - flush";
+                FLUSH_SD = " - flush";
             }
             else
             {
-                flushSD = "";
+                FLUSH_SD = "";
             }
 
-            if (configIniFile.IniReadInt("TRANSFERSYSTEM", "ScrubAlign") == 0)
+            if (CONFIG_INI_FILE.IniReadInt("TRANSFERSYSTEM", "ScrubAlign") == 0)
             {
-                scrubAlign = "";
+                SCRUB_ALIGN = "";
             }
-            else if (configIniFile.IniReadInt("TRANSFERSYSTEM", "ScrubAlign") == 1)
+            else if (CONFIG_INI_FILE.IniReadInt("TRANSFERSYSTEM", "ScrubAlign") == 1)
             {
-                scrubAlign = " -a 4";
+                SCRUB_ALIGN = " -a 4";
             }
-            else if (configIniFile.IniReadInt("TRANSFERSYSTEM", "ScrubAlign") == 2)
+            else if (CONFIG_INI_FILE.IniReadInt("TRANSFERSYSTEM", "ScrubAlign") == 2)
             {
-                scrubAlign = " -a 32";
+                SCRUB_ALIGN = " -a 32";
             }
             else
             {
-                scrubAlign = " -a 32K";
+                SCRUB_ALIGN = " -a 32K";
             }
 
-            //startInfo.Arguments = dgvGameList.CurrentRow.Cells[4].Value.ToString() + " -aq " + scrubAlign + flushSD + " -f " + configIniFile.IniReadInt("TRANSFERSYSTEM", "ScrubFormat", "") + " -d " + tscbDiscDrive.SelectedItem + @"games";
-            startInfo.Arguments = quote + _source + quote + " -aq " + scrubAlign + flushSD + " -f " + configIniFile.IniReadString("TRANSFERSYSTEM", "ScrubFormat", "") + " -d " + tscbDiscDrive.SelectedItem + @"games";
-            startInfo.WindowStyle = ProcessWindowStyle.Hidden;
+            //startInfo.Arguments = dgvGameList.CurrentRow.Cells[4].Value.ToString() + " -aq " + scrubAlign + flushSD +
+            //" -f " + configIniFile.IniReadInt("TRANSFERSYSTEM", "ScrubFormat", "") + " -d " + tscbDiscDrive.SelectedItem + @"games";
+            START_INFO.Arguments = quote + _source + quote + " -aq " + SCRUB_ALIGN + FLUSH_SD + " -f " + 
+                CONFIG_INI_FILE.IniReadString("TRANSFERSYSTEM", "ScrubFormat", "") + " -d " + tscbDiscDrive.SelectedItem + @"games";
+            START_INFO.WindowStyle = ProcessWindowStyle.Hidden;
 
-            using (Process myProcess = Process.Start(startInfo))
+            using (Process myProcess = Process.Start(START_INFO))
             {
                 int i = 0;
                 // Display the process statistics until
@@ -1801,7 +1759,7 @@ namespace GCBM
                     if (tbIDDiscID.Text == "0x01")
                     {
                         // Usar nome intermo
-                        if (configIniFile.IniReadBool("TITLES", "GameInternalName") == true)
+                        if (CONFIG_INI_FILE.IniReadBool("TITLES", "GameInternalName") == true)
                         {
                             // Renomear game.iso -> disc2.iso
                             //string myOrigem = tscbDiscDrive.SelectedItem + @"games\" + tbIDName.Text + " [" + tbIDGame.Text + "2]" + @"\game.iso";
@@ -2108,25 +2066,25 @@ namespace GCBM
                         {
                             if (_IDRegionCode.Equals("e"))
                             {
-                                _linkDomain = "US";
+                                LINK_DOMAIN = "US";
                             }
                             else if (_IDRegionCode.Equals("p"))
                             {
-                                _linkDomain = "EN";
+                                LINK_DOMAIN = "EN";
                             }
                             else if (_IDRegionCode.Equals("j"))
                             {
-                                _linkDomain = "JA";
+                                LINK_DOMAIN = "JA";
                             }
                             else
                             {
                                 GlobalNotifications(GCBM.Properties.Resources.UnknownRegion);
                             }
 
-                            string cover2D   = getCurrentPath + @"\covers\cache\" + _linkDomain + @"\2d\" + tbIDGame.Text + ".png";
-                            string cover3D   = getCurrentPath + @"\covers\cache\" + _linkDomain + @"\3d\" + tbIDGame.Text + ".png";
-                            string coverDisc = getCurrentPath + @"\covers\cache\" + _linkDomain + @"\disc\" + tbIDGame.Text + ".png";
-                            string coverFull = getCurrentPath + @"\covers\cache\" + _linkDomain + @"\full\" + tbIDGame.Text + ".png";
+                            string cover2D   = GET_CURRENT_PATH + @"\covers\cache\" + LINK_DOMAIN + @"\2d\" + tbIDGame.Text + ".png";
+                            string cover3D   = GET_CURRENT_PATH + @"\covers\cache\" + LINK_DOMAIN + @"\3d\" + tbIDGame.Text + ".png";
+                            string coverDisc = GET_CURRENT_PATH + @"\covers\cache\" + LINK_DOMAIN + @"\disc\" + tbIDGame.Text + ".png";
+                            string coverFull = GET_CURRENT_PATH + @"\covers\cache\" + LINK_DOMAIN + @"\full\" + tbIDGame.Text + ".png";
 
                             // DELETAR JOGO E CAPA DO DISPOSITIVO DE ORIGEM
                             if (dgv == dgvGameList)
@@ -2204,25 +2162,25 @@ namespace GCBM
                         {
                             if (_IDRegionCode.Equals("e"))
                             {
-                                _linkDomain = "US";
+                                LINK_DOMAIN = "US";
                             }
                             else if (_IDRegionCode.Equals("p"))
                             {
-                                _linkDomain = "EN";
+                                LINK_DOMAIN = "EN";
                             }
                             else if (_IDRegionCode.Equals("j"))
                             {
-                                _linkDomain = "JA";
+                                LINK_DOMAIN = "JA";
                             }
                             else
                             {
                                 GlobalNotifications(GCBM.Properties.Resources.UnknownRegion);
                             }
 
-                            DirectoryInfo di2D = new DirectoryInfo(getCurrentPath + @"\covers\cache\" + _linkDomain + @"\2d\");
-                            DirectoryInfo di3D = new DirectoryInfo(getCurrentPath + @"\covers\cache\" + _linkDomain + @"\3d\");
-                            DirectoryInfo diDisc = new DirectoryInfo(getCurrentPath + @"\covers\cache\" + _linkDomain + @"\disc\");
-                            DirectoryInfo diFull = new DirectoryInfo(getCurrentPath + @"\covers\cache\" + _linkDomain + @"\full\");
+                            DirectoryInfo di2D = new DirectoryInfo(GET_CURRENT_PATH + @"\covers\cache\" + LINK_DOMAIN + @"\2d\");
+                            DirectoryInfo di3D = new DirectoryInfo(GET_CURRENT_PATH + @"\covers\cache\" + LINK_DOMAIN + @"\3d\");
+                            DirectoryInfo diDisc = new DirectoryInfo(GET_CURRENT_PATH + @"\covers\cache\" + LINK_DOMAIN + @"\disc\");
+                            DirectoryInfo diFull = new DirectoryInfo(GET_CURRENT_PATH + @"\covers\cache\" + LINK_DOMAIN + @"\full\");
 
                             string[] files = GetFilesFolder(fbd1.SelectedPath, filters, false);
 
@@ -2431,10 +2389,10 @@ namespace GCBM
         private void CheckCoverTransfer()
         {
             //USB Loader GX
-            if (configIniFile.IniReadBool("COVERS", "GXCoverUSBLoader") == true)
+            if (CONFIG_INI_FILE.IniReadBool("COVERS", "GXCoverUSBLoader") == true)
             {
-                if (configIniFile.IniReadString("COVERS", "GXCoverDirectoryDisc", "") == string.Empty || configIniFile.IniReadString("COVERS", "GXCoverDirectory2D", "") == string.Empty
-                    || configIniFile.IniReadString("COVERS", "GXCoverDirectory3D", "") == string.Empty || configIniFile.IniReadString("COVERS", "GXCoverDirectoryFull", "") == string.Empty)
+                if (CONFIG_INI_FILE.IniReadString("COVERS", "GXCoverDirectoryDisc", "") == string.Empty || CONFIG_INI_FILE.IniReadString("COVERS", "GXCoverDirectory2D", "") == string.Empty
+                    || CONFIG_INI_FILE.IniReadString("COVERS", "GXCoverDirectory3D", "") == string.Empty || CONFIG_INI_FILE.IniReadString("COVERS", "GXCoverDirectoryFull", "") == string.Empty)
                 {
                     CheckUSBGXFlow();
                 }
@@ -2445,9 +2403,9 @@ namespace GCBM
                     _frmTransfer.Dispose();
                 }
             }// WiiFlow
-            else if (configIniFile.IniReadBool("COVERS", "WiiFlowCoverUSBLoader") == true)
+            else if (CONFIG_INI_FILE.IniReadBool("COVERS", "WiiFlowCoverUSBLoader") == true)
             {
-                if (configIniFile.IniReadString("COVERS", "WiiFlowCoverDirectory2D", "") == string.Empty || configIniFile.IniReadString("COVERS", "WiiFlowCoverDirectoryFull", "") == string.Empty)
+                if (CONFIG_INI_FILE.IniReadString("COVERS", "WiiFlowCoverDirectory2D", "") == string.Empty || CONFIG_INI_FILE.IniReadString("COVERS", "WiiFlowCoverDirectoryFull", "") == string.Empty)
                 {
                     CheckUSBGXFlow();
                 }
@@ -2475,7 +2433,7 @@ namespace GCBM
             }
             else
             {
-                if (File.Exists(fileXML))
+                if (File.Exists(WIITDB_FILE))
                 {
                     frmInfoAdditional _frmInfo = new frmInfoAdditional(tbIDGame.Text);
                     _frmInfo.ShowDialog();
@@ -2645,7 +2603,7 @@ namespace GCBM
             {
                 try
                 {
-                    TextWriter writer = new StreamWriter(getCurrentPath + @"\gamelist.txt");
+                    TextWriter writer = new StreamWriter(GET_CURRENT_PATH + @"\gamelist.txt");
                     for (int i = 0; i < dgv.Rows.Count - 1; i++)
                     {
                         for (int j = 1; j < dgv.Columns.Count; j++)
@@ -2675,7 +2633,7 @@ namespace GCBM
         {
             if (tbLog.Text != string.Empty)
             {
-                File.WriteAllText(getCurrentPath + @"\" + "gcbm.log", tbLog.Text);
+                File.WriteAllText(GET_CURRENT_PATH + @"\" + "gcbm.log", tbLog.Text);
                 GlobalNotifications(GCBM.Properties.Resources.RecordExportedSuccessfully);
             }
             else
@@ -2745,7 +2703,7 @@ namespace GCBM
         #region tsmiDownloadCoversSelectedGame_Click
         private void tsmiDownloadCoversSelectedGame_Click(object sender, EventArgs e)
         {
-            if (configIniFile.IniReadBool("SEVERAL", "NetVerify") == true)
+            if (CONFIG_INI_FILE.IniReadBool("SEVERAL", "NetVerify") == true)
             {
                 DownloadOnlyDisc3DCoverSelectedGame(dgvGameList);
             }
@@ -2760,7 +2718,7 @@ namespace GCBM
         #region tsmiSyncDownloadDiscOnly3DCovers_Click
         private void tsmiSyncDownloadDiscOnly3DCovers_Click(object sender, EventArgs e)
         {
-            if (configIniFile.IniReadBool("SEVERAL", "NetVerify") == true)
+            if (CONFIG_INI_FILE.IniReadBool("SEVERAL", "NetVerify") == true)
             {
                 DownloadOnlyDisc3DCover(dgvGameList);
             }
@@ -2791,17 +2749,17 @@ namespace GCBM
         #region tsmiDatabaseUpdateGameTDB_Click
         private void tsmiDatabaseUpdateGameTDB_Click(object sender, EventArgs e)
         {
-            if (configIniFile.IniReadBool("SEVERAL", "NetVerify") == true)
+            if (CONFIG_INI_FILE.IniReadBool("SEVERAL", "NetVerify") == true)
             {
                 using (var form = new frmDownloadGameTDB())
                 {
                     var _returnRename = form.ShowDialog();
                     if (_returnRename == DialogResult.OK)
                     {
-                        int _code = form._returnConfirm;
+                        int _code = form.RETURN_CONFIRM;
                         if (_code == 1)
                         {
-                            if (File.Exists(fileXML))
+                            if (File.Exists(WIITDB_FILE))
                             {
                                 LoadDatabaseXML();
                             }
@@ -2864,7 +2822,7 @@ namespace GCBM
                 var _returnRename = form.ShowDialog();
                 if (_returnRename == DialogResult.OK)
                 {
-                    int _code = form._returnConfirm;
+                    int _code = form.RETURN_CONFIRM;
                     if (_code == 1)
                     {
                         NetworkCheck();
@@ -2926,7 +2884,7 @@ namespace GCBM
                         var _returnRename = form.ShowDialog();
                         if (_returnRename == DialogResult.OK)
                         {
-                            int _code = form._returnConfirm;
+                            int _code = form.RETURN_CONFIRM;
                             if (_code == 1)
                             {
                                 //UpdateGameList(fbd1.SelectedPath, dgvGameList);
@@ -3286,7 +3244,7 @@ namespace GCBM
             if (File.Exists("config.ini"))
             {
                 // Suporte as atualizações do canal Beta
-                if (configIniFile.IniReadBool("UPDATES", "UpdateBetaChannel") == true)
+                if (CONFIG_INI_FILE.IniReadBool("UPDATES", "UpdateBetaChannel") == true)
                 {
 
                     AutoUpdater.Start("https://raw.githubusercontent.com/AxionDrak/GameCube-Backup-Manager/main/BetaChannel/AutoUpdaterBeta.xml");
@@ -3342,9 +3300,9 @@ namespace GCBM
                     }
 
                     // Pega as capas Disc do dispositivo
-                    if (File.Exists(getCurrentPath + @"\covers\cache\" + _region + @"\disc\" + lvDatabase.SelectedItems[0].Text.ToString() + ".png"))
+                    if (File.Exists(GET_CURRENT_PATH + @"\covers\cache\" + _region + @"\disc\" + lvDatabase.SelectedItems[0].Text.ToString() + ".png"))
                     {
-                        pbGameDisc.LoadAsync(getCurrentPath + @"\covers\cache\" + _region + @"\disc\" + lvDatabase.SelectedItems[0].Text.ToString() + ".png");
+                        pbGameDisc.LoadAsync(GET_CURRENT_PATH + @"\covers\cache\" + _region + @"\disc\" + lvDatabase.SelectedItems[0].Text.ToString() + ".png");
                     }
                     else
                     {
@@ -3352,11 +3310,11 @@ namespace GCBM
                         //HttpWebResponse response = null;
                         var request = (HttpWebRequest)WebRequest.Create(@"https://art.gametdb.com/wii/disc/" + _region + "/" + lvDatabase.SelectedItems[0].Text.ToString() + ".png");
                         request.Method = "HEAD";
-                        _netResponse = (HttpWebResponse)request.GetResponse();
+                        NET_RESPONSE = (HttpWebResponse)request.GetResponse();
 
                         try
                         {
-                            if (_netResponse.StatusCode == HttpStatusCode.OK)
+                            if (NET_RESPONSE.StatusCode == HttpStatusCode.OK)
                             {
                                 pbGameDisc.LoadAsync(@"https://art.gametdb.com/wii/disc/" + _region + "/" + lvDatabase.SelectedItems[0].Text.ToString() + ".png");
                             }
@@ -3373,17 +3331,17 @@ namespace GCBM
                         }
                         finally
                         {
-                            if (_netResponse != null)
+                            if (NET_RESPONSE != null)
                             {
-                                _netResponse.Close();
+                                NET_RESPONSE.Close();
                             }
                         }
                     }
 
                     //Pega as capas 3D do dispositivo
-                    if (File.Exists(getCurrentPath + @"\covers\cache\" + _region + @"\3d\" + lvDatabase.SelectedItems[0].Text.ToString() + ".png"))
+                    if (File.Exists(GET_CURRENT_PATH + @"\covers\cache\" + _region + @"\3d\" + lvDatabase.SelectedItems[0].Text.ToString() + ".png"))
                     {
-                        pbGameCover3D.LoadAsync(getCurrentPath + @"\covers\cache\" + _region + @"\3d\" + lvDatabase.SelectedItems[0].Text.ToString() + ".png");
+                        pbGameCover3D.LoadAsync(GET_CURRENT_PATH + @"\covers\cache\" + _region + @"\3d\" + lvDatabase.SelectedItems[0].Text.ToString() + ".png");
                     }
                     else
                     {
@@ -3391,11 +3349,11 @@ namespace GCBM
                         //HttpWebResponse response = null;
                         var request3D = (HttpWebRequest)WebRequest.Create(@"https://art.gametdb.com/wii/cover3D/" + _region + "/" + lvDatabase.SelectedItems[0].Text.ToString() + ".png");
                         request3D.Method = "HEAD";
-                        _netResponse = (HttpWebResponse)request3D.GetResponse();
+                        NET_RESPONSE = (HttpWebResponse)request3D.GetResponse();
 
                         try
                         {
-                            if (_netResponse.StatusCode == HttpStatusCode.OK)
+                            if (NET_RESPONSE.StatusCode == HttpStatusCode.OK)
                             {
                                 pbGameCover3D.LoadAsync(@"https://art.gametdb.com/wii/cover3D/" + _region + "/" + lvDatabase.SelectedItems[0].Text.ToString() + ".png");
                             }
@@ -3412,9 +3370,9 @@ namespace GCBM
                         }
                         finally
                         {
-                            if (_netResponse != null)
+                            if (NET_RESPONSE != null)
                             {
-                                _netResponse.Close();
+                                NET_RESPONSE.Close();
                             }
                         }
                     }
