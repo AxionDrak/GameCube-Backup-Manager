@@ -19,19 +19,15 @@ namespace GCBM
     public partial class frmConfig : Form
     {
         #region Properties
-        /// <summary>
-        /// Invoke Assembly
-        /// </summary>
+
         Assembly assembly = Assembly.GetExecutingAssembly();
 
-        // Get Current Directory
-        private static string getCurrentPath = Directory.GetCurrentDirectory();
-        // Default folders
-        private static string coverPathDefault = getCurrentPath + @"\covers\cache";
-        private static string tempPathDefault = getCurrentPath + @"\temp";
-        // IniFile 
-        private readonly IniFile configIniFile = new IniFile("config.ini");
-        public int _returnConfirm { get; set; }
+        private static string GET_CURRENT_PATH   = Directory.GetCurrentDirectory();
+        private static string COVERS_DIR         = GET_CURRENT_PATH + @"\covers\cache";
+        private static string TEMP_DIR           = GET_CURRENT_PATH + @"\temp";
+        private const string INI_FILE            = "config.ini";
+        private readonly IniFile CONFIG_INI_FILE = new IniFile(INI_FILE);
+        public int RETURN_CONFIRM { get; set; }
         #endregion
 
         #region Main Form
@@ -59,8 +55,8 @@ namespace GCBM
             cbLevelLog.SelectedIndex = 0;
             cbVerificationInterval.SelectedIndex = 0;
             grbGeneralFiles.Enabled = false;
-            tbGeneralTempPath.Text = tempPathDefault;
-            tbDirectoryCoverCache.Text = coverPathDefault;
+            tbGeneralTempPath.Text = TEMP_DIR;
+            tbDirectoryCoverCache.Text = COVERS_DIR;
         }
         #endregion
 
@@ -77,109 +73,109 @@ namespace GCBM
             var _version = assembly.GetName().Version;
 
             // GCBM
-            configIniFile.IniWriteString("GCBM", "ProgUpdated", "30/04/2022");
-            configIniFile.IniWriteString("GCBM", "ProgVersion", _version.ToString());
-            configIniFile.IniWriteString("GCBM", "ConfigUpdated", DateTime.Now.ToString("dd/MM/yyyy"));
+            CONFIG_INI_FILE.IniWriteString("GCBM", "ProgUpdated", "30/04/2022");
+            CONFIG_INI_FILE.IniWriteString("GCBM", "ProgVersion", _version.ToString());
+            CONFIG_INI_FILE.IniWriteString("GCBM", "ConfigUpdated", DateTime.Now.ToString("dd/MM/yyyy"));
 
-            if (configIniFile.IniReadString("GCBM", "Language", "") != GCBM.Properties.Resources.GCBM_Language)
+            if (CONFIG_INI_FILE.IniReadString("GCBM", "Language", "") != GCBM.Properties.Resources.GCBM_Language)
             {
-                configIniFile.IniWriteString("GCBM", "Language", GCBM.Properties.Resources.GCBM_Language);
+                CONFIG_INI_FILE.IniWriteString("GCBM", "Language", GCBM.Properties.Resources.GCBM_Language);
             }
 
-            if (configIniFile.IniReadString("GCBM", "TranslatedBy", "") != GCBM.Properties.Resources.GCBM_TranslatedBy)
+            if (CONFIG_INI_FILE.IniReadString("GCBM", "TranslatedBy", "") != GCBM.Properties.Resources.GCBM_TranslatedBy)
             {
-                configIniFile.IniWriteString("GCBM", "TranslatedBy", GCBM.Properties.Resources.GCBM_TranslatedBy);
+                CONFIG_INI_FILE.IniWriteString("GCBM", "TranslatedBy", GCBM.Properties.Resources.GCBM_TranslatedBy);
             }
 
             //configIniFile.IniWriteString("GCBM", "Language", GCBM.Properties.Resources.GCBM_Language);
             //configIniFile.IniWriteString("GCBM", "TranslatedBy", GCBM.Properties.Resources.GCBM_TranslatedBy);
 
             // General          
-            configIniFile.IniWriteBool("GENERAL", "DiscClean", rbGeneralDiscClean.Checked);
-            configIniFile.IniWriteBool("GENERAL", "DiscDelete", rbGeneralDiscDelete.Checked);
-            configIniFile.IniWriteBool("GENERAL", "ExtractZip", chkGeneralExtractZip.Checked);
-            configIniFile.IniWriteBool("GENERAL", "Extract7z", chkGeneralExtract7z.Checked);
-            configIniFile.IniWriteBool("GENERAL", "ExtractRar", chkGeneralExtractRar.Checked);
-            configIniFile.IniWriteBool("GENERAL", "ExtractBZip2", chkGeneralExtractBZip2.Checked);
-            configIniFile.IniWriteBool("GENERAL", "ExtractSplitFile", chkGeneralExtractSplitFile.Checked);
-            configIniFile.IniWriteBool("GENERAL", "ExtractNwb", chkGeneralExtractNwb.Checked);
-            configIniFile.IniWriteInt("GENERAL", "FileSize", cbGeneralFileSize.SelectedIndex);
+            CONFIG_INI_FILE.IniWriteBool("GENERAL", "DiscClean", rbGeneralDiscClean.Checked);
+            CONFIG_INI_FILE.IniWriteBool("GENERAL", "DiscDelete", rbGeneralDiscDelete.Checked);
+            CONFIG_INI_FILE.IniWriteBool("GENERAL", "ExtractZip", chkGeneralExtractZip.Checked);
+            CONFIG_INI_FILE.IniWriteBool("GENERAL", "Extract7z", chkGeneralExtract7z.Checked);
+            CONFIG_INI_FILE.IniWriteBool("GENERAL", "ExtractRar", chkGeneralExtractRar.Checked);
+            CONFIG_INI_FILE.IniWriteBool("GENERAL", "ExtractBZip2", chkGeneralExtractBZip2.Checked);
+            CONFIG_INI_FILE.IniWriteBool("GENERAL", "ExtractSplitFile", chkGeneralExtractSplitFile.Checked);
+            CONFIG_INI_FILE.IniWriteBool("GENERAL", "ExtractNwb", chkGeneralExtractNwb.Checked);
+            CONFIG_INI_FILE.IniWriteInt("GENERAL", "FileSize", cbGeneralFileSize.SelectedIndex);
 
             if (tbGeneralTempPath.Text == string.Empty)
             {
-                tbGeneralTempPath.Text = tempPathDefault;
-                configIniFile.IniWriteString("GENERAL", "TemporaryFolder", tempPathDefault);
+                tbGeneralTempPath.Text = TEMP_DIR;
+                CONFIG_INI_FILE.IniWriteString("GENERAL", "TemporaryFolder", TEMP_DIR);
             }
             else
             {
-                configIniFile.IniWriteString("GENERAL", "TemporaryFolder", tbGeneralTempPath.Text);
+                CONFIG_INI_FILE.IniWriteString("GENERAL", "TemporaryFolder", tbGeneralTempPath.Text);
             }
 
             // Several
-            configIniFile.IniWriteInt("SEVERAL", "AppointmentStyle", cbAdjustNamingStyle.SelectedIndex);
-            configIniFile.IniWriteBool("SEVERAL", "CheckMD5", chkGeneralMD5.Checked);
-            configIniFile.IniWriteBool("SEVERAL", "CheckSHA1", chkGeneralSHA1.Checked);
-            configIniFile.IniWriteBool("SEVERAL", "CheckNotify", chkNotify.Checked);
-            configIniFile.IniWriteBool("SEVERAL", "NetVerify", chkNetVerify.Checked);
-            configIniFile.IniWriteBool("SEVERAL", "RecursiveMode", chkGeneralRecursiva.Checked);
-            configIniFile.IniWriteBool("SEVERAL", "SupportNkit", chkEnableSupportNkit.Checked);
-            configIniFile.IniWriteBool("SEVERAL", "TemporaryBuffer", chkGeneralTemporaryBuffer.Checked);
-            configIniFile.IniWriteBool("SEVERAL", "WindowMaximized", chkStartWindowMaximized.Checked);
+            CONFIG_INI_FILE.IniWriteInt("SEVERAL", "AppointmentStyle", cbAdjustNamingStyle.SelectedIndex);
+            CONFIG_INI_FILE.IniWriteBool("SEVERAL", "CheckMD5", chkGeneralMD5.Checked);
+            CONFIG_INI_FILE.IniWriteBool("SEVERAL", "CheckSHA1", chkGeneralSHA1.Checked);
+            CONFIG_INI_FILE.IniWriteBool("SEVERAL", "CheckNotify", chkNotify.Checked);
+            CONFIG_INI_FILE.IniWriteBool("SEVERAL", "NetVerify", chkNetVerify.Checked);
+            CONFIG_INI_FILE.IniWriteBool("SEVERAL", "RecursiveMode", chkGeneralRecursiva.Checked);
+            CONFIG_INI_FILE.IniWriteBool("SEVERAL", "SupportNkit", chkEnableSupportNkit.Checked);
+            CONFIG_INI_FILE.IniWriteBool("SEVERAL", "TemporaryBuffer", chkGeneralTemporaryBuffer.Checked);
+            CONFIG_INI_FILE.IniWriteBool("SEVERAL", "WindowMaximized", chkStartWindowMaximized.Checked);
             //configIniFile.IniWriteBool("SEVERAL", "EnableSupportNkit", chkEnableSupportNkit.Checked);
-            configIniFile.IniWriteBool("SEVERAL", "Welcome", chkWelcome.Checked);
-            configIniFile.IniWriteBool("SEVERAL", "Screensaver", chkScreensaver.Checked);
-            configIniFile.IniWriteBool("SEVERAL", "LoadDatabase", chkLoadDatabase.Checked);
-            configIniFile.IniWriteBool("SEVERAL", "MultipleInstances", chkMultipleInstances.Checked);
+            CONFIG_INI_FILE.IniWriteBool("SEVERAL", "Welcome", chkWelcome.Checked);
+            CONFIG_INI_FILE.IniWriteBool("SEVERAL", "Screensaver", chkScreensaver.Checked);
+            CONFIG_INI_FILE.IniWriteBool("SEVERAL", "LoadDatabase", chkLoadDatabase.Checked);
+            CONFIG_INI_FILE.IniWriteBool("SEVERAL", "MultipleInstances", chkMultipleInstances.Checked);
 
             // TransferSystem
-            configIniFile.IniWriteBool("TRANSFERSYSTEM", "FST", rbTransferSystemFST.Checked);
-            configIniFile.IniWriteBool("TRANSFERSYSTEM", "ScrubFlushSD", chkGeneralScrubFlushSD.Checked);
-            configIniFile.IniWriteInt("TRANSFERSYSTEM", "ScrubAlign", cbScrubAlign.SelectedIndex);
-            configIniFile.IniWriteString("TRANSFERSYSTEM", "ScrubFormat", cbScrubFormat.Text);
-            configIniFile.IniWriteInt("TRANSFERSYSTEM", "ScrubFormatIndex", cbScrubFormat.SelectedIndex);
-            configIniFile.IniWriteBool("TRANSFERSYSTEM", "Wipe", rbTransferSystemWipe.Checked);
-            configIniFile.IniWriteBool("TRANSFERSYSTEM", "XCopy", rbTransferSystemXCopy.Checked);
+            CONFIG_INI_FILE.IniWriteBool("TRANSFERSYSTEM", "FST", rbTransferSystemFST.Checked);
+            CONFIG_INI_FILE.IniWriteBool("TRANSFERSYSTEM", "ScrubFlushSD", chkGeneralScrubFlushSD.Checked);
+            CONFIG_INI_FILE.IniWriteInt("TRANSFERSYSTEM", "ScrubAlign", cbScrubAlign.SelectedIndex);
+            CONFIG_INI_FILE.IniWriteString("TRANSFERSYSTEM", "ScrubFormat", cbScrubFormat.Text);
+            CONFIG_INI_FILE.IniWriteInt("TRANSFERSYSTEM", "ScrubFormatIndex", cbScrubFormat.SelectedIndex);
+            CONFIG_INI_FILE.IniWriteBool("TRANSFERSYSTEM", "Wipe", rbTransferSystemWipe.Checked);
+            CONFIG_INI_FILE.IniWriteBool("TRANSFERSYSTEM", "XCopy", rbTransferSystemXCopy.Checked);
 
             // Covers
-            configIniFile.IniWriteBool("COVERS", "DeleteCovers", chkCoverSynchronizeDelete.Checked);
-            configIniFile.IniWriteBool("COVERS", "CoverRecursiveSearch", chkCoverRecursiveSearch.Checked);
-            configIniFile.IniWriteBool("COVERS", "TransferCovers", chkCoverEnableTransfer.Checked);
-            configIniFile.IniWriteBool("COVERS", "WiiFlowCoverUSBLoader", rbCoverWiiFlow.Checked);
-            configIniFile.IniWriteBool("COVERS", "GXCoverUSBLoader", rbCoverUSBLoaderGX.Checked);
+            CONFIG_INI_FILE.IniWriteBool("COVERS", "DeleteCovers", chkCoverSynchronizeDelete.Checked);
+            CONFIG_INI_FILE.IniWriteBool("COVERS", "CoverRecursiveSearch", chkCoverRecursiveSearch.Checked);
+            CONFIG_INI_FILE.IniWriteBool("COVERS", "TransferCovers", chkCoverEnableTransfer.Checked);
+            CONFIG_INI_FILE.IniWriteBool("COVERS", "WiiFlowCoverUSBLoader", rbCoverWiiFlow.Checked);
+            CONFIG_INI_FILE.IniWriteBool("COVERS", "GXCoverUSBLoader", rbCoverUSBLoaderGX.Checked);
 
             if (tbDirectoryCoverCache.Text == string.Empty)
             {
-                tbDirectoryCoverCache.Text = coverPathDefault;
-                configIniFile.IniWriteString("COVERS", "CoverDirectoryCache", coverPathDefault);
+                tbDirectoryCoverCache.Text = COVERS_DIR;
+                CONFIG_INI_FILE.IniWriteString("COVERS", "CoverDirectoryCache", COVERS_DIR);
             }
             else
             {
-                configIniFile.IniWriteString("COVERS", "CoverDirectoryCache", tbDirectoryCoverCache.Text);
+                CONFIG_INI_FILE.IniWriteString("COVERS", "CoverDirectoryCache", tbDirectoryCoverCache.Text);
             }
 
             if (rbCoverWiiFlow.Checked)
             {
-                configIniFile.IniWriteString("COVERS", "WiiFlowCoverDirectoryDisc", tbDirectoryCoverDisc.Text);
-                configIniFile.IniWriteString("COVERS", "WiiFlowCoverDirectory2D", tbDirectoryCover2D.Text);
-                configIniFile.IniWriteString("COVERS", "WiiFlowCoverDirectory3D", tbDirectoryCover3D.Text);
-                configIniFile.IniWriteString("COVERS", "WiiFlowCoverDirectoryFull", tbDirectoryCoverFull.Text);
+                CONFIG_INI_FILE.IniWriteString("COVERS", "WiiFlowCoverDirectoryDisc", tbDirectoryCoverDisc.Text);
+                CONFIG_INI_FILE.IniWriteString("COVERS", "WiiFlowCoverDirectory2D", tbDirectoryCover2D.Text);
+                CONFIG_INI_FILE.IniWriteString("COVERS", "WiiFlowCoverDirectory3D", tbDirectoryCover3D.Text);
+                CONFIG_INI_FILE.IniWriteString("COVERS", "WiiFlowCoverDirectoryFull", tbDirectoryCoverFull.Text);
             }
             else
             {
-                configIniFile.IniWriteString("COVERS", "GXCoverDirectoryDisc", tbDirectoryCoverDisc.Text);
-                configIniFile.IniWriteString("COVERS", "GXCoverDirectory2D", tbDirectoryCover2D.Text);
-                configIniFile.IniWriteString("COVERS", "GXCoverDirectory3D", tbDirectoryCover3D.Text);
-                configIniFile.IniWriteString("COVERS", "GXCoverDirectoryFull", tbDirectoryCoverFull.Text);
+                CONFIG_INI_FILE.IniWriteString("COVERS", "GXCoverDirectoryDisc", tbDirectoryCoverDisc.Text);
+                CONFIG_INI_FILE.IniWriteString("COVERS", "GXCoverDirectory2D", tbDirectoryCover2D.Text);
+                CONFIG_INI_FILE.IniWriteString("COVERS", "GXCoverDirectory3D", tbDirectoryCover3D.Text);
+                CONFIG_INI_FILE.IniWriteString("COVERS", "GXCoverDirectoryFull", tbDirectoryCoverFull.Text);
             }
 
             // Titles
-            configIniFile.IniWriteBool("TITLES", "GameCustomTitles", chkGameTitleCustom.Checked);
-            configIniFile.IniWriteBool("TITLES", "GameTdbTitles", chkGameTitle.Checked);
-            configIniFile.IniWriteBool("TITLES", "GameInternalName", rbGameInternalName.Checked);
-            configIniFile.IniWriteBool("TITLES", "GameXmlName", rbGameXmlName.Checked);
-            configIniFile.IniWriteString("TITLES", "LocationTitles", tbTitle.Text);
-            configIniFile.IniWriteString("TITLES", "LocationCustomTitles", tbTitleCustom.Text);
-            configIniFile.IniWriteInt("TITLES", "TitleLanguage", cbTitleLanguage.SelectedIndex);
+            CONFIG_INI_FILE.IniWriteBool("TITLES", "GameCustomTitles", chkGameTitleCustom.Checked);
+            CONFIG_INI_FILE.IniWriteBool("TITLES", "GameTdbTitles", chkGameTitle.Checked);
+            CONFIG_INI_FILE.IniWriteBool("TITLES", "GameInternalName", rbGameInternalName.Checked);
+            CONFIG_INI_FILE.IniWriteBool("TITLES", "GameXmlName", rbGameXmlName.Checked);
+            CONFIG_INI_FILE.IniWriteString("TITLES", "LocationTitles", tbTitle.Text);
+            CONFIG_INI_FILE.IniWriteString("TITLES", "LocationCustomTitles", tbTitleCustom.Text);
+            CONFIG_INI_FILE.IniWriteInt("TITLES", "TitleLanguage", cbTitleLanguage.SelectedIndex);
 
             // Downloads
             //configIniFile.IniWriteBool("DOWNLOADS", "ListTaskComplete", chkDownloadTaskComplete.Checked);
@@ -188,116 +184,116 @@ namespace GCBM
             //configIniFile.IniWriteBool("DOWNLOADS", "PreviewCovers", chkDownloadPreviewCovers.Checked);
 
             // Updates
-            configIniFile.IniWriteBool("UPDATES", "UpdateVerifyStart", chkUpdateVerifyStart.Checked);
-            configIniFile.IniWriteBool("UPDATES", "UpdateBetaChannel", chkUpdateBetaChannel.Checked);
-            configIniFile.IniWriteBool("UPDATES", "UpdateFileLog", chkUpdateFileLog.Checked);
-            configIniFile.IniWriteBool("UPDATES", "UpdateServerProxy", chkUpdateServerProxy.Checked);
-            configIniFile.IniWriteString("UPDATES", "ServerProxy", tbServerProxy.Text);
-            configIniFile.IniWriteString("UPDATES", "UserProxy", tbUserProxy.Text);
-            configIniFile.IniWriteString("UPDATES", "PassProxy", tbPassProxy.Text);
-            configIniFile.IniWriteInt("UPDATES", "VerificationInterval", cbVerificationInterval.SelectedIndex);
+            CONFIG_INI_FILE.IniWriteBool("UPDATES", "UpdateVerifyStart", chkUpdateVerifyStart.Checked);
+            CONFIG_INI_FILE.IniWriteBool("UPDATES", "UpdateBetaChannel", chkUpdateBetaChannel.Checked);
+            CONFIG_INI_FILE.IniWriteBool("UPDATES", "UpdateFileLog", chkUpdateFileLog.Checked);
+            CONFIG_INI_FILE.IniWriteBool("UPDATES", "UpdateServerProxy", chkUpdateServerProxy.Checked);
+            CONFIG_INI_FILE.IniWriteString("UPDATES", "ServerProxy", tbServerProxy.Text);
+            CONFIG_INI_FILE.IniWriteString("UPDATES", "UserProxy", tbUserProxy.Text);
+            CONFIG_INI_FILE.IniWriteString("UPDATES", "PassProxy", tbPassProxy.Text);
+            CONFIG_INI_FILE.IniWriteInt("UPDATES", "VerificationInterval", cbVerificationInterval.SelectedIndex);
 
             // Manager Log
-            configIniFile.IniWriteInt("MANAGERLOG", "LogLevel", cbLevelLog.SelectedIndex);
-            configIniFile.IniWriteBool("MANAGERLOG", "LogSystemConsole", chkManagerLogSystemConsole.Checked);
-            configIniFile.IniWriteBool("MANAGERLOG", "LogDebugConsole", chkManagerLogDebugConsole.Checked);
-            configIniFile.IniWriteBool("MANAGERLOG", "LogWindow", chkManagerLogWindow.Checked);
-            configIniFile.IniWriteBool("MANAGERLOG", "LogFile", chkManagerLogFile.Checked);
+            CONFIG_INI_FILE.IniWriteInt("MANAGERLOG", "LogLevel", cbLevelLog.SelectedIndex);
+            CONFIG_INI_FILE.IniWriteBool("MANAGERLOG", "LogSystemConsole", chkManagerLogSystemConsole.Checked);
+            CONFIG_INI_FILE.IniWriteBool("MANAGERLOG", "LogDebugConsole", chkManagerLogDebugConsole.Checked);
+            CONFIG_INI_FILE.IniWriteBool("MANAGERLOG", "LogWindow", chkManagerLogWindow.Checked);
+            CONFIG_INI_FILE.IniWriteBool("MANAGERLOG", "LogFile", chkManagerLogFile.Checked);
 
             // Language
-            configIniFile.IniWriteInt("LANGUAGE", "ConfigLanguage", cbLanguage.SelectedIndex);
+            CONFIG_INI_FILE.IniWriteInt("LANGUAGE", "ConfigLanguage", cbLanguage.SelectedIndex);
         }
         #endregion
 
         #region LoadConfigFile
         private void LoadConfigFile()
         {
-            if (File.Exists(getCurrentPath + @"\config.ini"))
+            if (File.Exists(GET_CURRENT_PATH + @"\config.ini"))
             {
                 // General
-                rbGeneralDiscClean.Checked = configIniFile.IniReadBool("GENERAL", "DiscClean");
-                rbGeneralDiscDelete.Checked = configIniFile.IniReadBool("GENERAL", "DiscDelete");
-                chkGeneralExtractZip.Checked = configIniFile.IniReadBool("GENERAL", "ExtractZip");
-                chkGeneralExtract7z.Checked = configIniFile.IniReadBool("GENERAL", "Extract7z");
-                chkGeneralExtractRar.Checked = configIniFile.IniReadBool("GENERAL", "ExtractRar");
-                chkGeneralExtractBZip2.Checked = configIniFile.IniReadBool("GENERAL", "ExtractBZip2");
-                chkGeneralExtractSplitFile.Checked = configIniFile.IniReadBool("GENERAL", "ExtractSplitFile");
-                chkGeneralExtractNwb.Checked = configIniFile.IniReadBool("GENERAL", "ExtractNwb");
-                cbGeneralFileSize.SelectedIndex = configIniFile.IniReadInt("GENERAL", "FileSize");
+                rbGeneralDiscClean.Checked = CONFIG_INI_FILE.IniReadBool("GENERAL", "DiscClean");
+                rbGeneralDiscDelete.Checked = CONFIG_INI_FILE.IniReadBool("GENERAL", "DiscDelete");
+                chkGeneralExtractZip.Checked = CONFIG_INI_FILE.IniReadBool("GENERAL", "ExtractZip");
+                chkGeneralExtract7z.Checked = CONFIG_INI_FILE.IniReadBool("GENERAL", "Extract7z");
+                chkGeneralExtractRar.Checked = CONFIG_INI_FILE.IniReadBool("GENERAL", "ExtractRar");
+                chkGeneralExtractBZip2.Checked = CONFIG_INI_FILE.IniReadBool("GENERAL", "ExtractBZip2");
+                chkGeneralExtractSplitFile.Checked = CONFIG_INI_FILE.IniReadBool("GENERAL", "ExtractSplitFile");
+                chkGeneralExtractNwb.Checked = CONFIG_INI_FILE.IniReadBool("GENERAL", "ExtractNwb");
+                cbGeneralFileSize.SelectedIndex = CONFIG_INI_FILE.IniReadInt("GENERAL", "FileSize");
 
-                if (configIniFile.IniReadString("GENERAL", "TemporaryFolder", "") == string.Empty)
+                if (CONFIG_INI_FILE.IniReadString("GENERAL", "TemporaryFolder", "") == string.Empty)
                 {
-                    tbGeneralTempPath.Text = tempPathDefault;
+                    tbGeneralTempPath.Text = TEMP_DIR;
                 }
                 else
                 {
-                    tbGeneralTempPath.Text = configIniFile.IniReadString("GENERAL", "TemporaryFolder", "");
+                    tbGeneralTempPath.Text = CONFIG_INI_FILE.IniReadString("GENERAL", "TemporaryFolder", "");
                 }
 
                 // Several
-                cbAdjustNamingStyle.SelectedIndex = configIniFile.IniReadInt("SEVERAL", "AppointmentStyle");
-                chkGeneralMD5.Checked = configIniFile.IniReadBool("SEVERAL", "CheckMD5");
-                chkGeneralSHA1.Checked = configIniFile.IniReadBool("SEVERAL", "CheckSHA1");
-                chkNotify.Checked = configIniFile.IniReadBool("SEVERAL", "CheckNotify");
-                chkNetVerify.Checked = configIniFile.IniReadBool("SEVERAL", "NetVerify");
-                chkGeneralRecursiva.Checked = configIniFile.IniReadBool("SEVERAL", "RecursiveMode");
-                chkEnableSupportNkit.Checked = configIniFile.IniReadBool("SEVERAL", "SupportNkit");
-                chkGeneralTemporaryBuffer.Checked = configIniFile.IniReadBool("SEVERAL", "TemporaryBuffer");
-                chkStartWindowMaximized.Checked = configIniFile.IniReadBool("SEVERAL", "WindowMaximized");
+                cbAdjustNamingStyle.SelectedIndex = CONFIG_INI_FILE.IniReadInt("SEVERAL", "AppointmentStyle");
+                chkGeneralMD5.Checked = CONFIG_INI_FILE.IniReadBool("SEVERAL", "CheckMD5");
+                chkGeneralSHA1.Checked = CONFIG_INI_FILE.IniReadBool("SEVERAL", "CheckSHA1");
+                chkNotify.Checked = CONFIG_INI_FILE.IniReadBool("SEVERAL", "CheckNotify");
+                chkNetVerify.Checked = CONFIG_INI_FILE.IniReadBool("SEVERAL", "NetVerify");
+                chkGeneralRecursiva.Checked = CONFIG_INI_FILE.IniReadBool("SEVERAL", "RecursiveMode");
+                chkEnableSupportNkit.Checked = CONFIG_INI_FILE.IniReadBool("SEVERAL", "SupportNkit");
+                chkGeneralTemporaryBuffer.Checked = CONFIG_INI_FILE.IniReadBool("SEVERAL", "TemporaryBuffer");
+                chkStartWindowMaximized.Checked = CONFIG_INI_FILE.IniReadBool("SEVERAL", "WindowMaximized");
                 //chkEnableSupportNkit.Checked = configIniFile.IniReadBool("SEVERAL", "EnableSupportNkit");
-                chkWelcome.Checked = configIniFile.IniReadBool("SEVERAL", "Welcome");
-                chkScreensaver.Checked = configIniFile.IniReadBool("SEVERAL", "Screensaver");
-                chkLoadDatabase.Checked = configIniFile.IniReadBool("SEVERAL", "LoadDatabase");
-                chkMultipleInstances.Checked = configIniFile.IniReadBool("SEVERAL", "MultipleInstances");
+                chkWelcome.Checked = CONFIG_INI_FILE.IniReadBool("SEVERAL", "Welcome");
+                chkScreensaver.Checked = CONFIG_INI_FILE.IniReadBool("SEVERAL", "Screensaver");
+                chkLoadDatabase.Checked = CONFIG_INI_FILE.IniReadBool("SEVERAL", "LoadDatabase");
+                chkMultipleInstances.Checked = CONFIG_INI_FILE.IniReadBool("SEVERAL", "MultipleInstances");
 
                 // TransferSystem
-                rbTransferSystemFST.Checked = configIniFile.IniReadBool("TRANSFERSYSTEM", "FST");
-                chkGeneralScrubFlushSD.Checked = configIniFile.IniReadBool("TRANSFERSYSTEM", "ScrubFlushSD");
-                cbScrubAlign.SelectedIndex = configIniFile.IniReadInt("TRANSFERSYSTEM", "ScrubAlign");
+                rbTransferSystemFST.Checked = CONFIG_INI_FILE.IniReadBool("TRANSFERSYSTEM", "FST");
+                chkGeneralScrubFlushSD.Checked = CONFIG_INI_FILE.IniReadBool("TRANSFERSYSTEM", "ScrubFlushSD");
+                cbScrubAlign.SelectedIndex = CONFIG_INI_FILE.IniReadInt("TRANSFERSYSTEM", "ScrubAlign");
                 //cbScrubFormat.Text = configIniFile.IniReadString("TRANSFERSYSTEM", "ScrubFormat", "");
-                cbScrubFormat.SelectedIndex = configIniFile.IniReadInt("TRANSFERSYSTEM", "ScrubFormatIndex");
-                rbTransferSystemWipe.Checked = configIniFile.IniReadBool("TRANSFERSYSTEM", "Wipe");
-                rbTransferSystemXCopy.Checked = configIniFile.IniReadBool("TRANSFERSYSTEM", "XCopy");
+                cbScrubFormat.SelectedIndex = CONFIG_INI_FILE.IniReadInt("TRANSFERSYSTEM", "ScrubFormatIndex");
+                rbTransferSystemWipe.Checked = CONFIG_INI_FILE.IniReadBool("TRANSFERSYSTEM", "Wipe");
+                rbTransferSystemXCopy.Checked = CONFIG_INI_FILE.IniReadBool("TRANSFERSYSTEM", "XCopy");
 
                 // Covers
-                chkCoverSynchronizeDelete.Checked = configIniFile.IniReadBool("COVERS", "DeleteCovers");
-                chkCoverRecursiveSearch.Checked = configIniFile.IniReadBool("COVERS", "CoverRecursiveSearch");
-                chkCoverEnableTransfer.Checked = configIniFile.IniReadBool("COVERS", "TransferCovers");
-                rbCoverWiiFlow.Checked = configIniFile.IniReadBool("COVERS", "WiiFlowCoverUSBLoader");
-                rbCoverUSBLoaderGX.Checked = configIniFile.IniReadBool("COVERS", "GXCoverUSBLoader");
+                chkCoverSynchronizeDelete.Checked = CONFIG_INI_FILE.IniReadBool("COVERS", "DeleteCovers");
+                chkCoverRecursiveSearch.Checked = CONFIG_INI_FILE.IniReadBool("COVERS", "CoverRecursiveSearch");
+                chkCoverEnableTransfer.Checked = CONFIG_INI_FILE.IniReadBool("COVERS", "TransferCovers");
+                rbCoverWiiFlow.Checked = CONFIG_INI_FILE.IniReadBool("COVERS", "WiiFlowCoverUSBLoader");
+                rbCoverUSBLoaderGX.Checked = CONFIG_INI_FILE.IniReadBool("COVERS", "GXCoverUSBLoader");
 
-                if (configIniFile.IniReadString("COVERS", "CoverDirectoryCache", "") == string.Empty)
+                if (CONFIG_INI_FILE.IniReadString("COVERS", "CoverDirectoryCache", "") == string.Empty)
                 {
-                    tbDirectoryCoverCache.Text = coverPathDefault;
+                    tbDirectoryCoverCache.Text = COVERS_DIR;
                 }
                 else
                 {
-                    tbDirectoryCoverCache.Text = configIniFile.IniReadString("COVERS", "CoverDirectoryCache", "");
+                    tbDirectoryCoverCache.Text = CONFIG_INI_FILE.IniReadString("COVERS", "CoverDirectoryCache", "");
                 }
 
                 if (rbCoverWiiFlow.Checked)
                 {
-                    tbDirectoryCoverDisc.Text = configIniFile.IniReadString("COVERS", "WiiFlowCoverDirectoryDisc", "");
-                    tbDirectoryCover2D.Text = configIniFile.IniReadString("COVERS", "WiiFlowCoverDirectory2D", "");
-                    tbDirectoryCover3D.Text = configIniFile.IniReadString("COVERS", "WiiFlowCoverDirectory3D", "");
-                    tbDirectoryCoverFull.Text = configIniFile.IniReadString("COVERS", "WiiFlowCoverDirectoryFull", "");
+                    tbDirectoryCoverDisc.Text = CONFIG_INI_FILE.IniReadString("COVERS", "WiiFlowCoverDirectoryDisc", "");
+                    tbDirectoryCover2D.Text = CONFIG_INI_FILE.IniReadString("COVERS", "WiiFlowCoverDirectory2D", "");
+                    tbDirectoryCover3D.Text = CONFIG_INI_FILE.IniReadString("COVERS", "WiiFlowCoverDirectory3D", "");
+                    tbDirectoryCoverFull.Text = CONFIG_INI_FILE.IniReadString("COVERS", "WiiFlowCoverDirectoryFull", "");
                 }
                 else
                 {
-                    tbDirectoryCoverDisc.Text = configIniFile.IniReadString("COVERS", "GXCoverDirectoryDisc", "");
-                    tbDirectoryCover2D.Text = configIniFile.IniReadString("COVERS", "GXCoverDirectory2D", "");
-                    tbDirectoryCover3D.Text = configIniFile.IniReadString("COVERS", "GXCoverDirectory3D", "");
-                    tbDirectoryCoverFull.Text = configIniFile.IniReadString("COVERS", "GXCoverDirectoryFull", "");
+                    tbDirectoryCoverDisc.Text = CONFIG_INI_FILE.IniReadString("COVERS", "GXCoverDirectoryDisc", "");
+                    tbDirectoryCover2D.Text = CONFIG_INI_FILE.IniReadString("COVERS", "GXCoverDirectory2D", "");
+                    tbDirectoryCover3D.Text = CONFIG_INI_FILE.IniReadString("COVERS", "GXCoverDirectory3D", "");
+                    tbDirectoryCoverFull.Text = CONFIG_INI_FILE.IniReadString("COVERS", "GXCoverDirectoryFull", "");
                 }
 
                 // Titles
-                chkGameTitle.Checked = configIniFile.IniReadBool("TITLES", "GameTdbTitles");
-                rbGameInternalName.Checked = configIniFile.IniReadBool("TITLES", "GameInternalName");
-                rbGameXmlName.Checked = configIniFile.IniReadBool("TITLES", "GameXmlName");
-                chkGameTitleCustom.Checked = configIniFile.IniReadBool("TITLES", "GameCustomTitles");
-                tbTitle.Text = configIniFile.IniReadString("TITLES", "LocationTitles", "");
-                tbTitleCustom.Text = configIniFile.IniReadString("TITLES", "LocationCustomTitles", "");
-                cbTitleLanguage.SelectedIndex = configIniFile.IniReadInt("TITLES", "TitleLanguage");
+                chkGameTitle.Checked = CONFIG_INI_FILE.IniReadBool("TITLES", "GameTdbTitles");
+                rbGameInternalName.Checked = CONFIG_INI_FILE.IniReadBool("TITLES", "GameInternalName");
+                rbGameXmlName.Checked = CONFIG_INI_FILE.IniReadBool("TITLES", "GameXmlName");
+                chkGameTitleCustom.Checked = CONFIG_INI_FILE.IniReadBool("TITLES", "GameCustomTitles");
+                tbTitle.Text = CONFIG_INI_FILE.IniReadString("TITLES", "LocationTitles", "");
+                tbTitleCustom.Text = CONFIG_INI_FILE.IniReadString("TITLES", "LocationCustomTitles", "");
+                cbTitleLanguage.SelectedIndex = CONFIG_INI_FILE.IniReadInt("TITLES", "TitleLanguage");
 
                 // Downloads
                 //chkDownloadTaskComplete.Checked = configIniFile.IniReadBool("DOWNLOADS", "ListTaskComplete");
@@ -306,24 +302,24 @@ namespace GCBM
                 //chkDownloadPreviewCovers.Checked = configIniFile.IniReadBool("DOWNLOADS", "PreviewCovers");
 
                 // Updates
-                chkUpdateVerifyStart.Checked = configIniFile.IniReadBool("UPDATES", "UpdateVerifyStart");
-                chkUpdateBetaChannel.Checked = configIniFile.IniReadBool("UPDATES", "UpdateBetaChannel");
-                chkUpdateFileLog.Checked = configIniFile.IniReadBool("UPDATES", "UpdateFileLog");
-                chkUpdateServerProxy.Checked = configIniFile.IniReadBool("UPDATES", "UpdateServerProxy");
-                tbServerProxy.Text = configIniFile.IniReadString("UPDATES", "ServerProxy", "");
-                tbUserProxy.Text = configIniFile.IniReadString("UPDATES", "UserProxy", "");
-                tbPassProxy.Text = configIniFile.IniReadString("UPDATES", "PassProxy", "");
-                cbVerificationInterval.SelectedIndex = configIniFile.IniReadInt("UPDATES", "VerificationInterval");
+                chkUpdateVerifyStart.Checked = CONFIG_INI_FILE.IniReadBool("UPDATES", "UpdateVerifyStart");
+                chkUpdateBetaChannel.Checked = CONFIG_INI_FILE.IniReadBool("UPDATES", "UpdateBetaChannel");
+                chkUpdateFileLog.Checked = CONFIG_INI_FILE.IniReadBool("UPDATES", "UpdateFileLog");
+                chkUpdateServerProxy.Checked = CONFIG_INI_FILE.IniReadBool("UPDATES", "UpdateServerProxy");
+                tbServerProxy.Text = CONFIG_INI_FILE.IniReadString("UPDATES", "ServerProxy", "");
+                tbUserProxy.Text = CONFIG_INI_FILE.IniReadString("UPDATES", "UserProxy", "");
+                tbPassProxy.Text = CONFIG_INI_FILE.IniReadString("UPDATES", "PassProxy", "");
+                cbVerificationInterval.SelectedIndex = CONFIG_INI_FILE.IniReadInt("UPDATES", "VerificationInterval");
 
                 // Manager Log
-                cbLevelLog.SelectedIndex = configIniFile.IniReadInt("MANAGERLOG", "LogLevel");
-                chkManagerLogSystemConsole.Checked = configIniFile.IniReadBool("MANAGERLOG", "LogSystemConsole");
-                chkManagerLogDebugConsole.Checked = configIniFile.IniReadBool("MANAGERLOG", "LogDebugConsole");
-                chkManagerLogWindow.Checked = configIniFile.IniReadBool("MANAGERLOG", "LogWindow");
-                chkManagerLogFile.Checked = configIniFile.IniReadBool("MANAGERLOG", "LogFile");
+                cbLevelLog.SelectedIndex = CONFIG_INI_FILE.IniReadInt("MANAGERLOG", "LogLevel");
+                chkManagerLogSystemConsole.Checked = CONFIG_INI_FILE.IniReadBool("MANAGERLOG", "LogSystemConsole");
+                chkManagerLogDebugConsole.Checked = CONFIG_INI_FILE.IniReadBool("MANAGERLOG", "LogDebugConsole");
+                chkManagerLogWindow.Checked = CONFIG_INI_FILE.IniReadBool("MANAGERLOG", "LogWindow");
+                chkManagerLogFile.Checked = CONFIG_INI_FILE.IniReadBool("MANAGERLOG", "LogFile");
 
                 // Language
-                cbLanguage.SelectedIndex = configIniFile.IniReadInt("LANGUAGE", "ConfigLanguage");
+                cbLanguage.SelectedIndex = CONFIG_INI_FILE.IniReadInt("LANGUAGE", "ConfigLanguage");
             }
         }
         #endregion
@@ -342,7 +338,7 @@ namespace GCBM
 
             //MessageBox.Show("Deseja mesmo sair?", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.DialogResult = DialogResult.OK;
-            this._returnConfirm = 1;
+            this.RETURN_CONFIRM = 1;
             this.Close();
             this.notifyIcon.Dispose();
             this.Dispose();
@@ -474,19 +470,19 @@ namespace GCBM
             }
 
             //tbDirectoryCoverDisc.Text = configIniFile.IniReadString("Covers", "WiiFlowCoverDirectoryDisc", "");
-            tbDirectoryCover2D.Text = configIniFile.IniReadString("Covers", "WiiFlowCoverDirectory2D", "");
+            tbDirectoryCover2D.Text = CONFIG_INI_FILE.IniReadString("Covers", "WiiFlowCoverDirectory2D", "");
             //tbDirectoryCover3D.Text = configIniFile.IniReadString("Covers", "WiiFlowCoverDirectory3D", "");
-            tbDirectoryCoverFull.Text = configIniFile.IniReadString("Covers", "WiiFlowCoverDirectoryFull", "");
+            tbDirectoryCoverFull.Text = CONFIG_INI_FILE.IniReadString("Covers", "WiiFlowCoverDirectoryFull", "");
         }
         #endregion
 
         #region rbCoverUSBLoaderGX_CheckedChanged
         private void rbCoverUSBLoaderGX_CheckedChanged(object sender, EventArgs e)
         {
-            tbDirectoryCoverDisc.Text = configIniFile.IniReadString("Covers", "GXCoverDirectoryDisc", "");
-            tbDirectoryCover2D.Text = configIniFile.IniReadString("Covers", "GXCoverDirectory2D", "");
-            tbDirectoryCover3D.Text = configIniFile.IniReadString("Covers", "GXCoverDirectory3D", "");
-            tbDirectoryCoverFull.Text = configIniFile.IniReadString("Covers", "GXCoverDirectoryFull", "");
+            tbDirectoryCoverDisc.Text = CONFIG_INI_FILE.IniReadString("Covers", "GXCoverDirectoryDisc", "");
+            tbDirectoryCover2D.Text = CONFIG_INI_FILE.IniReadString("Covers", "GXCoverDirectory2D", "");
+            tbDirectoryCover3D.Text = CONFIG_INI_FILE.IniReadString("Covers", "GXCoverDirectory3D", "");
+            tbDirectoryCoverFull.Text = CONFIG_INI_FILE.IniReadString("Covers", "GXCoverDirectoryFull", "");
         }
         #endregion
 
