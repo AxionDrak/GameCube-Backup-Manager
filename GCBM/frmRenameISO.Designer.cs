@@ -35,7 +35,6 @@ namespace GCBM
             this.btnConfirm = new System.Windows.Forms.Button();
             this.tbRenameISO = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // chkRenameISO
@@ -69,16 +68,10 @@ namespace GCBM
             resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
             // 
-            // label2
-            // 
-            resources.ApplyResources(this.label2, "label2");
-            this.label2.Name = "label2";
-            // 
             // frmRenameISO
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.chkRenameISO);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnConfirm);
@@ -101,6 +94,5 @@ namespace GCBM
         private System.Windows.Forms.Button btnConfirm;
         private System.Windows.Forms.TextBox tbRenameISO;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
     }
 }
