@@ -118,10 +118,8 @@ namespace GCBM
             CONFIG_INI_FILE.IniWriteBool("SEVERAL", "CheckNotify", chkNotify.Checked);
             CONFIG_INI_FILE.IniWriteBool("SEVERAL", "NetVerify", chkNetVerify.Checked);
             CONFIG_INI_FILE.IniWriteBool("SEVERAL", "RecursiveMode", chkGeneralRecursiva.Checked);
-            CONFIG_INI_FILE.IniWriteBool("SEVERAL", "SupportNkit", chkEnableSupportNkit.Checked);
             CONFIG_INI_FILE.IniWriteBool("SEVERAL", "TemporaryBuffer", chkGeneralTemporaryBuffer.Checked);
             CONFIG_INI_FILE.IniWriteBool("SEVERAL", "WindowMaximized", chkStartWindowMaximized.Checked);
-            //configIniFile.IniWriteBool("SEVERAL", "EnableSupportNkit", chkEnableSupportNkit.Checked);
             CONFIG_INI_FILE.IniWriteBool("SEVERAL", "Welcome", chkWelcome.Checked);
             CONFIG_INI_FILE.IniWriteBool("SEVERAL", "Screensaver", chkScreensaver.Checked);
             CONFIG_INI_FILE.IniWriteBool("SEVERAL", "LoadDatabase", chkLoadDatabase.Checked);
@@ -237,10 +235,8 @@ namespace GCBM
                 chkNotify.Checked = CONFIG_INI_FILE.IniReadBool("SEVERAL", "CheckNotify");
                 chkNetVerify.Checked = CONFIG_INI_FILE.IniReadBool("SEVERAL", "NetVerify");
                 chkGeneralRecursiva.Checked = CONFIG_INI_FILE.IniReadBool("SEVERAL", "RecursiveMode");
-                chkEnableSupportNkit.Checked = CONFIG_INI_FILE.IniReadBool("SEVERAL", "SupportNkit");
                 chkGeneralTemporaryBuffer.Checked = CONFIG_INI_FILE.IniReadBool("SEVERAL", "TemporaryBuffer");
                 chkStartWindowMaximized.Checked = CONFIG_INI_FILE.IniReadBool("SEVERAL", "WindowMaximized");
-                //chkEnableSupportNkit.Checked = configIniFile.IniReadBool("SEVERAL", "EnableSupportNkit");
                 chkWelcome.Checked = CONFIG_INI_FILE.IniReadBool("SEVERAL", "Welcome");
                 chkScreensaver.Checked = CONFIG_INI_FILE.IniReadBool("SEVERAL", "Screensaver");
                 chkLoadDatabase.Checked = CONFIG_INI_FILE.IniReadBool("SEVERAL", "LoadDatabase");
