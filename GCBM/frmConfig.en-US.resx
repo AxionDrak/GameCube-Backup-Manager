@@ -292,12 +292,6 @@
   <data name="chkStartWindowMaximized.Text" xml:space="preserve">
     <value>Start window maximized</value>
   </data>
-  <data name="chkEnableSupportNkit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>302, 19</value>
-  </data>
-  <data name="chkEnableSupportNkit.Text" xml:space="preserve">
-    <value>Enable NKit technology support (EXPERIMENTAL)</value>
-  </data>
   <data name="chkGeneralSHA1.Size" type="System.Drawing.Size, System.Drawing">
     <value>207, 17</value>
   </data>
@@ -499,6 +493,15 @@
   <data name="chkGameTitle.Text" xml:space="preserve">
     <value>Use GameTDB (titles.txt)</value>
   </data>
+  <data name="lblTimeInterval.Location" type="System.Drawing.Point, System.Drawing">
+    <value>53, 246</value>
+  </data>
+  <data name="lblTimeInterval.Size" type="System.Drawing.Size, System.Drawing">
+    <value>422, 13</value>
+  </data>
+  <data name="lblTimeInterval.Text" xml:space="preserve">
+    <value>NOTE: Adjusting the time interval setting will only take effect after restarting the program.</value>
+  </data>
   <data name="grbUpdate.Text" xml:space="preserve">
     <value>Update Settings</value>
   </data>
@@ -600,6 +603,9 @@
   </data>
   <data name="cbLanguage.Items2" xml:space="preserve">
     <value>Spanish [Spain]</value>
+  </data>
+  <data name="cbLanguage.Items3" xml:space="preserve">
+    <value>Korean</value>
   </data>
   <data name="grbLog.Text" xml:space="preserve">
     <value>Record</value>
@@ -733,8 +739,5 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Settings</value>
-  </data>
-  <data name="cbLanguage.Items3" xml:space="preserve">
-    <value>Korean</value>
   </data>
 </root>
