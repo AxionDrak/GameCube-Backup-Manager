@@ -299,15 +299,6 @@
   <data name="chkStartWindowMaximized.Text" xml:space="preserve">
     <value>Ventana de inicio maximizada</value>
   </data>
-  <data name="chkEnableSupportNkit.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="chkEnableSupportNkit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>330, 19</value>
-  </data>
-  <data name="chkEnableSupportNkit.Text" xml:space="preserve">
-    <value>Habilitar soporte de tecnología NKit (EXPERIMENTAL)</value>
-  </data>
   <data name="chkGeneralSHA1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -601,6 +592,15 @@
   </data>
   <data name="grbTitleDiverse.Text" xml:space="preserve">
     <value>Varios</value>
+  </data>
+  <data name="lblTimeInterval.Location" type="System.Drawing.Point, System.Drawing">
+    <value>32, 246</value>
+  </data>
+  <data name="lblTimeInterval.Size" type="System.Drawing.Size, System.Drawing">
+    <value>484, 26</value>
+  </data>
+  <data name="lblTimeInterval.Text" xml:space="preserve">
+    <value>NOTA: El ajuste de la configuración del intervalo de tiempo solo tendrá efecto después de reiniciar el programa.</value>
   </data>
   <data name="lblUpdateInterval.Size" type="System.Drawing.Size, System.Drawing">
     <value>123, 13</value>
