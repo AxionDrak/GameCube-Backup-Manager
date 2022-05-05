@@ -117,14 +117,402 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="label35.Text" xml:space="preserve">
-    <value>폴더 위치:</value>
+  <data name="tabSettingsGeneral.Text" xml:space="preserve">
+    <value>일반</value>
+  </data>
+  <data name="tabSettingsNomenclature.Text" xml:space="preserve">
+    <value>명명법</value>
+  </data>
+  <data name="tabSettingsSeveral.Text" xml:space="preserve">
+    <value>여러 개</value>
+  </data>
+  <data name="tabSettingsTransfer.Text" xml:space="preserve">
+    <value>게임 전송</value>
+  </data>
+  <data name="tabSettingsCovers.Text" xml:space="preserve">
+    <value>커버</value>
+  </data>
+  <data name="tabSettingsTitle.Text" xml:space="preserve">
+    <value>타이틀</value>
+  </data>
+  <data name="tabSettingsUpdates.Text" xml:space="preserve">
+    <value>업데이트</value>
+  </data>
+  <data name="tabSettingsLanguage.Text" xml:space="preserve">
+    <value>언어</value>
+  </data>
+  <data name="tabSettingsLog.Text" xml:space="preserve">
+    <value>기록</value>
+  </data>
+  <data name="grbGeneralTemporaryFolder.Text" xml:space="preserve">
+    <value>임시 폴더</value>
+  </data>
+  <data name="grbGeneralFiles.Text" xml:space="preserve">
+    <value>파일</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="chkGeneralExtractNwb.Size" type="System.Drawing.Size, System.Drawing">
+    <value>110, 17</value>
+  </data>
+  <data name="chkGeneralExtractNwb.Text" xml:space="preserve">
+    <value>NWB 파일(*.nwb)</value>
+  </data>
+  <data name="chkGeneralExtractSplitFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 17</value>
+  </data>
+  <data name="chkGeneralExtractSplitFile.Text" xml:space="preserve">
+    <value>파일 분할 (*.001)</value>
+  </data>
+  <data name="chkGeneralExtractBZip2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>141, 17</value>
+  </data>
+  <data name="chkGeneralExtractBZip2.Text" xml:space="preserve">
+    <value>BZip2 파일 (*.bz;*.bzip2)</value>
+  </data>
+  <data name="chkGeneralExtractRar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>102, 17</value>
+  </data>
+  <data name="chkGeneralExtractRar.Text" xml:space="preserve">
+    <value>RAR 파일 (*.rar)</value>
+  </data>
+  <data name="chkGeneralExtract7z.Size" type="System.Drawing.Size, System.Drawing">
+    <value>128, 17</value>
+  </data>
+  <data name="chkGeneralExtract7z.Text" xml:space="preserve">
+    <value>7Zip 파일 (*.7z;*.7zip)</value>
+  </data>
+  <data name="chkGeneralExtractZip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>95, 17</value>
   </data>
   <data name="chkGeneralExtractZip.Text" xml:space="preserve">
     <value>Zip 파일 (*.zip)</value>
   </data>
+  <data name="lblGeneralExtract.Size" type="System.Drawing.Size, System.Drawing">
+    <value>137, 13</value>
+  </data>
+  <data name="lblGeneralExtract.Text" xml:space="preserve">
+    <value>필요할 때마다 추출합니다.</value>
+  </data>
+  <data name="grbGeneralFileSize.Text" xml:space="preserve">
+    <value>크기 표시</value>
+  </data>
+  <data name="cbGeneralFileSize.Items" xml:space="preserve">
+    <value>자동</value>
+  </data>
+  <data name="grbGeneralPartitions.Text" xml:space="preserve">
+    <value>게임 디렉토리 조정</value>
+  </data>
+  <data name="rbGeneralDiscDelete.Size" type="System.Drawing.Size, System.Drawing">
+    <value>299, 19</value>
+  </data>
+  <data name="rbGeneralDiscDelete.Text" xml:space="preserve">
+    <value>디스크 1 폴더만 유지하고 디스크 2 폴더 삭제 (실험)</value>
+  </data>
+  <data name="rbGeneralDiscClean.Size" type="System.Drawing.Size, System.Drawing">
+    <value>323, 17</value>
+  </data>
+  <data name="rbGeneralDiscClean.Text" xml:space="preserve">
+    <value>디스크 1과 디스크 2에 대해 모든 폴더를 별도로 유지 (기본값)</value>
+  </data>
+  <data name="lblCommentsScrubCopy.Size" type="System.Drawing.Size, System.Drawing">
+    <value>535, 39</value>
+  </data>
+  <data name="lblCommentsScrubCopy.Text" xml:space="preserve">
+    <value>Scrub 방법의 경우 내부 이름(개발자가 정의)을 기반으로 기본 "제목 [게임 코드]"가 항상 사용됩니다. 스크럽 복사 모드에서 디스크 1과 2는 항상 별도의 폴더에 저장됩니다. 단, 탐지 방법이 개발자가 지정한 일반 이름을 식별할 수 있는 특정 경우를 제외하고는 디스크 1과 2가 같은 폴더에 저장됩니다. .</value>
+  </data>
+  <data name="lblCommentsExactCopy.Size" type="System.Drawing.Size, System.Drawing">
+    <value>536, 39</value>
+  </data>
+  <data name="lblCommentsExactCopy.Text" xml:space="preserve">
+    <value>이름 스타일은 현재 파일의 정확한 복사본(1:1)에서만 작동하며 (wiitdb.xml을 통해) 내부 이름과 상업 이름을 모두 사용할 수 있습니다. 이 옵션은 '타이틀' 탭에서 사용자가 구성할 수 있습니다. 정확한 복사(1:1) 모드에서 디스크 1과 2는 항상 같은 폴더에 저장됩니다.</value>
+  </data>
+  <data name="lblComments.Size" type="System.Drawing.Size, System.Drawing">
+    <value>43, 13</value>
+  </data>
+  <data name="lblComments.Text" xml:space="preserve">
+    <value>코멘트:</value>
+  </data>
+  <data name="grpNomenclatureFolderFormat.Text" xml:space="preserve">
+    <value>폴더 형식</value>
+  </data>
+  <data name="cbAdjustNamingStyle.Items" xml:space="preserve">
+    <value>타이틀 [게임 코드]</value>
+  </data>
+  <data name="cbAdjustNamingStyle.Items1" xml:space="preserve">
+    <value>[게임 코드]</value>
+  </data>
+  <data name="lblNomenclature.Size" type="System.Drawing.Size, System.Drawing">
+    <value>68, 13</value>
+  </data>
+  <data name="lblNomenclature.Text" xml:space="preserve">
+    <value>명명 스타일:</value>
+  </data>
+  <data name="grbGeneralDiverse.Text" xml:space="preserve">
+    <value>여러 개</value>
+  </data>
+  <data name="chkMultipleInstances.Size" type="System.Drawing.Size, System.Drawing">
+    <value>203, 17</value>
+  </data>
+  <data name="chkMultipleInstances.Text" xml:space="preserve">
+    <value>프로그램의 여러 인스턴스 실행 허용</value>
+  </data>
+  <data name="chkLoadDatabase.Size" type="System.Drawing.Size, System.Drawing">
+    <value>331, 17</value>
+  </data>
+  <data name="chkLoadDatabase.Text" xml:space="preserve">
+    <value>프로그램 시작 시 데이터베이스 로드 (프로그램 시작 시간 증가)</value>
+  </data>
+  <data name="chkNotify.Size" type="System.Drawing.Size, System.Drawing">
+    <value>331, 17</value>
+  </data>
+  <data name="chkNotify.Text" xml:space="preserve">
+    <value>작업 표시줄 알림 활성화 (기본 알림은 계속 정상적으로 표시됨)</value>
+  </data>
+  <data name="chkScreensaver.Size" type="System.Drawing.Size, System.Drawing">
+    <value>198, 17</value>
+  </data>
+  <data name="chkScreensaver.Text" xml:space="preserve">
+    <value>화면 보호기 비활성화 (화면 보호기)</value>
+  </data>
+  <data name="chkWelcome.Size" type="System.Drawing.Size, System.Drawing">
+    <value>295, 17</value>
+  </data>
+  <data name="chkWelcome.Text" xml:space="preserve">
+    <value>프로그램 시작 시 시작 화면 비활성화 (스플래쉬 스크린)</value>
+  </data>
+  <data name="chkNetVerify.Size" type="System.Drawing.Size, System.Drawing">
+    <value>195, 17</value>
+  </data>
+  <data name="chkNetVerify.Text" xml:space="preserve">
+    <value>프로그램 시작 시 인터넷 연결 확인</value>
+  </data>
+  <data name="chkStartWindowMaximized.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 17</value>
+  </data>
+  <data name="chkStartWindowMaximized.Text" xml:space="preserve">
+    <value>시작 창 최대화</value>
+  </data>
+  <data name="chkGeneralSHA1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>146, 17</value>
+  </data>
+  <data name="chkGeneralSHA1.Text" xml:space="preserve">
+    <value>전송 중 SHA-1 서명 확인</value>
+  </data>
+  <data name="chkGeneralRecursiva.Size" type="System.Drawing.Size, System.Drawing">
+    <value>283, 17</value>
+  </data>
+  <data name="chkGeneralRecursiva.Text" xml:space="preserve">
+    <value>재귀적으로 디렉토리 검색 ("파일(소스)" 창에만 해당)</value>
+  </data>
+  <data name="chkGeneralTemporaryBuffer.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 17</value>
+  </data>
+  <data name="chkGeneralTemporaryBuffer.Text" xml:space="preserve">
+    <value>임시 메모리(버퍼)에서 전송 사용</value>
+  </data>
+  <data name="chkGeneralMD5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>138, 17</value>
+  </data>
+  <data name="chkGeneralMD5.Text" xml:space="preserve">
+    <value>전송 중 MD5 서명 계산</value>
+  </data>
+  <data name="lblFormat.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 13</value>
+  </data>
+  <data name="lblFormat.Text" xml:space="preserve">
+    <value>체재:</value>
+  </data>
+  <data name="lblAlignment.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 13</value>
+  </data>
+  <data name="lblAlignment.Text" xml:space="preserve">
+    <value>조정:</value>
+  </data>
+  <data name="cbScrubAlign.Items" xml:space="preserve">
+    <value>자동</value>
+  </data>
+  <data name="chkGeneralScrubFlushSD.Size" type="System.Drawing.Size, System.Drawing">
+    <value>288, 17</value>
+  </data>
+  <data name="chkGeneralScrubFlushSD.Text" xml:space="preserve">
+    <value>SD 카드를 거의 즉시 꺼낼 수 있도록 파일 버퍼 지우기</value>
+  </data>
+  <data name="label28.Size" type="System.Drawing.Size, System.Drawing">
+    <value>465, 39</value>
+  </data>
+  <data name="label28.Text" xml:space="preserve">
+    <value>FST(파일시스템 표)는 아카이브의 모든 실제 및 가상 파일을 포함하는 디렉토리에 추출된 파일 시스템입니다. 닌텐도는 FST 파일을 사용하여 내부 가상 ISO 이미지를 만들고 해당 가상 ISO에서 게임을 로드합니다.</value>
+  </data>
+  <data name="label31.Size" type="System.Drawing.Size, System.Drawing">
+    <value>466, 26</value>
+  </data>
+  <data name="label31.Text" xml:space="preserve">
+    <value>일정한 바이트 값(0xff 또는 0x00)으로 대체하여 불필요한 데이터(쓰레기)를 제거합니다. 그러나 데이터 무결성을 유지하기 위해 파일 크기가 더 작습니다.</value>
+  </data>
+  <data name="label20.Size" type="System.Drawing.Size, System.Drawing">
+    <value>467, 39</value>
+  </data>
+  <data name="label20.Text" xml:space="preserve">
+    <value>XCopy와 유사하지만 파일 내부에 존재하는 가비지 데이터(쓰레기)가 정리된다는 차이점이 있습니다. 원본 파일 크기가 유지됩니다. 쓰레기 데이터는 다른 데이터의 무결성을 유지하면서 제거됩니다.</value>
+  </data>
+  <data name="label17.Size" type="System.Drawing.Size, System.Drawing">
+    <value>462, 26</value>
+  </data>
+  <data name="label17.Text" xml:space="preserve">
+    <value>한 위치(소스)에서 다른 위치(대상)로 하나 이상의 파일을 복사합니다. 파일은 압축되지 않고 컨테이너의 일부가 아니며 쓰레기가 제거되지 않습니다.</value>
+  </data>
+  <data name="grbTransferSystem.Text" xml:space="preserve">
+    <value>사용할 전송 시스템</value>
+  </data>
+  <data name="rbTransferSystemXCopy.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 17</value>
+  </data>
+  <data name="rbTransferSystemXCopy.Text" xml:space="preserve">
+    <value>XCopy (기본값)</value>
+  </data>
+  <data name="grpTitlesCoverFolder.Text" xml:space="preserve">
+    <value>커버 폴더 (캐쉬 -&gt; 원본)</value>
+  </data>
+  <data name="grbCoverTransfer.Text" xml:space="preserve">
+    <value>USB 충전기 설정 (커버 전송 -&gt; 대상)</value>
+  </data>
+  <data name="tabCoverDisc.Text" xml:space="preserve">
+    <value>디스크</value>
+  </data>
+  <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>57, 13</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>폴더 위치:</value>
+  </data>
+  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>57, 13</value>
+  </data>
   <data name="label6.Text" xml:space="preserve">
     <value>폴더 위치:</value>
+  </data>
+  <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>57, 13</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>폴더 위치:</value>
+  </data>
+  <data name="tabCoverFull.Text" xml:space="preserve">
+    <value>완료</value>
+  </data>
+  <data name="label35.Size" type="System.Drawing.Size, System.Drawing">
+    <value>57, 13</value>
+  </data>
+  <data name="label35.Text" xml:space="preserve">
+    <value>폴더 위치:</value>
+  </data>
+  <data name="grpCoversSynchronize.Text" xml:space="preserve">
+    <value>동기화</value>
+  </data>
+  <data name="chkCoverRecursiveSearch.Size" type="System.Drawing.Size, System.Drawing">
+    <value>237, 17</value>
+  </data>
+  <data name="chkCoverRecursiveSearch.Text" xml:space="preserve">
+    <value>재귀적 스킨 검색 사용 (모든 지역에서 검색)</value>
+  </data>
+  <data name="chkCoverEnableTransfer.Size" type="System.Drawing.Size, System.Drawing">
+    <value>148, 17</value>
+  </data>
+  <data name="chkCoverEnableTransfer.Text" xml:space="preserve">
+    <value>장치 간 스킨 전송 활성화</value>
+  </data>
+  <data name="chkCoverSynchronizeDelete.Size" type="System.Drawing.Size, System.Drawing">
+    <value>159, 17</value>
+  </data>
+  <data name="chkCoverSynchronizeDelete.Text" xml:space="preserve">
+    <value>목록에 없는 게임 스킨 삭제</value>
+  </data>
+  <data name="grbTitleLanguage.Text" xml:space="preserve">
+    <value>타이틀 언어</value>
+  </data>
+  <data name="btnTitleDownload.Text" xml:space="preserve">
+    <value>titles.txt 다운로드</value>
+  </data>
+  <data name="cbTitleLanguage.Items" xml:space="preserve">
+    <value>영어</value>
+  </data>
+  <data name="cbTitleLanguage.Items1" xml:space="preserve">
+    <value>프랑스어</value>
+  </data>
+  <data name="cbTitleLanguage.Items2" xml:space="preserve">
+    <value>독일어</value>
+  </data>
+  <data name="cbTitleLanguage.Items3" xml:space="preserve">
+    <value>스페인어</value>
+  </data>
+  <data name="cbTitleLanguage.Items4" xml:space="preserve">
+    <value>이탈리아어</value>
+  </data>
+  <data name="cbTitleLanguage.Items5" xml:space="preserve">
+    <value>네덜란드어</value>
+  </data>
+  <data name="cbTitleLanguage.Items6" xml:space="preserve">
+    <value>포르투갈어</value>
+  </data>
+  <data name="cbTitleLanguage.Items7" xml:space="preserve">
+    <value>일본어</value>
+  </data>
+  <data name="cbTitleLanguage.Items8" xml:space="preserve">
+    <value>러시아어</value>
+  </data>
+  <data name="cbTitleLanguage.Items9" xml:space="preserve">
+    <value>한국인</value>
+  </data>
+  <data name="cbTitleLanguage.Items10" xml:space="preserve">
+    <value>중국어 번체</value>
+  </data>
+  <data name="cbTitleLanguage.Items11" xml:space="preserve">
+    <value>중국어 간체</value>
+  </data>
+  <data name="grbTitleFileLocation.Text" xml:space="preserve">
+    <value>파일 위치</value>
+  </data>
+  <data name="grbTitleDiverse.Text" xml:space="preserve">
+    <value>기타 (적용하려면 프로그램을 다시 시작해야 함)</value>
+  </data>
+  <data name="rbGameXmlName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>341, 17</value>
+  </data>
+  <data name="rbGameXmlName.Text" xml:space="preserve">
+    <value>wiitdb.xml을 통해 게임에 상표명 사용 (권장! - wiitdb.xml 파일 필요)</value>
+  </data>
+  <data name="rbGameInternalName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>234, 17</value>
+  </data>
+  <data name="rbGameInternalName.Text" xml:space="preserve">
+    <value>게임에 내부 프로덕션 이름 사용 (75% 지원)</value>
+  </data>
+  <data name="chkGameTitleCustom.Size" type="System.Drawing.Size, System.Drawing">
+    <value>198, 17</value>
+  </data>
+  <data name="chkGameTitleCustom.Text" xml:space="preserve">
+    <value>커스텀 타이틀 사용(custom-titles.txt)</value>
+  </data>
+  <data name="chkGameTitle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>142, 17</value>
+  </data>
+  <data name="chkGameTitle.Text" xml:space="preserve">
+    <value>GameTDB(titles.txt) 사용</value>
+  </data>
+  <data name="lblTimeInterval.Location" type="System.Drawing.Point, System.Drawing">
+    <value>86, 246</value>
+  </data>
+  <data name="lblTimeInterval.Size" type="System.Drawing.Size, System.Drawing">
+    <value>359, 13</value>
+  </data>
+  <data name="lblTimeInterval.Text" xml:space="preserve">
+    <value>참고: 시간 간격 설정 조정은 프로그램을 다시 시작한 후에만 적용됩니다.</value>
+  </data>
+  <data name="grbUpdate.Text" xml:space="preserve">
+    <value>업데이트 설정</value>
+  </data>
+  <data name="cbVerificationInterval.Items" xml:space="preserve">
+    <value>5 분</value>
   </data>
   <data name="cbVerificationInterval.Items1" xml:space="preserve">
     <value>10 분</value>
@@ -132,358 +520,227 @@
   <data name="cbVerificationInterval.Items2" xml:space="preserve">
     <value>15 분</value>
   </data>
-  <data name="cbVerificationInterval.Items5" xml:space="preserve">
-    <value>2 시간</value>
+  <data name="cbVerificationInterval.Items3" xml:space="preserve">
+    <value>30 분</value>
   </data>
   <data name="cbVerificationInterval.Items4" xml:space="preserve">
     <value>1 시간</value>
   </data>
-  <data name="lblCommentsExactCopy.Text" xml:space="preserve">
-    <value>이름 스타일은 현재 파일의 정확한 복사본(1:1)에서만 작동하며 (wiitdb.xml을 통해) 내부 이름과 상업 이름을 모두 사용할 수 있습니다. 이 옵션은 '타이틀' 탭에서 사용자가 구성할 수 있습니다. 정확한 복사(1:1) 모드에서 디스크 1과 2는 항상 같은 폴더에 저장됩니다.</value>
-  </data>
-  <data name="chkUpdateVerifyStart.Text" xml:space="preserve">
-    <value>시작 시 업데이트 확인</value>
-  </data>
-  <data name="cbTitleLanguage.Items9" xml:space="preserve">
-    <value>한국인</value>
-  </data>
-  <data name="chkGeneralExtractNwb.Text" xml:space="preserve">
-    <value>NWB 파일(*.nwb)</value>
-  </data>
-  <data name="label8.Text" xml:space="preserve">
-    <value>폴더 위치:</value>
-  </data>
-  <data name="lblLanguageComments.Text" xml:space="preserve">
-    <value>참고: 언어 설정 조정은 프로그램을 다시 시작한 후에만 적용됩니다.</value>
-  </data>
-  <data name="grbLog.Text" xml:space="preserve">
-    <value>기록</value>
-  </data>
-  <data name="grbTransferSystem.Text" xml:space="preserve">
-    <value>사용할 전송 시스템</value>
-  </data>
-  <data name="grbGeneralPartitions.Text" xml:space="preserve">
-    <value>게임 디렉토리 조정</value>
-  </data>
-  <data name="cbScrubAlign.Items" xml:space="preserve">
-    <value>자동</value>
-  </data>
-  <data name="cbVerificationInterval.Items3" xml:space="preserve">
-    <value>30 분</value>
-  </data>
-  <data name="rbGeneralDiscClean.Text" xml:space="preserve">
-    <value>디스크 1과 디스크 2에 대해 모든 폴더를 별도로 유지 (기본값)</value>
-  </data>
-  <data name="lblGeneralExtract.Text" xml:space="preserve">
-    <value>필요할 때마다 추출합니다.</value>
-  </data>
-  <data name="chkWelcome.Text" xml:space="preserve">
-    <value>프로그램 시작 시 시작 화면 비활성화 (스플래쉬 스크린)</value>
-  </data>
-  <data name="cbTitleLanguage.Items10" xml:space="preserve">
-    <value>중국어 번체</value>
-  </data>
-  <data name="chkGeneralScrubFlushSD.Text" xml:space="preserve">
-    <value>SD 카드를 거의 즉시 꺼낼 수 있도록 파일 버퍼 지우기</value>
-  </data>
-  <data name="grpNomenclatureFolderFormat.Text" xml:space="preserve">
-    <value>폴더 형식</value>
-  </data>
-  <data name="label9.Text" xml:space="preserve">
-    <value>폴더 위치:</value>
-  </data>
-  <data name="tabSettingsTransfer.Text" xml:space="preserve">
-    <value>게임 전송</value>
-  </data>
-  <data name="chkGeneralExtractRar.Text" xml:space="preserve">
-    <value>RAR 파일 (*.rar)</value>
-  </data>
-  <data name="tabSettingsNomenclature.Text" xml:space="preserve">
-    <value>명명법</value>
-  </data>
-  <data name="chkCoverSynchronizeDelete.Text" xml:space="preserve">
-    <value>목록에 없는 게임 스킨 삭제</value>
-  </data>
-  <data name="cbGeneralFileSize.Items" xml:space="preserve">
-    <value>자동</value>
-  </data>
-  <data name="cbTitleLanguage.Items5" xml:space="preserve">
-    <value>네덜란드어</value>
-  </data>
-  <data name="chkUpdateBetaChannel.Text" xml:space="preserve">
-    <value>베타 채널 업데이트로 전환</value>
-  </data>
-  <data name="label28.Text" xml:space="preserve">
-    <value>FST(파일시스템 표)는 아카이브의 모든 실제 및 가상 파일을 포함하는 디렉토리에 추출된 파일 시스템입니다. 닌텐도는 FST 파일을 사용하여 내부 가상 ISO 이미지를 만들고 해당 가상 ISO에서 게임을 로드합니다.</value>
-  </data>
-  <data name="chkEnableSupportNkit.Text" xml:space="preserve">
-    <value>NKit 기술 지원 활성화 (실험)</value>
-  </data>
-  <data name="cbAdjustNamingStyle.Items1" xml:space="preserve">
-    <value>[게임 코드]</value>
+  <data name="cbVerificationInterval.Items5" xml:space="preserve">
+    <value>2 시간</value>
   </data>
   <data name="cbVerificationInterval.Items6" xml:space="preserve">
     <value>3 시간</value>
   </data>
-  <data name="chkStartWindowMaximized.Text" xml:space="preserve">
-    <value>시작 창 최대화</value>
+  <data name="cbVerificationInterval.Items7" xml:space="preserve">
+    <value>4 시간</value>
   </data>
-  <data name="cbTitleLanguage.Items6" xml:space="preserve">
-    <value>포르투갈어</value>
-  </data>
-  <data name="rbTransferSystemXCopy.Text" xml:space="preserve">
-    <value>XCopy (기본값)</value>
-  </data>
-  <data name="lblCommentsScrubCopy.Text" xml:space="preserve">
-    <value>Scrub 방법의 경우 내부 이름(개발자가 정의)을 기반으로 기본 "제목 [게임 코드]"가 항상 사용됩니다. 스크럽 복사 모드에서 디스크 1과 2는 항상 별도의 폴더에 저장됩니다. 단, 탐지 방법이 개발자가 지정한 일반 이름을 식별할 수 있는 특정 경우를 제외하고는 디스크 1과 2가 같은 폴더에 저장됩니다. .</value>
-  </data>
-  <data name="chkGameTitle.Text" xml:space="preserve">
-    <value>GameTDB(titles.txt) 사용</value>
-  </data>
-  <data name="chkGeneralTemporaryBuffer.Text" xml:space="preserve">
-    <value>임시 메모리(버퍼)에서 전송 사용</value>
-  </data>
-  <data name="cbTitleLanguage.Items7" xml:space="preserve">
-    <value>일본어</value>
-  </data>
-  <data name="chkLoadDatabase.Text" xml:space="preserve">
-    <value>프로그램 시작 시 데이터베이스 로드 (프로그램 시작 시간 증가)</value>
-  </data>
-  <data name="lblFormat.Text" xml:space="preserve">
-    <value>체재:</value>
-  </data>
-  <data name="rbGameXmlName.Text" xml:space="preserve">
-    <value>wiitdb.xml을 통해 게임에 상표명 사용 (권장! - wiitdb.xml 파일 필요)</value>
-  </data>
-  <data name="label31.Text" xml:space="preserve">
-    <value>일정한 바이트 값(0xff 또는 0x00)으로 대체하여 불필요한 데이터(쓰레기)를 제거합니다. 그러나 데이터 무결성을 유지하기 위해 파일 크기가 더 작습니다.</value>
-  </data>
-  <data name="cbLanguage.Items1" xml:space="preserve">
-    <value>영어 [미국]</value>
-  </data>
-  <data name="cbAdjustNamingStyle.Items" xml:space="preserve">
-    <value>타이틀 [게임 코드]</value>
-  </data>
-  <data name="chkGeneralExtractBZip2.Text" xml:space="preserve">
-    <value>BZip2 파일 (*.bz;*.bzip2)</value>
-  </data>
-  <data name="grbGeneralFileSize.Text" xml:space="preserve">
-    <value>크기 표시</value>
-  </data>
-  <data name="cbTitleLanguage.Items" xml:space="preserve">
-    <value>영어</value>
-  </data>
-  <data name="chkGeneralMD5.Text" xml:space="preserve">
-    <value>전송 중 MD5 서명 계산</value>
-  </data>
-  <data name="grbTitleDiverse.Text" xml:space="preserve">
-    <value>기타 (적용하려면 프로그램을 다시 시작해야 함)</value>
-  </data>
-  <data name="chkGeneralRecursiva.Text" xml:space="preserve">
-    <value>재귀적으로 디렉토리 검색 ("파일(소스)" 창에만 해당)</value>
-  </data>
-  <data name="grpCoversSynchronize.Text" xml:space="preserve">
-    <value>동기화</value>
-  </data>
-  <data name="cbLevelLog.Items1" xml:space="preserve">
-    <value>요약</value>
-  </data>
-  <data name="rbGameInternalName.Text" xml:space="preserve">
-    <value>게임에 내부 프로덕션 이름 사용 (75% 지원)</value>
-  </data>
-  <data name="lblAlignment.Text" xml:space="preserve">
-    <value>조정:</value>
-  </data>
-  <data name="chkScreensaver.Text" xml:space="preserve">
-    <value>화면 보호기 비활성화 (화면 보호기)</value>
-  </data>
-  <data name="fbd.Description" xml:space="preserve">
-    <value>디렉토리 생성 또는 선택:</value>
-  </data>
-  <data name="cbLevelLog.Items" xml:space="preserve">
-    <value>유용한 정보</value>
-  </data>
-  <data name="lblNomenclature.Text" xml:space="preserve">
-    <value>명명 스타일:</value>
-  </data>
-  <data name="chkGeneralSHA1.Text" xml:space="preserve">
-    <value>전송 중 SHA-1 서명 확인</value>
-  </data>
-  <data name="chkManagerLogWindow.Text" xml:space="preserve">
-    <value>윈도우 등록</value>
-  </data>
-  <data name="chkCoverEnableTransfer.Text" xml:space="preserve">
-    <value>장치 간 스킨 전송 활성화</value>
-  </data>
-  <data name="cbTitleLanguage.Items2" xml:space="preserve">
-    <value>독일어</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>설정</value>
-  </data>
-  <data name="tabSettingsLanguage.Text" xml:space="preserve">
-    <value>언어</value>
-  </data>
-  <data name="grbGeneralTemporaryFolder.Text" xml:space="preserve">
-    <value>임시 폴더</value>
-  </data>
-  <data name="chkGeneralExtract7z.Text" xml:space="preserve">
-    <value>7Zip 파일 (*.7z;*.7zip)</value>
-  </data>
-  <data name="grbTitleFileLocation.Text" xml:space="preserve">
-    <value>파일 위치</value>
-  </data>
-  <data name="tabCoverDisc.Text" xml:space="preserve">
-    <value>디스크</value>
-  </data>
-  <data name="tabCoverFull.Text" xml:space="preserve">
-    <value>완료</value>
-  </data>
-  <data name="cbTitleLanguage.Items3" xml:space="preserve">
-    <value>스페인어</value>
-  </data>
-  <data name="btnApply.Text" xml:space="preserve">
-    <value>적용</value>
-  </data>
-  <data name="cbTitleLanguage.Items4" xml:space="preserve">
-    <value>이탈리아어</value>
-  </data>
-  <data name="lblComments.Text" xml:space="preserve">
-    <value>코멘트:</value>
-  </data>
-  <data name="chkNetVerify.Text" xml:space="preserve">
-    <value>프로그램 시작 시 인터넷 연결 확인</value>
-  </data>
-  <data name="cbLanguage.Items" xml:space="preserve">
-    <value>포르투갈어 [브라질]</value>
-  </data>
-  <data name="chkCoverRecursiveSearch.Text" xml:space="preserve">
-    <value>재귀적 스킨 검색 사용 (모든 지역에서 검색)</value>
-  </data>
-  <data name="lblLOG.Text" xml:space="preserve">
-    <value>로그 수준:</value>
-  </data>
-  <data name="tabSettingsUpdates.Text" xml:space="preserve">
-    <value>업데이트</value>
-  </data>
-  <data name="btnCancel.Text" xml:space="preserve">
-    <value>취소</value>
-  </data>
-  <data name="chkNotify.Text" xml:space="preserve">
-    <value>작업 표시줄 알림 활성화 (기본 알림은 계속 정상적으로 표시됨)</value>
-  </data>
-  <data name="chkManagerLogFile.Text" xml:space="preserve">
-    <value>파일에 기록</value>
-  </data>
-  <data name="tabSettingsTitle.Text" xml:space="preserve">
-    <value>타이틀</value>
-  </data>
-  <data name="cbLanguage.Items2" xml:space="preserve">
-    <value>스페인어 [스페인]</value>
+  <data name="lblUpdateInterval.Size" type="System.Drawing.Size, System.Drawing">
+    <value>57, 13</value>
   </data>
   <data name="lblUpdateInterval.Text" xml:space="preserve">
     <value>간격 확인:</value>
   </data>
-  <data name="grpTitlesCoverFolder.Text" xml:space="preserve">
-    <value>커버 폴더 (캐쉬 -&gt; 원본)</value>
-  </data>
-  <data name="rbGeneralDiscDelete.Text" xml:space="preserve">
-    <value>디스크 1 폴더만 유지하고 디스크 2 폴더 삭제 (실험)</value>
-  </data>
-  <data name="chkManagerLogDebugConsole.Text" xml:space="preserve">
-    <value>디버그 콘솔 로그</value>
-  </data>
-  <data name="cbLevelLog.Items2" xml:space="preserve">
-    <value>완료</value>
-  </data>
-  <data name="cbVerificationInterval.Items7" xml:space="preserve">
-    <value>4 시간</value>
-  </data>
-  <data name="chkManagerLogSystemConsole.Text" xml:space="preserve">
-    <value>시스템 콘솔 등록</value>
-  </data>
-  <data name="chkUpdateServerProxy.Text" xml:space="preserve">
-    <value>프록시 서버 사용</value>
-  </data>
-  <data name="label17.Text" xml:space="preserve">
-    <value>한 위치(소스)에서 다른 위치(대상)로 하나 이상의 파일을 복사합니다. 파일은 압축되지 않고 컨테이너의 일부가 아니며 쓰레기가 제거되지 않습니다.</value>
-  </data>
-  <data name="tabSettingsGeneral.Text" xml:space="preserve">
-    <value>일반</value>
-  </data>
-  <data name="grbLanguage.Text" xml:space="preserve">
-    <value>기본 언어 선택:</value>
-  </data>
-  <data name="chkMultipleInstances.Text" xml:space="preserve">
-    <value>프로그램의 여러 인스턴스 실행 허용</value>
-  </data>
-  <data name="chkGameTitleCustom.Text" xml:space="preserve">
-    <value>커스텀 타이틀 사용(custom-titles.txt)</value>
-  </data>
-  <data name="grbGeneralDiverse.Text" xml:space="preserve">
-    <value>여러 개</value>
+  <data name="lblPass.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 13</value>
   </data>
   <data name="lblPass.Text" xml:space="preserve">
     <value>비밀번호:</value>
   </data>
-  <data name="grbGeneralFiles.Text" xml:space="preserve">
-    <value>파일</value>
-  </data>
-  <data name="tabSettingsLog.Text" xml:space="preserve">
-    <value>기록</value>
-  </data>
-  <data name="lblServerProxy.Text" xml:space="preserve">
-    <value>프록시 서버:</value>
-  </data>
-  <data name="grbUpdate.Text" xml:space="preserve">
-    <value>업데이트 설정</value>
-  </data>
-  <data name="chkUpdateFileLog.Text" xml:space="preserve">
-    <value>로그 파일에 업데이트 추가</value>
-  </data>
-  <data name="grbCoverTransfer.Text" xml:space="preserve">
-    <value>USB 충전기 설정 (커버 전송 -&gt; 대상)</value>
+  <data name="lblUser.Size" type="System.Drawing.Size, System.Drawing">
+    <value>43, 13</value>
   </data>
   <data name="lblUser.Text" xml:space="preserve">
     <value>사용자:</value>
   </data>
+  <data name="lblServerProxy.Size" type="System.Drawing.Size, System.Drawing">
+    <value>68, 13</value>
+  </data>
+  <data name="lblServerProxy.Text" xml:space="preserve">
+    <value>프록시 서버:</value>
+  </data>
+  <data name="chkUpdateServerProxy.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 17</value>
+  </data>
+  <data name="chkUpdateServerProxy.Text" xml:space="preserve">
+    <value>프록시 서버 사용</value>
+  </data>
+  <data name="chkUpdateFileLog.Size" type="System.Drawing.Size, System.Drawing">
+    <value>156, 17</value>
+  </data>
+  <data name="chkUpdateFileLog.Text" xml:space="preserve">
+    <value>로그 파일에 업데이트 추가</value>
+  </data>
+  <data name="chkUpdateBetaChannel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>156, 17</value>
+  </data>
+  <data name="chkUpdateBetaChannel.Text" xml:space="preserve">
+    <value>베타 채널 업데이트로 전환</value>
+  </data>
+  <data name="chkUpdateVerifyStart.Size" type="System.Drawing.Size, System.Drawing">
+    <value>134, 17</value>
+  </data>
+  <data name="chkUpdateVerifyStart.Text" xml:space="preserve">
+    <value>시작 시 업데이트 확인</value>
+  </data>
+  <data name="lblLanguageComments.Size" type="System.Drawing.Size, System.Drawing">
+    <value>334, 13</value>
+  </data>
+  <data name="lblLanguageComments.Text" xml:space="preserve">
+    <value>참고: 언어 설정 조정은 프로그램을 다시 시작한 후에만 적용됩니다.</value>
+  </data>
+  <data name="grbLanguage.Text" xml:space="preserve">
+    <value>기본 언어 선택:</value>
+  </data>
+  <data name="lblLanguage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 13</value>
+  </data>
   <data name="lblLanguage.Text" xml:space="preserve">
     <value>언어:</value>
   </data>
-  <data name="label20.Text" xml:space="preserve">
-    <value>XCopy와 유사하지만 파일 내부에 존재하는 가비지 데이터(쓰레기)가 정리된다는 차이점이 있습니다. 원본 파일 크기가 유지됩니다. 쓰레기 데이터는 다른 데이터의 무결성을 유지하면서 제거됩니다.</value>
+  <data name="cbLanguage.Items" xml:space="preserve">
+    <value>포르투갈어 [브라질]</value>
   </data>
-  <data name="tabSettingsCovers.Text" xml:space="preserve">
-    <value>커버</value>
+  <data name="cbLanguage.Items1" xml:space="preserve">
+    <value>영어 [미국]</value>
   </data>
-  <data name="cbTitleLanguage.Items1" xml:space="preserve">
-    <value>프랑스어</value>
-  </data>
-  <data name="grbTitleLanguage.Text" xml:space="preserve">
-    <value>타이틀 언어</value>
-  </data>
-  <data name="cbVerificationInterval.Items" xml:space="preserve">
-    <value>5 분</value>
-  </data>
-  <data name="cbTitleLanguage.Items11" xml:space="preserve">
-    <value>중국어 간체</value>
-  </data>
-  <data name="chkGeneralExtractSplitFile.Text" xml:space="preserve">
-    <value>파일 분할 (*.001)</value>
-  </data>
-  <data name="cbTitleLanguage.Items8" xml:space="preserve">
-    <value>러시아어</value>
-  </data>
-  <data name="tabSettingsSeveral.Text" xml:space="preserve">
-    <value>여러 개</value>
-  </data>
-  <data name="btnRestore.Text" xml:space="preserve">
-    <value>설정 복원</value>
+  <data name="cbLanguage.Items2" xml:space="preserve">
+    <value>스페인어 [스페인]</value>
   </data>
   <data name="cbLanguage.Items3" xml:space="preserve">
     <value>한국인</value>
   </data>
-  <data name="btnTitleDownload.Text" xml:space="preserve">
-    <value>titles.txt 다운로드</value>
+  <data name="grbLog.Text" xml:space="preserve">
+    <value>기록</value>
+  </data>
+  <data name="lblLOG.Size" type="System.Drawing.Size, System.Drawing">
+    <value>57, 13</value>
+  </data>
+  <data name="lblLOG.Text" xml:space="preserve">
+    <value>로그 수준:</value>
+  </data>
+  <data name="chkManagerLogFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>84, 17</value>
+  </data>
+  <data name="chkManagerLogFile.Text" xml:space="preserve">
+    <value>파일에 기록</value>
+  </data>
+  <data name="chkManagerLogWindow.Size" type="System.Drawing.Size, System.Drawing">
+    <value>84, 17</value>
+  </data>
+  <data name="chkManagerLogWindow.Text" xml:space="preserve">
+    <value>윈도우 등록</value>
+  </data>
+  <data name="chkManagerLogDebugConsole.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 17</value>
+  </data>
+  <data name="chkManagerLogDebugConsole.Text" xml:space="preserve">
+    <value>디버그 콘솔 로그</value>
+  </data>
+  <data name="chkManagerLogSystemConsole.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 17</value>
+  </data>
+  <data name="chkManagerLogSystemConsole.Text" xml:space="preserve">
+    <value>시스템 콘솔 등록</value>
+  </data>
+  <data name="cbLevelLog.Items" xml:space="preserve">
+    <value>유용한 정보</value>
+  </data>
+  <data name="cbLevelLog.Items1" xml:space="preserve">
+    <value>요약</value>
+  </data>
+  <data name="cbLevelLog.Items2" xml:space="preserve">
+    <value>완료</value>
+  </data>
+  <data name="btnRestore.Text" xml:space="preserve">
+    <value>설정 복원</value>
+  </data>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>취소</value>
+  </data>
+  <data name="fbd.Description" xml:space="preserve">
+    <value>디렉토리 생성 또는 선택:</value>
+  </data>
+  <data name="btnApply.Text" xml:space="preserve">
+    <value>적용</value>
+  </data>
+  <data name="notifyIcon.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAICAAAAEAIACoEAAAFgAAACgAAAAgAAAAQAAAAAEAIAAAAAAAABAAAN0AAADdAAAAAAAAAAAA
+        AAD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8AAAAAEgIEB+kAAAD/AAAA/wEBAvsAAAA8////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wAAAAA7AAAAF////wAAAAApAAAA/zl+rf8/i7//CBAY+QAAAGn///8AAAAABgAA
+        AEcAAAAG////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8AAAICeQAAAP8CBgfhAAAAggEDBesGDRL6ULH0/1S5//8YM0f4AQID+AAA
+        AJoBBAa4AAAA/wMEB7YAAAAG////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AAACAnkBAgL9NXSg/xcxRPkIExn3K1+D/0yo6P9Uuf//VLn//1Gy
+        9v80c57/DiEt+AsYIfg6gLH/Bg4T+gMEB7YAAAAG////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wAAAAAHAAAA/yVScf9Uuf//VLn//1S5//9Uuf//VLn//1S5
+        //9Uuf//VLn//1S5//9Uuf//VLn//1S5//86f6//AAAA/wAAAEf///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wAAAgJ7AQID/Uqk4v9Uuf//VLn//1K1
+        +v8yb5n/IUZf/x4+U/8sYYb/Tarr/1S5//9Uuf//VLn//woXH/gBBAa4AAAABv///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AAAAAFoBAwT9Tarq/1S5
+        //9Jot//FCQv/xIUFv9eX2D/bGxs/yQnKf8LERX/PYe6/1S5//9Uuf//DiEt+AAAAJr///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AAAAACIAAABoAQQF1B1C
+        WvxUuf//VLj+/xkvP/84Ojv/6+vr////////////+/v7/2tra/8MExj/T67w/1S5//80cp3/AQID+AAA
+        AGkAAAA8////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8AAwcJwAUL
+        D/sOIS33R53Y/1S5//9BjsT/AwQE/+Hh4f//////////////////////+vr6/yUoKv8tY4j/VLn//1Gy
+        9v8YM0f4CBAY+QEBAvv///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wAECArIKlx//1S5//9Uuf//VLn//zBrk/8mKiz/////////////////////////////////aWlp/yNI
+        Yf9Uuf//VLn//1S5//8/i7//AAAA/////wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AAQICsgmU3P/Tq3u/1S5//9Uuf//NHOe/xseIP//////////////////////////////
+        //+9vsD/MmqQ/1S5//9Uuf//ULH0/zl+rf8AAAD/////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8AAwYJqQAAAP8BAgP9PYe6/1S5//9Gm9b/AQEB/8HBwf//////////////
+        /////////////9Ds//9Uuf//VLn//0yo6P8GDRL6AAAA/wIEB+n///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wAAAAAIAAAAKAEBA7MULT75VLn//1S5//8kTGf/Fxka/8HB
+        wf////////////////+MkZT/RX2k/1S5//9Uuf//LGKH/wIDBewAAAApAAAAEv///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8AAAAAQgAAAP9Jot//VLn//1Gy
+        9f8kTGf/AQEB/xseIP+NmqP/t+H//1uw6/9Ore7/VLn//1S5//8KFx/2AAAAif///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AAAAAAEDBAe2Bw8U+U6t
+        7v9Uuf//VLn//1S5//9Gm9b/NHOe/0WX0P9Uuf//VLn//1S5//9Uuf//VLn//xYvQvkCBAfkAAAAF///
+        /wD///8A////AP///wD///8A////AP///wAAAAA8AAAAoAAAAKAAAACTAAAADP///wD///8AAAAABQEC
+        A/gfRV/+VLn//06s7f9Jot//VLn//1S5//9Uuf//VLn//1S5//9Uuf//T67w/0ul4/9Uuf//NHOf/wAA
+        AP8AAAA7////AP///wD///8A////AAAAABoAAAAO////AAcGBLUpJRz/X1VA/wMDAv0AAABQ////AAAA
+        AB0AAAALAAAAQgEDBPkfRV/+Bg4T+gAAAP8ULT75PYe6/1S5//9Uuf//R53Z/x5EXvwCBQb7AQIC/SVR
+        b/8BAgL9AAICef///wD///8A////AP///wAAAABIAgIC+gcHBd0CAgKnAgIB/Ip8Xv//5a3/JCAY+AQE
+        A+oAAACXAgEB/QcHBdQAAAASAAAAQgECA/gDBAe2AAAAQgEBA7MBAgP9Tq3u/1S5//8OIS33AQIE2AAA
+        AGIAAAB/AAAA/wACAnn///8A////AP///wD///8AAAAARAMCAvt5bFL/SkMy+DozJ/ipmHP//eOs///l
+        rf/q0p//hHda/ysnHfWGeFv/LCge+QcHBdQAAAAOAAAABQAAAAH///8AAAAAKAAAAP8mU3P/Klx//wUL
+        D/sAAABo////AP///wAAAAAH////AP///wD///8A////AP///wACAgCMCQgG/NrElP//5a3//+Wt///l
+        rf/23af/38iX//7krP//5a3//+Wt///lrf+GeFv/AQEB/QAAAC////8A////AP///wAAAAAIAwYJqQQI
+        CsgECArIAwcJwAAAACL///8A////AP///wD///8A////AP///wD///8A////AAAAAAYCAgLzjX9g///l
+        rf/o0J3/VU07/wQEA/8AAAD/EhEO/5KDY//+5Kz//+Wt/ysnHfUAAACd////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8AAwMLnwICBfUCAgX1BAQMr////wD///8A////AP///wAAAAAqAAAAeAEB
+        Af7ex5f//OKr/zUwJv8lJST/l5eX/9HR0f9vb2//CAgH/5KDY///5a3/hHda/wQEA+sAAABQAAAADP//
+        /wD///8A////AP///wAAAAAcAAAAKwAAAEcBAQT0KCht/ywseP8BAQP6AAAAUAAAACEAAAAQ////AAMD
+        AvYIBwX8a19I+f/lrf+xn3j/AAAA/8/Pz/////////////////9vb2//EhEO//7krP/q0p//JiIa+AMD
+        Av0AAACT////AP///wD///8AAAAAAgICB9IAAAD+AAAA/x8fV/tZWfX/W1v6/yMjYvwAAAH+AAAA/gIC
+        COAAAAAFAAAA/7+sgv//5a3//+Wt/39yVv8xMC///////////////////////9HR0f8AAAD/38iX///l
+        rf//5a3/X1VA/wAAAKD///8A////AP///wAAAABjAwMJ+0FBsf9LS87/SkrK/yYmYP8kJFn/R0fE/01N
+        0/9CQrT/BgYP+QAAAHMAAAD/U0s4/76rgf//5a3/m4tp/wkJCP/u7u7/////////////////l5eX/wQE
+        A//23af//eOs/4x+X/8pJRz/AAAAn////wD///8A////AAMDCKoICBf7VVXp/0pKyv8DAwX/XV1g/2Vl
+        Z/8FBQj/RES6/1hY8f8LCx77AgIGzgYGBIEEBAPLDQwJ+fbdp//mz5z/Dw4M/2ZmZv/u7u7//////8/P
+        z/8lJST/VU07///lrf+tm3X/AgIB/AcGBLUAAAA8////AP///wD///8AAAAAEgAAAf5BQbP/JiZg/11d
+        YP///////////25ucP8iIlD/R0fD/wAAAP8AAAAf////AAAAABEDAwL4n49s///lrf+vnXf/Dw4M/wkJ
+        CP8xMC//AAAA/zUwJv/o0J3//+Wt/0Q8LfkDAwGt////AP///wD///8A////AP///wAAAAALAAAB/kFB
+        s/8kJFn/ZWVn////////////dnZ3/x8fSf9HR8P/AAAA/wAAABj///8AAAAATgICAf2vnXf//+Wt///l
+        rf/mz5z/m4tp/39yVv+xn3j//OKr///lrf//5a3/TUU0+QcHBeAAAAAS////AP///wD///8A////AAMD
+        CKUHBxP6VFTm/0dHxP8FBQj/bm5w/3Z2d/8JCQz/QkK0/1dX7/8JCRr6AwMGyf///wACAgCECAcF/M24
+        i/+wnnf/ppVx//jfqP//5a3//+Wt///lrf/jzJr/lIVk/9rElP95bFL/AgIC+gAAACv///8A////AP//
+        /wD///8AAAAAbAUFDfpGRsH/UFDb/0REuv8iIlD/Hx9J/0JCtP9RUd7/R0fE/wgIFvkAAAB8////AAAA
+        AAIFBQOhCAcF/AEBAf0CAgH6Dw0K+sCsgv//5a3/bmNK+gICAf4CAgH3CQgG/AMCAvsAAABI////AP//
+        /wD///8A////AP///wAAAAADAgII2wAAAP8AAAH+IyNi/Fpa9/9cXPz/KCht/QEBA/0AAAD/AgIH5QAA
+        AAj///8A////AAAAAAICAgJzAAAATAAAABMEBAPLU0s4/7+sgv8IBwX8AAAAeQAAAAgCAgJ6AAAAQf//
+        /wD///8A////AP///wD///8A////AP///wAAAAAiAAAANAAAAFcBAQT2LCx5/zExhf8BAQL6AAAAYAAA
+        ACwAAAAY////AP///wD///8A////AP///wD///8A////AAYGBIEAAAD/AAAA/wMDAvYAAAAq////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AAQECq0AAAD/AAAA/wQE
+        C77///8A////AP///wD///8A///gf///IEf//gAD//wAAf/4AAH//AAB//wAA//wAAD/8AAA//AAAP/w
+        AAD/8AAA//AAAP/8AAP/+AAB/BgAAeQQAAPAAAAHgAAgb4AA4H+AAf8PAAB4AQAAcAAAAHAAAABwAAAA
+        cACAAfAAgADwAIAA8ACAAfAAwAP4Afwf/w8=
+</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>설정</value>
   </data>
 </root>
