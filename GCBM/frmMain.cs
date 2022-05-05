@@ -169,7 +169,7 @@ namespace GCBM
         private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
         {
             ClearTemp();
-            ExportLOG();
+            ExportLOGClosed();
         }
         #endregion
 
@@ -705,7 +705,6 @@ namespace GCBM
             CONFIG_INI_FILE.IniWriteBool("SEVERAL", "CheckNotify", true);
             CONFIG_INI_FILE.IniWriteBool("SEVERAL", "NetVerify", false);
             CONFIG_INI_FILE.IniWriteBool("SEVERAL", "RecursiveMode", true);
-            CONFIG_INI_FILE.IniWriteBool("SEVERAL", "SupportNkit", false);
             CONFIG_INI_FILE.IniWriteBool("SEVERAL", "TemporaryBuffer", false);
             CONFIG_INI_FILE.IniWriteBool("SEVERAL", "WindowMaximized", false);
             CONFIG_INI_FILE.IniWriteBool("SEVERAL", "Welcome", false);
@@ -1561,7 +1560,7 @@ namespace GCBM
             catch (Exception ex)
             {
                 tbLog.AppendText("[" + DateString() + "]" + GCBM.Properties.Resources.ClearTemp_String1 + Environment.NewLine);
-                GlobalNotifications(GCBM.Properties.Resources.ClearTemp_String2);
+                //GlobalNotifications(GCBM.Properties.Resources.ClearTemp_String2);
             }
         }
         #endregion
@@ -2757,6 +2756,19 @@ namespace GCBM
             else
             {
                 GlobalNotifications(GCBM.Properties.Resources.RecordExportedFailed);
+            }
+        }
+        #endregion
+
+        #region Export LOG Closed
+        /// <summary>
+        /// Export Log.
+        /// </summary>
+        private void ExportLOGClosed()
+        {
+            if (tbLog.Text != string.Empty)
+            {
+                File.WriteAllText(GET_CURRENT_PATH + @"\" + "gcbm.log", tbLog.Text);
             }
         }
         #endregion
