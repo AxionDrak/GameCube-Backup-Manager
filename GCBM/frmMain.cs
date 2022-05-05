@@ -39,8 +39,8 @@ namespace GCBM
         private static string GET_CURRENT_PATH       = Directory.GetCurrentDirectory();
         private static string CURRENT_DIRECTORY      = "";
         private static string STANDARD_DIRECTORY     = "";
-        private static string TEMP_DIR               = "temp";
-        private static string COVERS_DIR             = "";
+        private static string TEMP_DIR               = @"\temp";
+        private static string COVERS_DIR             = @"\cover\cache";
         private static string FILE_TDBXML            = "";
         private static string LOG_LEVEL              = "";
         private static string CULTURE_LANG           = "";
@@ -121,6 +121,11 @@ namespace GCBM
                 NetworkCheck();
             }
 
+            if (!File.Exists(INI_FILE))
+            {
+                DefaultConfigSave();
+            }
+            
             AboutTranslator();
             AdjustLanguage();
             UpdateProgram();
@@ -668,6 +673,93 @@ namespace GCBM
                     this.WindowState = FormWindowState.Maximized;
                 }
             }
+        }
+        #endregion
+
+        #region Default Config Save
+        private void DefaultConfigSave()
+        {
+            var _version = assembly.GetName().Version;
+
+            // GCBM
+            CONFIG_INI_FILE.IniWriteString("GCBM", "ProgUpdated", "30/04/2022");
+            CONFIG_INI_FILE.IniWriteString("GCBM", "ProgVersion", _version.ToString());
+            CONFIG_INI_FILE.IniWriteString("GCBM", "ConfigUpdated", DateTime.Now.ToString("dd/MM/yyyy"));
+            CONFIG_INI_FILE.IniWriteString("GCBM", "Language", GCBM.Properties.Resources.GCBM_Language);
+            CONFIG_INI_FILE.IniWriteString("GCBM", "TranslatedBy", GCBM.Properties.Resources.GCBM_TranslatedBy);
+            // General          
+            CONFIG_INI_FILE.IniWriteBool("GENERAL", "DiscClean", true);
+            CONFIG_INI_FILE.IniWriteBool("GENERAL", "DiscDelete", false);
+            CONFIG_INI_FILE.IniWriteBool("GENERAL", "ExtractZip", false);
+            CONFIG_INI_FILE.IniWriteBool("GENERAL", "Extract7z", false);
+            CONFIG_INI_FILE.IniWriteBool("GENERAL", "ExtractRar", false);
+            CONFIG_INI_FILE.IniWriteBool("GENERAL", "ExtractBZip2", false);
+            CONFIG_INI_FILE.IniWriteBool("GENERAL", "ExtractSplitFile", false);
+            CONFIG_INI_FILE.IniWriteBool("GENERAL", "ExtractNwb", false);
+            CONFIG_INI_FILE.IniWriteInt("GENERAL", "FileSize", 0);
+            CONFIG_INI_FILE.IniWriteString("GENERAL", "TemporaryFolder", GET_CURRENT_PATH + TEMP_DIR);
+            // Several
+            CONFIG_INI_FILE.IniWriteInt("SEVERAL", "AppointmentStyle", 0);
+            CONFIG_INI_FILE.IniWriteBool("SEVERAL", "CheckMD5", false);
+            CONFIG_INI_FILE.IniWriteBool("SEVERAL", "CheckSHA1", false);
+            CONFIG_INI_FILE.IniWriteBool("SEVERAL", "CheckNotify", true);
+            CONFIG_INI_FILE.IniWriteBool("SEVERAL", "NetVerify", false);
+            CONFIG_INI_FILE.IniWriteBool("SEVERAL", "RecursiveMode", true);
+            CONFIG_INI_FILE.IniWriteBool("SEVERAL", "SupportNkit", false);
+            CONFIG_INI_FILE.IniWriteBool("SEVERAL", "TemporaryBuffer", false);
+            CONFIG_INI_FILE.IniWriteBool("SEVERAL", "WindowMaximized", false);
+            CONFIG_INI_FILE.IniWriteBool("SEVERAL", "Welcome", false);
+            CONFIG_INI_FILE.IniWriteBool("SEVERAL", "Screensaver", false);
+            CONFIG_INI_FILE.IniWriteBool("SEVERAL", "LoadDatabase", true);
+            CONFIG_INI_FILE.IniWriteBool("SEVERAL", "MultipleInstances", false);
+            // TransferSystem
+            CONFIG_INI_FILE.IniWriteBool("TRANSFERSYSTEM", "FST", false);
+            CONFIG_INI_FILE.IniWriteBool("TRANSFERSYSTEM", "ScrubFlushSD", false);
+            CONFIG_INI_FILE.IniWriteInt("TRANSFERSYSTEM", "ScrubAlign", 0);
+            CONFIG_INI_FILE.IniWriteString("TRANSFERSYSTEM", "ScrubFormat", "DiscEx");
+            CONFIG_INI_FILE.IniWriteInt("TRANSFERSYSTEM", "ScrubFormatIndex", 1);
+            CONFIG_INI_FILE.IniWriteBool("TRANSFERSYSTEM", "Wipe", false);
+            CONFIG_INI_FILE.IniWriteBool("TRANSFERSYSTEM", "XCopy", true);
+            // Covers
+            CONFIG_INI_FILE.IniWriteBool("COVERS", "DeleteCovers", false);
+            CONFIG_INI_FILE.IniWriteBool("COVERS", "CoverRecursiveSearch", false);
+            CONFIG_INI_FILE.IniWriteBool("COVERS", "TransferCovers", false);
+            CONFIG_INI_FILE.IniWriteBool("COVERS", "WiiFlowCoverUSBLoader", false);
+            CONFIG_INI_FILE.IniWriteBool("COVERS", "GXCoverUSBLoader", true);
+            CONFIG_INI_FILE.IniWriteString("COVERS", "CoverDirectoryCache", GET_CURRENT_PATH + COVERS_DIR);
+            CONFIG_INI_FILE.IniWriteString("COVERS", "WiiFlowCoverDirectoryDisc", "");
+            CONFIG_INI_FILE.IniWriteString("COVERS", "WiiFlowCoverDirectory2D", "");
+            CONFIG_INI_FILE.IniWriteString("COVERS", "WiiFlowCoverDirectory3D", "");
+            CONFIG_INI_FILE.IniWriteString("COVERS", "WiiFlowCoverDirectoryFull", "");
+            CONFIG_INI_FILE.IniWriteString("COVERS", "GXCoverDirectoryDisc", "");
+            CONFIG_INI_FILE.IniWriteString("COVERS", "GXCoverDirectory2D", "");
+            CONFIG_INI_FILE.IniWriteString("COVERS", "GXCoverDirectory3D", "");
+            CONFIG_INI_FILE.IniWriteString("COVERS", "GXCoverDirectoryFull", "");
+            // Titles
+            CONFIG_INI_FILE.IniWriteBool("TITLES", "GameCustomTitles", false);
+            CONFIG_INI_FILE.IniWriteBool("TITLES", "GameTdbTitles", false);
+            CONFIG_INI_FILE.IniWriteBool("TITLES", "GameInternalName", true);
+            CONFIG_INI_FILE.IniWriteBool("TITLES", "GameXmlName", false);
+            CONFIG_INI_FILE.IniWriteString("TITLES", "LocationTitles", @"%APP%\titles.txt");
+            CONFIG_INI_FILE.IniWriteString("TITLES", "LocationCustomTitles", @"%APP%\custom-titles.txt");
+            CONFIG_INI_FILE.IniWriteInt("TITLES", "TitleLanguage", 0);
+            // Updates
+            CONFIG_INI_FILE.IniWriteBool("UPDATES", "UpdateVerifyStart", false);
+            CONFIG_INI_FILE.IniWriteBool("UPDATES", "UpdateBetaChannel", false);
+            CONFIG_INI_FILE.IniWriteBool("UPDATES", "UpdateFileLog", false);
+            CONFIG_INI_FILE.IniWriteBool("UPDATES", "UpdateServerProxy", false);
+            CONFIG_INI_FILE.IniWriteString("UPDATES", "ServerProxy", "");
+            CONFIG_INI_FILE.IniWriteString("UPDATES", "UserProxy", "");
+            CONFIG_INI_FILE.IniWriteString("UPDATES", "PassProxy", "");
+            CONFIG_INI_FILE.IniWriteInt("UPDATES", "VerificationInterval", 0);
+            // Manager Log
+            CONFIG_INI_FILE.IniWriteInt("MANAGERLOG", "LogLevel", 0);
+            CONFIG_INI_FILE.IniWriteBool("MANAGERLOG", "LogSystemConsole", false);
+            CONFIG_INI_FILE.IniWriteBool("MANAGERLOG", "LogDebugConsole", false);
+            CONFIG_INI_FILE.IniWriteBool("MANAGERLOG", "LogWindow", false);
+            CONFIG_INI_FILE.IniWriteBool("MANAGERLOG", "LogFile", true);
+            // Language
+            CONFIG_INI_FILE.IniWriteInt("LANGUAGE", "ConfigLanguage", 0);
         }
         #endregion
 
@@ -1481,21 +1573,14 @@ namespace GCBM
         private void RequiredDirectories()
         {
             // Temporary directory default
-            if (CONFIG_INI_FILE.IniReadString("GENERAL", "TemporaryFolder", "") == string.Empty)
+            if (!Directory.Exists(GET_CURRENT_PATH + @"\temp"))
             {
-                if (!Directory.Exists(GET_CURRENT_PATH + @"\temp"))
-                {
-                    Directory.CreateDirectory(GET_CURRENT_PATH + @"\temp");
-                    tbLog.AppendText("[" + DateString() + "]" + GCBM.Properties.Resources.RequiredDirectories_String1 + Environment.NewLine);
-                }
-                else
-                {
-                    tbLog.AppendText("[" + DateString() + "]" + GCBM.Properties.Resources.RequiredDirectories_String2 + Environment.NewLine);
-                }
+                Directory.CreateDirectory(GET_CURRENT_PATH + @"\temp");
+                tbLog.AppendText("[" + DateString() + "]" + GCBM.Properties.Resources.RequiredDirectories_String1 + Environment.NewLine);
             }
             else
             {
-                tbLog.AppendText("[" + DateString() + "]" + GCBM.Properties.Resources.RequiredDirectories_String3 + Environment.NewLine);
+                tbLog.AppendText("[" + DateString() + "]" + GCBM.Properties.Resources.RequiredDirectories_String2 + Environment.NewLine);
             }
 
             // Cover Directory
@@ -1656,31 +1741,61 @@ namespace GCBM
             // GCIT
             START_INFO.FileName = GET_CURRENT_PATH + @"\bin\gcit.exe ";
 
-            if (CONFIG_INI_FILE.IniReadBool("TRANSFERSYSTEM", "ScrubFlushSD") == true)
+
+            bool boolCaseSwitch = CONFIG_INI_FILE.IniReadBool("TRANSFERSYSTEM", "ScrubFlushSD");
+            int intCaseSwitch   = CONFIG_INI_FILE.IniReadInt("TRANSFERSYSTEM", "ScrubAlign");
+
+            switch (boolCaseSwitch)
             {
-                FLUSH_SD = " - flush";
-            }
-            else
-            {
-                FLUSH_SD = "";
+                case true:
+                    FLUSH_SD = " - flush";
+                    break;
+                case false:
+                    FLUSH_SD = "";
+                    break;
             }
 
-            if (CONFIG_INI_FILE.IniReadInt("TRANSFERSYSTEM", "ScrubAlign") == 0)
+            switch (intCaseSwitch)
             {
-                SCRUB_ALIGN = "";
+                case 0:
+                    SCRUB_ALIGN = "";
+                    break;
+                case 1:
+                    SCRUB_ALIGN = " -a 4";
+                    break;
+                case 2:
+                    SCRUB_ALIGN = " -a 32";
+                    break;
+                default:
+                    SCRUB_ALIGN = " -a 32K";
+                    break;
             }
-            else if (CONFIG_INI_FILE.IniReadInt("TRANSFERSYSTEM", "ScrubAlign") == 1)
-            {
-                SCRUB_ALIGN = " -a 4";
-            }
-            else if (CONFIG_INI_FILE.IniReadInt("TRANSFERSYSTEM", "ScrubAlign") == 2)
-            {
-                SCRUB_ALIGN = " -a 32";
-            }
-            else
-            {
-                SCRUB_ALIGN = " -a 32K";
-            }
+
+            //if (CONFIG_INI_FILE.IniReadBool("TRANSFERSYSTEM", "ScrubFlushSD") == true)
+            //{
+            //    FLUSH_SD = " - flush";
+            //}
+            //else
+            //{
+            //    FLUSH_SD = "";
+            //}
+
+            //if (CONFIG_INI_FILE.IniReadInt("TRANSFERSYSTEM", "ScrubAlign") == 0)
+            //{
+            //    SCRUB_ALIGN = "";
+            //}
+            //else if (CONFIG_INI_FILE.IniReadInt("TRANSFERSYSTEM", "ScrubAlign") == 1)
+            //{
+            //    SCRUB_ALIGN = " -a 4";
+            //}
+            //else if (CONFIG_INI_FILE.IniReadInt("TRANSFERSYSTEM", "ScrubAlign") == 2)
+            //{
+            //    SCRUB_ALIGN = " -a 32";
+            //}
+            //else
+            //{
+            //    SCRUB_ALIGN = " -a 32K";
+            //}
 
             //startInfo.Arguments = dgvGameList.CurrentRow.Cells[4].Value.ToString() + " -aq " + scrubAlign + flushSD +
             //" -f " + configIniFile.IniReadInt("TRANSFERSYSTEM", "ScrubFormat", "") + " -d " + tscbDiscDrive.SelectedItem + @"games";
@@ -1748,7 +1863,8 @@ namespace GCBM
 
                     if (tbIDDiscID.Text == "0x00")
                     {
-                        MessageBox.Show(GCBM.Properties.Resources.InstallGameScrub_String5, GCBM.Properties.Resources.Information, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        GlobalNotifications(GCBM.Properties.Resources.InstallGameScrub_String5);
+                        //MessageBox.Show(GCBM.Properties.Resources.InstallGameScrub_String5, GCBM.Properties.Resources.Information, MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         lblCopy.Visible = false;
                         lblInstallGame.Visible = false;
@@ -1778,7 +1894,8 @@ namespace GCBM
 
                             File.Move(myOrigem, myDestiny);
 
-                            MessageBox.Show(GCBM.Properties.Resources.InstallGameScrub_String6, GCBM.Properties.Resources.Information, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            GlobalNotifications(GCBM.Properties.Resources.InstallGameScrub_String6);
+                            //MessageBox.Show(GCBM.Properties.Resources.InstallGameScrub_String6, GCBM.Properties.Resources.Information, MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                             lblCopy.Visible = false;
                             lblInstallGame.Visible = false;
@@ -1805,7 +1922,8 @@ namespace GCBM
 
                             File.Move(myOrigem, myDestiny);
 
-                            MessageBox.Show(GCBM.Properties.Resources.InstallGameScrub_String6, GCBM.Properties.Resources.Information, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            GlobalNotifications(GCBM.Properties.Resources.InstallGameScrub_String6);
+                            //MessageBox.Show(GCBM.Properties.Resources.InstallGameScrub_String6, GCBM.Properties.Resources.Information, MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                             lblCopy.Visible = false;
                             lblInstallGame.Visible = false;
