@@ -52,7 +52,6 @@ namespace GCBM
         private static string FLUSH_SD;
         private static string SCRUB_ALIGN;
         private static char REGION = 'n';
-        private const string VERSION                 = "2.4.3.0";
         private const string MIN_DB_VERSION          = "1.2.0.0";
         private const string INI_FILE                = "config.ini";
         private const string GLOBAL_INI_FILE         = "gc_global.ini";
@@ -87,6 +86,9 @@ namespace GCBM
         #endregion
 
         #region Flag Attributes Screensaver
+        /// <summary>
+        /// Flag Attributes Screensaver
+        /// </summary>
         [FlagsAttribute]
         enum EXECUTION_STATE : uint
         {
@@ -106,8 +108,7 @@ namespace GCBM
         {
             InitializeComponent();
 
-            var _version = assembly.GetName().Version;
-            this.Text = "GameCube Backup Manager 2022 - " + _version.ToString() + " - 64-bit";
+            this.Text = "GameCube Backup Manager 2022 - " + VERSION() + " - 64-bit";
 
             // Splash Screen
             if (CONFIG_INI_FILE.IniReadBool("SEVERAL", "Welcome") == false)
@@ -125,7 +126,8 @@ namespace GCBM
             {
                 DefaultConfigSave();
             }
-            
+
+            LoadConfigFile();
             AboutTranslator();
             AdjustLanguage();
             UpdateProgram();
@@ -138,7 +140,7 @@ namespace GCBM
             DisableOptionsGame(dgvGameList);
             tscbDiscDrive.SelectedIndex = 0;
             cbFilterDatabase.SelectedIndex = 0;
-            LoadConfigFile();
+            //LoadConfigFile();
 
             if (!File.Exists(WIITDB_FILE))
             {
@@ -166,33 +168,43 @@ namespace GCBM
         #endregion
 
         #region Main Form Closing
+        /// <summary>
+        /// Main Form Closing
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
         {
             ClearTemp();
-            ExportLOGClosed();
+            ExportLOG(1);
         }
         #endregion
 
-        #region Main Form Resize
-        private void frmMain_Resize(object sender, EventArgs e)
+        #region Program Version
+        /// <summary>
+        /// Get the program version directly from the Assembly.
+        /// </summary>
+        /// <returns></returns>
+        private string VERSION()
         {
-            if (this.WindowState == FormWindowState.Minimized)
-            {
-                GlobalNotifications(GCBM.Properties.Resources.frmMain_Resize_Program);
-            }
+            string PROG_VERSION = assembly.GetName().Version.ToString();
+            return PROG_VERSION;
         }
         #endregion
 
         #region About Translator
+        /// <summary>
+        /// About Translator
+        /// </summary>
         private void AboutTranslator()
         {
-            var _version = assembly.GetName().Version;
+            //PROG_VERSION = assembly.GetName().Version.ToString();
 
             if (File.Exists("config.ini"))
             {
-                if (CONFIG_INI_FILE.IniReadString("GCBM", "ProgVersion", "") != _version.ToString())
+                if (CONFIG_INI_FILE.IniReadString("GCBM", "ProgVersion", "") != VERSION())
                 {
-                    CONFIG_INI_FILE.IniWriteString("GCBM", "ProgVersion", _version.ToString());
+                    CONFIG_INI_FILE.IniWriteString("GCBM", "ProgVersion", VERSION());
                 }
 
                 if (CONFIG_INI_FILE.IniReadString("GCBM", "Language", "") != GCBM.Properties.Resources.GCBM_Language)
@@ -209,6 +221,9 @@ namespace GCBM
         #endregion
 
         #region Adjust Language
+        /// <summary>
+        /// Set the selected language
+        /// </summary>
         private void AdjustLanguage()
         {
             switch (CONFIG_INI_FILE.IniReadInt("LANGUAGE", "ConfigLanguage"))
@@ -282,6 +297,9 @@ namespace GCBM
         #endregion
 
         #region Update Program
+        /// <summary>
+        /// Adjust program update system
+        /// </summary>
         private void UpdateProgram()
         {
             if (CONFIG_INI_FILE.IniReadBool("UPDATES", "UpdateServerProxy") == true)
@@ -379,6 +397,7 @@ namespace GCBM
         #endregion
 
         #region DateString
+        // Get the date and time
         private static string DateString()
         {
             DateTime dt = DateTime.Now;
@@ -390,6 +409,7 @@ namespace GCBM
         #endregion
 
         #region Disable Screensaver
+        // Disable screen saver
         private void DisabeScreensaver()
         {
             if (CONFIG_INI_FILE.IniReadBool("SEVERAL", "Screensaver") == true)
@@ -418,14 +438,14 @@ namespace GCBM
                     pbNetStatus.Image = Properties.Resources.not_conected_16;
                     lblNetStatus.ForeColor = System.Drawing.Color.Red;
                     lblNetStatus.Text = GCBM.Properties.Resources.NetworkCheck_NetStatus_Offline;
-                    GlobalNotifications(GCBM.Properties.Resources.NetworkCheck_NetStatus_Offline);
+                    GlobalNotifications(GCBM.Properties.Resources.NetworkCheck_NetStatus_Offline, ToolTipIcon.Info);
                 }
                 else
                 {
                     pbNetStatus.Image = Properties.Resources.conected_16;
                     lblNetStatus.ForeColor = System.Drawing.Color.Black;
                     lblNetStatus.Text = GCBM.Properties.Resources.NetworkCheck_NetStatus_Online;
-                    GlobalNotifications(GCBM.Properties.Resources.NetworkCheck_NetStatus_Online);
+                    GlobalNotifications(GCBM.Properties.Resources.NetworkCheck_NetStatus_Online, ToolTipIcon.Info);
                 }
                 return;
             }
@@ -434,7 +454,7 @@ namespace GCBM
                 pbNetStatus.Image = Properties.Resources.not_conected_16;
                 lblNetStatus.ForeColor = System.Drawing.Color.Red;
                 lblNetStatus.Text = GCBM.Properties.Resources.NetworkCheck_NetStatus_Offline;
-                GlobalNotifications(GCBM.Properties.Resources.NetworkCheck_NetStatus_Offline);
+                GlobalNotifications(GCBM.Properties.Resources.NetworkCheck_NetStatus_Offline, ToolTipIcon.Info);
             }
         }
         #endregion
@@ -484,7 +504,11 @@ namespace GCBM
         }
         #endregion
 
-        #region Reset, Enable & Disable Options
+        #region Disable Options
+        /// <summary>
+        /// Disables options on the game selection screen
+        /// </summary>
+        /// <param name="dgv"></param>
         private void DisableOptionsGame(DataGridView dgv)
         {
             if (dgv == dgvGameList)
@@ -523,7 +547,9 @@ namespace GCBM
                 tsmiGameDiscRecalculateSelectedGameMD5.Enabled = false;
             }
         }
+        #endregion
 
+        #region Enable Options
         /// <summary>
         /// Enable options on the games tab.
         /// </summary>
@@ -545,7 +571,9 @@ namespace GCBM
             tsmiGameInfo.Enabled = true;
             tsmiTransferDeviceCovers.Enabled = true;
         }
+        #endregion
 
+        #region Reset Options
         /// <summary>
         /// Reset options game list.
         /// </summary>
@@ -569,6 +597,10 @@ namespace GCBM
         #endregion
 
         #region Process Task Delay
+        /// <summary>
+        /// Process Task Delay
+        /// </summary>
+        /// <returns></returns>
         async Task ProcessTaskDelay()
         {
             await Task.Delay(5000);
@@ -591,6 +623,9 @@ namespace GCBM
         #endregion
 
         #region Load Database XML
+        /// <summary>
+        /// Load Database XML
+        /// </summary>
         private void LoadDatabaseXML()
         {
             if (File.Exists(WIITDB_FILE))
@@ -642,7 +677,7 @@ namespace GCBM
                     catch (Exception ex)
                     {
                         //CheckWiiTdbXml();
-                        GlobalNotifications(ex.Message);
+                        GlobalNotifications(ex.Message, ToolTipIcon.Error);
                     }   
                 }
             }
@@ -762,7 +797,8 @@ namespace GCBM
         }
         #endregion
 
-        // REESCREVER FUNÇÃO - Reload DataGridView List
+        // REWRITE FUNCTION - Reload DataGridView List
+
         #region Reload DataGridView List
         /// <summary>
         /// Reloads the contents of the DataGridView Games List.
@@ -790,7 +826,7 @@ namespace GCBM
                 catch (Exception ex)
                 {
                     tbLog.AppendText("[" + DateString() + "]" + GCBM.Properties.Resources.Info + ex.Message);
-                    GlobalNotifications(ex.Message);
+                    GlobalNotifications(ex.Message, ToolTipIcon.Error);
                 }
             }
         }
@@ -822,7 +858,7 @@ namespace GCBM
                 catch (Exception ex)
                 {
                     tbLog.AppendText("[" + DateString() + "]" + GCBM.Properties.Resources.Info + ex.Message);
-                    GlobalNotifications(ex.Message);
+                    GlobalNotifications(ex.Message, ToolTipIcon.Error);
                 }
             }
         }
@@ -899,7 +935,7 @@ namespace GCBM
                     + _files._fileExtension.ToUpper(MY_CULTURE) + Environment.NewLine);
 
                 GlobalNotifications(GCBM.Properties.Resources.DisplayFilesSelected_Found_String3 + _files.Counter + 
-                    GCBM.Properties.Resources.DisplayFilesSelected_Found_String2 + _files._fileExtension.ToUpper(MY_CULTURE));
+                    GCBM.Properties.Resources.DisplayFilesSelected_Found_String2 + _files._fileExtension.ToUpper(MY_CULTURE), ToolTipIcon.Info);
 
             }
             //txtLog.AppendText(Environment.NewLine + Environment.NewLine);
@@ -1022,7 +1058,8 @@ namespace GCBM
         }
         #endregion
 
-        //REESCREVER FUNÇÃO - Get All Drives
+        // REWRITE FUNCTION - Get All Drives
+
         #region Get All Drives
         /// <summary>
         /// Gets a list of all connected drives.
@@ -1155,7 +1192,8 @@ namespace GCBM
         }
         #endregion
 
-        // REESCREVER FUNÇÃO - Directory Open
+        // REWRITE FUNCTION- Directory Open
+
         #region Directory Open
         /// <summary>
         /// Checks the consistency of the listed ISO and GCM files.       
@@ -1266,7 +1304,7 @@ namespace GCBM
                 {
                     tbLog.AppendText("[" + DateString() + "]" + GCBM.Properties.Resources.NotNintendoGameCubeFile);
                     GlobalNotifications(GCBM.Properties.Resources.NotNintendoGameCubeFile + Environment.NewLine + 
-                        GCBM.Properties.Resources.RecommendedDeleteOrMoveFile);
+                        GCBM.Properties.Resources.RecommendedDeleteOrMoveFile, ToolTipIcon.Info);
 
                     pbGameDisc.LoadAsync(GET_CURRENT_PATH + @"\media\covers\disc.png");
                     pbGameCover3D.LoadAsync(GET_CURRENT_PATH + @"\media\covers\3d.png");
@@ -1280,7 +1318,7 @@ namespace GCBM
             }
             catch (Exception ex)
             {
-                GlobalNotifications(ex.Message);
+                GlobalNotifications(ex.Message, ToolTipIcon.Error);
                 ERROR = true;
             }
             finally
@@ -1293,7 +1331,8 @@ namespace GCBM
         }
         #endregion
 
-        // REESCREVER FUNÇÃO - Load Cover
+        // REWRITE FUNCTION - Load Cover
+
         #region Load Cover
         /// <summary>
         /// Loads the respective Disk and 2D image files into the loaded ISO/GCM file.
@@ -1317,7 +1356,7 @@ namespace GCBM
                 }
                 else
                 {
-                    GlobalNotifications(GCBM.Properties.Resources.UnknownRegion);
+                    GlobalNotifications(GCBM.Properties.Resources.UnknownRegion, ToolTipIcon.Info);
                 }
             }
             catch (Exception ex)
@@ -1346,7 +1385,8 @@ namespace GCBM
         }
         #endregion
 
-        // REESCREVER FUNÇÃO - Download Only Disc & 3D Cover
+        // REWRITE FUNCTION - Download Only Disc & 3D Cover
+
         #region Download Only Disc & 3D Cover
         /// <summary>
         /// Only downloads Disc and 3D files from listed ISO/GCM files.
@@ -1372,7 +1412,7 @@ namespace GCBM
                 }
                 else
                 {
-                    GlobalNotifications(GCBM.Properties.Resources.UnknownRegion);
+                    GlobalNotifications(GCBM.Properties.Resources.UnknownRegion, ToolTipIcon.Info);
                 }
 
                 try
@@ -1434,7 +1474,8 @@ namespace GCBM
         }
         #endregion
 
-        // REESCREVER FUNÇÃO - Download Only Disc & 3D Cover Selected Game
+        // REWRITE FUNCTION - Download Only Disc & 3D Cover Selected Game
+
         #region Download Only Disc & 3D Cover Selected Game
         /// <summary>
         /// Downloads Disc and 3D files from the selected ISO/GCM file only.
@@ -1466,7 +1507,7 @@ namespace GCBM
                 }
                 else
                 {
-                    GlobalNotifications(GCBM.Properties.Resources.UnknownRegion);
+                    GlobalNotifications(GCBM.Properties.Resources.UnknownRegion, ToolTipIcon.Info);
                 }
 
                 try
@@ -1625,17 +1666,18 @@ namespace GCBM
             catch (Win32Exception noBrowser)
             {
                 if (noBrowser.ErrorCode == -2147467259)
-                    GlobalNotifications(noBrowser.Message);
+                    GlobalNotifications(noBrowser.Message, ToolTipIcon.Info);
             }
             catch (Exception ex)
             {
                 tbLog.AppendText("[" + DateString() + "]" + GCBM.Properties.Resources.Error + ex.Message + Environment.NewLine);
-                GlobalNotifications(ex.Message);
+                GlobalNotifications(ex.Message, ToolTipIcon.Error);
             }
         }
         #endregion
 
-        // REESCREVER FUNÇÃO - Install Game Exact Copy
+        // REWRITE FUNCTION - Install Game Exact Copy
+
         #region Install Game Exact Copy
         /// <summary>
         /// Function to install an exact copy of the file (1:1).
@@ -1722,13 +1764,14 @@ namespace GCBM
                 catch (Exception ex)
                 {
                     tbLog.AppendText("[" + DateString() + "]" + " [ERRO] " + ex.Message + Environment.NewLine);
-                    GlobalNotifications(ex.Message);
+                    GlobalNotifications(ex.Message, ToolTipIcon.Error);
                 }
             }
         }
         #endregion
 
-        // REESCREVER FUNÇÃO - Install Game Scrub
+        // REWRITE FUNCTION - Install Game Scrub
+
         #region Install Game Scrub
         private void InstallGameScrub()
         {
@@ -1862,7 +1905,7 @@ namespace GCBM
 
                     if (tbIDDiscID.Text == "0x00")
                     {
-                        GlobalNotifications(GCBM.Properties.Resources.InstallGameScrub_String5);
+                        GlobalNotifications(GCBM.Properties.Resources.InstallGameScrub_String5, ToolTipIcon.Info);
                         //MessageBox.Show(GCBM.Properties.Resources.InstallGameScrub_String5, GCBM.Properties.Resources.Information, MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         lblCopy.Visible = false;
@@ -1893,7 +1936,7 @@ namespace GCBM
 
                             File.Move(myOrigem, myDestiny);
 
-                            GlobalNotifications(GCBM.Properties.Resources.InstallGameScrub_String6);
+                            GlobalNotifications(GCBM.Properties.Resources.InstallGameScrub_String6, ToolTipIcon.Info);
                             //MessageBox.Show(GCBM.Properties.Resources.InstallGameScrub_String6, GCBM.Properties.Resources.Information, MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                             lblCopy.Visible = false;
@@ -1921,7 +1964,7 @@ namespace GCBM
 
                             File.Move(myOrigem, myDestiny);
 
-                            GlobalNotifications(GCBM.Properties.Resources.InstallGameScrub_String6);
+                            GlobalNotifications(GCBM.Properties.Resources.InstallGameScrub_String6, ToolTipIcon.Info);
                             //MessageBox.Show(GCBM.Properties.Resources.InstallGameScrub_String6, GCBM.Properties.Resources.Information, MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                             lblCopy.Visible = false;
@@ -1979,7 +2022,7 @@ namespace GCBM
                     lblCopy.Text = GCBM.Properties.Resources.CopyTask_String3;
                     lblInstallGame.Text = GCBM.Properties.Resources.CopyTask_String4;
                     lblPercent.Text = GCBM.Properties.Resources.CopyTask_String5;
-                    GlobalNotifications(GCBM.Properties.Resources.InstallGameScrub_String5);
+                    GlobalNotifications(GCBM.Properties.Resources.InstallGameScrub_String5, ToolTipIcon.Info);
                     EnableOptionsGameList();
                     dgvGameList.Enabled = true;
                     pbCopy.Visible = false;
@@ -2016,7 +2059,7 @@ namespace GCBM
                     lblCopy.Text = GCBM.Properties.Resources.CopyTask_String6;
                     lblInstallGame.Text = GCBM.Properties.Resources.CopyTask_String4;
                     lblPercent.Text = GCBM.Properties.Resources.CopyTask_String5;
-                    GlobalNotifications(GCBM.Properties.Resources.InstallGameScrub_String6);
+                    GlobalNotifications(GCBM.Properties.Resources.InstallGameScrub_String6, ToolTipIcon.Info);
                     EnableOptionsGameList();
                     pbCopy.Visible = false;
                     lblCopy.Visible = false;
@@ -2028,9 +2071,9 @@ namespace GCBM
         #endregion
 
         #region Notifications
-        private void GlobalNotifications(string ex)
+        private void GlobalNotifications(string message, ToolTipIcon icon)
         {
-            notifyIcon.ShowBalloonTip(10, "GameCube Backup Manager", ex, ToolTipIcon.Info);
+            notifyIcon.ShowBalloonTip(10, "GameCube Backup Manager", message, icon);
         }
 
         /// <summary>
@@ -2195,7 +2238,7 @@ namespace GCBM
                             }
                             else
                             {
-                                GlobalNotifications(GCBM.Properties.Resources.UnknownRegion);
+                                GlobalNotifications(GCBM.Properties.Resources.UnknownRegion, ToolTipIcon.Info);
                             }
 
                             string cover2D   = GET_CURRENT_PATH + @"\covers\cache\" + LINK_DOMAIN + @"\2d\" + tbIDGame.Text + ".png";
@@ -2251,7 +2294,7 @@ namespace GCBM
                     catch (Exception ex)
                     {
                         tbLog.AppendText("[" + DateString() + "]" + GCBM.Properties.Resources.Error + ex.Message + Environment.NewLine);
-                        GlobalNotifications(ex.Message);
+                        GlobalNotifications(ex.Message, ToolTipIcon.Error);
                     }
                 }
             }
@@ -2291,7 +2334,7 @@ namespace GCBM
                             }
                             else
                             {
-                                GlobalNotifications(GCBM.Properties.Resources.UnknownRegion);
+                                GlobalNotifications(GCBM.Properties.Resources.UnknownRegion, ToolTipIcon.Info);
                             }
 
                             DirectoryInfo di2D = new DirectoryInfo(GET_CURRENT_PATH + @"\covers\cache\" + LINK_DOMAIN + @"\2d\");
@@ -2403,7 +2446,7 @@ namespace GCBM
                 catch (Exception ex)
                 {
                     tbLog.AppendText("[" + DateString() + "]" + GCBM.Properties.Resources.Error + ex.Message + Environment.NewLine);
-                    GlobalNotifications(ex.Message);
+                    GlobalNotifications(ex.Message, ToolTipIcon.Error);
                 }
             }
         }
@@ -2492,13 +2535,14 @@ namespace GCBM
                 catch (Exception ex)
                 {
                     tbLog.AppendText("[" + DateString() + "]" + GCBM.Properties.Resources.Error + ex.Message + Environment.NewLine);
-                    GlobalNotifications(ex.Message);
+                    GlobalNotifications(ex.Message, ToolTipIcon.Error);
                 }
             }
         }
         #endregion
 
-        // REESCREVER FUNÇÃO DE TRANSFERIR CAPAS
+        // REWRITE FUNCTION - Transfer Covers
+
         #region Check Cover Transfer
         /// <summary>
         /// Function to check if the USB Loader GX or WiiFlow directories are configured.
@@ -2662,7 +2706,7 @@ namespace GCBM
                         catch (IOException ex)
                         {
                             fileError = true;
-                            GlobalNotifications(GCBM.Properties.Resources.UnableWriteDataDisk);
+                            GlobalNotifications(GCBM.Properties.Resources.UnableWriteDataDisk, ToolTipIcon.Error);
                         }
                     }
                     if (!fileError)
@@ -2687,20 +2731,20 @@ namespace GCBM
                             }
 
                             File.WriteAllLines(sfd.FileName, outputCsv, Encoding.UTF8);
-                            GlobalNotifications(GCBM.Properties.Resources.GameListExportedCSV);
+                            GlobalNotifications(GCBM.Properties.Resources.GameListExportedCSV, ToolTipIcon.Info);
 
                         }
                         catch (Exception ex)
                         {
                             tbLog.AppendText("[" + DateString() + "]" + GCBM.Properties.Resources.Error + ex.Message + Environment.NewLine);
-                            GlobalNotifications(ex.Message);
+                            GlobalNotifications(ex.Message, ToolTipIcon.Error);
                         }
                     }
                 }
             }
             else
             {
-                GlobalNotifications(GCBM.Properties.Resources.RecordExportedFailed);
+                GlobalNotifications(GCBM.Properties.Resources.RecordExportedFailed, ToolTipIcon.Error);
             }
         }
         #endregion
@@ -2714,7 +2758,7 @@ namespace GCBM
         {
             if (dgvGameList.RowCount == 0)
             {
-                GlobalNotifications(GCBM.Properties.Resources.RecordExportedFailed);
+                GlobalNotifications(GCBM.Properties.Resources.RecordExportedFailed, ToolTipIcon.Error);
             }
             else
             {
@@ -2732,11 +2776,11 @@ namespace GCBM
                             "------------------------------------------------------------------------------------------");
                     }
                     writer.Close();
-                    GlobalNotifications(GCBM.Properties.Resources.GameListExportedTXT);
+                    GlobalNotifications(GCBM.Properties.Resources.GameListExportedTXT, ToolTipIcon.Info);
                 }
                 catch (Exception ex)
                 {
-                    GlobalNotifications(ex.Message);
+                    GlobalNotifications(ex.Message, ToolTipIcon.Error);
                 }
             }
         }
@@ -2744,31 +2788,29 @@ namespace GCBM
 
         #region Export LOG
         /// <summary>
-        /// Export Log.
+        /// Export LOG
         /// </summary>
-        private void ExportLOG()
+        /// <param name="value"></param>
+        private void ExportLOG(int value)
         {
-            if (tbLog.Text != string.Empty)
+            if (value == 0)
             {
-                File.WriteAllText(GET_CURRENT_PATH + @"\" + "gcbm.log", tbLog.Text);
-                GlobalNotifications(GCBM.Properties.Resources.RecordExportedSuccessfully);
+                if (tbLog.Text != string.Empty)
+                {
+                    File.WriteAllText(GET_CURRENT_PATH + @"\" + "gcbm.log", tbLog.Text);
+                    GlobalNotifications(GCBM.Properties.Resources.RecordExportedSuccessfully, ToolTipIcon.Info);
+                }
+                else
+                {
+                    GlobalNotifications(GCBM.Properties.Resources.RecordExportedFailed, ToolTipIcon.Error);
+                }
             }
             else
             {
-                GlobalNotifications(GCBM.Properties.Resources.RecordExportedFailed);
-            }
-        }
-        #endregion
-
-        #region Export LOG Closed
-        /// <summary>
-        /// Export Log.
-        /// </summary>
-        private void ExportLOGClosed()
-        {
-            if (tbLog.Text != string.Empty)
-            {
-                File.WriteAllText(GET_CURRENT_PATH + @"\" + "gcbm.log", tbLog.Text);
+                if (tbLog.Text != string.Empty)
+                {
+                    File.WriteAllText(GET_CURRENT_PATH + @"\" + "gcbm.log", tbLog.Text);
+                }
             }
         }
         #endregion
@@ -2826,7 +2868,7 @@ namespace GCBM
         #region tsmiExportLog_Click
         private void tsmiExportLog_Click(object sender, EventArgs e)
         {
-            ExportLOG();           
+            ExportLOG(0);
         }
         #endregion
 
@@ -2840,7 +2882,7 @@ namespace GCBM
             else
             {
                 GlobalNotifications(GCBM.Properties.Resources.NoInternetConnectionFound_String1 + Environment.NewLine +
-                    GCBM.Properties.Resources.NoInternetConnectionFound_String2);
+                    GCBM.Properties.Resources.NoInternetConnectionFound_String2, ToolTipIcon.Info);
             }
         }
         #endregion
@@ -2855,7 +2897,7 @@ namespace GCBM
             else
             {
                 GlobalNotifications(GCBM.Properties.Resources.NoInternetConnectionFound_String1 + Environment.NewLine +
-                    GCBM.Properties.Resources.NoInternetConnectionFound_String2);
+                    GCBM.Properties.Resources.NoInternetConnectionFound_String2, ToolTipIcon.Info);
             }
         }
         #endregion
@@ -2903,7 +2945,7 @@ namespace GCBM
             else
             {
                 GlobalNotifications(GCBM.Properties.Resources.NoInternetConnectionFound_String1 + Environment.NewLine +
-                    GCBM.Properties.Resources.NoInternetConnectionFound_String2);
+                    GCBM.Properties.Resources.NoInternetConnectionFound_String2, ToolTipIcon.Info);
             }
         }
         #endregion
@@ -3183,6 +3225,116 @@ namespace GCBM
         }
         #endregion
 
+        #region tsmiMetaXml_Click
+        private void tsmiMetaXml_Click(object sender, EventArgs e)
+        {
+            GCBM.tools.frmMetaXml metaXml = new tools.frmMetaXml();
+            metaXml.ShowDialog();
+            metaXml.Dispose();
+        }
+        #endregion
+
+        #region tsmiManageApp_Click
+        private void tsmiManageApp_Click(object sender, EventArgs e)
+        {
+            GCBM.tools.frmManageApp manageApp = new tools.frmManageApp();
+            manageApp.ShowDialog();
+            manageApp.Dispose();
+        }
+        #endregion
+
+        #region tsmiElfDol_Click
+        private void tsmiElfDol_Click(object sender, EventArgs e)
+        {
+            GCBM.tools.frmConvertELFtoDOL elfDol = new tools.frmConvertELFtoDOL();
+            elfDol.ShowDialog();
+            elfDol.Dispose();
+        }
+        #endregion
+
+        #region tsmiDolphinEmulator_Click
+        private void tsmiDolphinEmulator_Click(object sender, EventArgs e)
+        {
+            GCBM.tools.frmDolphinEmulator dolphinEmulator = new tools.frmDolphinEmulator();
+            dolphinEmulator.ShowDialog();
+            dolphinEmulator.Dispose();
+        }
+        #endregion
+
+        #region tsmiCreatePackage_Click
+        private void tsmiCreatePackage_Click(object sender, EventArgs e)
+        {
+            GCBM.tools.frmCreateAppPackage createPackage = new tools.frmCreateAppPackage();
+            createPackage.ShowDialog();
+            createPackage.Dispose();
+        }
+        #endregion
+
+        #region tsmiBurnMedia_Click
+        private void tsmiBurnMedia_Click(object sender, EventArgs e)
+        {
+            GCBM.tools.frmBurnMedia burnMedia = new tools.frmBurnMedia();
+            burnMedia.ShowDialog();
+            burnMedia.Dispose();
+        }
+        #endregion
+
+        #region tsmiWebsiteFacebook_Click
+        private void tsmiWebsiteFacebook_Click(object sender, EventArgs e)
+        {
+            ExternalSite("https://www.facebook.com/groups/nintendowiibrasil/", "");
+        }
+        #endregion
+
+        #region tsmiOfficialGitHub_Click
+        private void tsmiOfficialGitHub_Click(object sender, EventArgs e)
+        {
+            ExternalSite("https://axiondrak.github.io/gcbm.html", "");
+        }
+        #endregion
+
+        #region tsmiOfficialGBATemp_Click
+        private void tsmiOfficialGBATemp_Click(object sender, EventArgs e)
+        {
+            ExternalSite("https://gbatemp.net/threads/gamecube-backup-manager-official-post.611247/", "");
+        }
+        #endregion
+
+        #region tsmiVerifyUpdate_Click
+        private void tsmiVerifyUpdate_Click(object sender, EventArgs e)
+        {
+            if (File.Exists("config.ini"))
+            {
+                // Suporte as atualizações do canal Beta
+                if (CONFIG_INI_FILE.IniReadBool("UPDATES", "UpdateBetaChannel") == true)
+                {
+
+                    AutoUpdater.Start("https://raw.githubusercontent.com/AxionDrak/GameCube-Backup-Manager/main/BetaChannel/AutoUpdaterBeta.xml");
+                    AutoUpdater.ShowRemindLaterButton = false;
+                    AutoUpdater.RunUpdateAsAdmin = false;
+                    AutoUpdater.ReportErrors = true;
+                    //AutoUpdater.UpdateFormSize = new Size(500, 400);
+                }
+                else
+                {
+                    AutoUpdater.Start("https://raw.githubusercontent.com/AxionDrak/GameCube-Backup-Manager/main/AutoUpdaterRelease.xml");
+                    AutoUpdater.ShowRemindLaterButton = false;
+                    AutoUpdater.RunUpdateAsAdmin = false;
+                    AutoUpdater.ReportErrors = true;
+                    //AutoUpdater.UpdateFormSize = new Size(500, 400);
+                }
+            }
+            else
+            {
+                AutoUpdater.Start("https://raw.githubusercontent.com/AxionDrak/GameCube-Backup-Manager/main/AutoUpdaterRelease.xml");
+                AutoUpdater.ShowRemindLaterButton = false;
+                AutoUpdater.RunUpdateAsAdmin = false;
+                AutoUpdater.ReportErrors = true;
+                //AutoUpdater.UpdateFormSize = new Size(500, 400);
+            }
+        }
+        #endregion
+
         // Extras Functions
 
         #region dgvGameList Click
@@ -3282,7 +3434,7 @@ namespace GCBM
             catch (Exception ex)
             {
                 tbLog.AppendText("[" + DateString() + "]" + GCBM.Properties.Resources.Error + ex.Message + Environment.NewLine);
-                GlobalNotifications(ex.Message);
+                GlobalNotifications(ex.Message, ToolTipIcon.Error);
             }
         }
         #endregion
@@ -3368,41 +3520,6 @@ namespace GCBM
         }
         #endregion
 
-        #region tsmiVerifyUpdate_Click
-        private void tsmiVerifyUpdate_Click(object sender, EventArgs e)
-        {
-            if (File.Exists("config.ini"))
-            {
-                // Suporte as atualizações do canal Beta
-                if (CONFIG_INI_FILE.IniReadBool("UPDATES", "UpdateBetaChannel") == true)
-                {
-
-                    AutoUpdater.Start("https://raw.githubusercontent.com/AxionDrak/GameCube-Backup-Manager/main/BetaChannel/AutoUpdaterBeta.xml");
-                    AutoUpdater.ShowRemindLaterButton = false;
-                    AutoUpdater.RunUpdateAsAdmin = false;
-                    AutoUpdater.ReportErrors = true;
-                    //AutoUpdater.UpdateFormSize = new Size(500, 400);
-                }
-                else
-                {
-                    AutoUpdater.Start("https://raw.githubusercontent.com/AxionDrak/GameCube-Backup-Manager/main/AutoUpdaterRelease.xml");
-                    AutoUpdater.ShowRemindLaterButton = false;
-                    AutoUpdater.RunUpdateAsAdmin = false;
-                    AutoUpdater.ReportErrors = true;
-                    //AutoUpdater.UpdateFormSize = new Size(500, 400);
-                }
-            }
-            else
-            {
-                AutoUpdater.Start("https://raw.githubusercontent.com/AxionDrak/GameCube-Backup-Manager/main/AutoUpdaterRelease.xml");
-                AutoUpdater.ShowRemindLaterButton = false;
-                AutoUpdater.RunUpdateAsAdmin = false;
-                AutoUpdater.ReportErrors = true;
-                //AutoUpdater.UpdateFormSize = new Size(500, 400);
-            }
-        }
-        #endregion
-
         #region lvDatabase_Click
         private void lvDatabase_Click(object sender, EventArgs e)
         {
@@ -3457,7 +3574,7 @@ namespace GCBM
                         catch (WebException ex)
                         {
                             //pbGameDisc.LoadAsync(getCurrentPath + @"\media\covers\disc.png");
-                            GlobalNotifications(GCBM.Properties.Resources.ServerReportedDiscCoverNotFound);
+                            GlobalNotifications(GCBM.Properties.Resources.ServerReportedDiscCoverNotFound, ToolTipIcon.Error);
                         }
                         finally
                         {
@@ -3496,7 +3613,7 @@ namespace GCBM
                         catch (WebException ex)
                         {
                             //pbGameCover3D.LoadAsync(getCurrentPath + @"\media\covers\3d.png");
-                            GlobalNotifications(GCBM.Properties.Resources.ServerReported3DCoverNotFound);
+                            GlobalNotifications(GCBM.Properties.Resources.ServerReported3DCoverNotFound, ToolTipIcon.Error);
                         }
                         finally
                         {
@@ -3509,7 +3626,7 @@ namespace GCBM
                 }
                 catch (Exception ex)
                 {
-                    GlobalNotifications(GCBM.Properties.Resources.ServerReportedOneCoverOrBothNotFound);
+                    GlobalNotifications(GCBM.Properties.Resources.ServerReportedOneCoverOrBothNotFound, ToolTipIcon.Error);
                 }
             }
         }
@@ -3565,69 +3682,12 @@ namespace GCBM
             catch (Exception ex)
             {
                 tbLog.AppendText("[" + DateString() + "]" + GCBM.Properties.Resources.Error + ex.Message + Environment.NewLine);
-                GlobalNotifications(ex.Message);
+                GlobalNotifications(ex.Message, ToolTipIcon.Error);
             }
-        }
-
-        private void tsmiMetaXml_Click(object sender, EventArgs e)
-        {
-            GCBM.tools.frmMetaXml metaXml = new tools.frmMetaXml();
-            metaXml.ShowDialog();
-            metaXml.Dispose();
-        }
-
-        private void tsmiManageApp_Click(object sender, EventArgs e)
-        {
-            GCBM.tools.frmManageApp manageApp = new tools.frmManageApp();
-            manageApp.ShowDialog();
-            manageApp.Dispose();
-        }
-
-        private void tsmiElfDol_Click(object sender, EventArgs e)
-        {
-            GCBM.tools.frmConvertELFtoDOL elfDol = new tools.frmConvertELFtoDOL();
-            elfDol.ShowDialog();
-            elfDol.Dispose();
-        }
-
-        private void tsmiDolphinEmulator_Click(object sender, EventArgs e)
-        {
-            GCBM.tools.frmDolphinEmulator dolphinEmulator = new tools.frmDolphinEmulator();
-            dolphinEmulator.ShowDialog();
-            dolphinEmulator.Dispose();
-        }
-
-        private void tsmiCreatePackage_Click(object sender, EventArgs e)
-        {
-            GCBM.tools.frmCreateAppPackage createPackage = new tools.frmCreateAppPackage();
-            createPackage.ShowDialog();
-            createPackage.Dispose();
-        }
-
-        private void tsmiBurnMedia_Click(object sender, EventArgs e)
-        {
-            GCBM.tools.frmBurnMedia burnMedia = new tools.frmBurnMedia();
-            burnMedia.ShowDialog();
-            burnMedia.Dispose();
-        }
-
-        private void tsmiWebsiteFacebook_Click(object sender, EventArgs e)
-        {
-            ExternalSite("https://www.facebook.com/groups/nintendowiibrasil/", "");
-        }
-
-        private void tsmiOfficialGitHub_Click(object sender, EventArgs e)
-        {
-            ExternalSite("https://axiondrak.github.io/gcbm.html", "");
-        }
-
-        private void tsmiOfficialGBATemp_Click(object sender, EventArgs e)
-        {
-            ExternalSite("https://gbatemp.net/threads/gamecube-backup-manager-official-post.611247/", "");
         }
         #endregion
 
-        //Reinicia a aplicação (fecha e reabre)
+        //Restarts the application (closes and reopens)
         //Application.Restart();
 
     } // frmMain Form
