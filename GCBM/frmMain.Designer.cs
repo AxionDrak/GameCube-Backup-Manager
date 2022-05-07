@@ -1275,7 +1275,6 @@ namespace GCBM
             this.MainMenuStrip = this.mstripMain;
             this.Name = "frmMain";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
-            this.Resize += new System.EventHandler(this.frmMain_Resize);
             this.spcMain.Panel1.ResumeLayout(false);
             this.spcMain.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.spcMain)).EndInit();
