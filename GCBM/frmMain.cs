@@ -34,46 +34,47 @@ namespace GCBM
     {
         #region Properties
 
-        Assembly assembly                            = Assembly.GetExecutingAssembly();
+        private readonly Assembly assembly           = Assembly.GetExecutingAssembly();
 
         private static string GET_CURRENT_PATH       = Directory.GetCurrentDirectory();
-        private static string CURRENT_DIRECTORY      = "";
-        private static string STANDARD_DIRECTORY     = "";
         private static string TEMP_DIR               = @"\temp";
         private static string COVERS_DIR             = @"\cover\cache";
-        private static string FILE_TDBXML            = "";
-        private static string LOG_LEVEL              = "";
-        private static string CULTURE_LANG           = "";
         private static string CULTURE_CURRENT        = "pt-BR";
-        private static string TRANSLATOR             = "";
-        private static string RES_PATH               = "";
-        private static string IMAGE_PATH             = "";
-        private static string LINK_DOMAIN            = "";
+        private static string PROG_UPDATE            = "07/05/2022";
+        //private static string CURRENT_DIRECTORY;
+        //private static string STANDARD_DIRECTORY;
+        //private static string FILE_TDBXML;
+        //private static string LOG_LEVEL;
+        //private static string CULTURE_LANG;
+        //private static string TRANSLATOR;
+        private static string RES_PATH;
+        private static string IMAGE_PATH;
+        private static string LINK_DOMAIN;
         private static string FLUSH_SD;
         private static string SCRUB_ALIGN;
         private static char REGION = 'n';
-        private const string MIN_DB_VERSION          = "1.2.0.0";
+        //private const string MIN_DB_VERSION          = "1.2.0.0";
         private const string INI_FILE                = "config.ini";
-        private const string GLOBAL_INI_FILE         = "gc_global.ini";
-        private const string LOG_FILE                = "gcbm.log";
-        private const string CACHE_DIR               = "cache";
-        private const string LOCAL_FILES_DB          = "gcbm_Local.xml";
+        //private const string GLOBAL_INI_FILE         = "gc_global.ini";
+        //private const string LOG_FILE                = "gcbm.log";
+        //private const string CACHE_DIR               = "cache";
+        //private const string LOCAL_FILES_DB          = "gcbm_Local.xml";
         private const string WIITDB_FILE             = "wiitdb.xml";
         private const string WIITDB_DOWNLOAD_SITE    = "https://www.gametdb.com/";
-        private const string TITLES_FILE             = "titles.txt";
-        private bool ENABLE_INTERNET                 = true;
-        private bool ENABLE_UPDATE_PROGRAM           = true;
-        private bool UPDATE_LOG                      = true;
+        //private const string TITLES_FILE             = "titles.txt";
+        //private bool ENABLE_INTERNET                 = true;
+        //private bool ENABLE_UPDATE_PROGRAM           = true;
+        //private bool UPDATE_LOG                      = true;
         private bool ERROR                           = false;
-        private bool NETWORK_CHECK                   = true;
-        private bool EXPORT_LOG_CHECK                = true;
-        private bool CLEAR_TEMP_CHECK                = true;
-        private bool WIITDBXML_CHECK                 = true;
+        //private bool NETWORK_CHECK                   = true;
+        //private bool EXPORT_LOG_CHECK                = true;
+        //private bool CLEAR_TEMP_CHECK                = true;
+        //private bool WIITDBXML_CHECK                 = true;
         private bool SPLASH_SCREEN_DONE              = false;
         private bool ROOT_OPENED                     = true;
         private bool FILENAME_SORT                   = true;
         private bool RETRIEVE_FILES_INFO             = true;
-        private int Reserved;
+        //private int Reserved;
         private readonly IniFile CONFIG_INI_FILE     = new IniFile(INI_FILE);
         private readonly CultureInfo MY_CULTURE      = new CultureInfo(CULTURE_CURRENT, false);
         private readonly ProcessStartInfo START_INFO = new ProcessStartInfo();
@@ -714,11 +715,11 @@ namespace GCBM
         #region Default Config Save
         private void DefaultConfigSave()
         {
-            var _version = assembly.GetName().Version;
+            //var _version = assembly.GetName().Version;
 
             // GCBM
-            CONFIG_INI_FILE.IniWriteString("GCBM", "ProgUpdated", "30/04/2022");
-            CONFIG_INI_FILE.IniWriteString("GCBM", "ProgVersion", _version.ToString());
+            CONFIG_INI_FILE.IniWriteString("GCBM", "ProgUpdated", PROG_UPDATE);
+            CONFIG_INI_FILE.IniWriteString("GCBM", "ProgVersion", VERSION());
             CONFIG_INI_FILE.IniWriteString("GCBM", "ConfigUpdated", DateTime.Now.ToString("dd/MM/yyyy"));
             CONFIG_INI_FILE.IniWriteString("GCBM", "Language", GCBM.Properties.Resources.GCBM_Language);
             CONFIG_INI_FILE.IniWriteString("GCBM", "TranslatedBy", GCBM.Properties.Resources.GCBM_TranslatedBy);
