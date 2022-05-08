@@ -176,6 +176,9 @@ namespace GCBM
         /// <param name="e"></param>
         private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
         {
+            notifyIcon.Visible = false;
+            notifyIcon.Icon = null;
+            notifyIcon.Dispose();
             ClearTemp();
             ExportLOG(1);
         }
@@ -713,10 +716,11 @@ namespace GCBM
         #endregion
 
         #region Default Config Save
+        /// <summary>
+        /// Default Config Save
+        /// </summary>
         private void DefaultConfigSave()
         {
-            //var _version = assembly.GetName().Version;
-
             // GCBM
             CONFIG_INI_FILE.IniWriteString("GCBM", "ProgUpdated", PROG_UPDATE);
             CONFIG_INI_FILE.IniWriteString("GCBM", "ProgVersion", VERSION());
@@ -1092,24 +1096,29 @@ namespace GCBM
         }
         #endregion
 
-        #region Display Format File Size (Basic Version - Automatic)
-        public static string BytesToGB(long bytes)
-        {
-            string result;
-            double _bytes = bytes;
-            string[] array_fs = new string[5] { "B", "KB", "MB", "GB", "TB" };
-            int num2_fs = 0;
+        //#region Display Format File Size (Basic Version - Automatic)
+        ///// <summary>
+        ///// Display Format File Size (Basic Version - Automatic)
+        ///// </summary>
+        ///// <param name="bytes"></param>
+        ///// <returns></returns>
+        //public static string BytesToGB(long bytes)
+        //{
+        //    string result;
+        //    double _bytes = bytes;
+        //    string[] array_fs = new string[5] { "B", "KB", "MB", "GB", "TB" };
+        //    int num2_fs = 0;
 
-            while (_bytes >= 1024.0 && num2_fs < array_fs.Length - 1)
-            {
-                num2_fs++;
-                _bytes /= 1024.0;
-            }
-            result = $"{_bytes:0.##} {array_fs[num2_fs]}";
+        //    while (_bytes >= 1024.0 && num2_fs < array_fs.Length - 1)
+        //    {
+        //        num2_fs++;
+        //        _bytes /= 1024.0;
+        //    }
+        //    result = $"{_bytes:0.##} {array_fs[num2_fs]}";
 
-            return result;
-        }
-        #endregion
+        //    return result;
+        //}
+        //#endregion
 
         #region Display Format File Size
         /// <summary>
@@ -1399,23 +1408,22 @@ namespace GCBM
                 string _IDGameCode = dgv.Rows[dgvResultRow.Index].Cells[4].Value.ToString();
                 DirectoryOpenGameList(_IDGameCode);
 
-                if (_IDRegionCode.Equals("e"))
+                switch (_IDRegionCode)
                 {
-                    LINK_DOMAIN = "US";
+                    case "e":
+                        LINK_DOMAIN = "US";
+                        break;
+                    case "p":
+                        LINK_DOMAIN = "EN";
+                        break;
+                    case "j":
+                        LINK_DOMAIN = "JA";
+                        break;
+                    default:
+                        GlobalNotifications(GCBM.Properties.Resources.UnknownRegion, ToolTipIcon.Info);
+                        break;
                 }
-                else if (_IDRegionCode.Equals("p"))
-                {
-                    LINK_DOMAIN = "EN";
-                }
-                else if (_IDRegionCode.Equals("j"))
-                {
-                    LINK_DOMAIN = "JA";
-                }
-                else
-                {
-                    GlobalNotifications(GCBM.Properties.Resources.UnknownRegion, ToolTipIcon.Info);
-                }
-
+               
                 try
                 {
                     // Download Disc cover
@@ -1491,24 +1499,20 @@ namespace GCBM
             }
             else
             {
-                //string _IDGameCode = fbd1.SelectedPath + @"\" + dgvGameList.Rows[1].Cells[1].Value.ToString();
-                //DirectoryOpen(_IDGameCode);
-
-                if (_IDRegionCode.Equals("e"))
+                switch (_IDRegionCode)
                 {
-                    LINK_DOMAIN = "US";
-                }
-                else if (_IDRegionCode.Equals("p"))
-                {
-                    LINK_DOMAIN = "EN";
-                }
-                else if (_IDRegionCode.Equals("j"))
-                {
-                    LINK_DOMAIN = "JA";
-                }
-                else
-                {
-                    GlobalNotifications(GCBM.Properties.Resources.UnknownRegion, ToolTipIcon.Info);
+                    case "e":
+                        LINK_DOMAIN = "US";
+                        break;
+                    case "p":
+                        LINK_DOMAIN = "EN";
+                        break;
+                    case "j":
+                        LINK_DOMAIN = "JA";
+                        break;
+                    default:
+                        GlobalNotifications(GCBM.Properties.Resources.UnknownRegion, ToolTipIcon.Info);
+                        break;
                 }
 
                 try
@@ -1522,7 +1526,7 @@ namespace GCBM
                     if (NET_RESPONSE.StatusCode == HttpStatusCode.OK)
                     {
                         tbLog.AppendText("[" + DateString() + "]" + GCBM.Properties.Resources.DownloadDiscCover + _IDMakerCode + ".png" + Environment.NewLine);
-                        NET_CLIENT.DownloadFileAsync(myLinkCoverDisc, GET_CURRENT_PATH + @"\covers\cache\" + _IDMakerCode + @"\disc\" + _IDMakerCode + ".png");
+                        NET_CLIENT.DownloadFileAsync(myLinkCoverDisc, GET_CURRENT_PATH + @"\covers\cache\" + LINK_DOMAIN + @"\disc\" + _IDMakerCode + ".png");
                         while (NET_CLIENT.IsBusy) { Application.DoEvents(); }
                     }
                 }
@@ -1571,6 +1575,8 @@ namespace GCBM
             }
         }
         #endregion      
+
+        // REWRITE FUNCTION - Clear temporary folder
 
         #region Clear Temp
         /// <summary>
@@ -1774,6 +1780,9 @@ namespace GCBM
         // REWRITE FUNCTION - Install Game Scrub
 
         #region Install Game Scrub
+        /// <summary>
+        /// Function to install an copy of the file in Scrub mode.
+        /// </summary>
         private void InstallGameScrub()
         {
             const string quote = "\"";
@@ -2072,6 +2081,11 @@ namespace GCBM
         #endregion
 
         #region Notifications
+        /// <summary>
+        /// Global Notifications
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="icon"></param>
         private void GlobalNotifications(string message, ToolTipIcon icon)
         {
             notifyIcon.ShowBalloonTip(10, "GameCube Backup Manager", message, icon);
@@ -2093,6 +2107,9 @@ namespace GCBM
             MessageBox.Show(GCBM.Properties.Resources.SelectGameFromList, GCBM.Properties.Resources.Information, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         private void SelectTargetDrive()
         {
             MessageBox.Show(GCBM.Properties.Resources.SelectTargetDrive, GCBM.Properties.Resources.Information, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -2124,6 +2141,9 @@ namespace GCBM
                 GCBM.Properties.Resources.Notice, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         private async void CheckWiiTdbXml()
         {
             await ProcessTaskDelay();
@@ -2136,6 +2156,10 @@ namespace GCBM
                 GCBM.Properties.Resources.Notice, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="typeDrive"></param>
         private void InvalidDrive(string typeDrive)
         {
             MessageBox.Show(GCBM.Properties.Resources.InvalidDrive_String1 + Environment.NewLine + 
@@ -2150,6 +2174,11 @@ namespace GCBM
                 GCBM.Properties.Resources.Attention, MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="typehash"></param>
+        /// <param name="listhash"></param>
         private void ListHash(string typehash, string listhash)
         {
             MessageBox.Show(GCBM.Properties.Resources.ListHash_String1 + typehash + GCBM.Properties.Resources.ListHash_String2 + Environment.NewLine + Environment.NewLine 
@@ -2202,7 +2231,7 @@ namespace GCBM
 
         #region Global Delete Selected Game
         /// <summary>
-        /// 
+        /// Global Delete Selected Game
         /// </summary>
         /// <param name="dgv"></param>
         private void GlobalDeleteSelectedGame(DataGridView dgv)
@@ -2303,6 +2332,10 @@ namespace GCBM
         #endregion
 
         #region Global Delete All Games
+        /// <summary>
+        /// Global Delete All Games
+        /// </summary>
+        /// <param name="dgv"></param>
         private void GlobalDeleteAllGames(DataGridView dgv)
         {
             var filters = new String[] { "iso", "gcm" };
@@ -2454,6 +2487,11 @@ namespace GCBM
         #endregion
 
         #region Global Install
+        /// <summary>
+        /// Global Install
+        /// </summary>
+        /// <param name="dgv"></param>
+        /// <param name="typeInstall"></param>
         private void GlobalInstall(DataGridView dgv, int typeInstall)
         {
             Int32 selectedRowCount = dgv.Rows.GetRowCount(DataGridViewElementStates.Selected);
@@ -2484,6 +2522,11 @@ namespace GCBM
         #endregion
 
         #region Global Check Hashs
+        /// <summary>
+        /// Global Check Hashs
+        /// </summary>
+        /// <param name="dgv"></param>
+        /// <param name="algorithm"></param>
         private void GlobalCheckHash(DataGridView dgv, string algorithm)
         {
             Int32 selectedRowCount = dgv.Rows.GetRowCount(DataGridViewElementStates.Selected);
@@ -2906,6 +2949,9 @@ namespace GCBM
         #region tsmiExit_Click
         private void tsmiExit_Click(object sender, EventArgs e)
         {
+            notifyIcon.Visible = false;
+            notifyIcon.Icon = null;
+            notifyIcon.Dispose();
             ClearTemp();
             Application.Exit();
         }
