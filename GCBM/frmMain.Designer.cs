@@ -171,8 +171,6 @@ namespace GCBM
             this.lblNetStatus = new System.Windows.Forms.Label();
             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.cmsNotifyIcon = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.tsmiNotifyConfig = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiNotifyDisplay = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiNotifyExit = new System.Windows.Forms.ToolStripMenuItem();
             this.pbNetStatus = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.spcMain)).BeginInit();
@@ -1229,25 +1227,9 @@ namespace GCBM
             // cmsNotifyIcon
             // 
             this.cmsNotifyIcon.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiNotifyConfig,
-            this.tsmiNotifyDisplay,
             this.tsmiNotifyExit});
             this.cmsNotifyIcon.Name = "cmsNotifyIcon";
             resources.ApplyResources(this.cmsNotifyIcon, "cmsNotifyIcon");
-            // 
-            // tsmiNotifyConfig
-            // 
-            this.tsmiNotifyConfig.Image = global::GCBM.Properties.Resources.config_16;
-            this.tsmiNotifyConfig.Name = "tsmiNotifyConfig";
-            resources.ApplyResources(this.tsmiNotifyConfig, "tsmiNotifyConfig");
-            this.tsmiNotifyConfig.Click += new System.EventHandler(this.tsmiNotifyConfig_Click);
-            // 
-            // tsmiNotifyDisplay
-            // 
-            this.tsmiNotifyDisplay.Image = global::GCBM.Properties.Resources.eye_16;
-            this.tsmiNotifyDisplay.Name = "tsmiNotifyDisplay";
-            resources.ApplyResources(this.tsmiNotifyDisplay, "tsmiNotifyDisplay");
-            this.tsmiNotifyDisplay.Click += new System.EventHandler(this.tsmiNotifyDisplay_Click);
             // 
             // tsmiNotifyExit
             // 
@@ -1443,9 +1425,7 @@ namespace GCBM
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.NotifyIcon notifyIcon;
         private System.Windows.Forms.ContextMenuStrip cmsNotifyIcon;
-        private System.Windows.Forms.ToolStripMenuItem tsmiNotifyDisplay;
         private System.Windows.Forms.ToolStripMenuItem tsmiNotifyExit;
-        private System.Windows.Forms.ToolStripMenuItem tsmiNotifyConfig;
         private System.Windows.Forms.ToolStripMenuItem exportarListaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tsmiExportTXT;
         private System.Windows.Forms.ToolStripMenuItem tsmiExportHTML;
