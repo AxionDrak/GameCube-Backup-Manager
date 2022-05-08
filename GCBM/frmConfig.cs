@@ -20,11 +20,12 @@ namespace GCBM
     {
         #region Properties
 
-        Assembly assembly = Assembly.GetExecutingAssembly();
+        private readonly Assembly assembly = Assembly.GetExecutingAssembly();
 
         private static string GET_CURRENT_PATH   = Directory.GetCurrentDirectory();
-        private static string COVERS_DIR         = GET_CURRENT_PATH + @"\covers\cache";
-        private static string TEMP_DIR           = GET_CURRENT_PATH + @"\temp";
+        private static string TEMP_DIR           = @"\temp";
+        private static string COVERS_DIR         = @"\cover\cache";
+        private static string PROG_UPDATE        = "07/05/2022";
         private const string INI_FILE            = "config.ini";
         private readonly IniFile CONFIG_INI_FILE = new IniFile(INI_FILE);
         public int RETURN_CONFIRM { get; set; }
@@ -55,8 +56,8 @@ namespace GCBM
             cbLevelLog.SelectedIndex = 0;
             cbVerificationInterval.SelectedIndex = 0;
             grbGeneralFiles.Enabled = false;
-            tbGeneralTempPath.Text = TEMP_DIR;
-            tbDirectoryCoverCache.Text = COVERS_DIR;
+            tbGeneralTempPath.Text = GET_CURRENT_PATH + TEMP_DIR;
+            tbDirectoryCoverCache.Text = GET_CURRENT_PATH + COVERS_DIR;
         }
         #endregion
 
@@ -67,14 +68,26 @@ namespace GCBM
         }
         #endregion
 
+        #region Program Version
+        /// <summary>
+        /// Get the program version directly from the Assembly.
+        /// </summary>
+        /// <returns></returns>
+        private string VERSION()
+        {
+            string PROG_VERSION = assembly.GetName().Version.ToString();
+            return PROG_VERSION;
+        }
+        #endregion
+
         #region SaveConfigFile
         private void SaveConfigFile()
         {
             var _version = assembly.GetName().Version;
 
             // GCBM
-            CONFIG_INI_FILE.IniWriteString("GCBM", "ProgUpdated", "30/04/2022");
-            CONFIG_INI_FILE.IniWriteString("GCBM", "ProgVersion", _version.ToString());
+            CONFIG_INI_FILE.IniWriteString("GCBM", "ProgUpdated", PROG_UPDATE);
+            CONFIG_INI_FILE.IniWriteString("GCBM", "ProgVersion",VERSION());
             CONFIG_INI_FILE.IniWriteString("GCBM", "ConfigUpdated", DateTime.Now.ToString("dd/MM/yyyy"));
 
             if (CONFIG_INI_FILE.IniReadString("GCBM", "Language", "") != GCBM.Properties.Resources.GCBM_Language)
@@ -206,7 +219,7 @@ namespace GCBM
         #region LoadConfigFile
         private void LoadConfigFile()
         {
-            if (File.Exists(GET_CURRENT_PATH + @"\config.ini"))
+            if (File.Exists(GET_CURRENT_PATH + @"\" + INI_FILE))
             {
                 // General
                 rbGeneralDiscClean.Checked = CONFIG_INI_FILE.IniReadBool("GENERAL", "DiscClean");
