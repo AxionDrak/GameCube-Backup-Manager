@@ -33,9 +33,6 @@ namespace GCBM
     public partial class frmMain : Form
     {
         #region Properties
-
-        private readonly Assembly assembly           = Assembly.GetExecutingAssembly();
-
         private static string GET_CURRENT_PATH       = Directory.GetCurrentDirectory();
         private static string TEMP_DIR               = @"\temp";
         private static string COVERS_DIR             = @"\cover\cache";
@@ -52,7 +49,7 @@ namespace GCBM
         private static string LINK_DOMAIN;
         private static string FLUSH_SD;
         private static string SCRUB_ALIGN;
-        private static char REGION = 'n';
+        private static char REGION                   = 'n';
         //private const string MIN_DB_VERSION          = "1.2.0.0";
         private const string INI_FILE                = "config.ini";
         //private const string GLOBAL_INI_FILE         = "gc_global.ini";
@@ -61,6 +58,8 @@ namespace GCBM
         //private const string LOCAL_FILES_DB          = "gcbm_Local.xml";
         private const string WIITDB_FILE             = "wiitdb.xml";
         private const string WIITDB_DOWNLOAD_SITE    = "https://www.gametdb.com/";
+        private const string en_US = "en-US";
+
         //private const string TITLES_FILE             = "titles.txt";
         //private bool ENABLE_INTERNET                 = true;
         //private bool ENABLE_UPDATE_PROGRAM           = true;
@@ -75,6 +74,7 @@ namespace GCBM
         private bool FILENAME_SORT                   = true;
         private bool RETRIEVE_FILES_INFO             = true;
         //private int Reserved;
+        private readonly Assembly assembly = Assembly.GetExecutingAssembly();
         private readonly IniFile CONFIG_INI_FILE     = new IniFile(INI_FILE);
         private readonly CultureInfo MY_CULTURE      = new CultureInfo(CULTURE_CURRENT, false);
         private readonly ProcessStartInfo START_INFO = new ProcessStartInfo();
@@ -130,6 +130,7 @@ namespace GCBM
 
             LoadConfigFile();
             AboutTranslator();
+            //DetectOSLanguage();
             AdjustLanguage();
             UpdateProgram();
             LoadDatabaseXML();
@@ -141,15 +142,13 @@ namespace GCBM
             DisableOptionsGame(dgvGameList);
             tscbDiscDrive.SelectedIndex = 0;
             cbFilterDatabase.SelectedIndex = 0;
-            //LoadConfigFile();
 
             if (!File.Exists(WIITDB_FILE))
             {
                 CheckWiiTdbXml();
             }
 
-            // Conforme a versão do programa
-            // DESATIVAR
+            // DISABLED
             tsmiExportCSV.Enabled = false;
             tsmiExportHTML.Enabled = false;
             //tsmiElfDol.Enabled = false;
@@ -157,7 +156,7 @@ namespace GCBM
             tsmiBurnMedia.Enabled = false;
             tsmiManageApp.Enabled = false;
             tsmiCreatePackage.Enabled = false;
-            // OCULTAR
+            // HIDE
             tsmiExportCSV.Visible = false;
             tsmiExportHTML.Visible = false;
             //tsmiElfDol.Visible = false;
@@ -202,8 +201,6 @@ namespace GCBM
         /// </summary>
         private void AboutTranslator()
         {
-            //PROG_VERSION = assembly.GetName().Version.ToString();
-
             if (File.Exists("config.ini"))
             {
                 if (CONFIG_INI_FILE.IniReadString("GCBM", "ProgVersion", "") != VERSION())
@@ -233,26 +230,64 @@ namespace GCBM
             switch (CONFIG_INI_FILE.IniReadInt("LANGUAGE", "ConfigLanguage"))
             {
                 case 0:
-                    Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("pt-BR");
+                    Thread.CurrentThread.CurrentUICulture = new CultureInfo("pt-BR");
                     this.Controls.Clear();
                     InitializeComponent();
                     break;
                 case 1:
-                    Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-US");
+                    Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
                     this.Controls.Clear();
                     InitializeComponent();
                     break;
                 case 2:
-                    Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("es");
+                    Thread.CurrentThread.CurrentUICulture = new CultureInfo("es");
                     this.Controls.Clear();
                     InitializeComponent();
                     break;
                 case 3:
-                    Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("ko");
+                    Thread.CurrentThread.CurrentUICulture = new CultureInfo("ko");
                     this.Controls.Clear();
                     InitializeComponent();
                     break;
             }
+        }
+        #endregion
+
+        #region Detect OS Language
+        private void DetectOSLanguage()
+        {
+            switch (CultureInfo.InstalledUICulture.IetfLanguageTag)
+            {
+                case "en-US":
+                    Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
+                    this.Controls.Clear();
+                    InitializeComponent();
+                    break;
+                case "es":
+                    Thread.CurrentThread.CurrentUICulture = new CultureInfo("es");
+                    this.Controls.Clear();
+                    InitializeComponent();
+                    break;
+                case "ko":
+                    Thread.CurrentThread.CurrentUICulture = new CultureInfo("ko");
+                    this.Controls.Clear();
+                    InitializeComponent();
+                    break;
+                default:
+                    Thread.CurrentThread.CurrentUICulture = new CultureInfo("pt-BR");
+                    this.Controls.Clear();
+                    InitializeComponent();
+                    break;
+            }
+
+            // Nome em inlês
+            //tbLog.AppendText(System.Globalization.CultureInfo.InstalledUICulture.EnglishName + Environment.NewLine);
+            // Nome local
+            //tbLog.AppendText(System.Globalization.CultureInfo.InstalledUICulture.NativeName + Environment.NewLine);
+            // ISO
+            //tbLog.AppendText(System.Globalization.CultureInfo.InstalledUICulture.ThreeLetterISOLanguageName + Environment.NewLine);
+            // RFC <-- usar este aqui!!!
+            //tbLog.AppendText(System.Globalization.CultureInfo.InstalledUICulture.IetfLanguageTag + Environment.NewLine);
         }
         #endregion
 
