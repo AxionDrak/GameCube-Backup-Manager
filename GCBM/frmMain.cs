@@ -35,9 +35,9 @@ namespace GCBM
         #region Properties
         private static string GET_CURRENT_PATH       = Directory.GetCurrentDirectory();
         private static string TEMP_DIR               = @"\temp";
-        private static string COVERS_DIR             = @"\cover\cache";
+        private static string COVERS_DIR             = @"\covers\cache";
         private static string CULTURE_CURRENT        = "pt-BR";
-        private static string PROG_UPDATE            = "07/05/2022";
+        private static string PROG_UPDATE            = "08/05/2022";
         //private static string CURRENT_DIRECTORY;
         //private static string STANDARD_DIRECTORY;
         //private static string FILE_TDBXML;
@@ -1671,9 +1671,9 @@ namespace GCBM
         private void RequiredDirectories()
         {
             // Temporary directory default
-            if (!Directory.Exists(GET_CURRENT_PATH + @"\temp"))
+            if (!Directory.Exists(GET_CURRENT_PATH + TEMP_DIR))
             {
-                Directory.CreateDirectory(GET_CURRENT_PATH + @"\temp");
+                Directory.CreateDirectory(GET_CURRENT_PATH + TEMP_DIR);
                 tbLog.AppendText("[" + DateString() + "]" + GCBM.Properties.Resources.RequiredDirectories_String1 + Environment.NewLine);
             }
             else
@@ -1682,23 +1682,23 @@ namespace GCBM
             }
 
             // Cover Directory
-            if (!Directory.Exists(GET_CURRENT_PATH + @"\covers\"))
+            if (!Directory.Exists(GET_CURRENT_PATH + COVERS_DIR))
             {
                 // US - Covers Directory
-                Directory.CreateDirectory(GET_CURRENT_PATH + @"\covers\cache\US\2d\"); // 2D
-                Directory.CreateDirectory(GET_CURRENT_PATH + @"\covers\cache\US\3d\"); // 3D
-                Directory.CreateDirectory(GET_CURRENT_PATH + @"\covers\cache\US\disc\"); // Disc
-                Directory.CreateDirectory(GET_CURRENT_PATH + @"\covers\cache\US\full\"); // Full
+                Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + @"\US\2d\"); // 2D
+                Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + @"\US\3d\"); // 3D
+                Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + @"\US\disc\"); // Disc
+                Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + @"\US\full\"); // Full
                 // JA - Covers Directory
-                Directory.CreateDirectory(GET_CURRENT_PATH + @"\covers\cache\JA\2d\"); // 2D
-                Directory.CreateDirectory(GET_CURRENT_PATH + @"\covers\cache\JA\3d\"); // 3D
-                Directory.CreateDirectory(GET_CURRENT_PATH + @"\covers\cache\JA\disc\"); // Disc
-                Directory.CreateDirectory(GET_CURRENT_PATH + @"\covers\cache\JA\full\"); // Full
+                Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + @"\JA\2d\"); // 2D
+                Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + @"\JA\3d\"); // 3D
+                Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + @"\JA\disc\"); // Disc
+                Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + @"\JA\full\"); // Full
                 // EN - Covers Directory
-                Directory.CreateDirectory(GET_CURRENT_PATH + @"\covers\cache\EN\2d\"); // 2D
-                Directory.CreateDirectory(GET_CURRENT_PATH + @"\covers\cache\EN\3d\"); // 3D
-                Directory.CreateDirectory(GET_CURRENT_PATH + @"\covers\cache\EN\disc\"); // Disc
-                Directory.CreateDirectory(GET_CURRENT_PATH + @"\covers\cache\EN\full\"); // Full
+                Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + @"\EN\2d\"); // 2D
+                Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + @"\EN\3d\"); // 3D
+                Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + @"\EN\disc\"); // Disc
+                Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + @"\EN\full\"); // Full
 
                 tbLog.AppendText("[" + DateString() + "]" + GCBM.Properties.Resources.RequiredDirectories_String4 + Environment.NewLine);
             }
@@ -3036,9 +3036,6 @@ namespace GCBM
                         }
                     }
                 }
-                //frmDownloadGameTDB _frmGameTDB = new frmDownloadGameTDB();
-                //_frmGameTDB.ShowDialog();
-                //_frmGameTDB.Dispose();
             }
             else
             {
@@ -3053,7 +3050,8 @@ namespace GCBM
         {
             if (tbLog.Text != String.Empty)
             {
-                DialogResult dr = MessageBox.Show(GCBM.Properties.Resources.ClearLog, GCBM.Properties.Resources.Notice, MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+                DialogResult dr = MessageBox.Show(GCBM.Properties.Resources.ClearLog, GCBM.Properties.Resources.Notice, 
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
 
                 if (dr == DialogResult.Yes)
                 {
@@ -3063,7 +3061,8 @@ namespace GCBM
             }
             else
             {
-                MessageBox.Show(GCBM.Properties.Resources.ClearLogNotFound, GCBM.Properties.Resources.Notice, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(GCBM.Properties.Resources.ClearLogNotFound, GCBM.Properties.Resources.Notice, 
+                    MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
         #endregion
@@ -3125,7 +3124,6 @@ namespace GCBM
         #region tsmiReloadGameListDisc_Click
         private void tsmiReloadGameListDisc_Click(object sender, EventArgs e)
         {
-            //UpdateGameList(tscbDiscDrive.SelectedItem + @"games\", dgvGameListDisc);
             DisplayFilesSelected(tscbDiscDrive.SelectedItem + @"games\", dgvGameListDisc);
         }
         #endregion
@@ -3157,7 +3155,6 @@ namespace GCBM
                             int _code = form.RETURN_CONFIRM;
                             if (_code == 1)
                             {
-                                //UpdateGameList(fbd1.SelectedPath, dgvGameList);
                                 DisplayFilesSelected(fbd1.SelectedPath, dgvGameList);
                             }
                         }
@@ -3175,32 +3172,9 @@ namespace GCBM
         }
         #endregion
 
-        #region tsmiNotifyDisplay_Click
-        private void tsmiNotifyDisplay_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Normal;
-            this.Show();
-            //this.TopLevel = true;
-            //this.TopMost = true;
-            //this.BringToFront();
-            //this.Activate();
-        }
-        #endregion
-
-        #region tsmiNotifyConfig_Click
-        private void tsmiNotifyConfig_Click(object sender, EventArgs e)
-        {
-            frmConfig _frmConfig = new frmConfig();
-            _frmConfig.StartPosition = FormStartPosition.CenterScreen;
-            _frmConfig.ShowDialog();
-            _frmConfig.Dispose();
-        }
-        #endregion
-
         #region tsmiGameDiscDeleteAllFiles_Click
         private void tsmiGameDiscDeleteAllFiles_Click(object sender, EventArgs e)
         {
-            //DeleteAllGames(1);
             GlobalDeleteAllGames(dgvGameListDisc);
         }
         #endregion
@@ -3500,8 +3474,7 @@ namespace GCBM
                                 }
                                 else
                                 {
-                                    // Se o diretório GAMES já existir, efetuar o carregamento do conteúdo de forma recursiva
-                                    //DisplayFilesSelectedDiscDrive(tscbDiscDrive.Text + @"games\");
+                                    // If the GAMES directory already exists, load the content recursively.
                                     DisplayFilesSelected(tscbDiscDrive.Text + @"games\", dgvGameListDisc);
                                 }
                             }
@@ -3519,8 +3492,7 @@ namespace GCBM
                                 }
                                 else
                                 {
-                                    // Se o diretório GAMES já existir, efetuar o carregamento do conteúdo de forma recursiva
-                                    //DisplayFilesSelectedDiscDrive(tscbDiscDrive.Text + @"games\");
+                                    // If the GAMES directory already exists, load the content recursively.
                                     DisplayFilesSelected(tscbDiscDrive.Text + @"games\", dgvGameListDisc);
                                 }
                             }
@@ -3545,9 +3517,7 @@ namespace GCBM
         /// <param name="e"></param>
         private void txtLog_TextChanged(object sender, EventArgs e)
         {
-            int _amount = tbLog.Lines.Length;
-
-            if (_amount > 14)
+            if (tbLog.Lines.Length > 14)
             {
                 tabMainLog.Text = "Log *";
                 tbLog.SelectionStart = tbLog.TextLength;
@@ -3559,9 +3529,6 @@ namespace GCBM
                 tbLog.SelectionStart = tbLog.TextLength;
                 tbLog.ScrollToCaret();
             }
-            //txtLog.SelectionStart = txtLog.Text.Length;
-            //txtLog.ScrollToCaret();
-            //txtLog.Refresh();
         }
         #endregion
 
@@ -3629,19 +3596,19 @@ namespace GCBM
 
                     if (lvDatabase.SelectedItems[0].SubItems[2].Text.ToString() == "NTSC-U")
                     {
-                        _region = "US/";
+                        _region = "US";
                     }
                     else if (lvDatabase.SelectedItems[0].SubItems[2].Text.ToString() == "NTSC-J")
                     {
-                        _region = "JA/";
+                        _region = "JA";
                     }
                     else if (lvDatabase.SelectedItems[0].SubItems[2].Text.ToString() == "NTSC-K")
                     {
-                        _region = "JA/";
+                        _region = "JA";
                     }
                     else //if (lvDatabase.SelectedItems[2].Text.ToString() == "PAL")
                     {
-                        _region = "EN/";
+                        _region = "EN";
                     }
 
                     // Pega as capas Disc do dispositivo
@@ -3767,13 +3734,10 @@ namespace GCBM
             try
             {
                 fbd1.Description = GCBM.Properties.Resources.SelectFolderContainingIsoGcmFiles;
-                //fbd1.RootFolder = Environment.SpecialFolder.Desktop;
                 fbd1.ShowNewFolderButton = false;
                 if (fbd1.ShowDialog() == DialogResult.OK)
                 {
-                    //DisplayFilesSelectedFolder(fbd1.SelectedPath);
                     DisplayFilesSelected(fbd1.SelectedPath, dgvGameList);
-                    //pathMainDirectory = fbd1.SelectedPath;
                     ListIsoFile();
                 }
             }
