@@ -20,6 +20,8 @@ All Releases: https://github.com/AxionDrak/GameCube-Backup-Manager/releases
 
 ### Features:
 
+**NOTE: At the moment the program only allows the individual transfer of ISO/GCM files. It is not possible to select more than one file for batch transfer. This should be fixed at some point in the future.**
+
 + Reads ISO / GCM / NKit (ISO )
 + Writes ISO
 + Execution of multiple instances of the program.
