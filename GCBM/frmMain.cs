@@ -74,7 +74,7 @@ namespace GCBM
         private bool FILENAME_SORT                   = true;
         private bool RETRIEVE_FILES_INFO             = true;
         //private int Reserved;
-        private readonly Assembly assembly = Assembly.GetExecutingAssembly();
+        private readonly Assembly assembly           = Assembly.GetExecutingAssembly();
         private readonly IniFile CONFIG_INI_FILE     = new IniFile(INI_FILE);
         private readonly CultureInfo MY_CULTURE      = new CultureInfo(CULTURE_CURRENT, false);
         private readonly ProcessStartInfo START_INFO = new ProcessStartInfo();
@@ -1387,22 +1387,38 @@ namespace GCBM
         {
             try
             {
-                if (_IDRegionCode.Equals("e"))
+                switch (_IDRegionCode)
                 {
-                    LINK_DOMAIN = "US";
+                    case "e":
+                        LINK_DOMAIN = "US";
+                        break;
+                    case "p":
+                        LINK_DOMAIN = "EN";
+                        break;
+                    case "j":
+                        LINK_DOMAIN = "JA";
+                        break;
+                    default:
+                        GlobalNotifications(GCBM.Properties.Resources.UnknownRegion, ToolTipIcon.Info);
+                        break;
                 }
-                else if (_IDRegionCode.Equals("p"))
-                {
-                    LINK_DOMAIN = "EN";
-                }
-                else if (_IDRegionCode.Equals("j"))
-                {
-                    LINK_DOMAIN = "JA";
-                }
-                else
-                {
-                    GlobalNotifications(GCBM.Properties.Resources.UnknownRegion, ToolTipIcon.Info);
-                }
+
+                //if (_IDRegionCode.Equals("e"))
+                //{
+                //    LINK_DOMAIN = "US";
+                //}
+                //else if (_IDRegionCode.Equals("p"))
+                //{
+                //    LINK_DOMAIN = "EN";
+                //}
+                //else if (_IDRegionCode.Equals("j"))
+                //{
+                //    LINK_DOMAIN = "JA";
+                //}
+                //else
+                //{
+                //    GlobalNotifications(GCBM.Properties.Resources.UnknownRegion, ToolTipIcon.Info);
+                //}
             }
             catch (Exception ex)
             {
