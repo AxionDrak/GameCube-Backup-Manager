@@ -13,11 +13,14 @@ namespace GCBM
 {
     public partial class frmSplashScreen : Form
     {
+        #region Properties
         private const string INI_FILE            = "config.ini";
         private readonly IniFile CONFIG_INI_FILE = new IniFile(INI_FILE);
         private delegate void ProgressDelegate(int progress);
         private ProgressDelegate del;
+        #endregion
 
+        #region Main Form
         public frmSplashScreen()
         {
             InitializeComponent();
@@ -27,7 +30,9 @@ namespace GCBM
             this.pbSplashScreen.Maximum = 100;
             del = this.UpdateProgressInternal;
         }
+        #endregion
 
+        #region Adjust Language
         private void AdjustLanguage()
         {
             switch (CONFIG_INI_FILE.IniReadInt("LANGUAGE", "ConfigLanguage"))
@@ -54,13 +59,17 @@ namespace GCBM
                     break;
             }
         }
+        #endregion
 
+        #region Current Year
         private void CurrentYear()
         {
             DateTime _currentYear = DateTime.Now;
             tsslCurrentYear.Text = "Copyright © 2019 - " + _currentYear.Year.ToString() + " Laete Meireles";
         }
+        #endregion
 
+        #region Update Progress Internal
         private void UpdateProgressInternal(int progress)
         {
             if (this.Handle == null)
@@ -69,10 +78,13 @@ namespace GCBM
             }
             this.pbSplashScreen.Value = progress;
         }
+        #endregion
+
+        #region Update Progress
         public void UpdateProgress(int progress)
         {
             this.Invoke(del, progress);
         }
-
+        #endregion
     }
 }
