@@ -36,6 +36,7 @@ namespace GCBM
         private static string GET_CURRENT_PATH       = Directory.GetCurrentDirectory();
         private static string TEMP_DIR               = @"\temp";
         private static string COVERS_DIR             = @"\covers\cache";
+        private static string MEDIA_DIR              = @"\media\covers";
         private static string CULTURE_CURRENT        = "pt-BR";
         private static string PROG_UPDATE            = "08/05/2022";
         //private static string CURRENT_DIRECTORY;
@@ -1098,8 +1099,6 @@ namespace GCBM
         }
         #endregion
 
-        // REWRITE FUNCTION - Get All Drives
-
         #region Get All Drives
         /// <summary>
         /// Gets a list of all connected drives.
@@ -1107,13 +1106,6 @@ namespace GCBM
         private void GetAllDrives()
         {
             DriveInfo[] allDrives = DriveInfo.GetDrives();
-            // Creates a DataTable with file data.
-            //DataTable extra = new DataTable();
-            //extra.Columns.Add("Dispositivo");
-            //extra.Columns.Add("Tipo");
-            //extra.Columns.Add("Volume");
-            //extra.Columns.Add("Total");
-            //extra.Columns.Add("Livre");
 
             tscbDiscDrive.Items.Clear();
             tscbDiscDrive.Items.Add(GCBM.Properties.Resources.GetAllDrives_Inactive);
@@ -1123,8 +1115,6 @@ namespace GCBM
             {
                 if (d.IsReady == true)
                 {
-                    //extra.Rows.Add(d.Name, d.DriveType, d.VolumeLabel, DisplayFormatFileSize(d.TotalSize, 0),
-                    //    DisplayFormatFileSize(d.AvailableFreeSpace, 0));                   
                     tscbDiscDrive.Items.Add(d.Name);
                 }
             }
@@ -1376,8 +1366,6 @@ namespace GCBM
         }
         #endregion
 
-        // REWRITE FUNCTION - Load Cover
-
         #region Load Cover
         /// <summary>
         /// Loads the respective Disk and 2D image files into the loaded ISO/GCM file.
@@ -1402,46 +1390,28 @@ namespace GCBM
                         GlobalNotifications(GCBM.Properties.Resources.UnknownRegion, ToolTipIcon.Info);
                         break;
                 }
-
-                //if (_IDRegionCode.Equals("e"))
-                //{
-                //    LINK_DOMAIN = "US";
-                //}
-                //else if (_IDRegionCode.Equals("p"))
-                //{
-                //    LINK_DOMAIN = "EN";
-                //}
-                //else if (_IDRegionCode.Equals("j"))
-                //{
-                //    LINK_DOMAIN = "JA";
-                //}
-                //else
-                //{
-                //    GlobalNotifications(GCBM.Properties.Resources.UnknownRegion, ToolTipIcon.Info);
-                //}
             }
             catch (Exception ex)
             {
                 tbLog.Text = ex.ToString();
-                //GlobalNotifications(ex.Message);
             }
 
-            if (File.Exists(GET_CURRENT_PATH + @"\covers\cache\" + LINK_DOMAIN + @"\disc\" + _idGame + ".png"))
+            if (File.Exists(GET_CURRENT_PATH + COVERS_DIR + @"\" + LINK_DOMAIN + @"\disc\" + _idGame + ".png"))
             {
-                pbGameDisc.LoadAsync(GET_CURRENT_PATH + @"\covers\cache\" + LINK_DOMAIN + @"\disc\" + _idGame + ".png");
+                pbGameDisc.LoadAsync(GET_CURRENT_PATH + COVERS_DIR + @"\" + LINK_DOMAIN + @"\disc\" + _idGame + ".png");
             }
             else
             {
-                pbGameDisc.LoadAsync(GET_CURRENT_PATH + @"\media\covers\disc.png");
+                pbGameDisc.LoadAsync(GET_CURRENT_PATH + MEDIA_DIR + @"\disc.png");
             }
 
-            if (File.Exists(GET_CURRENT_PATH + @"\covers\cache\" + LINK_DOMAIN + @"\3d\" + _idGame + ".png"))
+            if (File.Exists(GET_CURRENT_PATH + COVERS_DIR + @"\" + LINK_DOMAIN + @"\3d\" + _idGame + ".png"))
             {
-                pbGameCover3D.LoadAsync(GET_CURRENT_PATH + @"\covers\cache\" + LINK_DOMAIN + @"\3d\" + _idGame + ".png");
+                pbGameCover3D.LoadAsync(GET_CURRENT_PATH + COVERS_DIR + @"\" + LINK_DOMAIN + @"\3d\" + _idGame + ".png");
             }
             else
             {
-                pbGameCover3D.LoadAsync(GET_CURRENT_PATH + @"\media\covers\3d.png");
+                pbGameCover3D.LoadAsync(GET_CURRENT_PATH + MEDIA_DIR + @"\3d.png");
             }
         }
         #endregion
@@ -1458,6 +1428,8 @@ namespace GCBM
             {
                 string _IDGameCode = dgv.Rows[dgvResultRow.Index].Cells[4].Value.ToString();
                 DirectoryOpenGameList(_IDGameCode);
+
+                //tbLog.AppendText(_IDRegionCode + Environment.NewLine);
 
                 switch (_IDRegionCode)
                 {
@@ -1486,7 +1458,7 @@ namespace GCBM
                     if (NET_RESPONSE.StatusCode == HttpStatusCode.OK)
                     {
                         tbLog.AppendText("[" + DateString() + "]" + GCBM.Properties.Resources.DownloadDiscCover + _IDMakerCode + ".png" + Environment.NewLine);
-                        NET_CLIENT.DownloadFileAsync(myLinkCoverDisc, GET_CURRENT_PATH + @"\covers\cache\" + LINK_DOMAIN + @"\disc\" + _IDMakerCode + ".png");
+                        NET_CLIENT.DownloadFileAsync(myLinkCoverDisc, GET_CURRENT_PATH + COVERS_DIR + @"\" + LINK_DOMAIN + @"\disc\" + _IDMakerCode + ".png");
                         while (NET_CLIENT.IsBusy) { Application.DoEvents(); }
                     }
                 }
@@ -1514,7 +1486,7 @@ namespace GCBM
                     if (NET_RESPONSE.StatusCode == HttpStatusCode.OK)
                     {
                         tbLog.AppendText("[" + DateString() + "]" + GCBM.Properties.Resources.Download3DCover + _IDMakerCode + ".png" + Environment.NewLine);
-                        NET_CLIENT.DownloadFileAsync(myLinkCover3D, GET_CURRENT_PATH + @"\covers\cache\" + LINK_DOMAIN + @"\3d\" + _IDMakerCode + ".png");
+                        NET_CLIENT.DownloadFileAsync(myLinkCover3D, GET_CURRENT_PATH + COVERS_DIR + @"\" + LINK_DOMAIN + @"\3d\" + _IDMakerCode + ".png");
                         while (NET_CLIENT.IsBusy) { Application.DoEvents(); }
                     }
                 }
@@ -1577,7 +1549,7 @@ namespace GCBM
                     if (NET_RESPONSE.StatusCode == HttpStatusCode.OK)
                     {
                         tbLog.AppendText("[" + DateString() + "]" + GCBM.Properties.Resources.DownloadDiscCover + _IDMakerCode + ".png" + Environment.NewLine);
-                        NET_CLIENT.DownloadFileAsync(myLinkCoverDisc, GET_CURRENT_PATH + @"\covers\cache\" + LINK_DOMAIN + @"\disc\" + _IDMakerCode + ".png");
+                        NET_CLIENT.DownloadFileAsync(myLinkCoverDisc, GET_CURRENT_PATH + COVERS_DIR + @"\" + LINK_DOMAIN + @"\disc\" + _IDMakerCode + ".png");
                         while (NET_CLIENT.IsBusy) { Application.DoEvents(); }
                     }
                 }
@@ -1606,7 +1578,7 @@ namespace GCBM
                     if (NET_RESPONSE.StatusCode == HttpStatusCode.OK)
                     {
                         tbLog.AppendText("[" + DateString() + "]" + GCBM.Properties.Resources.Download3DCover + _IDMakerCode + ".png" + Environment.NewLine);
-                        NET_CLIENT.DownloadFileAsync(myLinkCover3D, GET_CURRENT_PATH + @"\covers\cache\" + LINK_DOMAIN + @"\3d\" + _IDMakerCode + ".png");
+                        NET_CLIENT.DownloadFileAsync(myLinkCover3D, GET_CURRENT_PATH + COVERS_DIR + @"\" + LINK_DOMAIN + @"\3d\" + _IDMakerCode + ".png");
                         while (NET_CLIENT.IsBusy) { Application.DoEvents(); }
                     }
                 }
@@ -1637,29 +1609,28 @@ namespace GCBM
         {
             try
             {
-                if (CONFIG_INI_FILE.IniReadString("GENERAL", "TemporaryFolder", "") == string.Empty)
-                {
-                    DirectoryInfo dir = new DirectoryInfo(GET_CURRENT_PATH + @"\temp");
-                    foreach (FileInfo fi in dir.GetFiles("*.*", SearchOption.AllDirectories))
-                    {
-                        fi.Delete();
-                    }
-                    //Directory.Delete(getCurrentPath + @"\temp", true);
-                }
-                else
+                if (Directory.Exists(CONFIG_INI_FILE.IniReadString("GENERAL", "TemporaryFolder", "")))
                 {
                     DirectoryInfo dir = new DirectoryInfo(CONFIG_INI_FILE.IniReadString("GENERAL", "TemporaryFolder", ""));
                     foreach (FileInfo fi in dir.GetFiles("*.*", SearchOption.AllDirectories))
                     {
                         fi.Delete();
+                        Directory.Delete(dir.ToString(), true);
                     }
-                    //Directory.Delete(dir.ToString(), true);
+                }
+                else
+                {
+                    DirectoryInfo dir = new DirectoryInfo(GET_CURRENT_PATH + TEMP_DIR);
+                    foreach (FileInfo fi in dir.GetFiles("*.*", SearchOption.AllDirectories))
+                    {
+                        fi.Delete();
+                        Directory.Delete(dir.ToString(), true);
+                    }
                 }
             }
             catch (Exception ex)
             {
                 tbLog.AppendText("[" + DateString() + "]" + GCBM.Properties.Resources.ClearTemp_String1 + Environment.NewLine);
-                //GlobalNotifications(GCBM.Properties.Resources.ClearTemp_String2);
             }
         }
         #endregion
@@ -1671,15 +1642,15 @@ namespace GCBM
         private void RequiredDirectories()
         {
             // Temporary directory default
-            if (!Directory.Exists(GET_CURRENT_PATH + TEMP_DIR))
+            if (!Directory.Exists(CONFIG_INI_FILE.IniReadString("GENERAL", "TemporaryFolder", "")))
             {
-                Directory.CreateDirectory(GET_CURRENT_PATH + TEMP_DIR);
+                Directory.CreateDirectory(CONFIG_INI_FILE.IniReadString("GENERAL", "TemporaryFolder", ""));
                 tbLog.AppendText("[" + DateString() + "]" + GCBM.Properties.Resources.RequiredDirectories_String1 + Environment.NewLine);
             }
             else
             {
                 tbLog.AppendText("[" + DateString() + "]" + GCBM.Properties.Resources.RequiredDirectories_String2 + Environment.NewLine);
-            }
+            }    
 
             // Cover Directory
             if (!Directory.Exists(GET_CURRENT_PATH + COVERS_DIR))
@@ -3593,6 +3564,22 @@ namespace GCBM
                 try
                 {
                     string _region;
+
+                    //switch (lvDatabase.SelectedItems[0].SubItems[2].Text.ToString())
+                    //{
+                    //    case "NTSC-J":
+                    //        _region = "JA";
+                    //        break;
+                    //    case "NTSC-K":
+                    //        _region = "JA";
+                    //        break;
+                    //    case "PAL":
+                    //        _region = "EN";
+                    //        break;
+                    //    default:
+                    //        _region = "US";
+                    //        break;
+                    //}
 
                     if (lvDatabase.SelectedItems[0].SubItems[2].Text.ToString() == "NTSC-U")
                     {
