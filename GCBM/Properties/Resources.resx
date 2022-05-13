@@ -733,4 +733,10 @@
   <data name="GCBM_Language" xml:space="preserve">
     <value>Portuguese [Brazil]</value>
   </data>
+  <data name="DestinyDrive_AvailableSpace" xml:space="preserve">
+    <value>Espaço disponível: </value>
+  </data>
+  <data name="DestinyDrive_TotalSpace" xml:space="preserve">
+    <value>Espaço total: </value>
+  </data>
 </root>

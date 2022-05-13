@@ -79,6 +79,8 @@ namespace GCBM
             this.tsmiExportHTML = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiExportCSV = new System.Windows.Forms.ToolStripMenuItem();
             this.tabMainDisc = new System.Windows.Forms.TabPage();
+            this.lblSpaceAvailabeOnDevice = new System.Windows.Forms.Label();
+            this.lblSpaceTotalOnDevice = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -554,6 +556,8 @@ namespace GCBM
             // 
             // tabMainDisc
             // 
+            this.tabMainDisc.Controls.Add(this.lblSpaceAvailabeOnDevice);
+            this.tabMainDisc.Controls.Add(this.lblSpaceTotalOnDevice);
             this.tabMainDisc.Controls.Add(this.label3);
             this.tabMainDisc.Controls.Add(this.label2);
             this.tabMainDisc.Controls.Add(this.groupBox2);
@@ -562,6 +566,16 @@ namespace GCBM
             resources.ApplyResources(this.tabMainDisc, "tabMainDisc");
             this.tabMainDisc.Name = "tabMainDisc";
             this.tabMainDisc.UseVisualStyleBackColor = true;
+            // 
+            // lblSpaceAvailabeOnDevice
+            // 
+            resources.ApplyResources(this.lblSpaceAvailabeOnDevice, "lblSpaceAvailabeOnDevice");
+            this.lblSpaceAvailabeOnDevice.Name = "lblSpaceAvailabeOnDevice";
+            // 
+            // lblSpaceTotalOnDevice
+            // 
+            resources.ApplyResources(this.lblSpaceTotalOnDevice, "lblSpaceTotalOnDevice");
+            this.lblSpaceTotalOnDevice.Name = "lblSpaceTotalOnDevice";
             // 
             // label3
             // 
@@ -1446,6 +1460,8 @@ namespace GCBM
         private System.Windows.Forms.ToolStripMenuItem tsmiOfficialGitHub;
         private System.Windows.Forms.ToolStripMenuItem tsmiOfficialGBATemp;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
+        private System.Windows.Forms.Label lblSpaceAvailabeOnDevice;
+        private System.Windows.Forms.Label lblSpaceTotalOnDevice;
     }
 }
 

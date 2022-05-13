@@ -34,11 +34,18 @@ namespace GCBM
     {
         #region Properties
         private static string GET_CURRENT_PATH       = Directory.GetCurrentDirectory();
+        private static string GAMES_DIR              = @"\games";
         private static string TEMP_DIR               = @"\temp";
         private static string COVERS_DIR             = @"\covers\cache";
         private static string MEDIA_DIR              = @"\media\covers";
         private static string CULTURE_CURRENT        = "pt-BR";
         private static string PROG_UPDATE            = "08/05/2022";
+        private static string FAT32                  = "FAT32";
+        private static string NTFS                   = "NTFS";
+        private static string EXFAT_FAT64            = "EXFAT";
+        //private static string EXT2                   = "EXT2";
+        //private static string EXT3                   = "EXT3";
+        //private static string EXT4                   = "EXT4";
         //private static string CURRENT_DIRECTORY;
         //private static string STANDARD_DIRECTORY;
         //private static string FILE_TDBXML;
@@ -137,7 +144,6 @@ namespace GCBM
             LoadDatabaseXML();
             DisabeScreensaver();
             GetAllDrives();
-            CurrentYear();
             RegisterHeaderLog();
             RequiredDirectories();
             DisableOptionsGame(dgvGameList);
@@ -439,13 +445,14 @@ namespace GCBM
         }
         #endregion
 
-        #region DateString
+        #region Current Year and Date
         // Get the date and time
-        private static string DateString()
+        private string DateString()
         {
             DateTime dt = DateTime.Now;
             //int dts = dt.Millisecond;
             //string dtnew = dt.ToString("yyyy'-'MM'-'dd' 'HH':'mm':'ss") + "." + dts.ToString();
+            tsslCurrentYear.Text = "Copyright © 2019 - " + dt.Year.ToString() + " Laete Meireles";
             string dtnew = dt.ToString("yyyy'-'MM'-'dd' 'HH':'mm':'ss");
             return dtnew;
         }
@@ -628,8 +635,8 @@ namespace GCBM
             tbIDGame.Clear();
             tbIDDiscID.Clear();
             tbIDMakerCode.Clear();
-            pbGameDisc.LoadAsync(GET_CURRENT_PATH + @"\media\covers\disc.png");
-            pbGameCover3D.LoadAsync(GET_CURRENT_PATH + @"\media\covers\3d.png");
+            pbGameDisc.LoadAsync(GET_CURRENT_PATH +  MEDIA_DIR + @"\disc.png");
+            pbGameCover3D.LoadAsync(GET_CURRENT_PATH + MEDIA_DIR + @"\3d.png");
             pbWebGameID.Enabled = false;
             pbWebGameID.Image = Resources.globe_earth_grayscale_64;
             dgvGameList.DataSource = null;
@@ -691,7 +698,7 @@ namespace GCBM
                         using (DataSet ds = new DataSet())
                         {
                             ListViewItem itemXml;
-                            ds.ReadXml(@"wiitdb.xml");
+                            ds.ReadXml(WIITDB_FILE);
 
                             foreach (DataRow dr in ds.Tables["game"].Rows)
                             {
@@ -727,24 +734,13 @@ namespace GCBM
         }
         #endregion
 
-        #region Current Year
-        /// <summary>
-        /// Get the current year.
-        /// </summary>
-        private void CurrentYear()
-        {
-            DateTime _currentYear = DateTime.Now;
-            tsslCurrentYear.Text = "Copyright © 2019 - " + _currentYear.Year.ToString() + " Laete Meireles";
-        }
-        #endregion
-
         #region Load Config File
         /// <summary>
         /// Reads and loads the contents of the INI file.
         /// </summary>
         private void LoadConfigFile()
         {
-            if (File.Exists(GET_CURRENT_PATH + @"\config.ini"))
+            if (File.Exists(GET_CURRENT_PATH + @"\" + INI_FILE))
             {
                 if (CONFIG_INI_FILE.IniReadBool("SEVERAL", "WindowMaximized") == true)
                 {
@@ -1087,19 +1083,19 @@ namespace GCBM
         /// <param name="filters"></param>
         /// <param name="isRecursive"></param>
         /// <returns></returns>
-        private string[] GetFilesFolderDisc(string rootFolder, string[] filters, bool isRecursive)
-        {
-            List<string> filesFound = new List<string>();
-            // Sets options for displaying root folder images.
-            //isRecursive = false;
+        //private string[] GetFilesFolderDisc(string rootFolder, string[] filters, bool isRecursive)
+        //{
+        //    List<string> filesFound = new List<string>();
+        //    // Sets options for displaying root folder images.
+        //    //isRecursive = false;
 
-            var optionSearch = isRecursive ? SearchOption.AllDirectories : SearchOption.TopDirectoryOnly;
-            foreach (var filter in filters)
-            {
-                filesFound.AddRange(Directory.GetFiles(rootFolder, string.Format("*.{0}", filter), optionSearch));
-            }
-            return filesFound.ToArray();
-        }
+        //    var optionSearch = isRecursive ? SearchOption.AllDirectories : SearchOption.TopDirectoryOnly;
+        //    foreach (var filter in filters)
+        //    {
+        //        filesFound.AddRange(Directory.GetFiles(rootFolder, string.Format("*.{0}", filter), optionSearch));
+        //    }
+        //    return filesFound.ToArray();
+        //}
         #endregion
 
         #region Get All Drives
@@ -1123,30 +1119,6 @@ namespace GCBM
             }
         }
         #endregion
-
-        //#region Display Format File Size (Basic Version - Automatic)
-        ///// <summary>
-        ///// Display Format File Size (Basic Version - Automatic)
-        ///// </summary>
-        ///// <param name="bytes"></param>
-        ///// <returns></returns>
-        //public static string BytesToGB(long bytes)
-        //{
-        //    string result;
-        //    double _bytes = bytes;
-        //    string[] array_fs = new string[5] { "B", "KB", "MB", "GB", "TB" };
-        //    int num2_fs = 0;
-
-        //    while (_bytes >= 1024.0 && num2_fs < array_fs.Length - 1)
-        //    {
-        //        num2_fs++;
-        //        _bytes /= 1024.0;
-        //    }
-        //    result = $"{_bytes:0.##} {array_fs[num2_fs]}";
-
-        //    return result;
-        //}
-        //#endregion
 
         #region Display Format File Size
         /// <summary>
@@ -1227,6 +1199,30 @@ namespace GCBM
             reading = (reading / 1024);
             // Returns the suffix formatted number.
             return reading.ToString("0.## ") + suffix;
+        }
+        #endregion
+
+        #region Display Format File Size (Basic Version - Automatic)
+        /// <summary>
+        /// Display Format File Size (Basic Version - Automatic)
+        /// </summary>
+        /// <param name="bytes"></param>
+        /// <returns></returns>
+        public static string BytesToGB(long bytes)
+        {
+            string result;
+            double _bytes = bytes;
+            string[] array_fs = new string[5] { "B", "KB", "MB", "GB", "TB" };
+            int num2_fs = 0;
+
+            while (_bytes >= 1024.0 && num2_fs < array_fs.Length - 1)
+            {
+                num2_fs++;
+                _bytes /= 1024.0;
+            }
+            result = $"{_bytes:0.##} {array_fs[num2_fs]}";
+
+            return result;
         }
         #endregion
 
@@ -1344,8 +1340,8 @@ namespace GCBM
                     GlobalNotifications(GCBM.Properties.Resources.NotNintendoGameCubeFile + Environment.NewLine + 
                         GCBM.Properties.Resources.RecommendedDeleteOrMoveFile, ToolTipIcon.Info);
 
-                    pbGameDisc.LoadAsync(GET_CURRENT_PATH + @"\media\covers\disc.png");
-                    pbGameCover3D.LoadAsync(GET_CURRENT_PATH + @"\media\covers\3d.png");
+                    pbGameDisc.LoadAsync(GET_CURRENT_PATH + MEDIA_DIR + @"\disc.png");
+                    pbGameCover3D.LoadAsync(GET_CURRENT_PATH + MEDIA_DIR + @"\3d.png");
 
                     ERROR = true;
                 }
@@ -1795,7 +1791,7 @@ namespace GCBM
                 }
                 catch (Exception ex)
                 {
-                    tbLog.AppendText("[" + DateString() + "]" + " [ERRO] " + ex.Message + Environment.NewLine);
+                    tbLog.AppendText("[" + DateString() + "]" + GCBM.Properties.Resources.Error + ex.Message + Environment.NewLine);
                     GlobalNotifications(ex.Message, ToolTipIcon.Error);
                 }
             }
@@ -2113,7 +2109,7 @@ namespace GCBM
         /// <param name="icon"></param>
         private void GlobalNotifications(string message, ToolTipIcon icon)
         {
-            notifyIcon.ShowBalloonTip(10, "GameCube Backup Manager", message, icon);
+            notifyIcon.ShowBalloonTip(5, "GameCube Backup Manager", message, icon);
         }
 
         /// <summary>
@@ -2296,10 +2292,10 @@ namespace GCBM
                                 GlobalNotifications(GCBM.Properties.Resources.UnknownRegion, ToolTipIcon.Info);
                             }
 
-                            string cover2D   = GET_CURRENT_PATH + @"\covers\cache\" + LINK_DOMAIN + @"\2d\" + tbIDGame.Text + ".png";
-                            string cover3D   = GET_CURRENT_PATH + @"\covers\cache\" + LINK_DOMAIN + @"\3d\" + tbIDGame.Text + ".png";
-                            string coverDisc = GET_CURRENT_PATH + @"\covers\cache\" + LINK_DOMAIN + @"\disc\" + tbIDGame.Text + ".png";
-                            string coverFull = GET_CURRENT_PATH + @"\covers\cache\" + LINK_DOMAIN + @"\full\" + tbIDGame.Text + ".png";
+                            string cover2D   = GET_CURRENT_PATH + COVERS_DIR + @"\" + LINK_DOMAIN + @"\2d\" + tbIDGame.Text + ".png";
+                            string cover3D   = GET_CURRENT_PATH + COVERS_DIR + @"\" + LINK_DOMAIN + @"\3d\" + tbIDGame.Text + ".png";
+                            string coverDisc = GET_CURRENT_PATH + COVERS_DIR + @"\" + LINK_DOMAIN + @"\disc\" + tbIDGame.Text + ".png";
+                            string coverFull = GET_CURRENT_PATH + COVERS_DIR + @"\" + LINK_DOMAIN + @"\full\" + tbIDGame.Text + ".png";
 
                             // DELETAR JOGO E CAPA DO DISPOSITIVO DE ORIGEM
                             if (dgv == dgvGameList)
@@ -2396,10 +2392,10 @@ namespace GCBM
                                 GlobalNotifications(GCBM.Properties.Resources.UnknownRegion, ToolTipIcon.Info);
                             }
 
-                            DirectoryInfo di2D = new DirectoryInfo(GET_CURRENT_PATH + @"\covers\cache\" + LINK_DOMAIN + @"\2d\");
-                            DirectoryInfo di3D = new DirectoryInfo(GET_CURRENT_PATH + @"\covers\cache\" + LINK_DOMAIN + @"\3d\");
-                            DirectoryInfo diDisc = new DirectoryInfo(GET_CURRENT_PATH + @"\covers\cache\" + LINK_DOMAIN + @"\disc\");
-                            DirectoryInfo diFull = new DirectoryInfo(GET_CURRENT_PATH + @"\covers\cache\" + LINK_DOMAIN + @"\full\");
+                            DirectoryInfo di2D = new DirectoryInfo(GET_CURRENT_PATH + COVERS_DIR + @"\" + LINK_DOMAIN + @"\2d\");
+                            DirectoryInfo di3D = new DirectoryInfo(GET_CURRENT_PATH + COVERS_DIR + @"\" + LINK_DOMAIN + @"\3d\");
+                            DirectoryInfo diDisc = new DirectoryInfo(GET_CURRENT_PATH + COVERS_DIR + @"\" + LINK_DOMAIN + @"\disc\");
+                            DirectoryInfo diFull = new DirectoryInfo(GET_CURRENT_PATH + COVERS_DIR + @"\" + LINK_DOMAIN + @"\full\");
 
                             string[] files = GetFilesFolder(fbd1.SelectedPath, filters, false);
 
@@ -3431,46 +3427,79 @@ namespace GCBM
 
                 foreach (DriveInfo d in allDrives)
                 {
+                    //if (d.DriveType == DriveType.Removable && d.Name == tscbDiscDrive.SelectedItem.ToString())
+                    if (d.DriveType == DriveType.Fixed && d.Name == tscbDiscDrive.SelectedItem.ToString())
+                    {
+                        //tscbDiscDrive.Items.Add(d.Name);
+                        lblSpaceAvailabeOnDevice.Text = GCBM.Properties.Resources.DestinyDrive_AvailableSpace + BytesToGB(d.TotalFreeSpace);
+                        lblSpaceTotalOnDevice.Text = GCBM.Properties.Resources.DestinyDrive_TotalSpace + BytesToGB(d.TotalSize);
+                    }
+                    else if (tscbDiscDrive.SelectedIndex == 0)
+                    {
+                        lblSpaceAvailabeOnDevice.Text = GCBM.Properties.Resources.DestinyDrive_AvailableSpace;
+                        lblSpaceTotalOnDevice.Text = GCBM.Properties.Resources.DestinyDrive_TotalSpace;
+                    }
+
                     if (d.IsReady == true)
                     {
                         if (tscbDiscDrive.Text == d.Name)
                         {
-                            if (d.DriveFormat == "NTFS") // NTFS
+                            if (d.DriveFormat == NTFS)
                             {
                                 InvalidDrive(d.DriveFormat);
 
-                                if (!Directory.Exists(tscbDiscDrive.Text + @"\games"))
+                                if (!Directory.Exists(tscbDiscDrive.Text + GAMES_DIR))
                                 {
                                     DialogResult result = MessageBox.Show(GCBM.Properties.Resources.CreateGamesFolder,
                                         GCBM.Properties.Resources.Attention, MessageBoxButtons.YesNo, MessageBoxIcon.Warning);                                    
 
                                     if (result == DialogResult.Yes)
                                     {
-                                        Directory.CreateDirectory(tscbDiscDrive.Text + @"\games");
+                                        Directory.CreateDirectory(tscbDiscDrive.Text + GAMES_DIR);
                                     }
                                 }
                                 else
                                 {
                                     // If the GAMES directory already exists, load the content recursively.
-                                    DisplayFilesSelected(tscbDiscDrive.Text + @"games\", dgvGameListDisc);
+                                    DisplayFilesSelected(tscbDiscDrive.Text + GAMES_DIR, dgvGameListDisc);
+                                }
+                            }
+                            else if (d.DriveFormat == EXFAT_FAT64)
+                            {
+                                InvalidDrive(d.DriveFormat);
+
+                                if (!Directory.Exists(tscbDiscDrive.Text + GAMES_DIR))
+                                {
+                                    DialogResult result = MessageBox.Show(GCBM.Properties.Resources.CreateGamesFolder,
+                                        GCBM.Properties.Resources.Attention, MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                                    if (result == DialogResult.Yes)
+                                    {
+                                        Directory.CreateDirectory(tscbDiscDrive.Text + GAMES_DIR);
+                                    }
+                                }
+                                else
+                                {
+                                    // If the GAMES directory already exists, load the content recursively.
+                                    DisplayFilesSelected(tscbDiscDrive.Text + GAMES_DIR, dgvGameListDisc);
                                 }
                             }
                             else // FAT32 
                             {
-                                if (!Directory.Exists(tscbDiscDrive.Text + @"\games"))
+                                if (!Directory.Exists(tscbDiscDrive.Text + GAMES_DIR))
                                 {
                                     DialogResult result = MessageBox.Show(GCBM.Properties.Resources.CreateGamesFolderNow,
                                         GCBM.Properties.Resources.Attention, MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
                                     if (result == DialogResult.Yes)
                                     {
-                                        Directory.CreateDirectory(tscbDiscDrive.Text + @"\games");
+                                        Directory.CreateDirectory(tscbDiscDrive.Text + GAMES_DIR);
                                     }
                                 }
                                 else
                                 {
                                     // If the GAMES directory already exists, load the content recursively.
-                                    DisplayFilesSelected(tscbDiscDrive.Text + @"games\", dgvGameListDisc);
+                                    DisplayFilesSelected(tscbDiscDrive.Text + GAMES_DIR, dgvGameListDisc);
                                 }
                             }
                             //label6.Text = "Tamanho Total: " + d.TotalSize / (1024 * 1024) + " MB\nFormato Drive: " + d.DriveFormat + " \nDisponível: " + d.AvailableFreeSpace / (1024 * 1024) + " MB\n" + d.DriveType;
@@ -3562,6 +3591,8 @@ namespace GCBM
         }
         #endregion
 
+        // VERIFICAR !!!
+
         #region lvDatabase_Click
         private void lvDatabase_Click(object sender, EventArgs e)
         {
@@ -3605,9 +3636,9 @@ namespace GCBM
                     }
 
                     // Pega as capas Disc do dispositivo
-                    if (File.Exists(GET_CURRENT_PATH + @"\covers\cache\" + _region + @"\disc\" + lvDatabase.SelectedItems[0].Text.ToString() + ".png"))
+                    if (File.Exists(GET_CURRENT_PATH + COVERS_DIR + @"\" + _region + @"\disc\" + lvDatabase.SelectedItems[0].Text.ToString() + ".png"))
                     {
-                        pbGameDisc.LoadAsync(GET_CURRENT_PATH + @"\covers\cache\" + _region + @"\disc\" + lvDatabase.SelectedItems[0].Text.ToString() + ".png");
+                        pbGameDisc.LoadAsync(GET_CURRENT_PATH + COVERS_DIR + @"\" + _region + @"\disc\" + lvDatabase.SelectedItems[0].Text.ToString() + ".png");
                     }
                     else
                     {
@@ -3644,9 +3675,9 @@ namespace GCBM
                     }
 
                     //Pega as capas 3D do dispositivo
-                    if (File.Exists(GET_CURRENT_PATH + @"\covers\cache\" + _region + @"\3d\" + lvDatabase.SelectedItems[0].Text.ToString() + ".png"))
+                    if (File.Exists(GET_CURRENT_PATH + COVERS_DIR + @"\" + _region + @"\3d\" + lvDatabase.SelectedItems[0].Text.ToString() + ".png"))
                     {
-                        pbGameCover3D.LoadAsync(GET_CURRENT_PATH + @"\covers\cache\" + _region + @"\3d\" + lvDatabase.SelectedItems[0].Text.ToString() + ".png");
+                        pbGameCover3D.LoadAsync(GET_CURRENT_PATH + COVERS_DIR + @"\" + _region + @"\3d\" + lvDatabase.SelectedItems[0].Text.ToString() + ".png");
                     }
                     else
                     {
