@@ -522,6 +522,24 @@ namespace GCBM.Properties {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Espaço disponível: .
+        /// </summary>
+        internal static string DestinyDrive_AvailableSpace {
+            get {
+                return ResourceManager.GetString("DestinyDrive_AvailableSpace", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Espaço total: .
+        /// </summary>
+        internal static string DestinyDrive_TotalSpace {
+            get {
+                return ResourceManager.GetString("DestinyDrive_TotalSpace", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Deseja realmente excluir o(s) arquivo(s) ? .
         /// </summary>
         internal static string DialogResultDeleteGame_ReallyDeleteFile_String1 {
