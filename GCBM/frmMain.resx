@@ -1666,7 +1666,7 @@
     <value>3, 3</value>
   </data>
   <data name="mstripFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>867, 24</value>
+    <value>873, 24</value>
   </data>
   <data name="mstripFile.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -1690,7 +1690,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabMainFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>873, 514</value>
+    <value>879, 514</value>
   </data>
   <data name="tabMainFile.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1713,6 +1713,72 @@
   <metadata name="tabMainDisc.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="lblSpaceAvailabeOnDevice.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblSpaceAvailabeOnDevice.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  </data>
+  <data name="lblSpaceAvailabeOnDevice.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblSpaceAvailabeOnDevice.Location" type="System.Drawing.Point, System.Drawing">
+    <value>514, 265</value>
+  </data>
+  <data name="lblSpaceAvailabeOnDevice.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 13</value>
+  </data>
+  <data name="lblSpaceAvailabeOnDevice.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="lblSpaceAvailabeOnDevice.Text" xml:space="preserve">
+    <value>Espaço disponível: </value>
+  </data>
+  <data name="&gt;&gt;lblSpaceAvailabeOnDevice.Name" xml:space="preserve">
+    <value>lblSpaceAvailabeOnDevice</value>
+  </data>
+  <data name="&gt;&gt;lblSpaceAvailabeOnDevice.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblSpaceAvailabeOnDevice.Parent" xml:space="preserve">
+    <value>tabMainDisc</value>
+  </data>
+  <data name="&gt;&gt;lblSpaceAvailabeOnDevice.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblSpaceTotalOnDevice.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblSpaceTotalOnDevice.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  </data>
+  <data name="lblSpaceTotalOnDevice.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblSpaceTotalOnDevice.Location" type="System.Drawing.Point, System.Drawing">
+    <value>514, 284</value>
+  </data>
+  <data name="lblSpaceTotalOnDevice.Size" type="System.Drawing.Size, System.Drawing">
+    <value>86, 13</value>
+  </data>
+  <data name="lblSpaceTotalOnDevice.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="lblSpaceTotalOnDevice.Text" xml:space="preserve">
+    <value>Espaço total: </value>
+  </data>
+  <data name="&gt;&gt;lblSpaceTotalOnDevice.Name" xml:space="preserve">
+    <value>lblSpaceTotalOnDevice</value>
+  </data>
+  <data name="&gt;&gt;lblSpaceTotalOnDevice.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblSpaceTotalOnDevice.Parent" xml:space="preserve">
+    <value>tabMainDisc</value>
+  </data>
+  <data name="&gt;&gt;lblSpaceTotalOnDevice.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <metadata name="label3.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -1747,7 +1813,7 @@
     <value>tabMainDisc</value>
   </data>
   <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
   <metadata name="label2.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -1783,7 +1849,7 @@
     <value>tabMainDisc</value>
   </data>
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <metadata name="groupBox2.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -2026,7 +2092,7 @@
     <value>tabMainDisc</value>
   </data>
   <data name="&gt;&gt;groupBox2.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <metadata name="dgvGameListDisc.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -2059,7 +2125,7 @@
     <value>tabMainDisc</value>
   </data>
   <data name="&gt;&gt;dgvGameListDisc.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <metadata name="mstripDisc.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>577, 11</value>
@@ -2197,7 +2263,7 @@
     <value>3, 3</value>
   </data>
   <data name="mstripDisc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>867, 27</value>
+    <value>873, 27</value>
   </data>
   <data name="mstripDisc.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -2212,7 +2278,7 @@
     <value>tabMainDisc</value>
   </data>
   <data name="&gt;&gt;mstripDisc.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="tabMainDisc.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
@@ -2221,7 +2287,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabMainDisc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>873, 514</value>
+    <value>879, 514</value>
   </data>
   <data name="tabMainDisc.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -2431,7 +2497,7 @@
     <value>3, 3</value>
   </data>
   <data name="mstripDatabase.Size" type="System.Drawing.Size, System.Drawing">
-    <value>867, 24</value>
+    <value>873, 24</value>
   </data>
   <data name="mstripDatabase.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -2455,7 +2521,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabMainDatabase.Size" type="System.Drawing.Size, System.Drawing">
-    <value>873, 514</value>
+    <value>879, 514</value>
   </data>
   <data name="tabMainDatabase.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -2542,7 +2608,7 @@
     <value>3, 3</value>
   </data>
   <data name="mstripLog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>867, 24</value>
+    <value>873, 24</value>
   </data>
   <data name="mstripLog.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2566,7 +2632,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabMainLog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>873, 514</value>
+    <value>879, 514</value>
   </data>
   <data name="tabMainLog.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -2590,7 +2656,7 @@
     <value>3, 3</value>
   </data>
   <data name="tabControlMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>881, 540</value>
+    <value>887, 540</value>
   </data>
   <data name="tabControlMain.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2650,10 +2716,7 @@
     <value>True</value>
   </metadata>
   <data name="tsslCurrentYear.Size" type="System.Drawing.Size, System.Drawing">
-    <value>101, 17</value>
-  </data>
-  <data name="tsslCurrentYear.Text" xml:space="preserve">
-    <value>Copyright © 2019</value>
+    <value>0, 17</value>
   </data>
   <data name="sstripMain.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 570</value>
@@ -2962,13 +3025,13 @@
     <value>7, 20</value>
   </metadata>
   <data name="tsmiNotifyExit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>93, 22</value>
   </data>
   <data name="tsmiNotifyExit.Text" xml:space="preserve">
     <value>Sair</value>
   </data>
   <data name="cmsNotifyIcon.Size" type="System.Drawing.Size, System.Drawing">
-    <value>181, 48</value>
+    <value>94, 26</value>
   </data>
   <data name="&gt;&gt;cmsNotifyIcon.Name" xml:space="preserve">
     <value>cmsNotifyIcon</value>
