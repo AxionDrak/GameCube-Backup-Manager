@@ -176,9 +176,12 @@ namespace GCBM
         /// <param name="e"></param>
         private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
         {
-            notifyIcon.Visible = false;
-            notifyIcon.Icon = null;
-            notifyIcon.Dispose();
+            if (notifyIcon != null)
+            {
+                notifyIcon.Visible = false;
+                notifyIcon.Icon = null;
+                notifyIcon.Dispose();
+            }
             ClearTemp();
             ExportLOG(1);
         }
@@ -2971,9 +2974,12 @@ namespace GCBM
         #region tsmiExit_Click
         private void tsmiExit_Click(object sender, EventArgs e)
         {
-            notifyIcon.Visible = false;
-            notifyIcon.Icon = null;
-            notifyIcon.Dispose();
+            if (notifyIcon != null)
+            {
+                notifyIcon.Visible = false;
+                notifyIcon.Icon = null;
+                notifyIcon.Dispose();
+            }           
             ClearTemp();
             Application.Exit();
         }
