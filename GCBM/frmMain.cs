@@ -1679,6 +1679,27 @@ namespace GCBM
         }
         #endregion
 
+
+        private void SearchOnWeb(string link)
+        {
+            if (CONFIG_INI_FILE.IniReadBool("TITLES", "GameXmlName") == true)
+            {
+                if (File.Exists(WIITDB_FILE))
+                {
+                    XElement root = XElement.Load(WIITDB_FILE);
+                    IEnumerable<XElement> tests = from el in root.Elements("game") where (string)el.Element("id") == tbIDGame.Text select el;
+                    foreach (XElement el in tests)
+                    {
+                        ExternalSite(link, (string)el.Element("locale").Element("title"));
+                    }
+                }
+                else
+                {
+                    CheckWiiTdbXml();
+                }
+            }
+        }
+
         #region External Site
         /// <summary>
         /// Function to load websites in the default browser.
@@ -3372,6 +3393,40 @@ namespace GCBM
                 AutoUpdater.ReportErrors = true;
                 //AutoUpdater.UpdateFormSize = new Size(500, 400);
             }
+        }
+        #endregion
+
+        // SEARCH DATA ON THE INTERNET
+
+        #region Search On Web
+        private void tsmiSearchOnGoogle_Click(object sender, EventArgs e)
+        {
+            SearchOnWeb("https://www.google.com/search?q=");
+        }
+
+        private void SearchOnWikipedia_Click(object sender, EventArgs e)
+        {
+            SearchOnWeb("https://en.wikipedia.org/w/index.php?search=");
+        }
+
+        private void tsmiSearchOnYoutube_Click(object sender, EventArgs e)
+        {
+            SearchOnWeb("https://www.youtube.com/results?search_query=");
+        }
+
+        private void tsmiSearchOnVGChartz_Click(object sender, EventArgs e)
+        {
+            SearchOnWeb("https://www.vgchartz.com/gamedb/games.php?name=");
+        }
+
+        private void tsmiSearchOnGameSpot_Click(object sender, EventArgs e)
+        {
+            SearchOnWeb("https://www.gamespot.com/search/?header=1&i=site&q=");
+        }
+
+        private void tsmiSearchOnGameTDB_Click(object sender, EventArgs e)
+        {
+            ExternalSite("https://www.gametdb.com/Wii/", tbIDGame.Text);
         }
         #endregion
 
