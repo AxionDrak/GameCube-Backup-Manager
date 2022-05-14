@@ -132,6 +132,18 @@ namespace GCBM
             this.rbGameInternalName = new System.Windows.Forms.RadioButton();
             this.chkGameTitleCustom = new System.Windows.Forms.CheckBox();
             this.chkGameTitle = new System.Windows.Forms.CheckBox();
+            this.tabSettingsDolphin = new System.Windows.Forms.TabPage();
+            this.grbDolphin = new System.Windows.Forms.GroupBox();
+            this.grbDolphinFolder = new System.Windows.Forms.GroupBox();
+            this.btnSelectFile = new System.Windows.Forms.Button();
+            this.tbPathDolphinEmulator = new System.Windows.Forms.TextBox();
+            this.grbDolphinAudio = new System.Windows.Forms.GroupBox();
+            this.rbDSPHLE = new System.Windows.Forms.RadioButton();
+            this.rbDSPLLE = new System.Windows.Forms.RadioButton();
+            this.grbDolphinVideo = new System.Windows.Forms.GroupBox();
+            this.rbVkGL = new System.Windows.Forms.RadioButton();
+            this.rbDX12 = new System.Windows.Forms.RadioButton();
+            this.rbDX11 = new System.Windows.Forms.RadioButton();
             this.tabSettingsUpdates = new System.Windows.Forms.TabPage();
             this.lblTimeInterval = new System.Windows.Forms.Label();
             this.grbUpdate = new System.Windows.Forms.GroupBox();
@@ -168,18 +180,6 @@ namespace GCBM
             this.fbd = new System.Windows.Forms.FolderBrowserDialog();
             this.btnApply = new System.Windows.Forms.Button();
             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
-            this.tabSettingsDolphin = new System.Windows.Forms.TabPage();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.btnSelectFile = new System.Windows.Forms.Button();
-            this.tbPathDolphinEmulator = new System.Windows.Forms.TextBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.rbHLE = new System.Windows.Forms.RadioButton();
-            this.rbLLE = new System.Windows.Forms.RadioButton();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.rbOpenGL = new System.Windows.Forms.RadioButton();
-            this.rbD3D12 = new System.Windows.Forms.RadioButton();
-            this.rbD3D11 = new System.Windows.Forms.RadioButton();
             this.ofdDolphin = new System.Windows.Forms.OpenFileDialog();
             this.tabSettings.SuspendLayout();
             this.tabSettingsGeneral.SuspendLayout();
@@ -207,6 +207,11 @@ namespace GCBM
             this.grbTitleLanguage.SuspendLayout();
             this.grbTitleFileLocation.SuspendLayout();
             this.grbTitleDiverse.SuspendLayout();
+            this.tabSettingsDolphin.SuspendLayout();
+            this.grbDolphin.SuspendLayout();
+            this.grbDolphinFolder.SuspendLayout();
+            this.grbDolphinAudio.SuspendLayout();
+            this.grbDolphinVideo.SuspendLayout();
             this.tabSettingsUpdates.SuspendLayout();
             this.grbUpdate.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -215,11 +220,6 @@ namespace GCBM
             this.tabSettingsLog.SuspendLayout();
             this.grbLog.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.tabSettingsDolphin.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.groupBox5.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabSettings
@@ -972,6 +972,95 @@ namespace GCBM
             this.chkGameTitle.UseVisualStyleBackColor = true;
             this.chkGameTitle.CheckedChanged += new System.EventHandler(this.chkGameTitle_CheckedChanged);
             // 
+            // tabSettingsDolphin
+            // 
+            this.tabSettingsDolphin.Controls.Add(this.grbDolphin);
+            resources.ApplyResources(this.tabSettingsDolphin, "tabSettingsDolphin");
+            this.tabSettingsDolphin.Name = "tabSettingsDolphin";
+            this.tabSettingsDolphin.UseVisualStyleBackColor = true;
+            // 
+            // grbDolphin
+            // 
+            this.grbDolphin.Controls.Add(this.grbDolphinFolder);
+            this.grbDolphin.Controls.Add(this.grbDolphinAudio);
+            this.grbDolphin.Controls.Add(this.grbDolphinVideo);
+            resources.ApplyResources(this.grbDolphin, "grbDolphin");
+            this.grbDolphin.Name = "grbDolphin";
+            this.grbDolphin.TabStop = false;
+            // 
+            // grbDolphinFolder
+            // 
+            this.grbDolphinFolder.Controls.Add(this.btnSelectFile);
+            this.grbDolphinFolder.Controls.Add(this.tbPathDolphinEmulator);
+            resources.ApplyResources(this.grbDolphinFolder, "grbDolphinFolder");
+            this.grbDolphinFolder.Name = "grbDolphinFolder";
+            this.grbDolphinFolder.TabStop = false;
+            // 
+            // btnSelectFile
+            // 
+            resources.ApplyResources(this.btnSelectFile, "btnSelectFile");
+            this.btnSelectFile.Name = "btnSelectFile";
+            this.btnSelectFile.UseVisualStyleBackColor = true;
+            this.btnSelectFile.Click += new System.EventHandler(this.btnSelectFile_Click);
+            // 
+            // tbPathDolphinEmulator
+            // 
+            this.tbPathDolphinEmulator.BackColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.tbPathDolphinEmulator, "tbPathDolphinEmulator");
+            this.tbPathDolphinEmulator.Name = "tbPathDolphinEmulator";
+            this.tbPathDolphinEmulator.ReadOnly = true;
+            // 
+            // grbDolphinAudio
+            // 
+            this.grbDolphinAudio.Controls.Add(this.rbDSPHLE);
+            this.grbDolphinAudio.Controls.Add(this.rbDSPLLE);
+            resources.ApplyResources(this.grbDolphinAudio, "grbDolphinAudio");
+            this.grbDolphinAudio.Name = "grbDolphinAudio";
+            this.grbDolphinAudio.TabStop = false;
+            // 
+            // rbDSPHLE
+            // 
+            resources.ApplyResources(this.rbDSPHLE, "rbDSPHLE");
+            this.rbDSPHLE.Checked = true;
+            this.rbDSPHLE.Name = "rbDSPHLE";
+            this.rbDSPHLE.TabStop = true;
+            this.rbDSPHLE.UseVisualStyleBackColor = true;
+            // 
+            // rbDSPLLE
+            // 
+            resources.ApplyResources(this.rbDSPLLE, "rbDSPLLE");
+            this.rbDSPLLE.Name = "rbDSPLLE";
+            this.rbDSPLLE.UseVisualStyleBackColor = true;
+            // 
+            // grbDolphinVideo
+            // 
+            this.grbDolphinVideo.Controls.Add(this.rbVkGL);
+            this.grbDolphinVideo.Controls.Add(this.rbDX11);
+            this.grbDolphinVideo.Controls.Add(this.rbDX12);
+            resources.ApplyResources(this.grbDolphinVideo, "grbDolphinVideo");
+            this.grbDolphinVideo.Name = "grbDolphinVideo";
+            this.grbDolphinVideo.TabStop = false;
+            // 
+            // rbVkGL
+            // 
+            resources.ApplyResources(this.rbVkGL, "rbVkGL");
+            this.rbVkGL.Name = "rbVkGL";
+            this.rbVkGL.UseVisualStyleBackColor = true;
+            // 
+            // rbDX12
+            // 
+            resources.ApplyResources(this.rbDX12, "rbDX12");
+            this.rbDX12.Name = "rbDX12";
+            this.rbDX12.UseVisualStyleBackColor = true;
+            // 
+            // rbDX11
+            // 
+            resources.ApplyResources(this.rbDX11, "rbDX11");
+            this.rbDX11.Checked = true;
+            this.rbDX11.Name = "rbDX11";
+            this.rbDX11.TabStop = true;
+            this.rbDX11.UseVisualStyleBackColor = true;
+            // 
             // tabSettingsUpdates
             // 
             this.tabSettingsUpdates.Controls.Add(this.lblTimeInterval);
@@ -1232,95 +1321,6 @@ namespace GCBM
             // 
             resources.ApplyResources(this.notifyIcon, "notifyIcon");
             // 
-            // tabSettingsDolphin
-            // 
-            this.tabSettingsDolphin.Controls.Add(this.groupBox1);
-            resources.ApplyResources(this.tabSettingsDolphin, "tabSettingsDolphin");
-            this.tabSettingsDolphin.Name = "tabSettingsDolphin";
-            this.tabSettingsDolphin.UseVisualStyleBackColor = true;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.groupBox5);
-            this.groupBox1.Controls.Add(this.groupBox3);
-            this.groupBox1.Controls.Add(this.groupBox2);
-            resources.ApplyResources(this.groupBox1, "groupBox1");
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.TabStop = false;
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Controls.Add(this.btnSelectFile);
-            this.groupBox5.Controls.Add(this.tbPathDolphinEmulator);
-            resources.ApplyResources(this.groupBox5, "groupBox5");
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.TabStop = false;
-            // 
-            // btnSelectFile
-            // 
-            resources.ApplyResources(this.btnSelectFile, "btnSelectFile");
-            this.btnSelectFile.Name = "btnSelectFile";
-            this.btnSelectFile.UseVisualStyleBackColor = true;
-            this.btnSelectFile.Click += new System.EventHandler(this.btnSelectFile_Click);
-            // 
-            // tbPathDolphinEmulator
-            // 
-            this.tbPathDolphinEmulator.BackColor = System.Drawing.Color.White;
-            resources.ApplyResources(this.tbPathDolphinEmulator, "tbPathDolphinEmulator");
-            this.tbPathDolphinEmulator.Name = "tbPathDolphinEmulator";
-            this.tbPathDolphinEmulator.ReadOnly = true;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.rbHLE);
-            this.groupBox3.Controls.Add(this.rbLLE);
-            resources.ApplyResources(this.groupBox3, "groupBox3");
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.TabStop = false;
-            // 
-            // rbHLE
-            // 
-            resources.ApplyResources(this.rbHLE, "rbHLE");
-            this.rbHLE.Name = "rbHLE";
-            this.rbHLE.UseVisualStyleBackColor = true;
-            // 
-            // rbLLE
-            // 
-            resources.ApplyResources(this.rbLLE, "rbLLE");
-            this.rbLLE.Checked = true;
-            this.rbLLE.Name = "rbLLE";
-            this.rbLLE.TabStop = true;
-            this.rbLLE.UseVisualStyleBackColor = true;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.rbOpenGL);
-            this.groupBox2.Controls.Add(this.rbD3D12);
-            this.groupBox2.Controls.Add(this.rbD3D11);
-            resources.ApplyResources(this.groupBox2, "groupBox2");
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.TabStop = false;
-            // 
-            // rbOpenGL
-            // 
-            resources.ApplyResources(this.rbOpenGL, "rbOpenGL");
-            this.rbOpenGL.Name = "rbOpenGL";
-            this.rbOpenGL.UseVisualStyleBackColor = true;
-            // 
-            // rbD3D12
-            // 
-            resources.ApplyResources(this.rbD3D12, "rbD3D12");
-            this.rbD3D12.Name = "rbD3D12";
-            this.rbD3D12.UseVisualStyleBackColor = true;
-            // 
-            // rbD3D11
-            // 
-            resources.ApplyResources(this.rbD3D11, "rbD3D11");
-            this.rbD3D11.Checked = true;
-            this.rbD3D11.Name = "rbD3D11";
-            this.rbD3D11.TabStop = true;
-            this.rbD3D11.UseVisualStyleBackColor = true;
-            // 
             // ofdDolphin
             // 
             resources.ApplyResources(this.ofdDolphin, "ofdDolphin");
@@ -1385,6 +1385,14 @@ namespace GCBM
             this.grbTitleFileLocation.PerformLayout();
             this.grbTitleDiverse.ResumeLayout(false);
             this.grbTitleDiverse.PerformLayout();
+            this.tabSettingsDolphin.ResumeLayout(false);
+            this.grbDolphin.ResumeLayout(false);
+            this.grbDolphinFolder.ResumeLayout(false);
+            this.grbDolphinFolder.PerformLayout();
+            this.grbDolphinAudio.ResumeLayout(false);
+            this.grbDolphinAudio.PerformLayout();
+            this.grbDolphinVideo.ResumeLayout(false);
+            this.grbDolphinVideo.PerformLayout();
             this.tabSettingsUpdates.ResumeLayout(false);
             this.tabSettingsUpdates.PerformLayout();
             this.grbUpdate.ResumeLayout(false);
@@ -1398,14 +1406,6 @@ namespace GCBM
             this.grbLog.ResumeLayout(false);
             this.grbLog.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.tabSettingsDolphin.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1550,17 +1550,17 @@ namespace GCBM
         private System.Windows.Forms.Label lblLanguage;
         private System.Windows.Forms.Label lblTimeInterval;
         private System.Windows.Forms.TabPage tabSettingsDolphin;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.GroupBox grbDolphin;
+        private System.Windows.Forms.GroupBox grbDolphinFolder;
         private System.Windows.Forms.Button btnSelectFile;
         private System.Windows.Forms.TextBox tbPathDolphinEmulator;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.RadioButton rbHLE;
-        private System.Windows.Forms.RadioButton rbLLE;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.RadioButton rbOpenGL;
-        private System.Windows.Forms.RadioButton rbD3D12;
-        private System.Windows.Forms.RadioButton rbD3D11;
+        private System.Windows.Forms.GroupBox grbDolphinAudio;
+        private System.Windows.Forms.RadioButton rbDSPHLE;
+        private System.Windows.Forms.RadioButton rbDSPLLE;
+        private System.Windows.Forms.GroupBox grbDolphinVideo;
+        private System.Windows.Forms.RadioButton rbVkGL;
+        private System.Windows.Forms.RadioButton rbDX12;
+        private System.Windows.Forms.RadioButton rbDX11;
         private System.Windows.Forms.OpenFileDialog ofdDolphin;
     }
 }
