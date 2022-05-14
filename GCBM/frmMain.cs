@@ -817,6 +817,13 @@ namespace GCBM
             CONFIG_INI_FILE.IniWriteString("TITLES", "LocationTitles", @"%APP%\titles.txt");
             CONFIG_INI_FILE.IniWriteString("TITLES", "LocationCustomTitles", @"%APP%\custom-titles.txt");
             CONFIG_INI_FILE.IniWriteInt("TITLES", "TitleLanguage", 0);
+            // Dolphin Emulator
+            CONFIG_INI_FILE.IniWriteString("DOLPHIN", "DolphinFolder", "");
+            CONFIG_INI_FILE.IniWriteBool("DOLPHIN", "DolphinDX11", true);
+            CONFIG_INI_FILE.IniWriteBool("DOLPHIN", "DolphinDX12", false);
+            CONFIG_INI_FILE.IniWriteBool("DOLPHIN", "DolphinVKGL", false);
+            CONFIG_INI_FILE.IniWriteBool("DOLPHIN", "DolphinLLE", false);
+            CONFIG_INI_FILE.IniWriteBool("DOLPHIN", "DolphinHLE", true);
             // Updates
             CONFIG_INI_FILE.IniWriteBool("UPDATES", "UpdateVerifyStart", false);
             CONFIG_INI_FILE.IniWriteBool("UPDATES", "UpdateBetaChannel", false);
