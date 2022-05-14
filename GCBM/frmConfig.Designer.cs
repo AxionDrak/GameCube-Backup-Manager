@@ -168,6 +168,19 @@ namespace GCBM
             this.fbd = new System.Windows.Forms.FolderBrowserDialog();
             this.btnApply = new System.Windows.Forms.Button();
             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
+            this.tabSettingsDolphin = new System.Windows.Forms.TabPage();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.btnSelectFile = new System.Windows.Forms.Button();
+            this.tbPathDolphinEmulator = new System.Windows.Forms.TextBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.rbHLE = new System.Windows.Forms.RadioButton();
+            this.rbLLE = new System.Windows.Forms.RadioButton();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.rbOpenGL = new System.Windows.Forms.RadioButton();
+            this.rbD3D12 = new System.Windows.Forms.RadioButton();
+            this.rbD3D11 = new System.Windows.Forms.RadioButton();
+            this.ofdDolphin = new System.Windows.Forms.OpenFileDialog();
             this.tabSettings.SuspendLayout();
             this.tabSettingsGeneral.SuspendLayout();
             this.grbGeneralTemporaryFolder.SuspendLayout();
@@ -202,6 +215,11 @@ namespace GCBM
             this.tabSettingsLog.SuspendLayout();
             this.grbLog.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.tabSettingsDolphin.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabSettings
@@ -212,6 +230,7 @@ namespace GCBM
             this.tabSettings.Controls.Add(this.tabSettingsTransfer);
             this.tabSettings.Controls.Add(this.tabSettingsCovers);
             this.tabSettings.Controls.Add(this.tabSettingsTitle);
+            this.tabSettings.Controls.Add(this.tabSettingsDolphin);
             this.tabSettings.Controls.Add(this.tabSettingsUpdates);
             this.tabSettings.Controls.Add(this.tabSettingsLanguage);
             this.tabSettings.Controls.Add(this.tabSettingsLog);
@@ -1213,6 +1232,99 @@ namespace GCBM
             // 
             resources.ApplyResources(this.notifyIcon, "notifyIcon");
             // 
+            // tabSettingsDolphin
+            // 
+            this.tabSettingsDolphin.Controls.Add(this.groupBox1);
+            resources.ApplyResources(this.tabSettingsDolphin, "tabSettingsDolphin");
+            this.tabSettingsDolphin.Name = "tabSettingsDolphin";
+            this.tabSettingsDolphin.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.groupBox5);
+            this.groupBox1.Controls.Add(this.groupBox3);
+            this.groupBox1.Controls.Add(this.groupBox2);
+            resources.ApplyResources(this.groupBox1, "groupBox1");
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.TabStop = false;
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.btnSelectFile);
+            this.groupBox5.Controls.Add(this.tbPathDolphinEmulator);
+            resources.ApplyResources(this.groupBox5, "groupBox5");
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.TabStop = false;
+            // 
+            // btnSelectFile
+            // 
+            resources.ApplyResources(this.btnSelectFile, "btnSelectFile");
+            this.btnSelectFile.Name = "btnSelectFile";
+            this.btnSelectFile.UseVisualStyleBackColor = true;
+            this.btnSelectFile.Click += new System.EventHandler(this.btnSelectFile_Click);
+            // 
+            // tbPathDolphinEmulator
+            // 
+            this.tbPathDolphinEmulator.BackColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.tbPathDolphinEmulator, "tbPathDolphinEmulator");
+            this.tbPathDolphinEmulator.Name = "tbPathDolphinEmulator";
+            this.tbPathDolphinEmulator.ReadOnly = true;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.rbHLE);
+            this.groupBox3.Controls.Add(this.rbLLE);
+            resources.ApplyResources(this.groupBox3, "groupBox3");
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.TabStop = false;
+            // 
+            // rbHLE
+            // 
+            resources.ApplyResources(this.rbHLE, "rbHLE");
+            this.rbHLE.Name = "rbHLE";
+            this.rbHLE.UseVisualStyleBackColor = true;
+            // 
+            // rbLLE
+            // 
+            resources.ApplyResources(this.rbLLE, "rbLLE");
+            this.rbLLE.Checked = true;
+            this.rbLLE.Name = "rbLLE";
+            this.rbLLE.TabStop = true;
+            this.rbLLE.UseVisualStyleBackColor = true;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.rbOpenGL);
+            this.groupBox2.Controls.Add(this.rbD3D12);
+            this.groupBox2.Controls.Add(this.rbD3D11);
+            resources.ApplyResources(this.groupBox2, "groupBox2");
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.TabStop = false;
+            // 
+            // rbOpenGL
+            // 
+            resources.ApplyResources(this.rbOpenGL, "rbOpenGL");
+            this.rbOpenGL.Name = "rbOpenGL";
+            this.rbOpenGL.UseVisualStyleBackColor = true;
+            // 
+            // rbD3D12
+            // 
+            resources.ApplyResources(this.rbD3D12, "rbD3D12");
+            this.rbD3D12.Name = "rbD3D12";
+            this.rbD3D12.UseVisualStyleBackColor = true;
+            // 
+            // rbD3D11
+            // 
+            resources.ApplyResources(this.rbD3D11, "rbD3D11");
+            this.rbD3D11.Checked = true;
+            this.rbD3D11.Name = "rbD3D11";
+            this.rbD3D11.TabStop = true;
+            this.rbD3D11.UseVisualStyleBackColor = true;
+            // 
+            // ofdDolphin
+            // 
+            resources.ApplyResources(this.ofdDolphin, "ofdDolphin");
+            // 
             // frmConfig
             // 
             resources.ApplyResources(this, "$this");
@@ -1286,6 +1398,14 @@ namespace GCBM
             this.grbLog.ResumeLayout(false);
             this.grbLog.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.tabSettingsDolphin.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1429,5 +1549,18 @@ namespace GCBM
         private System.Windows.Forms.Label lblCommentsExactCopy;
         private System.Windows.Forms.Label lblLanguage;
         private System.Windows.Forms.Label lblTimeInterval;
+        private System.Windows.Forms.TabPage tabSettingsDolphin;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.Button btnSelectFile;
+        private System.Windows.Forms.TextBox tbPathDolphinEmulator;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.RadioButton rbHLE;
+        private System.Windows.Forms.RadioButton rbLLE;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.RadioButton rbOpenGL;
+        private System.Windows.Forms.RadioButton rbD3D12;
+        private System.Windows.Forms.RadioButton rbD3D11;
+        private System.Windows.Forms.OpenFileDialog ofdDolphin;
     }
 }
