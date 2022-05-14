@@ -19,15 +19,16 @@ namespace GCBM
     public partial class frmConfig : Form
     {
         #region Properties
-
-        private readonly Assembly assembly = Assembly.GetExecutingAssembly();
-
-        private static string GET_CURRENT_PATH   = Directory.GetCurrentDirectory();
         private static string TEMP_DIR           = @"\temp";
         private static string COVERS_DIR         = @"\cover\cache";
         private static string PROG_UPDATE        = "07/05/2022";
         private const string INI_FILE            = "config.ini";
         private readonly IniFile CONFIG_INI_FILE = new IniFile(INI_FILE);
+        private readonly Assembly assembly = Assembly.GetExecutingAssembly();
+        private static string GET_CURRENT_PATH = Directory.GetCurrentDirectory();
+
+        private string GAME_NAME { get; set; }
+        private string GAME_PATH { get; set; }
         public int RETURN_CONFIRM { get; set; }
         #endregion
 
@@ -542,5 +543,15 @@ namespace GCBM
             }
         }
         #endregion
+
+        private void btnSelectFile_Click(object sender, EventArgs e)
+        {
+            if (ofdDolphin.ShowDialog() == DialogResult.OK)
+            {
+                //Get the path of specified file
+                tbPathDolphinEmulator.Text = ofdDolphin.FileName;
+
+            }
+        }
     }
 }
