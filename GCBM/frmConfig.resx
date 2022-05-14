@@ -117,149 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="&gt;&gt;tabSettingsGeneral.Name" xml:space="preserve">
-    <value>tabSettingsGeneral</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsGeneral.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsGeneral.Parent" xml:space="preserve">
-    <value>tabSettings</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsGeneral.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsNomenclature.Name" xml:space="preserve">
-    <value>tabSettingsNomenclature</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsNomenclature.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsNomenclature.Parent" xml:space="preserve">
-    <value>tabSettings</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsNomenclature.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsSeveral.Name" xml:space="preserve">
-    <value>tabSettingsSeveral</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsSeveral.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsSeveral.Parent" xml:space="preserve">
-    <value>tabSettings</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsSeveral.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsTransfer.Name" xml:space="preserve">
-    <value>tabSettingsTransfer</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsTransfer.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsTransfer.Parent" xml:space="preserve">
-    <value>tabSettings</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsTransfer.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsCovers.Name" xml:space="preserve">
-    <value>tabSettingsCovers</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsCovers.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsCovers.Parent" xml:space="preserve">
-    <value>tabSettings</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsCovers.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsTitle.Name" xml:space="preserve">
-    <value>tabSettingsTitle</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsTitle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsTitle.Parent" xml:space="preserve">
-    <value>tabSettings</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsTitle.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsDolphin.Name" xml:space="preserve">
-    <value>tabSettingsDolphin</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsDolphin.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsDolphin.Parent" xml:space="preserve">
-    <value>tabSettings</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsDolphin.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsUpdates.Name" xml:space="preserve">
-    <value>tabSettingsUpdates</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsUpdates.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsUpdates.Parent" xml:space="preserve">
-    <value>tabSettings</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsUpdates.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsLanguage.Name" xml:space="preserve">
-    <value>tabSettingsLanguage</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsLanguage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsLanguage.Parent" xml:space="preserve">
-    <value>tabSettings</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsLanguage.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsLog.Name" xml:space="preserve">
-    <value>tabSettingsLog</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsLog.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsLog.Parent" xml:space="preserve">
-    <value>tabSettings</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsLog.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="tabSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 12</value>
-  </data>
-  <data name="tabSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>562, 389</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="tabSettings.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;tabSettings.Name" xml:space="preserve">
-    <value>tabSettings</value>
-  </data>
-  <data name="&gt;&gt;tabSettings.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabSettings.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;tabSettings.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
   <data name="&gt;&gt;grbGeneralTemporaryFolder.Name" xml:space="preserve">
     <value>grbGeneralTemporaryFolder</value>
   </data>
@@ -308,6 +165,7 @@
   <data name="&gt;&gt;grbGeneralPartitions.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="tabSettingsGeneral.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
   </data>
@@ -318,6 +176,7 @@
   <data name="tabSettingsGeneral.Size" type="System.Drawing.Size, System.Drawing">
     <value>554, 363</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="tabSettingsGeneral.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
@@ -335,6 +194,795 @@
   </data>
   <data name="&gt;&gt;tabSettingsGeneral.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="&gt;&gt;lblCommentsScrubCopy.Name" xml:space="preserve">
+    <value>lblCommentsScrubCopy</value>
+  </data>
+  <data name="&gt;&gt;lblCommentsScrubCopy.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblCommentsScrubCopy.Parent" xml:space="preserve">
+    <value>tabSettingsNomenclature</value>
+  </data>
+  <data name="&gt;&gt;lblCommentsScrubCopy.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lblCommentsExactCopy.Name" xml:space="preserve">
+    <value>lblCommentsExactCopy</value>
+  </data>
+  <data name="&gt;&gt;lblCommentsExactCopy.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblCommentsExactCopy.Parent" xml:space="preserve">
+    <value>tabSettingsNomenclature</value>
+  </data>
+  <data name="&gt;&gt;lblCommentsExactCopy.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;lblComments.Name" xml:space="preserve">
+    <value>lblComments</value>
+  </data>
+  <data name="&gt;&gt;lblComments.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblComments.Parent" xml:space="preserve">
+    <value>tabSettingsNomenclature</value>
+  </data>
+  <data name="&gt;&gt;lblComments.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;grpNomenclatureFolderFormat.Name" xml:space="preserve">
+    <value>grpNomenclatureFolderFormat</value>
+  </data>
+  <data name="&gt;&gt;grpNomenclatureFolderFormat.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grpNomenclatureFolderFormat.Parent" xml:space="preserve">
+    <value>tabSettingsNomenclature</value>
+  </data>
+  <data name="&gt;&gt;grpNomenclatureFolderFormat.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="tabSettingsNomenclature.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tabSettingsNomenclature.Size" type="System.Drawing.Size, System.Drawing">
+    <value>554, 363</value>
+  </data>
+  <data name="tabSettingsNomenclature.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="tabSettingsNomenclature.Text" xml:space="preserve">
+    <value>Nomenclatura</value>
+  </data>
+  <data name="&gt;&gt;tabSettingsNomenclature.Name" xml:space="preserve">
+    <value>tabSettingsNomenclature</value>
+  </data>
+  <data name="&gt;&gt;tabSettingsNomenclature.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabSettingsNomenclature.Parent" xml:space="preserve">
+    <value>tabSettings</value>
+  </data>
+  <data name="&gt;&gt;tabSettingsNomenclature.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;grbGeneralDiverse.Name" xml:space="preserve">
+    <value>grbGeneralDiverse</value>
+  </data>
+  <data name="&gt;&gt;grbGeneralDiverse.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grbGeneralDiverse.Parent" xml:space="preserve">
+    <value>tabSettingsSeveral</value>
+  </data>
+  <data name="&gt;&gt;grbGeneralDiverse.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tabSettingsSeveral.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tabSettingsSeveral.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabSettingsSeveral.Size" type="System.Drawing.Size, System.Drawing">
+    <value>554, 363</value>
+  </data>
+  <data name="tabSettingsSeveral.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tabSettingsSeveral.Text" xml:space="preserve">
+    <value>Diversos</value>
+  </data>
+  <data name="&gt;&gt;tabSettingsSeveral.Name" xml:space="preserve">
+    <value>tabSettingsSeveral</value>
+  </data>
+  <data name="&gt;&gt;tabSettingsSeveral.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabSettingsSeveral.Parent" xml:space="preserve">
+    <value>tabSettings</value>
+  </data>
+  <data name="&gt;&gt;tabSettingsSeveral.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;grbGeneralScrub.Name" xml:space="preserve">
+    <value>grbGeneralScrub</value>
+  </data>
+  <data name="&gt;&gt;grbGeneralScrub.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grbGeneralScrub.Parent" xml:space="preserve">
+    <value>tabSettingsTransfer</value>
+  </data>
+  <data name="&gt;&gt;grbGeneralScrub.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;label28.Name" xml:space="preserve">
+    <value>label28</value>
+  </data>
+  <data name="&gt;&gt;label28.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label28.Parent" xml:space="preserve">
+    <value>tabSettingsTransfer</value>
+  </data>
+  <data name="&gt;&gt;label28.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;label31.Name" xml:space="preserve">
+    <value>label31</value>
+  </data>
+  <data name="&gt;&gt;label31.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label31.Parent" xml:space="preserve">
+    <value>tabSettingsTransfer</value>
+  </data>
+  <data name="&gt;&gt;label31.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;label20.Name" xml:space="preserve">
+    <value>label20</value>
+  </data>
+  <data name="&gt;&gt;label20.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label20.Parent" xml:space="preserve">
+    <value>tabSettingsTransfer</value>
+  </data>
+  <data name="&gt;&gt;label20.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;lblScrub.Name" xml:space="preserve">
+    <value>lblScrub</value>
+  </data>
+  <data name="&gt;&gt;lblScrub.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblScrub.Parent" xml:space="preserve">
+    <value>tabSettingsTransfer</value>
+  </data>
+  <data name="&gt;&gt;lblScrub.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;lblWipe.Name" xml:space="preserve">
+    <value>lblWipe</value>
+  </data>
+  <data name="&gt;&gt;lblWipe.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblWipe.Parent" xml:space="preserve">
+    <value>tabSettingsTransfer</value>
+  </data>
+  <data name="&gt;&gt;lblWipe.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;lblFST.Name" xml:space="preserve">
+    <value>lblFST</value>
+  </data>
+  <data name="&gt;&gt;lblFST.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblFST.Parent" xml:space="preserve">
+    <value>tabSettingsTransfer</value>
+  </data>
+  <data name="&gt;&gt;lblFST.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;lblXCopy.Name" xml:space="preserve">
+    <value>lblXCopy</value>
+  </data>
+  <data name="&gt;&gt;lblXCopy.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblXCopy.Parent" xml:space="preserve">
+    <value>tabSettingsTransfer</value>
+  </data>
+  <data name="&gt;&gt;lblXCopy.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;label17.Name" xml:space="preserve">
+    <value>label17</value>
+  </data>
+  <data name="&gt;&gt;label17.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label17.Parent" xml:space="preserve">
+    <value>tabSettingsTransfer</value>
+  </data>
+  <data name="&gt;&gt;label17.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;grbTransferSystem.Name" xml:space="preserve">
+    <value>grbTransferSystem</value>
+  </data>
+  <data name="&gt;&gt;grbTransferSystem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grbTransferSystem.Parent" xml:space="preserve">
+    <value>tabSettingsTransfer</value>
+  </data>
+  <data name="&gt;&gt;grbTransferSystem.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="tabSettingsTransfer.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tabSettingsTransfer.Size" type="System.Drawing.Size, System.Drawing">
+    <value>554, 363</value>
+  </data>
+  <data name="tabSettingsTransfer.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="tabSettingsTransfer.Text" xml:space="preserve">
+    <value>Transferir Jogo</value>
+  </data>
+  <data name="&gt;&gt;tabSettingsTransfer.Name" xml:space="preserve">
+    <value>tabSettingsTransfer</value>
+  </data>
+  <data name="&gt;&gt;tabSettingsTransfer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabSettingsTransfer.Parent" xml:space="preserve">
+    <value>tabSettings</value>
+  </data>
+  <data name="&gt;&gt;tabSettingsTransfer.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="tabSettingsCovers.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;grpTitlesCoverFolder.Name" xml:space="preserve">
+    <value>grpTitlesCoverFolder</value>
+  </data>
+  <data name="&gt;&gt;grpTitlesCoverFolder.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grpTitlesCoverFolder.Parent" xml:space="preserve">
+    <value>tabSettingsCovers</value>
+  </data>
+  <data name="&gt;&gt;grpTitlesCoverFolder.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;grbCoverTransfer.Name" xml:space="preserve">
+    <value>grbCoverTransfer</value>
+  </data>
+  <data name="&gt;&gt;grbCoverTransfer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grbCoverTransfer.Parent" xml:space="preserve">
+    <value>tabSettingsCovers</value>
+  </data>
+  <data name="&gt;&gt;grbCoverTransfer.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;grpCoversSynchronize.Name" xml:space="preserve">
+    <value>grpCoversSynchronize</value>
+  </data>
+  <data name="&gt;&gt;grpCoversSynchronize.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grpCoversSynchronize.Parent" xml:space="preserve">
+    <value>tabSettingsCovers</value>
+  </data>
+  <data name="&gt;&gt;grpCoversSynchronize.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="tabSettingsCovers.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tabSettingsCovers.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabSettingsCovers.Size" type="System.Drawing.Size, System.Drawing">
+    <value>554, 363</value>
+  </data>
+  <data name="tabSettingsCovers.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="tabSettingsCovers.Text" xml:space="preserve">
+    <value>Capas</value>
+  </data>
+  <data name="&gt;&gt;tabSettingsCovers.Name" xml:space="preserve">
+    <value>tabSettingsCovers</value>
+  </data>
+  <data name="&gt;&gt;tabSettingsCovers.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabSettingsCovers.Parent" xml:space="preserve">
+    <value>tabSettings</value>
+  </data>
+  <data name="&gt;&gt;tabSettingsCovers.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;grbTitleLanguage.Name" xml:space="preserve">
+    <value>grbTitleLanguage</value>
+  </data>
+  <data name="&gt;&gt;grbTitleLanguage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grbTitleLanguage.Parent" xml:space="preserve">
+    <value>tabSettingsTitle</value>
+  </data>
+  <data name="&gt;&gt;grbTitleLanguage.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;grbTitleFileLocation.Name" xml:space="preserve">
+    <value>grbTitleFileLocation</value>
+  </data>
+  <data name="&gt;&gt;grbTitleFileLocation.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grbTitleFileLocation.Parent" xml:space="preserve">
+    <value>tabSettingsTitle</value>
+  </data>
+  <data name="&gt;&gt;grbTitleFileLocation.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;grbTitleDiverse.Name" xml:space="preserve">
+    <value>grbTitleDiverse</value>
+  </data>
+  <data name="&gt;&gt;grbTitleDiverse.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grbTitleDiverse.Parent" xml:space="preserve">
+    <value>tabSettingsTitle</value>
+  </data>
+  <data name="&gt;&gt;grbTitleDiverse.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="tabSettingsTitle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tabSettingsTitle.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabSettingsTitle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>554, 363</value>
+  </data>
+  <data name="tabSettingsTitle.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="tabSettingsTitle.Text" xml:space="preserve">
+    <value>Títulos</value>
+  </data>
+  <data name="&gt;&gt;tabSettingsTitle.Name" xml:space="preserve">
+    <value>tabSettingsTitle</value>
+  </data>
+  <data name="&gt;&gt;tabSettingsTitle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabSettingsTitle.Parent" xml:space="preserve">
+    <value>tabSettings</value>
+  </data>
+  <data name="&gt;&gt;tabSettingsTitle.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;btnSelectFile.Name" xml:space="preserve">
+    <value>btnSelectFile</value>
+  </data>
+  <data name="&gt;&gt;btnSelectFile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnSelectFile.Parent" xml:space="preserve">
+    <value>grbDolphinFolder</value>
+  </data>
+  <data name="&gt;&gt;btnSelectFile.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tbPathDolphinEmulator.Name" xml:space="preserve">
+    <value>tbPathDolphinEmulator</value>
+  </data>
+  <data name="&gt;&gt;tbPathDolphinEmulator.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbPathDolphinEmulator.Parent" xml:space="preserve">
+    <value>grbDolphinFolder</value>
+  </data>
+  <data name="&gt;&gt;tbPathDolphinEmulator.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="grbDolphinFolder.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 19</value>
+  </data>
+  <data name="grbDolphinFolder.Size" type="System.Drawing.Size, System.Drawing">
+    <value>526, 50</value>
+  </data>
+  <data name="grbDolphinFolder.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="grbDolphinFolder.Text" xml:space="preserve">
+    <value>Caminho para o emulador</value>
+  </data>
+  <data name="&gt;&gt;grbDolphinFolder.Name" xml:space="preserve">
+    <value>grbDolphinFolder</value>
+  </data>
+  <data name="&gt;&gt;grbDolphinFolder.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grbDolphinFolder.Parent" xml:space="preserve">
+    <value>grbDolphin</value>
+  </data>
+  <data name="&gt;&gt;grbDolphinFolder.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;rbDSPHLE.Name" xml:space="preserve">
+    <value>rbDSPHLE</value>
+  </data>
+  <data name="&gt;&gt;rbDSPHLE.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rbDSPHLE.Parent" xml:space="preserve">
+    <value>grbDolphinAudio</value>
+  </data>
+  <data name="&gt;&gt;rbDSPHLE.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;rbDSPLLE.Name" xml:space="preserve">
+    <value>rbDSPLLE</value>
+  </data>
+  <data name="&gt;&gt;rbDSPLLE.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rbDSPLLE.Parent" xml:space="preserve">
+    <value>grbDolphinAudio</value>
+  </data>
+  <data name="&gt;&gt;rbDSPLLE.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="grbDolphinAudio.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 131</value>
+  </data>
+  <data name="grbDolphinAudio.Size" type="System.Drawing.Size, System.Drawing">
+    <value>526, 50</value>
+  </data>
+  <data name="grbDolphinAudio.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="grbDolphinAudio.Text" xml:space="preserve">
+    <value>Áudio</value>
+  </data>
+  <data name="&gt;&gt;grbDolphinAudio.Name" xml:space="preserve">
+    <value>grbDolphinAudio</value>
+  </data>
+  <data name="&gt;&gt;grbDolphinAudio.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grbDolphinAudio.Parent" xml:space="preserve">
+    <value>grbDolphin</value>
+  </data>
+  <data name="&gt;&gt;grbDolphinAudio.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="rbVkGL.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="rbVkGL.Location" type="System.Drawing.Point, System.Drawing">
+    <value>330, 19</value>
+  </data>
+  <data name="rbVkGL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>103, 17</value>
+  </data>
+  <data name="rbVkGL.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="rbVkGL.Text" xml:space="preserve">
+    <value>Vulkan/OpenGL</value>
+  </data>
+  <data name="&gt;&gt;rbVkGL.Name" xml:space="preserve">
+    <value>rbVkGL</value>
+  </data>
+  <data name="&gt;&gt;rbVkGL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rbVkGL.Parent" xml:space="preserve">
+    <value>grbDolphinVideo</value>
+  </data>
+  <data name="&gt;&gt;rbVkGL.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="rbDX11.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="rbDX11.Location" type="System.Drawing.Point, System.Drawing">
+    <value>104, 19</value>
+  </data>
+  <data name="rbDX11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 17</value>
+  </data>
+  <data name="rbDX11.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="rbDX11.Text" xml:space="preserve">
+    <value>D3D11</value>
+  </data>
+  <data name="&gt;&gt;rbDX11.Name" xml:space="preserve">
+    <value>rbDX11</value>
+  </data>
+  <data name="&gt;&gt;rbDX11.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rbDX11.Parent" xml:space="preserve">
+    <value>grbDolphinVideo</value>
+  </data>
+  <data name="&gt;&gt;rbDX11.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="rbDX12.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="rbDX12.Location" type="System.Drawing.Point, System.Drawing">
+    <value>218, 19</value>
+  </data>
+  <data name="rbDX12.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 17</value>
+  </data>
+  <data name="rbDX12.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="rbDX12.Text" xml:space="preserve">
+    <value>D3D12</value>
+  </data>
+  <data name="&gt;&gt;rbDX12.Name" xml:space="preserve">
+    <value>rbDX12</value>
+  </data>
+  <data name="&gt;&gt;rbDX12.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rbDX12.Parent" xml:space="preserve">
+    <value>grbDolphinVideo</value>
+  </data>
+  <data name="&gt;&gt;rbDX12.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="grbDolphinVideo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 75</value>
+  </data>
+  <data name="grbDolphinVideo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>526, 50</value>
+  </data>
+  <data name="grbDolphinVideo.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="grbDolphinVideo.Text" xml:space="preserve">
+    <value>Vídeo</value>
+  </data>
+  <data name="&gt;&gt;grbDolphinVideo.Name" xml:space="preserve">
+    <value>grbDolphinVideo</value>
+  </data>
+  <data name="&gt;&gt;grbDolphinVideo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grbDolphinVideo.Parent" xml:space="preserve">
+    <value>grbDolphin</value>
+  </data>
+  <data name="&gt;&gt;grbDolphinVideo.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="grbDolphin.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 3</value>
+  </data>
+  <data name="grbDolphin.Size" type="System.Drawing.Size, System.Drawing">
+    <value>539, 187</value>
+  </data>
+  <data name="grbDolphin.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="grbDolphin.Text" xml:space="preserve">
+    <value>Configurar Emulador</value>
+  </data>
+  <data name="&gt;&gt;grbDolphin.Name" xml:space="preserve">
+    <value>grbDolphin</value>
+  </data>
+  <data name="&gt;&gt;grbDolphin.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grbDolphin.Parent" xml:space="preserve">
+    <value>tabSettingsDolphin</value>
+  </data>
+  <data name="&gt;&gt;grbDolphin.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tabSettingsDolphin.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tabSettingsDolphin.Size" type="System.Drawing.Size, System.Drawing">
+    <value>554, 363</value>
+  </data>
+  <data name="tabSettingsDolphin.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="tabSettingsDolphin.Text" xml:space="preserve">
+    <value>Dolphin Emulator</value>
+  </data>
+  <data name="&gt;&gt;tabSettingsDolphin.Name" xml:space="preserve">
+    <value>tabSettingsDolphin</value>
+  </data>
+  <data name="&gt;&gt;tabSettingsDolphin.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabSettingsDolphin.Parent" xml:space="preserve">
+    <value>tabSettings</value>
+  </data>
+  <data name="&gt;&gt;tabSettingsDolphin.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;lblTimeInterval.Name" xml:space="preserve">
+    <value>lblTimeInterval</value>
+  </data>
+  <data name="&gt;&gt;lblTimeInterval.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblTimeInterval.Parent" xml:space="preserve">
+    <value>tabSettingsUpdates</value>
+  </data>
+  <data name="&gt;&gt;lblTimeInterval.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;grbUpdate.Name" xml:space="preserve">
+    <value>grbUpdate</value>
+  </data>
+  <data name="&gt;&gt;grbUpdate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grbUpdate.Parent" xml:space="preserve">
+    <value>tabSettingsUpdates</value>
+  </data>
+  <data name="&gt;&gt;grbUpdate.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tabSettingsUpdates.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tabSettingsUpdates.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabSettingsUpdates.Size" type="System.Drawing.Size, System.Drawing">
+    <value>554, 363</value>
+  </data>
+  <data name="tabSettingsUpdates.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="tabSettingsUpdates.Text" xml:space="preserve">
+    <value>Atualizações</value>
+  </data>
+  <data name="&gt;&gt;tabSettingsUpdates.Name" xml:space="preserve">
+    <value>tabSettingsUpdates</value>
+  </data>
+  <data name="&gt;&gt;tabSettingsUpdates.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabSettingsUpdates.Parent" xml:space="preserve">
+    <value>tabSettings</value>
+  </data>
+  <data name="&gt;&gt;tabSettingsUpdates.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;lblLanguageComments.Name" xml:space="preserve">
+    <value>lblLanguageComments</value>
+  </data>
+  <data name="&gt;&gt;lblLanguageComments.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblLanguageComments.Parent" xml:space="preserve">
+    <value>tabSettingsLanguage</value>
+  </data>
+  <data name="&gt;&gt;lblLanguageComments.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;grbLanguage.Name" xml:space="preserve">
+    <value>grbLanguage</value>
+  </data>
+  <data name="&gt;&gt;grbLanguage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grbLanguage.Parent" xml:space="preserve">
+    <value>tabSettingsLanguage</value>
+  </data>
+  <data name="&gt;&gt;grbLanguage.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tabSettingsLanguage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tabSettingsLanguage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>554, 363</value>
+  </data>
+  <data name="tabSettingsLanguage.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="tabSettingsLanguage.Text" xml:space="preserve">
+    <value>Idiomas</value>
+  </data>
+  <data name="&gt;&gt;tabSettingsLanguage.Name" xml:space="preserve">
+    <value>tabSettingsLanguage</value>
+  </data>
+  <data name="&gt;&gt;tabSettingsLanguage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabSettingsLanguage.Parent" xml:space="preserve">
+    <value>tabSettings</value>
+  </data>
+  <data name="&gt;&gt;tabSettingsLanguage.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;grbLog.Name" xml:space="preserve">
+    <value>grbLog</value>
+  </data>
+  <data name="&gt;&gt;grbLog.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grbLog.Parent" xml:space="preserve">
+    <value>tabSettingsLog</value>
+  </data>
+  <data name="&gt;&gt;grbLog.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tabSettingsLog.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tabSettingsLog.Size" type="System.Drawing.Size, System.Drawing">
+    <value>554, 363</value>
+  </data>
+  <data name="tabSettingsLog.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="tabSettingsLog.Text" xml:space="preserve">
+    <value>Registro (LOG)</value>
+  </data>
+  <data name="&gt;&gt;tabSettingsLog.Name" xml:space="preserve">
+    <value>tabSettingsLog</value>
+  </data>
+  <data name="&gt;&gt;tabSettingsLog.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabSettingsLog.Parent" xml:space="preserve">
+    <value>tabSettings</value>
+  </data>
+  <data name="&gt;&gt;tabSettingsLog.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="tabSettings.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 12</value>
+  </data>
+  <data name="tabSettings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>562, 389</value>
+  </data>
+  <data name="tabSettings.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;tabSettings.Name" xml:space="preserve">
+    <value>tabSettings</value>
+  </data>
+  <data name="&gt;&gt;tabSettings.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabSettings.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tabSettings.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <data name="&gt;&gt;btnTemporaryFolder.Name" xml:space="preserve">
     <value>btnTemporaryFolder</value>
@@ -924,78 +1572,6 @@
   <data name="&gt;&gt;rbGeneralDiscClean.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;lblCommentsScrubCopy.Name" xml:space="preserve">
-    <value>lblCommentsScrubCopy</value>
-  </data>
-  <data name="&gt;&gt;lblCommentsScrubCopy.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblCommentsScrubCopy.Parent" xml:space="preserve">
-    <value>tabSettingsNomenclature</value>
-  </data>
-  <data name="&gt;&gt;lblCommentsScrubCopy.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;lblCommentsExactCopy.Name" xml:space="preserve">
-    <value>lblCommentsExactCopy</value>
-  </data>
-  <data name="&gt;&gt;lblCommentsExactCopy.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblCommentsExactCopy.Parent" xml:space="preserve">
-    <value>tabSettingsNomenclature</value>
-  </data>
-  <data name="&gt;&gt;lblCommentsExactCopy.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;lblComments.Name" xml:space="preserve">
-    <value>lblComments</value>
-  </data>
-  <data name="&gt;&gt;lblComments.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblComments.Parent" xml:space="preserve">
-    <value>tabSettingsNomenclature</value>
-  </data>
-  <data name="&gt;&gt;lblComments.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;grpNomenclatureFolderFormat.Name" xml:space="preserve">
-    <value>grpNomenclatureFolderFormat</value>
-  </data>
-  <data name="&gt;&gt;grpNomenclatureFolderFormat.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;grpNomenclatureFolderFormat.Parent" xml:space="preserve">
-    <value>tabSettingsNomenclature</value>
-  </data>
-  <data name="&gt;&gt;grpNomenclatureFolderFormat.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="tabSettingsNomenclature.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tabSettingsNomenclature.Size" type="System.Drawing.Size, System.Drawing">
-    <value>554, 363</value>
-  </data>
-  <data name="tabSettingsNomenclature.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="tabSettingsNomenclature.Text" xml:space="preserve">
-    <value>Nomenclatura</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsNomenclature.Name" xml:space="preserve">
-    <value>tabSettingsNomenclature</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsNomenclature.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsNomenclature.Parent" xml:space="preserve">
-    <value>tabSettings</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsNomenclature.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="lblCommentsScrubCopy.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1187,45 +1763,6 @@
   </data>
   <data name="&gt;&gt;lblNomenclature.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="&gt;&gt;grbGeneralDiverse.Name" xml:space="preserve">
-    <value>grbGeneralDiverse</value>
-  </data>
-  <data name="&gt;&gt;grbGeneralDiverse.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;grbGeneralDiverse.Parent" xml:space="preserve">
-    <value>tabSettingsSeveral</value>
-  </data>
-  <data name="&gt;&gt;grbGeneralDiverse.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="tabSettingsSeveral.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tabSettingsSeveral.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tabSettingsSeveral.Size" type="System.Drawing.Size, System.Drawing">
-    <value>554, 363</value>
-  </data>
-  <data name="tabSettingsSeveral.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="tabSettingsSeveral.Text" xml:space="preserve">
-    <value>Diversos</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsSeveral.Name" xml:space="preserve">
-    <value>tabSettingsSeveral</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsSeveral.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsSeveral.Parent" xml:space="preserve">
-    <value>tabSettings</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsSeveral.ZOrder" xml:space="preserve">
-    <value>2</value>
   </data>
   <data name="&gt;&gt;chkMultipleInstances.Name" xml:space="preserve">
     <value>chkMultipleInstances</value>
@@ -1697,150 +2234,6 @@
   </data>
   <data name="&gt;&gt;chkGeneralMD5.ZOrder" xml:space="preserve">
     <value>10</value>
-  </data>
-  <data name="&gt;&gt;grbGeneralScrub.Name" xml:space="preserve">
-    <value>grbGeneralScrub</value>
-  </data>
-  <data name="&gt;&gt;grbGeneralScrub.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;grbGeneralScrub.Parent" xml:space="preserve">
-    <value>tabSettingsTransfer</value>
-  </data>
-  <data name="&gt;&gt;grbGeneralScrub.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;label28.Name" xml:space="preserve">
-    <value>label28</value>
-  </data>
-  <data name="&gt;&gt;label28.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label28.Parent" xml:space="preserve">
-    <value>tabSettingsTransfer</value>
-  </data>
-  <data name="&gt;&gt;label28.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;label31.Name" xml:space="preserve">
-    <value>label31</value>
-  </data>
-  <data name="&gt;&gt;label31.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label31.Parent" xml:space="preserve">
-    <value>tabSettingsTransfer</value>
-  </data>
-  <data name="&gt;&gt;label31.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;label20.Name" xml:space="preserve">
-    <value>label20</value>
-  </data>
-  <data name="&gt;&gt;label20.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label20.Parent" xml:space="preserve">
-    <value>tabSettingsTransfer</value>
-  </data>
-  <data name="&gt;&gt;label20.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;lblScrub.Name" xml:space="preserve">
-    <value>lblScrub</value>
-  </data>
-  <data name="&gt;&gt;lblScrub.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblScrub.Parent" xml:space="preserve">
-    <value>tabSettingsTransfer</value>
-  </data>
-  <data name="&gt;&gt;lblScrub.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;lblWipe.Name" xml:space="preserve">
-    <value>lblWipe</value>
-  </data>
-  <data name="&gt;&gt;lblWipe.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblWipe.Parent" xml:space="preserve">
-    <value>tabSettingsTransfer</value>
-  </data>
-  <data name="&gt;&gt;lblWipe.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;lblFST.Name" xml:space="preserve">
-    <value>lblFST</value>
-  </data>
-  <data name="&gt;&gt;lblFST.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblFST.Parent" xml:space="preserve">
-    <value>tabSettingsTransfer</value>
-  </data>
-  <data name="&gt;&gt;lblFST.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;lblXCopy.Name" xml:space="preserve">
-    <value>lblXCopy</value>
-  </data>
-  <data name="&gt;&gt;lblXCopy.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblXCopy.Parent" xml:space="preserve">
-    <value>tabSettingsTransfer</value>
-  </data>
-  <data name="&gt;&gt;lblXCopy.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;label17.Name" xml:space="preserve">
-    <value>label17</value>
-  </data>
-  <data name="&gt;&gt;label17.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label17.Parent" xml:space="preserve">
-    <value>tabSettingsTransfer</value>
-  </data>
-  <data name="&gt;&gt;label17.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;grbTransferSystem.Name" xml:space="preserve">
-    <value>grbTransferSystem</value>
-  </data>
-  <data name="&gt;&gt;grbTransferSystem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;grbTransferSystem.Parent" xml:space="preserve">
-    <value>tabSettingsTransfer</value>
-  </data>
-  <data name="&gt;&gt;grbTransferSystem.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="tabSettingsTransfer.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tabSettingsTransfer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>554, 363</value>
-  </data>
-  <data name="tabSettingsTransfer.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="tabSettingsTransfer.Text" xml:space="preserve">
-    <value>Transferir Jogo</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsTransfer.Name" xml:space="preserve">
-    <value>tabSettingsTransfer</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsTransfer.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsTransfer.Parent" xml:space="preserve">
-    <value>tabSettings</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsTransfer.ZOrder" xml:space="preserve">
-    <value>3</value>
   </data>
   <data name="&gt;&gt;lblFormat.Name" xml:space="preserve">
     <value>lblFormat</value>
@@ -2459,72 +2852,6 @@
   </data>
   <data name="&gt;&gt;rbTransferSystemXCopy.ZOrder" xml:space="preserve">
     <value>2</value>
-  </data>
-  <data name="tabSettingsCovers.AutoScroll" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;grpTitlesCoverFolder.Name" xml:space="preserve">
-    <value>grpTitlesCoverFolder</value>
-  </data>
-  <data name="&gt;&gt;grpTitlesCoverFolder.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;grpTitlesCoverFolder.Parent" xml:space="preserve">
-    <value>tabSettingsCovers</value>
-  </data>
-  <data name="&gt;&gt;grpTitlesCoverFolder.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;grbCoverTransfer.Name" xml:space="preserve">
-    <value>grbCoverTransfer</value>
-  </data>
-  <data name="&gt;&gt;grbCoverTransfer.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;grbCoverTransfer.Parent" xml:space="preserve">
-    <value>tabSettingsCovers</value>
-  </data>
-  <data name="&gt;&gt;grbCoverTransfer.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;grpCoversSynchronize.Name" xml:space="preserve">
-    <value>grpCoversSynchronize</value>
-  </data>
-  <data name="&gt;&gt;grpCoversSynchronize.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;grpCoversSynchronize.Parent" xml:space="preserve">
-    <value>tabSettingsCovers</value>
-  </data>
-  <data name="&gt;&gt;grpCoversSynchronize.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="tabSettingsCovers.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tabSettingsCovers.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tabSettingsCovers.Size" type="System.Drawing.Size, System.Drawing">
-    <value>554, 363</value>
-  </data>
-  <data name="tabSettingsCovers.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="tabSettingsCovers.Text" xml:space="preserve">
-    <value>Capas</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsCovers.Name" xml:space="preserve">
-    <value>tabSettingsCovers</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsCovers.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsCovers.Parent" xml:space="preserve">
-    <value>tabSettings</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsCovers.ZOrder" xml:space="preserve">
-    <value>4</value>
   </data>
   <data name="&gt;&gt;btnCoverDirectory.Name" xml:space="preserve">
     <value>btnCoverDirectory</value>
@@ -3486,69 +3813,6 @@
   <data name="&gt;&gt;chkCoverSynchronizeDelete.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;grbTitleLanguage.Name" xml:space="preserve">
-    <value>grbTitleLanguage</value>
-  </data>
-  <data name="&gt;&gt;grbTitleLanguage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;grbTitleLanguage.Parent" xml:space="preserve">
-    <value>tabSettingsTitle</value>
-  </data>
-  <data name="&gt;&gt;grbTitleLanguage.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;grbTitleFileLocation.Name" xml:space="preserve">
-    <value>grbTitleFileLocation</value>
-  </data>
-  <data name="&gt;&gt;grbTitleFileLocation.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;grbTitleFileLocation.Parent" xml:space="preserve">
-    <value>tabSettingsTitle</value>
-  </data>
-  <data name="&gt;&gt;grbTitleFileLocation.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;grbTitleDiverse.Name" xml:space="preserve">
-    <value>grbTitleDiverse</value>
-  </data>
-  <data name="&gt;&gt;grbTitleDiverse.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;grbTitleDiverse.Parent" xml:space="preserve">
-    <value>tabSettingsTitle</value>
-  </data>
-  <data name="&gt;&gt;grbTitleDiverse.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="tabSettingsTitle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tabSettingsTitle.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tabSettingsTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>554, 363</value>
-  </data>
-  <data name="tabSettingsTitle.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="tabSettingsTitle.Text" xml:space="preserve">
-    <value>Títulos</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsTitle.Name" xml:space="preserve">
-    <value>tabSettingsTitle</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsTitle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsTitle.Parent" xml:space="preserve">
-    <value>tabSettings</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsTitle.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
   <data name="&gt;&gt;btnTitleDownload.Name" xml:space="preserve">
     <value>btnTitleDownload</value>
   </data>
@@ -4116,56 +4380,104 @@
   <data name="&gt;&gt;chkGameTitle.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="&gt;&gt;lblTimeInterval.Name" xml:space="preserve">
-    <value>lblTimeInterval</value>
+  <data name="btnSelectFile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>495, 16</value>
   </data>
-  <data name="&gt;&gt;lblTimeInterval.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="btnSelectFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>25, 25</value>
   </data>
-  <data name="&gt;&gt;lblTimeInterval.Parent" xml:space="preserve">
-    <value>tabSettingsUpdates</value>
-  </data>
-  <data name="&gt;&gt;lblTimeInterval.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;grbUpdate.Name" xml:space="preserve">
-    <value>grbUpdate</value>
-  </data>
-  <data name="&gt;&gt;grbUpdate.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;grbUpdate.Parent" xml:space="preserve">
-    <value>tabSettingsUpdates</value>
-  </data>
-  <data name="&gt;&gt;grbUpdate.ZOrder" xml:space="preserve">
+  <data name="btnSelectFile.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="tabSettingsUpdates.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+  <data name="btnSelectFile.Text" xml:space="preserve">
+    <value>...</value>
   </data>
-  <data name="tabSettingsUpdates.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
+  <data name="&gt;&gt;btnSelectFile.Name" xml:space="preserve">
+    <value>btnSelectFile</value>
   </data>
-  <data name="tabSettingsUpdates.Size" type="System.Drawing.Size, System.Drawing">
-    <value>554, 363</value>
+  <data name="&gt;&gt;btnSelectFile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="tabSettingsUpdates.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+  <data name="&gt;&gt;btnSelectFile.Parent" xml:space="preserve">
+    <value>grbDolphinFolder</value>
   </data>
-  <data name="tabSettingsUpdates.Text" xml:space="preserve">
-    <value>Atualizações</value>
+  <data name="&gt;&gt;btnSelectFile.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
-  <data name="&gt;&gt;tabSettingsUpdates.Name" xml:space="preserve">
-    <value>tabSettingsUpdates</value>
+  <data name="tbPathDolphinEmulator.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 19</value>
   </data>
-  <data name="&gt;&gt;tabSettingsUpdates.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="tbPathDolphinEmulator.Size" type="System.Drawing.Size, System.Drawing">
+    <value>483, 20</value>
   </data>
-  <data name="&gt;&gt;tabSettingsUpdates.Parent" xml:space="preserve">
-    <value>tabSettings</value>
+  <data name="tbPathDolphinEmulator.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
-  <data name="&gt;&gt;tabSettingsUpdates.ZOrder" xml:space="preserve">
-    <value>7</value>
+  <data name="&gt;&gt;tbPathDolphinEmulator.Name" xml:space="preserve">
+    <value>tbPathDolphinEmulator</value>
+  </data>
+  <data name="&gt;&gt;tbPathDolphinEmulator.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbPathDolphinEmulator.Parent" xml:space="preserve">
+    <value>grbDolphinFolder</value>
+  </data>
+  <data name="&gt;&gt;tbPathDolphinEmulator.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="rbDSPHLE.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="rbDSPHLE.Location" type="System.Drawing.Point, System.Drawing">
+    <value>269, 23</value>
+  </data>
+  <data name="rbDSPHLE.Size" type="System.Drawing.Size, System.Drawing">
+    <value>113, 17</value>
+  </data>
+  <data name="rbDSPHLE.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="rbDSPHLE.Text" xml:space="preserve">
+    <value>DSP HLE (padrão)</value>
+  </data>
+  <data name="&gt;&gt;rbDSPHLE.Name" xml:space="preserve">
+    <value>rbDSPHLE</value>
+  </data>
+  <data name="&gt;&gt;rbDSPHLE.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rbDSPHLE.Parent" xml:space="preserve">
+    <value>grbDolphinAudio</value>
+  </data>
+  <data name="&gt;&gt;rbDSPHLE.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="rbDSPLLE.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="rbDSPLLE.Location" type="System.Drawing.Point, System.Drawing">
+    <value>172, 23</value>
+  </data>
+  <data name="rbDSPLLE.Size" type="System.Drawing.Size, System.Drawing">
+    <value>69, 17</value>
+  </data>
+  <data name="rbDSPLLE.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="rbDSPLLE.Text" xml:space="preserve">
+    <value>DSP LLE</value>
+  </data>
+  <data name="&gt;&gt;rbDSPLLE.Name" xml:space="preserve">
+    <value>rbDSPLLE</value>
+  </data>
+  <data name="&gt;&gt;rbDSPLLE.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rbDSPLLE.Parent" xml:space="preserve">
+    <value>grbDolphinAudio</value>
+  </data>
+  <data name="&gt;&gt;rbDSPLLE.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="lblTimeInterval.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -4749,54 +5061,6 @@
   <data name="&gt;&gt;chkUpdateVerifyStart.ZOrder" xml:space="preserve">
     <value>12</value>
   </data>
-  <data name="&gt;&gt;lblLanguageComments.Name" xml:space="preserve">
-    <value>lblLanguageComments</value>
-  </data>
-  <data name="&gt;&gt;lblLanguageComments.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblLanguageComments.Parent" xml:space="preserve">
-    <value>tabSettingsLanguage</value>
-  </data>
-  <data name="&gt;&gt;lblLanguageComments.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;grbLanguage.Name" xml:space="preserve">
-    <value>grbLanguage</value>
-  </data>
-  <data name="&gt;&gt;grbLanguage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;grbLanguage.Parent" xml:space="preserve">
-    <value>tabSettingsLanguage</value>
-  </data>
-  <data name="&gt;&gt;grbLanguage.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="tabSettingsLanguage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tabSettingsLanguage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>554, 363</value>
-  </data>
-  <data name="tabSettingsLanguage.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
-  </data>
-  <data name="tabSettingsLanguage.Text" xml:space="preserve">
-    <value>Idiomas</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsLanguage.Name" xml:space="preserve">
-    <value>tabSettingsLanguage</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsLanguage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsLanguage.Parent" xml:space="preserve">
-    <value>tabSettings</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsLanguage.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
   <data name="lblLanguageComments.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -4934,42 +5198,6 @@
   </data>
   <data name="&gt;&gt;cbLanguage.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="&gt;&gt;grbLog.Name" xml:space="preserve">
-    <value>grbLog</value>
-  </data>
-  <data name="&gt;&gt;grbLog.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;grbLog.Parent" xml:space="preserve">
-    <value>tabSettingsLog</value>
-  </data>
-  <data name="&gt;&gt;grbLog.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="tabSettingsLog.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tabSettingsLog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>554, 363</value>
-  </data>
-  <data name="tabSettingsLog.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="tabSettingsLog.Text" xml:space="preserve">
-    <value>Registro (LOG)</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsLog.Name" xml:space="preserve">
-    <value>tabSettingsLog</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsLog.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsLog.Parent" xml:space="preserve">
-    <value>tabSettings</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsLog.ZOrder" xml:space="preserve">
-    <value>9</value>
   </data>
   <data name="&gt;&gt;pictureBox2.Name" xml:space="preserve">
     <value>pictureBox2</value>
@@ -5454,438 +5682,6 @@
   </data>
   <data name="notifyIcon.Visible" type="System.Boolean, mscorlib">
     <value>True</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
-    <value>tabSettingsDolphin</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="tabSettingsDolphin.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tabSettingsDolphin.Size" type="System.Drawing.Size, System.Drawing">
-    <value>554, 363</value>
-  </data>
-  <data name="tabSettingsDolphin.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
-  <data name="tabSettingsDolphin.Text" xml:space="preserve">
-    <value>Dolphin Emulator</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsDolphin.Name" xml:space="preserve">
-    <value>tabSettingsDolphin</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsDolphin.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsDolphin.Parent" xml:space="preserve">
-    <value>tabSettings</value>
-  </data>
-  <data name="&gt;&gt;tabSettingsDolphin.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;groupBox5.Name" xml:space="preserve">
-    <value>groupBox5</value>
-  </data>
-  <data name="&gt;&gt;groupBox5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox5.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;groupBox5.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;groupBox3.Name" xml:space="preserve">
-    <value>groupBox3</value>
-  </data>
-  <data name="&gt;&gt;groupBox3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox3.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;groupBox3.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;groupBox2.Name" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
-  <data name="&gt;&gt;groupBox2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox2.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;groupBox2.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 3</value>
-  </data>
-  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>539, 187</value>
-  </data>
-  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Configurar Emulador</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
-    <value>tabSettingsDolphin</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;btnSelectFile.Name" xml:space="preserve">
-    <value>btnSelectFile</value>
-  </data>
-  <data name="&gt;&gt;btnSelectFile.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnSelectFile.Parent" xml:space="preserve">
-    <value>groupBox5</value>
-  </data>
-  <data name="&gt;&gt;btnSelectFile.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;tbPathDolphinEmulator.Name" xml:space="preserve">
-    <value>tbPathDolphinEmulator</value>
-  </data>
-  <data name="&gt;&gt;tbPathDolphinEmulator.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tbPathDolphinEmulator.Parent" xml:space="preserve">
-    <value>groupBox5</value>
-  </data>
-  <data name="&gt;&gt;tbPathDolphinEmulator.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="groupBox5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 19</value>
-  </data>
-  <data name="groupBox5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>526, 50</value>
-  </data>
-  <data name="groupBox5.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="groupBox5.Text" xml:space="preserve">
-    <value>Caminho para o emulador</value>
-  </data>
-  <data name="&gt;&gt;groupBox5.Name" xml:space="preserve">
-    <value>groupBox5</value>
-  </data>
-  <data name="&gt;&gt;groupBox5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox5.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;groupBox5.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="btnSelectFile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>495, 16</value>
-  </data>
-  <data name="btnSelectFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>25, 25</value>
-  </data>
-  <data name="btnSelectFile.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="btnSelectFile.Text" xml:space="preserve">
-    <value>...</value>
-  </data>
-  <data name="&gt;&gt;btnSelectFile.Name" xml:space="preserve">
-    <value>btnSelectFile</value>
-  </data>
-  <data name="&gt;&gt;btnSelectFile.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnSelectFile.Parent" xml:space="preserve">
-    <value>groupBox5</value>
-  </data>
-  <data name="&gt;&gt;btnSelectFile.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="tbPathDolphinEmulator.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 19</value>
-  </data>
-  <data name="tbPathDolphinEmulator.Size" type="System.Drawing.Size, System.Drawing">
-    <value>483, 20</value>
-  </data>
-  <data name="tbPathDolphinEmulator.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;tbPathDolphinEmulator.Name" xml:space="preserve">
-    <value>tbPathDolphinEmulator</value>
-  </data>
-  <data name="&gt;&gt;tbPathDolphinEmulator.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tbPathDolphinEmulator.Parent" xml:space="preserve">
-    <value>groupBox5</value>
-  </data>
-  <data name="&gt;&gt;tbPathDolphinEmulator.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;rbHLE.Name" xml:space="preserve">
-    <value>rbHLE</value>
-  </data>
-  <data name="&gt;&gt;rbHLE.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;rbHLE.Parent" xml:space="preserve">
-    <value>groupBox3</value>
-  </data>
-  <data name="&gt;&gt;rbHLE.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;rbLLE.Name" xml:space="preserve">
-    <value>rbLLE</value>
-  </data>
-  <data name="&gt;&gt;rbLLE.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;rbLLE.Parent" xml:space="preserve">
-    <value>groupBox3</value>
-  </data>
-  <data name="&gt;&gt;rbLLE.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="groupBox3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 131</value>
-  </data>
-  <data name="groupBox3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>526, 50</value>
-  </data>
-  <data name="groupBox3.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="groupBox3.Text" xml:space="preserve">
-    <value>Áudio</value>
-  </data>
-  <data name="&gt;&gt;groupBox3.Name" xml:space="preserve">
-    <value>groupBox3</value>
-  </data>
-  <data name="&gt;&gt;groupBox3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox3.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;groupBox3.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="rbHLE.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="rbHLE.Location" type="System.Drawing.Point, System.Drawing">
-    <value>269, 23</value>
-  </data>
-  <data name="rbHLE.Size" type="System.Drawing.Size, System.Drawing">
-    <value>113, 17</value>
-  </data>
-  <data name="rbHLE.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="rbHLE.Text" xml:space="preserve">
-    <value>DSP HLE (padrão)</value>
-  </data>
-  <data name="&gt;&gt;rbHLE.Name" xml:space="preserve">
-    <value>rbHLE</value>
-  </data>
-  <data name="&gt;&gt;rbHLE.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;rbHLE.Parent" xml:space="preserve">
-    <value>groupBox3</value>
-  </data>
-  <data name="&gt;&gt;rbHLE.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="rbLLE.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="rbLLE.Location" type="System.Drawing.Point, System.Drawing">
-    <value>172, 23</value>
-  </data>
-  <data name="rbLLE.Size" type="System.Drawing.Size, System.Drawing">
-    <value>69, 17</value>
-  </data>
-  <data name="rbLLE.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="rbLLE.Text" xml:space="preserve">
-    <value>DSP LLE</value>
-  </data>
-  <data name="&gt;&gt;rbLLE.Name" xml:space="preserve">
-    <value>rbLLE</value>
-  </data>
-  <data name="&gt;&gt;rbLLE.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;rbLLE.Parent" xml:space="preserve">
-    <value>groupBox3</value>
-  </data>
-  <data name="&gt;&gt;rbLLE.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;rbOpenGL.Name" xml:space="preserve">
-    <value>rbOpenGL</value>
-  </data>
-  <data name="&gt;&gt;rbOpenGL.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;rbOpenGL.Parent" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
-  <data name="&gt;&gt;rbOpenGL.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;rbD3D12.Name" xml:space="preserve">
-    <value>rbD3D12</value>
-  </data>
-  <data name="&gt;&gt;rbD3D12.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;rbD3D12.Parent" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
-  <data name="&gt;&gt;rbD3D12.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;rbD3D11.Name" xml:space="preserve">
-    <value>rbD3D11</value>
-  </data>
-  <data name="&gt;&gt;rbD3D11.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;rbD3D11.Parent" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
-  <data name="&gt;&gt;rbD3D11.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 75</value>
-  </data>
-  <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>526, 50</value>
-  </data>
-  <data name="groupBox2.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>Vídeo</value>
-  </data>
-  <data name="&gt;&gt;groupBox2.Name" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
-  <data name="&gt;&gt;groupBox2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox2.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;groupBox2.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="rbOpenGL.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="rbOpenGL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>328, 22</value>
-  </data>
-  <data name="rbOpenGL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>103, 17</value>
-  </data>
-  <data name="rbOpenGL.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="rbOpenGL.Text" xml:space="preserve">
-    <value>Vulkan/OpenGL</value>
-  </data>
-  <data name="&gt;&gt;rbOpenGL.Name" xml:space="preserve">
-    <value>rbOpenGL</value>
-  </data>
-  <data name="&gt;&gt;rbOpenGL.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;rbOpenGL.Parent" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
-  <data name="&gt;&gt;rbOpenGL.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="rbD3D12.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="rbD3D12.Location" type="System.Drawing.Point, System.Drawing">
-    <value>234, 22</value>
-  </data>
-  <data name="rbD3D12.Size" type="System.Drawing.Size, System.Drawing">
-    <value>59, 17</value>
-  </data>
-  <data name="rbD3D12.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="rbD3D12.Text" xml:space="preserve">
-    <value>D3D12</value>
-  </data>
-  <data name="&gt;&gt;rbD3D12.Name" xml:space="preserve">
-    <value>rbD3D12</value>
-  </data>
-  <data name="&gt;&gt;rbD3D12.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;rbD3D12.Parent" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
-  <data name="&gt;&gt;rbD3D12.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="rbD3D11.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="rbD3D11.Location" type="System.Drawing.Point, System.Drawing">
-    <value>143, 22</value>
-  </data>
-  <data name="rbD3D11.Size" type="System.Drawing.Size, System.Drawing">
-    <value>59, 17</value>
-  </data>
-  <data name="rbD3D11.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="rbD3D11.Text" xml:space="preserve">
-    <value>D3D11</value>
-  </data>
-  <data name="&gt;&gt;rbD3D11.Name" xml:space="preserve">
-    <value>rbD3D11</value>
-  </data>
-  <data name="&gt;&gt;rbD3D11.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;rbD3D11.Parent" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
-  <data name="&gt;&gt;rbD3D11.ZOrder" xml:space="preserve">
-    <value>2</value>
   </data>
   <metadata name="ofdDolphin.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>93, 17</value>
