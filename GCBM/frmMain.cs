@@ -1679,7 +1679,7 @@ namespace GCBM
         }
         #endregion
 
-
+        #region Searh On Web
         private void SearchOnWeb(string link)
         {
             if (CONFIG_INI_FILE.IniReadBool("TITLES", "GameXmlName") == true)
@@ -1699,6 +1699,7 @@ namespace GCBM
                 }
             }
         }
+        #endregion
 
         #region External Site
         /// <summary>
