@@ -34,7 +34,7 @@ namespace GCBM
     {
         #region Properties
         private static string GET_CURRENT_PATH       = Directory.GetCurrentDirectory();
-        private static string GAMES_DIR              = @"\games";
+        private static string GAMES_DIR              = @"games";
         private static string TEMP_DIR               = @"\temp";
         private static string COVERS_DIR             = @"\covers\cache";
         private static string MEDIA_DIR              = @"\media\covers";
@@ -1763,26 +1763,26 @@ namespace GCBM
                     // Disc 1 (0 -> 0) - Title [ID Game]
                     if (tbIDDiscID.Text == "0x00" && CONFIG_INI_FILE.IniReadInt("SEVERAL", "AppointmentStyle") == 0)
                     {
-                        Directory.CreateDirectory(tscbDiscDrive.SelectedItem + @"games\" + _SwapCharacter + " [" + tbIDGame.Text + "]");
-                        var _destination = new FileInfo(tscbDiscDrive.SelectedItem + @"games\" + _SwapCharacter + " [" + tbIDGame.Text + "]" + @"\" + "game.iso");
+                        Directory.CreateDirectory(tscbDiscDrive.SelectedItem + GAMES_DIR + @"\" + _SwapCharacter + " [" + tbIDGame.Text + "]");
+                        var _destination = new FileInfo(tscbDiscDrive.SelectedItem + GAMES_DIR + @"\" + _SwapCharacter + " [" + tbIDGame.Text + "]" + @"\" + "game.iso");
                         CopyTask(_source, _destination);
                     } // Disc 2 (1 -> 0) - Title [ID Game]
                     else if (tbIDDiscID.Text == "0x01" && CONFIG_INI_FILE.IniReadInt("SEVERAL", "AppointmentStyle") == 0)
                     {
-                        Directory.CreateDirectory(tscbDiscDrive.SelectedItem + @"games\" + _SwapCharacter + " [" + tbIDGame.Text + "]");
-                        var _destination = new FileInfo(tscbDiscDrive.SelectedItem + @"games\" + _SwapCharacter + " [" + tbIDGame.Text + "]" + @"\" + "disc2.iso");
+                        Directory.CreateDirectory(tscbDiscDrive.SelectedItem + GAMES_DIR + @"\" + _SwapCharacter + " [" + tbIDGame.Text + "]");
+                        var _destination = new FileInfo(tscbDiscDrive.SelectedItem + GAMES_DIR + @"\" + _SwapCharacter + " [" + tbIDGame.Text + "]" + @"\" + "disc2.iso");
                         CopyTask(_source, _destination);
                     }// Disc 1 (0 -> 1) - [ID Game]
                     else if (tbIDDiscID.Text == "0x00" && CONFIG_INI_FILE.IniReadInt("SEVERAL", "AppointmentStyle") == 1)
                     {
-                        Directory.CreateDirectory(tscbDiscDrive.SelectedItem + @"games\[" + tbIDGame.Text + "]");
-                        var _destination = new FileInfo(tscbDiscDrive.SelectedItem + @"games\[" + tbIDGame.Text + "]" + @"\" + "game.iso");
+                        Directory.CreateDirectory(tscbDiscDrive.SelectedItem + GAMES_DIR + @"\[" + tbIDGame.Text + "]");
+                        var _destination = new FileInfo(tscbDiscDrive.SelectedItem + GAMES_DIR + @"\[" + tbIDGame.Text + "]" + @"\" + "game.iso");
                         CopyTask(_source, _destination);
                     } // Disc 2 (1 -> 1) - [ID Game]
                     else if (tbIDDiscID.Text == "0x01" && CONFIG_INI_FILE.IniReadInt("SEVERAL", "AppointmentStyle") == 1)
                     {
-                        Directory.CreateDirectory(tscbDiscDrive.SelectedItem + @"games\[" + tbIDGame.Text + "]");
-                        var _destination = new FileInfo(tscbDiscDrive.SelectedItem + @"games\[" + tbIDGame.Text + "]" + @"\" + "disc2.iso");
+                        Directory.CreateDirectory(tscbDiscDrive.SelectedItem + GAMES_DIR + @"\[" + tbIDGame.Text + "]");
+                        var _destination = new FileInfo(tscbDiscDrive.SelectedItem + GAMES_DIR + @"\[" + tbIDGame.Text + "]" + @"\" + "disc2.iso");
                         CopyTask(_source, _destination);
                     }
 
@@ -1870,10 +1870,8 @@ namespace GCBM
             //    SCRUB_ALIGN = " -a 32K";
             //}
 
-            //startInfo.Arguments = dgvGameList.CurrentRow.Cells[4].Value.ToString() + " -aq " + scrubAlign + flushSD +
-            //" -f " + configIniFile.IniReadInt("TRANSFERSYSTEM", "ScrubFormat", "") + " -d " + tscbDiscDrive.SelectedItem + @"games";
             START_INFO.Arguments = quote + _source + quote + " -aq " + SCRUB_ALIGN + FLUSH_SD + " -f " + 
-                CONFIG_INI_FILE.IniReadString("TRANSFERSYSTEM", "ScrubFormat", "") + " -d " + tscbDiscDrive.SelectedItem + @"games";
+                CONFIG_INI_FILE.IniReadString("TRANSFERSYSTEM", "ScrubFormat", "") + " -d " + tscbDiscDrive.SelectedItem + GAMES_DIR;
             START_INFO.WindowStyle = ProcessWindowStyle.Hidden;
 
             using (Process myProcess = Process.Start(START_INFO))
@@ -1951,9 +1949,8 @@ namespace GCBM
                         if (CONFIG_INI_FILE.IniReadBool("TITLES", "GameInternalName") == true)
                         {
                             // Renomear game.iso -> disc2.iso
-                            //string myOrigem = tscbDiscDrive.SelectedItem + @"games\" + tbIDName.Text + " [" + tbIDGame.Text + "2]" + @"\game.iso";
-                            string myOrigem = tscbDiscDrive.SelectedItem + @"games\" + tbIDName.Text + " [" + tbIDGame.Text + "2]" + @"\game.iso";
-                            string myDestiny = tscbDiscDrive.SelectedItem + @"games\" + tbIDName.Text.Replace("disc2 ", "") + " [" + tbIDGame.Text + "2]" + @"\disc2.iso";
+                            string myOrigem = tscbDiscDrive.SelectedItem + GAMES_DIR + @"\" + tbIDName.Text + " [" + tbIDGame.Text + "2]" + @"\game.iso";
+                            string myDestiny = tscbDiscDrive.SelectedItem + GAMES_DIR + @"\" + tbIDName.Text.Replace("disc2 ", "") + " [" + tbIDGame.Text + "2]" + @"\disc2.iso";
 
                             //MessageBox.Show("MYORIGEM: " + Environment.NewLine
                             //    + myOrigem +
@@ -1979,9 +1976,8 @@ namespace GCBM
                         else
                         {
                             // Renomear game.iso -> disc2.iso
-                            //string myOrigem = tscbDiscDrive.SelectedItem + @"games\" + tbIDName.Text + " [" + tbIDGame.Text + "2]" + @"\game.iso";
-                            string myOrigem = tscbDiscDrive.SelectedItem + @"games\" + _oldNameInternal + " [" + tbIDGame.Text + "2]" + @"\game.iso";
-                            string myDestiny = tscbDiscDrive.SelectedItem + @"games\" + _oldNameInternal.Replace("disc2 ", "") + " [" + tbIDGame.Text + "2]" + @"\disc2.iso";
+                            string myOrigem = tscbDiscDrive.SelectedItem + GAMES_DIR + @"\" + _oldNameInternal + " [" + tbIDGame.Text + "2]" + @"\game.iso";
+                            string myDestiny = tscbDiscDrive.SelectedItem + GAMES_DIR + @"\" + _oldNameInternal.Replace("disc2 ", "") + " [" + tbIDGame.Text + "2]" + @"\disc2.iso";
 
                             //MessageBox.Show("MYORIGEM: " + Environment.NewLine
                             //    + myOrigem +
@@ -2330,8 +2326,7 @@ namespace GCBM
                             {
                                 string pasta = Path.GetDirectoryName(dgv.CurrentRow.Cells[4].Value.ToString());
                                 Directory.Delete(pasta, true);
-                                //UpdateGameList(tscbDiscDrive.SelectedItem + @"games\", dgvGameListDisc);
-                                DisplayFilesSelected(tscbDiscDrive.SelectedItem + @"games\", dgvGameListDisc);
+                                DisplayFilesSelected(tscbDiscDrive.SelectedItem + GAMES_DIR + @"\", dgvGameListDisc);
                             }
                            
                         }
@@ -2439,7 +2434,7 @@ namespace GCBM
                         }// DELETAR JOGO DO DISPOSITIVO DE DESTINO
                         else if (dgv == dgvGameListDisc)
                         {
-                            string[] files = GetFilesFolder(tscbDiscDrive.SelectedItem + @"games\", filters, false);
+                            string[] files = GetFilesFolder(tscbDiscDrive.SelectedItem + GAMES_DIR + @"\", filters, false);
 
                             // Goes through the entire file list and removes all found ISO and GCM files.
                             //string pasta = Path.GetDirectoryName(dgv.CurrentRow.Cells[4].Value.ToString());
@@ -2450,7 +2445,7 @@ namespace GCBM
                                 Directory.Delete(pasta, true);
                                 //MessageBox.Show(pasta);
 
-                                DisplayFilesSelected(tscbDiscDrive.SelectedItem + @"games\", dgv);
+                                DisplayFilesSelected(tscbDiscDrive.SelectedItem + GAMES_DIR + @"\", dgv);
                             }
 
                             //dgvGameListDisc.DataSource = null;
@@ -3097,7 +3092,7 @@ namespace GCBM
         #region tsmiReloadGameListDisc_Click
         private void tsmiReloadGameListDisc_Click(object sender, EventArgs e)
         {
-            DisplayFilesSelected(tscbDiscDrive.SelectedItem + @"games\", dgvGameListDisc);
+            DisplayFilesSelected(tscbDiscDrive.SelectedItem + GAMES_DIR + @"\", dgvGameListDisc);
         }
         #endregion
 
@@ -3448,58 +3443,58 @@ namespace GCBM
                             {
                                 InvalidDrive(d.DriveFormat);
 
-                                if (!Directory.Exists(tscbDiscDrive.Text + GAMES_DIR))
+                                if (!Directory.Exists(tscbDiscDrive.Text + @"\" + GAMES_DIR))
                                 {
                                     DialogResult result = MessageBox.Show(GCBM.Properties.Resources.CreateGamesFolder,
                                         GCBM.Properties.Resources.Attention, MessageBoxButtons.YesNo, MessageBoxIcon.Warning);                                    
 
                                     if (result == DialogResult.Yes)
                                     {
-                                        Directory.CreateDirectory(tscbDiscDrive.Text + GAMES_DIR);
+                                        Directory.CreateDirectory(tscbDiscDrive.Text + @"\" + GAMES_DIR);
                                     }
                                 }
                                 else
                                 {
                                     // If the GAMES directory already exists, load the content recursively.
-                                    DisplayFilesSelected(tscbDiscDrive.Text + GAMES_DIR, dgvGameListDisc);
+                                    DisplayFilesSelected(tscbDiscDrive.Text + @"\" + GAMES_DIR, dgvGameListDisc);
                                 }
                             }
                             else if (d.DriveFormat == EXFAT_FAT64)
                             {
                                 InvalidDrive(d.DriveFormat);
 
-                                if (!Directory.Exists(tscbDiscDrive.Text + GAMES_DIR))
+                                if (!Directory.Exists(tscbDiscDrive.Text + @"\" + GAMES_DIR))
                                 {
                                     DialogResult result = MessageBox.Show(GCBM.Properties.Resources.CreateGamesFolder,
                                         GCBM.Properties.Resources.Attention, MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
                                     if (result == DialogResult.Yes)
                                     {
-                                        Directory.CreateDirectory(tscbDiscDrive.Text + GAMES_DIR);
+                                        Directory.CreateDirectory(tscbDiscDrive.Text + @"\" + GAMES_DIR);
                                     }
                                 }
                                 else
                                 {
                                     // If the GAMES directory already exists, load the content recursively.
-                                    DisplayFilesSelected(tscbDiscDrive.Text + GAMES_DIR, dgvGameListDisc);
+                                    DisplayFilesSelected(tscbDiscDrive.Text + @"\" + GAMES_DIR, dgvGameListDisc);
                                 }
                             }
                             else // FAT32 
                             {
-                                if (!Directory.Exists(tscbDiscDrive.Text + GAMES_DIR))
+                                if (!Directory.Exists(tscbDiscDrive.Text + @"\" + GAMES_DIR))
                                 {
                                     DialogResult result = MessageBox.Show(GCBM.Properties.Resources.CreateGamesFolderNow,
                                         GCBM.Properties.Resources.Attention, MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
                                     if (result == DialogResult.Yes)
                                     {
-                                        Directory.CreateDirectory(tscbDiscDrive.Text + GAMES_DIR);
+                                        Directory.CreateDirectory(tscbDiscDrive.Text + @"\" + GAMES_DIR);
                                     }
                                 }
                                 else
                                 {
                                     // If the GAMES directory already exists, load the content recursively.
-                                    DisplayFilesSelected(tscbDiscDrive.Text + GAMES_DIR, dgvGameListDisc);
+                                    DisplayFilesSelected(tscbDiscDrive.Text + @"\" + GAMES_DIR, dgvGameListDisc);
                                 }
                             }
                             //label6.Text = "Tamanho Total: " + d.TotalSize / (1024 * 1024) + " MB\nFormato Drive: " + d.DriveFormat + " \nDisponível: " + d.AvailableFreeSpace / (1024 * 1024) + " MB\n" + d.DriveType;
