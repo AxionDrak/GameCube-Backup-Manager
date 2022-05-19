@@ -19,15 +19,16 @@ namespace GCBM
     public partial class frmConfig : Form
     {
         #region Properties
-
-        private readonly Assembly assembly = Assembly.GetExecutingAssembly();
-
-        private static string GET_CURRENT_PATH   = Directory.GetCurrentDirectory();
         private static string TEMP_DIR           = @"\temp";
         private static string COVERS_DIR         = @"\cover\cache";
         private static string PROG_UPDATE        = "07/05/2022";
         private const string INI_FILE            = "config.ini";
+        private static string GET_CURRENT_PATH = Directory.GetCurrentDirectory();
         private readonly IniFile CONFIG_INI_FILE = new IniFile(INI_FILE);
+        private readonly Assembly assembly       = Assembly.GetExecutingAssembly();
+        
+        private string GAME_NAME { get; set; }
+        private string GAME_PATH { get; set; }
         public int RETURN_CONFIRM { get; set; }
         #endregion
 
@@ -56,6 +57,9 @@ namespace GCBM
             cbLevelLog.SelectedIndex = 0;
             cbVerificationInterval.SelectedIndex = 0;
             grbGeneralFiles.Enabled = false;
+            //rbDX11.Enabled = true;
+            //rbDX11.Checked = true;
+            //rbDSPHLE.Checked = true;
             tbGeneralTempPath.Text = GET_CURRENT_PATH + TEMP_DIR;
             tbDirectoryCoverCache.Text = GET_CURRENT_PATH + COVERS_DIR;
         }
@@ -188,6 +192,14 @@ namespace GCBM
             CONFIG_INI_FILE.IniWriteString("TITLES", "LocationCustomTitles", tbTitleCustom.Text);
             CONFIG_INI_FILE.IniWriteInt("TITLES", "TitleLanguage", cbTitleLanguage.SelectedIndex);
 
+            // Dolphin Emulator
+            CONFIG_INI_FILE.IniWriteString("DOLPHIN", "DolphinFolder", tbPathDolphinEmulator.Text);
+            CONFIG_INI_FILE.IniWriteBool("DOLPHIN", "DolphinDX11", rbDX11.Checked);
+            CONFIG_INI_FILE.IniWriteBool("DOLPHIN", "DolphinDX12", rbDX12.Checked);
+            CONFIG_INI_FILE.IniWriteBool("DOLPHIN", "DolphinVKGL", rbVkGL.Checked);
+            CONFIG_INI_FILE.IniWriteBool("DOLPHIN", "DolphinLLE", rbDSPLLE.Checked);
+            CONFIG_INI_FILE.IniWriteBool("DOLPHIN", "DolphinHLE", rbDSPHLE.Checked);
+
             // Downloads
             //configIniFile.IniWriteBool("DOWNLOADS", "ListTaskComplete", chkDownloadTaskComplete.Checked);
             //configIniFile.IniWriteBool("DOWNLOADS", "ListTaskFailure", chkDownloadTaskFailure.Checked);
@@ -303,6 +315,14 @@ namespace GCBM
                 tbTitle.Text = CONFIG_INI_FILE.IniReadString("TITLES", "LocationTitles", "");
                 tbTitleCustom.Text = CONFIG_INI_FILE.IniReadString("TITLES", "LocationCustomTitles", "");
                 cbTitleLanguage.SelectedIndex = CONFIG_INI_FILE.IniReadInt("TITLES", "TitleLanguage");
+
+                // Dolphin Emulator
+                tbPathDolphinEmulator.Text = CONFIG_INI_FILE.IniReadString("DOLPHIN", "DolphinFolder", "");
+                rbDX11.Checked = CONFIG_INI_FILE.IniReadBool("DOLPHIN", "DolphinDX11");
+                rbDX12.Checked = CONFIG_INI_FILE.IniReadBool("DOLPHIN", "DolphinDX12");
+                rbVkGL.Checked = CONFIG_INI_FILE.IniReadBool("DOLPHIN", "DolphinVKGL");
+                rbDSPLLE.Checked = CONFIG_INI_FILE.IniReadBool("DOLPHIN", "DolphinLLE");
+                rbDSPHLE.Checked = CONFIG_INI_FILE.IniReadBool("DOLPHIN", "DolphinHLE");
 
                 // Downloads
                 //chkDownloadTaskComplete.Checked = configIniFile.IniReadBool("DOWNLOADS", "ListTaskComplete");
@@ -542,5 +562,15 @@ namespace GCBM
             }
         }
         #endregion
+
+        private void btnSelectFile_Click(object sender, EventArgs e)
+        {
+            if (ofdDolphin.ShowDialog() == DialogResult.OK)
+            {
+                //Get the path of specified file (dolphin.exe)
+                tbPathDolphinEmulator.Text = ofdDolphin.FileName;
+
+            }
+        }
     }
 }

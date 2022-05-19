@@ -817,6 +817,13 @@ namespace GCBM
             CONFIG_INI_FILE.IniWriteString("TITLES", "LocationTitles", @"%APP%\titles.txt");
             CONFIG_INI_FILE.IniWriteString("TITLES", "LocationCustomTitles", @"%APP%\custom-titles.txt");
             CONFIG_INI_FILE.IniWriteInt("TITLES", "TitleLanguage", 0);
+            // Dolphin Emulator
+            CONFIG_INI_FILE.IniWriteString("DOLPHIN", "DolphinFolder", "");
+            CONFIG_INI_FILE.IniWriteBool("DOLPHIN", "DolphinDX11", true);
+            CONFIG_INI_FILE.IniWriteBool("DOLPHIN", "DolphinDX12", false);
+            CONFIG_INI_FILE.IniWriteBool("DOLPHIN", "DolphinVKGL", false);
+            CONFIG_INI_FILE.IniWriteBool("DOLPHIN", "DolphinLLE", false);
+            CONFIG_INI_FILE.IniWriteBool("DOLPHIN", "DolphinHLE", true);
             // Updates
             CONFIG_INI_FILE.IniWriteBool("UPDATES", "UpdateVerifyStart", false);
             CONFIG_INI_FILE.IniWriteBool("UPDATES", "UpdateBetaChannel", false);
@@ -1675,6 +1682,28 @@ namespace GCBM
             else
             {
                 tbLog.AppendText("[" + DateString() + "]" + GCBM.Properties.Resources.RequiredDirectories_String5 + Environment.NewLine);
+            }
+        }
+        #endregion
+
+        #region Searh On Web
+        private void SearchOnWeb(string link)
+        {
+            if (CONFIG_INI_FILE.IniReadBool("TITLES", "GameXmlName") == true)
+            {
+                if (File.Exists(WIITDB_FILE))
+                {
+                    XElement root = XElement.Load(WIITDB_FILE);
+                    IEnumerable<XElement> tests = from el in root.Elements("game") where (string)el.Element("id") == tbIDGame.Text select el;
+                    foreach (XElement el in tests)
+                    {
+                        ExternalSite(link, (string)el.Element("locale").Element("title"));
+                    }
+                }
+                else
+                {
+                    CheckWiiTdbXml();
+                }
             }
         }
         #endregion
@@ -3372,6 +3401,40 @@ namespace GCBM
                 AutoUpdater.ReportErrors = true;
                 //AutoUpdater.UpdateFormSize = new Size(500, 400);
             }
+        }
+        #endregion
+
+        // SEARCH DATA ON THE INTERNET
+
+        #region Search On Web
+        private void tsmiSearchOnGoogle_Click(object sender, EventArgs e)
+        {
+            SearchOnWeb("https://www.google.com/search?q=");
+        }
+
+        private void SearchOnWikipedia_Click(object sender, EventArgs e)
+        {
+            SearchOnWeb("https://en.wikipedia.org/w/index.php?search=");
+        }
+
+        private void tsmiSearchOnYoutube_Click(object sender, EventArgs e)
+        {
+            SearchOnWeb("https://www.youtube.com/results?search_query=");
+        }
+
+        private void tsmiSearchOnVGChartz_Click(object sender, EventArgs e)
+        {
+            SearchOnWeb("https://www.vgchartz.com/gamedb/games.php?name=");
+        }
+
+        private void tsmiSearchOnGameSpot_Click(object sender, EventArgs e)
+        {
+            SearchOnWeb("https://www.gamespot.com/search/?header=1&i=site&q=");
+        }
+
+        private void tsmiSearchOnGameTDB_Click(object sender, EventArgs e)
+        {
+            ExternalSite("https://www.gametdb.com/Wii/", tbIDGame.Text);
         }
         #endregion
 

@@ -132,6 +132,18 @@ namespace GCBM
             this.rbGameInternalName = new System.Windows.Forms.RadioButton();
             this.chkGameTitleCustom = new System.Windows.Forms.CheckBox();
             this.chkGameTitle = new System.Windows.Forms.CheckBox();
+            this.tabSettingsDolphin = new System.Windows.Forms.TabPage();
+            this.grbDolphin = new System.Windows.Forms.GroupBox();
+            this.grbDolphinFolder = new System.Windows.Forms.GroupBox();
+            this.btnSelectFile = new System.Windows.Forms.Button();
+            this.tbPathDolphinEmulator = new System.Windows.Forms.TextBox();
+            this.grbDolphinAudio = new System.Windows.Forms.GroupBox();
+            this.rbDSPHLE = new System.Windows.Forms.RadioButton();
+            this.rbDSPLLE = new System.Windows.Forms.RadioButton();
+            this.grbDolphinVideo = new System.Windows.Forms.GroupBox();
+            this.rbVkGL = new System.Windows.Forms.RadioButton();
+            this.rbDX12 = new System.Windows.Forms.RadioButton();
+            this.rbDX11 = new System.Windows.Forms.RadioButton();
             this.tabSettingsUpdates = new System.Windows.Forms.TabPage();
             this.lblTimeInterval = new System.Windows.Forms.Label();
             this.grbUpdate = new System.Windows.Forms.GroupBox();
@@ -168,6 +180,7 @@ namespace GCBM
             this.fbd = new System.Windows.Forms.FolderBrowserDialog();
             this.btnApply = new System.Windows.Forms.Button();
             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
+            this.ofdDolphin = new System.Windows.Forms.OpenFileDialog();
             this.tabSettings.SuspendLayout();
             this.tabSettingsGeneral.SuspendLayout();
             this.grbGeneralTemporaryFolder.SuspendLayout();
@@ -194,6 +207,11 @@ namespace GCBM
             this.grbTitleLanguage.SuspendLayout();
             this.grbTitleFileLocation.SuspendLayout();
             this.grbTitleDiverse.SuspendLayout();
+            this.tabSettingsDolphin.SuspendLayout();
+            this.grbDolphin.SuspendLayout();
+            this.grbDolphinFolder.SuspendLayout();
+            this.grbDolphinAudio.SuspendLayout();
+            this.grbDolphinVideo.SuspendLayout();
             this.tabSettingsUpdates.SuspendLayout();
             this.grbUpdate.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -212,6 +230,7 @@ namespace GCBM
             this.tabSettings.Controls.Add(this.tabSettingsTransfer);
             this.tabSettings.Controls.Add(this.tabSettingsCovers);
             this.tabSettings.Controls.Add(this.tabSettingsTitle);
+            this.tabSettings.Controls.Add(this.tabSettingsDolphin);
             this.tabSettings.Controls.Add(this.tabSettingsUpdates);
             this.tabSettings.Controls.Add(this.tabSettingsLanguage);
             this.tabSettings.Controls.Add(this.tabSettingsLog);
@@ -953,6 +972,95 @@ namespace GCBM
             this.chkGameTitle.UseVisualStyleBackColor = true;
             this.chkGameTitle.CheckedChanged += new System.EventHandler(this.chkGameTitle_CheckedChanged);
             // 
+            // tabSettingsDolphin
+            // 
+            this.tabSettingsDolphin.Controls.Add(this.grbDolphin);
+            resources.ApplyResources(this.tabSettingsDolphin, "tabSettingsDolphin");
+            this.tabSettingsDolphin.Name = "tabSettingsDolphin";
+            this.tabSettingsDolphin.UseVisualStyleBackColor = true;
+            // 
+            // grbDolphin
+            // 
+            this.grbDolphin.Controls.Add(this.grbDolphinFolder);
+            this.grbDolphin.Controls.Add(this.grbDolphinAudio);
+            this.grbDolphin.Controls.Add(this.grbDolphinVideo);
+            resources.ApplyResources(this.grbDolphin, "grbDolphin");
+            this.grbDolphin.Name = "grbDolphin";
+            this.grbDolphin.TabStop = false;
+            // 
+            // grbDolphinFolder
+            // 
+            this.grbDolphinFolder.Controls.Add(this.btnSelectFile);
+            this.grbDolphinFolder.Controls.Add(this.tbPathDolphinEmulator);
+            resources.ApplyResources(this.grbDolphinFolder, "grbDolphinFolder");
+            this.grbDolphinFolder.Name = "grbDolphinFolder";
+            this.grbDolphinFolder.TabStop = false;
+            // 
+            // btnSelectFile
+            // 
+            resources.ApplyResources(this.btnSelectFile, "btnSelectFile");
+            this.btnSelectFile.Name = "btnSelectFile";
+            this.btnSelectFile.UseVisualStyleBackColor = true;
+            this.btnSelectFile.Click += new System.EventHandler(this.btnSelectFile_Click);
+            // 
+            // tbPathDolphinEmulator
+            // 
+            this.tbPathDolphinEmulator.BackColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.tbPathDolphinEmulator, "tbPathDolphinEmulator");
+            this.tbPathDolphinEmulator.Name = "tbPathDolphinEmulator";
+            this.tbPathDolphinEmulator.ReadOnly = true;
+            // 
+            // grbDolphinAudio
+            // 
+            this.grbDolphinAudio.Controls.Add(this.rbDSPHLE);
+            this.grbDolphinAudio.Controls.Add(this.rbDSPLLE);
+            resources.ApplyResources(this.grbDolphinAudio, "grbDolphinAudio");
+            this.grbDolphinAudio.Name = "grbDolphinAudio";
+            this.grbDolphinAudio.TabStop = false;
+            // 
+            // rbDSPHLE
+            // 
+            resources.ApplyResources(this.rbDSPHLE, "rbDSPHLE");
+            this.rbDSPHLE.Checked = true;
+            this.rbDSPHLE.Name = "rbDSPHLE";
+            this.rbDSPHLE.TabStop = true;
+            this.rbDSPHLE.UseVisualStyleBackColor = true;
+            // 
+            // rbDSPLLE
+            // 
+            resources.ApplyResources(this.rbDSPLLE, "rbDSPLLE");
+            this.rbDSPLLE.Name = "rbDSPLLE";
+            this.rbDSPLLE.UseVisualStyleBackColor = true;
+            // 
+            // grbDolphinVideo
+            // 
+            this.grbDolphinVideo.Controls.Add(this.rbVkGL);
+            this.grbDolphinVideo.Controls.Add(this.rbDX11);
+            this.grbDolphinVideo.Controls.Add(this.rbDX12);
+            resources.ApplyResources(this.grbDolphinVideo, "grbDolphinVideo");
+            this.grbDolphinVideo.Name = "grbDolphinVideo";
+            this.grbDolphinVideo.TabStop = false;
+            // 
+            // rbVkGL
+            // 
+            resources.ApplyResources(this.rbVkGL, "rbVkGL");
+            this.rbVkGL.Name = "rbVkGL";
+            this.rbVkGL.UseVisualStyleBackColor = true;
+            // 
+            // rbDX12
+            // 
+            resources.ApplyResources(this.rbDX12, "rbDX12");
+            this.rbDX12.Name = "rbDX12";
+            this.rbDX12.UseVisualStyleBackColor = true;
+            // 
+            // rbDX11
+            // 
+            resources.ApplyResources(this.rbDX11, "rbDX11");
+            this.rbDX11.Checked = true;
+            this.rbDX11.Name = "rbDX11";
+            this.rbDX11.TabStop = true;
+            this.rbDX11.UseVisualStyleBackColor = true;
+            // 
             // tabSettingsUpdates
             // 
             this.tabSettingsUpdates.Controls.Add(this.lblTimeInterval);
@@ -1213,6 +1321,10 @@ namespace GCBM
             // 
             resources.ApplyResources(this.notifyIcon, "notifyIcon");
             // 
+            // ofdDolphin
+            // 
+            resources.ApplyResources(this.ofdDolphin, "ofdDolphin");
+            // 
             // frmConfig
             // 
             resources.ApplyResources(this, "$this");
@@ -1273,6 +1385,14 @@ namespace GCBM
             this.grbTitleFileLocation.PerformLayout();
             this.grbTitleDiverse.ResumeLayout(false);
             this.grbTitleDiverse.PerformLayout();
+            this.tabSettingsDolphin.ResumeLayout(false);
+            this.grbDolphin.ResumeLayout(false);
+            this.grbDolphinFolder.ResumeLayout(false);
+            this.grbDolphinFolder.PerformLayout();
+            this.grbDolphinAudio.ResumeLayout(false);
+            this.grbDolphinAudio.PerformLayout();
+            this.grbDolphinVideo.ResumeLayout(false);
+            this.grbDolphinVideo.PerformLayout();
             this.tabSettingsUpdates.ResumeLayout(false);
             this.tabSettingsUpdates.PerformLayout();
             this.grbUpdate.ResumeLayout(false);
@@ -1429,5 +1549,18 @@ namespace GCBM
         private System.Windows.Forms.Label lblCommentsExactCopy;
         private System.Windows.Forms.Label lblLanguage;
         private System.Windows.Forms.Label lblTimeInterval;
+        private System.Windows.Forms.TabPage tabSettingsDolphin;
+        private System.Windows.Forms.GroupBox grbDolphin;
+        private System.Windows.Forms.GroupBox grbDolphinFolder;
+        private System.Windows.Forms.Button btnSelectFile;
+        private System.Windows.Forms.TextBox tbPathDolphinEmulator;
+        private System.Windows.Forms.GroupBox grbDolphinAudio;
+        private System.Windows.Forms.RadioButton rbDSPHLE;
+        private System.Windows.Forms.RadioButton rbDSPLLE;
+        private System.Windows.Forms.GroupBox grbDolphinVideo;
+        private System.Windows.Forms.RadioButton rbVkGL;
+        private System.Windows.Forms.RadioButton rbDX12;
+        private System.Windows.Forms.RadioButton rbDX11;
+        private System.Windows.Forms.OpenFileDialog ofdDolphin;
     }
 }

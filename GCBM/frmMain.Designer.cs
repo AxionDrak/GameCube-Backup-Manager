@@ -63,6 +63,14 @@ namespace GCBM
             this.dgvMainCheck = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.cmsMain = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiInfoGame = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem9 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsmiSearchOnGameTDB = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem8 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsmiSearchOnGoogle = new System.Windows.Forms.ToolStripMenuItem();
+            this.SearchOnWikipedia = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiSearchOnYoutube = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiSearchOnGameSpot = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiSearchOnVGChartz = new System.Windows.Forms.ToolStripMenuItem();
             this.mstripFile = new System.Windows.Forms.MenuStrip();
             this.tsmiReloadGameList = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiSelectGameList = new System.Windows.Forms.ToolStripMenuItem();
@@ -435,7 +443,15 @@ namespace GCBM
             // cmsMain
             // 
             this.cmsMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiInfoGame});
+            this.tsmiInfoGame,
+            this.toolStripMenuItem9,
+            this.tsmiSearchOnGameTDB,
+            this.toolStripMenuItem8,
+            this.tsmiSearchOnGoogle,
+            this.SearchOnWikipedia,
+            this.tsmiSearchOnYoutube,
+            this.tsmiSearchOnGameSpot,
+            this.tsmiSearchOnVGChartz});
             this.cmsMain.Name = "cmsMain";
             resources.ApplyResources(this.cmsMain, "cmsMain");
             // 
@@ -444,6 +460,52 @@ namespace GCBM
             this.tsmiInfoGame.Name = "tsmiInfoGame";
             resources.ApplyResources(this.tsmiInfoGame, "tsmiInfoGame");
             this.tsmiInfoGame.Click += new System.EventHandler(this.tsmiInfoGame_Click);
+            // 
+            // toolStripMenuItem9
+            // 
+            this.toolStripMenuItem9.Name = "toolStripMenuItem9";
+            resources.ApplyResources(this.toolStripMenuItem9, "toolStripMenuItem9");
+            // 
+            // tsmiSearchOnGameTDB
+            // 
+            this.tsmiSearchOnGameTDB.Name = "tsmiSearchOnGameTDB";
+            resources.ApplyResources(this.tsmiSearchOnGameTDB, "tsmiSearchOnGameTDB");
+            this.tsmiSearchOnGameTDB.Click += new System.EventHandler(this.tsmiSearchOnGameTDB_Click);
+            // 
+            // toolStripMenuItem8
+            // 
+            this.toolStripMenuItem8.Name = "toolStripMenuItem8";
+            resources.ApplyResources(this.toolStripMenuItem8, "toolStripMenuItem8");
+            // 
+            // tsmiSearchOnGoogle
+            // 
+            this.tsmiSearchOnGoogle.Name = "tsmiSearchOnGoogle";
+            resources.ApplyResources(this.tsmiSearchOnGoogle, "tsmiSearchOnGoogle");
+            this.tsmiSearchOnGoogle.Click += new System.EventHandler(this.tsmiSearchOnGoogle_Click);
+            // 
+            // SearchOnWikipedia
+            // 
+            this.SearchOnWikipedia.Name = "SearchOnWikipedia";
+            resources.ApplyResources(this.SearchOnWikipedia, "SearchOnWikipedia");
+            this.SearchOnWikipedia.Click += new System.EventHandler(this.SearchOnWikipedia_Click);
+            // 
+            // tsmiSearchOnYoutube
+            // 
+            this.tsmiSearchOnYoutube.Name = "tsmiSearchOnYoutube";
+            resources.ApplyResources(this.tsmiSearchOnYoutube, "tsmiSearchOnYoutube");
+            this.tsmiSearchOnYoutube.Click += new System.EventHandler(this.tsmiSearchOnYoutube_Click);
+            // 
+            // tsmiSearchOnGameSpot
+            // 
+            this.tsmiSearchOnGameSpot.Name = "tsmiSearchOnGameSpot";
+            resources.ApplyResources(this.tsmiSearchOnGameSpot, "tsmiSearchOnGameSpot");
+            this.tsmiSearchOnGameSpot.Click += new System.EventHandler(this.tsmiSearchOnGameSpot_Click);
+            // 
+            // tsmiSearchOnVGChartz
+            // 
+            this.tsmiSearchOnVGChartz.Name = "tsmiSearchOnVGChartz";
+            resources.ApplyResources(this.tsmiSearchOnVGChartz, "tsmiSearchOnVGChartz");
+            this.tsmiSearchOnVGChartz.Click += new System.EventHandler(this.tsmiSearchOnVGChartz_Click);
             // 
             // mstripFile
             // 
@@ -1462,6 +1524,14 @@ namespace GCBM
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
         private System.Windows.Forms.Label lblSpaceAvailabeOnDevice;
         private System.Windows.Forms.Label lblSpaceTotalOnDevice;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem8;
+        private System.Windows.Forms.ToolStripMenuItem tsmiSearchOnGoogle;
+        private System.Windows.Forms.ToolStripMenuItem SearchOnWikipedia;
+        private System.Windows.Forms.ToolStripMenuItem tsmiSearchOnYoutube;
+        private System.Windows.Forms.ToolStripMenuItem tsmiSearchOnGameSpot;
+        private System.Windows.Forms.ToolStripMenuItem tsmiSearchOnVGChartz;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem9;
+        private System.Windows.Forms.ToolStripMenuItem tsmiSearchOnGameTDB;
     }
 }
 
