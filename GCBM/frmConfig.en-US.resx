@@ -493,6 +493,24 @@
   <data name="chkGameTitle.Text" xml:space="preserve">
     <value>Use GameTDB (titles.txt)</value>
   </data>
+  <data name="grbDolphin.Text" xml:space="preserve">
+    <value>Configure Emulator</value>
+  </data>
+  <data name="grbDolphinFolder.Text" xml:space="preserve">
+    <value>Path to emulator</value>
+  </data>
+  <data name="grbDolphinAudio.Text" xml:space="preserve">
+    <value>Audio</value>
+  </data>
+  <data name="rbDSPHLE.Size" type="System.Drawing.Size, System.Drawing">
+    <value>112, 17</value>
+  </data>
+  <data name="rbDSPHLE.Text" xml:space="preserve">
+    <value>DSP HLE (default)</value>
+  </data>
+  <data name="grbDolphinVideo.Text" xml:space="preserve">
+    <value>Video</value>
+  </data>
   <data name="lblTimeInterval.Location" type="System.Drawing.Point, System.Drawing">
     <value>53, 246</value>
   </data>
@@ -739,5 +757,8 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Settings</value>
+  </data>
+  <data name="ofdDolphin.Filter" xml:space="preserve">
+    <value>Dolphin Emulator|dolphin.exe</value>
   </data>
 </root>
