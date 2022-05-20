@@ -1,4 +1,13 @@
 ﻿
+### GameCube Backup Manager 2.4.4.0 (19 de maio de 2022)
+
+[Adicionado] novos textos.
+[Adicionado] textos indicadores de Espaço Total e Espaço Disponível no dispositivo de destino.
+[Adicionado] sistema de configuração (preliminar) para testar jogos via emulador Dolphin.
+[Adicionado] função de pesquisa online para o jogo selecionado.
+[Corrigido] textos em todos os idiomas disponíveis.
+[Melhorado] funções no código do programa.
+
 ### GameCube Backup Manager 2.4.3.0 (30 de abril de 2022)
 
 [Corrigido] erro de transferência de arquivos no modo 'Instalar Jogo (1:1)'.
