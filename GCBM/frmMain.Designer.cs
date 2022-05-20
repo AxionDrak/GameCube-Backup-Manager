@@ -63,6 +63,8 @@ namespace GCBM
             this.dgvMainCheck = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.cmsMain = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiInfoGame = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem10 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsmiDolphinEmulator = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem9 = new System.Windows.Forms.ToolStripSeparator();
             this.tsmiSearchOnGameTDB = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem8 = new System.Windows.Forms.ToolStripSeparator();
@@ -163,7 +165,6 @@ namespace GCBM
             this.tsmiMainPlugins = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiMetaXml = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiManageApp = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiDolphinEmulator = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiElfDol = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiCreatePackage = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiBurnMedia = new System.Windows.Forms.ToolStripMenuItem();
@@ -444,6 +445,8 @@ namespace GCBM
             // 
             this.cmsMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiInfoGame,
+            this.toolStripMenuItem10,
+            this.tsmiDolphinEmulator,
             this.toolStripMenuItem9,
             this.tsmiSearchOnGameTDB,
             this.toolStripMenuItem8,
@@ -460,6 +463,17 @@ namespace GCBM
             this.tsmiInfoGame.Name = "tsmiInfoGame";
             resources.ApplyResources(this.tsmiInfoGame, "tsmiInfoGame");
             this.tsmiInfoGame.Click += new System.EventHandler(this.tsmiInfoGame_Click);
+            // 
+            // toolStripMenuItem10
+            // 
+            this.toolStripMenuItem10.Name = "toolStripMenuItem10";
+            resources.ApplyResources(this.toolStripMenuItem10, "toolStripMenuItem10");
+            // 
+            // tsmiDolphinEmulator
+            // 
+            this.tsmiDolphinEmulator.Name = "tsmiDolphinEmulator";
+            resources.ApplyResources(this.tsmiDolphinEmulator, "tsmiDolphinEmulator");
+            this.tsmiDolphinEmulator.Click += new System.EventHandler(this.tsmiDolphinEmulator_Click);
             // 
             // toolStripMenuItem9
             // 
@@ -1173,7 +1187,6 @@ namespace GCBM
             this.tsmiMainPlugins.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiMetaXml,
             this.tsmiManageApp,
-            this.tsmiDolphinEmulator,
             this.tsmiElfDol,
             this.tsmiCreatePackage,
             this.tsmiBurnMedia});
@@ -1194,13 +1207,6 @@ namespace GCBM
             this.tsmiManageApp.Name = "tsmiManageApp";
             resources.ApplyResources(this.tsmiManageApp, "tsmiManageApp");
             this.tsmiManageApp.Click += new System.EventHandler(this.tsmiManageApp_Click);
-            // 
-            // tsmiDolphinEmulator
-            // 
-            this.tsmiDolphinEmulator.Image = global::GCBM.Properties.Resources.dolphin_emulator_16;
-            this.tsmiDolphinEmulator.Name = "tsmiDolphinEmulator";
-            resources.ApplyResources(this.tsmiDolphinEmulator, "tsmiDolphinEmulator");
-            this.tsmiDolphinEmulator.Click += new System.EventHandler(this.tsmiDolphinEmulator_Click);
             // 
             // tsmiElfDol
             // 
@@ -1515,7 +1521,6 @@ namespace GCBM
         private System.Windows.Forms.ToolStripMenuItem tsmiMainPlugins;
         private System.Windows.Forms.ToolStripMenuItem tsmiMetaXml;
         private System.Windows.Forms.ToolStripMenuItem tsmiManageApp;
-        private System.Windows.Forms.ToolStripMenuItem tsmiDolphinEmulator;
         private System.Windows.Forms.ToolStripMenuItem tsmiElfDol;
         private System.Windows.Forms.ToolStripMenuItem tsmiCreatePackage;
         private System.Windows.Forms.ToolStripMenuItem tsmiBurnMedia;
@@ -1532,6 +1537,8 @@ namespace GCBM
         private System.Windows.Forms.ToolStripMenuItem tsmiSearchOnVGChartz;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem9;
         private System.Windows.Forms.ToolStripMenuItem tsmiSearchOnGameTDB;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem10;
+        private System.Windows.Forms.ToolStripMenuItem tsmiDolphinEmulator;
     }
 }
 

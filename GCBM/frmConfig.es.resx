@@ -117,12 +117,30 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="tabSettingsGeneral.Text" xml:space="preserve">
+    <value>General</value>
+  </data>
+  <data name="tabSettingsSeveral.Text" xml:space="preserve">
+    <value>Varios</value>
+  </data>
+  <data name="tabSettingsTransfer.Text" xml:space="preserve">
+    <value>Transferencia de Juegos</value>
+  </data>
+  <data name="tabSettingsCovers.Text" xml:space="preserve">
+    <value>Portadas</value>
+  </data>
+  <data name="tabSettingsUpdates.Text" xml:space="preserve">
+    <value>Actualizaciones</value>
+  </data>
+  <data name="grbGeneralTemporaryFolder.Text" xml:space="preserve">
+    <value>Carpeta temporal</value>
+  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="btnTemporaryFolder.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="grbGeneralTemporaryFolder.Text" xml:space="preserve">
-    <value>Carpeta temporal</value>
+  <data name="grbGeneralFiles.Text" xml:space="preserve">
+    <value>Archivos</value>
   </data>
   <data name="chkGeneralExtractNwb.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -170,11 +188,11 @@
   <data name="lblGeneralExtract.Text" xml:space="preserve">
     <value>Extraer siempre que sea necesario.</value>
   </data>
-  <data name="grbGeneralFiles.Text" xml:space="preserve">
-    <value>Archivos</value>
-  </data>
   <data name="grbGeneralFileSize.Text" xml:space="preserve">
     <value>Mostrar tamaño</value>
+  </data>
+  <data name="grbGeneralPartitions.Text" xml:space="preserve">
+    <value>Ajustar directorios de juegos</value>
   </data>
   <data name="rbGeneralDiscDelete.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -193,12 +211,6 @@
   </data>
   <data name="rbGeneralDiscClean.Text" xml:space="preserve">
     <value>Mantenga todas las carpetas separadas para el disco 1 y el disco 2 (Predeterminado)</value>
-  </data>
-  <data name="grbGeneralPartitions.Text" xml:space="preserve">
-    <value>Ajustar directorios de juegos</value>
-  </data>
-  <data name="tabSettingsGeneral.Text" xml:space="preserve">
-    <value>General</value>
   </data>
   <data name="lblCommentsScrubCopy.Location" type="System.Drawing.Point, System.Drawing">
     <value>10, 168</value>
@@ -221,6 +233,9 @@
   <data name="lblComments.Text" xml:space="preserve">
     <value>COMENTARIOS:</value>
   </data>
+  <data name="grpNomenclatureFolderFormat.Text" xml:space="preserve">
+    <value>Formato de carpeta</value>
+  </data>
   <data name="cbAdjustNamingStyle.Items" xml:space="preserve">
     <value>Título [Código del Juego]</value>
   </data>
@@ -233,8 +248,8 @@
   <data name="lblNomenclature.Text" xml:space="preserve">
     <value>Estilo de nomenclatura:</value>
   </data>
-  <data name="grpNomenclatureFolderFormat.Text" xml:space="preserve">
-    <value>Formato de carpeta</value>
+  <data name="grbGeneralDiverse.Text" xml:space="preserve">
+    <value>Varios</value>
   </data>
   <data name="chkMultipleInstances.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -335,12 +350,6 @@
   <data name="chkGeneralMD5.Text" xml:space="preserve">
     <value>Calcular la firma MD5 durante las transferencias</value>
   </data>
-  <data name="grbGeneralDiverse.Text" xml:space="preserve">
-    <value>Varios</value>
-  </data>
-  <data name="tabSettingsSeveral.Text" xml:space="preserve">
-    <value>Varios</value>
-  </data>
   <data name="lblAlignment.Size" type="System.Drawing.Size, System.Drawing">
     <value>59, 13</value>
   </data>
@@ -389,6 +398,9 @@
   <data name="label17.Text" xml:space="preserve">
     <value>Copie uno o más archivos de una ubicación (fuente) a otra (destino). El archivo no está comprimido, no forma parte de ningún contenedor y no se elimina gargabe (basura).</value>
   </data>
+  <data name="grbTransferSystem.Text" xml:space="preserve">
+    <value>Sistema de transferencia a utilizar</value>
+  </data>
   <data name="rbTransferSystemFST.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -404,17 +416,14 @@
   <data name="rbTransferSystemXCopy.Text" xml:space="preserve">
     <value>XCopy (Predeterminado)</value>
   </data>
-  <data name="grbTransferSystem.Text" xml:space="preserve">
-    <value>Sistema de transferencia a utilizar</value>
-  </data>
-  <data name="tabSettingsTransfer.Text" xml:space="preserve">
-    <value>Transferencia de Juegos</value>
+  <data name="grpTitlesCoverFolder.Text" xml:space="preserve">
+    <value>Carpeta de portadas (Caché -&gt; Origen)</value>
   </data>
   <data name="btnCoverDirectory.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="grpTitlesCoverFolder.Text" xml:space="preserve">
-    <value>Carpeta de portadas (Caché -&gt; Origen)</value>
+  <data name="grbCoverTransfer.Text" xml:space="preserve">
+    <value>Configuración del cargador USB (Transferir Coberturas -&gt; Destino)</value>
   </data>
   <data name="rbCoverUSBLoaderGX.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -470,9 +479,6 @@
   <data name="rbCoverWiiFlow.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="grbCoverTransfer.Text" xml:space="preserve">
-    <value>Configuración del cargador USB (Transferir Coberturas -&gt; Destino)</value>
-  </data>
   <data name="chkCoverRecursiveSearch.Size" type="System.Drawing.Size, System.Drawing">
     <value>355, 17</value>
   </data>
@@ -497,8 +503,8 @@
   <data name="chkCoverSynchronizeDelete.Text" xml:space="preserve">
     <value>Eliminar máscaras para juegos que no están en la lista</value>
   </data>
-  <data name="tabSettingsCovers.Text" xml:space="preserve">
-    <value>Portadas</value>
+  <data name="grbTitleLanguage.Text" xml:space="preserve">
+    <value>Idioma del título</value>
   </data>
   <data name="btnTitleDownload.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -536,8 +542,8 @@
   <data name="cbTitleLanguage.Items11" xml:space="preserve">
     <value>Chino Simplificado</value>
   </data>
-  <data name="grbTitleLanguage.Text" xml:space="preserve">
-    <value>Idioma del título</value>
+  <data name="grbTitleFileLocation.Text" xml:space="preserve">
+    <value>Localización de archivos</value>
   </data>
   <data name="label5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -551,8 +557,8 @@
   <data name="btnTitle.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="grbTitleFileLocation.Text" xml:space="preserve">
-    <value>Localización de archivos</value>
+  <data name="grbTitleDiverse.Text" xml:space="preserve">
+    <value>Varios</value>
   </data>
   <data name="rbGameXmlName.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -590,8 +596,14 @@
   <data name="chkGameTitle.Text" xml:space="preserve">
     <value>Usa GameTDB (titles.txt)</value>
   </data>
-  <data name="grbTitleDiverse.Text" xml:space="preserve">
-    <value>Varios</value>
+  <data name="grbDolphinFolder.Text" xml:space="preserve">
+    <value>Camino al emulador</value>
+  </data>
+  <data name="rbDSPHLE.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 17</value>
+  </data>
+  <data name="rbDSPHLE.Text" xml:space="preserve">
+    <value>DSP HLE (estándar)</value>
   </data>
   <data name="lblTimeInterval.Location" type="System.Drawing.Point, System.Drawing">
     <value>32, 246</value>
@@ -601,6 +613,9 @@
   </data>
   <data name="lblTimeInterval.Text" xml:space="preserve">
     <value>NOTA: El ajuste de la configuración del intervalo de tiempo solo tendrá efecto después de reiniciar el programa.</value>
+  </data>
+  <data name="grbUpdate.Text" xml:space="preserve">
+    <value>Ajustes de Actualización</value>
   </data>
   <data name="lblUpdateInterval.Size" type="System.Drawing.Size, System.Drawing">
     <value>123, 13</value>
@@ -656,17 +671,14 @@
   <data name="chkUpdateVerifyStart.Text" xml:space="preserve">
     <value>Buscar actualizaciones al inicio</value>
   </data>
-  <data name="grbUpdate.Text" xml:space="preserve">
-    <value>Ajustes de Actualización</value>
-  </data>
-  <data name="tabSettingsUpdates.Text" xml:space="preserve">
-    <value>Actualizaciones</value>
-  </data>
   <data name="lblLanguageComments.Size" type="System.Drawing.Size, System.Drawing">
     <value>470, 13</value>
   </data>
   <data name="lblLanguageComments.Text" xml:space="preserve">
     <value>NOTA: El ajuste de la configuración de idioma solo tendrá efecto después de reiniciar el programa.</value>
+  </data>
+  <data name="grbLanguage.Text" xml:space="preserve">
+    <value>Seleccione el idioma predeterminado:</value>
   </data>
   <data name="cbLanguage.Items" xml:space="preserve">
     <value>Portugués [Brasil]</value>
@@ -676,9 +688,6 @@
   </data>
   <data name="cbLanguage.Items2" xml:space="preserve">
     <value>Español [España]</value>
-  </data>
-  <data name="grbLanguage.Text" xml:space="preserve">
-    <value>Seleccione el idioma predeterminado:</value>
   </data>
   <data name="pictureBox2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -818,5 +827,8 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Configuraciones</value>
+  </data>
+  <data name="ofdDolphin.Filter" xml:space="preserve">
+    <value>Emulador Dolphin|dolphin.exe</value>
   </data>
 </root>

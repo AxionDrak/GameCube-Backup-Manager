@@ -159,7 +159,7 @@ namespace GCBM
             tsmiExportCSV.Enabled = false;
             tsmiExportHTML.Enabled = false;
             //tsmiElfDol.Enabled = false;
-            tsmiDolphinEmulator.Enabled = false;
+            //tsmiDolphinEmulator.Enabled = false;
             tsmiBurnMedia.Enabled = false;
             tsmiManageApp.Enabled = false;
             tsmiCreatePackage.Enabled = false;
@@ -167,7 +167,7 @@ namespace GCBM
             tsmiExportCSV.Visible = false;
             tsmiExportHTML.Visible = false;
             //tsmiElfDol.Visible = false;
-            tsmiDolphinEmulator.Visible = false;
+            //tsmiDolphinEmulator.Visible = false;
             tsmiBurnMedia.Visible = false;
             tsmiManageApp.Visible = false;
             tsmiCreatePackage.Visible = false;
@@ -1351,10 +1351,12 @@ namespace GCBM
                     pbGameCover3D.LoadAsync(GET_CURRENT_PATH + MEDIA_DIR + @"\3d.png");
 
                     ERROR = true;
+                    // INVALID FILE!!!
                 }
                 else
                 {
                     ERROR = false;
+                    // VALID FILE!!!
                 }
             }
             catch (Exception ex)
@@ -3324,9 +3326,65 @@ namespace GCBM
         #region tsmiDolphinEmulator_Click
         private void tsmiDolphinEmulator_Click(object sender, EventArgs e)
         {
-            GCBM.tools.frmDolphinEmulator dolphinEmulator = new tools.frmDolphinEmulator();
-            dolphinEmulator.ShowDialog();
-            dolphinEmulator.Dispose();
+            int? selectedRowCount = Convert.ToInt32(dgvGameList.Rows.GetRowCount(DataGridViewElementStates.Selected));
+
+            if (dgvGameList.RowCount == 0)
+            {
+                EmptyGamesList();
+            }
+            else if (selectedRowCount > 0)
+            {
+                if (CONFIG_INI_FILE.IniReadString("DOLPHIN", "DolphinFolder", "") == String.Empty)
+                {
+                    MessageBox.Show(GCBM.Properties.Resources.DolphinEmulator_Not_Found_String_1 + Environment.NewLine + Environment.NewLine +
+                        GCBM.Properties.Resources.DolphinEmulator_Not_Found_String_2, GCBM.Properties.Resources.MetaXml_String_ERRO, 
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    try
+                    {
+                        string VideoDX = "";
+                        string AudioDSP = "";
+                        var _sourceGame = dgvGameList.CurrentRow.Cells[4].Value.ToString();
+
+                        START_INFO.CreateNoWindow = true;
+                        START_INFO.UseShellExecute = true;
+                        // DOLPHIN
+                        START_INFO.FileName = CONFIG_INI_FILE.IniReadString("DOLPHIN", "DolphinFolder", "");
+
+                        if (CONFIG_INI_FILE.IniReadBool("DOLPHIN", "DolphinDX11") == true)
+                        {
+                            VideoDX = " --video_backend=D3D";
+                        }
+                        else if (CONFIG_INI_FILE.IniReadBool("DOLPHIN", "DolphinDX12") == true)
+                        {
+                            VideoDX = " --video_backend=D3D";
+                        }
+                        else
+                        {
+                            VideoDX = " --video_backend=OGL";
+                        }
+
+                        if (CONFIG_INI_FILE.IniReadBool("DOLPHIN", "DolphinLLE") == true)
+                        {
+                            AudioDSP = " --audio_emulation=LLE";
+                        }
+                        else
+                        {
+                            AudioDSP = " --audio_emulation=HLE";
+                        }
+
+                        START_INFO.Arguments = " --exec=" + "\"" + _sourceGame + "\"" + " /b " + VideoDX + AudioDSP;
+                        //START_INFO.WindowStyle = ProcessWindowStyle.Hidden;
+                        Process.Start(START_INFO);
+                    }
+                    catch (Exception ex)
+                    {
+                        GlobalNotifications(ex.Message, ToolTipIcon.Error);
+                    }
+                }
+            }
         }
         #endregion
 

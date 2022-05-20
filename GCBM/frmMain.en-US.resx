@@ -658,7 +658,7 @@
     <value>Files (Source)</value>
   </data>
   <data name="lblInstallGame.Location" type="System.Drawing.Point, System.Drawing">
-    <value>519, 330</value>
+    <value>517, 329</value>
   </data>
   <data name="lblInstallGame.Size" type="System.Drawing.Size, System.Drawing">
     <value>86, 13</value>
@@ -667,10 +667,10 @@
     <value>Installing game...</value>
   </data>
   <data name="lblPercent.Location" type="System.Drawing.Point, System.Drawing">
-    <value>665, 312</value>
+    <value>663, 311</value>
   </data>
   <data name="lblCopy.Location" type="System.Drawing.Point, System.Drawing">
-    <value>519, 312</value>
+    <value>517, 311</value>
   </data>
   <data name="lblCopy.Size" type="System.Drawing.Size, System.Drawing">
     <value>52, 13</value>
@@ -679,10 +679,16 @@
     <value>Waiting...</value>
   </data>
   <data name="pbCopy.Location" type="System.Drawing.Point, System.Drawing">
-    <value>516, 346</value>
+    <value>514, 345</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>517, 428</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Click on the icon to the side and select a folder to list all the ISO and GCM files contained inside.</value>
+  </data>
+  <data name="btnSelectFolder.Location" type="System.Drawing.Point, System.Drawing">
+    <value>781, 408</value>
   </data>
   <data name="grpDetails.Text" xml:space="preserve">
     <value>Details</value>
@@ -761,13 +767,46 @@
     <value>Title:</value>
   </data>
   <data name="cmsMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>172, 26</value>
+    <value>233, 198</value>
   </data>
   <data name="tsmiInfoGame.Size" type="System.Drawing.Size, System.Drawing">
-    <value>171, 22</value>
+    <value>232, 22</value>
   </data>
   <data name="tsmiInfoGame.Text" xml:space="preserve">
     <value>Game Information</value>
+  </data>
+  <data name="toolStripMenuItem10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>229, 6</value>
+  </data>
+  <data name="tsmiDolphinEmulator.Size" type="System.Drawing.Size, System.Drawing">
+    <value>232, 22</value>
+  </data>
+  <data name="tsmiDolphinEmulator.Text" xml:space="preserve">
+    <value>Test Game (Dolphin Emulator)</value>
+  </data>
+  <data name="toolStripMenuItem9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>229, 6</value>
+  </data>
+  <data name="tsmiSearchOnGameTDB.Size" type="System.Drawing.Size, System.Drawing">
+    <value>232, 22</value>
+  </data>
+  <data name="toolStripMenuItem8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>229, 6</value>
+  </data>
+  <data name="tsmiSearchOnGoogle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>232, 22</value>
+  </data>
+  <data name="SearchOnWikipedia.Size" type="System.Drawing.Size, System.Drawing">
+    <value>232, 22</value>
+  </data>
+  <data name="tsmiSearchOnYoutube.Size" type="System.Drawing.Size, System.Drawing">
+    <value>232, 22</value>
+  </data>
+  <data name="tsmiSearchOnGameSpot.Size" type="System.Drawing.Size, System.Drawing">
+    <value>232, 22</value>
+  </data>
+  <data name="tsmiSearchOnVGChartz.Size" type="System.Drawing.Size, System.Drawing">
+    <value>232, 22</value>
   </data>
   <data name="mstripFile.Size" type="System.Drawing.Size, System.Drawing">
     <value>864, 24</value>
@@ -844,8 +883,26 @@
   <data name="tabMainDisc.Text" xml:space="preserve">
     <value>Files (Destination)</value>
   </data>
+  <data name="lblSpaceAvailabeOnDevice.Location" type="System.Drawing.Point, System.Drawing">
+    <value>519, 265</value>
+  </data>
+  <data name="lblSpaceAvailabeOnDevice.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 13</value>
+  </data>
+  <data name="lblSpaceAvailabeOnDevice.Text" xml:space="preserve">
+    <value>Available space: </value>
+  </data>
+  <data name="lblSpaceTotalOnDevice.Location" type="System.Drawing.Point, System.Drawing">
+    <value>519, 284</value>
+  </data>
+  <data name="lblSpaceTotalOnDevice.Size" type="System.Drawing.Size, System.Drawing">
+    <value>82, 13</value>
+  </data>
+  <data name="lblSpaceTotalOnDevice.Text" xml:space="preserve">
+    <value>Total space: </value>
+  </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>511, 182</value>
+    <value>515, 182</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
     <value>347, 39</value>
@@ -854,7 +911,7 @@
     <value>The total file listing and total file size do not distinguish between Disc 1 (game.iso) and Disc 2 (disc2.iso) files. The data is for sampling purposes only.</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>511, 164</value>
+    <value>515, 164</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>45, 13</value>
@@ -1004,10 +1061,10 @@
     <value>Select an item...</value>
   </data>
   <data name="cbFilterDatabase.Location" type="System.Drawing.Point, System.Drawing">
-    <value>503, 5</value>
+    <value>497, 5</value>
   </data>
   <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>465, 8</value>
+    <value>459, 8</value>
   </data>
   <data name="label7.Text" xml:space="preserve">
     <value>Filter:</value>
@@ -1166,37 +1223,31 @@
     <value>170, 22</value>
   </data>
   <data name="tsmiMetaXml.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 22</value>
+    <value>184, 22</value>
   </data>
   <data name="tsmiMetaXml.Text" xml:space="preserve">
     <value>Read/Edit 'meta.xml'</value>
   </data>
   <data name="tsmiManageApp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 22</value>
+    <value>184, 22</value>
   </data>
   <data name="tsmiManageApp.Text" xml:space="preserve">
     <value>Manage APP's</value>
   </data>
-  <data name="tsmiDolphinEmulator.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 22</value>
-  </data>
-  <data name="tsmiDolphinEmulator.Text" xml:space="preserve">
-    <value>Test Game (Dolphin Emulator)</value>
-  </data>
   <data name="tsmiElfDol.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 22</value>
+    <value>184, 22</value>
   </data>
   <data name="tsmiElfDol.Text" xml:space="preserve">
     <value>Convert ELF -&gt; DOL</value>
   </data>
   <data name="tsmiCreatePackage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 22</value>
+    <value>184, 22</value>
   </data>
   <data name="tsmiCreatePackage.Text" xml:space="preserve">
     <value>Create APP Package</value>
   </data>
   <data name="tsmiBurnMedia.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 22</value>
+    <value>184, 22</value>
   </data>
   <data name="tsmiBurnMedia.Text" xml:space="preserve">
     <value>Burn CD/DVD Media</value>
@@ -1245,9 +1296,6 @@
   </data>
   <data name="lblNetStatus.Text" xml:space="preserve">
     <value>Internet connection disabled!</value>
-  </data>
-  <data name="cmsNotifyIcon.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 70</value>
   </data>
   <data name="notifyIcon.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1343,21 +1391,6 @@
         Af8BAQH/AAAAAAAAAAAAAAAAAAAAAAAAAADgBwAAwAMAAMADAADAAwAAwAMAAMADAADAAwAAwAMAAMAD
         AADAAwAAwAMAAMADAADAAwAAwAMAAMADAAD4HwAA
 </value>
-  </data>
-  <data name="tsmiNotifyConfig.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 22</value>
-  </data>
-  <data name="tsmiNotifyConfig.Text" xml:space="preserve">
-    <value>Settings...</value>
-  </data>
-  <data name="tsmiNotifyDisplay.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 22</value>
-  </data>
-  <data name="tsmiNotifyDisplay.Text" xml:space="preserve">
-    <value>Restore</value>
-  </data>
-  <data name="tsmiNotifyExit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 22</value>
   </data>
   <data name="tsmiNotifyExit.Text" xml:space="preserve">
     <value>Exit</value>
@@ -1456,5 +1489,23 @@
         Af8BAQH/AAAAAAAAAAAAAAAAAAAAAAAAAADgBwAAwAMAAMADAADAAwAAwAMAAMADAADAAwAAwAMAAMAD
         AADAAwAAwAMAAMADAADAAwAAwAMAAMADAAD4HwAA
 </value>
+  </data>
+  <data name="tsmiSearchOnGameTDB.Text" xml:space="preserve">
+    <value>Search GameTDB</value>
+  </data>
+  <data name="tsmiSearchOnGoogle.Text" xml:space="preserve">
+    <value>Search on Google</value>
+  </data>
+  <data name="SearchOnWikipedia.Text" xml:space="preserve">
+    <value>Search in Wikipedia</value>
+  </data>
+  <data name="tsmiSearchOnYoutube.Text" xml:space="preserve">
+    <value>Search on YouTube</value>
+  </data>
+  <data name="tsmiSearchOnGameSpot.Text" xml:space="preserve">
+    <value>Search on GameSpot</value>
+  </data>
+  <data name="tsmiSearchOnVGChartz.Text" xml:space="preserve">
+    <value>Search on VGChartz</value>
   </data>
 </root>
