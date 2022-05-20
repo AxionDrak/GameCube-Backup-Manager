@@ -789,7 +789,7 @@
     <value>True</value>
   </data>
   <data name="lblInstallGame.Location" type="System.Drawing.Point, System.Drawing">
-    <value>519, 332</value>
+    <value>517, 337</value>
   </data>
   <data name="lblInstallGame.Size" type="System.Drawing.Size, System.Drawing">
     <value>88, 13</value>
@@ -828,7 +828,7 @@
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
   <data name="lblPercent.Location" type="System.Drawing.Point, System.Drawing">
-    <value>665, 314</value>
+    <value>663, 319</value>
   </data>
   <data name="lblPercent.Size" type="System.Drawing.Size, System.Drawing">
     <value>24, 13</value>
@@ -864,7 +864,7 @@
     <value>True</value>
   </data>
   <data name="lblCopy.Location" type="System.Drawing.Point, System.Drawing">
-    <value>519, 314</value>
+    <value>517, 319</value>
   </data>
   <data name="lblCopy.Size" type="System.Drawing.Size, System.Drawing">
     <value>74, 13</value>
@@ -897,7 +897,7 @@
     <value>Top, Right</value>
   </data>
   <data name="pbCopy.Location" type="System.Drawing.Point, System.Drawing">
-    <value>516, 348</value>
+    <value>514, 353</value>
   </data>
   <data name="pbCopy.Size" type="System.Drawing.Size, System.Drawing">
     <value>342, 23</value>
@@ -927,7 +927,7 @@
     <value>Bottom, Right</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>519, 434</value>
+    <value>517, 433</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>264, 55</value>
@@ -960,7 +960,7 @@
     <value>Zoom</value>
   </data>
   <data name="btnSelectFolder.Location" type="System.Drawing.Point, System.Drawing">
-    <value>783, 414</value>
+    <value>781, 413</value>
   </data>
   <data name="btnSelectFolder.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 75</value>
@@ -1489,7 +1489,7 @@
     <value>12</value>
   </data>
   <data name="grpDetails.Location" type="System.Drawing.Point, System.Drawing">
-    <value>510, 28</value>
+    <value>508, 28</value>
   </data>
   <data name="grpDetails.Size" type="System.Drawing.Size, System.Drawing">
     <value>354, 272</value>
@@ -1528,55 +1528,64 @@
     <value>812, 13</value>
   </metadata>
   <data name="tsmiInfoGame.Size" type="System.Drawing.Size, System.Drawing">
-    <value>199, 22</value>
+    <value>236, 22</value>
   </data>
   <data name="tsmiInfoGame.Text" xml:space="preserve">
     <value>Informações do Jogo</value>
   </data>
+  <data name="toolStripMenuItem10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>233, 6</value>
+  </data>
+  <data name="tsmiDolphinEmulator.Size" type="System.Drawing.Size, System.Drawing">
+    <value>236, 22</value>
+  </data>
+  <data name="tsmiDolphinEmulator.Text" xml:space="preserve">
+    <value>Testar Jogo (Dolphin Emulator)</value>
+  </data>
   <data name="toolStripMenuItem9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>196, 6</value>
+    <value>233, 6</value>
   </data>
   <data name="tsmiSearchOnGameTDB.Size" type="System.Drawing.Size, System.Drawing">
-    <value>199, 22</value>
+    <value>236, 22</value>
   </data>
   <data name="tsmiSearchOnGameTDB.Text" xml:space="preserve">
     <value>Pesquisar no GameTDB</value>
   </data>
   <data name="toolStripMenuItem8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>196, 6</value>
+    <value>233, 6</value>
   </data>
   <data name="tsmiSearchOnGoogle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>199, 22</value>
+    <value>236, 22</value>
   </data>
   <data name="tsmiSearchOnGoogle.Text" xml:space="preserve">
     <value>Pesquisar no Google</value>
   </data>
   <data name="SearchOnWikipedia.Size" type="System.Drawing.Size, System.Drawing">
-    <value>199, 22</value>
+    <value>236, 22</value>
   </data>
   <data name="SearchOnWikipedia.Text" xml:space="preserve">
     <value>Pesquisar na Wikipedia</value>
   </data>
   <data name="tsmiSearchOnYoutube.Size" type="System.Drawing.Size, System.Drawing">
-    <value>199, 22</value>
+    <value>236, 22</value>
   </data>
   <data name="tsmiSearchOnYoutube.Text" xml:space="preserve">
     <value>Pesquisar no YouTube</value>
   </data>
   <data name="tsmiSearchOnGameSpot.Size" type="System.Drawing.Size, System.Drawing">
-    <value>199, 22</value>
+    <value>236, 22</value>
   </data>
   <data name="tsmiSearchOnGameSpot.Text" xml:space="preserve">
     <value>Pesquisar no GameSpot</value>
   </data>
   <data name="tsmiSearchOnVGChartz.Size" type="System.Drawing.Size, System.Drawing">
-    <value>199, 22</value>
+    <value>236, 22</value>
   </data>
   <data name="tsmiSearchOnVGChartz.Text" xml:space="preserve">
     <value>Pesquisar no VGChartz</value>
   </data>
   <data name="cmsMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 192</value>
+    <value>237, 198</value>
   </data>
   <data name="&gt;&gt;cmsMain.Name" xml:space="preserve">
     <value>cmsMain</value>
@@ -1585,10 +1594,10 @@
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="dgvGameList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 30</value>
+    <value>6, 30</value>
   </data>
   <data name="dgvGameList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>492, 478</value>
+    <value>496, 478</value>
   </data>
   <data name="dgvGameList.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -1708,7 +1717,7 @@
     <value>3, 3</value>
   </data>
   <data name="mstripFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>882, 24</value>
+    <value>864, 24</value>
   </data>
   <data name="mstripFile.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -1732,7 +1741,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabMainFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>888, 514</value>
+    <value>870, 514</value>
   </data>
   <data name="tabMainFile.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1755,6 +1764,9 @@
   <metadata name="tabMainDisc.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <metadata name="lblSpaceAvailabeOnDevice.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="lblSpaceAvailabeOnDevice.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1765,7 +1777,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblSpaceAvailabeOnDevice.Location" type="System.Drawing.Point, System.Drawing">
-    <value>514, 265</value>
+    <value>519, 265</value>
   </data>
   <data name="lblSpaceAvailabeOnDevice.Size" type="System.Drawing.Size, System.Drawing">
     <value>120, 13</value>
@@ -1788,6 +1800,9 @@
   <data name="&gt;&gt;lblSpaceAvailabeOnDevice.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <metadata name="lblSpaceTotalOnDevice.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="lblSpaceTotalOnDevice.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1798,7 +1813,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblSpaceTotalOnDevice.Location" type="System.Drawing.Point, System.Drawing">
-    <value>514, 284</value>
+    <value>519, 284</value>
   </data>
   <data name="lblSpaceTotalOnDevice.Size" type="System.Drawing.Size, System.Drawing">
     <value>86, 13</value>
@@ -1831,7 +1846,7 @@
     <value>True</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>514, 191</value>
+    <value>512, 195</value>
   </data>
   <data name="label3.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>350, 0</value>
@@ -1870,7 +1885,7 @@
     <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>514, 173</value>
+    <value>512, 177</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>94, 13</value>
@@ -2113,7 +2128,7 @@
     <value>6</value>
   </data>
   <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>510, 28</value>
+    <value>508, 28</value>
   </data>
   <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
     <value>354, 116</value>
@@ -2149,10 +2164,10 @@
     <value />
   </data>
   <data name="dgvGameListDisc.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 28</value>
+    <value>6, 33</value>
   </data>
   <data name="dgvGameListDisc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>501, 478</value>
+    <value>496, 473</value>
   </data>
   <data name="dgvGameListDisc.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2305,7 +2320,7 @@
     <value>3, 3</value>
   </data>
   <data name="mstripDisc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>882, 27</value>
+    <value>864, 27</value>
   </data>
   <data name="mstripDisc.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -2329,7 +2344,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabMainDisc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>888, 514</value>
+    <value>870, 514</value>
   </data>
   <data name="tabMainDisc.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -2437,7 +2452,7 @@
     <value>Homebrew</value>
   </data>
   <data name="cbFilterDatabase.Location" type="System.Drawing.Point, System.Drawing">
-    <value>518, 5</value>
+    <value>476, 5</value>
   </data>
   <data name="cbFilterDatabase.Size" type="System.Drawing.Size, System.Drawing">
     <value>120, 21</value>
@@ -2467,7 +2482,7 @@
     <value>True</value>
   </data>
   <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>480, 8</value>
+    <value>438, 8</value>
   </data>
   <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
     <value>32, 13</value>
@@ -2539,7 +2554,7 @@
     <value>3, 3</value>
   </data>
   <data name="mstripDatabase.Size" type="System.Drawing.Size, System.Drawing">
-    <value>882, 24</value>
+    <value>864, 24</value>
   </data>
   <data name="mstripDatabase.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -2563,7 +2578,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabMainDatabase.Size" type="System.Drawing.Size, System.Drawing">
-    <value>888, 514</value>
+    <value>870, 514</value>
   </data>
   <data name="tabMainDatabase.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -2650,7 +2665,7 @@
     <value>3, 3</value>
   </data>
   <data name="mstripLog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>882, 24</value>
+    <value>864, 24</value>
   </data>
   <data name="mstripLog.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2674,7 +2689,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabMainLog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>888, 514</value>
+    <value>870, 514</value>
   </data>
   <data name="tabMainLog.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -2698,7 +2713,7 @@
     <value>3, 3</value>
   </data>
   <data name="tabControlMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>896, 540</value>
+    <value>878, 540</value>
   </data>
   <data name="tabControlMain.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2905,37 +2920,31 @@
     <value>Renomear ISO/GCM</value>
   </data>
   <data name="tsmiMetaXml.Size" type="System.Drawing.Size, System.Drawing">
-    <value>236, 22</value>
+    <value>189, 22</value>
   </data>
   <data name="tsmiMetaXml.Text" xml:space="preserve">
     <value>Ler/Editar 'meta.xml'</value>
   </data>
   <data name="tsmiManageApp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>236, 22</value>
+    <value>189, 22</value>
   </data>
   <data name="tsmiManageApp.Text" xml:space="preserve">
     <value>Gerenciar APP's</value>
   </data>
-  <data name="tsmiDolphinEmulator.Size" type="System.Drawing.Size, System.Drawing">
-    <value>236, 22</value>
-  </data>
-  <data name="tsmiDolphinEmulator.Text" xml:space="preserve">
-    <value>Testar Jogo (Dolphin Emulator)</value>
-  </data>
   <data name="tsmiElfDol.Size" type="System.Drawing.Size, System.Drawing">
-    <value>236, 22</value>
+    <value>189, 22</value>
   </data>
   <data name="tsmiElfDol.Text" xml:space="preserve">
     <value>Converter ELF -&gt; DOL</value>
   </data>
   <data name="tsmiCreatePackage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>236, 22</value>
+    <value>189, 22</value>
   </data>
   <data name="tsmiCreatePackage.Text" xml:space="preserve">
     <value>Criar Pacote APP</value>
   </data>
   <data name="tsmiBurnMedia.Size" type="System.Drawing.Size, System.Drawing">
-    <value>236, 22</value>
+    <value>189, 22</value>
   </data>
   <data name="tsmiBurnMedia.Text" xml:space="preserve">
     <value>Gravar Mídia CD/DVD</value>
@@ -3338,6 +3347,18 @@
     <value>tsmiInfoGame</value>
   </data>
   <data name="&gt;&gt;tsmiInfoGame.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem10.Name" xml:space="preserve">
+    <value>toolStripMenuItem10</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem10.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiDolphinEmulator.Name" xml:space="preserve">
+    <value>tsmiDolphinEmulator</value>
+  </data>
+  <data name="&gt;&gt;tsmiDolphinEmulator.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripMenuItem9.Name" xml:space="preserve">
@@ -3776,12 +3797,6 @@
     <value>tsmiManageApp</value>
   </data>
   <data name="&gt;&gt;tsmiManageApp.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsmiDolphinEmulator.Name" xml:space="preserve">
-    <value>tsmiDolphinEmulator</value>
-  </data>
-  <data name="&gt;&gt;tsmiDolphinEmulator.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiElfDol.Name" xml:space="preserve">
