@@ -739,4 +739,10 @@
   <data name="DestinyDrive_TotalSpace" xml:space="preserve">
     <value>Espaço total: </value>
   </data>
+  <data name="DolphinEmulator_Not_Found_String_1" xml:space="preserve">
+    <value>Emulador não encontrado!</value>
+  </data>
+  <data name="DolphinEmulator_Not_Found_String_2" xml:space="preserve">
+    <value>Por favor, configure o camihno até o executável do emulador Dolphin (dolphin.exe).</value>
+  </data>
 </root>
