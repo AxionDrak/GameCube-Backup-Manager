@@ -135,6 +135,9 @@
   <data name="tabSettingsTitle.Text" xml:space="preserve">
     <value>타이틀</value>
   </data>
+  <data name="tabSettingsDolphin.Text" xml:space="preserve">
+    <value>돌고래 에뮬레이터</value>
+  </data>
   <data name="tabSettingsUpdates.Text" xml:space="preserve">
     <value>업데이트</value>
   </data>
@@ -499,6 +502,21 @@
   <data name="chkGameTitle.Text" xml:space="preserve">
     <value>GameTDB(titles.txt) 사용</value>
   </data>
+  <data name="grbDolphin.Text" xml:space="preserve">
+    <value>에뮬레이터 구성</value>
+  </data>
+  <data name="grbDolphinFolder.Text" xml:space="preserve">
+    <value>에뮬레이터 경로</value>
+  </data>
+  <data name="grbDolphinAudio.Text" xml:space="preserve">
+    <value>오디오</value>
+  </data>
+  <data name="rbDSPHLE.Text" xml:space="preserve">
+    <value>DSP HLE (기본값)</value>
+  </data>
+  <data name="grbDolphinVideo.Text" xml:space="preserve">
+    <value>동영상</value>
+  </data>
   <data name="lblTimeInterval.Location" type="System.Drawing.Point, System.Drawing">
     <value>86, 246</value>
   </data>
@@ -742,5 +760,8 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>설정</value>
+  </data>
+  <data name="ofdDolphin.Filter" xml:space="preserve">
+    <value>돌고래 에뮬레이터|dolphin.exe</value>
   </data>
 </root>
