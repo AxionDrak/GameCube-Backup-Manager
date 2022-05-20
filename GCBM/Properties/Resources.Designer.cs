@@ -622,6 +622,24 @@ namespace GCBM.Properties {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Emulador não encontrado!.
+        /// </summary>
+        internal static string DolphinEmulator_Not_Found_String_1 {
+            get {
+                return ResourceManager.GetString("DolphinEmulator_Not_Found_String_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Por favor, configure o camihno até o executável do emulador Dolphin (dolphin.exe)..
+        /// </summary>
+        internal static string DolphinEmulator_Not_Found_String_2 {
+            get {
+                return ResourceManager.GetString("DolphinEmulator_Not_Found_String_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap donate {
