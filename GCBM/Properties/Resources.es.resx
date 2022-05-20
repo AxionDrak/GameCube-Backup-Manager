@@ -474,4 +474,19 @@
   <data name="GCBM_Language" xml:space="preserve">
     <value>Spanish [Spain]</value>
   </data>
+  <data name="AssemblyInfo_Description" xml:space="preserve">
+    <value>Software de gestión de archivos ISO y GCM de Nintendo GameCube.</value>
+  </data>
+  <data name="DestinyDrive_AvailableSpace" xml:space="preserve">
+    <value>Espacio disponible: </value>
+  </data>
+  <data name="DestinyDrive_TotalSpace" xml:space="preserve">
+    <value>Espacio total: </value>
+  </data>
+  <data name="DolphinEmulator_Not_Found_String_1" xml:space="preserve">
+    <value>¡Emulador no encontrado!</value>
+  </data>
+  <data name="DolphinEmulator_Not_Found_String_2" xml:space="preserve">
+    <value>Establezca la ruta al ejecutable del emulador Dolphin (dolphin.exe).</value>
+  </data>
 </root>
