@@ -13,10 +13,14 @@ If you liked GameCube Backup Manager, feel free to donate any amount via PayPal.
 ### Download:
 All Releases: https://github.com/AxionDrak/GameCube-Backup-Manager/releases
 
-### Current Release - 2.4.3.0 (April 30, 2022)
+### Current Release - 2.4.4.0 (May 19, 2022)
 
-* [Fixed] file transfer error in 'Install Game (1:1)' mode.
-* [Fixed] translation errors on 'About GameCube Backup Manager' screen.
+* [Added] new texts.
+* [Added] Total Space and Available Space indicator texts on the target device.
+* [Added] (preliminary) configuration system to test games via Dolphin emulator.
+* [Added] online search function for selected game.
+* [Fixed] texts in all available languages.
+* [Improved] functions in program code.
 
 ### Features:
 
