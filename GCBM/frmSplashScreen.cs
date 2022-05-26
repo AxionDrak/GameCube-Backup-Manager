@@ -83,7 +83,14 @@ namespace GCBM
         #region Update Progress
         public void UpdateProgress(int progress)
         {
-            this.Invoke(del, progress);
+            try
+            {
+                this.Invoke(del, progress);
+            }
+            catch (Exception ex)
+            {
+                //not implemented!
+            }
         }
         #endregion
     }
