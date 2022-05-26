@@ -51,25 +51,58 @@ namespace GCBM
 
             _IDRegionCode = Convert.ToString(ste.Default.GetChars(new byte[] { bb[3] })[0]).ToLower();
 
+            //switch (Convert.ToString(ste.Default.GetChars(new byte[] { bb[3] })[0]).ToLower())
+            //{
+            //    case "e":
+            //        tbIDRegion.Text = "USA/NTSC-U";
+            //        REGION = 'u';
+            //        break;
+            //    case "j":
+            //        tbIDRegion.Text = "JAP/NTSC-J";
+            //        REGION = 'j';
+            //        break;
+            //    case "p":
+            //        tbIDRegion.Text = "EUR/PAL";
+            //        REGION = 'e';
+            //        break;
+            //    default:
+            //        tbIDRegion.Text = "UNK (EUR/PAL ?)";
+            //        REGION = 'n';
+            //        break;
+            //}
+
             switch (Convert.ToString(ste.Default.GetChars(new byte[] { bb[3] })[0]).ToLower())
             {
-                case "e":
+                case "e": // AMERICA - USA
                     tbIDRegion.Text = "USA/NTSC-U";
                     REGION = 'u';
                     break;
-                case "j":
+                case "j": // ASIA - JAPAN
+                case "t": // ASIA - TAIWAN
+                case "k": // ASIA - KOREA
                     tbIDRegion.Text = "JAP/NTSC-J";
                     REGION = 'j';
                     break;
-                case "p":
+                case "p": // EUROPE - ALL
+                case "f": // EUROPE - FRANCE
+                case "d": // EUROPE - GERMANY
+                case "s": // EUROPE - SPAIN
+                case "i": // EUROPE - ITALY
+                case "r": // EUROPE - RUSSIA
+                case "y": // EUROPE - France, Belgium, Netherlands ???
                     tbIDRegion.Text = "EUR/PAL";
                     REGION = 'e';
                     break;
+                case "u": // AUSTRALIA
+                    tbIDRegion.Text = "AUS/PAL";
+                    REGION = 'e';
+                    break;
                 default:
-                    tbIDRegion.Text = "UNK";
+                    tbIDRegion.Text = "UNK (EUR/PAL?)";
                     REGION = 'n';
                     break;
             }
+
             bb = br.ReadBytes(2); // 2
             string IDMakerCode = SIOExtensions.ToStringC(ste.Default.GetChars(bb)); // ID Maker Code - String
             tbIDMakerCode.Text = IDMakerCode;
@@ -133,23 +166,36 @@ namespace GCBM
 
             switch (Convert.ToString(ste.Default.GetChars(new byte[] { bb[3] })[0]).ToLower())
             {
-                case "e":
-                    tbIDRegionDisc.Text = "USA/NTSC-U";
+                case "e": // AMERICA - USA
+                    tbIDRegion.Text = "USA/NTSC-U";
                     REGION = 'u';
                     break;
-                case "j":
-                    tbIDRegionDisc.Text = "JAP/NTSC-J";
+                case "j": // ASIA - JAPAN
+                case "t": // ASIA - TAIWAN
+                case "k": // ASIA - KOREA
+                    tbIDRegion.Text = "JAP/NTSC-J";
                     REGION = 'j';
                     break;
-                case "p":
-                    tbIDRegionDisc.Text = "EUR/PAL";
+                case "p": // EUROPE - ALL
+                case "f": // EUROPE - FRANCE
+                case "d": // EUROPE - GERMANY
+                case "s": // EUROPE - SPAIN
+                case "i": // EUROPE - ITALY
+                case "r": // EUROPE - RUSSIA
+                case "y": // EUROPE - France, Belgium, Netherlands ???
+                    tbIDRegion.Text = "EUR/PAL";
+                    REGION = 'e';
+                    break;
+                case "u": // AUSTRALIA
+                    tbIDRegion.Text = "AUS/PAL";
                     REGION = 'e';
                     break;
                 default:
-                    tbIDRegionDisc.Text = "UNK";
+                    tbIDRegion.Text = "UNK (EUR/PAL?)";
                     REGION = 'n';
                     break;
             }
+
             bb = br.ReadBytes(2); // 2
             string IDMakerCodeDisc = SIOExtensions.ToStringC(ste.Default.GetChars(bb)); // ID Maker Code - String
             //tbIDMakerCode.Text = IDMakerCode;
