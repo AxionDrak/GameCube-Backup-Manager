@@ -309,25 +309,32 @@ namespace GCBM
         /// <param name="e"></param>
         private void HandleFormLoad(object sender, EventArgs e)
         {
-            this.Hide();
-            Thread thread = new Thread(new ThreadStart(this.ShowSplashScreen));
-            thread.Start();
-            Hardworker worker = new Hardworker();
-            worker.ProgressChanged += (o, ex) =>
+            try
             {
-                this.SPLASH_SCREEN.UpdateProgress(ex.Progress);
-            };
-            worker.HardWorkDone += (o, ex) =>
-            {
-                SPLASH_SCREEN_DONE = true;
-                //this.Show();
-                if (SPLASH_SCREEN_DONE == true)
+                this.Hide();
+                Thread thread = new Thread(new ThreadStart(this.ShowSplashScreen));
+                thread.Start();
+                Hardworker worker = new Hardworker();
+                worker.ProgressChanged += (o, ex) =>
                 {
-                    this.Show();
-                    NetworkCheck();
-                }
-            };
-            worker.DoHardWork();
+                    this.SPLASH_SCREEN.UpdateProgress(ex.Progress);
+                };
+                worker.HardWorkDone += (o, ex) =>
+                {
+                    SPLASH_SCREEN_DONE = true;
+                    //this.Show();
+                    if (SPLASH_SCREEN_DONE == true)
+                    {
+                        this.Show();
+                        NetworkCheck();
+                    }
+                };
+                worker.DoHardWork();
+            }
+            catch (Exception ex)
+            {
+
+            }
         }
 
         /// <summary>
@@ -335,13 +342,20 @@ namespace GCBM
         /// </summary>
         private void ShowSplashScreen()
         {
-            SPLASH_SCREEN.Show();
-            while (!SPLASH_SCREEN_DONE)
+            try
             {
-                Application.DoEvents();
+                SPLASH_SCREEN.Show();
+                while (!SPLASH_SCREEN_DONE)
+                {
+                    Application.DoEvents();
+                }
+                SPLASH_SCREEN.Close();
+                this.SPLASH_SCREEN.Dispose();
             }
-            SPLASH_SCREEN.Close();
-            this.SPLASH_SCREEN.Dispose();
+            catch (Exception ex)
+            {
+                tbLog.AppendText(ex.Message);
+            }
         }
         #endregion
 
@@ -1385,17 +1399,39 @@ namespace GCBM
             {
                 switch (_IDRegionCode)
                 {
-                    case "e":
+                    case "e": // AMERICA - USA
                         LINK_DOMAIN = "US";
                         break;
-                    case "p":
+                    case "p": // EUROPE - ALL
+                    case "r": // EUROPE - RUSSIA                   
                         LINK_DOMAIN = "EN";
                         break;
-                    case "j":
+                    case "j": // ASIA - JAPAN
+                    case "t": // ASIA - TAIWAN
+                    case "k": // ASIA - KOREA
                         LINK_DOMAIN = "JA";
                         break;
+                    case "d": // EUROPE - GERMANY
+                        LINK_DOMAIN = "DE";
+                        break;
+                    case "s": // EUROPE - SPAIN
+                        LINK_DOMAIN = "ES";
+                        break;
+                    case "i": // EUROPE - ITALY
+                        LINK_DOMAIN = "IT";
+                        break;
+                    case "u": // AUSTRALIA
+                        LINK_DOMAIN = "AU";
+                        break;
+                    case "y": // EUROPE - Netherlands ???
+                        LINK_DOMAIN = "NL";
+                        break;
+                    case "f": // EUROPE - FRANCE
+                        LINK_DOMAIN = "FR";
+                        break;
                     default:
-                        GlobalNotifications(GCBM.Properties.Resources.UnknownRegion, ToolTipIcon.Info);
+                        LINK_DOMAIN = "US";
+                        //GlobalNotifications(GCBM.Properties.Resources.UnknownRegion, ToolTipIcon.Info);
                         break;
                 }
             }
@@ -1441,20 +1477,42 @@ namespace GCBM
 
                 switch (_IDRegionCode)
                 {
-                    case "e":
+                    case "e": // AMERICA - USA
                         LINK_DOMAIN = "US";
                         break;
-                    case "p":
+                    case "p": // EUROPE - ALL
+                    case "r": // EUROPE - RUSSIA                   
                         LINK_DOMAIN = "EN";
                         break;
-                    case "j":
+                    case "j": // ASIA - JAPAN
+                    case "t": // ASIA - TAIWAN
+                    case "k": // ASIA - KOREA
                         LINK_DOMAIN = "JA";
                         break;
+                    case "d": // EUROPE - GERMANY
+                        LINK_DOMAIN = "DE";
+                        break;
+                    case "s": // EUROPE - SPAIN
+                        LINK_DOMAIN = "ES";
+                        break;
+                    case "i": // EUROPE - ITALY
+                        LINK_DOMAIN = "IT";
+                        break;
+                    case "u": // AUSTRALIA
+                        LINK_DOMAIN = "AU";
+                        break;
+                    case "y": // EUROPE - Netherlands ???
+                        LINK_DOMAIN = "NL";
+                        break;
+                    case "f": // EUROPE - FRANCE
+                        LINK_DOMAIN = "FR";
+                        break;
                     default:
-                        GlobalNotifications(GCBM.Properties.Resources.UnknownRegion, ToolTipIcon.Info);
+                        LINK_DOMAIN = "US";
+                        //GlobalNotifications(GCBM.Properties.Resources.UnknownRegion, ToolTipIcon.Info);
                         break;
                 }
-               
+
                 try
                 {
                     // Download Disc cover
@@ -1482,6 +1540,34 @@ namespace GCBM
                         NET_RESPONSE.Close();
                     }
                 }
+
+                //try
+                //{
+                //    // Download Disc cover
+                //    Uri myLinkCoverDisc = new Uri(@"https://art.gametdb.com/wii/disc/" + LINK_DOMAIN + "/" + _IDMakerCode + ".png");
+                //    var request = (HttpWebRequest)WebRequest.Create(myLinkCoverDisc);
+                //    request.Method = "HEAD";
+                //    NET_RESPONSE = (HttpWebResponse)request.GetResponse();
+
+                //    if (NET_RESPONSE.StatusCode == HttpStatusCode.OK)
+                //    {
+                //        tbLog.AppendText("[" + DateString() + "]" + GCBM.Properties.Resources.DownloadDiscCover + _IDMakerCode + ".png" + Environment.NewLine);
+                //        NET_CLIENT.DownloadFileAsync(myLinkCoverDisc, GET_CURRENT_PATH + COVERS_DIR + @"\" + LINK_DOMAIN + @"\disc\" + _IDMakerCode + ".png");
+                //        while (NET_CLIENT.IsBusy) { Application.DoEvents(); }
+                //    }
+                //}
+                //catch (WebException ex)
+                //{
+                //    tbLog.AppendText("[" + DateString() + "]" + GCBM.Properties.Resources.DownloadDiscCoverError + Environment.NewLine +
+                //        GCBM.Properties.Resources.Error + ex.Message + Environment.NewLine);
+                //}
+                //finally
+                //{
+                //    if (NET_RESPONSE != null)
+                //    {
+                //        NET_RESPONSE.Close();
+                //    }
+                //}
 
                 try
                 {
@@ -1532,20 +1618,41 @@ namespace GCBM
             {
                 switch (_IDRegionCode)
                 {
-                    case "e":
+                    case "e": // AMERICA - USA
                         LINK_DOMAIN = "US";
                         break;
-                    case "p":
+                    case "p": // EUROPE - ALL
+                    case "r": // EUROPE - RUSSIA                   
                         LINK_DOMAIN = "EN";
                         break;
-                    case "j":
+                    case "j": // ASIA - JAPAN
+                    case "t": // ASIA - TAIWAN
+                    case "k": // ASIA - KOREA
                         LINK_DOMAIN = "JA";
                         break;
+                    case "d": // EUROPE - GERMANY
+                        LINK_DOMAIN = "DE";
+                        break;
+                    case "s": // EUROPE - SPAIN
+                        LINK_DOMAIN = "ES";
+                        break;
+                    case "i": // EUROPE - ITALY
+                        LINK_DOMAIN = "IT";
+                        break;
+                    case "u": // AUSTRALIA
+                        LINK_DOMAIN = "AU";
+                        break;
+                    case "y": // EUROPE - Netherlands ???
+                        LINK_DOMAIN = "NL";
+                        break;
+                    case "f": // EUROPE - FRANCE
+                        LINK_DOMAIN = "FR";
+                        break;
                     default:
-                        GlobalNotifications(GCBM.Properties.Resources.UnknownRegion, ToolTipIcon.Info);
+                        LINK_DOMAIN = "US";
+                        //GlobalNotifications(GCBM.Properties.Resources.UnknownRegion, ToolTipIcon.Info);
                         break;
                 }
-
                 try
                 {
                     // Download Disc cover
@@ -1678,6 +1785,36 @@ namespace GCBM
                 Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + @"\EN\3d\"); // 3D
                 Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + @"\EN\disc\"); // Disc
                 Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + @"\EN\full\"); // Full
+                // DE - Covers Directory
+                Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + @"\DE\2d\"); // 2D
+                Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + @"\DE\3d\"); // 3D
+                Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + @"\DE\disc\"); // Disc
+                Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + @"\DE\full\"); // Full
+                // ES - Covers Directory
+                Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + @"\ES\2d\"); // 2D
+                Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + @"\ES\3d\"); // 3D
+                Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + @"\ES\disc\"); // Disc
+                Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + @"\ES\full\"); // Full
+                // IT - Covers Directory
+                Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + @"\IT\2d\"); // 2D
+                Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + @"\IT\3d\"); // 3D
+                Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + @"\IT\disc\"); // Disc
+                Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + @"\IT\full\"); // Full
+                // AU - Covers Directory
+                Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + @"\AU\2d\"); // 2D
+                Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + @"\AU\3d\"); // 3D
+                Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + @"\AU\disc\"); // Disc
+                Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + @"\AU\full\"); // Full
+                // NL - Covers Directory
+                Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + @"\NL\2d\"); // 2D
+                Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + @"\NL\3d\"); // 3D
+                Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + @"\NL\disc\"); // Disc
+                Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + @"\NL\full\"); // Full
+                // FR - Covers Directory
+                Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + @"\FR\2d\"); // 2D
+                Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + @"\FR\3d\"); // 3D
+                Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + @"\FR\disc\"); // Disc
+                Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + @"\FR\full\"); // Full
 
                 tbLog.AppendText("[" + DateString() + "]" + GCBM.Properties.Resources.RequiredDirectories_String4 + Environment.NewLine);
             }
@@ -2316,7 +2453,8 @@ namespace GCBM
                             }
                             else
                             {
-                                GlobalNotifications(GCBM.Properties.Resources.UnknownRegion, ToolTipIcon.Info);
+                                LINK_DOMAIN = "EN";
+                                //GlobalNotifications(GCBM.Properties.Resources.UnknownRegion, ToolTipIcon.Info);
                             }
 
                             string cover2D   = GET_CURRENT_PATH + COVERS_DIR + @"\" + LINK_DOMAIN + @"\2d\" + tbIDGame.Text + ".png";
@@ -2415,7 +2553,8 @@ namespace GCBM
                             }
                             else
                             {
-                                GlobalNotifications(GCBM.Properties.Resources.UnknownRegion, ToolTipIcon.Info);
+                                LINK_DOMAIN = "EN";
+                                //GlobalNotifications(GCBM.Properties.Resources.UnknownRegion, ToolTipIcon.Info);
                             }
 
                             DirectoryInfo di2D = new DirectoryInfo(GET_CURRENT_PATH + COVERS_DIR + @"\" + LINK_DOMAIN + @"\2d\");
