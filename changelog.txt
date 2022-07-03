@@ -1,11 +1,15 @@
-﻿
+
+### GameCube Backup Manager 2.4.6.0 (03 de julho, 2022)
+
+[Corrigido] erro de transferência de arquivos onde o nome da pasta de destino não era criado corretamente.
+
 ### GameCube Backup Manager 2.4.5.0 (26 de maio, 2022)
 
 [Adicionado] novas regiões dos jogos (Taiwan, Korea, Germany, Spain, Italy, Australia, Netherlands, France)
 [Melhorado] sistema de detecção das regiões dos jogos.
 [Melhorado] sistema de carregamento de capas.
 
-### GameCube Backup Manager 2.4.4.0 (19 de maio de 2022)
+### GameCube Backup Manager 2.4.4.0 (19 de maio, 2022)
 
 [Adicionado] novos textos.
 [Adicionado] textos indicadores de Espaço Total e Espaço Disponível no dispositivo de destino.
@@ -14,22 +18,22 @@
 [Corrigido] textos em todos os idiomas disponíveis.
 [Melhorado] funções no código do programa.
 
-### GameCube Backup Manager 2.4.3.0 (30 de abril de 2022)
+### GameCube Backup Manager 2.4.3.0 (30 de abril, 2022)
 
 [Corrigido] erro de transferência de arquivos no modo 'Instalar Jogo (1:1)'.
 [Corrigido] erros de tradução na tela 'Sobre o GameCube Backup Manager'.
 
-### GameCube Backup Manager 2.4.2.0 (28 de abril de 2022)
+### GameCube Backup Manager 2.4.2.0 (28 de abril, 2022)
 
 [Adicionado] tradução para o idioma Coreano (Agradecimentos a DDinghoya)  
 
-### GameCube Backup Manager 2.4.1.0 (25 de abril de 2022)
+### GameCube Backup Manager 2.4.1.0 (25 de abril, 2022)
 
 [Adicionado] novos textos para todos os idiomas oficialmente suportados.
 [Corrigido] traduções para os idiomas Português (Brasil), Inglês (EUA) e Espanhol (Espanha). 
 [Melhorado] mais limpeza de código. ;D
 
-### GameCube Backup Manager 2.4.0.0 (24 de abril de 2022)
+### GameCube Backup Manager 2.4.0.0 (24 de abril, 2022)
 
 [Adicionado] conversor de ELF para DOL.
 [Adicionado] link para página oficial (GitHub) no menu Ajuda.
@@ -37,20 +41,20 @@
 [Corrigido] sistema de limpeza da pasta temporária.
 [Melhorado] limpeza de código.
 
-### GameCube Backup Manager 2.3.0.0 (23 de abril de 2022)
+### GameCube Backup Manager 2.3.0.0 (23 de abril, 2022)
 
 [Removido] tela de instalação e gerenciamento de plugins.
   - Os plugins agora serão incorporados ao programa principal.
 [Corrigido/Ajustado] traduções para os idiomas Inglês (EUA) e Espanhol (Espanha). 
   - Correções de textos e inclusão de novos textos.
 
-### GameCube Backup Manager 2.2.0.0 (22 de abril de 2022)
+### GameCube Backup Manager 2.2.0.0 (22 de abril, 2022)
 
 [Adicionado] tradução para o idioma Inglês (EUA).
 [Adicionado] tradução para o idioma Espanhol (Espanha).
 [Adicionado] opção extra para checagem de atualizações, disponível na aba Ajuda.
 
-### GameCube Backup Manager 2.1.0.0 (19 de abril de 2022)
+### GameCube Backup Manager 2.1.0.0 (19 de abril, 2022)
 
 [Adicionado] Plugin (incorporado) para Ler/Editar arquivos meta.xml
 [Corrigido] tempo de carregamento de abertura (splash screen).
@@ -58,7 +62,7 @@
 [Corrigido] detecção de dados vazios na aba 'Base de Dados'.
 [Corrigido] verificação de assinaturas MD5 e SHA-1.
 
-### GameCube Backup Manager 2.0.0.0 (18 de abril de 2022)
+### GameCube Backup Manager 2.0.0.0 (18 de abril, 2022)
 
 [Adicionado] novo intervalo de tempo para pesquisa de atualizações (5 minutos).
 [Adicionado] permissão para execução de múltiplas instâncias do programa.
@@ -81,28 +85,27 @@
 [Corrigido] carregamento de arquivo 'wiitdb.xml' na aba 'Base de Dados'.
 [Corrigido] 'Restaurar Configurações' agora exclui corretamente o arquivo 'config.ini'.
 
-### GameCube Backup Manager 1.0.0.0-RC (11 de abril de 2022)
+### GameCube Backup Manager 1.0.0.0-RC (11 de abril, 2022)
 
 [Adicionado] transferência de jogos via XCopy (cópias 1:1 - Padrão).
 [Adicionado] download do arquivo 'wiitdb.xml' (GameTDB).
 
-### GameCube Backup Manage 0.90.0.0-Beta (25 de março de 2022)
+### GameCube Backup Manage 0.90.0.0-Beta (25 de março, 2022)
 
 [Adicionado] sistema de Plugins (Experimental).
 
-### GameCube Backup Manager 0.50.0.0-Beta (12 de fevereiro de 2022)
+### GameCube Backup Manager 0.50.0.0-Beta (12 de fevereiro, 2022)
 
 [Adicionado] cálculo de hash MD5.
 [Adicionado] cálculo de Hash SHA-1.
 [Adicionado] criação automática de pasta 'games' (se não existir).
 [Adicionado] suporte para arquivos ISO e GCM.
 
-### GameCube Backup Manager 0.10.0.0-Alpha (23 de janeiro de 2022)
+### GameCube Backup Manager 0.10.0.0-Alpha (23 de janeiro, 2022)
 
 [Corrigido] ajustes no layout do programa.
 [Adicionado] sistema de registro.
 
-### GameCube Backup Manager 0.1.0.0-Alpha (5 de janeiro de 2022)
+### GameCube Backup Manager 0.1.0.0-Alpha (5 de janeiro, 2022)
 
 [Adicionado] interface gráfica (UI) mais polida e funcional.
-
