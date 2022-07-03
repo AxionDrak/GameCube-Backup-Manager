@@ -1,4 +1,10 @@
 ﻿
+### GameCube Backup Manager 2.4.5.0 (26 de maio, 2022)
+
+[Adicionado] novas regiões dos jogos (Taiwan, Korea, Germany, Spain, Italy, Australia, Netherlands, France)
+[Melhorado] sistema de detecção das regiões dos jogos.
+[Melhorado] sistema de carregamento de capas.
+
 ### GameCube Backup Manager 2.4.4.0 (19 de maio de 2022)
 
 [Adicionado] novos textos.
