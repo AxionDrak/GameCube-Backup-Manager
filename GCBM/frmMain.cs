@@ -1531,7 +1531,7 @@ namespace GCBM
                 catch (WebException ex)
                 {
                     tbLog.AppendText("[" + DateString() + "]" + GCBM.Properties.Resources.DownloadDiscCoverError + Environment.NewLine +
-                        GCBM.Properties.Resources.Error + ex.Message + Environment.NewLine);
+                        "[" + DateString() + "]" + GCBM.Properties.Resources.Error + ex.Message + Environment.NewLine);
                 }
                 finally
                 {
@@ -1586,8 +1586,8 @@ namespace GCBM
                 }
                 catch (WebException ex)
                 {
-                    tbLog.AppendText("[" + DateString() + "]" + GCBM.Properties.Resources.Download3DCoverError + Environment.NewLine +
-                        GCBM.Properties.Resources.Error + ex.Message + Environment.NewLine);
+                    tbLog.AppendText("[" + DateString() + "]" + GCBM.Properties.Resources.DownloadDiscCoverError + Environment.NewLine +
+                        "[" + DateString() + "]" + GCBM.Properties.Resources.Error + ex.Message + Environment.NewLine);
                 }
                 finally
                 {
@@ -1670,7 +1670,6 @@ namespace GCBM
                 }
                 catch (WebException ex)
                 {
-                    //MessageBox.Show("ARQUIVO: " + _netResponse.ToString() + " não existe!");
                     tbLog.AppendText("[" + DateString() + "]" + GCBM.Properties.Resources.DownloadDiscCoverError + Environment.NewLine +
                         "[" + DateString() + "]" + GCBM.Properties.Resources.Error + ex.Message + Environment.NewLine);
                 }
@@ -1699,7 +1698,6 @@ namespace GCBM
                 }
                 catch (WebException ex)
                 {
-                    //MessageBox.Show("ARQUIVO: " + _netResponse.ToString() + " não existe!");
                     tbLog.AppendText("[" + DateString() + "]" + GCBM.Properties.Resources.Download3DCoverError + Environment.NewLine +
                         "[" + DateString() + "]" + GCBM.Properties.Resources.Error + ex.Message + Environment.NewLine);
                 }
@@ -1901,7 +1899,7 @@ namespace GCBM
                     //.Replace(" -  ", " - ").Replace(" FOR NINTENDO GAMECUBE", "").Replace(" GameCube", "");
 
                     // Nome do jogo
-                    string _SwapCharacter = tbIDName.Text.Replace(":", " - ").Replace(";", " - ").Replace(",", " - ").Replace(" -  ", " - ");
+                    string _SwapCharacter = tbIDName.Text.Replace(":", " - ").Replace(";", " - ").Replace(",", " - ").Replace(" -  ", " - ").Replace(" (2) ", "").Replace("(2)", "").Replace(" (2)", "");
 
                     //string strResult = "";
                     //bool firstCharacter = true;
@@ -1974,14 +1972,21 @@ namespace GCBM
         /// </summary>
         private void InstallGameScrub()
         {
+            // Removes blank spaces
+            //string ret = Regex.Replace(tbIDName.Text, @"[^0-9a-zA-ZéúíóáÉÚÍÓÁèùìòàÈÙÌÒÀõãñÕÃÑêûîôâÊÛÎÔÂëÿüïöäËYÜÏÖÄçÇ\s]+?", string.Empty);
+            //string strRegex = Regex.Replace(tbIDName.Text, @"[^(tm)\s]+?", string.Empty);
+            //(\W|^)(tm)(\W|$)
+
             const string quote = "\"";
             var _source = dgvGameList.CurrentRow.Cells[4].Value.ToString();
+
+            // Nome do jogo
+            //string _SwapCharacter = tbIDName.Text.Replace(":", " - ").Replace(";", " - ").Replace(",", " - ").Replace(" -  ", " - ").Replace(" (2) ", "").Replace("(2)", "").Replace(" (2)", "");
 
             START_INFO.CreateNoWindow = true;
             START_INFO.UseShellExecute = true;
             // GCIT
             START_INFO.FileName = GET_CURRENT_PATH + @"\bin\gcit.exe ";
-
 
             bool boolCaseSwitch = CONFIG_INI_FILE.IniReadBool("TRANSFERSYSTEM", "ScrubFlushSD");
             int intCaseSwitch   = CONFIG_INI_FILE.IniReadInt("TRANSFERSYSTEM", "ScrubAlign");
@@ -2116,21 +2121,35 @@ namespace GCBM
                         // Usar nome intermo
                         if (CONFIG_INI_FILE.IniReadBool("TITLES", "GameInternalName") == true)
                         {
-                            // Renomear game.iso -> disc2.iso
-                            string myOrigem = tscbDiscDrive.SelectedItem + GAMES_DIR + @"\" + tbIDName.Text + " [" + tbIDGame.Text + "2]" + @"\game.iso";
-                            string myDestiny = tscbDiscDrive.SelectedItem + GAMES_DIR + @"\" + tbIDName.Text.Replace("disc2 ", "") + " [" + tbIDGame.Text + "2]" + @"\disc2.iso";
+                            // Renomear game.iso
+                            string myOrigem  = tscbDiscDrive.SelectedItem + GAMES_DIR + @"\" + tbIDName.Text + " [" + tbIDGame.Text + "2]" + @"\game.iso";
+                            //string myDestiny = tscbDiscDrive.SelectedItem + GAMES_DIR + @"\" + tbIDName.Text.Replace("disc2 ", "") + " [" + tbIDGame.Text + "2]" + @"\disc2.iso";
+                            //string myDestiny = tscbDiscDrive.SelectedItem + GAMES_DIR + _SwapCharacter + @"\" + _oldNameInternal.Replace("disc2 ", "") + " [" + tbIDGame.Text + "2]" + @"\disc2.iso";
 
-                            //MessageBox.Show("MYORIGEM: " + Environment.NewLine
-                            //    + myOrigem +
-                            //    "\n\nMYDESTINY: " + Environment.NewLine
-                            //    + myDestiny, "DISC2", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            if (Directory.Exists(tscbDiscDrive.SelectedItem + GAMES_DIR + @"\" + tbIDName.Text + @" (2)" + " [" + tbIDGame.Text + "2]"))
+                            {
+                                string myOrigem2  = tscbDiscDrive.SelectedItem + GAMES_DIR + @"\" + tbIDName.Text + @" (2)" + " [" + tbIDGame.Text + "2]" + @"\game.iso";
+                                string myDestiny2 = tscbDiscDrive.SelectedItem + GAMES_DIR + @"\" + tbIDName.Text.Replace("disc2 ", "") + @" (2)" + " [" + tbIDGame.Text + "2]" + @"\disc2.iso";
+
+                                //MessageBox.Show("Diretório existe (GameInternalName): " + Environment.NewLine + myDestiny2, "DISC2", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                File.Move(myOrigem2, myDestiny2);
+                            }
+                            else
+                            {
+                                string myDestiny = tscbDiscDrive.SelectedItem + GAMES_DIR + @"\" + tbIDName.Text.Replace("disc2 ", "") + " [" + tbIDGame.Text + "2]" + @"\disc2.iso";
+                                File.Move(myOrigem, myDestiny);
+                            }
+
+                            //MessageBox.Show("MYORIGEM: " + Environment.NewLine + myOrigem +
+                            //             "\n\nMYDESTINY: " + Environment.NewLine + myDestiny +
+                            //             "\n\nOLD INTERNAL NAME: " + Environment.NewLine + _oldNameInternal, "DISC2", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             /*
-                            * MYORIGEM:     c:\games\resident evil 4 disc2 (2) [G4BE082]\game.iso
-                            * MYDESTINY:    c:\games\resident evil 4 disc2 (2) [G4BE082]\disc2.iso
+                            * MYORIGEM:     c:\games\resident evil 4 (2) [G4BE082]\game.iso
+                            * MYDESTINY:    c:\games\resident evil 4 (2) [G4BE082]\disc2.iso
                             * MYNEWDESTINY: c:\games\resident evil 4 [G4BE08]\
                             */
 
-                            File.Move(myOrigem, myDestiny);
+                            //File.Move(myOrigem, myDestiny);
 
                             GlobalNotifications(GCBM.Properties.Resources.InstallGameScrub_String6, ToolTipIcon.Info);
                             //MessageBox.Show(GCBM.Properties.Resources.InstallGameScrub_String6, GCBM.Properties.Resources.Information, MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -2144,20 +2163,33 @@ namespace GCBM
                         else
                         {
                             // Renomear game.iso -> disc2.iso
-                            string myOrigem = tscbDiscDrive.SelectedItem + GAMES_DIR + @"\" + _oldNameInternal + " [" + tbIDGame.Text + "2]" + @"\game.iso";
-                            string myDestiny = tscbDiscDrive.SelectedItem + GAMES_DIR + @"\" + _oldNameInternal.Replace("disc2 ", "") + " [" + tbIDGame.Text + "2]" + @"\disc2.iso";
+                            string myOrigem  = tscbDiscDrive.SelectedItem + GAMES_DIR + @"\" + _oldNameInternal + " [" + tbIDGame.Text + "2]" + @"\game.iso";
+                            //string myDestiny = tscbDiscDrive.SelectedItem + GAMES_DIR + @"\" + _oldNameInternal.Replace("disc2 ", "") + " [" + tbIDGame.Text + "2]" + @"\disc2.iso";
 
-                            //MessageBox.Show("MYORIGEM: " + Environment.NewLine
-                            //    + myOrigem +
-                            //    "\n\nMYDESTINY: " + Environment.NewLine
-                            //    + myDestiny, "DISC2", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            if (Directory.Exists(tscbDiscDrive.SelectedItem + GAMES_DIR + @"\" + _oldNameInternal + @" (2)" + " [" + tbIDGame.Text + "2]"))
+                            {
+                                string myOrigem2 = tscbDiscDrive.SelectedItem + GAMES_DIR + @"\" + _oldNameInternal + @" (2)" + " [" + tbIDGame.Text + "2]" + @"\game.iso";
+                                string myDestiny2 = tscbDiscDrive.SelectedItem + GAMES_DIR + @"\" + _oldNameInternal.Replace("disc2 ", "") + @" (2)" + " [" + tbIDGame.Text + "2]" + @"\disc2.iso";
+
+                                //MessageBox.Show("Diretório existe (WiiTDB): " + Environment.NewLine + myDestiny2, "DISC2", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                File.Move(myOrigem2, myDestiny2);
+                            }
+                            else
+                            {
+                                string myDestiny = tscbDiscDrive.SelectedItem + GAMES_DIR + @"\" + _oldNameInternal.Replace("disc2 ", "") + " [" + tbIDGame.Text + "2]" + @"\disc2.iso";
+                                File.Move(myOrigem, myDestiny);
+                            }
+
+                            //MessageBox.Show("MYORIGEM: " + Environment.NewLine + myOrigem +
+                            //            "\n\nMYDESTINY: " + Environment.NewLine + myDestiny +
+                            //            "\n\nOLD INTERNAL NAME: " + Environment.NewLine + _oldNameInternal, "DISC2", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             /*
-                            * MYORIGEM:     c:\games\resident evil 4 disc2 (2) [G4BE082]\game.iso
-                            * MYDESTINY:    c:\games\resident evil 4 disc2 (2) [G4BE082]\disc2.iso
+                            * MYORIGEM:     c:\games\resident evil 4 (2) [G4BE082]\game.iso
+                            * MYDESTINY:    c:\games\resident evil 4 (2) [G4BE082]\disc2.iso
                             * MYNEWDESTINY: c:\games\resident evil 4 [G4BE08]\
                             */
 
-                            File.Move(myOrigem, myDestiny);
+                            //File.Move(myOrigem, myDestiny);
 
                             GlobalNotifications(GCBM.Properties.Resources.InstallGameScrub_String6, ToolTipIcon.Info);
                             //MessageBox.Show(GCBM.Properties.Resources.InstallGameScrub_String6, GCBM.Properties.Resources.Information, MessageBoxButtons.OK, MessageBoxIcon.Information);
