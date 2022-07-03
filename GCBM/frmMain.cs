@@ -2725,6 +2725,15 @@ namespace GCBM
                     }
                 }
             }
+            if (cbDeleteSource.Checked)
+            {
+                //check if file exists 
+                if (File.Exists(Path.Combine(fbd1.SelectedPath, dgvGameList.CurrentRow.Cells[4].Value.ToString())))
+                {
+                    File.Delete(Path.Combine(fbd1.SelectedPath, dgvGameList.CurrentRow.Cells[4].Value.ToString()));
+                }
+                //delete file
+            }
         }
         #endregion
 

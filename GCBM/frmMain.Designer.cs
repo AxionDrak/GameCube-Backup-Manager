@@ -184,6 +184,7 @@ namespace GCBM
             this.cmsNotifyIcon = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiNotifyExit = new System.Windows.Forms.ToolStripMenuItem();
             this.pbNetStatus = new System.Windows.Forms.PictureBox();
+            this.cbDeleteSource = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.spcMain)).BeginInit();
             this.spcMain.Panel1.SuspendLayout();
             this.spcMain.Panel2.SuspendLayout();
@@ -363,6 +364,7 @@ namespace GCBM
             // 
             // grpOperations
             // 
+            this.grpOperations.Controls.Add(this.cbDeleteSource);
             this.grpOperations.Controls.Add(this.btnGameInstallScrub);
             this.grpOperations.Controls.Add(this.btnGameInstallExactCopy);
             resources.ApplyResources(this.grpOperations, "grpOperations");
@@ -1327,6 +1329,12 @@ namespace GCBM
             this.pbNetStatus.Name = "pbNetStatus";
             this.pbNetStatus.TabStop = false;
             // 
+            // cbDeleteSource
+            // 
+            resources.ApplyResources(this.cbDeleteSource, "cbDeleteSource");
+            this.cbDeleteSource.Name = "cbDeleteSource";
+            this.cbDeleteSource.UseVisualStyleBackColor = true;
+            // 
             // frmMain
             // 
             resources.ApplyResources(this, "$this");
@@ -1353,6 +1361,7 @@ namespace GCBM
             this.grpDetails.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbWebGameID)).EndInit();
             this.grpOperations.ResumeLayout(false);
+            this.grpOperations.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGameList)).EndInit();
             this.cmsMain.ResumeLayout(false);
             this.mstripFile.ResumeLayout(false);
@@ -1539,6 +1548,7 @@ namespace GCBM
         private System.Windows.Forms.ToolStripMenuItem tsmiSearchOnGameTDB;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem10;
         private System.Windows.Forms.ToolStripMenuItem tsmiDolphinEmulator;
+        private System.Windows.Forms.CheckBox cbDeleteSource;
     }
 }
 
