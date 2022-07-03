@@ -271,13 +271,6 @@ namespace GCBM
         #region Detect OS Language
         private void DetectOSLanguage()
         {
-            #region First Time Language Check
-            /*
-             * Get System Locale, and save it to config file
-             * 
-             * Commented old code, seeing as, we haven't haven't checked yet, and it assumes Portugese
-             */
-
             var sysLocale = Thread.CurrentThread.CurrentCulture;
             string[] aryLocales = { "pt-BR", "en-US", "es", "ko" };
 
@@ -294,7 +287,6 @@ namespace GCBM
                 CONFIG_INI_FILE.IniWriteInt("LANGUAGE", "ConfigLanguage", 1);//en-US
             }
 
-            #endregion
             //switch (CultureInfo.InstalledUICulture.IetfLanguageTag)
             //{
             //    case "en-US":
