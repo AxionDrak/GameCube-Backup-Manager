@@ -119,8 +119,9 @@ namespace GCBM
 
             this.Text = "GameCube Backup Manager 2022 - " + VERSION() + " - 64-bit";
 
+            #endregion
             // Splash Screen
-            if (CONFIG_INI_FILE.IniReadBool("SEVERAL", "Welcome") == false)
+            if (CONFIG_INI_FILE.IniReadBool("SEVERAL", "DisableSplash") == false)
             {
                 // Splash Screen
                 this.Load += new EventHandler(HandleFormLoad);
@@ -134,6 +135,7 @@ namespace GCBM
             if (!File.Exists(INI_FILE))
             {
                 DefaultConfigSave();
+                DetectOSLanguage();
             }
 
             LoadConfigFile();
@@ -171,8 +173,11 @@ namespace GCBM
             tsmiBurnMedia.Visible = false;
             tsmiManageApp.Visible = false;
             tsmiCreatePackage.Visible = false;
+
+
+            //All done, Clean up / Refresh to ensure language and settings are updated.
+            AdjustLanguage();
         }
-        #endregion
 
         #region Main Form Closing
         /// <summary>
@@ -266,29 +271,53 @@ namespace GCBM
         #region Detect OS Language
         private void DetectOSLanguage()
         {
-            switch (CultureInfo.InstalledUICulture.IetfLanguageTag)
+            #region First Time Language Check
+            /*
+             * Get System Locale, and save it to config file
+             * 
+             * Commented old code, seeing as, we haven't haven't checked yet, and it assumes Portugese
+             */
+
+            var sysLocale = Thread.CurrentThread.CurrentCulture;
+            string[] aryLocales = { "pt-BR", "en-US", "es", "ko" };
+
+            //  See if we have that translation
+            bool isTranslated = aryLocales.Contains(sysLocale.ToString());
+
+            //  Write the corresponding number to INI
+            if (isTranslated)
             {
-                case "en-US":
-                    Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
-                    this.Controls.Clear();
-                    InitializeComponent();
-                    break;
-                case "es":
-                    Thread.CurrentThread.CurrentUICulture = new CultureInfo("es");
-                    this.Controls.Clear();
-                    InitializeComponent();
-                    break;
-                case "ko":
-                    Thread.CurrentThread.CurrentUICulture = new CultureInfo("ko");
-                    this.Controls.Clear();
-                    InitializeComponent();
-                    break;
-                default:
-                    Thread.CurrentThread.CurrentUICulture = new CultureInfo("pt-BR");
-                    this.Controls.Clear();
-                    InitializeComponent();
-                    break;
+                CONFIG_INI_FILE.IniWriteInt("LANGUAGE", "ConfigLanguage", Array.FindIndex(aryLocales, l => l == sysLocale.Name));
             }
+            else //Default to english
+            {
+                CONFIG_INI_FILE.IniWriteInt("LANGUAGE", "ConfigLanguage", 1);//en-US
+            }
+
+            #endregion
+            //switch (CultureInfo.InstalledUICulture.IetfLanguageTag)
+            //{
+            //    case "en-US":
+            //        Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
+            //        this.Controls.Clear();
+            //        InitializeComponent();
+            //        break;
+            //    case "es":
+            //        Thread.CurrentThread.CurrentUICulture = new CultureInfo("es");
+            //        this.Controls.Clear();
+            //        InitializeComponent();
+            //        break;
+            //    case "ko":
+            //        Thread.CurrentThread.CurrentUICulture = new CultureInfo("ko");
+            //        this.Controls.Clear();
+            //        InitializeComponent();
+            //        break;
+            //    default:
+            //        Thread.CurrentThread.CurrentUICulture = new CultureInfo("pt-BR");
+            //        this.Controls.Clear();
+            //        InitializeComponent();
+            //        break;
+            //}
 
             // Nome em inlês
             //tbLog.AppendText(System.Globalization.CultureInfo.InstalledUICulture.EnglishName + Environment.NewLine);
@@ -776,7 +805,7 @@ namespace GCBM
             CONFIG_INI_FILE.IniWriteString("GCBM", "ConfigUpdated", DateTime.Now.ToString("dd/MM/yyyy"));
             CONFIG_INI_FILE.IniWriteString("GCBM", "Language", GCBM.Properties.Resources.GCBM_Language);
             CONFIG_INI_FILE.IniWriteString("GCBM", "TranslatedBy", GCBM.Properties.Resources.GCBM_TranslatedBy);
-            // General          
+            // General
             CONFIG_INI_FILE.IniWriteBool("GENERAL", "DiscClean", true);
             CONFIG_INI_FILE.IniWriteBool("GENERAL", "DiscDelete", false);
             CONFIG_INI_FILE.IniWriteBool("GENERAL", "ExtractZip", false);
@@ -796,7 +825,7 @@ namespace GCBM
             CONFIG_INI_FILE.IniWriteBool("SEVERAL", "RecursiveMode", true);
             CONFIG_INI_FILE.IniWriteBool("SEVERAL", "TemporaryBuffer", false);
             CONFIG_INI_FILE.IniWriteBool("SEVERAL", "WindowMaximized", false);
-            CONFIG_INI_FILE.IniWriteBool("SEVERAL", "Welcome", false);
+            CONFIG_INI_FILE.IniWriteBool("SEVERAL", "DisableSplash", false);
             CONFIG_INI_FILE.IniWriteBool("SEVERAL", "Screensaver", false);
             CONFIG_INI_FILE.IniWriteBool("SEVERAL", "LoadDatabase", true);
             CONFIG_INI_FILE.IniWriteBool("SEVERAL", "MultipleInstances", false);
@@ -854,7 +883,7 @@ namespace GCBM
             CONFIG_INI_FILE.IniWriteBool("MANAGERLOG", "LogWindow", false);
             CONFIG_INI_FILE.IniWriteBool("MANAGERLOG", "LogFile", true);
             // Language
-            CONFIG_INI_FILE.IniWriteInt("LANGUAGE", "ConfigLanguage", 0);
+            CONFIG_INI_FILE.IniWriteInt("LANGUAGE", "ConfigLanguage", 1);
         }
         #endregion
 

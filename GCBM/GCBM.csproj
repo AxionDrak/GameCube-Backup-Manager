@@ -232,6 +232,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmConfig.en-US.resx">
       <DependentUpon>frmConfig.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="frmConfig.es.resx">
       <DependentUpon>frmConfig.cs</DependentUpon>
@@ -239,6 +240,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmConfig.ko.resx">
       <DependentUpon>frmConfig.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="frmConfig.resx">
       <DependentUpon>frmConfig.cs</DependentUpon>
