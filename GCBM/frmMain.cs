@@ -3155,7 +3155,8 @@ namespace GCBM
         #endregion
 
         // Tool Strip Menu Item
-
+        #region TSMI
+        
         #region tsmiDeleteSelectedFile_Click
         private void tsmiDeleteSelectedFile_Click(object sender, EventArgs e)
         {
@@ -3709,7 +3710,8 @@ namespace GCBM
             }
         }
         #endregion
-
+        
+        #endregion
         // SEARCH DATA ON THE INTERNET
 
         #region Search On Web

@@ -185,6 +185,7 @@ namespace GCBM
             this.lblPercent = new System.Windows.Forms.Label();
             this.lblInstallGame = new System.Windows.Forms.Label();
             this.tabControlMain = new System.Windows.Forms.TabControl();
+            this.tsmiRenameFolders = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.spcMain)).BeginInit();
             this.spcMain.Panel1.SuspendLayout();
             this.spcMain.Panel2.SuspendLayout();
@@ -478,6 +479,7 @@ namespace GCBM
             // tsmiTools
             // 
             this.tsmiTools.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiRenameFolders,
             this.tsmiRenameISO,
             this.tsmiMainPlugins});
             this.tsmiTools.Name = "tsmiTools";
@@ -1334,6 +1336,12 @@ namespace GCBM
             this.tabControlMain.Name = "tabControlMain";
             this.tabControlMain.SelectedIndex = 0;
             // 
+            // tsmiRenameFolders
+            // 
+            this.tsmiRenameFolders.Image = global::GCBM.Properties.Resources.rename_folder_16;
+            this.tsmiRenameFolders.Name = "tsmiRenameFolders";
+            resources.ApplyResources(this.tsmiRenameFolders, "tsmiRenameFolders");
+            // 
             // frmMain
             // 
             resources.ApplyResources(this, "$this");
@@ -1548,6 +1556,7 @@ namespace GCBM
         private System.Windows.Forms.ToolStripMenuItem tsmiClearLog;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem tsmiExportLog;
+        private System.Windows.Forms.ToolStripMenuItem tsmiRenameFolders;
     }
 }
 
