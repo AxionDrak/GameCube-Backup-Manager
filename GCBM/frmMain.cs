@@ -891,7 +891,7 @@ namespace GCBM
         /// </summary>
         private void ReloadDataGridViewGameList()
         {
-            if (dgvGameList.RowCount != 0 && (!dgvGameList.SelectedRows.Contains(dgvGameList.Rows[0])))
+            if (dgvGameList.RowCount != 0)
             {
                 try
                 {
