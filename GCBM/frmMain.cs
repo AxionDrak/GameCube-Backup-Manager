@@ -1029,6 +1029,7 @@ namespace GCBM
 
             // Creates a DataTable with file data.
             //DataTable _table = new DataTable();
+            dgvGameList.Columns.Clear();
             dgvGameList.Columns.Add("Title", GCBM.Properties.Resources.LoadDatabase_GameTitle);
             dgvGameList.Columns.Add("ID", GCBM.Properties.Resources.LoadDatabase_IDGameCode);
             dgvGameList.Columns.Add("Region", GCBM.Properties.Resources.LoadDatabase_Region);
