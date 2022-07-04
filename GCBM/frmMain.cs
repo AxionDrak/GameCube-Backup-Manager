@@ -2027,6 +2027,12 @@ namespace GCBM
                         tbLog.AppendText("[" + DateString() + "]" + GCBM.Properties.Resources.Error + ex.Message + Environment.NewLine);
                         GlobalNotifications(ex.Message, ToolTipIcon.Error);
                     }
+                    //Delete Source if applicable
+                    if (cbDeleteSource.Checked && MessageBox.Show("Warning! THIS WILL DELETE YOUR SOURCE FILES! Are you sure you wish to continue?", "Warning! Deletion of files WILL occur.", MessageBoxButtons.YesNo) == DialogResult.Yes))
+                    {
+                        FileInfo f = new FileInfo(row.Cells[4].Value.ToString());
+                        f.Delete();
+                    }
                     WORKING = false;
                 }
             }
@@ -2043,7 +2049,7 @@ namespace GCBM
         {
             foreach (DataGridViewRow row in dgvGameList.SelectedRows)
             {
-                while(WORKING) { wait(1000); }
+                while (WORKING) { wait(1000); }
                 FileInfo _file = new FileInfo(row.Cells[4].Value.ToString());
                 loadPath = _file.FullName;
                 DirectoryOpenGameList(loadPath);
@@ -2247,6 +2253,11 @@ namespace GCBM
                     //{
                     //    //tsslStatusInformation.Text = "Status: ERRO! -> " + "{" + _StatusExit.ToString() + "}" + " Por favor, verifique se exitem espaços no nome do arquivo!";
                     //}
+                    if (cbDeleteSource.Checked && MessageBox.Show("Warning! THIS WILL DELETE YOUR SOURCE FILES! Are you sure you wish to continue?", "Warning! Deletion of files WILL occur.", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        FileInfo f = new FileInfo(row.Cells[4].Value.ToString());
+                        f.Delete();
+                    }
                     WORKING = false;
                 }
             }
@@ -2804,15 +2815,6 @@ namespace GCBM
                     }
                 }
             }
-            if (cbDeleteSource.Checked)
-            {
-                //check if file exists 
-                if (File.Exists(Path.Combine(fbd1.SelectedPath, dgvGameList.CurrentRow.Cells[4].Value.ToString())))
-                {
-                    File.Delete(Path.Combine(fbd1.SelectedPath, dgvGameList.CurrentRow.Cells[4].Value.ToString()));
-                }
-                //delete file
-            }
         }
         #endregion
 
@@ -3156,7 +3158,7 @@ namespace GCBM
 
         // Tool Strip Menu Item
         #region TSMI
-        
+
         #region tsmiDeleteSelectedFile_Click
         private void tsmiDeleteSelectedFile_Click(object sender, EventArgs e)
         {
@@ -3710,7 +3712,7 @@ namespace GCBM
             }
         }
         #endregion
-        
+
         #endregion
         // SEARCH DATA ON THE INTERNET
 
