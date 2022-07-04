@@ -891,11 +891,11 @@ namespace GCBM
         /// </summary>
         private void ReloadDataGridViewGameList()
         {
-            if (dgvGameList.RowCount != 0)
+            if (dgvGameList.RowCount != 0 && (!dgvGameList.SelectedRows.Contains(dgvGameList.Rows[0])))
             {
                 try
                 {
-                    DirectoryOpenGameList(dgvGameList.CurrentRow.Cells[4].Value.ToString());
+                    DirectoryOpenGameList(dgvGameList.CurrentRow.Cells[5].Value.ToString());
 
                     if (ERROR == false)
                     {
@@ -926,7 +926,7 @@ namespace GCBM
             {
                 try
                 {
-                    DirectoryOpenDiscList(dgvGameListDisc.CurrentRow.Cells[4].Value.ToString());
+                    DirectoryOpenDiscList(dgvGameListDisc.CurrentRow.Cells[5].Value.ToString());
 
                     if (ERROR == false)
                     {
@@ -1028,19 +1028,27 @@ namespace GCBM
             //txtLog.AppendText(Environment.NewLine + Environment.NewLine);
 
             // Creates a DataTable with file data.
-            DataTable _table = new DataTable();
-            _table.Columns.Add(GCBM.Properties.Resources.DisplayFilesSelected_FileName);
-            _table.Columns.Add(GCBM.Properties.Resources.LoadDatabase_Type);
-            _table.Columns.Add(GCBM.Properties.Resources.DisplayFilesSelected_Size);
-            _table.Columns.Add(GCBM.Properties.Resources.DisplayFilesSelected_FilePath);
+            //DataTable _table = new DataTable();
+            dgvGameList.Columns.Add("Title", GCBM.Properties.Resources.LoadDatabase_GameTitle);
+            dgvGameList.Columns.Add("ID", GCBM.Properties.Resources.LoadDatabase_IDGameCode);
+            dgvGameList.Columns.Add("Region", GCBM.Properties.Resources.LoadDatabase_Region);
+            dgvGameList.Columns.Add("Type", GCBM.Properties.Resources.LoadDatabase_Type);
+            dgvGameList.Columns.Add("Size", GCBM.Properties.Resources.DisplayFilesSelected_Size);
+            dgvGameList.Columns.Add("Path", GCBM.Properties.Resources.DisplayFilesSelected_FilePath);
 
             FileInfo _file = null;
+            dgvGameList.Rows.Clear();
             foreach (Game game in GameList)
             {
                 _file = new FileInfo(game.Path);
                 string _getSize = DisplayFormatFileSize(_file.Length, CONFIG_INI_FILE.IniReadInt("GENERAL", "FileSize"));
                 //5° coluna
-                _table.Rows.Add(game.Title, game.Extension.Substring(1, 3).Trim().ToUpper(MY_CULTURE), _getSize, game.Path);
+                dgvGameList.Rows.Add(game.Title,
+                                game.Region,
+                                game.ID,
+                                game.Extension.Substring(1, 3).Trim().ToUpper(MY_CULTURE),
+                                _getSize,
+                                game.Path);
             }
             //for (int i = 0; i < files.Length; i++)
             //{
@@ -1060,33 +1068,6 @@ namespace GCBM
             //{
             //    MessageBox.Show("O modo de seleção NÃO é RowHeaderSelect");
             //}
-
-            // Displays data in DataGridView.
-            dgv.DataSource = _table;
-            dgv.RowHeadersVisible = false;
-            dgv.ColumnHeadersVisible = true;
-            dgv.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
-            //Checkbox
-            dgv.Columns[0].ReadOnly = false;
-            dgv.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            dgv.Columns[0].Width = 30;
-            //Nome do Arquivo
-            dgv.Columns[1].ReadOnly = true;
-            dgv.Columns[1].Width = 150;
-            //Tipo
-            dgv.Columns[2].ReadOnly = true;
-            dgv.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            dgv.Columns[2].Width = 50;
-            //Tamanho
-            dgv.Columns[3].ReadOnly = true;
-            dgv.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            dgv.Columns[3].Width = 70;
-            //Caminho do Arquivo
-            dgv.Columns[4].ReadOnly = true;
-            dgv.Columns[4].Name = "Path";
-            //dgvGameList.Columns[4].Width = 100;
-            dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-
             if (dgv == dgvGameList)
             {
                 ReloadDataGridViewGameList();
@@ -1536,7 +1517,7 @@ namespace GCBM
         {
             foreach (DataGridViewRow dgvResultRow in dgv.Rows)
             {
-                string _IDGameCode = dgv.Rows[dgvResultRow.Index].Cells[4].Value.ToString();
+                string _IDGameCode = dgv.Rows[dgvResultRow.Index].Cells[5].Value.ToString();
                 DirectoryOpenGameList(_IDGameCode);
 
                 //tbLog.AppendText(_IDRegionCode + Environment.NewLine);
@@ -1950,7 +1931,7 @@ namespace GCBM
             foreach (DataGridViewRow row in dgvGameList.SelectedRows)
             {
                 while (WORKING) { wait(250); }
-                FileInfo _file = new FileInfo(row.Cells[4].Value.ToString());
+                FileInfo _file = new FileInfo(row.Cells[5].Value.ToString());
                 loadPath = _file.FullName;
                 DirectoryOpenGameList(loadPath);
                 int? selectedRowCount = Convert.ToInt32(dgvGameList.Rows.GetRowCount(DataGridViewElementStates.Selected));
@@ -2000,7 +1981,7 @@ namespace GCBM
                         //    }
                         //}
 
-                        var _source = new FileInfo(Path.Combine(fbd1.SelectedPath, row.Cells[4].Value.ToString()));
+                        var _source = new FileInfo(Path.Combine(fbd1.SelectedPath, row.Cells[5].Value.ToString()));
 
                         // Disc 1 (0 -> 0) - Title [ID Game]
                         if (tbIDDiscID.Text == "0x00" && CONFIG_INI_FILE.IniReadInt("SEVERAL", "AppointmentStyle") == 0)
@@ -2053,11 +2034,11 @@ namespace GCBM
             foreach (DataGridViewRow row in dgvGameList.SelectedRows)
             {
                 while (WORKING) { wait(1000); }
-                FileInfo _file = new FileInfo(row.Cells[4].Value.ToString());
+                FileInfo _file = new FileInfo(row.Cells[5].Value.ToString());
                 loadPath = _file.FullName;
                 DirectoryOpenGameList(loadPath);
                 const string quote = "\"";
-                var _source = row.Cells[4].Value.ToString();
+                var _source = row.Cells[5].Value.ToString();
 
                 START_INFO.CreateNoWindow = true;
                 START_INFO.UseShellExecute = true;
@@ -2574,7 +2555,7 @@ namespace GCBM
                             // DELETAR JOGO E CAPA DO DISPOSITIVO DE ORIGEM
                             if (dgv == dgvGameList)
                             {
-                                File.Delete(dgv.CurrentRow.Cells[4].Value.ToString());
+                                File.Delete(dgv.CurrentRow.Cells[5].Value.ToString());
 
                                 // 2D
                                 if (File.Exists(cover2D))
@@ -2602,7 +2583,7 @@ namespace GCBM
                             }// DELETAR JOGO DO DISPOSITIVO DE DESTINO
                             else
                             {
-                                string pasta = Path.GetDirectoryName(dgv.CurrentRow.Cells[4].Value.ToString());
+                                string pasta = Path.GetDirectoryName(dgv.CurrentRow.Cells[5].Value.ToString());
                                 Directory.Delete(pasta, true);
                                 DisplayFilesSelected(tscbDiscDrive.SelectedItem + GAMES_DIR + @"\", dgvGameListDisc);
                             }
@@ -2677,7 +2658,7 @@ namespace GCBM
                             for (int i = 0; i < files.Length; i++)
                             {
                                 //File.Delete(fbd1.SelectedPath + @"\" + dgvGameList.CurrentRow.Cells[1].Value.ToString());
-                                File.Delete(dgv.CurrentRow.Cells[4].Value.ToString());
+                                File.Delete(dgv.CurrentRow.Cells[5].Value.ToString());
 
                                 DisplayFilesSelected(fbd1.SelectedPath, dgv);
                             }
@@ -2716,10 +2697,10 @@ namespace GCBM
                             string[] files = GetFilesFolder(tscbDiscDrive.SelectedItem + GAMES_DIR + @"\", filters, false);
 
                             // Goes through the entire file list and removes all found ISO and GCM files.
-                            //string pasta = Path.GetDirectoryName(dgv.CurrentRow.Cells[4].Value.ToString());
+                            //string pasta = Path.GetDirectoryName(dgv.CurrentRow.Cells[5].Value.ToString());
                             for (int i = 0; i < files.Length; i++)
                             {
-                                string pasta = Path.GetDirectoryName(dgv.CurrentRow.Cells[4].Value.ToString());
+                                string pasta = Path.GetDirectoryName(dgv.CurrentRow.Cells[5].Value.ToString());
                                 //File.Delete(tscbDiscDrive.SelectedItem + @"games\" + dgv.CurrentRow.Cells[0].Value.ToString());                               
                                 Directory.Delete(pasta, true);
                                 //MessageBox.Show(pasta);
@@ -2834,7 +2815,7 @@ namespace GCBM
             {
                 try
                 {
-                    string source = dgv.CurrentRow.Cells[4].Value.ToString();
+                    string source = dgv.CurrentRow.Cells[5].Value.ToString();
 
                     //SHA-1
                     if (algorithm == "SHA-1")
@@ -3393,7 +3374,7 @@ namespace GCBM
                 }
                 else
                 {
-                    string pathImage = dgvGameList.CurrentRow.Cells[4].Value.ToString();
+                    string pathImage = dgvGameList.CurrentRow.Cells[5].Value.ToString();
 
                     using (var form = new frmRenameISO(fbd1.SelectedPath, pathImage))
                     {
@@ -3537,7 +3518,7 @@ namespace GCBM
                 {
                     // Nome do Arquivo, Formato (Tipo), Tamanho, Local do Arquivo, ID do Jogo
                     frmInformation _frmInfo = new frmInformation(dgvGameList.CurrentRow.Cells[1].Value.ToString(), dgvGameList.CurrentRow.Cells[2].Value.ToString(),
-                        dgvGameList.CurrentRow.Cells[3].Value.ToString(), dgvGameList.CurrentRow.Cells[4].Value.ToString(), tbIDGame.Text);
+                        dgvGameList.CurrentRow.Cells[3].Value.ToString(), dgvGameList.CurrentRow.Cells[5].Value.ToString(), tbIDGame.Text);
                     _frmInfo.ShowDialog();
                     _frmInfo.Dispose();
                 }
@@ -3595,7 +3576,7 @@ namespace GCBM
                     {
                         string VideoDX = "";
                         string AudioDSP = "";
-                        var _sourceGame = dgvGameList.CurrentRow.Cells[4].Value.ToString();
+                        var _sourceGame = dgvGameList.CurrentRow.Cells[5].Value.ToString();
 
                         START_INFO.CreateNoWindow = true;
                         START_INFO.UseShellExecute = true;

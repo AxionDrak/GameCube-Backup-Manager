@@ -60,7 +60,6 @@ namespace GCBM
             this.tbIDRegion = new System.Windows.Forms.TextBox();
             this.tbIDName = new System.Windows.Forms.TextBox();
             this.dgvGameList = new System.Windows.Forms.DataGridView();
-            this.dgvMainCheck = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.cmsMain = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiInfoGame = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem10 = new System.Windows.Forms.ToolStripSeparator();
@@ -423,23 +422,14 @@ namespace GCBM
             this.dgvGameList.AllowUserToDeleteRows = false;
             resources.ApplyResources(this.dgvGameList, "dgvGameList");
             this.dgvGameList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvGameList.BackgroundColor = System.Drawing.Color.White;
+            this.dgvGameList.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dgvGameList.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
             this.dgvGameList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvGameList.ColumnHeadersVisible = false;
-            this.dgvGameList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dgvMainCheck});
             this.dgvGameList.ContextMenuStrip = this.cmsMain;
             this.dgvGameList.Name = "dgvGameList";
             this.dgvGameList.ReadOnly = true;
+            this.dgvGameList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvGameList.Click += new System.EventHandler(this.dgvGameList_Click);
-            // 
-            // dgvMainCheck
-            // 
-            resources.ApplyResources(this.dgvMainCheck, "dgvMainCheck");
-            this.dgvMainCheck.Name = "dgvMainCheck";
-            this.dgvMainCheck.ReadOnly = true;
-            this.dgvMainCheck.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // cmsMain
             // 
@@ -1478,7 +1468,6 @@ namespace GCBM
         private System.Windows.Forms.TextBox tbIDRegion;
         private System.Windows.Forms.TextBox tbIDName;
         private System.Windows.Forms.DataGridView dgvGameList;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dgvMainCheck;
         private System.Windows.Forms.MenuStrip mstripFile;
         private System.Windows.Forms.ToolStripMenuItem tsmiReloadGameList;
         private System.Windows.Forms.ToolStripMenuItem tsmiSelectGameList;
