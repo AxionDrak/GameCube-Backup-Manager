@@ -184,6 +184,14 @@ namespace GCBM
             this.cmsNotifyIcon = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiNotifyExit = new System.Windows.Forms.ToolStripMenuItem();
             this.pbNetStatus = new System.Windows.Forms.PictureBox();
+            this.gameBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.clmChk = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.clmTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmRegion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmExtension = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmPath = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.spcMain)).BeginInit();
             this.spcMain.Panel1.SuspendLayout();
             this.spcMain.Panel2.SuspendLayout();
@@ -212,6 +220,7 @@ namespace GCBM
             this.mstripMain.SuspendLayout();
             this.cmsNotifyIcon.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbNetStatus)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gameBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // spcMain
@@ -425,10 +434,19 @@ namespace GCBM
             this.dgvGameList.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dgvGameList.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
             this.dgvGameList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvGameList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clmChk,
+            this.clmTitle,
+            this.clmRegion,
+            this.clmID,
+            this.clmExtension,
+            this.clmSize,
+            this.clmPath});
             this.dgvGameList.ContextMenuStrip = this.cmsMain;
             this.dgvGameList.Name = "dgvGameList";
             this.dgvGameList.ReadOnly = true;
             this.dgvGameList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvGameList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGameList_CellContentClick);
             this.dgvGameList.Click += new System.EventHandler(this.dgvGameList_Click);
             // 
             // cmsMain
@@ -1324,6 +1342,58 @@ namespace GCBM
             this.pbNetStatus.Name = "pbNetStatus";
             this.pbNetStatus.TabStop = false;
             // 
+            // gameBindingSource
+            // 
+            this.gameBindingSource.DataSource = typeof(GCBM.Game);
+            // 
+            // clmChk
+            // 
+            this.clmChk.FillWeight = 0.6474377F;
+            resources.ApplyResources(this.clmChk, "clmChk");
+            this.clmChk.Name = "clmChk";
+            this.clmChk.ReadOnly = true;
+            // 
+            // clmTitle
+            // 
+            this.clmTitle.FillWeight = 186.4554F;
+            resources.ApplyResources(this.clmTitle, "clmTitle");
+            this.clmTitle.Name = "clmTitle";
+            this.clmTitle.ReadOnly = true;
+            // 
+            // clmRegion
+            // 
+            this.clmRegion.FillWeight = 96.77139F;
+            resources.ApplyResources(this.clmRegion, "clmRegion");
+            this.clmRegion.Name = "clmRegion";
+            this.clmRegion.ReadOnly = true;
+            // 
+            // clmID
+            // 
+            this.clmID.FillWeight = 72.39307F;
+            resources.ApplyResources(this.clmID, "clmID");
+            this.clmID.Name = "clmID";
+            this.clmID.ReadOnly = true;
+            // 
+            // clmExtension
+            // 
+            resources.ApplyResources(this.clmExtension, "clmExtension");
+            this.clmExtension.Name = "clmExtension";
+            this.clmExtension.ReadOnly = true;
+            // 
+            // clmSize
+            // 
+            this.clmSize.FillWeight = 129.4417F;
+            resources.ApplyResources(this.clmSize, "clmSize");
+            this.clmSize.Name = "clmSize";
+            this.clmSize.ReadOnly = true;
+            // 
+            // clmPath
+            // 
+            this.clmPath.FillWeight = 24.29118F;
+            resources.ApplyResources(this.clmPath, "clmPath");
+            this.clmPath.Name = "clmPath";
+            this.clmPath.ReadOnly = true;
+            // 
             // frmMain
             // 
             resources.ApplyResources(this, "$this");
@@ -1376,6 +1446,7 @@ namespace GCBM
             this.mstripMain.PerformLayout();
             this.cmsNotifyIcon.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbNetStatus)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gameBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1536,6 +1607,14 @@ namespace GCBM
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem tsmiExportLog;
         private System.Windows.Forms.ToolStripMenuItem tsmiRenameFolders;
+        private System.Windows.Forms.BindingSource gameBindingSource;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn clmChk;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmTitle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmRegion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmExtension;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmSize;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmPath;
     }
 }
 
