@@ -953,6 +953,7 @@ namespace GCBM
         #region Display Files Selected
         /// <summary>
         /// Display Files Selected
+        /// --sjohnson1021-bookmark
         /// </summary>
         /// <param name="sourceFolder"></param>
         /// <param name="dgv"></param>
@@ -1034,16 +1035,23 @@ namespace GCBM
             _table.Columns.Add(GCBM.Properties.Resources.DisplayFilesSelected_FilePath);
 
             FileInfo _file = null;
-            for (int i = 0; i < files.Length; i++)
+            foreach (Game game in GameList)
             {
-                //FileInfo _file = new FileInfo(files[i]);
-                _file = new FileInfo(files[i]);
+                _file = new FileInfo(game.Path);
                 string _getSize = DisplayFormatFileSize(_file.Length, CONFIG_INI_FILE.IniReadInt("GENERAL", "FileSize"));
-                //string _getSize = BytesToGB(_file.Length);                
-                // 4° coluna
-                _table.Rows.Add(_file.Name, _file.Extension.Substring(1, 3).Trim().ToUpper(MY_CULTURE), _getSize, _file.FullName);
-                //_table.Rows.Add(_file.Name, _file.Extension.Substring(1, 3).Trim().ToUpper(myCulture), _getSize);
+                //5° coluna
+                _table.Rows.Add(game.Title, game.Extension.Substring(1, 3).Trim().ToUpper(MY_CULTURE), _getSize, game.Path);
             }
+            //for (int i = 0; i < files.Length; i++)
+            //{
+            //    //FileInfo _file = new FileInfo(files[i]);
+            //    _file = new FileInfo(files[i]);
+            //    string _getSize = DisplayFormatFileSize(_file.Length, CONFIG_INI_FILE.IniReadInt("GENERAL", "FileSize"));
+            //    //string _getSize = BytesToGB(_file.Length);                
+            //    // 4° coluna
+            //    _table.Rows.Add(_file.Name, _file.Extension.Substring(1, 3).Trim().ToUpper(MY_CULTURE), _getSize, _file.FullName);
+            //    //_table.Rows.Add(_file.Name, _file.Extension.Substring(1, 3).Trim().ToUpper(myCulture), _getSize);
+            //}
 
             //if(dgvGameList.SelectionMode == DataGridViewSelectionMode.RowHeaderSelect){
             //    MessageBox.Show("O modo de seleção é RowHeaderSelect");
@@ -1351,6 +1359,7 @@ namespace GCBM
                             foreach (XElement el in tests)
                             {
                                 tbIDNameDisc.Text = (string)el.Element("locale").Element("title");
+                                tbIDRegionDisc.Text = (string)el.Element("loacle").Element("region");
                             }
                         }
                         else
