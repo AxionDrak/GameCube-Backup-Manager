@@ -262,7 +262,7 @@ namespace GCBM
                 chkGeneralRecursiva.Checked = CONFIG_INI_FILE.IniReadBool("SEVERAL", "RecursiveMode");
                 chkGeneralTemporaryBuffer.Checked = CONFIG_INI_FILE.IniReadBool("SEVERAL", "TemporaryBuffer");
                 chkStartWindowMaximized.Checked = CONFIG_INI_FILE.IniReadBool("SEVERAL", "WindowMaximized");
-                chkSplash.Checked = CONFIG_INI_FILE.IniReadBool("SEVERAL", "Welcome");
+                chkSplash.Checked = CONFIG_INI_FILE.IniReadBool("SEVERAL", "DisableSplash");
                 chkScreensaver.Checked = CONFIG_INI_FILE.IniReadBool("SEVERAL", "Screensaver");
                 chkLoadDatabase.Checked = CONFIG_INI_FILE.IniReadBool("SEVERAL", "LoadDatabase");
                 chkMultipleInstances.Checked = CONFIG_INI_FILE.IniReadBool("SEVERAL", "MultipleInstances");

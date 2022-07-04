@@ -151,6 +151,7 @@
     <Compile Include="frmTransferCover.Designer.cs">
       <DependentUpon>frmTransferCover.cs</DependentUpon>
     </Compile>
+    <Compile Include="Game.cs" />
     <Compile Include="Hardworker.cs" />
     <Compile Include="image.cs">
       <SubType>Form</SubType>
@@ -420,6 +421,7 @@
     <Content Include="media\covers\full.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\rename_folder_16.png" />
     <None Include="Resources\donate.gif" />
     <None Include="Resources\GameTDB-400.png" />
     <None Include="Resources\github_16.png" />
