@@ -2027,12 +2027,6 @@ namespace GCBM
                         tbLog.AppendText("[" + DateString() + "]" + GCBM.Properties.Resources.Error + ex.Message + Environment.NewLine);
                         GlobalNotifications(ex.Message, ToolTipIcon.Error);
                     }
-                    //Delete Source if applicable
-                    if (cbDeleteSource.Checked && MessageBox.Show("Warning! THIS WILL DELETE YOUR SOURCE FILES! Are you sure you wish to continue?", "Warning! Deletion of files WILL occur.", MessageBoxButtons.YesNo) == DialogResult.Yes))
-                    {
-                        FileInfo f = new FileInfo(row.Cells[4].Value.ToString());
-                        f.Delete();
-                    }
                     WORKING = false;
                 }
             }
@@ -2253,11 +2247,6 @@ namespace GCBM
                     //{
                     //    //tsslStatusInformation.Text = "Status: ERRO! -> " + "{" + _StatusExit.ToString() + "}" + " Por favor, verifique se exitem espaços no nome do arquivo!";
                     //}
-                    if (cbDeleteSource.Checked && MessageBox.Show("Warning! THIS WILL DELETE YOUR SOURCE FILES! Are you sure you wish to continue?", "Warning! Deletion of files WILL occur.", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                    {
-                        FileInfo f = new FileInfo(row.Cells[4].Value.ToString());
-                        f.Delete();
-                    }
                     WORKING = false;
                 }
             }
