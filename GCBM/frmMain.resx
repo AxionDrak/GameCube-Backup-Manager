@@ -1794,9 +1794,6 @@
   <data name="tsmiExportHTML.Text" xml:space="preserve">
     <value>HTML</value>
   </data>
-  <data name="tsmiExportCSV.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="tsmiExportCSV.Size" type="System.Drawing.Size, System.Drawing">
     <value>180, 22</value>
   </data>
@@ -1819,7 +1816,7 @@
     <value>3, 3</value>
   </data>
   <data name="mstripFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>921, 24</value>
+    <value>924, 24</value>
   </data>
   <data name="mstripFile.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -1843,7 +1840,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabMainFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>927, 514</value>
+    <value>930, 514</value>
   </data>
   <data name="tabMainFile.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2440,7 +2437,7 @@
     <value>3, 3</value>
   </data>
   <data name="mstripDisc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>921, 27</value>
+    <value>924, 27</value>
   </data>
   <data name="mstripDisc.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -2464,7 +2461,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabMainDisc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>927, 514</value>
+    <value>930, 514</value>
   </data>
   <data name="tabMainDisc.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -2680,7 +2677,7 @@
     <value>3, 3</value>
   </data>
   <data name="mstripDatabase.Size" type="System.Drawing.Size, System.Drawing">
-    <value>921, 24</value>
+    <value>924, 24</value>
   </data>
   <data name="mstripDatabase.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -2704,7 +2701,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabMainDatabase.Size" type="System.Drawing.Size, System.Drawing">
-    <value>927, 514</value>
+    <value>930, 514</value>
   </data>
   <data name="tabMainDatabase.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -2791,7 +2788,7 @@
     <value>3, 3</value>
   </data>
   <data name="mstripLog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>921, 24</value>
+    <value>924, 24</value>
   </data>
   <data name="mstripLog.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2815,7 +2812,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabMainLog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>927, 514</value>
+    <value>930, 514</value>
   </data>
   <data name="tabMainLog.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -2839,7 +2836,7 @@
     <value>3, 3</value>
   </data>
   <data name="tabControlMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>935, 540</value>
+    <value>938, 540</value>
   </data>
   <data name="tabControlMain.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>

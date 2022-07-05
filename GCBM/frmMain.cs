@@ -3118,66 +3118,66 @@ namespace GCBM
         /// <summary>
         /// Export game list to CSV.
         /// </summary>
-        private void ExportCSV(DataGridView dgv)
-        {
-            if (dgvGameList.Rows.Count > 0)
-            {
-                SaveFileDialog sfd = new SaveFileDialog();
-                sfd.Filter = "CSV (*.csv)|*.csv";
-                sfd.FileName = "gamelist.csv";
-                bool fileError = false;
-                if (sfd.ShowDialog() == DialogResult.OK)
-                {
-                    if (File.Exists(sfd.FileName))
-                    {
-                        try
-                        {
-                            File.Delete(sfd.FileName);
-                        }
-                        catch (IOException ex)
-                        {
-                            fileError = true;
-                            GlobalNotifications(GCBM.Properties.Resources.UnableWriteDataDisk, ToolTipIcon.Error);
-                        }
-                    }
-                    if (!fileError)
-                    {
-                        try
-                        {
-                            int columnCount = dgv.Columns.Count;
-                            string columnNames = "";
-                            string[] outputCsv = new string[dgv.Rows.Count + 1];
-                            for (int i = 0; i < columnCount; i++)
-                            {
-                                columnNames += dgv.Columns[i].HeaderText.ToString() + ",";
-                            }
-                            outputCsv[0] += columnNames;
+        //private void ExportCSV(DataGridView dgv)
+        //{
+        //    if (dgvGameList.Rows.Count > 0)
+        //    {
+        //        SaveFileDialog sfd = new SaveFileDialog();
+        //        sfd.Filter = "CSV (*.csv)|*.csv";
+        //        sfd.FileName = "gamelist.csv";
+        //        bool fileError = false;
+        //        if (sfd.ShowDialog() == DialogResult.OK)
+        //        {
+        //            if (File.Exists(sfd.FileName))
+        //            {
+        //                try
+        //                {
+        //                    File.Delete(sfd.FileName);
+        //                }
+        //                catch (IOException ex)
+        //                {
+        //                    fileError = true;
+        //                    GlobalNotifications(GCBM.Properties.Resources.UnableWriteDataDisk, ToolTipIcon.Error);
+        //                }
+        //            }
+        //            if (!fileError)
+        //            {
+        //                try
+        //                {
+        //                    int columnCount = dgv.Columns.Count;
+        //                    string columnNames = "";
+        //                    string[] outputCsv = new string[dgv.Rows.Count + 1];
+        //                    for (int i = 0; i < columnCount; i++)
+        //                    {
+        //                        columnNames += dgv.Columns[i].HeaderText.ToString() + ",";
+        //                    }
+        //                    outputCsv[0] += columnNames;
 
-                            for (int i = 1; (i - 1) < dgv.Rows.Count; i++)
-                            {
-                                for (int j = 1; j < columnCount; j++)
-                                {
-                                    outputCsv[i] += dgv.Rows[i - 1].Cells[j].Value.ToString() + ",";
-                                }
-                            }
+        //                    for (int i = 1; (i - 1) < dgv.Rows.Count; i++)
+        //                    {
+        //                        for (int j = 1; j < columnCount; j++)
+        //                        {
+        //                            outputCsv[i] += dgv.Rows[i - 1].Cells[j].Value.ToString() + ",";
+        //                        }
+        //                    }
 
-                            File.WriteAllLines(sfd.FileName, outputCsv, Encoding.UTF8);
-                            GlobalNotifications(GCBM.Properties.Resources.GameListExportedCSV, ToolTipIcon.Info);
+        //                    File.WriteAllLines(sfd.FileName, outputCsv, Encoding.UTF8);
+        //                    GlobalNotifications(GCBM.Properties.Resources.GameListExportedCSV, ToolTipIcon.Info);
 
-                        }
-                        catch (Exception ex)
-                        {
-                            tbLog.AppendText("[" + DateString() + "]" + GCBM.Properties.Resources.Error + ex.Message + Environment.NewLine);
-                            GlobalNotifications(ex.Message, ToolTipIcon.Error);
-                        }
-                    }
-                }
-            }
-            else
-            {
-                GlobalNotifications(GCBM.Properties.Resources.RecordExportedFailed, ToolTipIcon.Error);
-            }
-        }
+        //                }
+        //                catch (Exception ex)
+        //                {
+        //                    tbLog.AppendText("[" + DateString() + "]" + GCBM.Properties.Resources.Error + ex.Message + Environment.NewLine);
+        //                    GlobalNotifications(ex.Message, ToolTipIcon.Error);
+        //                }
+        //            }
+        //        }
+        //    }
+        //    else
+        //    {
+        //        GlobalNotifications(GCBM.Properties.Resources.RecordExportedFailed, ToolTipIcon.Error);
+        //    }
+        //}
         #endregion
 
         #region Export TXT
@@ -3537,7 +3537,16 @@ namespace GCBM
         #region tsmiExportCSV_Click
         private void tsmiExportCSV_Click(object sender, EventArgs e)
         {
-            ExportCSV(dgvGameList);
+            using(var dialog = new FolderBrowserDialog())
+        {
+                //setup here
+
+                if (dialog.ShowDialog() == DialogResult.OK)  //check for OK...they might press cancel, so don't do anything if they did.
+                {
+                    var path = dialog.SelectedPath + "\\games.csv";
+                    DataTableToCSV.ToCSV(GameDataTable(), path);
+                }
+            }
         }
         #endregion
 

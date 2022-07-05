@@ -681,9 +681,9 @@ namespace GCBM
             // 
             // tsmiExportCSV
             // 
-            resources.ApplyResources(this.tsmiExportCSV, "tsmiExportCSV");
             this.tsmiExportCSV.Image = global::GCBM.Properties.Resources.csv_16;
             this.tsmiExportCSV.Name = "tsmiExportCSV";
+            resources.ApplyResources(this.tsmiExportCSV, "tsmiExportCSV");
             this.tsmiExportCSV.Click += new System.EventHandler(this.tsmiExportCSV_Click);
             // 
             // tabMainDisc
