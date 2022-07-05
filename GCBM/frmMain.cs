@@ -3057,12 +3057,20 @@ namespace GCBM
 
         public void ExportHTML(DataTable dt)
         {
-            string ThisFolder = new FileInfo(System.Reflection.Assembly.GetExecutingAssembly().Location).Directory.FullName;
-            string caminho = Path.Combine(ThisFolder, "media\\Web\\index.html");
-            StreamWriter r = new StreamWriter(caminho, false);
-            r.Write(DataTableToHTML(dt));
-            r.Close();
-            MessageBox.Show("File has been saved at: " + caminho, "Sucess!");
+            try
+            {
+                string ThisFolder = new FileInfo(System.Reflection.Assembly.GetExecutingAssembly().Location).Directory.FullName;
+                string caminho = Path.Combine(ThisFolder, "media\\Web\\index.html");
+                StreamWriter r = new StreamWriter(caminho, false);
+                r.Write(DataTableToHTML(dt));
+                r.Close();
+                MessageBox.Show("File has been saved at: " + caminho, "Sucess!");
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show("ERROR! Please post report this to Github or GBATemp.\n" + e.Message, "ERROR!");
+                tbLog.Text +="\n"+"HTML Export error\n" + e.Message + "\n" + DateTime.Now.ToString("hh:mm:ss tt"); 
+            }
         }
 
         //Font fonte = dgv.ColumnHeadersDefaultCellStyle.Font;
