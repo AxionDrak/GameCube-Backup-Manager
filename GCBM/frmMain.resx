@@ -1783,16 +1783,13 @@
     <value>Assinatura SHA-1</value>
   </data>
   <data name="tsmiExportTXT.Size" type="System.Drawing.Size, System.Drawing">
-    <value>106, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="tsmiExportTXT.Text" xml:space="preserve">
     <value>TXT</value>
   </data>
-  <data name="tsmiExportHTML.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="tsmiExportHTML.Size" type="System.Drawing.Size, System.Drawing">
-    <value>106, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="tsmiExportHTML.Text" xml:space="preserve">
     <value>HTML</value>
@@ -1801,7 +1798,7 @@
     <value>False</value>
   </data>
   <data name="tsmiExportCSV.Size" type="System.Drawing.Size, System.Drawing">
-    <value>106, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="tsmiExportCSV.Text" xml:space="preserve">
     <value>CSV</value>
@@ -1822,7 +1819,7 @@
     <value>3, 3</value>
   </data>
   <data name="mstripFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>918, 24</value>
+    <value>921, 24</value>
   </data>
   <data name="mstripFile.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -1846,7 +1843,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabMainFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>924, 514</value>
+    <value>927, 514</value>
   </data>
   <data name="tabMainFile.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2443,7 +2440,7 @@
     <value>3, 3</value>
   </data>
   <data name="mstripDisc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>918, 27</value>
+    <value>921, 27</value>
   </data>
   <data name="mstripDisc.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -2467,7 +2464,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabMainDisc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>924, 514</value>
+    <value>927, 514</value>
   </data>
   <data name="tabMainDisc.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -2683,7 +2680,7 @@
     <value>3, 3</value>
   </data>
   <data name="mstripDatabase.Size" type="System.Drawing.Size, System.Drawing">
-    <value>918, 24</value>
+    <value>921, 24</value>
   </data>
   <data name="mstripDatabase.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -2707,7 +2704,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabMainDatabase.Size" type="System.Drawing.Size, System.Drawing">
-    <value>924, 514</value>
+    <value>927, 514</value>
   </data>
   <data name="tabMainDatabase.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -2794,7 +2791,7 @@
     <value>3, 3</value>
   </data>
   <data name="mstripLog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>918, 24</value>
+    <value>921, 24</value>
   </data>
   <data name="mstripLog.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2818,7 +2815,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabMainLog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>924, 514</value>
+    <value>927, 514</value>
   </data>
   <data name="tabMainLog.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -2842,7 +2839,7 @@
     <value>3, 3</value>
   </data>
   <data name="tabControlMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>932, 540</value>
+    <value>935, 540</value>
   </data>
   <data name="tabControlMain.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -3475,14 +3472,53 @@
         AADAAwAAwAMAAMADAADAAwAAwAMAAMADAAD4HwAA
 </value>
   </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>1200, 630</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
+  </data>
+  <data name="&gt;&gt;clmChk.Name" xml:space="preserve">
+    <value>clmChk</value>
+  </data>
+  <data name="&gt;&gt;clmChk.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewCheckBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;clmTitle.Name" xml:space="preserve">
+    <value>clmTitle</value>
+  </data>
+  <data name="&gt;&gt;clmTitle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;clmRegion.Name" xml:space="preserve">
+    <value>clmRegion</value>
+  </data>
+  <data name="&gt;&gt;clmRegion.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;clmID.Name" xml:space="preserve">
+    <value>clmID</value>
+  </data>
+  <data name="&gt;&gt;clmID.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;clmExtension.Name" xml:space="preserve">
+    <value>clmExtension</value>
+  </data>
+  <data name="&gt;&gt;clmExtension.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;clmSize.Name" xml:space="preserve">
+    <value>clmSize</value>
+  </data>
+  <data name="&gt;&gt;clmSize.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;clmPath.Name" xml:space="preserve">
+    <value>clmPath</value>
+  </data>
+  <data name="&gt;&gt;clmPath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiInfoGame.Name" xml:space="preserve">
     <value>tsmiInfoGame</value>
@@ -4047,48 +4083,6 @@
   </data>
   <data name="&gt;&gt;gameBindingSource.Type" xml:space="preserve">
     <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;clmChk.Name" xml:space="preserve">
-    <value>clmChk</value>
-  </data>
-  <data name="&gt;&gt;clmChk.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewCheckBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;clmTitle.Name" xml:space="preserve">
-    <value>clmTitle</value>
-  </data>
-  <data name="&gt;&gt;clmTitle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;clmRegion.Name" xml:space="preserve">
-    <value>clmRegion</value>
-  </data>
-  <data name="&gt;&gt;clmRegion.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;clmID.Name" xml:space="preserve">
-    <value>clmID</value>
-  </data>
-  <data name="&gt;&gt;clmID.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;clmExtension.Name" xml:space="preserve">
-    <value>clmExtension</value>
-  </data>
-  <data name="&gt;&gt;clmExtension.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;clmSize.Name" xml:space="preserve">
-    <value>clmSize</value>
-  </data>
-  <data name="&gt;&gt;clmSize.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;clmPath.Name" xml:space="preserve">
-    <value>clmPath</value>
-  </data>
-  <data name="&gt;&gt;clmPath.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>frmMain</value>

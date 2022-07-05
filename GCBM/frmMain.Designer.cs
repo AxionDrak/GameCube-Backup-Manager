@@ -60,6 +60,13 @@ namespace GCBM
             this.tbIDRegion = new System.Windows.Forms.TextBox();
             this.tbIDName = new System.Windows.Forms.TextBox();
             this.dgvGameList = new System.Windows.Forms.DataGridView();
+            this.clmChk = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.clmTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmRegion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmExtension = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmPath = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cmsMain = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiInfoGame = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem10 = new System.Windows.Forms.ToolStripSeparator();
@@ -185,13 +192,6 @@ namespace GCBM
             this.tsmiNotifyExit = new System.Windows.Forms.ToolStripMenuItem();
             this.pbNetStatus = new System.Windows.Forms.PictureBox();
             this.gameBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.clmChk = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.clmTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmRegion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmExtension = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmPath = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.spcMain)).BeginInit();
             this.spcMain.Panel1.SuspendLayout();
             this.spcMain.Panel2.SuspendLayout();
@@ -449,6 +449,54 @@ namespace GCBM
             this.dgvGameList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGameList_CellContentClick);
             this.dgvGameList.Click += new System.EventHandler(this.dgvGameList_Click);
             // 
+            // clmChk
+            // 
+            this.clmChk.FillWeight = 0.6474377F;
+            resources.ApplyResources(this.clmChk, "clmChk");
+            this.clmChk.Name = "clmChk";
+            this.clmChk.ReadOnly = true;
+            // 
+            // clmTitle
+            // 
+            this.clmTitle.FillWeight = 186.4554F;
+            resources.ApplyResources(this.clmTitle, "clmTitle");
+            this.clmTitle.Name = "clmTitle";
+            this.clmTitle.ReadOnly = true;
+            // 
+            // clmRegion
+            // 
+            this.clmRegion.FillWeight = 96.77139F;
+            resources.ApplyResources(this.clmRegion, "clmRegion");
+            this.clmRegion.Name = "clmRegion";
+            this.clmRegion.ReadOnly = true;
+            // 
+            // clmID
+            // 
+            this.clmID.FillWeight = 72.39307F;
+            resources.ApplyResources(this.clmID, "clmID");
+            this.clmID.Name = "clmID";
+            this.clmID.ReadOnly = true;
+            // 
+            // clmExtension
+            // 
+            resources.ApplyResources(this.clmExtension, "clmExtension");
+            this.clmExtension.Name = "clmExtension";
+            this.clmExtension.ReadOnly = true;
+            // 
+            // clmSize
+            // 
+            this.clmSize.FillWeight = 129.4417F;
+            resources.ApplyResources(this.clmSize, "clmSize");
+            this.clmSize.Name = "clmSize";
+            this.clmSize.ReadOnly = true;
+            // 
+            // clmPath
+            // 
+            this.clmPath.FillWeight = 24.29118F;
+            resources.ApplyResources(this.clmPath, "clmPath");
+            this.clmPath.Name = "clmPath";
+            this.clmPath.ReadOnly = true;
+            // 
             // cmsMain
             // 
             this.cmsMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -626,9 +674,9 @@ namespace GCBM
             // 
             // tsmiExportHTML
             // 
-            resources.ApplyResources(this.tsmiExportHTML, "tsmiExportHTML");
             this.tsmiExportHTML.Image = global::GCBM.Properties.Resources.html_16;
             this.tsmiExportHTML.Name = "tsmiExportHTML";
+            resources.ApplyResources(this.tsmiExportHTML, "tsmiExportHTML");
             this.tsmiExportHTML.Click += new System.EventHandler(this.tsmiExportHTML_Click);
             // 
             // tsmiExportCSV
@@ -1345,54 +1393,6 @@ namespace GCBM
             // gameBindingSource
             // 
             this.gameBindingSource.DataSource = typeof(GCBM.Game);
-            // 
-            // clmChk
-            // 
-            this.clmChk.FillWeight = 0.6474377F;
-            resources.ApplyResources(this.clmChk, "clmChk");
-            this.clmChk.Name = "clmChk";
-            this.clmChk.ReadOnly = true;
-            // 
-            // clmTitle
-            // 
-            this.clmTitle.FillWeight = 186.4554F;
-            resources.ApplyResources(this.clmTitle, "clmTitle");
-            this.clmTitle.Name = "clmTitle";
-            this.clmTitle.ReadOnly = true;
-            // 
-            // clmRegion
-            // 
-            this.clmRegion.FillWeight = 96.77139F;
-            resources.ApplyResources(this.clmRegion, "clmRegion");
-            this.clmRegion.Name = "clmRegion";
-            this.clmRegion.ReadOnly = true;
-            // 
-            // clmID
-            // 
-            this.clmID.FillWeight = 72.39307F;
-            resources.ApplyResources(this.clmID, "clmID");
-            this.clmID.Name = "clmID";
-            this.clmID.ReadOnly = true;
-            // 
-            // clmExtension
-            // 
-            resources.ApplyResources(this.clmExtension, "clmExtension");
-            this.clmExtension.Name = "clmExtension";
-            this.clmExtension.ReadOnly = true;
-            // 
-            // clmSize
-            // 
-            this.clmSize.FillWeight = 129.4417F;
-            resources.ApplyResources(this.clmSize, "clmSize");
-            this.clmSize.Name = "clmSize";
-            this.clmSize.ReadOnly = true;
-            // 
-            // clmPath
-            // 
-            this.clmPath.FillWeight = 24.29118F;
-            resources.ApplyResources(this.clmPath, "clmPath");
-            this.clmPath.Name = "clmPath";
-            this.clmPath.ReadOnly = true;
             // 
             // frmMain
             // 
