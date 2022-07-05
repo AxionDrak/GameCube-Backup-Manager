@@ -3013,9 +3013,9 @@ namespace GCBM
 
             foreach (DataColumn myColumn in dt.Columns)
             {
-                strHTMLBuilder.Append("<td >");
+                strHTMLBuilder.Append("<th scope=\"col\">");
                 strHTMLBuilder.Append(myColumn.ColumnName);
-                strHTMLBuilder.Append("</td>");
+                strHTMLBuilder.Append("</th>");
             }
 
             strHTMLBuilder.Append("</tr>");
@@ -3038,6 +3038,7 @@ namespace GCBM
                     strHTMLBuilder.Append("</td>");
                 }
                 strHTMLBuilder.Append("</tr>");
+                i++;
             }
             //Close tags.
 
