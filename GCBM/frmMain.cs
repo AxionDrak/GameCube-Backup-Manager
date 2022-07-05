@@ -3029,7 +3029,7 @@ namespace GCBM
                 }
                 else
                 {
-                    strHTMLBuilder.Append("<tr class=\"secondary\"");
+                    strHTMLBuilder.Append("<tr class=\"table-secondary\"");
                 }
                 foreach (DataColumn myColumn in dt.Columns)
                 {
