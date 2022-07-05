@@ -1041,6 +1041,7 @@ namespace GCBM
 
             FileInfo _file = null;
             dgvGameList.Rows.Clear();
+            //dgvGameList.DataSource = GameDataTable();
             foreach (Game game in GameList)
             {
                 _file = new FileInfo(game.Path);
@@ -1359,9 +1360,9 @@ namespace GCBM
         }
         #endregion
 
-        #region Build Game list as Dictionary
+        #region Build Game list as List<Game>
         /// <summary>
-        /// Build a dictionary with file and game info for easier access programmatically.
+        /// Build a List<Game> with file and game info for easier access programmatically.
         /// </summary>
         private List<Game> GameList
         {
@@ -1387,6 +1388,29 @@ namespace GCBM
                 return list;
             }
             set { }
+        }
+        #endregion
+
+        #region Build Game list as DataTable
+        public DataTable GameDataTable()
+        {
+            DataTable _table = new DataTable();
+            _table.Columns.Add("Title");
+            _table.Columns.Add("Region");
+            _table.Columns.Add("ID");
+            _table.Columns.Add("Type");
+            _table.Columns.Add("Size");
+            _table.Columns.Add("Path");
+            foreach (Game game in GameList)
+            {
+                _table.Rows.Add(game.Title,
+                                game.Region,
+                                game.ID,
+                                game.Extension.Substring(1, 3).Trim().ToUpper(MY_CULTURE),
+                                DisplayFormatFileSize(game.Size, CONFIG_INI_FILE.IniReadInt("GENERAL", "FileSize")),
+                                game.Path);
+            }
+            return _table;
         }
         #endregion
 
@@ -2971,6 +2995,7 @@ namespace GCBM
             strHTMLBuilder.Append("src: url(\"./resources/Raleway-Thin.ttf\");");
             strHTMLBuilder.Append("}");
             strHTMLBuilder.Append("</style>");
+            strHTMLBuilder.Append("<script src=\"js/sorttable.js\"></script>");
             strHTMLBuilder.Append("</head>");
             strHTMLBuilder.Append("<body>");
             strHTMLBuilder.Append("<header class=\"grid-container\">");
@@ -3023,77 +3048,77 @@ namespace GCBM
             r.Close();
         }
 
-            //Font fonte = dgv.ColumnHeadersDefaultCellStyle.Font;
-            //int tabSize = 0;
-            //foreach (DataGridViewColumn col in dgv.Columns)
-            //    if (col.Visible) tabSize += col.Width;
+        //Font fonte = dgv.ColumnHeadersDefaultCellStyle.Font;
+        //int tabSize = 0;
+        //foreach (DataGridViewColumn col in dgv.Columns)
+        //    if (col.Visible) tabSize += col.Width;
 
-            ////string[] conteudo = new string[dgv.Columns.Count];
+        ////string[] conteudo = new string[dgv.Columns.Count];
 
-            //r.WriteLine("<html><head>");
-            //r.WriteLine("<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />");
-            //r.WriteLine("<title>" + dgv.Name + "</title>");
-            //r.WriteLine("</head><body>");
-            //r.WriteLine("<div style='position:static'>");
-            //r.WriteLine("<table style='border-collapse: collapse; width:" + tabSize.ToString() + "px'>");
-            //r.WriteLine("<tr>");
+        //r.WriteLine("<html><head>");
+        //r.WriteLine("<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />");
+        //r.WriteLine("<title>" + dgv.Name + "</title>");
+        //r.WriteLine("</head><body>");
+        //r.WriteLine("<div style='position:static'>");
+        //r.WriteLine("<table style='border-collapse: collapse; width:" + tabSize.ToString() + "px'>");
+        //r.WriteLine("<tr>");
 
-            //foreach (DataGridViewColumn coluna in dgv.Columns)
-            //{
-            //    if (coluna.Visible)
-            //    {
-            //        r.WriteLine("<td style='padding: 2px 2px 2px 2px; font-weight:bold; font-size:"
-            //            + Convert.ToInt32(fonte.Size + 3).ToString()
-            //            + "px; border-collapse: collapse; ' align='"
-            //            + coluna.InheritedStyle.Alignment.ToString().Substring(6,
-            //                coluna.InheritedStyle.Alignment.ToString().Length - 6)
-            //            + "' width='" + coluna.Width + "'>");
-            //        r.WriteLine("<font face='" + fonte.Name + "'>");
-            //        r.WriteLine(coluna.HeaderText.ToString());
-            //        r.WriteLine("</font>");
-            //        r.WriteLine("</td>");
-            //    }
-            //}
-            //r.WriteLine("</tr>");
-            //if (dgv.Rows.Count > 0)
-            //{
-            //    foreach (DataGridViewRow linha in dgv.Rows)
-            //    {
-            //        r.WriteLine("<tr>");
-            //        foreach (DataGridViewCell celula in linha.Cells)
-            //        {
-            //            if (celula.Visible)
-            //            {
-            //                r.WriteLine("<td style='padding: 2px 2px 2px 2px; font-size:"
-            //                    + Convert.ToInt32(fonte.Size + 3).ToString()
-            //                    + "; border-collapse: collapse; ' align='"
-            //                    + celula.InheritedStyle.Alignment.ToString().Substring(6,
-            //                        celula.InheritedStyle.Alignment.ToString().Length - 6)
-            //                    + "' width='" + celula.Size.Width + "'>");
-            //                r.Write("<font face='" + fonte.Name + "'>"
-            //                    + celula.FormattedValue.ToString() + "</font>");
-            //                r.WriteLine("</td>");
-            //            }
-            //        }
-            //        r.WriteLine("</tr>");
-            //    }
-            //}
-            //r.WriteLine("</table></div></body></html>");
-            //r.Close();
+        //foreach (DataGridViewColumn coluna in dgv.Columns)
+        //{
+        //    if (coluna.Visible)
+        //    {
+        //        r.WriteLine("<td style='padding: 2px 2px 2px 2px; font-weight:bold; font-size:"
+        //            + Convert.ToInt32(fonte.Size + 3).ToString()
+        //            + "px; border-collapse: collapse; ' align='"
+        //            + coluna.InheritedStyle.Alignment.ToString().Substring(6,
+        //                coluna.InheritedStyle.Alignment.ToString().Length - 6)
+        //            + "' width='" + coluna.Width + "'>");
+        //        r.WriteLine("<font face='" + fonte.Name + "'>");
+        //        r.WriteLine(coluna.HeaderText.ToString());
+        //        r.WriteLine("</font>");
+        //        r.WriteLine("</td>");
+        //    }
+        //}
+        //r.WriteLine("</tr>");
+        //if (dgv.Rows.Count > 0)
+        //{
+        //    foreach (DataGridViewRow linha in dgv.Rows)
+        //    {
+        //        r.WriteLine("<tr>");
+        //        foreach (DataGridViewCell celula in linha.Cells)
+        //        {
+        //            if (celula.Visible)
+        //            {
+        //                r.WriteLine("<td style='padding: 2px 2px 2px 2px; font-size:"
+        //                    + Convert.ToInt32(fonte.Size + 3).ToString()
+        //                    + "; border-collapse: collapse; ' align='"
+        //                    + celula.InheritedStyle.Alignment.ToString().Substring(6,
+        //                        celula.InheritedStyle.Alignment.ToString().Length - 6)
+        //                    + "' width='" + celula.Size.Width + "'>");
+        //                r.Write("<font face='" + fonte.Name + "'>"
+        //                    + celula.FormattedValue.ToString() + "</font>");
+        //                r.WriteLine("</td>");
+        //            }
+        //        }
+        //        r.WriteLine("</tr>");
+        //    }
+        //}
+        //r.WriteLine("</table></div></body></html>");
+        //r.Close();
 
-            //    //Process p = new Process();
-            //    //p.StartInfo = new ProcessStartInfo(caminho);
-            //    //p.StartInfo.UseShellExecute = true;
-            //    //p.Start();
-            //}
+        //    //Process p = new Process();
+        //    //p.StartInfo = new ProcessStartInfo(caminho);
+        //    //p.StartInfo.UseShellExecute = true;
+        //    //p.Start();
+        //}
 
-            #endregion
+        #endregion
 
-            #region Export CSV
-            /// <summary>
-            /// Export game list to CSV.
-            /// </summary>
-            private void ExportCSV(DataGridView dgv)
+        #region Export CSV
+        /// <summary>
+        /// Export game list to CSV.
+        /// </summary>
+        private void ExportCSV(DataGridView dgv)
         {
             if (dgvGameList.Rows.Count > 0)
             {
@@ -3504,23 +3529,7 @@ namespace GCBM
         #region tsmiExportHTML_Click
         private void tsmiExportHTML_Click(object sender, EventArgs e)
         {
-            DataTable _table = new DataTable();
-                _table.Columns.Add("Title");
-            _table.Columns.Add("Region");
-            _table.Columns.Add("ID");
-            _table.Columns.Add("Type");
-            _table.Columns.Add("Size");
-            _table.Columns.Add("Path");
-            foreach (Game game in GameList)
-            {
-                _table.Rows.Add(game.Title,
-                                game.Region,
-                                game.ID,
-                                game.Extension.Substring(1, 3).Trim().ToUpper(MY_CULTURE),
-                                DisplayFormatFileSize(game.Size, CONFIG_INI_FILE.IniReadInt("GENERAL", "FileSize")),
-                                game.Path);
-            }
-            ExportHTML(_table);
+            ExportHTML(GameDataTable());
         }
 
         #endregion
