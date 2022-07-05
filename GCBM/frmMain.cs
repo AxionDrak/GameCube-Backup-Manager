@@ -3062,6 +3062,7 @@ namespace GCBM
             StreamWriter r = new StreamWriter(caminho, false);
             r.Write(DataTableToHTML(dt));
             r.Close();
+            MessageBox.Show("File has been saved at: " + caminho, "Sucess!");
         }
 
         //Font fonte = dgv.ColumnHeadersDefaultCellStyle.Font;
