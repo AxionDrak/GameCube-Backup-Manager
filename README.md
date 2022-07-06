@@ -13,12 +13,6 @@ If you liked GameCube Backup Manager, feel free to donate any amount via PayPal.
 ### Download:
 All Releases: https://github.com/AxionDrak/GameCube-Backup-Manager/releases
 
-### Current Release - 2.4.5.0 (May 26, 2022)
-
-* [Added] new game regions (Taiwan, Korea, Germany, Spain, Italy, Australia, Netherlands, France)
-* [Improved] game region detection system.
-* [Improved] skin loading system.
-
 ### Features:
 
 **NOTE: At the moment the program only allows the individual transfer of ISO/GCM files. It is not possible to select more than one file for batch transfer. This should be fixed at some point in the future.**
