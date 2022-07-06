@@ -1,4 +1,4 @@
-﻿#region Using
+#region Using
 using GCBM.Properties;
 using System;
 using System.Collections;

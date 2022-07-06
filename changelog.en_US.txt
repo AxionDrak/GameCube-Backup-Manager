@@ -1,4 +1,8 @@
-.
+
+### GameCube Backup Manager 2.4.6.0 (July 03, 2022)
+
+[Fixed] File transfer error where destination folder name was not created correctly.
+
 ### GameCube Backup Manager 2.4.5.0 (May 26, 2022)
 
 [Added] new game regions (Taiwan, Korea, Germany, Spain, Italy, Australia, Netherlands, France)
