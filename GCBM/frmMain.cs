@@ -4339,6 +4339,30 @@ namespace GCBM
             }
         }
 
+        private void btnDiscSearch_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dgvGameListDisc.Rows)
+            {
+                row.Visible = true;
+            }
+            foreach (DataGridViewRow row in dgvGameListDisc.Rows)
+            {
+                if (tbDiscSearch.Text != null || tbSearch.Text != String.Empty)
+                {
+                    if (
+                        !row.Cells[1].Value.ToString().ToLower().Contains(tbDiscSearch.Text.ToLower()) &&
+                        !row.Cells[2].Value.ToString().ToLower().Contains(tbDiscSearch.Text.ToLower()) &&
+                        !row.Cells[3].Value.ToString().ToLower().Contains(tbDiscSearch.Text.ToLower()) &&
+                        !row.Cells[4].Value.ToString().ToLower().Contains(tbDiscSearch.Text.ToLower()) &&
+                        !row.Cells[5].Value.ToString().ToLower().Contains(tbDiscSearch.Text.ToLower()) &&
+                        !row.Cells[6].Value.ToString().ToLower().Contains(tbDiscSearch.Text.ToLower()))
+                    {
+                        row.Visible = false;
+                    }
+                }
+            }
+        }
+
 
         #endregion
 

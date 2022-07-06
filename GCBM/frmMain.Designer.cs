@@ -200,6 +200,8 @@ namespace GCBM
             this.clmDiscSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmDiscPath = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gameBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnDiscSearch = new System.Windows.Forms.Button();
+            this.tbDiscSearch = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.spcMain)).BeginInit();
             this.spcMain.Panel1.SuspendLayout();
             this.spcMain.Panel2.SuspendLayout();
@@ -711,6 +713,8 @@ namespace GCBM
             // 
             // tabMainDisc
             // 
+            this.tabMainDisc.Controls.Add(this.tbDiscSearch);
+            this.tabMainDisc.Controls.Add(this.btnDiscSearch);
             this.tabMainDisc.Controls.Add(this.lblSpaceAvailabeOnDevice);
             this.tabMainDisc.Controls.Add(this.lblSpaceTotalOnDevice);
             this.tabMainDisc.Controls.Add(this.label3);
@@ -1467,6 +1471,18 @@ namespace GCBM
             // 
             this.gameBindingSource.DataSource = typeof(GCBM.Game);
             // 
+            // btnDiscSearch
+            // 
+            resources.ApplyResources(this.btnDiscSearch, "btnDiscSearch");
+            this.btnDiscSearch.Name = "btnDiscSearch";
+            this.btnDiscSearch.UseVisualStyleBackColor = true;
+            this.btnDiscSearch.Click += new System.EventHandler(this.btnDiscSearch_Click);
+            // 
+            // tbDiscSearch
+            // 
+            resources.ApplyResources(this.tbDiscSearch, "tbDiscSearch");
+            this.tbDiscSearch.Name = "tbDiscSearch";
+            // 
             // frmMain
             // 
             resources.ApplyResources(this, "$this");
@@ -1696,6 +1712,8 @@ namespace GCBM
         private System.Windows.Forms.DataGridViewTextBoxColumn clmDiscExtension;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmDiscSize;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmDiscPath;
+        private System.Windows.Forms.TextBox tbDiscSearch;
+        private System.Windows.Forms.Button btnDiscSearch;
     }
 }
 
