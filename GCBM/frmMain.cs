@@ -2900,15 +2900,23 @@ namespace GCBM
                 }
                 else
                 {
-                    if (typeInstall == 0)
+                    try
                     {
-                        BuildCopyQueue(dgv);
-                        InstallGameExactCopy(lstInstallQueue[intQueuePos]);
+
+                        if (typeInstall == 0)
+                        {
+                            BuildCopyQueue(dgv);
+                            InstallGameExactCopy(lstInstallQueue[intQueuePos]);
+                        }
+                        else
+                        {
+                            BuildCopyQueue(dgv);
+                            InstallGameScrub(lstInstallQueue[intQueuePos]);
+                        }
                     }
-                    else
+                    catch
                     {
-                        BuildCopyQueue(dgv);
-                        InstallGameScrub(lstInstallQueue[intQueuePos]);
+
                     }
                 }
             }
