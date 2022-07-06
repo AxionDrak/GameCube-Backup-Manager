@@ -1870,6 +1870,26 @@ namespace GCBM.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Search256 {
+            get {
+                object obj = ResourceManager.GetObject("Search256", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Search32 {
+            get {
+                object obj = ResourceManager.GetObject("Search32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Selecione uma pasta contendo arquivos ISO/GCM:.
         /// </summary>
         internal static string SelectFolderContainingIsoGcmFiles {

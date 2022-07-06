@@ -435,6 +435,8 @@
     <Content Include="media\Web\js\vendor\jquery.js" />
     <Content Include="media\Web\js\vendor\what-input.js" />
     <Content Include="media\Web\resources\R.png" />
+    <None Include="Resources\Search32.png" />
+    <None Include="Resources\Search256.png" />
     <None Include="Resources\rename_folder_16.png" />
     <None Include="Resources\donate.gif" />
     <None Include="Resources\GameTDB-400.png" />

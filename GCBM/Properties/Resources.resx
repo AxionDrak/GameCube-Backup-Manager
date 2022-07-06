@@ -148,9 +148,6 @@
   <data name="image_not_found_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\image_not_found_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="DestinyDrive_AvailableSpace" xml:space="preserve">
-    <value>Espaço disponível: </value>
-  </data>
   <data name="RequiredDirectories_String2" xml:space="preserve">
     <value> [INFO] O diretório temporário padrão já existe... ignorando criação!</value>
   </data>
@@ -193,14 +190,11 @@
   <data name="ConvertElfDol_String2" xml:space="preserve">
     <value>&gt;&gt; Status: Não respondendo!</value>
   </data>
-  <data name="RecordExportedSuccessfully" xml:space="preserve">
-    <value>Registro exportado com sucesso!</value>
+  <data name="NoInternetConnectionFound_String1" xml:space="preserve">
+    <value>Nenhuma conexão com a internet encontrada!</value>
   </data>
   <data name="html_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\html_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="AboutVersion" xml:space="preserve">
-    <value>Versão </value>
   </data>
   <data name="open_folder_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\open_folder_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -283,6 +277,9 @@
   <data name="compact_file_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\compact_file_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="convert_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\convert_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="sync_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\sync_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -307,6 +304,9 @@
   <data name="image_not_found_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\image_not_found_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="DownloadDiscCoverError" xml:space="preserve">
+    <value> [ERRO] Falha ao efetuar download da capa (Disco)!</value>
+  </data>
   <data name="RecordExportedFailed" xml:space="preserve">
     <value>Nenhum dado disponível para ser exportado!</value>
   </data>
@@ -319,8 +319,8 @@
   <data name="ESRB_Adults_Only_18+_grayscale" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ESRB_Adults_Only_18+_grayscale.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="add_file_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\add_file_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ESRB_Teen_grayscale" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ESRB_Teen_grayscale.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="transfer_0002" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\transfer_0002.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -331,6 +331,9 @@
   <data name="information_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\information_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="rename_folder_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rename_folder_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="InvalidDrive_String2" xml:space="preserve">
     <value>O sistema de arquivos detectado é: </value>
   </data>
@@ -339,9 +342,6 @@
   </data>
   <data name="delete_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\delete_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ReadImage_String4" xml:space="preserve">
-    <value>ERRO!</value>
   </data>
   <data name="DownloadingWiiTDB_String1" xml:space="preserve">
     <value>&gt;&gt; Baixando WiiTDB.zip ... </value>
@@ -384,9 +384,6 @@
   </data>
   <data name="xml_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\xml_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="NoInternetConnectionFound_String1" xml:space="preserve">
-    <value>Nenhuma conexão com a internet encontrada!</value>
   </data>
   <data name="AllFilesSuccessfullyDeleted" xml:space="preserve">
     <value>Todos os arquivos foram excluídos com sucesso!</value>
@@ -475,6 +472,9 @@
   <data name="plugin_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\plugin_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="RecordExportedSuccessfully" xml:space="preserve">
+    <value>Registro exportado com sucesso!</value>
+  </data>
   <data name="ClearTemp_String1" xml:space="preserve">
     <value> [INFO] Não foi possível limpar a pasta temporária!</value>
   </data>
@@ -489,6 +489,9 @@
   </data>
   <data name="exit" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\exit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Search256" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Search256.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ProcessTaskDelay_String4" xml:space="preserve">
     <value>Para efetuar o download do arquivo (requer conexão com a internet), vá até a aba 'Base de Dados', depois em 'Ferramentas' -&gt; 'Atualização do GameTDB'.</value>
@@ -568,8 +571,8 @@
   <data name="DisplayFilesSelected_Found_String3" xml:space="preserve">
     <value>Encontrado(s) </value>
   </data>
-  <data name="DownloadDiscCoverError" xml:space="preserve">
-    <value> [ERRO] Falha ao efetuar download da capa (Disco)!</value>
+  <data name="add_file_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\add_file_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="CheckUSBGXFlow_String2" xml:space="preserve">
     <value>Depois vá em 'Capas' -&gt; 'Sincronizar' e marque a opção 'Ativar transferência de capas entre dispositivos'.</value>
@@ -601,8 +604,8 @@
   <data name="ESRB_RP" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ESRB_RP.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ESRB_Teen" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ESRB_Teen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="AboutVersion" xml:space="preserve">
+    <value>Versão </value>
   </data>
   <data name="Info" xml:space="preserve">
     <value> [INFO] </value>
@@ -712,14 +715,14 @@
   <data name="ReadImage_String1" xml:space="preserve">
     <value>A imagem é muito pequena!</value>
   </data>
-  <data name="CheckUSBGXFlow_String3" xml:space="preserve">
-    <value>Depois, na mesma aba, vá em 'Configuração do carregador USB (Transferir Capas)' e ajuste os diretórios das capas (Disco, 2D, 3D e Completo) do USB Loader GX ou WiiFlow em 'Configuração do carregador USB (Transferir Capas)', apontando para os respectivos diretórios dentro do dispositivo de destino.</value>
+  <data name="DestinyDrive_AvailableSpace" xml:space="preserve">
+    <value>Espaço disponível: </value>
   </data>
   <data name="LoadDatabase_Region" xml:space="preserve">
     <value>Região</value>
   </data>
-  <data name="convert_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\convert_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ESRB_Teen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ESRB_Teen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="RegisterHeaderLog_ProgramName" xml:space="preserve">
     <value> Nome do Programa: </value>
@@ -742,10 +745,13 @@
   <data name="ESRB_Everyone_10+_grayscale" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ESRB_Everyone_10+_grayscale.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ESRB_Teen_grayscale" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ESRB_Teen_grayscale.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ReadImage_String4" xml:space="preserve">
+    <value>ERRO!</value>
   </data>
-  <data name="rename_folder_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\rename_folder_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="CheckUSBGXFlow_String3" xml:space="preserve">
+    <value>Depois, na mesma aba, vá em 'Configuração do carregador USB (Transferir Capas)' e ajuste os diretórios das capas (Disco, 2D, 3D e Completo) do USB Loader GX ou WiiFlow em 'Configuração do carregador USB (Transferir Capas)', apontando para os respectivos diretórios dentro do dispositivo de destino.</value>
+  </data>
+  <data name="Search32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Search32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

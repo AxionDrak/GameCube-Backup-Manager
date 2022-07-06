@@ -96,6 +96,7 @@ namespace GCBM
         private int intQueueLength;
         private int intQueuePos;
         private List<string> lstInstallQueue = new List<string>();
+        private DataGridView dgvSelected = new DataGridView();
 
         [DllImport("kernel32.dll")]
         static extern EXECUTION_STATE SetThreadExecutionState(EXECUTION_STATE esFlags);
@@ -188,15 +189,6 @@ namespace GCBM
 
 
             //Localization.. but not working @Laetemn
-            #region dgvGameList Setup
-            dgvGameList.Columns[1].HeaderText = GCBM.Properties.Resources.LoadDatabase_GameTitle;
-            dgvGameList.Columns[2].HeaderText = GCBM.Properties.Resources.LoadDatabase_IDGameCode;
-            dgvGameList.Columns[3].HeaderText = GCBM.Properties.Resources.LoadDatabase_Region;
-            dgvGameList.Columns[4].HeaderText = GCBM.Properties.Resources.LoadDatabase_Type;
-            dgvGameList.Columns[5].HeaderText = GCBM.Properties.Resources.DisplayFilesSelected_Size;
-            dgvGameList.Columns[6].HeaderText = GCBM.Properties.Resources.DisplayFilesSelected_FilePath;
-            dgvGameList.Refresh();
-            #endregion                 
             #region dgvGameListDisc Setup 
             dgvGameListDisc.Columns[1].HeaderText = GCBM.Properties.Resources.LoadDatabase_GameTitle;
             dgvGameListDisc.Columns[2].HeaderText = GCBM.Properties.Resources.LoadDatabase_IDGameCode;
@@ -382,6 +374,25 @@ namespace GCBM
                     {
                         this.Show();
                         NetworkCheck();
+                        #region dgvGameList Setup
+                        dgvGameList.Columns[1].HeaderText = GCBM.Properties.Resources.LoadDatabase_GameTitle;
+                        dgvGameList.Columns[2].HeaderText = GCBM.Properties.Resources.LoadDatabase_IDGameCode;
+                        dgvGameList.Columns[3].HeaderText = GCBM.Properties.Resources.LoadDatabase_Region;
+                        dgvGameList.Columns[4].HeaderText = GCBM.Properties.Resources.LoadDatabase_Type;
+                        dgvGameList.Columns[5].HeaderText = GCBM.Properties.Resources.DisplayFilesSelected_Size;
+                        dgvGameList.Columns[6].HeaderText = GCBM.Properties.Resources.DisplayFilesSelected_FilePath;
+                        dgvGameList.Refresh();
+                        #endregion
+                        #region dgvGameList Setup
+                        dgvGameListDisc.Columns[1].HeaderText = GCBM.Properties.Resources.LoadDatabase_GameTitle;
+                        dgvGameListDisc.Columns[2].HeaderText = GCBM.Properties.Resources.LoadDatabase_IDGameCode;
+                        dgvGameListDisc.Columns[3].HeaderText = GCBM.Properties.Resources.LoadDatabase_Region;
+                        dgvGameListDisc.Columns[4].HeaderText = GCBM.Properties.Resources.LoadDatabase_Type;
+                        dgvGameListDisc.Columns[5].HeaderText = GCBM.Properties.Resources.DisplayFilesSelected_Size;
+                        dgvGameListDisc.Columns[6].HeaderText = GCBM.Properties.Resources.DisplayFilesSelected_FilePath;
+                        dgvGameListDisc.Refresh();
+                        #endregion
+
                     }
                 };
                 worker.DoHardWork();
@@ -920,13 +931,20 @@ namespace GCBM
         /// Reloads the contents of the DataGridView Games List.
         /// </summary>
         private void ReloadDataGridViewGameList(DataGridView dgv)
-        {
+        {    
             if (dgv.RowCount != 0)
             {
+
                 try
                 {
-                    DirectoryOpenGameList(dgv.CurrentRow.Cells[6].Value.ToString());
-
+                    if (dgv == dgvGameList)
+                    {
+                        DirectoryOpenGameList(dgv.CurrentRow.Cells[6].Value.ToString());
+                    }
+                    else
+                    {
+                        DirectoryOpenDiscList(dgv.CurrentRow.Cells[6].Value.ToString());
+                    }
                     if (ERROR == false)
                     {
                         LoadCover(tbIDGame.Text);
@@ -1383,7 +1401,6 @@ namespace GCBM
                             foreach (XElement el in tests)
                             {
                                 tbIDNameDisc.Text = (string)el.Element("locale").Element("title");
-                                tbIDRegionDisc.Text = (string)el.Element("loacle").Element("region");
                             }
                         }
                         else
@@ -1395,6 +1412,8 @@ namespace GCBM
                     ROOT_OPENED = false;
                 }
             }
+
+            tbIDRegionDisc.Text = dgvSelected.CurrentRow.Cells[2].Value.ToString();
         }
         #endregion
 
@@ -2237,7 +2256,7 @@ namespace GCBM
                         }
                         //progressBar1.Value += 5;
                     }
-                    while (!myProcess.WaitForExit(1000));
+                    while (!myProcess.WaitForExit(100));
 
                     //textLog.AppendText($">> Código de saída do processo : {myProcess.ExitCode}");
 
@@ -3671,7 +3690,7 @@ namespace GCBM
         {
             dgvGameList.EndEdit();
 
-            foreach (DataGridViewRow dtr in dgvGameList.Rows)
+            foreach (DataGridViewRow dtr in dgvSelected.Rows)
             {
                 ((DataGridViewCheckBoxCell)dtr.Cells[0]).Value = true;
             }
@@ -3688,7 +3707,7 @@ namespace GCBM
         {
             dgvGameList.EndEdit();
 
-            foreach (DataGridViewRow dtr in dgvGameList.Rows)
+            foreach (DataGridViewRow dtr in dgvSelected.Rows)
             {
                 ((DataGridViewCheckBoxCell)dtr.Cells[0]).Value = false;
             }
@@ -4362,43 +4381,31 @@ namespace GCBM
                  */
 
                 //There's a way to do this in a single line.. but
-                if (dgvGameList.Rows[e.RowIndex].Cells[0].Value.ToString() == "False")
+                if (dgvSelected.Rows[e.RowIndex].Cells[0].Value.ToString() == "False")
                 {
-                    dgvGameList.Rows[e.RowIndex].Cells[0].Value = true;
+                    dgvSelected.Rows[e.RowIndex].Cells[0].Value = true;
                 }
                 else
                 {
-                    dgvGameList.Rows[e.RowIndex].Cells[0].Value = false;
-                }
-            }
-        }
-        private void dgvGameListDisc_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.ColumnIndex == 0)
-            {
-                /*
-                 * e.ColumnIndex = 0 
-                 * e.RowIndex
-                 */
-
-                //There's a way to do this in a single line.. but
-                if (dgvGameListDisc.Rows[e.RowIndex].Cells[0].Value.ToString() == "False")
-                {
-                    dgvGameListDisc.Rows[e.RowIndex].Cells[0].Value = true;
-                }
-                else
-                {
-                    dgvGameListDisc.Rows[e.RowIndex].Cells[0].Value = false;
+                    dgvSelected.Rows[e.RowIndex].Cells[0].Value = false;
                 }
             }
         }
         private void Search_Click(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow row in dgvGameList.Rows)
+            if (tabControlMain.SelectedTab == tabMainFile)
+            {
+                dgvSelected = dgvGameList;
+            }
+            else if (tabControlMain.SelectedTab == tabMainDisc)
+            {
+                dgvSelected = dgvGameListDisc;
+            }
+            foreach (DataGridViewRow row in dgvSelected.Rows)
             {
                 row.Visible = true;
             }
-            foreach (DataGridViewRow row in dgvGameList.Rows)
+            foreach (DataGridViewRow row in dgvSelected.Rows)
             {
                 if (tbSearch.Text != null || tbSearch.Text != String.Empty)
                 {
@@ -4416,35 +4423,31 @@ namespace GCBM
             }
         }
 
-        private void btnDiscSearch_Click(object sender, EventArgs e)
+        private void tabControlMain_SelectedIndexChanged(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow row in dgvGameListDisc.Rows)
+            if (tabControlMain.SelectedTab == tabMainFile)
             {
-                row.Visible = true;
+                dgvSelected = dgvGameList;
             }
-            foreach (DataGridViewRow row in dgvGameListDisc.Rows)
+            else if (tabControlMain.SelectedTab == tabMainDisc)
             {
-                if (tbDiscSearch.Text != null || tbSearch.Text != String.Empty)
-                {
-                    if (
-                        !row.Cells[1].Value.ToString().ToLower().Contains(tbDiscSearch.Text.ToLower()) &&
-                        !row.Cells[2].Value.ToString().ToLower().Contains(tbDiscSearch.Text.ToLower()) &&
-                        !row.Cells[3].Value.ToString().ToLower().Contains(tbDiscSearch.Text.ToLower()) &&
-                        !row.Cells[4].Value.ToString().ToLower().Contains(tbDiscSearch.Text.ToLower()) &&
-                        !row.Cells[5].Value.ToString().ToLower().Contains(tbDiscSearch.Text.ToLower()) &&
-                        !row.Cells[6].Value.ToString().ToLower().Contains(tbDiscSearch.Text.ToLower()))
-                    {
-                        row.Visible = false;
-                    }
-                }
+                dgvSelected = dgvGameListDisc;
             }
         }
 
+        private void btnSearch_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                Search_Click(sender, e);
+            }
+        }
 
         #endregion
 
         //Restarts the application (closes and reopens)
         //Application.Restart();
 
-    } // frmMain Form
-} // namespace GCBM
+        // frmMain Form
+    }
+}// namespace GCBM
