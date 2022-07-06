@@ -183,13 +183,26 @@ namespace GCBM
             //All done, Clean up / Refresh to ensure language and settings are updated.
 
             #region dgvGameList Setup
-            //dgvGameList.Columns.Add("Title", GCBM.Properties.Resources.LoadDatabase_GameTitle);
-            //dgvGameList.Columns.Add("ID", GCBM.Properties.Resources.LoadDatabase_IDGameCode);
-            //dgvGameList.Columns.Add("Region", GCBM.Properties.Resources.LoadDatabase_Region);
-            //dgvGameList.Columns.Add("Type", GCBM.Properties.Resources.LoadDatabase_Type);
-            //dgvGameList.Columns.Add("Size", GCBM.Properties.Resources.DisplayFilesSelected_Size);
-            //dgvGameList.Columns.Add("Path", GCBM.Properties.Resources.DisplayFilesSelected_FilePath);
+            dgvGameList.Columns[1].HeaderText = GCBM.Properties.Resources.LoadDatabase_GameTitle;
+            dgvGameList.Columns[2].HeaderText = GCBM.Properties.Resources.LoadDatabase_IDGameCode;
+            dgvGameList.Columns[3].HeaderText = GCBM.Properties.Resources.LoadDatabase_Region;
+            dgvGameList.Columns[4].HeaderText = GCBM.Properties.Resources.LoadDatabase_Type;
+            dgvGameList.Columns[5].HeaderText = GCBM.Properties.Resources.DisplayFilesSelected_Size;
+            dgvGameList.Columns[6].HeaderText = GCBM.Properties.Resources.DisplayFilesSelected_FilePath;
+            dgvGameList.Refresh();
+            #endregion                 
+            #region dgvGameListDisc Setup 
+            dgvGameListDisc.Columns[1].HeaderText = GCBM.Properties.Resources.LoadDatabase_GameTitle;
+            dgvGameListDisc.Columns[2].HeaderText = GCBM.Properties.Resources.LoadDatabase_IDGameCode;
+            dgvGameListDisc.Columns[3].HeaderText = GCBM.Properties.Resources.LoadDatabase_Region;
+            dgvGameListDisc.Columns[4].HeaderText = GCBM.Properties.Resources.LoadDatabase_Type;
+            dgvGameListDisc.Columns[5].HeaderText = GCBM.Properties.Resources.DisplayFilesSelected_Size;
+            dgvGameListDisc.Columns[6].HeaderText = GCBM.Properties.Resources.DisplayFilesSelected_FilePath;
+            dgvGameListDisc.Refresh();
+
             #endregion
+            System.Threading.Thread.CurrentThread.CurrentUICulture.ClearCachedData();
+            System.Threading.Thread.CurrentThread.CurrentCulture.ClearCachedData();
             AdjustLanguage();
             this.Show();
         }
@@ -1054,10 +1067,10 @@ namespace GCBM
 
 
                 string _getSize = DisplayFormatFileSize(_file.Length, CONFIG_INI_FILE.IniReadInt("GENERAL", "FileSize"));
-               
-                
+
+
                 //5° coluna
-                
+
                 dgv.Rows.Add(false,
                                 game.Title,
                                 game.Region,
@@ -1385,24 +1398,24 @@ namespace GCBM
         /// </summary>
         private List<Game> GameList(string path)
         {
-                string[] filters = { "ISO", "GCM" };
-                List<Game> list = new List<Game>();
-                string[] files = GetFilesFolder(path, filters, false);
-                foreach (var file in files)
-                {
-                    FileInfo _file = new FileInfo(file);
-                    //Title - ID - Region - Path - Extension - Size
-                    loadPath = _file.FullName;
-                    DirectoryOpenGameList(loadPath);
-                    Game game = new Game(tbIDName.Text, tbIDGame.Text, tbIDRegion.Text, loadPath, _file.Extension, (int)_file.Length);
-                    //game.Title = _oldNameInternal;
-                    //game.Region = _IDRegionCode;
-                    //game.Path = _file.FullName;
-                    //game.Extension = _file.Extension;
-                    //game.Size = (int)_file.Length;
-                    list.Add(game);
-                }
-                return list;
+            string[] filters = { "ISO", "GCM" };
+            List<Game> list = new List<Game>();
+            string[] files = GetFilesFolder(path, filters, false);
+            foreach (var file in files)
+            {
+                FileInfo _file = new FileInfo(file);
+                //Title - ID - Region - Path - Extension - Size
+                loadPath = _file.FullName;
+                DirectoryOpenGameList(loadPath);
+                Game game = new Game(tbIDName.Text, tbIDGame.Text, tbIDRegion.Text, loadPath, _file.Extension, (int)_file.Length);
+                //game.Title = _oldNameInternal;
+                //game.Region = _IDRegionCode;
+                //game.Path = _file.FullName;
+                //game.Extension = _file.Extension;
+                //game.Size = (int)_file.Length;
+                list.Add(game);
+            }
+            return list;
         }
         #endregion
 
@@ -2747,7 +2760,7 @@ namespace GCBM
 
                             // Goes through the entire file list and removes all found ISO and GCM files.
                             //string pasta = Path.GetDirectoryName(dgv.CurrentRow.Cells[6].Value.ToString());
-                            for (int i = 0; i <files.Length; i++)
+                            for (int i = 0; i < files.Length; i++)
                             {
                                 string pasta = Path.GetDirectoryName(dgv.CurrentRow.Cells[6].Value.ToString());
                                 //File.Delete(tscbDiscDrive.SelectedItem + @"games\" + dgv.CurrentRow.Cells[0].Value.ToString());                               
@@ -3075,10 +3088,10 @@ namespace GCBM
                 tbLog.Text += "\n HTML exported sucessfully at: \n" + caminho + "\n";
                 MessageBox.Show("File has been saved at: " + caminho, "Sucess!");
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 MessageBox.Show("ERROR! Please post report this to Github or GBATemp.\n" + e.Message, "ERROR!");
-                tbLog.Text +="\n"+"HTML Export error\n" + e.Message + "\n" + DateTime.Now.ToString("hh:mm:ss tt"); 
+                tbLog.Text += "\n" + "HTML Export error\n" + e.Message + "\n" + DateTime.Now.ToString("hh:mm:ss tt");
             }
         }
 
@@ -3571,8 +3584,8 @@ namespace GCBM
         #region tsmiExportCSV_Click
         private void tsmiExportCSV_Click(object sender, EventArgs e)
         {
-            using(var dialog = new FolderBrowserDialog())
-        {
+            using (var dialog = new FolderBrowserDialog())
+            {
                 //setup here
 
                 if (dialog.ShowDialog() == DialogResult.OK)  //check for OK...they might press cancel, so don't do anything if they did.
@@ -4317,7 +4330,7 @@ namespace GCBM
         }
         private void Search_Click(object sender, EventArgs e)
         {
-            foreach(DataGridViewRow row in dgvGameList.Rows)
+            foreach (DataGridViewRow row in dgvGameList.Rows)
             {
                 row.Visible = true;
             }
