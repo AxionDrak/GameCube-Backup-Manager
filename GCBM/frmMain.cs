@@ -1988,7 +1988,7 @@ namespace GCBM
         /// <summary>
         /// Function to install an exact copy of the file (1:1).
         /// </summary>
-        private void BuildExactCopyQueue()
+        private void BuildCopyQueue(DataGridView dgv)
         {
             //Get # selected games - Done
             //Set QueueLength - Done
@@ -2011,7 +2011,6 @@ namespace GCBM
                 }
             }
             intQueueLength = lstInstallQueue.Count;
-            InstallGameExactCopy(lstInstallQueue[intQueuePos]);
         }
         #endregion
 
@@ -2122,219 +2121,224 @@ namespace GCBM
         /// <summary>
         /// Function to install an copy of the file in Scrub mode.
         /// </summary>
-        private void InstallGameScrub()
+        private void InstallGameScrub(string path)
         {
-            foreach (DataGridViewRow row in dgvGameList.Rows)
+            if (intQueuePos <= intQueueLength)
             {
-                if (row.Cells[0].Value.ToString() == "True")
+                FileInfo _file = new FileInfo(path);
+                loadPath = _file.FullName;
+                DirectoryOpenGameList(loadPath);
+                const string quote = "\"";
+                var _source = path;
+
+                START_INFO.CreateNoWindow = true;
+                START_INFO.UseShellExecute = true;
+                // GCIT
+                START_INFO.FileName = GET_CURRENT_PATH + @"\bin\gcit.exe ";
+
+
+                bool boolCaseSwitch = CONFIG_INI_FILE.IniReadBool("TRANSFERSYSTEM", "ScrubFlushSD");
+                int intCaseSwitch = CONFIG_INI_FILE.IniReadInt("TRANSFERSYSTEM", "ScrubAlign");
+
+                switch (boolCaseSwitch)
                 {
-                    while (WORKING) { wait(1000); }
-                    FileInfo _file = new FileInfo(row.Cells[6].Value.ToString());
-                    loadPath = _file.FullName;
-                    DirectoryOpenGameList(loadPath);
-                    const string quote = "\"";
-                    var _source = row.Cells[6].Value.ToString();
+                    case true:
+                        FLUSH_SD = " - flush";
+                        break;
+                    case false:
+                        FLUSH_SD = "";
+                        break;
+                }
 
-                    START_INFO.CreateNoWindow = true;
-                    START_INFO.UseShellExecute = true;
-                    // GCIT
-                    START_INFO.FileName = GET_CURRENT_PATH + @"\bin\gcit.exe ";
+                switch (intCaseSwitch)
+                {
+                    case 0:
+                        SCRUB_ALIGN = "";
+                        break;
+                    case 1:
+                        SCRUB_ALIGN = " -a 4";
+                        break;
+                    case 2:
+                        SCRUB_ALIGN = " -a 32";
+                        break;
+                    default:
+                        SCRUB_ALIGN = " -a 32K";
+                        break;
+                }
 
+                //if (CONFIG_INI_FILE.IniReadBool("TRANSFERSYSTEM", "ScrubFlushSD") == true)
+                //{
+                //    FLUSH_SD = " - flush";
+                //}
+                //else
+                //{
+                //    FLUSH_SD = "";
+                //}
 
-                    bool boolCaseSwitch = CONFIG_INI_FILE.IniReadBool("TRANSFERSYSTEM", "ScrubFlushSD");
-                    int intCaseSwitch = CONFIG_INI_FILE.IniReadInt("TRANSFERSYSTEM", "ScrubAlign");
+                //if (CONFIG_INI_FILE.IniReadInt("TRANSFERSYSTEM", "ScrubAlign") == 0)
+                //{
+                //    SCRUB_ALIGN = "";
+                //}
+                //else if (CONFIG_INI_FILE.IniReadInt("TRANSFERSYSTEM", "ScrubAlign") == 1)
+                //{
+                //    SCRUB_ALIGN = " -a 4";
+                //}
+                //else if (CONFIG_INI_FILE.IniReadInt("TRANSFERSYSTEM", "ScrubAlign") == 2)
+                //{
+                //    SCRUB_ALIGN = " -a 32";
+                //}
+                //else
+                //{
+                //    SCRUB_ALIGN = " -a 32K";
+                //}
 
-                    switch (boolCaseSwitch)
+                START_INFO.Arguments = quote + _source + quote + " -aq " + SCRUB_ALIGN + FLUSH_SD + " -f " +
+                    CONFIG_INI_FILE.IniReadString("TRANSFERSYSTEM", "ScrubFormat", "") + " -d " + tscbDiscDrive.SelectedItem + GAMES_DIR;
+                START_INFO.WindowStyle = ProcessWindowStyle.Hidden;
+
+                using (Process myProcess = Process.Start(START_INFO))
+                {
+                    int i = 0;
+                    // Display the process statistics until
+                    // the user closes the program.
+                    do
                     {
-                        case true:
-                            FLUSH_SD = " - flush";
-                            break;
-                        case false:
-                            FLUSH_SD = "";
-                            break;
-                    }
-
-                    switch (intCaseSwitch)
-                    {
-                        case 0:
-                            SCRUB_ALIGN = "";
-                            break;
-                        case 1:
-                            SCRUB_ALIGN = " -a 4";
-                            break;
-                        case 2:
-                            SCRUB_ALIGN = " -a 32";
-                            break;
-                        default:
-                            SCRUB_ALIGN = " -a 32K";
-                            break;
-                    }
-
-                    //if (CONFIG_INI_FILE.IniReadBool("TRANSFERSYSTEM", "ScrubFlushSD") == true)
-                    //{
-                    //    FLUSH_SD = " - flush";
-                    //}
-                    //else
-                    //{
-                    //    FLUSH_SD = "";
-                    //}
-
-                    //if (CONFIG_INI_FILE.IniReadInt("TRANSFERSYSTEM", "ScrubAlign") == 0)
-                    //{
-                    //    SCRUB_ALIGN = "";
-                    //}
-                    //else if (CONFIG_INI_FILE.IniReadInt("TRANSFERSYSTEM", "ScrubAlign") == 1)
-                    //{
-                    //    SCRUB_ALIGN = " -a 4";
-                    //}
-                    //else if (CONFIG_INI_FILE.IniReadInt("TRANSFERSYSTEM", "ScrubAlign") == 2)
-                    //{
-                    //    SCRUB_ALIGN = " -a 32";
-                    //}
-                    //else
-                    //{
-                    //    SCRUB_ALIGN = " -a 32K";
-                    //}
-
-                    START_INFO.Arguments = quote + _source + quote + " -aq " + SCRUB_ALIGN + FLUSH_SD + " -f " +
-                        CONFIG_INI_FILE.IniReadString("TRANSFERSYSTEM", "ScrubFormat", "") + " -d " + tscbDiscDrive.SelectedItem + GAMES_DIR;
-                    START_INFO.WindowStyle = ProcessWindowStyle.Hidden;
-
-                    using (Process myProcess = Process.Start(START_INFO))
-                    {
-                        int i = 0;
-                        // Display the process statistics until
-                        // the user closes the program.
-                        do
+                        if (!myProcess.HasExited)
                         {
-                            if (!myProcess.HasExited)
+                            // Refresh the current process property values.
+                            myProcess.Refresh();
+                            // Display current process statistics.
+                            tbLog.AppendText($"{myProcess} -");
+                            //toolStripStatusLabel3.Text = $"{myProcess} -";
+                            tbLog.AppendText(Environment.NewLine + "-------------------------------------" + Environment.NewLine + Environment.NewLine);
+
+                            if (myProcess.Responding)
                             {
-                                // Refresh the current process property values.
-                                myProcess.Refresh();
-                                // Display current process statistics.
-                                tbLog.AppendText($"{myProcess} -");
-                                //toolStripStatusLabel3.Text = $"{myProcess} -";
-                                tbLog.AppendText(Environment.NewLine + "-------------------------------------" + Environment.NewLine + Environment.NewLine);
+                                lblCopy.Visible = true;
+                                lblInstallGame.Visible = true;
+                                lblPercent.Visible = true;
+                                pbCopy.Visible = true;
 
-                                if (myProcess.Responding)
-                                {
-                                    lblCopy.Visible = true;
-                                    lblInstallGame.Visible = true;
-                                    lblPercent.Visible = true;
-                                    pbCopy.Visible = true;
+                                DisableOptionsGame(dgvGameList);
 
-                                    DisableOptionsGame(dgvGameList);
-
-                                    lblCopy.Text = GCBM.Properties.Resources.InstallGameScrub_String1;
-                                    lblInstallGame.Text = GCBM.Properties.Resources.InstallGameScrub_String2 + i++;
-                                    pbCopy.PerformStep();
-                                    var incrementValue = i++ / 2;
-                                    pbCopy.Value = incrementValue;
-                                    lblPercent.Text = incrementValue.ToString() + "%"; //i++.ToString() + "%";
-                                                                                       //progressBarGameCopy.Maximum = i++ * 5;
-                                }
-                                else
-                                {
-                                    lblInstallGame.Visible = true;
-                                    lblInstallGame.Text = GCBM.Properties.Resources.InstallGameScrub_String3;
-                                }
+                                lblCopy.Text = GCBM.Properties.Resources.InstallGameScrub_String1;
+                                lblInstallGame.Text = GCBM.Properties.Resources.InstallGameScrub_String2 + i++;
+                                pbCopy.PerformStep();
+                                var incrementValue = i++ / 2;
+                                pbCopy.Value = incrementValue;
+                                lblPercent.Text = incrementValue.ToString() + "%"; //i++.ToString() + "%";
+                                                                                   //progressBarGameCopy.Maximum = i++ * 5;
                             }
-                            //progressBar1.Value += 5;
-                        }
-                        while (!myProcess.WaitForExit(1000));
-
-                        //textLog.AppendText($">> Código de saída do processo : {myProcess.ExitCode}");
-
-                        var _StatusExit = myProcess.ExitCode;
-                        if (_StatusExit == 0)
-                        {
-                            lblInstallGame.Visible = true;
-                            lblPercent.Visible = true;
-                            pbCopy.Visible = true;
-
-                            EnableOptionsGameList();
-
-                            lblPercent.Text = "100%";
-                            pbCopy.Value = 100;
-                            lblInstallGame.Text = GCBM.Properties.Resources.InstallGameScrub_String4;
-
-                            if (tbIDDiscID.Text == "0x00")
+                            else
                             {
-                                GlobalNotifications(GCBM.Properties.Resources.InstallGameScrub_String5, ToolTipIcon.Info);
-                                //MessageBox.Show(GCBM.Properties.Resources.InstallGameScrub_String5, GCBM.Properties.Resources.Information, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                lblInstallGame.Visible = true;
+                                lblInstallGame.Text = GCBM.Properties.Resources.InstallGameScrub_String3;
+                            }
+                        }
+                        //progressBar1.Value += 5;
+                    }
+                    while (!myProcess.WaitForExit(1000));
+
+                    //textLog.AppendText($">> Código de saída do processo : {myProcess.ExitCode}");
+
+                    var _StatusExit = myProcess.ExitCode;
+                    if (_StatusExit == 0)
+                    {
+                        lblInstallGame.Visible = true;
+                        lblPercent.Visible = true;
+                        pbCopy.Visible = true;
+
+                        EnableOptionsGameList();
+
+                        lblPercent.Text = "100%";
+                        pbCopy.Value = 100;
+                        lblInstallGame.Text = GCBM.Properties.Resources.InstallGameScrub_String4;
+
+                        if (tbIDDiscID.Text == "0x00")
+                        {
+                            GlobalNotifications(GCBM.Properties.Resources.InstallGameScrub_String5, ToolTipIcon.Info);
+                            //MessageBox.Show(GCBM.Properties.Resources.InstallGameScrub_String5, GCBM.Properties.Resources.Information, MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                            lblCopy.Visible = false;
+                            lblInstallGame.Visible = false;
+                            lblPercent.Visible = false;
+                            pbCopy.Visible = false;
+                        }
+
+                        if (tbIDDiscID.Text == "0x01")
+                        {
+                            // Usar nome intermo
+                            if (CONFIG_INI_FILE.IniReadBool("TITLES", "GameInternalName") == true)
+                            {
+                                // Renomear game.iso -> disc2.iso
+                                string myOrigem = tscbDiscDrive.SelectedItem + GAMES_DIR + @"\" + tbIDName.Text + " [" + tbIDGame.Text + "2]" + @"\game.iso";
+                                string myDestiny = tscbDiscDrive.SelectedItem + GAMES_DIR + @"\" + tbIDName.Text.Replace("disc2 ", "") + " [" + tbIDGame.Text + "2]" + @"\disc2.iso";
+
+                                //MessageBox.Show("MYORIGEM: " + Environment.NewLine
+                                //    + myOrigem +
+                                //    "\n\nMYDESTINY: " + Environment.NewLine
+                                //    + myDestiny, "DISC2", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                /*
+                                * MYORIGEM:     c:\games\resident evil 4 disc2 (2) [G4BE082]\game.iso
+                                * MYDESTINY:    c:\games\resident evil 4 disc2 (2) [G4BE082]\disc2.iso
+                                * MYNEWDESTINY: c:\games\resident evil 4 [G4BE08]\
+                                */
+
+                                File.Move(myOrigem, myDestiny);
+
+                                GlobalNotifications(GCBM.Properties.Resources.InstallGameScrub_String6, ToolTipIcon.Info);
+                                //MessageBox.Show(GCBM.Properties.Resources.InstallGameScrub_String6, GCBM.Properties.Resources.Information, MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                                 lblCopy.Visible = false;
                                 lblInstallGame.Visible = false;
                                 lblPercent.Visible = false;
                                 pbCopy.Visible = false;
-                            }
-
-                            if (tbIDDiscID.Text == "0x01")
+                                //GC.Collect();
+                            }// Usar WiiTDB.xml
+                            else
                             {
-                                // Usar nome intermo
-                                if (CONFIG_INI_FILE.IniReadBool("TITLES", "GameInternalName") == true)
-                                {
-                                    // Renomear game.iso -> disc2.iso
-                                    string myOrigem = tscbDiscDrive.SelectedItem + GAMES_DIR + @"\" + tbIDName.Text + " [" + tbIDGame.Text + "2]" + @"\game.iso";
-                                    string myDestiny = tscbDiscDrive.SelectedItem + GAMES_DIR + @"\" + tbIDName.Text.Replace("disc2 ", "") + " [" + tbIDGame.Text + "2]" + @"\disc2.iso";
+                                // Renomear game.iso -> disc2.iso
+                                string myOrigem = tscbDiscDrive.SelectedItem + GAMES_DIR + @"\" + _oldNameInternal + " [" + tbIDGame.Text + "2]" + @"\game.iso";
+                                string myDestiny = tscbDiscDrive.SelectedItem + GAMES_DIR + @"\" + _oldNameInternal.Replace("disc2 ", "") + " [" + tbIDGame.Text + "2]" + @"\disc2.iso";
 
-                                    //MessageBox.Show("MYORIGEM: " + Environment.NewLine
-                                    //    + myOrigem +
-                                    //    "\n\nMYDESTINY: " + Environment.NewLine
-                                    //    + myDestiny, "DISC2", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                    /*
-                                    * MYORIGEM:     c:\games\resident evil 4 disc2 (2) [G4BE082]\game.iso
-                                    * MYDESTINY:    c:\games\resident evil 4 disc2 (2) [G4BE082]\disc2.iso
-                                    * MYNEWDESTINY: c:\games\resident evil 4 [G4BE08]\
-                                    */
+                                //MessageBox.Show("MYORIGEM: " + Environment.NewLine
+                                //    + myOrigem +
+                                //    "\n\nMYDESTINY: " + Environment.NewLine
+                                //    + myDestiny, "DISC2", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                /*
+                                * MYORIGEM:     c:\games\resident evil 4 disc2 (2) [G4BE082]\game.iso
+                                * MYDESTINY:    c:\games\resident evil 4 disc2 (2) [G4BE082]\disc2.iso
+                                * MYNEWDESTINY: c:\games\resident evil 4 [G4BE08]\
+                                */
 
-                                    File.Move(myOrigem, myDestiny);
+                                File.Move(myOrigem, myDestiny);
 
-                                    GlobalNotifications(GCBM.Properties.Resources.InstallGameScrub_String6, ToolTipIcon.Info);
-                                    //MessageBox.Show(GCBM.Properties.Resources.InstallGameScrub_String6, GCBM.Properties.Resources.Information, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                GlobalNotifications(GCBM.Properties.Resources.InstallGameScrub_String6, ToolTipIcon.Info);
+                                //MessageBox.Show(GCBM.Properties.Resources.InstallGameScrub_String6, GCBM.Properties.Resources.Information, MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                                    lblCopy.Visible = false;
-                                    lblInstallGame.Visible = false;
-                                    lblPercent.Visible = false;
-                                    pbCopy.Visible = false;
-                                    //GC.Collect();
-                                }// Usar WiiTDB.xml
-                                else
-                                {
-                                    // Renomear game.iso -> disc2.iso
-                                    string myOrigem = tscbDiscDrive.SelectedItem + GAMES_DIR + @"\" + _oldNameInternal + " [" + tbIDGame.Text + "2]" + @"\game.iso";
-                                    string myDestiny = tscbDiscDrive.SelectedItem + GAMES_DIR + @"\" + _oldNameInternal.Replace("disc2 ", "") + " [" + tbIDGame.Text + "2]" + @"\disc2.iso";
-
-                                    //MessageBox.Show("MYORIGEM: " + Environment.NewLine
-                                    //    + myOrigem +
-                                    //    "\n\nMYDESTINY: " + Environment.NewLine
-                                    //    + myDestiny, "DISC2", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                    /*
-                                    * MYORIGEM:     c:\games\resident evil 4 disc2 (2) [G4BE082]\game.iso
-                                    * MYDESTINY:    c:\games\resident evil 4 disc2 (2) [G4BE082]\disc2.iso
-                                    * MYNEWDESTINY: c:\games\resident evil 4 [G4BE08]\
-                                    */
-
-                                    File.Move(myOrigem, myDestiny);
-
-                                    GlobalNotifications(GCBM.Properties.Resources.InstallGameScrub_String6, ToolTipIcon.Info);
-                                    //MessageBox.Show(GCBM.Properties.Resources.InstallGameScrub_String6, GCBM.Properties.Resources.Information, MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                                    lblCopy.Visible = false;
-                                    lblInstallGame.Visible = false;
-                                    lblPercent.Visible = false;
-                                    pbCopy.Visible = false;
-                                    //GC.Collect();
-                                }
+                                lblCopy.Visible = false;
+                                lblInstallGame.Visible = false;
+                                lblPercent.Visible = false;
+                                pbCopy.Visible = false;
+                                //GC.Collect();
                             }
                         }
-                        //if (_StatusExit == 3)
-                        //{
-                        //    //tsslStatusInformation.Text = "Status: ERRO! -> " + "{" + _StatusExit.ToString() + "}" + " Por favor, verifique se exitem espaços no nome do arquivo!";
-                        //}
-                        WORKING = false;
+                    }
+                    //if (_StatusExit == 3)
+                    //{
+                    //    //tsslStatusInformation.Text = "Status: ERRO! -> " + "{" + _StatusExit.ToString() + "}" + " Por favor, verifique se exitem espaços no nome do arquivo!";
+                    //}
+                    intQueuePos++;
+                    WORKING = false;
+                    if (intQueuePos <= intQueueLength)
+                    {
+                        InstallGameScrub(lstInstallQueue[intQueuePos]);
                     }
                 }
+            }
+            else
+            {
+                MessageBox.Show("Successfully installed " + intQueueLength + " games.", "Success!");
             }
         }
         #endregion
@@ -2418,9 +2422,9 @@ namespace GCBM
                         {
                             InstallGameExactCopy(lstInstallQueue[intQueuePos]);
                         }
-                        catch(Exception e)
+                        catch (Exception e)
                         {
-                            tbLog.Text += "\n" + DateTime.Now.ToString() + " Error Installing: \n" + e.Message+"\n" ;
+                            tbLog.Text += "\n" + DateTime.Now.ToString() + " Error Installing: \n" + e.Message + "\n";
                         }
                     }
                 })));
@@ -2898,11 +2902,13 @@ namespace GCBM
                 {
                     if (typeInstall == 0)
                     {
-                        BuildExactCopyQueue();
+                        BuildCopyQueue(dgv);
+                        InstallGameExactCopy(lstInstallQueue[intQueuePos]);
                     }
                     else
                     {
-                        InstallGameScrub();
+                        BuildCopyQueue(dgv);
+                        InstallGameScrub(lstInstallQueue[intQueuePos]);
                     }
                 }
             }
