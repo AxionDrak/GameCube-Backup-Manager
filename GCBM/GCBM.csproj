@@ -13,6 +13,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -27,7 +28,6 @@
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>x64</PlatformTarget>
@@ -96,6 +96,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ExportDataTableToHTML.cs" />
     <Compile Include="FileInfoExtension.cs" />
     <Compile Include="frmAboutBox.cs">
       <SubType>Form</SubType>
@@ -151,6 +152,7 @@
     <Compile Include="frmTransferCover.Designer.cs">
       <DependentUpon>frmTransferCover.cs</DependentUpon>
     </Compile>
+    <Compile Include="Game.cs" />
     <Compile Include="Hardworker.cs" />
     <Compile Include="image.cs">
       <SubType>Form</SubType>
@@ -164,6 +166,7 @@
     <Compile Include="TOC.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ToCSV.cs" />
     <Compile Include="tools\frmBurnMedia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -232,6 +235,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmConfig.en-US.resx">
       <DependentUpon>frmConfig.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="frmConfig.es.resx">
       <DependentUpon>frmConfig.cs</DependentUpon>
@@ -239,6 +243,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmConfig.ko.resx">
       <DependentUpon>frmConfig.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="frmConfig.resx">
       <DependentUpon>frmConfig.cs</DependentUpon>
@@ -385,6 +390,9 @@
       <DependentUpon>frmMetaXml.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.manifest" />
+    <None Include="media\Web\resources\OpenSans-Light.ttf" />
+    <None Include="media\Web\resources\Raleway-Thin.ttf" />
+    <None Include="Properties\DataSources\Game.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -418,6 +426,18 @@
     <Content Include="media\covers\full.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="media\Web\css\app.css" />
+    <Content Include="media\Web\css\foundation.css" />
+    <Content Include="media\Web\css\foundation.min.css" />
+    <Content Include="media\Web\js\app.js" />
+    <Content Include="media\Web\js\vendor\foundation.js" />
+    <Content Include="media\Web\js\vendor\foundation.min.js" />
+    <Content Include="media\Web\js\vendor\jquery.js" />
+    <Content Include="media\Web\js\vendor\what-input.js" />
+    <Content Include="media\Web\resources\R.png" />
+    <None Include="Resources\Search32.png" />
+    <None Include="Resources\Search256.png" />
+    <None Include="Resources\rename_folder_16.png" />
     <None Include="Resources\donate.gif" />
     <None Include="Resources\GameTDB-400.png" />
     <None Include="Resources\github_16.png" />
@@ -507,7 +527,7 @@
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
       <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 e x64%29</ProductName>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">

@@ -138,6 +138,51 @@
   <data name="groupBox1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left</value>
   </data>
+  <data name="btnSearch.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnSearch.Location" type="System.Drawing.Point, System.Drawing">
+    <value>232, 12</value>
+  </data>
+  <data name="btnSearch.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 32</value>
+  </data>
+  <data name="btnSearch.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;btnSearch.Name" xml:space="preserve">
+    <value>btnSearch</value>
+  </data>
+  <data name="&gt;&gt;btnSearch.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnSearch.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;btnSearch.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tbSearch.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 19</value>
+  </data>
+  <data name="tbSearch.Size" type="System.Drawing.Size, System.Drawing">
+    <value>212, 20</value>
+  </data>
+  <data name="tbSearch.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;tbSearch.Name" xml:space="preserve">
+    <value>tbSearch</value>
+  </data>
+  <data name="&gt;&gt;tbSearch.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbSearch.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;tbSearch.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <metadata name="pbGameCover3D.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -556,6 +601,9 @@
         r4woCI2CFYQvkblAYsE0XfPySkKf+cz/AAEWkp2An70hAAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="pbGameCover3D.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="pbGameCover3D.Location" type="System.Drawing.Point, System.Drawing">
     <value>14, 306</value>
   </data>
@@ -578,7 +626,7 @@
     <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;pbGameCover3D.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
   <metadata name="pbGameDisc.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -707,6 +755,9 @@
         n3322V7suxX6ASKjfQ71h8j4/4Z4I7FIJPofI1bqEdzG6zMAAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="pbGameDisc.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="pbGameDisc.InitialImage" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
   </data>
@@ -732,7 +783,7 @@
     <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;pbGameDisc.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 3</value>
@@ -788,6 +839,9 @@
   <data name="lblInstallGame.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblInstallGame.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblInstallGame.Location" type="System.Drawing.Point, System.Drawing">
     <value>517, 337</value>
   </data>
@@ -827,6 +881,9 @@
   <data name="lblPercent.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
   </data>
+  <data name="lblPercent.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblPercent.Location" type="System.Drawing.Point, System.Drawing">
     <value>663, 319</value>
   </data>
@@ -863,6 +920,9 @@
   <data name="lblCopy.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblCopy.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblCopy.Location" type="System.Drawing.Point, System.Drawing">
     <value>517, 319</value>
   </data>
@@ -896,6 +956,9 @@
   <data name="pbCopy.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
+  <data name="pbCopy.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="pbCopy.Location" type="System.Drawing.Point, System.Drawing">
     <value>514, 353</value>
   </data>
@@ -925,6 +988,9 @@
   </metadata>
   <data name="label1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
+  </data>
+  <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
     <value>517, 433</value>
@@ -959,6 +1025,9 @@
   <data name="btnSelectFolder.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Zoom</value>
   </data>
+  <data name="btnSelectFolder.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="btnSelectFolder.Location" type="System.Drawing.Point, System.Drawing">
     <value>781, 413</value>
   </data>
@@ -992,6 +1061,9 @@
   <data name="lblTypeDisc.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblTypeDisc.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblTypeDisc.Location" type="System.Drawing.Point, System.Drawing">
     <value>132, 111</value>
   </data>
@@ -1024,6 +1096,9 @@
   </metadata>
   <data name="label34.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="label34.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="label34.Location" type="System.Drawing.Point, System.Drawing">
     <value>188, 59</value>
@@ -1103,6 +1178,9 @@
   <data name="label29.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="label29.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="label29.Location" type="System.Drawing.Point, System.Drawing">
     <value>14, 111</value>
   </data>
@@ -1132,6 +1210,9 @@
   </metadata>
   <data name="pbWebGameID.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
+  </data>
+  <data name="pbWebGameID.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="pbWebGameID.InitialImage" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
@@ -1194,6 +1275,9 @@
   <data name="btnGameInstallScrub.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleRight</value>
   </data>
+  <data name="btnGameInstallScrub.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="btnGameInstallScrub.Location" type="System.Drawing.Point, System.Drawing">
     <value>100, 67</value>
   </data>
@@ -1253,6 +1337,9 @@
         NlGmySJmu/yTDEOmsqpaHDUTz358o7UWQFxNASAFuRDwcqP4UAtYDLR3H6AXdzSQs3KLAHw8k99Hwx0C
         kHaIADl8LXJAK9hCoBSg2YT/NbIfXgkBoglxFOBAzb0Ec8Yl/APFvouOlljSHgAAAABJRU5ErkJggg==
 </value>
+  </data>
+  <data name="btnGameInstallExactCopy.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="btnGameInstallExactCopy.Location" type="System.Drawing.Point, System.Drawing">
     <value>100, 21</value>
@@ -1317,6 +1404,9 @@
   <data name="labelGameID.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="labelGameID.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="labelGameID.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 85</value>
   </data>
@@ -1350,6 +1440,9 @@
   <data name="labelFile.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="labelFile.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="labelFile.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 59</value>
   </data>
@@ -1382,6 +1475,9 @@
   </data>
   <data name="labelTitle.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="labelTitle.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="labelTitle.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 33</value>
@@ -1518,11 +1614,65 @@
   <data name="dgvGameList.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
-  <metadata name="dgvMainCheck.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="clmChk.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="dgvMainCheck.HeaderText" xml:space="preserve">
+  <data name="clmChk.HeaderText" xml:space="preserve">
     <value />
+  </data>
+  <data name="clmChk.MinimumWidth" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <metadata name="clmTitle.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="clmTitle.HeaderText" xml:space="preserve">
+    <value>Game Title</value>
+  </data>
+  <data name="clmTitle.MinimumWidth" type="System.Int32, mscorlib">
+    <value>75</value>
+  </data>
+  <metadata name="clmRegion.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="clmRegion.HeaderText" xml:space="preserve">
+    <value>Region</value>
+  </data>
+  <data name="clmRegion.MinimumWidth" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
+  <metadata name="clmID.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="clmID.HeaderText" xml:space="preserve">
+    <value>ID (Game ID)</value>
+  </data>
+  <data name="clmID.MinimumWidth" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
+  <metadata name="clmExtension.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="clmExtension.HeaderText" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <metadata name="clmSize.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="clmSize.HeaderText" xml:space="preserve">
+    <value>Size</value>
+  </data>
+  <data name="clmSize.MinimumWidth" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
+  <metadata name="clmPath.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="clmPath.HeaderText" xml:space="preserve">
+    <value>File Path</value>
+  </data>
+  <data name="clmPath.MinimumWidth" type="System.Int32, mscorlib">
+    <value>100</value>
   </data>
   <metadata name="cmsMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>812, 13</value>
@@ -1596,6 +1746,9 @@
   <data name="dgvGameList.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 30</value>
   </data>
+  <data name="dgvGameList.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
+    <value>None</value>
+  </data>
   <data name="dgvGameList.Size" type="System.Drawing.Size, System.Drawing">
     <value>496, 478</value>
   </data>
@@ -1627,19 +1780,16 @@
     <value>Recarregar Lista</value>
   </data>
   <data name="tsmiGameListSelectAll.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="tsmiGameListSelectAll.Text" xml:space="preserve">
     <value>Todos</value>
   </data>
   <data name="tsmiGameListSelectNone.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="tsmiGameListSelectNone.Text" xml:space="preserve">
     <value>Nenhum</value>
-  </data>
-  <data name="tsmiSelectGameList.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="tsmiSelectGameList.Size" type="System.Drawing.Size, System.Drawing">
     <value>73, 20</value>
@@ -1683,17 +1833,11 @@
   <data name="tsmiExportTXT.Text" xml:space="preserve">
     <value>TXT</value>
   </data>
-  <data name="tsmiExportHTML.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="tsmiExportHTML.Size" type="System.Drawing.Size, System.Drawing">
     <value>106, 22</value>
   </data>
   <data name="tsmiExportHTML.Text" xml:space="preserve">
     <value>HTML</value>
-  </data>
-  <data name="tsmiExportCSV.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="tsmiExportCSV.Size" type="System.Drawing.Size, System.Drawing">
     <value>106, 22</value>
@@ -1717,7 +1861,7 @@
     <value>3, 3</value>
   </data>
   <data name="mstripFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>864, 24</value>
+    <value>957, 24</value>
   </data>
   <data name="mstripFile.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -1741,7 +1885,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabMainFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>870, 514</value>
+    <value>963, 514</value>
   </data>
   <data name="tabMainFile.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1845,6 +1989,9 @@
   <data name="label3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="label3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
     <value>512, 195</value>
   </data>
@@ -1884,6 +2031,9 @@
   <data name="label2.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
   </data>
+  <data name="label2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
     <value>512, 177</value>
   </data>
@@ -1919,6 +2069,9 @@
   </metadata>
   <data name="pbWebGameDiscID.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
+  </data>
+  <data name="pbWebGameDiscID.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="pbWebGameDiscID.InitialImage" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
@@ -1956,6 +2109,9 @@
   <data name="label4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="label4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 85</value>
   </data>
@@ -1989,6 +2145,9 @@
   <data name="label5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="label5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 59</value>
   </data>
@@ -2021,6 +2180,9 @@
   </data>
   <data name="label6.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="label6.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 33</value>
@@ -2163,6 +2325,60 @@
   <data name="dgvMainDiscCheck.HeaderText" xml:space="preserve">
     <value />
   </data>
+  <data name="dgvMainDiscCheck.MinimumWidth" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <metadata name="clmDiscTitle.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="clmDiscTitle.HeaderText" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="clmDiscTitle.MinimumWidth" type="System.Int32, mscorlib">
+    <value>75</value>
+  </data>
+  <metadata name="clmDiscID.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="clmDiscID.HeaderText" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="clmDiscID.MinimumWidth" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
+  <metadata name="clmDiscRegion.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="clmDiscRegion.HeaderText" xml:space="preserve">
+    <value>Region</value>
+  </data>
+  <data name="clmDiscRegion.MinimumWidth" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
+  <metadata name="clmDiscExtension.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="clmDiscExtension.HeaderText" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <metadata name="clmDiscSize.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="clmDiscSize.HeaderText" xml:space="preserve">
+    <value>Size</value>
+  </data>
+  <data name="clmDiscSize.MinimumWidth" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
+  <metadata name="clmDiscPath.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="clmDiscPath.HeaderText" xml:space="preserve">
+    <value>Path</value>
+  </data>
+  <data name="clmDiscPath.MinimumWidth" type="System.Int32, mscorlib">
+    <value>100</value>
+  </data>
   <data name="dgvGameListDisc.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 33</value>
   </data>
@@ -2212,13 +2428,13 @@
     <value>Regarregar Lista</value>
   </data>
   <data name="tsmiGameDiscSelectAll.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="tsmiGameDiscSelectAll.Text" xml:space="preserve">
     <value>Todos</value>
   </data>
   <data name="tsmiGameDiscSelectNone.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="tsmiGameDiscSelectNone.Text" xml:space="preserve">
     <value>Nenhum</value>
@@ -2320,7 +2536,7 @@
     <value>3, 3</value>
   </data>
   <data name="mstripDisc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>864, 27</value>
+    <value>957, 27</value>
   </data>
   <data name="mstripDisc.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -2344,7 +2560,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabMainDisc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>870, 514</value>
+    <value>963, 514</value>
   </data>
   <data name="tabMainDisc.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -2375,6 +2591,9 @@
   </data>
   <data name="lblDatabaseTotal.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="lblDatabaseTotal.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lblDatabaseTotal.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 498</value>
@@ -2481,6 +2700,9 @@
   <data name="label7.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="label7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
     <value>438, 8</value>
   </data>
@@ -2554,7 +2776,7 @@
     <value>3, 3</value>
   </data>
   <data name="mstripDatabase.Size" type="System.Drawing.Size, System.Drawing">
-    <value>864, 24</value>
+    <value>957, 24</value>
   </data>
   <data name="mstripDatabase.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -2578,7 +2800,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabMainDatabase.Size" type="System.Drawing.Size, System.Drawing">
-    <value>870, 514</value>
+    <value>963, 514</value>
   </data>
   <data name="tabMainDatabase.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -2665,7 +2887,7 @@
     <value>3, 3</value>
   </data>
   <data name="mstripLog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>864, 24</value>
+    <value>957, 24</value>
   </data>
   <data name="mstripLog.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2689,7 +2911,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabMainLog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>870, 514</value>
+    <value>963, 514</value>
   </data>
   <data name="tabMainLog.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -2713,7 +2935,7 @@
     <value>3, 3</value>
   </data>
   <data name="tabControlMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>878, 540</value>
+    <value>971, 540</value>
   </data>
   <data name="tabControlMain.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2902,7 +3124,7 @@
     <value>Exibir</value>
   </data>
   <data name="tsmiConfigurationMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="tsmiConfigurationMain.Text" xml:space="preserve">
     <value>Configurações...</value>
@@ -2912,6 +3134,12 @@
   </data>
   <data name="tsmiOptions.Text" xml:space="preserve">
     <value>Opções</value>
+  </data>
+  <data name="tsmiRenameFolders.Size" type="System.Drawing.Size, System.Drawing">
+    <value>181, 22</value>
+  </data>
+  <data name="tsmiRenameFolders.Text" xml:space="preserve">
+    <value>Rename Folders</value>
   </data>
   <data name="tsmiRenameISO.Size" type="System.Drawing.Size, System.Drawing">
     <value>181, 22</value>
@@ -3044,6 +3272,9 @@
   </data>
   <data name="lblNetStatus.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
+  </data>
+  <data name="lblNetStatus.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lblNetStatus.Location" type="System.Drawing.Point, System.Drawing">
     <value>992, 575</value>
@@ -3197,6 +3428,9 @@
   <data name="pbNetStatus.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
+  <data name="pbNetStatus.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="pbNetStatus.Location" type="System.Drawing.Point, System.Drawing">
     <value>974, 573</value>
   </data>
@@ -3221,6 +3455,9 @@
   <data name="&gt;&gt;pbNetStatus.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <metadata name="gameBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 52</value>
+  </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -3331,17 +3568,56 @@
         AADAAwAAwAMAAMADAADAAwAAwAMAAMADAAD4HwAA
 </value>
   </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>1200, 630</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
   </data>
-  <data name="&gt;&gt;dgvMainCheck.Name" xml:space="preserve">
-    <value>dgvMainCheck</value>
+  <data name="&gt;&gt;clmChk.Name" xml:space="preserve">
+    <value>clmChk</value>
   </data>
-  <data name="&gt;&gt;dgvMainCheck.Type" xml:space="preserve">
+  <data name="&gt;&gt;clmChk.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewCheckBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;clmTitle.Name" xml:space="preserve">
+    <value>clmTitle</value>
+  </data>
+  <data name="&gt;&gt;clmTitle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;clmRegion.Name" xml:space="preserve">
+    <value>clmRegion</value>
+  </data>
+  <data name="&gt;&gt;clmRegion.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;clmID.Name" xml:space="preserve">
+    <value>clmID</value>
+  </data>
+  <data name="&gt;&gt;clmID.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;clmExtension.Name" xml:space="preserve">
+    <value>clmExtension</value>
+  </data>
+  <data name="&gt;&gt;clmExtension.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;clmSize.Name" xml:space="preserve">
+    <value>clmSize</value>
+  </data>
+  <data name="&gt;&gt;clmSize.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;clmPath.Name" xml:space="preserve">
+    <value>clmPath</value>
+  </data>
+  <data name="&gt;&gt;clmPath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiInfoGame.Name" xml:space="preserve">
     <value>tsmiInfoGame</value>
@@ -3498,6 +3774,42 @@
   </data>
   <data name="&gt;&gt;dgvMainDiscCheck.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewCheckBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;clmDiscTitle.Name" xml:space="preserve">
+    <value>clmDiscTitle</value>
+  </data>
+  <data name="&gt;&gt;clmDiscTitle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;clmDiscID.Name" xml:space="preserve">
+    <value>clmDiscID</value>
+  </data>
+  <data name="&gt;&gt;clmDiscID.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;clmDiscRegion.Name" xml:space="preserve">
+    <value>clmDiscRegion</value>
+  </data>
+  <data name="&gt;&gt;clmDiscRegion.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;clmDiscExtension.Name" xml:space="preserve">
+    <value>clmDiscExtension</value>
+  </data>
+  <data name="&gt;&gt;clmDiscExtension.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;clmDiscSize.Name" xml:space="preserve">
+    <value>clmDiscSize</value>
+  </data>
+  <data name="&gt;&gt;clmDiscSize.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;clmDiscPath.Name" xml:space="preserve">
+    <value>clmDiscPath</value>
+  </data>
+  <data name="&gt;&gt;clmDiscPath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tscbDiscDrive.Name" xml:space="preserve">
     <value>tscbDiscDrive</value>
@@ -3775,6 +4087,12 @@
   <data name="&gt;&gt;tsmiTools.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;tsmiRenameFolders.Name" xml:space="preserve">
+    <value>tsmiRenameFolders</value>
+  </data>
+  <data name="&gt;&gt;tsmiRenameFolders.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;tsmiRenameISO.Name" xml:space="preserve">
     <value>tsmiRenameISO</value>
   </data>
@@ -3894,6 +4212,12 @@
   </data>
   <data name="&gt;&gt;tsmiNotifyExit.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gameBindingSource.Name" xml:space="preserve">
+    <value>gameBindingSource</value>
+  </data>
+  <data name="&gt;&gt;gameBindingSource.Type" xml:space="preserve">
+    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>frmMain</value>

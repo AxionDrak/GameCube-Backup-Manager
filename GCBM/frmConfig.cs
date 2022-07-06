@@ -107,7 +107,7 @@ namespace GCBM
             //configIniFile.IniWriteString("GCBM", "Language", GCBM.Properties.Resources.GCBM_Language);
             //configIniFile.IniWriteString("GCBM", "TranslatedBy", GCBM.Properties.Resources.GCBM_TranslatedBy);
 
-            // General          
+            // General
             CONFIG_INI_FILE.IniWriteBool("GENERAL", "DiscClean", rbGeneralDiscClean.Checked);
             CONFIG_INI_FILE.IniWriteBool("GENERAL", "DiscDelete", rbGeneralDiscDelete.Checked);
             CONFIG_INI_FILE.IniWriteBool("GENERAL", "ExtractZip", chkGeneralExtractZip.Checked);
@@ -137,7 +137,7 @@ namespace GCBM
             CONFIG_INI_FILE.IniWriteBool("SEVERAL", "RecursiveMode", chkGeneralRecursiva.Checked);
             CONFIG_INI_FILE.IniWriteBool("SEVERAL", "TemporaryBuffer", chkGeneralTemporaryBuffer.Checked);
             CONFIG_INI_FILE.IniWriteBool("SEVERAL", "WindowMaximized", chkStartWindowMaximized.Checked);
-            CONFIG_INI_FILE.IniWriteBool("SEVERAL", "Welcome", chkWelcome.Checked);
+            CONFIG_INI_FILE.IniWriteBool("SEVERAL", "DisableSplash", chkSplash.Checked);
             CONFIG_INI_FILE.IniWriteBool("SEVERAL", "Screensaver", chkScreensaver.Checked);
             CONFIG_INI_FILE.IniWriteBool("SEVERAL", "LoadDatabase", chkLoadDatabase.Checked);
             CONFIG_INI_FILE.IniWriteBool("SEVERAL", "MultipleInstances", chkMultipleInstances.Checked);
@@ -262,7 +262,7 @@ namespace GCBM
                 chkGeneralRecursiva.Checked = CONFIG_INI_FILE.IniReadBool("SEVERAL", "RecursiveMode");
                 chkGeneralTemporaryBuffer.Checked = CONFIG_INI_FILE.IniReadBool("SEVERAL", "TemporaryBuffer");
                 chkStartWindowMaximized.Checked = CONFIG_INI_FILE.IniReadBool("SEVERAL", "WindowMaximized");
-                chkWelcome.Checked = CONFIG_INI_FILE.IniReadBool("SEVERAL", "Welcome");
+                chkSplash.Checked = CONFIG_INI_FILE.IniReadBool("SEVERAL", "DisableSplash");
                 chkScreensaver.Checked = CONFIG_INI_FILE.IniReadBool("SEVERAL", "Screensaver");
                 chkLoadDatabase.Checked = CONFIG_INI_FILE.IniReadBool("SEVERAL", "LoadDatabase");
                 chkMultipleInstances.Checked = CONFIG_INI_FILE.IniReadBool("SEVERAL", "MultipleInstances");

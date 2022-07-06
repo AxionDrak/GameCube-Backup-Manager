@@ -35,6 +35,10 @@ namespace GCBM
         #region Adjust Language
         private void AdjustLanguage()
         {
+
+            //Get current system Locale -- Thread.CurrentThread.CurrentUICulture.Name
+            if (!CONFIG_INI_FILE.IniReadBool("SEVERAL", "First Run"))
+            {
             switch (CONFIG_INI_FILE.IniReadInt("LANGUAGE", "ConfigLanguage"))
             {
                 case 0:
@@ -57,6 +61,44 @@ namespace GCBM
                     this.Controls.Clear();
                     InitializeComponent();
                     break;
+            }
+            }
+            else
+            {
+                switch (Thread.CurrentThread.CurrentUICulture.Name)
+                {
+                    case "pt - BR":
+                        Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("pt-BR");
+                        this.Controls.Clear();
+                        InitializeComponent();
+                        CONFIG_INI_FILE.IniWriteInt("LANGUAGE", "ConfigLanguage",0);
+                        break;
+                    case "en-US":
+                        Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-US");
+                        this.Controls.Clear();
+                        InitializeComponent();
+                        CONFIG_INI_FILE.IniWriteInt("LANGUAGE", "ConfigLanguage", 1);
+                        break;
+                    case "es":
+                        Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("es");
+                        this.Controls.Clear();
+                        InitializeComponent();
+                        CONFIG_INI_FILE.IniWriteInt("LANGUAGE", "ConfigLanguage", 2);
+                        break;
+                    case "ko":
+                        Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("ko");
+                        this.Controls.Clear();
+                        InitializeComponent();
+                        CONFIG_INI_FILE.IniWriteInt("LANGUAGE", "ConfigLanguage", 3);
+                        break;
+                    default:
+                        Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-US");
+                        this.Controls.Clear();
+                        InitializeComponent();
+                        CONFIG_INI_FILE.IniWriteInt("LANGUAGE", "ConfigLanguage", 1);
+                        break;
+                }
+                CONFIG_INI_FILE.IniWriteBool("SEVERAL", "FirstRun", false);
             }
         }
         #endregion
