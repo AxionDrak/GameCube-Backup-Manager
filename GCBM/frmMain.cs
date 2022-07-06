@@ -4280,6 +4280,32 @@ namespace GCBM
                 }
             }
         }
+
+        private void Search_Click(object sender, EventArgs e)
+        {
+            foreach(DataGridViewRow row in dgvGameList.Rows)
+            {
+                row.Visible = true;
+            }
+            foreach (DataGridViewRow row in dgvGameList.Rows)
+            {
+                if (tbSearch.Text != null || tbSearch.Text != String.Empty)
+                {
+                    if (
+                        !row.Cells[1].Value.ToString().ToLower().Contains(tbSearch.Text.ToLower()) &&
+                        !row.Cells[2].Value.ToString().ToLower().Contains(tbSearch.Text.ToLower()) &&
+                        !row.Cells[3].Value.ToString().ToLower().Contains(tbSearch.Text.ToLower()) &&
+                        !row.Cells[4].Value.ToString().ToLower().Contains(tbSearch.Text.ToLower()) &&
+                        !row.Cells[5].Value.ToString().ToLower().Contains(tbSearch.Text.ToLower()) &&
+                        !row.Cells[6].Value.ToString().ToLower().Contains(tbSearch.Text.ToLower()))
+                    {
+                        row.Visible = false;
+                    }
+                }
+            }
+        }
+
+
         #endregion
 
         //Restarts the application (closes and reopens)

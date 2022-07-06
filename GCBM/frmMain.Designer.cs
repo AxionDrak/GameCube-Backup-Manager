@@ -37,6 +37,7 @@ namespace GCBM
             this.pbGameDisc = new System.Windows.Forms.PictureBox();
             this.tabControlMain = new System.Windows.Forms.TabControl();
             this.tabMainFile = new System.Windows.Forms.TabPage();
+            this.tbSearch = new System.Windows.Forms.TextBox();
             this.lblInstallGame = new System.Windows.Forms.Label();
             this.lblPercent = new System.Windows.Forms.Label();
             this.lblCopy = new System.Windows.Forms.Label();
@@ -192,6 +193,7 @@ namespace GCBM
             this.tsmiNotifyExit = new System.Windows.Forms.ToolStripMenuItem();
             this.pbNetStatus = new System.Windows.Forms.PictureBox();
             this.gameBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnSearch = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.spcMain)).BeginInit();
             this.spcMain.Panel1.SuspendLayout();
             this.spcMain.Panel2.SuspendLayout();
@@ -269,6 +271,8 @@ namespace GCBM
             // 
             // tabMainFile
             // 
+            this.tabMainFile.Controls.Add(this.btnSearch);
+            this.tabMainFile.Controls.Add(this.tbSearch);
             this.tabMainFile.Controls.Add(this.lblInstallGame);
             this.tabMainFile.Controls.Add(this.lblPercent);
             this.tabMainFile.Controls.Add(this.lblCopy);
@@ -281,6 +285,11 @@ namespace GCBM
             resources.ApplyResources(this.tabMainFile, "tabMainFile");
             this.tabMainFile.Name = "tabMainFile";
             this.tabMainFile.UseVisualStyleBackColor = true;
+            // 
+            // tbSearch
+            // 
+            resources.ApplyResources(this.tbSearch, "tbSearch");
+            this.tbSearch.Name = "tbSearch";
             // 
             // lblInstallGame
             // 
@@ -1394,6 +1403,13 @@ namespace GCBM
             // 
             this.gameBindingSource.DataSource = typeof(GCBM.Game);
             // 
+            // btnSearch
+            // 
+            resources.ApplyResources(this.btnSearch, "btnSearch");
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.Search_Click);
+            // 
             // frmMain
             // 
             resources.ApplyResources(this, "$this");
@@ -1615,6 +1631,8 @@ namespace GCBM
         private System.Windows.Forms.DataGridViewTextBoxColumn clmExtension;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmSize;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmPath;
+        private System.Windows.Forms.TextBox tbSearch;
+        private System.Windows.Forms.Button btnSearch;
     }
 }
 
