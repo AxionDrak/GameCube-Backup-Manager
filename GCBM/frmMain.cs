@@ -91,7 +91,8 @@ namespace GCBM
         private frmSplashScreen SPLASH_SCREEN;
 
         private bool WORKING;
-
+        private string dgvGameListPath;
+        private string dgvGameListDiscPath;
         [DllImport("kernel32.dll")]
         static extern EXECUTION_STATE SetThreadExecutionState(EXECUTION_STATE esFlags);
         #endregion
@@ -899,13 +900,13 @@ namespace GCBM
         /// <summary>
         /// Reloads the contents of the DataGridView Games List.
         /// </summary>
-        private void ReloadDataGridViewGameList()
+        private void ReloadDataGridViewGameList(DataGridView dgv)
         {
-            if (dgvGameList.RowCount != 0)
+            if (dgv.RowCount != 0)
             {
                 try
                 {
-                    DirectoryOpenGameList(dgvGameList.CurrentRow.Cells[6].Value.ToString());
+                    DirectoryOpenGameList(dgv.CurrentRow.Cells[6].Value.ToString());
 
                     if (ERROR == false)
                     {
@@ -926,39 +927,41 @@ namespace GCBM
                 }
             }
         }
+        #endregion
 
+        //REFACTORED INTO ONE METHOD LINE 1090
         /// <summary>
         /// Reloads the contents of the DataGridView Disc List.
         /// </summary>
-        private void ReloadDataGridViewDiscList()
-        {
-            if (dgvGameListDisc.RowCount != 0)
-            {
-                try
-                {
-                    DirectoryOpenDiscList(dgvGameListDisc.CurrentRow.Cells[6].Value.ToString());
+        //private void ReloadDataGridViewDiscList()
+        //{
+        //    if (dgvGameListDisc.RowCount != 0)
+        //    {
+        //        try
+        //        {
+        //            DirectoryOpenDiscList(dgvGameListDisc.CurrentRow.Cells[6].Value.ToString());
 
-                    if (ERROR == false)
-                    {
-                        //LoadCover();
-                        LoadCover(tbIDGameDisc.Text);
-                    }
-                    // pictureBox GameID
-                    if (pbWebGameDiscID.Enabled == false)
-                    {
-                        pbWebGameDiscID.Enabled = true;
-                        pbWebGameDiscID.Image = Resources.globe_earth_color_64;
-                    }
+        //            if (ERROR == false)
+        //            {
+        //                //LoadCover();
+        //                LoadCover(tbIDGameDisc.Text);
+        //            }
+        //            // pictureBox GameID
+        //            if (pbWebGameDiscID.Enabled == false)
+        //            {
+        //                pbWebGameDiscID.Enabled = true;
+        //                pbWebGameDiscID.Image = Resources.globe_earth_color_64;
+        //            }
 
-                }
-                catch (Exception ex)
-                {
-                    tbLog.AppendText("[" + DateString() + "]" + GCBM.Properties.Resources.Info + ex.Message);
-                    GlobalNotifications(ex.Message, ToolTipIcon.Error);
-                }
-            }
-        }
-        #endregion
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            tbLog.AppendText("[" + DateString() + "]" + GCBM.Properties.Resources.Info + ex.Message);
+        //            GlobalNotifications(ex.Message, ToolTipIcon.Error);
+        //        }
+        //    }
+        //}
+        //#endregion
 
         #region Display Files Selected
         /// <summary>
@@ -1041,14 +1044,21 @@ namespace GCBM
             //DataTable _table = new DataTable();
 
             FileInfo _file = null;
-            dgvGameList.Rows.Clear();
+            dgv.Rows.Clear();
             //dgvGameList.DataSource = GameDataTable();
-            foreach (Game game in GameList)
+
+
+            foreach (Game game in GameList(sourceFolder))
             {
                 _file = new FileInfo(game.Path);
+
+
                 string _getSize = DisplayFormatFileSize(_file.Length, CONFIG_INI_FILE.IniReadInt("GENERAL", "FileSize"));
+               
+                
                 //5° coluna
-                dgvGameList.Rows.Add(false,
+                
+                dgv.Rows.Add(false,
                                 game.Title,
                                 game.Region,
                                 game.ID,
@@ -1056,6 +1066,8 @@ namespace GCBM
                                 _getSize,
                                 game.Path);
             }
+
+
             //for (int i = 0; i < files.Length; i++)
             //{
             //    //FileInfo _file = new FileInfo(files[i]);
@@ -1074,9 +1086,15 @@ namespace GCBM
             //{
             //    MessageBox.Show("O modo de seleção NÃO é RowHeaderSelect");
             //}
+
+
             if (dgv == dgvGameList)
             {
-                ReloadDataGridViewGameList();
+                ReloadDataGridViewGameList(dgvGameList);
+            }
+            else if (dgv == dgvGameListDisc)
+            {
+                ReloadDataGridViewGameList(dgvGameListDisc);
             }
         }
         #endregion
@@ -1365,13 +1383,11 @@ namespace GCBM
         /// <summary>
         /// Build a List<Game> with file and game info for easier access programmatically.
         /// </summary>
-        private List<Game> GameList
+        private List<Game> GameList(string path)
         {
-            get
-            {
                 string[] filters = { "ISO", "GCM" };
                 List<Game> list = new List<Game>();
-                string[] files = GetFilesFolder(fbd1.SelectedPath, filters, false);
+                string[] files = GetFilesFolder(path, filters, false);
                 foreach (var file in files)
                 {
                     FileInfo _file = new FileInfo(file);
@@ -1387,13 +1403,11 @@ namespace GCBM
                     list.Add(game);
                 }
                 return list;
-            }
-            set { }
         }
         #endregion
 
         #region Build Game list as DataTable
-        public DataTable GameDataTable()
+        public DataTable GameDataTable(string path)
         {
             DataTable _table = new DataTable();
             _table.Columns.Add("Title");
@@ -1402,7 +1416,7 @@ namespace GCBM
             _table.Columns.Add("Type");
             _table.Columns.Add("Size");
             _table.Columns.Add("Path");
-            foreach (Game game in GameList)
+            foreach (Game game in GameList(path))
             {
                 _table.Rows.Add(game.Title,
                                 game.Region,
@@ -3549,7 +3563,7 @@ namespace GCBM
         #region tsmiExportHTML_Click
         private void tsmiExportHTML_Click(object sender, EventArgs e)
         {
-            ExportHTML(GameDataTable());
+            ExportHTML(GameDataTable(dgvGameListPath));
         }
 
         #endregion
@@ -3564,7 +3578,7 @@ namespace GCBM
                 if (dialog.ShowDialog() == DialogResult.OK)  //check for OK...they might press cancel, so don't do anything if they did.
                 {
                     var path = dialog.SelectedPath + "\\games.csv";
-                    DataTableToCSV.ToCSV(GameDataTable(), path);
+                    DataTableToCSV.ToCSV(GameDataTable(dgvGameListPath), path);
                 }
             }
         }
@@ -3832,7 +3846,6 @@ namespace GCBM
             }
         }
         #endregion
-
         #endregion
         // SEARCH DATA ON THE INTERNET
 
@@ -3878,7 +3891,7 @@ namespace GCBM
         /// <param name="e"></param>
         private void dgvGameList_Click(object sender, EventArgs e)
         {
-            ReloadDataGridViewGameList();
+            ReloadDataGridViewGameList(dgvGameList);
         }
         #endregion
 
@@ -3992,6 +4005,7 @@ namespace GCBM
                             }
                             //label6.Text = "Tamanho Total: " + d.TotalSize / (1024 * 1024) + " MB\nFormato Drive: " + d.DriveFormat + " \nDisponível: " + d.AvailableFreeSpace / (1024 * 1024) + " MB\n" + d.DriveType;
                         }
+                        dgvGameListDiscPath = d.RootDirectory.FullName;
                     }
                 }
             }
@@ -4046,7 +4060,7 @@ namespace GCBM
         #region dgvGameListDisc_Click
         private void dgvGameListDisc_Click(object sender, EventArgs e)
         {
-            ReloadDataGridViewDiscList();
+            ReloadDataGridViewGameList(dgvGameListDisc);
         }
         #endregion
 
@@ -4249,6 +4263,7 @@ namespace GCBM
                 fbd1.ShowNewFolderButton = false;
                 if (fbd1.ShowDialog() == DialogResult.OK)
                 {
+                    dgvGameListPath = fbd1.SelectedPath;
                     DisplayFilesSelected(fbd1.SelectedPath, dgvGameList);
                     ListIsoFile();
                 }
@@ -4280,7 +4295,26 @@ namespace GCBM
                 }
             }
         }
+        private void dgvGameListDisc_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 0)
+            {
+                /*
+                 * e.ColumnIndex = 0 
+                 * e.RowIndex
+                 */
 
+                //There's a way to do this in a single line.. but
+                if (dgvGameListDisc.Rows[e.RowIndex].Cells[0].Value.ToString() == "False")
+                {
+                    dgvGameListDisc.Rows[e.RowIndex].Cells[0].Value = true;
+                }
+                else
+                {
+                    dgvGameListDisc.Rows[e.RowIndex].Cells[0].Value = false;
+                }
+            }
+        }
         private void Search_Click(object sender, EventArgs e)
         {
             foreach(DataGridViewRow row in dgvGameList.Rows)

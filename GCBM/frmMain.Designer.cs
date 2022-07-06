@@ -37,6 +37,7 @@ namespace GCBM
             this.pbGameDisc = new System.Windows.Forms.PictureBox();
             this.tabControlMain = new System.Windows.Forms.TabControl();
             this.tabMainFile = new System.Windows.Forms.TabPage();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.tbSearch = new System.Windows.Forms.TextBox();
             this.lblInstallGame = new System.Windows.Forms.Label();
             this.lblPercent = new System.Windows.Forms.Label();
@@ -109,7 +110,6 @@ namespace GCBM
             this.tbIDRegionDisc = new System.Windows.Forms.TextBox();
             this.tbIDNameDisc = new System.Windows.Forms.TextBox();
             this.dgvGameListDisc = new System.Windows.Forms.DataGridView();
-            this.dgvMainDiscCheck = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.mstripDisc = new System.Windows.Forms.MenuStrip();
             this.tscbDiscDrive = new System.Windows.Forms.ToolStripComboBox();
             this.tsmiReloadDeviceDrive = new System.Windows.Forms.ToolStripMenuItem();
@@ -192,8 +192,14 @@ namespace GCBM
             this.cmsNotifyIcon = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiNotifyExit = new System.Windows.Forms.ToolStripMenuItem();
             this.pbNetStatus = new System.Windows.Forms.PictureBox();
+            this.dgvMainDiscCheck = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.clmDiscTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmDiscID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmDiscRegion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmDiscExtension = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmDiscSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmDiscPath = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gameBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.btnSearch = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.spcMain)).BeginInit();
             this.spcMain.Panel1.SuspendLayout();
             this.spcMain.Panel2.SuspendLayout();
@@ -285,6 +291,13 @@ namespace GCBM
             resources.ApplyResources(this.tabMainFile, "tabMainFile");
             this.tabMainFile.Name = "tabMainFile";
             this.tabMainFile.UseVisualStyleBackColor = true;
+            // 
+            // btnSearch
+            // 
+            resources.ApplyResources(this.btnSearch, "btnSearch");
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.Search_Click);
             // 
             // tbSearch
             // 
@@ -454,6 +467,7 @@ namespace GCBM
             this.dgvGameList.ContextMenuStrip = this.cmsMain;
             this.dgvGameList.Name = "dgvGameList";
             this.dgvGameList.ReadOnly = true;
+            this.dgvGameList.RowHeadersVisible = false;
             this.dgvGameList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvGameList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGameList_CellContentClick);
             this.dgvGameList.Click += new System.EventHandler(this.dgvGameList_Click);
@@ -791,20 +805,20 @@ namespace GCBM
             this.dgvGameListDisc.BackgroundColor = System.Drawing.Color.White;
             this.dgvGameListDisc.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
             this.dgvGameListDisc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvGameListDisc.ColumnHeadersVisible = false;
             this.dgvGameListDisc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dgvMainDiscCheck});
+            this.dgvMainDiscCheck,
+            this.clmDiscTitle,
+            this.clmDiscID,
+            this.clmDiscRegion,
+            this.clmDiscExtension,
+            this.clmDiscSize,
+            this.clmDiscPath});
             this.dgvGameListDisc.MultiSelect = false;
             this.dgvGameListDisc.Name = "dgvGameListDisc";
             this.dgvGameListDisc.ReadOnly = true;
+            this.dgvGameListDisc.RowHeadersVisible = false;
+            this.dgvGameListDisc.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGameListDisc_CellContentClick);
             this.dgvGameListDisc.Click += new System.EventHandler(this.dgvGameListDisc_Click);
-            // 
-            // dgvMainDiscCheck
-            // 
-            resources.ApplyResources(this.dgvMainDiscCheck, "dgvMainDiscCheck");
-            this.dgvMainDiscCheck.Name = "dgvMainDiscCheck";
-            this.dgvMainDiscCheck.ReadOnly = true;
-            this.dgvMainDiscCheck.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // mstripDisc
             // 
@@ -1399,16 +1413,59 @@ namespace GCBM
             this.pbNetStatus.Name = "pbNetStatus";
             this.pbNetStatus.TabStop = false;
             // 
+            // dgvMainDiscCheck
+            // 
+            this.dgvMainDiscCheck.FillWeight = 57.44501F;
+            resources.ApplyResources(this.dgvMainDiscCheck, "dgvMainDiscCheck");
+            this.dgvMainDiscCheck.Name = "dgvMainDiscCheck";
+            this.dgvMainDiscCheck.ReadOnly = true;
+            this.dgvMainDiscCheck.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // clmDiscTitle
+            // 
+            this.clmDiscTitle.FillWeight = 57.44501F;
+            resources.ApplyResources(this.clmDiscTitle, "clmDiscTitle");
+            this.clmDiscTitle.Name = "clmDiscTitle";
+            this.clmDiscTitle.ReadOnly = true;
+            // 
+            // clmDiscID
+            // 
+            this.clmDiscID.FillWeight = 57.44501F;
+            resources.ApplyResources(this.clmDiscID, "clmDiscID");
+            this.clmDiscID.Name = "clmDiscID";
+            this.clmDiscID.ReadOnly = true;
+            // 
+            // clmDiscRegion
+            // 
+            this.clmDiscRegion.FillWeight = 57.44501F;
+            resources.ApplyResources(this.clmDiscRegion, "clmDiscRegion");
+            this.clmDiscRegion.Name = "clmDiscRegion";
+            this.clmDiscRegion.ReadOnly = true;
+            // 
+            // clmDiscExtension
+            // 
+            this.clmDiscExtension.FillWeight = 57.44501F;
+            resources.ApplyResources(this.clmDiscExtension, "clmDiscExtension");
+            this.clmDiscExtension.Name = "clmDiscExtension";
+            this.clmDiscExtension.ReadOnly = true;
+            // 
+            // clmDiscSize
+            // 
+            this.clmDiscSize.FillWeight = 57.44501F;
+            resources.ApplyResources(this.clmDiscSize, "clmDiscSize");
+            this.clmDiscSize.Name = "clmDiscSize";
+            this.clmDiscSize.ReadOnly = true;
+            // 
+            // clmDiscPath
+            // 
+            this.clmDiscPath.FillWeight = 355.33F;
+            resources.ApplyResources(this.clmDiscPath, "clmDiscPath");
+            this.clmDiscPath.Name = "clmDiscPath";
+            this.clmDiscPath.ReadOnly = true;
+            // 
             // gameBindingSource
             // 
             this.gameBindingSource.DataSource = typeof(GCBM.Game);
-            // 
-            // btnSearch
-            // 
-            resources.ApplyResources(this.btnSearch, "btnSearch");
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.Search_Click);
             // 
             // frmMain
             // 
@@ -1584,7 +1641,6 @@ namespace GCBM
         private System.Windows.Forms.TextBox tbIDRegionDisc;
         private System.Windows.Forms.TextBox tbIDNameDisc;
         private System.Windows.Forms.DataGridView dgvGameListDisc;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dgvMainDiscCheck;
         private System.Windows.Forms.MenuStrip mstripDisc;
         private System.Windows.Forms.ToolStripComboBox tscbDiscDrive;
         private System.Windows.Forms.ToolStripMenuItem tsmiReloadDeviceDrive;
@@ -1633,6 +1689,13 @@ namespace GCBM
         private System.Windows.Forms.DataGridViewTextBoxColumn clmPath;
         private System.Windows.Forms.TextBox tbSearch;
         private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dgvMainDiscCheck;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmDiscTitle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmDiscID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmDiscRegion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmDiscExtension;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmDiscSize;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmDiscPath;
     }
 }
 
