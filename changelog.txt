@@ -1,4 +1,19 @@
 
+### GameCube Backup Manager 2.5.0.6 (07 de julho, 2022)
+
+[Corrigido] bug com as unidades de rede que não estavam sendo listadas corretamente.
+
+### GameCube Backup Manager 2.5.0.5 (07 de julho, 2022)
+
+[Corrigido] bug com capas exibidas incorretamente na guia de destino.
+
+### GameCube Backup Manager 2.5.0.0 (06 de julho, 2022)
+
+[Adicionado] instalações em lote.
+[Adicionado] pesquisas em qualquer campo.
+[Adicionado] exportação de tabelas para HTML amigável (suporta dispositivos móveis) via JavaScript e tema Bootstrap 5.
+[Melhorado] outras melhorias e correções.
+
 ### GameCube Backup Manager 2.4.6.0 (03 de julho, 2022)
 
 [Corrigido] erro de transferência de arquivos onde o nome da pasta de destino não era criado corretamente.
