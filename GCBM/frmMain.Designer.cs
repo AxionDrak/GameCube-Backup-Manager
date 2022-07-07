@@ -32,9 +32,10 @@ namespace GCBM
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.spcMain = new System.Windows.Forms.SplitContainer();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.grpSearch = new System.Windows.Forms.GroupBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.tbSearch = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pbGameCover3D = new System.Windows.Forms.PictureBox();
             this.pbGameDisc = new System.Windows.Forms.PictureBox();
             this.tabControlMain = new System.Windows.Forms.TabControl();
@@ -200,11 +201,11 @@ namespace GCBM
             this.tsmiNotifyExit = new System.Windows.Forms.ToolStripMenuItem();
             this.pbNetStatus = new System.Windows.Forms.PictureBox();
             this.gameBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.grpSearch = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.spcMain)).BeginInit();
             this.spcMain.Panel1.SuspendLayout();
             this.spcMain.Panel2.SuspendLayout();
             this.spcMain.SuspendLayout();
+            this.grpSearch.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbGameCover3D)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbGameDisc)).BeginInit();
@@ -230,7 +231,6 @@ namespace GCBM
             this.cmsNotifyIcon.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbNetStatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gameBindingSource)).BeginInit();
-            this.grpSearch.SuspendLayout();
             this.SuspendLayout();
             // 
             // spcMain
@@ -248,13 +248,13 @@ namespace GCBM
             // 
             this.spcMain.Panel2.Controls.Add(this.tabControlMain);
             // 
-            // groupBox1
+            // grpSearch
             // 
-            resources.ApplyResources(this.groupBox1, "groupBox1");
-            this.groupBox1.Controls.Add(this.pbGameCover3D);
-            this.groupBox1.Controls.Add(this.pbGameDisc);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.TabStop = false;
+            this.grpSearch.Controls.Add(this.btnSearch);
+            this.grpSearch.Controls.Add(this.tbSearch);
+            resources.ApplyResources(this.grpSearch, "grpSearch");
+            this.grpSearch.Name = "grpSearch";
+            this.grpSearch.TabStop = false;
             // 
             // btnSearch
             // 
@@ -269,6 +269,14 @@ namespace GCBM
             // 
             resources.ApplyResources(this.tbSearch, "tbSearch");
             this.tbSearch.Name = "tbSearch";
+            // 
+            // groupBox1
+            // 
+            resources.ApplyResources(this.groupBox1, "groupBox1");
+            this.groupBox1.Controls.Add(this.pbGameCover3D);
+            this.groupBox1.Controls.Add(this.pbGameDisc);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.TabStop = false;
             // 
             // pbGameCover3D
             // 
@@ -1468,14 +1476,6 @@ namespace GCBM
             this.pbNetStatus.Name = "pbNetStatus";
             this.pbNetStatus.TabStop = false;
             // 
-            // grpSearch
-            // 
-            this.grpSearch.Controls.Add(this.btnSearch);
-            this.grpSearch.Controls.Add(this.tbSearch);
-            resources.ApplyResources(this.grpSearch, "grpSearch");
-            this.grpSearch.Name = "grpSearch";
-            this.grpSearch.TabStop = false;
-            // 
             // frmMain
             // 
             resources.ApplyResources(this, "$this");
@@ -1492,6 +1492,8 @@ namespace GCBM
             this.spcMain.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.spcMain)).EndInit();
             this.spcMain.ResumeLayout(false);
+            this.grpSearch.ResumeLayout(false);
+            this.grpSearch.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbGameCover3D)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbGameDisc)).EndInit();
@@ -1529,8 +1531,6 @@ namespace GCBM
             this.cmsNotifyIcon.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbNetStatus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gameBindingSource)).EndInit();
-            this.grpSearch.ResumeLayout(false);
-            this.grpSearch.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
