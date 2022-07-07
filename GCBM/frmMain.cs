@@ -3941,6 +3941,7 @@ namespace GCBM
         }
         #endregion
         #endregion
+
         // SEARCH DATA ON THE INTERNET
 
         #region Search On Web
@@ -4446,6 +4447,6 @@ namespace GCBM
         //Restarts the application (closes and reopens)
         //Application.Restart();
 
-        // frmMain Form
-    }
+
+    }// frmMain Form
 }// namespace GCBM
