@@ -1839,6 +1839,9 @@
   <data name="&gt;&gt;tabMainFile.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="lblSpaceAvailabeOnDevice.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
   <data name="lblSpaceAvailabeOnDevice.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1871,6 +1874,9 @@
   </data>
   <data name="&gt;&gt;lblSpaceAvailabeOnDevice.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="lblSpaceTotalOnDevice.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
   </data>
   <data name="lblSpaceTotalOnDevice.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
