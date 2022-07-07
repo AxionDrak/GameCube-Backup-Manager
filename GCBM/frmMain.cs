@@ -127,7 +127,6 @@ namespace GCBM
 
             this.Text = "GameCube Backup Manager 2022 - " + VERSION() + " - 64-bit";
 
-            #endregion
             // Splash Screen
             if (CONFIG_INI_FILE.IniReadBool("SEVERAL", "DisableSplash") == false)
             {
@@ -150,12 +149,12 @@ namespace GCBM
 
             LoadConfigFile();
             AboutTranslator();
+            GetAllDrives();
             //DetectOSLanguage();
-            AdjustLanguage();
+            //AdjustLanguage();
             UpdateProgram();
             LoadDatabaseXML();
             DisabeScreensaver();
-            GetAllDrives();
             RegisterHeaderLog();
             RequiredDirectories();
             DisableOptionsGame(dgvGameList);
@@ -184,9 +183,7 @@ namespace GCBM
             tsmiManageApp.Visible = false;
             tsmiCreatePackage.Visible = false;
 
-
             //All done, Clean up / Refresh to ensure language and settings are updated.
-
 
             //Localization.. but not working @Laetemn
             #region dgvGameListDisc Setup 
@@ -197,13 +194,14 @@ namespace GCBM
             dgvGameListDisc.Columns[5].HeaderText = GCBM.Properties.Resources.DisplayFilesSelected_Size;
             dgvGameListDisc.Columns[6].HeaderText = GCBM.Properties.Resources.DisplayFilesSelected_FilePath;
             dgvGameListDisc.Refresh();
-
             #endregion
+
             System.Threading.Thread.CurrentThread.CurrentUICulture.ClearCachedData();
             System.Threading.Thread.CurrentThread.CurrentCulture.ClearCachedData();
             AdjustLanguage();
             this.Show();
         }
+        #endregion
 
         #region Main Form Closing
         /// <summary>
