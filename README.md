@@ -54,9 +54,9 @@ All Releases: https://github.com/AxionDrak/GameCube-Backup-Manager/releases
 
 ### Screenshots
 
-![main](imgs/gcbm_0012.png)
-![main](imgs/gcbm_0013.png)
-![main](imgs/gcbm_0014.png)
+![main](imgs/gcbm_0000.png)
+![main](imgs/gcbm_0001.png)
+![main](imgs/gcbm_0002.png)
 
 ### Notes
 
