@@ -200,6 +200,7 @@ namespace GCBM
             this.tsmiNotifyExit = new System.Windows.Forms.ToolStripMenuItem();
             this.pbNetStatus = new System.Windows.Forms.PictureBox();
             this.gameBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.grpSearch = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.spcMain)).BeginInit();
             this.spcMain.Panel1.SuspendLayout();
             this.spcMain.Panel2.SuspendLayout();
@@ -229,6 +230,7 @@ namespace GCBM
             this.cmsNotifyIcon.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbNetStatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gameBindingSource)).BeginInit();
+            this.grpSearch.SuspendLayout();
             this.SuspendLayout();
             // 
             // spcMain
@@ -239,6 +241,7 @@ namespace GCBM
             // 
             // spcMain.Panel1
             // 
+            this.spcMain.Panel1.Controls.Add(this.grpSearch);
             this.spcMain.Panel1.Controls.Add(this.groupBox1);
             // 
             // spcMain.Panel2
@@ -248,8 +251,6 @@ namespace GCBM
             // groupBox1
             // 
             resources.ApplyResources(this.groupBox1, "groupBox1");
-            this.groupBox1.Controls.Add(this.btnSearch);
-            this.groupBox1.Controls.Add(this.tbSearch);
             this.groupBox1.Controls.Add(this.pbGameCover3D);
             this.groupBox1.Controls.Add(this.pbGameDisc);
             this.groupBox1.Name = "groupBox1";
@@ -1259,9 +1260,9 @@ namespace GCBM
             // 
             // tsmiGameInfo
             // 
+            resources.ApplyResources(this.tsmiGameInfo, "tsmiGameInfo");
             this.tsmiGameInfo.Image = global::GCBM.Properties.Resources.additional_information_16;
             this.tsmiGameInfo.Name = "tsmiGameInfo";
-            resources.ApplyResources(this.tsmiGameInfo, "tsmiGameInfo");
             this.tsmiGameInfo.Click += new System.EventHandler(this.tsmiGameInfo_Click);
             // 
             // boxArtToolStripMenuItem
@@ -1467,9 +1468,13 @@ namespace GCBM
             this.pbNetStatus.Name = "pbNetStatus";
             this.pbNetStatus.TabStop = false;
             // 
-            // gameBindingSource
+            // grpSearch
             // 
-            this.gameBindingSource.DataSource = typeof(GCBM.Game);
+            this.grpSearch.Controls.Add(this.btnSearch);
+            this.grpSearch.Controls.Add(this.tbSearch);
+            resources.ApplyResources(this.grpSearch, "grpSearch");
+            this.grpSearch.Name = "grpSearch";
+            this.grpSearch.TabStop = false;
             // 
             // frmMain
             // 
@@ -1488,7 +1493,6 @@ namespace GCBM
             ((System.ComponentModel.ISupportInitialize)(this.spcMain)).EndInit();
             this.spcMain.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbGameCover3D)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbGameDisc)).EndInit();
             this.tabControlMain.ResumeLayout(false);
@@ -1525,6 +1529,8 @@ namespace GCBM
             this.cmsNotifyIcon.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbNetStatus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gameBindingSource)).EndInit();
+            this.grpSearch.ResumeLayout(false);
+            this.grpSearch.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1701,6 +1707,7 @@ namespace GCBM
         private System.Windows.Forms.DataGridViewTextBoxColumn clmDiscExtension;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmDiscSize;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmDiscPath;
+        private System.Windows.Forms.GroupBox grpSearch;
     }
 }
 

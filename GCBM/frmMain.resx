@@ -117,9 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="spcMain.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="spcMain.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -132,17 +129,11 @@
   <data name="spcMain.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 24</value>
   </data>
-  <metadata name="groupBox1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="groupBox1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left</value>
-  </data>
   <data name="btnSearch.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="btnSearch.Location" type="System.Drawing.Point, System.Drawing">
-    <value>232, 12</value>
+    <value>237, 19</value>
   </data>
   <data name="btnSearch.Size" type="System.Drawing.Size, System.Drawing">
     <value>32, 32</value>
@@ -157,16 +148,16 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btnSearch.Parent" xml:space="preserve">
-    <value>groupBox1</value>
+    <value>grpSearch</value>
   </data>
   <data name="&gt;&gt;btnSearch.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="tbSearch.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 19</value>
+    <value>6, 26</value>
   </data>
   <data name="tbSearch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>212, 20</value>
+    <value>225, 20</value>
   </data>
   <data name="tbSearch.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
@@ -178,14 +169,38 @@
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tbSearch.Parent" xml:space="preserve">
-    <value>groupBox1</value>
+    <value>grpSearch</value>
   </data>
   <data name="&gt;&gt;tbSearch.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <metadata name="pbGameCover3D.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
+  <data name="grpSearch.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 3</value>
+  </data>
+  <data name="grpSearch.Size" type="System.Drawing.Size, System.Drawing">
+    <value>275, 60</value>
+  </data>
+  <data name="grpSearch.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="grpSearch.Text" xml:space="preserve">
+    <value>Pesquisar</value>
+  </data>
+  <data name="&gt;&gt;grpSearch.Name" xml:space="preserve">
+    <value>grpSearch</value>
+  </data>
+  <data name="&gt;&gt;grpSearch.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grpSearch.Parent" xml:space="preserve">
+    <value>spcMain.Panel1</value>
+  </data>
+  <data name="&gt;&gt;grpSearch.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="groupBox1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left</value>
+  </data>
   <data name="pbGameCover3D.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
@@ -608,7 +623,7 @@
     <value>14, 306</value>
   </data>
   <data name="pbGameCover3D.Size" type="System.Drawing.Size, System.Drawing">
-    <value>250, 231</value>
+    <value>250, 165</value>
   </data>
   <data name="pbGameCover3D.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>Zoom</value>
@@ -626,11 +641,8 @@
     <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;pbGameCover3D.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>0</value>
   </data>
-  <metadata name="pbGameDisc.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="pbGameDisc.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
@@ -762,10 +774,10 @@
     <value />
   </data>
   <data name="pbGameDisc.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 50</value>
+    <value>14, 19</value>
   </data>
   <data name="pbGameDisc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>250, 250</value>
+    <value>250, 281</value>
   </data>
   <data name="pbGameDisc.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>Zoom</value>
@@ -783,13 +795,13 @@
     <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;pbGameDisc.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>1</value>
   </data>
   <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 3</value>
+    <value>12, 69</value>
   </data>
   <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>275, 540</value>
+    <value>275, 474</value>
   </data>
   <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -807,7 +819,7 @@
     <value>spcMain.Panel1</value>
   </data>
   <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;spcMain.Panel1.Name" xml:space="preserve">
     <value>spcMain.Panel1</value>
@@ -821,18 +833,9 @@
   <data name="&gt;&gt;spcMain.Panel1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <metadata name="tabControlMain.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="tabControlMain.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
-  <metadata name="tabMainFile.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="lblInstallGame.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="lblInstallGame.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
@@ -843,7 +846,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblInstallGame.Location" type="System.Drawing.Point, System.Drawing">
-    <value>517, 337</value>
+    <value>514, 347</value>
   </data>
   <data name="lblInstallGame.Size" type="System.Drawing.Size, System.Drawing">
     <value>88, 13</value>
@@ -869,9 +872,6 @@
   <data name="&gt;&gt;lblInstallGame.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <metadata name="lblPercent.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="lblPercent.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
@@ -885,7 +885,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblPercent.Location" type="System.Drawing.Point, System.Drawing">
-    <value>663, 319</value>
+    <value>660, 329</value>
   </data>
   <data name="lblPercent.Size" type="System.Drawing.Size, System.Drawing">
     <value>24, 13</value>
@@ -911,9 +911,6 @@
   <data name="&gt;&gt;lblPercent.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <metadata name="lblCopy.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="lblCopy.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
@@ -924,7 +921,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblCopy.Location" type="System.Drawing.Point, System.Drawing">
-    <value>517, 319</value>
+    <value>514, 329</value>
   </data>
   <data name="lblCopy.Size" type="System.Drawing.Size, System.Drawing">
     <value>74, 13</value>
@@ -950,9 +947,6 @@
   <data name="&gt;&gt;lblCopy.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <metadata name="pbCopy.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="pbCopy.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
@@ -960,7 +954,7 @@
     <value>NoControl</value>
   </data>
   <data name="pbCopy.Location" type="System.Drawing.Point, System.Drawing">
-    <value>514, 353</value>
+    <value>511, 363</value>
   </data>
   <data name="pbCopy.Size" type="System.Drawing.Size, System.Drawing">
     <value>342, 23</value>
@@ -983,9 +977,6 @@
   <data name="&gt;&gt;pbCopy.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <metadata name="label1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="label1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
@@ -993,7 +984,7 @@
     <value>NoControl</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>517, 433</value>
+    <value>520, 443</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>264, 55</value>
@@ -1016,9 +1007,6 @@
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <metadata name="btnSelectFolder.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="btnSelectFolder.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
@@ -1029,7 +1017,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnSelectFolder.Location" type="System.Drawing.Point, System.Drawing">
-    <value>781, 413</value>
+    <value>784, 423</value>
   </data>
   <data name="btnSelectFolder.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 75</value>
@@ -1049,15 +1037,9 @@
   <data name="&gt;&gt;btnSelectFolder.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <metadata name="grpDetails.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="grpDetails.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
-  <metadata name="lblTypeDisc.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="lblTypeDisc.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1091,9 +1073,6 @@
   <data name="&gt;&gt;lblTypeDisc.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <metadata name="label34.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="label34.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1124,9 +1103,6 @@
   <data name="&gt;&gt;label34.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <metadata name="tbIDMakerCode.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="tbIDMakerCode.Location" type="System.Drawing.Point, System.Drawing">
     <value>259, 56</value>
   </data>
@@ -1148,9 +1124,6 @@
   <data name="&gt;&gt;tbIDMakerCode.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <metadata name="tbIDDiscID.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="tbIDDiscID.Location" type="System.Drawing.Point, System.Drawing">
     <value>86, 108</value>
   </data>
@@ -1172,9 +1145,6 @@
   <data name="&gt;&gt;tbIDDiscID.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <metadata name="label29.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="label29.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1205,9 +1175,6 @@
   <data name="&gt;&gt;label29.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <metadata name="pbWebGameID.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="pbWebGameID.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -1229,6 +1196,9 @@
   <data name="pbWebGameID.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
+  <data name="pbWebGameID.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="&gt;&gt;pbWebGameID.Name" xml:space="preserve">
     <value>pbWebGameID</value>
   </data>
@@ -1241,12 +1211,6 @@
   <data name="&gt;&gt;pbWebGameID.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <metadata name="grpOperations.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="btnGameInstallScrub.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="btnGameInstallScrub.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -1305,9 +1269,6 @@
   <data name="&gt;&gt;btnGameInstallScrub.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <metadata name="btnGameInstallExactCopy.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="btnGameInstallExactCopy.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -1395,9 +1356,6 @@
   <data name="&gt;&gt;grpOperations.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <metadata name="labelGameID.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="labelGameID.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
@@ -1431,9 +1389,6 @@
   <data name="&gt;&gt;labelGameID.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <metadata name="labelFile.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="labelFile.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
@@ -1467,9 +1422,6 @@
   <data name="&gt;&gt;labelFile.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
-  <metadata name="labelTitle.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="labelTitle.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
@@ -1503,9 +1455,6 @@
   <data name="&gt;&gt;labelTitle.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
-  <metadata name="tbIDGame.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="tbIDGame.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
@@ -1530,9 +1479,6 @@
   <data name="&gt;&gt;tbIDGame.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
-  <metadata name="tbIDRegion.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="tbIDRegion.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
@@ -1557,9 +1503,6 @@
   <data name="&gt;&gt;tbIDRegion.ZOrder" xml:space="preserve">
     <value>11</value>
   </data>
-  <metadata name="tbIDName.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="tbIDName.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
@@ -1585,7 +1528,7 @@
     <value>12</value>
   </data>
   <data name="grpDetails.Location" type="System.Drawing.Point, System.Drawing">
-    <value>508, 28</value>
+    <value>505, 30</value>
   </data>
   <data name="grpDetails.Size" type="System.Drawing.Size, System.Drawing">
     <value>354, 272</value>
@@ -1608,9 +1551,6 @@
   <data name="&gt;&gt;grpDetails.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <metadata name="dgvGameList.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="dgvGameList.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
@@ -1746,11 +1686,8 @@
   <data name="dgvGameList.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 30</value>
   </data>
-  <data name="dgvGameList.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
-    <value>None</value>
-  </data>
   <data name="dgvGameList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>496, 478</value>
+    <value>493, 478</value>
   </data>
   <data name="dgvGameList.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -1770,9 +1707,6 @@
   <metadata name="mstripFile.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>365, 11</value>
   </metadata>
-  <metadata name="mstripFile.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="tsmiReloadGameList.Size" type="System.Drawing.Size, System.Drawing">
     <value>118, 20</value>
   </data>
@@ -1780,13 +1714,13 @@
     <value>Recarregar Lista</value>
   </data>
   <data name="tsmiGameListSelectAll.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>121, 22</value>
   </data>
   <data name="tsmiGameListSelectAll.Text" xml:space="preserve">
     <value>Todos</value>
   </data>
   <data name="tsmiGameListSelectNone.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>121, 22</value>
   </data>
   <data name="tsmiGameListSelectNone.Text" xml:space="preserve">
     <value>Nenhum</value>
@@ -1861,7 +1795,7 @@
     <value>3, 3</value>
   </data>
   <data name="mstripFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>957, 24</value>
+    <value>864, 24</value>
   </data>
   <data name="mstripFile.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -1885,7 +1819,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabMainFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>963, 514</value>
+    <value>870, 514</value>
   </data>
   <data name="tabMainFile.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1905,12 +1839,6 @@
   <data name="&gt;&gt;tabMainFile.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <metadata name="tabMainDisc.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="lblSpaceAvailabeOnDevice.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="lblSpaceAvailabeOnDevice.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1921,7 +1849,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblSpaceAvailabeOnDevice.Location" type="System.Drawing.Point, System.Drawing">
-    <value>519, 265</value>
+    <value>6, 498</value>
   </data>
   <data name="lblSpaceAvailabeOnDevice.Size" type="System.Drawing.Size, System.Drawing">
     <value>120, 13</value>
@@ -1944,9 +1872,6 @@
   <data name="&gt;&gt;lblSpaceAvailabeOnDevice.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <metadata name="lblSpaceTotalOnDevice.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="lblSpaceTotalOnDevice.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1957,7 +1882,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblSpaceTotalOnDevice.Location" type="System.Drawing.Point, System.Drawing">
-    <value>519, 284</value>
+    <value>228, 498</value>
   </data>
   <data name="lblSpaceTotalOnDevice.Size" type="System.Drawing.Size, System.Drawing">
     <value>86, 13</value>
@@ -1980,9 +1905,6 @@
   <data name="&gt;&gt;lblSpaceTotalOnDevice.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <metadata name="label3.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="label3.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
@@ -1993,7 +1915,7 @@
     <value>NoControl</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>512, 195</value>
+    <value>509, 197</value>
   </data>
   <data name="label3.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>350, 0</value>
@@ -2019,9 +1941,6 @@
   <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <metadata name="label2.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="label2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
@@ -2035,7 +1954,7 @@
     <value>NoControl</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>512, 177</value>
+    <value>509, 179</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>94, 13</value>
@@ -2058,15 +1977,9 @@
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <metadata name="groupBox2.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="groupBox2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
-  <metadata name="pbWebGameDiscID.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="pbWebGameDiscID.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -2088,6 +2001,9 @@
   <data name="pbWebGameDiscID.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
+  <data name="pbWebGameDiscID.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="&gt;&gt;pbWebGameDiscID.Name" xml:space="preserve">
     <value>pbWebGameDiscID</value>
   </data>
@@ -2100,9 +2016,6 @@
   <data name="&gt;&gt;pbWebGameDiscID.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <metadata name="label4.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="label4.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
@@ -2136,9 +2049,6 @@
   <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <metadata name="label5.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="label5.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
@@ -2172,9 +2082,6 @@
   <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <metadata name="label6.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="label6.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
@@ -2208,9 +2115,6 @@
   <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <metadata name="tbIDGameDisc.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="tbIDGameDisc.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
@@ -2235,9 +2139,6 @@
   <data name="&gt;&gt;tbIDGameDisc.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <metadata name="tbIDRegionDisc.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="tbIDRegionDisc.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
@@ -2262,9 +2163,6 @@
   <data name="&gt;&gt;tbIDRegionDisc.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <metadata name="tbIDNameDisc.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="tbIDNameDisc.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
@@ -2290,7 +2188,7 @@
     <value>6</value>
   </data>
   <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>508, 28</value>
+    <value>505, 30</value>
   </data>
   <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
     <value>354, 116</value>
@@ -2313,9 +2211,6 @@
   <data name="&gt;&gt;groupBox2.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <metadata name="dgvGameListDisc.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="dgvGameListDisc.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
@@ -2383,7 +2278,7 @@
     <value>6, 33</value>
   </data>
   <data name="dgvGameListDisc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>496, 473</value>
+    <value>493, 462</value>
   </data>
   <data name="dgvGameListDisc.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2402,9 +2297,6 @@
   </data>
   <metadata name="mstripDisc.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>577, 11</value>
-  </metadata>
-  <metadata name="mstripDisc.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
   </metadata>
   <data name="tscbDiscDrive.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Standard</value>
@@ -2428,13 +2320,13 @@
     <value>Regarregar Lista</value>
   </data>
   <data name="tsmiGameDiscSelectAll.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>121, 22</value>
   </data>
   <data name="tsmiGameDiscSelectAll.Text" xml:space="preserve">
     <value>Todos</value>
   </data>
   <data name="tsmiGameDiscSelectNone.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>121, 22</value>
   </data>
   <data name="tsmiGameDiscSelectNone.Text" xml:space="preserve">
     <value>Nenhum</value>
@@ -2536,7 +2428,7 @@
     <value>3, 3</value>
   </data>
   <data name="mstripDisc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>957, 27</value>
+    <value>864, 27</value>
   </data>
   <data name="mstripDisc.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -2560,7 +2452,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabMainDisc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>963, 514</value>
+    <value>870, 514</value>
   </data>
   <data name="tabMainDisc.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -2580,12 +2472,6 @@
   <data name="&gt;&gt;tabMainDisc.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <metadata name="tabMainDatabase.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="lblDatabaseTotal.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="lblDatabaseTotal.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
   </data>
@@ -2619,9 +2505,6 @@
   <data name="&gt;&gt;lblDatabaseTotal.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <metadata name="cbFilterDatabase.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="cbFilterDatabase.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
@@ -2671,7 +2554,7 @@
     <value>Homebrew</value>
   </data>
   <data name="cbFilterDatabase.Location" type="System.Drawing.Point, System.Drawing">
-    <value>476, 5</value>
+    <value>380, 5</value>
   </data>
   <data name="cbFilterDatabase.Size" type="System.Drawing.Size, System.Drawing">
     <value>120, 21</value>
@@ -2691,9 +2574,6 @@
   <data name="&gt;&gt;cbFilterDatabase.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <metadata name="label7.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="label7.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
@@ -2704,7 +2584,7 @@
     <value>NoControl</value>
   </data>
   <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>438, 8</value>
+    <value>342, 8</value>
   </data>
   <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
     <value>32, 13</value>
@@ -2727,9 +2607,6 @@
   <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <metadata name="lvDatabase.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="lvDatabase.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
@@ -2757,9 +2634,6 @@
   <metadata name="mstripDatabase.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>675, 13</value>
   </metadata>
-  <metadata name="mstripDatabase.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="tsmiDatabaseUpdateGameTDB.Size" type="System.Drawing.Size, System.Drawing">
     <value>207, 22</value>
   </data>
@@ -2776,7 +2650,7 @@
     <value>3, 3</value>
   </data>
   <data name="mstripDatabase.Size" type="System.Drawing.Size, System.Drawing">
-    <value>957, 24</value>
+    <value>864, 24</value>
   </data>
   <data name="mstripDatabase.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -2800,7 +2674,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabMainDatabase.Size" type="System.Drawing.Size, System.Drawing">
-    <value>963, 514</value>
+    <value>870, 514</value>
   </data>
   <data name="tabMainDatabase.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -2820,12 +2694,6 @@
   <data name="&gt;&gt;tabMainDatabase.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <metadata name="tabMainLog.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="tbLog.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="tbLog.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
@@ -2859,9 +2727,6 @@
   <metadata name="mstripLog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>474, 7</value>
   </metadata>
-  <metadata name="mstripLog.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="tsmiClearLog.Size" type="System.Drawing.Size, System.Drawing">
     <value>147, 22</value>
   </data>
@@ -2887,7 +2752,7 @@
     <value>3, 3</value>
   </data>
   <data name="mstripLog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>957, 24</value>
+    <value>864, 24</value>
   </data>
   <data name="mstripLog.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2911,7 +2776,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabMainLog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>963, 514</value>
+    <value>870, 514</value>
   </data>
   <data name="tabMainLog.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -2935,7 +2800,7 @@
     <value>3, 3</value>
   </data>
   <data name="tabControlMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>971, 540</value>
+    <value>878, 540</value>
   </data>
   <data name="tabControlMain.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2991,9 +2856,6 @@
   <metadata name="sstripMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>128, 19</value>
   </metadata>
-  <metadata name="sstripMain.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="tsslCurrentYear.Size" type="System.Drawing.Size, System.Drawing">
     <value>0, 17</value>
   </data>
@@ -3020,9 +2882,6 @@
   </data>
   <metadata name="mstripMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>249, 22</value>
-  </metadata>
-  <metadata name="mstripMain.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
   </metadata>
   <data name="tsmiExit.Size" type="System.Drawing.Size, System.Drawing">
     <value>93, 22</value>
@@ -3093,6 +2952,9 @@
   <data name="tsmiCovers.Text" xml:space="preserve">
     <value>Capas</value>
   </data>
+  <data name="tsmiGameInfo.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="tsmiGameInfo.Size" type="System.Drawing.Size, System.Drawing">
     <value>318, 22</value>
   </data>
@@ -3124,7 +2986,7 @@
     <value>Exibir</value>
   </data>
   <data name="tsmiConfigurationMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>160, 22</value>
   </data>
   <data name="tsmiConfigurationMain.Text" xml:space="preserve">
     <value>Configurações...</value>
@@ -3260,9 +3122,6 @@
   </metadata>
   <metadata name="ofd1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>1066, 13</value>
-  </metadata>
-  <metadata name="lblNetStatus.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
   </metadata>
   <data name="lblNetStatus.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -3422,9 +3281,6 @@
   <data name="notifyIcon.Visible" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <metadata name="pbNetStatus.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="pbNetStatus.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
@@ -3459,9 +3315,6 @@
     <value>17, 52</value>
   </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -3567,9 +3420,6 @@
         Af8BAQH/AAAAAAAAAAAAAAAAAAAAAAAAAADgBwAAwAMAAMADAADAAwAAwAMAAMADAADAAwAAwAMAAMAD
         AADAAwAAwAMAAMADAADAAwAAwAMAAMADAAD4HwAA
 </value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>1200, 630</value>
