@@ -15,9 +15,8 @@ All Releases: https://github.com/AxionDrak/GameCube-Backup-Manager/releases
 
 ### Features:
 
-**NOTE: At the moment the program only allows the individual transfer of ISO/GCM files. It is not possible to select more than one file for batch transfer. This should be fixed at some point in the future.**
-
-+ Reads ISO / GCM / NKit (ISO )
++ Individual or batch file transfer (v2.5.0.0 or higher)
++ Reads ISO / GCM / NKit (ISO)
 + Writes ISO
 + Execution of multiple instances of the program.
 + Upload the 'wiitdb.xml' file in the 'Database' tab.
@@ -34,7 +33,7 @@ All Releases: https://github.com/AxionDrak/GameCube-Backup-Manager/releases
 + WiiTDB support for naming. ***File ‘wiitdb.xml’ required.***
 + Improved GameCube ISO detection (70% accuracy) in 'internal' (Standard) mode.
 + Improved GameCube ISO detection (100% accuracy) in 'business' mode (GameTDB). ***File ‘wiitdb.xml’ required.***
-+ Global download of Disco and 3D covers (for all games listed!).
++ Global download of Disc and 3D covers (for all games listed!).
 + Individual download of covers for the selected game (Disc and 3D).
 + Game transfer via XCopy (1:1 copies - Standard).
 + Download the file 'wiitdb.xml' (GameTDB).
