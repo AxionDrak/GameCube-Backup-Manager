@@ -124,7 +124,7 @@ namespace GCBM
         public frmMain()
         {
             InitializeComponent();
-
+            AdjustLanguage();
             this.Text = "GameCube Backup Manager 2022 - " + VERSION() + " - 64-bit";
 
             // Splash Screen
@@ -198,7 +198,9 @@ namespace GCBM
 
             System.Threading.Thread.CurrentThread.CurrentUICulture.ClearCachedData();
             System.Threading.Thread.CurrentThread.CurrentCulture.ClearCachedData();
-            AdjustLanguage();
+
+            //foreach in this.Controls.Results 
+            mstripMain.Refresh();
         }
         #endregion
 
@@ -269,22 +271,22 @@ namespace GCBM
             {
                 case 0:
                     Thread.CurrentThread.CurrentUICulture = new CultureInfo("pt-BR");
-                    //this.Controls.Clear();
+                    this.Controls.Clear();
                     InitializeComponent();
                     break;
                 case 1:
                     Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
-                    //this.Controls.Clear();
+                    this.Controls.Clear();
                     InitializeComponent();
                     break;
                 case 2:
                     Thread.CurrentThread.CurrentUICulture = new CultureInfo("es");
-                    //this.Controls.Clear();
+                    this.Controls.Clear();
                     InitializeComponent();
                     break;
                 case 3:
                     Thread.CurrentThread.CurrentUICulture = new CultureInfo("ko");
-                    //this.Controls.Clear();
+                    this.Controls.Clear();
                     InitializeComponent();
                     break;
             }
@@ -355,7 +357,7 @@ namespace GCBM
         {
             try
             {
-                //this.Hide();
+                this.Hide();
                 Thread thread = new Thread(new ThreadStart(this.ShowSplashScreen));
                 thread.Start();
                 Hardworker worker = new Hardworker();
