@@ -89,6 +89,7 @@ namespace GCBM
         private readonly WebClient NET_CLIENT        = new WebClient();
         private HttpWebResponse NET_RESPONSE         = null;
         private frmSplashScreen SPLASH_SCREEN;
+        private string WINTHEME;
 
         private bool WORKING;
         private string dgvGameListPath;
@@ -157,7 +158,7 @@ namespace GCBM
             DisabeScreensaver();
             RegisterHeaderLog();
             RequiredDirectories();
-            DisableOptionsGame(dgvGameList);
+            DisableOptionsGame(dgvSource);
             tscbDiscDrive.SelectedIndex = 0;
             cbFilterDatabase.SelectedIndex = 0;
 
@@ -186,14 +187,14 @@ namespace GCBM
             //All done, Clean up / Refresh to ensure language and settings are updated.
 
             //Localization.. but not working @Laetemn
-            #region dgvGameListDisc Setup 
-            dgvGameListDisc.Columns[1].HeaderText = GCBM.Properties.Resources.LoadDatabase_GameTitle;
-            dgvGameListDisc.Columns[2].HeaderText = GCBM.Properties.Resources.LoadDatabase_IDGameCode;
-            dgvGameListDisc.Columns[3].HeaderText = GCBM.Properties.Resources.LoadDatabase_Region;
-            dgvGameListDisc.Columns[4].HeaderText = GCBM.Properties.Resources.LoadDatabase_Type;
-            dgvGameListDisc.Columns[5].HeaderText = GCBM.Properties.Resources.DisplayFilesSelected_Size;
-            dgvGameListDisc.Columns[6].HeaderText = GCBM.Properties.Resources.DisplayFilesSelected_FilePath;
-            dgvGameListDisc.Refresh();
+            #region dgvDestination Setup 
+            dgvDestination.Columns[1].HeaderText = GCBM.Properties.Resources.LoadDatabase_GameTitle;
+            dgvDestination.Columns[2].HeaderText = GCBM.Properties.Resources.LoadDatabase_IDGameCode;
+            dgvDestination.Columns[3].HeaderText = GCBM.Properties.Resources.LoadDatabase_Region;
+            dgvDestination.Columns[4].HeaderText = GCBM.Properties.Resources.LoadDatabase_Type;
+            dgvDestination.Columns[5].HeaderText = GCBM.Properties.Resources.DisplayFilesSelected_Size;
+            dgvDestination.Columns[6].HeaderText = GCBM.Properties.Resources.DisplayFilesSelected_FilePath;
+            dgvDestination.Refresh();
             #endregion
 
             System.Threading.Thread.CurrentThread.CurrentUICulture.ClearCachedData();
@@ -343,23 +344,23 @@ namespace GCBM
                     {
                         this.Show();
                         NetworkCheck();
-                        #region dgvGameList Setup
-                        dgvGameList.Columns[1].HeaderText = GCBM.Properties.Resources.LoadDatabase_GameTitle;
-                        dgvGameList.Columns[2].HeaderText = GCBM.Properties.Resources.LoadDatabase_IDGameCode;
-                        dgvGameList.Columns[3].HeaderText = GCBM.Properties.Resources.LoadDatabase_Region;
-                        dgvGameList.Columns[4].HeaderText = GCBM.Properties.Resources.LoadDatabase_Type;
-                        dgvGameList.Columns[5].HeaderText = GCBM.Properties.Resources.DisplayFilesSelected_Size;
-                        dgvGameList.Columns[6].HeaderText = GCBM.Properties.Resources.DisplayFilesSelected_FilePath;
-                        dgvGameList.Refresh();
+                        #region dgvSource Setup
+                        dgvSource.Columns[1].HeaderText = GCBM.Properties.Resources.LoadDatabase_GameTitle;
+                        dgvSource.Columns[2].HeaderText = GCBM.Properties.Resources.LoadDatabase_IDGameCode;
+                        dgvSource.Columns[3].HeaderText = GCBM.Properties.Resources.LoadDatabase_Region;
+                        dgvSource.Columns[4].HeaderText = GCBM.Properties.Resources.LoadDatabase_Type;
+                        dgvSource.Columns[5].HeaderText = GCBM.Properties.Resources.DisplayFilesSelected_Size;
+                        dgvSource.Columns[6].HeaderText = GCBM.Properties.Resources.DisplayFilesSelected_FilePath;
+                        dgvSource.Refresh();
                         #endregion
-                        #region dgvGameList Setup
-                        dgvGameListDisc.Columns[1].HeaderText = GCBM.Properties.Resources.LoadDatabase_GameTitle;
-                        dgvGameListDisc.Columns[2].HeaderText = GCBM.Properties.Resources.LoadDatabase_IDGameCode;
-                        dgvGameListDisc.Columns[3].HeaderText = GCBM.Properties.Resources.LoadDatabase_Region;
-                        dgvGameListDisc.Columns[4].HeaderText = GCBM.Properties.Resources.LoadDatabase_Type;
-                        dgvGameListDisc.Columns[5].HeaderText = GCBM.Properties.Resources.DisplayFilesSelected_Size;
-                        dgvGameListDisc.Columns[6].HeaderText = GCBM.Properties.Resources.DisplayFilesSelected_FilePath;
-                        dgvGameListDisc.Refresh();
+                        #region dgvSource Setup
+                        dgvDestination.Columns[1].HeaderText = GCBM.Properties.Resources.LoadDatabase_GameTitle;
+                        dgvDestination.Columns[2].HeaderText = GCBM.Properties.Resources.LoadDatabase_IDGameCode;
+                        dgvDestination.Columns[3].HeaderText = GCBM.Properties.Resources.LoadDatabase_Region;
+                        dgvDestination.Columns[4].HeaderText = GCBM.Properties.Resources.LoadDatabase_Type;
+                        dgvDestination.Columns[5].HeaderText = GCBM.Properties.Resources.DisplayFilesSelected_Size;
+                        dgvDestination.Columns[6].HeaderText = GCBM.Properties.Resources.DisplayFilesSelected_FilePath;
+                        dgvDestination.Refresh();
                         #endregion
 
                     }
@@ -615,7 +616,7 @@ namespace GCBM
         /// <param name="dgv"></param>
         private void DisableOptionsGame(DataGridView dgv)
         {
-            if (dgv == dgvGameList)
+            if (dgv == dgvSource)
             {
                 // Main Menu Game
                 btnGameInstallExactCopy.Enabled = false;
@@ -693,10 +694,10 @@ namespace GCBM
             pbGameCover3D.LoadAsync(GET_CURRENT_PATH + MEDIA_DIR + @"\3d.png");
             pbWebGameID.Enabled = false;
             pbWebGameID.Image = Resources.globe_earth_grayscale_64;
-            dgvGameList.DataSource = null;
-            dgvGameList.Columns.Clear();
-            dgvGameList.Rows.Clear();
-            dgvGameList.Refresh();
+            dgvSource.DataSource = null;
+            dgvSource.Columns.Clear();
+            dgvSource.Rows.Clear();
+            dgvSource.Refresh();
         }
         #endregion
 
@@ -719,10 +720,9 @@ namespace GCBM
         {
             tbLog.AppendText("[" + DateString() + "]" + GCBM.Properties.Resources.FoundIsoGcmFiles + Environment.NewLine);
 
-            foreach (DataGridViewRow dgvResultRow in dgvGameList.Rows)
+            foreach (DataGridViewRow dgvResultRow in dgvSource.Rows)
             {
-                tbLog.AppendText("[" + DateString() + "]" + GCBM.Properties.Resources.Info + 
-                    dgvGameList.Rows[dgvResultRow.Index].Cells[1].Value.ToString() + Environment.NewLine);
+                tbLog.AppendText("[" + DateString() + "]" + GCBM.Properties.Resources.Info + dgvGameList.Rows[dgvResultRow.Index].Cells[1].Value.ToString() + Environment.NewLine);
             }
         }
         #endregion
@@ -913,14 +913,8 @@ namespace GCBM
 
                 try
                 {
-                    if (dgv == dgvGameList)
-                    {
-                        DirectoryOpenGameList(dgv.CurrentRow.Cells[6].Value.ToString());
-                    }
-                    else
-                    {
-                        DirectoryOpenDiscList(dgv.CurrentRow.Cells[6].Value.ToString());
-                    }
+                    VerifyGame(dgv.CurrentRow.Cells[6].Value.ToString());
+                    
                     if (ERROR == false)
                     {
                         LoadCover(tbIDGame.Text);
@@ -932,6 +926,10 @@ namespace GCBM
                         pbWebGameID.Image = Resources.globe_earth_color_64;
                     }
 
+                    if (dgv == dgvDestination)
+                    {
+                        tbIDRegionDisc.Text = GAME_REGION;
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -954,7 +952,7 @@ namespace GCBM
             var filters = new String[] { "iso", "gcm" };
             bool isRecursive;
 
-            if (dgv == dgvGameList)
+            if (dgv == dgvSource)
             {
                 if (dgv.RowCount == 0)
                 {
@@ -974,7 +972,7 @@ namespace GCBM
                 }
             }
 
-            if (dgv == dgvGameListDisc)
+            if (dgv == dgvDestination)
             {
                 isRecursive = true;
             }
@@ -985,7 +983,7 @@ namespace GCBM
 
             string[] files = GetFilesFolder(sourceFolder, filters, isRecursive);
 
-            if (dgv == dgvGameListDisc)
+            if (dgv == dgvDestination)
             {
                 //tsmiReloadGameListDisc.Enabled = true;
                 try
@@ -1023,7 +1021,7 @@ namespace GCBM
 
             FileInfo _file = null;
             dgv.Rows.Clear();
-            //dgvGameList.DataSource = GameDataTable();
+            //dgvSource.DataSource = GameDataTable();
 
             foreach (Game game in GameList(sourceFolder))
             {
@@ -1040,6 +1038,27 @@ namespace GCBM
                                 _getSize,
                                 game.Path);
             }
+
+
+            //for (int i = 0; i < files.Length; i++)
+            //{
+            //    //FileInfo _file = new FileInfo(files[i]);
+            //    _file = new FileInfo(files[i]);
+            //    string _getSize = DisplayFormatFileSize(_file.Length, CONFIG_INI_FILE.IniReadInt("GENERAL", "FileSize"));
+            //    //string _getSize = BytesToGB(_file.Length);                
+            //    // 4° coluna
+            //    _table.Rows.Add(_file.Name, _file.Extension.Substring(1, 3).Trim().ToUpper(MY_CULTURE), _getSize, _file.FullName);
+            //    //_table.Rows.Add(_file.Name, _file.Extension.Substring(1, 3).Trim().ToUpper(myCulture), _getSize);
+            //}
+
+            //if(dgvGameList.SelectionMode == DataGridViewSelectionMode.RowHeaderSelect){
+            //    MessageBox.Show("O modo de seleção é RowHeaderSelect");
+            //}
+            //else
+            //{
+            //    MessageBox.Show("O modo de seleção NÃO é RowHeaderSelect");
+            //}
+
 
             if (dgv == dgvGameList)
             {
@@ -1219,13 +1238,29 @@ namespace GCBM
         }
         #endregion
 
+        // REWRITE FUNCTION- Directory Open
+
         #region Directory Open
         /// <summary>
         /// Checks the consistency of the listed ISO and GCM files.       
         /// </summary>
         /// <param name="path"></param>
-        private void DirectoryOpenGameList(string path)
+        private void VerifyGame(string path)
         {
+            //OpenFileDialog ofd;
+
+            //if (path.Length == 0)
+            //{
+            //    ofd = new OpenFileDialog() { Filter = "GameCube ISO (*.iso)|*.iso|GameCube Image File (*.gcm)|*.gcm|All files (*.*)|*.*", Title = "Open image" };
+            //    if (imgPath != "")
+            //        ofd.FileName = imgPath;
+            //    if (ofd.ShowDialog() == DialogResult.OK)
+            //    {
+            //        imgPath = ofd.FileName;
+            //        path = imgPath;
+            //    }
+            //}
+
             if (path.Length == 0)
                 return;
 
@@ -1287,6 +1322,7 @@ namespace GCBM
                             CheckWiiTdbXml();
                         }
                     }
+                    //miImageOpen.ToolTipText = imgPath;
                     ROOT_OPENED = false;
                 }
             }
@@ -1294,7 +1330,7 @@ namespace GCBM
             tbIDRegionDisc.Text = dgvSelected.CurrentRow.Cells[2].Value.ToString();
         }
         #endregion
-
+        
         #region Build Game list as List<Game>
         /// <summary>
         /// Build a List<Game> with file and game info for easier access programmatically.
@@ -1310,13 +1346,9 @@ namespace GCBM
                 FileInfo _file = new FileInfo(file);
                 //Title - ID - Region - Path - Extension - Size
                 loadPath = _file.FullName;
-                DirectoryOpenGameList(loadPath);
-                Game game = new Game(tbIDName.Text, tbIDGame.Text, tbIDRegion.Text, loadPath, _file.Extension, (int)_file.Length);
-                //game.Title = _oldNameInternal;
-                //game.Region = _IDRegionCode;
-                //game.Path = _file.FullName;
-                //game.Extension = _file.Extension;
-                //game.Size = (int)_file.Length;
+                VerifyGame(loadPath);
+                Game game = new Game(tbIDName.Text, GAME_ID, GAME_REGION, loadPath, _file.Extension, (int)_file.Length);
+                //game.Title = GAME_NAME_INTERNAL;
                 IMAGE_PATH = game.Path;
                 if (CheckImage() && ReadImageDiscTOC())
                 {
@@ -1413,7 +1445,7 @@ namespace GCBM
         {
             try
             {
-                switch (_IDRegionCode)
+                switch (GAME_REGION)
                 {
                     case "e": // AMERICA - USA
                         LINK_DOMAIN = "US";
@@ -1486,11 +1518,11 @@ namespace GCBM
             foreach (DataGridViewRow dgvResultRow in dgv.Rows)
             {
                 string _IDGameCode = dgv.Rows[dgvResultRow.Index].Cells[6].Value.ToString();
-                DirectoryOpenGameList(_IDGameCode);
+                VerifyGame(_IDGameCode);
 
-                //tbLog.AppendText(_IDRegionCode + Environment.NewLine);
+                //tbLog.AppendText(GAME_REGION + Environment.NewLine);
 
-                switch (_IDRegionCode)
+                switch (GAME_REGION)
                 {
                     case "e": // AMERICA - USA
                         LINK_DOMAIN = "US";
@@ -1531,15 +1563,15 @@ namespace GCBM
                 try
                 {
                     // Download Disc cover
-                    Uri myLinkCoverDisc = new Uri(@"https://art.gametdb.com/wii/disc/" + LINK_DOMAIN + "/" + _IDMakerCode + ".png");
+                    Uri myLinkCoverDisc = new Uri(@"https://art.gametdb.com/wii/disc/" + LINK_DOMAIN + "/" + GAME_ID + ".png");
                     var request = (HttpWebRequest)WebRequest.Create(myLinkCoverDisc);
                     request.Method = "HEAD";
                     NET_RESPONSE = (HttpWebResponse)request.GetResponse();
 
                     if (NET_RESPONSE.StatusCode == HttpStatusCode.OK)
                     {
-                        tbLog.AppendText("[" + DateString() + "]" + GCBM.Properties.Resources.DownloadDiscCover + _IDMakerCode + ".png" + Environment.NewLine);
-                        NET_CLIENT.DownloadFileAsync(myLinkCoverDisc, GET_CURRENT_PATH + COVERS_DIR + @"\" + LINK_DOMAIN + @"\disc\" + _IDMakerCode + ".png");
+                        tbLog.AppendText("[" + DateString() + "]" + GCBM.Properties.Resources.DownloadDiscCover + GAME_ID + ".png" + Environment.NewLine);
+                        NET_CLIENT.DownloadFileAsync(myLinkCoverDisc, GET_CURRENT_PATH + COVERS_DIR + @"\" + LINK_DOMAIN + @"\disc\" + GAME_ID + ".png");
                         while (NET_CLIENT.IsBusy) { Application.DoEvents(); }
                     }
                 }
@@ -1556,18 +1588,46 @@ namespace GCBM
                     }
                 }
 
+                //try
+                //{
+                //    // Download Disc cover
+                //    Uri myLinkCoverDisc = new Uri(@"https://art.gametdb.com/wii/disc/" + LINK_DOMAIN + "/" + _IDMakerCode + ".png");
+                //    var request = (HttpWebRequest)WebRequest.Create(myLinkCoverDisc);
+                //    request.Method = "HEAD";
+                //    NET_RESPONSE = (HttpWebResponse)request.GetResponse();
+
+                //    if (NET_RESPONSE.StatusCode == HttpStatusCode.OK)
+                //    {
+                //        tbLog.AppendText("[" + DateString() + "]" + GCBM.Properties.Resources.DownloadDiscCover + _IDMakerCode + ".png" + Environment.NewLine);
+                //        NET_CLIENT.DownloadFileAsync(myLinkCoverDisc, GET_CURRENT_PATH + COVERS_DIR + @"\" + LINK_DOMAIN + @"\disc\" + _IDMakerCode + ".png");
+                //        while (NET_CLIENT.IsBusy) { Application.DoEvents(); }
+                //    }
+                //}
+                //catch (WebException ex)
+                //{
+                //    tbLog.AppendText("[" + DateString() + "]" + GCBM.Properties.Resources.DownloadDiscCoverError + Environment.NewLine +
+                //        GCBM.Properties.Resources.Error + ex.Message + Environment.NewLine);
+                //}
+                //finally
+                //{
+                //    if (NET_RESPONSE != null)
+                //    {
+                //        NET_RESPONSE.Close();
+                //    }
+                //}
+
                 try
                 {
                     // Download 3D cover
-                    Uri myLinkCover3D = new Uri(@"https://art.gametdb.com/wii/cover3D/" + LINK_DOMAIN + "/" + _IDMakerCode + ".png");
+                    Uri myLinkCover3D = new Uri(@"https://art.gametdb.com/wii/cover3D/" + LINK_DOMAIN + "/" + GAME_ID + ".png");
                     var request3D = (HttpWebRequest)WebRequest.Create(myLinkCover3D);
                     request3D.Method = "HEAD";
                     NET_RESPONSE = (HttpWebResponse)request3D.GetResponse();
 
                     if (NET_RESPONSE.StatusCode == HttpStatusCode.OK)
                     {
-                        tbLog.AppendText("[" + DateString() + "]" + GCBM.Properties.Resources.Download3DCover + _IDMakerCode + ".png" + Environment.NewLine);
-                        NET_CLIENT.DownloadFileAsync(myLinkCover3D, GET_CURRENT_PATH + COVERS_DIR + @"\" + LINK_DOMAIN + @"\3d\" + _IDMakerCode + ".png");
+                        tbLog.AppendText("[" + DateString() + "]" + GCBM.Properties.Resources.Download3DCover + GAME_ID + ".png" + Environment.NewLine);
+                        NET_CLIENT.DownloadFileAsync(myLinkCover3D, GET_CURRENT_PATH + COVERS_DIR + @"\" + LINK_DOMAIN + @"\3d\" + GAME_ID + ".png");
                         while (NET_CLIENT.IsBusy) { Application.DoEvents(); }
                     }
                 }
@@ -1602,7 +1662,7 @@ namespace GCBM
             }
             else
             {
-                switch (_IDRegionCode)
+                switch (GAME_REGION)
                 {
                     case "e": // AMERICA - USA
                         LINK_DOMAIN = "US";
@@ -1642,15 +1702,15 @@ namespace GCBM
                 try
                 {
                     // Download Disc cover
-                    Uri myLinkCoverDisc = new Uri(@"https://art.gametdb.com/wii/disc/" + LINK_DOMAIN + "/" + _IDMakerCode + ".png");
+                    Uri myLinkCoverDisc = new Uri(@"https://art.gametdb.com/wii/disc/" + LINK_DOMAIN + "/" + GAME_ID + ".png");
                     var request = (HttpWebRequest)WebRequest.Create(myLinkCoverDisc);
                     request.Method = "HEAD";
                     NET_RESPONSE = (HttpWebResponse)request.GetResponse();
 
                     if (NET_RESPONSE.StatusCode == HttpStatusCode.OK)
                     {
-                        tbLog.AppendText("[" + DateString() + "]" + GCBM.Properties.Resources.DownloadDiscCover + _IDMakerCode + ".png" + Environment.NewLine);
-                        NET_CLIENT.DownloadFileAsync(myLinkCoverDisc, GET_CURRENT_PATH + COVERS_DIR + @"\" + LINK_DOMAIN + @"\disc\" + _IDMakerCode + ".png");
+                        tbLog.AppendText("[" + DateString() + "]" + GCBM.Properties.Resources.DownloadDiscCover + GAME_ID + ".png" + Environment.NewLine);
+                        NET_CLIENT.DownloadFileAsync(myLinkCoverDisc, GET_CURRENT_PATH + COVERS_DIR + @"\" + LINK_DOMAIN + @"\disc\" + GAME_ID + ".png");
                         while (NET_CLIENT.IsBusy) { Application.DoEvents(); }
                     }
                 }
@@ -1671,15 +1731,15 @@ namespace GCBM
                 try
                 {
                     // Download 3D cover
-                    Uri myLinkCover3D = new Uri(@"https://art.gametdb.com/wii/cover3D/" + LINK_DOMAIN + "/" + _IDMakerCode + ".png");
+                    Uri myLinkCover3D = new Uri(@"https://art.gametdb.com/wii/cover3D/" + LINK_DOMAIN + "/" + GAME_ID + ".png");
                     var request3D = (HttpWebRequest)WebRequest.Create(myLinkCover3D);
                     request3D.Method = "HEAD";
                     NET_RESPONSE = (HttpWebResponse)request3D.GetResponse();
 
                     if (NET_RESPONSE.StatusCode == HttpStatusCode.OK)
                     {
-                        tbLog.AppendText("[" + DateString() + "]" + GCBM.Properties.Resources.Download3DCover + _IDMakerCode + ".png" + Environment.NewLine);
-                        NET_CLIENT.DownloadFileAsync(myLinkCover3D, GET_CURRENT_PATH + COVERS_DIR + @"\" + LINK_DOMAIN + @"\3d\" + _IDMakerCode + ".png");
+                        tbLog.AppendText("[" + DateString() + "]" + GCBM.Properties.Resources.Download3DCover + GAME_ID + ".png" + Environment.NewLine);
+                        NET_CLIENT.DownloadFileAsync(myLinkCover3D, GET_CURRENT_PATH + COVERS_DIR + @"\" + LINK_DOMAIN + @"\3d\" + GAME_ID + ".png");
                         while (NET_CLIENT.IsBusy) { Application.DoEvents(); }
                     }
                 }
@@ -1855,7 +1915,7 @@ namespace GCBM
             intQueueLength = 0;
             intQueuePos = 0;
             lstInstallQueue.Clear();
-            foreach (DataGridViewRow row in dgvGameList.Rows)
+            foreach (DataGridViewRow row in dgvSource.Rows)
             {
                 if (row.Cells[0].Value.ToString() == "True")
                 {
@@ -1874,10 +1934,10 @@ namespace GCBM
             {
                 FileInfo _file = new FileInfo(path);
                 loadPath = _file.FullName;
-                DirectoryOpenGameList(loadPath);
-                int? selectedRowCount = Convert.ToInt32(dgvGameList.Rows.GetRowCount(DataGridViewElementStates.Selected));
+                VerifyGame(loadPath);
+                int? selectedRowCount = Convert.ToInt32(dgvSource.Rows.GetRowCount(DataGridViewElementStates.Selected));
 
-                if (dgvGameList.RowCount == 0)
+                if (dgvSource.RowCount == 0)
                 {
                     EmptyGamesList();
                 }
@@ -1978,7 +2038,7 @@ namespace GCBM
             {
                 FileInfo _file = new FileInfo(path);
                 loadPath = _file.FullName;
-                DirectoryOpenGameList(loadPath);
+                VerifyGame(loadPath);
                 const string quote = "\"";
                 var _source = path;
 
@@ -2043,7 +2103,7 @@ namespace GCBM
                                 lblPercent.Visible = true;
                                 pbCopy.Visible = true;
 
-                                DisableOptionsGame(dgvGameList);
+                                DisableOptionsGame(dgvSource);
 
                                 lblCopy.Text = GCBM.Properties.Resources.InstallGameScrub_String1;
                                 lblInstallGame.Text = GCBM.Properties.Resources.InstallGameScrub_String2 + i++;
@@ -2121,7 +2181,7 @@ namespace GCBM
                             }// Use WiiTDB.xml
                             else
                             {
-                                // Rename game.iso -> disc2.iso
+                                // Renomear game.iso -> disc2.iso
                                 string myOrigem = tscbDiscDrive.SelectedItem + GAMES_DIR + @"\" + _oldNameInternal + " [" + tbIDGame.Text + "2]" + @"\game.iso";
                                 string myDestiny = tscbDiscDrive.SelectedItem + GAMES_DIR + @"\" + _oldNameInternal.Replace("disc2 ", "") + " [" + tbIDGame.Text + "2]" + @"\disc2.iso";
 
@@ -2211,8 +2271,8 @@ namespace GCBM
                     //_source.CopyTo(_destination, true);
                     _source.CopyTo(_destination, x => pbCopy.BeginInvoke(new Action(() =>
                     {
-                        DisableOptionsGame(dgvGameList);
-                        dgvGameList.Enabled = false;
+                        DisableOptionsGame(dgvSource);
+                        dgvSource.Enabled = false;
                         pbCopy.Visible = true;
                         lblCopy.Visible = true;
                         lblPercent.Visible = true;
@@ -2230,7 +2290,7 @@ namespace GCBM
                     lblPercent.Text = GCBM.Properties.Resources.CopyTask_String5;
                     GlobalNotifications(GCBM.Properties.Resources.InstallGameScrub_String5, ToolTipIcon.Info);
                     EnableOptionsGameList();
-                    dgvGameList.Enabled = true;
+                    dgvSource.Enabled = true;
                     pbCopy.Visible = false;
                     lblCopy.Visible = false;
                     lblPercent.Visible = false;
@@ -2262,7 +2322,7 @@ namespace GCBM
                 {
                     _source.CopyTo(_destination, x => pbCopy.BeginInvoke(new Action(() =>
                     {
-                        DisableOptionsGame(dgvGameList);
+                        DisableOptionsGame(dgvSource);
                         pbCopy.Visible = true;
                         lblCopy.Visible = true;
                         lblPercent.Visible = true;
@@ -2466,15 +2526,15 @@ namespace GCBM
                     {
                         if (DialogResultDeleteGame() == DialogResult.Yes)
                         {
-                            if (_IDRegionCode.Equals("e"))
+                            if (GAME_REGION.Equals("e"))
                             {
                                 LINK_DOMAIN = "US";
                             }
-                            else if (_IDRegionCode.Equals("p"))
+                            else if (GAME_REGION.Equals("p"))
                             {
                                 LINK_DOMAIN = "EN";
                             }
-                            else if (_IDRegionCode.Equals("j"))
+                            else if (GAME_REGION.Equals("j"))
                             {
                                 LINK_DOMAIN = "JA";
                             }
@@ -2489,7 +2549,7 @@ namespace GCBM
                             string coverDisc = GET_CURRENT_PATH + COVERS_DIR + @"\" + LINK_DOMAIN + @"\disc\" + tbIDGame.Text + ".png";
                             string coverFull = GET_CURRENT_PATH + COVERS_DIR + @"\" + LINK_DOMAIN + @"\full\" + tbIDGame.Text + ".png";
 
-                            // DELETE GAME AND CASE FROM THE SOURCE DEVICE.
+                            // DELETAR JOGO E CAPA DO DISPOSITIVO DE ORIGEM
                             if (dgv == dgvGameList)
                             {
                                 File.Delete(dgv.CurrentRow.Cells[6].Value.ToString());
@@ -2515,21 +2575,21 @@ namespace GCBM
                                     File.Delete(coverFull);
                                 }
 
-                                DisplayFilesSelected(fbd1.SelectedPath, dgvGameList);
+                                DisplayFilesSelected(fbd1.SelectedPath, dgvSource);
 
                             }// DELETE GAME FROM TARGET DEVICE.
                             else
                             {
                                 string pasta = Path.GetDirectoryName(dgv.CurrentRow.Cells[6].Value.ToString());
                                 Directory.Delete(pasta, true);
-                                DisplayFilesSelected(tscbDiscDrive.SelectedItem + GAMES_DIR + @"\", dgvGameListDisc);
+                                DisplayFilesSelected(tscbDiscDrive.SelectedItem + GAMES_DIR + @"\", dgvDestination);
                             }
 
                         }
 
                         if (dgv.RowCount == 0)
                         {
-                            DisableOptionsGame(dgvGameList);
+                            DisableOptionsGame(dgvSource);
                             ResetOptions();
                         }
                     }
@@ -2564,17 +2624,17 @@ namespace GCBM
                     {
                         // HERE START DELETING FILES.
 
-                        if (dgv == dgvGameList)
+                        if (dgv == dgvSource)
                         {
-                            if (_IDRegionCode.Equals("e"))
+                            if (GAME_REGION.Equals("e"))
                             {
                                 LINK_DOMAIN = "US";
                             }
-                            else if (_IDRegionCode.Equals("p"))
+                            else if (GAME_REGION.Equals("p"))
                             {
                                 LINK_DOMAIN = "EN";
                             }
-                            else if (_IDRegionCode.Equals("j"))
+                            else if (GAME_REGION.Equals("j"))
                             {
                                 LINK_DOMAIN = "JA";
                             }
@@ -2594,7 +2654,7 @@ namespace GCBM
                             // Goes through the entire file list and removes all found ISO and GCM files.
                             for (int i = 0; i < files.Length; i++)
                             {
-                                //File.Delete(fbd1.SelectedPath + @"\" + dgvGameList.CurrentRow.Cells[1].Value.ToString());
+                                //File.Delete(fbd1.SelectedPath + @"\" + dgvSource.CurrentRow.Cells[1].Value.ToString());
                                 File.Delete(dgv.CurrentRow.Cells[6].Value.ToString());
 
                                 DisplayFilesSelected(fbd1.SelectedPath, dgv);
@@ -2621,7 +2681,14 @@ namespace GCBM
                                 file.Delete();
                             }
 
-                        }// DELETE GAME FROM TARGET DEVICE.
+                            //if (dgv.RowCount == 0)
+                            //{
+                            //    DisableOptionsGame(dgvGameList);
+                            //    ResetOptions();
+                            //    MessageBox.Show("Todos os arquivos foram excluídos com sucesso!", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            //}
+
+                        }// DELETAR JOGO DO DISPOSITIVO DE DESTINO
                         else if (dgv == dgvGameListDisc)
                         {
                             string[] files = GetFilesFolder(tscbDiscDrive.SelectedItem + GAMES_DIR + @"\", filters, false);
@@ -2638,14 +2705,44 @@ namespace GCBM
                                 DisplayFilesSelected(tscbDiscDrive.SelectedItem + GAMES_DIR + @"\", dgv);
                             }
 
+                            //dgvGameListDisc.DataSource = null;
                             dgv.DataSource = null;
+
+                            // Delete cover 2D files
+                            //foreach (FileInfo file in di2D.GetFiles())
+                            //{
+                            //    file.Delete();
+                            //}
+                            //// Delete cover 3D files
+                            //foreach (FileInfo file in di3D.GetFiles())
+                            //{
+                            //    file.Delete();
+                            //}
+                            //// Delete cover Disc files
+                            //foreach (FileInfo file in diDisc.GetFiles())
+                            //{
+                            //    file.Delete();
+                            //}
+                            //// Delete cover Full files
+                            //foreach (FileInfo file in diFull.GetFiles())
+                            //{
+                            //    file.Delete();
+                            //}
+
+                            //if (dgvGameListDisc.RowCount == 0)
+                            //{
+                            //    DisableOptionsGame(dgvGameListDisc);
+                            //    ResetOptions();
+                            //    MessageBox.Show("Todos os arquivos foram excluídos com sucesso!", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            //}
+
                         }
                     }
 
                     if (dgv.RowCount == 0)
                     {
                         DisableOptionsGame(dgv);
-                        if (dgv == dgvGameList)
+                        if (dgv == dgvSource)
                         {
                             ResetOptions();
                         }
@@ -2820,7 +2917,7 @@ namespace GCBM
         /// </summary>
         private void AdditionalInformation()
         {
-            Int32 _selectedGameRowCount = dgvGameList.Rows.GetRowCount(DataGridViewElementStates.Selected);
+            Int32 _selectedGameRowCount = dgvSource.Rows.GetRowCount(DataGridViewElementStates.Selected);
 
             if (_selectedGameRowCount == 0)
             {
@@ -3019,7 +3116,7 @@ namespace GCBM
         /// </summary>
         //private void ExportCSV(DataGridView dgv)
         //{
-        //    if (dgvGameList.Rows.Count > 0)
+        //    if (dgvSource.Rows.Count > 0)
         //    {
         //        SaveFileDialog sfd = new SaveFileDialog();
         //        sfd.Filter = "CSV (*.csv)|*.csv";
@@ -3086,7 +3183,7 @@ namespace GCBM
         /// <param name="dgv"></param>
         private void ExportTXT(DataGridView dgv)
         {
-            if (dgvGameList.RowCount == 0)
+            if (dgvSource.RowCount == 0)
             {
                 GlobalNotifications(GCBM.Properties.Resources.RecordExportedFailed, ToolTipIcon.Error);
             }
@@ -3152,7 +3249,7 @@ namespace GCBM
         private void tsmiDeleteSelectedFile_Click(object sender, EventArgs e)
         {
             //DeleteSelectedGame(0);
-            GlobalDeleteSelectedGame(dgvGameList);
+            GlobalDeleteSelectedGame(dgvSource);
         }
         #endregion
 
@@ -3160,15 +3257,15 @@ namespace GCBM
         private void tsmiGameListDeleteAllFiles_Click(object sender, EventArgs e)
         {
             //DeleteAllGames(0);
-            GlobalDeleteAllGames(dgvGameList);
+            GlobalDeleteAllGames(dgvSource);
         }
         #endregion
 
         #region tsmiReloadGameList_Click
         private void tsmiReloadGameList_Click(object sender, EventArgs e)
         {
-            //UpdateGameList(fbd1.SelectedPath, dgvGameList);
-            DisplayFilesSelected(fbd1.SelectedPath, dgvGameList);
+            //UpdateGameList(fbd1.SelectedPath, dgvSource);
+            DisplayFilesSelected(fbd1.SelectedPath, dgvSource);
         }
         #endregion
 
@@ -3208,7 +3305,7 @@ namespace GCBM
         {
             if (CONFIG_INI_FILE.IniReadBool("SEVERAL", "NetVerify") == true)
             {
-                DownloadOnlyDisc3DCoverSelectedGame(dgvGameList);
+                DownloadOnlyDisc3DCoverSelectedGame(dgvSource);
             }
             else
             {
@@ -3223,7 +3320,7 @@ namespace GCBM
         {
             if (CONFIG_INI_FILE.IniReadBool("SEVERAL", "NetVerify") == true)
             {
-                DownloadOnlyDisc3DCover(dgvGameList);
+                DownloadOnlyDisc3DCover(dgvSource);
             }
             else
             {
@@ -3251,7 +3348,7 @@ namespace GCBM
         private void tsmiDeleteSelectedFileDisc_Click(object sender, EventArgs e)
         {
             //DeleteSelectedGame(1);
-            GlobalDeleteSelectedGame(dgvGameListDisc);
+            GlobalDeleteSelectedGame(dgvDestination);
         }
         #endregion
 
@@ -3356,23 +3453,23 @@ namespace GCBM
         private void tsmiReloadDeviceDrive_Click(object sender, EventArgs e)
         {
             GetAllDrives();
-            dgvGameListDisc.DataSource = null;
+            dgvDestination.DataSource = null;
         }
         #endregion
 
         #region tsmiReloadGameListDisc_Click
         private void tsmiReloadGameListDisc_Click(object sender, EventArgs e)
         {
-            DisplayFilesSelected(tscbDiscDrive.SelectedItem + GAMES_DIR + @"\", dgvGameListDisc);
+            DisplayFilesSelected(tscbDiscDrive.SelectedItem + GAMES_DIR + @"\", dgvDestination);
         }
         #endregion
 
         #region tsmiRenameISO_Click
         private void tsmiRenameISO_Click(object sender, EventArgs e)
         {
-            Int32 _selectedGameRowCount = dgvGameList.Rows.GetRowCount(DataGridViewElementStates.Selected);
+            Int32 _selectedGameRowCount = dgvSource.Rows.GetRowCount(DataGridViewElementStates.Selected);
 
-            if (dgvGameList.RowCount == 0)
+            if (dgvSource.RowCount == 0)
             {
                 EmptyGamesList();
             }
@@ -3384,7 +3481,7 @@ namespace GCBM
                 }
                 else
                 {
-                    string pathImage = dgvGameList.CurrentRow.Cells[6].Value.ToString();
+                    string pathImage = dgvSource.CurrentRow.Cells[6].Value.ToString();
 
                     using (var form = new frmRenameISO(fbd1.SelectedPath, pathImage))
                     {
@@ -3394,7 +3491,7 @@ namespace GCBM
                             int _code = form.RETURN_CONFIRM;
                             if (_code == 1)
                             {
-                                DisplayFilesSelected(fbd1.SelectedPath, dgvGameList);
+                                DisplayFilesSelected(fbd1.SelectedPath, dgvSource);
                             }
                         }
                     }
@@ -3414,14 +3511,14 @@ namespace GCBM
         #region tsmiGameDiscDeleteAllFiles_Click
         private void tsmiGameDiscDeleteAllFiles_Click(object sender, EventArgs e)
         {
-            GlobalDeleteAllGames(dgvGameListDisc);
+            GlobalDeleteAllGames(dgvDestination);
         }
         #endregion
 
         #region tsmiExportTXT_Click
         private void tsmiExportTXT_Click(object sender, EventArgs e)
         {
-            ExportTXT(dgvGameList);
+            ExportTXT(dgvSource);
         }
         #endregion
 
@@ -3457,7 +3554,7 @@ namespace GCBM
         /// <param name="e"></param>
         private void tsmiGameSelectAll_Click(object sender, EventArgs e)
         {
-            dgvGameList.EndEdit();
+            dgvSource.EndEdit();
 
             foreach (DataGridViewRow dtr in dgvSelected.Rows)
             {
@@ -3474,7 +3571,7 @@ namespace GCBM
         /// <param name="e"></param>
         private void tsmiGameSelectNone_Click(object sender, EventArgs e)
         {
-            dgvGameList.EndEdit();
+            dgvSource.EndEdit();
 
             foreach (DataGridViewRow dtr in dgvSelected.Rows)
             {
@@ -3491,7 +3588,7 @@ namespace GCBM
         /// <param name="e"></param>
         private void tsmiGameHashSHA1_Click(object sender, EventArgs e)
         {
-            GlobalCheckHash(dgvGameList, "SHA-1");
+            GlobalCheckHash(dgvSource, "SHA-1");
         }
         #endregion
 
@@ -3503,7 +3600,7 @@ namespace GCBM
         /// <param name="e"></param>
         private void tsmiGameDiscHashSHA1_Click(object sender, EventArgs e)
         {
-            GlobalCheckHash(dgvGameListDisc, "SHA-1");
+            GlobalCheckHash(dgvDestination, "SHA-1");
         }
         #endregion
 
@@ -3515,16 +3612,16 @@ namespace GCBM
         /// <param name="e"></param>
         private void tsmiGameDiscHashMD5_Click(object sender, EventArgs e)
         {
-            GlobalCheckHash(dgvGameListDisc, "MD5");
+            GlobalCheckHash(dgvDestination, "MD5");
         }
         #endregion
 
         #region tsmiInfoGame_Click
         private void tsmiInfoGame_Click(object sender, EventArgs e)
         {
-            Int32 _selecteGameRowCount = dgvGameList.Rows.GetRowCount(DataGridViewElementStates.Selected);
+            Int32 _selecteGameRowCount = dgvSource.Rows.GetRowCount(DataGridViewElementStates.Selected);
 
-            if (dgvGameList.RowCount == 0)
+            if (dgvSource.RowCount == 0)
             {
                 EmptyGamesList();
             }
@@ -3537,8 +3634,8 @@ namespace GCBM
                 else
                 {
                     // Nome do Arquivo, Formato (Tipo), Tamanho, Local do Arquivo, ID do Jogo
-                    frmInformation _frmInfo = new frmInformation(dgvGameList.CurrentRow.Cells[1].Value.ToString(), dgvGameList.CurrentRow.Cells[2].Value.ToString(),
-                        dgvGameList.CurrentRow.Cells[3].Value.ToString(), dgvGameList.CurrentRow.Cells[6].Value.ToString(), tbIDGame.Text);
+                    frmInformation _frmInfo = new frmInformation(dgvSource.CurrentRow.Cells[1].Value.ToString(), dgvSource.CurrentRow.Cells[2].Value.ToString(),
+                        dgvSource.CurrentRow.Cells[3].Value.ToString(), dgvSource.CurrentRow.Cells[6].Value.ToString(), tbIDGame.Text);
                     _frmInfo.ShowDialog();
                     _frmInfo.Dispose();
                 }
@@ -3576,9 +3673,9 @@ namespace GCBM
         #region tsmiDolphinEmulator_Click
         private void tsmiDolphinEmulator_Click(object sender, EventArgs e)
         {
-            int? selectedRowCount = Convert.ToInt32(dgvGameList.Rows.GetRowCount(DataGridViewElementStates.Selected));
+            int? selectedRowCount = Convert.ToInt32(dgvSource.Rows.GetRowCount(DataGridViewElementStates.Selected));
 
-            if (dgvGameList.RowCount == 0)
+            if (dgvSource.RowCount == 0)
             {
                 EmptyGamesList();
             }
@@ -3596,7 +3693,7 @@ namespace GCBM
                     {
                         string VideoDX = "";
                         string AudioDSP = "";
-                        var _sourceGame = dgvGameList.CurrentRow.Cells[6].Value.ToString();
+                        var _sourceGame = dgvSource.CurrentRow.Cells[6].Value.ToString();
 
                         START_INFO.CreateNoWindow = true;
                         START_INFO.UseShellExecute = true;
@@ -3767,8 +3864,8 @@ namespace GCBM
         }
         #endregion
 
-        // REWRITE AND ORGANIZE - Extras Functions
-        #region Extras Functions 
+        // Extras Functions
+
         #region dgvGameList Click
         /// <summary>
         /// Performs an action when clicking on the DataGridView Game List.
@@ -3777,7 +3874,7 @@ namespace GCBM
         /// <param name="e"></param>
         private void dgvGameList_Click(object sender, EventArgs e)
         {
-            ReloadDataGridViewGameList(dgvGameList);
+            ReloadDataGridViewGameList(dgvSource);
         }
         #endregion
 
@@ -3803,7 +3900,7 @@ namespace GCBM
             }
             else
             {
-                DisableOptionsGame(dgvGameListDisc);
+                DisableOptionsGame(dgvDestination);
             }
 
             tabMainDisc.Text = GCBM.Properties.Resources.FilesDestinationUnit + tscbDiscDrive.SelectedItem + ")";
@@ -3848,7 +3945,7 @@ namespace GCBM
                                 else
                                 {
                                     // If the GAMES directory already exists, load the content recursively.
-                                    DisplayFilesSelected(tscbDiscDrive.Text + @"\" + GAMES_DIR, dgvGameListDisc);
+                                    DisplayFilesSelected(tscbDiscDrive.Text + @"\" + GAMES_DIR, dgvDestination);
                                 }
                             }
                             else if (d.DriveFormat == EXFAT_FAT64) // EXFAT (FAT64)
@@ -3868,7 +3965,7 @@ namespace GCBM
                                 else
                                 {
                                     // If the GAMES directory already exists, load the content recursively.
-                                    DisplayFilesSelected(tscbDiscDrive.Text + @"\" + GAMES_DIR, dgvGameListDisc);
+                                    DisplayFilesSelected(tscbDiscDrive.Text + @"\" + GAMES_DIR, dgvDestination);
                                 }
                             }
                             else // FAT32 
@@ -3886,7 +3983,7 @@ namespace GCBM
                                 else
                                 {
                                     // If the GAMES directory already exists, load the content recursively.
-                                    DisplayFilesSelected(tscbDiscDrive.Text + @"\" + GAMES_DIR, dgvGameListDisc);
+                                    DisplayFilesSelected(tscbDiscDrive.Text + @"\" + GAMES_DIR, dgvDestination);
                                 }
                             }
                             //label6.Text = "Total Size: " + d.TotalSize / (1024 * 1024) + " MB\nDrive Format: " + d.DriveFormat + " \nAvailable: " + d.AvailableFreeSpace / (1024 * 1024) + " MB\n" + d.DriveType;
@@ -3946,7 +4043,7 @@ namespace GCBM
         #region dgvGameListDisc_Click
         private void dgvGameListDisc_Click(object sender, EventArgs e)
         {
-            ReloadDataGridViewGameList(dgvGameListDisc);
+            ReloadDataGridViewGameList(dgvDestination);
         }
         #endregion
 
@@ -4086,8 +4183,21 @@ namespace GCBM
         }
         #endregion
 
+
+        private void tabControlMain_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tabControlMain.SelectedTab == tabMainFile)
+            {
+                dgvSelected = dgvSource;
+            }
+            else if (tabControlMain.SelectedTab == tabMainDisc)
+            {
+                dgvSelected = dgvDestination;
+            }
+        }
+
         // Buttons
-        #region Buttons
+
         #region Button - Install Exact Copy Game
         /// <summary>
         /// Button to install exact copy (1:1) of the file.
@@ -4096,7 +4206,7 @@ namespace GCBM
         /// <param name="e"></param>
         private void btnGameInstallExactCopy_Click(object sender, EventArgs e)
         {
-            GlobalInstall(dgvGameList, 0);
+            GlobalInstall(dgvSource, 0);
         }
         #endregion
 
@@ -4108,7 +4218,7 @@ namespace GCBM
         /// <param name="e"></param>
         private void btnGameInstallScrub_Click(object sender, EventArgs e)
         {
-            GlobalInstall(dgvGameList, 1);
+            GlobalInstall(dgvSource, 1);
         }
         #endregion
 
@@ -4127,7 +4237,7 @@ namespace GCBM
                 if (fbd1.ShowDialog() == DialogResult.OK)
                 {
                     dgvGameListPath = fbd1.SelectedPath;
-                    DisplayFilesSelected(fbd1.SelectedPath, dgvGameList);
+                    DisplayFilesSelected(fbd1.SelectedPath, dgvSource);
                     ListIsoFile();
                 }
             }
@@ -4162,11 +4272,11 @@ namespace GCBM
         {
             if (tabControlMain.SelectedTab == tabMainFile)
             {
-                dgvSelected = dgvGameList;
+                dgvSelected = dgvSource;
             }
             else if (tabControlMain.SelectedTab == tabMainDisc)
             {
-                dgvSelected = dgvGameListDisc;
+                dgvSelected = dgvDestination;
             }
             foreach (DataGridViewRow row in dgvSelected.Rows)
             {
@@ -4190,18 +4300,7 @@ namespace GCBM
             }
         }
 
-        private void tabControlMain_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (tabControlMain.SelectedTab == tabMainFile)
-            {
-                dgvSelected = dgvGameList;
-            }
-            else if (tabControlMain.SelectedTab == tabMainDisc)
-            {
-                dgvSelected = dgvGameListDisc;
-            }
-        }
-
+        
         private void btnSearch_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Keys.Enter)
@@ -4209,7 +4308,7 @@ namespace GCBM
                 Search_Click(sender, e);
             }
         }
-        #endregion
+
         #endregion
 
         //Restarts the application (closes and reopens)
@@ -4217,3 +4316,4 @@ namespace GCBM
 
     }// frmMain Form
 }// namespace GCBM
+#endregion

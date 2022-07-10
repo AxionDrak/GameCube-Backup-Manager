@@ -925,7 +925,7 @@
   <data name="label6.Text" xml:space="preserve">
     <value>제목:</value>
   </data>
-  <data name="dgvGameListDisc.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="dgvDestination.Size" type="System.Drawing.Size, System.Drawing">
     <value>496, 475</value>
   </data>
   <data name="mstripDisc.Size" type="System.Drawing.Size, System.Drawing">

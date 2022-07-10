@@ -22,9 +22,9 @@ namespace GCBM
         byte b;
         byte[] bb;
 
-        public string _IDMakerCode { get; private set; }
-        public string _IDRegionCode { get; private set; }
-        public string _oldNameInternal { get; private set; }
+        public string GAME_ID { get; private set; }
+        public string GAME_REGION { get; private set; }
+        public string GAME_NAME_INTERNAL { get; private set; }
 
         public string _IDRegionName { get; private set; }
 
@@ -49,7 +49,7 @@ namespace GCBM
             //tbIDGameCode.Text = SIOExtensions.ToStringC(ste.Default.GetChars(bb));
             string IDGameCode = SIOExtensions.ToStringC(ste.Default.GetChars(bb)); // ID Game Code - String
 
-            _IDRegionCode = Convert.ToString(ste.Default.GetChars(new byte[] { bb[3] })[0]).ToLower();
+            GAME_REGION = Convert.ToString(ste.Default.GetChars(new byte[] { bb[3] })[0]).ToLower();
 
             //switch (Convert.ToString(ste.Default.GetChars(new byte[] { bb[3] })[0]).ToLower())
             //{
@@ -124,12 +124,12 @@ namespace GCBM
             if (CONFIG_INI_FILE.IniReadBool("TITLES", "GameInternalName") == true)
             {
                 tbIDName.Text = br.ReadStringNT();
-                _oldNameInternal = br.ReadStringNT();   
+                GAME_NAME_INTERNAL = br.ReadStringNT();   
             }
 
             if (CONFIG_INI_FILE.IniReadBool("TITLES", "GameXmlName") == true)
             {
-                _oldNameInternal = br.ReadStringNT();
+                GAME_NAME_INTERNAL = br.ReadStringNT();
             }
 
             br.Close();
@@ -144,7 +144,7 @@ namespace GCBM
             //tbIDDate.Text = br.ReadStringNT();
             tbIDGame.Text = IDGameCode + IDMakerCode; // GameID (IDGameCode + IDMakerCode)
             //_tbIDGameOld = IDGameCode + IDMakerCode; // GameID (IDGameCode + IDMakerCode)
-            _IDMakerCode = IDGameCode + IDMakerCode;
+            GAME_ID = IDGameCode + IDMakerCode;
 
             br.Close();
             fs.Close();
@@ -162,7 +162,7 @@ namespace GCBM
             //tbIDGameCode.Text = SIOExtensions.ToStringC(ste.Default.GetChars(bb));
             string IDGameCodeDisc = SIOExtensions.ToStringC(ste.Default.GetChars(bb)); // ID Game Code - String
 
-            _IDRegionCode = Convert.ToString(ste.Default.GetChars(new byte[] { bb[3] })[0]).ToLower();
+            GAME_REGION = Convert.ToString(ste.Default.GetChars(new byte[] { bb[3] })[0]).ToLower();
 
             switch (Convert.ToString(ste.Default.GetChars(new byte[] { bb[3] })[0]).ToLower())
             {
@@ -206,12 +206,12 @@ namespace GCBM
             if (CONFIG_INI_FILE.IniReadBool("TITLES", "GameInternalName") == true)
             {
                 tbIDNameDisc.Text = br.ReadStringNT();
-                _oldNameInternal = br.ReadStringNT();
+                GAME_NAME_INTERNAL = br.ReadStringNT();
             }
 
             if (CONFIG_INI_FILE.IniReadBool("TITLES", "GameXmlName") == true)
             {
-                _oldNameInternal = br.ReadStringNT();
+                GAME_NAME_INTERNAL = br.ReadStringNT();
             }
 
             br.Close();
@@ -226,7 +226,7 @@ namespace GCBM
             //tbIDDate.Text = br.ReadStringNT();
             tbIDGameDisc.Text = IDGameCodeDisc + IDMakerCodeDisc; // GameID (IDGameCode + IDMakerCode)
             //_tbIDGameOld = IDGameCode + IDMakerCode; // GameID (IDGameCode + IDMakerCode)
-            _IDMakerCode = IDGameCodeDisc + IDMakerCodeDisc;
+            GAME_ID = IDGameCodeDisc + IDMakerCodeDisc;
 
             br.Close();
             fs.Close();

@@ -1644,10 +1644,10 @@
   <data name="&gt;&gt;grpDetails.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <metadata name="dgvGameList.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="dgvSource.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="dgvGameList.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="dgvSource.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
   <metadata name="clmChk.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -1779,25 +1779,25 @@
   <data name="&gt;&gt;cmsMain.Type" xml:space="preserve">
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="dgvGameList.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="dgvSource.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 30</value>
   </data>
-  <data name="dgvGameList.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="dgvSource.Size" type="System.Drawing.Size, System.Drawing">
     <value>493, 478</value>
   </data>
-  <data name="dgvGameList.TabIndex" type="System.Int32, mscorlib">
+  <data name="dgvSource.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="&gt;&gt;dgvGameList.Name" xml:space="preserve">
-    <value>dgvGameList</value>
+  <data name="&gt;&gt;dgvSource.Name" xml:space="preserve">
+    <value>dgvSource</value>
   </data>
-  <data name="&gt;&gt;dgvGameList.Type" xml:space="preserve">
+  <data name="&gt;&gt;dgvSource.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;dgvGameList.Parent" xml:space="preserve">
+  <data name="&gt;&gt;dgvSource.Parent" xml:space="preserve">
     <value>tabMainFile</value>
   </data>
-  <data name="&gt;&gt;dgvGameList.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;dgvSource.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
   <metadata name="mstripFile.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
@@ -1894,7 +1894,7 @@
     <value>3, 3</value>
   </data>
   <data name="mstripFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>867, 24</value>
+    <value>870, 24</value>
   </data>
   <data name="mstripFile.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -1918,7 +1918,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabMainFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>873, 514</value>
+    <value>876, 514</value>
   </data>
   <data name="tabMainFile.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2355,10 +2355,10 @@
   <data name="&gt;&gt;groupBox2.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <metadata name="dgvGameListDisc.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="dgvDestination.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="dgvGameListDisc.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="dgvDestination.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
   <metadata name="dgvMainDiscCheck.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -2421,25 +2421,25 @@
   <data name="clmDiscPath.MinimumWidth" type="System.Int32, mscorlib">
     <value>100</value>
   </data>
-  <data name="dgvGameListDisc.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="dgvDestination.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 33</value>
   </data>
-  <data name="dgvGameListDisc.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="dgvDestination.Size" type="System.Drawing.Size, System.Drawing">
     <value>493, 462</value>
   </data>
-  <data name="dgvGameListDisc.TabIndex" type="System.Int32, mscorlib">
+  <data name="dgvDestination.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;dgvGameListDisc.Name" xml:space="preserve">
-    <value>dgvGameListDisc</value>
+  <data name="&gt;&gt;dgvDestination.Name" xml:space="preserve">
+    <value>dgvDestination</value>
   </data>
-  <data name="&gt;&gt;dgvGameListDisc.Type" xml:space="preserve">
+  <data name="&gt;&gt;dgvDestination.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;dgvGameListDisc.Parent" xml:space="preserve">
+  <data name="&gt;&gt;dgvDestination.Parent" xml:space="preserve">
     <value>tabMainDisc</value>
   </data>
-  <data name="&gt;&gt;dgvGameListDisc.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;dgvDestination.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
   <metadata name="mstripDisc.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
@@ -2578,7 +2578,7 @@
     <value>3, 3</value>
   </data>
   <data name="mstripDisc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>867, 27</value>
+    <value>870, 27</value>
   </data>
   <data name="mstripDisc.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -2602,7 +2602,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabMainDisc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>873, 514</value>
+    <value>876, 514</value>
   </data>
   <data name="tabMainDisc.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -2818,7 +2818,7 @@
     <value>3, 3</value>
   </data>
   <data name="mstripDatabase.Size" type="System.Drawing.Size, System.Drawing">
-    <value>867, 24</value>
+    <value>870, 24</value>
   </data>
   <data name="mstripDatabase.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -2842,7 +2842,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabMainDatabase.Size" type="System.Drawing.Size, System.Drawing">
-    <value>873, 514</value>
+    <value>876, 514</value>
   </data>
   <data name="tabMainDatabase.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -2929,7 +2929,7 @@
     <value>3, 3</value>
   </data>
   <data name="mstripLog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>867, 24</value>
+    <value>870, 24</value>
   </data>
   <data name="mstripLog.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2953,7 +2953,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabMainLog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>873, 514</value>
+    <value>876, 514</value>
   </data>
   <data name="tabMainLog.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -2977,7 +2977,7 @@
     <value>3, 3</value>
   </data>
   <data name="tabControlMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>881, 540</value>
+    <value>884, 540</value>
   </data>
   <data name="tabControlMain.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -3502,6 +3502,9 @@
   </data>
   <metadata name="gameBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 52</value>
+  </metadata>
+  <metadata name="process1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>178, 52</value>
   </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -4260,6 +4263,12 @@
   </data>
   <data name="&gt;&gt;gameBindingSource.Type" xml:space="preserve">
     <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;process1.Name" xml:space="preserve">
+    <value>process1</value>
+  </data>
+  <data name="&gt;&gt;process1.Type" xml:space="preserve">
+    <value>System.Diagnostics.Process, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>frmMain</value>

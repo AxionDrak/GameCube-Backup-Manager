@@ -62,7 +62,7 @@ namespace GCBM
             this.tbIDGame = new System.Windows.Forms.TextBox();
             this.tbIDRegion = new System.Windows.Forms.TextBox();
             this.tbIDName = new System.Windows.Forms.TextBox();
-            this.dgvGameList = new System.Windows.Forms.DataGridView();
+            this.dgvSource = new System.Windows.Forms.DataGridView();
             this.clmChk = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.clmTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmRegion = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -110,7 +110,7 @@ namespace GCBM
             this.tbIDGameDisc = new System.Windows.Forms.TextBox();
             this.tbIDRegionDisc = new System.Windows.Forms.TextBox();
             this.tbIDNameDisc = new System.Windows.Forms.TextBox();
-            this.dgvGameListDisc = new System.Windows.Forms.DataGridView();
+            this.dgvDestination = new System.Windows.Forms.DataGridView();
             this.dgvMainDiscCheck = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.clmDiscTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmDiscID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -201,6 +201,7 @@ namespace GCBM
             this.tsmiNotifyExit = new System.Windows.Forms.ToolStripMenuItem();
             this.pbNetStatus = new System.Windows.Forms.PictureBox();
             this.gameBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.process1 = new System.Diagnostics.Process();
             ((System.ComponentModel.ISupportInitialize)(this.spcMain)).BeginInit();
             this.spcMain.Panel1.SuspendLayout();
             this.spcMain.Panel2.SuspendLayout();
@@ -214,13 +215,13 @@ namespace GCBM
             this.grpDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbWebGameID)).BeginInit();
             this.grpOperations.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvGameList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSource)).BeginInit();
             this.cmsMain.SuspendLayout();
             this.mstripFile.SuspendLayout();
             this.tabMainDisc.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbWebGameDiscID)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvGameListDisc)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDestination)).BeginInit();
             this.mstripDisc.SuspendLayout();
             this.tabMainDatabase.SuspendLayout();
             this.mstripDatabase.SuspendLayout();
@@ -310,7 +311,7 @@ namespace GCBM
             this.tabMainFile.Controls.Add(this.label1);
             this.tabMainFile.Controls.Add(this.btnSelectFolder);
             this.tabMainFile.Controls.Add(this.grpDetails);
-            this.tabMainFile.Controls.Add(this.dgvGameList);
+            this.tabMainFile.Controls.Add(this.dgvSource);
             this.tabMainFile.Controls.Add(this.mstripFile);
             resources.ApplyResources(this.tabMainFile, "tabMainFile");
             this.tabMainFile.Name = "tabMainFile";
@@ -459,16 +460,16 @@ namespace GCBM
             this.tbIDName.Name = "tbIDName";
             this.tbIDName.ReadOnly = true;
             // 
-            // dgvGameList
+            // dgvSource
             // 
-            this.dgvGameList.AllowUserToAddRows = false;
-            this.dgvGameList.AllowUserToDeleteRows = false;
-            resources.ApplyResources(this.dgvGameList, "dgvGameList");
-            this.dgvGameList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvGameList.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.dgvGameList.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
-            this.dgvGameList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvGameList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvSource.AllowUserToAddRows = false;
+            this.dgvSource.AllowUserToDeleteRows = false;
+            resources.ApplyResources(this.dgvSource, "dgvSource");
+            this.dgvSource.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvSource.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.dgvSource.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
+            this.dgvSource.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSource.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clmChk,
             this.clmTitle,
             this.clmRegion,
@@ -476,13 +477,13 @@ namespace GCBM
             this.clmExtension,
             this.clmSize,
             this.clmPath});
-            this.dgvGameList.ContextMenuStrip = this.cmsMain;
-            this.dgvGameList.Name = "dgvGameList";
-            this.dgvGameList.ReadOnly = true;
-            this.dgvGameList.RowHeadersVisible = false;
-            this.dgvGameList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvGameList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGameList_CellContentClick);
-            this.dgvGameList.Click += new System.EventHandler(this.dgvGameList_Click);
+            this.dgvSource.ContextMenuStrip = this.cmsMain;
+            this.dgvSource.Name = "dgvSource";
+            this.dgvSource.ReadOnly = true;
+            this.dgvSource.RowHeadersVisible = false;
+            this.dgvSource.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvSource.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGameList_CellContentClick);
+            this.dgvSource.Click += new System.EventHandler(this.dgvGameList_Click);
             // 
             // clmChk
             // 
@@ -728,7 +729,7 @@ namespace GCBM
             this.tabMainDisc.Controls.Add(this.label3);
             this.tabMainDisc.Controls.Add(this.label2);
             this.tabMainDisc.Controls.Add(this.groupBox2);
-            this.tabMainDisc.Controls.Add(this.dgvGameListDisc);
+            this.tabMainDisc.Controls.Add(this.dgvDestination);
             this.tabMainDisc.Controls.Add(this.mstripDisc);
             resources.ApplyResources(this.tabMainDisc, "tabMainDisc");
             this.tabMainDisc.Name = "tabMainDisc";
@@ -808,16 +809,16 @@ namespace GCBM
             this.tbIDNameDisc.Name = "tbIDNameDisc";
             this.tbIDNameDisc.ReadOnly = true;
             // 
-            // dgvGameListDisc
+            // dgvDestination
             // 
-            this.dgvGameListDisc.AllowUserToAddRows = false;
-            this.dgvGameListDisc.AllowUserToDeleteRows = false;
-            resources.ApplyResources(this.dgvGameListDisc, "dgvGameListDisc");
-            this.dgvGameListDisc.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvGameListDisc.BackgroundColor = System.Drawing.Color.White;
-            this.dgvGameListDisc.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
-            this.dgvGameListDisc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvGameListDisc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvDestination.AllowUserToAddRows = false;
+            this.dgvDestination.AllowUserToDeleteRows = false;
+            resources.ApplyResources(this.dgvDestination, "dgvDestination");
+            this.dgvDestination.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvDestination.BackgroundColor = System.Drawing.Color.White;
+            this.dgvDestination.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
+            this.dgvDestination.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDestination.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dgvMainDiscCheck,
             this.clmDiscTitle,
             this.clmDiscID,
@@ -825,12 +826,12 @@ namespace GCBM
             this.clmDiscExtension,
             this.clmDiscSize,
             this.clmDiscPath});
-            this.dgvGameListDisc.MultiSelect = false;
-            this.dgvGameListDisc.Name = "dgvGameListDisc";
-            this.dgvGameListDisc.ReadOnly = true;
-            this.dgvGameListDisc.RowHeadersVisible = false;
-            this.dgvGameListDisc.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGameList_CellContentClick);
-            this.dgvGameListDisc.Click += new System.EventHandler(this.dgvGameListDisc_Click);
+            this.dgvDestination.MultiSelect = false;
+            this.dgvDestination.Name = "dgvDestination";
+            this.dgvDestination.ReadOnly = true;
+            this.dgvDestination.RowHeadersVisible = false;
+            this.dgvDestination.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGameList_CellContentClick);
+            this.dgvDestination.Click += new System.EventHandler(this.dgvGameListDisc_Click);
             // 
             // dgvMainDiscCheck
             // 
@@ -1476,6 +1477,16 @@ namespace GCBM
             this.pbNetStatus.Name = "pbNetStatus";
             this.pbNetStatus.TabStop = false;
             // 
+            // process1
+            // 
+            this.process1.StartInfo.Domain = "";
+            this.process1.StartInfo.LoadUserProfile = false;
+            this.process1.StartInfo.Password = null;
+            this.process1.StartInfo.StandardErrorEncoding = null;
+            this.process1.StartInfo.StandardOutputEncoding = null;
+            this.process1.StartInfo.UserName = "";
+            this.process1.SynchronizingObject = this;
+            // 
             // frmMain
             // 
             resources.ApplyResources(this, "$this");
@@ -1504,7 +1515,7 @@ namespace GCBM
             this.grpDetails.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbWebGameID)).EndInit();
             this.grpOperations.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvGameList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSource)).EndInit();
             this.cmsMain.ResumeLayout(false);
             this.mstripFile.ResumeLayout(false);
             this.mstripFile.PerformLayout();
@@ -1513,7 +1524,7 @@ namespace GCBM
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbWebGameDiscID)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvGameListDisc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDestination)).EndInit();
             this.mstripDisc.ResumeLayout(false);
             this.mstripDisc.PerformLayout();
             this.tabMainDatabase.ResumeLayout(false);
@@ -1622,7 +1633,7 @@ namespace GCBM
         private System.Windows.Forms.TextBox tbIDGame;
         private System.Windows.Forms.TextBox tbIDRegion;
         private System.Windows.Forms.TextBox tbIDName;
-        private System.Windows.Forms.DataGridView dgvGameList;
+        private System.Windows.Forms.DataGridView dgvSource;
         private System.Windows.Forms.MenuStrip mstripFile;
         private System.Windows.Forms.ToolStripMenuItem tsmiReloadGameList;
         private System.Windows.Forms.ToolStripMenuItem tsmiSelectGameList;
@@ -1651,7 +1662,7 @@ namespace GCBM
         private System.Windows.Forms.TextBox tbIDGameDisc;
         private System.Windows.Forms.TextBox tbIDRegionDisc;
         private System.Windows.Forms.TextBox tbIDNameDisc;
-        private System.Windows.Forms.DataGridView dgvGameListDisc;
+        private System.Windows.Forms.DataGridView dgvDestination;
         private System.Windows.Forms.MenuStrip mstripDisc;
         private System.Windows.Forms.ToolStripComboBox tscbDiscDrive;
         private System.Windows.Forms.ToolStripMenuItem tsmiReloadDeviceDrive;
@@ -1708,6 +1719,7 @@ namespace GCBM
         private System.Windows.Forms.DataGridViewTextBoxColumn clmDiscSize;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmDiscPath;
         private System.Windows.Forms.GroupBox grpSearch;
+        private System.Diagnostics.Process process1;
     }
 }
 

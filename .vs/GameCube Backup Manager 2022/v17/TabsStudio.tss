@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<ArrayOfArrayOfArrayOfString xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ArrayOfArrayOfString>
+    <ArrayOfString>
+      <string>C:\Users\Sjohn\source\laete-main\GameCube-Backup-Manager\GCBM\frmMain.cs</string>
+      <string>C:\Users\Sjohn\source\laete-main\GameCube-Backup-Manager\GCBM\frmMain.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>C:\Users\Sjohn\source\laete-main\GameCube-Backup-Manager\GCBM\info.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>C:\Users\Sjohn\source\laete-main\GameCube-Backup-Manager\GCBM\Program.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>Object Browser</string>
+    </ArrayOfString>
+  </ArrayOfArrayOfString>
+</ArrayOfArrayOfArrayOfString>
