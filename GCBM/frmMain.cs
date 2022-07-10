@@ -2030,49 +2030,49 @@ namespace GCBM
         {
             
 
-            string processName = Process.GetCurrentProcess().ProcessName;
-            Process[] processes = Process.GetProcessesByName(processName);
+            //string processName = Process.GetCurrentProcess().ProcessName;
+            //Process[] processes = Process.GetProcessesByName(processName);
 
-            if (File.Exists("config.ini"))
-            {
-                if (CONFIG_INI_FILE.IniReadBool("SEVERAL", "MultipleInstances") == false)
-                {
-                    if (processes.Length > 1)
-                    {
-                        //INI says Can't run two, stop
-                        MessageBox.Show(GCBM.Properties.Resources.CannotOpenTwoInstances, "GameCube Backup Manager", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    }
-                    else
-                    {
+            //if (File.Exists("config.ini"))
+            //{
+            //    if (CONFIG_INI_FILE.IniReadBool("SEVERAL", "MultipleInstances") == false)
+            //    {
+            //        if (processes.Length > 1)
+            //        {
+            //            //INI says Can't run two, stop
+            //            MessageBox.Show(GCBM.Properties.Resources.CannotOpenTwoInstances, "GameCube Backup Manager", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            //        }
+            //        else
+            //        {
 
-                        //INI says Can run two, run two
-                        Application.EnableVisualStyles();
-                        Application.SetCompatibleTextRenderingDefault(false);
-                        Application.Run(new frmMain());
-                    }
-                }
-                else
-                {
-                    //Not running, run
-                    Application.EnableVisualStyles();
-                    Application.SetCompatibleTextRenderingDefault(false);
-                    Application.Run(new frmMain());
-                }
-            }
-            else
-            {
-                if (processes.Length > 1)
-                {
-                    //No INI Can't have 2, close
-                }
-                else
-                {
-                    //No INI, Just one, run
-                    Application.EnableVisualStyles();
-                    Application.SetCompatibleTextRenderingDefault(false);
-                    Application.Run(new frmMain());
-                }
-            }
+            //            //INI says Can run two, run two
+            //            Application.EnableVisualStyles();
+            //            Application.SetCompatibleTextRenderingDefault(false);
+            //            Application.Run(new frmMain());
+            //        }
+            //    }
+            //    else
+            //    {
+            //        //Not running, run
+            //        Application.EnableVisualStyles();
+            //        Application.SetCompatibleTextRenderingDefault(false);
+            //        Application.Run(new frmMain());
+            //    }
+            //}
+            //else
+            //{
+            //    if (processes.Length > 1)
+            //    {
+            //        //No INI Can't have 2, close
+            //    }
+            //    else
+            //    {
+            //        //No INI, Just one, run
+            //        Application.EnableVisualStyles();
+            //        Application.SetCompatibleTextRenderingDefault(false);
+            //        Application.Run(new frmMain());
+            //    }
+            //}
 
 
             if (intQueuePos <= intQueueLength)
