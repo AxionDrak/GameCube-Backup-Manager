@@ -34,15 +34,15 @@ namespace GCBM
     {
         #region Properties
         private static string GET_CURRENT_PATH = Directory.GetCurrentDirectory();
-        private static string GAMES_DIR              = @"games";
-        private static string TEMP_DIR               = @"\temp";
-        private static string COVERS_DIR             = @"\covers\cache";
-        private static string MEDIA_DIR              = @"\media\covers";
-        private static string CULTURE_CURRENT        = "pt-BR";
-        private static string PROG_UPDATE            = "10/07/2022";
-        private static string FAT32                  = "FAT32";
-        private static string NTFS                   = "NTFS";
-        private static string EXFAT_FAT64            = "EXFAT";
+        private static string GAMES_DIR = @"games";
+        private static string TEMP_DIR = @"\temp";
+        private static string COVERS_DIR = @"\covers\cache";
+        private static string MEDIA_DIR = @"\media\covers";
+        private static string CULTURE_CURRENT = "pt-BR";
+        private static string PROG_UPDATE = "10/07/2022";
+        private static string FAT32 = "FAT32";
+        private static string NTFS = "NTFS";
+        private static string EXFAT_FAT64 = "EXFAT";
         //private static string EXT2                   = "EXT2";
         //private static string EXT3                   = "EXT3";
         //private static string EXT4                   = "EXT4";
@@ -59,14 +59,14 @@ namespace GCBM
         private static string SCRUB_ALIGN;
         private static char REGION = 'n';
         //private const string MIN_DB_VERSION          = "1.2.0.0";
-        private const string INI_FILE                = "config.ini";
+        private const string INI_FILE = "config.ini";
         //private const string GLOBAL_INI_FILE         = "gc_global.ini";
         //private const string LOG_FILE                = "gcbm.log";
         //private const string CACHE_DIR               = "cache";
         //private const string LOCAL_FILES_DB          = "gcbm_Local.xml";
-        private const string WIITDB_FILE             = "wiitdb.xml";
-        private const string WIITDB_DOWNLOAD_SITE    = "https://www.gametdb.com/";
-        private const string en_US                   = "en-US";
+        private const string WIITDB_FILE = "wiitdb.xml";
+        private const string WIITDB_DOWNLOAD_SITE = "https://www.gametdb.com/";
+        private const string en_US = "en-US";
 
         //private const string TITLES_FILE             = "titles.txt";
         //private bool ENABLE_INTERNET                 = true;
@@ -77,17 +77,17 @@ namespace GCBM
         //private bool EXPORT_LOG_CHECK                = true;
         //private bool CLEAR_TEMP_CHECK                = true;
         //private bool WIITDBXML_CHECK                 = true;
-        private bool SPLASH_SCREEN_DONE              = false;
-        private bool ROOT_OPENED                     = true;
-        private bool FILENAME_SORT                   = true;
-        private bool RETRIEVE_FILES_INFO             = true;
+        private bool SPLASH_SCREEN_DONE = false;
+        private bool ROOT_OPENED = true;
+        private bool FILENAME_SORT = true;
+        private bool RETRIEVE_FILES_INFO = true;
         //private int Reserved;
-        private readonly Assembly assembly           = Assembly.GetExecutingAssembly();
-        private readonly IniFile CONFIG_INI_FILE     = new IniFile(INI_FILE);
-        private readonly CultureInfo MY_CULTURE      = new CultureInfo(CULTURE_CURRENT, false);
+        private readonly Assembly assembly = Assembly.GetExecutingAssembly();
+        private readonly IniFile CONFIG_INI_FILE = new IniFile(INI_FILE);
+        private readonly CultureInfo MY_CULTURE = new CultureInfo(CULTURE_CURRENT, false);
         private readonly ProcessStartInfo START_INFO = new ProcessStartInfo();
-        private readonly WebClient NET_CLIENT        = new WebClient();
-        private HttpWebResponse NET_RESPONSE         = null;
+        private readonly WebClient NET_CLIENT = new WebClient();
+        private HttpWebResponse NET_RESPONSE = null;
         private frmSplashScreen SPLASH_SCREEN;
         private string WINTHEME;
 
@@ -96,8 +96,8 @@ namespace GCBM
         private string dgvGameListDiscPath;
         private int intQueueLength;
         private int intQueuePos;
-        private List<string> lstInstallQueue         = new List<string>();
-        private DataGridView dgvSelected             = new DataGridView();
+        private List<string> lstInstallQueue = new List<string>();
+        private DataGridView dgvSelected = new DataGridView();
 
         [DllImport("kernel32.dll")]
         static extern EXECUTION_STATE SetThreadExecutionState(EXECUTION_STATE esFlags);
@@ -722,7 +722,7 @@ namespace GCBM
 
             foreach (DataGridViewRow dgvResultRow in dgvSource.Rows)
             {
-                tbLog.AppendText("[" + DateString() + "]" + GCBM.Properties.Resources.Info + dgvGameList.Rows[dgvResultRow.Index].Cells[1].Value.ToString() + Environment.NewLine);
+                tbLog.AppendText("[" + DateString() + "]" + GCBM.Properties.Resources.Info + dgvSource.Rows[dgvResultRow.Index].Cells[1].Value.ToString() + Environment.NewLine);
             }
         }
         #endregion
@@ -907,14 +907,14 @@ namespace GCBM
         /// Reloads the contents of the DataGridView Games List.
         /// </summary>
         private void ReloadDataGridViewGameList(DataGridView dgv)
-        {    
+        {
             if (dgv.RowCount != 0)
             {
 
                 try
                 {
                     VerifyGame(dgv.CurrentRow.Cells[6].Value.ToString());
-                    
+
                     if (ERROR == false)
                     {
                         LoadCover(tbIDGame.Text);
@@ -1051,7 +1051,7 @@ namespace GCBM
             //    //_table.Rows.Add(_file.Name, _file.Extension.Substring(1, 3).Trim().ToUpper(myCulture), _getSize);
             //}
 
-            //if(dgvGameList.SelectionMode == DataGridViewSelectionMode.RowHeaderSelect){
+            //if(dgvSource.SelectionMode == DataGridViewSelectionMode.RowHeaderSelect){
             //    MessageBox.Show("O modo de seleção é RowHeaderSelect");
             //}
             //else
@@ -1060,14 +1060,8 @@ namespace GCBM
             //}
 
 
-            if (dgv == dgvGameList)
-            {
-                ReloadDataGridViewGameList(dgvGameList);
-            }
-            else if (dgv == dgvGameListDisc)
-            {
-                ReloadDataGridViewGameList(dgvGameListDisc);
-            }
+            ReloadDataGridViewGameList(dgv);
+
         }
         #endregion
 
@@ -1330,7 +1324,7 @@ namespace GCBM
             tbIDRegionDisc.Text = dgvSelected.CurrentRow.Cells[2].Value.ToString();
         }
         #endregion
-        
+
         #region Build Game list as List<Game>
         /// <summary>
         /// Build a List<Game> with file and game info for easier access programmatically.
@@ -1869,7 +1863,7 @@ namespace GCBM
             }
         }
         #endregion
-       
+
         #region External Site
         /// <summary>
         /// Function to load websites in the default browser.
@@ -2074,7 +2068,7 @@ namespace GCBM
                     default:
                         SCRUB_ALIGN = " -a 32K";
                         break;
-                }               
+                }
 
                 START_INFO.Arguments = quote + _source + quote + " -aq " + SCRUB_ALIGN + FLUSH_SD + " -f " +
                     CONFIG_INI_FILE.IniReadString("TRANSFERSYSTEM", "ScrubFormat", "") + " -d " + tscbDiscDrive.SelectedItem + GAMES_DIR;
@@ -2182,8 +2176,8 @@ namespace GCBM
                             else
                             {
                                 // Renomear game.iso -> disc2.iso
-                                string myOrigem = tscbDiscDrive.SelectedItem + GAMES_DIR + @"\" + _oldNameInternal + " [" + tbIDGame.Text + "2]" + @"\game.iso";
-                                string myDestiny = tscbDiscDrive.SelectedItem + GAMES_DIR + @"\" + _oldNameInternal.Replace("disc2 ", "") + " [" + tbIDGame.Text + "2]" + @"\disc2.iso";
+                                string myOrigem = tscbDiscDrive.SelectedItem + GAMES_DIR + @"\" + GAME_NAME_INTERNAL + " [" + tbIDGame.Text + "2]" + @"\game.iso";
+                                string myDestiny = tscbDiscDrive.SelectedItem + GAMES_DIR + @"\" + GAME_NAME_INTERNAL.Replace("disc2 ", "") + " [" + tbIDGame.Text + "2]" + @"\disc2.iso";
 
                                 //MessageBox.Show("MYORIGEM: " + Environment.NewLine
                                 //    + myOrigem +
@@ -2550,7 +2544,7 @@ namespace GCBM
                             string coverFull = GET_CURRENT_PATH + COVERS_DIR + @"\" + LINK_DOMAIN + @"\full\" + tbIDGame.Text + ".png";
 
                             // DELETAR JOGO E CAPA DO DISPOSITIVO DE ORIGEM
-                            if (dgv == dgvGameList)
+                            if (dgv == dgvSource)
                             {
                                 File.Delete(dgv.CurrentRow.Cells[6].Value.ToString());
 
@@ -2683,13 +2677,13 @@ namespace GCBM
 
                             //if (dgv.RowCount == 0)
                             //{
-                            //    DisableOptionsGame(dgvGameList);
+                            //    DisableOptionsGame(dgvSource);
                             //    ResetOptions();
                             //    MessageBox.Show("Todos os arquivos foram excluídos com sucesso!", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             //}
 
                         }// DELETAR JOGO DO DISPOSITIVO DE DESTINO
-                        else if (dgv == dgvGameListDisc)
+                        else if (dgv == dgvSource)
                         {
                             string[] files = GetFilesFolder(tscbDiscDrive.SelectedItem + GAMES_DIR + @"\", filters, false);
 
@@ -2705,7 +2699,7 @@ namespace GCBM
                                 DisplayFilesSelected(tscbDiscDrive.SelectedItem + GAMES_DIR + @"\", dgv);
                             }
 
-                            //dgvGameListDisc.DataSource = null;
+                            //dgvSource.DataSource = null;
                             dgv.DataSource = null;
 
                             // Delete cover 2D files
@@ -2729,9 +2723,9 @@ namespace GCBM
                             //    file.Delete();
                             //}
 
-                            //if (dgvGameListDisc.RowCount == 0)
+                            //if (dgvSource.RowCount == 0)
                             //{
-                            //    DisableOptionsGame(dgvGameListDisc);
+                            //    DisableOptionsGame(dgvSource);
                             //    ResetOptions();
                             //    MessageBox.Show("Todos os arquivos foram excluídos com sucesso!", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             //}
@@ -2747,7 +2741,7 @@ namespace GCBM
                             ResetOptions();
                         }
 
-                        MessageBox.Show(GCBM.Properties.Resources.AllFilesSuccessfullyDeleted, GCBM.Properties.Resources.Notice, 
+                        MessageBox.Show(GCBM.Properties.Resources.AllFilesSuccessfullyDeleted, GCBM.Properties.Resources.Notice,
                             MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
 
@@ -2880,9 +2874,9 @@ namespace GCBM
             //USB Loader GX
             if (CONFIG_INI_FILE.IniReadBool("COVERS", "GXCoverUSBLoader") == true)
             {
-                if (CONFIG_INI_FILE.IniReadString("COVERS", "GXCoverDirectoryDisc", "") == string.Empty || 
+                if (CONFIG_INI_FILE.IniReadString("COVERS", "GXCoverDirectoryDisc", "") == string.Empty ||
                     CONFIG_INI_FILE.IniReadString("COVERS", "GXCoverDirectory2D", "") == string.Empty
-                    || CONFIG_INI_FILE.IniReadString("COVERS", "GXCoverDirectory3D", "") == string.Empty || 
+                    || CONFIG_INI_FILE.IniReadString("COVERS", "GXCoverDirectory3D", "") == string.Empty ||
                     CONFIG_INI_FILE.IniReadString("COVERS", "GXCoverDirectoryFull", "") == string.Empty)
                 {
                     CheckUSBGXFlow();
@@ -2896,7 +2890,7 @@ namespace GCBM
             }// WiiFlow
             else if (CONFIG_INI_FILE.IniReadBool("COVERS", "WiiFlowCoverUSBLoader") == true)
             {
-                if (CONFIG_INI_FILE.IniReadString("COVERS", "WiiFlowCoverDirectory2D", "") == string.Empty || 
+                if (CONFIG_INI_FILE.IniReadString("COVERS", "WiiFlowCoverDirectory2D", "") == string.Empty ||
                     CONFIG_INI_FILE.IniReadString("COVERS", "WiiFlowCoverDirectoryFull", "") == string.Empty)
                 {
                     CheckUSBGXFlow();
@@ -3866,13 +3860,13 @@ namespace GCBM
 
         // Extras Functions
 
-        #region dgvGameList Click
+        #region dgvSource Click
         /// <summary>
         /// Performs an action when clicking on the DataGridView Game List.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void dgvGameList_Click(object sender, EventArgs e)
+        private void dgvSource_Click(object sender, EventArgs e)
         {
             ReloadDataGridViewGameList(dgvSource);
         }
@@ -4079,7 +4073,6 @@ namespace GCBM
                 }
             }
         }
-        #endregion
         #endregion
 
         // VERIFICAR, REWRITE AND ORGANIZE!!!
@@ -4300,7 +4293,7 @@ namespace GCBM
             }
         }
 
-        
+
         private void btnSearch_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Keys.Enter)
@@ -4316,4 +4309,3 @@ namespace GCBM
 
     }// frmMain Form
 }// namespace GCBM
-#endregion

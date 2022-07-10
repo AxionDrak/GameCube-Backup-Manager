@@ -483,7 +483,7 @@ namespace GCBM
             this.dgvSource.RowHeadersVisible = false;
             this.dgvSource.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSource.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGameList_CellContentClick);
-            this.dgvSource.Click += new System.EventHandler(this.dgvGameList_Click);
+            this.dgvSource.Click += new System.EventHandler(this.dgvSource_Click);
             // 
             // clmChk
             // 
