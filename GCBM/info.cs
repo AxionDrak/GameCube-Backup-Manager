@@ -49,7 +49,7 @@ namespace GCBM
             //tbIDGameCode.Text = SIOExtensions.ToStringC(ste.Default.GetChars(bb));
             string IDGameCode = SIOExtensions.ToStringC(ste.Default.GetChars(bb)); // ID Game Code - String
 
-            GAME_REGION = Convert.ToString(ste.Default.GetChars(new byte[] { bb[3] })[0]).ToLower();
+            //GAME_REGION = Convert.ToString(ste.Default.GetChars(new byte[] { bb[3] })[0]).ToLower();
 
             //switch (Convert.ToString(ste.Default.GetChars(new byte[] { bb[3] })[0]).ToLower())
             //{
@@ -75,12 +75,14 @@ namespace GCBM
             {
                 case "e": // AMERICA - USA
                     tbIDRegion.Text = "USA/NTSC-U";
+                    GAME_REGION = "USA/NTSC-U";
                     REGION = 'u';
                     break;
                 case "j": // ASIA - JAPAN
                 case "t": // ASIA - TAIWAN
                 case "k": // ASIA - KOREA
                     tbIDRegion.Text = "JAP/NTSC-J";
+                    GAME_REGION = "JAP/NTSC-J";
                     REGION = 'j';
                     break;
                 case "p": // EUROPE - ALL
@@ -91,6 +93,8 @@ namespace GCBM
                 case "r": // EUROPE - RUSSIA
                 case "y": // EUROPE - France, Belgium, Netherlands ???
                     tbIDRegion.Text = "EUR/PAL";
+                    GAME_REGION = "EUR/PAL";
+
                     REGION = 'e';
                     break;
                 case "u": // AUSTRALIA
@@ -99,13 +103,15 @@ namespace GCBM
                     break;
                 default:
                     tbIDRegion.Text = "UNK (EUR/PAL?)";
+                    GAME_REGION = "UNK (EUR/PAL?)";
                     REGION = 'n';
                     break;
             }
-
+            //Bookmark1021
             bb = br.ReadBytes(2); // 2
             string IDMakerCode = SIOExtensions.ToStringC(ste.Default.GetChars(bb)); // ID Maker Code - String
             tbIDMakerCode.Text = IDMakerCode;
+            GAME_ID = IDGameCode + IDMakerCode;
             b = br.ReadByte();
             tbIDDiscID.Text = string.Format("0x{0:x2}", b);
             fs.Position += 0x19;
@@ -124,7 +130,7 @@ namespace GCBM
             if (CONFIG_INI_FILE.IniReadBool("TITLES", "GameInternalName") == true)
             {
                 tbIDName.Text = br.ReadStringNT();
-                GAME_NAME_INTERNAL = br.ReadStringNT();   
+                GAME_NAME_INTERNAL = br.ReadStringNT();
             }
 
             if (CONFIG_INI_FILE.IniReadBool("TITLES", "GameXmlName") == true)
@@ -164,16 +170,19 @@ namespace GCBM
 
             GAME_REGION = Convert.ToString(ste.Default.GetChars(new byte[] { bb[3] })[0]).ToLower();
 
+            
             switch (Convert.ToString(ste.Default.GetChars(new byte[] { bb[3] })[0]).ToLower())
             {
                 case "e": // AMERICA - USA
                     tbIDRegion.Text = "USA/NTSC-U";
+                    GAME_REGION = "USA/NTSC-U";
                     REGION = 'u';
                     break;
                 case "j": // ASIA - JAPAN
                 case "t": // ASIA - TAIWAN
                 case "k": // ASIA - KOREA
                     tbIDRegion.Text = "JAP/NTSC-J";
+                    GAME_REGION = "JAP/NTSC-J";
                     REGION = 'j';
                     break;
                 case "p": // EUROPE - ALL
@@ -184,6 +193,8 @@ namespace GCBM
                 case "r": // EUROPE - RUSSIA
                 case "y": // EUROPE - France, Belgium, Netherlands ???
                     tbIDRegion.Text = "EUR/PAL";
+                    GAME_REGION = "EUR/PAL";
+
                     REGION = 'e';
                     break;
                 case "u": // AUSTRALIA
@@ -192,6 +203,7 @@ namespace GCBM
                     break;
                 default:
                     tbIDRegion.Text = "UNK (EUR/PAL?)";
+                    GAME_REGION = "UNK (EUR/PAL?)";
                     REGION = 'n';
                     break;
             }
