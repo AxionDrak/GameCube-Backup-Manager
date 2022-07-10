@@ -2188,33 +2188,7 @@ namespace GCBM
                     default:
                         SCRUB_ALIGN = " -a 32K";
                         break;
-                }
-
-                //if (CONFIG_INI_FILE.IniReadBool("TRANSFERSYSTEM", "ScrubFlushSD") == true)
-                //{
-                //    FLUSH_SD = " - flush";
-                //}
-                //else
-                //{
-                //    FLUSH_SD = "";
-                //}
-
-                //if (CONFIG_INI_FILE.IniReadInt("TRANSFERSYSTEM", "ScrubAlign") == 0)
-                //{
-                //    SCRUB_ALIGN = "";
-                //}
-                //else if (CONFIG_INI_FILE.IniReadInt("TRANSFERSYSTEM", "ScrubAlign") == 1)
-                //{
-                //    SCRUB_ALIGN = " -a 4";
-                //}
-                //else if (CONFIG_INI_FILE.IniReadInt("TRANSFERSYSTEM", "ScrubAlign") == 2)
-                //{
-                //    SCRUB_ALIGN = " -a 32";
-                //}
-                //else
-                //{
-                //    SCRUB_ALIGN = " -a 32K";
-                //}
+                }               
 
                 START_INFO.Arguments = quote + _source + quote + " -aq " + SCRUB_ALIGN + FLUSH_SD + " -f " +
                     CONFIG_INI_FILE.IniReadString("TRANSFERSYSTEM", "ScrubFormat", "") + " -d " + tscbDiscDrive.SelectedItem + GAMES_DIR;
@@ -2291,10 +2265,10 @@ namespace GCBM
 
                         if (tbIDDiscID.Text == "0x01")
                         {
-                            // Usar nome intermo
+                            // Use internal name
                             if (CONFIG_INI_FILE.IniReadBool("TITLES", "GameInternalName") == true)
                             {
-                                // Renomear game.iso -> disc2.iso
+                                // Rename game.iso -> disc2.iso
                                 string myOrigem = tscbDiscDrive.SelectedItem + GAMES_DIR + @"\" + tbIDName.Text + " [" + tbIDGame.Text + "2]" + @"\game.iso";
                                 string myDestiny = tscbDiscDrive.SelectedItem + GAMES_DIR + @"\" + tbIDName.Text.Replace("disc2 ", "") + " [" + tbIDGame.Text + "2]" + @"\disc2.iso";
 
@@ -2318,10 +2292,10 @@ namespace GCBM
                                 lblPercent.Visible = false;
                                 pbCopy.Visible = false;
                                 //GC.Collect();
-                            }// Usar WiiTDB.xml
+                            }// Use WiiTDB.xml
                             else
                             {
-                                // Renomear game.iso -> disc2.iso
+                                // Rename game.iso -> disc2.iso
                                 string myOrigem = tscbDiscDrive.SelectedItem + GAMES_DIR + @"\" + _oldNameInternal + " [" + tbIDGame.Text + "2]" + @"\game.iso";
                                 string myDestiny = tscbDiscDrive.SelectedItem + GAMES_DIR + @"\" + _oldNameInternal.Replace("disc2 ", "") + " [" + tbIDGame.Text + "2]" + @"\disc2.iso";
 
@@ -2348,10 +2322,7 @@ namespace GCBM
                             }
                         }
                     }
-                    //if (_StatusExit == 3)
-                    //{
-                    //    //tsslStatusInformation.Text = "Status: ERRO! -> " + "{" + _StatusExit.ToString() + "}" + " Por favor, verifique se exitem espaços no nome do arquivo!";
-                    //}
+
                     intQueuePos++;
                     WORKING = false;
                     if (intQueuePos <= intQueueLength)
