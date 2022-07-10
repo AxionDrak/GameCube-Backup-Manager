@@ -4296,7 +4296,11 @@ namespace GCBM
                  * e.ColumnIndex = 0 
                  * e.RowIndex
                  */
-
+                if (dgvSelected != dgvSource || dgvSelected != dgvDestination)
+                {
+                    //We haven't chosen one.. but.. clicked. Set selected dgv to source
+                    dgvSelected = dgvSource;
+                }
                 //There's a way to do this in a single line.. but
                 if (dgvSelected.Rows[e.RowIndex].Cells[0].Value.ToString() == "False")
                 {
