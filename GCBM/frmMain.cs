@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Globalization;
 using System.IO;
@@ -1083,6 +1084,8 @@ namespace GCBM
             dgv.Rows.Clear();
             //dgvGameList.DataSource = GameDataTable();
 
+            //Strip non-Games
+
 
             foreach (Game game in GameList(sourceFolder))
             {
@@ -1420,6 +1423,28 @@ namespace GCBM
         /// <summary>
         /// Build a List<Game> with file and game info for easier access programmatically.
         /// </summary>
+        //private List<Game> GameList(string path)
+        //{
+        //    string[] filters = { "ISO", "GCM" };
+        //    List<Game> list = new List<Game>();
+        //    string[] files = GetFilesFolder(path, filters, false);
+        //    foreach (var file in files)
+        //    {
+        //        FileInfo _file = new FileInfo(file);
+        //        //Title - ID - Region - Path - Extension - Size
+        //        loadPath = _file.FullName;
+        //        DirectoryOpenGameList(loadPath);
+        //        Game game = new Game(tbIDName.Text, tbIDGame.Text, tbIDRegion.Text, loadPath, _file.Extension, (int)_file.Length);
+        //        //game.Title = _oldNameInternal;
+        //        //game.Region = _IDRegionCode;
+        //        //game.Path = _file.FullName;
+        //        //game.Extension = _file.Extension;
+        //        //game.Size = (int)_file.Length;
+        //        list.Add(game);
+        //    }
+        //    return list;
+        //}
+
         private List<Game> GameList(string path)
         {
             string[] filters = { "ISO", "GCM" };
@@ -1437,7 +1462,13 @@ namespace GCBM
                 //game.Path = _file.FullName;
                 //game.Extension = _file.Extension;
                 //game.Size = (int)_file.Length;
-                list.Add(game);
+                IMAGE_PATH = game.Path;
+                if (CheckImage() && ReadImageDiscTOC())
+                {
+                    
+                    list.Add(game);
+                    
+                }
             }
             return list;
         }
@@ -2143,6 +2174,7 @@ namespace GCBM
         {
             if (intQueuePos <= intQueueLength)
             {
+                WORKING = true;
                 FileInfo _file = new FileInfo(path);
                 loadPath = _file.FullName;
                 DirectoryOpenGameList(loadPath);
@@ -2243,7 +2275,14 @@ namespace GCBM
                                 lblInstallGame.Text = GCBM.Properties.Resources.InstallGameScrub_String2 + i++;
                                 pbCopy.PerformStep();
                                 var incrementValue = i++ / 2;
-                                pbCopy.Value = incrementValue;
+                                if (incrementValue >= 100)
+                                {
+                                    pbCopy.Value = 100;
+                                }
+                                else{
+                                    pbCopy.Value = incrementValue;
+                                }
+
                                 lblPercent.Text = incrementValue.ToString() + "%"; //i++.ToString() + "%";
                                                                                    //progressBarGameCopy.Maximum = i++ * 5;
                             }
@@ -2281,6 +2320,7 @@ namespace GCBM
                             lblInstallGame.Visible = false;
                             lblPercent.Visible = false;
                             pbCopy.Visible = false;
+                            WORKING = false;
                         }
 
                         if (tbIDDiscID.Text == "0x01")
@@ -2311,6 +2351,7 @@ namespace GCBM
                                 lblInstallGame.Visible = false;
                                 lblPercent.Visible = false;
                                 pbCopy.Visible = false;
+                                WORKING = false;
                                 //GC.Collect();
                             }// Usar WiiTDB.xml
                             else
@@ -2338,6 +2379,7 @@ namespace GCBM
                                 lblInstallGame.Visible = false;
                                 lblPercent.Visible = false;
                                 pbCopy.Visible = false;
+                                WORKING = false;
                                 //GC.Collect();
                             }
                         }
@@ -2356,6 +2398,10 @@ namespace GCBM
             }
             else
             {
+                if (WORKING == false)
+                {
+                    EnableOptionsGameList();
+                }
                 MessageBox.Show("Successfully installed " + intQueueLength + " games.", "Success!");
             }
         }
