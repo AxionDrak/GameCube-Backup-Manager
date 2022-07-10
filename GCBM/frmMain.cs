@@ -1437,7 +1437,13 @@ namespace GCBM
                 //game.Path = _file.FullName;
                 //game.Extension = _file.Extension;
                 //game.Size = (int)_file.Length;
-                list.Add(game);
+                IMAGE_PATH = game.Path;
+                if (CheckImage() && ReadImageDiscTOC())
+                {
+                    
+                    list.Add(game);
+                    
+                }
             }
             return list;
         }
