@@ -124,7 +124,7 @@ namespace GCBM
         public frmMain()
         {
             InitializeComponent();
-
+            AdjustLanguage();
             this.Text = "GameCube Backup Manager 2022 - " + VERSION() + " - 64-bit";
 
             // Splash Screen
@@ -198,8 +198,9 @@ namespace GCBM
 
             System.Threading.Thread.CurrentThread.CurrentUICulture.ClearCachedData();
             System.Threading.Thread.CurrentThread.CurrentCulture.ClearCachedData();
-            AdjustLanguage();
-            this.Show();
+
+            //foreach in this.Controls.Results 
+            mstripMain.Refresh();
         }
         #endregion
 
@@ -356,7 +357,7 @@ namespace GCBM
         {
             try
             {
-                //this.Hide();
+                this.Hide();
                 Thread thread = new Thread(new ThreadStart(this.ShowSplashScreen));
                 thread.Start();
                 Hardworker worker = new Hardworker();
