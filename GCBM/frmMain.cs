@@ -2927,12 +2927,12 @@ namespace GCBM
                     try
                     {
 
-                        if (typeInstall == 0)
+                        if (typeInstall == 0) // Install Exact Copy
                         {
                             BuildCopyQueue(dgv);
                             InstallGameExactCopy(lstInstallQueue[intQueuePos]);
                         }
-                        else
+                        else // Install Scrub
                         {
                             BuildCopyQueue(dgv);
                             InstallGameScrub(lstInstallQueue[intQueuePos]);
