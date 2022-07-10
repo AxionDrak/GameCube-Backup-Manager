@@ -199,7 +199,6 @@ namespace GCBM
             System.Threading.Thread.CurrentThread.CurrentUICulture.ClearCachedData();
             System.Threading.Thread.CurrentThread.CurrentCulture.ClearCachedData();
             AdjustLanguage();
-            this.Show();
         }
         #endregion
 
@@ -270,22 +269,22 @@ namespace GCBM
             {
                 case 0:
                     Thread.CurrentThread.CurrentUICulture = new CultureInfo("pt-BR");
-                    this.Controls.Clear();
+                    //this.Controls.Clear();
                     InitializeComponent();
                     break;
                 case 1:
                     Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
-                    this.Controls.Clear();
+                    //this.Controls.Clear();
                     InitializeComponent();
                     break;
                 case 2:
                     Thread.CurrentThread.CurrentUICulture = new CultureInfo("es");
-                    this.Controls.Clear();
+                    //this.Controls.Clear();
                     InitializeComponent();
                     break;
                 case 3:
                     Thread.CurrentThread.CurrentUICulture = new CultureInfo("ko");
-                    this.Controls.Clear();
+                    //this.Controls.Clear();
                     InitializeComponent();
                     break;
             }
