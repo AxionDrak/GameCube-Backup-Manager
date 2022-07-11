@@ -202,6 +202,7 @@ namespace GCBM
             this.pbNetStatus = new System.Windows.Forms.PictureBox();
             this.gameBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.process1 = new System.Diagnostics.Process();
+            this.getProcessesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.spcMain)).BeginInit();
             this.spcMain.Panel1.SuspendLayout();
             this.spcMain.Panel2.SuspendLayout();
@@ -1134,7 +1135,8 @@ namespace GCBM
             // mstripLog
             // 
             this.mstripLog.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiToolLog});
+            this.tsmiToolLog,
+            this.getProcessesToolStripMenuItem});
             resources.ApplyResources(this.mstripLog, "mstripLog");
             this.mstripLog.Name = "mstripLog";
             // 
@@ -1487,6 +1489,12 @@ namespace GCBM
             this.process1.StartInfo.UserName = "";
             this.process1.SynchronizingObject = this;
             // 
+            // getProcessesToolStripMenuItem
+            // 
+            this.getProcessesToolStripMenuItem.Name = "getProcessesToolStripMenuItem";
+            resources.ApplyResources(this.getProcessesToolStripMenuItem, "getProcessesToolStripMenuItem");
+            this.getProcessesToolStripMenuItem.Click += new System.EventHandler(this.getProcessesToolStripMenuItem_Click);
+            // 
             // frmMain
             // 
             resources.ApplyResources(this, "$this");
@@ -1720,6 +1728,7 @@ namespace GCBM
         private System.Windows.Forms.DataGridViewTextBoxColumn clmDiscPath;
         private System.Windows.Forms.GroupBox grpSearch;
         private System.Diagnostics.Process process1;
+        private System.Windows.Forms.ToolStripMenuItem getProcessesToolStripMenuItem;
     }
 }
 
