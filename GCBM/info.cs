@@ -22,6 +22,9 @@ namespace GCBM
         byte b;
         byte[] bb;
 
+        public string _IDMakerCode { get; private set; }
+        public string _IDRegionCode { get; private set; }
+        public string _oldNameInternal { get; private set; }
 
         public string _IDRegionName { get; private set; }
 
@@ -46,69 +49,32 @@ namespace GCBM
             //tbIDGameCode.Text = SIOExtensions.ToStringC(ste.Default.GetChars(bb));
             string IDGameCode = SIOExtensions.ToStringC(ste.Default.GetChars(bb)); // ID Game Code - String
 
-            //utility_GAME_REGION = Convert.ToString(ste.Default.GetChars(new byte[] { bb[3] })[0]).ToLower();
-
-            //switch (Convert.ToString(ste.Default.GetChars(new byte[] { bb[3] })[0]).ToLower())
-            //{
-            //    case "e":
-            //        tbIDRegion.Text = "USA/NTSC-U";
-            //        REGION = 'u';
-            //        break;
-            //    case "j":
-            //        tbIDRegion.Text = "JAP/NTSC-J";
-            //        REGION = 'j';
-            //        break;
-            //    case "p":
-            //        tbIDRegion.Text = "EUR/PAL";
-            //        REGION = 'e';
-            //        break;
-            //    default:
-            //        tbIDRegion.Text = "UNK (EUR/PAL ?)";
-            //        REGION = 'n';
-            //        break;
-            //}
+            _IDRegionCode = Convert.ToString(ste.Default.GetChars(new byte[] { bb[3] })[0]).ToLower();
 
             switch (Convert.ToString(ste.Default.GetChars(new byte[] { bb[3] })[0]).ToLower())
             {
-                case "e": // AMERICA - USA
+                case "e":
                     tbIDRegion.Text = "USA/NTSC-U";
-                    utility_GAME_REGION = "USA/NTSC-U";
                     REGION = 'u';
                     break;
-                case "j": // ASIA - JAPAN
-                case "t": // ASIA - TAIWAN
-                case "k": // ASIA - KOREA
+                case "j":
                     tbIDRegion.Text = "JAP/NTSC-J";
-                    utility_GAME_REGION = "JAP/NTSC-J";
                     REGION = 'j';
                     break;
-                case "p": // EUROPE - ALL
-                case "f": // EUROPE - FRANCE
-                case "d": // EUROPE - GERMANY
-                case "s": // EUROPE - SPAIN
-                case "i": // EUROPE - ITALY
-                case "r": // EUROPE - RUSSIA
-                case "y": // EUROPE - France, Belgium, Netherlands ???
+                case "p":
                     tbIDRegion.Text = "EUR/PAL";
-                    utility_GAME_REGION = "EUR/PAL";
-
-                    REGION = 'e';
-                    break;
-                case "u": // AUSTRALIA
-                    tbIDRegion.Text = "AUS/PAL";
                     REGION = 'e';
                     break;
                 default:
-                    tbIDRegion.Text = "UNK (EUR/PAL?)";
-                    utility_GAME_REGION = "UNK (EUR/PAL?)";
+                    tbIDRegion.Text = "UNK";
                     REGION = 'n';
                     break;
             }
-            //Bookmark1021
+            //Catch GAMEREGION
             bb = br.ReadBytes(2); // 2
             string IDMakerCode = SIOExtensions.ToStringC(ste.Default.GetChars(bb)); // ID Maker Code - String
             tbIDMakerCode.Text = IDMakerCode;
-            utility_GAME_ID = IDGameCode + IDMakerCode;
+
             b = br.ReadByte();
             tbIDDiscID.Text = string.Format("0x{0:x2}", b);
             fs.Position += 0x19;
@@ -123,16 +89,18 @@ namespace GCBM
                 lblTypeDisc.Visible = true;
                 lblTypeDisc.Text = GCBM.Properties.Resources.LoadISOInfo_String2;
             }
-            utility_GAME_TITLE = br.ReadStringNT();
+
+
+            //Catch GAMETITLE
             if (CONFIG_INI_FILE.IniReadBool("TITLES", "GameInternalName") == true)
             {
                 tbIDName.Text = br.ReadStringNT();
-                utility_GAME_TITLE = br.ReadStringNT();
+                _oldNameInternal = br.ReadStringNT();   
             }
 
             if (CONFIG_INI_FILE.IniReadBool("TITLES", "GameXmlName") == true)
             {
-                utility_GAME_TITLE = br.ReadStringNT();
+                _oldNameInternal = br.ReadStringNT();
             }
 
             br.Close();
@@ -146,8 +114,10 @@ namespace GCBM
 
             //tbIDDate.Text = br.ReadStringNT();
             tbIDGame.Text = IDGameCode + IDMakerCode; // GameID (IDGameCode + IDMakerCode)
+            //Catch GAMEID here
+
             //_tbIDGameOld = IDGameCode + IDMakerCode; // GameID (IDGameCode + IDMakerCode)
-            utility_GAME_ID = IDGameCode + IDMakerCode;
+            _IDMakerCode = IDGameCode + IDMakerCode;
 
             br.Close();
             fs.Close();
@@ -165,46 +135,27 @@ namespace GCBM
             //tbIDGameCode.Text = SIOExtensions.ToStringC(ste.Default.GetChars(bb));
             string IDGameCodeDisc = SIOExtensions.ToStringC(ste.Default.GetChars(bb)); // ID Game Code - String
 
-            utility_GAME_REGION = Convert.ToString(ste.Default.GetChars(new byte[] { bb[3] })[0]).ToLower();
+            _IDRegionCode = Convert.ToString(ste.Default.GetChars(new byte[] { bb[3] })[0]).ToLower();
 
-            
             switch (Convert.ToString(ste.Default.GetChars(new byte[] { bb[3] })[0]).ToLower())
             {
-                case "e": // AMERICA - USA
-                    tbIDRegion.Text = "USA/NTSC-U";
-                    utility_GAME_REGION = "USA/NTSC-U";
+                case "e":
+                    tbIDRegionDisc.Text = "USA/NTSC-U";
                     REGION = 'u';
                     break;
-                case "j": // ASIA - JAPAN
-                case "t": // ASIA - TAIWAN
-                case "k": // ASIA - KOREA
-                    tbIDRegion.Text = "JAP/NTSC-J";
-                    utility_GAME_REGION = "JAP/NTSC-J";
+                case "j":
+                    tbIDRegionDisc.Text = "JAP/NTSC-J";
                     REGION = 'j';
                     break;
-                case "p": // EUROPE - ALL
-                case "f": // EUROPE - FRANCE
-                case "d": // EUROPE - GERMANY
-                case "s": // EUROPE - SPAIN
-                case "i": // EUROPE - ITALY
-                case "r": // EUROPE - RUSSIA
-                case "y": // EUROPE - France, Belgium, Netherlands ???
-                    tbIDRegion.Text = "EUR/PAL";
-                    utility_GAME_REGION = "EUR/PAL";
-
-                    REGION = 'e';
-                    break;
-                case "u": // AUSTRALIA
-                    tbIDRegion.Text = "AUS/PAL";
+                case "p":
+                    tbIDRegionDisc.Text = "EUR/PAL";
                     REGION = 'e';
                     break;
                 default:
-                    tbIDRegion.Text = "UNK (EUR/PAL?)";
-                    utility_GAME_REGION = "UNK (EUR/PAL?)";
+                    tbIDRegionDisc.Text = "UNK";
                     REGION = 'n';
                     break;
             }
-
             bb = br.ReadBytes(2); // 2
             string IDMakerCodeDisc = SIOExtensions.ToStringC(ste.Default.GetChars(bb)); // ID Maker Code - String
             //tbIDMakerCode.Text = IDMakerCode;
@@ -212,17 +163,15 @@ namespace GCBM
             //tbIDDiscID.Text = string.Format("0x{0:x2}", b);
             fs.Position += 0x19;
 
-
-            utility_GAME_TITLE = br.ReadStringNT();
             if (CONFIG_INI_FILE.IniReadBool("TITLES", "GameInternalName") == true)
             {
                 tbIDNameDisc.Text = br.ReadStringNT();
-                utility_GAME_TITLE = br.ReadStringNT();
+                _oldNameInternal = br.ReadStringNT();
             }
 
             if (CONFIG_INI_FILE.IniReadBool("TITLES", "GameXmlName") == true)
             {
-                utility_GAME_TITLE = br.ReadStringNT();
+                _oldNameInternal = br.ReadStringNT();
             }
 
             br.Close();
@@ -237,11 +186,104 @@ namespace GCBM
             //tbIDDate.Text = br.ReadStringNT();
             tbIDGameDisc.Text = IDGameCodeDisc + IDMakerCodeDisc; // GameID (IDGameCode + IDMakerCode)
             //_tbIDGameOld = IDGameCode + IDMakerCode; // GameID (IDGameCode + IDMakerCode)
-            utility_GAME_ID = IDGameCodeDisc + IDMakerCodeDisc;
+            _IDMakerCode = IDGameCodeDisc + IDMakerCodeDisc;
 
             br.Close();
             fs.Close();
         }
 
+
+        private Game tempLoadInfo(string path)
+        {
+            Game game = new Game();
+            fs = new sio.FileStream(path, sio.FileMode.Open, sio.FileAccess.Read, sio.FileShare.Read);
+            br = new sio.BinaryReader(fs, ste.Default);
+
+            bb = br.ReadBytes(4); // 4
+            //tbIDGameCode.Text = SIOExtensions.ToStringC(ste.Default.GetChars(bb));
+            string IDGameCode = SIOExtensions.ToStringC(ste.Default.GetChars(bb)); // ID Game Code - String
+
+            _IDRegionCode = Convert.ToString(ste.Default.GetChars(new byte[] { bb[3] })[0]).ToLower();
+
+            switch (Convert.ToString(ste.Default.GetChars(new byte[] { bb[3] })[0]).ToLower())
+            {
+                case "e":
+                    tbIDRegion.Text = "USA/NTSC-U";
+                    REGION = 'u';
+                    break;
+                case "j":
+                    tbIDRegion.Text = "JAP/NTSC-J";
+                    REGION = 'j';
+                    break;
+                case "p":
+                    tbIDRegion.Text = "EUR/PAL";
+                    REGION = 'e';
+                    break;
+                default:
+                    tbIDRegion.Text = "UNK";
+                    REGION = 'n';
+                    break;
+            }
+            //Catch GAMEREGION
+            game.Region = tbIDRegion.Text;
+            bb = br.ReadBytes(2); // 2
+            string IDMakerCode = SIOExtensions.ToStringC(ste.Default.GetChars(bb)); // ID Maker Code - String
+            tbIDMakerCode.Text = IDMakerCode;
+
+            b = br.ReadByte();
+            tbIDDiscID.Text = string.Format("0x{0:x2}", b);
+            fs.Position += 0x19;
+
+            if (string.Format("0x{0:x2}", b) == "0x00")
+            {
+                lblTypeDisc.Visible = true;
+                lblTypeDisc.Text = GCBM.Properties.Resources.LoadISOInfo_String1;
+            }
+            else
+            {
+                lblTypeDisc.Visible = true;
+                lblTypeDisc.Text = GCBM.Properties.Resources.LoadISOInfo_String2;
+            }
+
+
+            //Catch GAMETITLE
+            game.Title = tbIDName.Text;
+            if (CONFIG_INI_FILE.IniReadBool("TITLES", "GameInternalName") == true)
+            {
+                tbIDName.Text = br.ReadStringNT();
+                _oldNameInternal = br.ReadStringNT();   
+            }
+
+            if (CONFIG_INI_FILE.IniReadBool("TITLES", "GameXmlName") == true)
+            {
+                _oldNameInternal = br.ReadStringNT();
+            }
+
+            br.Close();
+            fs.Close();
+            //DANGER!!!
+            loadPath = (true) ? IMAGE_PATH : toc.fils[3].path;
+
+            fs = new sio.FileStream(loadPath, sio.FileMode.Open, sio.FileAccess.Read, sio.FileShare.Read);
+            br = new sio.BinaryReader(fs, ste.Default);
+            if (true) fs.Position = toc.fils[3].pos;
+
+            //tbIDDate.Text = br.ReadStringNT();
+            tbIDGame.Text = IDGameCode + IDMakerCode; // GameID (IDGameCode + IDMakerCode)
+            //Catch GAMEID here
+            game.ID = tbIDGame.Text;
+            //_tbIDGameOld = IDGameCode + IDMakerCode; // GameID (IDGameCode + IDMakerCode)
+            _IDMakerCode = IDGameCode + IDMakerCode;
+
+            FileInfo f = new FileInfo(path);
+            game.Extension = f.Extension;
+            game.Size = Convert.ToInt32(f.Length);
+            game.Path = path;
+
+            br.Close();
+            fs.Close();
+
+            return game;
+        }
     }
 }

@@ -100,12 +100,12 @@ namespace GCBM
         #region Global access for Image.cs and Info.cs
 
 
-        public string utility_GAME_ID { get; private set; }
-        public string utility_GAME_REGION { get; private set; }
-        public string utility_GAME_TITLE { get; private set; }
-        private string utility_GAME_EXTENSION;
-        private int utility_GAME_SIZE;
-        private string utility_GAME_PATH;
+        //public string _IDMakerCode;
+        //public string utility_GAME_REGION;
+        //public string utility_GAME_TITLE;
+        //private string utility_GAME_EXTENSION;
+        //private int utility_GAME_SIZE;
+        //private string utility_GAME_PATH;
 
         #endregion
 
@@ -949,7 +949,7 @@ namespace GCBM
 
                     if (dgv == dgvDestination)
                     {
-                        tbIDRegionDisc.Text = utility_GAME_REGION;
+                        tbIDRegionDisc.Text = _IDRegionCode;
                     }
                 }
                 catch (Exception ex)
@@ -1366,8 +1366,8 @@ namespace GCBM
                 //Title - ID - Region - Path - Extension - Size
                 loadPath = _file.FullName;
                 VerifyGame(loadPath);
-                Game game = new Game(tbIDName.Text, utility_GAME_ID, utility_GAME_REGION, loadPath, _file.Extension, (int)_file.Length);
-                //game.Title = utility_GAME_TITLE;
+                Game game = new Game(tbIDName.Text, tbIDGame.Text, tbIDRegion.Text, loadPath, _file.Extension, (int)_file.Length);
+                //game.Title = tbIDName.Text;
                 IMAGE_PATH = game.Path;
                 if (CheckImage() && ReadImageDiscTOC())
                 {
@@ -1507,8 +1507,8 @@ namespace GCBM
             Game game = new Game(
 
                 tbIDName.Text, //if not INI
-                utility_GAME_ID,
-                utility_GAME_REGION,
+                tbIDGame.Text,
+                _IDRegionName,
                 f.FullName,
                 f.Extension,
                 Convert.ToInt32(f.Length));
@@ -1527,7 +1527,7 @@ namespace GCBM
         {
             try
             {
-                switch (utility_GAME_REGION)
+                switch (_IDRegionCode)
                 {
                     case "e": // AMERICA - USA
                         LINK_DOMAIN = "US";
@@ -1602,9 +1602,9 @@ namespace GCBM
                 string _IDGameCode = dgv.Rows[dgvResultRow.Index].Cells[6].Value.ToString();
                 VerifyGame(_IDGameCode);
 
-                //tbLog.AppendText(utility_GAME_REGION + Environment.NewLine);
+                //tbLog.AppendText(_IDRegionCode + Environment.NewLine);
 
-                switch (utility_GAME_REGION)
+                switch (_IDRegionCode)
                 {
                     case "e": // AMERICA - USA
                         LINK_DOMAIN = "US";
@@ -1645,15 +1645,15 @@ namespace GCBM
                 try
                 {
                     // Download Disc cover
-                    Uri myLinkCoverDisc = new Uri(@"https://art.gametdb.com/wii/disc/" + LINK_DOMAIN + "/" + utility_GAME_ID + ".png");
+                    Uri myLinkCoverDisc = new Uri(@"https://art.gametdb.com/wii/disc/" + LINK_DOMAIN + "/" + _IDMakerCode + ".png");
                     var request = (HttpWebRequest)WebRequest.Create(myLinkCoverDisc);
                     request.Method = "HEAD";
                     NET_RESPONSE = (HttpWebResponse)request.GetResponse();
 
                     if (NET_RESPONSE.StatusCode == HttpStatusCode.OK)
                     {
-                        tbLog.AppendText("[" + DateString() + "]" + GCBM.Properties.Resources.DownloadDiscCover + utility_GAME_ID + ".png" + Environment.NewLine);
-                        NET_CLIENT.DownloadFileAsync(myLinkCoverDisc, GET_CURRENT_PATH + COVERS_DIR + @"\" + LINK_DOMAIN + @"\disc\" + utility_GAME_ID + ".png");
+                        tbLog.AppendText("[" + DateString() + "]" + GCBM.Properties.Resources.DownloadDiscCover + _IDMakerCode + ".png" + Environment.NewLine);
+                        NET_CLIENT.DownloadFileAsync(myLinkCoverDisc, GET_CURRENT_PATH + COVERS_DIR + @"\" + LINK_DOMAIN + @"\disc\" + _IDMakerCode + ".png");
                         while (NET_CLIENT.IsBusy) { Application.DoEvents(); }
                     }
                 }
@@ -1701,15 +1701,15 @@ namespace GCBM
                 try
                 {
                     // Download 3D cover
-                    Uri myLinkCover3D = new Uri(@"https://art.gametdb.com/wii/cover3D/" + LINK_DOMAIN + "/" + utility_GAME_ID + ".png");
+                    Uri myLinkCover3D = new Uri(@"https://art.gametdb.com/wii/cover3D/" + LINK_DOMAIN + "/" + _IDMakerCode + ".png");
                     var request3D = (HttpWebRequest)WebRequest.Create(myLinkCover3D);
                     request3D.Method = "HEAD";
                     NET_RESPONSE = (HttpWebResponse)request3D.GetResponse();
 
                     if (NET_RESPONSE.StatusCode == HttpStatusCode.OK)
                     {
-                        tbLog.AppendText("[" + DateString() + "]" + GCBM.Properties.Resources.Download3DCover + utility_GAME_ID + ".png" + Environment.NewLine);
-                        NET_CLIENT.DownloadFileAsync(myLinkCover3D, GET_CURRENT_PATH + COVERS_DIR + @"\" + LINK_DOMAIN + @"\3d\" + utility_GAME_ID + ".png");
+                        tbLog.AppendText("[" + DateString() + "]" + GCBM.Properties.Resources.Download3DCover + _IDMakerCode + ".png" + Environment.NewLine);
+                        NET_CLIENT.DownloadFileAsync(myLinkCover3D, GET_CURRENT_PATH + COVERS_DIR + @"\" + LINK_DOMAIN + @"\3d\" + _IDMakerCode + ".png");
                         while (NET_CLIENT.IsBusy) { Application.DoEvents(); }
                     }
                 }
@@ -1744,7 +1744,7 @@ namespace GCBM
             }
             else
             {
-                switch (utility_GAME_REGION)
+                switch (_IDRegionCode)
                 {
                     case "e": // AMERICA - USA
                         LINK_DOMAIN = "US";
@@ -1784,15 +1784,15 @@ namespace GCBM
                 try
                 {
                     // Download Disc cover
-                    Uri myLinkCoverDisc = new Uri(@"https://art.gametdb.com/wii/disc/" + LINK_DOMAIN + "/" + utility_GAME_ID + ".png");
+                    Uri myLinkCoverDisc = new Uri(@"https://art.gametdb.com/wii/disc/" + LINK_DOMAIN + "/" + _IDMakerCode + ".png");
                     var request = (HttpWebRequest)WebRequest.Create(myLinkCoverDisc);
                     request.Method = "HEAD";
                     NET_RESPONSE = (HttpWebResponse)request.GetResponse();
 
                     if (NET_RESPONSE.StatusCode == HttpStatusCode.OK)
                     {
-                        tbLog.AppendText("[" + DateString() + "]" + GCBM.Properties.Resources.DownloadDiscCover + utility_GAME_ID + ".png" + Environment.NewLine);
-                        NET_CLIENT.DownloadFileAsync(myLinkCoverDisc, GET_CURRENT_PATH + COVERS_DIR + @"\" + LINK_DOMAIN + @"\disc\" + utility_GAME_ID + ".png");
+                        tbLog.AppendText("[" + DateString() + "]" + GCBM.Properties.Resources.DownloadDiscCover + _IDMakerCode + ".png" + Environment.NewLine);
+                        NET_CLIENT.DownloadFileAsync(myLinkCoverDisc, GET_CURRENT_PATH + COVERS_DIR + @"\" + LINK_DOMAIN + @"\disc\" + _IDMakerCode + ".png");
                         while (NET_CLIENT.IsBusy) { Application.DoEvents(); }
                     }
                 }
@@ -1813,15 +1813,15 @@ namespace GCBM
                 try
                 {
                     // Download 3D cover
-                    Uri myLinkCover3D = new Uri(@"https://art.gametdb.com/wii/cover3D/" + LINK_DOMAIN + "/" + utility_GAME_ID + ".png");
+                    Uri myLinkCover3D = new Uri(@"https://art.gametdb.com/wii/cover3D/" + LINK_DOMAIN + "/" + _IDMakerCode + ".png");
                     var request3D = (HttpWebRequest)WebRequest.Create(myLinkCover3D);
                     request3D.Method = "HEAD";
                     NET_RESPONSE = (HttpWebResponse)request3D.GetResponse();
 
                     if (NET_RESPONSE.StatusCode == HttpStatusCode.OK)
                     {
-                        tbLog.AppendText("[" + DateString() + "]" + GCBM.Properties.Resources.Download3DCover + utility_GAME_ID + ".png" + Environment.NewLine);
-                        NET_CLIENT.DownloadFileAsync(myLinkCover3D, GET_CURRENT_PATH + COVERS_DIR + @"\" + LINK_DOMAIN + @"\3d\" + utility_GAME_ID + ".png");
+                        tbLog.AppendText("[" + DateString() + "]" + GCBM.Properties.Resources.Download3DCover + _IDMakerCode + ".png" + Environment.NewLine);
+                        NET_CLIENT.DownloadFileAsync(myLinkCover3D, GET_CURRENT_PATH + COVERS_DIR + @"\" + LINK_DOMAIN + @"\3d\" + _IDMakerCode + ".png");
                         while (NET_CLIENT.IsBusy) { Application.DoEvents(); }
                     }
                 }
@@ -2070,7 +2070,7 @@ namespace GCBM
                         // Disc 1 (0 -> 0) - Title [ID Game]
                         if (tbIDDiscID.Text == "0x00" && CONFIG_INI_FILE.IniReadInt("SEVERAL", "AppointmentStyle") == 0)
                         {
-                            Directory.CreateDirectory(tscbDiscDrive.SelectedItem + GAMES_DIR + @"\" + _SwapCharacter + " [" + utility_GAME_ID + "]");
+                            Directory.CreateDirectory(tscbDiscDrive.SelectedItem + GAMES_DIR + @"\" + _SwapCharacter + " [" + _IDMakerCode + "]");
                             var _destination = new FileInfo(tscbDiscDrive.SelectedItem + GAMES_DIR + @"\" + _SwapCharacter + " [" + CURRENT_GAME.ID + "]" + @"\" + "game.iso");
                             CopyTask(_source, _destination);
                         } // Disc 2 (1 -> 0) - Title [ID Game]
@@ -2307,8 +2307,8 @@ namespace GCBM
                         else
                         {
                             // Renomear game.iso -> disc2.iso
-                            string myOrigem = tscbDiscDrive.SelectedItem + GAMES_DIR + @"\" + utility_GAME_TITLE + " [" + utility_GAME_ID + "2]" + @"\game.iso";
-                            string myDestiny = tscbDiscDrive.SelectedItem + GAMES_DIR + @"\" + utility_GAME_TITLE.Replace("disc2 ", "") + " [" + utility_GAME_ID + "2]" + @"\disc2.iso";
+                            string myOrigem = tscbDiscDrive.SelectedItem + GAMES_DIR + @"\" + tbIDName.Text + " [" + _IDMakerCode + "2]" + @"\game.iso";
+                            string myDestiny = tscbDiscDrive.SelectedItem + GAMES_DIR + @"\" + tbIDName.Text.Replace("disc2 ", "") + " [" + _IDMakerCode + "2]" + @"\disc2.iso";
 
                             //MessageBox.Show("MYORIGEM: " + Environment.NewLine
                             //    + myOrigem +
@@ -2743,9 +2743,9 @@ namespace GCBM
         //                        {
         //                            // Renomear game.iso -> disc2.iso
         //                            string myOrigem = tscbDiscDrive.SelectedItem + GAMES_DIR + @"\" +
-        //                                              utility_GAME_TITLE + " [" + tbIDGame.Text + "2]" + @"\game.iso";
+        //                                              tbIDName.Text + " [" + tbIDGame.Text + "2]" + @"\game.iso";
         //                            string myDestiny = tscbDiscDrive.SelectedItem + GAMES_DIR + @"\" +
-        //                                               utility_GAME_TITLE.Replace("disc2 ", "") + " [" + tbIDGame.Text +
+        //                                               tbIDName.Text.Replace("disc2 ", "") + " [" + tbIDGame.Text +
         //                                               "2]" + @"\disc2.iso";
 
         //                            //MessageBox.Show("MYORIGEM: " + Environment.NewLine
@@ -3092,15 +3092,15 @@ namespace GCBM
                     {
                         if (DialogResultDeleteGame() == DialogResult.Yes)
                         {
-                            if (utility_GAME_REGION.Equals("e"))
+                            if (_IDRegionCode.Equals("e"))
                             {
                                 LINK_DOMAIN = "US";
                             }
-                            else if (utility_GAME_REGION.Equals("p"))
+                            else if (_IDRegionCode.Equals("p"))
                             {
                                 LINK_DOMAIN = "EN";
                             }
-                            else if (utility_GAME_REGION.Equals("j"))
+                            else if (_IDRegionCode.Equals("j"))
                             {
                                 LINK_DOMAIN = "JA";
                             }
@@ -3192,15 +3192,15 @@ namespace GCBM
 
                         if (dgv == dgvSource)
                         {
-                            if (utility_GAME_REGION.Equals("e"))
+                            if (_IDRegionCode.Equals("e"))
                             {
                                 LINK_DOMAIN = "US";
                             }
-                            else if (utility_GAME_REGION.Equals("p"))
+                            else if (_IDRegionCode.Equals("p"))
                             {
                                 LINK_DOMAIN = "EN";
                             }
-                            else if (utility_GAME_REGION.Equals("j"))
+                            else if (_IDRegionCode.Equals("j"))
                             {
                                 LINK_DOMAIN = "JA";
                             }
