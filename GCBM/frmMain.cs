@@ -99,7 +99,7 @@ namespace GCBM
 
         #region Global access for Image.cs and Info.cs
 
-        
+
         public string utility_GAME_ID { get; private set; }
         public string utility_GAME_REGION { get; private set; }
         public string utility_GAME_TITLE { get; private set; }
@@ -1502,17 +1502,17 @@ namespace GCBM
 
         Game getGameInfo(string path)
         {
-            CheckImage(path);
+            VerifyGame(path);
             FileInfo f = new FileInfo(path);
             Game game = new Game(
 
-                utility_GAME_TITLE, //if not INI
+                tbIDName.Text, //if not INI
                 utility_GAME_ID,
                 utility_GAME_REGION,
                 f.FullName,
                 f.Extension,
                 Convert.ToInt32(f.Length));
-            lastGameLookedUp = game;
+            //lastGameLookedUp = game;
             return game;
         }
 
@@ -1997,7 +1997,7 @@ namespace GCBM
             intQueueLength = 0;
             intQueuePos = 0;
             lstInstallQueue.Clear();
-            foreach (DataGridViewRow row in dgvSource.Rows)
+            foreach (DataGridViewRow row  in dgvSource.Rows)
             {
                 if (row.Cells[0].Value.ToString() == "True")
                 {
@@ -2307,7 +2307,7 @@ namespace GCBM
                         else
                         {
                             // Renomear game.iso -> disc2.iso
-                            string myOrigem = tscbDiscDrive.SelectedItem + GAMES_DIR + @"\" + utility_GAME_TITLE +" [" + utility_GAME_ID + "2]" + @"\game.iso";
+                            string myOrigem = tscbDiscDrive.SelectedItem + GAMES_DIR + @"\" + utility_GAME_TITLE + " [" + utility_GAME_ID + "2]" + @"\game.iso";
                             string myDestiny = tscbDiscDrive.SelectedItem + GAMES_DIR + @"\" + utility_GAME_TITLE.Replace("disc2 ", "") + " [" + utility_GAME_ID + "2]" + @"\disc2.iso";
 
                             //MessageBox.Show("MYORIGEM: " + Environment.NewLine
@@ -2340,8 +2340,8 @@ namespace GCBM
             }
         }
         #endregion
-        
-                #region Install Game Scrub
+
+        #region Install Game Scrub
         /// <summary>
         /// Function to install an copy of the file in Scrub mode.
         /// </summary>
@@ -2517,7 +2517,7 @@ namespace GCBM
                         else
                         {
                             // Renomear game.iso -> disc2.iso
-                            string myOrigem = tscbDiscDrive.SelectedItem + GAMES_DIR + @"\" + CURRENT_GAME.Title +" [" + CURRENT_GAME.ID + "2]" + @"\game.iso";
+                            string myOrigem = tscbDiscDrive.SelectedItem + GAMES_DIR + @"\" + CURRENT_GAME.Title + " [" + CURRENT_GAME.ID + "2]" + @"\game.iso";
                             string myDestiny = tscbDiscDrive.SelectedItem + GAMES_DIR + @"\" + CURRENT_GAME.Title.Replace("disc2 ", "") + " [" + CURRENT_GAME.ID + "2]" + @"\disc2.iso";
 
                             //MessageBox.Show("MYORIGEM: " + Environment.NewLine
@@ -2553,7 +2553,7 @@ namespace GCBM
             if (intQueuePos >= intQueueLength)
             {
                 EnableOptionsGameList();
-                GlobalNotifications("Done with install queue.",ToolTipIcon.Info);
+                GlobalNotifications("Done with install queue.", ToolTipIcon.Info);
             }
             else
             {
@@ -3372,7 +3372,7 @@ namespace GCBM
                                 }
                                 else
                                 {
-                                    if (intQueuePos >= intQueueLength)
+                                    if (intQueuePos <= intQueueLength)
                                     {
                                         InstallGameScrub(CURRENT_GAME);
                                     }
@@ -4839,19 +4839,15 @@ namespace GCBM
                  * e.ColumnIndex = 0 
                  * e.RowIndex
                  */
-                if (dgvSelected != dgvSource && dgvSelected != dgvDestination)
-                {
-                    //We haven't chosen one.. but.. clicked. Set selected dgv to source
-                    dgvSelected = dgvSource;
-                }
+                if (dgvSelected != dgvSource && dgvSelected != dgvDestination) dgvSelected = dgvSource;//We haven't chosen one.. but.. clicked. Set selected dgv to source
                 //There's a way to do this in a single line.. but
-                if (dgvSelected.Rows[e.RowIndex].Cells[0].Value.ToString() == "False")
+                if (dgvSelected != null && dgvSelected.Rows[e.RowIndex].Cells[0].Value.ToString() == "False")
                 {
-                    dgvSelected.Rows[e.RowIndex].Cells[0].Value = true;
+                    if (dgvSelected != null) dgvSelected.Rows[e.RowIndex].Cells[0].Value = true;
                 }
                 else
                 {
-                    dgvSelected.Rows[e.RowIndex].Cells[0].Value = false;
+                    if (dgvSelected != null) dgvSelected.Rows[e.RowIndex].Cells[0].Value = false;
                 }
             }
         }
@@ -4911,7 +4907,7 @@ namespace GCBM
                 }
             }
         }
-        
+
 
         ///Testing stuff. The night is dark and full of terrors.
         #region SJohnson1021's Playground
