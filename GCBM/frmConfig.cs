@@ -1,40 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using GCBM.Properties;
 
 namespace GCBM
 {
     /// <summary>
-    /// 
     /// </summary>
     public partial class frmConfig : Form
     {
-        #region Properties
-        private static string TEMP_DIR           = @"\temp";
-        private static string COVERS_DIR         = @"\cover\cache";
-        private static string PROG_UPDATE        = "07/05/2022";
-        private const string INI_FILE            = "config.ini";
-        private static string GET_CURRENT_PATH = Directory.GetCurrentDirectory();
-        private readonly IniFile CONFIG_INI_FILE = new IniFile(INI_FILE);
-        private readonly Assembly assembly       = Assembly.GetExecutingAssembly();
-        
-        private string GAME_NAME { get; set; }
-        private string GAME_PATH { get; set; }
-        public int RETURN_CONFIRM { get; set; }
-        #endregion
-
         #region Main Form
+
         /// <summary>
-        /// 
         /// </summary>
         public frmConfig()
         {
@@ -43,9 +21,11 @@ namespace GCBM
             ConfigStart();
             LoadConfigFile();
         }
+
         #endregion
 
         #region ConfigStart
+
         private void ConfigStart()
         {
             cbLanguage.SelectedIndex = 0;
@@ -63,46 +43,49 @@ namespace GCBM
             tbGeneralTempPath.Text = GET_CURRENT_PATH + TEMP_DIR;
             tbDirectoryCoverCache.Text = GET_CURRENT_PATH + COVERS_DIR;
         }
+
         #endregion
 
         #region Notifications
+
         private void AdjustNotify(string text)
         {
-            notifyIcon.ShowBalloonTip(10, "GameCube Backup Manager", "As notificações na barra de tarefas foram " + text + "!", ToolTipIcon.Info);
+            notifyIcon.ShowBalloonTip(10, "GameCube Backup Manager",
+                "As notificações na barra de tarefas foram " + text + "!", ToolTipIcon.Info);
         }
+
         #endregion
 
         #region Program Version
+
         /// <summary>
-        /// Get the program version directly from the Assembly.
+        ///     Get the program version directly from the Assembly.
         /// </summary>
         /// <returns></returns>
         private string VERSION()
         {
-            string PROG_VERSION = assembly.GetName().Version.ToString();
+            var PROG_VERSION = assembly.GetName().Version.ToString();
             return PROG_VERSION;
         }
+
         #endregion
 
         #region SaveConfigFile
+
         private void SaveConfigFile()
         {
             var _version = assembly.GetName().Version;
 
             // GCBM
             CONFIG_INI_FILE.IniWriteString("GCBM", "ProgUpdated", PROG_UPDATE);
-            CONFIG_INI_FILE.IniWriteString("GCBM", "ProgVersion",VERSION());
+            CONFIG_INI_FILE.IniWriteString("GCBM", "ProgVersion", VERSION());
             CONFIG_INI_FILE.IniWriteString("GCBM", "ConfigUpdated", DateTime.Now.ToString("dd/MM/yyyy"));
 
-            if (CONFIG_INI_FILE.IniReadString("GCBM", "Language", "") != GCBM.Properties.Resources.GCBM_Language)
-            {
-                CONFIG_INI_FILE.IniWriteString("GCBM", "Language", GCBM.Properties.Resources.GCBM_Language);
-            }
+            if (CONFIG_INI_FILE.IniReadString("GCBM", "Language", "") != Resources.GCBM_Language)
+                CONFIG_INI_FILE.IniWriteString("GCBM", "Language", Resources.GCBM_Language);
 
-            if (CONFIG_INI_FILE.IniReadString("GCBM", "TranslatedBy", "") != GCBM.Properties.Resources.GCBM_TranslatedBy)
-            {
-                CONFIG_INI_FILE.IniWriteString("GCBM", "TranslatedBy", GCBM.Properties.Resources.GCBM_TranslatedBy);
-            }
+            if (CONFIG_INI_FILE.IniReadString("GCBM", "TranslatedBy", "") != Resources.GCBM_TranslatedBy)
+                CONFIG_INI_FILE.IniWriteString("GCBM", "TranslatedBy", Resources.GCBM_TranslatedBy);
 
             //configIniFile.IniWriteString("GCBM", "Language", GCBM.Properties.Resources.GCBM_Language);
             //configIniFile.IniWriteString("GCBM", "TranslatedBy", GCBM.Properties.Resources.GCBM_TranslatedBy);
@@ -226,9 +209,11 @@ namespace GCBM
             // Language
             CONFIG_INI_FILE.IniWriteInt("LANGUAGE", "ConfigLanguage", cbLanguage.SelectedIndex);
         }
+
         #endregion
 
         #region LoadConfigFile
+
         private void LoadConfigFile()
         {
             if (File.Exists(GET_CURRENT_PATH + @"\" + INI_FILE))
@@ -245,13 +230,9 @@ namespace GCBM
                 cbGeneralFileSize.SelectedIndex = CONFIG_INI_FILE.IniReadInt("GENERAL", "FileSize");
 
                 if (CONFIG_INI_FILE.IniReadString("GENERAL", "TemporaryFolder", "") == string.Empty)
-                {
                     tbGeneralTempPath.Text = TEMP_DIR;
-                }
                 else
-                {
                     tbGeneralTempPath.Text = CONFIG_INI_FILE.IniReadString("GENERAL", "TemporaryFolder", "");
-                }
 
                 // Several
                 cbAdjustNamingStyle.SelectedIndex = CONFIG_INI_FILE.IniReadInt("SEVERAL", "AppointmentStyle");
@@ -284,20 +265,18 @@ namespace GCBM
                 rbCoverUSBLoaderGX.Checked = CONFIG_INI_FILE.IniReadBool("COVERS", "GXCoverUSBLoader");
 
                 if (CONFIG_INI_FILE.IniReadString("COVERS", "CoverDirectoryCache", "") == string.Empty)
-                {
                     tbDirectoryCoverCache.Text = COVERS_DIR;
-                }
                 else
-                {
                     tbDirectoryCoverCache.Text = CONFIG_INI_FILE.IniReadString("COVERS", "CoverDirectoryCache", "");
-                }
 
                 if (rbCoverWiiFlow.Checked)
                 {
-                    tbDirectoryCoverDisc.Text = CONFIG_INI_FILE.IniReadString("COVERS", "WiiFlowCoverDirectoryDisc", "");
+                    tbDirectoryCoverDisc.Text =
+                        CONFIG_INI_FILE.IniReadString("COVERS", "WiiFlowCoverDirectoryDisc", "");
                     tbDirectoryCover2D.Text = CONFIG_INI_FILE.IniReadString("COVERS", "WiiFlowCoverDirectory2D", "");
                     tbDirectoryCover3D.Text = CONFIG_INI_FILE.IniReadString("COVERS", "WiiFlowCoverDirectory3D", "");
-                    tbDirectoryCoverFull.Text = CONFIG_INI_FILE.IniReadString("COVERS", "WiiFlowCoverDirectoryFull", "");
+                    tbDirectoryCoverFull.Text =
+                        CONFIG_INI_FILE.IniReadString("COVERS", "WiiFlowCoverDirectoryFull", "");
                 }
                 else
                 {
@@ -351,101 +330,11 @@ namespace GCBM
                 cbLanguage.SelectedIndex = CONFIG_INI_FILE.IniReadInt("LANGUAGE", "ConfigLanguage");
             }
         }
-        #endregion
 
-        #region Buttons
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            this.notifyIcon.Dispose();
-            this.Dispose();
-        }
-
-        private void btnOK_Click(object sender, EventArgs e)
-        {
-            SaveConfigFile();
-
-            //MessageBox.Show("Deseja mesmo sair?", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            this.DialogResult = DialogResult.OK;
-            this.RETURN_CONFIRM = 1;
-            this.Close();
-            this.notifyIcon.Dispose();
-            this.Dispose();
-        }
-
-        private void btnRestore_Click(object sender, EventArgs e)
-        {
-            //RestoreDefault();
-            if (DialogResult.Yes == MessageBox.Show("Tem certeza que deseja restaurar as configurações?"
-                + Environment.NewLine + Environment.NewLine +
-                "Isso irá apagar o arquivo de configuração e reinicar o programa!!", 
-                "Confirmação", 
-                MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
-            {
-                if (File.Exists("config.ini"))
-                {
-                    File.Delete("config.ini");
-                    //Reinicia a aplicação (fecha e reabre)
-                    Application.Restart();
-                }
-            }
-        }
-
-        private void btnTemporaryFolder_Click(object sender, EventArgs e)
-        {
-            if (fbd.ShowDialog() == DialogResult.OK)
-            {
-                tbGeneralTempPath.Text = fbd.SelectedPath;
-            }
-        }
-
-        private void btnCoverDirectory_Click(object sender, EventArgs e)
-        {
-            if (fbd.ShowDialog() == DialogResult.OK)
-            {
-                tbDirectoryCoverCache.Text = fbd.SelectedPath;
-            }
-        }
-
-        private void btnDirectoryCoverDisc_Click(object sender, EventArgs e)
-        {
-            if (fbd.ShowDialog() == DialogResult.OK)
-            {
-                tbDirectoryCoverDisc.Text = fbd.SelectedPath;
-            }
-        }
-
-        private void btnDirectoryCover2D_Click(object sender, EventArgs e)
-        {
-            if (fbd.ShowDialog() == DialogResult.OK)
-            {
-                tbDirectoryCover2D.Text = fbd.SelectedPath;
-            }
-        }
-
-        private void btnDirectoryCover3D_Click(object sender, EventArgs e)
-        {
-            if (fbd.ShowDialog() == DialogResult.OK)
-            {
-                tbDirectoryCover3D.Text = fbd.SelectedPath;
-            }
-        }
-
-        private void btnDirectoryCoverFull_Click(object sender, EventArgs e)
-        {
-            if (fbd.ShowDialog() == DialogResult.OK)
-            {
-                tbDirectoryCoverFull.Text = fbd.SelectedPath;
-            }
-        }
-
-        private void btnApply_Click(object sender, EventArgs e)
-        {
-            SaveConfigFile();
-        }
         #endregion
 
         #region cbUpdateServerProxy_CheckedChanged
+
         private void cbUpdateServerProxy_CheckedChanged(object sender, EventArgs e)
         {
             if (chkUpdateServerProxy.Checked)
@@ -464,28 +353,28 @@ namespace GCBM
                 tbUserProxy.Enabled = false;
             }
         }
+
         #endregion
 
         #region chkCoverEnableTransfer_CheckedChanged
+
         private void chkCoverEnableTransfer_CheckedChanged(object sender, EventArgs e)
         {
             if (chkCoverEnableTransfer.Checked)
-            {
                 //tsmiTransferDeviceCovers.Enabled = true;
                 grbCoverTransfer.Enabled = true;
-            }
             else
-            {
                 //tsmiTransferDeviceCovers.Enabled = false;
                 grbCoverTransfer.Enabled = false;
-            }
         }
+
         #endregion
 
         #region rbCoverWiiFlow_CheckedChanged
+
         private void rbCoverWiiFlow_CheckedChanged(object sender, EventArgs e)
         {
-            if (rbCoverWiiFlow.Checked == true)
+            if (rbCoverWiiFlow.Checked)
             {
                 tbDirectoryCoverDisc.Text = string.Empty;
                 tbDirectoryCover3D.Text = string.Empty;
@@ -503,9 +392,11 @@ namespace GCBM
             //tbDirectoryCover3D.Text = configIniFile.IniReadString("Covers", "WiiFlowCoverDirectory3D", "");
             tbDirectoryCoverFull.Text = CONFIG_INI_FILE.IniReadString("Covers", "WiiFlowCoverDirectoryFull", "");
         }
+
         #endregion
 
         #region rbCoverUSBLoaderGX_CheckedChanged
+
         private void rbCoverUSBLoaderGX_CheckedChanged(object sender, EventArgs e)
         {
             tbDirectoryCoverDisc.Text = CONFIG_INI_FILE.IniReadString("Covers", "GXCoverDirectoryDisc", "");
@@ -513,37 +404,35 @@ namespace GCBM
             tbDirectoryCover3D.Text = CONFIG_INI_FILE.IniReadString("Covers", "GXCoverDirectory3D", "");
             tbDirectoryCoverFull.Text = CONFIG_INI_FILE.IniReadString("Covers", "GXCoverDirectoryFull", "");
         }
+
         #endregion
 
         #region chkGameTitle_CheckedChanged
+
         private void chkGameTitle_CheckedChanged(object sender, EventArgs e)
         {
-            if (chkGameTitle.Checked == true)
-            {
+            if (chkGameTitle.Checked)
                 grbTitleLanguage.Enabled = true;
-            }
             else
-            {
                 grbTitleLanguage.Enabled = false;
-            }
         }
+
         #endregion
 
         #region chkNotify_Click
+
         private void chkNotify_Click(object sender, EventArgs e)
         {
             if (chkNotify.CheckState == CheckState.Checked)
-            {
                 AdjustNotify("ativadas");
-            }
             else
-            {
                 AdjustNotify("desativadas");
-            }
         }
+
         #endregion
 
         #region chkUpdateVerifyStart_CheckedChanged
+
         private void chkUpdateVerifyStart_CheckedChanged(object sender, EventArgs e)
         {
             if (chkUpdateVerifyStart.Checked)
@@ -561,16 +450,104 @@ namespace GCBM
                 cbVerificationInterval.Enabled = false;
             }
         }
+
         #endregion
 
         private void btnSelectFile_Click(object sender, EventArgs e)
         {
             if (ofdDolphin.ShowDialog() == DialogResult.OK)
-            {
                 //Get the path of specified file (dolphin.exe)
                 tbPathDolphinEmulator.Text = ofdDolphin.FileName;
-
-            }
         }
+
+        #region Properties
+
+        private static readonly string TEMP_DIR = @"\temp";
+        private static readonly string COVERS_DIR = @"\cover\cache";
+        private static readonly string PROG_UPDATE = "07/05/2022";
+        private const string INI_FILE = "config.ini";
+        private static readonly string GET_CURRENT_PATH = Directory.GetCurrentDirectory();
+        private readonly IniFile CONFIG_INI_FILE = new IniFile(INI_FILE);
+        private readonly Assembly assembly = Assembly.GetExecutingAssembly();
+
+        private string GAME_NAME { get; set; }
+        private string GAME_PATH { get; set; }
+        public int RETURN_CONFIRM { get; set; }
+
+        #endregion
+
+        #region Buttons
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            Close();
+            notifyIcon.Dispose();
+            Dispose();
+        }
+
+        private void btnOK_Click(object sender, EventArgs e)
+        {
+            SaveConfigFile();
+
+            //MessageBox.Show("Deseja mesmo sair?", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            DialogResult = DialogResult.OK;
+            RETURN_CONFIRM = 1;
+            Close();
+            notifyIcon.Dispose();
+            Dispose();
+        }
+
+        private void btnRestore_Click(object sender, EventArgs e)
+        {
+            //RestoreDefault();
+            if (DialogResult.Yes == MessageBox.Show("Tem certeza que deseja restaurar as configurações?"
+                                                    + Environment.NewLine + Environment.NewLine +
+                                                    "Isso irá apagar o arquivo de configuração e reinicar o programa!!",
+                    "Confirmação",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
+                if (File.Exists("config.ini"))
+                {
+                    File.Delete("config.ini");
+                    //Reinicia a aplicação (fecha e reabre)
+                    Application.Restart();
+                }
+        }
+
+        private void btnTemporaryFolder_Click(object sender, EventArgs e)
+        {
+            if (fbd.ShowDialog() == DialogResult.OK) tbGeneralTempPath.Text = fbd.SelectedPath;
+        }
+
+        private void btnCoverDirectory_Click(object sender, EventArgs e)
+        {
+            if (fbd.ShowDialog() == DialogResult.OK) tbDirectoryCoverCache.Text = fbd.SelectedPath;
+        }
+
+        private void btnDirectoryCoverDisc_Click(object sender, EventArgs e)
+        {
+            if (fbd.ShowDialog() == DialogResult.OK) tbDirectoryCoverDisc.Text = fbd.SelectedPath;
+        }
+
+        private void btnDirectoryCover2D_Click(object sender, EventArgs e)
+        {
+            if (fbd.ShowDialog() == DialogResult.OK) tbDirectoryCover2D.Text = fbd.SelectedPath;
+        }
+
+        private void btnDirectoryCover3D_Click(object sender, EventArgs e)
+        {
+            if (fbd.ShowDialog() == DialogResult.OK) tbDirectoryCover3D.Text = fbd.SelectedPath;
+        }
+
+        private void btnDirectoryCoverFull_Click(object sender, EventArgs e)
+        {
+            if (fbd.ShowDialog() == DialogResult.OK) tbDirectoryCoverFull.Text = fbd.SelectedPath;
+        }
+
+        private void btnApply_Click(object sender, EventArgs e)
+        {
+            SaveConfigFile();
+        }
+
+        #endregion
     }
 }

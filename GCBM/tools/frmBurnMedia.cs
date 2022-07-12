@@ -13,33 +13,21 @@ namespace GCBM.tools
 {
     public partial class frmBurnMedia : Form
     {
-        #region Properties
-        private const string ClientName = "GCBM BurnMedia";
-
-        Int64 _totalDiscSize;
-
-        private bool _isBurning;
-        private bool _isFormatting;
-        private IMAPI_BURN_VERIFICATION_LEVEL _verificationLevel =
-            IMAPI_BURN_VERIFICATION_LEVEL.IMAPI_BURN_VERIFICATION_NONE;
-        private bool _closeMedia;
-        private bool _ejectMedia;
-
-        private BurnData _burnData = new BurnData();
-        #endregion
-
         #region Main Form
+
         public frmBurnMedia()
         {
             InitializeComponent();
 
             cbVerification.SelectedIndex = 0;
         }
+
         #endregion
 
         #region Form Load
+
         /// <summary>
-        /// Initialize the form
+        ///     Initialize the form
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -62,10 +50,8 @@ namespace GCBM.tools
 
                     cbDevices.Items.Add(discRecorder2);
                 }
-                if (cbDevices.Items.Count > 0)
-                {
-                    cbDevices.SelectedIndex = 0;
-                }
+
+                if (cbDevices.Items.Count > 0) cbDevices.SelectedIndex = 0;
             }
             catch (COMException ex)
             {
@@ -76,16 +62,13 @@ namespace GCBM.tools
             }
             finally
             {
-                if (discMaster != null)
-                {
-                    Marshal.ReleaseComObject(discMaster);
-                }
+                if (discMaster != null) Marshal.ReleaseComObject(discMaster);
             }
 
             //
             // Create the volume label based on the current date
             //
-            DateTime now = DateTime.Now;
+            var now = DateTime.Now;
             tbVolumeLabel.Text = now.Year + "_" + now.Month + "_" + now.Day;
 
             labelStatusText.Text = string.Empty;
@@ -98,44 +81,93 @@ namespace GCBM.tools
 
             UpdateCapacity();
         }
+
         #endregion
 
         #region Form Closing
+
         private void frmBurnMedia_FormClosing(object sender, FormClosingEventArgs e)
         {
             //
             // Release the disc recorder items
             //
             foreach (MsftDiscRecorder2 discRecorder2 in cbDevices.Items)
-            {
                 if (discRecorder2 != null)
-                {
                     Marshal.ReleaseComObject(discRecorder2);
-                }
-            }
-            this.Dispose();
+            Dispose();
         }
+
         #endregion
 
         #region Notifications
+
         private void GlobalNotifications(string ex)
         {
             notifyIcon.ShowBalloonTip(10, "GameCube Backup Manager", ex, ToolTipIcon.Info);
         }
+
+        #endregion
+
+        #region TabControl
+
+        /// <summary>
+        ///     Called when user selects a new tab
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void tabControl1_Selecting(object sender, TabControlCancelEventArgs e)
+        {
+            //
+            // Prevent page from changing if we're burning or formatting.
+            //
+            if (_isBurning || _isFormatting) e.Cancel = true;
+        }
+
+        #endregion
+
+        # region Verification ComboBox
+
+        /// <summary>
+        ///     Get the burn verification level when the user changes the selection
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void cbVerification_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            _verificationLevel = (IMAPI_BURN_VERIFICATION_LEVEL)cbVerification.SelectedIndex;
+        }
+
+        #endregion
+
+        #region Properties
+
+        private const string ClientName = "GCBM BurnMedia";
+
+        private long _totalDiscSize;
+
+        private bool _isBurning;
+        private bool _isFormatting;
+
+        private IMAPI_BURN_VERIFICATION_LEVEL _verificationLevel =
+            IMAPI_BURN_VERIFICATION_LEVEL.IMAPI_BURN_VERIFICATION_NONE;
+
+        private bool _closeMedia;
+        private bool _ejectMedia;
+
+        private readonly BurnData _burnData = new BurnData();
+
         #endregion
 
         #region Device ComboBox
+
         /// <summary>
-        /// Selected a new device
+        ///     Selected a new device
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void cbDevices_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbDevices.SelectedIndex == -1)
-            {
-                return;
-            }
+            if (cbDevices.SelectedIndex == -1) return;
 
             var discRecorder = (IDiscRecorder2)cbDevices.Items[cbDevices.SelectedIndex];
 
@@ -155,10 +187,10 @@ namespace GCBM.tools
                     return;
                 }
 
-                StringBuilder supportedMediaTypes = new StringBuilder();
+                var supportedMediaTypes = new StringBuilder();
                 foreach (IMAPI_PROFILE_TYPE profileType in discRecorder.SupportedProfiles)
                 {
-                    string profileName = GetProfileTypeString(profileType);
+                    var profileName = GetProfileTypeString(profileType);
 
                     if (string.IsNullOrEmpty(profileName))
                         continue;
@@ -176,15 +208,12 @@ namespace GCBM.tools
             }
             finally
             {
-                if (discFormatData != null)
-                {
-                    Marshal.ReleaseComObject(discFormatData);
-                }
+                if (discFormatData != null) Marshal.ReleaseComObject(discFormatData);
             }
         }
 
         /// <summary>
-        /// converts an IMAPI_MEDIA_PHYSICAL_TYPE to it's string
+        ///     converts an IMAPI_MEDIA_PHYSICAL_TYPE to it's string
         /// </summary>
         /// <param name="mediaType"></param>
         /// <returns></returns>
@@ -256,11 +285,11 @@ namespace GCBM.tools
         }
 
         /// <summary>
-        /// converts an IMAPI_PROFILE_TYPE to it's string
+        ///     converts an IMAPI_PROFILE_TYPE to it's string
         /// </summary>
         /// <param name="profileType"></param>
         /// <returns></returns>
-        static string GetProfileTypeString(IMAPI_PROFILE_TYPE profileType)
+        private static string GetProfileTypeString(IMAPI_PROFILE_TYPE profileType)
         {
             switch (profileType)
             {
@@ -330,35 +359,31 @@ namespace GCBM.tools
         }
 
         /// <summary>
-        /// Provides the display string for an IDiscRecorder2 object in the combobox
+        ///     Provides the display string for an IDiscRecorder2 object in the combobox
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void cbDevices_Format(object sender, ListControlConvertEventArgs e)
         {
-            IDiscRecorder2 discRecorder2 = (IDiscRecorder2)e.ListItem;
-            string devicePaths = string.Empty;
-            string volumePath = (string)discRecorder2.VolumePathNames.GetValue(0);
+            var discRecorder2 = (IDiscRecorder2)e.ListItem;
+            var devicePaths = string.Empty;
+            var volumePath = (string)discRecorder2.VolumePathNames.GetValue(0);
             foreach (string volPath in discRecorder2.VolumePathNames)
             {
-                if (!string.IsNullOrEmpty(devicePaths))
-                {
-                    devicePaths += ",";
-                }
+                if (!string.IsNullOrEmpty(devicePaths)) devicePaths += ",";
                 devicePaths += volumePath;
             }
 
             e.Value = string.Format("{0} [{1}]", devicePaths, discRecorder2.ProductId);
         }
+
         #endregion
 
         #region Media Size
+
         private void btnDetectMedia_Click(object sender, EventArgs e)
         {
-            if (cbDevices.SelectedIndex == -1)
-            {
-                return;
-            }
+            if (cbDevices.SelectedIndex == -1) return;
 
             var discRecorder = (IDiscRecorder2)cbDevices.Items[cbDevices.SelectedIndex];
 
@@ -383,7 +408,7 @@ namespace GCBM.tools
                     // Get the media type in the recorder
                     //
                     discFormatData.Recorder = discRecorder;
-                    IMAPI_MEDIA_PHYSICAL_TYPE mediaType = discFormatData.CurrentPhysicalMediaType;
+                    var mediaType = discFormatData.CurrentPhysicalMediaType;
                     labelMediaType.Text = GetMediaTypeString(mediaType);
 
                     //
@@ -401,7 +426,7 @@ namespace GCBM.tools
                         fileSystemImage.ImportFileSystem();
                     }
 
-                    Int64 freeMediaBlocks = fileSystemImage.FreeMediaBlocks;
+                    long freeMediaBlocks = fileSystemImage.FreeMediaBlocks;
                     _totalDiscSize = 2048 * freeMediaBlocks;
                 }
             }
@@ -412,22 +437,16 @@ namespace GCBM.tools
             }
             finally
             {
-                if (discFormatData != null)
-                {
-                    Marshal.ReleaseComObject(discFormatData);
-                }
+                if (discFormatData != null) Marshal.ReleaseComObject(discFormatData);
 
-                if (fileSystemImage != null)
-                {
-                    Marshal.ReleaseComObject(fileSystemImage);
-                }
+                if (fileSystemImage != null) Marshal.ReleaseComObject(fileSystemImage);
             }
 
             UpdateCapacity();
         }
 
         /// <summary>
-        /// Updates the capacity progressbar
+        ///     Updates the capacity progressbar
         /// </summary>
         private void UpdateCapacity()
         {
@@ -440,18 +459,15 @@ namespace GCBM.tools
                 return;
             }
 
-            labelTotalSize.Text = _totalDiscSize < 1000000000 ?
-                string.Format("{0}MB", _totalDiscSize / 1000000) :
-                string.Format("{0:F2}GB", (float)_totalDiscSize / 1000000000.0);
+            labelTotalSize.Text = _totalDiscSize < 1000000000
+                ? string.Format("{0}MB", _totalDiscSize / 1000000)
+                : string.Format("{0:F2}GB", (float)_totalDiscSize / 1000000000.0);
 
             //
             // Calculate the size of the files
             //
-            Int64 totalMediaSize = 0;
-            foreach (IMediaItem mediaItem in lbFiles.Items)
-            {
-                totalMediaSize += mediaItem.SizeOnDisc;
-            }
+            long totalMediaSize = 0;
+            foreach (IMediaItem mediaItem in lbFiles.Items) totalMediaSize += mediaItem.SizeOnDisc;
 
             if (totalMediaSize == 0)
             {
@@ -460,7 +476,7 @@ namespace GCBM.tools
             }
             else
             {
-                var percent = (int)((totalMediaSize * 100) / _totalDiscSize);
+                var percent = (int)(totalMediaSize * 100 / _totalDiscSize);
                 if (percent > 100)
                 {
                     pbCapacity.Value = 100;
@@ -473,20 +489,19 @@ namespace GCBM.tools
                 }
             }
         }
+
         #endregion
 
         #region Burn Media Process
+
         /// <summary>
-        /// User clicked the "Burn" button
+        ///     User clicked the "Burn" button
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void btnBurn_Click(object sender, EventArgs e)
         {
-            if (cbDevices.SelectedIndex == -1)
-            {
-                return;
-            }
+            if (cbDevices.SelectedIndex == -1) return;
 
             if (_isBurning)
             {
@@ -509,7 +524,7 @@ namespace GCBM.tools
         }
 
         /// <summary>
-        /// The thread that does the burning of the media
+        ///     The thread that does the burning of the media
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -548,9 +563,7 @@ namespace GCBM.tools
                 //
                 object[] multisessionInterfaces = null;
                 if (!discFormatData.MediaHeuristicallyBlank)
-                {
                     multisessionInterfaces = discFormatData.MultisessionInterfaces;
-                }
 
                 //
                 // Create the file system
@@ -583,10 +596,7 @@ namespace GCBM.tools
                 }
                 finally
                 {
-                    if (fileSystem != null)
-                    {
-                        Marshal.FinalReleaseComObject(fileSystem);
-                    }
+                    if (fileSystem != null) Marshal.FinalReleaseComObject(fileSystem);
                 }
 
                 //
@@ -594,10 +604,7 @@ namespace GCBM.tools
                 //
                 discFormatData.Update -= discFormatData_Update;
 
-                if (_ejectMedia)
-                {
-                    discRecorder.EjectMedia();
-                }
+                if (_ejectMedia) discRecorder.EjectMedia();
             }
             catch (COMException exception)
             {
@@ -609,24 +616,18 @@ namespace GCBM.tools
             }
             finally
             {
-                if (discRecorder != null)
-                {
-                    Marshal.ReleaseComObject(discRecorder);
-                }
+                if (discRecorder != null) Marshal.ReleaseComObject(discRecorder);
 
-                if (discFormatData != null)
-                {
-                    Marshal.ReleaseComObject(discFormatData);
-                }
+                if (discFormatData != null) Marshal.ReleaseComObject(discFormatData);
             }
         }
 
         /// <summary>
-        /// 
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="progress"></param>
-        void discFormatData_Update([In, MarshalAs(UnmanagedType.IDispatch)] object sender, [In, MarshalAs(UnmanagedType.IDispatch)] object progress)
+        private void discFormatData_Update([In] [MarshalAs(UnmanagedType.IDispatch)] object sender,
+            [In] [MarshalAs(UnmanagedType.IDispatch)] object progress)
         {
             //
             // Check if we've cancelled
@@ -664,7 +665,7 @@ namespace GCBM.tools
         }
 
         /// <summary>
-        /// Completed the "Burn" thread
+        ///     Completed the "Burn" thread
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -679,10 +680,10 @@ namespace GCBM.tools
         }
 
         /// <summary>
-        /// Enables/Disables the "Burn" User Interface
+        ///     Enables/Disables the "Burn" User Interface
         /// </summary>
         /// <param name="enable"></param>
-        void EnableBurnUI(bool enable)
+        private void EnableBurnUI(bool enable)
         {
             btnBurn.Text = enable ? "&Gravar" : "&Cancelar";
             btnDetectMedia.Enabled = enable;
@@ -700,7 +701,7 @@ namespace GCBM.tools
         }
 
         /// <summary>
-        /// Event receives notification from the Burn thread of an event
+        ///     Event receives notification from the Burn thread of an event
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -710,11 +711,8 @@ namespace GCBM.tools
             var burnData = (BurnData)e.UserState;
 
             if (burnData.task == BURN_MEDIA_TASK.BURN_MEDIA_TASK_FILE_SYSTEM)
-            {
                 labelStatusText.Text = burnData.statusMessage;
-            }
             else if (burnData.task == BURN_MEDIA_TASK.BURN_MEDIA_TASK_WRITING)
-            {
                 switch (burnData.currentAction)
                 {
                     case IMAPI_FORMAT2_DATA_WRITE_ACTION.IMAPI_FORMAT2_DATA_WRITE_ACTION_VALIDATING_MEDIA:
@@ -734,11 +732,11 @@ namespace GCBM.tools
                         break;
 
                     case IMAPI_FORMAT2_DATA_WRITE_ACTION.IMAPI_FORMAT2_DATA_WRITE_ACTION_WRITING_DATA:
-                        long writtenSectors = burnData.lastWrittenLba - burnData.startLba;
+                        var writtenSectors = burnData.lastWrittenLba - burnData.startLba;
 
                         if (writtenSectors > 0 && burnData.sectorCount > 0)
                         {
-                            var percent = (int)((100 * writtenSectors) / burnData.sectorCount);
+                            var percent = (int)(100 * writtenSectors / burnData.sectorCount);
                             labelStatusText.Text = string.Format("Progresso: {0}%", percent);
                             pbStatus.Value = percent;
                         }
@@ -747,6 +745,7 @@ namespace GCBM.tools
                             labelStatusText.Text = "Progresso: 0%";
                             pbStatus.Value = 0;
                         }
+
                         break;
 
                     case IMAPI_FORMAT2_DATA_WRITE_ACTION.IMAPI_FORMAT2_DATA_WRITE_ACTION_FINALIZATION:
@@ -761,20 +760,22 @@ namespace GCBM.tools
                         labelStatusText.Text = "Verificando";
                         break;
                 }
-            }
         }
 
         /// <summary>
-        /// Enable the Burn Button if items in the file listbox
+        ///     Enable the Burn Button if items in the file listbox
         /// </summary>
         private void EnableBurnButton()
         {
-            btnBurn.Enabled = (lbFiles.Items.Count > 0);
+            btnBurn.Enabled = lbFiles.Items.Count > 0;
         }
+
         #endregion
 
         #region File System Process
-        private bool CreateMediaFileSystem(IDiscRecorder2 discRecorder, object[] multisessionInterfaces, out IStream dataStream)
+
+        private bool CreateMediaFileSystem(IDiscRecorder2 discRecorder, object[] multisessionInterfaces,
+            out IStream dataStream)
         {
             MsftFileSystemImage fileSystemImage = null;
             try
@@ -799,7 +800,7 @@ namespace GCBM.tools
                 //
                 // Get the image root
                 //
-                IFsiDirectoryItem rootItem = fileSystemImage.Root;
+                var rootItem = fileSystemImage.Root;
 
                 //
                 // Add Files and Directories to File System Image
@@ -809,10 +810,7 @@ namespace GCBM.tools
                     //
                     // Check if we've cancelled
                     //
-                    if (bgBurnWorker.CancellationPending)
-                    {
-                        break;
-                    }
+                    if (bgBurnWorker.CancellationPending) break;
 
                     //
                     // Add to File System
@@ -842,30 +840,24 @@ namespace GCBM.tools
             }
             finally
             {
-                if (fileSystemImage != null)
-                {
-                    Marshal.ReleaseComObject(fileSystemImage);
-                }
+                if (fileSystemImage != null) Marshal.ReleaseComObject(fileSystemImage);
             }
 
             return true;
         }
 
         /// <summary>
-        /// Event Handler for File System Progress Updates
+        ///     Event Handler for File System Progress Updates
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="currentFile"></param>
         /// <param name="copiedSectors"></param>
         /// <param name="totalSectors"></param>
-        void fileSystemImage_Update([In, MarshalAs(UnmanagedType.IDispatch)] object sender,
-            [In, MarshalAs(UnmanagedType.BStr)] string currentFile, [In] int copiedSectors, [In] int totalSectors)
+        private void fileSystemImage_Update([In] [MarshalAs(UnmanagedType.IDispatch)] object sender,
+            [In] [MarshalAs(UnmanagedType.BStr)] string currentFile, [In] int copiedSectors, [In] int totalSectors)
         {
             var percentProgress = 0;
-            if (copiedSectors > 0 && totalSectors > 0)
-            {
-                percentProgress = (copiedSectors * 100) / totalSectors;
-            }
+            if (copiedSectors > 0 && totalSectors > 0) percentProgress = copiedSectors * 100 / totalSectors;
 
             if (!string.IsNullOrEmpty(currentFile))
             {
@@ -878,13 +870,14 @@ namespace GCBM.tools
                 _burnData.task = BURN_MEDIA_TASK.BURN_MEDIA_TASK_FILE_SYSTEM;
                 bgBurnWorker.ReportProgress(percentProgress, _burnData);
             }
-
         }
+
         #endregion
 
         #region Add/Remove File(s)/Folder(s)
+
         /// <summary>
-        /// Adds a file to the burn list
+        ///     Adds a file to the burn list
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -901,7 +894,7 @@ namespace GCBM.tools
         }
 
         /// <summary>
-        /// Adds a folder to the burn list
+        ///     Adds a folder to the burn list
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -918,7 +911,7 @@ namespace GCBM.tools
         }
 
         /// <summary>
-        /// User wants to remove a file or folder
+        ///     User wants to remove a file or folder
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -929,7 +922,7 @@ namespace GCBM.tools
                 return;
 
             if (MessageBox.Show("Você tem certeza que deseja remover \"" + mediaItem + "\"?",
-                "Remover item", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    "Remover item", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 lbFiles.Items.Remove(mediaItem);
 
@@ -937,43 +930,36 @@ namespace GCBM.tools
                 UpdateCapacity();
             }
         }
+
         #endregion
 
         #region File ListBox Events
+
         /// <summary>
-        /// The user has selected a file or folder
+        ///     The user has selected a file or folder
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void lbFiles_SelectedIndexChanged(object sender, EventArgs e)
         {
-            btnRemoveFiles.Enabled = (lbFiles.SelectedIndex != -1);
+            btnRemoveFiles.Enabled = lbFiles.SelectedIndex != -1;
         }
 
         /// <summary>
-        /// 
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void lbFiles_DrawItem(object sender, DrawItemEventArgs e)
         {
             var mediaItem = (IMediaItem)lbFiles.Items[e.Index];
-            if (mediaItem == null)
-            {
-                return;
-            }
+            if (mediaItem == null) return;
 
             e.DrawBackground();
 
-            if ((e.State & DrawItemState.Focus) != 0)
-            {
-                e.DrawFocusRectangle();
-            }
+            if ((e.State & DrawItemState.Focus) != 0) e.DrawFocusRectangle();
 
             if (mediaItem.FileIconImage != null)
-            {
                 e.Graphics.DrawImage(mediaItem.FileIconImage, new Rectangle(4, e.Bounds.Y + 4, 16, 16));
-            }
 
             var rectF = new RectangleF(e.Bounds.X + 24, e.Bounds.Y,
                 e.Bounds.Width - 24, e.Bounds.Height);
@@ -990,20 +976,19 @@ namespace GCBM.tools
             e.Graphics.DrawString(mediaItem.ToString(), font, new SolidBrush(e.ForeColor),
                 rectF, stringFormat);
         }
+
         #endregion
 
         #region Format/Erase the Disc
+
         /// <summary>
-        /// The user has clicked the "Format" button
+        ///     The user has clicked the "Format" button
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void btnFormat_Click(object sender, EventArgs e)
         {
-            if (cbDevices.SelectedIndex == -1)
-            {
-                return;
-            }
+            if (cbDevices.SelectedIndex == -1) return;
 
             _isFormatting = true;
             EnableFormatUI(false);
@@ -1013,10 +998,10 @@ namespace GCBM.tools
         }
 
         /// <summary>
-        /// Enables/Disables the "Burn" User Interface
+        ///     Enables/Disables the "Burn" User Interface
         /// </summary>
         /// <param name="enable"></param>
-        void EnableFormatUI(bool enable)
+        private void EnableFormatUI(bool enable)
         {
             btnFormat.Enabled = enable;
             chkEjectFormat.Enabled = enable;
@@ -1024,7 +1009,7 @@ namespace GCBM.tools
         }
 
         /// <summary>
-        /// Worker thread that Formats the Disc
+        ///     Worker thread that Formats the Disc
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -1080,11 +1065,7 @@ namespace GCBM.tools
                 //
                 // Eject the media 
                 //
-                if (chkEjectFormat.Checked)
-                {
-                    discRecorder.EjectMedia();
-                }
-
+                if (chkEjectFormat.Checked) discRecorder.EjectMedia();
             }
             catch (COMException exception)
             {
@@ -1095,25 +1076,20 @@ namespace GCBM.tools
             }
             finally
             {
-                if (discRecorder != null)
-                {
-                    Marshal.ReleaseComObject(discRecorder);
-                }
+                if (discRecorder != null) Marshal.ReleaseComObject(discRecorder);
 
-                if (discFormatErase != null)
-                {
-                    Marshal.ReleaseComObject(discFormatErase);
-                }
+                if (discFormatErase != null) Marshal.ReleaseComObject(discFormatErase);
             }
         }
 
         /// <summary>
-        /// Event Handler for the Erase Progress Updates
+        ///     Event Handler for the Erase Progress Updates
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="elapsedSeconds"></param>
         /// <param name="estimatedTotalSeconds"></param>
-        void discFormatErase_Update([In, MarshalAs(UnmanagedType.IDispatch)] object sender, int elapsedSeconds, int estimatedTotalSeconds)
+        private void discFormatErase_Update([In] [MarshalAs(UnmanagedType.IDispatch)] object sender, int elapsedSeconds,
+            int estimatedTotalSeconds)
         {
             var percent = elapsedSeconds * 100 / estimatedTotalSeconds;
             //
@@ -1130,44 +1106,15 @@ namespace GCBM.tools
 
         private void bgFormatWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            labelFormatStatusText.Text = (int)e.Result == 0 ?
-                "Formatação do disco finalizada!" : "Erro ao formatar o disco!";
+            labelFormatStatusText.Text =
+                (int)e.Result == 0 ? "Formatação do disco finalizada!" : "Erro ao formatar o disco!";
 
             pbFormat.Value = 0;
 
             _isFormatting = false;
             EnableFormatUI(true);
         }
-        #endregion
 
-        #region TabControl
-        /// <summary>
-        /// Called when user selects a new tab
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void tabControl1_Selecting(object sender, TabControlCancelEventArgs e)
-        {
-            //
-            // Prevent page from changing if we're burning or formatting.
-            //
-            if (_isBurning || _isFormatting)
-            {
-                e.Cancel = true;
-            }
-        }
-        #endregion
-
-        # region Verification ComboBox
-        /// <summary>
-        /// Get the burn verification level when the user changes the selection
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void cbVerification_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            _verificationLevel = (IMAPI_BURN_VERIFICATION_LEVEL)cbVerification.SelectedIndex;
-        }
         #endregion
     }
 }

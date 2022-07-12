@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
+﻿using System.Data;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace GCBM
 {
@@ -11,7 +7,7 @@ namespace GCBM
     {
         protected string ExportDatatableToHtml(DataTable dt)
         {
-            StringBuilder strHTMLBuilder = new StringBuilder();
+            var strHTMLBuilder = new StringBuilder();
             strHTMLBuilder.Append("<html >");
             strHTMLBuilder.Append("<!doctype html>");
             strHTMLBuilder.Append("<html class=\"no-js\" lang=\"en\" dir=\"ltr\">");
@@ -25,8 +21,10 @@ namespace GCBM
             strHTMLBuilder.Append("<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">");
             strHTMLBuilder.Append("<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">");
             strHTMLBuilder.Append("<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>");
-            strHTMLBuilder.Append("<link href=\"https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap\" rel=\"stylesheet\">");
-            strHTMLBuilder.Append("<link href=\"https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap\" rel=\"stylesheet\">");
+            strHTMLBuilder.Append(
+                "<link href=\"https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap\" rel=\"stylesheet\">");
+            strHTMLBuilder.Append(
+                "<link href=\"https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap\" rel=\"stylesheet\">");
             strHTMLBuilder.Append("<style>");
             strHTMLBuilder.Append("@font-face {");
             strHTMLBuilder.Append("font-family: \"OpenSans\";");
@@ -55,6 +53,7 @@ namespace GCBM
                 strHTMLBuilder.Append(myColumn.ColumnName);
                 strHTMLBuilder.Append("</td>");
             }
+
             strHTMLBuilder.Append("</tr>");
             foreach (DataRow myRow in dt.Rows)
             {
@@ -62,11 +61,13 @@ namespace GCBM
                 foreach (DataColumn myColumn in dt.Columns)
                 {
                     strHTMLBuilder.Append("<td >");
-                    strHTMLBuilder.Append(myRow[myColumn.ColumnName].ToString());
+                    strHTMLBuilder.Append(myRow[myColumn.ColumnName]);
                     strHTMLBuilder.Append("</td>");
                 }
+
                 strHTMLBuilder.Append("</tr>");
             }
+
             //Close tags.
             strHTMLBuilder.Append("</table>");
             strHTMLBuilder.Append("<script src=\"js/vendor/jquery.js\"></script>");
@@ -76,7 +77,7 @@ namespace GCBM
             strHTMLBuilder.Append("</body>");
             strHTMLBuilder.Append("</body><footer><span>&copy;2022 Sean Johnson</span></footer>");
             strHTMLBuilder.Append("</html>");
-            string Htmltext = strHTMLBuilder.ToString();
+            var Htmltext = strHTMLBuilder.ToString();
             return Htmltext;
         }
     }

@@ -1,12 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
 
@@ -15,15 +10,18 @@ namespace GCBM.tools
     public partial class frmManageApp : Form
     {
         #region Main Form
+
         public frmManageApp()
         {
             InitializeComponent();
         }
+
         #endregion
 
         #region Rename Files
+
         /// <summary>
-        /// Renomear automaticamente todos os arquivos 'boot.elf' para 'boot.dol'.
+        ///     Renomear automaticamente todos os arquivos 'boot.elf' para 'boot.dol'.
         /// </summary>
         /// <param name="folder"></param>
         private void RenameFiles(string folder)
@@ -31,42 +29,36 @@ namespace GCBM.tools
             //var findFolder = Directory.GetDirectories(folder, "*", SearchOption.AllDirectories);
             //var findFiles = Directory.GetFiles(folder, "*", SearchOption.AllDirectories);
 
-            string curFile = @"\boot.elf";
+            var curFile = @"\boot.elf";
 
-            foreach (string dir in Directory.GetDirectories(folder, "*", SearchOption.TopDirectoryOnly))
-            {
-                foreach (string file in Directory.GetFiles(dir, "*", SearchOption.TopDirectoryOnly))
-                {
-                    if (File.Exists(dir + curFile))
+            foreach (var dir in Directory.GetDirectories(folder, "*", SearchOption.TopDirectoryOnly))
+            foreach (var file in Directory.GetFiles(dir, "*", SearchOption.TopDirectoryOnly))
+                if (File.Exists(dir + curFile))
+                    try
                     {
-                        try
-                        {
-                            File.Move(file, file.Replace("boot.elf", "boot.dol"));
-                        }
-                        catch (FileNotFoundException ex)
-                        {
-                            GlobalNotifications(ex.Message);
-                        }
+                        File.Move(file, file.Replace("boot.elf", "boot.dol"));
                     }
-                    else
+                    catch (FileNotFoundException ex)
                     {
-                        DisplayFilesFolder(folder, dgvAppList);
+                        GlobalNotifications(ex.Message);
                     }
-                }
-            }
+                else
+                    DisplayFilesFolder(folder, dgvAppList);
         }
+
         #endregion
 
         #region Compress Folder
+
         /// <summary>
-        /// Compactar pastas, subpastas e todos os arquivos dentro das pastas.
+        ///     Compactar pastas, subpastas e todos os arquivos dentro das pastas.
         /// </summary>
         /// <param name="folder"></param>
         /// <param name="dest"></param>
         private void CompressFolder()
         {
             //int? selectedRowCount = Convert.ToInt32(dgvAppList.Rows.GetRowCount(DataGridViewElementStates.Selected));
-            Int32 _selectedGameRowCount = dgvAppList.Rows.GetRowCount(DataGridViewElementStates.Selected);
+            var _selectedGameRowCount = dgvAppList.Rows.GetRowCount(DataGridViewElementStates.Selected);
 
             if (dgvAppList.RowCount == 0)
             {
@@ -75,21 +67,18 @@ namespace GCBM.tools
             else
             {
                 if (_selectedGameRowCount == 0)
-                {
                     SelectAppFromList();
-                }
                 else
-                {
                     try
                     {
                         //string checkFile = dgvAppList.CurrentRow.Cells[0].Value.ToString() + ".zip";
-                        string checkFile = dgvAppList.CurrentRow.Cells[0].Value.ToString();
-                        string checkDirectory = dgvAppList.CurrentRow.Cells[3].Value.ToString();
+                        var checkFile = dgvAppList.CurrentRow.Cells[0].Value.ToString();
+                        var checkDirectory = dgvAppList.CurrentRow.Cells[3].Value.ToString();
 
                         //if (File.Exists(checkFileExist))
                         //{
 
-                        GCBM.tools.frmCreatePackage frmPackage = new frmCreatePackage(checkFile, checkDirectory, fbd.SelectedPath);
+                        var frmPackage = new frmCreatePackage(checkFile, checkDirectory, fbd.SelectedPath);
                         frmPackage.ShowDialog();
                         frmPackage.Dispose();
 
@@ -121,29 +110,30 @@ namespace GCBM.tools
                     {
                         GlobalNotifications(ex.Message);
                     }
-                }
             }
         }
+
         #endregion
 
         #region DisplayFilesFolder
+
         private void DisplayFilesFolder(string sourceFolder, DataGridView dgv)
         {
             try
             {
                 // Create and load the XmlDocument
-                XmlDocument xmlDoc = new XmlDocument();
+                var xmlDoc = new XmlDocument();
 
-                var filtersXML = new String[] { "xml" };
-                var filtersDOL = new String[] { "dol" };
+                var filtersXML = new[] { "xml" };
+                var filtersDOL = new[] { "dol" };
 
-                bool isRecursive = true;
+                var isRecursive = true;
 
-                string[] filesXML = GetFilesXMLFolder(sourceFolder, filtersXML, isRecursive);
-                string[] filesDOL = GetFilesDOLFolder(sourceFolder, filtersDOL, isRecursive);
+                var filesXML = GetFilesXMLFolder(sourceFolder, filtersXML, isRecursive);
+                var filesDOL = GetFilesDOLFolder(sourceFolder, filtersDOL, isRecursive);
 
                 // Creates a DataTable with file data.
-                DataTable _table = new DataTable();
+                var _table = new DataTable();
                 _table.Columns.Add("Nome do APP");
                 _table.Columns.Add("Versão");
                 _table.Columns.Add("Tamanho");
@@ -152,21 +142,19 @@ namespace GCBM.tools
                 FileInfo _fileXML = null;
                 FileInfo _fileDOL = null;
 
-                for (int i = 0; i < filesDOL.Length; i++)
+                for (var i = 0; i < filesDOL.Length; i++)
                 {
                     _fileXML = new FileInfo(filesXML[i]);
                     _fileDOL = new FileInfo(filesDOL[i]);
 
                     xmlDoc.Load(_fileXML.FullName);
-                    XmlNodeList xnList = xmlDoc.GetElementsByTagName("app");
-                    string _getSize = DisplayFormatFileSize(_fileDOL.Length, 1);
+                    var xnList = xmlDoc.GetElementsByTagName("app");
+                    var _getSize = DisplayFormatFileSize(_fileDOL.Length, 1);
 
                     //Usando foreach para imprimir na tela
                     foreach (XmlNode xn in xnList)
-                    {
                         _table.Rows.Add(xn["name"].InnerText, xn["version"].InnerText, _getSize, _fileDOL.FullName);
-                        //_table.Rows.Add(xn["name"].InnerText, xn["version"].InnerText, _getSize);
-                    }
+                    //_table.Rows.Add(xn["name"].InnerText, xn["version"].InnerText, _getSize);
                 }
 
                 // Displays data in DataGridView.
@@ -193,60 +181,21 @@ namespace GCBM.tools
                 //dgv.Columns[4].ReadOnly = true;
                 //dgv.Columns[4].Width = 100;
                 dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-
             }
             catch (Exception ex)
             {
                 GlobalNotifications(ex.Message);
             }
         }
-        #endregion
 
-        #region GetFilesFolder
-        private string[] GetFilesXMLFolder(string rootFolder, string[] filters, bool isRecursive)
-        {
-            List<string> filesFound = new List<string>();
-
-            try
-            {
-                var optionSearch = isRecursive ? SearchOption.AllDirectories : SearchOption.TopDirectoryOnly;
-                foreach (var filter in filters)
-                {
-                    filesFound.AddRange(Directory.GetFiles(rootFolder, string.Format("meta.{0}", filter), optionSearch));
-                }
-            }
-            catch (Exception ex)
-            {
-                GlobalNotifications(ex.Message);
-            }
-            return filesFound.ToArray();
-        }
-
-        private string[] GetFilesDOLFolder(string rootFolder, string[] filters, bool isRecursive)
-        {
-            List<string> filesFound = new List<string>();
-
-            try
-            {
-                var optionSearch = isRecursive ? SearchOption.AllDirectories : SearchOption.TopDirectoryOnly;
-                foreach (var filter in filters)
-                {
-                    filesFound.AddRange(Directory.GetFiles(rootFolder, string.Format("*.{0}", filter), optionSearch));
-                }
-            }
-            catch (Exception ex)
-            {
-                GlobalNotifications(ex.Message);
-            }
-            return filesFound.ToArray();
-        }
         #endregion
 
         #region DisplayFormatFileSize
+
         public static string DisplayFormatFileSize(long i, int k)
         {
             // Obtém o valor absoluto
-            long i_absolute = (i < 0 ? -i : i);
+            var i_absolute = i < 0 ? -i : i;
             string suffix;
             double reading;
 
@@ -255,27 +204,27 @@ namespace GCBM.tools
                 if (i_absolute >= 0x1000000000000000) // Exabyte
                 {
                     suffix = "EB";
-                    reading = (i >> 50);
+                    reading = i >> 50;
                 }
                 else if (i_absolute >= 0x4000000000000) // Petabyte
                 {
                     suffix = "PB";
-                    reading = (i >> 40);
+                    reading = i >> 40;
                 }
                 else if (i_absolute >= 0x10000000000) // Terabyte
                 {
                     suffix = "TB";
-                    reading = (i >> 30);
+                    reading = i >> 30;
                 }
                 else if (i_absolute >= 0x40000000) // Gigabyte
                 {
                     suffix = "GB";
-                    reading = (i >> 20);
+                    reading = i >> 20;
                 }
                 else if (i_absolute >= 0x100000) // Megabyte
                 {
                     suffix = "MB";
-                    reading = (i >> 10);
+                    reading = i >> 10;
                 }
                 else if (i_absolute >= 0x400) // Kilobyte
                 {
@@ -295,30 +244,74 @@ namespace GCBM.tools
             else if (k == 2) // Megabyte
             {
                 suffix = "MB";
-                reading = (i >> 10);
+                reading = i >> 10;
             }
             else if (k == 3) // Gigabyte
             {
                 suffix = "GB";
-                reading = (i >> 20);
+                reading = i >> 20;
             }
             else if (k == 4) // Terabyte
             {
                 suffix = "TB";
-                reading = (i >> 30);
+                reading = i >> 30;
             }
             else
             {
                 return i.ToString("0 bytes"); // Byte
             }
+
             // Divide by 1024 to get the fractional value.
-            reading = (reading / 1024);
+            reading = reading / 1024;
             // Returns the suffix formatted number.
             return reading.ToString("0.## ") + suffix;
         }
+
+        #endregion
+
+        #region GetFilesFolder
+
+        private string[] GetFilesXMLFolder(string rootFolder, string[] filters, bool isRecursive)
+        {
+            var filesFound = new List<string>();
+
+            try
+            {
+                var optionSearch = isRecursive ? SearchOption.AllDirectories : SearchOption.TopDirectoryOnly;
+                foreach (var filter in filters)
+                    filesFound.AddRange(Directory.GetFiles(rootFolder, string.Format("meta.{0}", filter),
+                        optionSearch));
+            }
+            catch (Exception ex)
+            {
+                GlobalNotifications(ex.Message);
+            }
+
+            return filesFound.ToArray();
+        }
+
+        private string[] GetFilesDOLFolder(string rootFolder, string[] filters, bool isRecursive)
+        {
+            var filesFound = new List<string>();
+
+            try
+            {
+                var optionSearch = isRecursive ? SearchOption.AllDirectories : SearchOption.TopDirectoryOnly;
+                foreach (var filter in filters)
+                    filesFound.AddRange(Directory.GetFiles(rootFolder, string.Format("*.{0}", filter), optionSearch));
+            }
+            catch (Exception ex)
+            {
+                GlobalNotifications(ex.Message);
+            }
+
+            return filesFound.ToArray();
+        }
+
         #endregion
 
         #region Notifications
+
         private void GlobalNotifications(string ex)
         {
             notifyIcon.ShowBalloonTip(10, "GameCube Backup Manager", ex, ToolTipIcon.Info);
@@ -326,28 +319,33 @@ namespace GCBM.tools
 
         private static void EmptyAppsList()
         {
-            MessageBox.Show("A lista de aplicativos homebrews está vazia!", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            MessageBox.Show("A lista de aplicativos homebrews está vazia!", "Informação", MessageBoxButtons.OK,
+                MessageBoxIcon.Exclamation);
         }
 
         private static void SelectAppFromList()
         {
-            MessageBox.Show("Por favor, selecione um aplicativo homebrew da lista!", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            MessageBox.Show("Por favor, selecione um aplicativo homebrew da lista!", "Informação", MessageBoxButtons.OK,
+                MessageBoxIcon.Exclamation);
         }
 
         private static DialogResult DialogResultDelete()
         {
-            DialogResult dr = MessageBox.Show("Deseja realmente excluir o aplicativo homebrew?" + Environment.NewLine + Environment.NewLine +
-                "Esse procedimento é irreversível e não será possivel recuperar o aplicativo homebrew!",
+            var dr = MessageBox.Show("Deseja realmente excluir o aplicativo homebrew?" + Environment.NewLine +
+                                     Environment.NewLine +
+                                     "Esse procedimento é irreversível e não será possivel recuperar o aplicativo homebrew!",
                 "AVISO", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             return dr;
         }
+
         #endregion
 
         #region Buttons
+
         private void btnClose_Click(object sender, EventArgs e)
         {
-            this.Close();
-            this.Dispose();
+            Close();
+            Dispose();
         }
 
         private void btnListApp_Click(object sender, EventArgs e)
@@ -357,10 +355,8 @@ namespace GCBM.tools
                 fbd.Description = "Selecione a pasta que contém os app's:";
                 fbd.ShowNewFolderButton = false;
                 if (fbd.ShowDialog() == DialogResult.OK)
-                {
                     //DisplayFilesFolder(fbd.SelectedPath, dgvAppList);
                     RenameFiles(fbd.SelectedPath);
-                }
             }
             catch (Exception ex)
             {
@@ -371,7 +367,7 @@ namespace GCBM.tools
 
         private void btnRemoveApp_Click(object sender, EventArgs e)
         {
-            Int32 _selectedGameRowCount = dgvAppList.Rows.GetRowCount(DataGridViewElementStates.Selected);
+            var _selectedGameRowCount = dgvAppList.Rows.GetRowCount(DataGridViewElementStates.Selected);
 
             if (dgvAppList.RowCount == 0)
             {
@@ -380,24 +376,21 @@ namespace GCBM.tools
             else
             {
                 if (_selectedGameRowCount == 0)
-                {
                     SelectAppFromList();
-                }
                 else if (DialogResultDelete() == DialogResult.Yes)
-                {
                     try
                     {
                         //Apagar a pasta e todo conteúdo do app homebrew
                         Directory.Delete(Path.GetDirectoryName(dgvAppList.CurrentRow.Cells[3].Value.ToString()), true);
                         //Recarregar o datagridview
                         DisplayFilesFolder(fbd.SelectedPath, dgvAppList);
-                        notifyIcon.ShowBalloonTip(10, "GameCube Backup Manager", "Aplicativo removido com sucesso!", ToolTipIcon.Info);
+                        notifyIcon.ShowBalloonTip(10, "GameCube Backup Manager", "Aplicativo removido com sucesso!",
+                            ToolTipIcon.Info);
                     }
                     catch (Exception ex)
                     {
                         GlobalNotifications(ex.Message);
                     }
-                }
             }
         }
 
@@ -412,6 +405,7 @@ namespace GCBM.tools
             //_frmInstall.ShowDialog();
             //_frmInstall.Dispose();
         }
+
         #endregion
     }
 }

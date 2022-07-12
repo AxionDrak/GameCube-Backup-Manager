@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GCBM.tools
@@ -13,6 +6,7 @@ namespace GCBM.tools
     public partial class frmCreateAppPackage : Form
     {
         #region Main form
+
         public frmCreateAppPackage()
         {
             InitializeComponent();
@@ -25,63 +19,23 @@ namespace GCBM.tools
             rbCreateNwb.Enabled = false;
             rbCreateZip.Enabled = false;
         }
+
         #endregion
 
         #region Notifications
+
         private void GlobalNotifications(string ex)
         {
             notifyIcon.ShowBalloonTip(10, "GameCube Backup Manager", ex, ToolTipIcon.Info);
         }
-        #endregion
 
-        #region Buttons
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            this.Dispose();
-        }
-
-        private void btnCreatePackage_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                //fbd.Description = "Selecione a pasta que contém o app:";
-                //fbd.ShowNewFolderButton = false;
-                if (fbdCreatePackage.ShowDialog() == DialogResult.OK)
-                {
-                    tbDirectory.Text = fbdCreatePackage.SelectedPath;
-
-                    //DisplayFilesFolder(fbd.SelectedPath, dgvAppList);
-                    //RenameFiles(fbd.SelectedPath);
-                }
-            }
-            catch (Exception ex)
-            {
-                //tbLog.AppendText(">> ERRO: " + ex.Message + Environment.NewLine);
-                GlobalNotifications(ex.Message);
-            }
-        }
-
-        private void btnSearchExtras_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnClear_Click(object sender, EventArgs e)
-        {
-            tbDirectory.Text = string.Empty;
-        }
         #endregion
 
         #region CheckBox
+
         private void chkIncludeExtra_CheckedChanged(object sender, EventArgs e)
         {
-            if (chkIncludeExtra.Checked == true)
+            if (chkIncludeExtra.Checked)
             {
                 tbExtra.Enabled = true;
                 btnSearchExtras.Enabled = true;
@@ -92,12 +46,14 @@ namespace GCBM.tools
                 btnSearchExtras.Enabled = false;
             }
         }
+
         #endregion
 
         #region TextBox
+
         private void tbDirectory_TextChanged(object sender, EventArgs e)
         {
-            if (tbDirectory.Text != String.Empty)
+            if (tbDirectory.Text != string.Empty)
             {
                 chkIncludeExtra.Enabled = true;
                 rbCreateZip.Enabled = true;
@@ -114,6 +70,49 @@ namespace GCBM.tools
                 btnClear.Enabled = false;
             }
         }
+
+        #endregion
+
+        #region Buttons
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
+            Dispose();
+        }
+
+        private void btnCreatePackage_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //fbd.Description = "Selecione a pasta que contém o app:";
+                //fbd.ShowNewFolderButton = false;
+                if (fbdCreatePackage.ShowDialog() == DialogResult.OK)
+                    tbDirectory.Text = fbdCreatePackage.SelectedPath;
+
+                //DisplayFilesFolder(fbd.SelectedPath, dgvAppList);
+                //RenameFiles(fbd.SelectedPath);
+            }
+            catch (Exception ex)
+            {
+                //tbLog.AppendText(">> ERRO: " + ex.Message + Environment.NewLine);
+                GlobalNotifications(ex.Message);
+            }
+        }
+
+        private void btnSearchExtras_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            tbDirectory.Text = string.Empty;
+        }
+
         #endregion
     }
 }

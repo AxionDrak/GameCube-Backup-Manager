@@ -1,20 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Security;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using GCBM.Properties;
 
 namespace GCBM.tools
 {
     public partial class frmMetaXml : Form
     {
         #region Main form
+
         public frmMetaXml()
         {
             InitializeComponent();
@@ -32,18 +27,22 @@ namespace GCBM.tools
             tbAppShortDescription.Enabled = false;
             tbAppLongDescription.Enabled = false;
             cbAppAhbAccess.Enabled = false;
-            cbAppNoReloadIOS.Enabled = false;          
+            cbAppNoReloadIOS.Enabled = false;
         }
+
         #endregion
 
         #region Notifications
+
         private void GlobalNotifications(string ex)
         {
             notifyIcon.ShowBalloonTip(10, "GameCube Backup Manager", ex, ToolTipIcon.Info);
         }
+
         #endregion
 
         #region Reset
+
         private void Reset()
         {
             tbAppDeveloper.Text = null;
@@ -57,7 +56,7 @@ namespace GCBM.tools
             cbPortUSB.SelectedIndex = 0;
             cbMountUSB.SelectedIndex = 0;
             //pbBanner.Image = null;
-            pbBanner.Image = Properties.Resources.image_not_found_1;
+            pbBanner.Image = Resources.image_not_found_1;
             btnAddBanner.Enabled = false;
             btnDeleteBanner.Enabled = false;
             btnClear.Enabled = false;
@@ -73,13 +72,15 @@ namespace GCBM.tools
             cbAppAhbAccess.Enabled = false;
             cbAppNoReloadIOS.Enabled = false;
         }
+
         #endregion
 
         #region Read Value XML
+
         public string ReadValuefromXML(string xmlfile, string start, string end)
         {
-            FileInfo fileinfo = new FileInfo(ofdXml.FileName);
-            string other = fileinfo.DirectoryName;
+            var fileinfo = new FileInfo(ofdXml.FileName);
+            var other = fileinfo.DirectoryName;
 
             if (File.Exists(other + @"\icon.png"))
             {
@@ -93,7 +94,7 @@ namespace GCBM.tools
             }
             else
             {
-                pbBanner.Image = Properties.Resources.image_not_found_2;
+                pbBanner.Image = Resources.image_not_found_2;
                 btnAddBanner.Enabled = true;
                 btnDeleteBanner.Enabled = true;
                 btnClear.Enabled = true;
@@ -112,17 +113,19 @@ namespace GCBM.tools
             cbAppNoReloadIOS.Enabled = true;
             //chkEnableArguments.Enabled = true;
 
-            int startindex = xmlfile.IndexOf(start);
-            int endindex = xmlfile.IndexOf(end, startindex);
-            int length = endindex - (startindex + start.Length);
+            var startindex = xmlfile.IndexOf(start);
+            var endindex = xmlfile.IndexOf(end, startindex);
+            var length = endindex - (startindex + start.Length);
             return xmlfile.Substring(startindex + start.Length, length);
         }
+
         #endregion
 
         #region Check Everything
+
         public bool CheckEverything()
         {
-            bool result = true;
+            var result = true;
             //if (xmlfilebox.Text == null) result = false; not for all...
             if (tbAppVersion.Text == "") result = false;
             if (tbAppName.Text == "") result = false;
@@ -136,13 +139,15 @@ namespace GCBM.tools
 
             return result;
         }
+
         #endregion
 
         #region Generate MetaXML
+
         public string GenerateMetaXML()
         {
             //char quote = '"';
-            string xmlgenerated = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\r\n\t<app version=\"";
+            var xmlgenerated = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\r\n\t<app version=\"";
             xmlgenerated += "1.0.0\">\r\n\t\t";
             xmlgenerated += "<name>" + tbAppName.Text + "</name>\r\n\t\t";
             xmlgenerated += "<coder>" + tbAppDeveloper.Text + "</coder>\r\n\t\t";
@@ -172,31 +177,26 @@ namespace GCBM.tools
             //    }
             //}
 
-            if (cbAppNoReloadIOS.SelectedIndex == 1)
-            {
-                xmlgenerated += "<no_ios_reload />\r\n\t\t";
-            }
+            if (cbAppNoReloadIOS.SelectedIndex == 1) xmlgenerated += "<no_ios_reload />\r\n\t\t";
 
-            if (cbAppAhbAccess.SelectedIndex == 1)
-            {
-                xmlgenerated += "<ahb_access />\r\n\t\t";
-            }
+            if (cbAppAhbAccess.SelectedIndex == 1) xmlgenerated += "<ahb_access />\r\n\t\t";
 
             xmlgenerated += "<short_description>" + tbAppShortDescription.Text + "</short_description>\r\n\t\t";
             xmlgenerated += "<long_description>" + tbAppLongDescription.Text + "</long_description>\r\n\t</app>";
 
             return xmlgenerated;
         }
+
         #endregion
 
         #region Buttons
+
         private void btnSearch_Click(object sender, EventArgs e)
         {
             if (ofdXml.ShowDialog() == DialogResult.OK)
-            {
                 try
                 {
-                    string xmlfile = File.ReadAllText(ofdXml.FileName.ToString());
+                    var xmlfile = File.ReadAllText(ofdXml.FileName);
                     //xmlfilebox.Text = openmetaxml.FileName.ToString();
                     //appversion.Text = ReadValuefromXML(xmlfile, "<app version=", ">");
                     //appversion.Text = appversion.Text.Substring(1, appversion.Text.Length - 2);
@@ -204,38 +204,36 @@ namespace GCBM.tools
                     tbAppDeveloper.Text = ReadValuefromXML(xmlfile, "<coder>", "</coder>");
                     tbAppVersion.Text = ReadValuefromXML(xmlfile, "<version>", "</version>");
                     tbAppReleaseDate.Text = ReadValuefromXML(xmlfile, "<release_date>", "</release_date>");
-                    tbAppShortDescription.Text = ReadValuefromXML(xmlfile, "<short_description>", "</short_description>");
+                    tbAppShortDescription.Text =
+                        ReadValuefromXML(xmlfile, "<short_description>", "</short_description>");
                     tbAppLongDescription.Text = ReadValuefromXML(xmlfile, "<long_description>", "</long_description>");
                 }
                 catch (ArgumentOutOfRangeException ex)
                 {
-                    MessageBox.Show(GCBM.Properties.Resources.MetaXml_String1 + Environment.NewLine + ex.Message, GCBM.Properties.Resources.MetaXml_String_ERRO, 
+                    MessageBox.Show(Resources.MetaXml_String1 + Environment.NewLine + ex.Message,
+                        Resources.MetaXml_String_ERRO,
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 catch (SecurityException ex)
                 {
-
                     GlobalNotifications(ex.Message);
                 }
-            }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            FileInfo fileinfo = new FileInfo(ofdXml.FileName);
-            string other = fileinfo.DirectoryName;
-            string xmlFile = @"\meta.xml";
+            var fileinfo = new FileInfo(ofdXml.FileName);
+            var other = fileinfo.DirectoryName;
+            var xmlFile = @"\meta.xml";
 
-            if (CheckEverything() == true)
+            if (CheckEverything())
             {
                 File.WriteAllText(other + xmlFile, GenerateMetaXML());
                 // Save PictureBox
-                if (pbBanner.Image != null)
-                {
-                    pbBanner.Image.Save(other + @"\icon.png");
-                }
+                if (pbBanner.Image != null) pbBanner.Image.Save(other + @"\icon.png");
 
-                MessageBox.Show(GCBM.Properties.Resources.MetaXml_String2, GCBM.Properties.Resources.Notice, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(Resources.MetaXml_String2, Resources.Notice, MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
             }
         }
 
@@ -247,7 +245,6 @@ namespace GCBM.tools
         private void btnAddBanner_Click(object sender, EventArgs e)
         {
             if (ofdBanner.ShowDialog() == DialogResult.OK)
-            {
                 try
                 {
                     pbBanner.LoadAsync(ofdBanner.FileName);
@@ -259,16 +256,15 @@ namespace GCBM.tools
                 {
                     GlobalNotifications(ex.Message);
                 }
-            }
         }
 
         private void btnDeleteBanner_Click(object sender, EventArgs e)
         {
             try
             {
-                FileInfo fileInfo = new FileInfo(ofdXml.FileName);
-                string other = fileInfo.DirectoryName;
-                string delFile = @"\icon.png";
+                var fileInfo = new FileInfo(ofdXml.FileName);
+                var other = fileInfo.DirectoryName;
+                var delFile = @"\icon.png";
                 File.Delete(other + delFile);
                 btnDeleteBanner.Enabled = false;
                 pbBanner.Image = null;
@@ -284,9 +280,10 @@ namespace GCBM.tools
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            this.Close();
-            this.Dispose();
+            Close();
+            Dispose();
         }
+
         #endregion
     }
 }

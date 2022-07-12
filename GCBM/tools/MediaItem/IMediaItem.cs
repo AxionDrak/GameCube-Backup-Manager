@@ -1,24 +1,24 @@
-﻿using System;
+﻿using System.Drawing;
 using PluginBurnMedia.Interop;
 
 namespace PluginBurnMedia.MediaItem
 {
-    interface IMediaItem
+    internal interface IMediaItem
     {
         /// <summary>
-        /// Returns the full path of the file or directory
+        ///     Returns the full path of the file or directory
         /// </summary>
         string Path { get; }
 
         /// <summary>
-        /// Returns the size of the file or directory to the next largest sector
+        ///     Returns the size of the file or directory to the next largest sector
         /// </summary>
-        Int64 SizeOnDisc { get; }
+        long SizeOnDisc { get; }
 
         /// <summary>
-        /// Returns the Icon of the file or directory
+        ///     Returns the Icon of the file or directory
         /// </summary>
-        System.Drawing.Image FileIconImage { get; }
+        Image FileIconImage { get; }
 
         // Adds the file or directory to the directory item, usually the root.
         bool AddToFileSystem(IFsiDirectoryItem rootItem);

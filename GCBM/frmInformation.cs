@@ -1,47 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
 
 namespace GCBM
 {
-
     public partial class frmInformation : Form
     {
         #region Properties
+
         private const string WIITDB_FILE = "wiitdb.xml";
-        #endregion
 
-        #region Main Form
-        public frmInformation()
-        {
-            InitializeComponent();
-        }
-
-        // Formato (Tipo), Tamanho, Local do Arquivo, ID do Jogo
-        public frmInformation(string gameFile, string gameType, string gameSize, string filePath, string idGame)
-        {
-            InitializeComponent();
-
-            this.Text = gameFile + ": " + idGame + " - ";
-
-            tbFileFormat.Text = gameType + " (" + gameSize + ")";
-            tbFilePath.Text = filePath;
-            tbIDGame.Text = idGame;
-            ParserXml(idGame);
-        }
         #endregion
 
         #region ParserXml
+
         /// <summary>
-        /// Parsers the XML.
+        ///     Parsers the XML.
         /// </summary>
         //private void ParserXml(string tbIDGame)
         private void ParserXml(string tbIDGame)
@@ -50,13 +25,12 @@ namespace GCBM
 
             try
             {
-                XElement root = XElement.Load(WIITDB_FILE);
-                IEnumerable<XElement> tests = from el in root.Elements("game") where (string)el.Element("id") == tbIDGame select el;
+                var root = XElement.Load(WIITDB_FILE);
+                var tests = from el in root.Elements("game") where (string)el.Element("id") == tbIDGame select el;
 
-                foreach (XElement el in tests)
+                foreach (var el in tests)
                 {
-
-                    this.Text += (string)el.Element("locale").Element("title");
+                    Text += (string)el.Element("locale").Element("title");
 
                     //tbGameInternalName.Text = (string)el.Attribute("name");
                     tbGameInternalName.Text = (string)el.Element("locale").Element("title");
@@ -96,12 +70,35 @@ namespace GCBM
                 MessageBox.Show(ex.ToString());
             }
         }
+
         #endregion
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            this.Close();
-            this.Dispose();
+            Close();
+            Dispose();
         }
+
+        #region Main Form
+
+        public frmInformation()
+        {
+            InitializeComponent();
+        }
+
+        // Formato (Tipo), Tamanho, Local do Arquivo, ID do Jogo
+        public frmInformation(string gameFile, string gameType, string gameSize, string filePath, string idGame)
+        {
+            InitializeComponent();
+
+            Text = gameFile + ": " + idGame + " - ";
+
+            tbFileFormat.Text = gameType + " (" + gameSize + ")";
+            tbFilePath.Text = filePath;
+            tbIDGame.Text = idGame;
+            ParserXml(idGame);
+        }
+
+        #endregion
     }
 }
