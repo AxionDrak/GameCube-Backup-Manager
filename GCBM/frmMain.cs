@@ -713,7 +713,7 @@ namespace GCBM
             CONFIG_INI_FILE.IniWriteBool("SEVERAL", "CheckMD5", false);
             CONFIG_INI_FILE.IniWriteBool("SEVERAL", "CheckSHA1", false);
             CONFIG_INI_FILE.IniWriteBool("SEVERAL", "CheckNotify", true);
-            CONFIG_INI_FILE.IniWriteBool("SEVERAL", "NetVerify", false);
+            CONFIG_INI_FILE.IniWriteBool("SEVERAL", "NetVerify", true);
             CONFIG_INI_FILE.IniWriteBool("SEVERAL", "RecursiveMode", true);
             CONFIG_INI_FILE.IniWriteBool("SEVERAL", "TemporaryBuffer", false);
             CONFIG_INI_FILE.IniWriteBool("SEVERAL", "WindowMaximized", false);
