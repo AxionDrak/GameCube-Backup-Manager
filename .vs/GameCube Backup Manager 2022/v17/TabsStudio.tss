@@ -5,10 +5,6 @@
       <string>C:\Users\Sjohn\Desktop\CS\gcbm\GameCube-Backup-Manager\GCBM\frmAboutBox.en-US.resx</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>C:\Users\Sjohn\Desktop\CS\gcbm\GameCube-Backup-Manager\GCBM\frmMain.cs</string>
-      <string>C:\Users\Sjohn\Desktop\CS\gcbm\GameCube-Backup-Manager\GCBM\frmMain.cs</string>
-    </ArrayOfString>
-    <ArrayOfString>
       <string>C:\Users\Sjohn\Desktop\CS\gcbm\GameCube-Backup-Manager\GCBM\ProcessExtensions.cs</string>
     </ArrayOfString>
     <ArrayOfString>
@@ -18,7 +14,8 @@
       <string>C:\Users\Sjohn\Desktop\CS\gcbm\GameCube-Backup-Manager\GCBM\Program.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>C:\Users\Sjohn\Desktop\CS\gcbm\GameCube-Backup-Manager\GCBM\info.cs</string>
+      <string>C:\Users\Sjohn\Desktop\CS\gcbm\GameCube-Backup-Manager\GCBM\frmMain.cs</string>
+      <string>C:\Users\Sjohn\Desktop\CS\gcbm\GameCube-Backup-Manager\GCBM\frmMain.cs</string>
     </ArrayOfString>
   </ArrayOfArrayOfString>
 </ArrayOfArrayOfArrayOfString>
