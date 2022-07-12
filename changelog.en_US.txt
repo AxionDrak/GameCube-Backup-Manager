@@ -1,18 +1,28 @@
+﻿
+### GameCube Backup Manager 2.6.0.0 (July 12, 2022)
 
-### GameCube Backup Manager 2.5.0.6 (July 07, 2022)
+[Fixed] mismatch between columns and data.
+[Fixed] database not loading on launch.
+[Fixed] other various bug fixes and maintenance.
+[Improved] improved stability of batch installs.
 
-[Fixed] bug with network drives not being listed correctly.
+### GameCube Backup Manager 2.5.0.6 (July 08, 2022)
+
+[Added] network drive support.
+[Fixed] network drives not displaying correctly.
 
 ### GameCube Backup Manager 2.5.0.5 (July 07, 2022)
 
-[Fixed] bug with covers showing incorrectly on the destination tab.
+[Fixed] bug with skins showing incorrectly in the target tab.
 
 ### GameCube Backup Manager 2.5.0.0 (July 06, 2022)
 
-[Added] batch installs.
-[Added] searches on any field.
-[Added] table export to friendly HTML (supports mobile devices) via JavaScript and Bootstrap 5 theme.
-[Improved] other improvements and fixes.
+[Added] batch install system.
+[Added] search system in any field.
+[Fixed] other improvements and fixes.
+[Improved] export to HTML for mobile devices (JavaScript-enabled table and Bootstrap 5 theme).
+
+[Extra] arrival of Sjohnson1021 as official GCBM maintainer.
 
 ### GameCube Backup Manager 2.4.6.0 (July 03, 2022)
 
