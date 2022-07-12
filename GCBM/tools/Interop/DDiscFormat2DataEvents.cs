@@ -1,7 +1,7 @@
 ﻿using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace PluginBurnMedia.Interop
+namespace GCBM.tools.Interop
 {
     /// <summary>
     ///     Data Writer

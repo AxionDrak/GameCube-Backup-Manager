@@ -4,9 +4,9 @@ using System.Drawing;
 using System.IO;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
-using PluginBurnMedia.Interop;
+using GCBM.tools.Interop;
 
-namespace PluginBurnMedia.MediaItem
+namespace GCBM.tools.MediaItem
 {
     /// <summary>
     /// </summary>

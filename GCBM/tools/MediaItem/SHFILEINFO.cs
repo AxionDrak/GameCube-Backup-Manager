@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 
-namespace PluginBurnMedia.MediaItem
+namespace GCBM.tools.MediaItem
 {
     [StructLayout(LayoutKind.Sequential)]
     public struct SHFILEINFO

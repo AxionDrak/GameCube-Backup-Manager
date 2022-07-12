@@ -1,4 +1,7 @@
 ﻿
+using System.ComponentModel;
+using System.Windows.Forms;
+
 namespace GCBM.tools
 {
     partial class frmConvertELFtoDOL
@@ -6,7 +9,7 @@ namespace GCBM.tools
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -143,17 +146,17 @@ namespace GCBM.tools
 
         #endregion
 
-        private System.Windows.Forms.Label labelLogELFtoDOL;
-        private System.Windows.Forms.TextBox textBoxLogELFtoDOL;
-        private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button btnConvertELF;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btnSearchELF;
-        private System.Windows.Forms.TextBox textBoxDOL;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBoxELF;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.OpenFileDialog ofdELF;
+        private Label labelLogELFtoDOL;
+        private TextBox textBoxLogELFtoDOL;
+        private Button btnCancel;
+        private Button btnConvertELF;
+        private Label label4;
+        private Label label3;
+        private Button btnSearchELF;
+        private TextBox textBoxDOL;
+        private Label label2;
+        private TextBox textBoxELF;
+        private Label label1;
+        private OpenFileDialog ofdELF;
     }
 }

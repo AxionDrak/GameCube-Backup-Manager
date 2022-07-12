@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace PluginBurnMedia.Interop
+namespace GCBM.tools.Interop
 {
     [Flags]
     public enum FsiFileSystems

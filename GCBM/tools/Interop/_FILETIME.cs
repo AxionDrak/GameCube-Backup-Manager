@@ -1,6 +1,6 @@
 ﻿using System.Runtime.InteropServices;
 
-namespace PluginBurnMedia.Interop
+namespace GCBM.tools.Interop
 {
     #region IMAPI2 Enums
 

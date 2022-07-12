@@ -1,7 +1,7 @@
 ﻿using System.Drawing;
-using PluginBurnMedia.Interop;
+using GCBM.tools.Interop;
 
-namespace PluginBurnMedia.MediaItem
+namespace GCBM.tools.MediaItem
 {
     internal interface IMediaItem
     {

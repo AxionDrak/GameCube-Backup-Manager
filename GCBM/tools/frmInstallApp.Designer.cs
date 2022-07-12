@@ -1,4 +1,7 @@
 ﻿
+using System.ComponentModel;
+using System.Windows.Forms;
+
 namespace GCBM.tools
 {
     partial class frmInstallApp
@@ -6,7 +9,7 @@ namespace GCBM.tools
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -211,18 +214,18 @@ namespace GCBM.tools
 
         #endregion
 
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.Button btnInstall;
-        private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.PictureBox pbBanner;
-        private System.Windows.Forms.TextBox tbVersion;
-        private System.Windows.Forms.ComboBox cbDestiny;
-        private System.Windows.Forms.TextBox tbDirectory;
-        private System.Windows.Forms.ComboBox cbDevice;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private Label label5;
+        private Button btnClose;
+        private Button btnInstall;
+        private Button btnSearch;
+        private PictureBox pbBanner;
+        private TextBox tbVersion;
+        private ComboBox cbDestiny;
+        private TextBox tbDirectory;
+        private ComboBox cbDevice;
+        private Label label4;
+        private Label label3;
+        private Label label2;
+        private Label label1;
     }
 }

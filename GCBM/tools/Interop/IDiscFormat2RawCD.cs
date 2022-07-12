@@ -1,7 +1,7 @@
 ﻿using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.ComTypes;
 
-namespace PluginBurnMedia.Interop
+namespace GCBM.tools.Interop
 {
     /// <summary>
     ///     CD Disc-At-Once RAW Writer

@@ -1,6 +1,6 @@
 ﻿using System.Runtime.InteropServices;
 
-namespace PluginBurnMedia.Interop
+namespace GCBM.tools.Interop
 {
     [ComImport]
     [Guid("ED79BA56-5294-4250-8D46-F9AECEE23459")]

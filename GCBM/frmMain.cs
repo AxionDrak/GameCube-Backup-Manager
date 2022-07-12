@@ -21,6 +21,7 @@ using System.Xml.Linq;
 using AutoUpdaterDotNET;
 using GCBM.Properties;
 using GCBM.tools;
+using static System.Threading.Tasks.Task;
 using sio = System.IO;
 using ste = System.Text.Encoding;
 using Timer = System.Timers.Timer;
@@ -37,6 +38,9 @@ namespace GCBM
         ///     Main constructor method of the class.
         ///     No argument parameters.
         /// </summary>
+
+        private bool ABORT;
+
         public frmMain()
         {
             InitializeComponent();
@@ -104,13 +108,8 @@ namespace GCBM
 
             #region dgvDestination Setup
 
-            dgvDestination.Columns[1].HeaderText = Resources.LoadDatabase_GameTitle;
-            dgvDestination.Columns[2].HeaderText = Resources.LoadDatabase_IDGameCode;
-            dgvDestination.Columns[3].HeaderText = Resources.LoadDatabase_Region;
-            dgvDestination.Columns[4].HeaderText = Resources.LoadDatabase_Type;
-            dgvDestination.Columns[5].HeaderText = Resources.DisplayFilesSelected_Size;
-            dgvDestination.Columns[6].HeaderText = Resources.DisplayFilesSelected_FilePath;
-            dgvDestination.Refresh();
+            PopDestination();
+            PopSource();
 
             #endregion
 
@@ -119,6 +118,35 @@ namespace GCBM
 
             //foreach in this.Controls.Results 
             mstripMain.Refresh();
+            this.Focus();
+        }
+
+        private void PopDestination()
+        {
+            DataGridViewCheckBoxColumn cb = new DataGridViewCheckBoxColumn();
+            dgvDestination.Columns.Clear();
+            dgvDestination.Columns.Add(cb);
+            dgvDestination.Columns.Add("Title",Resources.LoadDatabase_GameTitle);
+            dgvDestination.Columns.Add("ID",Resources.LoadDatabase_IDGameCode);
+            dgvDestination.Columns.Add("Region",Resources.LoadDatabase_Region);
+            dgvDestination.Columns.Add("Type",Resources.LoadDatabase_Type);
+            dgvDestination.Columns.Add("Size",Resources.DisplayFilesSelected_Size);
+            dgvDestination.Columns.Add("Path",Resources.DisplayFilesSelected_FilePath);
+            dgvDestination.Refresh();
+        }
+
+        private void PopSource()
+        {
+            DataGridViewCheckBoxColumn cb = new DataGridViewCheckBoxColumn();
+            dgvSource.Columns.Clear();
+            dgvSource.Columns.Add(cb);
+            dgvSource.Columns.Add("Title",Resources.LoadDatabase_GameTitle);
+            dgvSource.Columns.Add("ID",Resources.LoadDatabase_IDGameCode);
+            dgvSource.Columns.Add("Region",Resources.LoadDatabase_Region);
+            dgvSource.Columns.Add("Type",Resources.LoadDatabase_Type);
+            dgvSource.Columns.Add("Size",Resources.DisplayFilesSelected_Size);
+            dgvSource.Columns.Add("Path",Resources.DisplayFilesSelected_FilePath);
+            dgvSource.Refresh();
         }
 
         #endregion
@@ -549,6 +577,8 @@ namespace GCBM
             dgvSource.Columns.Clear();
             dgvSource.Rows.Clear();
             dgvSource.Refresh();
+            PopDestination();
+            PopSource();
         }
 
         #endregion
@@ -561,7 +591,7 @@ namespace GCBM
         /// <returns></returns>
         private async Task ProcessTaskDelay()
         {
-            await Task.Delay(5000);
+            await Delay(5000).ConfigureAwait(false);
         }
 
         #endregion
@@ -763,23 +793,26 @@ namespace GCBM
             if (dgv.RowCount != 0)
                 try
                 {
-                    VerifyGame(dgv.CurrentRow.Cells[6].Value.ToString());
-
-                    if (ERROR == false) LoadCover(tbIDGame.Text);
-                    // pictureBox GameID
-                    if (pbWebGameID.Enabled == false)
+                    if (dgv.CurrentRow != null)
                     {
-                        pbWebGameID.Enabled = true;
-                        pbWebGameID.Image = Resources.globe_earth_color_64;
-                    }
+                        VerifyGame(dgv.CurrentRow.Cells["Path"].Value.ToString());
 
-                    if (dgv == dgvDestination)
-                    {
-                        //title,region,id
+                        if (ERROR == false) LoadCover(tbIDGame.Text);
+                        // pictureBox GameID
+                        if (pbWebGameID.Enabled == false)
+                        {
+                            pbWebGameID.Enabled = true;
+                            pbWebGameID.Image = Resources.globe_earth_color_64;
+                        }
 
-                        tbIDNameDisc.Text = dgv.CurrentRow.Cells[1].Value.ToString();
-                        tbIDRegionDisc.Text = dgv.CurrentRow.Cells[2].Value.ToString();
-                        tbIDGameDisc.Text = dgv.CurrentRow.Cells[3].Value.ToString();
+                        if (dgv == dgvDestination)
+                        {
+                            //title,region,id
+
+                            tbIDNameDisc.Text = dgv.CurrentRow.Cells["Title"].Value.ToString();
+                            tbIDRegionDisc.Text = dgv.CurrentRow.Cells["Region"].Value.ToString();
+                            tbIDGameDisc.Text = dgv.CurrentRow.Cells["ID"].Value.ToString();
+                        }
                     }
                 }
                 catch (Exception ex)
@@ -801,6 +834,7 @@ namespace GCBM
         /// <param name="dgv"></param>
         private async void DisplayFilesSelected(string sourceFolder, DataGridView dgv)
         {
+            ABORT = false;
             var filters = new[] { "iso", "gcm" };
             bool isRecursive;
 
@@ -827,7 +861,7 @@ namespace GCBM
             else
                 isRecursive = false;
 
-            var files = await GetFilesFolder(sourceFolder, filters, isRecursive);
+            var files = await GetFilesFolder(sourceFolder, filters, isRecursive).ConfigureAwait(false);
 
             if (dgv == dgvDestination)
                 //tsmiReloadGameListDisc.Enabled = true;
@@ -841,8 +875,7 @@ namespace GCBM
 
             tsmiSelectGameList.Enabled = true;
             // Groups files in the folder by extension.
-            var filesGroupedByExtension = files.Select(
-                arq => sio.Path.GetExtension(arq).TrimStart('.').ToLower(MY_CULTURE)).GroupBy(x => x, (ext, extCnt) =>
+            var filesGroupedByExtension = files.Select(arq => sio.Path.GetExtension(arq).TrimStart('.').ToLower(MY_CULTURE)).GroupBy(x => x, (ext, extCnt) =>
                 new { _fileExtension = ext, Counter = extCnt.Count() });
 
             // Scroll through the result and display the values.
@@ -1088,7 +1121,7 @@ namespace GCBM
         {
             string[] filters = { "ISO", "GCM" };
             var list = new List<Game>();
-            var files = await GetFilesFolder(path, filters, false);
+            var files = await GetFilesFolder(path, filters, false).ConfigureAwait(false);
 
             foreach (var file in files)
             {
@@ -1810,7 +1843,7 @@ namespace GCBM
                             // DELETAR JOGO E CAPA DO DISPOSITIVO DE ORIGEM
                             if (dgv == dgvSource)
                             {
-                                sio.File.Delete(dgv.CurrentRow.Cells[6].Value.ToString());
+                                sio.File.Delete(dgv.CurrentRow.Cells["Path"].Value.ToString());
 
                                 // 2D
                                 if (sio.File.Exists(cover2D)) sio.File.Delete(cover2D);
@@ -1825,7 +1858,7 @@ namespace GCBM
                             } // DELETE GAME FROM TARGET DEVICE.
                             else
                             {
-                                var pasta = sio.Path.GetDirectoryName(dgv.CurrentRow.Cells[6].Value.ToString());
+                                var pasta = sio.Path.GetDirectoryName(dgv.CurrentRow.Cells["Path"].Value.ToString());
                                 sio.Directory.Delete(pasta, true);
                                 DisplayFilesSelected(tscbDiscDrive.SelectedItem + GAMES_DIR + @"\", dgvDestination);
                             }
@@ -1887,13 +1920,13 @@ namespace GCBM
                             var diFull =
                                 new sio.DirectoryInfo(GET_CURRENT_PATH + COVERS_DIR + @"\" + LINK_DOMAIN + @"\full\");
 
-                            var files = await GetFilesFolder(fbd1.SelectedPath, filters, false);
+                            var files = await GetFilesFolder(fbd1.SelectedPath, filters, false).ConfigureAwait(false);
 
                             // Goes through the entire file list and removes all found ISO and GCM files.
                             for (var i = 0; i < files.Length; i++)
                             {
-                                //File.Delete(fbd1.SelectedPath + @"\" + dgvSource.CurrentRow.Cells[1].Value.ToString());
-                                sio.File.Delete(dgv.CurrentRow.Cells[6].Value.ToString());
+                                //File.Delete(fbd1.SelectedPath + @"\" + dgvSource.CurrentRow.Cells["Title"].Value.ToString());
+                                sio.File.Delete(dgv.CurrentRow.Cells["Path"].Value.ToString());
 
                                 DisplayFilesSelected(fbd1.SelectedPath, dgv);
                             }
@@ -1917,13 +1950,13 @@ namespace GCBM
                         else if (dgv == dgvSource)
                         {
                             var files = await GetFilesFolder(tscbDiscDrive.SelectedItem + GAMES_DIR + @"\", filters,
-                                false);
+                                false).ConfigureAwait(false);
 
                             // Goes through the entire file list and removes all found ISO and GCM files.
-                            //string folder = Path.GetDirectoryName(dgv.CurrentRow.Cells[6].Value.ToString());
+                            //string folder = Path.GetDirectoryName(dgv.CurrentRow.Cells["Path"].Value.ToString());
                             for (var i = 0; i < files.Length; i++)
                             {
-                                var folder = sio.Path.GetDirectoryName(dgv.CurrentRow.Cells[6].Value.ToString());
+                                var folder = sio.Path.GetDirectoryName(dgv.CurrentRow.Cells["Path"].Value.ToString());
                                 //File.Delete(tscbDiscDrive.SelectedItem + @"games\" + dgv.CurrentRow.Cells[0].Value.ToString());                               
                                 sio.Directory.Delete(folder, true);
                                 //MessageBox.Show(pasta);
@@ -2062,7 +2095,7 @@ namespace GCBM
             else
                 try
                 {
-                    var source = dgv.CurrentRow.Cells[6].Value.ToString();
+                    var source = dgv.CurrentRow.Cells["Path"].Value.ToString();
 
                     //SHA-1
                     if (algorithm == "SHA-1")
@@ -2620,27 +2653,27 @@ namespace GCBM
 
         #endregion
 
-        private void dgvGameList_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.ColumnIndex == 0)
-            {
-                /*
-                 * e.ColumnIndex = 0 
-                 * e.RowIndex
-                 */
-                if (dgvSelected != dgvSource && dgvSelected != dgvDestination)
-                    dgvSelected = dgvSource; //We haven't chosen one.. but.. clicked. Set selected dgv to source
-                //There's a way to do this in a single line.. but
-                if (dgvSelected != null && dgvSelected.Rows[e.RowIndex].Cells[0].Value.ToString() == "False")
-                {
-                    if (dgvSelected != null) dgvSelected.Rows[e.RowIndex].Cells[0].Value = true;
-                }
-                else
-                {
-                    if (dgvSelected != null) dgvSelected.Rows[e.RowIndex].Cells[0].Value = false;
-                }
-            }
-        }
+        //private void dgvGameList_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        //{
+        //    if (e.ColumnIndex == 0)
+        //    {
+        //        /*
+        //         * e.ColumnIndex = 0 
+        //         * e.RowIndex
+        //         */
+        //        if (dgvSelected != dgvSource && dgvSelected != dgvDestination)
+        //            dgvSelected = dgvSource; //We haven't chosen one.. but.. clicked. Set selected dgv to source
+        //        //There's a way to do this in a single line.. but
+        //        if (dgvSelected != null && dgvSelected.Rows[e.RowIndex].Cells[0].Value.ToString() == "False")
+        //        {
+        //            if (dgvSelected != null) dgvSelected.Rows[e.RowIndex].Cells[0].Value = true;
+        //        }
+        //        else
+        //        {
+        //            if (dgvSelected != null) dgvSelected.Rows[e.RowIndex].Cells[0].Value = false;
+        //        }
+        //    }
+        //}
 
         private void Search_Click(object sender, EventArgs e)
         {
@@ -2651,12 +2684,12 @@ namespace GCBM
             foreach (DataGridViewRow row in dgvSelected.Rows)
                 if (tbSearch.Text != null || tbSearch.Text != string.Empty)
                     if (
-                        !row.Cells[1].Value.ToString().ToLower().Contains(tbSearch.Text.ToLower()) &&
-                        !row.Cells[2].Value.ToString().ToLower().Contains(tbSearch.Text.ToLower()) &&
-                        !row.Cells[3].Value.ToString().ToLower().Contains(tbSearch.Text.ToLower()) &&
-                        !row.Cells[4].Value.ToString().ToLower().Contains(tbSearch.Text.ToLower()) &&
-                        !row.Cells[5].Value.ToString().ToLower().Contains(tbSearch.Text.ToLower()) &&
-                        !row.Cells[6].Value.ToString().ToLower().Contains(tbSearch.Text.ToLower()))
+                        !row.Cells["Title"].Value.ToString().ToLower().Contains(tbSearch.Text.ToLower()) &&
+                        !row.Cells["ID"].Value.ToString().ToLower().Contains(tbSearch.Text.ToLower()) &&
+                        !row.Cells["Region"].Value.ToString().ToLower().Contains(tbSearch.Text.ToLower()) &&
+                        !row.Cells["Type"].Value.ToString().ToLower().Contains(tbSearch.Text.ToLower()) &&
+                        !row.Cells["Size"].Value.ToString().ToLower().Contains(tbSearch.Text.ToLower()) &&
+                        !row.Cells["Path"].Value.ToString().ToLower().Contains(tbSearch.Text.ToLower()))
                         row.Visible = false;
         }
 
@@ -2941,7 +2974,7 @@ namespace GCBM
                     ROOT_OPENED = false;
                 }
 
-            tbIDRegionDisc.Text = dgvSelected.CurrentRow.Cells[2].Value.ToString();
+            tbIDRegionDisc.Text = dgvSelected.CurrentRow.Cells["ID"].Value.ToString();
         }
 
         #endregion
@@ -3174,7 +3207,8 @@ namespace GCBM
         /// </summary>
         private void InstallGameScrub(int x)
         {
-            while (true)
+            //if (ABORT) return;
+            while (true && !ABORT)
             {
                 const string quote = "\"";
                 var _source = InstallQueue[x].Path;
@@ -3264,27 +3298,7 @@ namespace GCBM
 
                             if (myProcess.Responding)
                             {
-                                lblCopy.Visible = true;
-                                lblInstallGame.Visible = true;
-                                lblPercent.Visible = true;
-                                pbCopy.Visible = true;
-
-                                DisableOptionsGame(dgvSource);
-
-                                lblCopy.Text = Resources.InstallGameScrub_String1;
-                                lblInstallGame.Text = Resources.InstallGameScrub_String2 + i++;
-                                pbCopy.PerformStep();
-                                var incrementValue = i++ / 2;
-                                if (incrementValue >= 100)
-                                {
-                                    pbCopy.Hide();
-                                    lblPercent.Text = "This is taking a while, but we are still responding.";
-                                }
-                                else
-                                {
-                                    lblPercent.Text = incrementValue + "%"; //i++.ToString() + "%";
-                                    pbCopy.Value = incrementValue;
-                                }
+                                i = UpdateProgressScrub(i);
 
                                 //progressBarGameCopy.Maximum = i++ * 5;
                             }
@@ -3295,7 +3309,7 @@ namespace GCBM
                             }
                         }
                         //progressBar1.Value += 5;
-                    } while (!myProcess.WaitForExit(1000));
+                    } while (!myProcess.WaitForExit(1000) && !ABORT);
 
                     //textLog.AppendText($">> Código de saída do processo : {myProcess.ExitCode}");
 
@@ -3375,7 +3389,6 @@ namespace GCBM
                             * MYDESTINY:    c:\games\resident evil 4 disc2 (2) [G4BE082]\disc2.iso
                             * MYNEWDESTINY: c:\games\resident evil 4 [G4BE08]\
                             */
-
                                 sio.File.Move(myOrigem, myDestiny);
 
                                 GlobalNotifications(Resources.InstallGameScrub_String6, ToolTipIcon.Info);
@@ -3400,6 +3413,33 @@ namespace GCBM
             }
         }
 
+        private int UpdateProgressScrub(int i)
+        {
+            lblCopy.Visible = true;
+            lblInstallGame.Visible = true;
+            lblPercent.Visible = true;
+            pbCopy.Visible = true;
+
+            DisableOptionsGame(dgvSource);
+
+            lblCopy.Text = Resources.InstallGameScrub_String1;
+            lblInstallGame.Text = Resources.InstallGameScrub_String2 + i++;
+            pbCopy.PerformStep();
+            var incrementValue = i++ / 2;
+            if (incrementValue >= 100)
+            {
+                pbCopy.Hide();
+                lblPercent.Text = "This is taking a while, but we are still responding.";
+            }
+            else
+            {
+                lblPercent.Text = incrementValue + "%"; //i++.ToString() + "%";
+                pbCopy.Value = incrementValue;
+            }
+
+            return i;
+        }
+
         #endregion
 
         #region Copy Task
@@ -3417,37 +3457,17 @@ namespace GCBM
             {
                 if (_destination.Exists) _destination.Delete();
                 //Create a tast to run copy file
-                Task.Run(() =>
+                Run(() =>
                 {
                     //_source.CopyTo(_destination, true);
                     _source.CopyTo(_destination, x => pbCopy.BeginInvoke(new Action(() =>
                     {
                         //DisableOptionsGame(dgvSource);
-                        dgvSource.Enabled = false;
-                        pbCopy.Visible = true;
-                        lblCopy.Visible = true;
-                        lblPercent.Visible = true;
-                        lblInstallGame.Visible = true;
-                        pbCopy.Value = x;
-                        lblCopy.Text = Resources.CopyTask_String1;
-                        lblInstallGame.Text = Resources.CopyTask_String2 + tbIDName.Text;
-                        lblPercent.Text = x + "%";
+                        UpdateProgressExact(x);
                     })));
                 }).GetAwaiter().OnCompleted(() => pbCopy.BeginInvoke(new Action(() =>
                 {
-                    pbCopy.Value = 100;
-                    lblCopy.Text = Resources.CopyTask_String3;
-                    lblInstallGame.Text = Resources.CopyTask_String4;
-                    lblPercent.Text = Resources.CopyTask_String5;
-                    GlobalNotifications(Resources.InstallGameScrub_String5, ToolTipIcon.Info);
-                    EnableOptionsGameList();
-                    dgvSource.Enabled = true;
-                    pbCopy.Visible = false;
-                    lblCopy.Visible = false;
-                    lblPercent.Visible = false;
-                    lblInstallGame.Visible = false;
-                    intQueuePos++;
-                    WORKING = false;
+                    FinishedInstalling();
                     if (intQueuePos <= intQueueLength)
                         try
                         {
@@ -3464,37 +3484,49 @@ namespace GCBM
             {
                 if (_destination.Exists) _destination.Delete();
                 //Create a tast to run copy file
-                Task.Run(() =>
+               Run(() =>
                 {
                     _source.CopyTo(_destination, x => pbCopy.BeginInvoke(new Action(() =>
                     {
                         //DisableOptionsGame(dgvSource);
-                        pbCopy.Visible = true;
-                        lblCopy.Visible = true;
-                        lblPercent.Visible = true;
-                        lblInstallGame.Visible = true;
-                        pbCopy.Value = x;
-                        lblCopy.Text = Resources.CopyTask_String1;
-                        lblInstallGame.Text = Resources.CopyTask_String2 + tbIDName.Text;
-                        lblPercent.Text = x + "%";
+                     UpdateProgressExact(x);
                     })));
                 }).GetAwaiter().OnCompleted(() => pbCopy.BeginInvoke(new Action(() =>
                 {
-                    pbCopy.Value = 100;
-                    lblCopy.Text = Resources.CopyTask_String6;
-                    lblInstallGame.Text = Resources.CopyTask_String4;
-                    lblPercent.Text = Resources.CopyTask_String5;
-                    GlobalNotifications(Resources.InstallGameScrub_String6, ToolTipIcon.Info);
-                    EnableOptionsGameList();
-                    pbCopy.Visible = false;
-                    lblCopy.Visible = false;
-                    lblPercent.Visible = false;
-                    lblInstallGame.Visible = false;
-                    intQueuePos++;
-                    WORKING = false;
+                  FinishedInstalling();
                     CheckAndCallCopyTask(InstallQueue[intQueuePos].Path);
                 })));
             }
+        }
+
+        private void UpdateProgressExact(int x)
+        {
+            dgvSource.Enabled = false;
+            pbCopy.Visible = true;
+            lblCopy.Visible = true;
+            lblPercent.Visible = true;
+            lblInstallGame.Visible = true;
+            pbCopy.Value = x;
+            lblCopy.Text = Resources.CopyTask_String1;
+            lblInstallGame.Text = Resources.CopyTask_String2 + tbIDName.Text;
+            lblPercent.Text = x + "%";
+        }
+
+        private void FinishedInstalling()
+        {
+            pbCopy.Value = 100;
+            lblCopy.Text = Resources.CopyTask_String3;
+            lblInstallGame.Text = Resources.CopyTask_String4;
+            lblPercent.Text = Resources.CopyTask_String5;
+            GlobalNotifications(Resources.InstallGameScrub_String5, ToolTipIcon.Info);
+            EnableOptionsGameList();
+            dgvSource.Enabled = true;
+            pbCopy.Visible = false;
+            lblCopy.Visible = false;
+            lblPercent.Visible = false;
+            lblInstallGame.Visible = false;
+            intQueuePos++;
+            WORKING = false;
         }
 
         #endregion
@@ -3510,9 +3542,13 @@ namespace GCBM
         /// <param name="icon"></param>
         private void GlobalNotifications(string message, ToolTipIcon icon)
         {
+            if (intQueuePos + 1 == InstallQueue.Count && WORKING == false)
+            {
+                EnableOptionsGameList();
+            }
             notifyIcon.ShowBalloonTip(5, "GameCube Backup Manager", message, icon);
+            
 
-            if (!INSTALLING) EnableOptionsGameList();
         }
 
         /// <summary>
@@ -3571,7 +3607,7 @@ namespace GCBM
         /// </summary>
         private async void CheckWiiTdbXml()
         {
-            await ProcessTaskDelay();
+            await ProcessTaskDelay().ConfigureAwait(false);
             MessageBox.Show(Resources.ProcessTaskDelay_String1 + Environment.NewLine +
                             Resources.ProcessTaskDelay_String2 +
                             Environment.NewLine + Environment.NewLine +
@@ -3870,10 +3906,10 @@ namespace GCBM
 
         #region tsmiGameListDeleteAllFiles_Click
 
-        private void tsmiGameListDeleteAllFiles_Click(object sender, EventArgs e)
+        private async Task TsmiGameListDeleteAllFiles_ClickAsync(object sender, EventArgs e)
         {
             //DeleteAllGames(0);
-            GlobalDeleteAllGames(dgvSource);
+            await GlobalDeleteAllGames(dgvSource).ConfigureAwait(false);
         }
 
         #endregion
@@ -4113,7 +4149,7 @@ namespace GCBM
                 }
                 else
                 {
-                    var pathImage = dgvSource.CurrentRow.Cells[6].Value.ToString();
+                    var pathImage = dgvSource.CurrentRow.Cells["Path"].Value.ToString();
 
                     using (var form = new frmRenameISO(fbd1.SelectedPath, pathImage))
                     {
@@ -4279,10 +4315,10 @@ namespace GCBM
                 else
                 {
                     // Nome do Arquivo, Formato (Tipo), Tamanho, Local do Arquivo, ID do Jogo
-                    var _frmInfo = new frmInformation(dgvSource.CurrentRow.Cells[1].Value.ToString(),
-                        dgvSource.CurrentRow.Cells[2].Value.ToString(),
-                        dgvSource.CurrentRow.Cells[3].Value.ToString(), dgvSource.CurrentRow.Cells[6].Value.ToString(),
-                        tbIDGame.Text);
+                    var _frmInfo = new frmInformation(dgvSource.CurrentRow.Cells["Title"].Value.ToString(),
+                        dgvSource.CurrentRow.Cells["Type"].Value.ToString(),
+                        dgvSource.CurrentRow.Cells["Size"].Value.ToString(), dgvSource.CurrentRow.Cells["Path"].Value.ToString(),
+                        dgvSource.CurrentRow.Cells["ID"].Value.ToString());
                     _frmInfo.ShowDialog();
                     _frmInfo.Dispose();
                 }
@@ -4346,7 +4382,7 @@ namespace GCBM
                     {
                         var VideoDX = "";
                         var AudioDSP = "";
-                        var _sourceGame = dgvSource.CurrentRow.Cells[6].Value.ToString();
+                        var _sourceGame = dgvSource.CurrentRow.Cells["Path"].Value.ToString();
 
                         START_INFO.CreateNoWindow = true;
                         START_INFO.UseShellExecute = true;
@@ -4525,12 +4561,12 @@ namespace GCBM
 
         #region SJohnson1021's Playground
 
-        private async void StartScrub()
+        private void StartScrub()
         {
             DisableOptionsGame(dgvSource);
             BuildInstallQueue();
             foreach (var game in InstallQueue) InstallGameScrub(intQueuePos);
-            GlobalNotifications("Successfully installed " + InstallQueue.Count + "Games.", ToolTipIcon.Info);
+            GlobalNotifications("Successfully installed " + InstallQueue.Count + " games.", ToolTipIcon.Info);
             pbCopy.Hide();
             lblPercent.Hide();
             lblInstallGame.Hide();
@@ -4538,12 +4574,12 @@ namespace GCBM
             EnableOptionsGameList();
         }
 
-        private async void StartExact()
+        private void StartExact()
         {
             DisableOptionsGame(dgvSource);
             BuildInstallQueue();
             foreach (var game in InstallQueue) CheckAndCallCopyTask(InstallQueue[intQueuePos].Path);
-            GlobalNotifications("Successfully installed " + InstallQueue.Count + " Games.", ToolTipIcon.Info);
+            GlobalNotifications("Successfully installed " + InstallQueue.Count + " games.", ToolTipIcon.Info);
             pbCopy.Hide();
             lblPercent.Hide();
             lblInstallGame.Hide();
@@ -4581,7 +4617,7 @@ namespace GCBM
             foreach (DataGridViewRow row in dgvSource.Rows)
             {
                 if (row.Cells[0].Value.ToString() != "True") continue;
-                InstallQueue.Add(num, getGameInfo(row.Cells[6].Value.ToString()));
+                InstallQueue.Add(num, getGameInfo(row.Cells["Path"].Value.ToString()));
                 num++;
             }
 
@@ -4673,8 +4709,8 @@ namespace GCBM
                     }
             }
             else
-            {
-                MessageBox.Show("Successfully installed " + intQueueLength + " games.", "Success!");
+            { 
+                GlobalNotifications("Successfully installed " + InstallQueue.Count + " games.", ToolTipIcon.Info);
                 EnableOptionsGameList();
             }
         }
@@ -4692,11 +4728,12 @@ namespace GCBM
         {
             // Disc 1
             //if (textBoxDiscID.Text == "00" && comboBoxSettingsNomenclatureAppointmentStyle.SelectedIndex  == 0)
+            
             if (tbIDDiscID.Text == "0x00")
             {
                 if (_destination.Exists) _destination.Delete();
                 //Create a task to run copy file
-                Task.Run(() =>
+                Run(() =>
                 {
                     //_source.CopyTo(_destination, true);
                     _source.CopyTo(_destination, x => pbCopy.BeginInvoke(new Action(() =>
@@ -4713,7 +4750,7 @@ namespace GCBM
             {
                 if (_destination.Exists) _destination.Delete();
                 //Create a task to run copy file
-                Task.Run(() =>
+                Run(() =>
                 {
                     _source.CopyTo(_destination, x => pbCopy.BeginInvoke(new Action(() =>
                     {
@@ -4723,6 +4760,12 @@ namespace GCBM
                 {
                     //Finished
                 })));
+            }
+
+            if(((intQueuePos+1)==InstallQueue.Count)&&!WORKING)
+            {
+                GlobalNotifications("Finished!",ToolTipIcon.Info);
+                EnableOptionsGameList();
             }
         }
 
@@ -4926,7 +4969,7 @@ namespace GCBM
             foreach (DataGridViewRow row in dgvSource.Rows)
                 if (row.Cells[0].Value.ToString() == "True")
                 {
-                    InstallQueue.Add(num, getGameInfo(row.Cells[6].Value.ToString()));
+                    InstallQueue.Add(num, getGameInfo(row.Cells["Path"].Value.ToString()));
                     num++;
                 }
 
@@ -4940,7 +4983,7 @@ namespace GCBM
         //InstallGameExactCopy(row);
         private void InstallGameExactCopy(string path)
         {
-            if (intQueuePos <= InstallQueue.Count - 1)
+            if (intQueuePos <= InstallQueue.Count - 1 && !ABORT)
             {
                 var _file = new sio.FileInfo(path);
                 loadPath = _file.FullName;
@@ -5042,11 +5085,10 @@ namespace GCBM
                         GlobalNotifications(ex.Message, ToolTipIcon.Error);
                     }
             }
-            else if (intQueuePos + 1 == InstallQueue.Count && WORKING == false)
-            {
-                GlobalNotifications("Successfully installed " + InstallQueue.Count + " games.", ToolTipIcon.Info);
-                EnableOptionsGameList();
-            }
+
+            if (intQueuePos + 1 != InstallQueue.Count) return;
+            GlobalNotifications("Successfully installed " + InstallQueue.Count + " games.", ToolTipIcon.Info);
+            EnableOptionsGameList();
         }
 
         #endregion
@@ -5119,7 +5161,7 @@ namespace GCBM
             {
                 if (_destination.Exists) _destination.Delete();
                 //Create a tast to run copy file
-                Task.Run(() =>
+                Run(() =>
                 {
                     //_source.CopyTo(_destination, true);
                     _source.CopyTo(_destination, x => pbCopy.BeginInvoke(new Action(() =>
@@ -5172,7 +5214,7 @@ namespace GCBM
             {
                 if (_destination.Exists) _destination.Delete();
                 //Create a tast to run copy file
-                Task.Run(() =>
+                Run(() =>
                 {
                     _source.CopyTo(_destination, x => pbCopy.BeginInvoke(new Action(() =>
                     {
@@ -5260,11 +5302,61 @@ namespace GCBM
             btnGameInstallScrub.Enabled = true;
         }
 
+        private void dgvSource_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 0)
+            {
+                /*
+                 * e.ColumnIndex = 0 
+                 * e.RowIndex
+                 */
+                if (dgvSelected != dgvSource && dgvSelected != dgvDestination)
+                    dgvSelected = dgvSource; //We haven't chosen one.. but.. clicked. Set selected dgv to source
+                //There's a way to do this in a single line.. but
+                if (dgvSelected != null && dgvSelected.Rows[e.RowIndex].Cells[0].Value.ToString() == "False")
+                {
+                    if (dgvSelected != null) dgvSelected.Rows[e.RowIndex].Cells[0].Value = true;
+                }
+                else
+                {
+                    if (dgvSelected != null) dgvSelected.Rows[e.RowIndex].Cells[0].Value = false;
+                }
+            }
+
+        }
+
+        private void dgvDestination_CurrentCellChanged(object sender, EventArgs e)
+        {
+            ReloadDataGridViewGameList(dgvDestination);
+        }
+
+        private void dgvSource_CurrentCellChanged(object sender, EventArgs e)
+        {
+            ReloadDataGridViewGameList(dgvSource);
+        }
+
+        private void toolStripStatusLabel1_Click(object sender, EventArgs e)
+        {
+            ResetOptions();
+        }
+
         #endregion
 
         #endregion
 
         //Restarts the application (closes and reopens)
         //Application.Restart();
+        private void tsmiGameListDeleteAllFiles_ClickAsync(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void btnAbort_Click(object sender, EventArgs e)
+        {
+            ABORT = true;
+            ResetOptions();
+            lblPercent.Text = "We will stop once this transfer has completed, or errored. You will need to select a source folder again.";
+            lblInstallGame.Show();
+        }
     } // frmMain Form
 } // namespace GCBM

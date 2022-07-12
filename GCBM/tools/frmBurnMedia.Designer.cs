@@ -1,4 +1,7 @@
 ﻿
+using System.ComponentModel;
+using System.Windows.Forms;
+
 namespace GCBM.tools
 {
     partial class frmBurnMedia
@@ -6,7 +9,7 @@ namespace GCBM.tools
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -491,43 +494,43 @@ namespace GCBM.tools
 
         #endregion
 
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPageBurn;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.ProgressBar pbStatus;
-        private System.Windows.Forms.Label labelStatusText;
-        private System.Windows.Forms.Button btnBurn;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label labelMediaType;
-        private System.Windows.Forms.Button btnDetectMedia;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label labelTotalSize;
-        private System.Windows.Forms.ProgressBar pbCapacity;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox cbVerification;
-        private System.Windows.Forms.Label labelVerification;
-        private System.Windows.Forms.CheckBox chkEject;
-        private System.Windows.Forms.CheckBox chkCloseMedia;
-        private System.Windows.Forms.TextBox tbVolumeLabel;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnRemoveFiles;
-        private System.Windows.Forms.Button btnAddFolders;
-        private System.Windows.Forms.Button btnAddFiles;
-        private System.Windows.Forms.ListBox lbFiles;
-        private System.Windows.Forms.TabPage tabPageFormat;
-        private System.Windows.Forms.CheckBox chkQuickFormat;
-        private System.Windows.Forms.CheckBox chkEjectFormat;
-        private System.Windows.Forms.ProgressBar pbFormat;
-        private System.Windows.Forms.Label labelFormatStatusText;
-        private System.Windows.Forms.Button btnFormat;
-        private System.Windows.Forms.Label supportedMediaLabel;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cbDevices;
-        private System.Windows.Forms.NotifyIcon notifyIcon;
-        private System.Windows.Forms.OpenFileDialog ofd;
-        private System.Windows.Forms.FolderBrowserDialog fbd;
-        private System.ComponentModel.BackgroundWorker bgBurnWorker;
-        private System.ComponentModel.BackgroundWorker bgFormatWorker;
+        private Label label4;
+        private TabControl tabControl1;
+        private TabPage tabPageBurn;
+        private GroupBox groupBox3;
+        private ProgressBar pbStatus;
+        private Label labelStatusText;
+        private Button btnBurn;
+        private GroupBox groupBox2;
+        private Label labelMediaType;
+        private Button btnDetectMedia;
+        private Label label3;
+        private Label labelTotalSize;
+        private ProgressBar pbCapacity;
+        private GroupBox groupBox1;
+        private ComboBox cbVerification;
+        private Label labelVerification;
+        private CheckBox chkEject;
+        private CheckBox chkCloseMedia;
+        private TextBox tbVolumeLabel;
+        private Label label2;
+        private Button btnRemoveFiles;
+        private Button btnAddFolders;
+        private Button btnAddFiles;
+        private ListBox lbFiles;
+        private TabPage tabPageFormat;
+        private CheckBox chkQuickFormat;
+        private CheckBox chkEjectFormat;
+        private ProgressBar pbFormat;
+        private Label labelFormatStatusText;
+        private Button btnFormat;
+        private Label supportedMediaLabel;
+        private Label label1;
+        private ComboBox cbDevices;
+        private NotifyIcon notifyIcon;
+        private OpenFileDialog ofd;
+        private FolderBrowserDialog fbd;
+        private BackgroundWorker bgBurnWorker;
+        private BackgroundWorker bgFormatWorker;
     }
 }

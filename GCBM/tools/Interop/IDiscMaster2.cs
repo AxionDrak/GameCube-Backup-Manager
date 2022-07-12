@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Runtime.InteropServices;
 
-namespace PluginBurnMedia.Interop
+namespace GCBM.tools.Interop
 {
     /// <summary>
     ///     IDiscMaster2 is used to get an enumerator for the set of CD/DVD (optical) devices on the system

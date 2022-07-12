@@ -4,6 +4,7 @@
     <ArrayOfString>
       <string>C:\Users\Sjohn\Desktop\CS\gcbm\GameCube-Backup-Manager\GCBM\frmMain.cs</string>
       <string>C:\Users\Sjohn\Desktop\CS\gcbm\GameCube-Backup-Manager\GCBM\frmMain.cs</string>
+      <string>C:\Users\Sjohn\Desktop\CS\gcbm\GameCube-Backup-Manager\GCBM\frmMain.Designer.cs</string>
     </ArrayOfString>
     <ArrayOfString>
       <string>C:\Users\Sjohn\Desktop\CS\gcbm\GameCube-Backup-Manager\GCBM\ProcessExtensions.cs</string>
@@ -13,6 +14,14 @@
     </ArrayOfString>
     <ArrayOfString>
       <string>C:\Users\Sjohn\Desktop\CS\gcbm\GameCube-Backup-Manager\GCBM\Program.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>C:\Users\Sjohn\Desktop\CS\gcbm\GameCube-Backup-Manager\GCBM\TOC.cs</string>
+      <string>C:\Users\Sjohn\Desktop\CS\gcbm\GameCube-Backup-Manager\GCBM\TOC.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>C:\Users\Sjohn\Desktop\CS\gcbm\GameCube-Backup-Manager\GCBM\image.cs</string>
+      <string>C:\Users\Sjohn\Desktop\CS\gcbm\GameCube-Backup-Manager\GCBM\image.cs</string>
     </ArrayOfString>
   </ArrayOfArrayOfString>
 </ArrayOfArrayOfArrayOfString>

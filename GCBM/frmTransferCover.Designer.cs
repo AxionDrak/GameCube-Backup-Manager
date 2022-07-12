@@ -1,4 +1,7 @@
 ﻿
+using System.ComponentModel;
+using System.Windows.Forms;
+
 namespace GCBM
 {
     partial class frmTransferCover
@@ -6,7 +9,7 @@ namespace GCBM
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -149,17 +152,17 @@ namespace GCBM
         }
 
         #endregion
-        private System.Windows.Forms.Label lblTransferStatus;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.CheckBox chkTransferAllRegions;
-        private System.Windows.Forms.RadioButton rbJapan;
-        private System.Windows.Forms.RadioButton rbEurope;
-        private System.Windows.Forms.RadioButton rbUsa;
-        private System.Windows.Forms.ProgressBar pbCoverCopy;
-        private System.ComponentModel.BackgroundWorker bgWorkerIndeterminate;
-        private System.Windows.Forms.Button btnTaskCancel;
-        private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.Button btnTaskIndeterminate;
-        private System.Windows.Forms.NotifyIcon notifyIcon;
+        private Label lblTransferStatus;
+        private GroupBox groupBox1;
+        private CheckBox chkTransferAllRegions;
+        private RadioButton rbJapan;
+        private RadioButton rbEurope;
+        private RadioButton rbUsa;
+        private ProgressBar pbCoverCopy;
+        private BackgroundWorker bgWorkerIndeterminate;
+        private Button btnTaskCancel;
+        private Button btnClose;
+        private Button btnTaskIndeterminate;
+        private NotifyIcon notifyIcon;
     }
 }

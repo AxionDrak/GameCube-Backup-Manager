@@ -1,4 +1,4 @@
-﻿namespace PluginBurnMedia.Interop
+﻿namespace GCBM.tools.Interop
 {
     public enum IMAPI_FORMAT2_DATA_WRITE_ACTION
     {

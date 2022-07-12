@@ -1,4 +1,4 @@
-﻿namespace PluginBurnMedia.Interop
+﻿namespace GCBM.tools.Interop
 {
     public enum IMAPI_FEATURE_PAGE_TYPE
     {

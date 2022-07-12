@@ -1,53 +1,57 @@
-﻿using System.Text;
+﻿using System.IO;
+using System.Text;
 
-public static class SIOExtensions
+namespace GCBM
 {
-    private static int resI;
-    private static int resH;
-    private static string resS;
-    private static int i;
-    private static byte b;
-
-    public static int ReadInt32BE(this System.IO.BinaryReader br)
+    public static class SIOExtensions
     {
-        i = br.ReadByte();
-        resI = i << 0x18;
-        i = br.ReadByte();
-        resI += i << 0x10;
-        i = br.ReadByte();
-        resI += i << 0x08;
-        i = br.ReadByte();
-        resI += i;
+        private static int resI;
+        private static int resH;
+        private static string resS;
+        private static int i;
+        private static byte b;
 
-        return resI;
-    }
-
-    public static string ReadStringNT(this System.IO.BinaryReader br)
-    {
-        resS = "";
-        b = br.ReadByte();
-
-        while (b != 0)
+        public static int ReadInt32BE(this BinaryReader br)
         {
-            resS += Encoding.Default.GetChars(new[] { b })[0];
+            i = br.ReadByte();
+            resI = i << 0x18;
+            i = br.ReadByte();
+            resI += i << 0x10;
+            i = br.ReadByte();
+            resI += i << 0x08;
+            i = br.ReadByte();
+            resI += i;
+
+            return resI;
+        }
+
+        public static string ReadStringNT(this BinaryReader br)
+        {
+            resS = "";
             b = br.ReadByte();
+
+            while (b != 0)
+            {
+                resS += Encoding.Default.GetChars(new[] { b })[0];
+                b = br.ReadByte();
+            }
+
+            return resS;
         }
 
-        return resS;
-    }
-
-    public static string ToStringC(char[] chars)
-    {
-        resS = "";
-        resH = chars.Length;
-
-        for (var resI = 0; resI < resH; resI++)
+        public static string ToStringC(char[] chars)
         {
-            if (chars[resI] == '\n')
-                resS += '\r';
-            resS += chars[resI];
-        }
+            resS = "";
+            resH = chars.Length;
 
-        return resS;
+            for (var resI = 0; resI < resH; resI++)
+            {
+                if (chars[resI] == '\n')
+                    resS += '\r';
+                resS += chars[resI];
+            }
+
+            return resS;
+        }
     }
 }

@@ -1,6 +1,6 @@
 ﻿using System.Runtime.InteropServices;
 
-namespace PluginBurnMedia.Interop
+namespace GCBM.tools.Interop
 {
     [ComVisible(false)]
     [ComEventInterface(typeof(DWriteEngine2Events), typeof(DWriteEngine2_EventProvider))]

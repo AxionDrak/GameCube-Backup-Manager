@@ -12,11 +12,8 @@ namespace GCBM
         {
             return new ManagementObjectSearcher(
                     $"Select * From Win32_Process Where ParentProcessID={process.Id}")
-                .Get()
-                .Cast<ManagementObject>()
-                .Select(mo =>
-                    Process.GetProcessById(Convert.ToInt32(mo["ProcessID"])))
-                .ToList();
+                .Get().Cast<ManagementObject>().Select(mo =>
+                    Process.GetProcessById(Convert.ToInt32(mo["ProcessID"]))).ToList();
         }
     }
 }

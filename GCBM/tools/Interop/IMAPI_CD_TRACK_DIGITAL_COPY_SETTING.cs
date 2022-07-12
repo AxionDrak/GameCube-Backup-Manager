@@ -1,4 +1,4 @@
-﻿namespace PluginBurnMedia.Interop
+﻿namespace GCBM.tools.Interop
 {
     public enum IMAPI_CD_TRACK_DIGITAL_COPY_SETTING
     {

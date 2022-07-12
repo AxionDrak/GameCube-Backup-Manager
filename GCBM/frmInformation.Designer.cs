@@ -1,4 +1,7 @@
 ﻿
+using System.ComponentModel;
+using System.Windows.Forms;
+
 namespace GCBM
 {
     partial class frmInformation
@@ -6,7 +9,7 @@ namespace GCBM
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -285,33 +288,33 @@ namespace GCBM
 
         #endregion
 
-        private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.PictureBox pbBanner;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox cbLanguageBanner;
-        private System.Windows.Forms.TextBox tbDescriptionBanner;
-        private System.Windows.Forms.TextBox tbLanguageBanner;
-        private System.Windows.Forms.TextBox tbDeveloperBanner;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox tbDataApploader;
-        private System.Windows.Forms.TextBox tbDeveloper;
-        private System.Windows.Forms.TextBox tbRegion;
-        private System.Windows.Forms.TextBox tbIDGame;
-        private System.Windows.Forms.TextBox tbGameInternalName;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox tbFileFormat;
-        private System.Windows.Forms.TextBox tbFilePath;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private Button btnClose;
+        private GroupBox groupBox3;
+        private PictureBox pbBanner;
+        private Label label12;
+        private Label label11;
+        private Label label10;
+        private Label label9;
+        private Label label8;
+        private ComboBox cbLanguageBanner;
+        private TextBox tbDescriptionBanner;
+        private TextBox tbLanguageBanner;
+        private TextBox tbDeveloperBanner;
+        private GroupBox groupBox2;
+        private TextBox tbDataApploader;
+        private TextBox tbDeveloper;
+        private TextBox tbRegion;
+        private TextBox tbIDGame;
+        private TextBox tbGameInternalName;
+        private Label label7;
+        private Label label6;
+        private Label label5;
+        private Label label4;
+        private Label label3;
+        private GroupBox groupBox1;
+        private TextBox tbFileFormat;
+        private TextBox tbFilePath;
+        private Label label2;
+        private Label label1;
     }
 }

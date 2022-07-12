@@ -63,7 +63,7 @@ namespace GCBM
 
         private async Task ProcessTaskDelay()
         {
-            await Task.Delay(4000);
+            await Task.Delay(4000).ConfigureAwait(false);
         }
 
         #endregion
@@ -376,7 +376,7 @@ namespace GCBM
                 lblTransferStatus.Text = "Transferência finalizada!";
             }
 
-            await ProcessTaskDelay();
+            await ProcessTaskDelay().ConfigureAwait(false);
             //habilita os botões.
             btnTaskIndeterminate.Enabled = true;
             btnClose.Enabled = true;

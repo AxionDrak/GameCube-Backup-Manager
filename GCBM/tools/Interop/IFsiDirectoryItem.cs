@@ -3,7 +3,7 @@ using System.Collections;
 using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.ComTypes;
 
-namespace PluginBurnMedia.Interop
+namespace GCBM.tools.Interop
 {
     [Guid("2C941FDC-975B-59BE-A960-9A2A262853A5")]
     [TypeLibType(TypeLibTypeFlags.FDual | TypeLibTypeFlags.FDispatchable | TypeLibTypeFlags.FNonExtensible)]

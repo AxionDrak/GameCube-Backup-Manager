@@ -1,6 +1,6 @@
 ﻿using System.Runtime.InteropServices;
 
-namespace PluginBurnMedia.Interop
+namespace GCBM.tools.Interop
 {
     public enum IMAPI_FORMAT2_DATA_MEDIA_STATE
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 
-namespace PluginBurnMedia.Interop
+namespace GCBM.tools.Interop
 {
     [TypeLibType(TypeLibTypeFlags.FHidden)]
     [ClassInterface(ClassInterfaceType.None)]

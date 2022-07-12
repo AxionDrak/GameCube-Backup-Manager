@@ -1,4 +1,7 @@
 ﻿
+using System.ComponentModel;
+using System.Windows.Forms;
+
 namespace GCBM
 {
     partial class frmSplashScreen
@@ -6,7 +9,7 @@ namespace GCBM
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -81,9 +84,9 @@ namespace GCBM
 
         #endregion
 
-        private System.Windows.Forms.Label tsslCurrentYear;
-        private System.Windows.Forms.Label lblAllRightsReserved;
-        private System.Windows.Forms.ProgressBar pbSplashScreen;
-        private System.Windows.Forms.Label lblStartSplashScreen;
+        private Label tsslCurrentYear;
+        private Label lblAllRightsReserved;
+        private ProgressBar pbSplashScreen;
+        private Label lblStartSplashScreen;
     }
 }

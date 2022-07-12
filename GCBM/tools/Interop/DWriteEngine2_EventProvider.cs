@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.ComTypes;
 using System.Threading;
 
-namespace PluginBurnMedia.Interop
+namespace GCBM.tools.Interop
 {
     [ClassInterface(ClassInterfaceType.None)]
     internal sealed class DWriteEngine2_EventProvider : DWriteEngine2_Event, IDisposable

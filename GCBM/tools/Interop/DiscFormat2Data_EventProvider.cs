@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.ComTypes;
 using System.Threading;
 
-namespace PluginBurnMedia.Interop
+namespace GCBM.tools.Interop
 {
     [ClassInterface(ClassInterfaceType.None)]
     internal sealed class DiscFormat2Data_EventProvider : DiscFormat2Data_Event, IDisposable

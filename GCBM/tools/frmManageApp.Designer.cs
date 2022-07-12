@@ -1,4 +1,7 @@
 ﻿
+using System.ComponentModel;
+using System.Windows.Forms;
+
 namespace GCBM.tools
 {
     partial class frmManageApp
@@ -6,7 +9,7 @@ namespace GCBM.tools
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -160,13 +163,13 @@ namespace GCBM.tools
 
         #endregion
 
-        private System.Windows.Forms.Button btnListApp;
-        private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.Button btnPackageApp;
-        private System.Windows.Forms.Button btnInstallApp;
-        private System.Windows.Forms.Button btnRemoveApp;
-        private System.Windows.Forms.DataGridView dgvAppList;
-        private System.Windows.Forms.NotifyIcon notifyIcon;
-        private System.Windows.Forms.FolderBrowserDialog fbd;
+        private Button btnListApp;
+        private Button btnClose;
+        private Button btnPackageApp;
+        private Button btnInstallApp;
+        private Button btnRemoveApp;
+        private DataGridView dgvAppList;
+        private NotifyIcon notifyIcon;
+        private FolderBrowserDialog fbd;
     }
 }

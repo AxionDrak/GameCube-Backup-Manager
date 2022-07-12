@@ -71,7 +71,7 @@ namespace GCBM
             {
                 File.Delete(GET_CURRENT_PATH + @"\" + WIITDB_ZIP_FILE);
 
-                await ProcessTaskDelay();
+                await ProcessTaskDelay().ConfigureAwait(false);
                 var fileinfo = new FileInfo(GET_CURRENT_PATH + @"\" + WIITDB_FILE);
                 if (fileinfo.Length >= 31035000) //31035596
                 {
@@ -84,7 +84,7 @@ namespace GCBM
 
         private async Task ProcessTaskDelay()
         {
-            await Task.Delay(5000);
+            await Task.Delay(5000).ConfigureAwait(false);
         }
 
         private void btnCancelWork_Click(object sender, EventArgs e)

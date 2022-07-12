@@ -1,4 +1,11 @@
 ﻿
+using System;
+using System.ComponentModel;
+using System.Diagnostics;
+using System.Drawing;
+using System.Windows.Forms;
+using GCBM.Properties;
+
 namespace GCBM
 {
     partial class frmMain
@@ -6,7 +13,7 @@ namespace GCBM
         /// <summary>
         /// Variável de designer necessária.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Limpar os recursos que estão sendo usados.
@@ -40,6 +47,7 @@ namespace GCBM
             this.pbGameDisc = new System.Windows.Forms.PictureBox();
             this.tabControlMain = new System.Windows.Forms.TabControl();
             this.tabMainFile = new System.Windows.Forms.TabPage();
+            this.btnAbort = new System.Windows.Forms.Button();
             this.lblInstallGame = new System.Windows.Forms.Label();
             this.lblPercent = new System.Windows.Forms.Label();
             this.lblCopy = new System.Windows.Forms.Label();
@@ -202,7 +210,6 @@ namespace GCBM
             this.pbNetStatus = new System.Windows.Forms.PictureBox();
             this.gameBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.process1 = new System.Diagnostics.Process();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.spcMain)).BeginInit();
             this.spcMain.Panel1.SuspendLayout();
             this.spcMain.Panel2.SuspendLayout();
@@ -305,6 +312,7 @@ namespace GCBM
             // 
             // tabMainFile
             // 
+            this.tabMainFile.Controls.Add(this.btnAbort);
             this.tabMainFile.Controls.Add(this.lblInstallGame);
             this.tabMainFile.Controls.Add(this.lblPercent);
             this.tabMainFile.Controls.Add(this.lblCopy);
@@ -317,6 +325,15 @@ namespace GCBM
             resources.ApplyResources(this.tabMainFile, "tabMainFile");
             this.tabMainFile.Name = "tabMainFile";
             this.tabMainFile.UseVisualStyleBackColor = true;
+            // 
+            // btnAbort
+            // 
+            this.btnAbort.FlatAppearance.BorderSize = 0;
+            this.btnAbort.Image = global::GCBM.Properties.Resources.cancel_32;
+            resources.ApplyResources(this.btnAbort, "btnAbort");
+            this.btnAbort.Name = "btnAbort";
+            this.btnAbort.UseVisualStyleBackColor = true;
+            this.btnAbort.Click += new System.EventHandler(this.btnAbort_Click);
             // 
             // lblInstallGame
             // 
@@ -483,8 +500,8 @@ namespace GCBM
             this.dgvSource.ReadOnly = true;
             this.dgvSource.RowHeadersVisible = false;
             this.dgvSource.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSource.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGameList_CellContentClick);
-            this.dgvSource.Click += new System.EventHandler(this.dgvSource_Click);
+            this.dgvSource.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSource_CellContentClick);
+            this.dgvSource.CurrentCellChanged += new System.EventHandler(this.dgvSource_CurrentCellChanged);
             // 
             // clmChk
             // 
@@ -663,7 +680,7 @@ namespace GCBM
             // 
             this.tsmiGameListDeleteAllFiles.Name = "tsmiGameListDeleteAllFiles";
             resources.ApplyResources(this.tsmiGameListDeleteAllFiles, "tsmiGameListDeleteAllFiles");
-            this.tsmiGameListDeleteAllFiles.Click += new System.EventHandler(this.tsmiGameListDeleteAllFiles_Click);
+            this.tsmiGameListDeleteAllFiles.Click += new System.EventHandler(this.tsmiGameListDeleteAllFiles_ClickAsync);
             // 
             // tsmiGameListDeleteSelectedFile
             // 
@@ -831,8 +848,8 @@ namespace GCBM
             this.dgvDestination.Name = "dgvDestination";
             this.dgvDestination.ReadOnly = true;
             this.dgvDestination.RowHeadersVisible = false;
-            this.dgvDestination.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGameList_CellContentClick);
-            this.dgvDestination.Click += new System.EventHandler(this.dgvGameListDisc_Click);
+            this.dgvDestination.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSource_CellContentClick);
+            this.dgvDestination.CurrentCellChanged += new System.EventHandler(this.dgvDestination_CurrentCellChanged);
             // 
             // dgvMainDiscCheck
             // 
@@ -1488,18 +1505,10 @@ namespace GCBM
             this.process1.StartInfo.UserName = "";
             this.process1.SynchronizingObject = this;
             // 
-            // linkLabel1
-            // 
-            resources.ApplyResources(this.linkLabel1, "linkLabel1");
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
-            // 
             // frmMain
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.pbNetStatus);
             this.Controls.Add(this.lblNetStatus);
             this.Controls.Add(this.spcMain);
@@ -1558,178 +1567,178 @@ namespace GCBM
 
         #endregion
 
-        private System.Windows.Forms.StatusStrip sstripMain;
-        private System.Windows.Forms.MenuStrip mstripMain;
-        private System.Windows.Forms.ToolStripMenuItem tsmiFile;
-        private System.Windows.Forms.ToolStripMenuItem tsmiExit;
-        private System.Windows.Forms.SplitContainer spcMain;
-        private System.Windows.Forms.ToolStripMenuItem tsmiCovers;
-        private System.Windows.Forms.ToolStripMenuItem tsmiDisplay;
-        private System.Windows.Forms.ToolStripMenuItem tsmiOptions;
-        private System.Windows.Forms.ToolStripMenuItem tsmiTools;
-        private System.Windows.Forms.ToolStripMenuItem tsmiHelp;
-        private System.Windows.Forms.ToolStripMenuItem tsmiDownloadCoversSelectedGame;
-        private System.Windows.Forms.ToolStripMenuItem tsmiSyncDownloadDiscOnly3DCovers;
-        private System.Windows.Forms.ToolStripMenuItem tsmiGameInfo;
-        private System.Windows.Forms.ToolStripMenuItem boxArtToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem tsmiConfigurationMain;
-        private System.Windows.Forms.ToolStripMenuItem tsmiMenuAbout;
-        private System.Windows.Forms.ToolStripMenuItem tsmiEnableCoverPanel;
-        private System.Windows.Forms.ToolStripMenuItem tsmiDisableCoverPanel;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.PictureBox pbGameCover3D;
-        private System.Windows.Forms.PictureBox pbGameDisc;
-        private System.Windows.Forms.ToolStripStatusLabel tsslCurrentYear;
-        private System.Windows.Forms.FolderBrowserDialog fbd1;
-        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem5;
-        private System.Windows.Forms.ToolStripMenuItem tsmiSyncDownloadAllDiscOnly3DCovers;
-        private System.Windows.Forms.ToolStripMenuItem tsmiSyncDownloadAllCovers;
-        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem6;
-        private System.Windows.Forms.ToolStripMenuItem tsmiTransferDeviceCovers;
-        private System.Windows.Forms.FolderBrowserDialog fbd2;
-        private System.Windows.Forms.OpenFileDialog ofd1;
-        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem7;
-        private System.Windows.Forms.ToolStripMenuItem tsmiWebsiteFacebook;
-        private System.Windows.Forms.Label lblNetStatus;
-        private System.Windows.Forms.PictureBox pbNetStatus;
-        private System.Windows.Forms.ToolStripMenuItem tsmiRenameISO;
-        private System.Windows.Forms.NotifyIcon notifyIcon;
-        private System.Windows.Forms.ContextMenuStrip cmsNotifyIcon;
-        private System.Windows.Forms.ToolStripMenuItem tsmiNotifyExit;
-        private System.Windows.Forms.ContextMenuStrip cmsMain;
-        private System.Windows.Forms.ToolStripMenuItem tsmiInfoGame;
-        private System.Windows.Forms.ToolStripMenuItem tsmiVerifyUpdate;
-        private System.Windows.Forms.ToolStripMenuItem tsmiMainPlugins;
-        private System.Windows.Forms.ToolStripMenuItem tsmiMetaXml;
-        private System.Windows.Forms.ToolStripMenuItem tsmiManageApp;
-        private System.Windows.Forms.ToolStripMenuItem tsmiElfDol;
-        private System.Windows.Forms.ToolStripMenuItem tsmiCreatePackage;
-        private System.Windows.Forms.ToolStripMenuItem tsmiBurnMedia;
-        private System.Windows.Forms.ToolStripMenuItem tsmiOfficialGitHub;
-        private System.Windows.Forms.ToolStripMenuItem tsmiOfficialGBATemp;
-        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
-        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem8;
-        private System.Windows.Forms.ToolStripMenuItem tsmiSearchOnGoogle;
-        private System.Windows.Forms.ToolStripMenuItem SearchOnWikipedia;
-        private System.Windows.Forms.ToolStripMenuItem tsmiSearchOnYoutube;
-        private System.Windows.Forms.ToolStripMenuItem tsmiSearchOnGameSpot;
-        private System.Windows.Forms.ToolStripMenuItem tsmiSearchOnVGChartz;
-        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem9;
-        private System.Windows.Forms.ToolStripMenuItem tsmiSearchOnGameTDB;
-        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem10;
-        private System.Windows.Forms.ToolStripMenuItem tsmiDolphinEmulator;
-        private System.Windows.Forms.TabControl tabControlMain;
-        private System.Windows.Forms.TabPage tabMainFile;
-        private System.Windows.Forms.Label lblInstallGame;
-        private System.Windows.Forms.Label lblPercent;
-        private System.Windows.Forms.Label lblCopy;
-        private System.Windows.Forms.ProgressBar pbCopy;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnSelectFolder;
-        private System.Windows.Forms.GroupBox grpDetails;
-        private System.Windows.Forms.Label lblTypeDisc;
-        private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.TextBox tbIDMakerCode;
-        private System.Windows.Forms.TextBox tbIDDiscID;
-        private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.PictureBox pbWebGameID;
-        private System.Windows.Forms.GroupBox grpOperations;
-        private System.Windows.Forms.Button btnGameInstallScrub;
-        private System.Windows.Forms.Button btnGameInstallExactCopy;
-        private System.Windows.Forms.Label labelGameID;
-        private System.Windows.Forms.Label labelFile;
-        private System.Windows.Forms.Label labelTitle;
-        private System.Windows.Forms.TextBox tbIDGame;
-        private System.Windows.Forms.TextBox tbIDRegion;
-        private System.Windows.Forms.TextBox tbIDName;
-        private System.Windows.Forms.DataGridView dgvSource;
-        private System.Windows.Forms.MenuStrip mstripFile;
-        private System.Windows.Forms.ToolStripMenuItem tsmiReloadGameList;
-        private System.Windows.Forms.ToolStripMenuItem tsmiSelectGameList;
-        private System.Windows.Forms.ToolStripMenuItem tsmiGameListSelectAll;
-        private System.Windows.Forms.ToolStripMenuItem tsmiGameListSelectNone;
-        private System.Windows.Forms.ToolStripMenuItem tsmiRemoveGameList;
-        private System.Windows.Forms.ToolStripMenuItem tsmiGameListDeleteAllFiles;
-        private System.Windows.Forms.ToolStripMenuItem tsmiGameListDeleteSelectedFile;
-        private System.Windows.Forms.ToolStripMenuItem tsmiToolsGameList;
-        private System.Windows.Forms.ToolStripMenuItem tsmiGameListSignatureSHA1;
-        private System.Windows.Forms.ToolStripMenuItem tsmiGameListHashSHA1;
-        private System.Windows.Forms.ToolStripMenuItem exportarListaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem tsmiExportTXT;
-        private System.Windows.Forms.ToolStripMenuItem tsmiExportHTML;
-        private System.Windows.Forms.ToolStripMenuItem tsmiExportCSV;
-        private System.Windows.Forms.TabPage tabMainDisc;
-        private System.Windows.Forms.Label lblSpaceAvailabeOnDevice;
-        private System.Windows.Forms.Label lblSpaceTotalOnDevice;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.PictureBox pbWebGameDiscID;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox tbIDGameDisc;
-        private System.Windows.Forms.TextBox tbIDRegionDisc;
-        private System.Windows.Forms.TextBox tbIDNameDisc;
-        private System.Windows.Forms.DataGridView dgvDestination;
-        private System.Windows.Forms.MenuStrip mstripDisc;
-        private System.Windows.Forms.ToolStripComboBox tscbDiscDrive;
-        private System.Windows.Forms.ToolStripMenuItem tsmiReloadDeviceDrive;
-        private System.Windows.Forms.ToolStripMenuItem tsmiReloadGameListDisc;
-        private System.Windows.Forms.ToolStripMenuItem tsmiSelectGameDisc;
-        private System.Windows.Forms.ToolStripMenuItem tsmiGameDiscSelectAll;
-        private System.Windows.Forms.ToolStripMenuItem tsmiGameDiscSelectNone;
-        private System.Windows.Forms.ToolStripMenuItem tsmiRemoveGameDisc;
-        private System.Windows.Forms.ToolStripMenuItem tsmiGameDiscDeleteAllFiles;
-        private System.Windows.Forms.ToolStripMenuItem tsmiGameDiscDeleteSelectedFile;
-        private System.Windows.Forms.ToolStripMenuItem tsmiToolsGameDisc;
-        private System.Windows.Forms.ToolStripMenuItem tsmiGameDiscExportList;
-        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
-        private System.Windows.Forms.ToolStripMenuItem tsmiGameDiscSignatureSHA1;
-        private System.Windows.Forms.ToolStripMenuItem tsmiGameDiscAllHashSHA1;
-        private System.Windows.Forms.ToolStripMenuItem tsmiGameDiscHashSHA1;
-        private System.Windows.Forms.ToolStripMenuItem tsmiGameDiscSignatureMD5;
-        private System.Windows.Forms.ToolStripMenuItem tsmiGameDiscAllHashMD5;
-        private System.Windows.Forms.ToolStripMenuItem tsmiGameDiscHashMD5;
-        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem4;
-        private System.Windows.Forms.ToolStripMenuItem tsmiGameDiscRecalculateAllMD5;
-        private System.Windows.Forms.ToolStripMenuItem tsmiGameDiscRecalculateSelectedGameMD5;
-        private System.Windows.Forms.TabPage tabMainDatabase;
-        private System.Windows.Forms.Label lblDatabaseTotal;
-        private System.Windows.Forms.ComboBox cbFilterDatabase;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ListView lvDatabase;
-        private System.Windows.Forms.MenuStrip mstripDatabase;
-        private System.Windows.Forms.ToolStripMenuItem tsmiToolDatabase;
-        private System.Windows.Forms.ToolStripMenuItem tsmiDatabaseUpdateGameTDB;
-        private System.Windows.Forms.TabPage tabMainLog;
-        private System.Windows.Forms.TextBox tbLog;
-        private System.Windows.Forms.MenuStrip mstripLog;
-        private System.Windows.Forms.ToolStripMenuItem tsmiToolLog;
-        private System.Windows.Forms.ToolStripMenuItem tsmiClearLog;
-        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem tsmiExportLog;
-        private System.Windows.Forms.ToolStripMenuItem tsmiRenameFolders;
-        private System.Windows.Forms.BindingSource gameBindingSource;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn clmChk;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmTitle;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmRegion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmExtension;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmSize;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmPath;
-        private System.Windows.Forms.TextBox tbSearch;
-        private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dgvMainDiscCheck;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmDiscTitle;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmDiscID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmDiscRegion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmDiscExtension;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmDiscSize;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmDiscPath;
-        private System.Windows.Forms.GroupBox grpSearch;
-        private System.Diagnostics.Process process1;
-        private System.Windows.Forms.LinkLabel linkLabel1;
+        private StatusStrip sstripMain;
+        private MenuStrip mstripMain;
+        private ToolStripMenuItem tsmiFile;
+        private ToolStripMenuItem tsmiExit;
+        private SplitContainer spcMain;
+        private ToolStripMenuItem tsmiCovers;
+        private ToolStripMenuItem tsmiDisplay;
+        private ToolStripMenuItem tsmiOptions;
+        private ToolStripMenuItem tsmiTools;
+        private ToolStripMenuItem tsmiHelp;
+        private ToolStripMenuItem tsmiDownloadCoversSelectedGame;
+        private ToolStripMenuItem tsmiSyncDownloadDiscOnly3DCovers;
+        private ToolStripMenuItem tsmiGameInfo;
+        private ToolStripMenuItem boxArtToolStripMenuItem;
+        private ToolStripMenuItem tsmiConfigurationMain;
+        private ToolStripMenuItem tsmiMenuAbout;
+        private ToolStripMenuItem tsmiEnableCoverPanel;
+        private ToolStripMenuItem tsmiDisableCoverPanel;
+        private GroupBox groupBox1;
+        private PictureBox pbGameCover3D;
+        private PictureBox pbGameDisc;
+        private ToolStripStatusLabel tsslCurrentYear;
+        private FolderBrowserDialog fbd1;
+        private ToolStripSeparator toolStripMenuItem5;
+        private ToolStripMenuItem tsmiSyncDownloadAllDiscOnly3DCovers;
+        private ToolStripMenuItem tsmiSyncDownloadAllCovers;
+        private ToolStripSeparator toolStripMenuItem6;
+        private ToolStripMenuItem tsmiTransferDeviceCovers;
+        private FolderBrowserDialog fbd2;
+        private OpenFileDialog ofd1;
+        private ToolStripSeparator toolStripMenuItem7;
+        private ToolStripMenuItem tsmiWebsiteFacebook;
+        private Label lblNetStatus;
+        private PictureBox pbNetStatus;
+        private ToolStripMenuItem tsmiRenameISO;
+        private NotifyIcon notifyIcon;
+        private ContextMenuStrip cmsNotifyIcon;
+        private ToolStripMenuItem tsmiNotifyExit;
+        private ContextMenuStrip cmsMain;
+        private ToolStripMenuItem tsmiInfoGame;
+        private ToolStripMenuItem tsmiVerifyUpdate;
+        private ToolStripMenuItem tsmiMainPlugins;
+        private ToolStripMenuItem tsmiMetaXml;
+        private ToolStripMenuItem tsmiManageApp;
+        private ToolStripMenuItem tsmiElfDol;
+        private ToolStripMenuItem tsmiCreatePackage;
+        private ToolStripMenuItem tsmiBurnMedia;
+        private ToolStripMenuItem tsmiOfficialGitHub;
+        private ToolStripMenuItem tsmiOfficialGBATemp;
+        private ToolStripSeparator toolStripMenuItem1;
+        private ToolStripSeparator toolStripMenuItem8;
+        private ToolStripMenuItem tsmiSearchOnGoogle;
+        private ToolStripMenuItem SearchOnWikipedia;
+        private ToolStripMenuItem tsmiSearchOnYoutube;
+        private ToolStripMenuItem tsmiSearchOnGameSpot;
+        private ToolStripMenuItem tsmiSearchOnVGChartz;
+        private ToolStripSeparator toolStripMenuItem9;
+        private ToolStripMenuItem tsmiSearchOnGameTDB;
+        private ToolStripSeparator toolStripMenuItem10;
+        private ToolStripMenuItem tsmiDolphinEmulator;
+        private TabControl tabControlMain;
+        private TabPage tabMainFile;
+        private Label lblInstallGame;
+        private Label lblPercent;
+        private Label lblCopy;
+        private ProgressBar pbCopy;
+        private Label label1;
+        private Button btnSelectFolder;
+        private GroupBox grpDetails;
+        private Label lblTypeDisc;
+        private Label label34;
+        private TextBox tbIDMakerCode;
+        private TextBox tbIDDiscID;
+        private Label label29;
+        private PictureBox pbWebGameID;
+        private GroupBox grpOperations;
+        private Button btnGameInstallScrub;
+        private Button btnGameInstallExactCopy;
+        private Label labelGameID;
+        private Label labelFile;
+        private Label labelTitle;
+        private TextBox tbIDGame;
+        private TextBox tbIDRegion;
+        private TextBox tbIDName;
+        private DataGridView dgvSource;
+        private MenuStrip mstripFile;
+        private ToolStripMenuItem tsmiReloadGameList;
+        private ToolStripMenuItem tsmiSelectGameList;
+        private ToolStripMenuItem tsmiGameListSelectAll;
+        private ToolStripMenuItem tsmiGameListSelectNone;
+        private ToolStripMenuItem tsmiRemoveGameList;
+        private ToolStripMenuItem tsmiGameListDeleteAllFiles;
+        private ToolStripMenuItem tsmiGameListDeleteSelectedFile;
+        private ToolStripMenuItem tsmiToolsGameList;
+        private ToolStripMenuItem tsmiGameListSignatureSHA1;
+        private ToolStripMenuItem tsmiGameListHashSHA1;
+        private ToolStripMenuItem exportarListaToolStripMenuItem;
+        private ToolStripMenuItem tsmiExportTXT;
+        private ToolStripMenuItem tsmiExportHTML;
+        private ToolStripMenuItem tsmiExportCSV;
+        private TabPage tabMainDisc;
+        private Label lblSpaceAvailabeOnDevice;
+        private Label lblSpaceTotalOnDevice;
+        private Label label3;
+        private Label label2;
+        private GroupBox groupBox2;
+        private PictureBox pbWebGameDiscID;
+        private Label label4;
+        private Label label5;
+        private Label label6;
+        private TextBox tbIDGameDisc;
+        private TextBox tbIDRegionDisc;
+        private TextBox tbIDNameDisc;
+        private DataGridView dgvDestination;
+        private MenuStrip mstripDisc;
+        private ToolStripComboBox tscbDiscDrive;
+        private ToolStripMenuItem tsmiReloadDeviceDrive;
+        private ToolStripMenuItem tsmiReloadGameListDisc;
+        private ToolStripMenuItem tsmiSelectGameDisc;
+        private ToolStripMenuItem tsmiGameDiscSelectAll;
+        private ToolStripMenuItem tsmiGameDiscSelectNone;
+        private ToolStripMenuItem tsmiRemoveGameDisc;
+        private ToolStripMenuItem tsmiGameDiscDeleteAllFiles;
+        private ToolStripMenuItem tsmiGameDiscDeleteSelectedFile;
+        private ToolStripMenuItem tsmiToolsGameDisc;
+        private ToolStripMenuItem tsmiGameDiscExportList;
+        private ToolStripSeparator toolStripMenuItem3;
+        private ToolStripMenuItem tsmiGameDiscSignatureSHA1;
+        private ToolStripMenuItem tsmiGameDiscAllHashSHA1;
+        private ToolStripMenuItem tsmiGameDiscHashSHA1;
+        private ToolStripMenuItem tsmiGameDiscSignatureMD5;
+        private ToolStripMenuItem tsmiGameDiscAllHashMD5;
+        private ToolStripMenuItem tsmiGameDiscHashMD5;
+        private ToolStripSeparator toolStripMenuItem4;
+        private ToolStripMenuItem tsmiGameDiscRecalculateAllMD5;
+        private ToolStripMenuItem tsmiGameDiscRecalculateSelectedGameMD5;
+        private TabPage tabMainDatabase;
+        private Label lblDatabaseTotal;
+        private ComboBox cbFilterDatabase;
+        private Label label7;
+        private ListView lvDatabase;
+        private MenuStrip mstripDatabase;
+        private ToolStripMenuItem tsmiToolDatabase;
+        private ToolStripMenuItem tsmiDatabaseUpdateGameTDB;
+        private TabPage tabMainLog;
+        private TextBox tbLog;
+        private MenuStrip mstripLog;
+        private ToolStripMenuItem tsmiToolLog;
+        private ToolStripMenuItem tsmiClearLog;
+        private ToolStripSeparator toolStripMenuItem2;
+        private ToolStripMenuItem tsmiExportLog;
+        private ToolStripMenuItem tsmiRenameFolders;
+        private BindingSource gameBindingSource;
+        private DataGridViewCheckBoxColumn clmChk;
+        private DataGridViewTextBoxColumn clmTitle;
+        private DataGridViewTextBoxColumn clmRegion;
+        private DataGridViewTextBoxColumn clmID;
+        private DataGridViewTextBoxColumn clmExtension;
+        private DataGridViewTextBoxColumn clmSize;
+        private DataGridViewTextBoxColumn clmPath;
+        private TextBox tbSearch;
+        private Button btnSearch;
+        private DataGridViewCheckBoxColumn dgvMainDiscCheck;
+        private DataGridViewTextBoxColumn clmDiscTitle;
+        private DataGridViewTextBoxColumn clmDiscID;
+        private DataGridViewTextBoxColumn clmDiscRegion;
+        private DataGridViewTextBoxColumn clmDiscExtension;
+        private DataGridViewTextBoxColumn clmDiscSize;
+        private DataGridViewTextBoxColumn clmDiscPath;
+        private GroupBox grpSearch;
+        private Process process1;
+        private Button btnAbort;
     }
 }
 

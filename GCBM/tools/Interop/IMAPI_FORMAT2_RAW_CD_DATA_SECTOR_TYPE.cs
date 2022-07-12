@@ -1,4 +1,4 @@
-﻿namespace PluginBurnMedia.Interop
+﻿namespace GCBM.tools.Interop
 {
     public enum IMAPI_FORMAT2_RAW_CD_DATA_SECTOR_TYPE
     {

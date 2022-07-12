@@ -2,7 +2,7 @@
 using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.ComTypes;
 
-namespace PluginBurnMedia.MediaItem
+namespace GCBM.tools.MediaItem
 {
     internal class Win32
     {

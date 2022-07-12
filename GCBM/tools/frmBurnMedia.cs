@@ -6,8 +6,8 @@ using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Windows.Forms;
-using PluginBurnMedia.Interop;
-using PluginBurnMedia.MediaItem;
+using GCBM.tools.Interop;
+using GCBM.tools.MediaItem;
 
 namespace GCBM.tools
 {
