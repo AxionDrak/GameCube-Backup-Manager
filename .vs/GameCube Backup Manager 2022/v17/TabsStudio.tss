@@ -2,20 +2,20 @@
 <ArrayOfArrayOfArrayOfString xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <ArrayOfArrayOfString>
     <ArrayOfString>
-      <string>C:\Users\Sjohn\Desktop\CS\gcbm\GameCube-Backup-Manager\GCBM\frmMain.cs</string>
-      <string>C:\Users\Sjohn\Desktop\CS\gcbm\GameCube-Backup-Manager\GCBM\frmMain.cs</string>
+      <string>C:\Users\Sjohn\source\repos\GameCube-Backup-Manager\GCBM\frmMain.cs</string>
+      <string>C:\Users\Sjohn\source\repos\GameCube-Backup-Manager\GCBM\frmMain.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>C:\Users\Sjohn\Desktop\CS\gcbm\GameCube-Backup-Manager\GCBM\ProcessExtensions.cs</string>
+      <string>C:\Users\Sjohn\source\repos\GameCube-Backup-Manager\GCBM\ProcessExtensions.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>C:\Users\Sjohn\Desktop\CS\gcbm\GameCube-Backup-Manager\GCBM\Network.cs</string>
+      <string>C:\Users\Sjohn\source\repos\GameCube-Backup-Manager\GCBM\Network.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>C:\Users\Sjohn\Desktop\CS\gcbm\GameCube-Backup-Manager\GCBM\Program.cs</string>
+      <string>C:\Users\Sjohn\source\repos\GameCube-Backup-Manager\GCBM\Program.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>C:\Users\Sjohn\Desktop\CS\gcbm\GameCube-Backup-Manager\GCBM\info.cs</string>
+      <string>C:\Users\Sjohn\source\repos\GameCube-Backup-Manager\GCBM\info.cs</string>
     </ArrayOfString>
   </ArrayOfArrayOfString>
 </ArrayOfArrayOfArrayOfString>
