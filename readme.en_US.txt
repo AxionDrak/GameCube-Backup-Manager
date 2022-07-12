@@ -14,11 +14,14 @@ GameCube Backup Manager is built on the knowledge of others that have paved the 
 
 Thanks to those that have directly helped to provide something to this project either personally or by access to code or documentation.
 
+
+- Sjohnson1021 - Maintainer
 - Valclark Junior - Testing / User experience
 - Dolphin Emulator - GameCube / Wii / RVZ info
 - Wiimm - WIT (Wiimms ISO Tools) code
 - WiiBrew
-- DDinghoya - official Korean language translator
+
+Special thanks to the people who helped to translate this program into the most diverse languages, allowing people from all over the world to enjoy its resources.
 
 Plus everyone involved in the game preservation community.
 
