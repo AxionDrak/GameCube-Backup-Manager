@@ -5043,6 +5043,8 @@ namespace GCBM
             else
             {
                 GlobalNotifications("Successfully installed " + InstallQueue.Count + " games.", ToolTipIcon.Info);
+                EnableOptionsGameList();
+                dgvSource.Enabled = true;
             }
         }
         #endregion
@@ -5140,8 +5142,7 @@ namespace GCBM
                     lblInstallGame.Text = GCBM.Properties.Resources.CopyTask_String4;
                     lblPercent.Text = GCBM.Properties.Resources.CopyTask_String5;
                     GlobalNotifications(GCBM.Properties.Resources.InstallGameScrub_String5, ToolTipIcon.Info);
-                    EnableOptionsGameList();
-                    dgvSource.Enabled = true;
+
                     pbCopy.Visible = false;
                     lblCopy.Visible = false;
                     lblPercent.Visible = false;
@@ -5190,7 +5191,6 @@ namespace GCBM
                     lblInstallGame.Text = GCBM.Properties.Resources.CopyTask_String4;
                     lblPercent.Text = GCBM.Properties.Resources.CopyTask_String5;
                     GlobalNotifications(GCBM.Properties.Resources.InstallGameScrub_String6, ToolTipIcon.Info);
-                    EnableOptionsGameList();
                     pbCopy.Visible = false;
                     lblCopy.Visible = false;
                     lblPercent.Visible = false;
