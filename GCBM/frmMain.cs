@@ -93,7 +93,6 @@ namespace GCBM
         private int intQueuePos = 0;
         private List<Game> lstInstallQueue = new List<Game>();
         private List<Game> lstSourceGames = new List<Game>();
-        private Game CURRENT_GAME;
         private Game lastGameLookedUp;
         private DataGridView dgvSelected = new DataGridView();
         private Dictionary<int, Game> InstallQueue;
@@ -951,7 +950,11 @@ namespace GCBM
 
                     if (dgv == dgvDestination)
                     {
-                        tbIDRegionDisc.Text = _IDRegionCode;
+                        //title,region,id
+
+                        tbIDNameDisc.Text = dgv.CurrentRow.Cells[1].Value.ToString();
+                        tbIDRegionDisc.Text=dgv.CurrentRow.Cells[2].Value.ToString();
+                        tbIDGameDisc.Text=dgv.CurrentRow.Cells[3].Value.ToString();
                     }
                 }
                 catch (Exception ex)
@@ -1004,7 +1007,7 @@ namespace GCBM
                 isRecursive = false;
             }
 
-            string[] files = GetFilesFolder(sourceFolder, filters, isRecursive);
+            string[] files = await GetFilesFolder(sourceFolder, filters, isRecursive);
 
             if (dgv == dgvDestination)
             {
@@ -1047,7 +1050,7 @@ namespace GCBM
             dgv.Rows.Clear();
             //dgvSource.DataSource = GameDataTable();
 
-            foreach (Game game in GameList(sourceFolder))
+            foreach(Game game in GameList(sourceFolder).Result)
             {
                 if (dgvSelected == dgvSource)
                 {
@@ -1060,8 +1063,8 @@ namespace GCBM
                 // 5th column
                 dgv.Rows.Add(false,
                                 game.Title,
-                                game.Region,
                                 game.ID,
+                                game.Region,
                                 game.Extension.Substring(1, 3).Trim().ToUpper(MY_CULTURE),
                                 _getSize,
                                 game.Path);
@@ -1101,7 +1104,7 @@ namespace GCBM
         /// <param name="filters"></param>
         /// <param name="isRecursive"></param>
         /// <returns></returns>
-        private string[] GetFilesFolder(string rootFolder, string[] filters, bool isRecursive)
+        private async Task<string[]> GetFilesFolder(string rootFolder, string[] filters, bool isRecursive)
         {
             List<string> filesFound = new List<string>();
             // Sets options for displaying root folder images.
@@ -1357,11 +1360,11 @@ namespace GCBM
         /// <summary>
         /// Build a List<Game> with file and game info for easier access programmatically.
         /// </summary>
-        private List<Game> GameList(string path)
+        private async Task<List<Game>> GameList(string path)
         {
             string[] filters = { "ISO", "GCM" };
             List<Game> list = new List<Game>();
-            string[] files = GetFilesFolder(path, filters, false);
+            string[] files = await GetFilesFolder(path, filters, false);
 
             foreach (var file in files)
             {
@@ -1396,7 +1399,7 @@ namespace GCBM
             _table.Columns.Add("Type");
             _table.Columns.Add("Size");
             _table.Columns.Add("Path");
-            foreach (Game game in GameList(path))
+            foreach (Game game in GameList(path).Result)
             {
                 _table.Rows.Add(game.Title,
                                 game.Region,
@@ -1503,7 +1506,7 @@ namespace GCBM
 
         #region Get Game Info
 
-        Game getGameInfo(string path)
+        async Task<Game> getGameInfo(string path)
         {
             VerifyGame(path);
             FileInfo f = new FileInfo(path);
@@ -1989,7 +1992,7 @@ namespace GCBM
         private void InstallGameScrub()
         {
             const string quote = "\"";
-            var _source = CURRENT_GAME.Path;
+            var _source = InstallQueue[intQueuePos].Path;
 
             START_INFO.CreateNoWindow = true;
             START_INFO.UseShellExecute = true;
@@ -2378,8 +2381,8 @@ namespace GCBM
                             else
                             {
                                 // Renomear game.iso -> disc2.iso
-                                string myOrigem = tscbDiscDrive.SelectedItem + GAMES_DIR + @"\" + CURRENT_GAME.Title + " [" + CURRENT_GAME.ID + "2]" + @"\game.iso";
-                                string myDestiny = tscbDiscDrive.SelectedItem + GAMES_DIR + @"\" + CURRENT_GAME.Title.Replace("disc2 ", "") + " [" + CURRENT_GAME.ID + "2]" + @"\disc2.iso";
+                                string myOrigem = tscbDiscDrive.SelectedItem + GAMES_DIR + @"\" + InstallQueue[intQueuePos].Title + " [" + InstallQueue[intQueuePos].ID + "2]" + @"\game.iso";
+                                string myDestiny = tscbDiscDrive.SelectedItem + GAMES_DIR + @"\" + InstallQueue[intQueuePos].Title.Replace("disc2 ", "") + " [" + InstallQueue[intQueuePos].ID + "2]" + @"\disc2.iso";
 
                                 //MessageBox.Show("MYORIGEM: " + Environment.NewLine
                                 //    + myOrigem +
@@ -2426,7 +2429,7 @@ namespace GCBM
         /// </summary>
         /// <param name="_source"></param>
         /// <param name="_destination"></param>
-        private void CopyTask(FileInfo _source, FileInfo _destination)
+        private async void CopyTask(FileInfo _source, FileInfo _destination)
         {
             // Disc 1
             //if (textBoxDiscID.Text == "00" && comboBoxSettingsNomenclatureAppointmentStyle.SelectedIndex  == 0)
@@ -2472,7 +2475,7 @@ namespace GCBM
                     {
                         try
                         {
-                            CheckAndCallCopyTask(CURRENT_GAME.Path);
+                            CheckAndCallCopyTask(InstallQueue[intQueuePos].Path);
                         }
                         catch (Exception e)
                         {
@@ -2517,7 +2520,7 @@ namespace GCBM
                     lblInstallGame.Visible = false;
                     intQueuePos++;
                     WORKING = false;
-                    CheckAndCallCopyTask(CURRENT_GAME.Path);
+                    CheckAndCallCopyTask(InstallQueue[intQueuePos].Path);
                 })));
             }
         }
@@ -2781,7 +2784,7 @@ namespace GCBM
         /// Global Delete All Games
         /// </summary>
         /// <param name="dgv"></param>
-        private void GlobalDeleteAllGames(DataGridView dgv)
+        private async Task GlobalDeleteAllGames(DataGridView dgv)
         {
             var filters = new String[] { "iso", "gcm" };
 
@@ -2822,7 +2825,7 @@ namespace GCBM
                             DirectoryInfo diDisc = new DirectoryInfo(GET_CURRENT_PATH + COVERS_DIR + @"\" + LINK_DOMAIN + @"\disc\");
                             DirectoryInfo diFull = new DirectoryInfo(GET_CURRENT_PATH + COVERS_DIR + @"\" + LINK_DOMAIN + @"\full\");
 
-                            string[] files = GetFilesFolder(fbd1.SelectedPath, filters, false);
+                            string[] files = await GetFilesFolder(fbd1.SelectedPath, filters, false);
 
                             // Goes through the entire file list and removes all found ISO and GCM files.
                             for (int i = 0; i < files.Length; i++)
@@ -2864,7 +2867,7 @@ namespace GCBM
                         }// DELETAR JOGO DO DISPOSITIVO DE DESTINO
                         else if (dgv == dgvSource)
                         {
-                            string[] files = GetFilesFolder(tscbDiscDrive.SelectedItem + GAMES_DIR + @"\", filters, false);
+                            string[] files = await GetFilesFolder(tscbDiscDrive.SelectedItem + GAMES_DIR + @"\", filters, false);
 
                             // Goes through the entire file list and removes all found ISO and GCM files.
                             //string folder = Path.GetDirectoryName(dgv.CurrentRow.Cells[6].Value.ToString());
@@ -2964,7 +2967,7 @@ namespace GCBM
                             if (typeInstall == 0) // Install Exact Copy
                             {
                                 BuildInstallQueue();
-                                CheckAndCallCopyTask(CURRENT_GAME.Path);
+                                CheckAndCallCopyTask(InstallQueue[intQueuePos].Path);
                             }
                             else // Install Scrub
                             {
@@ -4528,10 +4531,29 @@ namespace GCBM
             {
                 InstallGameScrub(intQueuePos);
             }
-            GlobalNotifications("Successfully installed" + InstallQueue.Count + "Games", ToolTipIcon.Info);
+            GlobalNotifications("Successfully installed " + InstallQueue.Count +  "Games.", ToolTipIcon.Info);
+            pbCopy.Hide();
+            lblPercent.Hide();
+            lblInstallGame.Hide();
+            lblCopy.Hide();
             EnableOptionsGameList();
         }
 
+        private async void StartExact()
+        {
+            DisableOptionsGame(dgvSource);
+            BuildInstallQueue();
+            foreach (KeyValuePair<int, Game> game in InstallQueue)
+            {
+               CheckAndCallCopyTask(InstallQueue[intQueuePos].Path);
+            }
+            GlobalNotifications("Successfully installed " + InstallQueue.Count +  " Games.", ToolTipIcon.Info);
+            pbCopy.Hide();
+            lblPercent.Hide();
+            lblInstallGame.Hide();
+            lblCopy.Hide();
+            EnableOptionsGameList();
+        }
         #region Install Queue System
 
         #region Variables
@@ -4541,7 +4563,7 @@ namespace GCBM
         /// <summary>
         /// Get selected games and add them to a queue.
         /// </summary>
-        private void BuildInstallQueue()
+        private async Task BuildInstallQueue()
         {
             //Get # selected games - Done
             //Set QueueLength - Done
@@ -4560,7 +4582,7 @@ namespace GCBM
             foreach (DataGridViewRow row in dgvSource.Rows)
             {
                 if (row.Cells[0].Value.ToString() != "True") continue;
-                InstallQueue.Add(x, getGameInfo(row.Cells[6].Value.ToString()));
+                InstallQueue.Add(x, await getGameInfo(row.Cells[6].Value.ToString()));
                 x++;
             }
             intQueueLength = lstInstallQueue.Count;
@@ -4598,31 +4620,31 @@ namespace GCBM
                         // Nome do jogo
                         string _SwapCharacter = tbIDName.Text.Replace(":", " - ").Replace(";", " - ").Replace(",", " - ").Replace(" -  ", " - ");
 
-                        var _source = new FileInfo(Path.Combine(fbd1.SelectedPath, CURRENT_GAME.Path));
+                        var _source = new FileInfo(Path.Combine(fbd1.SelectedPath, InstallQueue[intQueuePos].Path));
 
                         // Disc 1 (0 -> 0) - Title [ID Game]
                         if (tbIDDiscID.Text == "0x00" && CONFIG_INI_FILE.IniReadInt("SEVERAL", "AppointmentStyle") == 0)
                         {
                             Directory.CreateDirectory(tscbDiscDrive.SelectedItem + GAMES_DIR + @"\" + _SwapCharacter + " [" + _IDMakerCode + "]");
-                            var _destination = new FileInfo(tscbDiscDrive.SelectedItem + GAMES_DIR + @"\" + _SwapCharacter + " [" + CURRENT_GAME.ID + "]" + @"\" + "game.iso");
+                            var _destination = new FileInfo(tscbDiscDrive.SelectedItem + GAMES_DIR + @"\" + _SwapCharacter + " [" + InstallQueue[intQueuePos].ID + "]" + @"\" + "game.iso");
                             CopyTask(_source, _destination);
                         } // Disc 2 (1 -> 0) - Title [ID Game]
                         else if (tbIDDiscID.Text == "0x01" && CONFIG_INI_FILE.IniReadInt("SEVERAL", "AppointmentStyle") == 0)
                         {
-                            Directory.CreateDirectory(tscbDiscDrive.SelectedItem + GAMES_DIR + @"\" + _SwapCharacter + " [" + CURRENT_GAME.ID + "]");
-                            var _destination = new FileInfo(tscbDiscDrive.SelectedItem + GAMES_DIR + @"\" + _SwapCharacter + " [" + CURRENT_GAME.ID + "]" + @"\" + "disc2.iso");
+                            Directory.CreateDirectory(tscbDiscDrive.SelectedItem + GAMES_DIR + @"\" + _SwapCharacter + " [" + InstallQueue[intQueuePos].ID + "]");
+                            var _destination = new FileInfo(tscbDiscDrive.SelectedItem + GAMES_DIR + @"\" + _SwapCharacter + " [" + InstallQueue[intQueuePos].ID + "]" + @"\" + "disc2.iso");
                             CopyTask(_source, _destination);
                         }// Disc 1 (0 -> 1) - [ID Game]
                         else if (tbIDDiscID.Text == "0x00" && CONFIG_INI_FILE.IniReadInt("SEVERAL", "AppointmentStyle") == 1)
                         {
-                            Directory.CreateDirectory(tscbDiscDrive.SelectedItem + GAMES_DIR + @"\[" + CURRENT_GAME.ID + "]");
-                            var _destination = new FileInfo(tscbDiscDrive.SelectedItem + GAMES_DIR + @"\[" + CURRENT_GAME.ID + "]" + @"\" + "game.iso");
+                            Directory.CreateDirectory(tscbDiscDrive.SelectedItem + GAMES_DIR + @"\[" + InstallQueue[intQueuePos].ID + "]");
+                            var _destination = new FileInfo(tscbDiscDrive.SelectedItem + GAMES_DIR + @"\[" + InstallQueue[intQueuePos].ID + "]" + @"\" + "game.iso");
                             CopyTask(_source, _destination);
                         } // Disc 2 (1 -> 1) - [ID Game]
                         else if (tbIDDiscID.Text == "0x01" && CONFIG_INI_FILE.IniReadInt("SEVERAL", "AppointmentStyle") == 1)
                         {
-                            Directory.CreateDirectory(tscbDiscDrive.SelectedItem + GAMES_DIR + @"\[" + CURRENT_GAME.ID + "]");
-                            var _destination = new FileInfo(tscbDiscDrive.SelectedItem + GAMES_DIR + @"\[" + CURRENT_GAME.ID + "]" + @"\" + "disc2.iso");
+                            Directory.CreateDirectory(tscbDiscDrive.SelectedItem + GAMES_DIR + @"\[" + InstallQueue[intQueuePos].ID + "]");
+                            var _destination = new FileInfo(tscbDiscDrive.SelectedItem + GAMES_DIR + @"\[" + InstallQueue[intQueuePos].ID + "]" + @"\" + "disc2.iso");
                             CopyTask(_source, _destination);
                         }
 
@@ -4722,59 +4744,6 @@ namespace GCBM
         }
         #endregion
 
-        #region Check Install Queue and Tell CopyTask to begin
-        private void CheckAndCallScrub(string path)
-        {
-            if (intQueuePos <= InstallQueue.Count - 1)//starts with 0
-            {
-                FileInfo _file = new FileInfo(path);
-                loadPath = _file.FullName;
-                VerifyGame(loadPath);
-                int? selectedRowCount = Convert.ToInt32(dgvSource.Rows.GetRowCount(DataGridViewElementStates.Selected));
-
-                if (dgvSource.RowCount == 0)
-                {
-                    EmptyGamesList();
-                }
-                else if (selectedRowCount > 0)
-                {
-                    try
-                    {
-                        // Removes blank spaces
-                        //string ret = Regex.Replace(txtGameTitle.Text, @"[^0-9a-zA-ZéúíóáÉÚÍÓÁèùìòàÈÙÌÒÀõãñÕÃÑêûîôâÊÛÎÔÂëÿüïöäËYÜÏÖÄçÇ\s]+?", string.Empty);
-                        // Removes whitespace
-                        //string ret = Regex.Replace(txtGameTitle.Text, @"[^0-9a-zA-ZéúíóáÉÚÍÓÁèùìòàÈÙÌÒÀõãñÕÃÑêûîôâÊÛÎÔÂëÿüïöäËYÜÏÖÄçÇ]+?", string.Empty);
-
-                        // Replaces
-                        //string _SwapCharacter = tbIDName.Text.Replace(" disc1", "").Replace(" disc2", "").Replace(" 1", "").Replace(" 2", "")
-                        //.Replace(" (2)", "").Replace(":", " - ").Replace(";", " - ").Replace(",", " - ")
-                        //.Replace(" -  ", " - ").Replace(" FOR NINTENDO GAMECUBE", "").Replace(" GameCube", "");
-
-                        // Nome do jogo
-                        string _SwapCharacter = tbIDName.Text.Replace(":", " - ").Replace(";", " - ").Replace(",", " - ").Replace(" -  ", " - ");
-
-                        var _source = new FileInfo(Path.Combine(fbd1.SelectedPath, CURRENT_GAME.Path));
-
-
-
-                        // Título [Código do Jogo] -> 0
-                        // [Código do Jogo]        -> 1
-                    }
-                    catch (Exception ex)
-                    {
-                        tbLog.AppendText("[" + DateString() + "]" + GCBM.Properties.Resources.Error + ex.Message + Environment.NewLine);
-                        GlobalNotifications(ex.Message, ToolTipIcon.Error);
-                    }
-                }
-            }
-            else
-            {
-                MessageBox.Show("Successfully installed " + intQueueLength + " games.", "Success!");
-            }
-        }
-        #endregion
-
-
         #region Install Game Scrub
         /// <summary>
         /// Function to install an copy of the file in Scrub mode.
@@ -4850,7 +4819,7 @@ namespace GCBM
                     }
                     //progressBar1.Value += 5;
                 }
-                while (!myProcess.WaitForExit(1000));
+                while (!myProcess.WaitForExit(500));
 
 
                 var _StatusExit = myProcess.ExitCode;
@@ -4918,9 +4887,7 @@ namespace GCBM
         #endregion
 
         #endregion
-
-        #endregion
-
+        #endregion  
         #region Wait
         public void wait(int milliseconds)
         {
@@ -4945,7 +4912,6 @@ namespace GCBM
             }
         }
         #endregion
-
         #endregion
         //Restarts the application (closes and reopens)
         //Application.Restart();
