@@ -1090,9 +1090,9 @@ namespace GCBM
             //    MessageBox.Show("O modo de seleção NÃO é RowHeaderSelect");
             //}
 
+            EnableOptionsGameList();
 
             ReloadDataGridViewGameList(dgv);
-
         }
         #endregion
 
@@ -4498,27 +4498,10 @@ namespace GCBM
         {
             if (e.KeyChar == (char)Keys.Enter)
             {
-                Search_Click(sender, e);
+                btnSearch.PerformClick();
             }
         }
-
-        private void getProcessesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-            var procs = Process.GetCurrentProcess().GetChildProcesses();
-            if (procs != null)
-            {
-                if (procs.Count != 0)
-                {
-                    foreach (Process proc in procs)
-                    {
-                        tbLog.AppendText(proc.ToString());
-                    }
-                }
-            }
-        }
-
-
+        
         ///Testing stuff. The night is dark and full of terrors.
 
         #region SJohnson1021's Playground
@@ -5042,10 +5025,9 @@ namespace GCBM
             }
             else
             {
-                GlobalNotifications("Successfully installed " + InstallQueue.Count + " games.", ToolTipIcon.Info);
                 EnableOptionsGameList();
-                dgvSource.Enabled = true;
             }
+            EnableOptionsGameList();
         }
         #endregion
 
@@ -5160,6 +5142,11 @@ namespace GCBM
                             tbLog.Text += "\n" + DateTime.Now.ToString() + " Error Installing: \n" + e.Message + "\n";
                         }
                     }
+                    else
+                    {
+                        EnableOptionsGameList();
+                        dgvSource.Enabled = true;
+                    }
                 })));
             }
             // Disc 2
@@ -5197,7 +5184,22 @@ namespace GCBM
                     lblInstallGame.Visible = false;
                     intQueuePos++;
                     WORKING = false;
-                    InstallGameExactCopy(lstInstallQueue[intQueuePos].Path);
+                    if (intQueuePos <= InstallQueue.Count)
+                    {
+                        try
+                        {
+                            InstallGameExactCopy(InstallQueue[intQueuePos].Path);
+                        }
+                        catch (Exception e)
+                        {
+                            tbLog.Text += "\n" + DateTime.Now.ToString() + " Error Installing: \n" + e.Message + "\n";
+                        }
+                    }
+                    else
+                    {
+                        EnableOptionsGameList();
+                        dgvSource.Enabled = true;
+                    }
                 })));
             }
         }
@@ -5246,7 +5248,20 @@ namespace GCBM
                 Application.DoEvents();
             }
         }
+
+        private void getProcessesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            
+            EnableOptionsGameList();
+            btnGameInstallExactCopy.Enabled = true;
+            btnGameInstallScrub.Enabled = true;
+        }
         #endregion
+
         #endregion
         //Restarts the application (closes and reopens)
         //Application.Restart();

@@ -202,7 +202,7 @@ namespace GCBM
             this.pbNetStatus = new System.Windows.Forms.PictureBox();
             this.gameBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.process1 = new System.Diagnostics.Process();
-            this.getProcessesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.spcMain)).BeginInit();
             this.spcMain.Panel1.SuspendLayout();
             this.spcMain.Panel2.SuspendLayout();
@@ -1135,8 +1135,7 @@ namespace GCBM
             // mstripLog
             // 
             this.mstripLog.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiToolLog,
-            this.getProcessesToolStripMenuItem});
+            this.tsmiToolLog});
             resources.ApplyResources(this.mstripLog, "mstripLog");
             this.mstripLog.Name = "mstripLog";
             // 
@@ -1489,16 +1488,18 @@ namespace GCBM
             this.process1.StartInfo.UserName = "";
             this.process1.SynchronizingObject = this;
             // 
-            // getProcessesToolStripMenuItem
+            // linkLabel1
             // 
-            this.getProcessesToolStripMenuItem.Name = "getProcessesToolStripMenuItem";
-            resources.ApplyResources(this.getProcessesToolStripMenuItem, "getProcessesToolStripMenuItem");
-            this.getProcessesToolStripMenuItem.Click += new System.EventHandler(this.getProcessesToolStripMenuItem_Click);
+            resources.ApplyResources(this.linkLabel1, "linkLabel1");
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // frmMain
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.pbNetStatus);
             this.Controls.Add(this.lblNetStatus);
             this.Controls.Add(this.spcMain);
@@ -1728,7 +1729,7 @@ namespace GCBM
         private System.Windows.Forms.DataGridViewTextBoxColumn clmDiscPath;
         private System.Windows.Forms.GroupBox grpSearch;
         private System.Diagnostics.Process process1;
-        private System.Windows.Forms.ToolStripMenuItem getProcessesToolStripMenuItem;
+        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }
 

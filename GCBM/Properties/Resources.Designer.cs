@@ -1695,6 +1695,16 @@ namespace GCBM.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Refresh_16 {
+            get {
+                object obj = ResourceManager.GetObject("Refresh_16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap refresh_32 {
             get {
                 object obj = ResourceManager.GetObject("refresh_32", resourceCulture);
