@@ -1,4 +1,7 @@
 ﻿
+using System.ComponentModel;
+using System.Windows.Forms;
+
 namespace GCBM.tools
 {
     partial class frmMetaXml
@@ -6,7 +9,7 @@ namespace GCBM.tools
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -366,43 +369,43 @@ namespace GCBM.tools
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.ComboBox cbPortUSB;
-        private System.Windows.Forms.CheckBox chkEnableArguments;
-        private System.Windows.Forms.Label lblIOS;
-        private System.Windows.Forms.TextBox tbIOS;
-        private System.Windows.Forms.Label lblUsbPort;
-        private System.Windows.Forms.ComboBox cbMountUSB;
-        private System.Windows.Forms.ComboBox cbAppAhbAccess;
-        private System.Windows.Forms.Label lblMountUsb;
-        private System.Windows.Forms.ComboBox cbAppNoReloadIOS;
-        private System.Windows.Forms.PictureBox pbBanner;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button btnDeleteBanner;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button btnAddBanner;
-        private System.Windows.Forms.TextBox tbAppReleaseDate;
-        private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.Label lblImageNotFound;
-        private System.Windows.Forms.Label lblAttentionImageNotFound;
-        private System.Windows.Forms.Button btnClear;
-        private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox tbAppLongDescription;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox tbAppShortDescription;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox tbAppVersion;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox tbAppDeveloper;
-        private System.Windows.Forms.TextBox tbAppName;
-        private System.Windows.Forms.NotifyIcon notifyIcon;
-        private System.Windows.Forms.OpenFileDialog ofdXml;
-        private System.Windows.Forms.OpenFileDialog ofdBanner;
+        private GroupBox groupBox1;
+        private GroupBox groupBox2;
+        private ComboBox cbPortUSB;
+        private CheckBox chkEnableArguments;
+        private Label lblIOS;
+        private TextBox tbIOS;
+        private Label lblUsbPort;
+        private ComboBox cbMountUSB;
+        private ComboBox cbAppAhbAccess;
+        private Label lblMountUsb;
+        private ComboBox cbAppNoReloadIOS;
+        private PictureBox pbBanner;
+        private Label label9;
+        private Label label7;
+        private Button btnDeleteBanner;
+        private Label label8;
+        private Button btnAddBanner;
+        private TextBox tbAppReleaseDate;
+        private Button btnClose;
+        private Label lblImageNotFound;
+        private Label lblAttentionImageNotFound;
+        private Button btnClear;
+        private Button btnSave;
+        private Button btnSearch;
+        private Label label1;
+        private Label label2;
+        private TextBox tbAppLongDescription;
+        private Label label3;
+        private TextBox tbAppShortDescription;
+        private Label label4;
+        private Label label5;
+        private TextBox tbAppVersion;
+        private Label label6;
+        private TextBox tbAppDeveloper;
+        private TextBox tbAppName;
+        private NotifyIcon notifyIcon;
+        private OpenFileDialog ofdXml;
+        private OpenFileDialog ofdBanner;
     }
 }

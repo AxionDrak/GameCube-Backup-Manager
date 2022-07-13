@@ -1,4 +1,7 @@
 ﻿
+using System.ComponentModel;
+using System.Windows.Forms;
+
 namespace GCBM.tools
 {
     partial class frmCreatePackage
@@ -6,7 +9,7 @@ namespace GCBM.tools
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -192,16 +195,16 @@ namespace GCBM.tools
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.Button btnCompress;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.RadioButton rbFileNwb;
-        private System.Windows.Forms.RadioButton rbFileZip;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton rbOptimizedCompression;
-        private System.Windows.Forms.RadioButton rbFastCompression;
-        private System.Windows.Forms.RadioButton rbNoCompression;
-        private System.Windows.Forms.NotifyIcon notifyIcon;
+        private Label label1;
+        private Button btnClose;
+        private Button btnCompress;
+        private GroupBox groupBox2;
+        private RadioButton rbFileNwb;
+        private RadioButton rbFileZip;
+        private GroupBox groupBox1;
+        private RadioButton rbOptimizedCompression;
+        private RadioButton rbFastCompression;
+        private RadioButton rbNoCompression;
+        private NotifyIcon notifyIcon;
     }
 }

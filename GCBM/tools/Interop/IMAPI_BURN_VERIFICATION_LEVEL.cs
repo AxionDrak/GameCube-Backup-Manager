@@ -1,0 +1,9 @@
+﻿namespace GCBM.tools.Interop
+{
+    public enum IMAPI_BURN_VERIFICATION_LEVEL
+    {
+        IMAPI_BURN_VERIFICATION_NONE,
+        IMAPI_BURN_VERIFICATION_QUICK,
+        IMAPI_BURN_VERIFICATION_FULL
+    }
+}

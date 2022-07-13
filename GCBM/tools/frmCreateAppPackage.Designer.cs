@@ -1,4 +1,7 @@
 ﻿
+using System.ComponentModel;
+using System.Windows.Forms;
+
 namespace GCBM.tools
 {
     partial class frmCreateAppPackage
@@ -6,7 +9,7 @@ namespace GCBM.tools
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -239,20 +242,20 @@ namespace GCBM.tools
 
         #endregion
 
-        private System.Windows.Forms.Button btnClear;
-        private System.Windows.Forms.GroupBox grbExtra;
-        private System.Windows.Forms.RadioButton rbCreateNwb;
-        private System.Windows.Forms.RadioButton rbCreateZip;
-        private System.Windows.Forms.CheckBox chkIncludeExtra;
-        private System.Windows.Forms.Button btnSearchExtras;
-        private System.Windows.Forms.Label lblMainExtra;
-        private System.Windows.Forms.TextBox tbExtra;
-        private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.Button btnCreatePackage;
-        private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.TextBox tbDirectory;
-        private System.Windows.Forms.Label lblMainPackage;
-        private System.Windows.Forms.NotifyIcon notifyIcon;
-        private System.Windows.Forms.FolderBrowserDialog fbdCreatePackage;
+        private Button btnClear;
+        private GroupBox grbExtra;
+        private RadioButton rbCreateNwb;
+        private RadioButton rbCreateZip;
+        private CheckBox chkIncludeExtra;
+        private Button btnSearchExtras;
+        private Label lblMainExtra;
+        private TextBox tbExtra;
+        private Button btnClose;
+        private Button btnCreatePackage;
+        private Button btnSearch;
+        private TextBox tbDirectory;
+        private Label lblMainPackage;
+        private NotifyIcon notifyIcon;
+        private FolderBrowserDialog fbdCreatePackage;
     }
 }

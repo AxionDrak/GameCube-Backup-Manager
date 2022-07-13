@@ -1,51 +1,48 @@
 ﻿using System;
+using System.Drawing;
 using System.IO;
 using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.ComTypes;
 using System.Windows.Forms;
-using PluginBurnMedia.Interop;
+using GCBM.tools.Interop;
 
-
-namespace PluginBurnMedia.MediaItem
+namespace GCBM.tools.MediaItem
 {
     /// <summary>
-    /// 
     /// </summary>
-    class FileItem : IMediaItem
+    internal class FileItem : IMediaItem
     {
-        private const Int64 SECTOR_SIZE = 2048;
+        private const long SECTOR_SIZE = 2048;
+        private readonly string displayName;
 
-        private Int64 m_fileLength = 0;
+        private readonly long m_fileLength;
 
         public FileItem(string path)
         {
-            if (!File.Exists(path))
-            {
-                throw new FileNotFoundException("The file added to FileItem was not found!", path);
-            }
+            if (!File.Exists(path)) throw new FileNotFoundException("The file added to FileItem was not found!", path);
 
-            filePath = path;
+            Path = path;
 
-            FileInfo fileInfo = new FileInfo(filePath);
+            var fileInfo = new FileInfo(Path);
             displayName = fileInfo.Name;
             m_fileLength = fileInfo.Length;
 
             //
             // Get the File icon
             //
-            SHFILEINFO shinfo = new SHFILEINFO();
-            IntPtr hImg = Win32.SHGetFileInfo(filePath, 0, ref shinfo,
+            var shinfo = new SHFILEINFO();
+            var hImg = Win32.SHGetFileInfo(Path, 0, ref shinfo,
                 (uint)Marshal.SizeOf(shinfo), Win32.SHGFI_ICON | Win32.SHGFI_SMALLICON);
 
             if (shinfo.hIcon != null)
             {
                 //The icon is returned in the hIcon member of the shinfo struct
-                System.Drawing.IconConverter imageConverter = new System.Drawing.IconConverter();
-                System.Drawing.Icon icon = System.Drawing.Icon.FromHandle(shinfo.hIcon);
+                var imageConverter = new IconConverter();
+                var icon = Icon.FromHandle(shinfo.hIcon);
                 try
                 {
-                    fileIconImage = (System.Drawing.Image)
-                        imageConverter.ConvertTo(icon, typeof(System.Drawing.Image));
+                    FileIconImage = (Image)
+                        imageConverter.ConvertTo(icon, typeof(Image));
                 }
                 catch (NotSupportedException)
                 {
@@ -56,54 +53,24 @@ namespace PluginBurnMedia.MediaItem
         }
 
         /// <summary>
-        /// 
         /// </summary>
-        public Int64 SizeOnDisc
+        public long SizeOnDisc
         {
             get
             {
-                if (m_fileLength > 0)
-                {
-                    return ((m_fileLength / SECTOR_SIZE) + 1) * SECTOR_SIZE;
-                }
+                if (m_fileLength > 0) return (m_fileLength / SECTOR_SIZE + 1) * SECTOR_SIZE;
 
                 return 0;
             }
         }
 
         /// <summary>
-        /// 
         /// </summary>
-        public string Path
-        {
-            get
-            {
-                return filePath;
-            }
-        }
-        private string filePath;
+        public string Path { get; }
 
         /// <summary>
-        /// 
         /// </summary>
-        public System.Drawing.Image FileIconImage
-        {
-            get
-            {
-                return fileIconImage;
-            }
-        }
-        private System.Drawing.Image fileIconImage = null;
-
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public override string ToString()
-        {
-            return displayName;
-        }
-        private string displayName;
+        public Image FileIconImage { get; }
 
         public bool AddToFileSystem(IFsiDirectoryItem rootItem)
         {
@@ -111,7 +78,7 @@ namespace PluginBurnMedia.MediaItem
 
             try
             {
-                Win32.SHCreateStreamOnFile(filePath, Win32.STGM_READ | Win32.STGM_SHARE_DENY_WRITE, ref stream);
+                Win32.SHCreateStreamOnFile(Path, Win32.STGM_READ | Win32.STGM_SHARE_DENY_WRITE, ref stream);
 
                 if (stream != null)
                 {
@@ -126,13 +93,18 @@ namespace PluginBurnMedia.MediaItem
             }
             finally
             {
-                if (stream != null)
-                {
-                    Marshal.FinalReleaseComObject(stream);
-                }
+                if (stream != null) Marshal.FinalReleaseComObject(stream);
             }
 
             return false;
+        }
+
+
+        /// <summary>
+        /// </summary>
+        public override string ToString()
+        {
+            return displayName;
         }
     }
 }

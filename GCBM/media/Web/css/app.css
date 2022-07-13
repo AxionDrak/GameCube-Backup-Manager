@@ -1,70 +1,68 @@
-html{
-    font-family: 'Open Sans', sans-serif;
-}
-body{
-    height:100%;
-    background: rgb(2,0,36);
-    background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(33,33,33,1) 0%, rgba(102,102,102,1) 100%);
-}
-.cell{
-    padding:0 !important;
-}
-header{
-    text-align: center;
-    color:white;
-    background-image: url("../resources/R.png");
-    background-size:35vw;
-    background-repeat: no-repeat;
-    background-position: center;
-    margin: 0 !important;
-    padding: 0 !important;
-    width:100% !important;
-    max-width: none !important;
+html { font-family: 'Open Sans', sans-serif; }
+
+body {
+    background: rgb(2, 0, 36);
+    background: linear-gradient(0deg, rgba(2, 0, 36, 1) 0%, rgba(33, 33, 33, 1) 0%, rgba(102, 102, 102, 1) 100%);
+    height: 100%;
 }
 
-header h1{
-    margin: .33em auto;;
-    padding: 0 0;
-    max-height: 3.1395em;
-    color: rgba(255,255,255,1);
+.cell { padding: 0 !important; }
+
+header {
+    background-image: url("../resources/R.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 35vw;
+    color: white;
+    margin: 0 !important;
+    max-width: none !important;
+    padding: 0 !important;
+    text-align: center;
+    width: 100% !important;
+}
+
+header h1 {
+    background: rgb(0, 0, 0);
+    ;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.66) 50%, rgba(0, 0, 0, 0) 100%);
+    color: rgba(255, 255, 255, 1);
     /*font-family: 'Open Sans', sans-serif;*/
     font-family: 'Raleway', sans-serif;
     font-size: 10vw;
     font-style: normal;
     font-weight: 100;
-    text-transform: none;
-    line-height: 1.0465;
     letter-spacing: normal;
+    line-height: 1.0465;
+    margin: .33em auto;
+    max-height: 3.1395em;
+    padding: 0 0;
     text-shadow: 0px 2px 2px rgb(0 0 0 / 25%);
-    background: rgb(0,0,0);
-background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.66) 50%, rgba(0,0,0,0) 100%);
+    text-transform: none;
 }
 
-.container{
-    width: 100%;
+.container {
     overflow-x: scroll;
+    width: 100%;
 }
 
-table{
-    background-color: aqua;
-}
+table { background-color: aqua; }
 
 .main-grid .primary.callout {
     background-color: #fff;
     border-radius: 16px;
-    padding:.33em;
-    margin:.125em;
+    margin: .125em;
+    padding: .33em;
 }
 
-footer{    
-    padding: 24px 8px;
-    max-width: none;
-    width: 100%;
-    margin: 0;
+footer {
+    background-color: #35414d;
     color: white;
     font-size: 12px;
     font-weight: 300;
     line-height: 1.5;
+    margin: 0;
+    max-width: none;
+    padding: 24px 8px;
     text-align: center;
-    background-color: #35414d;
+    width: 100%;
 }

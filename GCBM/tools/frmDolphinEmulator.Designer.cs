@@ -1,4 +1,7 @@
 ﻿
+using System.ComponentModel;
+using System.Windows.Forms;
+
 namespace GCBM.tools
 {
     partial class frmDolphinEmulator
@@ -6,7 +9,7 @@ namespace GCBM.tools
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -249,21 +252,21 @@ namespace GCBM.tools
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Label lblGame;
-        private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.Button btnRun;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.Button btnSelectFile;
-        private System.Windows.Forms.TextBox tbPathDolphinEmulator;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.RadioButton rbHLE;
-        private System.Windows.Forms.RadioButton rbLLE;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.RadioButton rbOpenGL;
-        private System.Windows.Forms.RadioButton rbD3D12;
-        private System.Windows.Forms.RadioButton rbD3D11;
-        private System.Windows.Forms.OpenFileDialog ofdDolphin;
+        private GroupBox groupBox4;
+        private Label lblGame;
+        private Button btnClose;
+        private Button btnRun;
+        private GroupBox groupBox1;
+        private GroupBox groupBox5;
+        private Button btnSelectFile;
+        private TextBox tbPathDolphinEmulator;
+        private GroupBox groupBox3;
+        private RadioButton rbHLE;
+        private RadioButton rbLLE;
+        private GroupBox groupBox2;
+        private RadioButton rbOpenGL;
+        private RadioButton rbD3D12;
+        private RadioButton rbD3D11;
+        private OpenFileDialog ofdDolphin;
     }
 }

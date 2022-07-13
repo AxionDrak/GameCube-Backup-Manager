@@ -1,27 +1,25 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using GCBM.Properties;
 
 namespace GCBM
 {
-    static class Program
+    internal static class Program
     {
         /// <summary>
-        /// Ponto de entrada principal para o aplicativo.
+        ///     Ponto de entrada principal para o aplicativo.
         /// </summary>
         [STAThread]
-        static void Main()
+        private static void Main()
         {
-            IniFile configIniFile = new IniFile("config.ini");
+            var configIniFile = new IniFile("config.ini");
 
             //Pega o nome do processo deste programa
-            string nomeProcesso = Process.GetCurrentProcess().ProcessName;
+            var nomeProcesso = Process.GetCurrentProcess().ProcessName;
             //Busca os processos com este nome que estão em execução
-            Process[] processos = Process.GetProcessesByName(nomeProcesso);
+            var processos = Process.GetProcessesByName(nomeProcesso);
 
             if (File.Exists("config.ini"))
             {
@@ -34,7 +32,8 @@ namespace GCBM
                     //Se já houver um aberto
                     if (processos.Length > 1)
                     {
-                        MessageBox.Show(GCBM.Properties.Resources.CannotOpenTwoInstances, "GameCube Backup Manager", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        MessageBox.Show(Resources.CannotOpenTwoInstances, "GameCube Backup Manager",
+                            MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         Application.Exit();
                     }
                     else
@@ -55,7 +54,8 @@ namespace GCBM
             {
                 if (processos.Length > 1)
                 {
-                    MessageBox.Show(GCBM.Properties.Resources.CannotOpenTwoInstances, "GameCube Backup Manager", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show(Resources.CannotOpenTwoInstances, "GameCube Backup Manager", MessageBoxButtons.OK,
+                        MessageBoxIcon.Exclamation);
                     Application.Exit();
                 }
                 else

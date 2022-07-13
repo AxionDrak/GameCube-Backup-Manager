@@ -1,4 +1,7 @@
 ﻿
+using System.ComponentModel;
+using System.Windows.Forms;
+
 namespace GCBM
 {
     partial class frmDownloadGameTDB
@@ -6,7 +9,7 @@ namespace GCBM
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -89,10 +92,10 @@ namespace GCBM
 
         #endregion
 
-        private System.Windows.Forms.Label lblDownload;
-        private System.Windows.Forms.Label lblExtracting;
-        private System.Windows.Forms.Label lblConverting;
-        private System.Windows.Forms.ProgressBar pbGameTDB;
-        private System.Windows.Forms.Button btnCancelWork;
+        private Label lblDownload;
+        private Label lblExtracting;
+        private Label lblConverting;
+        private ProgressBar pbGameTDB;
+        private Button btnCancelWork;
     }
 }

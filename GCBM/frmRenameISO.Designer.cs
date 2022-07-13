@@ -1,4 +1,7 @@
 ﻿
+using System.ComponentModel;
+using System.Windows.Forms;
+
 namespace GCBM
 {
     partial class frmRenameISO
@@ -6,7 +9,7 @@ namespace GCBM
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -89,10 +92,10 @@ namespace GCBM
 
         #endregion
 
-        private System.Windows.Forms.CheckBox chkRenameISO;
-        private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button btnConfirm;
-        private System.Windows.Forms.TextBox tbRenameISO;
-        private System.Windows.Forms.Label label1;
+        private CheckBox chkRenameISO;
+        private Button btnCancel;
+        private Button btnConfirm;
+        private TextBox tbRenameISO;
+        private Label label1;
     }
 }

@@ -1,4 +1,7 @@
 ﻿
+using System.ComponentModel;
+using System.Windows.Forms;
+
 namespace GCBM
 {
     partial class frmInfoAdditional
@@ -6,7 +9,7 @@ namespace GCBM
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -489,56 +492,56 @@ namespace GCBM
 
         #endregion
 
-        private System.Windows.Forms.GroupBox grpInfo;
-        private System.Windows.Forms.TextBox tbGameSHA1;
-        private System.Windows.Forms.TextBox tbGameMD5;
-        private System.Windows.Forms.TextBox tbGameCRC;
-        private System.Windows.Forms.Label lblSha1;
-        private System.Windows.Forms.Label lblMd5;
-        private System.Windows.Forms.Label lblCrc;
-        private System.Windows.Forms.TextBox tbGameVersion;
-        private System.Windows.Forms.TextBox tbGameControl;
-        private System.Windows.Forms.Label lblVersion;
-        private System.Windows.Forms.Label lblRequirements;
-        private System.Windows.Forms.TextBox tbGamePlayersOnline;
-        private System.Windows.Forms.TextBox tbGamePlayers;
-        private System.Windows.Forms.TextBox tbGameDescriptor;
-        private System.Windows.Forms.Label lblPlayersOnline;
-        private System.Windows.Forms.Label lblPlayers;
-        private System.Windows.Forms.Label lblContent;
-        private System.Windows.Forms.PictureBox pbGameTitle;
-        private System.Windows.Forms.TextBox tbGameRatingValue;
-        private System.Windows.Forms.Label lblType;
-        private System.Windows.Forms.Label lblDateGlobal;
-        private System.Windows.Forms.TextBox tbGameMonth;
-        private System.Windows.Forms.TextBox tbGameDay;
-        private System.Windows.Forms.Label lblInternalName;
-        private System.Windows.Forms.TextBox tbGameInternalName;
-        private System.Windows.Forms.TextBox tbGameSynopsis;
-        private System.Windows.Forms.Label lblSynopsis;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.PictureBox pbESRB_T;
-        private System.Windows.Forms.PictureBox pbESRB_C;
-        private System.Windows.Forms.PictureBox pbESRB_RP;
-        private System.Windows.Forms.PictureBox pbESRB_A;
-        private System.Windows.Forms.PictureBox pbESRB_M;
-        private System.Windows.Forms.PictureBox pbESRB_Eplus;
-        private System.Windows.Forms.PictureBox pbESRB_E;
-        private System.Windows.Forms.TextBox tbGameRegion;
-        private System.Windows.Forms.TextBox tbGameRatingType;
-        private System.Windows.Forms.Label lblRegion;
-        private System.Windows.Forms.TextBox tbGameGenre;
-        private System.Windows.Forms.Label lblDate;
-        private System.Windows.Forms.Label lblGenre;
-        private System.Windows.Forms.TextBox tbGameYear;
-        private System.Windows.Forms.Label lblLanguage;
-        private System.Windows.Forms.Label lblRating;
-        private System.Windows.Forms.TextBox tbGameDeveloper;
-        private System.Windows.Forms.Label lblDeveloper;
-        private System.Windows.Forms.Label lblPublisher;
-        private System.Windows.Forms.TextBox tbGamePublisher;
-        private System.Windows.Forms.TextBox tbGameLanguage;
-        private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.NotifyIcon notifyIcon;
+        private GroupBox grpInfo;
+        private TextBox tbGameSHA1;
+        private TextBox tbGameMD5;
+        private TextBox tbGameCRC;
+        private Label lblSha1;
+        private Label lblMd5;
+        private Label lblCrc;
+        private TextBox tbGameVersion;
+        private TextBox tbGameControl;
+        private Label lblVersion;
+        private Label lblRequirements;
+        private TextBox tbGamePlayersOnline;
+        private TextBox tbGamePlayers;
+        private TextBox tbGameDescriptor;
+        private Label lblPlayersOnline;
+        private Label lblPlayers;
+        private Label lblContent;
+        private PictureBox pbGameTitle;
+        private TextBox tbGameRatingValue;
+        private Label lblType;
+        private Label lblDateGlobal;
+        private TextBox tbGameMonth;
+        private TextBox tbGameDay;
+        private Label lblInternalName;
+        private TextBox tbGameInternalName;
+        private TextBox tbGameSynopsis;
+        private Label lblSynopsis;
+        private GroupBox groupBox1;
+        private PictureBox pbESRB_T;
+        private PictureBox pbESRB_C;
+        private PictureBox pbESRB_RP;
+        private PictureBox pbESRB_A;
+        private PictureBox pbESRB_M;
+        private PictureBox pbESRB_Eplus;
+        private PictureBox pbESRB_E;
+        private TextBox tbGameRegion;
+        private TextBox tbGameRatingType;
+        private Label lblRegion;
+        private TextBox tbGameGenre;
+        private Label lblDate;
+        private Label lblGenre;
+        private TextBox tbGameYear;
+        private Label lblLanguage;
+        private Label lblRating;
+        private TextBox tbGameDeveloper;
+        private Label lblDeveloper;
+        private Label lblPublisher;
+        private TextBox tbGamePublisher;
+        private TextBox tbGameLanguage;
+        private Button btnClose;
+        private NotifyIcon notifyIcon;
     }
 }
