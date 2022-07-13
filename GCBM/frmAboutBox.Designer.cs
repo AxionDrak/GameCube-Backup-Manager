@@ -34,41 +34,41 @@ namespace GCBM
         /// </summary>
         private void InitializeComponent()
         {
-            ComponentResourceManager resources = new ComponentResourceManager(typeof(frmAboutBox));
-            this.tableLayoutPanel = new TableLayoutPanel();
-            this.logoPictureBox = new PictureBox();
-            this.labelProductName = new Label();
-            this.labelVersion = new Label();
-            this.labelCopyright = new Label();
-            this.labelCompanyName = new Label();
-            this.textBoxDescription = new TextBox();
-            this.okButton = new Button();
-            this.tabControl1 = new TabControl();
-            this.tpGCBM = new TabPage();
-            this.tbTranslator = new TabPage();
-            this.lbl_DataAtualizacao = new Label();
-            this.lblAboutCurrentLanguage = new Label();
-            this.lblAboutTranslator = new Label();
-            this.lblAboutVersion = new Label();
-            this.lblAboutProgramName = new Label();
-            this.tbGameTDB = new TabPage();
-            this.rtbAboutGameTDB = new RichTextBox();
-            this.pbGameTDB = new PictureBox();
-            this.tbThanks = new TabPage();
-            this.rtbAboutThanks = new RichTextBox();
-            this.tbDonate = new TabPage();
-            this.pbDonations = new PictureBox();
-            this.rtbAboutDonations = new RichTextBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAboutBox));
+            this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.logoPictureBox = new System.Windows.Forms.PictureBox();
+            this.labelProductName = new System.Windows.Forms.Label();
+            this.labelVersion = new System.Windows.Forms.Label();
+            this.labelCopyright = new System.Windows.Forms.Label();
+            this.labelCompanyName = new System.Windows.Forms.Label();
+            this.textBoxDescription = new System.Windows.Forms.TextBox();
+            this.okButton = new System.Windows.Forms.Button();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tpGCBM = new System.Windows.Forms.TabPage();
+            this.tbTranslator = new System.Windows.Forms.TabPage();
+            this.lbl_DataAtualizacao = new System.Windows.Forms.Label();
+            this.lblAboutCurrentLanguage = new System.Windows.Forms.Label();
+            this.lblAboutTranslator = new System.Windows.Forms.Label();
+            this.lblAboutVersion = new System.Windows.Forms.Label();
+            this.lblAboutProgramName = new System.Windows.Forms.Label();
+            this.tbGameTDB = new System.Windows.Forms.TabPage();
+            this.rtbAboutGameTDB = new System.Windows.Forms.RichTextBox();
+            this.pbGameTDB = new System.Windows.Forms.PictureBox();
+            this.tbThanks = new System.Windows.Forms.TabPage();
+            this.rtbAboutThanks = new System.Windows.Forms.RichTextBox();
+            this.tbDonate = new System.Windows.Forms.TabPage();
+            this.pbDonations = new System.Windows.Forms.PictureBox();
+            this.rtbAboutDonations = new System.Windows.Forms.RichTextBox();
             this.tableLayoutPanel.SuspendLayout();
-            ((ISupportInitialize)(this.logoPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tpGCBM.SuspendLayout();
             this.tbTranslator.SuspendLayout();
             this.tbGameTDB.SuspendLayout();
-            ((ISupportInitialize)(this.pbGameTDB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbGameTDB)).BeginInit();
             this.tbThanks.SuspendLayout();
             this.tbDonate.SuspendLayout();
-            ((ISupportInitialize)(this.pbDonations)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDonations)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel
@@ -120,7 +120,7 @@ namespace GCBM
             // okButton
             // 
             resources.ApplyResources(this.okButton, "okButton");
-            this.okButton.DialogResult = DialogResult.Cancel;
+            this.okButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.okButton.Name = "okButton";
             // 
             // tabControl1
@@ -187,20 +187,20 @@ namespace GCBM
             // 
             // rtbAboutGameTDB
             // 
-            this.rtbAboutGameTDB.BackColor = Color.White;
-            this.rtbAboutGameTDB.BorderStyle = BorderStyle.None;
+            this.rtbAboutGameTDB.BackColor = System.Drawing.Color.White;
+            this.rtbAboutGameTDB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             resources.ApplyResources(this.rtbAboutGameTDB, "rtbAboutGameTDB");
             this.rtbAboutGameTDB.Name = "rtbAboutGameTDB";
             this.rtbAboutGameTDB.ReadOnly = true;
             // 
             // pbGameTDB
             // 
-            this.pbGameTDB.Image = Resources.GameTDB_400;
+            this.pbGameTDB.Image = global::GCBM.Properties.Resources.GameTDB_400;
             resources.ApplyResources(this.pbGameTDB, "pbGameTDB");
             this.pbGameTDB.Name = "pbGameTDB";
             this.pbGameTDB.TabStop = false;
-            this.pbGameTDB.Click += new EventHandler(this.pbGameTDB_Click);
-            this.pbGameTDB.MouseEnter += new EventHandler(this.pbGameTDB_MouseEnter);
+            this.pbGameTDB.Click += new System.EventHandler(this.pbGameTDB_Click);
+            this.pbGameTDB.MouseEnter += new System.EventHandler(this.pbGameTDB_MouseEnter);
             // 
             // tbThanks
             // 
@@ -211,8 +211,8 @@ namespace GCBM
             // 
             // rtbAboutThanks
             // 
-            this.rtbAboutThanks.BackColor = Color.White;
-            this.rtbAboutThanks.BorderStyle = BorderStyle.None;
+            this.rtbAboutThanks.BackColor = System.Drawing.Color.White;
+            this.rtbAboutThanks.BorderStyle = System.Windows.Forms.BorderStyle.None;
             resources.ApplyResources(this.rtbAboutThanks, "rtbAboutThanks");
             this.rtbAboutThanks.Name = "rtbAboutThanks";
             this.rtbAboutThanks.ReadOnly = true;
@@ -227,17 +227,17 @@ namespace GCBM
             // 
             // pbDonations
             // 
-            this.pbDonations.Image = Resources.donate;
+            this.pbDonations.Image = global::GCBM.Properties.Resources.donate;
             resources.ApplyResources(this.pbDonations, "pbDonations");
             this.pbDonations.Name = "pbDonations";
             this.pbDonations.TabStop = false;
-            this.pbDonations.Click += new EventHandler(this.pbDonations_Click);
-            this.pbDonations.MouseEnter += new EventHandler(this.pbDonations_MouseEnter);
+            this.pbDonations.Click += new System.EventHandler(this.pbDonations_Click);
+            this.pbDonations.MouseEnter += new System.EventHandler(this.pbDonations_MouseEnter);
             // 
             // rtbAboutDonations
             // 
-            this.rtbAboutDonations.BackColor = Color.White;
-            this.rtbAboutDonations.BorderStyle = BorderStyle.None;
+            this.rtbAboutDonations.BackColor = System.Drawing.Color.White;
+            this.rtbAboutDonations.BorderStyle = System.Windows.Forms.BorderStyle.None;
             resources.ApplyResources(this.rtbAboutDonations, "rtbAboutDonations");
             this.rtbAboutDonations.Name = "rtbAboutDonations";
             this.rtbAboutDonations.ReadOnly = true;
@@ -246,9 +246,9 @@ namespace GCBM
             // 
             this.AcceptButton = this.okButton;
             resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tabControl1);
-            this.FormBorderStyle = FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmAboutBox";
@@ -256,16 +256,16 @@ namespace GCBM
             this.ShowInTaskbar = false;
             this.tableLayoutPanel.ResumeLayout(false);
             this.tableLayoutPanel.PerformLayout();
-            ((ISupportInitialize)(this.logoPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tpGCBM.ResumeLayout(false);
             this.tbTranslator.ResumeLayout(false);
             this.tbTranslator.PerformLayout();
             this.tbGameTDB.ResumeLayout(false);
-            ((ISupportInitialize)(this.pbGameTDB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbGameTDB)).EndInit();
             this.tbThanks.ResumeLayout(false);
             this.tbDonate.ResumeLayout(false);
-            ((ISupportInitialize)(this.pbDonations)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDonations)).EndInit();
             this.ResumeLayout(false);
 
         }
