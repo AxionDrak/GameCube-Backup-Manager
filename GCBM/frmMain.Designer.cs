@@ -47,13 +47,16 @@ namespace GCBM
             this.pbGameDisc = new System.Windows.Forms.PictureBox();
             this.tabControlMain = new System.Windows.Forms.TabControl();
             this.tabMainFile = new System.Windows.Forms.TabPage();
-            this.btnAbort = new System.Windows.Forms.Button();
-            this.lblInstallGame = new System.Windows.Forms.Label();
-            this.lblPercent = new System.Windows.Forms.Label();
-            this.lblCopy = new System.Windows.Forms.Label();
+            this.lblSourceCount = new System.Windows.Forms.Label();
+            this.lblGameCountSource = new System.Windows.Forms.Label();
+            this.lblAbort = new System.Windows.Forms.Label();
             this.pbCopy = new System.Windows.Forms.ProgressBar();
+            this.lblCopy = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnAbort = new System.Windows.Forms.Button();
+            this.lblPercent = new System.Windows.Forms.Label();
             this.btnSelectFolder = new System.Windows.Forms.Button();
+            this.lblInstallGame = new System.Windows.Forms.Label();
             this.grpDetails = new System.Windows.Forms.GroupBox();
             this.lblTypeDisc = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
@@ -210,6 +213,8 @@ namespace GCBM
             this.pbNetStatus = new System.Windows.Forms.PictureBox();
             this.gameBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.process1 = new System.Diagnostics.Process();
+            this.label8 = new System.Windows.Forms.Label();
+            this.lblDestinationCount = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.spcMain)).BeginInit();
             this.spcMain.Panel1.SuspendLayout();
             this.spcMain.Panel2.SuspendLayout();
@@ -312,13 +317,16 @@ namespace GCBM
             // 
             // tabMainFile
             // 
-            this.tabMainFile.Controls.Add(this.btnAbort);
-            this.tabMainFile.Controls.Add(this.lblInstallGame);
-            this.tabMainFile.Controls.Add(this.lblPercent);
-            this.tabMainFile.Controls.Add(this.lblCopy);
+            this.tabMainFile.Controls.Add(this.lblSourceCount);
+            this.tabMainFile.Controls.Add(this.lblGameCountSource);
+            this.tabMainFile.Controls.Add(this.lblAbort);
             this.tabMainFile.Controls.Add(this.pbCopy);
+            this.tabMainFile.Controls.Add(this.lblCopy);
             this.tabMainFile.Controls.Add(this.label1);
+            this.tabMainFile.Controls.Add(this.btnAbort);
+            this.tabMainFile.Controls.Add(this.lblPercent);
             this.tabMainFile.Controls.Add(this.btnSelectFolder);
+            this.tabMainFile.Controls.Add(this.lblInstallGame);
             this.tabMainFile.Controls.Add(this.grpDetails);
             this.tabMainFile.Controls.Add(this.dgvSource);
             this.tabMainFile.Controls.Add(this.mstripFile);
@@ -326,40 +334,50 @@ namespace GCBM
             this.tabMainFile.Name = "tabMainFile";
             this.tabMainFile.UseVisualStyleBackColor = true;
             // 
-            // btnAbort
+            // lblSourceCount
             // 
-            this.btnAbort.FlatAppearance.BorderSize = 0;
-            this.btnAbort.Image = global::GCBM.Properties.Resources.cancel_32;
-            resources.ApplyResources(this.btnAbort, "btnAbort");
-            this.btnAbort.Name = "btnAbort";
-            this.btnAbort.UseVisualStyleBackColor = true;
-            this.btnAbort.Click += new System.EventHandler(this.btnAbort_Click);
+            resources.ApplyResources(this.lblSourceCount, "lblSourceCount");
+            this.lblSourceCount.Name = "lblSourceCount";
             // 
-            // lblInstallGame
+            // lblGameCountSource
             // 
-            resources.ApplyResources(this.lblInstallGame, "lblInstallGame");
-            this.lblInstallGame.Name = "lblInstallGame";
+            resources.ApplyResources(this.lblGameCountSource, "lblGameCountSource");
+            this.lblGameCountSource.Name = "lblGameCountSource";
             // 
-            // lblPercent
+            // lblAbort
             // 
-            resources.ApplyResources(this.lblPercent, "lblPercent");
-            this.lblPercent.BackColor = System.Drawing.Color.Transparent;
-            this.lblPercent.Name = "lblPercent";
-            // 
-            // lblCopy
-            // 
-            resources.ApplyResources(this.lblCopy, "lblCopy");
-            this.lblCopy.Name = "lblCopy";
+            resources.ApplyResources(this.lblAbort, "lblAbort");
+            this.lblAbort.Name = "lblAbort";
             // 
             // pbCopy
             // 
             resources.ApplyResources(this.pbCopy, "pbCopy");
             this.pbCopy.Name = "pbCopy";
             // 
+            // lblCopy
+            // 
+            resources.ApplyResources(this.lblCopy, "lblCopy");
+            this.lblCopy.Name = "lblCopy";
+            // 
             // label1
             // 
             resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
+            // 
+            // btnAbort
+            // 
+            resources.ApplyResources(this.btnAbort, "btnAbort");
+            this.btnAbort.FlatAppearance.BorderSize = 0;
+            this.btnAbort.Image = global::GCBM.Properties.Resources.cancel_32;
+            this.btnAbort.Name = "btnAbort";
+            this.btnAbort.UseVisualStyleBackColor = true;
+            this.btnAbort.Click += new System.EventHandler(this.btnAbort_Click);
+            // 
+            // lblPercent
+            // 
+            resources.ApplyResources(this.lblPercent, "lblPercent");
+            this.lblPercent.BackColor = System.Drawing.Color.Transparent;
+            this.lblPercent.Name = "lblPercent";
             // 
             // btnSelectFolder
             // 
@@ -368,6 +386,11 @@ namespace GCBM
             this.btnSelectFolder.Name = "btnSelectFolder";
             this.btnSelectFolder.UseVisualStyleBackColor = true;
             this.btnSelectFolder.Click += new System.EventHandler(this.btnSelectFolder_Click);
+            // 
+            // lblInstallGame
+            // 
+            resources.ApplyResources(this.lblInstallGame, "lblInstallGame");
+            this.lblInstallGame.Name = "lblInstallGame";
             // 
             // grpDetails
             // 
@@ -742,6 +765,8 @@ namespace GCBM
             // 
             // tabMainDisc
             // 
+            this.tabMainDisc.Controls.Add(this.lblDestinationCount);
+            this.tabMainDisc.Controls.Add(this.label8);
             this.tabMainDisc.Controls.Add(this.lblSpaceAvailabeOnDevice);
             this.tabMainDisc.Controls.Add(this.lblSpaceTotalOnDevice);
             this.tabMainDisc.Controls.Add(this.label3);
@@ -848,6 +873,7 @@ namespace GCBM
             this.dgvDestination.Name = "dgvDestination";
             this.dgvDestination.ReadOnly = true;
             this.dgvDestination.RowHeadersVisible = false;
+            this.dgvDestination.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDestination.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSource_CellContentClick);
             this.dgvDestination.CurrentCellChanged += new System.EventHandler(this.dgvDestination_CurrentCellChanged);
             // 
@@ -1505,6 +1531,16 @@ namespace GCBM
             this.process1.StartInfo.UserName = "";
             this.process1.SynchronizingObject = this;
             // 
+            // label8
+            // 
+            resources.ApplyResources(this.label8, "label8");
+            this.label8.Name = "label8";
+            // 
+            // lblDestinationCount
+            // 
+            resources.ApplyResources(this.lblDestinationCount, "lblDestinationCount");
+            this.lblDestinationCount.Name = "lblDestinationCount";
+            // 
             // frmMain
             // 
             resources.ApplyResources(this, "$this");
@@ -1739,6 +1775,11 @@ namespace GCBM
         private GroupBox grpSearch;
         private Process process1;
         private Button btnAbort;
+        private Label lblAbort;
+        private Label lblSourceCount;
+        private Label lblGameCountSource;
+        private Label lblDestinationCount;
+        private Label label8;
     }
 }
 

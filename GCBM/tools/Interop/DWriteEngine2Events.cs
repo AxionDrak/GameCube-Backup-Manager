@@ -15,6 +15,7 @@ namespace GCBM.tools.Interop
         [DispId(0x100)] // DISPID_DWRITEENGINE2EVENTS_UPDATE 
         [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
         void Update([In] [MarshalAs(UnmanagedType.IDispatch)] object sender,
-            [In] [MarshalAs(UnmanagedType.IDispatch)] object progress);
+            [In] [MarshalAs(UnmanagedType.IDispatch)]
+            object progress);
     }
 }

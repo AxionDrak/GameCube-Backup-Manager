@@ -627,7 +627,8 @@ namespace GCBM.tools
         /// <param name="sender"></param>
         /// <param name="progress"></param>
         private void discFormatData_Update([In] [MarshalAs(UnmanagedType.IDispatch)] object sender,
-            [In] [MarshalAs(UnmanagedType.IDispatch)] object progress)
+            [In] [MarshalAs(UnmanagedType.IDispatch)]
+            object progress)
         {
             //
             // Check if we've cancelled

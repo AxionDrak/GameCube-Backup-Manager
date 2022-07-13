@@ -142,10 +142,10 @@ namespace GCBM
 
         private class TOCClass : IComparer<TOCItemFil>, ICloneable
         {
+            public readonly List<TOCItemFil> fils;
             public int dataStart;
             public int dirCount = 1;
             public int filCount = 4;
-            public readonly List<TOCItemFil> fils;
             public int lastIdx;
             public int startIdx;
             public int totalLen;
@@ -207,14 +207,14 @@ namespace GCBM
             public readonly int dirIdx;
             public readonly string gamePath;
             public readonly bool isDir;
-            public int len;
             public readonly string name;
+            public readonly string path;
+            public readonly int TOCIdx;
+            public int len;
             public int nextIdx;
             public TreeNode node;
-            public readonly string path;
             public int pos;
             public int prevIdx;
-            public readonly int TOCIdx;
 
             public TOCItemFil(int TOCIdx, int dirIdx, int pos, int len, bool isDir, string name, string gamePath,
                 string path)

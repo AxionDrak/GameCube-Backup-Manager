@@ -32,125 +32,6 @@ namespace GCBM
 {
     public partial class frmMain : Form
     {
-        #region Main Form
-
-        /// <summary>
-        ///     Main constructor method of the class.
-        ///     No argument parameters.
-        /// </summary>
-
-        private bool ABORT;
-
-        public frmMain()
-        {
-            InitializeComponent();
-            InstallQueue = new Dictionary<int, Game>();
-            Text = "GameCube Backup Manager 2022 - " + VERSION() + " - 64-bit";
-
-            // Splash Screen
-            if (CONFIG_INI_FILE.IniReadBool("SEVERAL", "DisableSplash") == false)
-            {
-                // Splash Screen
-                Load += HandleFormLoad;
-                SPLASH_SCREEN = new frmSplashScreen();
-            }
-            else
-            {
-                NetworkCheck();
-            }
-
-            if (!sio.File.Exists(INI_FILE))
-            {
-                DefaultConfigSave();
-                DetectOSLanguage();
-
-                AdjustLanguage();
-                Controls.Clear();
-                InitializeComponent();
-            }
-
-            LoadConfigFile();
-            AboutTranslator();
-            GetAllDrives();
-            //DetectOSLanguage();
-            //AdjustLanguage();
-            UpdateProgram();
-            LoadDatabaseXML();
-            DisabeScreensaver();
-            RegisterHeaderLog();
-            RequiredDirectories();
-            DisableOptionsGame(dgvSource);
-            tscbDiscDrive.SelectedIndex = 0;
-            cbFilterDatabase.SelectedIndex = 0;
-
-            if (!sio.File.Exists(WIITDB_FILE)) CheckWiiTdbXml();
-
-            // DISABLED
-            tsmiExportCSV.Enabled = false;
-            tsmiExportHTML.Enabled = false;
-            //tsmiElfDol.Enabled = false;
-            //tsmiDolphinEmulator.Enabled = false;
-            tsmiBurnMedia.Enabled = false;
-            tsmiManageApp.Enabled = false;
-            tsmiCreatePackage.Enabled = false;
-            // HIDE
-            tsmiExportCSV.Visible = false;
-            tsmiExportHTML.Visible = false;
-            //tsmiElfDol.Visible = false;
-            //tsmiDolphinEmulator.Visible = false;
-            tsmiBurnMedia.Visible = false;
-            tsmiManageApp.Visible = false;
-            tsmiCreatePackage.Visible = false;
-
-            //All done, Clean up / Refresh to ensure language and settings are updated.
-
-            //Localization.. but not working @Laetemn
-
-            #region dgvDestination Setup
-
-            PopDestination();
-            PopSource();
-
-            #endregion
-
-            Thread.CurrentThread.CurrentUICulture.ClearCachedData();
-            Thread.CurrentThread.CurrentCulture.ClearCachedData();
-
-            //foreach in this.Controls.Results 
-            mstripMain.Refresh();
-            this.Focus();
-        }
-
-        private void PopDestination()
-        {
-            DataGridViewCheckBoxColumn cb = new DataGridViewCheckBoxColumn();
-            dgvDestination.Columns.Clear();
-            dgvDestination.Columns.Add(cb);
-            dgvDestination.Columns.Add("Title",Resources.LoadDatabase_GameTitle);
-            dgvDestination.Columns.Add("ID",Resources.LoadDatabase_IDGameCode);
-            dgvDestination.Columns.Add("Region",Resources.LoadDatabase_Region);
-            dgvDestination.Columns.Add("Type",Resources.LoadDatabase_Type);
-            dgvDestination.Columns.Add("Size",Resources.DisplayFilesSelected_Size);
-            dgvDestination.Columns.Add("Path",Resources.DisplayFilesSelected_FilePath);
-            dgvDestination.Refresh();
-        }
-
-        private void PopSource()
-        {
-            DataGridViewCheckBoxColumn cb = new DataGridViewCheckBoxColumn();
-            dgvSource.Columns.Clear();
-            dgvSource.Columns.Add(cb);
-            dgvSource.Columns.Add("Title",Resources.LoadDatabase_GameTitle);
-            dgvSource.Columns.Add("ID",Resources.LoadDatabase_IDGameCode);
-            dgvSource.Columns.Add("Region",Resources.LoadDatabase_Region);
-            dgvSource.Columns.Add("Type",Resources.LoadDatabase_Type);
-            dgvSource.Columns.Add("Size",Resources.DisplayFilesSelected_Size);
-            dgvSource.Columns.Add("Path",Resources.DisplayFilesSelected_FilePath);
-            dgvSource.Refresh();
-        }
-
-        #endregion
-
         #region Assembly Product
 
         /// <summary>
@@ -808,10 +689,15 @@ namespace GCBM
                         if (dgv == dgvDestination)
                         {
                             //title,region,id
-
+                            lblDestinationCount.Text = dgv.Rows.Count.ToString();
                             tbIDNameDisc.Text = dgv.CurrentRow.Cells["Title"].Value.ToString();
                             tbIDRegionDisc.Text = dgv.CurrentRow.Cells["Region"].Value.ToString();
                             tbIDGameDisc.Text = dgv.CurrentRow.Cells["ID"].Value.ToString();
+                        }
+
+                        if (dgv == dgvSource)
+                        {
+                            lblSourceCount.Text = dgv.Rows.Count.ToString();
                         }
                     }
                 }
@@ -875,8 +761,10 @@ namespace GCBM
 
             tsmiSelectGameList.Enabled = true;
             // Groups files in the folder by extension.
-            var filesGroupedByExtension = files.Select(arq => sio.Path.GetExtension(arq).TrimStart('.').ToLower(MY_CULTURE)).GroupBy(x => x, (ext, extCnt) =>
-                new { _fileExtension = ext, Counter = extCnt.Count() });
+            var filesGroupedByExtension = files
+                .Select(arq => sio.Path.GetExtension(arq).TrimStart('.').ToLower(MY_CULTURE)).GroupBy(x => x,
+                    (ext, extCnt) =>
+                        new { _fileExtension = ext, Counter = extCnt.Count() });
 
             // Scroll through the result and display the values.
             foreach (var _files in filesGroupedByExtension)
@@ -2046,10 +1934,14 @@ namespace GCBM
                                 BuildInstallQueue();
                                 DisableOptionsGame(dgvSource);
                                 INSTALLING = true;
+                                btnAbort.Visible = true;
+                                lblAbort.Visible = true;
                                 InstallGameExactCopy(InstallQueue[intQueuePos].Path);
                             }
                             else // Install Scrub
                             {
+                                btnAbort.Visible = true;
+                                lblAbort.Visible = true;
                                 BuildInstallQueue();
                                 if (lstInstallQueue.Count == 0 || lstInstallQueue == null)
                                     //probably unreachable
@@ -2698,6 +2590,20 @@ namespace GCBM
             if (e.KeyChar == (char)Keys.Enter) btnSearch.PerformClick();
         }
 
+        //Restarts the application (closes and reopens)
+        //Application.Restart();
+        private void tsmiGameListDeleteAllFiles_ClickAsync(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void btnAbort_Click(object sender, EventArgs e)
+        {
+            ABORT = true;
+            ResetOptions();
+            lblInstallGame.Show();
+        }
+
         #region Flag Attributes Screensaver
 
         /// <summary>
@@ -2710,6 +2616,124 @@ namespace GCBM
             ES_CONTINUOUS = 0x80000000,
             ES_DISPLAY_REQUIRED = 0x00000002,
             ES_SYSTEM_REQUIRED = 0x00000001
+        }
+
+        #endregion
+
+        #region Main Form
+
+        /// <summary>
+        ///     Main constructor method of the class.
+        ///     No argument parameters.
+        /// </summary>
+        private bool ABORT;
+
+        public frmMain()
+        {
+            InitializeComponent();
+            InstallQueue = new Dictionary<int, Game>();
+            Text = "GameCube Backup Manager 2022 - " + VERSION() + " - 64-bit";
+
+            // Splash Screen
+            if (CONFIG_INI_FILE.IniReadBool("SEVERAL", "DisableSplash") == false)
+            {
+                // Splash Screen
+                Load += HandleFormLoad;
+                SPLASH_SCREEN = new frmSplashScreen();
+            }
+            else
+            {
+                NetworkCheck();
+            }
+
+            if (!sio.File.Exists(INI_FILE))
+            {
+                DefaultConfigSave();
+                DetectOSLanguage();
+
+                AdjustLanguage();
+                Controls.Clear();
+                InitializeComponent();
+            }
+
+            LoadConfigFile();
+            AboutTranslator();
+            GetAllDrives();
+            //DetectOSLanguage();
+            //AdjustLanguage();
+            UpdateProgram();
+            LoadDatabaseXML();
+            DisabeScreensaver();
+            RegisterHeaderLog();
+            RequiredDirectories();
+            DisableOptionsGame(dgvSource);
+            tscbDiscDrive.SelectedIndex = 0;
+            cbFilterDatabase.SelectedIndex = 0;
+
+            if (!sio.File.Exists(WIITDB_FILE)) CheckWiiTdbXml();
+
+            // DISABLED
+            tsmiExportCSV.Enabled = false;
+            tsmiExportHTML.Enabled = false;
+            //tsmiElfDol.Enabled = false;
+            //tsmiDolphinEmulator.Enabled = false;
+            tsmiBurnMedia.Enabled = false;
+            tsmiManageApp.Enabled = false;
+            tsmiCreatePackage.Enabled = false;
+            // HIDE
+            tsmiExportCSV.Visible = false;
+            tsmiExportHTML.Visible = false;
+            //tsmiElfDol.Visible = false;
+            //tsmiDolphinEmulator.Visible = false;
+            tsmiBurnMedia.Visible = false;
+            tsmiManageApp.Visible = false;
+            tsmiCreatePackage.Visible = false;
+
+            //All done, Clean up / Refresh to ensure language and settings are updated.
+
+            //Localization.. but not working @Laetemn
+
+            #region dgvDestination Setup
+
+            PopDestination();
+            PopSource();
+
+            #endregion
+
+            Thread.CurrentThread.CurrentUICulture.ClearCachedData();
+            Thread.CurrentThread.CurrentCulture.ClearCachedData();
+
+            //foreach in this.Controls.Results 
+            mstripMain.Refresh();
+            Focus();
+        }
+
+        private void PopDestination()
+        {
+            var cb = new DataGridViewCheckBoxColumn();
+            dgvDestination.Columns.Clear();
+            dgvDestination.Columns.Add(cb);
+            dgvDestination.Columns.Add("Title", Resources.LoadDatabase_GameTitle);
+            dgvDestination.Columns.Add("ID", Resources.LoadDatabase_IDGameCode);
+            dgvDestination.Columns.Add("Region", Resources.LoadDatabase_Region);
+            dgvDestination.Columns.Add("Type", Resources.LoadDatabase_Type);
+            dgvDestination.Columns.Add("Size", Resources.DisplayFilesSelected_Size);
+            dgvDestination.Columns.Add("Path", Resources.DisplayFilesSelected_FilePath);
+            dgvDestination.Refresh();
+        }
+
+        private void PopSource()
+        {
+            var cb = new DataGridViewCheckBoxColumn();
+            dgvSource.Columns.Clear();
+            dgvSource.Columns.Add(cb);
+            dgvSource.Columns.Add("Title", Resources.LoadDatabase_GameTitle);
+            dgvSource.Columns.Add("ID", Resources.LoadDatabase_IDGameCode);
+            dgvSource.Columns.Add("Region", Resources.LoadDatabase_Region);
+            dgvSource.Columns.Add("Type", Resources.LoadDatabase_Type);
+            dgvSource.Columns.Add("Size", Resources.DisplayFilesSelected_Size);
+            dgvSource.Columns.Add("Path", Resources.DisplayFilesSelected_FilePath);
+            dgvSource.Refresh();
         }
 
         #endregion
@@ -3484,16 +3508,16 @@ namespace GCBM
             {
                 if (_destination.Exists) _destination.Delete();
                 //Create a tast to run copy file
-               Run(() =>
+                Run(() =>
                 {
                     _source.CopyTo(_destination, x => pbCopy.BeginInvoke(new Action(() =>
                     {
                         //DisableOptionsGame(dgvSource);
-                     UpdateProgressExact(x);
+                        UpdateProgressExact(x);
                     })));
                 }).GetAwaiter().OnCompleted(() => pbCopy.BeginInvoke(new Action(() =>
                 {
-                  FinishedInstalling();
+                    FinishedInstalling();
                     CheckAndCallCopyTask(InstallQueue[intQueuePos].Path);
                 })));
             }
@@ -3542,13 +3566,8 @@ namespace GCBM
         /// <param name="icon"></param>
         private void GlobalNotifications(string message, ToolTipIcon icon)
         {
-            if (intQueuePos + 1 == InstallQueue.Count && WORKING == false)
-            {
-                EnableOptionsGameList();
-            }
+            if (intQueuePos + 1 == InstallQueue.Count && WORKING == false) EnableOptionsGameList();
             notifyIcon.ShowBalloonTip(5, "GameCube Backup Manager", message, icon);
-            
-
         }
 
         /// <summary>
@@ -3825,7 +3844,7 @@ namespace GCBM
         #region Export CSV
 
         /// <summary>
-        /// Export game list to CSV.
+        ///     Export game list to CSV.
         /// </summary>
         //private void ExportCSV(DataGridView dgv)
         //{
@@ -4317,7 +4336,8 @@ namespace GCBM
                     // Nome do Arquivo, Formato (Tipo), Tamanho, Local do Arquivo, ID do Jogo
                     var _frmInfo = new frmInformation(dgvSource.CurrentRow.Cells["Title"].Value.ToString(),
                         dgvSource.CurrentRow.Cells["Type"].Value.ToString(),
-                        dgvSource.CurrentRow.Cells["Size"].Value.ToString(), dgvSource.CurrentRow.Cells["Path"].Value.ToString(),
+                        dgvSource.CurrentRow.Cells["Size"].Value.ToString(),
+                        dgvSource.CurrentRow.Cells["Path"].Value.ToString(),
                         dgvSource.CurrentRow.Cells["ID"].Value.ToString());
                     _frmInfo.ShowDialog();
                     _frmInfo.Dispose();
@@ -4563,6 +4583,8 @@ namespace GCBM
 
         private void StartScrub()
         {
+            btnAbort.Visible = true;
+            lblAbort.Visible = true;
             DisableOptionsGame(dgvSource);
             BuildInstallQueue();
             foreach (var game in InstallQueue) InstallGameScrub(intQueuePos);
@@ -4576,6 +4598,8 @@ namespace GCBM
 
         private void StartExact()
         {
+            btnAbort.Visible = true;
+            lblAbort.Visible = true;
             DisableOptionsGame(dgvSource);
             BuildInstallQueue();
             foreach (var game in InstallQueue) CheckAndCallCopyTask(InstallQueue[intQueuePos].Path);
@@ -4584,6 +4608,7 @@ namespace GCBM
             lblPercent.Hide();
             lblInstallGame.Hide();
             lblCopy.Hide();
+            btnAbort.Visible = false;
             EnableOptionsGameList();
         }
 
@@ -4709,7 +4734,7 @@ namespace GCBM
                     }
             }
             else
-            { 
+            {
                 GlobalNotifications("Successfully installed " + InstallQueue.Count + " games.", ToolTipIcon.Info);
                 EnableOptionsGameList();
             }
@@ -4728,7 +4753,7 @@ namespace GCBM
         {
             // Disc 1
             //if (textBoxDiscID.Text == "00" && comboBoxSettingsNomenclatureAppointmentStyle.SelectedIndex  == 0)
-            
+
             if (tbIDDiscID.Text == "0x00")
             {
                 if (_destination.Exists) _destination.Delete();
@@ -4762,9 +4787,9 @@ namespace GCBM
                 })));
             }
 
-            if(((intQueuePos+1)==InstallQueue.Count)&&!WORKING)
+            if (intQueuePos + 1 == InstallQueue.Count && !WORKING)
             {
-                GlobalNotifications("Finished!",ToolTipIcon.Info);
+                GlobalNotifications("Finished!", ToolTipIcon.Info);
                 EnableOptionsGameList();
             }
         }
@@ -4983,6 +5008,8 @@ namespace GCBM
         //InstallGameExactCopy(row);
         private void InstallGameExactCopy(string path)
         {
+            btnAbort.Visible = true;
+            lblAbort.Visible = true;
             if (intQueuePos <= InstallQueue.Count - 1 && !ABORT)
             {
                 var _file = new sio.FileInfo(path);
@@ -5088,6 +5115,7 @@ namespace GCBM
 
             if (intQueuePos + 1 != InstallQueue.Count) return;
             GlobalNotifications("Successfully installed " + InstallQueue.Count + " games.", ToolTipIcon.Info);
+            btnAbort.Visible = false;
             EnableOptionsGameList();
         }
 
@@ -5322,7 +5350,6 @@ namespace GCBM
                     if (dgvSelected != null) dgvSelected.Rows[e.RowIndex].Cells[0].Value = false;
                 }
             }
-
         }
 
         private void dgvDestination_CurrentCellChanged(object sender, EventArgs e)
@@ -5343,20 +5370,5 @@ namespace GCBM
         #endregion
 
         #endregion
-
-        //Restarts the application (closes and reopens)
-        //Application.Restart();
-        private void tsmiGameListDeleteAllFiles_ClickAsync(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void btnAbort_Click(object sender, EventArgs e)
-        {
-            ABORT = true;
-            ResetOptions();
-            lblPercent.Text = "We will stop once this transfer has completed, or errored. You will need to select a source folder again.";
-            lblInstallGame.Show();
-        }
     } // frmMain Form
 } // namespace GCBM
