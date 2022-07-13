@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -874,6 +874,9 @@
   </data>
   <data name="lblSourceCount.Size" type="System.Drawing.Size, System.Drawing">
     <value>13, 13</value>
+  </data>  
+  <data name="lblInstallGame.Location" type="System.Drawing.Point, System.Drawing">
+    <value>517, 347</value>
   </data>
   <data name="lblSourceCount.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
@@ -907,6 +910,18 @@
   </data>
   <data name="lblGameCountSource.Location" type="System.Drawing.Point, System.Drawing">
     <value>520, 406</value>
+    </data>
+  <data name="lblPercent.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="lblPercent.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblPercent.Location" type="System.Drawing.Point, System.Drawing">
+    <value>663, 329</value>
+  </data>
+  <data name="lblPercent.Size" type="System.Drawing.Size, System.Drawing">
+    <value>24, 13</value>
   </data>
   <data name="lblGameCountSource.Size" type="System.Drawing.Size, System.Drawing">
     <value>76, 13</value>
@@ -943,6 +958,9 @@
   </data>
   <data name="lblAbort.Location" type="System.Drawing.Point, System.Drawing">
     <value>782, 320</value>
+  </data>
+  <data name="lblCopy.Location" type="System.Drawing.Point, System.Drawing">
+    <value>517, 329</value>
   </data>
   <data name="lblAbort.Size" type="System.Drawing.Size, System.Drawing">
     <value>32, 13</value>
@@ -1050,7 +1068,7 @@
     <value>NoControl</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>520, 443</value>
+    <value>523, 443</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>264, 55</value>
@@ -1158,7 +1176,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnSelectFolder.Location" type="System.Drawing.Point, System.Drawing">
-    <value>784, 423</value>
+    <value>787, 423</value>
   </data>
   <data name="btnSelectFolder.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 75</value>
@@ -1756,7 +1774,7 @@
     <value>12</value>
   </data>
   <data name="grpDetails.Location" type="System.Drawing.Point, System.Drawing">
-    <value>505, 30</value>
+    <value>508, 30</value>
   </data>
   <data name="grpDetails.Size" type="System.Drawing.Size, System.Drawing">
     <value>354, 272</value>
@@ -1918,7 +1936,7 @@
     <value>6, 30</value>
   </data>
   <data name="dgvSource.Size" type="System.Drawing.Size, System.Drawing">
-    <value>493, 478</value>
+    <value>496, 478</value>
   </data>
   <data name="dgvSource.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -2245,7 +2263,7 @@
     <value>NoControl</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>509, 197</value>
+    <value>512, 198</value>
   </data>
   <data name="label3.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>350, 0</value>
@@ -2287,7 +2305,7 @@
     <value>NoControl</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>509, 179</value>
+    <value>512, 180</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>94, 13</value>
@@ -2545,7 +2563,7 @@
     <value>6</value>
   </data>
   <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>505, 30</value>
+    <value>508, 30</value>
   </data>
   <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
     <value>354, 116</value>
@@ -2638,7 +2656,7 @@
     <value>6, 33</value>
   </data>
   <data name="dgvDestination.Size" type="System.Drawing.Size, System.Drawing">
-    <value>493, 462</value>
+    <value>496, 462</value>
   </data>
   <data name="dgvDestination.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2926,7 +2944,7 @@
     <value>Homebrew</value>
   </data>
   <data name="cbFilterDatabase.Location" type="System.Drawing.Point, System.Drawing">
-    <value>380, 5</value>
+    <value>360, 5</value>
   </data>
   <data name="cbFilterDatabase.Size" type="System.Drawing.Size, System.Drawing">
     <value>120, 21</value>
@@ -2959,7 +2977,7 @@
     <value>NoControl</value>
   </data>
   <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>342, 8</value>
+    <value>322, 8</value>
   </data>
   <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
     <value>32, 13</value>
@@ -2992,7 +3010,7 @@
     <value>6, 30</value>
   </data>
   <data name="lvDatabase.Size" type="System.Drawing.Size, System.Drawing">
-    <value>858, 465</value>
+    <value>856, 465</value>
   </data>
   <data name="lvDatabase.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -3055,7 +3073,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabMainDatabase.Size" type="System.Drawing.Size, System.Drawing">
-    <value>912, 514</value>
+   <value>912, 514</value>
   </data>
   <data name="tabMainDatabase.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -3094,7 +3112,7 @@
     <value>Vertical</value>
   </data>
   <data name="tbLog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>858, 481</value>
+    <value>856, 481</value>
   </data>
   <data name="tbLog.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -3733,6 +3751,36 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>1184, 592</value>
+  </data>
+  <metadata name="linkLabel1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="linkLabel1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="linkLabel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>818, 575</value>
+  </data>
+  <data name="linkLabel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 13</value>
+  </data>
+  <data name="linkLabel1.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="linkLabel1.Text" xml:space="preserve">
+    <value>Reset Install Buttons</value>
+  </data>
+  <data name="&gt;&gt;linkLabel1.Name" xml:space="preserve">
+    <value>linkLabel1</value>
+  </data>
+  <data name="&gt;&gt;linkLabel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;linkLabel1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;linkLabel1.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
