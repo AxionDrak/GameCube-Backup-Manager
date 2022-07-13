@@ -57,7 +57,7 @@ namespace GCBM
             this.lblPercent = new System.Windows.Forms.Label();
             this.btnSelectFolder = new System.Windows.Forms.Button();
             this.lblInstallGame = new System.Windows.Forms.Label();
-            this.grpDetails = new System.Windows.Forms.GroupBox();
+            this.grpDetailsSource = new System.Windows.Forms.GroupBox();
             this.lblTypeDisc = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
             this.tbIDMakerCode = new System.Windows.Forms.TextBox();
@@ -109,11 +109,13 @@ namespace GCBM
             this.tsmiExportHTML = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiExportCSV = new System.Windows.Forms.ToolStripMenuItem();
             this.tabMainDisc = new System.Windows.Forms.TabPage();
+            this.lblDestinationCount = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.lblSpaceAvailabeOnDevice = new System.Windows.Forms.Label();
             this.lblSpaceTotalOnDevice = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.grpDetailsDestiny = new System.Windows.Forms.GroupBox();
             this.pbWebGameDiscID = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -213,8 +215,6 @@ namespace GCBM
             this.pbNetStatus = new System.Windows.Forms.PictureBox();
             this.gameBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.process1 = new System.Diagnostics.Process();
-            this.label8 = new System.Windows.Forms.Label();
-            this.lblDestinationCount = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.spcMain)).BeginInit();
             this.spcMain.Panel1.SuspendLayout();
             this.spcMain.Panel2.SuspendLayout();
@@ -225,14 +225,14 @@ namespace GCBM
             ((System.ComponentModel.ISupportInitialize)(this.pbGameDisc)).BeginInit();
             this.tabControlMain.SuspendLayout();
             this.tabMainFile.SuspendLayout();
-            this.grpDetails.SuspendLayout();
+            this.grpDetailsSource.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbWebGameID)).BeginInit();
             this.grpOperations.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSource)).BeginInit();
             this.cmsMain.SuspendLayout();
             this.mstripFile.SuspendLayout();
             this.tabMainDisc.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.grpDetailsDestiny.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbWebGameDiscID)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDestination)).BeginInit();
             this.mstripDisc.SuspendLayout();
@@ -328,7 +328,7 @@ namespace GCBM
             this.tabMainFile.Controls.Add(this.lblPercent);
             this.tabMainFile.Controls.Add(this.btnSelectFolder);
             this.tabMainFile.Controls.Add(this.lblInstallGame);
-            this.tabMainFile.Controls.Add(this.grpDetails);
+            this.tabMainFile.Controls.Add(this.grpDetailsSource);
             this.tabMainFile.Controls.Add(this.dgvSource);
             this.tabMainFile.Controls.Add(this.mstripFile);
             resources.ApplyResources(this.tabMainFile, "tabMainFile");
@@ -393,24 +393,24 @@ namespace GCBM
             resources.ApplyResources(this.lblInstallGame, "lblInstallGame");
             this.lblInstallGame.Name = "lblInstallGame";
             // 
-            // grpDetails
+            // grpDetailsSource
             // 
-            resources.ApplyResources(this.grpDetails, "grpDetails");
-            this.grpDetails.Controls.Add(this.lblTypeDisc);
-            this.grpDetails.Controls.Add(this.label34);
-            this.grpDetails.Controls.Add(this.tbIDMakerCode);
-            this.grpDetails.Controls.Add(this.tbIDDiscID);
-            this.grpDetails.Controls.Add(this.label29);
-            this.grpDetails.Controls.Add(this.pbWebGameID);
-            this.grpDetails.Controls.Add(this.grpOperations);
-            this.grpDetails.Controls.Add(this.labelGameID);
-            this.grpDetails.Controls.Add(this.labelFile);
-            this.grpDetails.Controls.Add(this.labelTitle);
-            this.grpDetails.Controls.Add(this.tbIDGame);
-            this.grpDetails.Controls.Add(this.tbIDRegion);
-            this.grpDetails.Controls.Add(this.tbIDName);
-            this.grpDetails.Name = "grpDetails";
-            this.grpDetails.TabStop = false;
+            resources.ApplyResources(this.grpDetailsSource, "grpDetailsSource");
+            this.grpDetailsSource.Controls.Add(this.lblTypeDisc);
+            this.grpDetailsSource.Controls.Add(this.label34);
+            this.grpDetailsSource.Controls.Add(this.tbIDMakerCode);
+            this.grpDetailsSource.Controls.Add(this.tbIDDiscID);
+            this.grpDetailsSource.Controls.Add(this.label29);
+            this.grpDetailsSource.Controls.Add(this.pbWebGameID);
+            this.grpDetailsSource.Controls.Add(this.grpOperations);
+            this.grpDetailsSource.Controls.Add(this.labelGameID);
+            this.grpDetailsSource.Controls.Add(this.labelFile);
+            this.grpDetailsSource.Controls.Add(this.labelTitle);
+            this.grpDetailsSource.Controls.Add(this.tbIDGame);
+            this.grpDetailsSource.Controls.Add(this.tbIDRegion);
+            this.grpDetailsSource.Controls.Add(this.tbIDName);
+            this.grpDetailsSource.Name = "grpDetailsSource";
+            this.grpDetailsSource.TabStop = false;
             // 
             // lblTypeDisc
             // 
@@ -772,12 +772,22 @@ namespace GCBM
             this.tabMainDisc.Controls.Add(this.lblSpaceTotalOnDevice);
             this.tabMainDisc.Controls.Add(this.label3);
             this.tabMainDisc.Controls.Add(this.label2);
-            this.tabMainDisc.Controls.Add(this.groupBox2);
+            this.tabMainDisc.Controls.Add(this.grpDetailsDestiny);
             this.tabMainDisc.Controls.Add(this.dgvDestination);
             this.tabMainDisc.Controls.Add(this.mstripDisc);
             resources.ApplyResources(this.tabMainDisc, "tabMainDisc");
             this.tabMainDisc.Name = "tabMainDisc";
             this.tabMainDisc.UseVisualStyleBackColor = true;
+            // 
+            // lblDestinationCount
+            // 
+            resources.ApplyResources(this.lblDestinationCount, "lblDestinationCount");
+            this.lblDestinationCount.Name = "lblDestinationCount";
+            // 
+            // label8
+            // 
+            resources.ApplyResources(this.label8, "label8");
+            this.label8.Name = "label8";
             // 
             // lblSpaceAvailabeOnDevice
             // 
@@ -799,18 +809,18 @@ namespace GCBM
             resources.ApplyResources(this.label2, "label2");
             this.label2.Name = "label2";
             // 
-            // groupBox2
+            // grpDetailsDestiny
             // 
-            resources.ApplyResources(this.groupBox2, "groupBox2");
-            this.groupBox2.Controls.Add(this.pbWebGameDiscID);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.tbIDGameDisc);
-            this.groupBox2.Controls.Add(this.tbIDRegionDisc);
-            this.groupBox2.Controls.Add(this.tbIDNameDisc);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.TabStop = false;
+            resources.ApplyResources(this.grpDetailsDestiny, "grpDetailsDestiny");
+            this.grpDetailsDestiny.Controls.Add(this.pbWebGameDiscID);
+            this.grpDetailsDestiny.Controls.Add(this.label4);
+            this.grpDetailsDestiny.Controls.Add(this.label5);
+            this.grpDetailsDestiny.Controls.Add(this.label6);
+            this.grpDetailsDestiny.Controls.Add(this.tbIDGameDisc);
+            this.grpDetailsDestiny.Controls.Add(this.tbIDRegionDisc);
+            this.grpDetailsDestiny.Controls.Add(this.tbIDNameDisc);
+            this.grpDetailsDestiny.Name = "grpDetailsDestiny";
+            this.grpDetailsDestiny.TabStop = false;
             // 
             // pbWebGameDiscID
             // 
@@ -1532,16 +1542,6 @@ namespace GCBM
             this.process1.StartInfo.UserName = "";
             this.process1.SynchronizingObject = this;
             // 
-            // label8
-            // 
-            resources.ApplyResources(this.label8, "label8");
-            this.label8.Name = "label8";
-            // 
-            // lblDestinationCount
-            // 
-            resources.ApplyResources(this.lblDestinationCount, "lblDestinationCount");
-            this.lblDestinationCount.Name = "lblDestinationCount";
-            // 
             // frmMain
             // 
             resources.ApplyResources(this, "$this");
@@ -1566,8 +1566,8 @@ namespace GCBM
             this.tabControlMain.ResumeLayout(false);
             this.tabMainFile.ResumeLayout(false);
             this.tabMainFile.PerformLayout();
-            this.grpDetails.ResumeLayout(false);
-            this.grpDetails.PerformLayout();
+            this.grpDetailsSource.ResumeLayout(false);
+            this.grpDetailsSource.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbWebGameID)).EndInit();
             this.grpOperations.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSource)).EndInit();
@@ -1576,8 +1576,8 @@ namespace GCBM
             this.mstripFile.PerformLayout();
             this.tabMainDisc.ResumeLayout(false);
             this.tabMainDisc.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.grpDetailsDestiny.ResumeLayout(false);
+            this.grpDetailsDestiny.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbWebGameDiscID)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDestination)).EndInit();
             this.mstripDisc.ResumeLayout(false);
@@ -1672,7 +1672,7 @@ namespace GCBM
         private ProgressBar pbCopy;
         private Label label1;
         private Button btnSelectFolder;
-        private GroupBox grpDetails;
+        private GroupBox grpDetailsSource;
         private Label lblTypeDisc;
         private Label label34;
         private TextBox tbIDMakerCode;
@@ -1709,7 +1709,7 @@ namespace GCBM
         private Label lblSpaceTotalOnDevice;
         private Label label3;
         private Label label2;
-        private GroupBox groupBox2;
+        private GroupBox grpDetailsDestiny;
         private PictureBox pbWebGameDiscID;
         private Label label4;
         private Label label5;
