@@ -1,10 +1,16 @@
 
+### GameCube Backup Manager 2.6.0.2 (July 13, 2022)
+
+[Added] label to display the number of games found.
+[Improved] search system is now updated live as you type.
+
 ### GameCube Backup Manager 2.6.0.1 (July 12, 2022)
 
-[Fixed] Database not being loaded on launch.
-[Added] Abort button
-[Improved] Responsiveness of grid.
-[Improved] Overall speed and stability
+[Added] button to cancel transfer queue.
+[Changed] Internet check on startup by default.
+[Fixed] other fixes.
+[Improved] overall program stability.
+[Improved] more responsive UI.
 
 ### GameCube Backup Manager 2.6.0.0 (July 12, 2022)
 
