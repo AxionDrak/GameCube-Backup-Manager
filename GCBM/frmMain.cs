@@ -50,6 +50,7 @@ namespace GCBM
 
         #endregion
 
+
         #region Main Form Closing
 
         /// <summary>
@@ -2621,7 +2622,14 @@ namespace GCBM
         #endregion
 
         #region Main Form
+        private void CheckEnterKeyPress(object sender, System.Windows.Forms.KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Return)
 
+            {
+                btnSearch.PerformClick();
+            }
+        }
         /// <summary>
         ///     Main constructor method of the class.
         ///     No argument parameters.
@@ -2632,6 +2640,7 @@ namespace GCBM
         {
             InitializeComponent();
             InstallQueue = new Dictionary<int, Game>();
+            this.tbSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(CheckEnterKeyPress);
             Text = "GameCube Backup Manager 2022 - " + VERSION() + " - 64-bit";
 
             // Splash Screen

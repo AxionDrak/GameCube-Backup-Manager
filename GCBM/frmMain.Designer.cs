@@ -283,6 +283,7 @@ namespace GCBM
             // 
             resources.ApplyResources(this.tbSearch, "tbSearch");
             this.tbSearch.Name = "tbSearch";
+            this.tbSearch.TextChanged += new System.EventHandler(this.Search_Click);
             // 
             // groupBox1
             // 
