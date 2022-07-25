@@ -4060,10 +4060,10 @@
     <value>True</value>
   </metadata>
   <data name="cbLanguage.Items" xml:space="preserve">
-    <value>English[US]</value>
+    <value>Português [Brasil]</value>
   </data>
   <data name="cbLanguage.Items1" xml:space="preserve">
-    <value>Português [Brasil]</value>
+    <value>English [US]</value>
   </data>
   <data name="cbLanguage.Items2" xml:space="preserve">
     <value>Español [ES]</value>
