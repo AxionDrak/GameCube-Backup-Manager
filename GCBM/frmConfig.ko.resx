@@ -617,16 +617,16 @@
     <value>언어:</value>
   </data>
   <data name="cbLanguage.Items" xml:space="preserve">
-    <value>포르투갈어 [브라질]</value>
+    <value>포르투갈어 [브라질 - BR]</value>
   </data>
   <data name="cbLanguage.Items1" xml:space="preserve">
-    <value>영어 [미국]</value>
+    <value>영어 [미국 - US]</value>
   </data>
   <data name="cbLanguage.Items2" xml:space="preserve">
-    <value>스페인어 [스페인]</value>
+    <value>스페인어 [스페인 - ES]</value>
   </data>
   <data name="cbLanguage.Items3" xml:space="preserve">
-    <value>한국인</value>
+    <value>한국인 [KR]</value>
   </data>
   <data name="grbLog.Text" xml:space="preserve">
     <value>기록</value>
