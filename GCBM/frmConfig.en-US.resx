@@ -359,7 +359,7 @@
     <value>427, 26</value>
   </data>
   <data name="label17.Text" xml:space="preserve">
-    <value>Copies one or more files from one location (source) to another (destination). The file is not compressed, not part of any container, and not gargabe (garbage) removed.</value>
+    <value>Copies one or more files from one location (source) to another (destination). The file is not compressed, not part of any container, and not garbage (garbage) removed.</value>
   </data>
   <data name="grbTransferSystem.Text" xml:space="preserve">
     <value>Transfer system to be used</value>

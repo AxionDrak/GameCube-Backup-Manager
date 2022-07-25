@@ -396,7 +396,7 @@
     <value>420, 26</value>
   </data>
   <data name="label17.Text" xml:space="preserve">
-    <value>Copie uno o más archivos de una ubicación (fuente) a otra (destino). El archivo no está comprimido, no forma parte de ningún contenedor y no se elimina gargabe (basura).</value>
+    <value>Copie uno o más archivos de una ubicación (fuente) a otra (destino). El archivo no está comprimido, no forma parte de ningún contenedor y no se elimina garbage (basura).</value>
   </data>
   <data name="grbTransferSystem.Text" xml:space="preserve">
     <value>Sistema de transferencia a utilizar</value>
