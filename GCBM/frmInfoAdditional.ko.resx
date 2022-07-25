@@ -151,7 +151,7 @@
     <value>시작:</value>
   </data>
   <data name="lblGenre.Text" xml:space="preserve">
-    <value>성별:</value>
+    <value>장르:</value>
   </data>
   <data name="lblLanguage.Text" xml:space="preserve">
     <value>언어:</value>
