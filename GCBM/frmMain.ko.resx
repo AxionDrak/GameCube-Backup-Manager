@@ -1523,4 +1523,7 @@
   <data name="grpSearch.Text" xml:space="preserve">
     <value>검색</value>
   </data>
+  <data name="grpDetailsDestiny.Text" xml:space="preserve">
+    <value>정보</value>
+  </data>
 </root>

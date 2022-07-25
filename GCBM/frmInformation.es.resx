@@ -230,4 +230,7 @@
   <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <data name="grpDetailsSource.Text" xml:space="preserve">
+    <value>Detalles</value>
+  </data>
 </root>

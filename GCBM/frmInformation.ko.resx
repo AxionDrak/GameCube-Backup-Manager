@@ -162,4 +162,7 @@
   <data name="label4.Text" xml:space="preserve">
     <value>게임 ID:</value>
   </data>
+  <data name="grpDetailsSource.Text" xml:space="preserve">
+    <value>정보</value>
+  </data>
 </root>

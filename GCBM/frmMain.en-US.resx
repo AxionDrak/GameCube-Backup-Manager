@@ -1511,4 +1511,7 @@
   <data name="grpSearch.Text" xml:space="preserve">
     <value>Search</value>
   </data>
+  <data name="grpDetailsDestiny.Text" xml:space="preserve">
+    <value>Details</value>
+  </data>
 </root>
