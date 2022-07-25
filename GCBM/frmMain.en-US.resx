@@ -1508,4 +1508,7 @@
   <data name="tsmiSearchOnVGChartz.Text" xml:space="preserve">
     <value>Search on VGChartz</value>
   </data>
+  <data name="grpSearch.Text" xml:space="preserve">
+    <value>Search</value>
+  </data>
 </root>
