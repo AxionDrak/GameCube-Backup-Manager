@@ -1520,7 +1520,7 @@
   <data name="tsmiMainPlugins.Text" xml:space="preserve">
     <value>플러그인</value>
   </data>
-  <data name="grpSearch.txt" xml:space="preserve">
+  <data name="grpSearch.Text" xml:space="preserve">
     <value>검색</value>
   </data>
 </root>
