@@ -501,6 +501,11 @@ namespace GCBM
         /// </summary>
         private void LoadDatabaseXML()
         {
+            if (!Monitor.TryEnter(lvDatabase))
+            {
+                return;
+            }
+
             if (sio.File.Exists(WIITDB_FILE))
                 if (CONFIG_INI_FILE.IniReadBool("SEVERAL", "LoadDatabase"))
                     // PERFECT - DO NOT CHANGE!!!
@@ -548,6 +553,8 @@ namespace GCBM
                         //CheckWiiTdbXml();
                         GlobalNotifications(ex.Message, ToolTipIcon.Error);
                     }
+
+            Monitor.Exit(lvDatabase);
         }
 
         #endregion
@@ -2679,7 +2686,7 @@ namespace GCBM
             tscbDiscDrive.SelectedIndex = 0;
             cbFilterDatabase.SelectedIndex = 0;
 
-            if (!sio.File.Exists(WIITDB_FILE)) CheckWiiTdbXml();
+            if (!sio.File.Exists(WIITDB_FILE)) CheckAndDownloadWiiTdbXml();
 
             // DISABLED
             tsmiExportCSV.Enabled = false;
@@ -3633,6 +3640,37 @@ namespace GCBM
 
         /// <summary>
         /// </summary>
+        private async void CheckAndDownloadWiiTdbXml()
+        {
+            await ProcessTaskDelay().ConfigureAwait(false);
+            if (sio.File.Exists(WIITDB_FILE))
+            {
+                return;
+            }
+
+            if (CONFIG_INI_FILE.IniReadBool("SEVERAL", "NetVerify"))
+            {
+                if (!Monitor.TryEnter(lvDatabase))
+                {
+                    return;
+                }
+
+                frmDownloadGameTDB.GameTDBSynchronous();
+
+                Monitor.Exit(lvDatabase);
+
+                if (sio.File.Exists(WIITDB_FILE))
+                {
+                    LoadDatabaseXML();
+                    return;
+                }
+            }
+
+            CheckWiiTdbXml();
+        }
+
+        /// <summary>
+        /// </summary>
         private async void CheckWiiTdbXml()
         {
             await ProcessTaskDelay().ConfigureAwait(false);
@@ -4047,9 +4085,16 @@ namespace GCBM
         private void tsmiDatabaseUpdateGameTDB_Click(object sender, EventArgs e)
         {
             if (CONFIG_INI_FILE.IniReadBool("SEVERAL", "NetVerify"))
+            {
+                if (!Monitor.TryEnter(lvDatabase))
+                {
+                    return;
+                }
+
                 using (var form = new frmDownloadGameTDB())
                 {
                     var _returnRename = form.ShowDialog();
+                    Monitor.Exit(lvDatabase);
                     if (_returnRename == DialogResult.OK)
                     {
                         var _code = form.RETURN_CONFIRM;
@@ -4058,6 +4103,7 @@ namespace GCBM
                                 LoadDatabaseXML();
                     }
                 }
+            }
             else
                 GlobalNotifications(Resources.NoInternetConnectionFound_String1 + Environment.NewLine +
                                     Resources.NoInternetConnectionFound_String2, ToolTipIcon.Info);
