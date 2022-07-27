@@ -262,13 +262,13 @@
     <value>File Path</value>
   </data>
   <data name="DisplayFilesSelected_Found_String1" xml:space="preserve">
-    <value> [INFO] Found</value>
+    <value> [INFO] Found </value>
   </data>
   <data name="DisplayFilesSelected_Found_String2" xml:space="preserve">
     <value> file(s) with extension .</value>
   </data>
   <data name="DisplayFilesSelected_Found_String3" xml:space="preserve">
-    <value>Found</value>
+    <value>Found </value>
   </data>
   <data name="GetAllDrives_Inactive" xml:space="preserve">
     <value>Inactive</value>
