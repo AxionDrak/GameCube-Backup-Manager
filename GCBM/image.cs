@@ -66,7 +66,7 @@ namespace GCBM
                 error = true;
             }
 
-            if (fsr.Length < toc.dataStart)
+            if (fsr.Length < toc.dataStart && !IMAGE_PATH.ToLower().EndsWith(".nkit.iso"))
             {
                 errorText = Resources.ReadImage_String1;
                 error = true;
@@ -252,7 +252,7 @@ namespace GCBM
                 error = true;
             }
 
-            if (fsr.Length < toc.dataStart)
+            if (fsr.Length < toc.dataStart && !IMAGE_PATH.ToLower().EndsWith(".nkit.iso"))
             {
                 errorText = Resources.ReadImage_String1;
                 error = true;
