@@ -92,45 +92,45 @@ namespace GCBM
                 try
                 {
                     var _filesDisc =
-                        Directory.GetFiles(CONFIG_INI_FILE.IniReadString("COVERS", "CoverDirectoryCache", "") + @"\" +
-                                           REGION_GAME + @"\disc");
+                        Directory.GetFiles(CONFIG_INI_FILE.IniReadString("COVERS", "CoverDirectoryCache", "") + Path.DirectorySeparatorChar +
+                                           REGION_GAME + Path.DirectorySeparatorChar + "disc");
                     var _files2D =
-                        Directory.GetFiles(CONFIG_INI_FILE.IniReadString("COVERS", "CoverDirectoryCache", "") + @"\" +
-                                           REGION_GAME + @"\2d");
+                        Directory.GetFiles(CONFIG_INI_FILE.IniReadString("COVERS", "CoverDirectoryCache", "") + Path.DirectorySeparatorChar +
+                                           REGION_GAME + Path.DirectorySeparatorChar + "2d");
                     var _files3D =
-                        Directory.GetFiles(CONFIG_INI_FILE.IniReadString("COVERS", "CoverDirectoryCache", "") + @"\" +
-                                           REGION_GAME + @"\3d");
+                        Directory.GetFiles(CONFIG_INI_FILE.IniReadString("COVERS", "CoverDirectoryCache", "") + Path.DirectorySeparatorChar +
+                                           REGION_GAME + Path.DirectorySeparatorChar + "3d");
                     var _filesFull =
-                        Directory.GetFiles(CONFIG_INI_FILE.IniReadString("COVERS", "CoverDirectoryCache", "") + @"\" +
-                                           REGION_GAME + @"\full");
+                        Directory.GetFiles(CONFIG_INI_FILE.IniReadString("COVERS", "CoverDirectoryCache", "") + Path.DirectorySeparatorChar +
+                                           REGION_GAME + Path.DirectorySeparatorChar + "full");
 
                     var _destFiles = "";
                     // Disc
                     foreach (var source in _filesDisc)
                     {
                         _destFiles = Path.GetFileName(source);
-                        File.Copy(source, _targetDisc + @"\" + _destFiles, true);
+                        File.Copy(source, _targetDisc + Path.DirectorySeparatorChar + _destFiles, true);
                     }
 
                     // 2D
                     foreach (var source in _files2D)
                     {
                         _destFiles = Path.GetFileName(source);
-                        File.Copy(source, _target2D + @"\" + _destFiles, true);
+                        File.Copy(source, _target2D + Path.DirectorySeparatorChar + _destFiles, true);
                     }
 
                     // 3D
                     foreach (var source in _files3D)
                     {
                         _destFiles = Path.GetFileName(source);
-                        File.Copy(source, _target3D + @"\" + _destFiles, true);
+                        File.Copy(source, _target3D + Path.DirectorySeparatorChar + _destFiles, true);
                     }
 
                     // Full
                     foreach (var source in _filesFull)
                     {
                         _destFiles = Path.GetFileName(source);
-                        File.Copy(source, _targetFull + @"\" + _destFiles, true);
+                        File.Copy(source, _targetFull + Path.DirectorySeparatorChar + _destFiles, true);
                     }
                 }
                 catch (Exception ex)
@@ -144,13 +144,13 @@ namespace GCBM
                 try
                 {
                     var _files = Directory.GetFiles(CONFIG_INI_FILE.IniReadString("COVERS", "CoverDirectoryCache", "") +
-                                                    @"\" + REGION_GAME + @"\3d");
+                                                    Path.DirectorySeparatorChar + REGION_GAME + Path.DirectorySeparatorChar + "3d");
                     var _destFiles = "";
 
                     foreach (var source in _files)
                     {
                         _destFiles = Path.GetFileName(source);
-                        File.Copy(source, _target3DCovers + @"\" + _destFiles, true);
+                        File.Copy(source, _target3DCovers + Path.DirectorySeparatorChar + _destFiles, true);
                     }
                 }
                 catch (Exception ex)
@@ -162,13 +162,13 @@ namespace GCBM
                 try
                 {
                     var _files = Directory.GetFiles(CONFIG_INI_FILE.IniReadString("COVERS", "CoverDirectoryCache", "") +
-                                                    @"\" + REGION_GAME + @"\full");
+                                                    Path.DirectorySeparatorChar + REGION_GAME + Path.DirectorySeparatorChar + "full");
                     var _destFiles = "";
 
                     foreach (var source in _files)
                     {
                         _destFiles = Path.GetFileName(source);
-                        File.Copy(source, _targetBoxCovers + @"\" + _destFiles, true);
+                        File.Copy(source, _targetBoxCovers + Path.DirectorySeparatorChar + _destFiles, true);
                     }
                 }
                 catch (Exception ex)
@@ -209,13 +209,13 @@ namespace GCBM
                 try
                 {
                     var _files = Directory.GetFiles(CONFIG_INI_FILE.IniReadString("COVERS", "CoverDirectoryCache", "") +
-                                                    @"\" + REGION_GAME + @"\disc");
+                                                    Path.DirectorySeparatorChar + REGION_GAME + Path.DirectorySeparatorChar + "disc");
                     var _destFiles = "";
 
                     foreach (var source in _files)
                     {
                         _destFiles = Path.GetFileName(source);
-                        File.Copy(source, _targetDisc + @"\" + _destFiles, true);
+                        File.Copy(source, _targetDisc + Path.DirectorySeparatorChar + _destFiles, true);
                     }
                 }
                 catch (Exception ex)
@@ -227,13 +227,13 @@ namespace GCBM
                 try
                 {
                     var _files = Directory.GetFiles(CONFIG_INI_FILE.IniReadString("COVERS", "CoverDirectoryCache", "") +
-                                                    @"\" + REGION_GAME + @"\2d");
+                                                    Path.DirectorySeparatorChar + REGION_GAME + Path.DirectorySeparatorChar + "2d");
                     var _destFiles = "";
 
                     foreach (var source in _files)
                     {
                         _destFiles = Path.GetFileName(source);
-                        File.Copy(source, _target2D + @"\" + _destFiles, true);
+                        File.Copy(source, _target2D + Path.DirectorySeparatorChar + _destFiles, true);
                     }
                 }
                 catch (Exception ex)
@@ -245,13 +245,13 @@ namespace GCBM
                 try
                 {
                     var _files = Directory.GetFiles(CONFIG_INI_FILE.IniReadString("COVERS", "CoverDirectoryCache", "") +
-                                                    @"\" + REGION_GAME + @"\3d");
+                                                    Path.DirectorySeparatorChar + REGION_GAME + Path.DirectorySeparatorChar + "3d");
                     var _destFiles = "";
 
                     foreach (var source in _files)
                     {
                         _destFiles = Path.GetFileName(source);
-                        File.Copy(source, _target3D + @"\" + _destFiles, true);
+                        File.Copy(source, _target3D + Path.DirectorySeparatorChar + _destFiles, true);
                     }
                 }
                 catch (Exception ex)
@@ -263,13 +263,13 @@ namespace GCBM
                 try
                 {
                     var _files = Directory.GetFiles(CONFIG_INI_FILE.IniReadString("COVERS", "CoverDirectoryCache", "") +
-                                                    @"\" + REGION_GAME + @"\full");
+                                                    Path.DirectorySeparatorChar + REGION_GAME + Path.DirectorySeparatorChar + "full");
                     var _destFiles = "";
 
                     foreach (var source in _files)
                     {
                         _destFiles = Path.GetFileName(source);
-                        File.Copy(source, _targetFull + @"\" + _destFiles, true);
+                        File.Copy(source, _targetFull + Path.DirectorySeparatorChar + _destFiles, true);
                     }
                 }
                 catch (Exception ex)
@@ -283,13 +283,13 @@ namespace GCBM
                 try
                 {
                     var _files = Directory.GetFiles(CONFIG_INI_FILE.IniReadString("COVERS", "CoverDirectoryCache", "") +
-                                                    @"\" + REGION_GAME + @"\3d");
+                                                    Path.DirectorySeparatorChar + REGION_GAME + Path.DirectorySeparatorChar + "3d");
                     var _destFiles = "";
 
                     foreach (var source in _files)
                     {
                         _destFiles = Path.GetFileName(source);
-                        File.Copy(source, _target3DCovers + @"\" + _destFiles, true);
+                        File.Copy(source, _target3DCovers + Path.DirectorySeparatorChar + _destFiles, true);
                     }
                 }
                 catch (Exception ex)
@@ -301,13 +301,13 @@ namespace GCBM
                 try
                 {
                     var _files = Directory.GetFiles(CONFIG_INI_FILE.IniReadString("COVERS", "CoverDirectoryCache", "") +
-                                                    @"\" + REGION_GAME + @"\full");
+                                                    Path.DirectorySeparatorChar + REGION_GAME + Path.DirectorySeparatorChar + "full");
                     var _destFiles = "";
 
                     foreach (var source in _files)
                     {
                         _destFiles = Path.GetFileName(source);
-                        File.Copy(source, _targetBoxCovers + @"\" + _destFiles, true);
+                        File.Copy(source, _targetBoxCovers + Path.DirectorySeparatorChar + _destFiles, true);
                     }
                 }
                 catch (Exception ex)

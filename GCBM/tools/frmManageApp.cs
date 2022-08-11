@@ -29,7 +29,7 @@ namespace GCBM.tools
             //var findFolder = Directory.GetDirectories(folder, "*", SearchOption.AllDirectories);
             //var findFiles = Directory.GetFiles(folder, "*", SearchOption.AllDirectories);
 
-            var curFile = @"\boot.elf";
+            var curFile = Path.DirectorySeparatorChar + "boot.elf";
 
             foreach (var dir in Directory.GetDirectories(folder, "*", SearchOption.TopDirectoryOnly))
             foreach (var file in Directory.GetFiles(dir, "*", SearchOption.TopDirectoryOnly))

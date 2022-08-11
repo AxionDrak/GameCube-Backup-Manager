@@ -1,5 +1,6 @@
 ﻿
 using System.ComponentModel;
+using System.IO;
 using System.Windows.Forms;
 
 namespace GCBM.tools
@@ -119,8 +120,8 @@ namespace GCBM.tools
             this.cbDestiny.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbDestiny.FormattingEnabled = true;
             this.cbDestiny.Items.AddRange(new object[] {
-            "\\",
-            "\\apps"});
+            Path.DirectorySeparatorChar,
+            Path.DirectorySeparatorChar+ "apps"});
             this.cbDestiny.Location = new System.Drawing.Point(103, 29);
             this.cbDestiny.Name = "cbDestiny";
             this.cbDestiny.Size = new System.Drawing.Size(85, 21);

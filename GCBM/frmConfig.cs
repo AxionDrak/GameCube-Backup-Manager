@@ -216,7 +216,7 @@ namespace GCBM
 
         private void LoadConfigFile()
         {
-            if (File.Exists(GET_CURRENT_PATH + @"\" + INI_FILE))
+            if (File.Exists(GET_CURRENT_PATH + Path.DirectorySeparatorChar + INI_FILE))
             {
                 // General
                 rbGeneralDiscClean.Checked = CONFIG_INI_FILE.IniReadBool("GENERAL", "DiscClean");
@@ -462,8 +462,8 @@ namespace GCBM
 
         #region Properties
 
-        private static readonly string TEMP_DIR = @"\temp";
-        private static readonly string COVERS_DIR = @"\cover\cache";
+        private static readonly string TEMP_DIR = Path.DirectorySeparatorChar + "temp";
+        private static readonly string COVERS_DIR = Path.DirectorySeparatorChar + "cover" + Path.DirectorySeparatorChar + "cache";
         private static readonly string PROG_UPDATE = "07/05/2022";
         private const string INI_FILE = "config.ini";
         private static readonly string GET_CURRENT_PATH = Directory.GetCurrentDirectory();

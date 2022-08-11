@@ -154,16 +154,16 @@ namespace GCBM
             {
                 fils = new List<TOCItemFil>();
                 fils.Add(new TOCItemFil(0, 0, 0, 99999, true, "root", "", resPath));
-                fils.Add(new TOCItemFil(1, 0, 0, 6, true, "&&SystemData", "&&systemdata\\",
-                    resPath + "&&systemdata\\"));
-                fils.Add(new TOCItemFil(2, 1, 0, 99999, false, "ISO.hdr", "&&SystemData\\iso.hdr",
-                    resPath + "&&SystemData\\iso.hdr"));
-                fils.Add(new TOCItemFil(3, 1, 9280, 99999, false, "AppLoader.ldr", "&&SystemData\\apploader.ldr",
-                    resPath + "&&SystemData\\apploader.ldr"));
-                fils.Add(new TOCItemFil(4, 1, 0, 99999, false, "Start.dol", "&&SystemData\\start.dol",
-                    resPath + "&&SystemData\\start.dol"));
-                fils.Add(new TOCItemFil(5, 1, 0, 99999, false, "Game.toc", "&&SystemData\\game.toc",
-                    resPath + "&&SystemData\\game.toc"));
+                fils.Add(new TOCItemFil(1, 0, 0, 6, true, "&&SystemData", "&&systemdata" + sio.Path.DirectorySeparatorChar,
+                    resPath + "&&systemdata" + sio.Path.DirectorySeparatorChar));
+                fils.Add(new TOCItemFil(2, 1, 0, 99999, false, "ISO.hdr", "&&SystemData" + sio.Path.DirectorySeparatorChar + "iso.hdr",
+                    resPath + "&&SystemData" + sio.Path.DirectorySeparatorChar + "iso.hdr"));
+                fils.Add(new TOCItemFil(3, 1, 9280, 99999, false, "AppLoader.ldr", "&&SystemData" + sio.Path.DirectorySeparatorChar + "apploader.ldr",
+                    resPath + "&&SystemData" + sio.Path.DirectorySeparatorChar + "apploader.ldr"));
+                fils.Add(new TOCItemFil(4, 1, 0, 99999, false, "Start.dol", "&&SystemData" + sio.Path.DirectorySeparatorChar + "start.dol",
+                    resPath + "&&SystemData" + sio.Path.DirectorySeparatorChar + "start.dol"));
+                fils.Add(new TOCItemFil(5, 1, 0, 99999, false, "Game.toc", "&&SystemData" + sio.Path.DirectorySeparatorChar + "game.toc",
+                    resPath + "&&SystemData" + sio.Path.DirectorySeparatorChar + "game.toc"));
 
                 totalLen = 0;
                 dataStart = totalLen;

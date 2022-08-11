@@ -86,7 +86,7 @@ namespace GCBM
         /// <example>Inifile("C:\dados\exemplos","Configuracoes")</example>
         public IniFile(string path, string fileName)
         {
-            if (path.Substring(path.Length - 1, 1) != @"\\") path += "\\";
+            if (path.Substring(path.Length - 1, 1) != Path.DirectorySeparatorChar.ToString()) path += Path.DirectorySeparatorChar;
             this.fileName = path + corrigeFileName(fileName);
         }
 
@@ -98,14 +98,14 @@ namespace GCBM
         /// <example>Inifile("Configuracoes") , Inifile("c:\dados\exemplos\Configuracoes")</example>
         public IniFile(string fileName)
         {
-            if (fileName.IndexOf("\\") > -1)
+            if (fileName.IndexOf(Path.DirectorySeparatorChar) > -1)
             {
                 this.fileName = fileName;
             }
             else
             {
                 var strAppDir = Application.StartupPath;
-                this.fileName = strAppDir + "\\" + corrigeFileName(fileName);
+                this.fileName = strAppDir + Path.DirectorySeparatorChar + corrigeFileName(fileName);
             }
         }
 

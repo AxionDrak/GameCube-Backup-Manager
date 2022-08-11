@@ -82,9 +82,9 @@ namespace GCBM.tools
             var fileinfo = new FileInfo(ofdXml.FileName);
             var other = fileinfo.DirectoryName;
 
-            if (File.Exists(other + @"\icon.png"))
+            if (File.Exists(other + Path.DirectorySeparatorChar + "icon.png"))
             {
-                pbBanner.LoadAsync(other + @"\icon.png");
+                pbBanner.LoadAsync(other + Path.DirectorySeparatorChar + "icon.png");
                 btnAddBanner.Enabled = true;
                 btnDeleteBanner.Enabled = true;
                 btnClear.Enabled = true;
@@ -224,13 +224,13 @@ namespace GCBM.tools
         {
             var fileinfo = new FileInfo(ofdXml.FileName);
             var other = fileinfo.DirectoryName;
-            var xmlFile = @"\meta.xml";
+            var xmlFile = Path.DirectorySeparatorChar + "meta.xml";
 
             if (CheckEverything())
             {
                 File.WriteAllText(other + xmlFile, GenerateMetaXML());
                 // Save PictureBox
-                if (pbBanner.Image != null) pbBanner.Image.Save(other + @"\icon.png");
+                if (pbBanner.Image != null) pbBanner.Image.Save(other + Path.DirectorySeparatorChar + "icon.png");
 
                 MessageBox.Show(Resources.MetaXml_String2, Resources.Notice, MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
@@ -264,7 +264,7 @@ namespace GCBM.tools
             {
                 var fileInfo = new FileInfo(ofdXml.FileName);
                 var other = fileInfo.DirectoryName;
-                var delFile = @"\icon.png";
+                var delFile = Path.DirectorySeparatorChar + "icon.png";
                 File.Delete(other + delFile);
                 btnDeleteBanner.Enabled = false;
                 pbBanner.Image = null;
