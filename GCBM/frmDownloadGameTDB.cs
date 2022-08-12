@@ -43,7 +43,7 @@ namespace GCBM
             }
             catch (Exception ex)
             {
-                ex.Message.ToString();
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -61,18 +61,18 @@ namespace GCBM
 
             try
             {
-                ZipFile.ExtractToDirectory(GET_CURRENT_PATH + @"\" + WIITDB_ZIP_FILE, GET_CURRENT_PATH);
+                ZipFile.ExtractToDirectory(GET_CURRENT_PATH + Path.DirectorySeparatorChar + WIITDB_ZIP_FILE, GET_CURRENT_PATH);
             }
             catch (Exception ex)
             {
-                ex.Message.ToString();
+                MessageBox.Show(ex.Message);
             }
             finally
             {
-                File.Delete(GET_CURRENT_PATH + @"\" + WIITDB_ZIP_FILE);
+                File.Delete(GET_CURRENT_PATH + Path.DirectorySeparatorChar + WIITDB_ZIP_FILE);
 
                 await ProcessTaskDelay().ConfigureAwait(false);
-                var fileinfo = new FileInfo(GET_CURRENT_PATH + @"\" + WIITDB_FILE);
+                var fileinfo = new FileInfo(GET_CURRENT_PATH + Path.DirectorySeparatorChar + WIITDB_FILE);
                 if (fileinfo.Length >= 31035000) //31035596
                 {
                     lblConverting.Font = new Font(lblConverting.Font, FontStyle.Bold);

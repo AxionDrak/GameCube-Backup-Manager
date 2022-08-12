@@ -62,13 +62,13 @@ namespace GCBM
             }
             else
             {
-                errorText = Resources.ReadImage_String1;
+                errorText = Resources.ReadImage_String1 + " " + IMAGE_PATH;
                 error = true;
             }
 
             if (fsr.Length < toc.dataStart)
             {
-                errorText = Resources.ReadImage_String1;
+                errorText = Resources.ReadImage_String1 + " " + IMAGE_PATH + ": expected length of " + toc.dataStart + " but got " + fsr.Length + ".";
                 error = true;
             }
 
@@ -137,12 +137,12 @@ namespace GCBM
                         }
                         else
                         {
-                            itemPath = itemPath.Insert(0, toc.fils[j].name + '\\');
+                            itemPath = itemPath.Insert(0, toc.fils[j].name + sio.Path.DirectorySeparatorChar);
                             j = toc.fils[j].dirIdx;
                         }
 
                     if (itemIsDir)
-                        itemPath += '\\';
+                        itemPath += sio.Path.DirectorySeparatorChar;
 
                     if (RETRIEVE_FILES_INFO)
                     {
@@ -248,13 +248,13 @@ namespace GCBM
             }
             else
             {
-                errorText = Resources.ReadImage_String1;
+                errorText = Resources.ReadImage_String1 + " " + IMAGE_PATH;
                 error = true;
             }
 
             if (fsr.Length < toc.dataStart)
             {
-                errorText = Resources.ReadImage_String1;
+                errorText = Resources.ReadImage_String1 + " " + IMAGE_PATH + ": expected length of " + toc.dataStart + " but got " + fsr.Length + ".";
                 error = true;
             }
 
@@ -323,12 +323,12 @@ namespace GCBM
                         }
                         else
                         {
-                            itemPath = itemPath.Insert(0, toc.fils[j].name + '\\');
+                            itemPath = itemPath.Insert(0, toc.fils[j].name + sio.Path.DirectorySeparatorChar);
                             j = toc.fils[j].dirIdx;
                         }
 
                     if (itemIsDir)
-                        itemPath += '\\';
+                        itemPath += sio.Path.DirectorySeparatorChar;
 
                     if (RETRIEVE_FILES_INFO)
                     {

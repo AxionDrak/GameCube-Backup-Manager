@@ -50,7 +50,7 @@ namespace GCBM.tools
             startInfo.CreateNoWindow = true;
             startInfo.UseShellExecute = true;
             // Elf2Dol
-            startInfo.FileName = GET_CURRENT_PATH + @"\bin\elf2dol.exe ";
+            startInfo.FileName = GET_CURRENT_PATH + Path.DirectorySeparatorChar + "bin" + Path.DirectorySeparatorChar + "elf2dol.exe ";
             // Argumentos
             startInfo.Arguments = " -O binary " + textBoxELF.Text + " " + textBoxDOL.Text;
             startInfo.WindowStyle = ProcessWindowStyle.Hidden;

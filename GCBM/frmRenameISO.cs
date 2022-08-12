@@ -14,7 +14,7 @@ namespace GCBM
             var _directoryName = Path.GetDirectoryName(NEW_NAME);
             var _fileName = Path.GetFileName(NEW_NAME);
             var ret = Regex.Replace(_fileName,
-                @"[^0-9a-zA-ZéúíóáÉÚÍÓÁèùìòàÈÙÌÒÀõãñÕÃÑêûîôâÊÛÎÔÂëÿüïöäËYÜÏÖÄçÇ[\]\-().]+?", string.Empty);
+                @"[^0-9a-zA-ZéúíóáÉÚÍÓÁèùìòàÈÙÌÒÀõãñÕÃÑêûîôâÊÛÎÔÂëÿüïöäËYÜÏÖÄçÇ[\]\-().]+?", string.Empty).Replace("/","&");
 
             if (chkRenameISO.Checked)
             {
@@ -24,9 +24,9 @@ namespace GCBM
 
                     if (!string.IsNullOrEmpty(newFilename))
                     {
-                        //File.Move(_oldName + @"\" + _newName, _oldName + @"\" + newFilename);
-                        File.Move(NEW_NAME, _directoryName + @"\" + newFilename);
-                        if (File.Exists(_directoryName + @"\" + newFilename))
+                        //File.Move(_oldName + Path.DirectorySeparatorChar + _newName, _oldName + Path.DirectorySeparatorChar + newFilename);
+                        File.Move(NEW_NAME, _directoryName + Path.DirectorySeparatorChar + newFilename);
+                        if (File.Exists(_directoryName + Path.DirectorySeparatorChar + newFilename))
                         {
                             ConfirmRename(newFilename);
 
@@ -44,8 +44,8 @@ namespace GCBM
                     var newFilename = tbRenameISO.Text;
                     if (!string.IsNullOrEmpty(newFilename))
                     {
-                        File.Move(NEW_NAME, _directoryName + @"\" + newFilename);
-                        if (File.Exists(_directoryName + @"\" + newFilename))
+                        File.Move(NEW_NAME, _directoryName + Path.DirectorySeparatorChar + newFilename);
+                        if (File.Exists(_directoryName + Path.DirectorySeparatorChar + newFilename))
                         {
                             ConfirmRename(newFilename);
 

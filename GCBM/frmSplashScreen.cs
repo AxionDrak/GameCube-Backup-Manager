@@ -125,6 +125,7 @@ namespace GCBM
             catch (Exception ex)
             {
                 //not implemented!
+                MessageBox.Show(ex.Message);
             }
         }
 

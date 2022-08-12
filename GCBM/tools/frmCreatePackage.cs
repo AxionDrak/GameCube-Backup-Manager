@@ -91,19 +91,19 @@ namespace GCBM.tools
             {
                 if (rbNoCompression.Checked)
                 {
-                    ZipFile.CreateFromDirectory(Path.GetDirectoryName(DGV_DIRECTORY), FBD_DIRECTORY + @"\" + NEW_FILE,
+                    ZipFile.CreateFromDirectory(Path.GetDirectoryName(DGV_DIRECTORY), FBD_DIRECTORY + Path.DirectorySeparatorChar + NEW_FILE,
                         CompressionLevel.NoCompression, true);
                     SuccessCompressingFile();
                 }
                 else if (rbFastCompression.Checked)
                 {
-                    ZipFile.CreateFromDirectory(Path.GetDirectoryName(DGV_DIRECTORY), FBD_DIRECTORY + @"\" + NEW_FILE,
+                    ZipFile.CreateFromDirectory(Path.GetDirectoryName(DGV_DIRECTORY), FBD_DIRECTORY + Path.DirectorySeparatorChar + NEW_FILE,
                         CompressionLevel.Fastest, true);
                     SuccessCompressingFile();
                 }
                 else
                 {
-                    ZipFile.CreateFromDirectory(Path.GetDirectoryName(DGV_DIRECTORY), FBD_DIRECTORY + @"\" + NEW_FILE,
+                    ZipFile.CreateFromDirectory(Path.GetDirectoryName(DGV_DIRECTORY), FBD_DIRECTORY + Path.DirectorySeparatorChar + NEW_FILE,
                         CompressionLevel.Optimal, true);
                     SuccessCompressingFile();
                 }
