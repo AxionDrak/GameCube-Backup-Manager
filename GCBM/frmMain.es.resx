@@ -1599,4 +1599,10 @@
   <data name="lblDatabaseTotal.Text" xml:space="preserve">
     <value>0 Totales</value>
   </data>
+  <data name="grpSearch.Text" xml:space="preserve">
+    <value>Buscar</value>
+  </data>
+  <data name="grpDetailsDestiny.Text" xml:space="preserve">
+    <value>Detalles</value>
+  </data>
 </root>

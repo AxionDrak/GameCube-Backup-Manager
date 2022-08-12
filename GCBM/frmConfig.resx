@@ -1705,7 +1705,7 @@
     <value>2</value>
   </data>
   <data name="label17.Text" xml:space="preserve">
-    <value>Copia um ou mais arquivos de um local (origem) para outro (destino). O arquivo não é comprimido, não faz parte de nenhum recipiente e nem tem o gargabe (lixo) removido.</value>
+    <value>Copia um ou mais arquivos de um local (origem) para outro (destino). O arquivo não é comprimido, não faz parte de nenhum recipiente e nem tem o garbage (lixo) removido.</value>
   </data>
   <data name="&gt;&gt;label17.Name" xml:space="preserve">
     <value>label17</value>
@@ -4060,10 +4060,10 @@
     <value>True</value>
   </metadata>
   <data name="cbLanguage.Items" xml:space="preserve">
-    <value>English[US]</value>
+    <value>Português [Brasil]</value>
   </data>
   <data name="cbLanguage.Items1" xml:space="preserve">
-    <value>Português [Brasil]</value>
+    <value>English [US]</value>
   </data>
   <data name="cbLanguage.Items2" xml:space="preserve">
     <value>Español [ES]</value>

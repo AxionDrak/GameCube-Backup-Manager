@@ -162,4 +162,7 @@
   <data name="label4.Text" xml:space="preserve">
     <value>Game ID:</value>
   </data>
+  <data name="grpDetailsSource.Text" xml:space="preserve">
+    <value>Details</value>
+  </data>
 </root>
