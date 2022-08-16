@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>GCBM</RootNamespace>
     <AssemblyName>GCBM</AssemblyName>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
@@ -485,7 +485,9 @@
     <EmbeddedResource Include="frmTransferCover.resx">
       <DependentUpon>frmTransferCover.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.en-US.resx" />
+    <EmbeddedResource Include="Properties\Resources.en-US.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.es.resx" />
     <EmbeddedResource Include="Properties\Resources.ko.resx" />
     <EmbeddedResource Include="Properties\Resources.resx">

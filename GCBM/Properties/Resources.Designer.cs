@@ -8,16 +8,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using System.CodeDom.Compiler;
-using System.ComponentModel;
-using System.Diagnostics;
-using System.Diagnostics.CodeAnalysis;
-using System.Drawing;
-using System.Globalization;
-using System.Resources;
-using System.Runtime.CompilerServices;
-
 namespace GCBM.Properties {
+    using System;
+    
+    
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
     /// </summary>
@@ -25,27 +19,27 @@ namespace GCBM.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [GeneratedCode("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
-    [DebuggerNonUserCode()]
-    [CompilerGenerated()]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
         
-        private static ResourceManager resourceMan;
+        private static global::System.Resources.ResourceManager resourceMan;
         
-        private static CultureInfo resourceCulture;
+        private static global::System.Globalization.CultureInfo resourceCulture;
         
-        [SuppressMessage("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
+        [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
         internal Resources() {
         }
         
         /// <summary>
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
-        [EditorBrowsable(EditorBrowsableState.Advanced)]
-        internal static ResourceManager ResourceManager {
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Resources.ResourceManager ResourceManager {
             get {
-                if (ReferenceEquals(resourceMan, null)) {
-                    ResourceManager temp = new ResourceManager("GCBM.Properties.Resources", typeof(Resources).Assembly);
+                if (object.ReferenceEquals(resourceMan, null)) {
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("GCBM.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -56,8 +50,8 @@ namespace GCBM.Properties {
         ///   Overrides the current thread's CurrentUICulture property for all
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
-        [EditorBrowsable(EditorBrowsableState.Advanced)]
-        internal static CultureInfo Culture {
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -123,40 +117,40 @@ namespace GCBM.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static Bitmap add {
+        internal static System.Drawing.Bitmap add {
             get {
                 object obj = ResourceManager.GetObject("add", resourceCulture);
-                return ((Bitmap)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static Bitmap add_file_32 {
+        internal static System.Drawing.Bitmap add_file_32 {
             get {
                 object obj = ResourceManager.GetObject("add_file_32", resourceCulture);
-                return ((Bitmap)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static Bitmap add_folder_32 {
+        internal static System.Drawing.Bitmap add_folder_32 {
             get {
                 object obj = ResourceManager.GetObject("add_folder_32", resourceCulture);
-                return ((Bitmap)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static Bitmap additional_information_16 {
+        internal static System.Drawing.Bitmap additional_information_16 {
             get {
                 object obj = ResourceManager.GetObject("additional_information_16", resourceCulture);
-                return ((Bitmap)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -190,60 +184,60 @@ namespace GCBM.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static Bitmap box_16 {
+        internal static System.Drawing.Bitmap box_16 {
             get {
                 object obj = ResourceManager.GetObject("box_16", resourceCulture);
-                return ((Bitmap)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static Bitmap box_32 {
+        internal static System.Drawing.Bitmap box_32 {
             get {
                 object obj = ResourceManager.GetObject("box_32", resourceCulture);
-                return ((Bitmap)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static Bitmap burn_cd_16 {
+        internal static System.Drawing.Bitmap burn_cd_16 {
             get {
                 object obj = ResourceManager.GetObject("burn-cd_16", resourceCulture);
-                return ((Bitmap)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static Bitmap burn_cd_32 {
+        internal static System.Drawing.Bitmap burn_cd_32 {
             get {
                 object obj = ResourceManager.GetObject("burn-cd_32", resourceCulture);
-                return ((Bitmap)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static Bitmap cancel_16 {
+        internal static System.Drawing.Bitmap cancel_16 {
             get {
                 object obj = ResourceManager.GetObject("cancel-16", resourceCulture);
-                return ((Bitmap)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static Bitmap cancel_32 {
+        internal static System.Drawing.Bitmap cancel_32 {
             get {
                 object obj = ResourceManager.GetObject("cancel_32", resourceCulture);
-                return ((Bitmap)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -322,70 +316,70 @@ namespace GCBM.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static Bitmap compact_file_16 {
+        internal static System.Drawing.Bitmap compact_file_16 {
             get {
                 object obj = ResourceManager.GetObject("compact_file_16", resourceCulture);
-                return ((Bitmap)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static Bitmap compact_file_32 {
+        internal static System.Drawing.Bitmap compact_file_32 {
             get {
                 object obj = ResourceManager.GetObject("compact_file_32", resourceCulture);
-                return ((Bitmap)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static Bitmap conected_16 {
+        internal static System.Drawing.Bitmap conected_16 {
             get {
                 object obj = ResourceManager.GetObject("conected_16", resourceCulture);
-                return ((Bitmap)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static Bitmap config {
+        internal static System.Drawing.Bitmap config {
             get {
                 object obj = ResourceManager.GetObject("config", resourceCulture);
-                return ((Bitmap)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static Bitmap config_16 {
+        internal static System.Drawing.Bitmap config_16 {
             get {
                 object obj = ResourceManager.GetObject("config_16", resourceCulture);
-                return ((Bitmap)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static Bitmap convert_16 {
+        internal static System.Drawing.Bitmap convert_16 {
             get {
                 object obj = ResourceManager.GetObject("convert_16", resourceCulture);
-                return ((Bitmap)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static Bitmap convert_32 {
+        internal static System.Drawing.Bitmap convert_32 {
             get {
                 object obj = ResourceManager.GetObject("convert_32", resourceCulture);
-                return ((Bitmap)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -500,30 +494,30 @@ namespace GCBM.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static Bitmap csv_16 {
+        internal static System.Drawing.Bitmap csv_16 {
             get {
                 object obj = ResourceManager.GetObject("csv_16", resourceCulture);
-                return ((Bitmap)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static Bitmap delete_16 {
+        internal static System.Drawing.Bitmap delete_16 {
             get {
                 object obj = ResourceManager.GetObject("delete_16", resourceCulture);
-                return ((Bitmap)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static Bitmap delete_file_32 {
+        internal static System.Drawing.Bitmap delete_file_32 {
             get {
                 object obj = ResourceManager.GetObject("delete_file_32", resourceCulture);
-                return ((Bitmap)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -620,10 +614,10 @@ namespace GCBM.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static Bitmap dolphin_emulator_16 {
+        internal static System.Drawing.Bitmap dolphin_emulator_16 {
             get {
                 object obj = ResourceManager.GetObject("dolphin_emulator_16", resourceCulture);
-                return ((Bitmap)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -648,10 +642,10 @@ namespace GCBM.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static Bitmap donate {
+        internal static System.Drawing.Bitmap donate {
             get {
                 object obj = ResourceManager.GetObject("donate", resourceCulture);
-                return ((Bitmap)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -730,20 +724,20 @@ namespace GCBM.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static Bitmap eraser_16 {
+        internal static System.Drawing.Bitmap eraser_16 {
             get {
                 object obj = ResourceManager.GetObject("eraser_16", resourceCulture);
-                return ((Bitmap)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static Bitmap eraser_32 {
+        internal static System.Drawing.Bitmap eraser_32 {
             get {
                 object obj = ResourceManager.GetObject("eraser_32", resourceCulture);
-                return ((Bitmap)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -759,170 +753,170 @@ namespace GCBM.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static Bitmap ESRB_Adults_Only_18_ {
+        internal static System.Drawing.Bitmap ESRB_Adults_Only_18_ {
             get {
                 object obj = ResourceManager.GetObject("ESRB_Adults_Only_18_", resourceCulture);
-                return ((Bitmap)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static Bitmap ESRB_Adults_Only_18__grayscale {
+        internal static System.Drawing.Bitmap ESRB_Adults_Only_18__grayscale {
             get {
                 object obj = ResourceManager.GetObject("ESRB_Adults_Only_18+_grayscale", resourceCulture);
-                return ((Bitmap)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static Bitmap ESRB_Early_Childhood {
+        internal static System.Drawing.Bitmap ESRB_Early_Childhood {
             get {
                 object obj = ResourceManager.GetObject("ESRB_Early_Childhood", resourceCulture);
-                return ((Bitmap)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static Bitmap ESRB_Early_Childhood_grayscale {
+        internal static System.Drawing.Bitmap ESRB_Early_Childhood_grayscale {
             get {
                 object obj = ResourceManager.GetObject("ESRB_Early_Childhood_grayscale", resourceCulture);
-                return ((Bitmap)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static Bitmap ESRB_Everyone {
+        internal static System.Drawing.Bitmap ESRB_Everyone {
             get {
                 object obj = ResourceManager.GetObject("ESRB_Everyone", resourceCulture);
-                return ((Bitmap)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static Bitmap ESRB_Everyone_10_ {
+        internal static System.Drawing.Bitmap ESRB_Everyone_10_ {
             get {
                 object obj = ResourceManager.GetObject("ESRB_Everyone_10_", resourceCulture);
-                return ((Bitmap)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static Bitmap ESRB_Everyone_10__grayscale {
+        internal static System.Drawing.Bitmap ESRB_Everyone_10__grayscale {
             get {
                 object obj = ResourceManager.GetObject("ESRB_Everyone_10+_grayscale", resourceCulture);
-                return ((Bitmap)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static Bitmap ESRB_Everyone_grayscale {
+        internal static System.Drawing.Bitmap ESRB_Everyone_grayscale {
             get {
                 object obj = ResourceManager.GetObject("ESRB_Everyone_grayscale", resourceCulture);
-                return ((Bitmap)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static Bitmap ESRB_Mature_17_ {
+        internal static System.Drawing.Bitmap ESRB_Mature_17_ {
             get {
                 object obj = ResourceManager.GetObject("ESRB_Mature_17_", resourceCulture);
-                return ((Bitmap)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static Bitmap ESRB_Mature_17__grayscale {
+        internal static System.Drawing.Bitmap ESRB_Mature_17__grayscale {
             get {
                 object obj = ResourceManager.GetObject("ESRB_Mature_17+_grayscale", resourceCulture);
-                return ((Bitmap)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static Bitmap ESRB_RP {
+        internal static System.Drawing.Bitmap ESRB_RP {
             get {
                 object obj = ResourceManager.GetObject("ESRB_RP", resourceCulture);
-                return ((Bitmap)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static Bitmap ESRB_RP_grayscale {
+        internal static System.Drawing.Bitmap ESRB_RP_grayscale {
             get {
                 object obj = ResourceManager.GetObject("ESRB_RP_grayscale", resourceCulture);
-                return ((Bitmap)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static Bitmap ESRB_Teen {
+        internal static System.Drawing.Bitmap ESRB_Teen {
             get {
                 object obj = ResourceManager.GetObject("ESRB_Teen", resourceCulture);
-                return ((Bitmap)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static Bitmap ESRB_Teen_grayscale {
+        internal static System.Drawing.Bitmap ESRB_Teen_grayscale {
             get {
                 object obj = ResourceManager.GetObject("ESRB_Teen_grayscale", resourceCulture);
-                return ((Bitmap)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static Bitmap exit {
+        internal static System.Drawing.Bitmap exit {
             get {
                 object obj = ResourceManager.GetObject("exit", resourceCulture);
-                return ((Bitmap)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static Bitmap eye_16 {
+        internal static System.Drawing.Bitmap eye_16 {
             get {
                 object obj = ResourceManager.GetObject("eye_16", resourceCulture);
-                return ((Bitmap)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static Bitmap facebook_16 {
+        internal static System.Drawing.Bitmap facebook_16 {
             get {
                 object obj = ResourceManager.GetObject("facebook_16", resourceCulture);
-                return ((Bitmap)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -956,10 +950,10 @@ namespace GCBM.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static Bitmap format_dvd_32 {
+        internal static System.Drawing.Bitmap format_dvd_32 {
             get {
                 object obj = ResourceManager.GetObject("format_dvd_32", resourceCulture);
-                return ((Bitmap)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -1002,20 +996,20 @@ namespace GCBM.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static Bitmap GameTDB_400 {
+        internal static System.Drawing.Bitmap GameTDB_400 {
             get {
                 object obj = ResourceManager.GetObject("GameTDB-400", resourceCulture);
-                return ((Bitmap)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static Bitmap gbatemp_16 {
+        internal static System.Drawing.Bitmap gbatemp_16 {
             get {
                 object obj = ResourceManager.GetObject("gbatemp_16", resourceCulture);
-                return ((Bitmap)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -1031,20 +1025,20 @@ namespace GCBM.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static Bitmap gcbm_logo {
+        internal static System.Drawing.Bitmap gcbm_logo {
             get {
                 object obj = ResourceManager.GetObject("gcbm_logo", resourceCulture);
-                return ((Bitmap)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static Bitmap gcbm_splash_screen {
+        internal static System.Drawing.Bitmap gcbm_splash_screen {
             get {
                 object obj = ResourceManager.GetObject("gcbm_splash_screen", resourceCulture);
-                return ((Bitmap)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -1078,40 +1072,40 @@ namespace GCBM.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static Bitmap github_16 {
+        internal static System.Drawing.Bitmap github_16 {
             get {
                 object obj = ResourceManager.GetObject("github_16", resourceCulture);
-                return ((Bitmap)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static Bitmap globe_earth_color_64 {
+        internal static System.Drawing.Bitmap globe_earth_color_64 {
             get {
                 object obj = ResourceManager.GetObject("globe-earth-color_64", resourceCulture);
-                return ((Bitmap)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static Bitmap globe_earth_grayscale_64 {
+        internal static System.Drawing.Bitmap globe_earth_grayscale_64 {
             get {
                 object obj = ResourceManager.GetObject("globe-earth-grayscale_64", resourceCulture);
-                return ((Bitmap)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static Bitmap hash_16 {
+        internal static System.Drawing.Bitmap hash_16 {
             get {
                 object obj = ResourceManager.GetObject("hash_16", resourceCulture);
-                return ((Bitmap)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -1127,30 +1121,30 @@ namespace GCBM.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static Bitmap html_16 {
+        internal static System.Drawing.Bitmap html_16 {
             get {
                 object obj = ResourceManager.GetObject("html_16", resourceCulture);
-                return ((Bitmap)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static Bitmap image_not_found_1 {
+        internal static System.Drawing.Bitmap image_not_found_1 {
             get {
                 object obj = ResourceManager.GetObject("image_not_found_1", resourceCulture);
-                return ((Bitmap)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static Bitmap image_not_found_2 {
+        internal static System.Drawing.Bitmap image_not_found_2 {
             get {
                 object obj = ResourceManager.GetObject("image_not_found_2", resourceCulture);
-                return ((Bitmap)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -1166,10 +1160,10 @@ namespace GCBM.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static Bitmap info_16 {
+        internal static System.Drawing.Bitmap info_16 {
             get {
                 object obj = ResourceManager.GetObject("info_16", resourceCulture);
-                return ((Bitmap)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -1185,30 +1179,30 @@ namespace GCBM.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static Bitmap information_16 {
+        internal static System.Drawing.Bitmap information_16 {
             get {
                 object obj = ResourceManager.GetObject("information_16", resourceCulture);
-                return ((Bitmap)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static Bitmap install_16 {
+        internal static System.Drawing.Bitmap install_16 {
             get {
                 object obj = ResourceManager.GetObject("install_16", resourceCulture);
-                return ((Bitmap)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static Bitmap install_software_32 {
+        internal static System.Drawing.Bitmap install_software_32 {
             get {
                 object obj = ResourceManager.GetObject("install_software_32", resourceCulture);
-                return ((Bitmap)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -1413,30 +1407,30 @@ namespace GCBM.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static Bitmap log_64 {
+        internal static System.Drawing.Bitmap log_64 {
             get {
                 object obj = ResourceManager.GetObject("log_64", resourceCulture);
-                return ((Bitmap)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static Bitmap manager_apps_16 {
+        internal static System.Drawing.Bitmap manager_apps_16 {
             get {
                 object obj = ResourceManager.GetObject("manager_apps_16", resourceCulture);
-                return ((Bitmap)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static Bitmap manager_apps_32 {
+        internal static System.Drawing.Bitmap manager_apps_32 {
             get {
                 object obj = ResourceManager.GetObject("manager_apps_32", resourceCulture);
-                return ((Bitmap)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -1506,10 +1500,10 @@ namespace GCBM.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static Bitmap not_conected_16 {
+        internal static System.Drawing.Bitmap not_conected_16 {
             get {
                 object obj = ResourceManager.GetObject("not_conected_16", resourceCulture);
-                return ((Bitmap)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -1534,50 +1528,50 @@ namespace GCBM.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static Bitmap open_folder_16 {
+        internal static System.Drawing.Bitmap open_folder_16 {
             get {
                 object obj = ResourceManager.GetObject("open_folder_16", resourceCulture);
-                return ((Bitmap)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static Bitmap open_folder_32 {
+        internal static System.Drawing.Bitmap open_folder_32 {
             get {
                 object obj = ResourceManager.GetObject("open_folder_32", resourceCulture);
-                return ((Bitmap)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static Bitmap open_folder_64 {
+        internal static System.Drawing.Bitmap open_folder_64 {
             get {
                 object obj = ResourceManager.GetObject("open_folder_64", resourceCulture);
-                return ((Bitmap)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static Bitmap plugin_16 {
+        internal static System.Drawing.Bitmap plugin_16 {
             get {
                 object obj = ResourceManager.GetObject("plugin_16", resourceCulture);
-                return ((Bitmap)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static Bitmap plugin_32 {
+        internal static System.Drawing.Bitmap plugin_32 {
             get {
                 object obj = ResourceManager.GetObject("plugin_32", resourceCulture);
-                return ((Bitmap)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -1701,20 +1695,20 @@ namespace GCBM.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static Bitmap Refresh_16 {
+        internal static System.Drawing.Bitmap Refresh_16 {
             get {
                 object obj = ResourceManager.GetObject("Refresh_16", resourceCulture);
-                return ((Bitmap)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static Bitmap refresh_32 {
+        internal static System.Drawing.Bitmap refresh_32 {
             get {
                 object obj = ResourceManager.GetObject("refresh_32", resourceCulture);
-                return ((Bitmap)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -1793,30 +1787,30 @@ namespace GCBM.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static Bitmap Remove {
+        internal static System.Drawing.Bitmap Remove {
             get {
                 object obj = ResourceManager.GetObject("Remove", resourceCulture);
-                return ((Bitmap)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static Bitmap rename_16 {
+        internal static System.Drawing.Bitmap rename_16 {
             get {
                 object obj = ResourceManager.GetObject("rename_16", resourceCulture);
-                return ((Bitmap)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static Bitmap rename_folder_16 {
+        internal static System.Drawing.Bitmap rename_folder_16 {
             get {
                 object obj = ResourceManager.GetObject("rename_folder_16", resourceCulture);
-                return ((Bitmap)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -1868,40 +1862,40 @@ namespace GCBM.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static Bitmap save_32 {
+        internal static System.Drawing.Bitmap save_32 {
             get {
                 object obj = ResourceManager.GetObject("save_32", resourceCulture);
-                return ((Bitmap)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static Bitmap search_16 {
+        internal static System.Drawing.Bitmap search_16 {
             get {
                 object obj = ResourceManager.GetObject("search_16", resourceCulture);
-                return ((Bitmap)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static Bitmap Search256 {
+        internal static System.Drawing.Bitmap Search256 {
             get {
                 object obj = ResourceManager.GetObject("Search256", resourceCulture);
-                return ((Bitmap)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static Bitmap Search32 {
+        internal static System.Drawing.Bitmap Search32 {
             get {
                 object obj = ResourceManager.GetObject("Search32", resourceCulture);
-                return ((Bitmap)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -1962,30 +1956,30 @@ namespace GCBM.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static Bitmap sync_16 {
+        internal static System.Drawing.Bitmap sync_16 {
             get {
                 object obj = ResourceManager.GetObject("sync_16", resourceCulture);
-                return ((Bitmap)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static Bitmap transfer_0002 {
+        internal static System.Drawing.Bitmap transfer_0002 {
             get {
                 object obj = ResourceManager.GetObject("transfer_0002", resourceCulture);
-                return ((Bitmap)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static Bitmap txt_16 {
+        internal static System.Drawing.Bitmap txt_16 {
             get {
                 object obj = ResourceManager.GetObject("txt_16", resourceCulture);
-                return ((Bitmap)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -2010,60 +2004,60 @@ namespace GCBM.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static Bitmap update_16 {
+        internal static System.Drawing.Bitmap update_16 {
             get {
                 object obj = ResourceManager.GetObject("update_16", resourceCulture);
-                return ((Bitmap)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static Bitmap update_64 {
+        internal static System.Drawing.Bitmap update_64 {
             get {
                 object obj = ResourceManager.GetObject("update_64", resourceCulture);
-                return ((Bitmap)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static Bitmap website {
+        internal static System.Drawing.Bitmap website {
             get {
                 object obj = ResourceManager.GetObject("website", resourceCulture);
-                return ((Bitmap)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static Bitmap website_grayscale {
+        internal static System.Drawing.Bitmap website_grayscale {
             get {
                 object obj = ResourceManager.GetObject("website_grayscale", resourceCulture);
-                return ((Bitmap)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static Bitmap xml_16 {
+        internal static System.Drawing.Bitmap xml_16 {
             get {
                 object obj = ResourceManager.GetObject("xml_16", resourceCulture);
-                return ((Bitmap)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static Bitmap xml_32 {
+        internal static System.Drawing.Bitmap xml_32 {
             get {
                 object obj = ResourceManager.GetObject("xml_32", resourceCulture);
-                return ((Bitmap)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }
