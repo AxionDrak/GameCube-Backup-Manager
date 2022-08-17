@@ -47,6 +47,32 @@ namespace GCBM
             }
         }
 
+        public static void GameTDBSynchronous()
+        {
+            try
+            {
+                var webClient = new WebClient();
+                webClient.DownloadFile(new Uri("https://www.gametdb.com/wiitdb.zip"), WIITDB_ZIP_FILE);
+
+                try
+                {
+                    ZipFile.ExtractToDirectory(GET_CURRENT_PATH + @"\" + WIITDB_ZIP_FILE, GET_CURRENT_PATH);
+                }
+                catch (Exception ex)
+                {
+                    ex.Message.ToString();
+                }
+                finally
+                {
+                    File.Delete(GET_CURRENT_PATH + @"\" + WIITDB_ZIP_FILE);
+                }
+            }
+            catch (Exception ex)
+            {
+                ex.Message.ToString();
+            }
+        }
+
         private void ProgressChanged(object sender, DownloadProgressChangedEventArgs e)
         {
             lblDownload.Font = new Font(lblDownload.Font, FontStyle.Bold);
