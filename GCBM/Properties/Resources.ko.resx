@@ -487,7 +487,7 @@
     <value>편집자</value>
   </data>
   <data name="AssemblyInfo_Description" xml:space="preserve">
-    <value>Nintendo GameCube ISO 및 GCM 파일 관리자 소프트웨어.</value>
+    <value>닌텐도 게임큐브 ISO 및 GCM 파일 관리자 소프트웨어.</value>
   </data>
   <data name="DestinyDrive_AvailableSpace" xml:space="preserve">
     <value>사용 가능한 공간: </value>
@@ -499,6 +499,6 @@
     <value>에뮬레이터를 찾을 수 없습니다!</value>
   </data>
   <data name="DolphinEmulator_Not_Found_String_2" xml:space="preserve">
-    <value>Dolphin 에뮬레이터 실행 파일(dolphin.exe)의 경로를 설정하세요.</value>
+    <value>돌핀 에뮬레이터 실행 파일(dolphin.exe)의 경로를 설정하세요.</value>
   </data>
 </root>
