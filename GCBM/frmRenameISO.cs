@@ -14,7 +14,7 @@ namespace GCBM
             var _directoryName = Path.GetDirectoryName(NEW_NAME);
             var _fileName = Path.GetFileName(NEW_NAME);
             var ret = Regex.Replace(_fileName,
-                @"[^0-9a-zA-ZéúíóáÉÚÍÓÁèùìòàÈÙÌÒÀõãñÕÃÑêûîôâÊÛÎÔÂëÿüïöäËYÜÏÖÄçÇ[\]\-().]+?", string.Empty).Replace("/","&");
+                @"[^0-9a-zA-ZéúíóáÉÚÍÓÁèùìòàÈÙÌÒÀõãñÕÃÑêûîôâÊÛÎÔÂëÿüïöäËYÜÏÖÄçÇ[\]\-().]+?", string.Empty).Replace("/", "&");
 
             if (chkRenameISO.Checked)
             {

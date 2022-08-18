@@ -32,18 +32,18 @@ namespace GCBM.tools
             var curFile = Path.DirectorySeparatorChar + "boot.elf";
 
             foreach (var dir in Directory.GetDirectories(folder, "*", SearchOption.TopDirectoryOnly))
-            foreach (var file in Directory.GetFiles(dir, "*", SearchOption.TopDirectoryOnly))
-                if (File.Exists(dir + curFile))
-                    try
-                    {
-                        File.Move(file, file.Replace("boot.elf", "boot.dol"));
-                    }
-                    catch (FileNotFoundException ex)
-                    {
-                        GlobalNotifications(ex.Message);
-                    }
-                else
-                    DisplayFilesFolder(folder, dgvAppList);
+                foreach (var file in Directory.GetFiles(dir, "*", SearchOption.TopDirectoryOnly))
+                    if (File.Exists(dir + curFile))
+                        try
+                        {
+                            File.Move(file, file.Replace("boot.elf", "boot.dol"));
+                        }
+                        catch (FileNotFoundException ex)
+                        {
+                            GlobalNotifications(ex.Message);
+                        }
+                    else
+                        DisplayFilesFolder(folder, dgvAppList);
         }
 
         #endregion

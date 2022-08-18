@@ -33,7 +33,7 @@ namespace GCBM.tools.Interop
 
         // Set stream from the ISO image, overwrites path
         [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-        void SetStream([In] [MarshalAs(UnmanagedType.Interface)] FsiStream Data);
+        void SetStream([In][MarshalAs(UnmanagedType.Interface)] FsiStream Data);
 
         // Validate if the ISO image file is a valid file
         [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]

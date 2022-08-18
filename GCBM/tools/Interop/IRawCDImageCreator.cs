@@ -14,15 +14,15 @@ namespace GCBM.tools.Interop
 
         // Adds a track to the media (defaults to audio, always 2352 bytes/sector)
         [DispId(0x201)]
-        int AddTrack(IMAPI_CD_SECTOR_TYPE dataType, [In] [MarshalAs(UnmanagedType.Interface)] IStream data);
+        int AddTrack(IMAPI_CD_SECTOR_TYPE dataType, [In][MarshalAs(UnmanagedType.Interface)] IStream data);
 
         // Adds a special pregap to the first track, and implies an audio CD
         [DispId(0x202)]
-        void AddSpecialPregap([In] [MarshalAs(UnmanagedType.Interface)] IStream data);
+        void AddSpecialPregap([In][MarshalAs(UnmanagedType.Interface)] IStream data);
 
         // Adds an R-W subcode generation object to supply R-W subcode (i.e. CD-Text or CD-G).
         [DispId(0x203)]
-        void AddSubcodeRWGenerator([In] [MarshalAs(UnmanagedType.Interface)] IStream subcode);
+        void AddSubcodeRWGenerator([In][MarshalAs(UnmanagedType.Interface)] IStream subcode);
 
         [DispId(0x100)] IMAPI_FORMAT2_RAW_CD_DATA_SECTOR_TYPE ResultingImageType { set; get; }
 

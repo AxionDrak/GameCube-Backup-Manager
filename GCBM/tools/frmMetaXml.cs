@@ -1,8 +1,8 @@
-﻿using System;
+﻿using GCBM.Properties;
+using System;
 using System.IO;
 using System.Security;
 using System.Windows.Forms;
-using GCBM.Properties;
 
 namespace GCBM.tools
 {

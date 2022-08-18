@@ -1,5 +1,8 @@
 #region Using
 
+using AutoUpdaterDotNET;
+using GCBM.Properties;
+using GCBM.tools;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,9 +22,6 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
-using AutoUpdaterDotNET;
-using GCBM.Properties;
-using GCBM.tools;
 using static System.Threading.Tasks.Task;
 using sio = System.IO;
 using ste = System.Text.Encoding;
@@ -1375,7 +1375,7 @@ namespace GCBM
                         tbLog.AppendText("[" + DateString() + "]" + Resources.Download3DCover + _IDMakerCode + ".png" +
                                          Environment.NewLine);
                         NET_CLIENT.DownloadFileAsync(myLinkCover3D,
-                            GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + LINK_DOMAIN + sio.Path.DirectorySeparatorChar+ "3d" + sio.Path.DirectorySeparatorChar + _IDMakerCode + ".png");
+                            GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + LINK_DOMAIN + sio.Path.DirectorySeparatorChar + "3d" + sio.Path.DirectorySeparatorChar + _IDMakerCode + ".png");
                         while (NET_CLIENT.IsBusy) Application.DoEvents();
                     }
                 }
@@ -2192,8 +2192,8 @@ namespace GCBM
                 {
                     var root = XElement.Load(WIITDB_FILE);
                     var tests = from el in root.Elements("game")
-                        where (string)el.Element("id") == tbIDGame.Text
-                        select el;
+                                where (string)el.Element("id") == tbIDGame.Text
+                                select el;
                     foreach (var el in tests) ExternalSite(link, (string)el.Element("locale").Element("title"));
                 }
                 else
@@ -2493,7 +2493,7 @@ namespace GCBM
                         }
                     }
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     GlobalNotifications(Resources.ServerReportedOneCoverOrBothNotFound, ToolTipIcon.Error);
                 }
@@ -2984,8 +2984,8 @@ namespace GCBM
                         {
                             var root = XElement.Load(WIITDB_FILE);
                             var tests = from el in root.Elements("game")
-                                where (string)el.Element("id") == tbIDGame.Text
-                                select el;
+                                        where (string)el.Element("id") == tbIDGame.Text
+                                        select el;
                             foreach (var el in tests) tbIDName.Text = (string)el.Element("locale").Element("title");
                         }
                         else
@@ -3017,8 +3017,8 @@ namespace GCBM
                         {
                             var root = XElement.Load(WIITDB_FILE);
                             var tests = from el in root.Elements("game")
-                                where (string)el.Element("id") == tbIDGameDisc.Text
-                                select el;
+                                        where (string)el.Element("id") == tbIDGameDisc.Text
+                                        select el;
                             foreach (var el in tests) tbIDNameDisc.Text = (string)el.Element("locale").Element("title");
                         }
                         else
@@ -4942,7 +4942,7 @@ namespace GCBM
 
             using (var myProcess = Process.Start(START_INFO))
             {
-                var i = 0;
+                // unused var i = 0;
                 // Display the process statistics until
                 // the user closes the program.
                 do
@@ -5234,8 +5234,8 @@ namespace GCBM
                         {
                             var root = XElement.Load(WIITDB_FILE);
                             var tests = from el in root.Elements("game")
-                                where (string)el.Element("id") == tbIDGame.Text
-                                select el;
+                                        where (string)el.Element("id") == tbIDGame.Text
+                                        select el;
                             foreach (var el in tests) tbIDName.Text = (string)el.Element("locale").Element("title");
                         }
                         else
