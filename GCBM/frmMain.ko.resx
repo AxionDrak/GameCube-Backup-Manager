@@ -1497,19 +1497,19 @@
 </value>
   </data>
   <data name="tsmiSearchOnGameTDB.Text" xml:space="preserve">
-    <value>게임TDB 검색</value>
+    <value>GameTDB 검색</value>
   </data>
   <data name="tsmiSearchOnGoogle.Text" xml:space="preserve">
-    <value>Google에서 검색</value>
+    <value>구글에서 검색</value>
   </data>
   <data name="SearchOnWikipedia.Text" xml:space="preserve">
     <value>위키피디아에서 검색</value>
   </data>
   <data name="tsmiSearchOnYoutube.Text" xml:space="preserve">
-    <value>YouTube에서 검색</value>
+    <value>유튜브에서 검색</value>
   </data>
   <data name="tsmiSearchOnGameSpot.Text" xml:space="preserve">
-    <value>GameSpot에서 검색</value>
+    <value>게임스팟에서 검색</value>
   </data>
   <data name="tsmiSearchOnVGChartz.Text" xml:space="preserve">
     <value>VGChartz에서 검색</value>
