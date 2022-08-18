@@ -136,7 +136,7 @@
     <value>타이틀</value>
   </data>
   <data name="tabSettingsDolphin.Text" xml:space="preserve">
-    <value>돌고래 에뮬레이터</value>
+    <value>돌핀 에뮬레이터</value>
   </data>
   <data name="tabSettingsUpdates.Text" xml:space="preserve">
     <value>업데이트</value>
@@ -464,7 +464,7 @@
     <value>러시아어</value>
   </data>
   <data name="cbTitleLanguage.Items9" xml:space="preserve">
-    <value>한국인</value>
+    <value>한국</value>
   </data>
   <data name="cbTitleLanguage.Items10" xml:space="preserve">
     <value>중국어 번체</value>
@@ -626,7 +626,7 @@
     <value>스페인어 [스페인 - ES]</value>
   </data>
   <data name="cbLanguage.Items3" xml:space="preserve">
-    <value>한국인 [KR]</value>
+    <value>한국어 [대한민국 - KR]</value>
   </data>
   <data name="grbLog.Text" xml:space="preserve">
     <value>기록</value>
@@ -762,6 +762,6 @@
     <value>설정</value>
   </data>
   <data name="ofdDolphin.Filter" xml:space="preserve">
-    <value>돌고래 에뮬레이터|dolphin.exe</value>
+    <value>돌핀 에뮬레이터|dolphin.exe</value>
   </data>
 </root>
