@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GCBM.Properties;
+using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.IO;
@@ -7,7 +8,6 @@ using System.Net;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using GCBM.Properties;
 
 namespace GCBM
 {

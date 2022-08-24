@@ -11,18 +11,14 @@ namespace GCBM.tools.Interop
 
         public DiscMaster2_SinkHelper(DiscMaster2_NotifyDeviceAddedEventHandler eventHandler)
         {
-            if (eventHandler == null)
-                throw new ArgumentNullException("Delegate (callback function) cannot be null");
             Cookie = 0;
-            NotifyDeviceAddedDelegate = eventHandler;
+            NotifyDeviceAddedDelegate = eventHandler ?? throw new ArgumentNullException("Delegate (callback function) cannot be null");
         }
 
         public DiscMaster2_SinkHelper(DiscMaster2_NotifyDeviceRemovedEventHandler eventHandler)
         {
-            if (eventHandler == null)
-                throw new ArgumentNullException("Delegate (callback function) cannot be null");
             Cookie = 0;
-            NotifyDeviceRemovedDelegate = eventHandler;
+            NotifyDeviceRemovedDelegate = eventHandler ?? throw new ArgumentNullException("Delegate (callback function) cannot be null");
         }
 
         public int Cookie { get; set; }

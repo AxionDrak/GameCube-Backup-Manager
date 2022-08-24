@@ -1,6 +1,6 @@
-﻿using System;
+﻿using GCBM.Properties;
+using System;
 using System.Windows.Forms;
-using GCBM.Properties;
 using sio = System.IO;
 using ste = System.Text.Encoding;
 

@@ -1,10 +1,10 @@
-﻿using System;
+﻿using GCBM.Properties;
+using System;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Windows.Forms;
 using System.Xml.Linq;
-using GCBM.Properties;
 
 namespace GCBM
 {

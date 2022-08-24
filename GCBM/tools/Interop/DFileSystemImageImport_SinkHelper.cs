@@ -11,10 +11,8 @@ namespace GCBM.tools.Interop
 
         public DFileSystemImageImport_SinkHelper(DFileSystemImageImport_EventHandler eventHandler)
         {
-            if (eventHandler == null)
-                throw new ArgumentNullException("Delegate (callback function) cannot be null");
             Cookie = 0;
-            UpdateDelegate = eventHandler;
+            UpdateDelegate = eventHandler ?? throw new ArgumentNullException("Delegate (callback function) cannot be null");
         }
 
         public int Cookie { get; set; }
