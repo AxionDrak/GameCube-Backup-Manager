@@ -109,8 +109,6 @@ namespace GCBM
             this.tsmiExportHTML = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiExportCSV = new System.Windows.Forms.ToolStripMenuItem();
             this.tabMainDisc = new System.Windows.Forms.TabPage();
-            this.lblDestinationCount = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.lblSpaceAvailabeOnDevice = new System.Windows.Forms.Label();
             this.lblSpaceTotalOnDevice = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -217,9 +215,11 @@ namespace GCBM
             this.process1 = new System.Diagnostics.Process();
             this.lblScan = new System.Windows.Forms.ToolStripStatusLabel();
             this.pbScan = new System.Windows.Forms.ToolStripProgressBar();
-            this.btnCancelScan = new System.Windows.Forms.ToolStripSplitButton();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripSplitButton1 = new System.Windows.Forms.ToolStripSplitButton();
+            this.lblDestinationCount = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.spcMain)).BeginInit();
             this.spcMain.Panel1.SuspendLayout();
             this.spcMain.Panel2.SuspendLayout();
@@ -511,6 +511,7 @@ namespace GCBM
             // 
             this.dgvSource.AllowUserToAddRows = false;
             this.dgvSource.AllowUserToDeleteRows = false;
+            this.dgvSource.AllowUserToResizeRows = false;
             resources.ApplyResources(this.dgvSource, "dgvSource");
             this.dgvSource.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvSource.BackgroundColor = System.Drawing.Color.WhiteSmoke;
@@ -784,16 +785,6 @@ namespace GCBM
             this.tabMainDisc.Name = "tabMainDisc";
             this.tabMainDisc.UseVisualStyleBackColor = true;
             // 
-            // lblDestinationCount
-            // 
-            resources.ApplyResources(this.lblDestinationCount, "lblDestinationCount");
-            this.lblDestinationCount.Name = "lblDestinationCount";
-            // 
-            // label8
-            // 
-            resources.ApplyResources(this.label8, "label8");
-            this.label8.Name = "label8";
-            // 
             // lblSpaceAvailabeOnDevice
             // 
             resources.ApplyResources(this.lblSpaceAvailabeOnDevice, "lblSpaceAvailabeOnDevice");
@@ -872,6 +863,7 @@ namespace GCBM
             // 
             this.dgvDestination.AllowUserToAddRows = false;
             this.dgvDestination.AllowUserToDeleteRows = false;
+            this.dgvDestination.AllowUserToResizeRows = false;
             resources.ApplyResources(this.dgvDestination, "dgvDestination");
             this.dgvDestination.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDestination.BackgroundColor = System.Drawing.Color.White;
@@ -1230,8 +1222,8 @@ namespace GCBM
             this.tsslCurrentYear,
             this.toolStripStatusLabel2,
             this.pbScan,
+            this.toolStripSplitButton1,
             this.toolStripStatusLabel1,
-            this.btnCancelScan,
             this.lblScan});
             resources.ApplyResources(this.sstripMain, "sstripMain");
             this.sstripMain.Name = "sstripMain";
@@ -1563,15 +1555,6 @@ namespace GCBM
             resources.ApplyResources(this.pbScan, "pbScan");
             this.pbScan.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             // 
-            // btnCancelScan
-            // 
-            this.btnCancelScan.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            resources.ApplyResources(this.btnCancelScan, "btnCancelScan");
-            this.btnCancelScan.Image = global::GCBM.Properties.Resources.cancel_16;
-            this.btnCancelScan.Name = "btnCancelScan";
-            this.btnCancelScan.ButtonClick += new System.EventHandler(this.btnAbort_Click);
-            this.btnCancelScan.Click += new System.EventHandler(this.btnAbort_Click);
-            // 
             // toolStripStatusLabel1
             // 
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
@@ -1583,6 +1566,25 @@ namespace GCBM
             this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
             resources.ApplyResources(this.toolStripStatusLabel2, "toolStripStatusLabel2");
             this.toolStripStatusLabel2.Spring = true;
+            // 
+            // toolStripSplitButton1
+            // 
+            this.toolStripSplitButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripSplitButton1.Image = global::GCBM.Properties.Resources.cancel_16;
+            resources.ApplyResources(this.toolStripSplitButton1, "toolStripSplitButton1");
+            this.toolStripSplitButton1.Name = "toolStripSplitButton1";
+            this.toolStripSplitButton1.ButtonClick += new System.EventHandler(this.btnAbort_Click);
+            this.toolStripSplitButton1.Click += new System.EventHandler(this.btnAbort_Click);
+            // 
+            // lblDestinationCount
+            // 
+            resources.ApplyResources(this.lblDestinationCount, "lblDestinationCount");
+            this.lblDestinationCount.Name = "lblDestinationCount";
+            // 
+            // label8
+            // 
+            resources.ApplyResources(this.label8, "label8");
+            this.label8.Name = "label8";
             // 
             // frmMain
             // 
@@ -1821,13 +1823,13 @@ namespace GCBM
         private Label lblAbort;
         private Label lblSourceCount;
         private Label lblGameCountSource;
-        private Label lblDestinationCount;
-        private Label label8;
         private ToolStripProgressBar pbScan;
-        private ToolStripSplitButton btnCancelScan;
         private ToolStripStatusLabel lblScan;
         private ToolStripStatusLabel toolStripStatusLabel2;
         private ToolStripStatusLabel toolStripStatusLabel1;
+        private ToolStripSplitButton toolStripSplitButton1;
+        private Label lblDestinationCount;
+        private Label label8;
     }
 }
 

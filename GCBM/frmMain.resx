@@ -3256,25 +3256,25 @@
     <value>0, 17</value>
   </data>
   <data name="toolStripStatusLabel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>304, 17</value>
+    <value>320, 17</value>
   </data>
   <data name="pbScan.Size" type="System.Drawing.Size, System.Drawing">
     <value>495, 16</value>
   </data>
-  <data name="toolStripStatusLabel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>304, 17</value>
-  </data>
-  <data name="btnCancelScan.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="btnCancelScan.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+  <data name="toolStripSplitButton1.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
-  <data name="btnCancelScan.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="toolStripSplitButton1.Size" type="System.Drawing.Size, System.Drawing">
     <value>32, 20</value>
   </data>
-  <data name="btnCancelScan.Text" xml:space="preserve">
+  <data name="toolStripSplitButton1.Text" xml:space="preserve">
     <value>toolStripSplitButton1</value>
+  </data>
+  <data name="toolStripSplitButton1.ToolTipText" xml:space="preserve">
+    <value>btnCancelScan</value>
+  </data>
+  <data name="toolStripStatusLabel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>320, 17</value>
   </data>
   <data name="lblScan.Size" type="System.Drawing.Size, System.Drawing">
     <value>0, 17</value>
@@ -4522,12 +4522,6 @@
   <data name="&gt;&gt;pbScan.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripProgressBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;btnCancelScan.Name" xml:space="preserve">
-    <value>btnCancelScan</value>
-  </data>
-  <data name="&gt;&gt;btnCancelScan.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSplitButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;toolStripStatusLabel1.Name" xml:space="preserve">
     <value>toolStripStatusLabel1</value>
   </data>
@@ -4539,6 +4533,12 @@
   </data>
   <data name="&gt;&gt;toolStripStatusLabel2.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSplitButton1.Name" xml:space="preserve">
+    <value>toolStripSplitButton1</value>
+  </data>
+  <data name="&gt;&gt;toolStripSplitButton1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSplitButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>frmMain</value>
