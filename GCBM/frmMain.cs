@@ -53,7 +53,7 @@ namespace GCBM
         #endregion
 
         #region Globals
-        
+
         public bool LOADING = false;
 
         #endregion
@@ -81,6 +81,10 @@ namespace GCBM
                 foreach (var process in Process.GetCurrentProcess().GetChildProcesses())
                     //Kill GCIT and others
                     process.Kill();
+
+            //Cleanup any Threads left lying around
+            this.Dispose();
+            Process.GetCurrentProcess().Kill();
         }
 
         #endregion
@@ -811,31 +815,31 @@ namespace GCBM
             //Setup Interface
             pbScan.Maximum = files.Length;
             pbScan.Value = 0;
-            lblScan.Text = "Scanning...";
-            lblScan.Visible = true;
             dgv.Rows.Clear();
             //btnAbort.Visible = true;
 
             //Loop through files
             foreach (string file in files)
             {
+                if (ABORT)
+                    break;
                 var _f = new FileInfo(file);
                 var _getSize = DisplayFormatFileSize(_f.Length, CONFIG_INI_FILE.IniReadInt("GENERAL", "FileSize"));
                 //Title - ID - Region - Path - Extension - Size
                 loadPath = _f.FullName;
                 IMAGE_PATH = loadPath;
                 //Need to find a better way of this.. but for now this is the only way I really know how to get a hold of the game info. I'll go back and dig later, I found it before.. just meant a lot of stepping-through
-                if (ReadImageTOC())
+                if (ReadImageTOC() && !ABORT)
                 {
                     if (CONFIG_INI_FILE.IniReadBool("TITLES", "GameXmlName"))
                     {
                         if (File.Exists(WIITDB_FILE))
                         {
-                            var root = XElement.Load(WIITDB_FILE);
-                            var tests = from el in root.Elements("game")
-                                        where (string)el.Element("id") == tbIDGame.Text
-                                        select el;
-                            foreach (var el in tests) tbIDName.Text = (string)el.Element("locale").Element("title");
+                            XElement root = XElement.Load(WIITDB_FILE);
+                            IEnumerable<XElement> tests = from el in root.Elements("game")
+                                                          where (string)el.Element("id") == tbIDGame.Text
+                                                          select el;
+                            foreach (XElement el in tests) tbIDName.Text = (string)el.Element("locale").Element("title");
                         }
                         else
                         {
@@ -850,11 +854,11 @@ namespace GCBM
 
                 //Clean up Interface
                 lblSourceCount.Text = files.Length.ToString();
-                lblScan.Text = "Done.";//Do this with Resources
                 //done with loop
 
                 LOADING = false;
                 dgv.Update();
+                wait(250);//Stop Windows from Panicking
             }
 
             //dgvSource.DataSource = GameDataTable();
@@ -926,7 +930,7 @@ namespace GCBM
                 isRecursive = false;
 
             var optionSearch = isRecursive ? sio.SearchOption.AllDirectories : sio.SearchOption.TopDirectoryOnly;
-            foreach (var filter in filters)
+            foreach (string filter in filters)
                 try
                 {
                     filesFound.AddRange(
@@ -5513,5 +5517,14 @@ namespace GCBM
         #endregion
 
         #endregion
+
+        private void toolStripSplitButton1_ButtonClick(object sender, EventArgs e)
+        {
+            //Identical to abort button, but don't reset the options.
+            ABORT = true;
+            lblInstallGame.Text = "Stopped!";
+            lblInstallGame.Show();
+            EnableOptionsGameList();
+        }
     } // frmMain Form
 } // namespace GCBM
