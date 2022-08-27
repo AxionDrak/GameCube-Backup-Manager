@@ -15,6 +15,7 @@ using System.Linq;
 using System.Net;
 using System.Net.NetworkInformation;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography;
 using System.Text;
@@ -51,6 +52,11 @@ namespace GCBM
 
         #endregion
 
+        #region Globals
+        
+        public bool LOADING = false;
+
+        #endregion
 
         #region Main Form Closing
 
@@ -728,9 +734,13 @@ namespace GCBM
         /// </summary>
         /// <param name="sourceFolder"></param>
         /// <param name="dgv"></param>
-        private async void DisplayFilesSelected(string sourceFolder, DataGridView dgv)
+        private async Task DisplayFilesSelected(string sourceFolder, DataGridView dgv)
         {
+
+            //Setup Variables
             ABORT = false;
+            LOADING = true;
+            int Pos = 0;
             var filters = new[] { "iso", "gcm" };
             bool isRecursive;
 
@@ -757,7 +767,7 @@ namespace GCBM
             else
                 isRecursive = false;
 
-            var files = await GetFilesFolder(sourceFolder, filters, isRecursive).ConfigureAwait(false);
+            var files = GetFilesFolder(sourceFolder, filters, isRecursive).Result;
 
             if (dgv == dgvDestination)
                 //tsmiReloadGameListDisc.Enabled = true;
@@ -772,10 +782,11 @@ namespace GCBM
 
             tsmiSelectGameList.Enabled = true;
             // Groups files in the folder by extension.
-            var filesGroupedByExtension = files
-                .Select(arq => sio.Path.GetExtension(arq).TrimStart('.').ToLower(MY_CULTURE)).GroupBy(x => x,
-                    (ext, extCnt) =>
-                        new { _fileExtension = ext, Counter = extCnt.Count() });
+            var enumerable = files
+                            .Select(arq => Path.GetExtension(arq).TrimStart('.').ToLower(MY_CULTURE)).GroupBy(x => x,
+                                (ext, extCnt) =>
+                                    new { _fileExtension = ext, Counter = extCnt.Count() });
+            var filesGroupedByExtension = enumerable;
 
             // Scroll through the result and display the values.
             foreach (var _files in filesGroupedByExtension)
@@ -794,46 +805,99 @@ namespace GCBM
             // Creates a DataTable with file data.
             //DataTable _table = new DataTable();
 
-            sio.FileInfo _file = null;
+            FileInfo _file = null;
+
+
+            //Setup Interface
+            pbScan.Maximum = files.Length;
+            pbScan.Value = 0;
+            lblScan.Text = "Scanning...";
+            lblScan.Visible = true;
             dgv.Rows.Clear();
-            //dgvSource.DataSource = GameDataTable();
+            //btnAbort.Visible = true;
 
-            foreach (var game in GameList(sourceFolder).Result)
+            //Loop through files
+            foreach (string file in files)
             {
-                if (dgvSelected == dgvSource) lstSourceGames.Add(game);
-                _file = new sio.FileInfo(game.Path);
+                var _f = new FileInfo(file);
+                var _getSize = DisplayFormatFileSize(_f.Length, CONFIG_INI_FILE.IniReadInt("GENERAL", "FileSize"));
+                //Title - ID - Region - Path - Extension - Size
+                loadPath = _f.FullName;
+                IMAGE_PATH = loadPath;
+                //Need to find a better way of this.. but for now this is the only way I really know how to get a hold of the game info. I'll go back and dig later, I found it before.. just meant a lot of stepping-through
+                if (ReadImageTOC())
+                {
+                    if (CONFIG_INI_FILE.IniReadBool("TITLES", "GameXmlName"))
+                    {
+                        if (File.Exists(WIITDB_FILE))
+                        {
+                            var root = XElement.Load(WIITDB_FILE);
+                            var tests = from el in root.Elements("game")
+                                        where (string)el.Element("id") == tbIDGame.Text
+                                        select el;
+                            foreach (var el in tests) tbIDName.Text = (string)el.Element("locale").Element("title");
+                        }
+                        else
+                        {
+                            CheckWiiTdbXml();
+                        }
+                    }
 
-                var _getSize = DisplayFormatFileSize(_file.Length, CONFIG_INI_FILE.IniReadInt("GENERAL", "FileSize"));
+                    ROOT_OPENED = false;
+                    dgv.Rows.Add(false, tbIDName.Text, tbIDGame.Text, tbIDRegion.Text, _f.Extension.Substring(1, 3).Trim().ToUpper(MY_CULTURE), _getSize, _f.FullName);
+                    pbScan.Value++;
+                }
 
-                // 5th column
-                dgv.Rows.Add(false,
-                    game.Title,
-                    game.ID,
-                    game.Region,
-                    game.Extension.Substring(1, 3).Trim().ToUpper(MY_CULTURE),
-                    _getSize,
-                    game.Path);
+                //Clean up Interface
+                lblSourceCount.Text = files.Length.ToString();
+                lblScan.Text = "Done.";//Do this with Resources
+                //done with loop
+
+                LOADING = false;
+                dgv.Update();
             }
 
+            //dgvSource.DataSource = GameDataTable();
 
-            //for (int i = 0; i < files.Length; i++)
+            #region deprecated
+            //foreach (var game in GameList(sourceFolder).Result)
             //{
-            //    //FileInfo _file = new FileInfo(files[i]);
-            //    _file = new FileInfo(files[i]);
-            //    string _getSize = DisplayFormatFileSize(_file.Length, CONFIG_INI_FILE.IniReadInt("GENERAL", "FileSize"));
-            //    //string _getSize = BytesToGB(_file.Length);                
-            //    // 4° coluna
-            //    _table.Rows.Add(_file.Name, _file.Extension.Substring(1, 3).Trim().ToUpper(MY_CULTURE), _getSize, _file.FullName);
-            //    //_table.Rows.Add(_file.Name, _file.Extension.Substring(1, 3).Trim().ToUpper(myCulture), _getSize);
+            //    if (dgvSelected == dgvSource) lstSourceGames.Add(game);
+            //    _file = new sio.FileInfo(game.Path);
+
+            //    var _getSize = DisplayFormatFileSize(_file.Length, CONFIG_INI_FILE.IniReadInt("GENERAL", "FileSize"));
+
+            //    // 5th column
+            //    dgv.Rows.Add(false,
+            //        game.Title,
+            //        game.ID,
+            //        game.Region,
+            //        game.Extension.Substring(1, 3).Trim().ToUpper(MY_CULTURE),
+            //        _getSize,
+            //        game.Path);
             //}
 
-            //if(dgvSource.SelectionMode == DataGridViewSelectionMode.RowHeaderSelect){
-            //    MessageBox.Show("O modo de seleção é RowHeaderSelect");
-            //}
-            //else
-            //{
-            //    MessageBox.Show("O modo de seleção NÃO é RowHeaderSelect");
-            //}
+
+            ////for (int i = 0; i < files.Length; i++)
+            ////{
+            ////    //FileInfo _file = new FileInfo(files[i]);
+            ////    _file = new FileInfo(files[i]);
+            ////    string _getSize = DisplayFormatFileSize(_file.Length, CONFIG_INI_FILE.IniReadInt("GENERAL", "FileSize"));
+            ////    //string _getSize = BytesToGB(_file.Length);                
+            ////    // 4° coluna
+            ////    _table.Rows.Add(_file.Name, _file.Extension.Substring(1, 3).Trim().ToUpper(MY_CULTURE), _getSize, _file.FullName);
+            ////    //_table.Rows.Add(_file.Name, _file.Extension.Substring(1, 3).Trim().ToUpper(myCulture), _getSize);
+            ////}
+
+            ////if(dgvSource.SelectionMode == DataGridViewSelectionMode.RowHeaderSelect){
+            ////    MessageBox.Show("O modo de seleção é RowHeaderSelect");
+            ////}
+            ////else
+            ////{
+            ////    MessageBox.Show("O modo de seleção NÃO é RowHeaderSelect");
+            ////}
+            ///
+            #endregion
 
             EnableOptionsGameList();
 
@@ -1120,7 +1184,7 @@ namespace GCBM
 
         #endregion
 
-        private bool CheckImage(string path)
+        private bool IsValid(string path)
         {
             sio.FileStream fs = null;
             sio.BinaryReader br = null;
@@ -2228,7 +2292,7 @@ namespace GCBM
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void tscbDiscDrive_SelectedIndexChanged(object sender, EventArgs e)
+        private async void tscbDiscDrive_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (tscbDiscDrive.SelectedIndex != 0)
             {
@@ -2288,7 +2352,7 @@ namespace GCBM
                                 else
                                 {
                                     // If the GAMES directory already exists, load the content recursively.
-                                    DisplayFilesSelected(tscbDiscDrive.Text + sio.Path.DirectorySeparatorChar + GAMES_DIR, dgvDestination);
+                                    await DisplayFilesSelected(tscbDiscDrive.Text + Path.DirectorySeparatorChar + GAMES_DIR, dgvDestination).ConfigureAwait(false);
                                 }
                             }
                             else if (d.DriveFormat == EXFAT_FAT64) // EXFAT (FAT64)
@@ -2306,7 +2370,7 @@ namespace GCBM
                                 else
                                 {
                                     // If the GAMES directory already exists, load the content recursively.
-                                    DisplayFilesSelected(tscbDiscDrive.Text + sio.Path.DirectorySeparatorChar + GAMES_DIR, dgvDestination);
+                                    await DisplayFilesSelected(tscbDiscDrive.Text + Path.DirectorySeparatorChar + GAMES_DIR, dgvDestination).ConfigureAwait(false);
                                 }
                             }
                             else // FAT32 
@@ -2322,7 +2386,7 @@ namespace GCBM
                                 else
                                 {
                                     // If the GAMES directory already exists, load the content recursively.
-                                    DisplayFilesSelected(tscbDiscDrive.Text + sio.Path.DirectorySeparatorChar + GAMES_DIR, dgvDestination);
+                                    await DisplayFilesSelected(tscbDiscDrive.Text + Path.DirectorySeparatorChar + GAMES_DIR, dgvDestination).ConfigureAwait(false);
                                 }
                             }
                             //label6.Text = "Total Size: " + d.TotalSize / (1024 * 1024) + " MB\nDrive Format: " + d.DriveFormat + " \nAvailable: " + d.AvailableFreeSpace / (1024 * 1024) + " MB\n" + d.DriveType;
@@ -2546,7 +2610,7 @@ namespace GCBM
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnSelectFolder_Click(object sender, EventArgs e)
+        private async void btnSelectFolder_Click(object sender, EventArgs e)
         {
             try
             {
@@ -2555,7 +2619,7 @@ namespace GCBM
                 if (fbd1.ShowDialog() == DialogResult.OK)
                 {
                     dgvGameListPath = fbd1.SelectedPath;
-                    DisplayFilesSelected(fbd1.SelectedPath, dgvSource);
+                    await DisplayFilesSelected(fbd1.SelectedPath, dgvSource).ConfigureAwait(false);
                     ListIsoFile();
                 }
             }
@@ -2591,7 +2655,7 @@ namespace GCBM
         //    }
         //}
 
-        private void Search_Click(object sender, EventArgs e)
+        private async void Search_Click(object sender, EventArgs e)
         {
             if (tabControlMain.SelectedTab == tabMainFile)
                 dgvSelected = dgvSource;
@@ -2609,7 +2673,7 @@ namespace GCBM
                         row.Visible = false;
         }
 
-        private void btnSearch_KeyPress(object sender, KeyPressEventArgs e)
+        private async void btnSearch_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Keys.Enter) btnSearch.PerformClick();
         }
@@ -2625,6 +2689,7 @@ namespace GCBM
         {
             ABORT = true;
             ResetOptions();
+            lblInstallGame.Text = "Stopped!";
             lblInstallGame.Show();
         }
 
