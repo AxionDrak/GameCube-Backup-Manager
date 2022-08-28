@@ -1263,6 +1263,7 @@ namespace GCBM
             resources.ApplyResources(this.toolStripSplitButton1, "toolStripSplitButton1");
             this.toolStripSplitButton1.Name = "toolStripSplitButton1";
             this.toolStripSplitButton1.ButtonClick += new System.EventHandler(this.toolStripSplitButton1_ButtonClick);
+            this.toolStripSplitButton1.Click += new System.EventHandler(this.toolStripSplitButton1_ButtonClick);
             // 
             // toolStripStatusLabel1
             // 
