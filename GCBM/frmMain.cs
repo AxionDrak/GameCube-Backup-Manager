@@ -744,26 +744,13 @@ namespace GCBM
             //Setup Variables
             ABORT = false;
             LOADING = true;
-            int Pos = 0;
             var filters = new[] { "iso", "gcm" };
             bool isRecursive;
 
             if (dgv == dgvSource)
                 if (dgv.RowCount == 0)
                 {
-                    btnGameInstallExactCopy.Enabled = true;
-                    btnGameInstallScrub.Enabled = true;
-                    tsmiReloadGameList.Enabled = true;
-                    tsmiGameListSelectAll.Enabled = true;
-                    tsmiGameListSelectNone.Enabled = true;
-                    tsmiGameListDeleteAllFiles.Enabled = true;
-                    tsmiGameListDeleteSelectedFile.Enabled = true;
-                    //tsmiGameListAllHashSHA1.Enabled = true;
-                    tsmiGameListHashSHA1.Enabled = true;
-                    tsmiDownloadCoversSelectedGame.Enabled = true;
-                    tsmiSyncDownloadDiscOnly3DCovers.Enabled = true;
-                    tsmiGameInfo.Enabled = true;
-                    tsmiTransferDeviceCovers.Enabled = true;
+                    EnableOptionsGameList();
                 }
 
             if (dgv == dgvDestination)
@@ -2020,11 +2007,12 @@ namespace GCBM
                         {
                             if (typeInstall == 0) // Install Exact Copy
                             {
+                                
+                                btnAbort.Visible = true;
+                                lblAbort.Visible = true;
                                 BuildInstallQueue();
                                 DisableOptionsGame(dgvSource);
                                 INSTALLING = true;
-                                btnAbort.Visible = true;
-                                lblAbort.Visible = true;
                                 InstallGameExactCopy(InstallQueue[intQueuePos].Path);
                             }
                             else // Install Scrub
@@ -2771,7 +2759,14 @@ namespace GCBM
             tscbDiscDrive.SelectedIndex = 0;
             cbFilterDatabase.SelectedIndex = 0;
 
-            if (!sio.File.Exists(WIITDB_FILE)) CheckAndDownloadWiiTdbXml();
+
+            //Check for WiiTDB file and internet connection, download if not found and we're online
+            if (!sio.File.Exists(WIITDB_FILE) && NetworkInterface.GetIsNetworkAvailable())
+            {
+                frmDownloadGameTDB frmDownload = new frmDownloadGameTDB();
+                frmDownload.ShowDialog();
+            }
+
 
             // DISABLED
             tsmiExportCSV.Enabled = false;
@@ -2806,7 +2801,8 @@ namespace GCBM
 
             //foreach in this.Controls.Results 
             mstripMain.Refresh();
-            Focus();
+            this.Focus();
+
         }
 
         private void PopDestination()
@@ -3727,7 +3723,7 @@ namespace GCBM
 
         /// <summary>
         /// </summary>
-        private async void CheckAndDownloadWiiTdbXml()
+        private async Task CheckAndDownloadWiiTdbXml()
         {
             await ProcessTaskDelay().ConfigureAwait(false);
             if (sio.File.Exists(WIITDB_FILE))
@@ -3742,13 +3738,19 @@ namespace GCBM
                     return;
                 }
 
-                frmDownloadGameTDB.GameTDBSynchronous();
+                Application.Run(new frmDownloadGameTDB());
 
                 Monitor.Exit(lvDatabase);
 
                 if (sio.File.Exists(WIITDB_FILE))
                 {
+                    try{
                     LoadDatabaseXML();
+                }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, Resources.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                     return;
                 }
             }
@@ -5525,6 +5527,30 @@ namespace GCBM
             lblInstallGame.Text = "Stopped!";
             lblInstallGame.Show();
             EnableOptionsGameList();
+        }
+
+        private void lblNetStatus_Click(object sender, EventArgs e)
+        {
+            NetworkCheck();
+            if (sio.File.Exists(WIITDB_FILE))
+            {
+                return;
+            }
+            else
+            {
+                            DialogResult result = MessageBox.Show(Resources.ProcessTaskDelay_String1 + Environment.NewLine +
+                            Resources.ProcessTaskDelay_String2 +
+                            Environment.NewLine + Environment.NewLine +
+                            Resources.ProcessTaskDelay_String3 +
+                            Environment.NewLine + Environment.NewLine +
+                            Resources.ProcessTaskDelay_String4,
+                Resources.Notice, MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                if (result == DialogResult.Yes)
+                {
+                    //download the file
+                    CheckAndDownloadWiiTdbXml();
+                }
+            }
         }
     } // frmMain Form
 } // namespace GCBM

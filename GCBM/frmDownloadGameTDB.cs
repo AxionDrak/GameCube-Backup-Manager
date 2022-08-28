@@ -28,18 +28,29 @@ namespace GCBM
 
             btnCancelWork.Enabled = false;
             GameTDB();
+
         }
 
         public int RETURN_CONFIRM { get; set; }
 
-        private void GameTDB()
+        private async void GameTDB()
         {
             try
             {
+
                 var webClient = new WebClient();
                 webClient.DownloadFileCompleted += Completed;
                 webClient.DownloadProgressChanged += ProgressChanged;
                 webClient.DownloadFileAsync(new Uri("https://www.gametdb.com/wiitdb.zip"), WIITDB_ZIP_FILE);
+                await Task.Delay(5000);
+                btnCancelWork.Enabled = true;
+
+                if (File.Exists(WIITDB_FILE))
+                {
+                    lblConverting.Font = new Font(lblConverting.Font, FontStyle.Bold);
+                    lblConverting.Text = PROCESS_COMPLETED;
+                    btnCancelWork.PerformClick();
+                }
             }
             catch (Exception ex)
             {
@@ -49,6 +60,7 @@ namespace GCBM
 
         public static void GameTDBSynchronous()
         {
+
             try
             {
                 var webClient = new WebClient();
@@ -101,11 +113,14 @@ namespace GCBM
                 var fileinfo = new FileInfo(GET_CURRENT_PATH + Path.DirectorySeparatorChar + WIITDB_FILE);
                 if (fileinfo.Length >= 31035000) //31035596
                 {
-                    lblConverting.Font = new Font(lblConverting.Font, FontStyle.Bold);
-                    lblConverting.Text = PROCESS_COMPLETED;
-                    btnCancelWork.Enabled = true;
+                    //lblConverting.Font = new Font(lblConverting.Font, FontStyle.Bold);
+                    //lblConverting.Text = PROCESS_COMPLETED;
+                    //btnCancelWork.Enabled = true;
+                    DialogResult = DialogResult.OK;
+                    RETURN_CONFIRM = 1;
                 }
             }
+
         }
 
         private async Task ProcessTaskDelay()

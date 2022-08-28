@@ -1549,6 +1549,7 @@ namespace GCBM
             resources.ApplyResources(this.lblNetStatus, "lblNetStatus");
             this.lblNetStatus.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lblNetStatus.Name = "lblNetStatus";
+            this.lblNetStatus.Click += new System.EventHandler(this.lblNetStatus_Click);
             // 
             // notifyIcon
             // 
@@ -1575,6 +1576,7 @@ namespace GCBM
             this.pbNetStatus.Image = global::GCBM.Properties.Resources.not_conected_16;
             this.pbNetStatus.Name = "pbNetStatus";
             this.pbNetStatus.TabStop = false;
+            this.pbNetStatus.Click += new System.EventHandler(this.lblNetStatus_Click);
             // 
             // process1
             // 
