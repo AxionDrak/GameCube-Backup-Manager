@@ -2308,10 +2308,10 @@ namespace GCBM
             try
             {
                 var allDrives = sio.DriveInfo.GetDrives();
-
-                foreach (var d in allDrives)
-                {
-                    //if (d.DriveType == DriveType.Removable && d.Name == tscbDiscDrive.SelectedItem.ToString())
+                DriveInfo d = allDrives.Where(a=> a.Name == tscbDiscDrive.Text).First();
+                //foreach (DriveInfo d in allDrives)
+                //{
+                if (d.DriveType == DriveType.Removable && d.Name == tscbDiscDrive.SelectedItem.ToString())
                     if (d.DriveType == sio.DriveType.Fixed && d.Name == tscbDiscDrive.SelectedItem.ToString())
                     {
                         //tscbDiscDrive.Items.Add(d.Name);
@@ -2386,7 +2386,8 @@ namespace GCBM
 
                         dgvGameListDiscPath = d.RootDirectory.FullName;
                     }
-                }
+                    wait(250);
+                //}
             }
             catch (Exception ex)
             {
@@ -5529,7 +5530,7 @@ namespace GCBM
             EnableOptionsGameList();
         }
 
-        private void lblNetStatus_Click(object sender, EventArgs e)
+        private async void lblNetStatus_Click(object sender, EventArgs e)
         {
             NetworkCheck();
             if (sio.File.Exists(WIITDB_FILE))
@@ -5548,7 +5549,7 @@ namespace GCBM
                 if (result == DialogResult.Yes)
                 {
                     //download the file
-                    CheckAndDownloadWiiTdbXml();
+                    await CheckAndDownloadWiiTdbXml();
                 }
             }
         }

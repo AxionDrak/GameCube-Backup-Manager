@@ -1,3 +1,10 @@
+### GameCube Backup Manager 2.6.0.7 (August 28, 2022)
+
+[Changed] WiiTDB Download form now shows on first launch if a network connection is detected, visually explaining to the user what we're doing.
+[Fixed] Some minor interface fixes.
+[Added] Clicking on the network status indicator now rechecks for a network connection, and will ask to download WiiTDB.
+[Improved] Stability improvements, added a few failsafes.
+
 ### GameCube Backup Manager 2.6.0.6 (August 27, 2022)
 
 [Improved] Progress bar to display the progress of scanning the chosen directory.
