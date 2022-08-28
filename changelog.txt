@@ -1,5 +1,6 @@
 ### GameCube Backup Manager 2.6.0.7 (28 de agosto de 2022)
 
+[Melhoria] A seleção de uma unidade de destino responde MUITO mais rápido agora. Deve negar a possibilidade de bloqueios de interface.
 [Alterado] O formulário de download do WiiTDB agora é exibido na primeira inicialização se uma conexão de rede for detectada, explicando visualmente ao usuário o que estamos fazendo.
 [Correção] Algumas pequenas correções de interface.
 [Adicionado] Clicar no indicador de status da rede agora verifica novamente se há uma conexão de rede e solicitará o download do WiiTDB.
