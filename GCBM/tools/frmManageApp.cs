@@ -29,11 +29,14 @@ namespace GCBM.tools
             //var findFolder = Directory.GetDirectories(folder, "*", SearchOption.AllDirectories);
             //var findFiles = Directory.GetFiles(folder, "*", SearchOption.AllDirectories);
 
-            var curFile = Path.DirectorySeparatorChar + "boot.elf";
+            string curFile = Path.DirectorySeparatorChar + "boot.elf";
 
-            foreach (var dir in Directory.GetDirectories(folder, "*", SearchOption.TopDirectoryOnly))
-                foreach (var file in Directory.GetFiles(dir, "*", SearchOption.TopDirectoryOnly))
+            foreach (string dir in Directory.GetDirectories(folder, "*", SearchOption.TopDirectoryOnly))
+            {
+                foreach (string file in Directory.GetFiles(dir, "*", SearchOption.TopDirectoryOnly))
+                {
                     if (File.Exists(dir + curFile))
+                    {
                         try
                         {
                             File.Move(file, file.Replace("boot.elf", "boot.dol"));
@@ -42,8 +45,13 @@ namespace GCBM.tools
                         {
                             GlobalNotifications(ex.Message);
                         }
+                    }
                     else
+                    {
                         DisplayFilesFolder(folder, dgvAppList);
+                    }
+                }
+            }
         }
 
         #endregion
@@ -58,7 +66,7 @@ namespace GCBM.tools
         private void CompressFolder()
         {
             //int? selectedRowCount = Convert.ToInt32(dgvAppList.Rows.GetRowCount(DataGridViewElementStates.Selected));
-            var _selectedGameRowCount = dgvAppList.Rows.GetRowCount(DataGridViewElementStates.Selected);
+            int _selectedGameRowCount = dgvAppList.Rows.GetRowCount(DataGridViewElementStates.Selected);
 
             if (dgvAppList.RowCount == 0)
             {
@@ -67,19 +75,22 @@ namespace GCBM.tools
             else
             {
                 if (_selectedGameRowCount == 0)
+                {
                     SelectAppFromList();
+                }
                 else
+                {
                     try
                     {
                         //string checkFile = dgvAppList.CurrentRow.Cells[0].Value.ToString() + ".zip";
-                        var checkFile = dgvAppList.CurrentRow.Cells[0].Value.ToString();
-                        var checkDirectory = dgvAppList.CurrentRow.Cells[3].Value.ToString();
+                        string checkFile = dgvAppList.CurrentRow.Cells[0].Value.ToString();
+                        string checkDirectory = dgvAppList.CurrentRow.Cells[3].Value.ToString();
 
                         //if (File.Exists(checkFileExist))
                         //{
 
-                        var frmPackage = new frmCreatePackage(checkFile, checkDirectory, fbd.SelectedPath);
-                        frmPackage.ShowDialog();
+                        frmCreatePackage frmPackage = new frmCreatePackage(checkFile, checkDirectory, fbd.SelectedPath);
+                        _ = frmPackage.ShowDialog();
                         frmPackage.Dispose();
 
                         //    //MessageBox.Show(dgvAppList.CurrentRow.Cells[0].Value.ToString() + ".zip" + " Arquivo já existe!");
@@ -110,6 +121,7 @@ namespace GCBM.tools
                     {
                         GlobalNotifications(ex.Message);
                     }
+                }
             }
         }
 
@@ -122,38 +134,40 @@ namespace GCBM.tools
             try
             {
                 // Create and load the XmlDocument
-                var xmlDoc = new XmlDocument();
+                XmlDocument xmlDoc = new XmlDocument();
 
-                var filtersXML = new[] { "xml" };
-                var filtersDOL = new[] { "dol" };
+                string[] filtersXML = new[] { "xml" };
+                string[] filtersDOL = new[] { "dol" };
 
-                var isRecursive = true;
+                bool isRecursive = true;
 
-                var filesXML = GetFilesXMLFolder(sourceFolder, filtersXML, isRecursive);
-                var filesDOL = GetFilesDOLFolder(sourceFolder, filtersDOL, isRecursive);
+                string[] filesXML = GetFilesXMLFolder(sourceFolder, filtersXML, isRecursive);
+                string[] filesDOL = GetFilesDOLFolder(sourceFolder, filtersDOL, isRecursive);
 
                 // Creates a DataTable with file data.
-                var _table = new DataTable();
-                _table.Columns.Add("Nome do APP");
-                _table.Columns.Add("Versão");
-                _table.Columns.Add("Tamanho");
-                _table.Columns.Add("Caminho do Arquivo");
+                DataTable _table = new DataTable();
+                _ = _table.Columns.Add("Nome do APP");
+                _ = _table.Columns.Add("Versão");
+                _ = _table.Columns.Add("Tamanho");
+                _ = _table.Columns.Add("Caminho do Arquivo");
 
                 FileInfo _fileXML = null;
                 FileInfo _fileDOL = null;
 
-                for (var i = 0; i < filesDOL.Length; i++)
+                for (int i = 0; i < filesDOL.Length; i++)
                 {
                     _fileXML = new FileInfo(filesXML[i]);
                     _fileDOL = new FileInfo(filesDOL[i]);
 
                     xmlDoc.Load(_fileXML.FullName);
-                    var xnList = xmlDoc.GetElementsByTagName("app");
-                    var _getSize = DisplayFormatFileSize(_fileDOL.Length, 1);
+                    XmlNodeList xnList = xmlDoc.GetElementsByTagName("app");
+                    string _getSize = DisplayFormatFileSize(_fileDOL.Length, 1);
 
                     //Usando foreach para imprimir na tela
                     foreach (XmlNode xn in xnList)
-                        _table.Rows.Add(xn["name"].InnerText, xn["version"].InnerText, _getSize, _fileDOL.FullName);
+                    {
+                        _ = _table.Rows.Add(xn["name"].InnerText, xn["version"].InnerText, _getSize, _fileDOL.FullName);
+                    }
                     //_table.Rows.Add(xn["name"].InnerText, xn["version"].InnerText, _getSize);
                 }
 
@@ -195,7 +209,7 @@ namespace GCBM.tools
         public static string DisplayFormatFileSize(long i, int k)
         {
             // Obtém o valor absoluto
-            var i_absolute = i < 0 ? -i : i;
+            long i_absolute = i < 0 ? -i : i;
             string suffix;
             double reading;
 
@@ -262,7 +276,7 @@ namespace GCBM.tools
             }
 
             // Divide by 1024 to get the fractional value.
-            reading = reading / 1024;
+            reading /= 1024;
             // Returns the suffix formatted number.
             return reading.ToString("0.## ") + suffix;
         }
@@ -273,14 +287,16 @@ namespace GCBM.tools
 
         private string[] GetFilesXMLFolder(string rootFolder, string[] filters, bool isRecursive)
         {
-            var filesFound = new List<string>();
+            List<string> filesFound = new List<string>();
 
             try
             {
-                var optionSearch = isRecursive ? SearchOption.AllDirectories : SearchOption.TopDirectoryOnly;
-                foreach (var filter in filters)
+                SearchOption optionSearch = isRecursive ? SearchOption.AllDirectories : SearchOption.TopDirectoryOnly;
+                foreach (string filter in filters)
+                {
                     filesFound.AddRange(Directory.GetFiles(rootFolder, string.Format("meta.{0}", filter),
                         optionSearch));
+                }
             }
             catch (Exception ex)
             {
@@ -292,13 +308,15 @@ namespace GCBM.tools
 
         private string[] GetFilesDOLFolder(string rootFolder, string[] filters, bool isRecursive)
         {
-            var filesFound = new List<string>();
+            List<string> filesFound = new List<string>();
 
             try
             {
-                var optionSearch = isRecursive ? SearchOption.AllDirectories : SearchOption.TopDirectoryOnly;
-                foreach (var filter in filters)
+                SearchOption optionSearch = isRecursive ? SearchOption.AllDirectories : SearchOption.TopDirectoryOnly;
+                foreach (string filter in filters)
+                {
                     filesFound.AddRange(Directory.GetFiles(rootFolder, string.Format("*.{0}", filter), optionSearch));
+                }
             }
             catch (Exception ex)
             {
@@ -319,19 +337,19 @@ namespace GCBM.tools
 
         private static void EmptyAppsList()
         {
-            MessageBox.Show("A lista de aplicativos homebrews está vazia!", "Informação", MessageBoxButtons.OK,
+            _ = MessageBox.Show("A lista de aplicativos homebrews está vazia!", "Informação", MessageBoxButtons.OK,
                 MessageBoxIcon.Exclamation);
         }
 
         private static void SelectAppFromList()
         {
-            MessageBox.Show("Por favor, selecione um aplicativo homebrew da lista!", "Informação", MessageBoxButtons.OK,
+            _ = MessageBox.Show("Por favor, selecione um aplicativo homebrew da lista!", "Informação", MessageBoxButtons.OK,
                 MessageBoxIcon.Exclamation);
         }
 
         private static DialogResult DialogResultDelete()
         {
-            var dr = MessageBox.Show("Deseja realmente excluir o aplicativo homebrew?" + Environment.NewLine +
+            DialogResult dr = MessageBox.Show("Deseja realmente excluir o aplicativo homebrew?" + Environment.NewLine +
                                      Environment.NewLine +
                                      "Esse procedimento é irreversível e não será possivel recuperar o aplicativo homebrew!",
                 "AVISO", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
@@ -355,8 +373,10 @@ namespace GCBM.tools
                 fbd.Description = "Selecione a pasta que contém os app's:";
                 fbd.ShowNewFolderButton = false;
                 if (fbd.ShowDialog() == DialogResult.OK)
+                {
                     //DisplayFilesFolder(fbd.SelectedPath, dgvAppList);
                     RenameFiles(fbd.SelectedPath);
+                }
             }
             catch (Exception ex)
             {
@@ -367,7 +387,7 @@ namespace GCBM.tools
 
         private void btnRemoveApp_Click(object sender, EventArgs e)
         {
-            var _selectedGameRowCount = dgvAppList.Rows.GetRowCount(DataGridViewElementStates.Selected);
+            int _selectedGameRowCount = dgvAppList.Rows.GetRowCount(DataGridViewElementStates.Selected);
 
             if (dgvAppList.RowCount == 0)
             {
@@ -376,8 +396,11 @@ namespace GCBM.tools
             else
             {
                 if (_selectedGameRowCount == 0)
+                {
                     SelectAppFromList();
+                }
                 else if (DialogResultDelete() == DialogResult.Yes)
+                {
                     try
                     {
                         //Apagar a pasta e todo conteúdo do app homebrew
@@ -391,6 +414,7 @@ namespace GCBM.tools
                     {
                         GlobalNotifications(ex.Message);
                     }
+                }
             }
         }
 

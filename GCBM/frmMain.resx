@@ -918,7 +918,7 @@
     <value>15</value>
   </data>
   <data name="lblGameCountSource.Text" xml:space="preserve">
-    <value>Games Found:</value>
+    <value>Jogos encontrados:</value>
   </data>
   <data name="&gt;&gt;lblGameCountSource.Name" xml:space="preserve">
     <value>lblGameCountSource</value>
@@ -954,7 +954,7 @@
     <value>14</value>
   </data>
   <data name="lblAbort.Text" xml:space="preserve">
-    <value>Abort</value>
+    <value>Pare</value>
   </data>
   <data name="lblAbort.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -1591,7 +1591,7 @@
     <value>5</value>
   </data>
   <data name="labelGameID.Text" xml:space="preserve">
-    <value>Game ID:</value>
+    <value>ID do jogo:</value>
   </data>
   <data name="&gt;&gt;labelGameID.Name" xml:space="preserve">
     <value>labelGameID</value>
@@ -2101,7 +2101,7 @@
     <value>17</value>
   </data>
   <data name="lblAbortDestination.Text" xml:space="preserve">
-    <value>Abort</value>
+    <value>Pare</value>
   </data>
   <data name="lblAbortDestination.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -2248,7 +2248,7 @@
     <value>13</value>
   </data>
   <data name="label8.Text" xml:space="preserve">
-    <value>Games found:</value>
+    <value>Juegos Encontrados:</value>
   </data>
   <data name="&gt;&gt;label8.Name" xml:space="preserve">
     <value>label8</value>
@@ -3508,7 +3508,7 @@
     <value>181, 22</value>
   </data>
   <data name="tsmiRenameFolders.Text" xml:space="preserve">
-    <value>Rename Folders</value>
+    <value>Renomear pastas</value>
   </data>
   <data name="tsmiRenameISO.Size" type="System.Drawing.Size, System.Drawing">
     <value>181, 22</value>
@@ -4605,5 +4605,11 @@
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Detalles</value>
+  </data>
+  <data name="grpDetails.Text" xml:space="preserve">
+    <value>Detalles</value>
   </data>
 </root>

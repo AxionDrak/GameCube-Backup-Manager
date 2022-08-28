@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="tsslCurrentYear.Text" xml:space="preserve">
-    <value>Copyright © 2019 -</value>
+    <value>Copyright © 2019 - </value>
   </data>
   <data name="lblAllRightsReserved.Text" xml:space="preserve">
     <value>All rights reserved.</value>

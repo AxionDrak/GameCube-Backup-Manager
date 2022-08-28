@@ -29,8 +29,10 @@ namespace GCBM.tools
         private void btnSelectFile_Click(object sender, EventArgs e)
         {
             if (ofdDolphin.ShowDialog() == DialogResult.OK)
+            {
                 //Get the path of specified file
                 tbPathDolphinEmulator.Text = ofdDolphin.FileName;
+            }
         }
 
         private void btnRun_Click(object sender, EventArgs e)

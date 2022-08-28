@@ -257,7 +257,7 @@
     <value> [INFO] Diretório atual do programa: </value>
   </data>
   <data name="ListHash_String2" xml:space="preserve">
-    <value> hash do arquivo: </value>
+    <value>hash do arquivo: </value>
   </data>
   <data name="Information" xml:space="preserve">
     <value>Informação</value>

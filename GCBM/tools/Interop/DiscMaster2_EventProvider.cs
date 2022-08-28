@@ -18,8 +18,8 @@ namespace GCBM.tools.Interop
         {
             lock (this)
             {
-                var eventsGuid = typeof(DDiscMaster2Events).GUID;
-                var connectionPointContainer = pointContainer as IConnectionPointContainer;
+                Guid eventsGuid = typeof(DDiscMaster2Events).GUID;
+                IConnectionPointContainer connectionPointContainer = pointContainer as IConnectionPointContainer;
 
                 connectionPointContainer.FindConnectionPoint(ref eventsGuid, out m_connectionPoint);
             }
@@ -31,11 +31,10 @@ namespace GCBM.tools.Interop
             {
                 lock (this)
                 {
-                    var helper =
+                    DiscMaster2_SinkHelper helper =
                         new DiscMaster2_SinkHelper(value);
-                    int cookie;
 
-                    m_connectionPoint.Advise(helper, out cookie);
+                    m_connectionPoint.Advise(helper, out int cookie);
                     helper.Cookie = cookie;
                     m_aEventSinkHelpers.Add(helper.NotifyDeviceAddedDelegate, helper);
                 }
@@ -45,9 +44,7 @@ namespace GCBM.tools.Interop
             {
                 lock (this)
                 {
-                    var helper =
-                        m_aEventSinkHelpers[value] as DiscMaster2_SinkHelper;
-                    if (helper != null)
+                    if (m_aEventSinkHelpers[value] is DiscMaster2_SinkHelper helper)
                     {
                         m_connectionPoint.Unadvise(helper.Cookie);
                         m_aEventSinkHelpers.Remove(helper.NotifyDeviceAddedDelegate);
@@ -62,11 +59,10 @@ namespace GCBM.tools.Interop
             {
                 lock (this)
                 {
-                    var helper =
+                    DiscMaster2_SinkHelper helper =
                         new DiscMaster2_SinkHelper(value);
-                    int cookie;
 
-                    m_connectionPoint.Advise(helper, out cookie);
+                    m_connectionPoint.Advise(helper, out int cookie);
                     helper.Cookie = cookie;
                     m_aEventSinkHelpers.Add(helper.NotifyDeviceRemovedDelegate, helper);
                 }
@@ -76,9 +72,7 @@ namespace GCBM.tools.Interop
             {
                 lock (this)
                 {
-                    var helper =
-                        m_aEventSinkHelpers[value] as DiscMaster2_SinkHelper;
-                    if (helper != null)
+                    if (m_aEventSinkHelpers[value] is DiscMaster2_SinkHelper helper)
                     {
                         m_connectionPoint.Unadvise(helper.Cookie);
                         m_aEventSinkHelpers.Remove(helper.NotifyDeviceRemovedDelegate);
@@ -104,10 +98,12 @@ namespace GCBM.tools.Interop
             try
             {
                 foreach (DiscMaster2_SinkHelper helper in m_aEventSinkHelpers.Values)
+                {
                     m_connectionPoint.Unadvise(helper.Cookie);
+                }
 
                 m_aEventSinkHelpers.Clear();
-                Marshal.ReleaseComObject(m_connectionPoint);
+                _ = Marshal.ReleaseComObject(m_connectionPoint);
             }
             catch (SynchronizationLockException)
             {

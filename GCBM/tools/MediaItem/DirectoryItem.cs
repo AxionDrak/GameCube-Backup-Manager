@@ -21,36 +21,44 @@ namespace GCBM.tools.MediaItem
         public DirectoryItem(string directoryPath)
         {
             if (!Directory.Exists(directoryPath))
+            {
                 throw new FileNotFoundException("The directory added to DirectoryItem was not found!", directoryPath);
+            }
 
             Path = directoryPath;
-            var fileInfo = new FileInfo(Path);
+            FileInfo fileInfo = new FileInfo(Path);
             displayName = fileInfo.Name;
 
             //
             // Get all the files in the directory
             //
-            var files = Directory.GetFiles(Path);
-            foreach (var file in files) mediaItems.Add(new FileItem(file));
+            string[] files = Directory.GetFiles(Path);
+            foreach (string file in files)
+            {
+                mediaItems.Add(new FileItem(file));
+            }
 
             //
             // Get all the subdirectories
             //
-            var directories = Directory.GetDirectories(Path);
-            foreach (var directory in directories) mediaItems.Add(new DirectoryItem(directory));
+            string[] directories = Directory.GetDirectories(Path);
+            foreach (string directory in directories)
+            {
+                mediaItems.Add(new DirectoryItem(directory));
+            }
 
             //
             // Get the Directory icon
             //
-            var shinfo = new SHFILEINFO();
-            var hImg = Win32.SHGetFileInfo(Path, 0, ref shinfo,
+            SHFILEINFO shinfo = new SHFILEINFO();
+            _ = Win32.SHGetFileInfo(Path, 0, ref shinfo,
                 (uint)Marshal.SizeOf(shinfo), Win32.SHGFI_ICON | Win32.SHGFI_SMALLICON);
 
             if (shinfo.hIcon != null)
             {
                 //The icon is returned in the hIcon member of the shinfo struct
-                var imageConverter = new IconConverter();
-                var icon = Icon.FromHandle(shinfo.hIcon);
+                IconConverter imageConverter = new IconConverter();
+                Icon icon = Icon.FromHandle(shinfo.hIcon);
                 try
                 {
                     FileIconImage = (Image)
@@ -60,7 +68,7 @@ namespace GCBM.tools.MediaItem
                 {
                 }
 
-                Win32.DestroyIcon(shinfo.hIcon);
+                _ = Win32.DestroyIcon(shinfo.hIcon);
             }
         }
 
@@ -75,7 +83,11 @@ namespace GCBM.tools.MediaItem
             get
             {
                 long totalSize = 0;
-                foreach (var mediaItem in mediaItems) totalSize += mediaItem.SizeOnDisc;
+                foreach (IMediaItem mediaItem in mediaItems)
+                {
+                    totalSize += mediaItem.SizeOnDisc;
+                }
+
                 return totalSize;
             }
         }
@@ -97,7 +109,7 @@ namespace GCBM.tools.MediaItem
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error adding folder",
+                _ = MessageBox.Show(ex.Message, "Error adding folder",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
                 return false;

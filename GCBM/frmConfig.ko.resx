@@ -764,4 +764,7 @@
   <data name="ofdDolphin.Filter" xml:space="preserve">
     <value>돌핀 에뮬레이터|dolphin.exe</value>
   </data>
+  <data name="grbGeneralScrub.Text" xml:space="preserve">
+    <value>없애다</value>
+  </data>
 </root>

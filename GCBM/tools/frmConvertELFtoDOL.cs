@@ -37,10 +37,7 @@ namespace GCBM.tools
                 textBoxDOL.Text = ofdELF.FileName.Replace(".elf", ".dol");
             }
 
-            if (string.IsNullOrEmpty(textBoxELF.Text))
-                btnConvertELF.Enabled = false;
-            else
-                btnConvertELF.Enabled = true;
+            btnConvertELF.Enabled = !string.IsNullOrEmpty(textBoxELF.Text);
         }
 
         private void btnConvertELF_Click(object sender, EventArgs e)
@@ -57,7 +54,7 @@ namespace GCBM.tools
 
             //MessageBox.Show(startInfo.FileName.ToString() + startInfo.Arguments.ToString());
 
-            using (var myProcess = Process.Start(startInfo))
+            using (Process myProcess = Process.Start(startInfo))
             {
                 do
                 {
@@ -71,17 +68,26 @@ namespace GCBM.tools
                                                       Environment.NewLine);
 
                         if (myProcess.Responding)
+                        {
                             textBoxLogELFtoDOL.AppendText(Resources.ConvertElfDol_String1 + Environment.NewLine);
+                        }
                         else
+                        {
                             textBoxLogELFtoDOL.AppendText(Resources.ConvertElfDol_String2 + Environment.NewLine);
+                        }
                     }
                 } while (!myProcess.WaitForExit(1000));
 
-                var _StatusExit = myProcess.ExitCode;
+                int _StatusExit = myProcess.ExitCode;
                 if (_StatusExit == 0)
+                {
                     textBoxLogELFtoDOL.AppendText(Resources.ConvertElfDol_String3 + Environment.NewLine);
+                }
+
                 if (_StatusExit == 1)
+                {
                     textBoxLogELFtoDOL.AppendText(Resources.ConvertElfDol_String4 + Environment.NewLine);
+                }
             }
         }
 

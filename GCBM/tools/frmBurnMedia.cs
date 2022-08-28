@@ -42,16 +42,22 @@ namespace GCBM.tools
                 discMaster = new MsftDiscMaster2();
 
                 if (!discMaster.IsSupportedEnvironment)
-                    return;
-                foreach (string uniqueRecorderId in discMaster)
                 {
-                    var discRecorder2 = new MsftDiscRecorder2();
-                    discRecorder2.InitializeDiscRecorder(uniqueRecorderId);
-
-                    cbDevices.Items.Add(discRecorder2);
+                    return;
                 }
 
-                if (cbDevices.Items.Count > 0) cbDevices.SelectedIndex = 0;
+                foreach (string uniqueRecorderId in discMaster)
+                {
+                    MsftDiscRecorder2 discRecorder2 = new MsftDiscRecorder2();
+                    discRecorder2.InitializeDiscRecorder(uniqueRecorderId);
+
+                    _ = cbDevices.Items.Add(discRecorder2);
+                }
+
+                if (cbDevices.Items.Count > 0)
+                {
+                    cbDevices.SelectedIndex = 0;
+                }
             }
             catch (COMException ex)
             {
@@ -62,13 +68,16 @@ namespace GCBM.tools
             }
             finally
             {
-                if (discMaster != null) Marshal.ReleaseComObject(discMaster);
+                if (discMaster != null)
+                {
+                    _ = Marshal.ReleaseComObject(discMaster);
+                }
             }
 
             //
             // Create the volume label based on the current date
             //
-            var now = DateTime.Now;
+            DateTime now = DateTime.Now;
             tbVolumeLabel.Text = now.Year + "_" + now.Month + "_" + now.Day;
 
             labelStatusText.Text = string.Empty;
@@ -92,8 +101,13 @@ namespace GCBM.tools
             // Release the disc recorder items
             //
             foreach (MsftDiscRecorder2 discRecorder2 in cbDevices.Items)
+            {
                 if (discRecorder2 != null)
-                    Marshal.ReleaseComObject(discRecorder2);
+                {
+                    _ = Marshal.ReleaseComObject(discRecorder2);
+                }
+            }
+
             Dispose();
         }
 
@@ -120,7 +134,10 @@ namespace GCBM.tools
             //
             // Prevent page from changing if we're burning or formatting.
             //
-            if (_isBurning || _isFormatting) e.Cancel = true;
+            if (_isBurning || _isFormatting)
+            {
+                e.Cancel = true;
+            }
         }
 
         #endregion
@@ -167,9 +184,12 @@ namespace GCBM.tools
         /// <param name="e"></param>
         private void cbDevices_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbDevices.SelectedIndex == -1) return;
+            if (cbDevices.SelectedIndex == -1)
+            {
+                return;
+            }
 
-            var discRecorder = (IDiscRecorder2)cbDevices.Items[cbDevices.SelectedIndex];
+            IDiscRecorder2 discRecorder = (IDiscRecorder2)cbDevices.Items[cbDevices.SelectedIndex];
 
             supportedMediaLabel.Text = string.Empty;
 
@@ -187,17 +207,22 @@ namespace GCBM.tools
                     return;
                 }
 
-                var supportedMediaTypes = new StringBuilder();
+                StringBuilder supportedMediaTypes = new StringBuilder();
                 foreach (IMAPI_PROFILE_TYPE profileType in discRecorder.SupportedProfiles)
                 {
-                    var profileName = GetProfileTypeString(profileType);
+                    string profileName = GetProfileTypeString(profileType);
 
                     if (string.IsNullOrEmpty(profileName))
+                    {
                         continue;
+                    }
 
                     if (supportedMediaTypes.Length > 0)
-                        supportedMediaTypes.Append(", ");
-                    supportedMediaTypes.Append(profileName);
+                    {
+                        _ = supportedMediaTypes.Append(", ");
+                    }
+
+                    _ = supportedMediaTypes.Append(profileName);
                 }
 
                 supportedMediaLabel.Text = supportedMediaTypes.ToString();
@@ -208,7 +233,10 @@ namespace GCBM.tools
             }
             finally
             {
-                if (discFormatData != null) Marshal.ReleaseComObject(discFormatData);
+                if (discFormatData != null)
+                {
+                    _ = Marshal.ReleaseComObject(discFormatData);
+                }
             }
         }
 
@@ -365,12 +393,16 @@ namespace GCBM.tools
         /// <param name="e"></param>
         private void cbDevices_Format(object sender, ListControlConvertEventArgs e)
         {
-            var discRecorder2 = (IDiscRecorder2)e.ListItem;
-            var devicePaths = string.Empty;
-            var volumePath = (string)discRecorder2.VolumePathNames.GetValue(0);
+            IDiscRecorder2 discRecorder2 = (IDiscRecorder2)e.ListItem;
+            string devicePaths = string.Empty;
+            string volumePath = (string)discRecorder2.VolumePathNames.GetValue(0);
             foreach (string volPath in discRecorder2.VolumePathNames)
             {
-                if (!string.IsNullOrEmpty(devicePaths)) devicePaths += ",";
+                if (!string.IsNullOrEmpty(devicePaths))
+                {
+                    devicePaths += ",";
+                }
+
                 devicePaths += volumePath;
             }
 
@@ -383,9 +415,12 @@ namespace GCBM.tools
 
         private void btnDetectMedia_Click(object sender, EventArgs e)
         {
-            if (cbDevices.SelectedIndex == -1) return;
+            if (cbDevices.SelectedIndex == -1)
+            {
+                return;
+            }
 
-            var discRecorder = (IDiscRecorder2)cbDevices.Items[cbDevices.SelectedIndex];
+            IDiscRecorder2 discRecorder = (IDiscRecorder2)cbDevices.Items[cbDevices.SelectedIndex];
 
             MsftFileSystemImage fileSystemImage = null;
             MsftDiscFormat2Data discFormatData = null;
@@ -408,7 +443,7 @@ namespace GCBM.tools
                     // Get the media type in the recorder
                     //
                     discFormatData.Recorder = discRecorder;
-                    var mediaType = discFormatData.CurrentPhysicalMediaType;
+                    IMAPI_MEDIA_PHYSICAL_TYPE mediaType = discFormatData.CurrentPhysicalMediaType;
                     labelMediaType.Text = GetMediaTypeString(mediaType);
 
                     //
@@ -423,7 +458,7 @@ namespace GCBM.tools
                     if (!discFormatData.MediaHeuristicallyBlank)
                     {
                         fileSystemImage.MultisessionInterfaces = discFormatData.MultisessionInterfaces;
-                        fileSystemImage.ImportFileSystem();
+                        _ = fileSystemImage.ImportFileSystem();
                     }
 
                     long freeMediaBlocks = fileSystemImage.FreeMediaBlocks;
@@ -437,9 +472,15 @@ namespace GCBM.tools
             }
             finally
             {
-                if (discFormatData != null) Marshal.ReleaseComObject(discFormatData);
+                if (discFormatData != null)
+                {
+                    _ = Marshal.ReleaseComObject(discFormatData);
+                }
 
-                if (fileSystemImage != null) Marshal.ReleaseComObject(fileSystemImage);
+                if (fileSystemImage != null)
+                {
+                    _ = Marshal.ReleaseComObject(fileSystemImage);
+                }
             }
 
             UpdateCapacity();
@@ -461,13 +502,16 @@ namespace GCBM.tools
 
             labelTotalSize.Text = _totalDiscSize < 1000000000
                 ? string.Format("{0}MB", _totalDiscSize / 1000000)
-                : string.Format("{0:F2}GB", (float)_totalDiscSize / 1000000000.0);
+                : string.Format("{0:F2}GB", _totalDiscSize / 1000000000.0);
 
             //
             // Calculate the size of the files
             //
             long totalMediaSize = 0;
-            foreach (IMediaItem mediaItem in lbFiles.Items) totalMediaSize += mediaItem.SizeOnDisc;
+            foreach (IMediaItem mediaItem in lbFiles.Items)
+            {
+                totalMediaSize += mediaItem.SizeOnDisc;
+            }
 
             if (totalMediaSize == 0)
             {
@@ -476,7 +520,7 @@ namespace GCBM.tools
             }
             else
             {
-                var percent = (int)(totalMediaSize * 100 / _totalDiscSize);
+                int percent = (int)(totalMediaSize * 100 / _totalDiscSize);
                 if (percent > 100)
                 {
                     pbCapacity.Value = 100;
@@ -501,7 +545,10 @@ namespace GCBM.tools
         /// <param name="e"></param>
         private void btnBurn_Click(object sender, EventArgs e)
         {
-            if (cbDevices.SelectedIndex == -1) return;
+            if (cbDevices.SelectedIndex == -1)
+            {
+                return;
+            }
 
             if (_isBurning)
             {
@@ -516,7 +563,7 @@ namespace GCBM.tools
 
                 EnableBurnUI(false);
 
-                var discRecorder = (IDiscRecorder2)cbDevices.Items[cbDevices.SelectedIndex];
+                IDiscRecorder2 discRecorder = (IDiscRecorder2)cbDevices.Items[cbDevices.SelectedIndex];
                 _burnData.uniqueRecorderId = discRecorder.ActiveDiscRecorder;
 
                 bgBurnWorker.RunWorkerAsync(_burnData);
@@ -539,7 +586,7 @@ namespace GCBM.tools
                 // Create and initialize the IDiscRecorder2 object
                 //
                 discRecorder = new MsftDiscRecorder2();
-                var burnData = (BurnData)e.Argument;
+                BurnData burnData = (BurnData)e.Argument;
                 discRecorder.InitializeDiscRecorder(burnData.uniqueRecorderId);
 
                 //
@@ -555,7 +602,7 @@ namespace GCBM.tools
                 //
                 // Set the verification level
                 //
-                var burnVerification = (IBurnVerification)discFormatData;
+                IBurnVerification burnVerification = (IBurnVerification)discFormatData;
                 burnVerification.BurnVerificationLevel = _verificationLevel;
 
                 //
@@ -563,13 +610,14 @@ namespace GCBM.tools
                 //
                 object[] multisessionInterfaces = null;
                 if (!discFormatData.MediaHeuristicallyBlank)
+                {
                     multisessionInterfaces = discFormatData.MultisessionInterfaces;
+                }
 
                 //
                 // Create the file system
                 //
-                IStream fileSystem;
-                if (!CreateMediaFileSystem(discRecorder, multisessionInterfaces, out fileSystem))
+                if (!CreateMediaFileSystem(discRecorder, multisessionInterfaces, out IStream fileSystem))
                 {
                     e.Result = -1;
                     return;
@@ -596,7 +644,10 @@ namespace GCBM.tools
                 }
                 finally
                 {
-                    if (fileSystem != null) Marshal.FinalReleaseComObject(fileSystem);
+                    if (fileSystem != null)
+                    {
+                        _ = Marshal.FinalReleaseComObject(fileSystem);
+                    }
                 }
 
                 //
@@ -604,21 +655,30 @@ namespace GCBM.tools
                 //
                 discFormatData.Update -= discFormatData_Update;
 
-                if (_ejectMedia) discRecorder.EjectMedia();
+                if (_ejectMedia)
+                {
+                    discRecorder.EjectMedia();
+                }
             }
             catch (COMException exception)
             {
                 //
                 // If anything happens during the format, show the message
                 //
-                MessageBox.Show(exception.Message);
+                _ = MessageBox.Show(exception.Message);
                 e.Result = exception.ErrorCode;
             }
             finally
             {
-                if (discRecorder != null) Marshal.ReleaseComObject(discRecorder);
+                if (discRecorder != null)
+                {
+                    _ = Marshal.ReleaseComObject(discRecorder);
+                }
 
-                if (discFormatData != null) Marshal.ReleaseComObject(discFormatData);
+                if (discFormatData != null)
+                {
+                    _ = Marshal.ReleaseComObject(discFormatData);
+                }
             }
         }
 
@@ -635,12 +695,12 @@ namespace GCBM.tools
             //
             if (bgBurnWorker.CancellationPending)
             {
-                var format2Data = (IDiscFormat2Data)sender;
+                IDiscFormat2Data format2Data = (IDiscFormat2Data)sender;
                 format2Data.CancelWrite();
                 return;
             }
 
-            var eventArgs = (IDiscFormat2DataEventArgs)progress;
+            IDiscFormat2DataEventArgs eventArgs = (IDiscFormat2DataEventArgs)progress;
 
             _burnData.task = BURN_MEDIA_TASK.BURN_MEDIA_TASK_WRITING;
 
@@ -709,11 +769,14 @@ namespace GCBM.tools
         private void bgBurnWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
             //int percent = e.ProgressPercentage;
-            var burnData = (BurnData)e.UserState;
+            BurnData burnData = (BurnData)e.UserState;
 
             if (burnData.task == BURN_MEDIA_TASK.BURN_MEDIA_TASK_FILE_SYSTEM)
+            {
                 labelStatusText.Text = burnData.statusMessage;
+            }
             else if (burnData.task == BURN_MEDIA_TASK.BURN_MEDIA_TASK_WRITING)
+            {
                 switch (burnData.currentAction)
                 {
                     case IMAPI_FORMAT2_DATA_WRITE_ACTION.IMAPI_FORMAT2_DATA_WRITE_ACTION_VALIDATING_MEDIA:
@@ -733,11 +796,11 @@ namespace GCBM.tools
                         break;
 
                     case IMAPI_FORMAT2_DATA_WRITE_ACTION.IMAPI_FORMAT2_DATA_WRITE_ACTION_WRITING_DATA:
-                        var writtenSectors = burnData.lastWrittenLba - burnData.startLba;
+                        long writtenSectors = burnData.lastWrittenLba - burnData.startLba;
 
                         if (writtenSectors > 0 && burnData.sectorCount > 0)
                         {
-                            var percent = (int)(100 * writtenSectors / burnData.sectorCount);
+                            int percent = (int)(100 * writtenSectors / burnData.sectorCount);
                             labelStatusText.Text = string.Format("Progresso: {0}%", percent);
                             pbStatus.Value = percent;
                         }
@@ -761,6 +824,7 @@ namespace GCBM.tools
                         labelStatusText.Text = "Verificando";
                         break;
                 }
+            }
         }
 
         /// <summary>
@@ -795,13 +859,13 @@ namespace GCBM.tools
                 if (multisessionInterfaces != null)
                 {
                     fileSystemImage.MultisessionInterfaces = multisessionInterfaces;
-                    fileSystemImage.ImportFileSystem();
+                    _ = fileSystemImage.ImportFileSystem();
                 }
 
                 //
                 // Get the image root
                 //
-                var rootItem = fileSystemImage.Root;
+                IFsiDirectoryItem rootItem = fileSystemImage.Root;
 
                 //
                 // Add Files and Directories to File System Image
@@ -811,12 +875,15 @@ namespace GCBM.tools
                     //
                     // Check if we've cancelled
                     //
-                    if (bgBurnWorker.CancellationPending) break;
+                    if (bgBurnWorker.CancellationPending)
+                    {
+                        break;
+                    }
 
                     //
                     // Add to File System
                     //
-                    mediaItem.AddToFileSystem(rootItem);
+                    _ = mediaItem.AddToFileSystem(rootItem);
                 }
 
                 fileSystemImage.Update -= fileSystemImage_Update;
@@ -841,7 +908,10 @@ namespace GCBM.tools
             }
             finally
             {
-                if (fileSystemImage != null) Marshal.ReleaseComObject(fileSystemImage);
+                if (fileSystemImage != null)
+                {
+                    _ = Marshal.ReleaseComObject(fileSystemImage);
+                }
             }
 
             return true;
@@ -857,12 +927,15 @@ namespace GCBM.tools
         private void fileSystemImage_Update([In][MarshalAs(UnmanagedType.IDispatch)] object sender,
             [In][MarshalAs(UnmanagedType.BStr)] string currentFile, [In] int copiedSectors, [In] int totalSectors)
         {
-            var percentProgress = 0;
-            if (copiedSectors > 0 && totalSectors > 0) percentProgress = copiedSectors * 100 / totalSectors;
+            int percentProgress = 0;
+            if (copiedSectors > 0 && totalSectors > 0)
+            {
+                percentProgress = copiedSectors * 100 / totalSectors;
+            }
 
             if (!string.IsNullOrEmpty(currentFile))
             {
-                var fileInfo = new FileInfo(currentFile);
+                FileInfo fileInfo = new FileInfo(currentFile);
                 _burnData.statusMessage = "Adicionando \"" + fileInfo.Name + "\" à imagem...";
 
                 //
@@ -886,8 +959,8 @@ namespace GCBM.tools
         {
             if (ofd.ShowDialog(this) == DialogResult.OK)
             {
-                var fileItem = new FileItem(ofd.FileName);
-                lbFiles.Items.Add(fileItem);
+                FileItem fileItem = new FileItem(ofd.FileName);
+                _ = lbFiles.Items.Add(fileItem);
 
                 UpdateCapacity();
                 EnableBurnButton();
@@ -903,8 +976,8 @@ namespace GCBM.tools
         {
             if (fbd.ShowDialog(this) == DialogResult.OK)
             {
-                var directoryItem = new DirectoryItem(fbd.SelectedPath);
-                lbFiles.Items.Add(directoryItem);
+                DirectoryItem directoryItem = new DirectoryItem(fbd.SelectedPath);
+                _ = lbFiles.Items.Add(directoryItem);
 
                 UpdateCapacity();
                 EnableBurnButton();
@@ -918,9 +991,11 @@ namespace GCBM.tools
         /// <param name="e"></param>
         private void btnRemoveFiles_Click(object sender, EventArgs e)
         {
-            var mediaItem = (IMediaItem)lbFiles.SelectedItem;
+            IMediaItem mediaItem = (IMediaItem)lbFiles.SelectedItem;
             if (mediaItem == null)
+            {
                 return;
+            }
 
             if (MessageBox.Show("Você tem certeza que deseja remover \"" + mediaItem + "\"?",
                     "Remover item", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -952,22 +1027,30 @@ namespace GCBM.tools
         /// <param name="e"></param>
         private void lbFiles_DrawItem(object sender, DrawItemEventArgs e)
         {
-            var mediaItem = (IMediaItem)lbFiles.Items[e.Index];
-            if (mediaItem == null) return;
+            IMediaItem mediaItem = (IMediaItem)lbFiles.Items[e.Index];
+            if (mediaItem == null)
+            {
+                return;
+            }
 
             e.DrawBackground();
 
-            if ((e.State & DrawItemState.Focus) != 0) e.DrawFocusRectangle();
+            if ((e.State & DrawItemState.Focus) != 0)
+            {
+                e.DrawFocusRectangle();
+            }
 
             if (mediaItem.FileIconImage != null)
+            {
                 e.Graphics.DrawImage(mediaItem.FileIconImage, new Rectangle(4, e.Bounds.Y + 4, 16, 16));
+            }
 
-            var rectF = new RectangleF(e.Bounds.X + 24, e.Bounds.Y,
+            RectangleF rectF = new RectangleF(e.Bounds.X + 24, e.Bounds.Y,
                 e.Bounds.Width - 24, e.Bounds.Height);
 
-            var font = new Font(FontFamily.GenericSansSerif, 11);
+            Font font = new Font(FontFamily.GenericSansSerif, 11);
 
-            var stringFormat = new StringFormat
+            StringFormat stringFormat = new StringFormat
             {
                 LineAlignment = StringAlignment.Center,
                 Alignment = StringAlignment.Near,
@@ -989,12 +1072,15 @@ namespace GCBM.tools
         /// <param name="e"></param>
         private void btnFormat_Click(object sender, EventArgs e)
         {
-            if (cbDevices.SelectedIndex == -1) return;
+            if (cbDevices.SelectedIndex == -1)
+            {
+                return;
+            }
 
             _isFormatting = true;
             EnableFormatUI(false);
 
-            var discRecorder = (IDiscRecorder2)cbDevices.Items[cbDevices.SelectedIndex];
+            IDiscRecorder2 discRecorder = (IDiscRecorder2)cbDevices.Items[cbDevices.SelectedIndex];
             bgFormatWorker.RunWorkerAsync(discRecorder.ActiveDiscRecorder);
         }
 
@@ -1025,7 +1111,7 @@ namespace GCBM.tools
                 // Create and initialize the IDiscRecorder2
                 //
                 discRecorder = new MsftDiscRecorder2();
-                var activeDiscRecorder = (string)e.Argument;
+                string activeDiscRecorder = (string)e.Argument;
                 discRecorder.InitializeDiscRecorder(activeDiscRecorder);
 
                 //
@@ -1066,20 +1152,29 @@ namespace GCBM.tools
                 //
                 // Eject the media 
                 //
-                if (chkEjectFormat.Checked) discRecorder.EjectMedia();
+                if (chkEjectFormat.Checked)
+                {
+                    discRecorder.EjectMedia();
+                }
             }
             catch (COMException exception)
             {
                 //
                 // If anything happens during the format, show the message
                 //
-                MessageBox.Show(exception.Message);
+                _ = MessageBox.Show(exception.Message);
             }
             finally
             {
-                if (discRecorder != null) Marshal.ReleaseComObject(discRecorder);
+                if (discRecorder != null)
+                {
+                    _ = Marshal.ReleaseComObject(discRecorder);
+                }
 
-                if (discFormatErase != null) Marshal.ReleaseComObject(discFormatErase);
+                if (discFormatErase != null)
+                {
+                    _ = Marshal.ReleaseComObject(discFormatErase);
+                }
             }
         }
 
@@ -1092,7 +1187,7 @@ namespace GCBM.tools
         private void discFormatErase_Update([In][MarshalAs(UnmanagedType.IDispatch)] object sender, int elapsedSeconds,
             int estimatedTotalSeconds)
         {
-            var percent = elapsedSeconds * 100 / estimatedTotalSeconds;
+            int percent = elapsedSeconds * 100 / estimatedTotalSeconds;
             //
             // Report back to the UI
             //

@@ -354,4 +354,7 @@ Wii 또는 컴퓨터에서 GameTDB를 사용하여 다음을 수행할 수 있�
   <data name="$this.Text" xml:space="preserve">
     <value>정보...</value>
   </data>
+  <data name="labelCopyright.Text" xml:space="preserve">
+    <value>저작권</value>
+  </data>
 </root>

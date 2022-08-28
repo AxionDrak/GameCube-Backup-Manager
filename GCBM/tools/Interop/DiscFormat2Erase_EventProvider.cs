@@ -18,8 +18,8 @@ namespace GCBM.tools.Interop
         {
             lock (this)
             {
-                var eventsGuid = typeof(DDiscFormat2EraseEvents).GUID;
-                var connectionPointContainer = pointContainer as IConnectionPointContainer;
+                Guid eventsGuid = typeof(DDiscFormat2EraseEvents).GUID;
+                IConnectionPointContainer connectionPointContainer = pointContainer as IConnectionPointContainer;
 
                 connectionPointContainer.FindConnectionPoint(ref eventsGuid, out m_connectionPoint);
             }
@@ -31,9 +31,9 @@ namespace GCBM.tools.Interop
             {
                 lock (this)
                 {
-                    var helper =
+                    DiscFormat2Erase_SinkHelper helper =
                         new DiscFormat2Erase_SinkHelper(value);
-                    var cookie = -1;
+                    int cookie = -1;
 
                     m_connectionPoint.Advise(helper, out cookie);
                     helper.Cookie = cookie;
@@ -45,9 +45,7 @@ namespace GCBM.tools.Interop
             {
                 lock (this)
                 {
-                    var helper =
-                        m_aEventSinkHelpers[value] as DiscFormat2Erase_SinkHelper;
-                    if (helper != null)
+                    if (m_aEventSinkHelpers[value] is DiscFormat2Erase_SinkHelper helper)
                     {
                         m_connectionPoint.Unadvise(helper.Cookie);
                         m_aEventSinkHelpers.Remove(helper.UpdateDelegate);
@@ -73,10 +71,12 @@ namespace GCBM.tools.Interop
             try
             {
                 foreach (DiscFormat2Erase_SinkHelper helper in m_aEventSinkHelpers.Values)
+                {
                     m_connectionPoint.Unadvise(helper.Cookie);
+                }
 
                 m_aEventSinkHelpers.Clear();
-                Marshal.ReleaseComObject(m_connectionPoint);
+                _ = Marshal.ReleaseComObject(m_connectionPoint);
             }
             catch (SynchronizationLockException)
             {

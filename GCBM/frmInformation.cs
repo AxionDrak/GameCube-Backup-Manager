@@ -25,10 +25,10 @@ namespace GCBM
 
             try
             {
-                var root = XElement.Load(WIITDB_FILE);
-                var tests = from el in root.Elements("game") where (string)el.Element("id") == tbIDGame select el;
+                XElement root = XElement.Load(WIITDB_FILE);
+                System.Collections.Generic.IEnumerable<XElement> tests = from el in root.Elements("game") where (string)el.Element("id") == tbIDGame select el;
 
-                foreach (var el in tests)
+                foreach (XElement el in tests)
                 {
                     Text += (string)el.Element("locale").Element("title");
 
@@ -67,7 +67,7 @@ namespace GCBM
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                _ = MessageBox.Show(ex.ToString());
             }
         }
 

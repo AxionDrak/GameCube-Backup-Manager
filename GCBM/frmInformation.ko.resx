@@ -165,4 +165,7 @@
   <data name="grpDetailsSource.Text" xml:space="preserve">
     <value>정보</value>
   </data>
+  <data name="label12.Text" xml:space="preserve">
+    <value>기:</value>
+  </data>
 </root>

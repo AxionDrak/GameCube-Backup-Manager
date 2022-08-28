@@ -132,4 +132,7 @@
   <data name="$this.Text" xml:space="preserve">
     <value>ELF -&gt; DOL 변환</value>
   </data>
+  <data name="labelLogELFtoDOL.Text" xml:space="preserve">
+    <value>측정기:</value>
+  </data>
 </root>

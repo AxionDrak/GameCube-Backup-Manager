@@ -1524,4 +1524,19 @@
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="label12.Text" xml:space="preserve">
+    <value>(Día/Mes/Año)</value>
+  </data>
+  <data name="label14.Text" xml:space="preserve">
+    <value>CONTENIDO:</value>
+  </data>
+  <data name="label15.Text" xml:space="preserve">
+    <value>JUGADORES:</value>
+  </data>
+  <data name="label17.Text" xml:space="preserve">
+    <value>REQUISITOS:</value>
+  </data>
+  <data name="label18.Text" xml:space="preserve">
+    <value>VERSIÓN:</value>
+  </data>
 </root>

@@ -761,4 +761,7 @@
   <data name="ofdDolphin.Filter" xml:space="preserve">
     <value>Dolphin Emulator|dolphin.exe</value>
   </data>
+  <data name="grbGeneralScrub.Text" xml:space="preserve">
+    <value>Scrub</value>
+  </data>
 </root>

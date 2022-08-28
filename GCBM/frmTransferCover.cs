@@ -71,19 +71,26 @@ namespace GCBM
         private void CopyAllCovers()
         {
             // USB Loader GX - Diretórios de destino das capas
-            var _targetDisc = CONFIG_INI_FILE.IniReadString("COVERS", "GXCoverDirectoryDisc", "");
-            var _target2D = CONFIG_INI_FILE.IniReadString("COVERS", "GXCoverDirectory2D", "");
-            var _target3D = CONFIG_INI_FILE.IniReadString("COVERS", "GXCoverDirectory3D", "");
-            var _targetFull = CONFIG_INI_FILE.IniReadString("COVERS", "GXCoverDirectoryFull", "");
+            string _targetDisc = CONFIG_INI_FILE.IniReadString("COVERS", "GXCoverDirectoryDisc", "");
+            string _target2D = CONFIG_INI_FILE.IniReadString("COVERS", "GXCoverDirectory2D", "");
+            string _target3D = CONFIG_INI_FILE.IniReadString("COVERS", "GXCoverDirectory3D", "");
+            string _targetFull = CONFIG_INI_FILE.IniReadString("COVERS", "GXCoverDirectoryFull", "");
             // WiiFlow - Diretórios de destino das capas
-            var _target3DCovers = CONFIG_INI_FILE.IniReadString("COVERS", "WiiFlowCoverDirectory3D", "");
-            var _targetBoxCovers = CONFIG_INI_FILE.IniReadString("COVERS", "WiiFlowCoverDirectoryFull", "");
+            string _target3DCovers = CONFIG_INI_FILE.IniReadString("COVERS", "WiiFlowCoverDirectory3D", "");
+            string _targetBoxCovers = CONFIG_INI_FILE.IniReadString("COVERS", "WiiFlowCoverDirectoryFull", "");
 
             if (rbUsa.Checked)
+            {
                 REGION_GAME = "US";
+            }
             else if (rbEurope.Checked)
+            {
                 REGION_GAME = "EN";
-            else if (rbJapan.Checked) REGION_GAME = "JA";
+            }
+            else if (rbJapan.Checked)
+            {
+                REGION_GAME = "JA";
+            }
 
             //USB Loader GX
             if (CONFIG_INI_FILE.IniReadBool("COVERS", "GXCoverUSBLoader"))
@@ -91,43 +98,43 @@ namespace GCBM
                 // Disc covers
                 try
                 {
-                    var _filesDisc =
+                    string[] _filesDisc =
                         Directory.GetFiles(CONFIG_INI_FILE.IniReadString("COVERS", "CoverDirectoryCache", "") + Path.DirectorySeparatorChar +
                                            REGION_GAME + Path.DirectorySeparatorChar + "disc");
-                    var _files2D =
+                    string[] _files2D =
                         Directory.GetFiles(CONFIG_INI_FILE.IniReadString("COVERS", "CoverDirectoryCache", "") + Path.DirectorySeparatorChar +
                                            REGION_GAME + Path.DirectorySeparatorChar + "2d");
-                    var _files3D =
+                    string[] _files3D =
                         Directory.GetFiles(CONFIG_INI_FILE.IniReadString("COVERS", "CoverDirectoryCache", "") + Path.DirectorySeparatorChar +
                                            REGION_GAME + Path.DirectorySeparatorChar + "3d");
-                    var _filesFull =
+                    string[] _filesFull =
                         Directory.GetFiles(CONFIG_INI_FILE.IniReadString("COVERS", "CoverDirectoryCache", "") + Path.DirectorySeparatorChar +
                                            REGION_GAME + Path.DirectorySeparatorChar + "full");
 
-                    var _destFiles = "";
+                    string _destFiles = "";
                     // Disc
-                    foreach (var source in _filesDisc)
+                    foreach (string source in _filesDisc)
                     {
                         _destFiles = Path.GetFileName(source);
                         File.Copy(source, _targetDisc + Path.DirectorySeparatorChar + _destFiles, true);
                     }
 
                     // 2D
-                    foreach (var source in _files2D)
+                    foreach (string source in _files2D)
                     {
                         _destFiles = Path.GetFileName(source);
                         File.Copy(source, _target2D + Path.DirectorySeparatorChar + _destFiles, true);
                     }
 
                     // 3D
-                    foreach (var source in _files3D)
+                    foreach (string source in _files3D)
                     {
                         _destFiles = Path.GetFileName(source);
                         File.Copy(source, _target3D + Path.DirectorySeparatorChar + _destFiles, true);
                     }
 
                     // Full
-                    foreach (var source in _filesFull)
+                    foreach (string source in _filesFull)
                     {
                         _destFiles = Path.GetFileName(source);
                         File.Copy(source, _targetFull + Path.DirectorySeparatorChar + _destFiles, true);
@@ -143,11 +150,11 @@ namespace GCBM
                 // 3D covers
                 try
                 {
-                    var _files = Directory.GetFiles(CONFIG_INI_FILE.IniReadString("COVERS", "CoverDirectoryCache", "") +
+                    string[] _files = Directory.GetFiles(CONFIG_INI_FILE.IniReadString("COVERS", "CoverDirectoryCache", "") +
                                                     Path.DirectorySeparatorChar + REGION_GAME + Path.DirectorySeparatorChar + "3d");
-                    var _destFiles = "";
+                    string _destFiles = "";
 
-                    foreach (var source in _files)
+                    foreach (string source in _files)
                     {
                         _destFiles = Path.GetFileName(source);
                         File.Copy(source, _target3DCovers + Path.DirectorySeparatorChar + _destFiles, true);
@@ -161,11 +168,11 @@ namespace GCBM
                 // Full covers
                 try
                 {
-                    var _files = Directory.GetFiles(CONFIG_INI_FILE.IniReadString("COVERS", "CoverDirectoryCache", "") +
+                    string[] _files = Directory.GetFiles(CONFIG_INI_FILE.IniReadString("COVERS", "CoverDirectoryCache", "") +
                                                     Path.DirectorySeparatorChar + REGION_GAME + Path.DirectorySeparatorChar + "full");
-                    var _destFiles = "";
+                    string _destFiles = "";
 
-                    foreach (var source in _files)
+                    foreach (string source in _files)
                     {
                         _destFiles = Path.GetFileName(source);
                         File.Copy(source, _targetBoxCovers + Path.DirectorySeparatorChar + _destFiles, true);
@@ -188,19 +195,26 @@ namespace GCBM
             //}
 
             // USB Loader GX - Diretórios de destino das capas
-            var _targetDisc = CONFIG_INI_FILE.IniReadString("COVERS", "GXCoverDirectoryDisc", "");
-            var _target2D = CONFIG_INI_FILE.IniReadString("COVERS", "GXCoverDirectory2D", "");
-            var _target3D = CONFIG_INI_FILE.IniReadString("COVERS", "GXCoverDirectory3D", "");
-            var _targetFull = CONFIG_INI_FILE.IniReadString("COVERS", "GXCoverDirectoryFull", "");
+            string _targetDisc = CONFIG_INI_FILE.IniReadString("COVERS", "GXCoverDirectoryDisc", "");
+            string _target2D = CONFIG_INI_FILE.IniReadString("COVERS", "GXCoverDirectory2D", "");
+            string _target3D = CONFIG_INI_FILE.IniReadString("COVERS", "GXCoverDirectory3D", "");
+            string _targetFull = CONFIG_INI_FILE.IniReadString("COVERS", "GXCoverDirectoryFull", "");
             // WiiFlow - Diretórios de destino das capas
-            var _target3DCovers = CONFIG_INI_FILE.IniReadString("COVERS", "WiiFlowCoverDirectory3D", "");
-            var _targetBoxCovers = CONFIG_INI_FILE.IniReadString("COVERS", "WiiFlowCoverDirectoryFull", "");
+            string _target3DCovers = CONFIG_INI_FILE.IniReadString("COVERS", "WiiFlowCoverDirectory3D", "");
+            string _targetBoxCovers = CONFIG_INI_FILE.IniReadString("COVERS", "WiiFlowCoverDirectoryFull", "");
 
             if (rbUsa.Checked)
+            {
                 REGION_GAME = "US";
+            }
             else if (rbEurope.Checked)
+            {
                 REGION_GAME = "EN";
-            else if (rbJapan.Checked) REGION_GAME = "JA";
+            }
+            else if (rbJapan.Checked)
+            {
+                REGION_GAME = "JA";
+            }
 
             //USB Loader GX
             if (CONFIG_INI_FILE.IniReadBool("COVERS", "GXCoverUSBLoader"))
@@ -208,11 +222,11 @@ namespace GCBM
                 // Disc covers
                 try
                 {
-                    var _files = Directory.GetFiles(CONFIG_INI_FILE.IniReadString("COVERS", "CoverDirectoryCache", "") +
+                    string[] _files = Directory.GetFiles(CONFIG_INI_FILE.IniReadString("COVERS", "CoverDirectoryCache", "") +
                                                     Path.DirectorySeparatorChar + REGION_GAME + Path.DirectorySeparatorChar + "disc");
-                    var _destFiles = "";
+                    string _destFiles = "";
 
-                    foreach (var source in _files)
+                    foreach (string source in _files)
                     {
                         _destFiles = Path.GetFileName(source);
                         File.Copy(source, _targetDisc + Path.DirectorySeparatorChar + _destFiles, true);
@@ -226,11 +240,11 @@ namespace GCBM
                 // 2D covers
                 try
                 {
-                    var _files = Directory.GetFiles(CONFIG_INI_FILE.IniReadString("COVERS", "CoverDirectoryCache", "") +
+                    string[] _files = Directory.GetFiles(CONFIG_INI_FILE.IniReadString("COVERS", "CoverDirectoryCache", "") +
                                                     Path.DirectorySeparatorChar + REGION_GAME + Path.DirectorySeparatorChar + "2d");
-                    var _destFiles = "";
+                    string _destFiles = "";
 
-                    foreach (var source in _files)
+                    foreach (string source in _files)
                     {
                         _destFiles = Path.GetFileName(source);
                         File.Copy(source, _target2D + Path.DirectorySeparatorChar + _destFiles, true);
@@ -244,11 +258,11 @@ namespace GCBM
                 // 3D covers
                 try
                 {
-                    var _files = Directory.GetFiles(CONFIG_INI_FILE.IniReadString("COVERS", "CoverDirectoryCache", "") +
+                    string[] _files = Directory.GetFiles(CONFIG_INI_FILE.IniReadString("COVERS", "CoverDirectoryCache", "") +
                                                     Path.DirectorySeparatorChar + REGION_GAME + Path.DirectorySeparatorChar + "3d");
-                    var _destFiles = "";
+                    string _destFiles = "";
 
-                    foreach (var source in _files)
+                    foreach (string source in _files)
                     {
                         _destFiles = Path.GetFileName(source);
                         File.Copy(source, _target3D + Path.DirectorySeparatorChar + _destFiles, true);
@@ -262,11 +276,11 @@ namespace GCBM
                 // Full Boxcovers
                 try
                 {
-                    var _files = Directory.GetFiles(CONFIG_INI_FILE.IniReadString("COVERS", "CoverDirectoryCache", "") +
+                    string[] _files = Directory.GetFiles(CONFIG_INI_FILE.IniReadString("COVERS", "CoverDirectoryCache", "") +
                                                     Path.DirectorySeparatorChar + REGION_GAME + Path.DirectorySeparatorChar + "full");
-                    var _destFiles = "";
+                    string _destFiles = "";
 
-                    foreach (var source in _files)
+                    foreach (string source in _files)
                     {
                         _destFiles = Path.GetFileName(source);
                         File.Copy(source, _targetFull + Path.DirectorySeparatorChar + _destFiles, true);
@@ -282,11 +296,11 @@ namespace GCBM
                 // 3D covers
                 try
                 {
-                    var _files = Directory.GetFiles(CONFIG_INI_FILE.IniReadString("COVERS", "CoverDirectoryCache", "") +
+                    string[] _files = Directory.GetFiles(CONFIG_INI_FILE.IniReadString("COVERS", "CoverDirectoryCache", "") +
                                                     Path.DirectorySeparatorChar + REGION_GAME + Path.DirectorySeparatorChar + "3d");
-                    var _destFiles = "";
+                    string _destFiles = "";
 
-                    foreach (var source in _files)
+                    foreach (string source in _files)
                     {
                         _destFiles = Path.GetFileName(source);
                         File.Copy(source, _target3DCovers + Path.DirectorySeparatorChar + _destFiles, true);
@@ -300,11 +314,11 @@ namespace GCBM
                 // Full covers
                 try
                 {
-                    var _files = Directory.GetFiles(CONFIG_INI_FILE.IniReadString("COVERS", "CoverDirectoryCache", "") +
+                    string[] _files = Directory.GetFiles(CONFIG_INI_FILE.IniReadString("COVERS", "CoverDirectoryCache", "") +
                                                     Path.DirectorySeparatorChar + REGION_GAME + Path.DirectorySeparatorChar + "full");
-                    var _destFiles = "";
+                    string _destFiles = "";
 
-                    foreach (var source in _files)
+                    foreach (string source in _files)
                     {
                         _destFiles = Path.GetFileName(source);
                         File.Copy(source, _targetBoxCovers + Path.DirectorySeparatorChar + _destFiles, true);
@@ -323,7 +337,7 @@ namespace GCBM
 
         private void bgWorkerIndeterminate_DoWork(object sender, DoWorkEventArgs e)
         {
-            var worker = sender as BackgroundWorker;
+            BackgroundWorker worker = sender as BackgroundWorker;
 
             //Verifica se houve uma requisição para cancelar a operação.
             if (worker.CancellationPending)
@@ -445,7 +459,10 @@ namespace GCBM
             //btnTaskCancel.Visible = false;
 
             //Tarefa sendo executada.          
-            if (bgWorkerIndeterminate.IsBusy != true) bgWorkerIndeterminate.RunWorkerAsync();
+            if (bgWorkerIndeterminate.IsBusy != true)
+            {
+                bgWorkerIndeterminate.RunWorkerAsync();
+            }
 
             //define a progressBar para Marquee
             pbCoverCopy.Style = ProgressBarStyle.Marquee;

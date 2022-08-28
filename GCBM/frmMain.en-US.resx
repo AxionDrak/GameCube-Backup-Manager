@@ -1514,4 +1514,25 @@
   <data name="grpDetailsDestiny.Text" xml:space="preserve">
     <value>Details</value>
   </data>
+  <data name="lblGameCountSource.Text" xml:space="preserve">
+    <value>Games Found:</value>
+  </data>
+  <data name="tsmiRenameFolders.Text" xml:space="preserve">
+    <value>Rename Folders</value>
+  </data>
+  <data name="tsmiMainPlugins.Text" xml:space="preserve">
+    <value>Plugins</value>
+  </data>
+  <data name="lblAbort.Text" xml:space="preserve">
+    <value>Stop</value>
+  </data>
+  <data name="lblAbortDestination.Text" xml:space="preserve">
+    <value>Stop</value>
+  </data>
+  <data name="labelGameID.Text" xml:space="preserve">
+    <value>Game ID:</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>Games Found:</value>
+  </data>
 </root>

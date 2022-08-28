@@ -19,8 +19,8 @@ namespace GCBM.tools.Interop
         {
             lock (this)
             {
-                var eventsGuid = typeof(DFileSystemImageImportEvents).GUID;
-                var connectionPointContainer = pointContainer as IConnectionPointContainer;
+                Guid eventsGuid = typeof(DFileSystemImageImportEvents).GUID;
+                IConnectionPointContainer connectionPointContainer = pointContainer as IConnectionPointContainer;
 
                 connectionPointContainer.FindConnectionPoint(ref eventsGuid, out m_connectionPoint);
             }
@@ -32,10 +32,9 @@ namespace GCBM.tools.Interop
             {
                 lock (this)
                 {
-                    var helper = new DFileSystemImageImport_SinkHelper(value);
-                    int cookie;
+                    DFileSystemImageImport_SinkHelper helper = new DFileSystemImageImport_SinkHelper(value);
 
-                    m_connectionPoint.Advise(helper, out cookie);
+                    m_connectionPoint.Advise(helper, out int cookie);
                     helper.Cookie = cookie;
                     m_aEventSinkHelpers.Add(helper.UpdateDelegate, helper);
                 }
@@ -45,9 +44,7 @@ namespace GCBM.tools.Interop
             {
                 lock (this)
                 {
-                    var helper =
-                        m_aEventSinkHelpers[value] as DFileSystemImageImport_SinkHelper;
-                    if (helper != null)
+                    if (m_aEventSinkHelpers[value] is DFileSystemImageImport_SinkHelper helper)
                     {
                         m_connectionPoint.Unadvise(helper.Cookie);
                         m_aEventSinkHelpers.Remove(helper.UpdateDelegate);
@@ -73,10 +70,12 @@ namespace GCBM.tools.Interop
             try
             {
                 foreach (DFileSystemImageImport_SinkHelper helper in m_aEventSinkHelpers.Values)
+                {
                     m_connectionPoint.Unadvise(helper.Cookie);
+                }
 
                 m_aEventSinkHelpers.Clear();
-                Marshal.ReleaseComObject(m_connectionPoint);
+                _ = Marshal.ReleaseComObject(m_connectionPoint);
             }
             catch (SynchronizationLockException)
             {

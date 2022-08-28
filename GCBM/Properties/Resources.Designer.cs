@@ -1324,7 +1324,7 @@ namespace GCBM.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to  hash do arquivo: .
+        ///   Looks up a localized string similar to hash do arquivo: .
         /// </summary>
         internal static string ListHash_String2 {
             get {

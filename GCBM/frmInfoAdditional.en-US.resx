@@ -171,4 +171,40 @@
   <data name="grpInfo.Text" xml:space="preserve">
     <value>Additional Information</value>
   </data>
+  <data name="labelRegion.Text" xml:space="preserve">
+    <value>Region:</value>
+  </data>
+  <data name="labelRating.Text" xml:space="preserve">
+    <value>Rating:</value>
+  </data>
+  <data name="labelPublisher.Text" xml:space="preserve">
+    <value>Publisher:</value>
+  </data>
+  <data name="labelDeveloper.Text" xml:space="preserve">
+    <value>Developer:</value>
+  </data>
+  <data name="labelDate.Text" xml:space="preserve">
+    <value>Date:</value>
+  </data>
+  <data name="labelGenre.Text" xml:space="preserve">
+    <value>Genre:</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>SYNOPSIS:</value>
+  </data>
+  <data name="label12.Text" xml:space="preserve">
+    <value>(Day/Month/Year)</value>
+  </data>
+  <data name="label14.Text" xml:space="preserve">
+    <value>CONTENTS:</value>
+  </data>
+  <data name="label15.Text" xml:space="preserve">
+    <value>PLAYERS:</value>
+  </data>
+  <data name="label17.Text" xml:space="preserve">
+    <value>REQUIREMENTS:</value>
+  </data>
+  <data name="label18.Text" xml:space="preserve">
+    <value>VERSION:</value>
+  </data>
 </root>

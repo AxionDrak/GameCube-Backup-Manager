@@ -139,4 +139,7 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Convert ELF -&gt; DOL</value>
   </data>
+  <data name="labelLogELFtoDOL.Text" xml:space="preserve">
+    <value>Log:</value>
+  </data>
 </root>

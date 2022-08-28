@@ -44,10 +44,13 @@ namespace GCBM
             resS = "";
             resH = chars.Length;
 
-            for (var resI = 0; resI < resH; resI++)
+            for (int resI = 0; resI < resH; resI++)
             {
                 if (chars[resI] == '\n')
+                {
                     resS += '\r';
+                }
+
                 resS += chars[resI];
             }
 

@@ -92,7 +92,9 @@ namespace GCBM.tools
                 //fbd.Description = "Selecione a pasta que contém o app:";
                 //fbd.ShowNewFolderButton = false;
                 if (fbdCreatePackage.ShowDialog() == DialogResult.OK)
+                {
                     tbDirectory.Text = fbdCreatePackage.SelectedPath;
+                }
 
                 //DisplayFilesFolder(fbd.SelectedPath, dgvAppList);
                 //RenameFiles(fbd.SelectedPath);

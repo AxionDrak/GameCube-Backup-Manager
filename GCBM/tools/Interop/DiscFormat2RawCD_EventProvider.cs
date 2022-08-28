@@ -18,8 +18,8 @@ namespace GCBM.tools.Interop
         {
             lock (this)
             {
-                var eventsGuid = typeof(DDiscFormat2RawCDEvents).GUID;
-                var connectionPointContainer = pointContainer as IConnectionPointContainer;
+                Guid eventsGuid = typeof(DDiscFormat2RawCDEvents).GUID;
+                IConnectionPointContainer connectionPointContainer = pointContainer as IConnectionPointContainer;
 
                 connectionPointContainer.FindConnectionPoint(ref eventsGuid, out m_connectionPoint);
             }
@@ -31,11 +31,10 @@ namespace GCBM.tools.Interop
             {
                 lock (this)
                 {
-                    var helper =
+                    DiscFormat2RawCD_SinkHelper helper =
                         new DiscFormat2RawCD_SinkHelper(value);
-                    int cookie;
 
-                    m_connectionPoint.Advise(helper, out cookie);
+                    m_connectionPoint.Advise(helper, out int cookie);
                     helper.Cookie = cookie;
                     m_aEventSinkHelpers.Add(helper.UpdateDelegate, helper);
                 }
@@ -45,9 +44,7 @@ namespace GCBM.tools.Interop
             {
                 lock (this)
                 {
-                    var helper =
-                        m_aEventSinkHelpers[value] as DiscFormat2RawCD_SinkHelper;
-                    if (helper != null)
+                    if (m_aEventSinkHelpers[value] is DiscFormat2RawCD_SinkHelper helper)
                     {
                         m_connectionPoint.Unadvise(helper.Cookie);
                         m_aEventSinkHelpers.Remove(helper.UpdateDelegate);
@@ -73,10 +70,12 @@ namespace GCBM.tools.Interop
             try
             {
                 foreach (DiscFormat2RawCD_SinkHelper helper in m_aEventSinkHelpers.Values)
+                {
                     m_connectionPoint.Unadvise(helper.Cookie);
+                }
 
                 m_aEventSinkHelpers.Clear();
-                Marshal.ReleaseComObject(m_connectionPoint);
+                _ = Marshal.ReleaseComObject(m_connectionPoint);
             }
             catch (SynchronizationLockException)
             {

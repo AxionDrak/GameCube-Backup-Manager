@@ -10,12 +10,12 @@ namespace GCBM
         {
             const int bufferSize = 1024 * 1024;
             byte[] buffer = new byte[bufferSize], buffer2 = new byte[bufferSize];
-            var swap = false;
+            bool swap = false;
             //int progress = 0, reportedProgress = 0, read = 0;
-            var reportedProgress = 0;
+            int reportedProgress = 0;
             // Validar argumentos de métodos públicos
             // #pragma warning disable CA1062
-            var len = file.Length;
+            long len = file.Length;
             // Validar argumentos de métodos públicos
             // #pragma warning restore CA1062
             float flen = len;
@@ -23,8 +23,8 @@ namespace GCBM
 
             //string.IsNullOrEmpty(destination);
 
-            using (var source = file.OpenRead())
-            using (var dest = destination?.OpenWrite())
+            using (FileStream source = file.OpenRead())
+            using (FileStream dest = destination?.OpenWrite())
             {
                 dest.SetLength(source.Length);
                 int read;
@@ -32,7 +32,10 @@ namespace GCBM
                 {
                     int progress;
                     if ((progress = (int)(size / flen * 100)) != reportedProgress)
+                    {
                         progressCallback(reportedProgress = progress);
+                    }
+
                     read = source.Read(swap ? buffer : buffer2, 0, bufferSize);
                     writer?.Wait();
                     writer = dest.WriteAsync(swap ? buffer : buffer2, 0, read);

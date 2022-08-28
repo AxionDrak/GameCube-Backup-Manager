@@ -98,7 +98,7 @@ namespace GCBM
 
         private void CurrentYear()
         {
-            var _currentYear = DateTime.Now;
+            DateTime _currentYear = DateTime.Now;
             tsslCurrentYear.Text = "Copyright © 2019 - " + _currentYear.Year + " Laete Meireles";
         }
 
@@ -108,7 +108,11 @@ namespace GCBM
 
         private void UpdateProgressInternal(int progress)
         {
-            if (Handle == null) return;
+            if (Handle == null)
+            {
+                return;
+            }
+
             pbSplashScreen.Value = progress;
         }
 
@@ -120,12 +124,12 @@ namespace GCBM
         {
             try
             {
-                Invoke(del, progress);
+                _ = Invoke(del, progress);
             }
             catch (Exception ex)
             {
                 //not implemented!
-                MessageBox.Show(ex.Message);
+                _ = MessageBox.Show(ex.Message);
             }
         }
 

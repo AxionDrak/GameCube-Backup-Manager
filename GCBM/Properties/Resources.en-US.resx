@@ -181,7 +181,7 @@
     <value>If the 'wiitdb.xml' file is installed correctly, make the necessary adjustments to the program settings.</value>
   </data>
   <data name="Error" xml:space="preserve">
-    <value> [ERROR]</value>
+    <value> [ERROR] </value>
   </data>
   <data name="CreateGamesFolderNow" xml:space="preserve">
     <value>This is a valid device but there is no GAMES folder, create folder now?</value>
@@ -232,10 +232,10 @@
     <value>Unknown region!</value>
   </data>
   <data name="FoundIsoGcmFiles" xml:space="preserve">
-    <value> [INFO] ISO/GCM file(s) found:</value>
+    <value> [INFO] ISO/GCM file(s) found: </value>
   </data>
   <data name="Info" xml:space="preserve">
-    <value> [INFO]</value>
+    <value> [INFO] </value>
   </data>
   <data name="LoadDatabase_IDGameCode" xml:space="preserve">
     <value>ID (Game Code)</value>
@@ -298,7 +298,7 @@
     <value>Cannot open two instances of this program!</value>
   </data>
   <data name="DialogResultDeleteGame_ReallyDeleteFile_String1" xml:space="preserve">
-    <value>Do you really want to delete the file(s)?</value>
+    <value>Do you really want to delete the file(s)? </value>
   </data>
   <data name="DialogResultDeleteGame_ReallyDeleteFile_String2" xml:space="preserve">
     <value>This procedure is irreversible and it will not be possible to recover the file(s)!</value>
@@ -343,7 +343,7 @@
     <value> as BACKUP storage for ISO/GCM files.</value>
   </data>
   <data name="ListHash_String2" xml:space="preserve">
-    <value> file hash:</value>
+    <value>file hash: </value>
   </data>
   <data name="ReadImage_String1" xml:space="preserve">
     <value>The image is too small!</value>
@@ -373,7 +373,7 @@
     <value>Transferring...</value>
   </data>
   <data name="InstallGameScrub_String2" xml:space="preserve">
-    <value>Status: Scrubbing...</value>
+    <value>Status: Scrubbing... </value>
   </data>
   <data name="InstallGameScrub_String3" xml:space="preserve">
     <value>Status: Not responding!</value>
@@ -391,7 +391,7 @@
     <value>Transferring file...</value>
   </data>
   <data name="CopyTask_String2" xml:space="preserve">
-    <value>Installing game...</value>
+    <value>Installing game... </value>
   </data>
   <data name="CopyTask_String3" xml:space="preserve">
     <value>Transfer complete!</value>
@@ -415,10 +415,10 @@
     <value>Invalid or damaged 'meta.xml' file!</value>
   </data>
   <data name="ListHash_String1" xml:space="preserve">
-    <value>The</value>
+    <value>The </value>
   </data>
   <data name="DownloadingWiiTDB_String1" xml:space="preserve">
-    <value>&gt;&gt; Downloading WiiTDB.zip ...</value>
+    <value>&gt;&gt; Downloading WiiTDB.zip ... </value>
   </data>
   <data name="DownloadingWiiTDB_String2" xml:space="preserve">
     <value>&gt;&gt; Extracting WiiTDB.xml ...</value>

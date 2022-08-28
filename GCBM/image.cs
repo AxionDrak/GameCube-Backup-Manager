@@ -19,21 +19,21 @@ namespace GCBM
             int namesTableEntryCount;
             int namesTableStart;
             int itemNamePtr;
-            var itemIsDir = false;
+            bool itemIsDir = false;
             int itemPos;
             int itemLen;
             string itemName;
-            var itemGamePath = "";
+            string itemGamePath = "";
             string itemPath;
 
             int itemNum;
             int shift;
-            var dirEntry = new int[512];
-            var dirEntryCount = 0;
+            int[] dirEntry = new int[512];
+            int dirEntryCount = 0;
             dirEntry[1] = 99999999;
 
-            var error = false;
-            var errorText = "";
+            bool error = false;
+            string errorText = "";
             int i, j;
 
             toc = new TOCClass(RES_PATH);
@@ -93,13 +93,16 @@ namespace GCBM
                 }
 
                 namesTableEntryCount = mbr.ReadInt32BE() - 1;
-                namesTableStart = namesTableEntryCount * 12 + 12;
+                namesTableStart = (namesTableEntryCount * 12) + 12;
 
-                for (var cnt = 0; cnt < namesTableEntryCount; cnt++)
+                for (int cnt = 0; cnt < namesTableEntryCount; cnt++)
                 {
                     itemNamePtr = mbr.ReadInt32BE();
                     if (itemNamePtr >> 0x18 == 1)
+                    {
                         itemIsDir = true;
+                    }
+
                     itemNamePtr &= 0x00ffffff;
                     itemPos = mbr.ReadInt32BE();
                     itemLen = mbr.ReadInt32BE();
@@ -110,7 +113,9 @@ namespace GCBM
                     msr.Position = prevPos;
 
                     while (dirEntry[dirEntryCount + 1] <= itemNum)
+                    {
                         dirEntryCount -= 2;
+                    }
 
                     if (itemIsDir)
                     {
@@ -129,6 +134,7 @@ namespace GCBM
                     itemPath = itemName;
                     j = dirEntry[dirEntryCount];
                     for (i = 0; i < 256; i++)
+                    {
                         if (j == 0)
                         {
                             itemGamePath = itemPath;
@@ -140,21 +146,28 @@ namespace GCBM
                             itemPath = itemPath.Insert(0, toc.fils[j].name + sio.Path.DirectorySeparatorChar);
                             j = toc.fils[j].dirIdx;
                         }
+                    }
 
                     if (itemIsDir)
+                    {
                         itemPath += sio.Path.DirectorySeparatorChar;
+                    }
 
                     if (RETRIEVE_FILES_INFO)
                     {
                         if (!itemIsDir)
+                        {
                             if (fsr.Length < itemPos + itemLen)
                             {
                                 errorText = string.Format(Resources.ReadImage_String3, itemPath);
                                 error = true;
                             }
+                        }
 
                         if (error)
+                        {
                             break;
+                        }
                     }
 
                     tif = new TOCItemFil(itemNum, dirEntry[dirEntryCount], itemPos, itemLen, itemIsDir, itemName,
@@ -180,7 +193,7 @@ namespace GCBM
 
             if (error)
             {
-                MessageBox.Show(errorText, Resources.ReadImage_String4, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                _ = MessageBox.Show(errorText, Resources.ReadImage_String4, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
@@ -205,21 +218,21 @@ namespace GCBM
             int namesTableEntryCount;
             int namesTableStart;
             int itemNamePtr;
-            var itemIsDir = false;
+            bool itemIsDir = false;
             int itemPos;
             int itemLen;
             string itemName;
-            var itemGamePath = "";
+            string itemGamePath = "";
             string itemPath;
 
             int itemNum;
             int shift;
-            var dirEntry = new int[512];
-            var dirEntryCount = 0;
+            int[] dirEntry = new int[512];
+            int dirEntryCount = 0;
             dirEntry[1] = 99999999;
 
-            var error = false;
-            var errorText = "";
+            bool error = false;
+            string errorText = "";
             int i, j;
 
             toc = new TOCClass(RES_PATH);
@@ -279,13 +292,16 @@ namespace GCBM
                 }
 
                 namesTableEntryCount = mbr.ReadInt32BE() - 1;
-                namesTableStart = namesTableEntryCount * 12 + 12;
+                namesTableStart = (namesTableEntryCount * 12) + 12;
 
-                for (var cnt = 0; cnt < namesTableEntryCount; cnt++)
+                for (int cnt = 0; cnt < namesTableEntryCount; cnt++)
                 {
                     itemNamePtr = mbr.ReadInt32BE();
                     if (itemNamePtr >> 0x18 == 1)
+                    {
                         itemIsDir = true;
+                    }
+
                     itemNamePtr &= 0x00ffffff;
                     itemPos = mbr.ReadInt32BE();
                     itemLen = mbr.ReadInt32BE();
@@ -296,7 +312,9 @@ namespace GCBM
                     msr.Position = prevPos;
 
                     while (dirEntry[dirEntryCount + 1] <= itemNum)
+                    {
                         dirEntryCount -= 2;
+                    }
 
                     if (itemIsDir)
                     {
@@ -315,6 +333,7 @@ namespace GCBM
                     itemPath = itemName;
                     j = dirEntry[dirEntryCount];
                     for (i = 0; i < 256; i++)
+                    {
                         if (j == 0)
                         {
                             itemGamePath = itemPath;
@@ -326,21 +345,28 @@ namespace GCBM
                             itemPath = itemPath.Insert(0, toc.fils[j].name + sio.Path.DirectorySeparatorChar);
                             j = toc.fils[j].dirIdx;
                         }
+                    }
 
                     if (itemIsDir)
+                    {
                         itemPath += sio.Path.DirectorySeparatorChar;
+                    }
 
                     if (RETRIEVE_FILES_INFO)
                     {
                         if (!itemIsDir)
+                        {
                             if (fsr.Length < itemPos + itemLen)
                             {
                                 errorText = string.Format(Resources.ReadImage_String3, itemPath);
                                 error = true;
                             }
+                        }
 
                         if (error)
+                        {
                             break;
+                        }
                     }
 
                     tif = new TOCItemFil(itemNum, dirEntry[dirEntryCount], itemPos, itemLen, itemIsDir, itemName,
@@ -366,7 +392,7 @@ namespace GCBM
 
             if (error)
             {
-                MessageBox.Show(errorText, Resources.ReadImage_String4, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                _ = MessageBox.Show(errorText, Resources.ReadImage_String4, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 

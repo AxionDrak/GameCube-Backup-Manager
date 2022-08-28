@@ -390,4 +390,7 @@
   <data name="ofdBanner.Title" xml:space="preserve">
     <value>Select the image file:</value>
   </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>Banner:</value>
+  </data>
 </root>

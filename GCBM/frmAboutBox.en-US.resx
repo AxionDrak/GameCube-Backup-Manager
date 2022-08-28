@@ -372,4 +372,10 @@ Don't forget to send me an email so I can thank you.</value>
   <data name="$this.Text" xml:space="preserve">
     <value>About...</value>
   </data>
+  <data name="lblAboutProgramName.Text" xml:space="preserve">
+    <value>GameCube Backup Manager</value>
+  </data>
+  <data name="labelCopyright.Text" xml:space="preserve">
+    <value>Copyright</value>
+  </data>
 </root>

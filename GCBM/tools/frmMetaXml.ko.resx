@@ -204,4 +204,7 @@
   <data name="lblImageNotFound.Text" xml:space="preserve">
     <value>이미지를 찾을 수 없습니다! 위에 표시된 이미지를 사용하여 저장하거나 새 이미지를 선택하거나 이미지를 완전히 제거할 수 있습니다. 이미지 크기: 128(너비) x 48(높이).</value>
   </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>플래그:</value>
+  </data>
 </root>

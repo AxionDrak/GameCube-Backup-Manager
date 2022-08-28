@@ -19,26 +19,29 @@ namespace GCBM.tools.MediaItem
 
         public FileItem(string path)
         {
-            if (!File.Exists(path)) throw new FileNotFoundException("The file added to FileItem was not found!", path);
+            if (!File.Exists(path))
+            {
+                throw new FileNotFoundException("The file added to FileItem was not found!", path);
+            }
 
             Path = path;
 
-            var fileInfo = new FileInfo(Path);
+            FileInfo fileInfo = new FileInfo(Path);
             displayName = fileInfo.Name;
             m_fileLength = fileInfo.Length;
 
             //
             // Get the File icon
             //
-            var shinfo = new SHFILEINFO();
-            var hImg = Win32.SHGetFileInfo(Path, 0, ref shinfo,
+            SHFILEINFO shinfo = new SHFILEINFO();
+            _ = Win32.SHGetFileInfo(Path, 0, ref shinfo,
                 (uint)Marshal.SizeOf(shinfo), Win32.SHGFI_ICON | Win32.SHGFI_SMALLICON);
 
             if (shinfo.hIcon != null)
             {
                 //The icon is returned in the hIcon member of the shinfo struct
-                var imageConverter = new IconConverter();
-                var icon = Icon.FromHandle(shinfo.hIcon);
+                IconConverter imageConverter = new IconConverter();
+                Icon icon = Icon.FromHandle(shinfo.hIcon);
                 try
                 {
                     FileIconImage = (Image)
@@ -48,21 +51,13 @@ namespace GCBM.tools.MediaItem
                 {
                 }
 
-                Win32.DestroyIcon(shinfo.hIcon);
+                _ = Win32.DestroyIcon(shinfo.hIcon);
             }
         }
 
         /// <summary>
         /// </summary>
-        public long SizeOnDisc
-        {
-            get
-            {
-                if (m_fileLength > 0) return (m_fileLength / SECTOR_SIZE + 1) * SECTOR_SIZE;
-
-                return 0;
-            }
-        }
+        public long SizeOnDisc => m_fileLength > 0 ? ((m_fileLength / SECTOR_SIZE) + 1) * SECTOR_SIZE : 0;
 
         /// <summary>
         /// </summary>
@@ -88,12 +83,15 @@ namespace GCBM.tools.MediaItem
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error adding file",
+                _ = MessageBox.Show(ex.Message, "Error adding file",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
-                if (stream != null) Marshal.FinalReleaseComObject(stream);
+                if (stream != null)
+                {
+                    _ = Marshal.FinalReleaseComObject(stream);
+                }
             }
 
             return false;

@@ -14,12 +14,12 @@ namespace GCBM
         [STAThread]
         private static void Main()
         {
-            var configIniFile = new IniFile("config.ini");
+            IniFile configIniFile = new IniFile("config.ini");
 
             //Pega o nome do processo deste programa
-            var nomeProcesso = Process.GetCurrentProcess().ProcessName;
+            string nomeProcesso = Process.GetCurrentProcess().ProcessName;
             //Busca os processos com este nome que estão em execução
-            var processos = Process.GetProcessesByName(nomeProcesso);
+            Process[] processos = Process.GetProcessesByName(nomeProcesso);
 
             if (File.Exists("config.ini"))
             {
@@ -32,7 +32,7 @@ namespace GCBM
                     //Se já houver um aberto
                     if (processos.Length > 1)
                     {
-                        MessageBox.Show(Resources.CannotOpenTwoInstances, "GameCube Backup Manager",
+                        _ = MessageBox.Show(Resources.CannotOpenTwoInstances, "GameCube Backup Manager",
                             MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         Application.Exit();
                     }
@@ -54,7 +54,7 @@ namespace GCBM
             {
                 if (processos.Length > 1)
                 {
-                    MessageBox.Show(Resources.CannotOpenTwoInstances, "GameCube Backup Manager", MessageBoxButtons.OK,
+                    _ = MessageBox.Show(Resources.CannotOpenTwoInstances, "GameCube Backup Manager", MessageBoxButtons.OK,
                         MessageBoxIcon.Exclamation);
                     Application.Exit();
                 }

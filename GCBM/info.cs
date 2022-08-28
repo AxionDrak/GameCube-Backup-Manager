@@ -43,7 +43,7 @@ namespace GCBM
 
             bb = br.ReadBytes(4); // 4
             //tbIDGameCode.Text = SIOExtensions.ToStringC(ste.Default.GetChars(bb));
-            var IDGameCode = SIOExtensions.ToStringC(ste.Default.GetChars(bb)); // ID Game Code - String
+            string IDGameCode = SIOExtensions.ToStringC(ste.Default.GetChars(bb)); // ID Game Code - String
 
             _IDRegionCode = Convert.ToString(ste.Default.GetChars(new[] { bb[3] })[0]).ToLower();
 
@@ -69,7 +69,7 @@ namespace GCBM
 
             //Catch GAMEREGION
             bb = br.ReadBytes(2); // 2
-            var IDMakerCode = SIOExtensions.ToStringC(ste.Default.GetChars(bb)); // ID Maker Code - String
+            string IDMakerCode = SIOExtensions.ToStringC(ste.Default.GetChars(bb)); // ID Maker Code - String
             tbIDMakerCode.Text = IDMakerCode;
 
             b = br.ReadByte();
@@ -95,7 +95,10 @@ namespace GCBM
                 _oldNameInternal = br.ReadStringNT();
             }
 
-            if (CONFIG_INI_FILE.IniReadBool("TITLES", "GameXmlName")) _oldNameInternal = br.ReadStringNT();
+            if (CONFIG_INI_FILE.IniReadBool("TITLES", "GameXmlName"))
+            {
+                _oldNameInternal = br.ReadStringNT();
+            }
 
             br.Close();
             fs.Close();
@@ -104,7 +107,10 @@ namespace GCBM
 
             fs = new sio.FileStream(loadPath, sio.FileMode.Open, sio.FileAccess.Read, sio.FileShare.Read);
             br = new sio.BinaryReader(fs, ste.Default);
-            if (image) fs.Position = toc.fils[3].pos;
+            if (image)
+            {
+                fs.Position = toc.fils[3].pos;
+            }
 
             //tbIDDate.Text = br.ReadStringNT();
             tbIDGame.Text = IDGameCode + IDMakerCode; // GameID (IDGameCode + IDMakerCode)
@@ -126,7 +132,7 @@ namespace GCBM
 
             bb = br.ReadBytes(4); // 4
             //tbIDGameCode.Text = SIOExtensions.ToStringC(ste.Default.GetChars(bb));
-            var IDGameCodeDisc = SIOExtensions.ToStringC(ste.Default.GetChars(bb)); // ID Game Code - String
+            string IDGameCodeDisc = SIOExtensions.ToStringC(ste.Default.GetChars(bb)); // ID Game Code - String
 
             _IDRegionCode = Convert.ToString(ste.Default.GetChars(new[] { bb[3] })[0]).ToLower();
 
@@ -151,7 +157,7 @@ namespace GCBM
             }
 
             bb = br.ReadBytes(2); // 2
-            var IDMakerCodeDisc = SIOExtensions.ToStringC(ste.Default.GetChars(bb)); // ID Maker Code - String
+            string IDMakerCodeDisc = SIOExtensions.ToStringC(ste.Default.GetChars(bb)); // ID Maker Code - String
             //tbIDMakerCode.Text = IDMakerCode;
             b = br.ReadByte();
             //tbIDDiscID.Text = string.Format("0x{0:x2}", b);
@@ -163,7 +169,10 @@ namespace GCBM
                 _oldNameInternal = br.ReadStringNT();
             }
 
-            if (CONFIG_INI_FILE.IniReadBool("TITLES", "GameXmlName")) _oldNameInternal = br.ReadStringNT();
+            if (CONFIG_INI_FILE.IniReadBool("TITLES", "GameXmlName"))
+            {
+                _oldNameInternal = br.ReadStringNT();
+            }
 
             br.Close();
             fs.Close();
@@ -172,7 +181,10 @@ namespace GCBM
 
             fs = new sio.FileStream(loadPath, sio.FileMode.Open, sio.FileAccess.Read, sio.FileShare.Read);
             br = new sio.BinaryReader(fs, ste.Default);
-            if (image) fs.Position = toc.fils[3].pos;
+            if (image)
+            {
+                fs.Position = toc.fils[3].pos;
+            }
 
             //tbIDDate.Text = br.ReadStringNT();
             tbIDGameDisc.Text = IDGameCodeDisc + IDMakerCodeDisc; // GameID (IDGameCode + IDMakerCode)
@@ -186,13 +198,13 @@ namespace GCBM
 
         private Game tempLoadInfo(string path)
         {
-            var game = new Game();
+            Game game = new Game();
             fs = new sio.FileStream(path, sio.FileMode.Open, sio.FileAccess.Read, sio.FileShare.Read);
             br = new sio.BinaryReader(fs, ste.Default);
 
             bb = br.ReadBytes(4); // 4
             //tbIDGameCode.Text = SIOExtensions.ToStringC(ste.Default.GetChars(bb));
-            var IDGameCode = SIOExtensions.ToStringC(ste.Default.GetChars(bb)); // ID Game Code - String
+            string IDGameCode = SIOExtensions.ToStringC(ste.Default.GetChars(bb)); // ID Game Code - String
 
             _IDRegionCode = Convert.ToString(ste.Default.GetChars(new[] { bb[3] })[0]).ToLower();
 
@@ -219,7 +231,7 @@ namespace GCBM
             //Catch GAMEREGION
             game.Region = tbIDRegion.Text;
             bb = br.ReadBytes(2); // 2
-            var IDMakerCode = SIOExtensions.ToStringC(ste.Default.GetChars(bb)); // ID Maker Code - String
+            string IDMakerCode = SIOExtensions.ToStringC(ste.Default.GetChars(bb)); // ID Maker Code - String
             tbIDMakerCode.Text = IDMakerCode;
 
             b = br.ReadByte();
@@ -246,7 +258,10 @@ namespace GCBM
                 _oldNameInternal = br.ReadStringNT();
             }
 
-            if (CONFIG_INI_FILE.IniReadBool("TITLES", "GameXmlName")) _oldNameInternal = br.ReadStringNT();
+            if (CONFIG_INI_FILE.IniReadBool("TITLES", "GameXmlName"))
+            {
+                _oldNameInternal = br.ReadStringNT();
+            }
 
             br.Close();
             fs.Close();
@@ -255,7 +270,10 @@ namespace GCBM
 
             fs = new sio.FileStream(loadPath, sio.FileMode.Open, sio.FileAccess.Read, sio.FileShare.Read);
             br = new sio.BinaryReader(fs, ste.Default);
-            if (true) fs.Position = toc.fils[3].pos;
+            if (true)
+            {
+                fs.Position = toc.fils[3].pos;
+            }
 
             //tbIDDate.Text = br.ReadStringNT();
             tbIDGame.Text = IDGameCode + IDMakerCode; // GameID (IDGameCode + IDMakerCode)
@@ -264,7 +282,7 @@ namespace GCBM
             //_tbIDGameOld = IDGameCode + IDMakerCode; // GameID (IDGameCode + IDMakerCode)
             _IDMakerCode = IDGameCode + IDMakerCode;
 
-            var f = new sio.FileInfo(path);
+            sio.FileInfo f = new sio.FileInfo(path);
             game.Extension = f.Extension;
             game.Size = Convert.ToInt32(f.Length);
             game.Path = path;

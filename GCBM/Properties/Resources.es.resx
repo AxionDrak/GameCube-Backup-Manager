@@ -172,7 +172,7 @@
     <value>¡Conexión a Internet establecida!</value>
   </data>
   <data name="RegisterHeaderLog_GcbmLogCreated" xml:space="preserve">
-    <value>  Se crea gcbm.log.</value>
+    <value> Se crea gcbm.log.</value>
   </data>
   <data name="RegisterHeaderLog_OSVersion" xml:space="preserve">
     <value> OS Versión: </value>
@@ -190,7 +190,7 @@
     <value> Nombre del Programa: </value>
   </data>
   <data name="RegisterHeaderLog_ApplicationVersion" xml:space="preserve">
-    <value>  Versión de la aplicación: </value>
+    <value> Versión de la aplicación: </value>
   </data>
   <data name="RegisterHeaderLog_CurrentProgramDirectory" xml:space="preserve">
     <value> [INFO] Directorio del programa actual: </value>
@@ -214,7 +214,7 @@
     <value>Si el archivo 'wiitdb.xml' está instalado correctamente, realice los ajustes necesarios en la configuración del programa.</value>
   </data>
   <data name="Error" xml:space="preserve">
-    <value> [ERROR]</value>
+    <value> [ERROR] </value>
   </data>
   <data name="FilesDestinationUnit" xml:space="preserve">
     <value>Archivos (Destino) - Unidad (</value>
@@ -250,7 +250,7 @@
     <value>¡Región desconocida!</value>
   </data>
   <data name="FoundIsoGcmFiles" xml:space="preserve">
-    <value> [INFO] Archivos ISO/GCM encontrados:</value>
+    <value> [INFO] Archivos ISO/GCM encontrados: </value>
   </data>
   <data name="LoadDatabase_IDGameCode" xml:space="preserve">
     <value>ID (Código de Juego)</value>
@@ -286,7 +286,7 @@
     <value>Información</value>
   </data>
   <data name="DialogResultDeleteGame_ReallyDeleteFile_String1" xml:space="preserve">
-    <value>¿Realmente desea eliminar los archivos?</value>
+    <value>¿Realmente desea eliminar los archivos? </value>
   </data>
   <data name="DialogResultDeleteGame_ReallyDeleteFile_String2" xml:space="preserve">
     <value>¡Este procedimiento es irreversible y no será posible recuperar los archivos!</value>
@@ -331,7 +331,7 @@
     <value> como almacenamiento de RESPALDO para archivos ISO/GCM.</value>
   </data>
   <data name="ListHash_String2" xml:space="preserve">
-    <value> hash de archivo:</value>
+    <value>hash de archivo: </value>
   </data>
   <data name="ReadImage_String1" xml:space="preserve">
     <value>¡La imagen es demasiado pequeña!</value>
@@ -361,7 +361,7 @@
     <value>Transferiendo...</value>
   </data>
   <data name="InstallGameScrub_String2" xml:space="preserve">
-    <value>Estado: Scrubbing...</value>
+    <value>Estado: Scrubbing... </value>
   </data>
   <data name="InstallGameScrub_String3" xml:space="preserve">
     <value>Estado: ¡No responde!</value>
@@ -379,7 +379,7 @@
     <value>Transfiriendo archivo...</value>
   </data>
   <data name="CopyTask_String2" xml:space="preserve">
-    <value>Instalando juego...</value>
+    <value>Instalando juego... </value>
   </data>
   <data name="CopyTask_String3" xml:space="preserve">
     <value>¡Transferencia completa!</value>
@@ -403,10 +403,10 @@
     <value>¡Archivo 'meta.xml' no válido o dañado!</value>
   </data>
   <data name="ListHash_String1" xml:space="preserve">
-    <value>La</value>
+    <value>La </value>
   </data>
   <data name="DownloadingWiiTDB_String1" xml:space="preserve">
-    <value>&gt;&gt; Descargando WiiTDB.zip...</value>
+    <value>&gt;&gt; Descargando WiiTDB.zip... </value>
   </data>
   <data name="DownloadingWiiTDB_String2" xml:space="preserve">
     <value>&gt;&gt; Extrayendo WiiTDB.xml...</value>

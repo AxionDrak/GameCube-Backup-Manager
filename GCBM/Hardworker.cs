@@ -9,9 +9,13 @@ namespace GCBM
 
         public void DoHardWork()
         {
-            for (var i = 1; i <= 100; i++)
+            for (int i = 1; i <= 100; i++)
             {
-                for (var j = 1; j <= 500000; j++) Math.Pow(i, j);
+                for (int j = 1; j <= 500000; j++)
+                {
+                    _ = Math.Pow(i, j);
+                }
+
                 OnProgressChanged(i);
             }
 
@@ -20,14 +24,12 @@ namespace GCBM
 
         private void OnProgressChanged(int progress)
         {
-            var handler = ProgressChanged;
-            if (handler != null) handler(this, new HardWorkerEventArgs(progress));
+            ProgressChanged?.Invoke(this, new HardWorkerEventArgs(progress));
         }
 
         private void OnHardWorkDone()
         {
-            var handler = HardWorkDone;
-            if (handler != null) handler(this, EventArgs.Empty);
+            HardWorkDone?.Invoke(this, EventArgs.Empty);
         }
     }
 }

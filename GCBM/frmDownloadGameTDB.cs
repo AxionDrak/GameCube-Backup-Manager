@@ -38,7 +38,7 @@ namespace GCBM
             try
             {
 
-                var webClient = new WebClient();
+                WebClient webClient = new WebClient();
                 webClient.DownloadFileCompleted += Completed;
                 webClient.DownloadProgressChanged += ProgressChanged;
                 webClient.DownloadFileAsync(new Uri("https://www.gametdb.com/wiitdb.zip"), WIITDB_ZIP_FILE);
@@ -54,7 +54,7 @@ namespace GCBM
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                _ = MessageBox.Show(ex.Message);
             }
         }
 
@@ -63,7 +63,7 @@ namespace GCBM
 
             try
             {
-                var webClient = new WebClient();
+                WebClient webClient = new WebClient();
                 webClient.DownloadFile(new Uri("https://www.gametdb.com/wiitdb.zip"), WIITDB_ZIP_FILE);
 
                 try
@@ -72,7 +72,7 @@ namespace GCBM
                 }
                 catch (Exception ex)
                 {
-                    ex.Message.ToString();
+                    _ = ex.Message.ToString();
                 }
                 finally
                 {
@@ -81,7 +81,7 @@ namespace GCBM
             }
             catch (Exception ex)
             {
-                ex.Message.ToString();
+                _ = ex.Message.ToString();
             }
         }
 
@@ -103,14 +103,14 @@ namespace GCBM
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                _ = MessageBox.Show(ex.Message);
             }
             finally
             {
                 File.Delete(GET_CURRENT_PATH + Path.DirectorySeparatorChar + WIITDB_ZIP_FILE);
 
                 await ProcessTaskDelay().ConfigureAwait(false);
-                var fileinfo = new FileInfo(GET_CURRENT_PATH + Path.DirectorySeparatorChar + WIITDB_FILE);
+                FileInfo fileinfo = new FileInfo(GET_CURRENT_PATH + Path.DirectorySeparatorChar + WIITDB_FILE);
                 if (fileinfo.Length >= 31035000) //31035596
                 {
                     //lblConverting.Font = new Font(lblConverting.Font, FontStyle.Bold);
@@ -150,9 +150,9 @@ namespace GCBM
 
         private void frmDownloadGameTDB_Load(object sender, EventArgs e)
         {
-            var hMenu = GetSystemMenu(Handle, false);
-            var MenuItemCount = GetMenuItemCount(hMenu);
-            RemoveMenu(hMenu, MenuItemCount - 1, MF_BYPOSITION);
+            IntPtr hMenu = GetSystemMenu(Handle, false);
+            int MenuItemCount = GetMenuItemCount(hMenu);
+            _ = RemoveMenu(hMenu, MenuItemCount - 1, MF_BYPOSITION);
         }
     }
 }

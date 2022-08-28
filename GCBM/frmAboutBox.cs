@@ -16,7 +16,7 @@ namespace GCBM
         {
             InitializeComponent();
 
-            var _version = assembly.GetName().Version;
+            Version _version = assembly.GetName().Version;
 
             Text = string.Format(Resources.AboutBox_String1, AssemblyTitle);
             labelProductName.Text = AssemblyProduct;
@@ -66,15 +66,18 @@ namespace GCBM
         {
             try
             {
-                Process.Start(targetLink);
+                _ = Process.Start(targetLink);
             }
             catch (Win32Exception noBrowser)
             {
-                if (noBrowser.ErrorCode == -2147467259) MessageBox.Show("Erro ao acessar site.");
+                if (noBrowser.ErrorCode == -2147467259)
+                {
+                    _ = MessageBox.Show("Erro ao acessar site.");
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                _ = MessageBox.Show(ex.Message);
             }
         }
 
@@ -103,7 +106,7 @@ namespace GCBM
         #region Properties
 
         private readonly Assembly assembly = Assembly.GetExecutingAssembly();
-        private DateTime CURRENT_YEAR = DateTime.Now;
+        private readonly DateTime CURRENT_YEAR = DateTime.Now;
 
         private const string INI_FILE = "config.ini";
         private readonly IniFile CONFIG_INI_FILE = new IniFile(INI_FILE);
@@ -116,12 +119,15 @@ namespace GCBM
         {
             get
             {
-                var attributes = Assembly.GetExecutingAssembly()
+                object[] attributes = Assembly.GetExecutingAssembly()
                     .GetCustomAttributes(typeof(AssemblyTitleAttribute), false);
                 if (attributes.Length > 0)
                 {
-                    var titleAttribute = (AssemblyTitleAttribute)attributes[0];
-                    if (titleAttribute.Title != "") return titleAttribute.Title;
+                    AssemblyTitleAttribute titleAttribute = (AssemblyTitleAttribute)attributes[0];
+                    if (titleAttribute.Title != "")
+                    {
+                        return titleAttribute.Title;
+                    }
                 }
 
                 return Path.GetFileNameWithoutExtension(Assembly.GetExecutingAssembly().CodeBase);
@@ -134,10 +140,9 @@ namespace GCBM
         {
             get
             {
-                var attributes = Assembly.GetExecutingAssembly()
+                object[] attributes = Assembly.GetExecutingAssembly()
                     .GetCustomAttributes(typeof(AssemblyDescriptionAttribute), false);
-                if (attributes.Length == 0) return "";
-                return ((AssemblyDescriptionAttribute)attributes[0]).Description;
+                return attributes.Length == 0 ? "" : ((AssemblyDescriptionAttribute)attributes[0]).Description;
             }
         }
 
@@ -145,10 +150,9 @@ namespace GCBM
         {
             get
             {
-                var attributes = Assembly.GetExecutingAssembly()
+                object[] attributes = Assembly.GetExecutingAssembly()
                     .GetCustomAttributes(typeof(AssemblyProductAttribute), false);
-                if (attributes.Length == 0) return "";
-                return ((AssemblyProductAttribute)attributes[0]).Product;
+                return attributes.Length == 0 ? "" : ((AssemblyProductAttribute)attributes[0]).Product;
             }
         }
 
@@ -165,10 +169,9 @@ namespace GCBM
         {
             get
             {
-                var attributes = Assembly.GetExecutingAssembly()
+                object[] attributes = Assembly.GetExecutingAssembly()
                     .GetCustomAttributes(typeof(AssemblyCompanyAttribute), false);
-                if (attributes.Length == 0) return "";
-                return ((AssemblyCompanyAttribute)attributes[0]).Company;
+                return attributes.Length == 0 ? "" : ((AssemblyCompanyAttribute)attributes[0]).Company;
             }
         }
 

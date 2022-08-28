@@ -401,4 +401,7 @@
         AAAASUVORK5CYII=
 </value>
   </data>
+  <data name="tsslCurrentYear.Text" xml:space="preserve">
+    <value>Copyright © 2019 - </value>
+  </data>
 </root>

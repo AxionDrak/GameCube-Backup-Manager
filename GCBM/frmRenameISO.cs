@@ -11,16 +11,16 @@ namespace GCBM
 
         private void RenameISO()
         {
-            var _directoryName = Path.GetDirectoryName(NEW_NAME);
-            var _fileName = Path.GetFileName(NEW_NAME);
-            var ret = Regex.Replace(_fileName,
+            string _directoryName = Path.GetDirectoryName(NEW_NAME);
+            string _fileName = Path.GetFileName(NEW_NAME);
+            string ret = Regex.Replace(_fileName,
                 @"[^0-9a-zA-ZéúíóáÉÚÍÓÁèùìòàÈÙÌÒÀõãñÕÃÑêûîôâÊÛÎÔÂëÿüïöäËYÜÏÖÄçÇ[\]\-().]+?", string.Empty).Replace("/", "&");
 
             if (chkRenameISO.Checked)
             {
                 if (File.Exists(NEW_NAME))
                 {
-                    var newFilename = ret;
+                    string newFilename = ret;
 
                     if (!string.IsNullOrEmpty(newFilename))
                     {
@@ -41,7 +41,7 @@ namespace GCBM
             {
                 if (File.Exists(NEW_NAME))
                 {
-                    var newFilename = tbRenameISO.Text;
+                    string newFilename = tbRenameISO.Text;
                     if (!string.IsNullOrEmpty(newFilename))
                     {
                         File.Move(NEW_NAME, _directoryName + Path.DirectorySeparatorChar + newFilename);
@@ -68,10 +68,7 @@ namespace GCBM
 
         private void chkRenameISO_CheckedChanged(object sender, EventArgs e)
         {
-            if (chkRenameISO.Checked)
-                tbRenameISO.Enabled = false;
-            else
-                tbRenameISO.Enabled = true;
+            tbRenameISO.Enabled = !chkRenameISO.Checked;
         }
 
         #endregion
@@ -106,14 +103,14 @@ namespace GCBM
 
         private void ConfirmRename(string newFilename)
         {
-            MessageBox.Show("Arquivo renomeado para: " +
+            _ = MessageBox.Show("Arquivo renomeado para: " +
                             Environment.NewLine + Environment.NewLine +
                             newFilename, "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void NameNeeded()
         {
-            MessageBox.Show("Por favor, digite um nome para o arquivo!",
+            _ = MessageBox.Show("Por favor, digite um nome para o arquivo!",
                 "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 

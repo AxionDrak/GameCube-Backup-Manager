@@ -39,10 +39,10 @@ namespace GCBM
 
             try
             {
-                var root = XElement.Load(WIITDB_FILE);
-                var tests = from el in root.Elements("game") where (string)el.Element("id") == tbIDGame select el;
+                XElement root = XElement.Load(WIITDB_FILE);
+                System.Collections.Generic.IEnumerable<XElement> tests = from el in root.Elements("game") where (string)el.Element("id") == tbIDGame select el;
 
-                foreach (var el in tests)
+                foreach (XElement el in tests)
                 {
                     //tbGameInternalName.Text = (string)el.Attribute("name");
                     tbGameInternalName.Text = (string)el.Element("locale").Element("title");
@@ -66,10 +66,9 @@ namespace GCBM
                     tbGameGenre.Text = (string)el.Element("genre");
                     tbGamePublisher.Text = (string)el.Element("publisher");
                     //tbGameAccessories.Text = 
-                    if (string.IsNullOrWhiteSpace(tbGameVersion.Text = (string)el.Element("rom").Attribute("version")))
-                        tbGameVersion.Text = "??";
-                    else
-                        tbGameVersion.Text = (string)el.Element("rom").Attribute("version");
+                    tbGameVersion.Text = string.IsNullOrWhiteSpace(tbGameVersion.Text = (string)el.Element("rom").Attribute("version"))
+                        ? "??"
+                        : (string)el.Element("rom").Attribute("version");
                 }
             }
             catch (Exception ex)
@@ -78,17 +77,29 @@ namespace GCBM
             }
 
             if (tbGameRatingValue.Text == "A")
+            {
                 pbESRB_A.Image = Resources.ESRB_Adults_Only_18_;
+            }
             else if (tbGameRatingValue.Text == "C")
+            {
                 pbESRB_C.Image = Resources.ESRB_Early_Childhood;
+            }
             else if (tbGameRatingValue.Text == "E")
+            {
                 pbESRB_E.Image = Resources.ESRB_Everyone;
+            }
             else if (tbGameRatingValue.Text == "E10+")
+            {
                 pbESRB_Eplus.Image = Resources.ESRB_Everyone_10_;
+            }
             else if (tbGameRatingValue.Text == "M")
+            {
                 pbESRB_M.Image = Resources.ESRB_Mature_17_;
+            }
             else
+            {
                 pbESRB_T.Image = Resources.ESRB_Teen;
+            }
 
             if (pbGameTitle.Enabled == false)
             {
@@ -105,12 +116,14 @@ namespace GCBM
         {
             try
             {
-                Process.Start(targetLink + targetID);
+                _ = Process.Start(targetLink + targetID);
             }
             catch (Win32Exception noBrowser)
             {
                 if (noBrowser.ErrorCode == -2147467259)
-                    MessageBox.Show(noBrowser.Message);
+                {
+                    _ = MessageBox.Show(noBrowser.Message);
+                }
             }
             catch (Exception ex)
             {

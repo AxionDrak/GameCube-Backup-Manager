@@ -347,4 +347,7 @@ No olvides enviarme un correo electrónico para que pueda agradecerte.</value>
   <data name="$this.Text" xml:space="preserve">
     <value>Acerca de...</value>
   </data>
+  <data name="labelCopyright.Text" xml:space="preserve">
+    <value>Copyright</value>
+  </data>
 </root>

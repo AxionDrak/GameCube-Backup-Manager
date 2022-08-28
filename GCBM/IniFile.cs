@@ -86,7 +86,11 @@ namespace GCBM
         /// <example>Inifile("C:\dados\exemplos","Configuracoes")</example>
         public IniFile(string path, string fileName)
         {
-            if (path.Substring(path.Length - 1, 1) != Path.DirectorySeparatorChar.ToString()) path += Path.DirectorySeparatorChar;
+            if (path.Substring(path.Length - 1, 1) != Path.DirectorySeparatorChar.ToString())
+            {
+                path += Path.DirectorySeparatorChar;
+            }
+
             this.fileName = path + corrigeFileName(fileName);
         }
 
@@ -104,7 +108,7 @@ namespace GCBM
             }
             else
             {
-                var strAppDir = Application.StartupPath;
+                string strAppDir = Application.StartupPath;
                 this.fileName = strAppDir + Path.DirectorySeparatorChar + corrigeFileName(fileName);
             }
         }
@@ -117,7 +121,7 @@ namespace GCBM
         /// <example>Inifile()</example>
         public IniFile()
         {
-            var strAppDir = Application.ExecutablePath;
+            string strAppDir = Application.ExecutablePath;
             strAppDir = strAppDir.ToLower().Replace(".exe", ".ini");
             fileName = strAppDir;
         }
@@ -132,7 +136,11 @@ namespace GCBM
         private string corrigeFileName(string fileName)
         {
             fileName = fileName.ToLower();
-            if (fileName.IndexOf(".ini") == -1) fileName += ".ini";
+            if (fileName.IndexOf(".ini") == -1)
+            {
+                fileName += ".ini";
+            }
+
             return fileName;
         }
 
@@ -152,7 +160,7 @@ namespace GCBM
         /// <PARAM name="Valor">Informe a string a ser gravada</PARAM>
         public void IniWriteString(string Section, string Key, string Valor)
         {
-            WritePrivateProfileString(Section, Key, Valor, fileName);
+            _ = WritePrivateProfileString(Section, Key, Valor, fileName);
         }
 
         /// <summary>
@@ -162,7 +170,7 @@ namespace GCBM
         /// <PARAM name="Valor">Informe a string a ser gravada</PARAM>
         public void IniWriteString(string Key, string Valor)
         {
-            WritePrivateProfileString(section, Key, Valor, fileName);
+            _ = WritePrivateProfileString(section, Key, Valor, fileName);
         }
 
         #endregion Salvar string
@@ -177,7 +185,7 @@ namespace GCBM
         /// <PARAM name="Valor">Informe o inteiro a ser gravado</PARAM>
         public void IniWriteInt(string Section, string Key, int Valor)
         {
-            WritePrivateProfileString(Section, Key, Valor.ToString(), fileName);
+            _ = WritePrivateProfileString(Section, Key, Valor.ToString(), fileName);
         }
 
         /// <summary>
@@ -187,7 +195,7 @@ namespace GCBM
         /// <PARAM name="Valor">Informe o inteiro a ser gravado</PARAM>
         public void IniWriteInt(string Key, int Valor)
         {
-            WritePrivateProfileString(section, Key, Valor.ToString(), fileName);
+            _ = WritePrivateProfileString(section, Key, Valor.ToString(), fileName);
         }
 
         #endregion Salvar inteiro
@@ -202,7 +210,7 @@ namespace GCBM
         /// <PARAM name="Valor">Informe o valor boolean a ser gravado</PARAM>
         public void IniWriteBool(string Section, string Key, bool Valor)
         {
-            WritePrivateProfileString(Section, Key, Valor.ToString(), fileName);
+            _ = WritePrivateProfileString(Section, Key, Valor.ToString(), fileName);
         }
 
         /// <summary>
@@ -212,7 +220,7 @@ namespace GCBM
         /// <PARAM name="Valor">Informe o valor boolean a ser gravado</PARAM>
         public void IniWriteBool(string Key, bool Valor)
         {
-            WritePrivateProfileString(section, Key, Valor.ToString(), fileName);
+            _ = WritePrivateProfileString(section, Key, Valor.ToString(), fileName);
         }
 
         #endregion Salvar boolean
@@ -232,8 +240,8 @@ namespace GCBM
         /// <returns>string com valor</returns>
         public string IniReadString(string Section, string Key, string _default = "")
         {
-            var temp = new StringBuilder(255);
-            var i = GetPrivateProfileString(Section, Key, _default, temp,
+            StringBuilder temp = new StringBuilder(255);
+            _ = GetPrivateProfileString(Section, Key, _default, temp,
                 255, fileName);
             return temp.ToString();
         }
@@ -246,8 +254,8 @@ namespace GCBM
         /// <returns>string com valor</returns>
         public string IniReadString(string Key, string _default = "")
         {
-            var temp = new StringBuilder(255);
-            var i = GetPrivateProfileString(section, Key, _default, temp,
+            StringBuilder temp = new StringBuilder(255);
+            _ = GetPrivateProfileString(section, Key, _default, temp,
                 255, fileName);
             return temp.ToString();
         }
@@ -265,10 +273,10 @@ namespace GCBM
         /// <returns>inteiro com valor</returns>
         public int IniReadInt(string Section, string Key, int _default = 0)
         {
-            var valor = _default;
-            var temp = new StringBuilder(255);
-            var i = GetPrivateProfileString(Section, Key, _default.ToString(), temp,
+            StringBuilder temp = new StringBuilder(255);
+            _ = GetPrivateProfileString(Section, Key, _default.ToString(), temp,
                 255, fileName);
+            int valor;
             try
             {
                 valor = Convert.ToInt32(temp.ToString());
@@ -289,10 +297,10 @@ namespace GCBM
         /// <returns>inteiro com valor</returns>
         public int IniReadInt(string Key, int _default = 0)
         {
-            var valor = _default;
-            var temp = new StringBuilder(255);
-            var i = GetPrivateProfileString(section, Key, _default.ToString(), temp,
+            StringBuilder temp = new StringBuilder(255);
+            _ = GetPrivateProfileString(section, Key, _default.ToString(), temp,
                 255, fileName);
+            int valor;
             try
             {
                 valor = Convert.ToInt32(temp.ToString());
@@ -318,10 +326,10 @@ namespace GCBM
         /// <returns>boolean com valor</returns>
         public bool IniReadBool(string Section, string Key, bool _default = false)
         {
-            var valor = _default;
-            var temp = new StringBuilder(255);
-            var i = GetPrivateProfileString(Section, Key, _default.ToString(), temp,
+            StringBuilder temp = new StringBuilder(255);
+            _ = GetPrivateProfileString(Section, Key, _default.ToString(), temp,
                 255, fileName);
+            bool valor;
             try
             {
                 valor = Convert.ToBoolean(temp.ToString());
@@ -342,10 +350,10 @@ namespace GCBM
         /// <returns>boolean com valor</returns>
         public bool IniReadBool(string Key, bool _default = false)
         {
-            var valor = _default;
-            var temp = new StringBuilder(255);
-            var i = GetPrivateProfileString(section, Key, _default.ToString(), temp,
+            StringBuilder temp = new StringBuilder(255);
+            _ = GetPrivateProfileString(section, Key, _default.ToString(), temp,
                 255, fileName);
+            bool valor;
             try
             {
                 valor = Convert.ToBoolean(temp.ToString());

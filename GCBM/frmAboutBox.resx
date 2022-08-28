@@ -604,7 +604,7 @@
     <value>4</value>
   </data>
   <data name="lblAboutCurrentLanguage.Text" xml:space="preserve">
-    <value>Idioma Atual:</value>
+    <value>Idioma Atual: </value>
   </data>
   <data name="&gt;&gt;lblAboutCurrentLanguage.Name" xml:space="preserve">
     <value>lblAboutCurrentLanguage</value>
@@ -631,7 +631,7 @@
     <value>3</value>
   </data>
   <data name="lblAboutTranslator.Text" xml:space="preserve">
-    <value>Tradutor:</value>
+    <value>Tradutor: </value>
   </data>
   <data name="&gt;&gt;lblAboutTranslator.Name" xml:space="preserve">
     <value>lblAboutTranslator</value>

@@ -148,7 +148,7 @@
     <value>파일을 삭제하거나 다른 위치로 이동하는 것이 좋습니다.</value>
   </data>
   <data name="FoundIsoGcmFiles" xml:space="preserve">
-    <value> [정보] ISO/GCM 파일 발견:</value>
+    <value> [정보] ISO/GCM 파일 발견: </value>
   </data>
   <data name="frmMain_Resize_Program" xml:space="preserve">
     <value>백그라운드에서 실행되는 프로그램입니다!</value>
@@ -196,7 +196,7 @@
     <value>이것은 유효한 장치가 아닙니다!</value>
   </data>
   <data name="InstallGameScrub_String2" xml:space="preserve">
-    <value>상태: 스크러빙 중...</value>
+    <value>상태: 스크러빙 중... </value>
   </data>
   <data name="Attention" xml:space="preserve">
     <value>주목!</value>
@@ -205,16 +205,16 @@
     <value>파일 '{0}'을(를) 찾을 수 없습니다!</value>
   </data>
   <data name="Error" xml:space="preserve">
-    <value> [오류]</value>
+    <value> [오류] </value>
   </data>
   <data name="PluginDisplay_String2" xml:space="preserve">
     <value>프로그램 삭제</value>
   </data>
   <data name="RegisterHeaderLog_CurrentProgramDirectory" xml:space="preserve">
-    <value> [정보] 현재 프로그램 디렉토리:</value>
+    <value> [정보] 현재 프로그램 디렉토리: </value>
   </data>
   <data name="ListHash_String2" xml:space="preserve">
-    <value>파일 해시:</value>
+    <value>파일 해시: </value>
   </data>
   <data name="Information" xml:space="preserve">
     <value>정보</value>
@@ -235,7 +235,7 @@
     <value>오류!</value>
   </data>
   <data name="DownloadingWiiTDB_String1" xml:space="preserve">
-    <value>&gt;&gt; WiiTDB.zip 다운로드 중...</value>
+    <value>&gt;&gt; WiiTDB.zip 다운로드 중... </value>
   </data>
   <data name="ServerReportedDiscCoverNotFound" xml:space="preserve">
     <value>서버 보고: 디스크 커버를 찾을 수 없습니다!</value>
@@ -253,7 +253,7 @@
     <value>데이터가 성공적으로 저장되었습니다!</value>
   </data>
   <data name="RegisterHeaderLog_WorkingSet" xml:space="preserve">
-    <value> 작업 설정:</value>
+    <value> 작업 설정: </value>
   </data>
   <data name="AllFilesSuccessfullyDeleted" xml:space="preserve">
     <value>모든 파일이 성공적으로 삭제되었습니다!</value>
@@ -265,19 +265,19 @@
     <value>ISO/GCM 파일용 백업 저장소로.</value>
   </data>
   <data name="RegisterHeaderLog_OSVersion" xml:space="preserve">
-    <value>OS 버전:</value>
+    <value> OS 버전: </value>
   </data>
   <data name="LoadISOInfo_String2" xml:space="preserve">
     <value>보조 디스크: (디스크2)</value>
   </data>
   <data name="ListHash_String1" xml:space="preserve">
-    <value>그</value>
+    <value>그 </value>
   </data>
   <data name="RegisterHeaderLog_ApplicationVersion" xml:space="preserve">
-    <value> 애플리케이션 버전:</value>
+    <value> 애플리케이션 버전: </value>
   </data>
   <data name="RegisterHeaderLog_LogicalUnits" xml:space="preserve">
-    <value> 논리 단위:</value>
+    <value> 논리 단위: </value>
   </data>
   <data name="FilesDestinationUnit" xml:space="preserve">
     <value>파일 (대상) - 드라이브(</value>
@@ -340,7 +340,7 @@
     <value>기본 디스크: (디스크1)</value>
   </data>
   <data name="DialogResultDeleteGame_ReallyDeleteFile_String1" xml:space="preserve">
-    <value>정말 파일을 삭제하겠습니까?</value>
+    <value>정말 파일을 삭제하겠습니까? </value>
   </data>
   <data name="CreateGamesFolderNow" xml:space="preserve">
     <value>유효한 장치이지만 GAMES 폴더가 없습니다. 지금 폴더를 만드시겠습니까?</value>
@@ -373,7 +373,7 @@
     <value>찾기</value>
   </data>
   <data name="Info" xml:space="preserve">
-    <value> [정보]</value>
+    <value> [정보] </value>
   </data>
   <data name="RequiredDirectories_String5" xml:space="preserve">
     <value> [정보] 표지 디렉토리가 이미 존재합니다... 생성을 무시합니다!</value>
@@ -382,7 +382,7 @@
     <value>게임큐브게임, Wii 게임, ROM, 앱, 에뮬레이터 및 그 사이의 모든 것과 최대한의 호환성을 보장하려면 32K 클러스터가 있는 FAT32 파일 시스템을 사용하는 것이 좋습니다!</value>
   </data>
   <data name="CopyTask_String2" xml:space="preserve">
-    <value>게임 설치 중...</value>
+    <value>게임 설치 중... </value>
   </data>
   <data name="InstallGameScrub_String4" xml:space="preserve">
     <value>상태: 완료!</value>
@@ -448,7 +448,7 @@
     <value> gcbm.log가 생성됩니다.</value>
   </data>
   <data name="RegisterHeaderLog_CLRVersion" xml:space="preserve">
-    <value> CLR 버전:</value>
+    <value> CLR 버전: </value>
   </data>
   <data name="CheckUSBGXFlow_String3" xml:space="preserve">
     <value>그런 다음 같은 탭에서 'USB 충전기 구성(커버 전송)'으로 이동하여 'USB 충전기 구성(커버 전송)'에서 USB Loader GX 또는 WiiFlow의 커버(디스크, 2D, 3D 및 전체) 디렉토리를 조정합니다. ' , 대상 장치 내의 각 디렉토리를 가리킵니다.</value>
@@ -457,7 +457,7 @@
     <value>비활성</value>
   </data>
   <data name="RegisterHeaderLog_ProgramName" xml:space="preserve">
-    <value> 프로그램 이름:</value>
+    <value> 프로그램 이름: </value>
   </data>
   <data name="MetaXml_String_ERRO" xml:space="preserve">
     <value>오류</value>

@@ -1605,4 +1605,31 @@
   <data name="grpDetailsDestiny.Text" xml:space="preserve">
     <value>Detalles</value>
   </data>
+  <data name="lblGameCountSource.Text" xml:space="preserve">
+    <value>Juegos encontrados:</value>
+  </data>
+  <data name="tsmiRenameFolders.Text" xml:space="preserve">
+    <value>Renombrar carpetas</value>
+  </data>
+  <data name="tsmiGameListSelectAll.Text" xml:space="preserve">
+    <value>Todos</value>
+  </data>
+  <data name="tsmiGameListDeleteAllFiles.Text" xml:space="preserve">
+    <value>Todos</value>
+  </data>
+  <data name="tsmiGameDiscSelectAll.Text" xml:space="preserve">
+    <value>Todos</value>
+  </data>
+  <data name="tsmiGameDiscDeleteAllFiles.Text" xml:space="preserve">
+    <value>Todos</value>
+  </data>
+  <data name="lblAbortDestination.Text" xml:space="preserve">
+    <value>Deténgase</value>
+  </data>
+  <data name="lblAbort.Text" xml:space="preserve">
+    <value>Deténgase</value>
+  </data>
+  <data name="labelTitle.Text" xml:space="preserve">
+    <value>Título:</value>
+  </data>
 </root>

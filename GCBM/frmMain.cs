@@ -42,10 +42,9 @@ namespace GCBM
         {
             get
             {
-                var attributes = Assembly.GetExecutingAssembly()
+                object[] attributes = Assembly.GetExecutingAssembly()
                     .GetCustomAttributes(typeof(AssemblyProductAttribute), false);
-                if (attributes.Length == 0) return string.Empty;
-                return ((AssemblyProductAttribute)attributes[0]).Product;
+                return attributes.Length == 0 ? string.Empty : ((AssemblyProductAttribute)attributes[0]).Product;
             }
         }
 
@@ -77,12 +76,16 @@ namespace GCBM
             ExportLOG(1);
             if (Process.GetCurrentProcess().GetChildProcesses() != null &&
                 Process.GetCurrentProcess().GetChildProcesses().Count != 0)
-                foreach (var process in Process.GetCurrentProcess().GetChildProcesses())
+            {
+                foreach (Process process in Process.GetCurrentProcess().GetChildProcesses())
+                {
                     //Kill GCIT and others
                     process.Kill();
+                }
+            }
 
             //Cleanup any Threads left lying around
-            this.Dispose();
+            Dispose();
             Process.GetCurrentProcess().Kill();
         }
 
@@ -96,7 +99,7 @@ namespace GCBM
         /// <returns></returns>
         private string VERSION()
         {
-            var PROG_VERSION = assembly.GetName().Version.ToString();
+            string PROG_VERSION = assembly.GetName().Version.ToString();
             return PROG_VERSION;
         }
 
@@ -112,13 +115,19 @@ namespace GCBM
             if (sio.File.Exists("config.ini"))
             {
                 if (CONFIG_INI_FILE.IniReadString("GCBM", "ProgVersion", "") != VERSION())
+                {
                     CONFIG_INI_FILE.IniWriteString("GCBM", "ProgVersion", VERSION());
+                }
 
                 if (CONFIG_INI_FILE.IniReadString("GCBM", "Language", "") != Resources.GCBM_Language)
+                {
                     CONFIG_INI_FILE.IniWriteString("GCBM", "Language", Resources.GCBM_Language);
+                }
 
                 if (CONFIG_INI_FILE.IniReadString("GCBM", "TranslatedBy", "") != Resources.GCBM_TranslatedBy)
+                {
                     CONFIG_INI_FILE.IniWriteString("GCBM", "TranslatedBy", Resources.GCBM_TranslatedBy);
+                }
             }
         }
 
@@ -165,18 +174,22 @@ namespace GCBM
         /// </summary>
         private void DetectOSLanguage()
         {
-            var sysLocale = Thread.CurrentThread.CurrentCulture;
+            CultureInfo sysLocale = Thread.CurrentThread.CurrentCulture;
             string[] aryLocales = { "pt-BR", "en-US", "es", "ko" };
 
             //  See if we have that translation
-            var isTranslated = aryLocales.Contains(sysLocale.ToString());
+            bool isTranslated = aryLocales.Contains(sysLocale.ToString());
 
             //  Write the corresponding number to INI
             if (isTranslated)
+            {
                 CONFIG_INI_FILE.IniWriteInt("LANGUAGE", "ConfigLanguage",
                     Array.FindIndex(aryLocales, l => l == sysLocale.Name));
+            }
             else //Default to english
+            {
                 CONFIG_INI_FILE.IniWriteInt("LANGUAGE", "ConfigLanguage", 1); //en-US
+            }
         }
 
         #endregion
@@ -189,44 +202,62 @@ namespace GCBM
         private void UpdateProgram()
         {
             if (CONFIG_INI_FILE.IniReadBool("UPDATES", "UpdateServerProxy"))
+            {
                 if (CONFIG_INI_FILE.IniReadString("UPDATES", "ServerProxy", "") != string.Empty &&
                     CONFIG_INI_FILE.IniReadString("UPDATES", "UserProxy", "") != string.Empty &&
                     CONFIG_INI_FILE.IniReadString("UPDATES", "PassProxy", "") != string.Empty)
                 {
-                    var proxy = new WebProxy(CONFIG_INI_FILE.IniReadString("UPDATES", "ServerProxy", ""), true)
+                    WebProxy proxy = new WebProxy(CONFIG_INI_FILE.IniReadString("UPDATES", "ServerProxy", ""), true)
                     {
                         Credentials = new NetworkCredential(CONFIG_INI_FILE.IniReadString("UPDATES", "UserProxy", ""),
                             CONFIG_INI_FILE.IniReadString("UPDATES", "PassProxy", ""))
                     };
                     AutoUpdater.Proxy = proxy;
                 }
+            }
 
             // Enable support for updates.
             if (CONFIG_INI_FILE.IniReadBool("UPDATES", "UpdateVerifyStart"))
             {
-                var timeInterval = 0;
+                int timeInterval = 0;
 
                 if (CONFIG_INI_FILE.IniReadInt("UPDATES", "VerificationInterval") == 0)
+                {
                     timeInterval = 10; // 5 minutes
+                }
                 else if (CONFIG_INI_FILE.IniReadInt("UPDATES", "VerificationInterval") == 1)
+                {
                     timeInterval = 20; // 10 minutes
+                }
                 else if (CONFIG_INI_FILE.IniReadInt("UPDATES", "VerificationInterval") == 2)
+                {
                     timeInterval = 30; // 15 minutes
+                }
                 else if (CONFIG_INI_FILE.IniReadInt("UPDATES", "VerificationInterval") == 3)
+                {
                     timeInterval = 60; // 30 minutes
+                }
                 else if (CONFIG_INI_FILE.IniReadInt("UPDATES", "VerificationInterval") == 4)
+                {
                     timeInterval = 120; // 1 hour
+                }
                 else if (CONFIG_INI_FILE.IniReadInt("UPDATES", "VerificationInterval") == 5)
+                {
                     timeInterval = 240; // 2 hours
+                }
                 else if (CONFIG_INI_FILE.IniReadInt("UPDATES", "VerificationInterval") == 6)
+                {
                     timeInterval = 360; // 3 hours
+                }
                 else
+                {
                     timeInterval = 480; // 4 hours
+                }
 
                 // Support Beta channel updates.
                 if (CONFIG_INI_FILE.IniReadBool("UPDATES", "UpdateBetaChannel"))
                 {
-                    var timer = new Timer
+                    Timer timer = new Timer
                     {
                         Interval = 2 * 15000 * timeInterval,
                         SynchronizingObject = this
@@ -246,7 +277,7 @@ namespace GCBM
                 else
                 {
                     // Support for Release (Default) channel updates.
-                    var timer = new Timer
+                    Timer timer = new Timer
                     {
                         Interval = 2 * 15000 * timeInterval,
                         SynchronizingObject = this
@@ -273,11 +304,11 @@ namespace GCBM
         // Get the date and time
         private string DateString()
         {
-            var dt = DateTime.Now;
+            DateTime dt = DateTime.Now;
             //int dts = dt.Millisecond;
             //string dtnew = dt.ToString("yyyy'-'MM'-'dd' 'HH':'mm':'ss") + "." + dts.ToString();
             tsslCurrentYear.Text = "Copyright © 2019 - " + dt.Year + " Laete Meireles";
-            var dtnew = dt.ToString("yyyy'-'MM'-'dd' 'HH':'mm':'ss");
+            string dtnew = dt.ToString("yyyy'-'MM'-'dd' 'HH':'mm':'ss");
             return dtnew;
         }
 
@@ -289,11 +320,15 @@ namespace GCBM
         private void DisabeScreensaver()
         {
             if (CONFIG_INI_FILE.IniReadBool("SEVERAL", "Screensaver"))
+            {
                 // Disable the screensaver.
-                SetThreadExecutionState(EXECUTION_STATE.ES_DISPLAY_REQUIRED | EXECUTION_STATE.ES_CONTINUOUS);
+                _ = SetThreadExecutionState(EXECUTION_STATE.ES_DISPLAY_REQUIRED | EXECUTION_STATE.ES_CONTINUOUS);
+            }
             else
+            {
                 // Activate the screensaver.
-                SetThreadExecutionState(EXECUTION_STATE.ES_CONTINUOUS);
+                _ = SetThreadExecutionState(EXECUTION_STATE.ES_CONTINUOUS);
+            }
         }
 
         #endregion
@@ -345,7 +380,7 @@ namespace GCBM
         private void RegisterHeaderLog()
         {
             // Assembly
-            var _version = assembly.GetName();
+            AssemblyName _version = assembly.GetName();
             // Log
             tbLog.AppendText(
                 "[" + DateString() + "]" + Resources.RegisterHeaderLog_GcbmLogCreated + Environment.NewLine);
@@ -498,8 +533,10 @@ namespace GCBM
             tbLog.AppendText("[" + DateString() + "]" + Resources.FoundIsoGcmFiles + Environment.NewLine);
 
             foreach (DataGridViewRow dgvResultRow in dgvSource.Rows)
+            {
                 tbLog.AppendText("[" + DateString() + "]" + Resources.Info +
                                  dgvSource.Rows[dgvResultRow.Index].Cells[1].Value + Environment.NewLine);
+            }
         }
 
         #endregion
@@ -517,24 +554,26 @@ namespace GCBM
             }
 
             if (sio.File.Exists(WIITDB_FILE))
+            {
                 if (CONFIG_INI_FILE.IniReadBool("SEVERAL", "LoadDatabase"))
+                {
                     // PERFECT - DO NOT CHANGE!!!
                     try
                     {
                         lvDatabase.View = View.Details;
                         lvDatabase.GridLines = true;
                         lvDatabase.FullRowSelect = true;
-                        lvDatabase.Columns.Add(Resources.LoadDatabase_IDGameCode, 70);
-                        lvDatabase.Columns.Add(Resources.LoadDatabase_GameTitle, 210);
-                        lvDatabase.Columns.Add(Resources.LoadDatabase_Region, 70);
-                        lvDatabase.Columns.Add(Resources.LoadDatabase_Type, 80);
-                        lvDatabase.Columns.Add(Resources.LoadDatabase_Developer, 200);
-                        lvDatabase.Columns.Add(Resources.LoadDatabase_Editor, 200);
+                        _ = lvDatabase.Columns.Add(Resources.LoadDatabase_IDGameCode, 70);
+                        _ = lvDatabase.Columns.Add(Resources.LoadDatabase_GameTitle, 210);
+                        _ = lvDatabase.Columns.Add(Resources.LoadDatabase_Region, 70);
+                        _ = lvDatabase.Columns.Add(Resources.LoadDatabase_Type, 80);
+                        _ = lvDatabase.Columns.Add(Resources.LoadDatabase_Developer, 200);
+                        _ = lvDatabase.Columns.Add(Resources.LoadDatabase_Editor, 200);
 
-                        using (var ds = new DataSet())
+                        using (DataSet ds = new DataSet())
                         {
                             ListViewItem itemXml;
-                            ds.ReadXml(WIITDB_FILE);
+                            _ = ds.ReadXml(WIITDB_FILE);
 
                             foreach (DataRow dr in ds.Tables["game"].Rows)
                             {
@@ -548,11 +587,13 @@ namespace GCBM
                                     dr["publisher"].ToString()
                                 });
 
-                                lvDatabase.Items.Add(itemXml);
+                                _ = lvDatabase.Items.Add(itemXml);
                             }
 
                             foreach (DataRow dr in ds.Tables["WiiTDB"].Rows)
+                            {
                                 lblDatabaseTotal.Text = dr["games"] + " Total";
+                            }
 
                             ds.Dispose();
                             ds.Clear();
@@ -563,6 +604,8 @@ namespace GCBM
                         //CheckWiiTdbXml();
                         GlobalNotifications(ex.Message, ToolTipIcon.Error);
                     }
+                }
+            }
 
             Monitor.Exit(lvDatabase);
         }
@@ -577,8 +620,12 @@ namespace GCBM
         private void LoadConfigFile()
         {
             if (sio.File.Exists(GET_CURRENT_PATH + sio.Path.DirectorySeparatorChar + INI_FILE))
+            {
                 if (CONFIG_INI_FILE.IniReadBool("SEVERAL", "WindowMaximized"))
+                {
                     WindowState = FormWindowState.Maximized;
+                }
+            }
         }
 
         #endregion
@@ -690,13 +737,17 @@ namespace GCBM
         private void ReloadDataGridViewGameList(DataGridView dgv)
         {
             if (dgv.RowCount != 0)
+            {
                 try
                 {
                     if (dgv.CurrentRow != null)
                     {
                         VerifyGame(dgv.CurrentRow.Cells["Path"].Value.ToString());
 
-                        if (ERROR == false) LoadCover(tbIDGame.Text);
+                        if (ERROR == false)
+                        {
+                            LoadCover(tbIDGame.Text);
+                        }
                         // pictureBox GameID
                         if (pbWebGameID.Enabled == false)
                         {
@@ -725,6 +776,7 @@ namespace GCBM
                     tbLog.AppendText(ex.Message + Environment.NewLine + ex.StackTrace);
                     GlobalNotifications(ex.Message, ToolTipIcon.Error);
                 }
+            }
         }
 
         #endregion
@@ -736,7 +788,7 @@ namespace GCBM
         /// </summary>
         /// <param name="sourceFolder"></param>
         /// <param name="dgv"></param>
-        private async Task DisplaySourceFilesAsync(string sourceFolder, DataGridView dgv)
+        private Task DisplaySourceFilesAsync(string sourceFolder, DataGridView dgv)
         {
 
             //Store the passed dgv locally to prevent errors
@@ -744,7 +796,7 @@ namespace GCBM
             //Setup Variables
             ABORT = false;
             SCANNING = true;
-            var filters = new[] { "iso", "gcm" };
+            string[] filters = new[] { "iso", "gcm" };
             bool isRecursive = false;
 
             //if(dgv == dgvSource)
@@ -758,7 +810,7 @@ namespace GCBM
             //else
             //    isRecursive = false;
 
-            var files = GetFilesFolder(sourceFolder, filters, isRecursive).Result;
+            string[] files = GetFilesFolder(sourceFolder, filters, isRecursive).Result;
 
             //if (dgv == dgvDestination)
             //    //tsmiReloadGameListDisc.Enabled = true;
@@ -791,8 +843,6 @@ namespace GCBM
                                     Resources.DisplayFilesSelected_Found_String2 +
                                     _files._fileExtension.ToUpper(MY_CULTURE), ToolTipIcon.Info);
             }
-
-            FileInfo _file = null;
 
             //Setup Interface
             pbCopy.Maximum = files.Length;
@@ -805,9 +855,12 @@ namespace GCBM
             foreach (string file in files)
             {
                 if (ABORT)
+                {
                     break;
-                var _f = new FileInfo(file);
-                var _getSize = DisplayFormatFileSize(_f.Length, CONFIG_INI_FILE.IniReadInt("GENERAL", "FileSize"));
+                }
+
+                FileInfo _f = new FileInfo(file);
+                string _getSize = DisplayFormatFileSize(_f.Length, CONFIG_INI_FILE.IniReadInt("GENERAL", "FileSize"));
                 //Title - ID - Region - Path - Extension - Size
                 loadPath = _f.FullName;
                 IMAGE_PATH = loadPath;
@@ -822,7 +875,10 @@ namespace GCBM
                             IEnumerable<XElement> tests = from el in root.Elements("game")
                                                           where (string)el.Element("id") == tbIDGame.Text
                                                           select el;
-                            foreach (XElement el in tests) tbIDName.Text = (string)el.Element("locale").Element("title");
+                            foreach (XElement el in tests)
+                            {
+                                tbIDName.Text = (string)el.Element("locale").Element("title");
+                            }
                         }
                         else
                         {
@@ -831,9 +887,11 @@ namespace GCBM
                     }
 
                     ROOT_OPENED = false;
-                    dgvSourcetemp.Rows.Add(false, tbIDName.Text, tbIDGame.Text, tbIDRegion.Text, _f.Extension.Substring(1, 3).Trim().ToUpper(MY_CULTURE), _getSize, _f.FullName);
+                    _ = dgvSourcetemp.Rows.Add(false, tbIDName.Text, tbIDGame.Text, tbIDRegion.Text, _f.Extension.Substring(1, 3).Trim().ToUpper(MY_CULTURE), _getSize, _f.FullName);
                     if (pbCopy.Value < pbCopy.Maximum)
+                    {
                         pbCopy.Value++;
+                    }
                 }
 
                 //Clean up Interface
@@ -846,8 +904,9 @@ namespace GCBM
             EnableOptionsGameList();
 
             ReloadDataGridViewGameList(dgvSourcetemp);
-            
-                SCANNING = false;
+
+            SCANNING = false;
+            return CompletedTask;
         }
         #endregion
 
@@ -859,7 +918,7 @@ namespace GCBM
         /// </summary>
         /// <param name="sourceFolder"></param>
         /// <param name="dgv"></param>
-        private async Task DisplayDestinationFilesAsync(string sourceFolder, DataGridView dgv)
+        private Task DisplayDestinationFilesAsync(string sourceFolder, DataGridView dgv)
         {
 
             //Store the passed dgv locally to prevent errors
@@ -867,10 +926,10 @@ namespace GCBM
             //Setup Variables
             ABORT = false;
             SCANNING = true;
-            var filters = new[] { "iso", "gcm" };
+            string[] filters = new[] { "iso", "gcm" };
             bool isRecursive = true;
 
-            var files = GetFilesFolder(sourceFolder, filters, isRecursive).Result;
+            string[] files = GetFilesFolder(sourceFolder, filters, isRecursive).Result;
 
             //if (dgv == dgvDestination)
             //    //tsmiReloadGameListDisc.Enabled = true;
@@ -904,8 +963,6 @@ namespace GCBM
                                     _files._fileExtension.ToUpper(MY_CULTURE), ToolTipIcon.Info);
             }
 
-            FileInfo _file = null;
-
             //Setup Interface
             pbDestination.Maximum = files.Length;
             pbDestination.Value = 0;
@@ -917,9 +974,12 @@ namespace GCBM
             foreach (string file in files)
             {
                 if (ABORT)
+                {
                     break;
-                var _f = new FileInfo(file);
-                var _getSize = DisplayFormatFileSize(_f.Length, CONFIG_INI_FILE.IniReadInt("GENERAL", "FileSize"));
+                }
+
+                FileInfo _f = new FileInfo(file);
+                string _getSize = DisplayFormatFileSize(_f.Length, CONFIG_INI_FILE.IniReadInt("GENERAL", "FileSize"));
                 //Title - ID - Region - Path - Extension - Size
                 loadPath = _f.FullName;
                 IMAGE_PATH = loadPath;
@@ -934,7 +994,10 @@ namespace GCBM
                             IEnumerable<XElement> tests = from el in root.Elements("game")
                                                           where (string)el.Element("id") == tbIDGame.Text
                                                           select el;
-                            foreach (XElement el in tests) tbIDName.Text = (string)el.Element("locale").Element("title");
+                            foreach (XElement el in tests)
+                            {
+                                tbIDName.Text = (string)el.Element("locale").Element("title");
+                            }
                         }
                         else
                         {
@@ -943,9 +1006,11 @@ namespace GCBM
                     }
 
                     ROOT_OPENED = false;
-                    dgvDestinationtemp.Rows.Add(false, tbIDName.Text, tbIDGame.Text, tbIDRegion.Text, _f.Extension.Substring(1, 3).Trim().ToUpper(MY_CULTURE), _getSize, _f.FullName);
+                    _ = dgvDestinationtemp.Rows.Add(false, tbIDName.Text, tbIDGame.Text, tbIDRegion.Text, _f.Extension.Substring(1, 3).Trim().ToUpper(MY_CULTURE), _getSize, _f.FullName);
                     if (pbDestination.Value < pbDestination.Maximum)
+                    {
                         pbDestination.Value++;
+                    }
                 }
 
                 //Clean up Interface
@@ -958,8 +1023,9 @@ namespace GCBM
             EnableOptionsGameList();
 
             ReloadDataGridViewGameList(dgvDestinationtemp);
-            
-                SCANNING = false;
+
+            SCANNING = false;
+            return CompletedTask;
         }
         #endregion
         #region Get Files Folder
@@ -971,18 +1037,16 @@ namespace GCBM
         /// <param name="filters"></param>
         /// <param name="isRecursive"></param>
         /// <returns></returns>
-        private async Task<string[]> GetFilesFolder(string rootFolder, string[] filters, bool isRecursive)
+        private Task<string[]> GetFilesFolder(string rootFolder, string[] filters, bool isRecursive)
         {
-            var filesFound = new List<string>();
+            List<string> filesFound = new List<string>();
             // Sets options for displaying root folder images.
 
-            if (CONFIG_INI_FILE.IniReadBool("SEVERAL", "RecursiveMode"))
-                isRecursive = true;
-            else
-                isRecursive = false;
+            isRecursive = CONFIG_INI_FILE.IniReadBool("SEVERAL", "RecursiveMode");
 
-            var optionSearch = isRecursive ? sio.SearchOption.AllDirectories : sio.SearchOption.TopDirectoryOnly;
+            SearchOption optionSearch = isRecursive ? sio.SearchOption.AllDirectories : sio.SearchOption.TopDirectoryOnly;
             foreach (string filter in filters)
+            {
                 try
                 {
                     filesFound.AddRange(
@@ -994,8 +1058,9 @@ namespace GCBM
                     // Just to avoid mistakes.
                     tbLog.AppendText(ex.Message + Environment.NewLine + ex.StackTrace);
                 }
+            }
 
-            return filesFound.ToArray();
+            return FromResult(filesFound.ToArray());
         }
 
         #endregion
@@ -1007,15 +1072,19 @@ namespace GCBM
         /// </summary>
         private void GetAllDrives()
         {
-            var allDrives = sio.DriveInfo.GetDrives();
+            DriveInfo[] allDrives = sio.DriveInfo.GetDrives();
 
             tscbDiscDrive.Items.Clear();
-            tscbDiscDrive.Items.Add(Resources.GetAllDrives_Inactive);
+            _ = tscbDiscDrive.Items.Add(Resources.GetAllDrives_Inactive);
             tscbDiscDrive.SelectedIndex = 0;
 
-            foreach (var d in allDrives)
+            foreach (DriveInfo d in allDrives)
+            {
                 if (d.IsReady)
-                    tscbDiscDrive.Items.Add(d.Name);
+                {
+                    _ = tscbDiscDrive.Items.Add(d.Name);
+                }
+            }
         }
 
         #endregion
@@ -1031,7 +1100,7 @@ namespace GCBM
         public static string DisplayFormatFileSize(long i, int k)
         {
             // Gets the absolute value.
-            var i_absolute = i < 0 ? -i : i;
+            long i_absolute = i < 0 ? -i : i;
             string suffix;
             double reading;
 
@@ -1098,7 +1167,7 @@ namespace GCBM
             }
 
             // Divide by 1024 to get the fractional value.
-            reading = reading / 1024;
+            reading /= 1024;
             // Returns the suffix formatted number.
             return reading.ToString("0.## ") + suffix;
         }
@@ -1116,8 +1185,8 @@ namespace GCBM
         {
             string result;
             double _bytes = bytes;
-            var array_fs = new string[5] { "B", "KB", "MB", "GB", "TB" };
-            var num2_fs = 0;
+            string[] array_fs = new string[5] { "B", "KB", "MB", "GB", "TB" };
+            int num2_fs = 0;
 
             while (_bytes >= 1024.0 && num2_fs < array_fs.Length - 1)
             {
@@ -1140,20 +1209,23 @@ namespace GCBM
         private async Task<List<Game>> GameList(string path)
         {
             string[] filters = { "ISO", "GCM" };
-            var list = new List<Game>();
-            var files = await GetFilesFolder(path, filters, false).ConfigureAwait(false);
+            List<Game> list = new List<Game>();
+            string[] files = await GetFilesFolder(path, filters, false).ConfigureAwait(false);
 
-            foreach (var file in files)
+            foreach (string file in files)
             {
-                var _file = new sio.FileInfo(file);
+                FileInfo _file = new sio.FileInfo(file);
                 //Title - ID - Region - Path - Extension - Size
                 loadPath = _file.FullName;
                 VerifyGame(loadPath);
-                var game = new Game(tbIDName.Text, tbIDGame.Text, tbIDRegion.Text, loadPath, _file.Extension,
+                Game game = new Game(tbIDName.Text, tbIDGame.Text, tbIDRegion.Text, loadPath, _file.Extension,
                     (int)_file.Length);
                 //game.Title = tbIDName.Text;
                 IMAGE_PATH = game.Path;
-                if (CheckImage() && ReadImageDiscTOC()) list.Add(game);
+                if (CheckImage() && ReadImageDiscTOC())
+                {
+                    list.Add(game);
+                }
             }
 
             return list;
@@ -1170,20 +1242,23 @@ namespace GCBM
         /// <returns></returns>
         public DataTable GameDataTable(string path)
         {
-            var _table = new DataTable();
-            _table.Columns.Add("Title");
-            _table.Columns.Add("Region");
-            _table.Columns.Add("ID");
-            _table.Columns.Add("Type");
-            _table.Columns.Add("Size");
-            _table.Columns.Add("Path");
-            foreach (var game in GameList(path).Result)
-                _table.Rows.Add(game.Title,
+            DataTable _table = new DataTable();
+            _ = _table.Columns.Add("Title");
+            _ = _table.Columns.Add("Region");
+            _ = _table.Columns.Add("ID");
+            _ = _table.Columns.Add("Type");
+            _ = _table.Columns.Add("Size");
+            _ = _table.Columns.Add("Path");
+            foreach (Game game in GameList(path).Result)
+            {
+                _ = _table.Rows.Add(game.Title,
                     game.Region,
                     game.ID,
                     game.Extension.Substring(1, 3).Trim().ToUpper(MY_CULTURE),
                     DisplayFormatFileSize(game.Size, CONFIG_INI_FILE.IniReadInt("GENERAL", "FileSize")),
                     game.Path);
+            }
+
             return _table;
         }
 
@@ -1231,8 +1306,15 @@ namespace GCBM
             }
             finally
             {
-                if (br != null) br.Close();
-                if (fs != null) fs.Close();
+                if (br != null)
+                {
+                    br.Close();
+                }
+
+                if (fs != null)
+                {
+                    fs.Close();
+                }
             }
 
             return !ERROR;
@@ -1276,8 +1358,15 @@ namespace GCBM
             }
             finally
             {
-                if (br != null) br.Close();
-                if (fs != null) fs.Close();
+                if (br != null)
+                {
+                    br.Close();
+                }
+
+                if (fs != null)
+                {
+                    fs.Close();
+                }
             }
 
             return !ERROR;
@@ -1288,8 +1377,8 @@ namespace GCBM
         private Game getGameInfo(string path)
         {
             VerifyGame(path);
-            var f = new sio.FileInfo(path);
-            var game = new Game(
+            FileInfo f = new sio.FileInfo(path);
+            Game game = new Game(
                 tbIDName.Text, //if not INI
                 tbIDGame.Text,
                 _IDRegionName,
@@ -1356,15 +1445,23 @@ namespace GCBM
             }
 
             if (sio.File.Exists(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + LINK_DOMAIN + sio.Path.DirectorySeparatorChar + "disc" + sio.Path.DirectorySeparatorChar + _idGame + ".png"))
+            {
                 pbGameDisc.LoadAsync(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + LINK_DOMAIN + sio.Path.DirectorySeparatorChar + "disc" + sio.Path.DirectorySeparatorChar + _idGame + ".png");
+            }
             else
+            {
                 pbGameDisc.LoadAsync(GET_CURRENT_PATH + MEDIA_DIR + sio.Path.DirectorySeparatorChar + "disc.png");
+            }
 
             if (sio.File.Exists(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + LINK_DOMAIN + sio.Path.DirectorySeparatorChar + "3d" + sio.Path.DirectorySeparatorChar + _idGame + ".png"))
+            {
                 pbGameCover3D.LoadAsync(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + LINK_DOMAIN + sio.Path.DirectorySeparatorChar + "3d" + sio.Path.DirectorySeparatorChar + _idGame +
                                         ".png");
+            }
             else
+            {
                 pbGameCover3D.LoadAsync(GET_CURRENT_PATH + MEDIA_DIR + sio.Path.DirectorySeparatorChar + "3d.png");
+            }
         }
 
         #endregion
@@ -1380,7 +1477,7 @@ namespace GCBM
         {
             foreach (DataGridViewRow dgvResultRow in dgv.Rows)
             {
-                var _IDGameCode = dgv.Rows[dgvResultRow.Index].Cells[6].Value.ToString();
+                string _IDGameCode = dgv.Rows[dgvResultRow.Index].Cells[6].Value.ToString();
                 VerifyGame(_IDGameCode);
 
                 //tbLog.AppendText(_IDRegionCode + Environment.NewLine);
@@ -1426,9 +1523,9 @@ namespace GCBM
                 try
                 {
                     // Download Disc cover
-                    var myLinkCoverDisc = new Uri(@"https://art.gametdb.com/wii/disc/" + LINK_DOMAIN + "/" +
+                    Uri myLinkCoverDisc = new Uri(@"https://art.gametdb.com/wii/disc/" + LINK_DOMAIN + "/" +
                                                   _IDMakerCode + ".png");
-                    var request = (HttpWebRequest)WebRequest.Create(myLinkCoverDisc);
+                    HttpWebRequest request = (HttpWebRequest)WebRequest.Create(myLinkCoverDisc);
                     request.Method = "HEAD";
                     NET_RESPONSE = (HttpWebResponse)request.GetResponse();
 
@@ -1438,7 +1535,10 @@ namespace GCBM
                                          ".png" + Environment.NewLine);
                         NET_CLIENT.DownloadFileAsync(myLinkCoverDisc,
                             GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + LINK_DOMAIN + sio.Path.DirectorySeparatorChar + "disc" + sio.Path.DirectorySeparatorChar + _IDMakerCode + ".png");
-                        while (NET_CLIENT.IsBusy) Application.DoEvents();
+                        while (NET_CLIENT.IsBusy)
+                        {
+                            Application.DoEvents();
+                        }
                     }
                 }
                 catch (WebException ex)
@@ -1449,7 +1549,10 @@ namespace GCBM
                 }
                 finally
                 {
-                    if (NET_RESPONSE != null) NET_RESPONSE.Close();
+                    if (NET_RESPONSE != null)
+                    {
+                        NET_RESPONSE.Close();
+                    }
                 }
 
                 //try
@@ -1484,9 +1587,9 @@ namespace GCBM
                 try
                 {
                     // Download 3D cover
-                    var myLinkCover3D = new Uri(@"https://art.gametdb.com/wii/cover3D/" + LINK_DOMAIN + "/" +
+                    Uri myLinkCover3D = new Uri(@"https://art.gametdb.com/wii/cover3D/" + LINK_DOMAIN + "/" +
                                                 _IDMakerCode + ".png");
-                    var request3D = (HttpWebRequest)WebRequest.Create(myLinkCover3D);
+                    HttpWebRequest request3D = (HttpWebRequest)WebRequest.Create(myLinkCover3D);
                     request3D.Method = "HEAD";
                     NET_RESPONSE = (HttpWebResponse)request3D.GetResponse();
 
@@ -1496,7 +1599,10 @@ namespace GCBM
                                          Environment.NewLine);
                         NET_CLIENT.DownloadFileAsync(myLinkCover3D,
                             GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + LINK_DOMAIN + sio.Path.DirectorySeparatorChar + "3d" + sio.Path.DirectorySeparatorChar + _IDMakerCode + ".png");
-                        while (NET_CLIENT.IsBusy) Application.DoEvents();
+                        while (NET_CLIENT.IsBusy)
+                        {
+                            Application.DoEvents();
+                        }
                     }
                 }
                 catch (WebException ex)
@@ -1507,7 +1613,10 @@ namespace GCBM
                 }
                 finally
                 {
-                    if (NET_RESPONSE != null) NET_RESPONSE.Close();
+                    if (NET_RESPONSE != null)
+                    {
+                        NET_RESPONSE.Close();
+                    }
                 }
             }
         }
@@ -1523,7 +1632,7 @@ namespace GCBM
         /// </summary>
         private void DownloadOnlyDisc3DCoverSelectedGame(DataGridView dgv)
         {
-            var _selectedGameRowCount = dgv.Rows.GetRowCount(DataGridViewElementStates.Selected);
+            int _selectedGameRowCount = dgv.Rows.GetRowCount(DataGridViewElementStates.Selected);
 
             if (_selectedGameRowCount == 0)
             {
@@ -1572,9 +1681,9 @@ namespace GCBM
                 try
                 {
                     // Download Disc cover
-                    var myLinkCoverDisc = new Uri(@"https://art.gametdb.com/wii/disc/" + LINK_DOMAIN + "/" +
+                    Uri myLinkCoverDisc = new Uri(@"https://art.gametdb.com/wii/disc/" + LINK_DOMAIN + "/" +
                                                   _IDMakerCode + ".png");
-                    var request = (HttpWebRequest)WebRequest.Create(myLinkCoverDisc);
+                    HttpWebRequest request = (HttpWebRequest)WebRequest.Create(myLinkCoverDisc);
                     request.Method = "HEAD";
                     NET_RESPONSE = (HttpWebResponse)request.GetResponse();
 
@@ -1584,7 +1693,10 @@ namespace GCBM
                                          ".png" + Environment.NewLine);
                         NET_CLIENT.DownloadFileAsync(myLinkCoverDisc,
                             GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + LINK_DOMAIN + sio.Path.DirectorySeparatorChar + "disc" + sio.Path.DirectorySeparatorChar + _IDMakerCode + ".png");
-                        while (NET_CLIENT.IsBusy) Application.DoEvents();
+                        while (NET_CLIENT.IsBusy)
+                        {
+                            Application.DoEvents();
+                        }
                     }
                 }
                 catch (WebException ex)
@@ -1596,15 +1708,18 @@ namespace GCBM
                 }
                 finally
                 {
-                    if (NET_RESPONSE != null) NET_RESPONSE.Close();
+                    if (NET_RESPONSE != null)
+                    {
+                        NET_RESPONSE.Close();
+                    }
                 }
 
                 try
                 {
                     // Download 3D cover
-                    var myLinkCover3D = new Uri(@"https://art.gametdb.com/wii/cover3D/" + LINK_DOMAIN + "/" +
+                    Uri myLinkCover3D = new Uri(@"https://art.gametdb.com/wii/cover3D/" + LINK_DOMAIN + "/" +
                                                 _IDMakerCode + ".png");
-                    var request3D = (HttpWebRequest)WebRequest.Create(myLinkCover3D);
+                    HttpWebRequest request3D = (HttpWebRequest)WebRequest.Create(myLinkCover3D);
                     request3D.Method = "HEAD";
                     NET_RESPONSE = (HttpWebResponse)request3D.GetResponse();
 
@@ -1614,7 +1729,10 @@ namespace GCBM
                                          Environment.NewLine);
                         NET_CLIENT.DownloadFileAsync(myLinkCover3D,
                             GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + LINK_DOMAIN + sio.Path.DirectorySeparatorChar + "3d" + sio.Path.DirectorySeparatorChar + _IDMakerCode + ".png");
-                        while (NET_CLIENT.IsBusy) Application.DoEvents();
+                        while (NET_CLIENT.IsBusy)
+                        {
+                            Application.DoEvents();
+                        }
                     }
                 }
                 catch (WebException ex)
@@ -1626,7 +1744,10 @@ namespace GCBM
                 }
                 finally
                 {
-                    if (NET_RESPONSE != null) NET_RESPONSE.Close();
+                    if (NET_RESPONSE != null)
+                    {
+                        NET_RESPONSE.Close();
+                    }
                 }
             }
         }
@@ -1646,8 +1767,8 @@ namespace GCBM
             {
                 if (sio.Directory.Exists(CONFIG_INI_FILE.IniReadString("GENERAL", "TemporaryFolder", "")))
                 {
-                    var dir = new sio.DirectoryInfo(CONFIG_INI_FILE.IniReadString("GENERAL", "TemporaryFolder", ""));
-                    foreach (var fi in dir.GetFiles("*.*", sio.SearchOption.AllDirectories))
+                    DirectoryInfo dir = new sio.DirectoryInfo(CONFIG_INI_FILE.IniReadString("GENERAL", "TemporaryFolder", ""));
+                    foreach (FileInfo fi in dir.GetFiles("*.*", sio.SearchOption.AllDirectories))
                     {
                         fi.Delete();
                         sio.Directory.Delete(dir.ToString(), true);
@@ -1655,8 +1776,8 @@ namespace GCBM
                 }
                 else
                 {
-                    var dir = new sio.DirectoryInfo(GET_CURRENT_PATH + TEMP_DIR);
-                    foreach (var fi in dir.GetFiles("*.*", sio.SearchOption.AllDirectories))
+                    DirectoryInfo dir = new sio.DirectoryInfo(GET_CURRENT_PATH + TEMP_DIR);
+                    foreach (FileInfo fi in dir.GetFiles("*.*", sio.SearchOption.AllDirectories))
                     {
                         fi.Delete();
                         sio.Directory.Delete(dir.ToString(), true);
@@ -1682,7 +1803,7 @@ namespace GCBM
             // Temporary directory default
             if (!sio.Directory.Exists(CONFIG_INI_FILE.IniReadString("GENERAL", "TemporaryFolder", "")))
             {
-                sio.Directory.CreateDirectory(CONFIG_INI_FILE.IniReadString("GENERAL", "TemporaryFolder", ""));
+                _ = sio.Directory.CreateDirectory(CONFIG_INI_FILE.IniReadString("GENERAL", "TemporaryFolder", ""));
                 tbLog.AppendText("[" + DateString() + "]" + Resources.RequiredDirectories_String1 +
                                  Environment.NewLine);
             }
@@ -1696,50 +1817,50 @@ namespace GCBM
             if (!sio.Directory.Exists(GET_CURRENT_PATH + COVERS_DIR))
             {
                 // US - Covers Directory
-                sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "US" + sio.Path.DirectorySeparatorChar + "2d" + sio.Path.DirectorySeparatorChar); // 2D
-                sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "US" + sio.Path.DirectorySeparatorChar + "3d" + sio.Path.DirectorySeparatorChar); // 3D
-                sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "US" + sio.Path.DirectorySeparatorChar + "disc" + sio.Path.DirectorySeparatorChar); // Disc
-                sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "US" + sio.Path.DirectorySeparatorChar + "full" + sio.Path.DirectorySeparatorChar); // Full
+                _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "US" + sio.Path.DirectorySeparatorChar + "2d" + sio.Path.DirectorySeparatorChar); // 2D
+                _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "US" + sio.Path.DirectorySeparatorChar + "3d" + sio.Path.DirectorySeparatorChar); // 3D
+                _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "US" + sio.Path.DirectorySeparatorChar + "disc" + sio.Path.DirectorySeparatorChar); // Disc
+                _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "US" + sio.Path.DirectorySeparatorChar + "full" + sio.Path.DirectorySeparatorChar); // Full
                 // JA - Covers Directory
-                sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "JA" + sio.Path.DirectorySeparatorChar + "2d" + sio.Path.DirectorySeparatorChar); // 2D
-                sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "JA" + sio.Path.DirectorySeparatorChar + "3d" + sio.Path.DirectorySeparatorChar); // 3D
-                sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "JA" + sio.Path.DirectorySeparatorChar + "disc" + sio.Path.DirectorySeparatorChar); // Disc
-                sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "JA" + sio.Path.DirectorySeparatorChar + "full" + sio.Path.DirectorySeparatorChar); // Full
+                _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "JA" + sio.Path.DirectorySeparatorChar + "2d" + sio.Path.DirectorySeparatorChar); // 2D
+                _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "JA" + sio.Path.DirectorySeparatorChar + "3d" + sio.Path.DirectorySeparatorChar); // 3D
+                _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "JA" + sio.Path.DirectorySeparatorChar + "disc" + sio.Path.DirectorySeparatorChar); // Disc
+                _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "JA" + sio.Path.DirectorySeparatorChar + "full" + sio.Path.DirectorySeparatorChar); // Full
                 // EN - Covers Directory
-                sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "EN" + sio.Path.DirectorySeparatorChar + "2d" + sio.Path.DirectorySeparatorChar); // 2D
-                sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "EN" + sio.Path.DirectorySeparatorChar + "3d" + sio.Path.DirectorySeparatorChar); // 3D
-                sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "EN" + sio.Path.DirectorySeparatorChar + "disc" + sio.Path.DirectorySeparatorChar); // Disc
-                sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "EN" + sio.Path.DirectorySeparatorChar + "full" + sio.Path.DirectorySeparatorChar); // Full
+                _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "EN" + sio.Path.DirectorySeparatorChar + "2d" + sio.Path.DirectorySeparatorChar); // 2D
+                _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "EN" + sio.Path.DirectorySeparatorChar + "3d" + sio.Path.DirectorySeparatorChar); // 3D
+                _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "EN" + sio.Path.DirectorySeparatorChar + "disc" + sio.Path.DirectorySeparatorChar); // Disc
+                _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "EN" + sio.Path.DirectorySeparatorChar + "full" + sio.Path.DirectorySeparatorChar); // Full
                 // DE - Covers Directory
-                sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "DE" + sio.Path.DirectorySeparatorChar + "2d" + sio.Path.DirectorySeparatorChar); // 2D
-                sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "DE" + sio.Path.DirectorySeparatorChar + "3d" + sio.Path.DirectorySeparatorChar); // 3D
-                sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "DE" + sio.Path.DirectorySeparatorChar + "disc" + sio.Path.DirectorySeparatorChar); // Disc
-                sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "DE" + sio.Path.DirectorySeparatorChar + "full" + sio.Path.DirectorySeparatorChar); // Full
+                _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "DE" + sio.Path.DirectorySeparatorChar + "2d" + sio.Path.DirectorySeparatorChar); // 2D
+                _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "DE" + sio.Path.DirectorySeparatorChar + "3d" + sio.Path.DirectorySeparatorChar); // 3D
+                _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "DE" + sio.Path.DirectorySeparatorChar + "disc" + sio.Path.DirectorySeparatorChar); // Disc
+                _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "DE" + sio.Path.DirectorySeparatorChar + "full" + sio.Path.DirectorySeparatorChar); // Full
                 // ES - Covers Directory
-                sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "ES" + sio.Path.DirectorySeparatorChar + "2d" + sio.Path.DirectorySeparatorChar); // 2D
-                sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "ES" + sio.Path.DirectorySeparatorChar + "3d" + sio.Path.DirectorySeparatorChar); // 3D
-                sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "ES" + sio.Path.DirectorySeparatorChar + "disc" + sio.Path.DirectorySeparatorChar); // Disc
-                sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "ES" + sio.Path.DirectorySeparatorChar + "full" + sio.Path.DirectorySeparatorChar); // Full
+                _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "ES" + sio.Path.DirectorySeparatorChar + "2d" + sio.Path.DirectorySeparatorChar); // 2D
+                _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "ES" + sio.Path.DirectorySeparatorChar + "3d" + sio.Path.DirectorySeparatorChar); // 3D
+                _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "ES" + sio.Path.DirectorySeparatorChar + "disc" + sio.Path.DirectorySeparatorChar); // Disc
+                _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "ES" + sio.Path.DirectorySeparatorChar + "full" + sio.Path.DirectorySeparatorChar); // Full
                 // IT - Covers Directory
-                sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "IT" + sio.Path.DirectorySeparatorChar + "2d" + sio.Path.DirectorySeparatorChar); // 2D
-                sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "IT" + sio.Path.DirectorySeparatorChar + "3d" + sio.Path.DirectorySeparatorChar); // 3D
-                sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "IT" + sio.Path.DirectorySeparatorChar + "disc" + sio.Path.DirectorySeparatorChar); // Disc
-                sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "IT" + sio.Path.DirectorySeparatorChar + "full" + sio.Path.DirectorySeparatorChar); // Full
+                _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "IT" + sio.Path.DirectorySeparatorChar + "2d" + sio.Path.DirectorySeparatorChar); // 2D
+                _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "IT" + sio.Path.DirectorySeparatorChar + "3d" + sio.Path.DirectorySeparatorChar); // 3D
+                _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "IT" + sio.Path.DirectorySeparatorChar + "disc" + sio.Path.DirectorySeparatorChar); // Disc
+                _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "IT" + sio.Path.DirectorySeparatorChar + "full" + sio.Path.DirectorySeparatorChar); // Full
                 // AU - Covers Directory
-                sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "AU" + sio.Path.DirectorySeparatorChar + "2d" + sio.Path.DirectorySeparatorChar); // 2D
-                sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "AU" + sio.Path.DirectorySeparatorChar + "3d" + sio.Path.DirectorySeparatorChar); // 3D
-                sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "AU" + sio.Path.DirectorySeparatorChar + "disc" + sio.Path.DirectorySeparatorChar); // Disc
-                sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "AU" + sio.Path.DirectorySeparatorChar + "full" + sio.Path.DirectorySeparatorChar); // Full
+                _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "AU" + sio.Path.DirectorySeparatorChar + "2d" + sio.Path.DirectorySeparatorChar); // 2D
+                _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "AU" + sio.Path.DirectorySeparatorChar + "3d" + sio.Path.DirectorySeparatorChar); // 3D
+                _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "AU" + sio.Path.DirectorySeparatorChar + "disc" + sio.Path.DirectorySeparatorChar); // Disc
+                _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "AU" + sio.Path.DirectorySeparatorChar + "full" + sio.Path.DirectorySeparatorChar); // Full
                 // NL - Covers Directory
-                sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "NL" + sio.Path.DirectorySeparatorChar + "2d" + sio.Path.DirectorySeparatorChar); // 2D
-                sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "NL" + sio.Path.DirectorySeparatorChar + "3d" + sio.Path.DirectorySeparatorChar); // 3D
-                sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "NL" + sio.Path.DirectorySeparatorChar + "disc" + sio.Path.DirectorySeparatorChar); // Disc
-                sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "NL" + sio.Path.DirectorySeparatorChar + "full" + sio.Path.DirectorySeparatorChar); // Full
+                _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "NL" + sio.Path.DirectorySeparatorChar + "2d" + sio.Path.DirectorySeparatorChar); // 2D
+                _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "NL" + sio.Path.DirectorySeparatorChar + "3d" + sio.Path.DirectorySeparatorChar); // 3D
+                _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "NL" + sio.Path.DirectorySeparatorChar + "disc" + sio.Path.DirectorySeparatorChar); // Disc
+                _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "NL" + sio.Path.DirectorySeparatorChar + "full" + sio.Path.DirectorySeparatorChar); // Full
                 // FR - Covers Directory
-                sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "FR" + sio.Path.DirectorySeparatorChar + "2d" + sio.Path.DirectorySeparatorChar); // 2D
-                sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "FR" + sio.Path.DirectorySeparatorChar + "3d" + sio.Path.DirectorySeparatorChar); // 3D
-                sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "FR" + sio.Path.DirectorySeparatorChar + "disc" + sio.Path.DirectorySeparatorChar); // Disc
-                sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "FR" + sio.Path.DirectorySeparatorChar + "full" + sio.Path.DirectorySeparatorChar); // Full
+                _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "FR" + sio.Path.DirectorySeparatorChar + "2d" + sio.Path.DirectorySeparatorChar); // 2D
+                _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "FR" + sio.Path.DirectorySeparatorChar + "3d" + sio.Path.DirectorySeparatorChar); // 3D
+                _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "FR" + sio.Path.DirectorySeparatorChar + "disc" + sio.Path.DirectorySeparatorChar); // Disc
+                _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "FR" + sio.Path.DirectorySeparatorChar + "full" + sio.Path.DirectorySeparatorChar); // Full
 
                 tbLog.AppendText("[" + DateString() + "]" + Resources.RequiredDirectories_String4 +
                                  Environment.NewLine);
@@ -1764,12 +1885,14 @@ namespace GCBM
         {
             try
             {
-                Process.Start(targetLink + targetID);
+                _ = Process.Start(targetLink + targetID);
             }
             catch (Win32Exception noBrowser)
             {
                 if (noBrowser.ErrorCode == -2147467259)
+                {
                     GlobalNotifications(noBrowser.Message, ToolTipIcon.Info);
+                }
             }
             catch (Exception ex)
             {
@@ -1792,13 +1915,16 @@ namespace GCBM
         private static string GetHash(HashAlgorithm hashAlgorithm, string input)
         {
             // Convert the input string to a byte array and compute the hash.
-            var data = hashAlgorithm.ComputeHash(ste.UTF8.GetBytes(input));
+            byte[] data = hashAlgorithm.ComputeHash(ste.UTF8.GetBytes(input));
             // Create a new Stringbuilder to collect the bytes
             // and create a string.
-            var sBuilder = new StringBuilder();
+            StringBuilder sBuilder = new StringBuilder();
             // Loop through each byte of the hashed data
             // and format each one as a hexadecimal string.
-            for (var i = 0; i < data.Length; i++) sBuilder.Append(data[i].ToString("x2"));
+            for (int i = 0; i < data.Length; i++)
+            {
+                _ = sBuilder.Append(data[i].ToString("x2"));
+            }
             // Return the hexadecimal string.
             return sBuilder.ToString();
         }
@@ -1817,9 +1943,9 @@ namespace GCBM
         private static bool VerifyHash(HashAlgorithm hashAlgorithm, string input, string hash)
         {
             // Hash the input.
-            var hashOfInput = GetHash(hashAlgorithm, input);
+            string hashOfInput = GetHash(hashAlgorithm, input);
             // Create a StringComparer an compare the hashes.
-            var comparer = StringComparer.OrdinalIgnoreCase;
+            StringComparer comparer = StringComparer.OrdinalIgnoreCase;
             return comparer.Compare(hashOfInput, hash) == 0;
         }
 
@@ -1833,7 +1959,7 @@ namespace GCBM
         /// <param name="dgv"></param>
         private async void GlobalDeleteSelectedGame(DataGridView dgv)
         {
-            var _selectedRowCount = dgv.Rows.GetRowCount(DataGridViewElementStates.Selected);
+            int _selectedRowCount = dgv.Rows.GetRowCount(DataGridViewElementStates.Selected);
 
             if (dgv.RowCount == 0)
             {
@@ -1842,29 +1968,25 @@ namespace GCBM
             else
             {
                 if (_selectedRowCount == 0)
+                {
                     SelectGameFromList();
+                }
                 else
+                {
                     try
                     {
                         if (DialogResultDeleteGame() == DialogResult.Yes)
                         {
-                            if (_IDRegionCode.Equals("e"))
-                                LINK_DOMAIN = "US";
-                            else if (_IDRegionCode.Equals("p"))
-                                LINK_DOMAIN = "EN";
-                            else if (_IDRegionCode.Equals("j"))
-                                LINK_DOMAIN = "JA";
-                            else
-                                LINK_DOMAIN = "EN";
+                            LINK_DOMAIN = _IDRegionCode.Equals("e") ? "US" : _IDRegionCode.Equals("p") ? "EN" : _IDRegionCode.Equals("j") ? "JA" : "EN";
                             //GlobalNotifications(GCBM.Properties.Resources.UnknownRegion, ToolTipIcon.Info);
 
-                            var cover2D = GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + LINK_DOMAIN + sio.Path.DirectorySeparatorChar
+                            string cover2D = GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + LINK_DOMAIN + sio.Path.DirectorySeparatorChar
                                 + "2d" + sio.Path.DirectorySeparatorChar + tbIDGame.Text + ".png";
-                            var cover3D = GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + LINK_DOMAIN + sio.Path.DirectorySeparatorChar
+                            string cover3D = GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + LINK_DOMAIN + sio.Path.DirectorySeparatorChar
                                 + "3d" + sio.Path.DirectorySeparatorChar + tbIDGame.Text + ".png";
-                            var coverDisc = GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + LINK_DOMAIN + sio.Path.DirectorySeparatorChar
+                            string coverDisc = GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + LINK_DOMAIN + sio.Path.DirectorySeparatorChar
                                 + "disc" + sio.Path.DirectorySeparatorChar + tbIDGame.Text + ".png";
-                            var coverFull = GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + LINK_DOMAIN + sio.Path.DirectorySeparatorChar
+                            string coverFull = GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + LINK_DOMAIN + sio.Path.DirectorySeparatorChar
                                 + "full" + sio.Path.DirectorySeparatorChar + tbIDGame.Text + ".png";
 
                             // DELETAR JOGO E CAPA DO DISPOSITIVO DE ORIGEM
@@ -1873,19 +1995,31 @@ namespace GCBM
                                 sio.File.Delete(dgv.CurrentRow.Cells["Path"].Value.ToString());
 
                                 // 2D
-                                if (sio.File.Exists(cover2D)) sio.File.Delete(cover2D);
+                                if (sio.File.Exists(cover2D))
+                                {
+                                    sio.File.Delete(cover2D);
+                                }
                                 // 3D
-                                if (sio.File.Exists(cover3D)) sio.File.Delete(cover3D);
+                                if (sio.File.Exists(cover3D))
+                                {
+                                    sio.File.Delete(cover3D);
+                                }
                                 // Disc
-                                if (sio.File.Exists(coverDisc)) sio.File.Delete(coverDisc);
+                                if (sio.File.Exists(coverDisc))
+                                {
+                                    sio.File.Delete(coverDisc);
+                                }
                                 // Full
-                                if (sio.File.Exists(coverFull)) sio.File.Delete(coverFull);
+                                if (sio.File.Exists(coverFull))
+                                {
+                                    sio.File.Delete(coverFull);
+                                }
 
                                 await DisplaySourceFilesAsync(fbd1.SelectedPath, dgvSource);
                             } // DELETE GAME FROM TARGET DEVICE.
                             else
                             {
-                                var pasta = sio.Path.GetDirectoryName(dgv.CurrentRow.Cells["Path"].Value.ToString());
+                                string pasta = sio.Path.GetDirectoryName(dgv.CurrentRow.Cells["Path"].Value.ToString());
                                 sio.Directory.Delete(pasta, true);
                                 await DisplayDestinationFilesAsync(tscbDiscDrive.SelectedItem + GAMES_DIR + sio.Path.DirectorySeparatorChar, dgvDestination);
                             }
@@ -1903,6 +2037,7 @@ namespace GCBM
                         tbLog.AppendText(ex.StackTrace);
                         GlobalNotifications(ex.Message, ToolTipIcon.Error);
                     }
+                }
             }
         }
 
@@ -1916,11 +2051,14 @@ namespace GCBM
         /// <param name="dgv"></param>
         private async Task GlobalDeleteAllGames(DataGridView dgv)
         {
-            var filters = new[] { "iso", "gcm" };
+            string[] filters = new[] { "iso", "gcm" };
 
             if (dgv.RowCount == 0)
+            {
                 EmptyGamesList();
+            }
             else
+            {
                 try
                 {
                     if (DialogResultDeleteGame() == DialogResult.Yes)
@@ -1929,29 +2067,22 @@ namespace GCBM
 
                         if (dgv == dgvSource)
                         {
-                            if (_IDRegionCode.Equals("e"))
-                                LINK_DOMAIN = "US";
-                            else if (_IDRegionCode.Equals("p"))
-                                LINK_DOMAIN = "EN";
-                            else if (_IDRegionCode.Equals("j"))
-                                LINK_DOMAIN = "JA";
-                            else
-                                LINK_DOMAIN = "EN";
+                            LINK_DOMAIN = _IDRegionCode.Equals("e") ? "US" : _IDRegionCode.Equals("p") ? "EN" : _IDRegionCode.Equals("j") ? "JA" : "EN";
                             //GlobalNotifications(GCBM.Properties.Resources.UnknownRegion, ToolTipIcon.Info);
 
-                            var di2D = new sio.DirectoryInfo(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + LINK_DOMAIN +
+                            DirectoryInfo di2D = new sio.DirectoryInfo(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + LINK_DOMAIN +
                                                              sio.Path.DirectorySeparatorChar + "2d" + sio.Path.DirectorySeparatorChar);
-                            var di3D = new sio.DirectoryInfo(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + LINK_DOMAIN +
+                            DirectoryInfo di3D = new sio.DirectoryInfo(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + LINK_DOMAIN +
                                                              sio.Path.DirectorySeparatorChar + "3d" + sio.Path.DirectorySeparatorChar);
-                            var diDisc =
+                            DirectoryInfo diDisc =
                                 new sio.DirectoryInfo(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + LINK_DOMAIN + sio.Path.DirectorySeparatorChar + "disc" + sio.Path.DirectorySeparatorChar);
-                            var diFull =
+                            DirectoryInfo diFull =
                                 new sio.DirectoryInfo(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + LINK_DOMAIN + sio.Path.DirectorySeparatorChar + "full" + sio.Path.DirectorySeparatorChar);
 
-                            var files = await GetFilesFolder(fbd1.SelectedPath, filters, false).ConfigureAwait(false);
+                            string[] files = await GetFilesFolder(fbd1.SelectedPath, filters, false).ConfigureAwait(false);
 
                             // Goes through the entire file list and removes all found ISO and GCM files.
-                            for (var i = 0; i < files.Length; i++)
+                            for (int i = 0; i < files.Length; i++)
                             {
                                 //File.Delete(fbd1.SelectedPath + sio.Path.DirectorySeparatorChar + dgvSource.CurrentRow.Cells["Title"].Value.ToString());
                                 sio.File.Delete(dgv.CurrentRow.Cells["Path"].Value.ToString());
@@ -1960,13 +2091,25 @@ namespace GCBM
                             }
 
                             // Delete cover 2D files
-                            foreach (var file in di2D.GetFiles()) file.Delete();
+                            foreach (FileInfo file in di2D.GetFiles())
+                            {
+                                file.Delete();
+                            }
                             // Delete cover 3D files
-                            foreach (var file in di3D.GetFiles()) file.Delete();
+                            foreach (FileInfo file in di3D.GetFiles())
+                            {
+                                file.Delete();
+                            }
                             // Delete cover Disc files
-                            foreach (var file in diDisc.GetFiles()) file.Delete();
+                            foreach (FileInfo file in diDisc.GetFiles())
+                            {
+                                file.Delete();
+                            }
                             // Delete cover Full files
-                            foreach (var file in diFull.GetFiles()) file.Delete();
+                            foreach (FileInfo file in diFull.GetFiles())
+                            {
+                                file.Delete();
+                            }
 
                             //if (dgv.RowCount == 0)
                             //{
@@ -1977,14 +2120,14 @@ namespace GCBM
                         } // DELETAR JOGO DO DISPOSITIVO DE DESTINO
                         else if (dgv == dgvSource)
                         {
-                            var files = await GetFilesFolder(tscbDiscDrive.SelectedItem + GAMES_DIR + sio.Path.DirectorySeparatorChar, filters,
+                            string[] files = await GetFilesFolder(tscbDiscDrive.SelectedItem + GAMES_DIR + sio.Path.DirectorySeparatorChar, filters,
                                 false).ConfigureAwait(false);
 
                             // Goes through the entire file list and removes all found ISO and GCM files.
                             //string folder = Path.GetDirectoryName(dgv.CurrentRow.Cells["Path"].Value.ToString());
-                            for (var i = 0; i < files.Length; i++)
+                            for (int i = 0; i < files.Length; i++)
                             {
-                                var folder = sio.Path.GetDirectoryName(dgv.CurrentRow.Cells["Path"].Value.ToString());
+                                string folder = sio.Path.GetDirectoryName(dgv.CurrentRow.Cells["Path"].Value.ToString());
                                 //File.Delete(tscbDiscDrive.SelectedItem + "games" + sio.Path.DirectorySeparatorChar + dgv.CurrentRow.Cells[0].Value.ToString());                               
                                 sio.Directory.Delete(folder, true);
                                 //MessageBox.Show(pasta);
@@ -2028,9 +2171,12 @@ namespace GCBM
                     if (dgv.RowCount == 0)
                     {
                         DisableOptionsGame(dgv);
-                        if (dgv == dgvSource) ResetOptions();
+                        if (dgv == dgvSource)
+                        {
+                            ResetOptions();
+                        }
 
-                        MessageBox.Show(Resources.AllFilesSuccessfullyDeleted, Resources.Notice,
+                        _ = MessageBox.Show(Resources.AllFilesSuccessfullyDeleted, Resources.Notice,
                             MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
@@ -2040,6 +2186,7 @@ namespace GCBM
                     tbLog.AppendText(ex.StackTrace);
                     GlobalNotifications(ex.Message, ToolTipIcon.Error);
                 }
+            }
         }
 
         #endregion
@@ -2053,7 +2200,7 @@ namespace GCBM
         /// <param name="typeInstall"></param>
         private void GlobalInstall(DataGridView dgv, int typeInstall)
         {
-            var selectedRowCount = dgv.Rows.GetRowCount(DataGridViewElementStates.Selected);
+            int selectedRowCount = dgv.Rows.GetRowCount(DataGridViewElementStates.Selected);
 
             if (selectedRowCount == 0)
             {
@@ -2068,6 +2215,7 @@ namespace GCBM
                 else
                 {
                     if (!isGCITRunning())
+                    {
                         try
                         {
                             if (typeInstall == 0) // Install Exact Copy
@@ -2086,8 +2234,11 @@ namespace GCBM
                                 lblAbort.Visible = true;
                                 BuildInstallQueue();
                                 if (lstInstallQueue.Count == 0 || lstInstallQueue == null)
+                                {
                                     //probably unreachable
-                                    MessageBox.Show("Select a game");
+                                    _ = MessageBox.Show("Select a game");
+                                }
+
                                 if (lstInstallQueue.Count == 1)
                                 {
                                     INSTALLING = true;
@@ -2107,6 +2258,7 @@ namespace GCBM
                         catch
                         {
                         }
+                    }
                 }
             }
         }
@@ -2122,39 +2274,54 @@ namespace GCBM
         /// <param name="algorithm"></param>
         private void GlobalCheckHash(DataGridView dgv, string algorithm)
         {
-            var selectedRowCount = dgv.Rows.GetRowCount(DataGridViewElementStates.Selected);
+            int selectedRowCount = dgv.Rows.GetRowCount(DataGridViewElementStates.Selected);
 
             if (selectedRowCount == 0)
+            {
                 SelectGameFromList();
+            }
             else
+            {
                 try
                 {
-                    var source = dgv.CurrentRow.Cells["Path"].Value.ToString();
+                    string source = dgv.CurrentRow.Cells["Path"].Value.ToString();
 
                     //SHA-1
                     if (algorithm == "SHA-1")
-                        using (var sha1Hash = SHA1.Create())
+                    {
+                        using (SHA1 sha1Hash = SHA1.Create())
                         {
-                            var hash = GetHash(sha1Hash, source);
+                            string hash = GetHash(sha1Hash, source);
 
                             if (VerifyHash(sha1Hash, source, hash))
+                            {
                                 ListHash("SHA-1", hash);
+                            }
                             else
+                            {
                                 tbLog.AppendText("[" + DateString() + "]" + Resources.HashesAreNotSame +
                                                  Environment.NewLine);
+                            }
                         }
+                    }
                     else if (algorithm == "MD5")
+                    {
                         //MD5
-                        using (var md5Hash = MD5.Create())
+                        using (MD5 md5Hash = MD5.Create())
                         {
-                            var hash = GetHash(md5Hash, source);
+                            string hash = GetHash(md5Hash, source);
 
                             if (VerifyHash(md5Hash, source, hash))
+                            {
                                 ListHash("MD5", hash);
+                            }
                             else
+                            {
                                 tbLog.AppendText("[" + DateString() + "]" + Resources.HashesAreNotSame +
                                                  Environment.NewLine);
+                            }
                         }
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -2162,6 +2329,7 @@ namespace GCBM
                     tbLog.AppendText(ex.StackTrace);
                     GlobalNotifications(ex.Message, ToolTipIcon.Error);
                 }
+            }
         }
 
         #endregion
@@ -2187,8 +2355,8 @@ namespace GCBM
                 }
                 else
                 {
-                    var _frmTransfer = new frmTransferCover();
-                    _frmTransfer.ShowDialog();
+                    frmTransferCover _frmTransfer = new frmTransferCover();
+                    _ = _frmTransfer.ShowDialog();
                     _frmTransfer.Dispose();
                 }
             } // WiiFlow
@@ -2201,8 +2369,8 @@ namespace GCBM
                 }
                 else
                 {
-                    var _frmTransfer = new frmTransferCover();
-                    _frmTransfer.ShowDialog();
+                    frmTransferCover _frmTransfer = new frmTransferCover();
+                    _ = _frmTransfer.ShowDialog();
                     _frmTransfer.Dispose();
                 }
             }
@@ -2217,7 +2385,7 @@ namespace GCBM
         /// </summary>
         private void AdditionalInformation()
         {
-            var _selectedGameRowCount = dgvSource.Rows.GetRowCount(DataGridViewElementStates.Selected);
+            int _selectedGameRowCount = dgvSource.Rows.GetRowCount(DataGridViewElementStates.Selected);
 
             if (_selectedGameRowCount == 0)
             {
@@ -2227,8 +2395,8 @@ namespace GCBM
             {
                 if (sio.File.Exists(WIITDB_FILE))
                 {
-                    var _frmInfo = new frmInfoAdditional(tbIDGame.Text);
-                    _frmInfo.ShowDialog();
+                    frmInfoAdditional _frmInfo = new frmInfoAdditional(tbIDGame.Text);
+                    _ = _frmInfo.ShowDialog();
                     _frmInfo.Dispose();
                 }
                 else
@@ -2249,15 +2417,21 @@ namespace GCBM
         private void ExportTXT(DataGridView dgv)
         {
             if (dgvSource.RowCount == 0)
+            {
                 GlobalNotifications(Resources.RecordExportedFailed, ToolTipIcon.Error);
+            }
             else
+            {
                 try
                 {
                     sio.TextWriter writer = new sio.StreamWriter(GET_CURRENT_PATH + sio.Path.DirectorySeparatorChar + "gamelist.txt");
-                    for (var i = 0; i < dgv.Rows.Count - 1; i++)
+                    for (int i = 0; i < dgv.Rows.Count - 1; i++)
                     {
-                        for (var j = 1; j < dgv.Columns.Count; j++)
+                        for (int j = 1; j < dgv.Columns.Count; j++)
+                        {
                             writer.Write("\t" + dgv.Rows[i].Cells[j].Value + "\t" + "|");
+                        }
+
                         writer.WriteLine("");
                         writer.WriteLine(
                             "--------------------------------------------------------------------------------" +
@@ -2271,6 +2445,7 @@ namespace GCBM
                 {
                     GlobalNotifications(ex.Message, ToolTipIcon.Error);
                 }
+            }
         }
 
         #endregion
@@ -2297,7 +2472,10 @@ namespace GCBM
             }
             else
             {
-                if (tbLog.Text != string.Empty) sio.File.WriteAllText(GET_CURRENT_PATH + sio.Path.DirectorySeparatorChar + "gcbm.log", tbLog.Text);
+                if (tbLog.Text != string.Empty)
+                {
+                    sio.File.WriteAllText(GET_CURRENT_PATH + sio.Path.DirectorySeparatorChar + "gcbm.log", tbLog.Text);
+                }
             }
         }
 
@@ -2311,11 +2489,14 @@ namespace GCBM
             {
                 if (sio.File.Exists(WIITDB_FILE))
                 {
-                    var root = XElement.Load(WIITDB_FILE);
-                    var tests = from el in root.Elements("game")
-                                where (string)el.Element("id") == tbIDGame.Text
-                                select el;
-                    foreach (var el in tests) ExternalSite(link, (string)el.Element("locale").Element("title"));
+                    XElement root = XElement.Load(WIITDB_FILE);
+                    IEnumerable<XElement> tests = from el in root.Elements("game")
+                                                  where (string)el.Element("id") == tbIDGame.Text
+                                                  select el;
+                    foreach (XElement el in tests)
+                    {
+                        ExternalSite(link, (string)el.Element("locale").Element("title"));
+                    }
                 }
                 else
                 {
@@ -2375,11 +2556,12 @@ namespace GCBM
 
                 try
                 {
-                    var allDrives = sio.DriveInfo.GetDrives();
+                    DriveInfo[] allDrives = sio.DriveInfo.GetDrives();
                     DriveInfo d = allDrives.Where(a => a.Name == tscbDiscDrive.Text).First();
                     //foreach (DriveInfo d in allDrives)
                     //{
                     if (d.DriveType == DriveType.Removable && d.Name == tscbDiscDrive.SelectedItem.ToString())
+                    {
                         if (d.DriveType == sio.DriveType.Fixed && d.Name == tscbDiscDrive.SelectedItem.ToString())
                         {
                             //tscbDiscDrive.Items.Add(d.Name);
@@ -2392,6 +2574,7 @@ namespace GCBM
                             lblSpaceAvailabeOnDevice.Text = Resources.DestinyDrive_AvailableSpace;
                             lblSpaceTotalOnDevice.Text = Resources.DestinyDrive_TotalSpace;
                         }
+                    }
 
                     if (d.IsReady)
                     {
@@ -2403,11 +2586,13 @@ namespace GCBM
 
                                 if (!sio.Directory.Exists(tscbDiscDrive.Text + sio.Path.DirectorySeparatorChar + GAMES_DIR))
                                 {
-                                    var result = MessageBox.Show(Resources.CreateGamesFolder,
+                                    DialogResult result = MessageBox.Show(Resources.CreateGamesFolder,
                                         Resources.Attention, MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
                                     if (result == DialogResult.Yes)
-                                        sio.Directory.CreateDirectory(tscbDiscDrive.Text + sio.Path.DirectorySeparatorChar + GAMES_DIR);
+                                    {
+                                        _ = sio.Directory.CreateDirectory(tscbDiscDrive.Text + sio.Path.DirectorySeparatorChar + GAMES_DIR);
+                                    }
                                 }
                                 else
                                 {
@@ -2421,11 +2606,13 @@ namespace GCBM
 
                                 if (!sio.Directory.Exists(tscbDiscDrive.Text + sio.Path.DirectorySeparatorChar + GAMES_DIR))
                                 {
-                                    var result = MessageBox.Show(Resources.CreateGamesFolder,
+                                    DialogResult result = MessageBox.Show(Resources.CreateGamesFolder,
                                         Resources.Attention, MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
                                     if (result == DialogResult.Yes)
-                                        sio.Directory.CreateDirectory(tscbDiscDrive.Text + sio.Path.DirectorySeparatorChar + GAMES_DIR);
+                                    {
+                                        _ = sio.Directory.CreateDirectory(tscbDiscDrive.Text + sio.Path.DirectorySeparatorChar + GAMES_DIR);
+                                    }
                                 }
                                 else
                                 {
@@ -2437,11 +2624,13 @@ namespace GCBM
                             {
                                 if (!sio.Directory.Exists(tscbDiscDrive.Text + sio.Path.DirectorySeparatorChar + GAMES_DIR))
                                 {
-                                    var result = MessageBox.Show(Resources.CreateGamesFolderNow,
+                                    DialogResult result = MessageBox.Show(Resources.CreateGamesFolderNow,
                                         Resources.Attention, MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
                                     if (result == DialogResult.Yes)
-                                        sio.Directory.CreateDirectory(tscbDiscDrive.Text + sio.Path.DirectorySeparatorChar + GAMES_DIR);
+                                    {
+                                        _ = sio.Directory.CreateDirectory(tscbDiscDrive.Text + sio.Path.DirectorySeparatorChar + GAMES_DIR);
+                                    }
                                 }
                                 else
                                 {
@@ -2514,20 +2703,26 @@ namespace GCBM
             if (cbFilterDatabase.SelectedIndex != 0)
             {
                 if (lvDatabase.Items.Count == 0)
-                    MessageBox.Show(Resources.FilterDatabase_String1 + Environment.NewLine + Environment.NewLine +
+                {
+                    _ = MessageBox.Show(Resources.FilterDatabase_String1 + Environment.NewLine + Environment.NewLine +
                                     Resources.FilterDatabase_String2, Resources.Notice, MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
+                }
                 else
+                {
                     foreach (ListViewItem item in lvDatabase.Items)
+                    {
                         if (cbFilterDatabase.Text.ToLower() == item.SubItems[3].Text.ToLower())
                         {
                             lvDatabase.Refresh();
-                            lvDatabase.Focus();
+                            _ = lvDatabase.Focus();
                             lvDatabase.HideSelection = false;
                             item.Selected = true;
                             lvDatabase.TopItem = item;
                             break;
                         }
+                    }
+                }
             }
         }
 
@@ -2540,18 +2735,14 @@ namespace GCBM
         private void lvDatabase_Click(object sender, EventArgs e)
         {
             if (lvDatabase.SelectedItems[0].Text != string.Empty)
+            {
                 try
                 {
-                    string _region;
-
-                    if (lvDatabase.SelectedItems[0].SubItems[2].Text == "NTSC-U")
-                        _region = "US";
-                    else if (lvDatabase.SelectedItems[0].SubItems[2].Text == "NTSC-J")
-                        _region = "JA";
-                    else if (lvDatabase.SelectedItems[0].SubItems[2].Text == "NTSC-K")
-                        _region = "JA";
-                    else //if (lvDatabase.SelectedItems[2].Text.ToString() == "PAL")
-                        _region = "EN";
+                    string _region = lvDatabase.SelectedItems[0].SubItems[2].Text == "NTSC-U"
+                        ? "US"
+                        : lvDatabase.SelectedItems[0].SubItems[2].Text == "NTSC-J"
+                            ? "JA"
+                            : lvDatabase.SelectedItems[0].SubItems[2].Text == "NTSC-K" ? "JA" : "EN";
 
                     // Take the Disc covers from the device
                     if (sio.File.Exists(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + _region + sio.Path.DirectorySeparatorChar
@@ -2564,7 +2755,7 @@ namespace GCBM
                     {
                         // Get Disc Covers from the Internet
                         //HttpWebResponse response = null;
-                        var request = (HttpWebRequest)WebRequest.Create(@"https://art.gametdb.com/wii/disc/" + _region +
+                        HttpWebRequest request = (HttpWebRequest)WebRequest.Create(@"https://art.gametdb.com/wii/disc/" + _region +
                                                                         "/" + lvDatabase.SelectedItems[0].Text +
                                                                         ".png");
                         request.Method = "HEAD";
@@ -2573,8 +2764,10 @@ namespace GCBM
                         try
                         {
                             if (NET_RESPONSE.StatusCode == HttpStatusCode.OK)
+                            {
                                 pbGameDisc.LoadAsync(@"https://art.gametdb.com/wii/disc/" + _region + "/" +
                                                      lvDatabase.SelectedItems[0].Text + ".png");
+                            }
                         }
                         catch (WebException ex)
                         {
@@ -2582,7 +2775,10 @@ namespace GCBM
                         }
                         finally
                         {
-                            if (NET_RESPONSE != null) NET_RESPONSE.Close();
+                            if (NET_RESPONSE != null)
+                            {
+                                NET_RESPONSE.Close();
+                            }
                         }
                     }
 
@@ -2597,7 +2793,7 @@ namespace GCBM
                     {
                         // Get 3D covers from the internet
                         //HttpWebResponse response = null;
-                        var request3D = (HttpWebRequest)WebRequest.Create(@"https://art.gametdb.com/wii/cover3D/" +
+                        HttpWebRequest request3D = (HttpWebRequest)WebRequest.Create(@"https://art.gametdb.com/wii/cover3D/" +
                                                                           _region + "/" +
                                                                           lvDatabase.SelectedItems[0].Text + ".png");
                         request3D.Method = "HEAD";
@@ -2606,8 +2802,10 @@ namespace GCBM
                         try
                         {
                             if (NET_RESPONSE.StatusCode == HttpStatusCode.OK)
+                            {
                                 pbGameCover3D.LoadAsync(@"https://art.gametdb.com/wii/cover3D/" + _region + "/" +
                                                         lvDatabase.SelectedItems[0].Text + ".png");
+                            }
                         }
                         catch (WebException ex)
                         {
@@ -2615,7 +2813,10 @@ namespace GCBM
                         }
                         finally
                         {
-                            if (NET_RESPONSE != null) NET_RESPONSE.Close();
+                            if (NET_RESPONSE != null)
+                            {
+                                NET_RESPONSE.Close();
+                            }
                         }
                     }
                 }
@@ -2623,6 +2824,7 @@ namespace GCBM
                 {
                     GlobalNotifications(Resources.ServerReportedOneCoverOrBothNotFound, ToolTipIcon.Error);
                 }
+            }
         }
 
         #endregion
@@ -2631,8 +2833,13 @@ namespace GCBM
         private void tabControlMain_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (tabControlMain.SelectedTab == tabMainFile)
+            {
                 dgvSelected = dgvSource;
-            else if (tabControlMain.SelectedTab == tabMainDisc) dgvSelected = dgvDestination;
+            }
+            else if (tabControlMain.SelectedTab == tabMainDisc)
+            {
+                dgvSelected = dgvDestination;
+            }
         }
 
         // Buttons
@@ -2717,14 +2924,26 @@ namespace GCBM
         //    }
         //}
 
-        private async void Search_Click(object sender, EventArgs e)
+        private void Search_Click(object sender, EventArgs e)
         {
             if (tabControlMain.SelectedTab == tabMainFile)
+            {
                 dgvSelected = dgvSource;
-            else if (tabControlMain.SelectedTab == tabMainDisc) dgvSelected = dgvDestination;
-            foreach (DataGridViewRow row in dgvSelected.Rows) row.Visible = true;
+            }
+            else if (tabControlMain.SelectedTab == tabMainDisc)
+            {
+                dgvSelected = dgvDestination;
+            }
+
             foreach (DataGridViewRow row in dgvSelected.Rows)
+            {
+                row.Visible = true;
+            }
+
+            foreach (DataGridViewRow row in dgvSelected.Rows)
+            {
                 if (tbSearch.Text != null || tbSearch.Text != string.Empty)
+                {
                     if (
                         !row.Cells["Title"].Value.ToString().ToLower().Contains(tbSearch.Text.ToLower()) &&
                         !row.Cells["ID"].Value.ToString().ToLower().Contains(tbSearch.Text.ToLower()) &&
@@ -2732,12 +2951,19 @@ namespace GCBM
                         !row.Cells["Type"].Value.ToString().ToLower().Contains(tbSearch.Text.ToLower()) &&
                         !row.Cells["Size"].Value.ToString().ToLower().Contains(tbSearch.Text.ToLower()) &&
                         !row.Cells["Path"].Value.ToString().ToLower().Contains(tbSearch.Text.ToLower()))
+                    {
                         row.Visible = false;
+                    }
+                }
+            }
         }
 
-        private async void btnSearch_KeyPress(object sender, KeyPressEventArgs e)
+        private void btnSearch_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == (char)Keys.Enter) btnSearch.PerformClick();
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                btnSearch.PerformClick();
+            }
         }
 
         //Restarts the application (closes and reopens)
@@ -2751,7 +2977,10 @@ namespace GCBM
         {
             ABORT = true;
             if (INSTALLING)
+            {
                 ResetOptions();
+            }
+
             lblInstallGame.Text = "Stopped!";
             lblInstallGame.Show();
         }
@@ -2791,7 +3020,7 @@ namespace GCBM
         {
             InitializeComponent();
             InstallQueue = new Dictionary<int, Game>();
-            this.tbSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(CheckEnterKeyPress);
+            tbSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(CheckEnterKeyPress);
             Text = "GameCube Backup Manager 2022 - " + VERSION() + " - 64-bit";
 
             // Splash Screen
@@ -2835,7 +3064,7 @@ namespace GCBM
             if (!sio.File.Exists(WIITDB_FILE) && NetworkInterface.GetIsNetworkAvailable())
             {
                 frmDownloadGameTDB frmDownload = new frmDownloadGameTDB();
-                frmDownload.ShowDialog();
+                _ = frmDownload.ShowDialog();
             }
 
 
@@ -2872,35 +3101,35 @@ namespace GCBM
 
             //foreach in this.Controls.Results 
             mstripMain.Refresh();
-            this.Focus();
+            _ = Focus();
             FINISHEDLAUNCH = true;
         }
 
         private void PopDestination()
         {
-            var cb = new DataGridViewCheckBoxColumn();
+            DataGridViewCheckBoxColumn cb = new DataGridViewCheckBoxColumn();
             dgvDestination.Columns.Clear();
-            dgvDestination.Columns.Add(cb);
-            dgvDestination.Columns.Add("Title", Resources.LoadDatabase_GameTitle);
-            dgvDestination.Columns.Add("ID", Resources.LoadDatabase_IDGameCode);
-            dgvDestination.Columns.Add("Region", Resources.LoadDatabase_Region);
-            dgvDestination.Columns.Add("Type", Resources.LoadDatabase_Type);
-            dgvDestination.Columns.Add("Size", Resources.DisplayFilesSelected_Size);
-            dgvDestination.Columns.Add("Path", Resources.DisplayFilesSelected_FilePath);
+            _ = dgvDestination.Columns.Add(cb);
+            _ = dgvDestination.Columns.Add("Title", Resources.LoadDatabase_GameTitle);
+            _ = dgvDestination.Columns.Add("ID", Resources.LoadDatabase_IDGameCode);
+            _ = dgvDestination.Columns.Add("Region", Resources.LoadDatabase_Region);
+            _ = dgvDestination.Columns.Add("Type", Resources.LoadDatabase_Type);
+            _ = dgvDestination.Columns.Add("Size", Resources.DisplayFilesSelected_Size);
+            _ = dgvDestination.Columns.Add("Path", Resources.DisplayFilesSelected_FilePath);
             dgvDestination.Refresh();
         }
 
         private void PopSource()
         {
-            var cb = new DataGridViewCheckBoxColumn();
+            DataGridViewCheckBoxColumn cb = new DataGridViewCheckBoxColumn();
             dgvSource.Columns.Clear();
-            dgvSource.Columns.Add(cb);
-            dgvSource.Columns.Add("Title", Resources.LoadDatabase_GameTitle);
-            dgvSource.Columns.Add("ID", Resources.LoadDatabase_IDGameCode);
-            dgvSource.Columns.Add("Region", Resources.LoadDatabase_Region);
-            dgvSource.Columns.Add("Type", Resources.LoadDatabase_Type);
-            dgvSource.Columns.Add("Size", Resources.DisplayFilesSelected_Size);
-            dgvSource.Columns.Add("Path", Resources.DisplayFilesSelected_FilePath);
+            _ = dgvSource.Columns.Add(cb);
+            _ = dgvSource.Columns.Add("Title", Resources.LoadDatabase_GameTitle);
+            _ = dgvSource.Columns.Add("ID", Resources.LoadDatabase_IDGameCode);
+            _ = dgvSource.Columns.Add("Region", Resources.LoadDatabase_Region);
+            _ = dgvSource.Columns.Add("Type", Resources.LoadDatabase_Type);
+            _ = dgvSource.Columns.Add("Size", Resources.DisplayFilesSelected_Size);
+            _ = dgvSource.Columns.Add("Path", Resources.DisplayFilesSelected_FilePath);
             dgvSource.Refresh();
         }
 
@@ -2920,7 +3149,7 @@ namespace GCBM
         private static readonly string EXFAT_FAT64 = "EXFAT";
 
         private bool INSTALLING;
-        private bool FINISHEDLAUNCH = false;
+        private readonly bool FINISHEDLAUNCH = false;
 
         //private static string EXT2                   = "EXT2";
         //private static string EXT3                   = "EXT3";
@@ -2931,7 +3160,7 @@ namespace GCBM
         //private static string LOG_LEVEL;
         //private static string CULTURE_LANG;
         //private static string TRANSLATOR;
-        private static string RES_PATH;
+        private static readonly string RES_PATH;
         private static string IMAGE_PATH;
         private static string LINK_DOMAIN;
         private static string FLUSH_SD;
@@ -2974,7 +3203,7 @@ namespace GCBM
         private readonly WebClient NET_CLIENT = new WebClient();
         private HttpWebResponse NET_RESPONSE;
         private readonly frmSplashScreen SPLASH_SCREEN;
-        private string WINTHEME;
+        private readonly string WINTHEME;
 
         private bool WORKING;
         private string dgvGameListPath;
@@ -2983,7 +3212,7 @@ namespace GCBM
         private int intQueuePos;
         private readonly List<Game> lstInstallQueue = new List<Game>();
         private readonly List<Game> lstSourceGames = new List<Game>();
-        private Game lastGameLookedUp;
+        private readonly Game lastGameLookedUp;
         private DataGridView dgvSelected = new DataGridView();
         private readonly Dictionary<int, Game> InstallQueue;
 
@@ -3004,9 +3233,9 @@ namespace GCBM
             try
             {
                 Hide();
-                var thread = new Thread(ShowSplashScreen);
+                Thread thread = new Thread(ShowSplashScreen);
                 thread.Start();
-                var worker = new Hardworker();
+                Hardworker worker = new Hardworker();
                 worker.ProgressChanged += (o, ex) => { SPLASH_SCREEN.UpdateProgress(ex.Progress); };
                 worker.HardWorkDone += (o, ex) =>
                 {
@@ -3063,7 +3292,11 @@ namespace GCBM
             try
             {
                 SPLASH_SCREEN.Show();
-                while (!SPLASH_SCREEN_DONE) Application.DoEvents();
+                while (!SPLASH_SCREEN_DONE)
+                {
+                    Application.DoEvents();
+                }
+
                 SPLASH_SCREEN.Close();
                 SPLASH_SCREEN.Dispose();
             }
@@ -3100,22 +3333,28 @@ namespace GCBM
             //}
 
             if (path.Length == 0)
+            {
                 return;
+            }
 
             IMAGE_PATH = path;
 
             if (CheckImage())
+            {
                 if (ReadImageTOC())
                 {
                     if (CONFIG_INI_FILE.IniReadBool("TITLES", "GameXmlName"))
                     {
                         if (sio.File.Exists(WIITDB_FILE))
                         {
-                            var root = XElement.Load(WIITDB_FILE);
-                            var tests = from el in root.Elements("game")
-                                        where (string)el.Element("id") == tbIDGame.Text
-                                        select el;
-                            foreach (var el in tests) tbIDName.Text = (string)el.Element("locale").Element("title");
+                            XElement root = XElement.Load(WIITDB_FILE);
+                            IEnumerable<XElement> tests = from el in root.Elements("game")
+                                                          where (string)el.Element("id") == tbIDGame.Text
+                                                          select el;
+                            foreach (XElement el in tests)
+                            {
+                                tbIDName.Text = (string)el.Element("locale").Element("title");
+                            }
                         }
                         else
                         {
@@ -3125,6 +3364,7 @@ namespace GCBM
 
                     ROOT_OPENED = false;
                 }
+            }
         }
 
         /// <summary>
@@ -3133,22 +3373,28 @@ namespace GCBM
         private void DirectoryOpenDiscList(string path)
         {
             if (path.Length == 0)
+            {
                 return;
+            }
 
             IMAGE_PATH = path;
 
             if (CheckImage())
+            {
                 if (ReadImageDiscTOC())
                 {
                     if (CONFIG_INI_FILE.IniReadBool("TITLES", "GameXmlName"))
                     {
                         if (sio.File.Exists(WIITDB_FILE))
                         {
-                            var root = XElement.Load(WIITDB_FILE);
-                            var tests = from el in root.Elements("game")
-                                        where (string)el.Element("id") == tbIDGameDisc.Text
-                                        select el;
-                            foreach (var el in tests) tbIDNameDisc.Text = (string)el.Element("locale").Element("title");
+                            XElement root = XElement.Load(WIITDB_FILE);
+                            IEnumerable<XElement> tests = from el in root.Elements("game")
+                                                          where (string)el.Element("id") == tbIDGameDisc.Text
+                                                          select el;
+                            foreach (XElement el in tests)
+                            {
+                                tbIDNameDisc.Text = (string)el.Element("locale").Element("title");
+                            }
                         }
                         else
                         {
@@ -3159,6 +3405,7 @@ namespace GCBM
                     //miImageOpen.ToolTipText = imgPath;
                     ROOT_OPENED = false;
                 }
+            }
 
             tbIDRegionDisc.Text = dgvSelected.CurrentRow.Cells["ID"].Value.ToString();
         }
@@ -3175,7 +3422,7 @@ namespace GCBM
         private void InstallGameScrub()
         {
             const string quote = "\"";
-            var _source = InstallQueue[intQueuePos].Path;
+            string _source = InstallQueue[intQueuePos].Path;
 
             START_INFO.CreateNoWindow = true;
             START_INFO.UseShellExecute = true;
@@ -3183,8 +3430,8 @@ namespace GCBM
             START_INFO.FileName = GET_CURRENT_PATH + sio.Path.DirectorySeparatorChar + "bin" + sio.Path.DirectorySeparatorChar + "gcit.exe ";
 
 
-            var boolCaseSwitch = CONFIG_INI_FILE.IniReadBool("TRANSFERSYSTEM", "ScrubFlushSD");
-            var intCaseSwitch = CONFIG_INI_FILE.IniReadInt("TRANSFERSYSTEM", "ScrubAlign");
+            bool boolCaseSwitch = CONFIG_INI_FILE.IniReadBool("TRANSFERSYSTEM", "ScrubFlushSD");
+            int intCaseSwitch = CONFIG_INI_FILE.IniReadInt("TRANSFERSYSTEM", "ScrubAlign");
 
             switch (boolCaseSwitch)
             {
@@ -3243,9 +3490,9 @@ namespace GCBM
                                    tscbDiscDrive.SelectedItem + GAMES_DIR;
             START_INFO.WindowStyle = ProcessWindowStyle.Hidden;
 
-            using (var myProcess = Process.Start(START_INFO))
+            using (Process myProcess = Process.Start(START_INFO))
             {
-                var i = 0;
+                int i = 0;
                 // Display the process statistics until
                 // the user closes the program.
                 do
@@ -3272,7 +3519,7 @@ namespace GCBM
                             lblCopy.Text = Resources.InstallGameScrub_String1;
                             lblInstallGame.Text = Resources.InstallGameScrub_String2 + i++;
                             pbCopy.PerformStep();
-                            var incrementValue = i++ / 2;
+                            int incrementValue = i++ / 2;
                             pbCopy.Value = incrementValue;
                             lblPercent.Text = incrementValue + "%"; //i++.ToString() + "%";
                             //progressBarGameCopy.Maximum = i++ * 5;
@@ -3288,7 +3535,7 @@ namespace GCBM
 
                 //textLog.AppendText($">> Código de saída do processo : {myProcess.ExitCode}");
 
-                var _StatusExit = myProcess.ExitCode;
+                int _StatusExit = myProcess.ExitCode;
                 if (_StatusExit == 0)
                 {
                     lblInstallGame.Visible = true;
@@ -3318,9 +3565,9 @@ namespace GCBM
                         if (CONFIG_INI_FILE.IniReadBool("TITLES", "GameInternalName"))
                         {
                             // Renomear game.iso -> disc2.iso
-                            var myOrigem = tscbDiscDrive.SelectedItem + GAMES_DIR + sio.Path.DirectorySeparatorChar + tbIDName.Text + " [" +
+                            string myOrigem = tscbDiscDrive.SelectedItem + GAMES_DIR + sio.Path.DirectorySeparatorChar + tbIDName.Text + " [" +
                                            tbIDGame.Text + "2]" + sio.Path.DirectorySeparatorChar + "game.iso";
-                            var myDestiny = tscbDiscDrive.SelectedItem + GAMES_DIR + sio.Path.DirectorySeparatorChar +
+                            string myDestiny = tscbDiscDrive.SelectedItem + GAMES_DIR + sio.Path.DirectorySeparatorChar +
                                             tbIDName.Text.Replace("disc2 ", "") + " [" + tbIDGame.Text + "2]" +
                                             sio.Path.DirectorySeparatorChar + "disc2.iso";
 
@@ -3348,9 +3595,9 @@ namespace GCBM
                         else
                         {
                             // Renomear game.iso -> disc2.iso
-                            var myOrigem = tscbDiscDrive.SelectedItem + GAMES_DIR + sio.Path.DirectorySeparatorChar + tbIDName.Text + " [" +
+                            string myOrigem = tscbDiscDrive.SelectedItem + GAMES_DIR + sio.Path.DirectorySeparatorChar + tbIDName.Text + " [" +
                                            _IDMakerCode + "2]" + sio.Path.DirectorySeparatorChar + "game.iso";
-                            var myDestiny = tscbDiscDrive.SelectedItem + GAMES_DIR + sio.Path.DirectorySeparatorChar +
+                            string myDestiny = tscbDiscDrive.SelectedItem + GAMES_DIR + sio.Path.DirectorySeparatorChar +
                                             tbIDName.Text.Replace("disc2 ", "") + " [" + _IDMakerCode + "2]" +
                                             sio.Path.DirectorySeparatorChar + "disc2.iso";
 
@@ -3397,7 +3644,7 @@ namespace GCBM
             while (true && !ABORT)
             {
                 const string quote = "\"";
-                var _source = InstallQueue[x].Path;
+                string _source = InstallQueue[x].Path;
 
                 START_INFO.CreateNoWindow = true;
                 START_INFO.UseShellExecute = true;
@@ -3405,8 +3652,8 @@ namespace GCBM
                 START_INFO.FileName = GET_CURRENT_PATH + sio.Path.DirectorySeparatorChar + "bin" + sio.Path.DirectorySeparatorChar + "gcit.exe ";
 
 
-                var boolCaseSwitch = CONFIG_INI_FILE.IniReadBool("TRANSFERSYSTEM", "ScrubFlushSD");
-                var intCaseSwitch = CONFIG_INI_FILE.IniReadInt("TRANSFERSYSTEM", "ScrubAlign");
+                bool boolCaseSwitch = CONFIG_INI_FILE.IniReadBool("TRANSFERSYSTEM", "ScrubFlushSD");
+                int intCaseSwitch = CONFIG_INI_FILE.IniReadInt("TRANSFERSYSTEM", "ScrubAlign");
 
                 switch (boolCaseSwitch)
                 {
@@ -3465,9 +3712,9 @@ namespace GCBM
                                        tscbDiscDrive.SelectedItem + GAMES_DIR;
                 START_INFO.WindowStyle = ProcessWindowStyle.Hidden;
 
-                using (var myProcess = Process.Start(START_INFO))
+                using (Process myProcess = Process.Start(START_INFO))
                 {
-                    var i = 0;
+                    int i = 0;
                     // Display the process statistics until
                     // the user closes the program.
                     do
@@ -3499,7 +3746,7 @@ namespace GCBM
 
                     //textLog.AppendText($">> Código de saída do processo : {myProcess.ExitCode}");
 
-                    var _StatusExit = myProcess.ExitCode;
+                    int _StatusExit = myProcess.ExitCode;
                     if (_StatusExit == 0)
                     {
                         lblInstallGame.Visible = true;
@@ -3529,9 +3776,9 @@ namespace GCBM
                             if (CONFIG_INI_FILE.IniReadBool("TITLES", "GameInternalName"))
                             {
                                 // Renomear game.iso -> disc2.iso
-                                var myOrigem = tscbDiscDrive.SelectedItem + GAMES_DIR + sio.Path.DirectorySeparatorChar + tbIDName.Text + " [" +
+                                string myOrigem = tscbDiscDrive.SelectedItem + GAMES_DIR + sio.Path.DirectorySeparatorChar + tbIDName.Text + " [" +
                                                tbIDGame.Text + "2]" + sio.Path.DirectorySeparatorChar + "game.iso";
-                                var myDestiny = tscbDiscDrive.SelectedItem + GAMES_DIR + sio.Path.DirectorySeparatorChar +
+                                string myDestiny = tscbDiscDrive.SelectedItem + GAMES_DIR + sio.Path.DirectorySeparatorChar +
                                                 tbIDName.Text.Replace("disc2 ", "") + " [" + tbIDGame.Text + "2]" +
                                                 sio.Path.DirectorySeparatorChar + "disc2.iso";
 
@@ -3559,10 +3806,10 @@ namespace GCBM
                             else
                             {
                                 // Renomear game.iso -> disc2.iso
-                                var myOrigem = tscbDiscDrive.SelectedItem + GAMES_DIR + sio.Path.DirectorySeparatorChar +
+                                string myOrigem = tscbDiscDrive.SelectedItem + GAMES_DIR + sio.Path.DirectorySeparatorChar +
                                                InstallQueue[intQueuePos].Title + " [" + InstallQueue[intQueuePos].ID +
                                                "2]" + sio.Path.DirectorySeparatorChar + "game.iso";
-                                var myDestiny = tscbDiscDrive.SelectedItem + GAMES_DIR + sio.Path.DirectorySeparatorChar +
+                                string myDestiny = tscbDiscDrive.SelectedItem + GAMES_DIR + sio.Path.DirectorySeparatorChar +
                                                 InstallQueue[intQueuePos].Title.Replace("disc2 ", "") + " [" +
                                                 InstallQueue[intQueuePos].ID + "2]" + sio.Path.DirectorySeparatorChar + "disc2.iso";
 
@@ -3595,7 +3842,10 @@ namespace GCBM
                 }
 
                 intQueuePos++;
-                if (intQueuePos >= intQueueLength) break;
+                if (intQueuePos >= intQueueLength)
+                {
+                    break;
+                }
             }
         }
 
@@ -3611,7 +3861,7 @@ namespace GCBM
             lblCopy.Text = Resources.InstallGameScrub_String1;
             lblInstallGame.Text = Resources.InstallGameScrub_String2 + i++;
             pbCopy.PerformStep();
-            var incrementValue = i++ / 2;
+            int incrementValue = i++ / 2;
             if (incrementValue >= 100)
             {
                 pbCopy.Hide();
@@ -3635,13 +3885,16 @@ namespace GCBM
         /// </summary>
         /// <param name="_source"></param>
         /// <param name="_destination"></param>
-        private async void CopyTask(sio.FileInfo _source, sio.FileInfo _destination)
+        private void CopyTask(sio.FileInfo _source, sio.FileInfo _destination)
         {
             // Disc 1
             //if (textBoxDiscID.Text == "00" && comboBoxSettingsNomenclatureAppointmentStyle.SelectedIndex  == 0)
             if (tbIDDiscID.Text == "0x00")
             {
-                if (_destination.Exists) _destination.Delete();
+                if (_destination.Exists)
+                {
+                    _destination.Delete();
+                }
                 //Create a tast to run copy file
                 Run(() =>
                 {
@@ -3655,6 +3908,7 @@ namespace GCBM
                 {
                     FinishedInstalling();
                     if (intQueuePos <= intQueueLength)
+                    {
                         try
                         {
                             CheckAndCallCopyTask(InstallQueue[intQueuePos].Path);
@@ -3664,12 +3918,16 @@ namespace GCBM
                             tbLog.AppendText("[" + DateTime.Now + "] Error Installing: " + Environment.NewLine + ex.Message + Environment.NewLine);
                             tbLog.AppendText(ex.StackTrace);
                         }
+                    }
                 })));
             }
             // Disc 2
             else if (tbIDDiscID.Text == "0x01")
             {
-                if (_destination.Exists) _destination.Delete();
+                if (_destination.Exists)
+                {
+                    _destination.Delete();
+                }
                 //Create a tast to run copy file
                 Run(() =>
                 {
@@ -3729,7 +3987,11 @@ namespace GCBM
         /// <param name="icon"></param>
         private void GlobalNotifications(string message, ToolTipIcon icon)
         {
-            if (intQueuePos + 1 == InstallQueue.Count && WORKING == false) EnableOptionsGameList();
+            if (intQueuePos + 1 == InstallQueue.Count && WORKING == false)
+            {
+                EnableOptionsGameList();
+            }
+
             notifyIcon.ShowBalloonTip(5, "GameCube Backup Manager", message, icon);
         }
 
@@ -3738,7 +4000,7 @@ namespace GCBM
         /// </summary>
         private static void EmptyGamesList()
         {
-            MessageBox.Show(Resources.EmptyGamesList, Resources.Information, MessageBoxButtons.OK,
+            _ = MessageBox.Show(Resources.EmptyGamesList, Resources.Information, MessageBoxButtons.OK,
                 MessageBoxIcon.Exclamation);
         }
 
@@ -3747,7 +4009,7 @@ namespace GCBM
         /// </summary>
         private static void SelectGameFromList()
         {
-            MessageBox.Show(Resources.SelectGameFromList, Resources.Information, MessageBoxButtons.OK,
+            _ = MessageBox.Show(Resources.SelectGameFromList, Resources.Information, MessageBoxButtons.OK,
                 MessageBoxIcon.Exclamation);
         }
 
@@ -3755,7 +4017,7 @@ namespace GCBM
         /// </summary>
         private void SelectTargetDrive()
         {
-            MessageBox.Show(Resources.SelectTargetDrive, Resources.Information, MessageBoxButtons.OK,
+            _ = MessageBox.Show(Resources.SelectTargetDrive, Resources.Information, MessageBoxButtons.OK,
                 MessageBoxIcon.Exclamation);
         }
 
@@ -3766,7 +4028,7 @@ namespace GCBM
         /// <returns></returns>
         private static DialogResult DialogResultDeleteGame()
         {
-            var dr = MessageBox.Show(Resources.DialogResultDeleteGame_ReallyDeleteFile_String1 + Environment.NewLine +
+            DialogResult dr = MessageBox.Show(Resources.DialogResultDeleteGame_ReallyDeleteFile_String1 + Environment.NewLine +
                                      Environment.NewLine + Resources.DialogResultDeleteGame_ReallyDeleteFile_String2,
                 Resources.Notice, MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             return dr;
@@ -3777,7 +4039,7 @@ namespace GCBM
         /// </summary>
         private static void CheckUSBGXFlow()
         {
-            MessageBox.Show(Resources.CheckUSBGXFlow_String1 +
+            _ = MessageBox.Show(Resources.CheckUSBGXFlow_String1 +
                             Environment.NewLine + Environment.NewLine +
                             Resources.CheckUSBGXFlow_String2 +
                             Environment.NewLine + Environment.NewLine +
@@ -3814,7 +4076,7 @@ namespace GCBM
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show(ex.Message, Resources.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        _ = MessageBox.Show(ex.Message, Resources.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     return;
                 }
@@ -3828,7 +4090,7 @@ namespace GCBM
         private async void CheckWiiTdbXml()
         {
             await ProcessTaskDelay().ConfigureAwait(false);
-            MessageBox.Show(Resources.ProcessTaskDelay_String1 + Environment.NewLine +
+            _ = MessageBox.Show(Resources.ProcessTaskDelay_String1 + Environment.NewLine +
                             Resources.ProcessTaskDelay_String2 +
                             Environment.NewLine + Environment.NewLine +
                             Resources.ProcessTaskDelay_String3 +
@@ -3842,7 +4104,7 @@ namespace GCBM
         /// <param name="typeDrive"></param>
         private void InvalidDrive(string typeDrive)
         {
-            MessageBox.Show(Resources.InvalidDrive_String1 + Environment.NewLine +
+            _ = MessageBox.Show(Resources.InvalidDrive_String1 + Environment.NewLine +
                             Resources.InvalidDrive_String2 + typeDrive +
                             Environment.NewLine + Environment.NewLine +
                             Resources.InvalidDrive_String3 +
@@ -3860,7 +4122,7 @@ namespace GCBM
         /// <param name="listhash"></param>
         private void ListHash(string typehash, string listhash)
         {
-            MessageBox.Show(Resources.ListHash_String1 + typehash + Resources.ListHash_String2 + Environment.NewLine +
+            _ = MessageBox.Show(Resources.ListHash_String1 + typehash + Resources.ListHash_String2 + Environment.NewLine +
                             Environment.NewLine
                             + listhash, Resources.Information, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
@@ -3875,7 +4137,7 @@ namespace GCBM
         /// <param name="dgv"></param>
         protected string DataTableToHTML(DataTable dt)
         {
-            var strHTMLBuilder = new StringBuilder();
+            StringBuilder strHTMLBuilder = new StringBuilder();
             //strHTMLBuilder.Append("<html >");
             //strHTMLBuilder.Append("<!doctype html>");
             //strHTMLBuilder.Append("<html class=\"no-js\" lang=\"en\" dir=\"ltr\">");
@@ -3913,37 +4175,37 @@ namespace GCBM
             //strHTMLBuilder.Append("</header>");
             //strHTMLBuilder.Append("<div class=\"container\">");
 
-            strHTMLBuilder.Append(
+            _ = strHTMLBuilder.Append(
                 "<!doctype html> <html lang=\"en\" class=\"h-100\"> <head> <meta charset=\"utf-8\"> <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"> <meta name=\"description\" content=\"\"> <meta name=\"author\" content=\"Mark Otto, Jacob Thornton, and Bootstrap contributors\"> <meta name=\"generator\" content=\"Hugo 0.98.0\"> <link rel=\"stylesheet\" href=\"./css/gcbm.css\" /><link rel=\"icon\" href=\"favicon.ico\" type=\"image/x-icon\" /> <title>GameCube Backups</title> <script src=\"./js/jquery.js\"></script><script src=\"./js/jquery.dataTables.min.js\"></script><script src=\"./js/bootstrap-tables.js\"></script><script>$(document).ready(function () {$('.table').DataTable();});</script> <svg xmlns =\"http://www.w3.org/2000/svg\" style=\"display: none;\"> <title>Bootstrap</title> <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M24.509 0c-6.733 0-11.715 5.893-11.492 12.284.214 6.14-.064 14.092-2.066 20.577C8.943 39.365 5.547 43.485 0 44.014v5.972c5.547.529 8.943 4.649 10.951 11.153 2.002 6.485 2.28 14.437 2.066 20.577C12.794 88.106 17.776 94 24.51 94H93.5c6.733 0 11.714-5.893 11.491-12.284-.214-6.14.064-14.092 2.066-20.577 2.009-6.504 5.396-10.624 10.943-11.153v-5.972c-5.547-.529-8.934-4.649-10.943-11.153-2.002-6.484-2.28-14.437-2.066-20.577C105.214 5.894 100.233 0 93.5 0H24.508zM80 57.863C80 66.663 73.436 72 62.543 72H44a2 2 0 01-2-2V24a2 2 0 012-2h18.437c9.083 0 15.044 4.92 15.044 12.474 0 5.302-4.01 10.049-9.119 10.88v.277C75.317 46.394 80 51.21 80 57.863zM60.521 28.34H49.948v14.934h8.905c6.884 0 10.68-2.772 10.68-7.727 0-4.643-3.264-7.207-9.012-7.207zM49.948 49.2v16.458H60.91c7.167 0 10.964-2.876 10.964-8.281 0-5.406-3.903-8.178-11.425-8.178H49.948z\"></path> </symbol> <symbol id=\"facebook\" viewBox=\"0 0 16 16\"> <path d=\"M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z\"></path> </symbol></svg><link href =\"./css/bootstrap.min.css\" rel=\"stylesheet\"><style> .bd-placeholder-img { font-size: 1.125rem; text-anchor: middle; -webkit-user-select: none; -moz-user-select: none; user-select: none; } @media(min-width: 768px) { .bd-placeholder-img-lg { font-size: 3.5rem; } } .b-example-divider { height: 3rem; background-color: rgba(0, 0, 0, .1); border: solid rgba(0, 0, 0, .15); border-width: 1px 0; box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15); } .b-example-vr { flex-shrink: 0; width: 1.5rem; height: 100vh; } .bi { vertical-align: -.125em; fill: currentColor; } .nav-scroller { position: relative; z-index: 2; height: 2.75rem; overflow-y: hidden; } .nav-scroller.nav { display: flex; flex-wrap: nowrap; padding-bottom: 1rem; margin-top: -1px; overflow-x: auto; text-align: center; white-space: nowrap; -webkit-overflow-scrolling: touch; } .bd-placeholder-img { font-size: 1.125rem; text-anchor: middle; -webkit-user-select: none; -moz-user-select: none; user-select: none; }            @media(min-width: 768px) { .bd-placeholder-img-lg { font-size: 3.5rem; } } .b-example-divider { height: 3rem; background-color: rgba(0, 0, 0, .1); border: solid rgba(0, 0, 0, .15); border-width: 1px 0; box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15); } .odd{background:#e2e3e5;} .b-example-vr { flex-shrink: 0; width: 1.5rem; height: 100vh; } .bi { vertical-align: -.125em; fill: currentColor; } .nav-scroller { position: relative; z-index: 2; height: 2.75rem; overflow-y: hidden; } .nav-scroller.nav { display: flex; flex-wrap: nowrap; padding-bottom: 1rem; margin-top: -1px; overflow-x: auto; text-align: center; white-space: nowrap; -webkit-overflow-scrolling: touch; }  .bg-dark {background-color: #4d6082 !important; } .copy { color: white!important; }# gh { margin-top: -3px; } footer { padding-left: 2em; padding-right: 2em; } </style > <link href =\"sticky-footer-navbar.css\" rel=\"stylesheet\"> </head> <body class=\"d-flex flex-column h-100\"> <header> <!-- Fixed navbar --> <nav class=\"navbar navbar-expand-md navbar-dark fixed-top bg-dark\"> <div class=\"container-fluid\"> <img src=\"./img/GC-Logo.png\" alt=\"\" style=\"height: 42px; width: 42px; padding: .25em;\"> <a class=\"navbar-brand\" href=\"https://axiondrak.github.io/gcbm.html\">GameCube Backup Manager</a> <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarCollapse\" aria-controls=\"navbarCollapse\" aria-expanded=\"false\" aria-label=\"Toggle navigation\"> <span class=\"navbar-toggler-icon\"></span> </button> <div class=\"collapse navbar-collapse\" id=\"navbarCollapse\"> <ul class=\"navbar-nav me-auto mb-2 mb-md-0\"> <li class=\"nav-item\"> <a class=\"nav-link active\" aria-current=\"page\" href=\"#\">Home</a> </li> <li class=\"nav-item\"> <a class=\"nav-link\" href=\"#\">Stats</a> </li> <li class=\"nav-item\"> <a class=\"nav-link\">Help</a> </li> </ul> </div> </div> </nav> </header> <!-- Begin page content --> <main class=\"flex-shrink-0\"> <div class=\"container\"> <h1 class=\"mt-5\">GameCube Backups</h1> <p class=\"lead\">My collection of games.</p> </div> </main> ");
-            strHTMLBuilder.Append("<div class=\"container-fluid\"><table class=\"table\">");
-            strHTMLBuilder.Append("<thead >");
+            _ = strHTMLBuilder.Append("<div class=\"container-fluid\"><table class=\"table\">");
+            _ = strHTMLBuilder.Append("<thead >");
 
             foreach (DataColumn myColumn in dt.Columns)
             {
-                strHTMLBuilder.Append("<th scope=\"col\">");
-                strHTMLBuilder.Append(myColumn.ColumnName);
-                strHTMLBuilder.Append("</th>");
+                _ = strHTMLBuilder.Append("<th scope=\"col\">");
+                _ = strHTMLBuilder.Append(myColumn.ColumnName);
+                _ = strHTMLBuilder.Append("</th>");
             }
 
-            strHTMLBuilder.Append("</thead>");
+            _ = strHTMLBuilder.Append("</thead>");
 
-            var i = 0;
+            int i = 0;
             foreach (DataRow myRow in dt.Rows)
             {
-                strHTMLBuilder.Append("<tr >");
+                _ = strHTMLBuilder.Append("<tr >");
                 foreach (DataColumn myColumn in dt.Columns)
                 {
-                    strHTMLBuilder.Append("<td >");
-                    strHTMLBuilder.Append(myRow[myColumn.ColumnName]);
-                    strHTMLBuilder.Append("</td>");
+                    _ = strHTMLBuilder.Append("<td >");
+                    _ = strHTMLBuilder.Append(myRow[myColumn.ColumnName]);
+                    _ = strHTMLBuilder.Append("</td>");
                 }
 
-                strHTMLBuilder.Append("</tr>");
+                _ = strHTMLBuilder.Append("</tr>");
                 i++;
             }
             //Close tags.
 
-            strHTMLBuilder.Append(
+            _ = strHTMLBuilder.Append(
                 " </tbody></table></div><footer class=\"bg-dark d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top\"> <div class=\"col-md-4 d-flex align-items-center\"> <a href=\"https://axiondrak.github.io/\" class=\"mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1\"> <img src=\"./img/Brazil.png\" style=\"opacity:55%;\"> </a> <span class=\"copy mb-3 mb-md-0 text-muted\">Copyright © 2019-2022 Laete Meireles</span> </div> <ul class=\"nav col-md-4 justify-content-end list-unstyled d-flex\"> <li class=\"ms-3\"> <a class=\"text-muted\" href=\"https://gbatemp.net/threads/gamecube-backup-manager-official-post.611247/\"> <svg xmlns=\"http://www.w3.org/2000/svg\" height=\"24px\" width=\"24px\" viewBox=\"0 0 118.06 113.06\"> <style> .st1 { fill: #ff9600 } .st2 { fill: #fff } </style> <g id=\"tempy_x5F_by_x5F_shaunj66\"> <path d=\"M98.19 6c.57 0 13.87.03 13.87 2.42l-3.08 2.85-3.07 2.83a81.372 81.372 0 00-15.5 21.7c9.34-3.12 14.76-4.62 16.54-4.62.03 8.91-5.11 16.7-7.3 20.02-.61.92-1.04 1.58-.98 1.69l4.18-.23 3.86-.23c.03 2.52-2.68 8.8-5.77 13.46 1.17 2.3 1.79 5.02 1.79 7.83 0 7.83-4.8 14.2-10.71 14.2-.76 0-1.52-.11-2.26-.32C83.7 99.41 70 107.05 54.9 107.05c-15.28 0-29.04-7.76-35.05-19.78-.99.44-2.06.65-3.15.65-5.89 0-10.7-6.37-10.7-14.19 0-4.71 1.75-9.1 4.69-11.75C7.25 52.93 6 42.01 6 36.88l3.19 2.1 6.29 4.25c-.04-10.4 4.26-25.79 12.23-33.77l.52 1.9c.72 6.33 1.84 12.38 3.34 18.01C50.03 14.51 78.2 7.51 96.7 6.03c.23-.02.76-.03 1.49-.03m0-6c-1.32 0-1.8.04-1.96.05-16.97 1.36-41.76 7.2-60.77 19.21-.51-2.78-.93-5.64-1.26-8.57a5.7 5.7 0 00-.17-.9l-.52-1.9a6 6 0 00-5.79-4.42c-1.57 0-3.11.62-4.25 1.76-6.72 6.73-11.09 17.5-12.95 27.44l-1.21-.8a5.986 5.986 0 00-6.14-.27A5.966 5.966 0 000 36.88C0 41.17.85 51.1 3.9 60.7 1.42 64.3 0 68.92 0 73.73c0 11.14 7.5 20.2 16.71 20.2h.09c7.84 11.75 22.3 19.13 38.12 19.13 15.8 0 30.31-7.41 38.12-19.17 8.75-.63 15.71-9.43 15.71-20.16 0-2.51-.38-4.97-1.1-7.26 2.47-4.32 5.12-10.23 5.08-14.09a6.009 6.009 0 00-3.64-5.45c2.06-4.28 3.9-9.72 3.88-15.76a5.994 5.994 0 00-6-5.98c-.7 0-1.63.08-3.15.39 1.93-2.5 4.02-4.89 6.27-7.15l2.98-2.75 3.08-2.86a6.025 6.025 0 001.92-4.4c0-1.63-.64-5.59-6.52-7.18-1.47-.4-3.32-.69-5.66-.9-3.65-.33-7.3-.34-7.7-.34z\" fill=\"#f2f2f2\" id=\"head_1_\" /> <g id=\"buttons\"><path class=\"st1\" d=\"M73.01 87.68c-2.81 0-5.1-2.28-5.1-5.09s2.29-5.09 5.1-5.09 5.1 2.29 5.1 5.09-2.28 5.09-5.1 5.09zm7.67-7.66c-2.81 0-5.1-2.29-5.1-5.09 0-2.81 2.29-5.09 5.1-5.09 2.81 0 5.1 2.29 5.1 5.09 0 2.81-2.29 5.09-5.1 5.09zm-15.33 0c-2.81 0-5.1-2.29-5.1-5.09 0-2.81 2.29-5.09 5.1-5.09s5.1 2.29 5.1 5.09c0 2.81-2.29 5.09-5.1 5.09zm7.77-7.76c-2.81 0-5.1-2.29-5.1-5.09 0-2.81 2.29-5.09 5.1-5.09s5.1 2.29 5.1 5.09c0 2.81-2.29 5.09-5.1 5.09z\" /><path class=\"st2\" d=\"M73.12 63.57a3.596 3.596 0 110 7.19 3.596 3.596 0 110-7.19m7.56 7.76a3.596 3.596 0 110 7.19 3.596 3.596 0 110-7.19m-15.33 0a3.596 3.596 0 110 7.19 3.596 3.596 0 110-7.19m7.66 7.66a3.59 3.59 0 110 7.18c-1.99 0-3.6-1.61-3.6-3.59 0-1.98 1.62-3.59 3.6-3.59m.11-18.42c-3.64 0-6.6 2.96-6.6 6.59 0 .44.04.88.13 1.3-.42-.08-.86-.13-1.3-.13-3.64 0-6.6 2.96-6.6 6.59 0 3.64 2.96 6.6 6.6 6.6.4 0 .79-.04 1.17-.1-.07.38-.1.77-.1 1.17 0 3.64 2.96 6.59 6.6 6.59 3.64 0 6.6-2.96 6.6-6.59 0-.4-.04-.79-.1-1.17.38.07.77.1 1.17.1 3.64 0 6.6-2.96 6.6-6.6 0-3.64-2.96-6.59-6.6-6.59-.37 0-.73.03-1.09.09.08-.41.12-.83.12-1.26 0-3.63-2.96-6.59-6.6-6.59zM71.84 76.1c.07-.38.1-.77.1-1.17 0-.44-.04-.88-.13-1.29.42.08.86.13 1.3.13.37 0 .73-.03 1.08-.09-.08.41-.12.83-.12 1.25 0 .4.04.79.1 1.17-.38-.07-.77-.1-1.17-.1-.39-.01-.78.03-1.16.1z\" /></g> <g id=\"dpad\"><path class=\"st1\" d=\"M36.83 87.69c-1.79 0-3.25-1.59-3.25-3.55v-4.07H29.3c-1.96 0-3.55-1.46-3.55-3.25v-3.33c0-1.79 1.59-3.25 3.55-3.25h4.28v-4.27c0-1.96 1.46-3.55 3.25-3.55h3.33c1.79 0 3.25 1.59 3.25 3.55v4.27h4.08c1.96 0 3.56 1.46 3.56 3.25v3.33c0 1.79-1.6 3.25-3.56 3.25h-4.08v4.07c0 1.96-1.46 3.55-3.25 3.55h-3.33z\" /><path class=\"st2\" d=\"M40.16 63.92c.97 0 1.75.92 1.75 2.05v5.77h5.58c1.14 0 2.06.79 2.06 1.75v3.33c0 .97-.92 1.75-2.06 1.75h-5.58v5.57c0 1.13-.78 2.05-1.75 2.05h-3.33c-.97 0-1.75-.92-1.75-2.05v-5.57H29.3c-1.13 0-2.05-.78-2.05-1.75v-3.33c0-.96.92-1.75 2.05-1.75h5.78v-5.77c0-1.13.78-2.05 1.75-2.05h3.33m0-3h-3.33c-2.62 0-4.75 2.27-4.75 5.05v2.77H29.3c-2.78 0-5.05 2.13-5.05 4.75v3.33c0 2.62 2.27 4.75 5.05 4.75h2.78v2.57c0 2.78 2.13 5.05 4.75 5.05h3.33c2.62 0 4.75-2.27 4.75-5.05v-2.57h2.58c2.79 0 5.06-2.13 5.06-4.75v-3.33c0-2.62-2.27-4.75-5.06-4.75h-2.58v-2.77c0-2.79-2.13-5.05-4.75-5.05z\" /></g> </g> </svg> </a> </li> <li class=\"ms-3\"> <a class=\"text-muted\" href=\"https://github.com/AxionDrak\"> <svg id=\"gh\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"24px\" height=\"24px\" viewBox=\"0 0 256 250\" version=\"1.1\" preserveAspectRatio=\"xMidYMid\"> <g id=\"github\"> <path d=\"M128.00106,0 C57.3172926,0 0,57.3066942 0,128.00106 C0,184.555281 36.6761997,232.535542 87.534937,249.460899 C93.9320223,250.645779 96.280588,246.684165 96.280588,243.303333 C96.280588,240.251045 96.1618878,230.167899 96.106777,219.472176 C60.4967585,227.215235 52.9826207,204.369712 52.9826207,204.369712 C47.1599584,189.574598 38.770408,185.640538 38.770408,185.640538 C27.1568785,177.696113 39.6458206,177.859325 39.6458206,177.859325 C52.4993419,178.762293 59.267365,191.04987 59.267365,191.04987 C70.6837675,210.618423 89.2115753,204.961093 96.5158685,201.690482 C97.6647155,193.417512 100.981959,187.77078 104.642583,184.574357 C76.211799,181.33766 46.324819,170.362144 46.324819,121.315702 C46.324819,107.340889 51.3250588,95.9223682 59.5132437,86.9583937 C58.1842268,83.7344152 53.8029229,70.715562 60.7532354,53.0843636 C60.7532354,53.0843636 71.5019501,49.6441813 95.9626412,66.2049595 C106.172967,63.368876 117.123047,61.9465949 128.00106,61.8978432 C138.879073,61.9465949 149.837632,63.368876 160.067033,66.2049595 C184.49805,49.6441813 195.231926,53.0843636 195.231926,53.0843636 C202.199197,70.715562 197.815773,83.7344152 196.486756,86.9583937 C204.694018,95.9223682 209.660343,107.340889 209.660343,121.315702 C209.660343,170.478725 179.716133,181.303747 151.213281,184.472614 C155.80443,188.444828 159.895342,196.234518 159.895342,208.176593 C159.895342,225.303317 159.746968,239.087361 159.746968,243.303333 C159.746968,246.709601 162.05102,250.70089 168.53925,249.443941 C219.370432,232.499507 256,184.536204 256,128.00106 C256,57.3066942 198.691187,0 128.00106,0 Z M47.9405593,182.340212 C47.6586465,182.976105 46.6581745,183.166873 45.7467277,182.730227 C44.8183235,182.312656 44.2968914,181.445722 44.5978808,180.80771 C44.8734344,180.152739 45.876026,179.97045 46.8023103,180.409216 C47.7328342,180.826786 48.2627451,181.702199 47.9405593,182.340212 Z M54.2367892,187.958254 C53.6263318,188.524199 52.4329723,188.261363 51.6232682,187.366874 C50.7860088,186.474504 50.6291553,185.281144 51.2480912,184.70672 C51.8776254,184.140775 53.0349512,184.405731 53.8743302,185.298101 C54.7115892,186.201069 54.8748019,187.38595 54.2367892,187.958254 Z M58.5562413,195.146347 C57.7719732,195.691096 56.4895886,195.180261 55.6968417,194.042013 C54.9125733,192.903764 54.9125733,191.538713 55.713799,190.991845 C56.5086651,190.444977 57.7719732,190.936735 58.5753181,192.066505 C59.3574669,193.22383 59.3574669,194.58888 58.5562413,195.146347 Z M65.8613592,203.471174 C65.1597571,204.244846 63.6654083,204.03712 62.5716717,202.981538 C61.4524999,201.94927 61.1409122,200.484596 61.8446341,199.710926 C62.5547146,198.935137 64.0575422,199.15346 65.1597571,200.200564 C66.2704506,201.230712 66.6095936,202.705984 65.8613592,203.471174 Z M75.3025151,206.281542 C74.9930474,207.284134 73.553809,207.739857 72.1039724,207.313809 C70.6562556,206.875043 69.7087748,205.700761 70.0012857,204.687571 C70.302275,203.678621 71.7478721,203.20382 73.2083069,203.659543 C74.6539041,204.09619 75.6035048,205.261994 75.3025151,206.281542 Z M86.046947,207.473627 C86.0829806,208.529209 84.8535871,209.404622 83.3316829,209.4237 C81.8013,209.457614 80.563428,208.603398 80.5464708,207.564772 C80.5464708,206.498591 81.7483088,205.631657 83.2786917,205.606221 C84.8005962,205.576546 86.046947,206.424403 86.046947,207.473627 Z M96.6021471,207.069023 C96.7844366,208.099171 95.7267341,209.156872 94.215428,209.438785 C92.7295577,209.710099 91.3539086,209.074206 91.1652603,208.052538 C90.9808515,206.996955 92.0576306,205.939253 93.5413813,205.66582 C95.054807,205.402984 96.4092596,206.021919 96.6021471,207.069023 Z\" fill=\"#fff\" /> </g> </svg> </a> </li> <li class=\"ms-3\"> <a class=\"text-muted\" href=\"https://www.facebook.com/groups/nintendowiibrasil/\"> <svg width=\"24\" height=\"24\"> <style> #facebook { fill: #fff; } </style> <use xlink:href=\"#facebook\"></use> </svg> </a> </li></ul> </footer> <script src=\"./js/bootstrap.bundle.min.js\"></script> </body> </html> ");
             //strHTMLBuilder.Append("</table>");
             //strHTMLBuilder.Append("<script src=\"js/vendor/jquery.js\"></script>");
@@ -3953,7 +4215,7 @@ namespace GCBM
             //strHTMLBuilder.Append("</body>");
             //strHTMLBuilder.Append("</body><footer><span>&copy;2022 Sean Johnson</span></footer>");
             //strHTMLBuilder.Append("</html>");
-            var Htmltext = strHTMLBuilder.ToString();
+            string Htmltext = strHTMLBuilder.ToString();
             return Htmltext;
         }
 
@@ -3961,17 +4223,17 @@ namespace GCBM
         {
             try
             {
-                var ThisFolder = new sio.FileInfo(Assembly.GetExecutingAssembly().Location).Directory.FullName;
-                var caminho = sio.Path.Combine(ThisFolder, "media\\Web\\index.html");
-                var r = new sio.StreamWriter(caminho, false);
+                string ThisFolder = new sio.FileInfo(Assembly.GetExecutingAssembly().Location).Directory.FullName;
+                string caminho = sio.Path.Combine(ThisFolder, "media\\Web\\index.html");
+                StreamWriter r = new sio.StreamWriter(caminho, false);
                 r.Write(DataTableToHTML(dt));
                 r.Close();
                 tbLog.Text += "\n HTML exported sucessfully at: \n" + caminho + "\n";
-                MessageBox.Show("File has been saved at: " + caminho, "Sucess!");
+                _ = MessageBox.Show("File has been saved at: " + caminho, "Sucess!");
             }
             catch (Exception ex)
             {
-                MessageBox.Show("ERROR! Please post report this to Github or GBATemp.\n" + ex.Message, "ERROR!");
+                _ = MessageBox.Show("ERROR! Please post report this to Github or GBATemp.\n" + ex.Message, "ERROR!");
                 tbLog.AppendText("[" + DateTime.Now.ToString("hh:mm:ss tt") + "] HTML Export error" + Environment.NewLine + ex.Message + Environment.NewLine);
                 tbLog.AppendText(ex.StackTrace);
             }
@@ -4188,10 +4450,14 @@ namespace GCBM
         private void tsmiDownloadCoversSelectedGame_Click(object sender, EventArgs e)
         {
             if (CONFIG_INI_FILE.IniReadBool("SEVERAL", "NetVerify"))
+            {
                 DownloadOnlyDisc3DCoverSelectedGame(dgvSource);
+            }
             else
+            {
                 GlobalNotifications(Resources.NoInternetConnectionFound_String1 + Environment.NewLine +
                                     Resources.NoInternetConnectionFound_String2, ToolTipIcon.Info);
+            }
         }
 
         #endregion
@@ -4201,10 +4467,14 @@ namespace GCBM
         private void tsmiSyncDownloadDiscOnly3DCovers_Click(object sender, EventArgs e)
         {
             if (CONFIG_INI_FILE.IniReadBool("SEVERAL", "NetVerify"))
+            {
                 DownloadOnlyDisc3DCover(dgvSource);
+            }
             else
+            {
                 GlobalNotifications(Resources.NoInternetConnectionFound_String1 + Environment.NewLine +
                                     Resources.NoInternetConnectionFound_String2, ToolTipIcon.Info);
+            }
         }
 
         #endregion
@@ -4247,22 +4517,28 @@ namespace GCBM
                     return;
                 }
 
-                using (var form = new frmDownloadGameTDB())
+                using (frmDownloadGameTDB form = new frmDownloadGameTDB())
                 {
-                    var _returnRename = form.ShowDialog();
+                    DialogResult _returnRename = form.ShowDialog();
                     Monitor.Exit(lvDatabase);
                     if (_returnRename == DialogResult.OK)
                     {
-                        var _code = form.RETURN_CONFIRM;
+                        int _code = form.RETURN_CONFIRM;
                         if (_code == 1)
+                        {
                             if (sio.File.Exists(WIITDB_FILE))
+                            {
                                 LoadDatabaseXML();
+                            }
+                        }
                     }
                 }
             }
             else
+            {
                 GlobalNotifications(Resources.NoInternetConnectionFound_String1 + Environment.NewLine +
                                     Resources.NoInternetConnectionFound_String2, ToolTipIcon.Info);
+            }
         }
 
         #endregion
@@ -4273,7 +4549,7 @@ namespace GCBM
         {
             if (tbLog.Text != string.Empty)
             {
-                var dr = MessageBox.Show(Resources.ClearLog, Resources.Notice,
+                DialogResult dr = MessageBox.Show(Resources.ClearLog, Resources.Notice,
                     MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
 
                 if (dr == DialogResult.Yes)
@@ -4284,7 +4560,7 @@ namespace GCBM
             }
             else
             {
-                MessageBox.Show(Resources.ClearLogNotFound, Resources.Notice,
+                _ = MessageBox.Show(Resources.ClearLogNotFound, Resources.Notice,
                     MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
@@ -4295,8 +4571,8 @@ namespace GCBM
 
         private void tsmiMenuAbout_Click(object sender, EventArgs e)
         {
-            var _frmAbout = new frmAboutBox();
-            _frmAbout.ShowDialog();
+            frmAboutBox _frmAbout = new frmAboutBox();
+            _ = _frmAbout.ShowDialog();
             _frmAbout.Dispose();
         }
 
@@ -4315,13 +4591,16 @@ namespace GCBM
 
         private void tsmiConfigurationMain_Click(object sender, EventArgs e)
         {
-            using (var form = new frmConfig())
+            using (frmConfig form = new frmConfig())
             {
-                var _returnRename = form.ShowDialog();
+                DialogResult _returnRename = form.ShowDialog();
                 if (_returnRename == DialogResult.OK)
                 {
-                    var _code = form.RETURN_CONFIRM;
-                    if (_code == 1) NetworkCheck();
+                    int _code = form.RETURN_CONFIRM;
+                    if (_code == 1)
+                    {
+                        NetworkCheck();
+                    }
                 }
             }
         }
@@ -4365,7 +4644,7 @@ namespace GCBM
 
         private async void tsmiRenameISO_Click(object sender, EventArgs e)
         {
-            var _selectedGameRowCount = dgvSource.Rows.GetRowCount(DataGridViewElementStates.Selected);
+            int _selectedGameRowCount = dgvSource.Rows.GetRowCount(DataGridViewElementStates.Selected);
 
             if (dgvSource.RowCount == 0)
             {
@@ -4379,15 +4658,18 @@ namespace GCBM
                 }
                 else
                 {
-                    var pathImage = dgvSource.CurrentRow.Cells["Path"].Value.ToString();
+                    string pathImage = dgvSource.CurrentRow.Cells["Path"].Value.ToString();
 
-                    using (var form = new frmRenameISO(fbd1.SelectedPath, pathImage))
+                    using (frmRenameISO form = new frmRenameISO(fbd1.SelectedPath, pathImage))
                     {
-                        var _returnRename = form.ShowDialog();
+                        DialogResult _returnRename = form.ShowDialog();
                         if (_returnRename == DialogResult.OK)
                         {
-                            var _code = form.RETURN_CONFIRM;
-                            if (_code == 1) await DisplaySourceFilesAsync(fbd1.SelectedPath, dgvSource);
+                            int _code = form.RETURN_CONFIRM;
+                            if (_code == 1)
+                            {
+                                await DisplaySourceFilesAsync(fbd1.SelectedPath, dgvSource);
+                            }
                         }
                     }
                 }
@@ -4437,14 +4719,14 @@ namespace GCBM
 
         private void tsmiExportCSV_Click(object sender, EventArgs e)
         {
-            using (var dialog = new FolderBrowserDialog())
+            using (FolderBrowserDialog dialog = new FolderBrowserDialog())
             {
                 //setup here
 
                 if (dialog.ShowDialog() ==
                     DialogResult.OK) //check for OK...they might press cancel, so don't do anything if they did.
                 {
-                    var path = dialog.SelectedPath + sio.Path.DirectorySeparatorChar + "games.csv";
+                    string path = dialog.SelectedPath + sio.Path.DirectorySeparatorChar + "games.csv";
                     GameDataTable(dgvGameListPath).ToCSV(path);
                 }
             }
@@ -4461,9 +4743,12 @@ namespace GCBM
         /// <param name="e"></param>
         private void tsmiGameSelectAll_Click(object sender, EventArgs e)
         {
-            dgvSource.EndEdit();
+            _ = dgvSource.EndEdit();
 
-            foreach (DataGridViewRow dtr in dgvSelected.Rows) ((DataGridViewCheckBoxCell)dtr.Cells[0]).Value = true;
+            foreach (DataGridViewRow dtr in dgvSelected.Rows)
+            {
+                ((DataGridViewCheckBoxCell)dtr.Cells[0]).Value = true;
+            }
         }
 
         #endregion
@@ -4477,9 +4762,12 @@ namespace GCBM
         /// <param name="e"></param>
         private void tsmiGameSelectNone_Click(object sender, EventArgs e)
         {
-            dgvSource.EndEdit();
+            _ = dgvSource.EndEdit();
 
-            foreach (DataGridViewRow dtr in dgvSelected.Rows) ((DataGridViewCheckBoxCell)dtr.Cells[0]).Value = false;
+            foreach (DataGridViewRow dtr in dgvSelected.Rows)
+            {
+                ((DataGridViewCheckBoxCell)dtr.Cells[0]).Value = false;
+            }
         }
 
         #endregion
@@ -4530,7 +4818,7 @@ namespace GCBM
 
         private void tsmiInfoGame_Click(object sender, EventArgs e)
         {
-            var _selecteGameRowCount = dgvSource.Rows.GetRowCount(DataGridViewElementStates.Selected);
+            int _selecteGameRowCount = dgvSource.Rows.GetRowCount(DataGridViewElementStates.Selected);
 
             if (dgvSource.RowCount == 0)
             {
@@ -4545,12 +4833,12 @@ namespace GCBM
                 else
                 {
                     // Nome do Arquivo, Formato (Tipo), Tamanho, Local do Arquivo, ID do Jogo
-                    var _frmInfo = new frmInformation(dgvSource.CurrentRow.Cells["Title"].Value.ToString(),
+                    frmInformation _frmInfo = new frmInformation(dgvSource.CurrentRow.Cells["Title"].Value.ToString(),
                         dgvSource.CurrentRow.Cells["Type"].Value.ToString(),
                         dgvSource.CurrentRow.Cells["Size"].Value.ToString(),
                         dgvSource.CurrentRow.Cells["Path"].Value.ToString(),
                         dgvSource.CurrentRow.Cells["ID"].Value.ToString());
-                    _frmInfo.ShowDialog();
+                    _ = _frmInfo.ShowDialog();
                     _frmInfo.Dispose();
                 }
             }
@@ -4562,8 +4850,8 @@ namespace GCBM
 
         private void tsmiMetaXml_Click(object sender, EventArgs e)
         {
-            var metaXml = new frmMetaXml();
-            metaXml.ShowDialog();
+            frmMetaXml metaXml = new frmMetaXml();
+            _ = metaXml.ShowDialog();
             metaXml.Dispose();
         }
 
@@ -4573,8 +4861,8 @@ namespace GCBM
 
         private void tsmiManageApp_Click(object sender, EventArgs e)
         {
-            var manageApp = new frmManageApp();
-            manageApp.ShowDialog();
+            frmManageApp manageApp = new frmManageApp();
+            _ = manageApp.ShowDialog();
             manageApp.Dispose();
         }
 
@@ -4584,8 +4872,8 @@ namespace GCBM
 
         private void tsmiElfDol_Click(object sender, EventArgs e)
         {
-            var elfDol = new frmConvertELFtoDOL();
-            elfDol.ShowDialog();
+            frmConvertELFtoDOL elfDol = new frmConvertELFtoDOL();
+            _ = elfDol.ShowDialog();
             elfDol.Dispose();
         }
 
@@ -4604,42 +4892,40 @@ namespace GCBM
             else if (selectedRowCount > 0)
             {
                 if (CONFIG_INI_FILE.IniReadString("DOLPHIN", "DolphinFolder", "") == string.Empty)
-                    MessageBox.Show(Resources.DolphinEmulator_Not_Found_String_1 + Environment.NewLine +
+                {
+                    _ = MessageBox.Show(Resources.DolphinEmulator_Not_Found_String_1 + Environment.NewLine +
                                     Environment.NewLine +
                                     Resources.DolphinEmulator_Not_Found_String_2, Resources.MetaXml_String_ERRO,
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
                 else
+                {
                     try
                     {
-                        var VideoDX = "";
-                        var AudioDSP = "";
-                        var _sourceGame = dgvSource.CurrentRow.Cells["Path"].Value.ToString();
+                        string VideoDX = "";
+                        string AudioDSP = "";
+                        string _sourceGame = dgvSource.CurrentRow.Cells["Path"].Value.ToString();
 
                         START_INFO.CreateNoWindow = true;
                         START_INFO.UseShellExecute = true;
                         // DOLPHIN
                         START_INFO.FileName = CONFIG_INI_FILE.IniReadString("DOLPHIN", "DolphinFolder", "");
 
-                        if (CONFIG_INI_FILE.IniReadBool("DOLPHIN", "DolphinDX11"))
-                            VideoDX = " --video_backend=D3D";
-                        else if (CONFIG_INI_FILE.IniReadBool("DOLPHIN", "DolphinDX12"))
-                            VideoDX = " --video_backend=D3D";
-                        else
-                            VideoDX = " --video_backend=OGL";
+                        VideoDX = CONFIG_INI_FILE.IniReadBool("DOLPHIN", "DolphinDX11")
+                            ? " --video_backend=D3D"
+                            : CONFIG_INI_FILE.IniReadBool("DOLPHIN", "DolphinDX12") ? " --video_backend=D3D" : " --video_backend=OGL";
 
-                        if (CONFIG_INI_FILE.IniReadBool("DOLPHIN", "DolphinLLE"))
-                            AudioDSP = " --audio_emulation=LLE";
-                        else
-                            AudioDSP = " --audio_emulation=HLE";
+                        AudioDSP = CONFIG_INI_FILE.IniReadBool("DOLPHIN", "DolphinLLE") ? " --audio_emulation=LLE" : " --audio_emulation=HLE";
 
                         START_INFO.Arguments = " --exec=" + sio.Path.DirectorySeparatorChar + _sourceGame + sio.Path.DirectorySeparatorChar + " /b " + VideoDX + AudioDSP;
                         //START_INFO.WindowStyle = ProcessWindowStyle.Hidden;
-                        Process.Start(START_INFO);
+                        _ = Process.Start(START_INFO);
                     }
                     catch (Exception ex)
                     {
                         GlobalNotifications(ex.Message, ToolTipIcon.Error);
                     }
+                }
             }
         }
 
@@ -4649,8 +4935,8 @@ namespace GCBM
 
         private void tsmiCreatePackage_Click(object sender, EventArgs e)
         {
-            var createPackage = new frmCreateAppPackage();
-            createPackage.ShowDialog();
+            frmCreateAppPackage createPackage = new frmCreateAppPackage();
+            _ = createPackage.ShowDialog();
             createPackage.Dispose();
         }
 
@@ -4660,8 +4946,8 @@ namespace GCBM
 
         private void tsmiBurnMedia_Click(object sender, EventArgs e)
         {
-            var burnMedia = new frmBurnMedia();
-            burnMedia.ShowDialog();
+            frmBurnMedia burnMedia = new frmBurnMedia();
+            _ = burnMedia.ShowDialog();
             burnMedia.Dispose();
         }
 
@@ -4798,7 +5084,11 @@ namespace GCBM
             lblAbort.Visible = true;
             DisableOptionsGame(dgvSource);
             BuildInstallQueue();
-            foreach (var game in InstallQueue) InstallGameScrub(intQueuePos);
+            foreach (KeyValuePair<int, Game> game in InstallQueue)
+            {
+                InstallGameScrub(intQueuePos);
+            }
+
             GlobalNotifications("Successfully installed " + InstallQueue.Count + " games.", ToolTipIcon.Info);
             pbCopy.Hide();
             lblPercent.Hide();
@@ -4813,7 +5103,11 @@ namespace GCBM
             lblAbort.Visible = true;
             DisableOptionsGame(dgvSource);
             BuildInstallQueue();
-            foreach (var game in InstallQueue) CheckAndCallCopyTask(InstallQueue[intQueuePos].Path);
+            foreach (KeyValuePair<int, Game> game in InstallQueue)
+            {
+                CheckAndCallCopyTask(InstallQueue[intQueuePos].Path);
+            }
+
             GlobalNotifications("Successfully installed " + InstallQueue.Count + " games.", ToolTipIcon.Info);
             pbCopy.Hide();
             lblPercent.Hide();
@@ -4849,10 +5143,14 @@ namespace GCBM
             intQueueLength = 0;
             intQueuePos = 0;
             InstallQueue.Clear();
-            var num = 0;
+            int num = 0;
             foreach (DataGridViewRow row in dgvSource.Rows)
             {
-                if (row.Cells[0].Value.ToString() != "True") continue;
+                if (row.Cells[0].Value.ToString() != "True")
+                {
+                    continue;
+                }
+
                 InstallQueue.Add(num, getGameInfo(row.Cells["Path"].Value.ToString()));
                 num++;
             }
@@ -4868,14 +5166,17 @@ namespace GCBM
         {
             if (intQueuePos <= InstallQueue.Count - 1) //starts with 0
             {
-                var _file = new sio.FileInfo(path);
+                FileInfo _file = new sio.FileInfo(path);
                 loadPath = _file.FullName;
                 VerifyGame(loadPath);
                 int? selectedRowCount = Convert.ToInt32(dgvSource.Rows.GetRowCount(DataGridViewElementStates.Selected));
 
                 if (dgvSource.RowCount == 0)
+                {
                     EmptyGamesList();
+                }
                 else if (selectedRowCount > 0)
+                {
                     try
                     {
                         // Removes blank spaces
@@ -4889,18 +5190,18 @@ namespace GCBM
                         //.Replace(" -  ", " - ").Replace(" FOR NINTENDO GAMECUBE", "").Replace(" GameCube", "");
 
                         // Nome do jogo
-                        var _SwapCharacter = tbIDName.Text.Replace(":", " - ").Replace(";", " - ").Replace(",", " - ")
+                        string _SwapCharacter = tbIDName.Text.Replace(":", " - ").Replace(";", " - ").Replace(",", " - ")
                             .Replace(" -  ", " - ").Replace("/", "&");
 
-                        var _source =
+                        FileInfo _source =
                             new sio.FileInfo(sio.Path.Combine(fbd1.SelectedPath, InstallQueue[intQueuePos].Path));
 
                         // Disc 1 (0 -> 0) - Title [ID Game]
                         if (tbIDDiscID.Text == "0x00" && CONFIG_INI_FILE.IniReadInt("SEVERAL", "AppointmentStyle") == 0)
                         {
-                            sio.Directory.CreateDirectory(tscbDiscDrive.SelectedItem + GAMES_DIR + sio.Path.DirectorySeparatorChar +
+                            _ = sio.Directory.CreateDirectory(tscbDiscDrive.SelectedItem + GAMES_DIR + sio.Path.DirectorySeparatorChar +
                                                           _SwapCharacter + " [" + _IDMakerCode + "]");
-                            var _destination = new sio.FileInfo(tscbDiscDrive.SelectedItem + GAMES_DIR + sio.Path.DirectorySeparatorChar +
+                            FileInfo _destination = new sio.FileInfo(tscbDiscDrive.SelectedItem + GAMES_DIR + sio.Path.DirectorySeparatorChar +
                                                                 _SwapCharacter + " [" + InstallQueue[intQueuePos].ID +
                                                                 "]" + sio.Path.DirectorySeparatorChar + "game.iso");
                             CopyTask(_source, _destination);
@@ -4908,9 +5209,9 @@ namespace GCBM
                         else if (tbIDDiscID.Text == "0x01" &&
                                  CONFIG_INI_FILE.IniReadInt("SEVERAL", "AppointmentStyle") == 0)
                         {
-                            sio.Directory.CreateDirectory(tscbDiscDrive.SelectedItem + GAMES_DIR + sio.Path.DirectorySeparatorChar +
+                            _ = sio.Directory.CreateDirectory(tscbDiscDrive.SelectedItem + GAMES_DIR + sio.Path.DirectorySeparatorChar +
                                                           _SwapCharacter + " [" + InstallQueue[intQueuePos].ID + "]");
-                            var _destination = new sio.FileInfo(tscbDiscDrive.SelectedItem + GAMES_DIR + sio.Path.DirectorySeparatorChar +
+                            FileInfo _destination = new sio.FileInfo(tscbDiscDrive.SelectedItem + GAMES_DIR + sio.Path.DirectorySeparatorChar +
                                                                 _SwapCharacter + " [" + InstallQueue[intQueuePos].ID +
                                                                 "]" + sio.Path.DirectorySeparatorChar + "disc2.iso");
                             CopyTask(_source, _destination);
@@ -4918,18 +5219,18 @@ namespace GCBM
                         else if (tbIDDiscID.Text == "0x00" &&
                                  CONFIG_INI_FILE.IniReadInt("SEVERAL", "AppointmentStyle") == 1)
                         {
-                            sio.Directory.CreateDirectory(tscbDiscDrive.SelectedItem + GAMES_DIR + sio.Path.DirectorySeparatorChar + "[" +
+                            _ = sio.Directory.CreateDirectory(tscbDiscDrive.SelectedItem + GAMES_DIR + sio.Path.DirectorySeparatorChar + "[" +
                                                           InstallQueue[intQueuePos].ID + "]");
-                            var _destination = new sio.FileInfo(tscbDiscDrive.SelectedItem + GAMES_DIR + sio.Path.DirectorySeparatorChar + "[" +
+                            FileInfo _destination = new sio.FileInfo(tscbDiscDrive.SelectedItem + GAMES_DIR + sio.Path.DirectorySeparatorChar + "[" +
                                                                 InstallQueue[intQueuePos].ID + "]" + sio.Path.DirectorySeparatorChar + "game.iso");
                             CopyTask(_source, _destination);
                         } // Disc 2 (1 -> 1) - [ID Game]
                         else if (tbIDDiscID.Text == "0x01" &&
                                  CONFIG_INI_FILE.IniReadInt("SEVERAL", "AppointmentStyle") == 1)
                         {
-                            sio.Directory.CreateDirectory(tscbDiscDrive.SelectedItem + GAMES_DIR + sio.Path.DirectorySeparatorChar + "[" +
+                            _ = sio.Directory.CreateDirectory(tscbDiscDrive.SelectedItem + GAMES_DIR + sio.Path.DirectorySeparatorChar + "[" +
                                                           InstallQueue[intQueuePos].ID + "]");
-                            var _destination = new sio.FileInfo(tscbDiscDrive.SelectedItem + GAMES_DIR + sio.Path.DirectorySeparatorChar + "[" +
+                            FileInfo _destination = new sio.FileInfo(tscbDiscDrive.SelectedItem + GAMES_DIR + sio.Path.DirectorySeparatorChar + "[" +
                                                                 InstallQueue[intQueuePos].ID + "]" + sio.Path.DirectorySeparatorChar +
                                                                 "disc2.iso");
                             CopyTask(_source, _destination);
@@ -4944,6 +5245,7 @@ namespace GCBM
                         tbLog.AppendText(ex.StackTrace);
                         GlobalNotifications(ex.Message, ToolTipIcon.Error);
                     }
+                }
             }
             else
             {
@@ -4968,7 +5270,10 @@ namespace GCBM
 
             if (tbIDDiscID.Text == "0x00")
             {
-                if (_destination.Exists) _destination.Delete();
+                if (_destination.Exists)
+                {
+                    _destination.Delete();
+                }
                 //Create a task to run copy file
                 Run(() =>
                 {
@@ -4985,7 +5290,10 @@ namespace GCBM
             // Disc 2
             else if (tbIDDiscID.Text == "0x01")
             {
-                if (_destination.Exists) _destination.Delete();
+                if (_destination.Exists)
+                {
+                    _destination.Delete();
+                }
                 //Create a task to run copy file
                 Run(() =>
                 {
@@ -5016,13 +5324,22 @@ namespace GCBM
         /// <returns></returns>
         public static bool isGCITRunning()
         {
-            var procs = Process.GetCurrentProcess().GetChildProcesses();
+            IList<Process> procs = Process.GetCurrentProcess().GetChildProcesses();
 
             if (procs != null)
+            {
                 if (procs.Count != 0)
-                    foreach (var proc in procs)
+                {
+                    foreach (Process proc in procs)
+                    {
                         if (proc.ProcessName.Contains("gcit"))
+                        {
                             return true;
+                        }
+                    }
+                }
+            }
+
             return false;
         }
 
@@ -5042,8 +5359,8 @@ namespace GCBM
             START_INFO.FileName = GET_CURRENT_PATH + sio.Path.DirectorySeparatorChar + "bin" + sio.Path.DirectorySeparatorChar + "gcit.exe ";
 
 
-            var boolCaseSwitch = CONFIG_INI_FILE.IniReadBool("TRANSFERSYSTEM", "ScrubFlushSD");
-            var intCaseSwitch = CONFIG_INI_FILE.IniReadInt("TRANSFERSYSTEM", "ScrubAlign");
+            bool boolCaseSwitch = CONFIG_INI_FILE.IniReadBool("TRANSFERSYSTEM", "ScrubFlushSD");
+            int intCaseSwitch = CONFIG_INI_FILE.IniReadInt("TRANSFERSYSTEM", "ScrubAlign");
 
             switch (boolCaseSwitch)
             {
@@ -5076,7 +5393,7 @@ namespace GCBM
                                    tscbDiscDrive.SelectedItem + GAMES_DIR;
             START_INFO.WindowStyle = ProcessWindowStyle.Hidden;
 
-            using (var myProcess = Process.Start(START_INFO))
+            using (Process myProcess = Process.Start(START_INFO))
             {
                 // unused var i = 0;
                 // Display the process statistics until
@@ -5104,7 +5421,7 @@ namespace GCBM
                 } while (!myProcess.WaitForExit(500));
 
 
-                var _StatusExit = myProcess.ExitCode;
+                int _StatusExit = myProcess.ExitCode;
                 if (_StatusExit == 0)
                 {
                     //Exit Successfully
@@ -5121,9 +5438,9 @@ namespace GCBM
                         if (CONFIG_INI_FILE.IniReadBool("TITLES", "GameInternalName"))
                         {
                             // Renomear - Rename game.iso -> disc2.iso
-                            var myOrigem = tscbDiscDrive.SelectedItem + GAMES_DIR + sio.Path.DirectorySeparatorChar + tbIDName.Text + " [" +
+                            string myOrigem = tscbDiscDrive.SelectedItem + GAMES_DIR + sio.Path.DirectorySeparatorChar + tbIDName.Text + " [" +
                                            tbIDGame.Text + "2]" + sio.Path.DirectorySeparatorChar + "game.iso";
-                            var myDestiny = tscbDiscDrive.SelectedItem + GAMES_DIR + sio.Path.DirectorySeparatorChar +
+                            string myDestiny = tscbDiscDrive.SelectedItem + GAMES_DIR + sio.Path.DirectorySeparatorChar +
                                             tbIDName.Text.Replace("disc2 ", "") + " [" + tbIDGame.Text + "2]" +
                                             sio.Path.DirectorySeparatorChar + "disc2.iso";
 
@@ -5139,9 +5456,9 @@ namespace GCBM
                         else
                         {
                             // Renomear game.iso -> disc2.iso
-                            var myOrigem = tscbDiscDrive.SelectedItem + GAMES_DIR + sio.Path.DirectorySeparatorChar + _oldNameInternal + " [" +
+                            string myOrigem = tscbDiscDrive.SelectedItem + GAMES_DIR + sio.Path.DirectorySeparatorChar + _oldNameInternal + " [" +
                                            tbIDGame.Text + "2]" + sio.Path.DirectorySeparatorChar + "game.iso";
-                            var myDestiny = tscbDiscDrive.SelectedItem + GAMES_DIR + sio.Path.DirectorySeparatorChar +
+                            string myDestiny = tscbDiscDrive.SelectedItem + GAMES_DIR + sio.Path.DirectorySeparatorChar +
                                             _oldNameInternal.Replace("disc2 ", "") + " [" + tbIDGame.Text + "2]" +
                                             sio.Path.DirectorySeparatorChar + "disc2.iso";
 
@@ -5201,14 +5518,16 @@ namespace GCBM
             //Check if we're done
             intQueueLength = 0;
             intQueuePos = 0;
-            var num = 0;
+            int num = 0;
             lstInstallQueue.Clear();
             foreach (DataGridViewRow row in dgvSource.Rows)
+            {
                 if (row.Cells[0].Value.ToString() == "True")
                 {
                     InstallQueue.Add(num, getGameInfo(row.Cells["Path"].Value.ToString()));
                     num++;
                 }
+            }
 
             intQueueLength = lstInstallQueue.Count;
         }
@@ -5224,14 +5543,17 @@ namespace GCBM
             lblAbort.Visible = true;
             if (intQueuePos <= InstallQueue.Count - 1 && !ABORT)
             {
-                var _file = new sio.FileInfo(path);
+                FileInfo _file = new sio.FileInfo(path);
                 loadPath = _file.FullName;
                 DirectoryOpenGameList(loadPath);
                 int? selectedRowCount = Convert.ToInt32(dgvSource.Rows.GetRowCount(DataGridViewElementStates.Selected));
 
                 if (dgvSource.RowCount == 0)
+                {
                     EmptyGamesList();
+                }
                 else if (selectedRowCount > 0)
+                {
                     try
                     {
                         WORKING = true;
@@ -5246,7 +5568,7 @@ namespace GCBM
                         //.Replace(" -  ", " - ").Replace(" FOR NINTENDO GAMECUBE", "").Replace(" GameCube", "");
 
                         // Nome do jogo
-                        var _SwapCharacter = InstallQueue[intQueuePos].Title.Replace(":", " - ").Replace(";", " - ")
+                        string _SwapCharacter = InstallQueue[intQueuePos].Title.Replace(":", " - ").Replace(";", " - ")
                             .Replace(",", " - ").Replace(" -  ", " - ").Replace("/", "&");
 
                         //string strResult = "";
@@ -5272,15 +5594,15 @@ namespace GCBM
                         //    }
                         //}
 
-                        var _source =
+                        FileInfo _source =
                             new sio.FileInfo(sio.Path.Combine(fbd1.SelectedPath, InstallQueue[intQueuePos].Path));
 
                         // Disc 1 (0 -> 0) - Title [ID Game]
                         if (tbIDDiscID.Text == "0x00" && CONFIG_INI_FILE.IniReadInt("SEVERAL", "AppointmentStyle") == 0)
                         {
-                            sio.Directory.CreateDirectory(tscbDiscDrive.SelectedItem + GAMES_DIR + sio.Path.DirectorySeparatorChar +
+                            _ = sio.Directory.CreateDirectory(tscbDiscDrive.SelectedItem + GAMES_DIR + sio.Path.DirectorySeparatorChar +
                                                           _SwapCharacter + " [" + InstallQueue[intQueuePos].ID + "]");
-                            var _destination = new sio.FileInfo(tscbDiscDrive.SelectedItem + GAMES_DIR + sio.Path.DirectorySeparatorChar +
+                            FileInfo _destination = new sio.FileInfo(tscbDiscDrive.SelectedItem + GAMES_DIR + sio.Path.DirectorySeparatorChar +
                                                                 _SwapCharacter + " [" + InstallQueue[intQueuePos].ID +
                                                                 "]" + sio.Path.DirectorySeparatorChar + "game.iso");
                             oldCopyTask(_source, _destination);
@@ -5288,9 +5610,9 @@ namespace GCBM
                         else if (tbIDDiscID.Text == "0x01" &&
                                  CONFIG_INI_FILE.IniReadInt("SEVERAL", "AppointmentStyle") == 0)
                         {
-                            sio.Directory.CreateDirectory(tscbDiscDrive.SelectedItem + GAMES_DIR + sio.Path.DirectorySeparatorChar +
+                            _ = sio.Directory.CreateDirectory(tscbDiscDrive.SelectedItem + GAMES_DIR + sio.Path.DirectorySeparatorChar +
                                                           _SwapCharacter + " [" + InstallQueue[intQueuePos].ID + "]");
-                            var _destination = new sio.FileInfo(tscbDiscDrive.SelectedItem + GAMES_DIR + sio.Path.DirectorySeparatorChar +
+                            FileInfo _destination = new sio.FileInfo(tscbDiscDrive.SelectedItem + GAMES_DIR + sio.Path.DirectorySeparatorChar +
                                                                 _SwapCharacter + " [" + InstallQueue[intQueuePos].ID +
                                                                 "]" + sio.Path.DirectorySeparatorChar + "disc2.iso");
                             oldCopyTask(_source, _destination);
@@ -5298,18 +5620,18 @@ namespace GCBM
                         else if (tbIDDiscID.Text == "0x00" &&
                                  CONFIG_INI_FILE.IniReadInt("SEVERAL", "AppointmentStyle") == 1)
                         {
-                            sio.Directory.CreateDirectory(tscbDiscDrive.SelectedItem + GAMES_DIR + sio.Path.DirectorySeparatorChar + "[" +
+                            _ = sio.Directory.CreateDirectory(tscbDiscDrive.SelectedItem + GAMES_DIR + sio.Path.DirectorySeparatorChar + "[" +
                                                           InstallQueue[intQueuePos].ID + "]");
-                            var _destination = new sio.FileInfo(tscbDiscDrive.SelectedItem + GAMES_DIR + sio.Path.DirectorySeparatorChar + "[" +
+                            FileInfo _destination = new sio.FileInfo(tscbDiscDrive.SelectedItem + GAMES_DIR + sio.Path.DirectorySeparatorChar + "[" +
                                                                 InstallQueue[intQueuePos].ID + "]" + sio.Path.DirectorySeparatorChar + "game.iso");
                             oldCopyTask(_source, _destination);
                         } // Disc 2 (1 -> 1) - [ID Game]
                         else if (tbIDDiscID.Text == "0x01" &&
                                  CONFIG_INI_FILE.IniReadInt("SEVERAL", "AppointmentStyle") == 1)
                         {
-                            sio.Directory.CreateDirectory(tscbDiscDrive.SelectedItem + GAMES_DIR + sio.Path.DirectorySeparatorChar + "[" +
+                            _ = sio.Directory.CreateDirectory(tscbDiscDrive.SelectedItem + GAMES_DIR + sio.Path.DirectorySeparatorChar + "[" +
                                                           InstallQueue[intQueuePos].ID + "]");
-                            var _destination = new sio.FileInfo(tscbDiscDrive.SelectedItem + GAMES_DIR + sio.Path.DirectorySeparatorChar + "[" +
+                            FileInfo _destination = new sio.FileInfo(tscbDiscDrive.SelectedItem + GAMES_DIR + sio.Path.DirectorySeparatorChar + "[" +
                                                                 InstallQueue[intQueuePos].ID + "]" + sio.Path.DirectorySeparatorChar +
                                                                 "disc2.iso");
                             oldCopyTask(_source, _destination);
@@ -5324,9 +5646,14 @@ namespace GCBM
                         tbLog.AppendText(ex.StackTrace);
                         GlobalNotifications(ex.Message, ToolTipIcon.Error);
                     }
+                }
             }
 
-            if (intQueuePos + 1 != InstallQueue.Count) return;
+            if (intQueuePos + 1 != InstallQueue.Count)
+            {
+                return;
+            }
+
             GlobalNotifications("Successfully installed " + InstallQueue.Count + " games.", ToolTipIcon.Info);
             btnAbort.Visible = false;
             EnableOptionsGameList();
@@ -5357,22 +5684,28 @@ namespace GCBM
             //}
 
             if (path.Length == 0)
+            {
                 return;
+            }
 
             IMAGE_PATH = path;
 
             if (CheckImage())
+            {
                 if (ReadImageTOC())
                 {
                     if (CONFIG_INI_FILE.IniReadBool("TITLES", "GameXmlName"))
                     {
                         if (sio.File.Exists(WIITDB_FILE))
                         {
-                            var root = XElement.Load(WIITDB_FILE);
-                            var tests = from el in root.Elements("game")
-                                        where (string)el.Element("id") == tbIDGame.Text
-                                        select el;
-                            foreach (var el in tests) tbIDName.Text = (string)el.Element("locale").Element("title");
+                            XElement root = XElement.Load(WIITDB_FILE);
+                            IEnumerable<XElement> tests = from el in root.Elements("game")
+                                                          where (string)el.Element("id") == tbIDGame.Text
+                                                          select el;
+                            foreach (XElement el in tests)
+                            {
+                                tbIDName.Text = (string)el.Element("locale").Element("title");
+                            }
                         }
                         else
                         {
@@ -5383,6 +5716,7 @@ namespace GCBM
                     //miImageOpen.ToolTipText = imgPath;
                     ROOT_OPENED = false;
                 }
+            }
         }
 
         #endregion
@@ -5400,7 +5734,10 @@ namespace GCBM
             //if (textBoxDiscID.Text == "00" && comboBoxSettingsNomenclatureAppointmentStyle.SelectedIndex  == 0)
             if (tbIDDiscID.Text == "0x00")
             {
-                if (_destination.Exists) _destination.Delete();
+                if (_destination.Exists)
+                {
+                    _destination.Delete();
+                }
                 //Create a tast to run copy file
                 Run(() =>
                 {
@@ -5454,7 +5791,10 @@ namespace GCBM
             // Disc 2
             else if (tbIDDiscID.Text == "0x01")
             {
-                if (_destination.Exists) _destination.Delete();
+                if (_destination.Exists)
+                {
+                    _destination.Delete();
+                }
                 //Create a tast to run copy file
                 Run(() =>
                 {
@@ -5515,8 +5855,11 @@ namespace GCBM
 
         public void wait(int milliseconds)
         {
-            var timer1 = new System.Windows.Forms.Timer();
-            if (milliseconds == 0 || milliseconds < 0) return;
+            System.Windows.Forms.Timer timer1 = new System.Windows.Forms.Timer();
+            if (milliseconds == 0 || milliseconds < 0)
+            {
+                return;
+            }
 
             // Console.WriteLine("start wait timer");
             timer1.Interval = milliseconds;
@@ -5530,7 +5873,10 @@ namespace GCBM
                 // Console.WriteLine("stop wait timer");
             };
 
-            while (timer1.Enabled) Application.DoEvents();
+            while (timer1.Enabled)
+            {
+                Application.DoEvents();
+            }
         }
 
         private void getProcessesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -5553,15 +5899,23 @@ namespace GCBM
                  * e.RowIndex
                  */
                 if (dgvSelected != dgvSource && dgvSelected != dgvDestination)
+                {
                     dgvSelected = dgvSource; //We haven't chosen one.. but.. clicked. Set selected dgv to source
+                }
                 //There's a way to do this in a single line.. but
                 if (dgvSelected != null && dgvSelected.Rows[e.RowIndex].Cells[0].Value.ToString() == "False")
                 {
-                    if (dgvSelected != null) dgvSelected.Rows[e.RowIndex].Cells[0].Value = true;
+                    if (dgvSelected != null)
+                    {
+                        dgvSelected.Rows[e.RowIndex].Cells[0].Value = true;
+                    }
                 }
                 else
                 {
-                    if (dgvSelected != null) dgvSelected.Rows[e.RowIndex].Cells[0].Value = false;
+                    if (dgvSelected != null)
+                    {
+                        dgvSelected.Rows[e.RowIndex].Cells[0].Value = false;
+                    }
                 }
             }
         }
