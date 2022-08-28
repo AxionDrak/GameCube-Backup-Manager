@@ -3256,7 +3256,7 @@
     <value>0, 17</value>
   </data>
   <data name="toolStripStatusLabel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>304, 17</value>
+    <value>320, 17</value>
   </data>
   <data name="pbScan.Size" type="System.Drawing.Size, System.Drawing">
     <value>495, 16</value>
@@ -3274,7 +3274,7 @@
     <value>btnCancelScan</value>
   </data>
   <data name="toolStripStatusLabel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>304, 17</value>
+    <value>320, 17</value>
   </data>
   <data name="lblScan.Size" type="System.Drawing.Size, System.Drawing">
     <value>0, 17</value>
@@ -4539,6 +4539,36 @@
   </data>
   <data name="&gt;&gt;process1.Type" xml:space="preserve">
     <value>System.Diagnostics.Process, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblScan.Name" xml:space="preserve">
+    <value>lblScan</value>
+  </data>
+  <data name="&gt;&gt;lblScan.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pbScan.Name" xml:space="preserve">
+    <value>pbScan</value>
+  </data>
+  <data name="&gt;&gt;pbScan.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripProgressBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripStatusLabel1.Name" xml:space="preserve">
+    <value>toolStripStatusLabel1</value>
+  </data>
+  <data name="&gt;&gt;toolStripStatusLabel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripStatusLabel2.Name" xml:space="preserve">
+    <value>toolStripStatusLabel2</value>
+  </data>
+  <data name="&gt;&gt;toolStripStatusLabel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSplitButton1.Name" xml:space="preserve">
+    <value>toolStripSplitButton1</value>
+  </data>
+  <data name="&gt;&gt;toolStripSplitButton1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSplitButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>frmMain</value>
