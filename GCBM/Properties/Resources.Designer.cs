@@ -278,6 +278,16 @@ namespace GCBM.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Clear_icon {
+            get {
+                object obj = ResourceManager.GetObject("Clear-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Deseja realmente limpar os dados de registro?.
         /// </summary>
         internal static string ClearLog {
@@ -504,6 +514,16 @@ namespace GCBM.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Cursor_Select_icon {
+            get {
+                object obj = ResourceManager.GetObject("Cursor-Select-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap delete_16 {
             get {
                 object obj = ResourceManager.GetObject("delete_16", resourceCulture);
@@ -536,6 +556,16 @@ namespace GCBM.Properties {
         internal static string DestinyDrive_TotalSpace {
             get {
                 return ResourceManager.GetString("DestinyDrive_TotalSpace", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Devices_drive_harddisk_usb_icon {
+            get {
+                object obj = ResourceManager.GetObject("Devices-drive-harddisk-usb-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -2017,6 +2047,16 @@ namespace GCBM.Properties {
         internal static System.Drawing.Bitmap update_64 {
             get {
                 object obj = ResourceManager.GetObject("update_64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Utilities_icon {
+            get {
+                object obj = ResourceManager.GetObject("Utilities-icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

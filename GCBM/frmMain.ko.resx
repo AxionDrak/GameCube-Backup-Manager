@@ -842,7 +842,7 @@
     <value>43, 20</value>
   </data>
   <data name="tsmiRemoveGameList.Text" xml:space="preserve">
-    <value>제거</value>
+    <value>지우다</value>
   </data>
   <data name="tsmiGameListDeleteAllFiles.Size" type="System.Drawing.Size, System.Drawing">
     <value>110, 22</value>
@@ -968,7 +968,7 @@
     <value>43, 23</value>
   </data>
   <data name="tsmiRemoveGameDisc.Text" xml:space="preserve">
-    <value>제거</value>
+    <value>지우다</value>
   </data>
   <data name="tsmiGameDiscDeleteAllFiles.Size" type="System.Drawing.Size, System.Drawing">
     <value>110, 22</value>

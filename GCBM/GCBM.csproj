@@ -588,6 +588,10 @@
     <Content Include="media\Web\js\vendor\jquery.js" />
     <Content Include="media\Web\js\vendor\what-input.js" />
     <Content Include="media\Web\resources\R.png" />
+    <None Include="Resources\Utilities-icon.png" />
+    <None Include="Resources\Devices-drive-harddisk-usb-icon.png" />
+    <None Include="Resources\Cursor-Select-icon.png" />
+    <None Include="Resources\Clear-icon.png" />
     <None Include="Resources\Refresh_16.png" />
     <None Include="Resources\Search32.png" />
     <None Include="Resources\Search256.png" />
