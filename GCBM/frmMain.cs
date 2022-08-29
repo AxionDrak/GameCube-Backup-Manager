@@ -2385,7 +2385,7 @@ namespace GCBM
         /// </summary>
         private void AdditionalInformation()
         {
-            int _selectedGameRowCount = dgvSource.Rows.GetRowCount(DataGridViewElementStates.Selected);
+            int _selectedGameRowCount = dgvSelected.Rows.GetRowCount(DataGridViewElementStates.Selected);
 
             if (_selectedGameRowCount == 0)
             {
