@@ -1535,4 +1535,10 @@
   <data name="label8.Text" xml:space="preserve">
     <value>Games Found:</value>
   </data>
+  <data name="tsmiClearListDestination.Text" xml:space="preserve">
+    <value>Clear List</value>
+  </data>
+  <data name="tsmiClearListSource.Text" xml:space="preserve">
+    <value>Clear List</value>
+  </data>
 </root>

@@ -1547,4 +1547,10 @@
   <data name="label4.Text" xml:space="preserve">
     <value>게임 ID:</value>
   </data>
+  <data name="tsmiClearListDestination.Text" xml:space="preserve">
+    <value>목록 지우기</value>
+  </data>
+  <data name="tsmiClearListSource.Text" xml:space="preserve">
+    <value>목록 지우기</value>
+  </data>
 </root>
