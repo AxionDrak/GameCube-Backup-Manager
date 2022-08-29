@@ -1,3 +1,10 @@
+### GameCube Backup Manager 2.6.0.8 (August 29, 2022)
+
+[Fixed] Deleting all source games works once more. Although with some strange behavior with refreshing the DGV every time a file is deleted. Can be optimized later.
+[Changed] Changed "Remove" to "Delete" for clarification reasons.
+[Added] Button to Clear the list, although this might be useless. Took 3 seconds, can remove.
+[Translation] Minor improvements to translations.
+
 ### GameCube Backup Manager 2.6.0.7 (August 28, 2022)
 
 [Improved] Selecting a destination drive responds MUCH faster now. Should negate the possibility for interface locks.

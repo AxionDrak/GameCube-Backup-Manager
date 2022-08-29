@@ -1957,7 +1957,7 @@ namespace GCBM
         ///     Global Delete Selected Game
         /// </summary>
         /// <param name="dgv"></param>
-        private async void GlobalDeleteSelectedGame(DataGridView dgv)
+        private async Task GlobalDeleteSelectedGame(DataGridView dgv)
         {
             int _selectedRowCount = dgv.Rows.GetRowCount(DataGridViewElementStates.Selected);
 
@@ -2118,7 +2118,8 @@ namespace GCBM
                             //    MessageBox.Show("Todos os arquivos foram excluídos com sucesso!", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             //}
                         } // DELETAR JOGO DO DISPOSITIVO DE DESTINO
-                        else if (dgv == dgvSource)
+                        //else if (dgv == dgvSource) <-- Uh.. No..?
+                        else if (dgv == dgvDestination)
                         {
                             string[] files = await GetFilesFolder(tscbDiscDrive.SelectedItem + GAMES_DIR + sio.Path.DirectorySeparatorChar, filters,
                                 false).ConfigureAwait(false);
@@ -2964,13 +2965,6 @@ namespace GCBM
             {
                 btnSearch.PerformClick();
             }
-        }
-
-        //Restarts the application (closes and reopens)
-        //Application.Restart();
-        private void tsmiGameListDeleteAllFiles_ClickAsync(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
         }
 
         private void btnAbort_Click(object sender, EventArgs e)
@@ -4380,22 +4374,20 @@ namespace GCBM
 
         #region tsmiDeleteSelectedFile_Click
 
-        private void tsmiDeleteSelectedFile_Click(object sender, EventArgs e)
+        private async void tsmiDeleteSelectedFile_Click(object sender, EventArgs e)
         {
             //DeleteSelectedGame(0);
-            GlobalDeleteSelectedGame(dgvSource);
+            await GlobalDeleteSelectedGame(dgvSource);
         }
 
         #endregion
 
         #region tsmiGameListDeleteAllFiles_Click
-
-        private async Task TsmiGameListDeleteAllFiles_ClickAsync(object sender, EventArgs e)
+        private async void tsmiGameListDeleteAllFiles_Click(object sender, EventArgs e)
         {
-            //DeleteAllGames(0);
-            await GlobalDeleteAllGames(dgvSource).ConfigureAwait(false);
+            //DeleteAllGame(0);
+            await GlobalDeleteAllGames(dgvSource);
         }
-
         #endregion
 
         #region tsmiReloadGameList_Click
@@ -4498,10 +4490,10 @@ namespace GCBM
 
         #region tsmiDeleteSelectedFileDisc_Click
 
-        private void tsmiDeleteSelectedFileDisc_Click(object sender, EventArgs e)
+        private async void tsmiDeleteSelectedFileDisc_Click(object sender, EventArgs e)
         {
             //DeleteSelectedGame(1);
-            GlobalDeleteSelectedGame(dgvDestination);
+            await GlobalDeleteSelectedGame(dgvDestination);
         }
 
         #endregion
@@ -5970,6 +5962,16 @@ namespace GCBM
                     await CheckAndDownloadWiiTdbXml();
                 }
             }
+        }
+
+        private void tsmiClearListSource_Click(object sender, EventArgs e)
+        {
+            dgvSource.Rows.Clear();
+        }
+
+        private void tsmiClearListDestination_Click(object sender, EventArgs e)
+        {
+            dgvDestination.Rows.Clear();
         }
     } // frmMain Form
 } // namespace GCBM

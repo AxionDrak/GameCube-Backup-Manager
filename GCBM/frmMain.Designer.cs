@@ -95,6 +95,7 @@ namespace GCBM
             this.tsmiSearchOnVGChartz = new System.Windows.Forms.ToolStripMenuItem();
             this.mstripFile = new System.Windows.Forms.MenuStrip();
             this.tsmiReloadGameList = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiClearListSource = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiSelectGameList = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiGameListSelectAll = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiGameListSelectNone = new System.Windows.Forms.ToolStripMenuItem();
@@ -109,6 +110,9 @@ namespace GCBM
             this.tsmiExportHTML = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiExportCSV = new System.Windows.Forms.ToolStripMenuItem();
             this.tabMainDisc = new System.Windows.Forms.TabPage();
+            this.lblAbortDestination = new System.Windows.Forms.Label();
+            this.pbDestination = new System.Windows.Forms.ProgressBar();
+            this.btnAbortDestination = new System.Windows.Forms.Button();
             this.lblDestinationCount = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.lblSpaceAvailabeOnDevice = new System.Windows.Forms.Label();
@@ -135,6 +139,7 @@ namespace GCBM
             this.tscbDiscDrive = new System.Windows.Forms.ToolStripComboBox();
             this.tsmiReloadDeviceDrive = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiReloadGameListDisc = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiClearListDestination = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiSelectGameDisc = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiGameDiscSelectAll = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiGameDiscSelectNone = new System.Windows.Forms.ToolStripMenuItem();
@@ -216,9 +221,6 @@ namespace GCBM
             this.pbNetStatus = new System.Windows.Forms.PictureBox();
             this.gameBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.process1 = new System.Diagnostics.Process();
-            this.lblAbortDestination = new System.Windows.Forms.Label();
-            this.pbDestination = new System.Windows.Forms.ProgressBar();
-            this.btnAbortDestination = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.spcMain)).BeginInit();
             this.spcMain.Panel1.SuspendLayout();
             this.spcMain.Panel2.SuspendLayout();
@@ -664,6 +666,7 @@ namespace GCBM
             // 
             this.mstripFile.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiReloadGameList,
+            this.tsmiClearListSource,
             this.tsmiSelectGameList,
             this.tsmiRemoveGameList,
             this.tsmiToolsGameList});
@@ -677,11 +680,19 @@ namespace GCBM
             resources.ApplyResources(this.tsmiReloadGameList, "tsmiReloadGameList");
             this.tsmiReloadGameList.Click += new System.EventHandler(this.tsmiReloadGameList_Click);
             // 
+            // tsmiClearListSource
+            // 
+            this.tsmiClearListSource.Image = global::GCBM.Properties.Resources.Clear_icon;
+            this.tsmiClearListSource.Name = "tsmiClearListSource";
+            resources.ApplyResources(this.tsmiClearListSource, "tsmiClearListSource");
+            this.tsmiClearListSource.Click += new System.EventHandler(this.tsmiClearListSource_Click);
+            // 
             // tsmiSelectGameList
             // 
             this.tsmiSelectGameList.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiGameListSelectAll,
             this.tsmiGameListSelectNone});
+            this.tsmiSelectGameList.Image = global::GCBM.Properties.Resources.Cursor_Select_icon;
             this.tsmiSelectGameList.Name = "tsmiSelectGameList";
             resources.ApplyResources(this.tsmiSelectGameList, "tsmiSelectGameList");
             // 
@@ -702,6 +713,7 @@ namespace GCBM
             this.tsmiRemoveGameList.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiGameListDeleteAllFiles,
             this.tsmiGameListDeleteSelectedFile});
+            this.tsmiRemoveGameList.Image = global::GCBM.Properties.Resources.delete_16;
             this.tsmiRemoveGameList.Name = "tsmiRemoveGameList";
             resources.ApplyResources(this.tsmiRemoveGameList, "tsmiRemoveGameList");
             // 
@@ -709,7 +721,7 @@ namespace GCBM
             // 
             this.tsmiGameListDeleteAllFiles.Name = "tsmiGameListDeleteAllFiles";
             resources.ApplyResources(this.tsmiGameListDeleteAllFiles, "tsmiGameListDeleteAllFiles");
-            this.tsmiGameListDeleteAllFiles.Click += new System.EventHandler(this.tsmiGameListDeleteAllFiles_ClickAsync);
+            this.tsmiGameListDeleteAllFiles.Click += new System.EventHandler(this.tsmiGameListDeleteAllFiles_Click);
             // 
             // tsmiGameListDeleteSelectedFile
             // 
@@ -722,6 +734,7 @@ namespace GCBM
             this.tsmiToolsGameList.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiGameListSignatureSHA1,
             this.exportarListaToolStripMenuItem});
+            this.tsmiToolsGameList.Image = global::GCBM.Properties.Resources.Utilities_icon;
             this.tsmiToolsGameList.Name = "tsmiToolsGameList";
             resources.ApplyResources(this.tsmiToolsGameList, "tsmiToolsGameList");
             // 
@@ -786,6 +799,25 @@ namespace GCBM
             resources.ApplyResources(this.tabMainDisc, "tabMainDisc");
             this.tabMainDisc.Name = "tabMainDisc";
             this.tabMainDisc.UseVisualStyleBackColor = true;
+            // 
+            // lblAbortDestination
+            // 
+            resources.ApplyResources(this.lblAbortDestination, "lblAbortDestination");
+            this.lblAbortDestination.Name = "lblAbortDestination";
+            // 
+            // pbDestination
+            // 
+            resources.ApplyResources(this.pbDestination, "pbDestination");
+            this.pbDestination.Name = "pbDestination";
+            // 
+            // btnAbortDestination
+            // 
+            resources.ApplyResources(this.btnAbortDestination, "btnAbortDestination");
+            this.btnAbortDestination.FlatAppearance.BorderSize = 0;
+            this.btnAbortDestination.Image = global::GCBM.Properties.Resources.cancel_32;
+            this.btnAbortDestination.Name = "btnAbortDestination";
+            this.btnAbortDestination.UseVisualStyleBackColor = true;
+            this.btnAbortDestination.Click += new System.EventHandler(this.btnAbort_Click);
             // 
             // lblDestinationCount
             // 
@@ -952,6 +984,7 @@ namespace GCBM
             this.tscbDiscDrive,
             this.tsmiReloadDeviceDrive,
             this.tsmiReloadGameListDisc,
+            this.tsmiClearListDestination,
             this.tsmiSelectGameDisc,
             this.tsmiRemoveGameDisc,
             this.tsmiToolsGameDisc});
@@ -981,11 +1014,19 @@ namespace GCBM
             resources.ApplyResources(this.tsmiReloadGameListDisc, "tsmiReloadGameListDisc");
             this.tsmiReloadGameListDisc.Click += new System.EventHandler(this.tsmiReloadGameListDisc_Click);
             // 
+            // tsmiClearListDestination
+            // 
+            this.tsmiClearListDestination.Image = global::GCBM.Properties.Resources.Clear_icon;
+            this.tsmiClearListDestination.Name = "tsmiClearListDestination";
+            resources.ApplyResources(this.tsmiClearListDestination, "tsmiClearListDestination");
+            this.tsmiClearListDestination.Click += new System.EventHandler(this.tsmiClearListDestination_Click);
+            // 
             // tsmiSelectGameDisc
             // 
             this.tsmiSelectGameDisc.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiGameDiscSelectAll,
             this.tsmiGameDiscSelectNone});
+            this.tsmiSelectGameDisc.Image = global::GCBM.Properties.Resources.Cursor_Select_icon;
             this.tsmiSelectGameDisc.Name = "tsmiSelectGameDisc";
             resources.ApplyResources(this.tsmiSelectGameDisc, "tsmiSelectGameDisc");
             // 
@@ -1006,6 +1047,7 @@ namespace GCBM
             this.tsmiRemoveGameDisc.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiGameDiscDeleteAllFiles,
             this.tsmiGameDiscDeleteSelectedFile});
+            this.tsmiRemoveGameDisc.Image = global::GCBM.Properties.Resources.delete_16;
             this.tsmiRemoveGameDisc.Name = "tsmiRemoveGameDisc";
             resources.ApplyResources(this.tsmiRemoveGameDisc, "tsmiRemoveGameDisc");
             // 
@@ -1028,6 +1070,7 @@ namespace GCBM
             this.toolStripMenuItem3,
             this.tsmiGameDiscSignatureSHA1,
             this.tsmiGameDiscSignatureMD5});
+            this.tsmiToolsGameDisc.Image = global::GCBM.Properties.Resources.Utilities_icon;
             this.tsmiToolsGameDisc.Name = "tsmiToolsGameDisc";
             resources.ApplyResources(this.tsmiToolsGameDisc, "tsmiToolsGameDisc");
             // 
@@ -1559,25 +1602,6 @@ namespace GCBM
             this.process1.StartInfo.UserName = "";
             this.process1.SynchronizingObject = this;
             // 
-            // lblAbortDestination
-            // 
-            resources.ApplyResources(this.lblAbortDestination, "lblAbortDestination");
-            this.lblAbortDestination.Name = "lblAbortDestination";
-            // 
-            // pbDestination
-            // 
-            resources.ApplyResources(this.pbDestination, "pbDestination");
-            this.pbDestination.Name = "pbDestination";
-            // 
-            // btnAbortDestination
-            // 
-            resources.ApplyResources(this.btnAbortDestination, "btnAbortDestination");
-            this.btnAbortDestination.FlatAppearance.BorderSize = 0;
-            this.btnAbortDestination.Image = global::GCBM.Properties.Resources.cancel_32;
-            this.btnAbortDestination.Name = "btnAbortDestination";
-            this.btnAbortDestination.UseVisualStyleBackColor = true;
-            this.btnAbortDestination.Click += new System.EventHandler(this.btnAbort_Click);
-            // 
             // frmMain
             // 
             resources.ApplyResources(this, "$this");
@@ -1821,6 +1845,8 @@ namespace GCBM
         private Label lblAbortDestination;
         private ProgressBar pbDestination;
         private Button btnAbortDestination;
+        private ToolStripMenuItem tsmiClearListSource;
+        private ToolStripMenuItem tsmiClearListDestination;
     }
 }
 

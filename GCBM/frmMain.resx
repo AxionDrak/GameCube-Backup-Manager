@@ -912,7 +912,7 @@
     <value>514, 407</value>
   </data>
   <data name="lblGameCountSource.Size" type="System.Drawing.Size, System.Drawing">
-    <value>76, 13</value>
+    <value>100, 13</value>
   </data>
   <data name="lblGameCountSource.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -948,7 +948,7 @@
     <value>776, 321</value>
   </data>
   <data name="lblAbort.Size" type="System.Drawing.Size, System.Drawing">
-    <value>32, 13</value>
+    <value>29, 13</value>
   </data>
   <data name="lblAbort.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
@@ -1585,7 +1585,7 @@
     <value>15, 85</value>
   </data>
   <data name="labelGameID.Size" type="System.Drawing.Size, System.Drawing">
-    <value>52, 13</value>
+    <value>59, 13</value>
   </data>
   <data name="labelGameID.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -1950,6 +1950,12 @@
   <data name="tsmiReloadGameList.Text" xml:space="preserve">
     <value>Recarregar Lista</value>
   </data>
+  <data name="tsmiClearListSource.Size" type="System.Drawing.Size, System.Drawing">
+    <value>99, 20</value>
+  </data>
+  <data name="tsmiClearListSource.Text" xml:space="preserve">
+    <value>Limpar Lista</value>
+  </data>
   <data name="tsmiGameListSelectAll.Size" type="System.Drawing.Size, System.Drawing">
     <value>121, 22</value>
   </data>
@@ -1963,7 +1969,7 @@
     <value>Nenhum</value>
   </data>
   <data name="tsmiSelectGameList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>73, 20</value>
+    <value>89, 20</value>
   </data>
   <data name="tsmiSelectGameList.Text" xml:space="preserve">
     <value>Selecionar</value>
@@ -1981,10 +1987,10 @@
     <value>Selecionado(s)</value>
   </data>
   <data name="tsmiRemoveGameList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>66, 20</value>
+    <value>73, 20</value>
   </data>
   <data name="tsmiRemoveGameList.Text" xml:space="preserve">
-    <value>Remover</value>
+    <value>Apagar</value>
   </data>
   <data name="tsmiGameListHashSHA1.Size" type="System.Drawing.Size, System.Drawing">
     <value>195, 22</value>
@@ -2023,7 +2029,7 @@
     <value>Exportar lista como...</value>
   </data>
   <data name="tsmiToolsGameList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>84, 20</value>
+    <value>100, 20</value>
   </data>
   <data name="tsmiToolsGameList.Text" xml:space="preserve">
     <value>Ferramentas</value>
@@ -2032,7 +2038,7 @@
     <value>3, 3</value>
   </data>
   <data name="mstripFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>889, 24</value>
+    <value>904, 24</value>
   </data>
   <data name="mstripFile.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -2056,7 +2062,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabMainFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>895, 514</value>
+    <value>910, 514</value>
   </data>
   <data name="tabMainFile.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2095,7 +2101,7 @@
     <value>770, 298</value>
   </data>
   <data name="lblAbortDestination.Size" type="System.Drawing.Size, System.Drawing">
-    <value>32, 13</value>
+    <value>29, 13</value>
   </data>
   <data name="lblAbortDestination.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
@@ -2242,7 +2248,7 @@
     <value>512, 309</value>
   </data>
   <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>85, 13</value>
+    <value>126, 13</value>
   </data>
   <data name="label8.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -2790,6 +2796,12 @@
   <data name="tsmiReloadGameListDisc.Text" xml:space="preserve">
     <value>Regarregar Lista</value>
   </data>
+  <data name="tsmiClearListDestination.Size" type="System.Drawing.Size, System.Drawing">
+    <value>99, 23</value>
+  </data>
+  <data name="tsmiClearListDestination.Text" xml:space="preserve">
+    <value>Limpar Lista</value>
+  </data>
   <data name="tsmiGameDiscSelectAll.Size" type="System.Drawing.Size, System.Drawing">
     <value>121, 22</value>
   </data>
@@ -2803,7 +2815,7 @@
     <value>Nenhum</value>
   </data>
   <data name="tsmiSelectGameDisc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>73, 23</value>
+    <value>89, 23</value>
   </data>
   <data name="tsmiSelectGameDisc.Text" xml:space="preserve">
     <value>Selecionar</value>
@@ -2821,10 +2833,10 @@
     <value>Selecionado(s)</value>
   </data>
   <data name="tsmiRemoveGameDisc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>66, 23</value>
+    <value>73, 23</value>
   </data>
   <data name="tsmiRemoveGameDisc.Text" xml:space="preserve">
-    <value>Remover</value>
+    <value>Apagar</value>
   </data>
   <data name="tsmiGameDiscExportList.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -2890,7 +2902,7 @@
     <value>Assinatura MD5</value>
   </data>
   <data name="tsmiToolsGameDisc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>84, 23</value>
+    <value>100, 23</value>
   </data>
   <data name="tsmiToolsGameDisc.Text" xml:space="preserve">
     <value>Ferramentas</value>
@@ -2899,7 +2911,7 @@
     <value>3, 3</value>
   </data>
   <data name="mstripDisc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>889, 27</value>
+    <value>904, 27</value>
   </data>
   <data name="mstripDisc.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -2923,7 +2935,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabMainDisc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>895, 514</value>
+    <value>910, 514</value>
   </data>
   <data name="tabMainDisc.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -3139,7 +3151,7 @@
     <value>3, 3</value>
   </data>
   <data name="mstripDatabase.Size" type="System.Drawing.Size, System.Drawing">
-    <value>889, 24</value>
+    <value>904, 24</value>
   </data>
   <data name="mstripDatabase.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -3163,7 +3175,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabMainDatabase.Size" type="System.Drawing.Size, System.Drawing">
-    <value>895, 514</value>
+    <value>910, 514</value>
   </data>
   <data name="tabMainDatabase.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -3250,7 +3262,7 @@
     <value>3, 3</value>
   </data>
   <data name="mstripLog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>889, 24</value>
+    <value>904, 24</value>
   </data>
   <data name="mstripLog.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -3274,7 +3286,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabMainLog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>895, 514</value>
+    <value>910, 514</value>
   </data>
   <data name="tabMainLog.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -3298,7 +3310,7 @@
     <value>3, 3</value>
   </data>
   <data name="tabControlMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>903, 540</value>
+    <value>918, 540</value>
   </data>
   <data name="tabControlMain.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -4060,6 +4072,12 @@
   <data name="&gt;&gt;tsmiReloadGameList.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;tsmiClearListSource.Name" xml:space="preserve">
+    <value>tsmiClearListSource</value>
+  </data>
+  <data name="&gt;&gt;tsmiClearListSource.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;tsmiSelectGameList.Name" xml:space="preserve">
     <value>tsmiSelectGameList</value>
   </data>
@@ -4196,6 +4214,12 @@
     <value>tsmiReloadGameListDisc</value>
   </data>
   <data name="&gt;&gt;tsmiReloadGameListDisc.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsmiClearListDestination.Name" xml:space="preserve">
+    <value>tsmiClearListDestination</value>
+  </data>
+  <data name="&gt;&gt;tsmiClearListDestination.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiSelectGameDisc.Name" xml:space="preserve">
@@ -4605,11 +4629,5 @@
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>Detalles</value>
-  </data>
-  <data name="grpDetails.Text" xml:space="preserve">
-    <value>Detalles</value>
   </data>
 </root>
