@@ -501,4 +501,13 @@
   <data name="DolphinEmulator_Not_Found_String_2" xml:space="preserve">
     <value>돌핀 에뮬레이터 실행 파일(dolphin.exe)의 경로를 설정하세요.</value>
   </data>
+  <data name="OverwriteWiiTDBBody" xml:space="preserve">
+    <value>현재 WiiTDB.xml 파일을 덮어쓰시겠습니까?현재 WiiTDB를 덮어쓰시겠습니까?</value>
+  </data>
+  <data name="OverwriteWiiTDBCaption" xml:space="preserve">
+    <value>"WiiTDB.xml을 덮어쓰시겠습니까?"</value>
+  </data>
+  <data name="CantOpenImage" xml:space="preserve">
+    <value>[오류] 이미지 파일을 열 수 없습니다.</value>
+  </data>
 </root>

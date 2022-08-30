@@ -863,6 +863,36 @@
   <metadata name="tabMainFile.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="pbSource.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="pbSource.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="pbSource.Location" type="System.Drawing.Point, System.Drawing">
+    <value>514, 377</value>
+  </data>
+  <data name="pbSource.Size" type="System.Drawing.Size, System.Drawing">
+    <value>339, 23</value>
+  </data>
+  <data name="pbSource.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="pbSource.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;pbSource.Name" xml:space="preserve">
+    <value>pbSource</value>
+  </data>
+  <data name="&gt;&gt;pbSource.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ProgressBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pbSource.Parent" xml:space="preserve">
+    <value>tabMainFile</value>
+  </data>
+  <data name="&gt;&gt;pbSource.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <metadata name="lblSourceCount.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -897,7 +927,7 @@
     <value>tabMainFile</value>
   </data>
   <data name="&gt;&gt;lblSourceCount.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <metadata name="lblGameCountSource.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -930,7 +960,7 @@
     <value>tabMainFile</value>
   </data>
   <data name="&gt;&gt;lblGameCountSource.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <metadata name="lblAbort.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -969,7 +999,7 @@
     <value>tabMainFile</value>
   </data>
   <data name="&gt;&gt;lblAbort.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <metadata name="pbCopy.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -1002,7 +1032,7 @@
     <value>tabMainFile</value>
   </data>
   <data name="&gt;&gt;pbCopy.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <metadata name="lblCopy.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -1041,7 +1071,7 @@
     <value>tabMainFile</value>
   </data>
   <data name="&gt;&gt;lblCopy.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <metadata name="label1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -1074,7 +1104,7 @@
     <value>tabMainFile</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <metadata name="btnAbort.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -1104,7 +1134,7 @@
     <value>tabMainFile</value>
   </data>
   <data name="&gt;&gt;btnAbort.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <metadata name="lblPercent.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -1146,7 +1176,7 @@
     <value>tabMainFile</value>
   </data>
   <data name="&gt;&gt;lblPercent.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <metadata name="btnSelectFolder.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -1179,7 +1209,7 @@
     <value>tabMainFile</value>
   </data>
   <data name="&gt;&gt;btnSelectFolder.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <metadata name="lblInstallGame.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -1218,7 +1248,7 @@
     <value>tabMainFile</value>
   </data>
   <data name="&gt;&gt;lblInstallGame.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <metadata name="grpDetailsSource.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -1780,7 +1810,7 @@
     <value>tabMainFile</value>
   </data>
   <data name="&gt;&gt;grpDetailsSource.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <metadata name="dgvSource.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -1936,7 +1966,7 @@
     <value>tabMainFile</value>
   </data>
   <data name="&gt;&gt;dgvSource.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <metadata name="mstripFile.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>365, 11</value>
@@ -2038,7 +2068,7 @@
     <value>3, 3</value>
   </data>
   <data name="mstripFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>904, 24</value>
+    <value>913, 24</value>
   </data>
   <data name="mstripFile.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -2053,7 +2083,7 @@
     <value>tabMainFile</value>
   </data>
   <data name="&gt;&gt;mstripFile.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>13</value>
   </data>
   <data name="tabMainFile.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
@@ -2062,7 +2092,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabMainFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>910, 514</value>
+    <value>919, 514</value>
   </data>
   <data name="tabMainFile.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2911,7 +2941,7 @@
     <value>3, 3</value>
   </data>
   <data name="mstripDisc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>904, 27</value>
+    <value>913, 27</value>
   </data>
   <data name="mstripDisc.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -2935,7 +2965,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabMainDisc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>910, 514</value>
+    <value>919, 514</value>
   </data>
   <data name="tabMainDisc.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -3151,7 +3181,7 @@
     <value>3, 3</value>
   </data>
   <data name="mstripDatabase.Size" type="System.Drawing.Size, System.Drawing">
-    <value>904, 24</value>
+    <value>913, 24</value>
   </data>
   <data name="mstripDatabase.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -3175,7 +3205,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabMainDatabase.Size" type="System.Drawing.Size, System.Drawing">
-    <value>910, 514</value>
+    <value>919, 514</value>
   </data>
   <data name="tabMainDatabase.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -3262,7 +3292,7 @@
     <value>3, 3</value>
   </data>
   <data name="mstripLog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>904, 24</value>
+    <value>913, 24</value>
   </data>
   <data name="mstripLog.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -3286,7 +3316,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabMainLog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>910, 514</value>
+    <value>919, 514</value>
   </data>
   <data name="tabMainLog.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -3310,7 +3340,7 @@
     <value>3, 3</value>
   </data>
   <data name="tabControlMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>918, 540</value>
+    <value>927, 540</value>
   </data>
   <data name="tabControlMain.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -3517,13 +3547,13 @@
     <value>Opções</value>
   </data>
   <data name="tsmiRenameFolders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>181, 22</value>
+    <value>207, 22</value>
   </data>
   <data name="tsmiRenameFolders.Text" xml:space="preserve">
     <value>Renomear pastas</value>
   </data>
   <data name="tsmiRenameISO.Size" type="System.Drawing.Size, System.Drawing">
-    <value>181, 22</value>
+    <value>207, 22</value>
   </data>
   <data name="tsmiRenameISO.Text" xml:space="preserve">
     <value>Renomear ISO/GCM</value>
@@ -3559,10 +3589,16 @@
     <value>Gravar Mídia CD/DVD</value>
   </data>
   <data name="tsmiMainPlugins.Size" type="System.Drawing.Size, System.Drawing">
-    <value>181, 22</value>
+    <value>207, 22</value>
   </data>
   <data name="tsmiMainPlugins.Text" xml:space="preserve">
     <value>Plugins</value>
+  </data>
+  <data name="toolStripMenuItem11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>207, 22</value>
+  </data>
+  <data name="toolStripMenuItem11.Text" xml:space="preserve">
+    <value>Atualização do GameTDB</value>
   </data>
   <data name="tsmiTools.Size" type="System.Drawing.Size, System.Drawing">
     <value>84, 20</value>
@@ -4532,6 +4568,12 @@
     <value>tsmiBurnMedia</value>
   </data>
   <data name="&gt;&gt;tsmiBurnMedia.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem11.Name" xml:space="preserve">
+    <value>toolStripMenuItem11</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem11.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmiHelp.Name" xml:space="preserve">

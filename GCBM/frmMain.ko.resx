@@ -1198,9 +1198,6 @@
   <data name="tsmiOptions.Size" type="System.Drawing.Size, System.Drawing">
     <value>43, 20</value>
   </data>
-  <data name="tsmiOptions.Text" xml:space="preserve">
-    <value>옵션</value>
-  </data>
   <data name="tsmiConfigurationMain.Size" type="System.Drawing.Size, System.Drawing">
     <value>107, 22</value>
   </data>
@@ -1552,5 +1549,8 @@
   </data>
   <data name="tsmiClearListSource.Text" xml:space="preserve">
     <value>목록 지우기</value>
+  </data>
+  <data name="tsmiOptions.Text" xml:space="preserve">
+    <value>옵션</value>
   </data>
 </root>

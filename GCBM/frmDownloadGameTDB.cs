@@ -26,7 +26,6 @@ namespace GCBM
         {
             InitializeComponent();
 
-            btnCancelWork.Enabled = false;
             GameTDB();
 
         }
@@ -35,6 +34,9 @@ namespace GCBM
 
         private async void GameTDB()
         {
+            bool update = false;
+            if (File.Exists(WIITDB_FILE))
+                update = true;
             try
             {
 
@@ -42,15 +44,8 @@ namespace GCBM
                 webClient.DownloadFileCompleted += Completed;
                 webClient.DownloadProgressChanged += ProgressChanged;
                 webClient.DownloadFileAsync(new Uri("https://www.gametdb.com/wiitdb.zip"), WIITDB_ZIP_FILE);
-                await Task.Delay(5000);
-                btnCancelWork.Enabled = true;
 
-                if (File.Exists(WIITDB_FILE))
-                {
-                    lblConverting.Font = new Font(lblConverting.Font, FontStyle.Bold);
-                    lblConverting.Text = PROCESS_COMPLETED;
-                    btnCancelWork.PerformClick();
-                }
+                AskOverwrite(update);
             }
             catch (Exception ex)
             {
@@ -58,9 +53,22 @@ namespace GCBM
             }
         }
 
+        private void AskOverwrite(bool update)
+        {
+            if (File.Exists(WIITDB_FILE))
+            {
+                lblConverting.Font = new Font(lblConverting.Font, FontStyle.Bold);
+                lblConverting.Text = PROCESS_COMPLETED;
+
+                //ask the user if they want to overwrite the file
+            }
+        }
+
         public static void GameTDBSynchronous()
         {
-
+            bool update = false;
+            if (File.Exists(WIITDB_FILE))
+                update = true;
             try
             {
                 WebClient webClient = new WebClient();
@@ -68,7 +76,30 @@ namespace GCBM
 
                 try
                 {
-                    ZipFile.ExtractToDirectory(GET_CURRENT_PATH + @"\" + WIITDB_ZIP_FILE, GET_CURRENT_PATH);
+                    if (File.Exists(WIITDB_FILE))
+                    {
+                        
+                        if (update)
+                        {
+                DialogResult result = MessageBox.Show(Resources.OverwriteWiiTDBBody,Resources.OverwriteWiiTDBCaption, MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+                            if (result == DialogResult.Yes)
+                            {
+                                File.Delete(GET_CURRENT_PATH + @"\" + WIITDB_FILE);
+                                try{
+                                ZipFile.ExtractToDirectory(GET_CURRENT_PATH + @"\" + WIITDB_ZIP_FILE, GET_CURRENT_PATH);
+                                }
+                                catch (Exception ex)
+                                {
+                                    _ = MessageBox.Show(ex.Message);
+                                }
+                                finally
+                                {
+                                    File.Delete(GET_CURRENT_PATH + @"\" + WIITDB_ZIP_FILE);
+                                }
+                            }
+                        }
+                        else { return; }
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -125,7 +156,7 @@ namespace GCBM
 
         private async Task ProcessTaskDelay()
         {
-            await Task.Delay(5000).ConfigureAwait(false);
+            await Task.Delay(3000).ConfigureAwait(false);
         }
 
         private void btnCancelWork_Click(object sender, EventArgs e)

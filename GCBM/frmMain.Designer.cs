@@ -203,6 +203,7 @@ namespace GCBM
             this.tsmiElfDol = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiCreatePackage = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiBurnMedia = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem11 = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiWebsiteFacebook = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiOfficialGitHub = new System.Windows.Forms.ToolStripMenuItem();
@@ -221,6 +222,7 @@ namespace GCBM
             this.pbNetStatus = new System.Windows.Forms.PictureBox();
             this.gameBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.process1 = new System.Diagnostics.Process();
+            this.pbSource = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.spcMain)).BeginInit();
             this.spcMain.Panel1.SuspendLayout();
             this.spcMain.Panel2.SuspendLayout();
@@ -324,6 +326,7 @@ namespace GCBM
             // 
             // tabMainFile
             // 
+            this.tabMainFile.Controls.Add(this.pbSource);
             this.tabMainFile.Controls.Add(this.lblSourceCount);
             this.tabMainFile.Controls.Add(this.lblGameCountSource);
             this.tabMainFile.Controls.Add(this.lblAbort);
@@ -1216,6 +1219,7 @@ namespace GCBM
             // 
             // tsmiDatabaseUpdateGameTDB
             // 
+            this.tsmiDatabaseUpdateGameTDB.Image = global::GCBM.Properties.Resources.Misc_Download_Database_icon;
             this.tsmiDatabaseUpdateGameTDB.Name = "tsmiDatabaseUpdateGameTDB";
             resources.ApplyResources(this.tsmiDatabaseUpdateGameTDB, "tsmiDatabaseUpdateGameTDB");
             this.tsmiDatabaseUpdateGameTDB.Click += new System.EventHandler(this.tsmiDatabaseUpdateGameTDB_Click);
@@ -1428,7 +1432,8 @@ namespace GCBM
             this.tsmiTools.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiRenameFolders,
             this.tsmiRenameISO,
-            this.tsmiMainPlugins});
+            this.tsmiMainPlugins,
+            this.toolStripMenuItem11});
             this.tsmiTools.Name = "tsmiTools";
             resources.ApplyResources(this.tsmiTools, "tsmiTools");
             // 
@@ -1491,6 +1496,13 @@ namespace GCBM
             this.tsmiBurnMedia.Name = "tsmiBurnMedia";
             resources.ApplyResources(this.tsmiBurnMedia, "tsmiBurnMedia");
             this.tsmiBurnMedia.Click += new System.EventHandler(this.tsmiBurnMedia_Click);
+            // 
+            // toolStripMenuItem11
+            // 
+            this.toolStripMenuItem11.Image = global::GCBM.Properties.Resources.Misc_Download_Database_icon;
+            this.toolStripMenuItem11.Name = "toolStripMenuItem11";
+            resources.ApplyResources(this.toolStripMenuItem11, "toolStripMenuItem11");
+            this.toolStripMenuItem11.Click += new System.EventHandler(this.tsmiDatabaseUpdateGameTDB_Click);
             // 
             // tsmiHelp
             // 
@@ -1601,6 +1613,11 @@ namespace GCBM
             this.process1.StartInfo.StandardOutputEncoding = null;
             this.process1.StartInfo.UserName = "";
             this.process1.SynchronizingObject = this;
+            // 
+            // pbSource
+            // 
+            resources.ApplyResources(this.pbSource, "pbSource");
+            this.pbSource.Name = "pbSource";
             // 
             // frmMain
             // 
@@ -1847,6 +1864,8 @@ namespace GCBM
         private Button btnAbortDestination;
         private ToolStripMenuItem tsmiClearListSource;
         private ToolStripMenuItem tsmiClearListDestination;
+        private ToolStripMenuItem toolStripMenuItem11;
+        private ProgressBar pbSource;
     }
 }
 

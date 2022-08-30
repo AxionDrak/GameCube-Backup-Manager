@@ -167,6 +167,11 @@
     <Compile Include="Network.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="SIOExtensions.cs" />
     <Compile Include="TOC.cs">
       <SubType>Form</SubType>
@@ -492,14 +497,9 @@
     <EmbeddedResource Include="Properties\Resources.ko.resx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="tools\frmBurnMedia.resx">
       <DependentUpon>frmBurnMedia.cs</DependentUpon>
     </EmbeddedResource>
@@ -588,6 +588,7 @@
     <Content Include="media\Web\js\vendor\jquery.js" />
     <Content Include="media\Web\js\vendor\what-input.js" />
     <Content Include="media\Web\resources\R.png" />
+    <None Include="Resources\Misc-Download-Database-icon.png" />
     <None Include="Resources\Utilities-icon.png" />
     <None Include="Resources\Devices-drive-harddisk-usb-icon.png" />
     <None Include="Resources\Cursor-Select-icon.png" />

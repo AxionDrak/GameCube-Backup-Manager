@@ -1,13 +1,19 @@
-﻿using GCBM.Properties;
+﻿using GCBM;
+using GCBM.Properties;
+using Microsoft.VisualBasic.ApplicationServices;
 using System;
 using System.Diagnostics;
 using System.IO;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace GCBM
 {
+
     internal static class Program
     {
+        public static Form SplashScreen;
+        static Form MainForm;
         /// <summary>
         ///     Ponto de entrada principal para o aplicativo.
         /// </summary>
@@ -38,16 +44,12 @@ namespace GCBM
                     }
                     else
                     {
-                        Application.EnableVisualStyles();
-                        Application.SetCompatibleTextRenderingDefault(false);
-                        Application.Run(new frmMain());
+                        Start();
                     }
                 }
                 else
                 {
-                    Application.EnableVisualStyles();
-                    Application.SetCompatibleTextRenderingDefault(false);
-                    Application.Run(new frmMain());
+                    Start();
                 }
             }
             else
@@ -60,11 +62,40 @@ namespace GCBM
                 }
                 else
                 {
-                    Application.EnableVisualStyles();
-                    Application.SetCompatibleTextRenderingDefault(false);
-                    Application.Run(new frmMain());
+                    Start();
                 }
             }
         }
+
+        private static void Start()
+        {
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            //Show Splash Form
+            SplashScreen = new frmSplashScreen();
+            var splashThread = new Thread(new ThreadStart(
+                () => Application.Run(SplashScreen)));
+            splashThread.SetApartmentState(ApartmentState.STA);
+            splashThread.Start();
+
+            //Create and Show Main Form
+            MainForm = new frmMain();
+            MainForm.Load += MainForm_LoadCompleted;
+            Application.Run(new frmMain());
+        }
+        private static void MainForm_LoadCompleted(object sender, EventArgs e)
+        {
+            if (SplashScreen != null && !SplashScreen.Disposing && !SplashScreen.IsDisposed)
+                SplashScreen.Invoke(new Action(() => SplashScreen.Close()));
+            //MainForm.TopMost = true;
+            MainForm.Activate();
+            //MainForm.TopMost = false;
+        }
     }
+
+
+    //Create and Show Main Form
+
+
+
 }

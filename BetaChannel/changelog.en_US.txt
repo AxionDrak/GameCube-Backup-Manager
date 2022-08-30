@@ -1,9 +1,178 @@
-﻿
-### GameCube Backup Manager 2.0.0.1-Beta (April 21, 2022)
+### GameCube Backup Manager 2.6.0.8 (August 29, 2022)
 
-[Added] plugin for CD/DVD burning.
-[Added] plugin to convert ELF files to DOL.
-[Added] plugin to create ZIP and NWB packages.
-[Added] plugin for game testing (via Dolphin emulator).
-[Added] plugin to manage apps.
-[Added] plugin for editing 'meta.xml' files.
+[Fixed] Deleting all source games works once more. Although with some strange behavior with refreshing the DGV every time a file is deleted. Can be optimized later.
+[Changed] Changed "Remove" to "Delete" for clarification reasons.
+[Added] Button to Clear the list, although this might be useless. Took 3 seconds, can remove.
+[Translation] Minor improvements to translations.
+
+### GameCube Backup Manager 2.6.0.7 (August 28, 2022)
+
+[Improved] Selecting a destination drive responds MUCH faster now. Should negate the possibility for interface locks.
+[Changed] WiiTDB Download form now shows on first launch if a network connection is detected, visually explaining to the user what we're doing.
+[Fixed] Some minor interface fixes.
+[Added] Clicking on the network status indicator now rechecks for a network connection, and will ask to download WiiTDB.
+[Improved] Stability improvements, added a few failsafes.
+
+### GameCube Backup Manager 2.6.0.6 (August 27, 2022)
+
+[Improved] Progress bar to display the progress of scanning the chosen directory.
+[Fixed] Hopefully various things.
+
+### GameCube Backup Manager 2.6.0.5 (August 24, 2022)
+
+[Added] Display progress while loading directory.
+
+### GameCube Backup Manager 2.6.0.3 (August 17, 2022)
+
+[Added] Attempts to download WiiTDB.xml in the background on launch.
+[Fixed] Various mistranslations and grammatical errors.
+[Improved] Various additions from new contributors 
+
+### GameCube Backup Manager 2.6.0.2 (July 13, 2022)
+
+[Added] label to display the number of games found.
+[Improved] search system is now updated live as you type.
+
+### GameCube Backup Manager 2.6.0.1 (July 12, 2022)
+
+[Added] button to cancel transfer queue.
+[Changed] Internet check on startup by default.
+[Fixed] other fixes.
+[Improved] overall program stability.
+[Improved] more responsive UI.
+
+### GameCube Backup Manager 2.6.0.0 (July 12, 2022)
+
+[Fixed] mismatch between columns and data.
+[Fixed] database not loading on launch.
+[Fixed] other various bug fixes and maintenance.
+[Improved] improved stability of batch installs.
+
+### GameCube Backup Manager 2.5.0.6 (July 08, 2022)
+
+[Added] network drive support.
+[Fixed] network drives not displaying correctly.
+
+### GameCube Backup Manager 2.5.0.5 (July 07, 2022)
+
+[Fixed] bug with skins showing incorrectly in the target tab.
+
+### GameCube Backup Manager 2.5.0.0 (July 06, 2022)
+
+[Added] batch install system.
+[Added] search system in any field.
+[Fixed] other improvements and fixes.
+[Improved] export to HTML for mobile devices (JavaScript-enabled table and Bootstrap 5 theme).
+
+[Extra] arrival of Sjohnson1021 as official GCBM maintainer.
+
+### GameCube Backup Manager 2.4.6.0 (July 03, 2022)
+
+[Fixed] File transfer error where destination folder name was not created correctly.
+
+### GameCube Backup Manager 2.4.5.0 (May 26, 2022)
+
+[Added] new game regions (Taiwan, Korea, Germany, Spain, Italy, Australia, Netherlands, France)
+[Improved] game region detection system.
+[Improved] cover loading system.
+
+### GameCube Backup Manager 2.4.4.0 (May 19, 2022)
+
+[Added] new texts.
+[Added] Total Space and Available Space indicator texts on the target device.
+[Added] (preliminary) configuration system to test games via Dolphin emulator.
+[Added] online search function for selected game.
+[Fixed] texts in all available languages.
+[Improved] functions in program code.
+
+### GameCube Backup Manager 2.4.3.0 (April 30, 2022)
+
+[Fixed] file transfer error in 'Install Game (1:1)' mode.
+[Fixed] Translation errors on 'About GameCube Backup Manager' screen.
+
+### GameCube Backup Manager 2.4.2.0 (April 28, 2022)
+
+[Added] Korean language translation (Thanks to DDinghoya)
+
+### GameCube Backup Manager 2.4.1.0 (April 25, 2022)
+
+[Added] new texts for all officially supported languages.
+[Fixed] Portuguese (Brazil), English (US) and Spanish (Spain) translations.
+[Improved] more code cleanup. ;D
+
+### GameCube Backup Manager 2.4.0.0 (April 24, 2022)
+
+[Added] ELF to DOL converter.
+[Added] link to official page (GitHub) in Help menu.
+[Added] link to official post (GBATemp) in Help menu.
+[Fixed] temp folder cleanup system.
+[Improved] code cleanup.
+
+### GameCube Backup Manager 2.3.0.0 (April 23, 2022)
+
+[Removed] Plugin installation and management screen.
+  - Plugins will now be merged into the main program.
+[Corrected/Adjusted] English (US) and Spanish (Spain) language translations.
+  - Text corrections and inclusion of new texts.
+
+### GameCube Backup Manager 2.2.0.0 (April 22, 2022)
+
+[Added] English (US) language translation.
+[Added] Spanish (Spain) language translation.
+[Added] extra option for checking for updates, available in the Help tab.
+
+### GameCube Backup Manager 2.1.0.0 (April 19, 2022)
+
+[Added] Plugin (built-in) to Read/Edit meta.xml files
+[Fixed] opening loading time (splash screen).
+[Fixed] link in Disc tab to GameTDB page with selected game data.
+[Fixed] empty data detection in 'Database' tab.
+[Fixed] MD5 and SHA-1 signature verification.
+
+### GameCube Backup Manager 2.0.0.0 (April 18, 2022)
+
+[Added] new time interval for polling updates (5 minutes).
+[Added] permission to run multiple instances of the program.
+[Added] auto-update system.
+[Added] system for proxy.
+[Added] cover transfer (WiiFlow, WiiFlow Lite, WiiFlow Fusion).
+[Added] cover transfer (USB Loader GX, USB Loader GX Tab MOD).
+[Added] ISO/GCM readable format transfer (FAT32 or NTFS devices).
+[Added] game transfer with correct nomenclature (Game Name+ID or ID only).
+[Added] game transfer via Scrub (GCReEx and DiscEx).
+[Added] game files deletion (Source and Destination).
+[Added] game information display (region, publisher, genre, etc).
+[Added] ESRB ratings display.
+[Added] WiiTDB support.
+[Added] improved GameCube ISO detection (70% accuracy) in 'internal' (Default) mode.
+[Added] improved GameCube ISO detection (100% accuracy) in 'business' mode (GameTDB).
+[Added] global download of Disco and 3D skins (for all games listed!).
+[Added] individual download of skins for the selected game (Disc and 3D).
+[Fixed] file transfer system crash (1:1).
+[Fixed] loading 'wiitdb.xml' file in 'Database' tab.
+[Fixed] 'Restore Settings' now correctly deletes the 'config.ini' file.
+
+### GameCube Backup Manager 1.0.0.0-RC (April 11, 2022)
+
+[Added] game transfer via XCopy (1:1 copies - Default).
+[Added] 'wiitdb.xml' file download (GameTDB).
+
+### GameCube Backup Manage 0.90.0.0-Beta (March 25, 2022)
+
+[Added] Plugins system (Experimental).
+
+### GameCube Backup Manager 0.50.0.0-Beta (Feb 12, 2022)
+
+[Added] MD5 hash calculation.
+[Added] SHA-1 Hash calculation.
+[Added] automatic creation of 'games' folder (if it doesn't exist).
+[Added] support for ISO and GCM files.
+
+### GameCube Backup Manager 0.10.0.0-Alpha (January 23, 2022)
+
+[Fixed] program layout tweaks.
+[Added] registration system.
+
+### GameCube Backup Manager 0.1.0.0-Alpha (January 5, 2022)
+
+[Added] more polished and functional graphical interface (UI).

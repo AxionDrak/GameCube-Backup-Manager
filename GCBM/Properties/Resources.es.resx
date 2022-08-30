@@ -489,4 +489,13 @@
   <data name="DolphinEmulator_Not_Found_String_2" xml:space="preserve">
     <value>Establezca la ruta al ejecutable del emulador Dolphin (dolphin.exe).</value>
   </data>
+  <data name="OverwriteWiiTDBBody" xml:space="preserve">
+    <value>¿Quieres sobrescribir el archivo WiiTDB.xml actual? ¿Quieres sobrescribir el WiiTDB actual?</value>
+  </data>
+  <data name="OverwriteWiiTDBCaption" xml:space="preserve">
+    <value>"¿Sobrescribir WiiTDB.xml?"</value>
+  </data>
+  <data name="CantOpenImage" xml:space="preserve">
+    <value>[ERROR] No se pudo abrir el archivo de imagen.</value>
+  </data>
 </root>
