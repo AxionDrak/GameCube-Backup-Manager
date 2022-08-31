@@ -164,6 +164,15 @@ namespace GCBM.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to WiiTDB.zip não encontrado, gostaria de baixá-lo agora?.
+        /// </summary>
+        internal static string AskDownloadWiiTDB {
+            get {
+                return ResourceManager.GetString("AskDownloadWiiTDB", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Software gerenciador de arquivos ISO e GCM de Nintendo GameCube..
         /// </summary>
         internal static string AssemblyInfo_Description {
@@ -1048,6 +1057,16 @@ namespace GCBM.Properties {
         internal static System.Drawing.Bitmap gbatemp_16 {
             get {
                 object obj = ResourceManager.GetObject("gbatemp_16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gcbm {
+            get {
+                object obj = ResourceManager.GetObject("gcbm", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

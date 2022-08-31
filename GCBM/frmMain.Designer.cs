@@ -47,6 +47,7 @@ namespace GCBM
             this.pbGameDisc = new System.Windows.Forms.PictureBox();
             this.tabControlMain = new System.Windows.Forms.TabControl();
             this.tabMainFile = new System.Windows.Forms.TabPage();
+            this.pbSource = new System.Windows.Forms.ProgressBar();
             this.lblSourceCount = new System.Windows.Forms.Label();
             this.lblGameCountSource = new System.Windows.Forms.Label();
             this.lblAbort = new System.Windows.Forms.Label();
@@ -222,7 +223,6 @@ namespace GCBM
             this.pbNetStatus = new System.Windows.Forms.PictureBox();
             this.gameBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.process1 = new System.Diagnostics.Process();
-            this.pbSource = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.spcMain)).BeginInit();
             this.spcMain.Panel1.SuspendLayout();
             this.spcMain.Panel2.SuspendLayout();
@@ -343,6 +343,11 @@ namespace GCBM
             resources.ApplyResources(this.tabMainFile, "tabMainFile");
             this.tabMainFile.Name = "tabMainFile";
             this.tabMainFile.UseVisualStyleBackColor = true;
+            // 
+            // pbSource
+            // 
+            resources.ApplyResources(this.pbSource, "pbSource");
+            this.pbSource.Name = "pbSource";
             // 
             // lblSourceCount
             // 
@@ -1613,11 +1618,6 @@ namespace GCBM
             this.process1.StartInfo.StandardOutputEncoding = null;
             this.process1.StartInfo.UserName = "";
             this.process1.SynchronizingObject = this;
-            // 
-            // pbSource
-            // 
-            resources.ApplyResources(this.pbSource, "pbSource");
-            this.pbSource.Name = "pbSource";
             // 
             // frmMain
             // 

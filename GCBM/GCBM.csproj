@@ -566,7 +566,9 @@
     <Content Include="bin\gcit.exe">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="gcbm.ico" />
+    <Content Include="gcbm.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="media\covers\3d.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -588,6 +590,7 @@
     <Content Include="media\Web\js\vendor\jquery.js" />
     <Content Include="media\Web\js\vendor\what-input.js" />
     <Content Include="media\Web\resources\R.png" />
+    <EmbeddedResource Include="Resources\gcbm.ico" />
     <None Include="Resources\Misc-Download-Database-icon.png" />
     <None Include="Resources\Utilities-icon.png" />
     <None Include="Resources\Devices-drive-harddisk-usb-icon.png" />

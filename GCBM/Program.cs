@@ -88,6 +88,7 @@ namespace GCBM
             if (SplashScreen != null && !SplashScreen.Disposing && !SplashScreen.IsDisposed)
                 SplashScreen.Invoke(new Action(() => SplashScreen.Close()));
             //MainForm.TopMost = true;
+            MainForm.Show();
             MainForm.Activate();
             //MainForm.TopMost = false;
         }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Globalization;
 using System.Threading;
 using System.Windows.Forms;
@@ -145,5 +146,21 @@ namespace GCBM
         private readonly ProgressDelegate del;
 
         #endregion
+
+        private void frmSplashScreen_FormClosing(object sender, FormClosingEventArgs e)
+        {
+             if (Process.GetCurrentProcess().GetChildProcesses() != null &&
+                Process.GetCurrentProcess().GetChildProcesses().Count != 0)
+            {
+                foreach (Process process in Process.GetCurrentProcess().GetChildProcesses())
+                {
+                    //Kill GCIT and others
+                    process.Kill();
+                }
+            }
+            //Garbage collector
+            GC.Collect();
+            //Cleanup any Threads left lying around
+        }
     }
 }

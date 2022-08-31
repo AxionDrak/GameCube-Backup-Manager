@@ -54,9 +54,10 @@ namespace GCBM
         #region Globals
 
         public bool SCANNING = false;
-
+        public bool CLOSING = false;
         #endregion
 
+        
         #region Main Form Closing
 
         /// <summary>
@@ -66,6 +67,7 @@ namespace GCBM
         /// <param name="e"></param>
         private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
         {
+            CLOSING = true;
             if (notifyIcon != null)
             {
                 notifyIcon.Visible = false;
@@ -85,9 +87,12 @@ namespace GCBM
                 }
             }
 
+            //Garbage Collector
+            GC.Collect();
             //Cleanup any Threads left lying around
             Dispose();
             Process.GetCurrentProcess().Kill();
+            
         }
 
         #endregion
@@ -378,7 +383,7 @@ namespace GCBM
         /// <summary>
         ///     Log record.
         /// </summary>
-        private void RegisterHeaderLog()
+        private void SetupLog()
         {
             // Assembly
             AssemblyName _version = assembly.GetName();
@@ -550,7 +555,7 @@ namespace GCBM
         /// <summary>
         ///     Load Database XML
         /// </summary>
-        private void LoadDatabaseXML()
+        private async void LoadDatabaseXML()
         {
             if (!Monitor.TryEnter(lvDatabase))
             {
@@ -794,134 +799,135 @@ namespace GCBM
         /// <param name="dgv"></param>
         private Task DisplaySourceFilesAsync(string sourceFolder, DataGridView dgv)
         {
-
-            //Store the passed dgv locally to prevent errors
-            DataGridView dgvSourcetemp = dgv;
-            //Setup Variables
-            ABORT = false;
-            SCANNING = true;
-            string[] filters = new[] { "iso", "gcm" };
-            bool isRecursive = false;
-
-            //if(dgv == dgvSource)
-            if (dgvSourcetemp.RowCount == 0)
+            //Check for an empty string first, and return a completed task if it is
+            if (sourceFolder != String.Empty && sourceFolder != "" && sourceFolder != null)
             {
-                EnableOptionsGameList();
-            }
+                //Store the passed dgv locally to prevent errors
+                DataGridView dgvSourcetemp = dgv;
+                //Setup Variables
+                ABORT = false;
+                SCANNING = true;
+                string[] filters = new[] { "iso", "gcm" };
+                bool isRecursive = false;
 
-            //if (dgv == dgvDestination)
-            //    isRecursive = true;
-            //else
-            //    isRecursive = false;
-
-            string[] files = GetFilesFolder(sourceFolder, filters, isRecursive).Result;
-
-            //if (dgv == dgvDestination)
-            //    //tsmiReloadGameListDisc.Enabled = true;
-            //    try
-            //    {
-            //        if (dgv.RowCount == 0) tsmiReloadGameListDisc.Enabled = true;
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        tbLog.AppendText(ex.Message + Environment.NewLine + ex.StackTrace);
-            //    }
-
-            tsmiSelectGameList.Enabled = true;
-            // Groups files in the folder by extension.
-            var enumerable = files
-                            .Select(arq => Path.GetExtension(arq).TrimStart('.').ToLower(MY_CULTURE)).GroupBy(x => x,
-                                (ext, extCnt) =>
-                                    new { _fileExtension = ext, Counter = extCnt.Count() });
-            var filesGroupedByExtension = enumerable;
-
-            // Scroll through the result and display the values.
-            foreach (var _files in filesGroupedByExtension)
-            {
-                tbLog.AppendText("[" + DateString() + "]" + Resources.DisplayFilesSelected_Found_String1 +
-                                 _files.Counter +
-                                 Resources.DisplayFilesSelected_Found_String2
-                                 + _files._fileExtension.ToUpper(MY_CULTURE) + Environment.NewLine);
-
-                GlobalNotifications(Resources.DisplayFilesSelected_Found_String3 + _files.Counter +
-                                    Resources.DisplayFilesSelected_Found_String2 +
-                                    _files._fileExtension.ToUpper(MY_CULTURE), ToolTipIcon.Info);
-            }
-
-            //Setup Interface
-            pbSource.Maximum = files.Length;
-            pbSource.Visible = true;
-            dgvSourcetemp.Rows.Clear();
-            btnAbort.Visible = true;
-
-            //Loop through files
-            foreach (string file in files)
-            {
-                if (ABORT)
+                //if(dgv == dgvSource)
+                if (dgvSourcetemp.RowCount == 0)
                 {
-                    break;
+                    EnableOptionsGameList();
                 }
 
-                FileInfo _f = new FileInfo(file);
-                string _getSize = DisplayFormatFileSize(_f.Length, CONFIG_INI_FILE.IniReadInt("GENERAL", "FileSize"));
-                //Title - ID - Region - Path - Extension - Size
-                loadPath = _f.FullName;
-                IMAGE_PATH = loadPath;
-                //Need to find a better way of this.. but for now this is the only way I really know how to get a hold of the game info. I'll go back and dig later, I found it before.. just meant a lot of stepping-through
-                if (ReadImageTOC() && !ABORT)
+                //if (dgv == dgvDestination)
+                //    isRecursive = true;
+                //else
+                //    isRecursive = false;
+                string[] files = GetFilesFolder(sourceFolder, filters, isRecursive).Result;
+
+                //if (dgv == dgvDestination)
+                //    //tsmiReloadGameListDisc.Enabled = true;
+                //    try
+                //    {
+                //        if (dgv.RowCount == 0) tsmiReloadGameListDisc.Enabled = true;
+                //    }
+                //    catch (Exception ex)
+                //    {
+                //        tbLog.AppendText(ex.Message + Environment.NewLine + ex.StackTrace);
+                //    }
+
+                tsmiSelectGameList.Enabled = true;
+                // Groups files in the folder by extension.
+                var enumerable = files
+                                .Select(arq => Path.GetExtension(arq).TrimStart('.').ToLower(MY_CULTURE)).GroupBy(x => x,
+                                    (ext, extCnt) =>
+                                        new { _fileExtension = ext, Counter = extCnt.Count() });
+                var filesGroupedByExtension = enumerable;
+
+                // Scroll through the result and display the values.
+                foreach (var _files in filesGroupedByExtension)
                 {
-                    if (CONFIG_INI_FILE.IniReadBool("TITLES", "GameXmlName"))
+                    tbLog.AppendText("[" + DateString() + "]" + Resources.DisplayFilesSelected_Found_String1 +
+                                     _files.Counter +
+                                     Resources.DisplayFilesSelected_Found_String2
+                                     + _files._fileExtension.ToUpper(MY_CULTURE) + Environment.NewLine);
+
+                    GlobalNotifications(Resources.DisplayFilesSelected_Found_String3 + _files.Counter +
+                                        Resources.DisplayFilesSelected_Found_String2 +
+                                        _files._fileExtension.ToUpper(MY_CULTURE), ToolTipIcon.Info);
+                }
+
+                //Setup Interface
+                pbSource.Maximum = files.Length;
+                pbSource.Visible = true;
+                dgvSourcetemp.Rows.Clear();
+                btnAbort.Visible = true;
+
+                //Loop through files
+                foreach (string file in files)
+                {
+                    if (ABORT)
                     {
-                        if (File.Exists(WIITDB_FILE))
+                        break;
+                    }
+
+                    FileInfo _f = new FileInfo(file);
+                    string _getSize = DisplayFormatFileSize(_f.Length, CONFIG_INI_FILE.IniReadInt("GENERAL", "FileSize"));
+                    //Title - ID - Region - Path - Extension - Size
+                    loadPath = _f.FullName;
+                    IMAGE_PATH = loadPath;
+                    //Need to find a better way of this.. but for now this is the only way I really know how to get a hold of the game info. I'll go back and dig later, I found it before.. just meant a lot of stepping-through
+                    if (ReadImageTOC() && !ABORT)
+                    {
+                        if (CONFIG_INI_FILE.IniReadBool("TITLES", "GameXmlName"))
                         {
-                            XElement root = XElement.Load(WIITDB_FILE);
-                            IEnumerable<XElement> tests = from el in root.Elements("game")
-                                                          where (string)el.Element("id") == tbIDGame.Text
-                                                          select el;
-                            foreach (XElement el in tests)
+                            if (File.Exists(WIITDB_FILE))
                             {
-                                tbIDName.Text = (string)el.Element("locale").Element("title");
+                                XElement root = XElement.Load(WIITDB_FILE);
+                                IEnumerable<XElement> tests = from el in root.Elements("game")
+                                                              where (string)el.Element("id") == tbIDGame.Text
+                                                              select el;
+                                foreach (XElement el in tests)
+                                {
+                                    tbIDName.Text = (string)el.Element("locale").Element("title");
+                                }
                             }
+                            else
+                            {
+                                CheckWiiTdbXml();
+                            }
+                        }
+
+                        ROOT_OPENED = false;
+                        int n = files.Length;
+                        _ = dgvSourcetemp.Rows.Add(false, tbIDName.Text, tbIDGame.Text, tbIDRegion.Text, _f.Extension.Substring(1, 3).Trim().ToUpper(MY_CULTURE), _getSize, _f.FullName);
+                        //Update ProgressBar pbCopy, and make sure we don't go over the maximum value
+                        if (pbSource.Value < pbSource.Maximum)
+                        {
+                            pbSource.Value++;
                         }
                         else
                         {
-                            CheckWiiTdbXml();
+                            pbSource.Value = pbSource.Maximum;
                         }
+
                     }
 
-                    ROOT_OPENED = false;
-                    int n = files.Length;
-                    _ = dgvSourcetemp.Rows.Add(false, tbIDName.Text, tbIDGame.Text, tbIDRegion.Text, _f.Extension.Substring(1, 3).Trim().ToUpper(MY_CULTURE), _getSize, _f.FullName);
-                    //Update ProgressBar pbCopy, and make sure we don't go over the maximum value
-                    if (pbSource.Value < pbSource.Maximum)
-                    {
-                        pbSource.Value++;
-                    }
-                    else
-                    {
-                        pbSource.Value = pbSource.Maximum;
-                    }
+                    //Clean up Interface
+                    //put pbCopy back to normal
 
+                    lblSourceCount.Text = files.Length.ToString();
+                    //done with loop
+
+                    dgvSourcetemp.Update();
+                    wait(250);//Stop Windows from Panicking
                 }
+                EnableOptionsGameList();
 
-                //Clean up Interface
-                //put pbCopy back to normal
+                ReloadDataGridViewGameList(dgvSourcetemp);
 
-                lblSourceCount.Text = files.Length.ToString();
-                //done with loop
-
-                dgvSourcetemp.Update();
-                wait(250);//Stop Windows from Panicking
             }
-            EnableOptionsGameList();
-
-            ReloadDataGridViewGameList(dgvSourcetemp);
-
             SCANNING = false;
             return CompletedTask;
         }
         #endregion
-
 
         #region Display Destination Files List
         /// <summary>
@@ -932,117 +938,121 @@ namespace GCBM
         /// <param name="dgv"></param>
         private Task DisplayDestinationFilesAsync(string sourceFolder, DataGridView dgv)
         {
-
-            //Store the passed dgv locally to prevent errors
-            DataGridView dgvDestinationtemp = dgv;
-            //Setup Variables
-            ABORT = false;
-            SCANNING = true;
-            string[] filters = new[] { "iso", "gcm" };
-            bool isRecursive = true;
-
-            string[] files = GetFilesFolder(sourceFolder, filters, isRecursive).Result;
-
-            //if (dgv == dgvDestination)
-            tsmiReloadGameListDisc.Enabled = true;
-            try
+            //Check for an empty string first, and return if it is
+            if (sourceFolder != String.Empty || sourceFolder == "" || sourceFolder == null)
             {
-                if (dgv.RowCount == 0) tsmiReloadGameListDisc.Enabled = true;
-            }
-            catch (Exception ex)
-            {
-                tbLog.AppendText(ex.Message + Environment.NewLine + ex.StackTrace);
-            }
+                //Store the passed dgv locally to prevent errors
+                DataGridView dgvDestinationtemp = dgv;
+                //Setup Variables
+                ABORT = false;
+                SCANNING = true;
+                string[] filters = new[] { "iso", "gcm" };
+                bool isRecursive = true;
 
-            tsmiSelectGameList.Enabled = true;
-            // Groups files in the folder by extension.
-            var enumerable = files
-                            .Select(arq => Path.GetExtension(arq).TrimStart('.').ToLower(MY_CULTURE)).GroupBy(x => x,
-                                (ext, extCnt) =>
-                                    new { _fileExtension = ext, Counter = extCnt.Count() });
-            var filesGroupedByExtension = enumerable;
+                string[] files = GetFilesFolder(sourceFolder, filters, isRecursive).Result;
 
-            // Scroll through the result and display the values.
-            foreach (var _files in filesGroupedByExtension)
-            {
-                tbLog.AppendText("[" + DateString() + "]" + Resources.DisplayFilesSelected_Found_String1 +
-                                 _files.Counter +
-                                 Resources.DisplayFilesSelected_Found_String2
-                                 + _files._fileExtension.ToUpper(MY_CULTURE) + Environment.NewLine);
-
-                GlobalNotifications(Resources.DisplayFilesSelected_Found_String3 + _files.Counter +
-                                    Resources.DisplayFilesSelected_Found_String2 +
-                                    _files._fileExtension.ToUpper(MY_CULTURE), ToolTipIcon.Info);
-            }
-
-            //Setup Interface
-            pbDestination.Maximum = files.Length;
-            pbDestination.Visible = true;
-            dgvDestinationtemp.Rows.Clear();
-            btnAbortDestination.Visible = true;
-
-            //Loop through files
-            foreach (string file in files)
-            {
-                if (ABORT)
+                //if (dgv == dgvDestination)
+                tsmiReloadGameListDisc.Enabled = true;
+                try
                 {
-                    break;
+                    if (dgv.RowCount == 0) tsmiReloadGameListDisc.Enabled = true;
+                }
+                catch (Exception ex)
+                {
+                    tbLog.AppendText(ex.Message + Environment.NewLine + ex.StackTrace);
                 }
 
-                FileInfo _f = new FileInfo(file);
-                string _getSize = DisplayFormatFileSize(_f.Length, CONFIG_INI_FILE.IniReadInt("GENERAL", "FileSize"));
-                //Title - ID - Region - Path - Extension - Size
-                loadPath = _f.FullName;
-                IMAGE_PATH = loadPath;
-                //Need to find a better way of this.. but for now this is the only way I really know how to get a hold of the game info. I'll go back and dig later, I found it before.. just meant a lot of stepping-through
-                if (ReadImageTOC() && !ABORT)
+                tsmiSelectGameList.Enabled = true;
+                // Groups files in the folder by extension.
+                var enumerable = files
+                                .Select(arq => Path.GetExtension(arq).TrimStart('.').ToLower(MY_CULTURE)).GroupBy(x => x,
+                                    (ext, extCnt) =>
+                                        new { _fileExtension = ext, Counter = extCnt.Count() });
+                var filesGroupedByExtension = enumerable;
+
+                // Scroll through the result and display the values.
+                foreach (var _files in filesGroupedByExtension)
                 {
-                    if (CONFIG_INI_FILE.IniReadBool("TITLES", "GameXmlName"))
+                    tbLog.AppendText("[" + DateString() + "]" + Resources.DisplayFilesSelected_Found_String1 +
+                                     _files.Counter +
+                                     Resources.DisplayFilesSelected_Found_String2
+                                     + _files._fileExtension.ToUpper(MY_CULTURE) + Environment.NewLine);
+
+                    GlobalNotifications(Resources.DisplayFilesSelected_Found_String3 + _files.Counter +
+                                        Resources.DisplayFilesSelected_Found_String2 +
+                                        _files._fileExtension.ToUpper(MY_CULTURE), ToolTipIcon.Info);
+                }
+
+                //Setup Interface
+                pbDestination.Maximum = files.Length;
+                pbDestination.Visible = true;
+                dgvDestinationtemp.Rows.Clear();
+                btnAbortDestination.Visible = true;
+
+                //Loop through files
+                foreach (string file in files)
+                {
+                    if (ABORT)
                     {
-                        if (File.Exists(WIITDB_FILE))
+                        break;
+                    }
+
+                    FileInfo _f = new FileInfo(file);
+                    string _getSize = DisplayFormatFileSize(_f.Length, CONFIG_INI_FILE.IniReadInt("GENERAL", "FileSize"));
+                    //Title - ID - Region - Path - Extension - Size
+                    loadPath = _f.FullName;
+                    IMAGE_PATH = loadPath;
+                    //Need to find a better way of this.. but for now this is the only way I really know how to get a hold of the game info. I'll go back and dig later, I found it before.. just meant a lot of stepping-through
+                    if (ReadImageTOC() && !ABORT)
+                    {
+                        if (CONFIG_INI_FILE.IniReadBool("TITLES", "GameXmlName"))
                         {
-                            XElement root = XElement.Load(WIITDB_FILE);
-                            IEnumerable<XElement> tests = from el in root.Elements("game")
-                                                          where (string)el.Element("id") == tbIDGame.Text
-                                                          select el;
-                            foreach (XElement el in tests)
+                            if (File.Exists(WIITDB_FILE))
                             {
-                                tbIDName.Text = (string)el.Element("locale").Element("title");
+                                XElement root = XElement.Load(WIITDB_FILE);
+                                IEnumerable<XElement> tests = from el in root.Elements("game")
+                                                              where (string)el.Element("id") == tbIDGame.Text
+                                                              select el;
+                                foreach (XElement el in tests)
+                                {
+                                    tbIDName.Text = (string)el.Element("locale").Element("title");
+                                }
                             }
+                            else
+                            {
+                                CheckWiiTdbXml();
+                            }
+                        }
+
+                        ROOT_OPENED = false;
+                        _ = dgvDestinationtemp.Rows.Add(false, tbIDName.Text, tbIDGame.Text, tbIDRegion.Text, _f.Extension.Substring(1, 3).Trim().ToUpper(MY_CULTURE), _getSize, _f.FullName);
+                        //Update pbDestination, and make sure we don't go over the maximum value
+                        if (pbDestination.Value < pbDestination.Maximum)
+                        {
+                            pbDestination.Value++;
                         }
                         else
                         {
-                            CheckWiiTdbXml();
+                            pbDestination.Value = pbDestination.Maximum;
                         }
                     }
 
-                    ROOT_OPENED = false;
-                    _ = dgvDestinationtemp.Rows.Add(false, tbIDName.Text, tbIDGame.Text, tbIDRegion.Text, _f.Extension.Substring(1, 3).Trim().ToUpper(MY_CULTURE), _getSize, _f.FullName);
-                    //Update pbDestination, and make sure we don't go over the maximum value
-                    if (pbDestination.Value < pbDestination.Maximum)
-                    {
-                        pbDestination.Value++;
-                    }
-                    else
-                    {
-                        pbDestination.Value = pbDestination.Maximum;
-                    }
+                    //Clean up Interface
+                    lblDestinationCount.Text = files.Length.ToString();
+                    //done with loop
+                    dgvDestinationtemp.Update();
+                    wait(250);//Stop Windows from Panicking
                 }
+                EnableOptionsGameList();
 
-                //Clean up Interface
-                lblDestinationCount.Text = files.Length.ToString();
-                //done with loop
-                dgvDestinationtemp.Update();
-                wait(250);//Stop Windows from Panicking
+                ReloadDataGridViewGameList(dgvDestinationtemp);
             }
-            EnableOptionsGameList();
-
-            ReloadDataGridViewGameList(dgvDestinationtemp);
-
             SCANNING = false;
+
             return CompletedTask;
         }
         #endregion
+
         #region Get Files Folder
 
         /// <summary>
@@ -1085,20 +1095,17 @@ namespace GCBM
         /// <summary>
         ///     Gets a list of all connected drives.
         /// </summary>
-        private void GetAllDrives()
+        private async void GetAllDrives()
         {
-            DriveInfo[] allDrives = sio.DriveInfo.GetDrives();
 
             tscbDiscDrive.Items.Clear();
             _ = tscbDiscDrive.Items.Add(Resources.GetAllDrives_Inactive);
             tscbDiscDrive.SelectedIndex = 0;
-
-            foreach (DriveInfo d in allDrives)
+            foreach (var d in from DriveInfo d in DriveInfo.GetDrives().AsParallel()
+                              where d.IsReady
+                              select d)
             {
-                if (d.IsReady)
-                {
-                    _ = tscbDiscDrive.Items.Add(d.Name);
-                }
+                _ = tscbDiscDrive.Items.Add(d.Name);
             }
         }
 
@@ -1336,56 +1343,6 @@ namespace GCBM
         }
 
         #endregion
-
-        private bool IsValid(string path)
-        {
-            sio.FileStream fs = null;
-            sio.BinaryReader br = null;
-
-            try
-            {
-                fs = new sio.FileStream(path, sio.FileMode.Open, sio.FileAccess.Read, sio.FileShare.Read);
-                br = new sio.BinaryReader(fs, ste.Default);
-
-                fs.Position = 0x1c;
-                if (br.ReadInt32() != 0x3d9f33c2)
-                {
-                    tbLog.AppendText("[" + DateString() + "]" + Resources.NotNintendoGameCubeFile);
-                    GlobalNotifications(Resources.NotNintendoGameCubeFile + Environment.NewLine +
-                                        Resources.RecommendedDeleteOrMoveFile, ToolTipIcon.Info);
-
-                    pbGameDisc.LoadAsync(GET_CURRENT_PATH + MEDIA_DIR + sio.Path.DirectorySeparatorChar + "disc.png");
-                    pbGameCover3D.LoadAsync(GET_CURRENT_PATH + MEDIA_DIR + sio.Path.DirectorySeparatorChar + "3d.png");
-
-                    ERROR = true;
-                    // INVALID FILE!!!
-                }
-                else
-                {
-                    ERROR = false;
-                    // VALID FILE!!!
-                }
-            }
-            catch (Exception ex)
-            {
-                GlobalNotifications(ex.Message, ToolTipIcon.Error);
-                ERROR = true;
-            }
-            finally
-            {
-                if (br != null)
-                {
-                    br.Close();
-                }
-
-                if (fs != null)
-                {
-                    fs.Close();
-                }
-            }
-
-            return !ERROR;
-        }
 
         #region Get Game Info
 
@@ -1811,9 +1768,9 @@ namespace GCBM
         #region Required Directories
 
         /// <summary>
-        ///     Directories required for the correct functioning of the program.
+        ///     Directories required for the correct functioning of the program. Sjohnson1021: This.. should be done with setup.exe.
         /// </summary>
-        private void RequiredDirectories()
+        private async Task RequiredDirectories()
         {
             // Temporary directory default
             if (!sio.Directory.Exists(CONFIG_INI_FILE.IniReadString("GENERAL", "TemporaryFolder", "")))
@@ -1831,51 +1788,55 @@ namespace GCBM
             // Cover Directory
             if (!sio.Directory.Exists(GET_CURRENT_PATH + COVERS_DIR))
             {
-                // US - Covers Directory
-                _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "US" + sio.Path.DirectorySeparatorChar + "2d" + sio.Path.DirectorySeparatorChar); // 2D
-                _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "US" + sio.Path.DirectorySeparatorChar + "3d" + sio.Path.DirectorySeparatorChar); // 3D
-                _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "US" + sio.Path.DirectorySeparatorChar + "disc" + sio.Path.DirectorySeparatorChar); // Disc
-                _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "US" + sio.Path.DirectorySeparatorChar + "full" + sio.Path.DirectorySeparatorChar); // Full
-                // JA - Covers Directory
-                _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "JA" + sio.Path.DirectorySeparatorChar + "2d" + sio.Path.DirectorySeparatorChar); // 2D
-                _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "JA" + sio.Path.DirectorySeparatorChar + "3d" + sio.Path.DirectorySeparatorChar); // 3D
-                _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "JA" + sio.Path.DirectorySeparatorChar + "disc" + sio.Path.DirectorySeparatorChar); // Disc
-                _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "JA" + sio.Path.DirectorySeparatorChar + "full" + sio.Path.DirectorySeparatorChar); // Full
-                // EN - Covers Directory
-                _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "EN" + sio.Path.DirectorySeparatorChar + "2d" + sio.Path.DirectorySeparatorChar); // 2D
-                _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "EN" + sio.Path.DirectorySeparatorChar + "3d" + sio.Path.DirectorySeparatorChar); // 3D
-                _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "EN" + sio.Path.DirectorySeparatorChar + "disc" + sio.Path.DirectorySeparatorChar); // Disc
-                _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "EN" + sio.Path.DirectorySeparatorChar + "full" + sio.Path.DirectorySeparatorChar); // Full
-                // DE - Covers Directory
-                _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "DE" + sio.Path.DirectorySeparatorChar + "2d" + sio.Path.DirectorySeparatorChar); // 2D
-                _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "DE" + sio.Path.DirectorySeparatorChar + "3d" + sio.Path.DirectorySeparatorChar); // 3D
-                _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "DE" + sio.Path.DirectorySeparatorChar + "disc" + sio.Path.DirectorySeparatorChar); // Disc
-                _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "DE" + sio.Path.DirectorySeparatorChar + "full" + sio.Path.DirectorySeparatorChar); // Full
-                // ES - Covers Directory
-                _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "ES" + sio.Path.DirectorySeparatorChar + "2d" + sio.Path.DirectorySeparatorChar); // 2D
-                _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "ES" + sio.Path.DirectorySeparatorChar + "3d" + sio.Path.DirectorySeparatorChar); // 3D
-                _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "ES" + sio.Path.DirectorySeparatorChar + "disc" + sio.Path.DirectorySeparatorChar); // Disc
-                _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "ES" + sio.Path.DirectorySeparatorChar + "full" + sio.Path.DirectorySeparatorChar); // Full
-                // IT - Covers Directory
-                _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "IT" + sio.Path.DirectorySeparatorChar + "2d" + sio.Path.DirectorySeparatorChar); // 2D
-                _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "IT" + sio.Path.DirectorySeparatorChar + "3d" + sio.Path.DirectorySeparatorChar); // 3D
-                _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "IT" + sio.Path.DirectorySeparatorChar + "disc" + sio.Path.DirectorySeparatorChar); // Disc
-                _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "IT" + sio.Path.DirectorySeparatorChar + "full" + sio.Path.DirectorySeparatorChar); // Full
-                // AU - Covers Directory
-                _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "AU" + sio.Path.DirectorySeparatorChar + "2d" + sio.Path.DirectorySeparatorChar); // 2D
-                _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "AU" + sio.Path.DirectorySeparatorChar + "3d" + sio.Path.DirectorySeparatorChar); // 3D
-                _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "AU" + sio.Path.DirectorySeparatorChar + "disc" + sio.Path.DirectorySeparatorChar); // Disc
-                _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "AU" + sio.Path.DirectorySeparatorChar + "full" + sio.Path.DirectorySeparatorChar); // Full
-                // NL - Covers Directory
-                _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "NL" + sio.Path.DirectorySeparatorChar + "2d" + sio.Path.DirectorySeparatorChar); // 2D
-                _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "NL" + sio.Path.DirectorySeparatorChar + "3d" + sio.Path.DirectorySeparatorChar); // 3D
-                _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "NL" + sio.Path.DirectorySeparatorChar + "disc" + sio.Path.DirectorySeparatorChar); // Disc
-                _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "NL" + sio.Path.DirectorySeparatorChar + "full" + sio.Path.DirectorySeparatorChar); // Full
-                // FR - Covers Directory
-                _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "FR" + sio.Path.DirectorySeparatorChar + "2d" + sio.Path.DirectorySeparatorChar); // 2D
-                _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "FR" + sio.Path.DirectorySeparatorChar + "3d" + sio.Path.DirectorySeparatorChar); // 3D
-                _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "FR" + sio.Path.DirectorySeparatorChar + "disc" + sio.Path.DirectorySeparatorChar); // Disc
-                _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "FR" + sio.Path.DirectorySeparatorChar + "full" + sio.Path.DirectorySeparatorChar); // Full
+                Task.Run(() =>
+                {
+
+                    // US - Covers Directory
+                    _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "US" + sio.Path.DirectorySeparatorChar + "2d" + sio.Path.DirectorySeparatorChar); // 2D
+                    _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "US" + sio.Path.DirectorySeparatorChar + "3d" + sio.Path.DirectorySeparatorChar); // 3D
+                    _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "US" + sio.Path.DirectorySeparatorChar + "disc" + sio.Path.DirectorySeparatorChar); // Disc
+                    _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "US" + sio.Path.DirectorySeparatorChar + "full" + sio.Path.DirectorySeparatorChar); // Full
+                                                                                                                                                                                                            // JA - Covers Directory
+                    _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "JA" + sio.Path.DirectorySeparatorChar + "2d" + sio.Path.DirectorySeparatorChar); // 2D
+                    _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "JA" + sio.Path.DirectorySeparatorChar + "3d" + sio.Path.DirectorySeparatorChar); // 3D
+                    _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "JA" + sio.Path.DirectorySeparatorChar + "disc" + sio.Path.DirectorySeparatorChar); // Disc
+                    _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "JA" + sio.Path.DirectorySeparatorChar + "full" + sio.Path.DirectorySeparatorChar); // Full
+                                                                                                                                                                                                            // EN - Covers Directory
+                    _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "EN" + sio.Path.DirectorySeparatorChar + "2d" + sio.Path.DirectorySeparatorChar); // 2D
+                    _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "EN" + sio.Path.DirectorySeparatorChar + "3d" + sio.Path.DirectorySeparatorChar); // 3D
+                    _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "EN" + sio.Path.DirectorySeparatorChar + "disc" + sio.Path.DirectorySeparatorChar); // Disc
+                    _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "EN" + sio.Path.DirectorySeparatorChar + "full" + sio.Path.DirectorySeparatorChar); // Full
+                                                                                                                                                                                                            // DE - Covers Directory
+                    _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "DE" + sio.Path.DirectorySeparatorChar + "2d" + sio.Path.DirectorySeparatorChar); // 2D
+                    _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "DE" + sio.Path.DirectorySeparatorChar + "3d" + sio.Path.DirectorySeparatorChar); // 3D
+                    _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "DE" + sio.Path.DirectorySeparatorChar + "disc" + sio.Path.DirectorySeparatorChar); // Disc
+                    _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "DE" + sio.Path.DirectorySeparatorChar + "full" + sio.Path.DirectorySeparatorChar); // Full
+                                                                                                                                                                                                            // ES - Covers Directory
+                    _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "ES" + sio.Path.DirectorySeparatorChar + "2d" + sio.Path.DirectorySeparatorChar); // 2D
+                    _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "ES" + sio.Path.DirectorySeparatorChar + "3d" + sio.Path.DirectorySeparatorChar); // 3D
+                    _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "ES" + sio.Path.DirectorySeparatorChar + "disc" + sio.Path.DirectorySeparatorChar); // Disc
+                    _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "ES" + sio.Path.DirectorySeparatorChar + "full" + sio.Path.DirectorySeparatorChar); // Full
+                                                                                                                                                                                                            // IT - Covers Directory
+                    _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "IT" + sio.Path.DirectorySeparatorChar + "2d" + sio.Path.DirectorySeparatorChar); // 2D
+                    _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "IT" + sio.Path.DirectorySeparatorChar + "3d" + sio.Path.DirectorySeparatorChar); // 3D
+                    _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "IT" + sio.Path.DirectorySeparatorChar + "disc" + sio.Path.DirectorySeparatorChar); // Disc
+                    _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "IT" + sio.Path.DirectorySeparatorChar + "full" + sio.Path.DirectorySeparatorChar); // Full
+                                                                                                                                                                                                            // AU - Covers Directory
+                    _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "AU" + sio.Path.DirectorySeparatorChar + "2d" + sio.Path.DirectorySeparatorChar); // 2D
+                    _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "AU" + sio.Path.DirectorySeparatorChar + "3d" + sio.Path.DirectorySeparatorChar); // 3D
+                    _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "AU" + sio.Path.DirectorySeparatorChar + "disc" + sio.Path.DirectorySeparatorChar); // Disc
+                    _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "AU" + sio.Path.DirectorySeparatorChar + "full" + sio.Path.DirectorySeparatorChar); // Full
+                                                                                                                                                                                                            // NL - Covers Directory
+                    _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "NL" + sio.Path.DirectorySeparatorChar + "2d" + sio.Path.DirectorySeparatorChar); // 2D
+                    _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "NL" + sio.Path.DirectorySeparatorChar + "3d" + sio.Path.DirectorySeparatorChar); // 3D
+                    _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "NL" + sio.Path.DirectorySeparatorChar + "disc" + sio.Path.DirectorySeparatorChar); // Disc
+                    _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "NL" + sio.Path.DirectorySeparatorChar + "full" + sio.Path.DirectorySeparatorChar); // Full
+                                                                                                                                                                                                            // FR - Covers Directory
+                    _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "FR" + sio.Path.DirectorySeparatorChar + "2d" + sio.Path.DirectorySeparatorChar); // 2D
+                    _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "FR" + sio.Path.DirectorySeparatorChar + "3d" + sio.Path.DirectorySeparatorChar); // 3D
+                    _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "FR" + sio.Path.DirectorySeparatorChar + "disc" + sio.Path.DirectorySeparatorChar); // Disc
+                    _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "FR" + sio.Path.DirectorySeparatorChar + "full" + sio.Path.DirectorySeparatorChar); // Full
+                }).GetAwaiter().GetResult();
 
                 tbLog.AppendText("[" + DateString() + "]" + Resources.RequiredDirectories_String4 +
                                  Environment.NewLine);
@@ -2141,7 +2102,7 @@ namespace GCBM
                             {
                                 sio.File.Delete(r.Cells["Path"].Value.ToString());
                             }
-                            
+
 
                             //dgvSource.DataSource = null;
                             dgv.DataSource = null;
@@ -2910,28 +2871,12 @@ namespace GCBM
 
         #endregion
 
-        //private void dgvGameList_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        //{
-        //    if (e.ColumnIndex == 0)
-        //    {
-        //        /*
-        //         * e.ColumnIndex = 0 
-        //         * e.RowIndex
-        //         */
-        //        if (dgvSelected != dgvSource && dgvSelected != dgvDestination)
-        //            dgvSelected = dgvSource; //We haven't chosen one.. but.. clicked. Set selected dgv to source
-        //        //There's a way to do this in a single line.. but
-        //        if (dgvSelected != null && dgvSelected.Rows[e.RowIndex].Cells[0].Value.ToString() == "False")
-        //        {
-        //            if (dgvSelected != null) dgvSelected.Rows[e.RowIndex].Cells[0].Value = true;
-        //        }
-        //        else
-        //        {
-        //            if (dgvSelected != null) dgvSelected.Rows[e.RowIndex].Cells[0].Value = false;
-        //        }
-        //    }
-        //}
-
+        #region Button - Search grid for games matching search criteria
+        /// <summary>
+        ///    Button to search the grid for games matching the search criteria.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Search_Click(object sender, EventArgs e)
         {
             if (tabControlMain.SelectedTab == tabMainFile)
@@ -2965,7 +2910,14 @@ namespace GCBM
                 }
             }
         }
+        #endregion
 
+        #region KeyPress - Update search criteria
+        /// <summary>
+        ///   Update search results live as the user types.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSearch_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Keys.Enter)
@@ -2974,6 +2926,14 @@ namespace GCBM
             }
         }
 
+        #endregion
+
+        #region Button - ABORT
+        /// <summary>
+        ///    Button to abort the current operation, and reset the interface if Installing games..
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAbort_Click(object sender, EventArgs e)
         {
             ABORT = true;
@@ -2985,6 +2945,7 @@ namespace GCBM
             lblInstallGame.Text = "Stopped!";
             lblInstallGame.Show();
         }
+        #endregion
 
         #region Flag Attributes Screensaver
 
@@ -3026,6 +2987,7 @@ namespace GCBM
         private void MainCore()
         {
             Hide();
+            notifyIcon.Visible = true;
             InstallQueue = new Dictionary<int, Game>();
             tbSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(CheckEnterKeyPress);
             Text = "GameCube Backup Manager 2022 - " + VERSION() + " - 64-bit";
@@ -3034,6 +2996,7 @@ namespace GCBM
             //if (CONFIG_INI_FILE.IniReadBool("SEVERAL", "DisableSplash") == false)
 
             //    Load += HandleFormLoad;
+
             NetworkCheck();
             if (!sio.File.Exists(INI_FILE))
             {
@@ -3050,11 +3013,11 @@ namespace GCBM
             GetAllDrives();
             //DetectOSLanguage();
             //AdjustLanguage();
-            UpdateProgram();
+            //UpdateProgram();
             //LoadDatabaseXML();
             DisabeScreensaver();
-            RegisterHeaderLog();
-            RequiredDirectories();
+            SetupLog();
+            RequiredDirectories().GetAwaiter().GetResult();
             DisableOptionsGame(dgvSource);
             tscbDiscDrive.SelectedIndex = 0;
             cbFilterDatabase.SelectedIndex = 0;
@@ -3064,8 +3027,10 @@ namespace GCBM
             //Check for WiiTDB file and internet connection, download if not found and we're online
             if (!sio.File.Exists(WIITDB_FILE) && NetworkInterface.GetIsNetworkAvailable())
             {
-                frmDownloadGameTDB frmDownload = new frmDownloadGameTDB();
-                _ = frmDownload.ShowDialog();
+                //frmDownloadGameTDB frmDownload = new frmDownloadGameTDB();
+                //_ = frmDownload.ShowDialog();
+                Show();
+                CheckAndDownloadWiiTdbXml();
             }
             else if (!sio.File.Exists(WIITDB_FILE) && !NetworkInterface.GetIsNetworkAvailable())
             {
@@ -3074,24 +3039,10 @@ namespace GCBM
                                 Resources.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            LoadDatabaseXML();
+            //LoadDatabaseXML();
 
             // DISABLED
-            tsmiExportCSV.Enabled = false;
-            tsmiExportHTML.Enabled = false;
-            //tsmiElfDol.Enabled = false;
-            //tsmiDolphinEmulator.Enabled = false;
-            tsmiBurnMedia.Enabled = false;
-            tsmiManageApp.Enabled = false;
-            tsmiCreatePackage.Enabled = false;
-            // HIDE
-            tsmiExportCSV.Visible = false;
-            tsmiExportHTML.Visible = false;
-            //tsmiElfDol.Visible = false;
-            //tsmiDolphinEmulator.Visible = false;
-            tsmiBurnMedia.Visible = false;
-            tsmiManageApp.Visible = false;
-            tsmiCreatePackage.Visible = false;
+            DisableOptions();
 
             //All done, Clean up / Refresh to ensure language and settings are updated.
 
@@ -3113,8 +3064,37 @@ namespace GCBM
                 SplashScreen.Invoke(new Action(() => SplashScreen.Close()));
             wait(500);
             Show();
+            
             Activate();
+            try
+            {
+                LoadDatabaseXML();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, Resources.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
+        private void DisableOptions()
+        {
+            tsmiExportCSV.Enabled = false;
+            tsmiExportHTML.Enabled = false;
+            //tsmiElfDol.Enabled = false;
+            //tsmiDolphinEmulator.Enabled = false;
+            tsmiBurnMedia.Enabled = false;
+            tsmiManageApp.Enabled = false;
+            tsmiCreatePackage.Enabled = false;
+            // HIDE
+            tsmiExportCSV.Visible = false;
+            tsmiExportHTML.Visible = false;
+            //tsmiElfDol.Visible = false;
+            //tsmiDolphinEmulator.Visible = false;
+            tsmiBurnMedia.Visible = false;
+            tsmiManageApp.Visible = false;
+            tsmiCreatePackage.Visible = false;
+        }
+
         protected override void OnLoad(EventArgs e)
         {
             //base.OnLoad(e);
@@ -4050,9 +4030,9 @@ namespace GCBM
 
         /// <summary>
         /// </summary>
-        private async Task CheckAndDownloadWiiTdbXml()
+        private async void CheckAndDownloadWiiTdbXml()
         {
-            await ProcessTaskDelay().ConfigureAwait(false);
+
             if (sio.File.Exists(WIITDB_FILE))
             {
                 return;
@@ -4062,13 +4042,23 @@ namespace GCBM
             {
                 if (!Monitor.TryEnter(lvDatabase))
                 {
-                    return;
+                    Process.GetCurrentProcess().Kill();
                 }
 
-                Application.Run(new frmDownloadGameTDB());
+                //frmDownloadGameTDB.GameTDBAsynchronous();
+                //await ProcessTaskDelay();
+                //Monitor.Exit(lvDatabase);
 
-                Monitor.Exit(lvDatabase);
-
+                //Ask the user via Dialog if they want to download, if Yes, run a new frmDownloadGameTDB in a task, and wait for it to finish
+                Show();
+                Activate();
+                DialogResult result = MessageBox.Show(Resources.AskDownloadWiiTDB, Resources.ProcessTaskDelay_String1, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    frmDownloadGameTDB dl = new frmDownloadGameTDB();
+                    dl.ShowDialog();
+                    await Task.Delay(5000);
+                }
                 if (sio.File.Exists(WIITDB_FILE))
                 {
                     try
@@ -5946,16 +5936,7 @@ namespace GCBM
 
         #endregion
 
-        private void toolStripSplitButton1_ButtonClick(object sender, EventArgs e)
-        {
-            //Identical to abort button, but don't reset the options.
-            ABORT = true;
-            lblInstallGame.Text = "Stopped!";
-            lblInstallGame.Show();
-            EnableOptionsGameList();
-        }
-
-        private async void lblNetStatus_Click(object sender, EventArgs e)
+        private void lblNetStatus_Click(object sender, EventArgs e)
         {
             NetworkCheck();
             if (sio.File.Exists(WIITDB_FILE))
@@ -5974,7 +5955,7 @@ namespace GCBM
                 if (result == DialogResult.Yes)
                 {
                     //download the file
-                    await CheckAndDownloadWiiTdbXml();
+                    Application.Run(new frmDownloadGameTDB());
                 }
             }
         }

@@ -510,4 +510,7 @@
   <data name="CantOpenImage" xml:space="preserve">
     <value>[오류] 이미지 파일을 열 수 없습니다.</value>
   </data>
+  <data name="AskDownloadWiiTDB" xml:space="preserve">
+    <value>WiiTDB.zip을 찾을 수 없습니다. 지금 다운로드하시겠습니까?</value>
+  </data>
 </root>

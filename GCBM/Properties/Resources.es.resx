@@ -498,4 +498,7 @@
   <data name="CantOpenImage" xml:space="preserve">
     <value>[ERROR] No se pudo abrir el archivo de imagen.</value>
   </data>
+  <data name="AskDownloadWiiTDB" xml:space="preserve">
+    <value>WiiTDB.zip no encontrado, ¿quieres descargarlo ahora?</value>
+  </data>
 </root>
