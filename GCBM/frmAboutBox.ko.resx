@@ -322,7 +322,7 @@ Wii 또는 컴퓨터에서 GameTDB를 사용하여 다음을 수행할 수 있�
 - 특정 등급과 일치하거나 특정 연도에 출시된 게임큐브 및 Wii 게임을 퍼블리셔, 개발자별로 검색합니다.</value>
   </data>
   <data name="tbThanks.Text" xml:space="preserve">
-    <value>감사해요</value>
+    <value>감사한 분</value>
   </data>
   <data name="rtbAboutThanks.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 10pt</value>
@@ -335,7 +335,7 @@ Wii 또는 컴퓨터에서 GameTDB를 사용하여 다음을 수행할 수 있�
 - Wimm
 - WIT (Wiimms ISO 도구)
 - WiiBrew
-- DDinghoya - 공식 한국어 번역기
+- DDinghoya - 공식 한국어 번역가
 
 게임 보존 커뮤니티에 관련된 모든 사람 외에도.</value>
   </data>
