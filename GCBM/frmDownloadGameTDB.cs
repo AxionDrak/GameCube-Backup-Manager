@@ -152,7 +152,7 @@ namespace GCBM
         private async Task ProcessTaskDelay()
         {
              
-            await Task.Delay(3000);
+            await Task.Delay(2500);
         }
 
         private void btnCancelWork_Click(object sender, EventArgs e)

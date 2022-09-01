@@ -797,7 +797,7 @@ namespace GCBM
         /// </summary>
         /// <param name="sourceFolder"></param>
         /// <param name="dgv"></param>
-        private Task DisplaySourceFilesAsync(string sourceFolder, DataGridView dgv)
+        private async Task DisplaySourceFilesAsync(string sourceFolder, DataGridView dgv)
         {
             //Check for an empty string first, and return a completed task if it is
             if (sourceFolder != String.Empty && sourceFolder != "" && sourceFolder != null)
@@ -868,36 +868,11 @@ namespace GCBM
                         break;
                     }
 
+                    Game game = GetGameInfo(file);
                     FileInfo _f = new FileInfo(file);
                     string _getSize = DisplayFormatFileSize(_f.Length, CONFIG_INI_FILE.IniReadInt("GENERAL", "FileSize"));
-                    //Title - ID - Region - Path - Extension - Size
-                    loadPath = _f.FullName;
-                    IMAGE_PATH = loadPath;
-                    //Need to find a better way of this.. but for now this is the only way I really know how to get a hold of the game info. I'll go back and dig later, I found it before.. just meant a lot of stepping-through
-                    if (ReadImageTOC() && !ABORT)
-                    {
-                        if (CONFIG_INI_FILE.IniReadBool("TITLES", "GameXmlName"))
-                        {
-                            if (File.Exists(WIITDB_FILE))
-                            {
-                                XElement root = XElement.Load(WIITDB_FILE);
-                                IEnumerable<XElement> tests = from el in root.Elements("game")
-                                                              where (string)el.Element("id") == tbIDGame.Text
-                                                              select el;
-                                foreach (XElement el in tests)
-                                {
-                                    tbIDName.Text = (string)el.Element("locale").Element("title");
-                                }
-                            }
-                            else
-                            {
-                                CheckWiiTdbXml();
-                            }
-                        }
-
-                        ROOT_OPENED = false;
-                        int n = files.Length;
-                        _ = dgvSourcetemp.Rows.Add(false, tbIDName.Text, tbIDGame.Text, tbIDRegion.Text, _f.Extension.Substring(1, 3).Trim().ToUpper(MY_CULTURE), _getSize, _f.FullName);
+                    //Title - ID - Region - Extension - Size - Path
+                        _ = dgvSourcetemp.Rows.Add(false, game.Title, game.ID, game.Region, _f.Extension.Substring(1, 3).Trim().ToUpper(MY_CULTURE), _getSize, _f.FullName);
                         //Update ProgressBar pbCopy, and make sure we don't go over the maximum value
                         if (pbSource.Value < pbSource.Maximum)
                         {
@@ -908,7 +883,6 @@ namespace GCBM
                             pbSource.Value = pbSource.Maximum;
                         }
 
-                    }
 
                     //Clean up Interface
                     //put pbCopy back to normal
@@ -925,7 +899,6 @@ namespace GCBM
 
             }
             SCANNING = false;
-            return CompletedTask;
         }
         #endregion
 
@@ -936,7 +909,7 @@ namespace GCBM
         /// </summary>
         /// <param name="sourceFolder"></param>
         /// <param name="dgv"></param>
-        private Task DisplayDestinationFilesAsync(string sourceFolder, DataGridView dgv)
+        private async Task DisplayDestinationFilesAsync(string sourceFolder, DataGridView dgv)
         {
             //Check for an empty string first, and return if it is
             if (sourceFolder != String.Empty || sourceFolder == "" || sourceFolder == null)
@@ -997,45 +970,11 @@ namespace GCBM
                         break;
                     }
 
+                    Game game = GetGameInfo(file);
                     FileInfo _f = new FileInfo(file);
                     string _getSize = DisplayFormatFileSize(_f.Length, CONFIG_INI_FILE.IniReadInt("GENERAL", "FileSize"));
-                    //Title - ID - Region - Path - Extension - Size
-                    loadPath = _f.FullName;
-                    IMAGE_PATH = loadPath;
-                    //Need to find a better way of this.. but for now this is the only way I really know how to get a hold of the game info. I'll go back and dig later, I found it before.. just meant a lot of stepping-through
-                    if (ReadImageTOC() && !ABORT)
-                    {
-                        if (CONFIG_INI_FILE.IniReadBool("TITLES", "GameXmlName"))
-                        {
-                            if (File.Exists(WIITDB_FILE))
-                            {
-                                XElement root = XElement.Load(WIITDB_FILE);
-                                IEnumerable<XElement> tests = from el in root.Elements("game")
-                                                              where (string)el.Element("id") == tbIDGame.Text
-                                                              select el;
-                                foreach (XElement el in tests)
-                                {
-                                    tbIDName.Text = (string)el.Element("locale").Element("title");
-                                }
-                            }
-                            else
-                            {
-                                CheckWiiTdbXml();
-                            }
-                        }
-
-                        ROOT_OPENED = false;
-                        _ = dgvDestinationtemp.Rows.Add(false, tbIDName.Text, tbIDGame.Text, tbIDRegion.Text, _f.Extension.Substring(1, 3).Trim().ToUpper(MY_CULTURE), _getSize, _f.FullName);
-                        //Update pbDestination, and make sure we don't go over the maximum value
-                        if (pbDestination.Value < pbDestination.Maximum)
-                        {
-                            pbDestination.Value++;
-                        }
-                        else
-                        {
-                            pbDestination.Value = pbDestination.Maximum;
-                        }
-                    }
+                        _ = dgvDestinationtemp.Rows.Add(false, game.Title, game.ID, game.Region, _f.Extension.Substring(1, 3).Trim().ToUpper(MY_CULTURE), _getSize, _f.FullName);
+                    
 
                     //Clean up Interface
                     lblDestinationCount.Text = files.Length.ToString();
@@ -1049,7 +988,6 @@ namespace GCBM
             }
             SCANNING = false;
 
-            return CompletedTask;
         }
         #endregion
 
@@ -1228,61 +1166,30 @@ namespace GCBM
         /// <summary>
         ///     Build a List<Game> with file and game info for easier access programmatically.
         /// </summary>
-        private async Task<List<Game>> GameList(string path)
-        {
-            string[] filters = { "ISO", "GCM" };
-            List<Game> list = new List<Game>();
-            string[] files = await GetFilesFolder(path, filters, false).ConfigureAwait(false);
+        //private async Task<List<Game>> GameList(string path)
+        //{
+        //    string[] filters = { "ISO", "GCM" };
+        //    List<Game> list = new List<Game>();
+        //    string[] files = await GetFilesFolder(path, filters, false).ConfigureAwait(false);
 
-            foreach (string file in files)
-            {
-                FileInfo _file = new sio.FileInfo(file);
-                //Title - ID - Region - Path - Extension - Size
-                loadPath = _file.FullName;
-                VerifyGame(loadPath);
-                Game game = new Game(tbIDName.Text, tbIDGame.Text, tbIDRegion.Text, loadPath, _file.Extension,
-                    (int)_file.Length);
-                //game.Title = tbIDName.Text;
-                IMAGE_PATH = game.Path;
-                if (CheckImage() && ReadImageDiscTOC())
-                {
-                    list.Add(game);
-                }
-            }
+        //    foreach (string file in files)
+        //    {
+        //        FileInfo _file = new sio.FileInfo(file);
+        //        //Title - ID - Region - Path - Extension - Size
+        //        loadPath = _file.FullName;
+        //        VerifyGame(loadPath);
+        //        Game game = new Game(tbIDName.Text, tbIDGame.Text, tbIDRegion.Text, loadPath, _file.Extension,
+        //            (int)_file.Length);
+        //        //game.Title = tbIDName.Text;
+        //        IMAGE_PATH = game.Path;
+        //        if (CheckImage() && ReadImageDiscTOC())
+        //        {
+        //            list.Add(game);
+        //        }
+        //    }
 
-            return list;
-        }
-
-        #endregion
-
-        #region Build Game list as DataTable
-
-        /// <summary>
-        ///     Build a list with file and game info for easier access programmatically.
-        /// </summary>
-        /// <param name="path"></param>
-        /// <returns></returns>
-        public DataTable GameDataTable(string path)
-        {
-            DataTable _table = new DataTable();
-            _ = _table.Columns.Add("Title");
-            _ = _table.Columns.Add("Region");
-            _ = _table.Columns.Add("ID");
-            _ = _table.Columns.Add("Type");
-            _ = _table.Columns.Add("Size");
-            _ = _table.Columns.Add("Path");
-            foreach (Game game in GameList(path).Result)
-            {
-                _ = _table.Rows.Add(game.Title,
-                    game.Region,
-                    game.ID,
-                    game.Extension.Substring(1, 3).Trim().ToUpper(MY_CULTURE),
-                    DisplayFormatFileSize(game.Size, CONFIG_INI_FILE.IniReadInt("GENERAL", "FileSize")),
-                    game.Path);
-            }
-
-            return _table;
-        }
+        //    return list;
+        //}
 
         #endregion
 
@@ -1340,25 +1247,6 @@ namespace GCBM
             }
 
             return !ERROR;
-        }
-
-        #endregion
-
-        #region Get Game Info
-
-        private Game getGameInfo(string path)
-        {
-            VerifyGame(path);
-            FileInfo f = new sio.FileInfo(path);
-            Game game = new Game(
-                tbIDName.Text, //if not INI
-                tbIDGame.Text,
-                _IDRegionName,
-                f.FullName,
-                f.Extension,
-                Convert.ToInt32(f.Length));
-            //lastGameLookedUp = game;
-            return game;
         }
 
         #endregion
@@ -1788,7 +1676,7 @@ namespace GCBM
             // Cover Directory
             if (!sio.Directory.Exists(GET_CURRENT_PATH + COVERS_DIR))
             {
-                Task.Run(() =>
+                await Task.Run(() =>
                 {
 
                     // US - Covers Directory
@@ -1836,7 +1724,7 @@ namespace GCBM
                     _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "FR" + sio.Path.DirectorySeparatorChar + "3d" + sio.Path.DirectorySeparatorChar); // 3D
                     _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "FR" + sio.Path.DirectorySeparatorChar + "disc" + sio.Path.DirectorySeparatorChar); // Disc
                     _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + "FR" + sio.Path.DirectorySeparatorChar + "full" + sio.Path.DirectorySeparatorChar); // Full
-                }).GetAwaiter().GetResult();
+                });
 
                 tbLog.AppendText("[" + DateString() + "]" + Resources.RequiredDirectories_String4 +
                                  Environment.NewLine);
@@ -3017,7 +2905,7 @@ namespace GCBM
             //LoadDatabaseXML();
             DisabeScreensaver();
             SetupLog();
-            RequiredDirectories().GetAwaiter().GetResult();
+            RequiredDirectories();//Do we really need to wait on this?
             DisableOptionsGame(dgvSource);
             tscbDiscDrive.SelectedIndex = 0;
             cbFilterDatabase.SelectedIndex = 0;
@@ -3098,7 +2986,7 @@ namespace GCBM
         protected override void OnLoad(EventArgs e)
         {
             //base.OnLoad(e);
-
+            notifyIcon.Visible = true;
             //Do Work
             MainCore();
             FINISHEDLAUNCH = true;
@@ -4699,7 +4587,7 @@ namespace GCBM
 
         private void tsmiExportHTML_Click(object sender, EventArgs e)
         {
-            ExportHTML(GameDataTable(dgvGameListPath));
+            //ExportHTML(GameDataTable(dgvGameListPath));
         }
 
         #endregion
@@ -4708,17 +4596,17 @@ namespace GCBM
 
         private void tsmiExportCSV_Click(object sender, EventArgs e)
         {
-            using (FolderBrowserDialog dialog = new FolderBrowserDialog())
-            {
-                //setup here
+            //using (FolderBrowserDialog dialog = new FolderBrowserDialog())
+            //{
+            //    //setup here
 
-                if (dialog.ShowDialog() ==
-                    DialogResult.OK) //check for OK...they might press cancel, so don't do anything if they did.
-                {
-                    string path = dialog.SelectedPath + sio.Path.DirectorySeparatorChar + "games.csv";
-                    GameDataTable(dgvGameListPath).ToCSV(path);
-                }
-            }
+            //    if (dialog.ShowDialog() ==
+            //        DialogResult.OK) //check for OK...they might press cancel, so don't do anything if they did.
+            //    {
+            //        string path = dialog.SelectedPath + sio.Path.DirectorySeparatorChar + "games.csv";
+            //        GameDataTable(dgvGameListPath).ToCSV(path);
+            //    }
+            //}
         }
 
         #endregion
@@ -5140,7 +5028,7 @@ namespace GCBM
                     continue;
                 }
 
-                InstallQueue.Add(num, getGameInfo(row.Cells["Path"].Value.ToString()));
+                InstallQueue.Add(num, GetGameInfo(row.Cells["Path"].Value.ToString()));
                 num++;
             }
 
@@ -5515,7 +5403,7 @@ namespace GCBM
             {
                 if (row.Cells[0].Value.ToString() == "True")
                 {
-                    InstallQueue.Add(num, getGameInfo(row.Cells["Path"].Value.ToString()));
+                    InstallQueue.Add(num, GetGameInfo(row.Cells["Path"].Value.ToString()));
                     num++;
                 }
             }
