@@ -880,8 +880,10 @@ namespace GCBM
                 btnAbort.Visible = true;
 
                 //Loop through files
-                foreach (string file in files)
+                int counter=0;
+                for (int i = 0; i < files.Length; i++)
                 {
+                    string file = files[i];
                     if (ABORT)
                     {
                         break;
@@ -907,12 +909,12 @@ namespace GCBM
 
                     //Clean up Interface
                     //put pbCopy back to normal
-
-                    lblSourceCount.Text = files.Length.ToString();
+                    counter++;
+                    lblSourceCount.Text = counter.ToString() + "/" + files.Length.ToString();
                     //done with loop
 
                     dgvSourcetemp.Update();
-                    wait(250);//Stop Windows from Panicking
+                    wait(100);//Stop Windows from Panicking
                 }
                 EnableOptionsGameList();
 

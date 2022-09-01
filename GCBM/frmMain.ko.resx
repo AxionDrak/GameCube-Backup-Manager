@@ -1524,7 +1524,7 @@
     <value>정보</value>
   </data>
   <data name="lblGameCountSource.Text" xml:space="preserve">
-    <value>찾은 게임:</value>
+    <value>검증된 게임:</value>
   </data>
   <data name="tsmiRenameFolders.Text" xml:space="preserve">
     <value>폴더 이름 바꾸기</value>

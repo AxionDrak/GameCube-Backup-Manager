@@ -1362,7 +1362,7 @@
     <value>15</value>
   </data>
   <data name="lblGameCountSource.Text" xml:space="preserve">
-    <value>Jogos encontrados:</value>
+    <value>Jogos verificados:</value>
   </data>
   <data name="&gt;&gt;lblGameCountSource.Name" xml:space="preserve">
     <value>lblGameCountSource</value>

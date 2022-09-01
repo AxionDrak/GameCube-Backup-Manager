@@ -1606,7 +1606,7 @@
     <value>Detalles</value>
   </data>
   <data name="lblGameCountSource.Text" xml:space="preserve">
-    <value>Juegos encontrados:</value>
+    <value>Juegos verificados:</value>
   </data>
   <data name="tsmiRenameFolders.Text" xml:space="preserve">
     <value>Renombrar carpetas</value>

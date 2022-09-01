@@ -1515,7 +1515,7 @@
     <value>Details</value>
   </data>
   <data name="lblGameCountSource.Text" xml:space="preserve">
-    <value>Games Found:</value>
+    <value>Games Verified:</value>
   </data>
   <data name="tsmiRenameFolders.Text" xml:space="preserve">
     <value>Rename Folders</value>
