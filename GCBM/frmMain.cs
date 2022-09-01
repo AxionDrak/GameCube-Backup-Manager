@@ -752,6 +752,7 @@ namespace GCBM
         /// </summary>
         private async void ReloadDataGridViewGameList(DataGridView dgv)
         {
+
             if (dgv.RowCount != 0)
             {
                 try
@@ -818,6 +819,8 @@ namespace GCBM
         /// <param name="dgv"></param>
         private async Task DisplaySourceFilesAsync(string sourceFolder, DataGridView dgv)
         {
+            dSourceGames.Clear();
+            pbSource.Value = 0;
             //Check for an empty string first, and return a completed task if it is
             if (sourceFolder != String.Empty && sourceFolder != "" && sourceFolder != null)
             {
@@ -880,7 +883,7 @@ namespace GCBM
                 btnAbort.Visible = true;
 
                 //Loop through files
-                int counter=0;
+                int counter = 0;
                 for (int i = 0; i < files.Length; i++)
                 {
                     string file = files[i];
@@ -913,6 +916,7 @@ namespace GCBM
                     lblSourceCount.Text = counter.ToString() + "/" + files.Length.ToString();
                     //done with loop
 
+                    dSourceGames.Add(counter, game);
                     dgvSourcetemp.Update();
                     wait(100);//Stop Windows from Panicking
                 }
@@ -934,6 +938,7 @@ namespace GCBM
         /// <param name="dgv"></param>
         private async Task DisplayDestinationFilesAsync(string sourceFolder, DataGridView dgv)
         {
+            pbDestination.Value = 0;
             //Check for an empty string first, and return if it is
             if (sourceFolder != String.Empty || sourceFolder == "" || sourceFolder == null)
             {
@@ -1351,8 +1356,6 @@ namespace GCBM
 
         #endregion
 
-        // REWRITE FUNCTION - Download Only Disc & 3D Cover
-
         #region Download Only Disc & 3D Cover
 
         /// <summary>
@@ -1507,7 +1510,7 @@ namespace GCBM
         }
 
         #endregion
-
+        
         // REWRITE FUNCTION - Download Only Disc & 3D Cover Selected Game
 
         #region Download Only Disc & 3D Cover Selected Game
@@ -3120,7 +3123,8 @@ namespace GCBM
         private int intQueueLength;
         private int intQueuePos;
         private List<Game> lstInstallQueue = new List<Game>();
-        private List<Game> lstSourceGames = new List<Game>();
+        private Dictionary<int, Game> dSourceGames = new Dictionary<int, Game>();
+        private Dictionary<int, Game> dDestGames = new Dictionary<int, Game>();
         private Game lastGameLookedUp;
         private DataGridView dgvSelected = new DataGridView();
         private Dictionary<int, Game> InstallQueue;

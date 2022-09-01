@@ -1,4 +1,4 @@
-### GameCube Backup Manager 2.6.0.8 (August 29, 2022)
+### GameCube Backup Manager 2.6.0.9 (September 1, 2022)
 
 [Changed] Internal changes to code.
 [Fixed] Should be slightly more stable now?
