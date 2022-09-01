@@ -1,6 +1,10 @@
 ﻿using GCBM.Properties;
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using sio = System.IO;
 using ste = System.Text.Encoding;
 
@@ -24,17 +28,22 @@ namespace GCBM
 
         public string _IDRegionName { get; private set; }
 
-        private void LoadInfo(bool image)
+        private async void LoadInfo(string path)
+        {
+            IMAGE_PATH = path;
+            LoadISOInfo(true);
+        }
+        private async void LoadInfo(bool image)
         {
             LoadISOInfo(image);
         }
 
-        private void LoadInfoDisc(bool image)
+        private async void LoadInfoDisc(bool image)
         {
             LoadISOInfoDisc(image);
         }
 
-        private void LoadISOInfo(bool image)
+        private async void LoadISOInfo(bool image)
         {
             loadPath = image ? IMAGE_PATH : toc.fils[2].path;
 
@@ -196,92 +205,95 @@ namespace GCBM
         }
 
 
-        private Game tempLoadInfo(string path)
+        private Game GetGameInfo(string path)
         {
             Game game = new Game();
-            fs = new sio.FileStream(path, sio.FileMode.Open, sio.FileAccess.Read, sio.FileShare.Read);
+            IMAGE_PATH = path;
+            loadPath = true ? IMAGE_PATH : toc.fils[2].path;
+
+            fs = new sio.FileStream(loadPath, sio.FileMode.Open, sio.FileAccess.Read, sio.FileShare.Read);
             br = new sio.BinaryReader(fs, ste.Default);
 
             bb = br.ReadBytes(4); // 4
             //tbIDGameCode.Text = SIOExtensions.ToStringC(ste.Default.GetChars(bb));
-            string IDGameCode = SIOExtensions.ToStringC(ste.Default.GetChars(bb)); // ID Game Code - String
+            game.IDGameCode = SIOExtensions.ToStringC(ste.Default.GetChars(bb)); // ID Game Code - String
 
-            _IDRegionCode = Convert.ToString(ste.Default.GetChars(new[] { bb[3] })[0]).ToLower();
+            game.IDRegionCode = Convert.ToString(ste.Default.GetChars(new[] { bb[3] })[0]).ToLower();
 
             switch (Convert.ToString(ste.Default.GetChars(new[] { bb[3] })[0]).ToLower())
             {
                 case "e":
-                    tbIDRegion.Text = "USA/NTSC-U";
+                    game.Region = "USA/NTSC-U";
                     REGION = 'u';
                     break;
                 case "j":
-                    tbIDRegion.Text = "JAP/NTSC-J";
+                    game.Region = "JAP/NTSC-J";
                     REGION = 'j';
                     break;
                 case "p":
-                    tbIDRegion.Text = "EUR/PAL";
+                    game.Region = "EUR/PAL";
                     REGION = 'e';
                     break;
                 default:
-                    tbIDRegion.Text = "UNK";
+                    game.Region = "UNK";
                     REGION = 'n';
                     break;
             }
 
             //Catch GAMEREGION
-            game.Region = tbIDRegion.Text;
             bb = br.ReadBytes(2); // 2
-            string IDMakerCode = SIOExtensions.ToStringC(ste.Default.GetChars(bb)); // ID Maker Code - String
-            tbIDMakerCode.Text = IDMakerCode;
+            game.IDMakerCode = SIOExtensions.ToStringC(ste.Default.GetChars(bb)); // ID Maker Code - String
 
             b = br.ReadByte();
-            tbIDDiscID.Text = string.Format("0x{0:x2}", b);
+            game.DiscID = string.Format("0x{0:x2}", b);
             fs.Position += 0x19;
-
-            if (string.Format("0x{0:x2}", b) == "0x00")
-            {
-                lblTypeDisc.Visible = true;
-                lblTypeDisc.Text = Resources.LoadISOInfo_String1;
-            }
-            else
-            {
-                lblTypeDisc.Visible = true;
-                lblTypeDisc.Text = Resources.LoadISOInfo_String2;
-            }
 
 
             //Catch GAMETITLE
-            game.Title = tbIDName.Text;
+
+            game.InternalName = br.ReadStringNT();
+
             if (CONFIG_INI_FILE.IniReadBool("TITLES", "GameInternalName"))
             {
-                tbIDName.Text = br.ReadStringNT();
-                _oldNameInternal = br.ReadStringNT();
+                game.Title = game.InternalName;
             }
 
             if (CONFIG_INI_FILE.IniReadBool("TITLES", "GameXmlName"))
             {
-                _oldNameInternal = br.ReadStringNT();
+                if (sio.File.Exists(WIITDB_FILE))
+                {
+                    XElement root = XElement.Load(WIITDB_FILE);
+                    IEnumerable<XElement> tests = from el in root.Elements("game")
+                                                  where (string)el.Element("id") == game.IDGameCode + game.IDMakerCode //GameID
+                                                  select el;
+                    foreach (XElement el in tests)
+                    {
+                        game.Title = (string)el.Element("locale").Element("title");
+                    }
+                }
+                else
+                {
+                    CheckWiiTdbXml();
+                }
             }
-
             br.Close();
             fs.Close();
-            //DANGER!!!
+
             loadPath = true ? IMAGE_PATH : toc.fils[3].path;
 
             fs = new sio.FileStream(loadPath, sio.FileMode.Open, sio.FileAccess.Read, sio.FileShare.Read);
             br = new sio.BinaryReader(fs, ste.Default);
-            if (true)
-            {
-                fs.Position = toc.fils[3].pos;
-            }
+            //if (true)
+            //{
+            //    fs.Position = toc.fils[3].pos;
+            //}
 
-            //tbIDDate.Text = br.ReadStringNT();
-            tbIDGame.Text = IDGameCode + IDMakerCode; // GameID (IDGameCode + IDMakerCode)
-            //Catch GAMEID here
-            game.ID = tbIDGame.Text;
-            //_tbIDGameOld = IDGameCode + IDMakerCode; // GameID (IDGameCode + IDMakerCode)
-            _IDMakerCode = IDGameCode + IDMakerCode;
+            game.Date = br.ReadStringNT();
+            game.ID = game.IDGameCode + game.IDMakerCode; // GameID (IDGameCode + IDMakerCode)
+                                                          //Catch GAMEID here
 
+            br.Close();
+            fs.Close();
             sio.FileInfo f = new sio.FileInfo(path);
             game.Extension = f.Extension;
             game.Size = Convert.ToInt32(f.Length);
@@ -289,7 +301,6 @@ namespace GCBM
 
             br.Close();
             fs.Close();
-
             return game;
         }
     }

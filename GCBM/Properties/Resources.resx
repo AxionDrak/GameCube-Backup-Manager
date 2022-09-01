@@ -175,6 +175,9 @@
   <data name="format_dvd_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\format_dvd_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="OverwriteWiiTDBBody" xml:space="preserve">
+    <value>Deseja substituir o arquivo WiiTDB.xml atual? Deseja substituir o WiiTDB atual.</value>
+  </data>
   <data name="save_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\save_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -207,6 +210,9 @@
   </data>
   <data name="GCBM_TranslatedBy" xml:space="preserve">
     <value>Laete Meireles</value>
+  </data>
+  <data name="config" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\config.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="LoadDatabase_Region" xml:space="preserve">
     <value>Região</value>
@@ -298,11 +304,11 @@
   <data name="image_not_found_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\image_not_found_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="DownloadDiscCoverError" xml:space="preserve">
-    <value> [ERRO] Falha ao efetuar download da capa (Disco)!</value>
-  </data>
   <data name="RecordExportedFailed" xml:space="preserve">
     <value>Nenhum dado disponível para ser exportado!</value>
+  </data>
+  <data name="CantOpenImage" xml:space="preserve">
+    <value>[ERRO] Não foi possível abrir o arquivo de imagem.</value>
   </data>
   <data name="ConvertElfDol_String1" xml:space="preserve">
     <value>&gt;&gt; Status: Trabalhando...</value>
@@ -313,8 +319,11 @@
   <data name="ESRB_Adults_Only_18+_grayscale" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ESRB_Adults_Only_18+_grayscale.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ESRB_Teen_grayscale" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ESRB_Teen_grayscale.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="AskDownloadWiiTDB" xml:space="preserve">
+    <value>WiiTDB.zip não encontrado, gostaria de baixá-lo agora?</value>
+  </data>
+  <data name="add_file_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\add_file_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="transfer_0002" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\transfer_0002.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -343,6 +352,9 @@
   <data name="delete_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\delete_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ReadImage_String4" xml:space="preserve">
+    <value>ERRO!</value>
+  </data>
   <data name="DownloadingWiiTDB_String1" xml:space="preserve">
     <value>&gt;&gt; Baixando WiiTDB.zip ... </value>
   </data>
@@ -369,6 +381,9 @@
   </data>
   <data name="InstallGameScrub_String6" xml:space="preserve">
     <value>Disco 2 transferido com sucesso!</value>
+  </data>
+  <data name="Misc-Download-Database-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Misc-Download-Database-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="not_conected_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\not_conected_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -532,6 +547,9 @@
   <data name="InstallGameScrub_String5" xml:space="preserve">
     <value>Jogo instalado com sucesso!</value>
   </data>
+  <data name="OverwriteWiiTDBCaption" xml:space="preserve">
+    <value>"Substituir WiiTDB.xml?"</value>
+  </data>
   <data name="DialogResultDeleteGame_ReallyDeleteFile_String1" xml:space="preserve">
     <value>Deseja realmente excluir o(s) arquivo(s) ? </value>
   </data>
@@ -543,6 +561,9 @@
   </data>
   <data name="box_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\box_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Devices-drive-harddisk-usb-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Devices-drive-harddisk-usb-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="plugin_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\plugin_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -559,8 +580,8 @@
   <data name="AboutTranslator" xml:space="preserve">
     <value>Tradutor: </value>
   </data>
-  <data name="add_file_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\add_file_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="DownloadDiscCoverError" xml:space="preserve">
+    <value> [ERRO] Falha ao efetuar download da capa (Disco)!</value>
   </data>
   <data name="CheckUSBGXFlow_String2" xml:space="preserve">
     <value>Depois vá em 'Capas' -&gt; 'Sincronizar' e marque a opção 'Ativar transferência de capas entre dispositivos'.</value>
@@ -591,6 +612,9 @@
   </data>
   <data name="update_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\update_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Cursor-Select-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Cursor-Select-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="DownloadingWiiTDB_String3" xml:space="preserve">
     <value>&gt;&gt; Processo concluído!</value>
@@ -661,8 +685,8 @@
   <data name="ProcessTaskDelay_String1" xml:space="preserve">
     <value>O arquivo 'wiitdb.xml' não foi encontrado!</value>
   </data>
-  <data name="config" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\config.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Utilities-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Utilities-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ClearTemp_String1" xml:space="preserve">
     <value> [INFO] Não foi possível limpar a pasta temporária!</value>
@@ -754,19 +778,13 @@
   <data name="ESRB_Everyone_10+_grayscale" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ESRB_Everyone_10+_grayscale.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ReadImage_String4" xml:space="preserve">
-    <value>ERRO!</value>
+  <data name="ESRB_Teen_grayscale" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ESRB_Teen_grayscale.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="CheckUSBGXFlow_String3" xml:space="preserve">
     <value>Depois, na mesma aba, vá em 'Configuração do carregador USB (Transferir Capas)' e ajuste os diretórios das capas (Disco, 2D, 3D e Completo) do USB Loader GX ou WiiFlow em 'Configuração do carregador USB (Transferir Capas)', apontando para os respectivos diretórios dentro do dispositivo de destino.</value>
   </data>
-  <data name="Cursor-Select-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Cursor-Select-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Devices-drive-harddisk-usb-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Devices-drive-harddisk-usb-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Utilities-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Utilities-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="gcbm" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\gcbm.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

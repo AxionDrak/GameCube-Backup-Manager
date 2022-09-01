@@ -40,7 +40,13 @@ namespace GCBM
             itemNum = toc.fils.Count;
             shift = toc.fils.Count - 1;
 
-            fsr = new sio.FileStream(IMAGE_PATH, sio.FileMode.Open, sio.FileAccess.Read, sio.FileShare.Read);
+            try{fsr = new sio.FileStream(IMAGE_PATH, sio.FileMode.Open, sio.FileAccess.Read, sio.FileShare.Read); }
+            catch (sio.IOException) {
+                error = true;
+                errorText = Resources.CantOpenImage;
+                return false;
+            }
+
             brr = new sio.BinaryReader(fsr, ste.Default);
 
             if (fsr.Length > 0x0438)

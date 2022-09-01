@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <item>
-  <version>2.0.0.0</version>
-  <url>https://github.com/AxionDrak/GameCube-Backup-Manager/releases/download/release/gcbm-beta.zip</url>
-  <changelog>https://github.com/AxionDrak/GameCube-Backup-Manager/releases/tag/release</changelog>
+  <version>2.6.0.8</version>
+  <url>https://github.com/AxionDrak/GameCube-Backup-Manager/releases/download/beta/gcbm.zip</url>
+  <changelog>https://github.com/AxionDrak/GameCube-Backup-Manager/releases/tag/beta</changelog>
   <mandatory>false</mandatory>
 </item>

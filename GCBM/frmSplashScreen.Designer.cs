@@ -55,6 +55,7 @@ namespace GCBM
             // 
             resources.ApplyResources(this.pbSplashScreen, "pbSplashScreen");
             this.pbSplashScreen.Name = "pbSplashScreen";
+            this.pbSplashScreen.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
             // 
             // lblStartSplashScreen
             // 
@@ -77,6 +78,7 @@ namespace GCBM
             this.Name = "frmSplashScreen";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmSplashScreen_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

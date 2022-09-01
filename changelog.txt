@@ -1,3 +1,13 @@
+### GameCube Backup Manager 2.6.0.9 (1º de setembro de 2022)
+
+[Alterado] Alterações internas no código.
+[Correção] Deveria ser um pouco mais estável agora?
+
+### GameCube Backup Manager 2.6.0.8 (29 de agosto de 2022)
+
+[Cambiado] Cambios internos al código.
+[Solucionado] ¿Debería ser un poco más estable ahora?
+
 ### GameCube Backup Manager 2.6.0.8 (29 de agosto de 2022)
 
 [Correção] A exclusão de todos os jogos de origem funciona mais uma vez. Embora com algum comportamento estranho com a atualização do DGV toda vez que um arquivo é excluído. Pode ser otimizado posteriormente.

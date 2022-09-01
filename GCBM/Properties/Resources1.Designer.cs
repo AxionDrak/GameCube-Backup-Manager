@@ -164,6 +164,15 @@ namespace GCBM.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to WiiTDB.zip não encontrado, gostaria de baixá-lo agora?.
+        /// </summary>
+        internal static string AskDownloadWiiTDB {
+            get {
+                return ResourceManager.GetString("AskDownloadWiiTDB", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Software gerenciador de arquivos ISO e GCM de Nintendo GameCube..
         /// </summary>
         internal static string AssemblyInfo_Description {
@@ -247,6 +256,15 @@ namespace GCBM.Properties {
         internal static string CannotOpenTwoInstances {
             get {
                 return ResourceManager.GetString("CannotOpenTwoInstances", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to [ERRO] Não foi possível abrir o arquivo de imagem..
+        /// </summary>
+        internal static string CantOpenImage {
+            get {
+                return ResourceManager.GetString("CantOpenImage", resourceCulture);
             }
         }
         
@@ -1044,6 +1062,16 @@ namespace GCBM.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gcbm {
+            get {
+                object obj = ResourceManager.GetObject("gcbm", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Portuguese [Brazil].
         /// </summary>
         internal static string GCBM_Language {
@@ -1492,6 +1520,16 @@ namespace GCBM.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Misc_Download_Database_icon {
+            get {
+                object obj = ResourceManager.GetObject("Misc-Download-Database-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Conexão com a internet desativada!.
         /// </summary>
         internal static string NetworkCheck_NetStatus_Offline {
@@ -1582,6 +1620,24 @@ namespace GCBM.Properties {
             get {
                 object obj = ResourceManager.GetObject("open_folder_64", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Deseja substituir o arquivo WiiTDB.xml atual? Deseja substituir o WiiTDB atual..
+        /// </summary>
+        internal static string OverwriteWiiTDBBody {
+            get {
+                return ResourceManager.GetString("OverwriteWiiTDBBody", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &quot;Substituir WiiTDB.xml?&quot;.
+        /// </summary>
+        internal static string OverwriteWiiTDBCaption {
+            get {
+                return ResourceManager.GetString("OverwriteWiiTDBCaption", resourceCulture);
             }
         }
         

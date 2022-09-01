@@ -501,4 +501,16 @@
   <data name="DolphinEmulator_Not_Found_String_2" xml:space="preserve">
     <value>Please set the path to the Dolphin emulator executable (dolphin.exe).</value>
   </data>
+  <data name="OverwriteWiiTDBBody" xml:space="preserve">
+    <value>Do you want to overwrite the current WiiTDB.xml file?Do you want to overwrite the current WiiTDB.xml file?</value>
+  </data>
+  <data name="OverwriteWiiTDBCaption" xml:space="preserve">
+    <value>Overwrite WiiTDB.xml?</value>
+  </data>
+  <data name="CantOpenImage" xml:space="preserve">
+    <value>[ERROR] Could not open image file.</value>
+  </data>
+  <data name="AskDownloadWiiTDB" xml:space="preserve">
+    <value>WiiTDB.zip not found, would you like to download it now?</value>
+  </data>
 </root>
