@@ -738,12 +738,19 @@ namespace GCBM
         // REWRITE FUNCTION - Reload DataGridView List
         // REFACTORED INTO ONE METHOD LINE 1090
 
+        //Rewrite Function 
+        //Populate the textboxes in the details panel with information from the selected game.
+        private async void PopDetails(DataGridView dgv)
+        {
+
+        }
+
         #region Reload DataGridView List
 
         /// <summary>
         ///     Reloads the contents of the DataGridView Games List.
         /// </summary>
-        private void ReloadDataGridViewGameList(DataGridView dgv)
+        private async void ReloadDataGridViewGameList(DataGridView dgv)
         {
             if (dgv.RowCount != 0)
             {
@@ -751,12 +758,8 @@ namespace GCBM
                 {
                     if (dgv.CurrentRow != null)
                     {
-                        VerifyGame(dgv.CurrentRow.Cells["Path"].Value.ToString());
-
-                        if (ERROR == false)
-                        {
-                            LoadCover(tbIDGame.Text);
-                        }
+                        Game game = GetGameInfo(dgv.CurrentRow.Cells["Path"].Value.ToString());
+                        LoadCover(game.ID);
                         // pictureBox GameID
                         if (pbWebGameID.Enabled == false)
                         {
@@ -768,14 +771,30 @@ namespace GCBM
                         {
                             //title,region,id
                             lblDestinationCount.Text = dgv.Rows.Count.ToString();
-                            tbIDNameDisc.Text = dgv.CurrentRow.Cells["Title"].Value.ToString();
-                            tbIDRegionDisc.Text = dgv.CurrentRow.Cells["Region"].Value.ToString();
-                            tbIDGameDisc.Text = dgv.CurrentRow.Cells["ID"].Value.ToString();
+                            tbIDNameDisc.Text = game.Title;
+                            tbIDGameDisc.Text = game.ID;
+                            tbIDRegionDisc.Text = game.Region;
+                            tbIDGameDisc.Text = game.DiscID;
                         }
 
                         if (dgv == dgvSource)
                         {
+                            tbIDName.Text = game.Title;
+                            tbIDGame.Text = game.ID;
+                            tbIDRegion.Text = game.Region;
+                            tbIDMakerCode.Text = game.IDMakerCode;
+                            tbIDDiscID.Text = game.DiscID;
                             lblSourceCount.Text = dgv.Rows.Count.ToString();
+                            if (string.Format("0x{0:x2}", game.DiscID) == "0x00")
+                            {
+                                lblTypeDisc.Visible = true;
+                                lblTypeDisc.Text = Resources.LoadISOInfo_String1;
+                            }
+                            else
+                            {
+                                lblTypeDisc.Visible = true;
+                                lblTypeDisc.Text = Resources.LoadISOInfo_String2;
+                            }
                         }
                     }
                 }
@@ -1261,7 +1280,7 @@ namespace GCBM
         ///     Loads the respective Disk and 2D image files into the loaded ISO/GCM file.
         /// </summary>
         //private void LoadCover()
-        private void LoadCover(string _idGame)
+        private async void LoadCover(string _idGame)
         {
             try
             {

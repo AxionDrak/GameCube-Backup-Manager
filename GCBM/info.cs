@@ -28,17 +28,22 @@ namespace GCBM
 
         public string _IDRegionName { get; private set; }
 
-        private void LoadInfo(bool image)
+        private async void LoadInfo(string path)
+        {
+            IMAGE_PATH = path;
+            LoadISOInfo(true);
+        }
+        private async void LoadInfo(bool image)
         {
             LoadISOInfo(image);
         }
 
-        private void LoadInfoDisc(bool image)
+        private async void LoadInfoDisc(bool image)
         {
             LoadISOInfoDisc(image);
         }
 
-        private void LoadISOInfo(bool image)
+        private async void LoadISOInfo(bool image)
         {
             loadPath = image ? IMAGE_PATH : toc.fils[2].path;
 
