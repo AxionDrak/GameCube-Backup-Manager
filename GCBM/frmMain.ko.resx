@@ -854,7 +854,7 @@
     <value>110, 22</value>
   </data>
   <data name="tsmiGameListDeleteSelectedFile.Text" xml:space="preserve">
-    <value>선택된</value>
+    <value>선택</value>
   </data>
   <data name="tsmiToolsGameList.Size" type="System.Drawing.Size, System.Drawing">
     <value>43, 20</value>
@@ -938,7 +938,7 @@
     <value>110, 23</value>
   </data>
   <data name="tsmiReloadDeviceDrive.Text" xml:space="preserve">
-    <value>장치 재로고침</value>
+    <value>장치 새로고침</value>
   </data>
   <data name="tsmiReloadGameListDisc.Size" type="System.Drawing.Size, System.Drawing">
     <value>110, 23</value>
@@ -968,7 +968,7 @@
     <value>43, 23</value>
   </data>
   <data name="tsmiRemoveGameDisc.Text" xml:space="preserve">
-    <value>지우다</value>
+    <value>삭제</value>
   </data>
   <data name="tsmiGameDiscDeleteAllFiles.Size" type="System.Drawing.Size, System.Drawing">
     <value>110, 22</value>
@@ -980,7 +980,7 @@
     <value>110, 22</value>
   </data>
   <data name="tsmiGameDiscDeleteSelectedFile.Text" xml:space="preserve">
-    <value>선택된</value>
+    <value>선택</value>
   </data>
   <data name="tsmiToolsGameDisc.Size" type="System.Drawing.Size, System.Drawing">
     <value>43, 23</value>
@@ -1223,13 +1223,13 @@
     <value>184, 22</value>
   </data>
   <data name="tsmiMetaXml.Text" xml:space="preserve">
-    <value>meta.xml' 읽기/편집</value>
+    <value>meta.xml 읽기/편집</value>
   </data>
   <data name="tsmiManageApp.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 22</value>
   </data>
   <data name="tsmiManageApp.Text" xml:space="preserve">
-    <value>APP 관리</value>
+    <value>앱 관리</value>
   </data>
   <data name="tsmiElfDol.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 22</value>
@@ -1554,3 +1554,4 @@
     <value>옵션</value>
   </data>
 </root>
+
