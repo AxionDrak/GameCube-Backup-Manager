@@ -57,7 +57,7 @@ namespace GCBM
         public bool CLOSING = false;
         #endregion
 
-        
+
         #region Main Form Closing
 
         /// <summary>
@@ -92,7 +92,7 @@ namespace GCBM
             //Cleanup any Threads left lying around
             Dispose();
             Process.GetCurrentProcess().Kill();
-            
+
         }
 
         #endregion
@@ -869,19 +869,21 @@ namespace GCBM
                     }
 
                     Game game = GetGameInfo(file);
+                    if (game.DiscID == "0x01")
+                        game.Title += " (2)";
                     FileInfo _f = new FileInfo(file);
                     string _getSize = DisplayFormatFileSize(_f.Length, CONFIG_INI_FILE.IniReadInt("GENERAL", "FileSize"));
                     //Title - ID - Region - Extension - Size - Path
-                        _ = dgvSourcetemp.Rows.Add(false, game.Title, game.ID, game.Region, _f.Extension.Substring(1, 3).Trim().ToUpper(MY_CULTURE), _getSize, _f.FullName);
-                        //Update ProgressBar pbCopy, and make sure we don't go over the maximum value
-                        if (pbSource.Value < pbSource.Maximum)
-                        {
-                            pbSource.Value++;
-                        }
-                        else
-                        {
-                            pbSource.Value = pbSource.Maximum;
-                        }
+                    _ = dgvSourcetemp.Rows.Add(false, game.Title, game.ID, game.Region, _f.Extension.Substring(1, 3).Trim().ToUpper(MY_CULTURE), _getSize, _f.FullName);
+                    //Update ProgressBar pbCopy, and make sure we don't go over the maximum value
+                    if (pbSource.Value < pbSource.Maximum)
+                    {
+                        pbSource.Value++;
+                    }
+                    else
+                    {
+                        pbSource.Value = pbSource.Maximum;
+                    }
 
 
                     //Clean up Interface
@@ -971,10 +973,12 @@ namespace GCBM
                     }
 
                     Game game = GetGameInfo(file);
+                    if (game.DiscID == "0x01")
+                        game.Title += " (2)";
                     FileInfo _f = new FileInfo(file);
                     string _getSize = DisplayFormatFileSize(_f.Length, CONFIG_INI_FILE.IniReadInt("GENERAL", "FileSize"));
-                        _ = dgvDestinationtemp.Rows.Add(false, game.Title, game.ID, game.Region, _f.Extension.Substring(1, 3).Trim().ToUpper(MY_CULTURE), _getSize, _f.FullName);
-                    
+                    _ = dgvDestinationtemp.Rows.Add(false, game.Title, game.ID, game.Region, _f.Extension.Substring(1, 3).Trim().ToUpper(MY_CULTURE), _getSize, _f.FullName);
+
 
                     //Clean up Interface
                     lblDestinationCount.Text = files.Length.ToString();
@@ -2952,7 +2956,7 @@ namespace GCBM
                 SplashScreen.Invoke(new Action(() => SplashScreen.Close()));
             wait(500);
             Show();
-            
+
             Activate();
             try
             {
