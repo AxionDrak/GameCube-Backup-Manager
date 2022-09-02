@@ -49,7 +49,8 @@ All Releases: https://github.com/AxionDrak/GameCube-Backup-Manager/releases
 + More polished and functional graphical interface (UI).
 
 ### Requirements
-* .NET Framework 4.6
+* .NET Framework 4.6 (version 2.5.x.x or lower)
+* .NET Framework 4.8 (version 2.6.x.x or higher)
 * Microsoft Windows 64-bit (32-bit not supported!)
 
 ### Screenshots
