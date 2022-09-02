@@ -223,6 +223,7 @@ namespace GCBM
             this.pbNetStatus = new System.Windows.Forms.PictureBox();
             this.gameBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.process1 = new System.Diagnostics.Process();
+            this.getCountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.spcMain)).BeginInit();
             this.spcMain.Panel1.SuspendLayout();
             this.spcMain.Panel2.SuspendLayout();
@@ -699,7 +700,8 @@ namespace GCBM
             // 
             this.tsmiSelectGameList.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiGameListSelectAll,
-            this.tsmiGameListSelectNone});
+            this.tsmiGameListSelectNone,
+            this.getCountToolStripMenuItem});
             this.tsmiSelectGameList.Image = global::GCBM.Properties.Resources.Cursor_Select_icon;
             this.tsmiSelectGameList.Name = "tsmiSelectGameList";
             resources.ApplyResources(this.tsmiSelectGameList, "tsmiSelectGameList");
@@ -1619,6 +1621,12 @@ namespace GCBM
             this.process1.StartInfo.UserName = "";
             this.process1.SynchronizingObject = this;
             // 
+            // getCountToolStripMenuItem
+            // 
+            this.getCountToolStripMenuItem.Name = "getCountToolStripMenuItem";
+            resources.ApplyResources(this.getCountToolStripMenuItem, "getCountToolStripMenuItem");
+            this.getCountToolStripMenuItem.Click += new System.EventHandler(this.getCountToolStripMenuItem_Click);
+            // 
             // frmMain
             // 
             resources.ApplyResources(this, "$this");
@@ -1866,6 +1874,7 @@ namespace GCBM
         private ToolStripMenuItem tsmiClearListDestination;
         private ToolStripMenuItem toolStripMenuItem11;
         private ProgressBar pbSource;
+        private ToolStripMenuItem getCountToolStripMenuItem;
     }
 }
 
