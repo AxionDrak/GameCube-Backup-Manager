@@ -16,7 +16,7 @@ All Releases: https://github.com/AxionDrak/GameCube-Backup-Manager/releases
 ### Features:
 
 + Individual or batch file transfer (v2.5.0.0 or higher)
-+ Reads ISO / GCM / NKit (ISO)
++ Reads ISO / GCM / NKit (ISO only - not GCZ)
 + Writes ISO
 + Execution of multiple instances of the program.
 + Upload the 'wiitdb.xml' file in the 'Database' tab.
@@ -37,11 +37,11 @@ All Releases: https://github.com/AxionDrak/GameCube-Backup-Manager/releases
 + Individual download of covers for the selected game (Disc and 3D).
 + Game transfer via XCopy (1:1 copies - Standard).
 + Download the file 'wiitdb.xml' (GameTDB).
-+ MD5 hash calculation.
++ MD5 hash Calculation.
 + SHA-1 Hash Calculation.
 + Automatic creation of 'games' folder (if it doesn't exist).
 + LOG system.
-+ Multiple languages ​​supported:
++ Multiple languages supported:
   + Portuguese (Brazil)
   + English (United States)
   + Spanish (Spain)
