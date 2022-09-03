@@ -543,7 +543,7 @@ namespace GCBM
                 return;
             }
 
-            if (CONFIG_INI_FILE.IniReadBool("SEVERAL", "NetVerify"))
+            if (CONFIG_INI_FILE.IniReadBool("SEVERAL", "NetVerify") || !sio.File.Exists(WIITDB_FILE))
             {
                 if (!Monitor.TryEnter(lvDatabase))
                 {
@@ -555,8 +555,7 @@ namespace GCBM
                 //Monitor.Exit(lvDatabase);
 
                 //Ask the user via Dialog if they want to download, if Yes, run a new frmDownloadGameTDB in a task, and wait for it to finish
-                Show();
-                Activate();
+                this.Activate();
                 DialogResult result = MessageBox.Show(Resources.AskDownloadWiiTDB, Resources.ProcessTaskDelay_String1, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
