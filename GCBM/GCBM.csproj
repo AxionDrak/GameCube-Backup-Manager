@@ -376,6 +376,7 @@
     <Compile Include="tools\MediaItem\IMediaItem.cs" />
     <Compile Include="tools\MediaItem\SHFILEINFO.cs" />
     <Compile Include="tools\MediaItem\Win32.cs" />
+    <Compile Include="Utilities.cs" />
     <EmbeddedResource Include="frmAboutBox.en-US.resx">
       <DependentUpon>frmAboutBox.cs</DependentUpon>
       <SubType>Designer</SubType>

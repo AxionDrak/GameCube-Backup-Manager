@@ -10,11 +10,12 @@ namespace GCBM
     {
         #region Main Form
 
+        public Utilities utilities = new Utilities();
         public frmSplashScreen()
         {
+            AdjustLanguage	();
             InitializeComponent();
 
-            AdjustLanguage();
             CurrentYear();
             pbSplashScreen.Maximum = 100;
             del = UpdateProgressInternal;
@@ -27,7 +28,7 @@ namespace GCBM
         private void AdjustLanguage()
         {
             //Get current system Locale -- Thread.CurrentThread.CurrentUICulture.Name
-            if (!CONFIG_INI_FILE.IniReadBool("SEVERAL", "First Run"))
+            if (System.IO.File.Exists	(INI_FILE		))
             {
                 switch (CONFIG_INI_FILE.IniReadInt("LANGUAGE", "ConfigLanguage"))
                 {
@@ -55,7 +56,7 @@ namespace GCBM
             }
             else
             {
-                switch (Thread.CurrentThread.CurrentUICulture.Name)
+                switch (Thread.CurrentThread.CurrentUICulture.ToString	())
                 {
                     case "pt - BR":
                         Thread.CurrentThread.CurrentUICulture = new CultureInfo("pt-BR");
@@ -161,6 +162,11 @@ namespace GCBM
             //Garbage collector
             GC.Collect();
             //Cleanup any Threads left lying around
+        }
+
+        private void frmSplashScreen_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

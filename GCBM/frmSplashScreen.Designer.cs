@@ -79,6 +79,7 @@ namespace GCBM
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmSplashScreen_FormClosing);
+            this.Load += new System.EventHandler(this.frmSplashScreen_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

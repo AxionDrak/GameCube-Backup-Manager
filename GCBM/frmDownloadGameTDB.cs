@@ -24,6 +24,10 @@ namespace GCBM
         private static readonly string EXTRACT_FILE = Resources.DownloadingWiiTDB_String2;
         public frmDownloadGameTDB()
         {
+
+            Utilities utilities = new Utilities();
+            Text = "GameCube Backup Manager 2022 - " + utilities.VERSION() + " - 64-bit";
+
             InitializeComponent();
 
             GameTDB();

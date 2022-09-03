@@ -34,22 +34,6 @@ namespace GCBM
 {
     public partial class frmMain : Form
     {
-        #region Assembly Product
-
-        /// <summary>
-        ///     Gets the attributes of the Assembly.
-        /// </summary>
-        private static string AssemblyProduct
-        {
-            get
-            {
-                object[] attributes = Assembly.GetExecutingAssembly()
-                    .GetCustomAttributes(typeof(AssemblyProductAttribute), false);
-                return attributes.Length == 0 ? string.Empty : ((AssemblyProductAttribute)attributes[0]).Product;
-            }
-        }
-
-        #endregion
 
         #region Properties
 
@@ -134,7 +118,7 @@ namespace GCBM
         public bool WORKING = false;
         public bool CLOSING = false;
         public int InstallType;
-
+        public Utilities util = new Utilities();
         private int CurrentInstallType;
         [DllImport("kernel32.dll")]
         private static extern EXECUTION_STATE SetThreadExecutionState(EXECUTION_STATE esFlags);
@@ -1896,116 +1880,122 @@ namespace GCBM
         ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         #region Launch and Setup
+        
+        #region Current Year and Date
 
-        #region Program Version
-
-        /// <summary>
-        ///     Get the program version directly from the Assembly.
-        /// </summary>
-        /// <returns></returns>
-        private string VERSION()
+        // Get the date and time
+        private string DateString()
         {
-            string PROG_VERSION = assembly.GetName().Version.ToString();
-            return PROG_VERSION;
+            DateTime dt = DateTime.Now;
+            //int dts = dt.Millisecond;
+            //string dtnew = dt.ToString("yyyy'-'MM'-'dd' 'HH':'mm':'ss") + "." + dts.ToString();
+            tsslCurrentYear.Text = "Copyright © 2019 - " + dt.Year + " Laete Meireles";
+            string dtnew = dt.ToString("yyyy'-'MM'-'dd' 'HH':'mm':'ss");
+            return dtnew;
         }
 
         #endregion
 
-        #region About Translator
+        #region Disable Screensaver
+
+        // Disable screen saver
+        private void DisabeScreensaver()
+        {
+            if (CONFIG_INI_FILE.IniReadBool("SEVERAL", "Screensaver"))
+            {
+                // Disable the screensaver.
+                _ = SetThreadExecutionState(EXECUTION_STATE.ES_DISPLAY_REQUIRED | EXECUTION_STATE.ES_CONTINUOUS);
+            }
+            else
+            {
+                // Activate the screensaver.
+                _ = SetThreadExecutionState(EXECUTION_STATE.ES_CONTINUOUS);
+            }
+        }
+
+        #endregion
+
+        //Rewrite this function (Network Check) and create a connection verification system for
+        //every attempt to download or perform any other action over the Internet
+        //or local area network.
+
+        #region Network Check
 
         /// <summary>
-        ///     About Translator
+        ///     Checks for the existence of a network connection.
         /// </summary>
-        private void AboutTranslator()
+        private void NetworkCheck()
         {
-            if (sio.File.Exists("config.ini"))
+            if (CONFIG_INI_FILE.IniReadBool("SEVERAL", "NetVerify"))
             {
-                if (CONFIG_INI_FILE.IniReadString("GCBM", "ProgVersion", "") != VERSION())
+                if (!NetworkInterface.GetIsNetworkAvailable())
                 {
-                    CONFIG_INI_FILE.IniWriteString("GCBM", "ProgVersion", VERSION());
+                    pbNetStatus.Image = Resources.not_conected_16;
+                    lblNetStatus.ForeColor = Color.Red;
+                    lblNetStatus.Text = Resources.NetworkCheck_NetStatus_Offline;
+                    GlobalNotifications(Resources.NetworkCheck_NetStatus_Offline, ToolTipIcon.Info);
+                }
+                else
+                {
+                    pbNetStatus.Image = Resources.conected_16;
+                    lblNetStatus.ForeColor = Color.Black;
+                    lblNetStatus.Text = Resources.NetworkCheck_NetStatus_Online;
+                    //GlobalNotifications(Resources.NetworkCheck_NetStatus_Online, ToolTipIcon.Info);
                 }
 
-                if (CONFIG_INI_FILE.IniReadString("GCBM", "Language", "") != Resources.GCBM_Language)
-                {
-                    CONFIG_INI_FILE.IniWriteString("GCBM", "Language", Resources.GCBM_Language);
-                }
-
-                if (CONFIG_INI_FILE.IniReadString("GCBM", "TranslatedBy", "") != Resources.GCBM_TranslatedBy)
-                {
-                    CONFIG_INI_FILE.IniWriteString("GCBM", "TranslatedBy", Resources.GCBM_TranslatedBy);
-                }
+                return;
             }
+
+            pbNetStatus.Image = Resources.not_conected_16;
+            lblNetStatus.ForeColor = Color.Red;
+            lblNetStatus.Text = Resources.NetworkCheck_NetStatus_Offline;
+            GlobalNotifications(Resources.NetworkCheck_NetStatus_Offline, ToolTipIcon.Info);
         }
 
         #endregion
 
-        #region Detect OS Language
+        #region Register Log
 
         /// <summary>
-        ///     Automatic detection of operating system default language
+        ///     Log record.
         /// </summary>
-        private void DetectOSLanguage()
+        private void SetupLog()
         {
-            CultureInfo sysLocale = Thread.CurrentThread.CurrentCulture;
-            string[] aryLocales = { "pt-BR", "en-US", "es", "ko" };
-
-            //  See if we have that translation
-            bool isTranslated = aryLocales.Contains(sysLocale.ToString());
-
-            //  Write the corresponding number to INI
-            if (isTranslated)
-            {
-                CONFIG_INI_FILE.IniWriteInt("LANGUAGE", "ConfigLanguage",
-                    Array.FindIndex(aryLocales, l => l == sysLocale.Name));
-            }
-            else //Default to english
-            {
-                CONFIG_INI_FILE.IniWriteInt("LANGUAGE", "ConfigLanguage", 1); //en-US
-            }
+            // Assembly
+            // Log
+            tbLog.AppendText(
+                "[" + DateString() + "]" + Resources.RegisterHeaderLog_GcbmLogCreated + Environment.NewLine);
+            // Version number of the OS
+            tbLog.AppendText("[" + DateString() + "]" + Resources.RegisterHeaderLog_OSVersion + Environment.OSVersion +
+                             Environment.NewLine);
+            // Major, minor, build, and revision numbers of the CLR
+            tbLog.AppendText("[" + DateString() + "]" + Resources.RegisterHeaderLog_CLRVersion + Environment.Version +
+                             Environment.NewLine);
+            // Amount of physical memory mapped to the process context
+            tbLog.AppendText("[" + DateString() + "]" + Resources.RegisterHeaderLog_WorkingSet +
+                             Environment.WorkingSet + Environment.NewLine);
+            // Array of string containing the names of the logical drives
+            tbLog.AppendText("[" + DateString() + "]" + Resources.RegisterHeaderLog_LogicalUnits +
+                             string.Join(", ", Environment.GetLogicalDrives()) + Environment.NewLine);
+            // Gets the name of the program.
+            tbLog.AppendText("[" + DateString() + "]" + Resources.RegisterHeaderLog_ProgramName + Utilities.AssemblyProduct +
+                             Environment.NewLine);
+            // Gets the program version.
+            tbLog.AppendText("[" + DateString() + "]" + Resources.RegisterHeaderLog_ApplicationVersion + util.VERSION() +
+                             Environment.NewLine);
+            // Gets the current program directory.
+            tbLog.AppendText("[" + DateString() + "]" + Resources.RegisterHeaderLog_CurrentProgramDirectory +
+                             GET_CURRENT_PATH + Environment.NewLine);
         }
 
         #endregion
 
-        #region Adjust Language
-
-        /// <summary>
-        ///     Set the selected language
-        /// </summary>
-        private void AdjustLanguage()
-        {
-            switch (CONFIG_INI_FILE.IniReadInt("LANGUAGE", "ConfigLanguage"))
-            {
-                case 0:
-                    Thread.CurrentThread.CurrentUICulture = new CultureInfo("pt-BR");
-                    Controls.Clear();
-                    InitializeComponent();
-                    break;
-                case 1:
-                    Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
-                    Controls.Clear();
-                    InitializeComponent();
-                    break;
-                case 2:
-                    Thread.CurrentThread.CurrentUICulture = new CultureInfo("es");
-                    Controls.Clear();
-                    InitializeComponent();
-                    break;
-                case 3:
-                    Thread.CurrentThread.CurrentUICulture = new CultureInfo("ko");
-                    Controls.Clear();
-                    InitializeComponent();
-                    break;
-            }
-        }
-
-        #endregion
-
-        #region Update Program
+                #region Update Program
 
         /// <summary>
         ///     Adjust program update system
         /// </summary>
-        private void UpdateProgram()
+        public void UpdateProgram()
         {
             if (CONFIG_INI_FILE.IniReadBool("UPDATES", "UpdateServerProxy"))
             {
@@ -2105,116 +2095,6 @@ namespace GCBM
 
         #endregion
 
-        #region Current Year and Date
-
-        // Get the date and time
-        private string DateString()
-        {
-            DateTime dt = DateTime.Now;
-            //int dts = dt.Millisecond;
-            //string dtnew = dt.ToString("yyyy'-'MM'-'dd' 'HH':'mm':'ss") + "." + dts.ToString();
-            tsslCurrentYear.Text = "Copyright © 2019 - " + dt.Year + " Laete Meireles";
-            string dtnew = dt.ToString("yyyy'-'MM'-'dd' 'HH':'mm':'ss");
-            return dtnew;
-        }
-
-        #endregion
-
-        #region Disable Screensaver
-
-        // Disable screen saver
-        private void DisabeScreensaver()
-        {
-            if (CONFIG_INI_FILE.IniReadBool("SEVERAL", "Screensaver"))
-            {
-                // Disable the screensaver.
-                _ = SetThreadExecutionState(EXECUTION_STATE.ES_DISPLAY_REQUIRED | EXECUTION_STATE.ES_CONTINUOUS);
-            }
-            else
-            {
-                // Activate the screensaver.
-                _ = SetThreadExecutionState(EXECUTION_STATE.ES_CONTINUOUS);
-            }
-        }
-
-        #endregion
-
-        //Rewrite this function (Network Check) and create a connection verification system for
-        //every attempt to download or perform any other action over the Internet
-        //or local area network.
-
-        #region Network Check
-
-        /// <summary>
-        ///     Checks for the existence of a network connection.
-        /// </summary>
-        private void NetworkCheck()
-        {
-            if (CONFIG_INI_FILE.IniReadBool("SEVERAL", "NetVerify"))
-            {
-                if (!NetworkInterface.GetIsNetworkAvailable())
-                {
-                    pbNetStatus.Image = Resources.not_conected_16;
-                    lblNetStatus.ForeColor = Color.Red;
-                    lblNetStatus.Text = Resources.NetworkCheck_NetStatus_Offline;
-                    GlobalNotifications(Resources.NetworkCheck_NetStatus_Offline, ToolTipIcon.Info);
-                }
-                else
-                {
-                    pbNetStatus.Image = Resources.conected_16;
-                    lblNetStatus.ForeColor = Color.Black;
-                    lblNetStatus.Text = Resources.NetworkCheck_NetStatus_Online;
-                    //GlobalNotifications(Resources.NetworkCheck_NetStatus_Online, ToolTipIcon.Info);
-                }
-
-                return;
-            }
-
-            pbNetStatus.Image = Resources.not_conected_16;
-            lblNetStatus.ForeColor = Color.Red;
-            lblNetStatus.Text = Resources.NetworkCheck_NetStatus_Offline;
-            GlobalNotifications(Resources.NetworkCheck_NetStatus_Offline, ToolTipIcon.Info);
-        }
-
-        #endregion
-
-        #region Register Log
-
-        /// <summary>
-        ///     Log record.
-        /// </summary>
-        private void SetupLog()
-        {
-            // Assembly
-            AssemblyName _version = assembly.GetName();
-            // Log
-            tbLog.AppendText(
-                "[" + DateString() + "]" + Resources.RegisterHeaderLog_GcbmLogCreated + Environment.NewLine);
-            // Version number of the OS
-            tbLog.AppendText("[" + DateString() + "]" + Resources.RegisterHeaderLog_OSVersion + Environment.OSVersion +
-                             Environment.NewLine);
-            // Major, minor, build, and revision numbers of the CLR
-            tbLog.AppendText("[" + DateString() + "]" + Resources.RegisterHeaderLog_CLRVersion + Environment.Version +
-                             Environment.NewLine);
-            // Amount of physical memory mapped to the process context
-            tbLog.AppendText("[" + DateString() + "]" + Resources.RegisterHeaderLog_WorkingSet +
-                             Environment.WorkingSet + Environment.NewLine);
-            // Array of string containing the names of the logical drives
-            tbLog.AppendText("[" + DateString() + "]" + Resources.RegisterHeaderLog_LogicalUnits +
-                             string.Join(", ", Environment.GetLogicalDrives()) + Environment.NewLine);
-            // Gets the name of the program.
-            tbLog.AppendText("[" + DateString() + "]" + Resources.RegisterHeaderLog_ProgramName + AssemblyProduct +
-                             Environment.NewLine);
-            // Gets the program version.
-            tbLog.AppendText("[" + DateString() + "]" + Resources.RegisterHeaderLog_ApplicationVersion + _version +
-                             Environment.NewLine);
-            // Gets the current program directory.
-            tbLog.AppendText("[" + DateString() + "]" + Resources.RegisterHeaderLog_CurrentProgramDirectory +
-                             GET_CURRENT_PATH + Environment.NewLine);
-        }
-
-        #endregion
-
 
         #region Main Form
         private void CheckEnterKeyPress(object sender, System.Windows.Forms.KeyPressEventArgs e)
@@ -2244,7 +2124,6 @@ namespace GCBM
             Hide();
             notifyIcon.Visible = true;
             tbSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(CheckEnterKeyPress);
-            Text = "GameCube Backup Manager 2022 - " + VERSION() + " - 64-bit";
 
             //Splash Screen
             //if (CONFIG_INI_FILE.IniReadBool("SEVERAL", "DisableSplash") == false)
@@ -2252,19 +2131,6 @@ namespace GCBM
             //    Load += HandleFormLoad;
 
             NetworkCheck();
-            if (!sio.File.Exists(INI_FILE))
-            {
-                DefaultConfigSave();
-                DetectOSLanguage();
-
-                AdjustLanguage();
-                Controls.Clear();
-                InitializeComponent();
-            }
-
-            LoadConfigFile();
-            AboutTranslator();
-            //DetectOSLanguage();
             //AdjustLanguage();
             //UpdateProgram();
             //LoadDatabaseXML();
@@ -2356,6 +2222,7 @@ namespace GCBM
             MainCore();
             FINISHEDLAUNCH = true;
         }
+        
         private void PopDgv()
         {
             DataGridViewCheckBoxColumn cb = new DataGridViewCheckBoxColumn();
@@ -2613,119 +2480,6 @@ namespace GCBM
 
         #endregion
 
-        #region Load Config File
-
-        /// <summary>
-        ///     Reads and loads the contents of the INI file.
-        /// </summary>
-        private void LoadConfigFile()
-        {
-            if (sio.File.Exists(GET_CURRENT_PATH + sio.Path.DirectorySeparatorChar + INI_FILE))
-            {
-                if (CONFIG_INI_FILE.IniReadBool("SEVERAL", "WindowMaximized"))
-                {
-                    WindowState = FormWindowState.Maximized;
-                }
-            }
-        }
-
-        #endregion
-
-        #region Default Config Save
-
-        /// <summary>
-        ///     Default Config Save
-        /// </summary>
-        private void DefaultConfigSave()
-        {
-            // GCBM
-            CONFIG_INI_FILE.IniWriteString("GCBM", "ProgUpdated", PROG_UPDATE);
-            CONFIG_INI_FILE.IniWriteString("GCBM", "ProgVersion", VERSION());
-            CONFIG_INI_FILE.IniWriteString("GCBM", "ConfigUpdated", DateTime.Now.ToString("dd/MM/yyyy"));
-            CONFIG_INI_FILE.IniWriteString("GCBM", "Language", Resources.GCBM_Language);
-            CONFIG_INI_FILE.IniWriteString("GCBM", "TranslatedBy", Resources.GCBM_TranslatedBy);
-            // General
-            CONFIG_INI_FILE.IniWriteBool("GENERAL", "DiscClean", true);
-            CONFIG_INI_FILE.IniWriteBool("GENERAL", "DiscDelete", false);
-            CONFIG_INI_FILE.IniWriteBool("GENERAL", "ExtractZip", false);
-            CONFIG_INI_FILE.IniWriteBool("GENERAL", "Extract7z", false);
-            CONFIG_INI_FILE.IniWriteBool("GENERAL", "ExtractRar", false);
-            CONFIG_INI_FILE.IniWriteBool("GENERAL", "ExtractBZip2", false);
-            CONFIG_INI_FILE.IniWriteBool("GENERAL", "ExtractSplitFile", false);
-            CONFIG_INI_FILE.IniWriteBool("GENERAL", "ExtractNwb", false);
-            CONFIG_INI_FILE.IniWriteInt("GENERAL", "FileSize", 0);
-            CONFIG_INI_FILE.IniWriteString("GENERAL", "TemporaryFolder", GET_CURRENT_PATH + TEMP_DIR);
-            // Several
-            CONFIG_INI_FILE.IniWriteInt("SEVERAL", "AppointmentStyle", 0);
-            CONFIG_INI_FILE.IniWriteBool("SEVERAL", "CheckMD5", false);
-            CONFIG_INI_FILE.IniWriteBool("SEVERAL", "CheckSHA1", false);
-            CONFIG_INI_FILE.IniWriteBool("SEVERAL", "CheckNotify", true);
-            CONFIG_INI_FILE.IniWriteBool("SEVERAL", "NetVerify", true);
-            CONFIG_INI_FILE.IniWriteBool("SEVERAL", "RecursiveMode", true);
-            CONFIG_INI_FILE.IniWriteBool("SEVERAL", "TemporaryBuffer", false);
-            CONFIG_INI_FILE.IniWriteBool("SEVERAL", "WindowMaximized", false);
-            CONFIG_INI_FILE.IniWriteBool("SEVERAL", "DisableSplash", false);
-            CONFIG_INI_FILE.IniWriteBool("SEVERAL", "Screensaver", false);
-            CONFIG_INI_FILE.IniWriteBool("SEVERAL", "LoadDatabase", true);
-            CONFIG_INI_FILE.IniWriteBool("SEVERAL", "MultipleInstances", false);
-            // TransferSystem
-            CONFIG_INI_FILE.IniWriteBool("TRANSFERSYSTEM", "FST", false);
-            CONFIG_INI_FILE.IniWriteBool("TRANSFERSYSTEM", "ScrubFlushSD", false);
-            CONFIG_INI_FILE.IniWriteInt("TRANSFERSYSTEM", "ScrubAlign", 0);
-            CONFIG_INI_FILE.IniWriteString("TRANSFERSYSTEM", "ScrubFormat", "DiscEx");
-            CONFIG_INI_FILE.IniWriteInt("TRANSFERSYSTEM", "ScrubFormatIndex", 1);
-            CONFIG_INI_FILE.IniWriteBool("TRANSFERSYSTEM", "Wipe", false);
-            CONFIG_INI_FILE.IniWriteBool("TRANSFERSYSTEM", "XCopy", true);
-            // Covers
-            CONFIG_INI_FILE.IniWriteBool("COVERS", "DeleteCovers", false);
-            CONFIG_INI_FILE.IniWriteBool("COVERS", "CoverRecursiveSearch", false);
-            CONFIG_INI_FILE.IniWriteBool("COVERS", "TransferCovers", false);
-            CONFIG_INI_FILE.IniWriteBool("COVERS", "WiiFlowCoverUSBLoader", false);
-            CONFIG_INI_FILE.IniWriteBool("COVERS", "GXCoverUSBLoader", true);
-            CONFIG_INI_FILE.IniWriteString("COVERS", "CoverDirectoryCache", GET_CURRENT_PATH + COVERS_DIR);
-            CONFIG_INI_FILE.IniWriteString("COVERS", "WiiFlowCoverDirectoryDisc", "");
-            CONFIG_INI_FILE.IniWriteString("COVERS", "WiiFlowCoverDirectory2D", "");
-            CONFIG_INI_FILE.IniWriteString("COVERS", "WiiFlowCoverDirectory3D", "");
-            CONFIG_INI_FILE.IniWriteString("COVERS", "WiiFlowCoverDirectoryFull", "");
-            CONFIG_INI_FILE.IniWriteString("COVERS", "GXCoverDirectoryDisc", "");
-            CONFIG_INI_FILE.IniWriteString("COVERS", "GXCoverDirectory2D", "");
-            CONFIG_INI_FILE.IniWriteString("COVERS", "GXCoverDirectory3D", "");
-            CONFIG_INI_FILE.IniWriteString("COVERS", "GXCoverDirectoryFull", "");
-            // Titles
-            CONFIG_INI_FILE.IniWriteBool("TITLES", "GameCustomTitles", false);
-            CONFIG_INI_FILE.IniWriteBool("TITLES", "GameTdbTitles", false);
-            CONFIG_INI_FILE.IniWriteBool("TITLES", "GameInternalName", true);
-            CONFIG_INI_FILE.IniWriteBool("TITLES", "GameXmlName", false);
-            CONFIG_INI_FILE.IniWriteString("TITLES", "LocationTitles", "%APP%" + Path.DirectorySeparatorChar + "titles.txt");
-            CONFIG_INI_FILE.IniWriteString("TITLES", "LocationCustomTitles", "%APP%" + Path.DirectorySeparatorChar + "custom-titles.txt");
-            CONFIG_INI_FILE.IniWriteInt("TITLES", "TitleLanguage", 0);
-            // Dolphin Emulator
-            CONFIG_INI_FILE.IniWriteString("DOLPHIN", "DolphinFolder", "");
-            CONFIG_INI_FILE.IniWriteBool("DOLPHIN", "DolphinDX11", true);
-            CONFIG_INI_FILE.IniWriteBool("DOLPHIN", "DolphinDX12", false);
-            CONFIG_INI_FILE.IniWriteBool("DOLPHIN", "DolphinVKGL", false);
-            CONFIG_INI_FILE.IniWriteBool("DOLPHIN", "DolphinLLE", false);
-            CONFIG_INI_FILE.IniWriteBool("DOLPHIN", "DolphinHLE", true);
-            // Updates
-            CONFIG_INI_FILE.IniWriteBool("UPDATES", "UpdateVerifyStart", false);
-            CONFIG_INI_FILE.IniWriteBool("UPDATES", "UpdateBetaChannel", false);
-            CONFIG_INI_FILE.IniWriteBool("UPDATES", "UpdateFileLog", false);
-            CONFIG_INI_FILE.IniWriteBool("UPDATES", "UpdateServerProxy", false);
-            CONFIG_INI_FILE.IniWriteString("UPDATES", "ServerProxy", "");
-            CONFIG_INI_FILE.IniWriteString("UPDATES", "UserProxy", "");
-            CONFIG_INI_FILE.IniWriteString("UPDATES", "PassProxy", "");
-            CONFIG_INI_FILE.IniWriteInt("UPDATES", "VerificationInterval", 0);
-            // Manager Log
-            CONFIG_INI_FILE.IniWriteInt("MANAGERLOG", "LogLevel", 0);
-            CONFIG_INI_FILE.IniWriteBool("MANAGERLOG", "LogSystemConsole", false);
-            CONFIG_INI_FILE.IniWriteBool("MANAGERLOG", "LogDebugConsole", false);
-            CONFIG_INI_FILE.IniWriteBool("MANAGERLOG", "LogWindow", false);
-            CONFIG_INI_FILE.IniWriteBool("MANAGERLOG", "LogFile", true);
-            // Language
-            CONFIG_INI_FILE.IniWriteInt("LANGUAGE", "ConfigLanguage", 1);
-        }
-
-        #endregion
 
         #region Get All Drives
 
@@ -4104,7 +3858,7 @@ namespace GCBM
             }
             else
             {
-                MessageBox.Show("We're Busy");
+                GlobalNotifications(Resources.Error, ToolTipIcon.Error);
             }
         }
 
