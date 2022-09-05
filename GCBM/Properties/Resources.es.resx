@@ -357,40 +357,37 @@
   <data name="PluginDisplay_String1" xml:space="preserve">
     <value>¿Está seguro de que desea eliminar el complemento?</value>
   </data>
-  <data name="InstallGameScrub_String1" xml:space="preserve">
+  <data name="InstallGameScrub_Transferring" xml:space="preserve">
     <value>Transferiendo...</value>
   </data>
-  <data name="InstallGameScrub_String2" xml:space="preserve">
+  <data name="InstallGameScrub_Scrubbing" xml:space="preserve">
     <value>Estado: Scrubbing... </value>
   </data>
-  <data name="InstallGameScrub_String3" xml:space="preserve">
+  <data name="InstallGameScrub_Unresponsive" xml:space="preserve">
     <value>Estado: ¡No responde!</value>
   </data>
-  <data name="InstallGameScrub_String4" xml:space="preserve">
+  <data name="InstallGameScrub_Complete" xml:space="preserve">
     <value>Estado: ¡Completado!</value>
   </data>
-  <data name="InstallGameScrub_String5" xml:space="preserve">
+  <data name="InstallGameScrub_Disc1Success" xml:space="preserve">
     <value>¡Juego instalado con éxito!</value>
   </data>
-  <data name="InstallGameScrub_String6" xml:space="preserve">
+  <data name="InstallGameScrub_Disc2Success" xml:space="preserve">
     <value>¡El disco 2 se transfirió con éxito!</value>
   </data>
-  <data name="CopyTask_String1" xml:space="preserve">
+  <data name="CopyTask_Transferring" xml:space="preserve">
     <value>Transfiriendo archivo...</value>
   </data>
-  <data name="CopyTask_String2" xml:space="preserve">
+  <data name="CopyTask_GameInstalling" xml:space="preserve">
     <value>Instalando juego... </value>
   </data>
-  <data name="CopyTask_String3" xml:space="preserve">
-    <value>¡Transferencia completa!</value>
-  </data>
-  <data name="CopyTask_String4" xml:space="preserve">
+  <data name="CopyTask_GameInstalled" xml:space="preserve">
     <value>¡Juego instalado!</value>
   </data>
-  <data name="CopyTask_String5" xml:space="preserve">
+  <data name="CopyTask_100Complete" xml:space="preserve">
     <value>100% completo!</value>
   </data>
-  <data name="CopyTask_String6" xml:space="preserve">
+  <data name="CopyTask_TransferComplete" xml:space="preserve">
     <value>¡Transferencia completa!</value>
   </data>
   <data name="MetaXml_String2" xml:space="preserve">
@@ -500,5 +497,17 @@
   </data>
   <data name="AskDownloadWiiTDB" xml:space="preserve">
     <value>WiiTDB.zip no encontrado, ¿quieres descargarlo ahora?</value>
+  </data>
+  <data name="GameDoneTransferring" xml:space="preserve">
+    <value>Juego instalado: </value>
+  </data>
+  <data name="DoneTransferringAll" xml:space="preserve">
+    <value>Terminado de transferir {0} juegos a la unidad "{1}"</value>
+  </data>
+  <data name="SilenceNotifications" xml:space="preserve">
+    <value>Silenciar notificaciones</value>
+  </data>
+  <data name="CopyTask_Disc2Installed" xml:space="preserve">
+    <value>¡Disco 2 instalado!</value>
   </data>
 </root>

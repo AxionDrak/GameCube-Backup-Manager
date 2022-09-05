@@ -20,6 +20,7 @@ namespace GCBM
 
             ConfigStart();
             LoadConfigFile();
+            this.Update();
         }
 
         #endregion
@@ -104,7 +105,7 @@ namespace GCBM
             CONFIG_INI_FILE.IniWriteBool("GENERAL", "ExtractSplitFile", chkGeneralExtractSplitFile.Checked);
             CONFIG_INI_FILE.IniWriteBool("GENERAL", "ExtractNwb", chkGeneralExtractNwb.Checked);
             CONFIG_INI_FILE.IniWriteInt("GENERAL", "FileSize", cbGeneralFileSize.SelectedIndex);
-
+            CONFIG_INI_FILE.IniWriteBool("GENERAL", "IsSilenced", checkBox1.Checked);
             if (tbGeneralTempPath.Text == string.Empty)
             {
                 tbGeneralTempPath.Text = TEMP_DIR;
@@ -232,6 +233,11 @@ namespace GCBM
                 chkGeneralExtractSplitFile.Checked = CONFIG_INI_FILE.IniReadBool("GENERAL", "ExtractSplitFile");
                 chkGeneralExtractNwb.Checked = CONFIG_INI_FILE.IniReadBool("GENERAL", "ExtractNwb");
                 cbGeneralFileSize.SelectedIndex = CONFIG_INI_FILE.IniReadInt("GENERAL", "FileSize");
+                if (CONFIG_INI_FILE.IniReadBool("GENERAL", "IsSilenced"))
+                {
+                    checkBox1.Checked = true;
+                    checkBox1.CheckState = CheckState.Checked;
+                }
 
                 tbGeneralTempPath.Text = CONFIG_INI_FILE.IniReadString("GENERAL", "TemporaryFolder", "") == string.Empty
                     ? TEMP_DIR

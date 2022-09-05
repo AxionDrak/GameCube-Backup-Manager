@@ -1,3 +1,10 @@
+### GameCube Backup Manager 2.6.1.0 (September 4, 2022)
+
+[Improved] Stability improvements, speed optimizations. removed SOME unused code. lots more to come... Added an option to silence notifications.
+[Changed] Rewrote Queue system for batch scrubs.
+[Fixed] Stopped program from proceding with search if user cancels or closes folder browse dialog.
+[Translation] Attempts to Improve localization.
+
 ### GameCube Backup Manager 2.6.0.9 (September 1, 2022)
 
 [Changed] Internal changes to code.

@@ -210,7 +210,6 @@ namespace GCBM
             Game game = new Game();
             IMAGE_PATH = path;
             loadPath = true ? IMAGE_PATH : toc.fils[2].path;
-
             fs = new sio.FileStream(loadPath, sio.FileMode.Open, sio.FileAccess.Read, sio.FileShare.Read);
             br = new sio.BinaryReader(fs, ste.Default);
 

@@ -3,8 +3,11 @@ using GCBM.Properties;
 using Microsoft.VisualBasic.ApplicationServices;
 using System;
 using System.Diagnostics;
+using System.Globalization;
 using System.IO;
+using System.Linq;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GCBM
@@ -20,6 +23,20 @@ namespace GCBM
         [STAThread]
         private static void Main()
         {
+            #region Adjust Language
+            CultureInfo sysLocale = Thread.CurrentThread.CurrentCulture;
+
+            string[] aryLocales = { "pt-BR", "en-US", "es", "ko" };
+
+            //  See if we have that translation
+            bool isTranslated = aryLocales.Contains(sysLocale.ToString());
+            if (isTranslated)
+            {
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo(sysLocale.ToString()); 
+                CultureInfo.CurrentUICulture = new CultureInfo(sysLocale.ToString());
+
+            }
+            #endregion
             IniFile configIniFile = new IniFile("config.ini");
 
             //Pega o nome do processo deste programa
@@ -69,6 +86,20 @@ namespace GCBM
 
         private static void Start()
         {
+            #region Adjust Language
+            CultureInfo sysLocale = CultureInfo.CurrentCulture;
+
+            string[] aryLocales = { "pt-BR", "en-US", "es", "ko" };
+
+            //  See if we have that translation
+            bool isTranslated = aryLocales.Contains(sysLocale.ToString());
+            if (isTranslated)
+            {
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo(sysLocale.ToString()); 
+                CultureInfo.CurrentUICulture = new CultureInfo(sysLocale.ToString());
+
+            }
+            #endregion
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Show Splash Form
@@ -76,6 +107,7 @@ namespace GCBM
             var splashThread = new Thread(new ThreadStart(
                 () => Application.Run(SplashScreen)));
             splashThread.SetApartmentState(ApartmentState.STA);
+            splashThread.CurrentUICulture = new CultureInfo(sysLocale.ToString());
             splashThread.Start();
 
             //Create and Show Main Form
@@ -86,11 +118,22 @@ namespace GCBM
         private static void MainForm_LoadCompleted(object sender, EventArgs e)
         {
             if (SplashScreen != null && !SplashScreen.Disposing && !SplashScreen.IsDisposed)
-                SplashScreen.Invoke(new Action(() => SplashScreen.Close()));
+                SplashScreen.Invoke(new Action(() =>
+                {
+                    SplashScreen.Close();
+                }));
             //MainForm.TopMost = true;
-            MainForm.Show();
-            MainForm.Activate();
+            ShowMain();
             //MainForm.TopMost = false;
+        }
+
+        private static Action<Task> ShowMain()
+        {
+            return task =>
+            {
+                MainForm.Show();
+                MainForm.Activate();
+            };
         }
     }
 

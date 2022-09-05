@@ -117,41 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="tabSettingsGeneral.Text" xml:space="preserve">
-    <value>일반</value>
-  </data>
-  <data name="tabSettingsNomenclature.Text" xml:space="preserve">
-    <value>명명법</value>
-  </data>
-  <data name="tabSettingsSeveral.Text" xml:space="preserve">
-    <value>여러 개</value>
-  </data>
-  <data name="tabSettingsTransfer.Text" xml:space="preserve">
-    <value>게임 전송</value>
-  </data>
-  <data name="tabSettingsCovers.Text" xml:space="preserve">
-    <value>커버</value>
-  </data>
-  <data name="tabSettingsTitle.Text" xml:space="preserve">
-    <value>타이틀</value>
-  </data>
-  <data name="tabSettingsDolphin.Text" xml:space="preserve">
-    <value>돌핀 에뮬레이터</value>
-  </data>
-  <data name="tabSettingsUpdates.Text" xml:space="preserve">
-    <value>업데이트</value>
-  </data>
-  <data name="tabSettingsLanguage.Text" xml:space="preserve">
-    <value>언어</value>
-  </data>
-  <data name="tabSettingsLog.Text" xml:space="preserve">
-    <value>기록</value>
-  </data>
   <data name="grbGeneralTemporaryFolder.Text" xml:space="preserve">
     <value>임시 폴더</value>
-  </data>
-  <data name="grbGeneralFiles.Text" xml:space="preserve">
-    <value>파일</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="chkGeneralExtractNwb.Size" type="System.Drawing.Size, System.Drawing">
@@ -196,14 +163,14 @@
   <data name="lblGeneralExtract.Text" xml:space="preserve">
     <value>필요할 때마다 추출합니다.</value>
   </data>
-  <data name="grbGeneralFileSize.Text" xml:space="preserve">
-    <value>크기 표시</value>
+  <data name="grbGeneralFiles.Text" xml:space="preserve">
+    <value>파일</value>
   </data>
   <data name="cbGeneralFileSize.Items" xml:space="preserve">
     <value>자동</value>
   </data>
-  <data name="grbGeneralPartitions.Text" xml:space="preserve">
-    <value>게임 디렉토리 조정</value>
+  <data name="grbGeneralFileSize.Text" xml:space="preserve">
+    <value>크기 표시</value>
   </data>
   <data name="rbGeneralDiscDelete.Size" type="System.Drawing.Size, System.Drawing">
     <value>299, 19</value>
@@ -216,6 +183,12 @@
   </data>
   <data name="rbGeneralDiscClean.Text" xml:space="preserve">
     <value>디스크 1과 디스크 2에 대해 모든 폴더를 별도로 유지 (기본값)</value>
+  </data>
+  <data name="grbGeneralPartitions.Text" xml:space="preserve">
+    <value>게임 디렉토리 조정</value>
+  </data>
+  <data name="tabSettingsGeneral.Text" xml:space="preserve">
+    <value>일반</value>
   </data>
   <data name="lblCommentsScrubCopy.Size" type="System.Drawing.Size, System.Drawing">
     <value>535, 39</value>
@@ -235,9 +208,6 @@
   <data name="lblComments.Text" xml:space="preserve">
     <value>코멘트:</value>
   </data>
-  <data name="grpNomenclatureFolderFormat.Text" xml:space="preserve">
-    <value>폴더 형식</value>
-  </data>
   <data name="cbAdjustNamingStyle.Items" xml:space="preserve">
     <value>타이틀 [게임 코드]</value>
   </data>
@@ -250,8 +220,17 @@
   <data name="lblNomenclature.Text" xml:space="preserve">
     <value>명명 스타일:</value>
   </data>
-  <data name="grbGeneralDiverse.Text" xml:space="preserve">
-    <value>여러 개</value>
+  <data name="grpNomenclatureFolderFormat.Text" xml:space="preserve">
+    <value>폴더 형식</value>
+  </data>
+  <data name="tabSettingsNomenclature.Text" xml:space="preserve">
+    <value>명명법</value>
+  </data>
+  <data name="checkBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>73, 17</value>
+  </data>
+  <data name="checkBox1.Text" xml:space="preserve">
+    <value>무음 알림</value>
   </data>
   <data name="chkMultipleInstances.Size" type="System.Drawing.Size, System.Drawing">
     <value>203, 17</value>
@@ -276,12 +255,6 @@
   </data>
   <data name="chkScreensaver.Text" xml:space="preserve">
     <value>화면 보호기 비활성화 (화면 보호기)</value>
-  </data>
-  <data name="chkWelcome.Size" type="System.Drawing.Size, System.Drawing">
-    <value>295, 17</value>
-  </data>
-  <data name="chkWelcome.Text" xml:space="preserve">
-    <value>프로그램 시작 시 시작 화면 비활성화 (스플래쉬 스크린)</value>
   </data>
   <data name="chkNetVerify.Size" type="System.Drawing.Size, System.Drawing">
     <value>195, 17</value>
@@ -319,6 +292,12 @@
   <data name="chkGeneralMD5.Text" xml:space="preserve">
     <value>전송 중 MD5 서명 계산</value>
   </data>
+  <data name="grbGeneralDiverse.Text" xml:space="preserve">
+    <value>여러 개</value>
+  </data>
+  <data name="tabSettingsSeveral.Text" xml:space="preserve">
+    <value>여러 개</value>
+  </data>
   <data name="lblFormat.Size" type="System.Drawing.Size, System.Drawing">
     <value>32, 13</value>
   </data>
@@ -339,6 +318,9 @@
   </data>
   <data name="chkGeneralScrubFlushSD.Text" xml:space="preserve">
     <value>SD 카드를 거의 즉시 꺼낼 수 있도록 파일 버퍼 지우기</value>
+  </data>
+  <data name="grbGeneralScrub.Text" xml:space="preserve">
+    <value>없애다</value>
   </data>
   <data name="label28.Size" type="System.Drawing.Size, System.Drawing">
     <value>465, 39</value>
@@ -364,29 +346,29 @@
   <data name="label17.Text" xml:space="preserve">
     <value>한 위치(소스)에서 다른 위치(대상)로 하나 이상의 파일을 복사합니다. 파일은 압축되지 않고 컨테이너의 일부가 아니며 쓰레기가 제거되지 않습니다.</value>
   </data>
-  <data name="grbTransferSystem.Text" xml:space="preserve">
-    <value>사용할 전송 시스템</value>
-  </data>
   <data name="rbTransferSystemXCopy.Size" type="System.Drawing.Size, System.Drawing">
     <value>98, 17</value>
   </data>
   <data name="rbTransferSystemXCopy.Text" xml:space="preserve">
     <value>XCopy (기본값)</value>
   </data>
+  <data name="grbTransferSystem.Text" xml:space="preserve">
+    <value>사용할 전송 시스템</value>
+  </data>
+  <data name="tabSettingsTransfer.Text" xml:space="preserve">
+    <value>게임 전송</value>
+  </data>
   <data name="grpTitlesCoverFolder.Text" xml:space="preserve">
     <value>커버 폴더 (캐쉬 -&gt; 원본)</value>
-  </data>
-  <data name="grbCoverTransfer.Text" xml:space="preserve">
-    <value>USB 충전기 설정 (커버 전송 -&gt; 대상)</value>
-  </data>
-  <data name="tabCoverDisc.Text" xml:space="preserve">
-    <value>디스크</value>
   </data>
   <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
     <value>57, 13</value>
   </data>
   <data name="label8.Text" xml:space="preserve">
     <value>폴더 위치:</value>
+  </data>
+  <data name="tabCoverDisc.Text" xml:space="preserve">
+    <value>디스크</value>
   </data>
   <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
     <value>57, 13</value>
@@ -400,17 +382,17 @@
   <data name="label9.Text" xml:space="preserve">
     <value>폴더 위치:</value>
   </data>
-  <data name="tabCoverFull.Text" xml:space="preserve">
-    <value>완료</value>
-  </data>
   <data name="label35.Size" type="System.Drawing.Size, System.Drawing">
     <value>57, 13</value>
   </data>
   <data name="label35.Text" xml:space="preserve">
     <value>폴더 위치:</value>
   </data>
-  <data name="grpCoversSynchronize.Text" xml:space="preserve">
-    <value>동기화</value>
+  <data name="tabCoverFull.Text" xml:space="preserve">
+    <value>완료</value>
+  </data>
+  <data name="grbCoverTransfer.Text" xml:space="preserve">
+    <value>USB 충전기 설정 (커버 전송 -&gt; 대상)</value>
   </data>
   <data name="chkCoverRecursiveSearch.Size" type="System.Drawing.Size, System.Drawing">
     <value>237, 17</value>
@@ -430,8 +412,11 @@
   <data name="chkCoverSynchronizeDelete.Text" xml:space="preserve">
     <value>목록에 없는 게임 스킨 삭제</value>
   </data>
-  <data name="grbTitleLanguage.Text" xml:space="preserve">
-    <value>타이틀 언어</value>
+  <data name="grpCoversSynchronize.Text" xml:space="preserve">
+    <value>동기화</value>
+  </data>
+  <data name="tabSettingsCovers.Text" xml:space="preserve">
+    <value>커버</value>
   </data>
   <data name="btnTitleDownload.Text" xml:space="preserve">
     <value>titles.txt 다운로드</value>
@@ -472,11 +457,11 @@
   <data name="cbTitleLanguage.Items11" xml:space="preserve">
     <value>중국어 간체</value>
   </data>
+  <data name="grbTitleLanguage.Text" xml:space="preserve">
+    <value>타이틀 언어</value>
+  </data>
   <data name="grbTitleFileLocation.Text" xml:space="preserve">
     <value>파일 위치</value>
-  </data>
-  <data name="grbTitleDiverse.Text" xml:space="preserve">
-    <value>기타 (적용하려면 프로그램을 다시 시작해야 함)</value>
   </data>
   <data name="rbGameXmlName.Size" type="System.Drawing.Size, System.Drawing">
     <value>341, 17</value>
@@ -502,20 +487,29 @@
   <data name="chkGameTitle.Text" xml:space="preserve">
     <value>GameTDB(titles.txt) 사용</value>
   </data>
-  <data name="grbDolphin.Text" xml:space="preserve">
-    <value>에뮬레이터 구성</value>
+  <data name="grbTitleDiverse.Text" xml:space="preserve">
+    <value>기타 (적용하려면 프로그램을 다시 시작해야 함)</value>
+  </data>
+  <data name="tabSettingsTitle.Text" xml:space="preserve">
+    <value>타이틀</value>
   </data>
   <data name="grbDolphinFolder.Text" xml:space="preserve">
     <value>에뮬레이터 경로</value>
   </data>
-  <data name="grbDolphinAudio.Text" xml:space="preserve">
-    <value>오디오</value>
-  </data>
   <data name="rbDSPHLE.Text" xml:space="preserve">
     <value>DSP HLE (기본값)</value>
   </data>
+  <data name="grbDolphinAudio.Text" xml:space="preserve">
+    <value>오디오</value>
+  </data>
   <data name="grbDolphinVideo.Text" xml:space="preserve">
     <value>동영상</value>
+  </data>
+  <data name="grbDolphin.Text" xml:space="preserve">
+    <value>에뮬레이터 구성</value>
+  </data>
+  <data name="tabSettingsDolphin.Text" xml:space="preserve">
+    <value>돌핀 에뮬레이터</value>
   </data>
   <data name="lblTimeInterval.Location" type="System.Drawing.Point, System.Drawing">
     <value>86, 246</value>
@@ -525,9 +519,6 @@
   </data>
   <data name="lblTimeInterval.Text" xml:space="preserve">
     <value>참고: 시간 간격 설정 조정은 프로그램을 다시 시작한 후에만 적용됩니다.</value>
-  </data>
-  <data name="grbUpdate.Text" xml:space="preserve">
-    <value>업데이트 설정</value>
   </data>
   <data name="cbVerificationInterval.Items" xml:space="preserve">
     <value>5 분</value>
@@ -601,14 +592,17 @@
   <data name="chkUpdateVerifyStart.Text" xml:space="preserve">
     <value>시작 시 업데이트 확인</value>
   </data>
+  <data name="grbUpdate.Text" xml:space="preserve">
+    <value>업데이트 설정</value>
+  </data>
+  <data name="tabSettingsUpdates.Text" xml:space="preserve">
+    <value>업데이트</value>
+  </data>
   <data name="lblLanguageComments.Size" type="System.Drawing.Size, System.Drawing">
     <value>334, 13</value>
   </data>
   <data name="lblLanguageComments.Text" xml:space="preserve">
     <value>참고: 언어 설정 조정은 프로그램을 다시 시작한 후에만 적용됩니다.</value>
-  </data>
-  <data name="grbLanguage.Text" xml:space="preserve">
-    <value>기본 언어 선택:</value>
   </data>
   <data name="lblLanguage.Size" type="System.Drawing.Size, System.Drawing">
     <value>32, 13</value>
@@ -628,8 +622,11 @@
   <data name="cbLanguage.Items3" xml:space="preserve">
     <value>한국어 [대한민국 - KR]</value>
   </data>
-  <data name="grbLog.Text" xml:space="preserve">
-    <value>기록</value>
+  <data name="grbLanguage.Text" xml:space="preserve">
+    <value>기본 언어 선택:</value>
+  </data>
+  <data name="tabSettingsLanguage.Text" xml:space="preserve">
+    <value>언어</value>
   </data>
   <data name="lblLOG.Size" type="System.Drawing.Size, System.Drawing">
     <value>57, 13</value>
@@ -669,6 +666,12 @@
   </data>
   <data name="cbLevelLog.Items2" xml:space="preserve">
     <value>완료</value>
+  </data>
+  <data name="grbLog.Text" xml:space="preserve">
+    <value>기록</value>
+  </data>
+  <data name="tabSettingsLog.Text" xml:space="preserve">
+    <value>기록</value>
   </data>
   <data name="btnRestore.Text" xml:space="preserve">
     <value>설정 복원</value>
@@ -758,13 +761,10 @@
         cACAAfAAgADwAIAA8ACAAfAAwAP4Afwf/w8=
 </value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>설정</value>
-  </data>
   <data name="ofdDolphin.Filter" xml:space="preserve">
     <value>돌핀 에뮬레이터|dolphin.exe</value>
   </data>
-  <data name="grbGeneralScrub.Text" xml:space="preserve">
-    <value>없애다</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>설정</value>
   </data>
 </root>

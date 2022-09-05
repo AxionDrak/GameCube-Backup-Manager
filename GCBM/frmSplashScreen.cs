@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Globalization;
+using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -12,9 +13,18 @@ namespace GCBM
 
         public frmSplashScreen()
         {
-            InitializeComponent();
+            #region Adjust Language
+            CultureInfo sysLocale = Thread.CurrentThread.CurrentCulture;
+            string[] aryLocales = { "pt-BR", "en-US", "es", "ko" };
 
-            AdjustLanguage();
+            //  See if we have that translation
+            bool isTranslated = aryLocales.Contains(sysLocale.ToString());
+            if (isTranslated)
+            {
+                CultureInfo.CurrentUICulture = new CultureInfo(sysLocale.ToString());
+            }
+            #endregion
+            InitializeComponent();
             CurrentYear();
             pbSplashScreen.Maximum = 100;
             del = UpdateProgressInternal;
@@ -32,24 +42,16 @@ namespace GCBM
                 switch (CONFIG_INI_FILE.IniReadInt("LANGUAGE", "ConfigLanguage"))
                 {
                     case 0:
-                        Thread.CurrentThread.CurrentUICulture = new CultureInfo("pt-BR");
-                        Controls.Clear();
-                        InitializeComponent();
+                        Thread.CurrentThread.CurrentUICulture = CultureInfo.CurrentUICulture = new CultureInfo("pt-BR");
                         break;
                     case 1:
-                        Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
-                        Controls.Clear();
-                        InitializeComponent();
+                        Thread.CurrentThread.CurrentUICulture = CultureInfo.CurrentUICulture = new CultureInfo("en-US");
                         break;
                     case 2:
-                        Thread.CurrentThread.CurrentUICulture = new CultureInfo("es");
-                        Controls.Clear();
-                        InitializeComponent();
+                        Thread.CurrentThread.CurrentUICulture = CultureInfo.CurrentUICulture = new CultureInfo("es");
                         break;
                     case 3:
-                        Thread.CurrentThread.CurrentUICulture = new CultureInfo("ko");
-                        Controls.Clear();
-                        InitializeComponent();
+                        Thread.CurrentThread.CurrentUICulture = CultureInfo.CurrentUICulture = new CultureInfo("ko");
                         break;
                 }
             }
@@ -58,33 +60,23 @@ namespace GCBM
                 switch (Thread.CurrentThread.CurrentUICulture.Name)
                 {
                     case "pt - BR":
-                        Thread.CurrentThread.CurrentUICulture = new CultureInfo("pt-BR");
-                        Controls.Clear();
-                        InitializeComponent();
+                        Thread.CurrentThread.CurrentUICulture= CultureInfo.CurrentUICulture = new CultureInfo("pt-BR");
                         CONFIG_INI_FILE.IniWriteInt("LANGUAGE", "ConfigLanguage", 0);
                         break;
                     case "en-US":
-                        Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
-                        Controls.Clear();
-                        InitializeComponent();
+                        Thread.CurrentThread.CurrentUICulture= CultureInfo.CurrentUICulture = new CultureInfo("en-US");
                         CONFIG_INI_FILE.IniWriteInt("LANGUAGE", "ConfigLanguage", 1);
                         break;
                     case "es":
-                        Thread.CurrentThread.CurrentUICulture = new CultureInfo("es");
-                        Controls.Clear();
-                        InitializeComponent();
+                        Thread.CurrentThread.CurrentUICulture= CultureInfo.CurrentUICulture = new CultureInfo("es");
                         CONFIG_INI_FILE.IniWriteInt("LANGUAGE", "ConfigLanguage", 2);
                         break;
                     case "ko":
-                        Thread.CurrentThread.CurrentUICulture = new CultureInfo("ko");
-                        Controls.Clear();
-                        InitializeComponent();
+                        Thread.CurrentThread.CurrentUICulture= CultureInfo.CurrentUICulture = new CultureInfo("ko");
                         CONFIG_INI_FILE.IniWriteInt("LANGUAGE", "ConfigLanguage", 3);
                         break;
                     default:
-                        Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
-                        Controls.Clear();
-                        InitializeComponent();
+                        Thread.CurrentThread.CurrentUICulture= CultureInfo.CurrentUICulture = new CultureInfo("en-US");
                         CONFIG_INI_FILE.IniWriteInt("LANGUAGE", "ConfigLanguage", 1);
                         break;
                 }
@@ -149,8 +141,8 @@ namespace GCBM
 
         private void frmSplashScreen_FormClosing(object sender, FormClosingEventArgs e)
         {
-             if (Process.GetCurrentProcess().GetChildProcesses() != null &&
-                Process.GetCurrentProcess().GetChildProcesses().Count != 0)
+            if (Process.GetCurrentProcess().GetChildProcesses() != null &&
+               Process.GetCurrentProcess().GetChildProcesses().Count != 0)
             {
                 foreach (Process process in Process.GetCurrentProcess().GetChildProcesses())
                 {
