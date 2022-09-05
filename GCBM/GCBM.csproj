@@ -157,12 +157,6 @@
     </Compile>
     <Compile Include="Game.cs" />
     <Compile Include="Hardworker.cs" />
-    <Compile Include="image.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="info.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="IniFile.cs" />
     <Compile Include="Network.cs" />
     <Compile Include="Program.cs" />
@@ -173,9 +167,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="SIOExtensions.cs" />
-    <Compile Include="TOC.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="DataTableToCSV.cs" />
     <Compile Include="tools\frmBurnMedia.cs">
       <SubType>Form</SubType>
