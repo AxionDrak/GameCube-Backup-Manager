@@ -2778,7 +2778,8 @@ namespace GCBM
             {
                 fbd1.Description = Resources.SelectFolderContainingIsoGcmFiles;
                 fbd1.ShowNewFolderButton = false;
-                if (fbd1.ShowDialog() == DialogResult.OK)
+                DialogResult result = fbd1.ShowDialog();
+                if (result == DialogResult.OK)
                 {
                     dgvGameListPath = fbd1.SelectedPath;
                     await DisplaySourceFilesAsync(fbd1.SelectedPath, dgvSource).ConfigureAwait(false);
