@@ -55,6 +55,13 @@ namespace GCBM
 
         public bool SCANNING = false;
         public bool CLOSING = false;
+
+        private string loadPath;
+        private string _IDMakerCode;
+        private string _oldNameInternal;
+        private string _IDRegionCode;
+        public Game gameUtilities = new Game();
+        private bool useXmlTitle;
         #endregion
 
 
@@ -630,6 +637,7 @@ namespace GCBM
         {
             if (sio.File.Exists(GET_CURRENT_PATH + sio.Path.DirectorySeparatorChar + INI_FILE))
             {
+                useXmlTitle = CONFIG_INI_FILE.IniReadBool("TITLES", "GameXmlName");
                 if (CONFIG_INI_FILE.IniReadBool("SEVERAL", "WindowMaximized"))
                 {
                     WindowState = FormWindowState.Maximized;
@@ -759,7 +767,7 @@ namespace GCBM
                 {
                     if (dgv.CurrentRow != null)
                     {
-                        Game game = GetGameInfo(dgv.CurrentRow.Cells["Path"].Value.ToString());
+                        Game game = gameUtilities.GetGameInfo(dgv.CurrentRow.Cells["Path"].Value.ToString(),useXmlTitle).Result;
                         LoadCover(game.ID);
                         // pictureBox GameID
                         if (pbWebGameID.Enabled == false)
@@ -892,7 +900,7 @@ namespace GCBM
                         break;
                     }
 
-                    Game game = GetGameInfo(file);
+                    Game game = gameUtilities.GetGameInfo(file,useXmlTitle).Result;
                     if (game.DiscID == "0x01")
                         game.Title += " (2)";
                     FileInfo _f = new FileInfo(file);
@@ -998,7 +1006,7 @@ namespace GCBM
                         break;
                     }
 
-                    Game game = GetGameInfo(file);
+                    Game game = gameUtilities.GetGameInfo(file,useXmlTitle).Result;
                     if (game.DiscID == "0x01")
                         game.Title += " (2)";
                     FileInfo _f = new FileInfo(file);
@@ -1212,7 +1220,7 @@ namespace GCBM
         //            (int)_file.Length);
         //        //game.Title = tbIDName.Text;
         //        IMAGE_PATH = game.Path;
-        //        if (CheckImage() && ReadImageDiscTOC())
+        //        if (CheckImage() && gameUtilities.ReadImageDiscTOC())
         //        {
         //            list.Add(game);
         //        }
@@ -3229,7 +3237,7 @@ namespace GCBM
 
             if (CheckImage())
             {
-                if (ReadImageTOC())
+                if (gameUtilities.ReadImageTOC())
                 {
                     if (CONFIG_INI_FILE.IniReadBool("TITLES", "GameXmlName"))
                     {
@@ -3269,7 +3277,7 @@ namespace GCBM
 
             if (CheckImage())
             {
-                if (ReadImageDiscTOC())
+                if (gameUtilities.ReadImageDiscTOC())
                 {
                     if (CONFIG_INI_FILE.IniReadBool("TITLES", "GameXmlName"))
                     {
@@ -5057,7 +5065,7 @@ namespace GCBM
                     continue;
                 }
 
-                InstallQueue.Add(num, GetGameInfo(row.Cells["Path"].Value.ToString()));
+                InstallQueue.Add(num, gameUtilities.GetGameInfo(row.Cells["Path"].Value.ToString(),useXmlTitle).Result);
                 num++;
             }
 
@@ -5432,7 +5440,7 @@ namespace GCBM
             {
                 if (row.Cells[0].Value.ToString() == "True")
                 {
-                    InstallQueue.Add(num, GetGameInfo(row.Cells["Path"].Value.ToString()));
+                    InstallQueue.Add(num, gameUtilities.GetGameInfo(row.Cells["Path"].Value.ToString(),useXmlTitle).Result);
                     num++;
                 }
             }
@@ -5602,7 +5610,7 @@ namespace GCBM
 
             if (CheckImage())
             {
-                if (ReadImageTOC())
+                if (gameUtilities.ReadImageTOC())
                 {
                     if (CONFIG_INI_FILE.IniReadBool("TITLES", "GameXmlName"))
                     {
@@ -5675,7 +5683,7 @@ namespace GCBM
                     lblCopy.Text = Resources.CopyTask_String3;
                     lblInstallGame.Text = Resources.CopyTask_String4;
                     lblPercent.Text = Resources.CopyTask_String5;
-                    //GlobalNotifications(Resources.InstallGameScrub_String5, ToolTipIcon.Info);
+                    GlobalNotifications(Resources.InstallGameScrub_String5, ToolTipIcon.Info);
 
                     pbCopy.Visible = false;
                     lblCopy.Visible = false;
@@ -5683,7 +5691,7 @@ namespace GCBM
                     lblInstallGame.Visible = false;
                     intQueuePos++;
                     WORKING = false;
-                    if (intQueuePos <= InstallQueue.Count)
+                    if (intQueuePos <= InstallQueue.Count - 1)
                     {
                         try
                         {
@@ -5730,7 +5738,7 @@ namespace GCBM
                     lblCopy.Text = Resources.CopyTask_String6;
                     lblInstallGame.Text = Resources.CopyTask_String4;
                     lblPercent.Text = Resources.CopyTask_String5;
-                    //GlobalNotifications(Resources.InstallGameScrub_String6, ToolTipIcon.Info);
+                    GlobalNotifications(Resources.InstallGameScrub_String6, ToolTipIcon.Info);
                     pbCopy.Visible = false;
                     lblCopy.Visible = false;
                     lblPercent.Visible = false;
