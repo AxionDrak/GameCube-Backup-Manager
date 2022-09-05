@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Globalization;
+using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -12,9 +13,10 @@ namespace GCBM
 
         public frmSplashScreen()
         {
+            AdjustLanguage();
+
             InitializeComponent();
 
-            AdjustLanguage();
             CurrentYear();
             pbSplashScreen.Maximum = 100;
             del = UpdateProgressInternal;
@@ -27,69 +29,42 @@ namespace GCBM
         private void AdjustLanguage()
         {
             //Get current system Locale -- Thread.CurrentThread.CurrentUICulture.Name
-            if (!CONFIG_INI_FILE.IniReadBool("SEVERAL", "First Run"))
+            if (CONFIG_INI_FILE.IniReadBool("SEVERAL", "LaunchedOnce"))
             {
                 switch (CONFIG_INI_FILE.IniReadInt("LANGUAGE", "ConfigLanguage"))
                 {
                     case 0:
-                        Thread.CurrentThread.CurrentUICulture = new CultureInfo("pt-BR");
-                        Controls.Clear();
-                        InitializeComponent();
+                        CultureInfo.CurrentUICulture = new CultureInfo("pt-BR");
                         break;
                     case 1:
-                        Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
-                        Controls.Clear();
-                        InitializeComponent();
+                        CultureInfo.CurrentUICulture = new CultureInfo("en-US");
                         break;
                     case 2:
-                        Thread.CurrentThread.CurrentUICulture = new CultureInfo("es");
-                        Controls.Clear();
-                        InitializeComponent();
+                        CultureInfo.CurrentUICulture = new CultureInfo("es");
                         break;
                     case 3:
-                        Thread.CurrentThread.CurrentUICulture = new CultureInfo("ko");
-                        Controls.Clear();
-                        InitializeComponent();
+                        CultureInfo.CurrentUICulture = new CultureInfo("ko");
                         break;
                 }
             }
             else
             {
-                switch (Thread.CurrentThread.CurrentUICulture.Name)
+                #region Adjust Language
+
+                CultureInfo sysLocale = CultureInfo.CurrentCulture;
+
+                string[] aryLocales = { "pt-BR", "en-US", "es", "ko" };
+
+                //  See if we have that translation
+                bool isTranslated = aryLocales.Contains(sysLocale.ToString());
+                if (isTranslated)
                 {
-                    case "pt - BR":
-                        Thread.CurrentThread.CurrentUICulture = new CultureInfo("pt-BR");
-                        Controls.Clear();
-                        InitializeComponent();
-                        CONFIG_INI_FILE.IniWriteInt("LANGUAGE", "ConfigLanguage", 0);
-                        break;
-                    case "en-US":
-                        Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
-                        Controls.Clear();
-                        InitializeComponent();
-                        CONFIG_INI_FILE.IniWriteInt("LANGUAGE", "ConfigLanguage", 1);
-                        break;
-                    case "es":
-                        Thread.CurrentThread.CurrentUICulture = new CultureInfo("es");
-                        Controls.Clear();
-                        InitializeComponent();
-                        CONFIG_INI_FILE.IniWriteInt("LANGUAGE", "ConfigLanguage", 2);
-                        break;
-                    case "ko":
-                        Thread.CurrentThread.CurrentUICulture = new CultureInfo("ko");
-                        Controls.Clear();
-                        InitializeComponent();
-                        CONFIG_INI_FILE.IniWriteInt("LANGUAGE", "ConfigLanguage", 3);
-                        break;
-                    default:
-                        Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
-                        Controls.Clear();
-                        InitializeComponent();
-                        CONFIG_INI_FILE.IniWriteInt("LANGUAGE", "ConfigLanguage", 1);
-                        break;
+                    Thread.CurrentThread.CurrentUICulture = new CultureInfo(sysLocale.ToString());
+                    CultureInfo.CurrentUICulture = new CultureInfo(sysLocale.ToString());
+
                 }
 
-                CONFIG_INI_FILE.IniWriteBool("SEVERAL", "FirstRun", false);
+                #endregion
             }
         }
 

@@ -3,7 +3,9 @@ using GCBM.Properties;
 using Microsoft.VisualBasic.ApplicationServices;
 using System;
 using System.Diagnostics;
+using System.Globalization;
 using System.IO;
+using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -20,6 +22,20 @@ namespace GCBM
         [STAThread]
         private static void Main()
         {
+            #region Adjust Language
+            CultureInfo sysLocale = CultureInfo.CurrentCulture;
+
+            string[] aryLocales = { "pt-BR", "en-US", "es", "ko" };
+
+            //  See if we have that translation
+            bool isTranslated = aryLocales.Contains(sysLocale.ToString());
+            if (isTranslated)
+            {
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo(sysLocale.ToString()); 
+                CultureInfo.CurrentUICulture = new CultureInfo(sysLocale.ToString());
+
+            }
+            #endregion
             IniFile configIniFile = new IniFile("config.ini");
 
             //Pega o nome do processo deste programa
@@ -69,12 +85,15 @@ namespace GCBM
 
         private static void Start()
         {
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Show Splash Form
             SplashScreen = new frmSplashScreen();
+            
             var splashThread = new Thread(new ThreadStart(
                 () => Application.Run(SplashScreen)));
+            splashThread.CurrentUICulture = CultureInfo.CurrentCulture;
             splashThread.SetApartmentState(ApartmentState.STA);
             splashThread.Start();
 
