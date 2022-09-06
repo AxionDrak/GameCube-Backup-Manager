@@ -1,16 +1,24 @@
-### GameCube Backup Manager 2.6.0.9 (1 de setembro de 2022)
+
+### GameCube Backup Manager 2.6.0.10 (6 de setembro, 2022)
+
+[Alterado] AutoUpdater.NET v1.7.0 para AutoUpdater.NET v1.7.5
+[Alterado] AutoUpdater.NET: agora usando a pasta temporária como pasta de dados do usuário WebView2 para evitar problemas ao usá-la com o suplemento VSTO.
+[Corrigido] AutoUpdater.NET: problema em que argumentos de linha de comando com espaços não eram passados corretamente para o ZipExtractor.
+[Corrigido] AutoUpdater.NET: problema que causava falha devido à incompatibilidade de versão do WebView2 (o problema pode ressurgir devido a essa alteração, portanto, evite atualizar o pacote WebView2 se houver um novo pacote disponível no futuro).).
+
+### GameCube Backup Manager 2.6.0.9 (1 de setembro, 2022)
 
 [Corrigido] deveria ser um pouco mais estável agora?
 [Melhorado] melhorias internas no código.
 
-### GameCube Backup Manager 2.6.0.8 (29 de agosto de 2022)
+### GameCube Backup Manager 2.6.0.8 (29 de agosto, 2022)
 
 [Adicionado] botão para limpar a lista, embora isso possa ser inútil (Demorou 3 segundos, pode remover).
 [Corrigido] exclusão de todos os jogos de origem funciona novamente (Embora com algum comportamento estranho com a atualização do DGV toda vez que um arquivo é excluído. Pode ser otimizado posteriormente).
 [Melhorado] pequenas melhorias nas traduções.
 [Alterado] nomenclatura "Remover" para "Excluir" por motivos de esclarecimento.
 
-### GameCube Backup Manager 2.6.0.7 (28 de agosto de 2022)
+### GameCube Backup Manager 2.6.0.7 (28 de agosto, 2022)
 
 [Adicionado] clicar no indicador de status da rede agora verifica novamente se há uma conexão de rede e solicitará o download do WiiTDB.
 [Corrigido] algumas pequenas falhas nainterface.
@@ -18,27 +26,27 @@
 [Melhorado] seleção de uma unidade de destino responde MUITO mais rápido agora (deve impedir a possibilidade de bloqueios de interface).
 [Alterado] formulário de download do WiiTDB agora é exibido na primeira inicialização se uma conexão de rede for detectada (explicando visualmente ao usuário o que estamos fazendo).
 
-### GameCube Backup Manager 2.6.0.6 (27 de agosto de 2022)
+### GameCube Backup Manager 2.6.0.6 (27 de agosto, 2022)
 
 [Corrigido] espero que várias coisas.
 [Melhorado] barra de progresso para exibir o progresso da verificação do diretório escolhido.
 
-### GameCube Backup Manager 2.6.0.5 (24 de agosto de 2022)
+### GameCube Backup Manager 2.6.0.5 (24 de agosto, 2022)
 
 [Adicionado] exibição do progresso ao carregar um diretório.
 
-### GameCube Backup Manager 2.6.0.3 (17 de agosto de 2022)
+### GameCube Backup Manager 2.6.0.3 (17 de agosto, 2022)
 
 [Adicionado] download do arquivo WiiTDB.xml em segundo plano no lançamento.
 [Corrigido] vários erros de tradução e erros gramaticais.
 [Melhorado] várias adições de novos colaboradores
 
-### GameCube Backup Manager 2.6.0.2 (13 de julho de 2022)
+### GameCube Backup Manager 2.6.0.2 (13 de julho, 2022)
 
 [Adicionado] rótulo para exibir o número de jogos encontrados.
 [Melhorado] sistema de pesquisa agora é atualizado ao vivo enquanto você digita.
 
-### GameCube Backup Manager 2.6.0.1 (12 de julho de 2022)
+### GameCube Backup Manager 2.6.0.1 (12 de julho, 2022)
 
 [Adicionado] botão para cancelar a fila de transferência.
 [Corrigido] outras correções.
