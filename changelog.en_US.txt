@@ -1,55 +1,55 @@
 ### GameCube Backup Manager 2.6.0.9 (September 1, 2022)
 
-[Changed] Internal changes to code.
-[Fixed] Should be slightly more stable now?
+[Fixed] should it be a little more stable now?
+[Improved] internal code improvements.
 
 ### GameCube Backup Manager 2.6.0.8 (August 29, 2022)
 
-[Fixed] Deleting all source games works once more. Although with some strange behavior with refreshing the DGV every time a file is deleted. Can be optimized later.
-[Changed] Changed "Remove" to "Delete" for clarification reasons.
-[Added] Button to Clear the list, although this might be useless. Took 3 seconds, can remove.
-[Translation] Minor improvements to translations.
+[Added] button to clear the list, although this might be useless (Took 3 seconds, can remove).
+[Fixed] deleting all source games works again (Although with some weird behavior with DGV updating every time a file is deleted. Can be optimized later).
+[Improved] minor translation improvements.
+[Changed] naming "Remove" to "Delete" for clarity.
 
-### GameCube Backup Manager 2.6.0.7 (August 28, 2022)
+### GameCube Backup Manager 2.6.0.7 (28 Aug 2022)
 
-[Improved] Selecting a destination drive responds MUCH faster now. Should negate the possibility for interface locks.
-[Changed] WiiTDB Download form now shows on first launch if a network connection is detected, visually explaining to the user what we're doing.
-[Fixed] Some minor interface fixes.
-[Added] Clicking on the network status indicator now rechecks for a network connection, and will ask to download WiiTDB.
-[Improved] Stability improvements, added a few failsafes.
+[Added] clicking the network status indicator now rechecks for a network connection and will prompt you to download WiiTDB.
+[Fixed] some minor glitches in the interface.
+[Improved] overall program stability, added some crash protections.
+[Improved] selecting a target drive responds MUCH faster now (should prevent the possibility of interface locks).
+[Changed] WiiTDB download form is now displayed on first launch if a network connection is detected (visually explaining to the user what we are doing).
 
-### GameCube Backup Manager 2.6.0.6 (August 27, 2022)
+### GameCube Backup Manager 2.6.0.6 (27 Aug 2022)
 
-[Improved] Progress bar to display the progress of scanning the chosen directory.
-[Fixed] Hopefully various things.
+[Corrected] I hope several things.
+[Improved] progress bar to display the scan progress of the chosen directory.
 
-### GameCube Backup Manager 2.6.0.5 (August 24, 2022)
+### GameCube Backup Manager 2.6.0.5 (24 Aug 2022)
 
-[Added] Display progress while loading directory.
+[Added] display of progress when loading a directory.
 
 ### GameCube Backup Manager 2.6.0.3 (August 17, 2022)
 
-[Added] Attempts to download WiiTDB.xml in the background on launch.
-[Fixed] Various mistranslations and grammatical errors.
-[Improved] Various additions from new contributors 
+[Added] WiiTDB.xml file download in background on launch.
+[Fixed] various translation errors and grammatical errors.
+[Improved] various new contributor additions
 
 ### GameCube Backup Manager 2.6.0.2 (July 13, 2022)
 
-[Added] label to display the number of games found.
-[Improved] search system is now updated live as you type.
+[Added] label to display the number of matches found.
+[Improved] search system now updates live as you type.
 
 ### GameCube Backup Manager 2.6.0.1 (July 12, 2022)
 
 [Added] button to cancel transfer queue.
-[Changed] Internet check on startup by default.
 [Fixed] other fixes.
 [Improved] overall program stability.
 [Improved] more responsive UI.
+[Changed] internet check on startup by default.
 
 ### GameCube Backup Manager 2.6.0.0 (July 12, 2022)
 
 [Fixed] mismatch between columns and data.
-[Fixed] database not loading on launch.
+[Fixed] fixed database not loading on launch.
 [Fixed] other various bug fixes and maintenance.
 [Improved] improved stability of batch installs.
 
