@@ -513,7 +513,13 @@
   <data name="AskDownloadWiiTDB" xml:space="preserve">
     <value>WiiTDB.zip을 찾을 수 없습니다. 지금 다운로드하시겠습니까?</value>
   </data>
-  <data name="TransferCompleteAll" xml:space="preserve">
-    <value>{0} 파일 전송을 완료했습니다.</value>
+  <data name="GameDoneTransferring" xml:space="preserve">
+    <value>설치된 게임: </value>
+  </data>
+  <data name="DoneTransferringAll" xml:space="preserve">
+    <value>{0} 게임을 "{1}" 드라이브로 전송 완료</value>
+  </data>
+  <data name="SilenceNotifications" xml:space="preserve">
+    <value>무음 알림</value>
   </data>
 </root>

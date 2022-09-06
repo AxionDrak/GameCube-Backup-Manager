@@ -236,15 +236,11 @@
   <data name="grpNomenclatureFolderFormat.Text" xml:space="preserve">
     <value>Formato de carpeta</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="cbNotificationToggle.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="checkBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>146, 17</value>
   </data>
-  <data name="cbNotificationToggle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 17</value>
-  </data>
-  <data name="cbNotificationToggle.Text" xml:space="preserve">
-    <value>Silenciar notificações</value>
+  <data name="checkBox1.Text" xml:space="preserve">
+    <value>Notificaciones de silencio</value>
   </data>
   <data name="chkMultipleInstances.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>

@@ -117,17 +117,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="&gt;&gt;tabSettingsCovers.Name" xml:space="preserve">
-    <value>tabSettingsCovers</value>
-  </data>
-  <data name="&gt;&gt;rbGameInternalName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;chkNotify.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblLanguage.Parent" xml:space="preserve">
     <value>grbLanguage</value>
-  </data>
-  <data name="&gt;&gt;tbServerProxy.Parent" xml:space="preserve">
-    <value>grbUpdate</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="grbGeneralDiverse.Font" type="System.Drawing.Font, System.Drawing">
@@ -155,8 +149,8 @@
   <data name="&gt;&gt;btnCoverDirectory.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;grbTitleFileLocation.Name" xml:space="preserve">
-    <value>grbTitleFileLocation</value>
+  <data name="chkUpdateVerifyStart.Size" type="System.Drawing.Size, System.Drawing">
+    <value>171, 17</value>
   </data>
   <data name="tabSettings.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -190,9 +184,6 @@
   </data>
   <data name="chkGeneralExtractRar.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
-  </data>
-  <data name="&gt;&gt;btnDirectoryCoverDisc.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="tbTitleCustom.Text" xml:space="preserve">
     <value>%APP%\custom-titles.txt</value>
@@ -230,11 +221,14 @@
   <data name="pictureBox2.Location" type="System.Drawing.Point, System.Drawing">
     <value>18, 33</value>
   </data>
-  <data name="&gt;&gt;chkLoadDatabase.Parent" xml:space="preserve">
-    <value>grbGeneralDiverse</value>
+  <data name="cbVerificationInterval.Items4" xml:space="preserve">
+    <value>1 hora</value>
   </data>
   <data name="cbVerificationInterval.Items5" xml:space="preserve">
     <value>2 horas</value>
+  </data>
+  <data name="rbCoverWiiFlow.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="chkGeneralExtractRar.Location" type="System.Drawing.Point, System.Drawing">
     <value>10, 94</value>
@@ -242,8 +236,8 @@
   <data name="chkGameTitleCustom.Size" type="System.Drawing.Size, System.Drawing">
     <value>228, 17</value>
   </data>
-  <data name="&gt;&gt;tbServerProxy.Name" xml:space="preserve">
-    <value>tbServerProxy</value>
+  <data name="chkManagerLogWindow.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="&gt;&gt;rbGeneralDiscClean.Type" xml:space="preserve">
     <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -263,8 +257,8 @@
   <data name="&gt;&gt;chkNetVerify.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;chkGeneralExtractRar.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="&gt;&gt;rbGameXmlName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="chkCoverRecursiveSearch.Text" xml:space="preserve">
     <value>Usar pesquisa recursiva de capas (pesquisar em todas as regiões)</value>
@@ -287,11 +281,11 @@
   <data name="&gt;&gt;grbDolphin.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="&gt;&gt;cbLanguage.Name" xml:space="preserve">
+    <value>cbLanguage</value>
+  </data>
   <data name="&gt;&gt;tbDirectoryCoverCache.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="&gt;&gt;lblNomenclature.Parent" xml:space="preserve">
-    <value>grpNomenclatureFolderFormat</value>
   </data>
   <data name="lblLOG.Size" type="System.Drawing.Size, System.Drawing">
     <value>76, 13</value>
@@ -302,11 +296,14 @@
   <data name="grbTransferSystem.Size" type="System.Drawing.Size, System.Drawing">
     <value>539, 95</value>
   </data>
+  <data name="rbCoverWiiFlow.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="label8.Text" xml:space="preserve">
     <value>Localização da pasta:</value>
   </data>
   <data name="tabSettingsUpdates.Size" type="System.Drawing.Size, System.Drawing">
-    <value>554, 363</value>
+    <value>556, 363</value>
   </data>
   <data name="chkCoverEnableTransfer.Size" type="System.Drawing.Size, System.Drawing">
     <value>248, 17</value>
@@ -315,9 +312,6 @@
     <value>540, 0</value>
   </data>
   <data name="rbGeneralDiscClean.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;rbGameXmlName.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="&gt;&gt;cbTitleLanguage.Name" xml:space="preserve">
@@ -344,6 +338,9 @@
   <data name="&gt;&gt;chkGeneralExtractBZip2.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;tbServerProxy.Name" xml:space="preserve">
+    <value>tbServerProxy</value>
+  </data>
   <data name="grbGeneralTemporaryFolder.Location" type="System.Drawing.Point, System.Drawing">
     <value>7, 282</value>
   </data>
@@ -364,6 +361,9 @@
   </data>
   <data name="lblServerProxy.Text" xml:space="preserve">
     <value>Servidor proxy:</value>
+  </data>
+  <data name="&gt;&gt;btnCancel.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="cbTitleLanguage.Items5" xml:space="preserve">
     <value>Holandês</value>
@@ -406,7 +406,7 @@
     <value>grbGeneralFiles</value>
   </data>
   <data name="tabSettingsSeveral.Size" type="System.Drawing.Size, System.Drawing">
-    <value>554, 363</value>
+    <value>556, 363</value>
   </data>
   <data name="label20.Size" type="System.Drawing.Size, System.Drawing">
     <value>458, 39</value>
@@ -429,11 +429,14 @@
   <data name="chkCoverRecursiveSearch.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
+  <data name="&gt;&gt;lblXCopy.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
   <data name="cbTitleLanguage.Items7" xml:space="preserve">
     <value>Japonês</value>
   </data>
   <data name="tabSettingsDolphin.Size" type="System.Drawing.Size, System.Drawing">
-    <value>554, 363</value>
+    <value>556, 363</value>
   </data>
   <data name="&gt;&gt;cbAdjustNamingStyle.Name" xml:space="preserve">
     <value>cbAdjustNamingStyle</value>
@@ -489,8 +492,8 @@
   <data name="&gt;&gt;label31.Name" xml:space="preserve">
     <value>label31</value>
   </data>
-  <data name="grbTitleDiverse.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 6</value>
+  <data name="&gt;&gt;grbGeneralFileSize.Parent" xml:space="preserve">
+    <value>tabSettingsGeneral</value>
   </data>
   <data name="cbScrubAlign.Location" type="System.Drawing.Point, System.Drawing">
     <value>92, 46</value>
@@ -510,11 +513,17 @@
   <data name="label31.Size" type="System.Drawing.Size, System.Drawing">
     <value>452, 26</value>
   </data>
+  <data name="lblFST.Size" type="System.Drawing.Size, System.Drawing">
+    <value>38, 13</value>
+  </data>
   <data name="btnDirectoryCover3D.Location" type="System.Drawing.Point, System.Drawing">
     <value>481, 29</value>
   </data>
   <data name="&gt;&gt;grbTransferSystem.ZOrder" xml:space="preserve">
     <value>9</value>
+  </data>
+  <data name="tabSettingsGeneral.Text" xml:space="preserve">
+    <value>Geral</value>
   </data>
   <data name="lblPass.Location" type="System.Drawing.Point, System.Drawing">
     <value>111, 203</value>
@@ -522,8 +531,8 @@
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
     <value>7, 22</value>
   </data>
-  <data name="btnTitleDownload.Text" xml:space="preserve">
-    <value>Download titles.txt</value>
+  <data name="&gt;&gt;chkGeneralExtractRar.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="grpNomenclatureFolderFormat.Size" type="System.Drawing.Size, System.Drawing">
     <value>539, 74</value>
@@ -666,6 +675,9 @@
   <data name="cbGeneralFileSize.Location" type="System.Drawing.Point, System.Drawing">
     <value>7, 22</value>
   </data>
+  <data name="&gt;&gt;chkManagerLogWindow.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;rbTransferSystemXCopy.Name" xml:space="preserve">
     <value>rbTransferSystemXCopy</value>
   </data>
@@ -690,6 +702,9 @@
   <data name="cbLanguage.Items1" xml:space="preserve">
     <value>English [US]</value>
   </data>
+  <data name="&gt;&gt;rbGameXmlName.Name" xml:space="preserve">
+    <value>rbGameXmlName</value>
+  </data>
   <data name="&gt;&gt;chkManagerLogSystemConsole.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -705,6 +720,9 @@
   <data name="&gt;&gt;label5.Parent" xml:space="preserve">
     <value>grbTitleFileLocation</value>
   </data>
+  <data name="&gt;&gt;rbVkGL.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="&gt;&gt;chkGeneralMD5.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -713,6 +731,9 @@
   </data>
   <data name="&gt;&gt;tabSettingsNomenclature.Type" xml:space="preserve">
     <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="pictureBox1.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>AutoSize</value>
   </data>
   <data name="&gt;&gt;cbVerificationInterval.Parent" xml:space="preserve">
     <value>grbUpdate</value>
@@ -741,8 +762,8 @@
   <data name="chkMultipleInstances.Text" xml:space="preserve">
     <value>Permitir a execução de múltiplas instâncias do programa</value>
   </data>
-  <data name="&gt;&gt;grbGeneralScrub.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="cbScrubAlign.Items2" xml:space="preserve">
+    <value>32 bytes</value>
   </data>
   <data name="cbScrubAlign.Items3" xml:space="preserve">
     <value>32 KB</value>
@@ -768,9 +789,6 @@
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
     <value>79, 13</value>
   </data>
-  <data name="rbCoverUSBLoaderGX.Size" type="System.Drawing.Size, System.Drawing">
-    <value>238, 17</value>
-  </data>
   <data name="&gt;&gt;tbTitle.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
@@ -786,12 +804,6 @@
   <data name="grbLanguage.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="lblUser.Text" xml:space="preserve">
-    <value>Usuário:</value>
-  </data>
-  <data name="cbVerificationInterval.Items7" xml:space="preserve">
-    <value>4 horas</value>
-  </data>
   <data name="&gt;&gt;rbTransferSystemFST.Name" xml:space="preserve">
     <value>rbTransferSystemFST</value>
   </data>
@@ -800,9 +812,6 @@
   </data>
   <data name="btnTemporaryFolder.Location" type="System.Drawing.Point, System.Drawing">
     <value>499, 19</value>
-  </data>
-  <data name="rbVkGL.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="&gt;&gt;grbDolphin.Name" xml:space="preserve">
     <value>grbDolphin</value>
@@ -813,9 +822,6 @@
   <data name="label20.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>470, 0</value>
   </data>
-  <data name="cbTitleLanguage.Items3" xml:space="preserve">
-    <value>Espanhol</value>
-  </data>
   <data name="&gt;&gt;lblScrub.Name" xml:space="preserve">
     <value>lblScrub</value>
   </data>
@@ -825,11 +831,11 @@
   <data name="&gt;&gt;chkScreensaver.Name" xml:space="preserve">
     <value>chkScreensaver</value>
   </data>
-  <data name="&gt;&gt;lblCommentsExactCopy.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="&gt;&gt;chkCoverEnableTransfer.Parent" xml:space="preserve">
     <value>grpCoversSynchronize</value>
+  </data>
+  <data name="chkGameTitle.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>frmConfig</value>
@@ -840,20 +846,17 @@
   <data name="&gt;&gt;chkGameTitleCustom.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;lblLanguage.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="&gt;&gt;tabCoverDisc.Type" xml:space="preserve">
     <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="rbTransferSystemFST.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="grbUpdate.Text" xml:space="preserve">
-    <value>Configurações de Atualização</value>
-  </data>
   <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
     <value>111, 13</value>
-  </data>
-  <data name="&gt;&gt;fbd.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FolderBrowserDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="chkUpdateServerProxy.Size" type="System.Drawing.Size, System.Drawing">
     <value>116, 17</value>
@@ -863,9 +866,6 @@
   </data>
   <data name="grpTitlesCoverFolder.Location" type="System.Drawing.Point, System.Drawing">
     <value>7, 107</value>
-  </data>
-  <data name="cbNotificationToggle.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
   </data>
   <data name="&gt;&gt;lblFST.ZOrder" xml:space="preserve">
     <value>6</value>
@@ -888,26 +888,23 @@
   <data name="&gt;&gt;lblFormat.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="btnTemporaryFolder.Text" xml:space="preserve">
-    <value>...</value>
-  </data>
   <data name="tabSettingsTransfer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>554, 363</value>
+    <value>556, 363</value>
   </data>
   <data name="grpNomenclatureFolderFormat.Location" type="System.Drawing.Point, System.Drawing">
     <value>7, 6</value>
   </data>
+  <data name="rbGameXmlName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>467, 17</value>
+  </data>
   <data name="tabCoverFront.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
-  </data>
-  <data name="cbNotificationToggle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 275</value>
   </data>
   <data name="&gt;&gt;tbTitle.Parent" xml:space="preserve">
     <value>grbTitleFileLocation</value>
   </data>
   <data name="tabSettingsTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>554, 363</value>
+    <value>556, 363</value>
   </data>
   <data name="&gt;&gt;rbCoverWiiFlow.Name" xml:space="preserve">
     <value>rbCoverWiiFlow</value>
@@ -919,7 +916,7 @@
     <value>True</value>
   </data>
   <data name="tabSettingsLog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>554, 363</value>
+    <value>556, 363</value>
   </data>
   <data name="cbTitleLanguage.Items1" xml:space="preserve">
     <value>Francês</value>
@@ -929,9 +926,6 @@
   </data>
   <data name="&gt;&gt;grpNomenclatureFolderFormat.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tbDirectoryCoverFull.Name" xml:space="preserve">
-    <value>tbDirectoryCoverFull</value>
   </data>
   <data name="label17.Size" type="System.Drawing.Size, System.Drawing">
     <value>468, 26</value>
@@ -984,6 +978,12 @@
   <data name="&gt;&gt;tabCover3D.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="label8.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;chkManagerLogFile.Name" xml:space="preserve">
+    <value>chkManagerLogFile</value>
+  </data>
   <data name="chkGameTitle.Text" xml:space="preserve">
     <value>Usar GameTDB (titles.txt)</value>
   </data>
@@ -1005,14 +1005,11 @@
   <data name="cbGeneralFileSize.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="rbDX12.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
   <data name="&gt;&gt;label6.Parent" xml:space="preserve">
     <value>tabCoverFront</value>
   </data>
-  <data name="btnDirectoryCover3D.TabIndex" type="System.Int32, mscorlib">
-    <value>26</value>
+  <data name="&gt;&gt;grpNomenclatureFolderFormat.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="&gt;&gt;tabSettingsLog.Type" xml:space="preserve">
     <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -1023,8 +1020,8 @@
   <data name="lblAlignment.Location" type="System.Drawing.Point, System.Drawing">
     <value>7, 49</value>
   </data>
-  <data name="&gt;&gt;chkCoverRecursiveSearch.Name" xml:space="preserve">
-    <value>chkCoverRecursiveSearch</value>
+  <data name="grbCoverTransfer.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="&gt;&gt;chkNotify.Name" xml:space="preserve">
     <value>chkNotify</value>
@@ -1053,9 +1050,6 @@
   <data name="&gt;&gt;tbTitleCustom.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="tabSettingsGeneral.Size" type="System.Drawing.Size, System.Drawing">
-    <value>554, 363</value>
-  </data>
   <data name="chkNotify.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -1080,8 +1074,11 @@
   <data name="label6.Text" xml:space="preserve">
     <value>Localização da pasta:</value>
   </data>
-  <data name="&gt;&gt;lblXCopy.ZOrder" xml:space="preserve">
-    <value>7</value>
+  <data name="&gt;&gt;chkCoverRecursiveSearch.Name" xml:space="preserve">
+    <value>chkCoverRecursiveSearch</value>
+  </data>
+  <data name="btnDirectoryCoverDisc.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
   </data>
   <data name="chkGeneralExtractBZip2.Size" type="System.Drawing.Size, System.Drawing">
     <value>160, 17</value>
@@ -1104,20 +1101,17 @@
   <data name="&gt;&gt;lblWipe.Parent" xml:space="preserve">
     <value>tabSettingsTransfer</value>
   </data>
-  <data name="grbDolphinFolder.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
   <data name="&gt;&gt;chkCoverRecursiveSearch.Parent" xml:space="preserve">
     <value>grpCoversSynchronize</value>
+  </data>
+  <data name="chkNetVerify.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
   </data>
   <data name="lblPass.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
   </data>
-  <data name="cbVerificationInterval.Items" xml:space="preserve">
-    <value>5 minutos</value>
-  </data>
-  <data name="&gt;&gt;chkManagerLogWindow.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;chkUpdateVerifyStart.Parent" xml:space="preserve">
+    <value>grbUpdate</value>
   </data>
   <data name="&gt;&gt;chkGeneralSHA1.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -1137,8 +1131,8 @@
   <data name="tabCoverFront.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;tabCoverFull.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="&gt;&gt;rbGeneralDiscDelete.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="label28.Location" type="System.Drawing.Point, System.Drawing">
     <value>67, 312</value>
@@ -1158,11 +1152,11 @@
   <data name="&gt;&gt;rbDSPHLE.Parent" xml:space="preserve">
     <value>grbDolphinAudio</value>
   </data>
-  <data name="&gt;&gt;rbDSPLLE.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="chkGeneralMD5.Text" xml:space="preserve">
     <value>Calcular assinatura MD5 durante transferências</value>
+  </data>
+  <data name="label6.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
   </data>
   <data name="grbGeneralScrub.Text" xml:space="preserve">
     <value>Scrub</value>
@@ -1170,8 +1164,8 @@
   <data name="&gt;&gt;chkGeneralScrubFlushSD.Parent" xml:space="preserve">
     <value>grbGeneralScrub</value>
   </data>
-  <data name="chkGameTitle.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="btnTitleDownload.Text" xml:space="preserve">
+    <value>Download titles.txt</value>
   </data>
   <data name="lblCommentsScrubCopy.Location" type="System.Drawing.Point, System.Drawing">
     <value>10, 152</value>
@@ -1183,7 +1177,7 @@
     <value>7, 65</value>
   </data>
   <data name="tabSettingsLanguage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>554, 363</value>
+    <value>556, 363</value>
   </data>
   <data name="&gt;&gt;tabSettingsLog.ZOrder" xml:space="preserve">
     <value>9</value>
@@ -1215,8 +1209,8 @@
   <data name="chkGeneralMD5.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;cbNotificationToggle.Parent" xml:space="preserve">
-    <value>grbGeneralDiverse</value>
+  <data name="&gt;&gt;label31.Parent" xml:space="preserve">
+    <value>tabSettingsTransfer</value>
   </data>
   <data name="lblUser.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -1257,11 +1251,11 @@
   <data name="chkUpdateServerProxy.Text" xml:space="preserve">
     <value>Usar servidor proxy</value>
   </data>
-  <data name="&gt;&gt;rbVkGL.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="label20.Location" type="System.Drawing.Point, System.Drawing">
+    <value>67, 231</value>
   </data>
-  <data name="btnTitleCustom.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+  <data name="rbTransferSystemXCopy.Location" type="System.Drawing.Point, System.Drawing">
+    <value>17, 21</value>
   </data>
   <data name="pictureBox1.Size" type="System.Drawing.Size, System.Drawing">
     <value>64, 64</value>
@@ -1275,20 +1269,17 @@
   <data name="chkGeneralExtractSplitFile.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="&gt;&gt;label31.Parent" xml:space="preserve">
-    <value>tabSettingsTransfer</value>
-  </data>
   <data name="&gt;&gt;tabSettingsSeveral.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
   <data name="&gt;&gt;checkBox1.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tbServerProxy.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="lblFormat.Text" xml:space="preserve">
+    <value>Formato:</value>
   </data>
-  <data name="chkCoverRecursiveSearch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>337, 17</value>
+  <data name="&gt;&gt;grbGeneralScrub.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="chkNotify.Size" type="System.Drawing.Size, System.Drawing">
     <value>510, 17</value>
@@ -1301,6 +1292,9 @@
   </data>
   <data name="&gt;&gt;btnTemporaryFolder.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="tbUserProxy.Location" type="System.Drawing.Point, System.Drawing">
+    <value>194, 174</value>
   </data>
   <data name="&gt;&gt;btnRestore.Name" xml:space="preserve">
     <value>btnRestore</value>
@@ -1317,9 +1311,6 @@
   <data name="cbTitleLanguage.Items2" xml:space="preserve">
     <value>Alemão</value>
   </data>
-  <data name="&gt;&gt;grbTitleLanguage.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="&gt;&gt;lblCommentsExactCopy.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -1329,8 +1320,8 @@
   <data name="cbScrubAlign.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;rbGameXmlName.Name" xml:space="preserve">
-    <value>rbGameXmlName</value>
+  <data name="label5.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
   </data>
   <data name="pictureBox2.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -1338,11 +1329,8 @@
   <data name="btnCoverDirectory.Size" type="System.Drawing.Size, System.Drawing">
     <value>31, 27</value>
   </data>
-  <data name="&gt;&gt;tbTitle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;grbCoverTransfer.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;chkNetVerify.ZOrder" xml:space="preserve">
+    <value>6</value>
   </data>
   <data name="&gt;&gt;btnOK.ZOrder" xml:space="preserve">
     <value>2</value>
@@ -1355,6 +1343,9 @@
   </data>
   <data name="btnCoverDirectory.Text" xml:space="preserve">
     <value>...</value>
+  </data>
+  <data name="lblUser.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="&gt;&gt;btnRestore.Parent" xml:space="preserve">
     <value>$this</value>
@@ -1389,6 +1380,9 @@
   <data name="&gt;&gt;lblPass.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
+  <data name="chkCoverRecursiveSearch.Size" type="System.Drawing.Size, System.Drawing">
+    <value>337, 17</value>
+  </data>
   <data name="lblLOG.Text" xml:space="preserve">
     <value>Nível de LOG:</value>
   </data>
@@ -1401,14 +1395,17 @@
   <data name="&gt;&gt;cbScrubFormat.Name" xml:space="preserve">
     <value>cbScrubFormat</value>
   </data>
+  <data name="&gt;&gt;label17.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="chkCoverSynchronizeDelete.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="grbGeneralDiverse.Text" xml:space="preserve">
-    <value>Diversos</value>
+  <data name="&gt;&gt;tabCover3D.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;rbTransferSystemFST.Parent" xml:space="preserve">
-    <value>grbTransferSystem</value>
+  <data name="lblFormat.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="chkGeneralExtract7z.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1452,8 +1449,8 @@
   <data name="chkStartWindowMaximized.Text" xml:space="preserve">
     <value>Iniciar janela maximizada</value>
   </data>
-  <data name="grbDolphin.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 3</value>
+  <data name="&gt;&gt;grpCoversSynchronize.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btnTitle.ZOrder" xml:space="preserve">
     <value>3</value>
@@ -1473,8 +1470,8 @@
   <data name="&gt;&gt;chkUpdateServerProxy.Parent" xml:space="preserve">
     <value>grbUpdate</value>
   </data>
-  <data name="&gt;&gt;tbDirectoryCover3D.Parent" xml:space="preserve">
-    <value>tabCover3D</value>
+  <data name="&gt;&gt;lblFormat.Parent" xml:space="preserve">
+    <value>grbGeneralScrub</value>
   </data>
   <data name="&gt;&gt;chkGeneralExtractBZip2.ZOrder" xml:space="preserve">
     <value>2</value>
@@ -1487,9 +1484,6 @@
   </data>
   <data name="label35.Size" type="System.Drawing.Size, System.Drawing">
     <value>111, 13</value>
-  </data>
-  <data name="grbCoverTransfer.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="tabCoverFront.Size" type="System.Drawing.Size, System.Drawing">
     <value>518, 72</value>
@@ -1569,6 +1563,9 @@
   <data name="grbDolphinAudio.Text" xml:space="preserve">
     <value>Áudio</value>
   </data>
+  <data name="&gt;&gt;lblTimeInterval.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;tbGeneralTempPath.Name" xml:space="preserve">
     <value>tbGeneralTempPath</value>
   </data>
@@ -1581,11 +1578,11 @@
   <data name="&gt;&gt;chkStartWindowMaximized.Name" xml:space="preserve">
     <value>chkStartWindowMaximized</value>
   </data>
+  <data name="&gt;&gt;label4.Name" xml:space="preserve">
+    <value>label4</value>
+  </data>
   <data name="&gt;&gt;grbTitleFileLocation.Parent" xml:space="preserve">
     <value>tabSettingsTitle</value>
-  </data>
-  <data name="&gt;&gt;chkManagerLogWindow.ZOrder" xml:space="preserve">
-    <value>3</value>
   </data>
   <data name="rbTransferSystemXCopy.Size" type="System.Drawing.Size, System.Drawing">
     <value>99, 17</value>
@@ -1602,23 +1599,23 @@
   <data name="chkGeneralExtractBZip2.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="lblFormat.Text" xml:space="preserve">
-    <value>Formato:</value>
+  <data name="rbVkGL.Text" xml:space="preserve">
+    <value>Vulkan/OpenGL</value>
   </data>
-  <data name="tabSettingsSeveral.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="chkGeneralExtractRar.Text" xml:space="preserve">
+    <value>Arquivos RAR (*.rar)</value>
   </data>
-  <data name="&gt;&gt;rbTransferSystemWipe.Parent" xml:space="preserve">
-    <value>grbTransferSystem</value>
+  <data name="lblUser.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 13</value>
   </data>
   <data name="&gt;&gt;label20.Name" xml:space="preserve">
     <value>label20</value>
   </data>
-  <data name="&gt;&gt;btnApply.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="lblComments.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="tbTitle.Text" xml:space="preserve">
-    <value>%APP%\titles.txt</value>
+  <data name="&gt;&gt;tbDirectoryCover3D.Parent" xml:space="preserve">
+    <value>tabCover3D</value>
   </data>
   <data name="btnRestore.Size" type="System.Drawing.Size, System.Drawing">
     <value>140, 23</value>
@@ -1631,9 +1628,6 @@
   </data>
   <data name="&gt;&gt;grbGeneralScrub.Name" xml:space="preserve">
     <value>grbGeneralScrub</value>
-  </data>
-  <data name="&gt;&gt;rbCoverWiiFlow.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="tabSettingsTransfer.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -1683,11 +1677,8 @@
   <data name="&gt;&gt;lblScrub.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;cbLanguage.Parent" xml:space="preserve">
-    <value>grbLanguage</value>
-  </data>
-  <data name="rbGameXmlName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>467, 17</value>
+  <data name="lblTimeInterval.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="rbGeneralDiscDelete.Size" type="System.Drawing.Size, System.Drawing">
     <value>438, 19</value>
@@ -1731,17 +1722,14 @@
   <data name="lblCommentsScrubCopy.Size" type="System.Drawing.Size, System.Drawing">
     <value>537, 52</value>
   </data>
-  <data name="&gt;&gt;cbTitleLanguage.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="&gt;&gt;lblLOG.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="tabSettingsTitle.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
   </data>
-  <data name="chkUpdateVerifyStart.Size" type="System.Drawing.Size, System.Drawing">
-    <value>171, 17</value>
+  <data name="&gt;&gt;btnTitleDownload.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="label35.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1761,6 +1749,9 @@
   <data name="tabSettingsTitle.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
+  <data name="&gt;&gt;chkGameTitleCustom.Parent" xml:space="preserve">
+    <value>grbTitleDiverse</value>
+  </data>
   <data name="label20.Text" xml:space="preserve">
     <value>Similar ao XCopy com a diferença que é efetuada a limpeza dos dados garbage (lixo) existentes dentro dos arquivos. O tamanho original do arquivo é mantido. Os dados garbage (lixo) são removidos mantendo a integridade dos demais dados.</value>
   </data>
@@ -1770,8 +1761,8 @@
   <data name="&gt;&gt;lblComments.Parent" xml:space="preserve">
     <value>tabSettingsNomenclature</value>
   </data>
-  <data name="grbGeneralDiverse.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 6</value>
+  <data name="&gt;&gt;tabCoverFull.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="chkGameTitle.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -1803,17 +1794,14 @@
   <data name="grbTitleDiverse.Size" type="System.Drawing.Size, System.Drawing">
     <value>539, 112</value>
   </data>
-  <data name="chkGeneralExtractBZip2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>215, 48</value>
+  <data name="tbTitle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>486, 20</value>
   </data>
   <data name="&gt;&gt;chkGeneralExtractSplitFile.Name" xml:space="preserve">
     <value>chkGeneralExtractSplitFile</value>
   </data>
   <data name="lblWipe.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
-  </data>
-  <data name="chkManagerLogWindow.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="&gt;&gt;btnSelectFile.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -1860,6 +1848,9 @@
   <data name="&gt;&gt;lblServerProxy.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
+  <data name="&gt;&gt;btnApply.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="&gt;&gt;fbd.Name" xml:space="preserve">
     <value>fbd</value>
   </data>
@@ -1872,11 +1863,14 @@
   <data name="&gt;&gt;label8.Name" xml:space="preserve">
     <value>label8</value>
   </data>
+  <data name="&gt;&gt;chkGeneralExtractNwb.Parent" xml:space="preserve">
+    <value>grbGeneralFiles</value>
+  </data>
   <data name="grbGeneralFileSize.Text" xml:space="preserve">
     <value>Mostrar tamanho</value>
   </data>
-  <data name="&gt;&gt;chkUpdateVerifyStart.Parent" xml:space="preserve">
-    <value>grbUpdate</value>
+  <data name="chkLoadDatabase.Text" xml:space="preserve">
+    <value>Carregar Banco de Dados ao iniciar programa (aumenta o tempo de inicio do programa)</value>
   </data>
   <data name="&gt;&gt;label28.ZOrder" xml:space="preserve">
     <value>1</value>
@@ -1888,10 +1882,10 @@
     <value>Arquivos</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>582, 437</value>
+    <value>584, 437</value>
   </data>
-  <data name="btnCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>406, 407</value>
+  <data name="chkNetVerify.Text" xml:space="preserve">
+    <value>Verificar conexão com a internet ao iniciar programa</value>
   </data>
   <data name="&gt;&gt;rbGeneralDiscClean.Name" xml:space="preserve">
     <value>rbGeneralDiscClean</value>
@@ -1905,17 +1899,11 @@
   <data name="tbPathDolphinEmulator.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 19</value>
   </data>
-  <data name="chkManagerLogSystemConsole.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
   <data name="grbTransferSystem.Location" type="System.Drawing.Point, System.Drawing">
     <value>7, 6</value>
   </data>
   <data name="tabCoverDisc.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
-  </data>
-  <data name="&gt;&gt;cbLanguage.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="&gt;&gt;btnTitleDownload.Parent" xml:space="preserve">
     <value>grbTitleLanguage</value>
@@ -1933,7 +1921,7 @@
     <value>Registro (LOG)</value>
   </data>
   <data name="tabSettingsNomenclature.Size" type="System.Drawing.Size, System.Drawing">
-    <value>554, 363</value>
+    <value>556, 363</value>
   </data>
   <data name="btnCancel.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -1944,8 +1932,8 @@
   <data name="&gt;&gt;tbTitleCustom.Name" xml:space="preserve">
     <value>tbTitleCustom</value>
   </data>
-  <data name="&gt;&gt;tabSettingsSeveral.Name" xml:space="preserve">
-    <value>tabSettingsSeveral</value>
+  <data name="&gt;&gt;tabSettingsTitle.Parent" xml:space="preserve">
+    <value>tabSettings</value>
   </data>
   <data name="&gt;&gt;rbVkGL.Type" xml:space="preserve">
     <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -1968,11 +1956,11 @@
   <data name="chkManagerLogWindow.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="&gt;&gt;rbGeneralDiscDelete.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="chkManagerLogSystemConsole.Text" xml:space="preserve">
+    <value>LOG para Console do Sistema</value>
   </data>
-  <data name="label20.Location" type="System.Drawing.Point, System.Drawing">
-    <value>67, 231</value>
+  <data name="grbDolphinFolder.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
   </data>
   <data name="&gt;&gt;cbVerificationInterval.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -1982,9 +1970,6 @@
   </data>
   <data name="&gt;&gt;rbGameInternalName.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="chkManagerLogSystemConsole.Text" xml:space="preserve">
-    <value>LOG para Console do Sistema</value>
   </data>
   <data name="tbGeneralTempPath.Location" type="System.Drawing.Point, System.Drawing">
     <value>7, 22</value>
@@ -2022,9 +2007,6 @@
   <data name="&gt;&gt;chkManagerLogSystemConsole.Name" xml:space="preserve">
     <value>chkManagerLogSystemConsole</value>
   </data>
-  <data name="lblFormat.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="tbDirectoryCover3D.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
   </data>
@@ -2040,9 +2022,6 @@
   <data name="chkMultipleInstances.Location" type="System.Drawing.Point, System.Drawing">
     <value>10, 252</value>
   </data>
-  <data name="&gt;&gt;tabCoverDisc.Name" xml:space="preserve">
-    <value>tabCoverDisc</value>
-  </data>
   <data name="grbTitleLanguage.Location" type="System.Drawing.Point, System.Drawing">
     <value>7, 250</value>
   </data>
@@ -2052,8 +2031,8 @@
   <data name="cbLevelLog.Items" xml:space="preserve">
     <value>Informativo</value>
   </data>
-  <data name="checkBox1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;rbTransferSystemFST.Parent" xml:space="preserve">
+    <value>grbTransferSystem</value>
   </data>
   <data name="cbLanguage.Items" xml:space="preserve">
     <value>Português [Brasil]</value>
@@ -2063,6 +2042,9 @@
   </data>
   <data name="&gt;&gt;cbAdjustNamingStyle.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Configurações</value>
   </data>
   <data name="&gt;&gt;chkGeneralExtractZip.Parent" xml:space="preserve">
     <value>grbGeneralFiles</value>
@@ -2074,10 +2056,13 @@
     <value>tabSettings</value>
   </data>
   <data name="checkBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
+    <value>7</value>
   </data>
-  <data name="&gt;&gt;chkCoverSynchronizeDelete.Name" xml:space="preserve">
-    <value>chkCoverSynchronizeDelete</value>
+  <data name="&gt;&gt;grbTitleDiverse.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkGeneralExtractZip.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
   <data name="lblWipe.Size" type="System.Drawing.Size, System.Drawing">
     <value>40, 13</value>
@@ -2086,7 +2071,7 @@
     <value>lblFormat</value>
   </data>
   <data name="tabSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>562, 389</value>
+    <value>564, 389</value>
   </data>
   <data name="&gt;&gt;chkGeneralExtractSplitFile.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -2097,8 +2082,8 @@
   <data name="tabCoverFull.Text" xml:space="preserve">
     <value>Completo</value>
   </data>
-  <data name="&gt;&gt;lblTimeInterval.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="grbGeneralDiverse.Text" xml:space="preserve">
+    <value>Diversos</value>
   </data>
   <data name="&gt;&gt;pictureBox2.Name" xml:space="preserve">
     <value>pictureBox2</value>
@@ -2148,11 +2133,11 @@
   <data name="&gt;&gt;grpCoversSynchronize.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="&gt;&gt;tbServerProxy.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;label5.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;chkNotify.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btnOK.Name" xml:space="preserve">
     <value>btnOK</value>
@@ -2181,9 +2166,6 @@
   <data name="lblScrub.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="&gt;&gt;chkGeneralScrubFlushSD.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
   <data name="chkUpdateFileLog.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -2193,8 +2175,8 @@
   <data name="rbGeneralDiscClean.Size" type="System.Drawing.Size, System.Drawing">
     <value>346, 17</value>
   </data>
-  <data name="tabSettingsCovers.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
+  <data name="&gt;&gt;btnCoverDirectory.Parent" xml:space="preserve">
+    <value>grpTitlesCoverFolder</value>
   </data>
   <data name="&gt;&gt;cbGeneralFileSize.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -2219,9 +2201,6 @@
   </data>
   <data name="&gt;&gt;chkLoadDatabase.ZOrder" xml:space="preserve">
     <value>2</value>
-  </data>
-  <data name="grbGeneralTemporaryFolder.Text" xml:space="preserve">
-    <value>Pasta temporária</value>
   </data>
   <data name="rbCoverWiiFlow.Text" xml:space="preserve">
     <value>WiiFlow / WiiFlow Fusion / WiiFlow Lite</value>
@@ -2259,6 +2238,9 @@
   <data name="&gt;&gt;rbDX11.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="&gt;&gt;chkUpdateBetaChannel.Parent" xml:space="preserve">
+    <value>grbUpdate</value>
+  </data>
   <data name="tbPassProxy.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
   </data>
@@ -2271,11 +2253,11 @@
   <data name="&gt;&gt;chkUpdateBetaChannel.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;chkUpdateBetaChannel.Parent" xml:space="preserve">
-    <value>grbUpdate</value>
+  <data name="&gt;&gt;lblAlignment.Name" xml:space="preserve">
+    <value>lblAlignment</value>
   </data>
   <data name="tabSettingsCovers.Size" type="System.Drawing.Size, System.Drawing">
-    <value>554, 363</value>
+    <value>556, 363</value>
   </data>
   <data name="&gt;&gt;lblAlignment.Parent" xml:space="preserve">
     <value>grbGeneralScrub</value>
@@ -2286,26 +2268,26 @@
   <data name="grbTitleFileLocation.Size" type="System.Drawing.Size, System.Drawing">
     <value>539, 120</value>
   </data>
-  <data name="chkManagerLogDebugConsole.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="tabSettingsTitle.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
   <data name="&gt;&gt;btnTitleCustom.Parent" xml:space="preserve">
     <value>grbTitleFileLocation</value>
   </data>
-  <data name="&gt;&gt;ofdDolphin.Name" xml:space="preserve">
-    <value>ofdDolphin</value>
+  <data name="chkGeneralExtractZip.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblFST.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="chkManagerLogWindow.Text" xml:space="preserve">
     <value>LOG para Janela</value>
   </data>
-  <data name="chkGeneralExtractBZip2.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="chkMultipleInstances.Size" type="System.Drawing.Size, System.Drawing">
+    <value>289, 17</value>
   </data>
-  <data name="&gt;&gt;chkGeneralExtractZip.ZOrder" xml:space="preserve">
-    <value>5</value>
+  <data name="&gt;&gt;cbLanguage.Parent" xml:space="preserve">
+    <value>grbLanguage</value>
   </data>
   <data name="&gt;&gt;chkCoverEnableTransfer.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -2346,6 +2328,9 @@
   <data name="cbScrubAlign.Size" type="System.Drawing.Size, System.Drawing">
     <value>121, 21</value>
   </data>
+  <data name="&gt;&gt;chkGeneralExtractBZip2.Parent" xml:space="preserve">
+    <value>grbGeneralFiles</value>
+  </data>
   <data name="lblComments.Text" xml:space="preserve">
     <value>OBSERVAÇÕES:</value>
   </data>
@@ -2367,8 +2352,8 @@
   <data name="rbTransferSystemWipe.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="tabSettingsDolphin.Text" xml:space="preserve">
-    <value>Dolphin Emulator</value>
+  <data name="&gt;&gt;cbGeneralFileSize.Parent" xml:space="preserve">
+    <value>grbGeneralFileSize</value>
   </data>
   <data name="&gt;&gt;chkStartWindowMaximized.ZOrder" xml:space="preserve">
     <value>7</value>
@@ -2400,14 +2385,17 @@
   <data name="tabSettingsNomenclature.Text" xml:space="preserve">
     <value>Nomenclatura</value>
   </data>
-  <data name="&gt;&gt;cbScrubFormat.Parent" xml:space="preserve">
-    <value>grbGeneralScrub</value>
+  <data name="lblFST.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
   </data>
   <data name="&gt;&gt;label17.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
-  <data name="rbVkGL.Text" xml:space="preserve">
-    <value>Vulkan/OpenGL</value>
+  <data name="&gt;&gt;rbTransferSystemWipe.Parent" xml:space="preserve">
+    <value>grbTransferSystem</value>
+  </data>
+  <data name="&gt;&gt;lblPass.Parent" xml:space="preserve">
+    <value>grbUpdate</value>
   </data>
   <data name="lblXCopy.Size" type="System.Drawing.Size, System.Drawing">
     <value>47, 13</value>
@@ -2415,14 +2403,11 @@
   <data name="grpTitlesCoverFolder.Text" xml:space="preserve">
     <value>Pasta das capas (Cache -&gt; Origem)</value>
   </data>
-  <data name="&gt;&gt;tabCover3D.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;rbDSPLLE.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tabSettingsGeneral.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="rbCoverWiiFlow.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;tbTitle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;grbGeneralTemporaryFolder.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -2439,14 +2424,17 @@
   <data name="grbTitleLanguage.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="cbScrubAlign.Items2" xml:space="preserve">
-    <value>32 bytes</value>
+  <data name="tbDirectoryCoverFull.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
   </data>
-  <data name="&gt;&gt;tbGeneralTempPath.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="&gt;&gt;tbGeneralTempPath.Parent" xml:space="preserve">
+    <value>grbGeneralTemporaryFolder</value>
   </data>
-  <data name="&gt;&gt;btnTitleDownload.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="&gt;&gt;label31.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;label20.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="btnDirectoryCover2D.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
@@ -2457,17 +2445,23 @@
   <data name="&gt;&gt;btnApply.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="chkGameTitleCustom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 88</value>
+  <data name="chkCoverEnableTransfer.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="label4.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
+  </data>
+  <data name="&gt;&gt;chkMultipleInstances.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btnTemporaryFolder.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblPass.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnDirectoryCover2D.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;chkGameTitle.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -2505,9 +2499,6 @@
   <data name="&gt;&gt;grbDolphinFolder.Parent" xml:space="preserve">
     <value>grbDolphin</value>
   </data>
-  <data name="&gt;&gt;rbTransferSystemWipe.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="chkManagerLogWindow.Location" type="System.Drawing.Point, System.Drawing">
     <value>335, 72</value>
   </data>
@@ -2517,8 +2508,8 @@
   <data name="&gt;&gt;btnDirectoryCover3D.Name" xml:space="preserve">
     <value>btnDirectoryCover3D</value>
   </data>
-  <data name="&gt;&gt;chkGeneralExtractSplitFile.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="btnCoverDirectory.Location" type="System.Drawing.Point, System.Drawing">
+    <value>500, 19</value>
   </data>
   <data name="&gt;&gt;grbDolphinFolder.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -2526,8 +2517,8 @@
   <data name="rbGeneralDiscDelete.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9pt, style=Bold, Italic</value>
   </data>
-  <data name="&gt;&gt;chkManagerLogSystemConsole.ZOrder" xml:space="preserve">
-    <value>5</value>
+  <data name="&gt;&gt;grbTitleLanguage.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;tabSettingsTitle.ZOrder" xml:space="preserve">
     <value>5</value>
@@ -2565,11 +2556,14 @@
   <data name="label31.Location" type="System.Drawing.Point, System.Drawing">
     <value>67, 278</value>
   </data>
-  <data name="&gt;&gt;chkMultipleInstances.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;lblCommentsExactCopy.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="&gt;&gt;btnSelectFile.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="&gt;&gt;btnDirectoryCover2D.Parent" xml:space="preserve">
+    <value>tabCoverFront</value>
   </data>
   <data name="&gt;&gt;chkNotify.ZOrder" xml:space="preserve">
     <value>3</value>
@@ -2586,8 +2580,8 @@
   <data name="rbDX12.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="label5.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+  <data name="chkGeneralTemporaryBuffer.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 91</value>
   </data>
   <data name="rbCoverUSBLoaderGX.Location" type="System.Drawing.Point, System.Drawing">
     <value>7, 48</value>
@@ -2595,8 +2589,8 @@
   <data name="btnOK.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
   </data>
-  <data name="&gt;&gt;chkNetVerify.ZOrder" xml:space="preserve">
-    <value>6</value>
+  <data name="&gt;&gt;rbTransferSystemWipe.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;rbVkGL.Name" xml:space="preserve">
     <value>rbVkGL</value>
@@ -2606,9 +2600,6 @@
   </data>
   <data name="chkStartWindowMaximized.Location" type="System.Drawing.Point, System.Drawing">
     <value>10, 183</value>
-  </data>
-  <data name="tabSettingsTitle.Text" xml:space="preserve">
-    <value>Títulos</value>
   </data>
   <data name="cbGeneralFileSize.Items4" xml:space="preserve">
     <value>Terabyte</value>
@@ -2640,8 +2631,8 @@
   <data name="grbGeneralTemporaryFolder.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="&gt;&gt;btnDirectoryCover2D.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;chkMultipleInstances.Name" xml:space="preserve">
+    <value>chkMultipleInstances</value>
   </data>
   <data name="tbServerProxy.Size" type="System.Drawing.Size, System.Drawing">
     <value>339, 20</value>
@@ -2652,23 +2643,17 @@
   <data name="&gt;&gt;rbDX12.Parent" xml:space="preserve">
     <value>grbDolphinVideo</value>
   </data>
-  <data name="lblTimeInterval.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <data name="&gt;&gt;grbGeneralDiverse.Name" xml:space="preserve">
     <value>grbGeneralDiverse</value>
   </data>
   <data name="&gt;&gt;btnDirectoryCover2D.Name" xml:space="preserve">
     <value>btnDirectoryCover2D</value>
   </data>
-  <data name="cbScrubFormat.Items1" xml:space="preserve">
-    <value>DiscEx</value>
+  <data name="btnDirectoryCover2D.Text" xml:space="preserve">
+    <value>...</value>
   </data>
-  <data name="lblUser.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblFST.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
+  <data name="tabSettingsGeneral.Size" type="System.Drawing.Size, System.Drawing">
+    <value>556, 363</value>
   </data>
   <data name="rbDSPHLE.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -2703,6 +2688,9 @@
   <data name="lblWipe.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="chkGameTitleCustom.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 88</value>
+  </data>
   <data name="&gt;&gt;chkUpdateFileLog.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -2733,8 +2721,8 @@
   <data name="&gt;&gt;tabControl2.Parent" xml:space="preserve">
     <value>grbCoverTransfer</value>
   </data>
-  <data name="&gt;&gt;grbGeneralFileSize.Parent" xml:space="preserve">
-    <value>tabSettingsGeneral</value>
+  <data name="chkGeneralExtractBZip2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="grbTitleDiverse.Text" xml:space="preserve">
     <value>Diversos (necessário reiniciar programa para ter efeito)</value>
@@ -2754,8 +2742,8 @@
   <data name="&gt;&gt;chkCoverRecursiveSearch.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;lblPass.Parent" xml:space="preserve">
-    <value>grbUpdate</value>
+  <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>111, 13</value>
   </data>
   <data name="chkLoadDatabase.Location" type="System.Drawing.Point, System.Drawing">
     <value>10, 114</value>
@@ -2778,8 +2766,11 @@
   <data name="&gt;&gt;chkGeneralScrubFlushSD.Name" xml:space="preserve">
     <value>chkGeneralScrubFlushSD</value>
   </data>
-  <data name="&gt;&gt;lblGeneralExtract.Name" xml:space="preserve">
-    <value>lblGeneralExtract</value>
+  <data name="grbGeneralTemporaryFolder.Size" type="System.Drawing.Size, System.Drawing">
+    <value>539, 57</value>
+  </data>
+  <data name="&gt;&gt;chkGameTitle.Name" xml:space="preserve">
+    <value>chkGameTitle</value>
   </data>
   <data name="cbTitleLanguage.Items9" xml:space="preserve">
     <value>Coreano</value>
@@ -2795,6 +2786,9 @@
   </data>
   <data name="chkStartWindowMaximized.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="&gt;&gt;cbScrubAlign.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tabCoverFull.Parent" xml:space="preserve">
     <value>tabControl2</value>
@@ -2850,8 +2844,8 @@
   <data name="&gt;&gt;lblComments.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="tabSettingsNomenclature.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+  <data name="grbGeneralDiverse.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 6</value>
   </data>
   <data name="&gt;&gt;lblLanguageComments.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -2865,11 +2859,14 @@
   <data name="cbVerificationInterval.Items2" xml:space="preserve">
     <value>15 minutos</value>
   </data>
+  <data name="grpTitlesCoverFolder.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
   <data name="cbVerificationInterval.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="grbLog.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="label35.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
   </data>
   <data name="&gt;&gt;tabCoverFront.Parent" xml:space="preserve">
     <value>tabControl2</value>
@@ -2892,8 +2889,8 @@
   <data name="grbCoverTransfer.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="rbTransferSystemXCopy.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 21</value>
+  <data name="chkManagerLogSystemConsole.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
   <data name="cbLanguage.Size" type="System.Drawing.Size, System.Drawing">
     <value>207, 21</value>
@@ -2931,8 +2928,8 @@
   <data name="cbTitleLanguage.Items4" xml:space="preserve">
     <value>Italiano</value>
   </data>
-  <data name="&gt;&gt;chkGeneralExtractRar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;grbTitleLanguage.Name" xml:space="preserve">
+    <value>grbTitleLanguage</value>
   </data>
   <data name="&gt;&gt;tabCoverFront.ZOrder" xml:space="preserve">
     <value>1</value>
@@ -2943,11 +2940,11 @@
   <data name="&gt;&gt;tbDirectoryCover2D.Parent" xml:space="preserve">
     <value>tabCoverFront</value>
   </data>
-  <data name="&gt;&gt;grbTitleLanguage.Name" xml:space="preserve">
-    <value>grbTitleLanguage</value>
+  <data name="&gt;&gt;chkCoverSynchronizeDelete.Name" xml:space="preserve">
+    <value>chkCoverSynchronizeDelete</value>
   </data>
-  <data name="rbDSPLLE.Size" type="System.Drawing.Size, System.Drawing">
-    <value>69, 17</value>
+  <data name="btnDirectoryCover3D.TabIndex" type="System.Int32, mscorlib">
+    <value>26</value>
   </data>
   <data name="&gt;&gt;label20.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -2979,14 +2976,11 @@
   <data name="&gt;&gt;tabSettingsCovers.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="lblUser.Size" type="System.Drawing.Size, System.Drawing">
-    <value>46, 13</value>
+  <data name="&gt;&gt;chkLoadDatabase.Parent" xml:space="preserve">
+    <value>grbGeneralDiverse</value>
   </data>
-  <data name="&gt;&gt;chkGeneralExtractBZip2.Parent" xml:space="preserve">
-    <value>grbGeneralFiles</value>
-  </data>
-  <data name="chkLoadDatabase.Text" xml:space="preserve">
-    <value>Carregar Banco de Dados ao iniciar programa (aumenta o tempo de inicio do programa)</value>
+  <data name="chkLoadDatabase.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
   </data>
   <data name="&gt;&gt;tbUserProxy.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -2994,17 +2988,14 @@
   <data name="&gt;&gt;tbPathDolphinEmulator.Name" xml:space="preserve">
     <value>tbPathDolphinEmulator</value>
   </data>
-  <data name="tbDirectoryCoverFull.TabIndex" type="System.Int32, mscorlib">
-    <value>25</value>
+  <data name="grbTitleDiverse.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 6</value>
   </data>
-  <data name="lblComments.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="tabSettingsDolphin.Text" xml:space="preserve">
+    <value>Dolphin Emulator</value>
   </data>
   <data name="&gt;&gt;btnCoverDirectory.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="&gt;&gt;chkGeneralExtractBZip2.Name" xml:space="preserve">
-    <value>chkGeneralExtractBZip2</value>
   </data>
   <data name="tabSettingsSeveral.Text" xml:space="preserve">
     <value>Diversos</value>
@@ -3024,17 +3015,17 @@
   <data name="&gt;&gt;btnTitleCustom.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;grbTitleDiverse.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;ofdDolphin.Name" xml:space="preserve">
+    <value>ofdDolphin</value>
   </data>
   <data name="chkUpdateServerProxy.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="tabSettingsLog.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+  <data name="cbVerificationInterval.Items" xml:space="preserve">
+    <value>5 minutos</value>
   </data>
-  <data name="chkGeneralExtractRar.Text" xml:space="preserve">
-    <value>Arquivos RAR (*.rar)</value>
+  <data name="&gt;&gt;lblGeneralExtract.Name" xml:space="preserve">
+    <value>lblGeneralExtract</value>
   </data>
   <data name="&gt;&gt;chkStartWindowMaximized.Parent" xml:space="preserve">
     <value>grbGeneralDiverse</value>
@@ -3057,11 +3048,8 @@
   <data name="rbDX11.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="lblFST.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;lblWipe.ZOrder" xml:space="preserve">
-    <value>5</value>
+  <data name="btnTitleCustom.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
   </data>
   <data name="&gt;&gt;rbGeneralDiscClean.Parent" xml:space="preserve">
     <value>grbGeneralPartitions</value>
@@ -3105,8 +3093,8 @@
   <data name="chkScreensaver.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="&gt;&gt;label28.Name" xml:space="preserve">
-    <value>label28</value>
+  <data name="grbDolphin.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 3</value>
   </data>
   <data name="cbScrubAlign.Items1" xml:space="preserve">
     <value>4 bytes</value>
@@ -3139,10 +3127,10 @@
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="btnOK.Location" type="System.Drawing.Point, System.Drawing">
-    <value>325, 407</value>
+    <value>327, 407</value>
   </data>
-  <data name="&gt;&gt;btnDirectoryCover2D.Parent" xml:space="preserve">
-    <value>tabCoverFront</value>
+  <data name="chkUpdateFileLog.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
   </data>
   <data name="lblUpdateInterval.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3159,6 +3147,9 @@
   <data name="chkGeneralTemporaryBuffer.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
+  <data name="cbScrubAlign.Items" xml:space="preserve">
+    <value>Automático</value>
+  </data>
   <data name="&gt;&gt;chkUpdateBetaChannel.ZOrder" xml:space="preserve">
     <value>11</value>
   </data>
@@ -3171,17 +3162,14 @@
   <data name="cbGeneralFileSize.Size" type="System.Drawing.Size, System.Drawing">
     <value>524, 21</value>
   </data>
-  <data name="&gt;&gt;rbGameXmlName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="checkBox1.Text" xml:space="preserve">
     <value>Silenciar notificações</value>
   </data>
   <data name="chkSplash.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="&gt;&gt;grpNomenclatureFolderFormat.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="tbDirectoryCoverCache.Size" type="System.Drawing.Size, System.Drawing">
+    <value>485, 20</value>
   </data>
   <data name="&gt;&gt;chkGeneralExtractRar.Parent" xml:space="preserve">
     <value>grbGeneralFiles</value>
@@ -3195,8 +3183,8 @@
   <data name="btnTitle.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="btnCoverDirectory.Location" type="System.Drawing.Point, System.Drawing">
-    <value>500, 19</value>
+  <data name="&gt;&gt;grbCoverTransfer.Name" xml:space="preserve">
+    <value>grbCoverTransfer</value>
   </data>
   <data name="&gt;&gt;pictureBox2.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -3207,8 +3195,8 @@
   <data name="&gt;&gt;label8.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="label6.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
+  <data name="chkGeneralTemporaryBuffer.Size" type="System.Drawing.Size, System.Drawing">
+    <value>264, 17</value>
   </data>
   <data name="chkGeneralScrubFlushSD.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3216,14 +3204,14 @@
   <data name="chkGeneralExtractNwb.Location" type="System.Drawing.Point, System.Drawing">
     <value>215, 94</value>
   </data>
-  <data name="tabSettingsSeveral.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+  <data name="&gt;&gt;chkGeneralExtractRar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btnSelectFile.Parent" xml:space="preserve">
     <value>grbDolphinFolder</value>
   </data>
-  <data name="chkNetVerify.Text" xml:space="preserve">
-    <value>Verificar conexão com a internet ao iniciar programa</value>
+  <data name="tabSettingsLog.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
   </data>
   <data name="&gt;&gt;grbUpdate.Parent" xml:space="preserve">
     <value>tabSettingsUpdates</value>
@@ -3233,6 +3221,9 @@
   </data>
   <data name="grbGeneralFileSize.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
+  </data>
+  <data name="cbScrubFormat.Location" type="System.Drawing.Point, System.Drawing">
+    <value>280, 46</value>
   </data>
   <data name="grbGeneralPartitions.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
@@ -3246,17 +3237,14 @@
   <data name="&gt;&gt;chkUpdateFileLog.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
-  <data name="&gt;&gt;rbDX12.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="lblXCopy.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="&gt;&gt;cbNotificationToggle.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="&gt;&gt;lblNomenclature.Parent" xml:space="preserve">
+    <value>grpNomenclatureFolderFormat</value>
   </data>
-  <data name="chkNetVerify.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+  <data name="checkBox1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="&gt;&gt;checkBox1.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -3264,8 +3252,8 @@
   <data name="pictureBox2.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>AutoSize</value>
   </data>
-  <data name="&gt;&gt;label20.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="&gt;&gt;rbGameInternalName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btnDirectoryCoverFull.Parent" xml:space="preserve">
     <value>tabCoverFull</value>
@@ -3276,14 +3264,17 @@
   <data name="chkUpdateBetaChannel.Size" type="System.Drawing.Size, System.Drawing">
     <value>217, 17</value>
   </data>
-  <data name="chkGeneralTemporaryBuffer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>264, 17</value>
+  <data name="tbTitle.Text" xml:space="preserve">
+    <value>%APP%\titles.txt</value>
   </data>
-  <data name="&gt;&gt;chkSplash.Parent" xml:space="preserve">
-    <value>grbGeneralDiverse</value>
+  <data name="tabSettingsSeveral.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
   </data>
   <data name="rbTransferSystemXCopy.Text" xml:space="preserve">
     <value>XCopy (Padrão)</value>
+  </data>
+  <data name="&gt;&gt;cbLanguage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tabSettingsTransfer.Parent" xml:space="preserve">
     <value>tabSettings</value>
@@ -3300,8 +3291,8 @@
   <data name="&gt;&gt;cbScrubAlign.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="grbUpdate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 6</value>
+  <data name="label28.Text" xml:space="preserve">
+    <value>FST (FileSystem Table) é um sistema de arquivos extraído para um diretório que contém todos os arquivos reais e virtuais de um arquivo. O Nintendont usa os arquivos FST para criar uma imagem ISO virtual interna e carregar o jogo através dessa ISO virtual.</value>
   </data>
   <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 15</value>
@@ -3318,8 +3309,8 @@
   <data name="lblPass.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="pictureBox1.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>AutoSize</value>
+  <data name="rbCoverUSBLoaderGX.Size" type="System.Drawing.Size, System.Drawing">
+    <value>238, 17</value>
   </data>
   <data name="&gt;&gt;btnDirectoryCoverDisc.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -3330,14 +3321,14 @@
   <data name="&gt;&gt;tbDirectoryCover3D.Name" xml:space="preserve">
     <value>tbDirectoryCover3D</value>
   </data>
-  <data name="&gt;&gt;grpCoversSynchronize.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;tbDirectoryCoverFull.Name" xml:space="preserve">
+    <value>tbDirectoryCoverFull</value>
   </data>
-  <data name="lblCommentsScrubCopy.AutoSize" type="System.Boolean, mscorlib">
+  <data name="cbScrubFormat.Items1" xml:space="preserve">
+    <value>DiscEx</value>
+  </data>
+  <data name="tabSettingsCovers.AutoScroll" type="System.Boolean, mscorlib">
     <value>True</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Configurações</value>
   </data>
   <data name="btnDirectoryCoverFull.TabIndex" type="System.Int32, mscorlib">
     <value>26</value>
@@ -3348,23 +3339,23 @@
   <data name="&gt;&gt;chkManagerLogWindow.Parent" xml:space="preserve">
     <value>grbLog</value>
   </data>
+  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="lblComments.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>510, 0</value>
   </data>
   <data name="&gt;&gt;chkMultipleInstances.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;chkGameTitle.Name" xml:space="preserve">
-    <value>chkGameTitle</value>
+  <data name="chkGeneralExtractBZip2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>215, 48</value>
   </data>
-  <data name="chkGeneralScrubFlushSD.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 22</value>
+  <data name="rbDSPLLE.Size" type="System.Drawing.Size, System.Drawing">
+    <value>69, 17</value>
   </data>
   <data name="chkLoadDatabase.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
-  </data>
-  <data name="tbDirectoryCoverCache.Size" type="System.Drawing.Size, System.Drawing">
-    <value>485, 20</value>
   </data>
   <data name="&gt;&gt;tbUserProxy.ZOrder" xml:space="preserve">
     <value>3</value>
@@ -3381,17 +3372,17 @@
   <data name="&gt;&gt;tbPassProxy.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label31.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="grbUpdate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 6</value>
   </data>
   <data name="rbGeneralDiscDelete.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="chkMultipleInstances.Size" type="System.Drawing.Size, System.Drawing">
-    <value>289, 17</value>
+  <data name="&gt;&gt;grbCoverTransfer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;chkGameTitleCustom.Parent" xml:space="preserve">
-    <value>grbTitleDiverse</value>
+  <data name="&gt;&gt;tabCoverDisc.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;grbGeneralFiles.Name" xml:space="preserve">
     <value>grbGeneralFiles</value>
@@ -3399,11 +3390,11 @@
   <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 15</value>
   </data>
-  <data name="tabSettingsCovers.AutoScroll" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;tabSettingsGeneral.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
-  <data name="&gt;&gt;chkManagerLogFile.Name" xml:space="preserve">
-    <value>chkManagerLogFile</value>
+  <data name="&gt;&gt;tbGeneralTempPath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="cbTitleLanguage.Items" xml:space="preserve">
     <value>Inglês</value>
@@ -3444,8 +3435,8 @@
   <data name="tabControl2.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="tbUserProxy.Location" type="System.Drawing.Point, System.Drawing">
-    <value>194, 174</value>
+  <data name="tabCoverDisc.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="label9.TabIndex" type="System.Int32, mscorlib">
     <value>24</value>
@@ -3471,8 +3462,8 @@
   <data name="&gt;&gt;tbPassProxy.Name" xml:space="preserve">
     <value>tbPassProxy</value>
   </data>
-  <data name="&gt;&gt;chkGeneralExtractNwb.Parent" xml:space="preserve">
-    <value>grbGeneralFiles</value>
+  <data name="&gt;&gt;chkGeneralExtractSplitFile.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="&gt;&gt;grbGeneralFileSize.Name" xml:space="preserve">
     <value>grbGeneralFileSize</value>
@@ -3504,14 +3495,14 @@
   <data name="grbCoverTransfer.Text" xml:space="preserve">
     <value>Configuração do carregador USB (Transferir Capas -&gt; Destino)</value>
   </data>
-  <data name="&gt;&gt;lblLanguage.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;lblWipe.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;tbServerProxy.Parent" xml:space="preserve">
+    <value>grbUpdate</value>
+  </data>
+  <data name="&gt;&gt;rbGameXmlName.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="lblFST.Size" type="System.Drawing.Size, System.Drawing">
-    <value>38, 13</value>
-  </data>
-  <data name="label28.Text" xml:space="preserve">
-    <value>FST (FileSystem Table) é um sistema de arquivos extraído para um diretório que contém todos os arquivos reais e virtuais de um arquivo. O Nintendont usa os arquivos FST para criar uma imagem ISO virtual interna e carregar o jogo através dessa ISO virtual.</value>
   </data>
   <data name="&gt;&gt;chkManagerLogDebugConsole.ZOrder" xml:space="preserve">
     <value>4</value>
@@ -3528,8 +3519,8 @@
   <data name="&gt;&gt;chkManagerLogFile.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="chkGeneralScrubFlushSD.Text" xml:space="preserve">
-    <value>Limpar os buffers de arquivo para que o cartão SD possa ser ejetado quase imediatamente</value>
+  <data name="lblUser.Text" xml:space="preserve">
+    <value>Usuário:</value>
   </data>
   <data name="&gt;&gt;label9.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -3585,8 +3576,8 @@
   <data name="chkGeneralSHA1.Text" xml:space="preserve">
     <value>Verificar assinatura SHA-1 durante transferências</value>
   </data>
-  <data name="chkCoverEnableTransfer.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;fbd.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FolderBrowserDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="lblGeneralExtract.Text" xml:space="preserve">
     <value>Extrair sempre que necessário.</value>
@@ -3602,6 +3593,9 @@
   </data>
   <data name="grbTitleFileLocation.Text" xml:space="preserve">
     <value>Localização de arquivos</value>
+  </data>
+  <data name="btnDirectoryCoverFull.Location" type="System.Drawing.Point, System.Drawing">
+    <value>481, 29</value>
   </data>
   <data name="rbCoverWiiFlow.Location" type="System.Drawing.Point, System.Drawing">
     <value>7, 22</value>
@@ -3624,14 +3618,17 @@
   <data name="&gt;&gt;chkGeneralExtractZip.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;cbScrubAlign.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;chkGeneralExtractBZip2.Name" xml:space="preserve">
+    <value>chkGeneralExtractBZip2</value>
   </data>
-  <data name="label8.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+  <data name="tabSettingsCovers.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
   </data>
   <data name="lblLanguageComments.Location" type="System.Drawing.Point, System.Drawing">
     <value>50, 78</value>
+  </data>
+  <data name="&gt;&gt;lblTimeInterval.Name" xml:space="preserve">
+    <value>lblTimeInterval</value>
   </data>
   <data name="chkManagerLogFile.Location" type="System.Drawing.Point, System.Drawing">
     <value>335, 95</value>
@@ -3675,8 +3672,8 @@
   <data name="lblServerProxy.Location" type="System.Drawing.Point, System.Drawing">
     <value>111, 151</value>
   </data>
-  <data name="rbCoverWiiFlow.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="cbVerificationInterval.Items7" xml:space="preserve">
+    <value>4 horas</value>
   </data>
   <data name="grbGeneralTemporaryFolder.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
@@ -3699,20 +3696,17 @@
   <data name="grbGeneralScrub.Location" type="System.Drawing.Point, System.Drawing">
     <value>7, 107</value>
   </data>
-  <data name="&gt;&gt;cbLanguage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="chkGeneralScrubFlushSD.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 22</value>
   </data>
-  <data name="&gt;&gt;pictureBox1.Name" xml:space="preserve">
-    <value>pictureBox1</value>
-  </data>
-  <data name="chkLoadDatabase.Size" type="System.Drawing.Size, System.Drawing">
-    <value>436, 17</value>
+  <data name="&gt;&gt;rbCoverWiiFlow.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="chkGeneralRecursiva.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="chkLoadDatabase.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
+  <data name="&gt;&gt;grbTitleFileLocation.Name" xml:space="preserve">
+    <value>grbTitleFileLocation</value>
   </data>
   <data name="&gt;&gt;grbDolphinAudio.Parent" xml:space="preserve">
     <value>grbDolphin</value>
@@ -3723,8 +3717,8 @@
   <data name="&gt;&gt;label28.Parent" xml:space="preserve">
     <value>tabSettingsTransfer</value>
   </data>
-  <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>111, 13</value>
+  <data name="tabSettingsNomenclature.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
   </data>
   <data name="grbGeneralPartitions.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -3732,11 +3726,11 @@
   <data name="&gt;&gt;tabSettingsLog.Name" xml:space="preserve">
     <value>tabSettingsLog</value>
   </data>
-  <data name="&gt;&gt;grbCoverTransfer.Name" xml:space="preserve">
-    <value>grbCoverTransfer</value>
+  <data name="tabSettingsSeveral.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
-  <data name="&gt;&gt;lblFormat.Parent" xml:space="preserve">
-    <value>grbGeneralScrub</value>
+  <data name="&gt;&gt;label28.Name" xml:space="preserve">
+    <value>label28</value>
   </data>
   <data name="chkCoverSynchronizeDelete.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3744,8 +3738,8 @@
   <data name="&gt;&gt;chkGeneralExtractNwb.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="btnDirectoryCover2D.Text" xml:space="preserve">
-    <value>...</value>
+  <data name="&gt;&gt;rbDX12.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="tabSettingsLanguage.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
@@ -3758,12 +3752,6 @@
   </data>
   <data name="chkUpdateVerifyStart.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
-  </data>
-  <data name="&gt;&gt;cbNotificationToggle.Name" xml:space="preserve">
-    <value>cbNotificationToggle</value>
-  </data>
-  <data name="chkNotify.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
   </data>
   <data name="tabSettingsDolphin.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -3801,9 +3789,6 @@
   <data name="&gt;&gt;rbDSPHLE.Name" xml:space="preserve">
     <value>rbDSPHLE</value>
   </data>
-  <data name="chkGeneralTemporaryBuffer.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 91</value>
-  </data>
   <data name="tabSettingsCovers.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
@@ -3813,17 +3798,14 @@
   <data name="&gt;&gt;lblUser.Name" xml:space="preserve">
     <value>lblUser</value>
   </data>
-  <data name="btnDirectoryCoverDisc.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+  <data name="&gt;&gt;chkManagerLogWindow.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="tbGeneralTempPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>486, 20</value>
   </data>
-  <data name="&gt;&gt;cbNotificationToggle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label17.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="grbGeneralTemporaryFolder.Text" xml:space="preserve">
+    <value>Pasta temporária</value>
   </data>
   <data name="btnDirectoryCover3D.Size" type="System.Drawing.Size, System.Drawing">
     <value>31, 27</value>
@@ -3919,26 +3901,29 @@
   <data name="pictureBox1.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
+  <data name="&gt;&gt;chkSplash.Parent" xml:space="preserve">
+    <value>grbGeneralDiverse</value>
+  </data>
   <data name="&gt;&gt;chkGeneralRecursiva.Name" xml:space="preserve">
     <value>chkGeneralRecursiva</value>
   </data>
   <data name="&gt;&gt;label8.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;cbLanguage.Name" xml:space="preserve">
-    <value>cbLanguage</value>
+  <data name="lblLOG.Location" type="System.Drawing.Point, System.Drawing">
+    <value>114, 29</value>
+  </data>
+  <data name="&gt;&gt;tabCoverDisc.Name" xml:space="preserve">
+    <value>tabCoverDisc</value>
   </data>
   <data name="tabCoverFront.Text" xml:space="preserve">
     <value>2D</value>
   </data>
-  <data name="cbScrubFormat.Location" type="System.Drawing.Point, System.Drawing">
-    <value>280, 46</value>
-  </data>
-  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;tbGeneralTempPath.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;cbGeneralFileSize.Parent" xml:space="preserve">
-    <value>grbGeneralFileSize</value>
+  <data name="rbDX12.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
   <data name="grbGeneralFiles.Location" type="System.Drawing.Point, System.Drawing">
     <value>7, 153</value>
@@ -3949,8 +3934,8 @@
   <data name="&gt;&gt;cbVerificationInterval.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tbGeneralTempPath.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;btnDirectoryCoverDisc.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;lblLanguageComments.Parent" xml:space="preserve">
     <value>tabSettingsLanguage</value>
@@ -3973,11 +3958,11 @@
   <data name="&gt;&gt;tabSettings.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="tbTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>486, 20</value>
+  <data name="btnTemporaryFolder.Text" xml:space="preserve">
+    <value>...</value>
   </data>
   <data name="btnApply.Location" type="System.Drawing.Point, System.Drawing">
-    <value>487, 407</value>
+    <value>489, 407</value>
   </data>
   <data name="label20.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
@@ -3994,17 +3979,14 @@
   <data name="&gt;&gt;lblLanguageComments.Name" xml:space="preserve">
     <value>lblLanguageComments</value>
   </data>
-  <data name="btnDirectoryCoverFull.Location" type="System.Drawing.Point, System.Drawing">
-    <value>481, 29</value>
+  <data name="chkLoadDatabase.Size" type="System.Drawing.Size, System.Drawing">
+    <value>436, 17</value>
   </data>
-  <data name="&gt;&gt;tabSettingsTitle.Parent" xml:space="preserve">
-    <value>tabSettings</value>
+  <data name="cbTitleLanguage.Items3" xml:space="preserve">
+    <value>Espanhol</value>
   </data>
-  <data name="grbGeneralTemporaryFolder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>539, 57</value>
-  </data>
-  <data name="&gt;&gt;tbGeneralTempPath.Parent" xml:space="preserve">
-    <value>grbGeneralTemporaryFolder</value>
+  <data name="&gt;&gt;tabSettingsCovers.Name" xml:space="preserve">
+    <value>tabSettingsCovers</value>
   </data>
   <data name="&gt;&gt;grbGeneralPartitions.ZOrder" xml:space="preserve">
     <value>3</value>
@@ -4012,8 +3994,8 @@
   <data name="rbGeneralDiscDelete.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="chkGeneralExtractZip.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;cbTitleLanguage.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="&gt;&gt;chkUpdateServerProxy.ZOrder" xml:space="preserve">
     <value>9</value>
@@ -4021,8 +4003,8 @@
   <data name="&gt;&gt;lblLanguage.Name" xml:space="preserve">
     <value>lblLanguage</value>
   </data>
-  <data name="lblLOG.Location" type="System.Drawing.Point, System.Drawing">
-    <value>114, 29</value>
+  <data name="grbUpdate.Text" xml:space="preserve">
+    <value>Configurações de Atualização</value>
   </data>
   <data name="grbGeneralDiverse.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -4030,8 +4012,8 @@
   <data name="&gt;&gt;btnTitle.Parent" xml:space="preserve">
     <value>grbTitleFileLocation</value>
   </data>
-  <data name="chkUpdateFileLog.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+  <data name="chkNotify.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
   </data>
   <data name="&gt;&gt;btnTitle.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -4042,14 +4024,14 @@
   <data name="&gt;&gt;cbScrubFormat.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lblTimeInterval.Name" xml:space="preserve">
-    <value>lblTimeInterval</value>
+  <data name="&gt;&gt;tabSettingsSeveral.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="cbScrubAlign.Items" xml:space="preserve">
-    <value>Automático</value>
+  <data name="tabSettingsTitle.Text" xml:space="preserve">
+    <value>Títulos</value>
   </data>
-  <data name="label35.TabIndex" type="System.Int32, mscorlib">
-    <value>24</value>
+  <data name="chkManagerLogDebugConsole.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="&gt;&gt;tbDirectoryCover3D.ZOrder" xml:space="preserve">
     <value>1</value>
@@ -4096,8 +4078,8 @@
   <data name="chkManagerLogSystemConsole.Size" type="System.Drawing.Size, System.Drawing">
     <value>168, 17</value>
   </data>
-  <data name="grpTitlesCoverFolder.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+  <data name="&gt;&gt;pictureBox1.Name" xml:space="preserve">
+    <value>pictureBox1</value>
   </data>
   <data name="grbLanguage.Size" type="System.Drawing.Size, System.Drawing">
     <value>539, 64</value>
@@ -4114,8 +4096,8 @@
   <data name="btnOK.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="&gt;&gt;tabCoverDisc.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="chkGeneralScrubFlushSD.Text" xml:space="preserve">
+    <value>Limpar os buffers de arquivo para que o cartão SD possa ser ejetado quase imediatamente</value>
   </data>
   <data name="&gt;&gt;chkGeneralSHA1.Parent" xml:space="preserve">
     <value>grbGeneralDiverse</value>
@@ -4144,8 +4126,8 @@
   <data name="lblUpdateInterval.Size" type="System.Drawing.Size, System.Drawing">
     <value>126, 13</value>
   </data>
-  <data name="&gt;&gt;lblAlignment.Name" xml:space="preserve">
-    <value>lblAlignment</value>
+  <data name="btnCancel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>408, 407</value>
   </data>
   <data name="&gt;&gt;btnRestore.ZOrder" xml:space="preserve">
     <value>3</value>
@@ -4165,8 +4147,8 @@
   <data name="chkGeneralTemporaryBuffer.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="&gt;&gt;chkMultipleInstances.Name" xml:space="preserve">
-    <value>chkMultipleInstances</value>
+  <data name="&gt;&gt;tabSettingsSeveral.Name" xml:space="preserve">
+    <value>tabSettingsSeveral</value>
   </data>
   <data name="lblGeneralExtract.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -4183,14 +4165,14 @@
   <data name="chkScreensaver.Location" type="System.Drawing.Point, System.Drawing">
     <value>10, 206</value>
   </data>
-  <data name="tabCoverDisc.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="&gt;&gt;cbScrubFormat.Parent" xml:space="preserve">
+    <value>grbGeneralScrub</value>
   </data>
-  <data name="tabSettingsGeneral.Text" xml:space="preserve">
-    <value>Geral</value>
+  <data name="lblCommentsScrubCopy.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="&gt;&gt;label4.Name" xml:space="preserve">
-    <value>label4</value>
+  <data name="&gt;&gt;chkGeneralScrubFlushSD.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <data name="&gt;&gt;rbCoverUSBLoaderGX.Type" xml:space="preserve">
     <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -4207,8 +4189,8 @@
   <data name="grbLanguage.Location" type="System.Drawing.Point, System.Drawing">
     <value>7, 6</value>
   </data>
-  <data name="&gt;&gt;btnCancel.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="&gt;&gt;chkManagerLogSystemConsole.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
   <data name="&gt;&gt;label4.Parent" xml:space="preserve">
     <value>grbTitleFileLocation</value>
@@ -4219,8 +4201,8 @@
   <data name="cbLevelLog.Size" type="System.Drawing.Size, System.Drawing">
     <value>416, 21</value>
   </data>
-  <data name="cbVerificationInterval.Items4" xml:space="preserve">
-    <value>1 hora</value>
+  <data name="&gt;&gt;cbLanguage.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="chkGameTitleCustom.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -4234,8 +4216,8 @@
   <data name="&gt;&gt;grbGeneralDiverse.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tabSettingsSeveral.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="grbLog.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="chkGeneralExtractSplitFile.Size" type="System.Drawing.Size, System.Drawing">
     <value>145, 17</value>
@@ -4258,25 +4240,472 @@
   <data name="grbDolphinVideo.Location" type="System.Drawing.Point, System.Drawing">
     <value>7, 75</value>
   </data>
-  <data name="&gt;&gt;btnCoverDirectory.Parent" xml:space="preserve">
-    <value>grpTitlesCoverFolder</value>
+  <data name="rbVkGL.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
+  <metadata name="tabCoverFront.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="cbTitleLanguage.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="grbDolphinAudio.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="lblFST.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="chkCoverSynchronizeDelete.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="chkManagerLogFile.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="grbUpdate.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="lblNomenclature.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="rbDSPHLE.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="cbLevelLog.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>es</value>
+    <value>en-US</value>
   </metadata>
-  <metadata name="notifyIcon.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>196, 15</value>
+  <metadata name="chkGeneralTemporaryBuffer.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
   </metadata>
-  <metadata name="fbd.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
+  <metadata name="btnOK.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
   </metadata>
-  <metadata name="ofdDolphin.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>93, 17</value>
+  <metadata name="rbTransferSystemWipe.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
   </metadata>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="grbLanguage.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="tabSettingsSeveral.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="btnSelectFile.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="grpNomenclatureFolderFormat.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="cbGeneralFileSize.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="tabCoverFull.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="label28.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="tabSettingsTransfer.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="lblUpdateInterval.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="grbTransferSystem.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="tbPassProxy.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="grpCoversSynchronize.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="chkGeneralExtractZip.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="lblLanguageComments.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="btnCoverDirectory.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="rbTransferSystemFST.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="grbGeneralFileSize.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="lblLOG.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="chkCoverRecursiveSearch.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="lblXCopy.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="btnDirectoryCover2D.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="lblServerProxy.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="tbDirectoryCoverDisc.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="tbTitleCustom.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="grpTitlesCoverFolder.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="chkGeneralSHA1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="tbDirectoryCover2D.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="btnRestore.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="btnDirectoryCoverFull.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="chkUpdateBetaChannel.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>46</value>
+  </metadata>
+  <metadata name="label31.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="label6.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="lblLanguage.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="grbDolphinFolder.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="checkBox1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="rbGameInternalName.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="btnDirectoryCover3D.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="tabSettingsLanguage.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="grbLog.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="tbDirectoryCover3D.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="cbLanguage.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="grbDolphinVideo.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="chkUpdateFileLog.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="lblAlignment.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="tabSettingsTitle.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="label4.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="tbUserProxy.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="grbTitleLanguage.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="chkManagerLogDebugConsole.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="rbCoverWiiFlow.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="chkLoadDatabase.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="fbd.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="chkGeneralScrubFlushSD.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="btnTemporaryFolder.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="tbTitle.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="lblTimeInterval.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="chkGameTitleCustom.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="rbGeneralDiscDelete.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="grbTitleDiverse.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="chkMultipleInstances.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="tabCover3D.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="tabSettingsCovers.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="lblCommentsScrubCopy.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="chkStartWindowMaximized.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="tabSettingsUpdates.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="cbScrubFormat.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="chkGeneralRecursiva.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="tabSettingsDolphin.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="chkNotify.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="pictureBox1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="tabSettingsLog.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="label20.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="tabSettingsGeneral.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="rbDX11.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="btnApply.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="btnTitleDownload.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="tbPathDolphinEmulator.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="rbDSPLLE.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="chkGeneralExtractBZip2.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="pictureBox2.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="grbGeneralFiles.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="chkGeneralExtractRar.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="cbVerificationInterval.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="label35.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="lblPass.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="tabControl2.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="cbScrubAlign.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="chkCoverEnableTransfer.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ofdDolphin.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>93, 17</value>
+  </metadata>
+  <metadata name="label9.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="lblWipe.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="chkScreensaver.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="grbDolphin.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="grbCoverTransfer.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="grbGeneralDiverse.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="tabSettings.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="chkNetVerify.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="rbGameXmlName.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="chkManagerLogSystemConsole.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="lblGeneralExtract.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="label5.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="label8.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="chkGeneralMD5.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="rbVkGL.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="rbDX12.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="btnCancel.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="chkGeneralExtractNwb.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="grbGeneralPartitions.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="tbDirectoryCoverCache.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="lblCommentsExactCopy.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="rbTransferSystemXCopy.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="tbDirectoryCoverFull.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="rbCoverUSBLoaderGX.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="chkUpdateVerifyStart.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="chkSplash.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="notifyIcon.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>196, 15</value>
+  </metadata>
+  <metadata name="tabCoverDisc.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="chkManagerLogWindow.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="tbGeneralTempPath.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="btnTitle.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="chkUpdateServerProxy.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="btnDirectoryCoverDisc.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="lblScrub.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="tabSettingsNomenclature.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="chkGameTitle.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="lblUser.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="grbGeneralTemporaryFolder.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="lblFormat.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="tbServerProxy.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="chkGeneralExtract7z.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="cbAdjustNamingStyle.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="btnTitleCustom.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="rbGeneralDiscClean.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="label17.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="grbGeneralScrub.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="lblComments.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="chkGeneralExtractSplitFile.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="grbTitleFileLocation.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
   </metadata>
 </root>

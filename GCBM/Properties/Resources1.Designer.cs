@@ -193,26 +193,6 @@ namespace GCBM.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap bell_24 {
-            get {
-                object obj = ResourceManager.GetObject("bell-24", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap bell_off_24 {
-            get {
-                object obj = ResourceManager.GetObject("bell-off-24", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap box_16 {
             get {
                 object obj = ResourceManager.GetObject("box_16", resourceCulture);
@@ -718,15 +698,6 @@ namespace GCBM.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Concluída a transferência de {0} jogos para a unidade &quot;{1}&quot;.
-        /// </summary>
-        internal static string DoneTransferringAll {
-            get {
-                return ResourceManager.GetString("DoneTransferringAll", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to  [INFO] Baixando capas (3D)... .
         /// </summary>
         internal static string Download3DCover {
@@ -1049,15 +1020,6 @@ namespace GCBM.Properties {
         internal static string frmMain_Resize_Program {
             get {
                 return ResourceManager.GetString("frmMain_Resize_Program", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Jogo instalado: .
-        /// </summary>
-        internal static string GameDoneTransferring {
-            get {
-                return ResourceManager.GetString("GameDoneTransferring", resourceCulture);
             }
         }
         
@@ -2074,15 +2036,6 @@ namespace GCBM.Properties {
         internal static string ServerReportedOneCoverOrBothNotFound {
             get {
                 return ResourceManager.GetString("ServerReportedOneCoverOrBothNotFound", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Silenciar notificações.
-        /// </summary>
-        internal static string SilenceNotifications {
-            get {
-                return ResourceManager.GetString("SilenceNotifications", resourceCulture);
             }
         }
         

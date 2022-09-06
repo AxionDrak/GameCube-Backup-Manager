@@ -61,7 +61,7 @@ namespace GCBM
             this.lblNomenclature = new System.Windows.Forms.Label();
             this.tabSettingsSeveral = new System.Windows.Forms.TabPage();
             this.grbGeneralDiverse = new System.Windows.Forms.GroupBox();
-            this.cbNotificationToggle = new System.Windows.Forms.CheckBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.chkMultipleInstances = new System.Windows.Forms.CheckBox();
             this.chkLoadDatabase = new System.Windows.Forms.CheckBox();
             this.chkNotify = new System.Windows.Forms.CheckBox();
@@ -430,7 +430,7 @@ namespace GCBM
             // grbGeneralDiverse
             // 
             resources.ApplyResources(this.grbGeneralDiverse, "grbGeneralDiverse");
-            this.grbGeneralDiverse.Controls.Add(this.cbNotificationToggle);
+            this.grbGeneralDiverse.Controls.Add(this.checkBox1);
             this.grbGeneralDiverse.Controls.Add(this.chkMultipleInstances);
             this.grbGeneralDiverse.Controls.Add(this.chkLoadDatabase);
             this.grbGeneralDiverse.Controls.Add(this.chkNotify);
@@ -445,12 +445,12 @@ namespace GCBM
             this.grbGeneralDiverse.Name = "grbGeneralDiverse";
             this.grbGeneralDiverse.TabStop = false;
             // 
-            // cbNotificationToggle
+            // checkBox1
             // 
-            resources.ApplyResources(this.cbNotificationToggle, "cbNotificationToggle");
-            this.cbNotificationToggle.Name = "cbNotificationToggle";
-            this.cbNotificationToggle.UseVisualStyleBackColor = true;
-            this.cbNotificationToggle.CheckedChanged += new System.EventHandler(this.cbNotificationToggle_CheckChanged);
+            resources.ApplyResources(this.checkBox1, "checkBox1");
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // chkMultipleInstances
             // 
@@ -1574,6 +1574,6 @@ namespace GCBM
         private RadioButton rbDX12;
         private RadioButton rbDX11;
         private OpenFileDialog ofdDolphin;
-        private CheckBox cbNotificationToggle;
+        private CheckBox checkBox1;
     }
 }

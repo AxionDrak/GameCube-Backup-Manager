@@ -501,7 +501,13 @@
   <data name="AskDownloadWiiTDB" xml:space="preserve">
     <value>WiiTDB.zip no encontrado, ¿quieres descargarlo ahora?</value>
   </data>
-  <data name="TransferCompleteAll" xml:space="preserve">
-    <value>Se terminaron de transferir {0} archivos.</value>
+  <data name="GameDoneTransferring" xml:space="preserve">
+    <value>Juego instalado: </value>
+  </data>
+  <data name="DoneTransferringAll" xml:space="preserve">
+    <value>Terminado de transferir {0} juegos a la unidad "{1}"</value>
+  </data>
+  <data name="SilenceNotifications" xml:space="preserve">
+    <value>Silenciar notificaciones</value>
   </data>
 </root>

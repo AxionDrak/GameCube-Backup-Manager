@@ -23,7 +23,7 @@ namespace GCBM
         private static void Main()
         {
             #region Adjust Language
-            CultureInfo sysLocale = CultureInfo.CurrentCulture;
+            CultureInfo sysLocale = Thread.CurrentThread.CurrentCulture;
 
             string[] aryLocales = { "pt-BR", "en-US", "es", "ko" };
 
@@ -85,16 +85,28 @@ namespace GCBM
 
         private static void Start()
         {
+            #region Adjust Language
+            CultureInfo sysLocale = CultureInfo.CurrentCulture;
 
+            string[] aryLocales = { "pt-BR", "en-US", "es", "ko" };
+
+            //  See if we have that translation
+            bool isTranslated = aryLocales.Contains(sysLocale.ToString());
+            if (isTranslated)
+            {
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo(sysLocale.ToString()); 
+                CultureInfo.CurrentUICulture = new CultureInfo(sysLocale.ToString());
+
+            }
+            #endregion
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Show Splash Form
             SplashScreen = new frmSplashScreen();
-            
             var splashThread = new Thread(new ThreadStart(
                 () => Application.Run(SplashScreen)));
-            splashThread.CurrentUICulture = CultureInfo.CurrentCulture;
             splashThread.SetApartmentState(ApartmentState.STA);
+            splashThread.CurrentUICulture = new CultureInfo(sysLocale.ToString());
             splashThread.Start();
 
             //Create and Show Main Form

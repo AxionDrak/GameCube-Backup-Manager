@@ -97,12 +97,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="HardWorkerEventArgs.cs" />
     <Compile Include="ProcessExtensions.cs" />
     <Compile Include="ExportDataTableToHTML.cs" />
@@ -163,6 +157,12 @@
     </Compile>
     <Compile Include="Game.cs" />
     <Compile Include="Hardworker.cs" />
+    <Compile Include="image.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="info.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="IniFile.cs" />
     <Compile Include="Network.cs" />
     <Compile Include="Program.cs" />
@@ -173,6 +173,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="SIOExtensions.cs" />
+    <Compile Include="TOC.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="DataTableToCSV.cs" />
     <Compile Include="tools\frmBurnMedia.cs">
       <SubType>Form</SubType>
@@ -373,9 +376,6 @@
     <Compile Include="tools\MediaItem\IMediaItem.cs" />
     <Compile Include="tools\MediaItem\SHFILEINFO.cs" />
     <Compile Include="tools\MediaItem\Win32.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmAboutBox.en-US.resx">
       <DependentUpon>frmAboutBox.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -440,6 +440,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmInformation.resx">
       <DependentUpon>frmInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.en-UM.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.en-US.resx">
       <DependentUpon>frmMain.cs</DependentUpon>

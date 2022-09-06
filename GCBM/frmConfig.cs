@@ -20,6 +20,7 @@ namespace GCBM
 
             ConfigStart();
             LoadConfigFile();
+            this.Update();
         }
 
         #endregion
@@ -42,6 +43,8 @@ namespace GCBM
             //rbDSPHLE.Checked = true;
             tbGeneralTempPath.Text = GET_CURRENT_PATH + TEMP_DIR;
             tbDirectoryCoverCache.Text = GET_CURRENT_PATH + COVERS_DIR;
+            checkBox1.Checked = CONFIG_INI_FILE.IniReadBool("GENERAL", "IsSilenced");
+            checkBox1.CheckState = CheckState.Checked;
         }
 
         #endregion
@@ -104,7 +107,7 @@ namespace GCBM
             CONFIG_INI_FILE.IniWriteBool("GENERAL", "ExtractSplitFile", chkGeneralExtractSplitFile.Checked);
             CONFIG_INI_FILE.IniWriteBool("GENERAL", "ExtractNwb", chkGeneralExtractNwb.Checked);
             CONFIG_INI_FILE.IniWriteInt("GENERAL", "FileSize", cbGeneralFileSize.SelectedIndex);
-
+            CONFIG_INI_FILE.IniWriteBool("GENERAL", "IsSilenced", checkBox1.Checked);
             if (tbGeneralTempPath.Text == string.Empty)
             {
                 tbGeneralTempPath.Text = TEMP_DIR;
@@ -128,7 +131,6 @@ namespace GCBM
             CONFIG_INI_FILE.IniWriteBool("SEVERAL", "Screensaver", chkScreensaver.Checked);
             CONFIG_INI_FILE.IniWriteBool("SEVERAL", "LoadDatabase", chkLoadDatabase.Checked);
             CONFIG_INI_FILE.IniWriteBool("SEVERAL", "MultipleInstances", chkMultipleInstances.Checked);
-            CONFIG_INI_FILE.IniWriteBool("GENERAL", "IsSilenced", IsSilenced);
 
             // TransferSystem
             CONFIG_INI_FILE.IniWriteBool("TRANSFERSYSTEM", "FST", rbTransferSystemFST.Checked);
@@ -251,11 +253,6 @@ namespace GCBM
                 chkScreensaver.Checked = CONFIG_INI_FILE.IniReadBool("SEVERAL", "Screensaver");
                 chkLoadDatabase.Checked = CONFIG_INI_FILE.IniReadBool("SEVERAL", "LoadDatabase");
                 chkMultipleInstances.Checked = CONFIG_INI_FILE.IniReadBool("SEVERAL", "MultipleInstances");
-                IsSilenced = CONFIG_INI_FILE.IniReadBool("SEVERAL", "IsSilenced");
-                cbNotificationToggle.Image = IsSilenced ? Resources.bell_off_24 : Resources.bell_24;
-                cbNotificationToggle.Checked = IsSilenced;
-                cbNotificationToggle.CheckState = IsSilenced ? CheckState.Unchecked : CheckState.Checked;
-                cbNotificationToggle.Update();
 
                 // TransferSystem
                 rbTransferSystemFST.Checked = CONFIG_INI_FILE.IniReadBool("TRANSFERSYSTEM", "FST");
@@ -585,14 +582,9 @@ namespace GCBM
 
         #endregion
 
-        private bool IsSilenced;
-        private void cbNotificationToggle_CheckChanged(object sender, EventArgs e)
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            IsSilenced = !IsSilenced;
-            cbNotificationToggle.Image = IsSilenced ? Resources.bell_off_24 : Resources.bell_24;
-            cbNotificationToggle.Checked = IsSilenced;
-            cbNotificationToggle.Update();
+            CONFIG_INI_FILE.IniWriteBool("GENERAL","IsSilenced",checkBox1.Checked);
         }
-
     }
 }

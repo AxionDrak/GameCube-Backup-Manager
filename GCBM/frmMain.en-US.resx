@@ -117,10 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="tabControlMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>878, 540</value>
+  <data name="grpSearch.Text" xml:space="preserve">
+    <value>Search</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="pbGameCover3D.ErrorImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAALAAAAD4CAYAAABMvGxfAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
@@ -651,23 +651,17 @@
         n3322V7suxX6ASKjfQ71h8j4/4Z4I7FIJPofI1bqEdzG6zMAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="tabMainFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>870, 514</value>
+  <data name="lblGameCountSource.Size" type="System.Drawing.Size, System.Drawing">
+    <value>81, 13</value>
   </data>
-  <data name="tabMainFile.Text" xml:space="preserve">
-    <value>Files (Source)</value>
+  <data name="lblGameCountSource.Text" xml:space="preserve">
+    <value>Games Verified:</value>
   </data>
-  <data name="lblInstallGame.Location" type="System.Drawing.Point, System.Drawing">
-    <value>517, 329</value>
+  <data name="lblAbort.Text" xml:space="preserve">
+    <value>Stop</value>
   </data>
-  <data name="lblInstallGame.Size" type="System.Drawing.Size, System.Drawing">
-    <value>86, 13</value>
-  </data>
-  <data name="lblInstallGame.Text" xml:space="preserve">
-    <value>Installing game...</value>
-  </data>
-  <data name="lblPercent.Location" type="System.Drawing.Point, System.Drawing">
-    <value>663, 311</value>
+  <data name="pbCopy.Location" type="System.Drawing.Point, System.Drawing">
+    <value>514, 345</value>
   </data>
   <data name="lblCopy.Location" type="System.Drawing.Point, System.Drawing">
     <value>517, 311</value>
@@ -678,29 +672,32 @@
   <data name="lblCopy.Text" xml:space="preserve">
     <value>Waiting...</value>
   </data>
-  <data name="pbCopy.Location" type="System.Drawing.Point, System.Drawing">
-    <value>514, 345</value>
-  </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
     <value>517, 428</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Click on the icon to the side and select a folder to list all the ISO and GCM files contained inside.</value>
   </data>
+  <data name="lblPercent.Location" type="System.Drawing.Point, System.Drawing">
+    <value>663, 311</value>
+  </data>
   <data name="btnSelectFolder.Location" type="System.Drawing.Point, System.Drawing">
     <value>781, 408</value>
   </data>
-  <data name="grpDetails.Text" xml:space="preserve">
-    <value>Details</value>
+  <data name="lblInstallGame.Location" type="System.Drawing.Point, System.Drawing">
+    <value>517, 329</value>
+  </data>
+  <data name="lblInstallGame.Size" type="System.Drawing.Size, System.Drawing">
+    <value>86, 13</value>
+  </data>
+  <data name="lblInstallGame.Text" xml:space="preserve">
+    <value>Installing game...</value>
   </data>
   <data name="lblTypeDisc.Size" type="System.Drawing.Size, System.Drawing">
     <value>37, 13</value>
   </data>
   <data name="lblTypeDisc.Text" xml:space="preserve">
     <value>Disc...</value>
-  </data>
-  <data name="grpOperations.Text" xml:space="preserve">
-    <value>Operations</value>
   </data>
   <data name="btnGameInstallScrub.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -757,6 +754,15 @@
   <data name="btnGameInstallExactCopy.Text" xml:space="preserve">
     <value>Install Game (1:1)</value>
   </data>
+  <data name="grpOperations.Text" xml:space="preserve">
+    <value>Operations</value>
+  </data>
+  <data name="labelGameID.Size" type="System.Drawing.Size, System.Drawing">
+    <value>52, 13</value>
+  </data>
+  <data name="labelGameID.Text" xml:space="preserve">
+    <value>Game ID:</value>
+  </data>
   <data name="labelFile.Text" xml:space="preserve">
     <value>Region:</value>
   </data>
@@ -765,9 +771,6 @@
   </data>
   <data name="labelTitle.Text" xml:space="preserve">
     <value>Title:</value>
-  </data>
-  <data name="cmsMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>233, 198</value>
   </data>
   <data name="tsmiInfoGame.Size" type="System.Drawing.Size, System.Drawing">
     <value>232, 22</value>
@@ -790,26 +793,44 @@
   <data name="tsmiSearchOnGameTDB.Size" type="System.Drawing.Size, System.Drawing">
     <value>232, 22</value>
   </data>
+  <data name="tsmiSearchOnGameTDB.Text" xml:space="preserve">
+    <value>Search GameTDB</value>
+  </data>
   <data name="toolStripMenuItem8.Size" type="System.Drawing.Size, System.Drawing">
     <value>229, 6</value>
   </data>
   <data name="tsmiSearchOnGoogle.Size" type="System.Drawing.Size, System.Drawing">
     <value>232, 22</value>
   </data>
+  <data name="tsmiSearchOnGoogle.Text" xml:space="preserve">
+    <value>Search on Google</value>
+  </data>
   <data name="SearchOnWikipedia.Size" type="System.Drawing.Size, System.Drawing">
     <value>232, 22</value>
+  </data>
+  <data name="SearchOnWikipedia.Text" xml:space="preserve">
+    <value>Search in Wikipedia</value>
   </data>
   <data name="tsmiSearchOnYoutube.Size" type="System.Drawing.Size, System.Drawing">
     <value>232, 22</value>
   </data>
+  <data name="tsmiSearchOnYoutube.Text" xml:space="preserve">
+    <value>Search on YouTube</value>
+  </data>
   <data name="tsmiSearchOnGameSpot.Size" type="System.Drawing.Size, System.Drawing">
     <value>232, 22</value>
+  </data>
+  <data name="tsmiSearchOnGameSpot.Text" xml:space="preserve">
+    <value>Search on GameSpot</value>
   </data>
   <data name="tsmiSearchOnVGChartz.Size" type="System.Drawing.Size, System.Drawing">
     <value>232, 22</value>
   </data>
-  <data name="mstripFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>864, 24</value>
+  <data name="tsmiSearchOnVGChartz.Text" xml:space="preserve">
+    <value>Search on VGChartz</value>
+  </data>
+  <data name="cmsMain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>233, 198</value>
   </data>
   <data name="tsmiReloadGameList.Size" type="System.Drawing.Size, System.Drawing">
     <value>92, 20</value>
@@ -817,11 +838,11 @@
   <data name="tsmiReloadGameList.Text" xml:space="preserve">
     <value>Reload List</value>
   </data>
-  <data name="tsmiSelectGameList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>50, 20</value>
+  <data name="tsmiClearListSource.Size" type="System.Drawing.Size, System.Drawing">
+    <value>83, 20</value>
   </data>
-  <data name="tsmiSelectGameList.Text" xml:space="preserve">
-    <value>Select</value>
+  <data name="tsmiClearListSource.Text" xml:space="preserve">
+    <value>Clear List</value>
   </data>
   <data name="tsmiGameListSelectAll.Size" type="System.Drawing.Size, System.Drawing">
     <value>103, 22</value>
@@ -835,11 +856,11 @@
   <data name="tsmiGameListSelectNone.Text" xml:space="preserve">
     <value>None</value>
   </data>
-  <data name="tsmiRemoveGameList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>62, 20</value>
+  <data name="tsmiSelectGameList.Size" type="System.Drawing.Size, System.Drawing">
+    <value>66, 20</value>
   </data>
-  <data name="tsmiRemoveGameList.Text" xml:space="preserve">
-    <value>Delete</value>
+  <data name="tsmiSelectGameList.Text" xml:space="preserve">
+    <value>Select</value>
   </data>
   <data name="tsmiGameListDeleteAllFiles.Size" type="System.Drawing.Size, System.Drawing">
     <value>118, 22</value>
@@ -853,17 +874,11 @@
   <data name="tsmiGameListDeleteSelectedFile.Text" xml:space="preserve">
     <value>Selected</value>
   </data>
-  <data name="tsmiToolsGameList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>46, 20</value>
+  <data name="tsmiRemoveGameList.Size" type="System.Drawing.Size, System.Drawing">
+    <value>68, 20</value>
   </data>
-  <data name="tsmiToolsGameList.Text" xml:space="preserve">
-    <value>Tools</value>
-  </data>
-  <data name="tsmiGameListSignatureSHA1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 22</value>
-  </data>
-  <data name="tsmiGameListSignatureSHA1.Text" xml:space="preserve">
-    <value>SHA-1 signature</value>
+  <data name="tsmiRemoveGameList.Text" xml:space="preserve">
+    <value>Delete</value>
   </data>
   <data name="tsmiGameListHashSHA1.Size" type="System.Drawing.Size, System.Drawing">
     <value>166, 22</value>
@@ -871,17 +886,41 @@
   <data name="tsmiGameListHashSHA1.Text" xml:space="preserve">
     <value>Check selected(s)</value>
   </data>
+  <data name="tsmiGameListSignatureSHA1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 22</value>
+  </data>
+  <data name="tsmiGameListSignatureSHA1.Text" xml:space="preserve">
+    <value>SHA-1 signature</value>
+  </data>
   <data name="exportarListaToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>160, 22</value>
   </data>
   <data name="exportarListaToolStripMenuItem.Text" xml:space="preserve">
     <value>Export list as...</value>
   </data>
-  <data name="tabMainDisc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>870, 514</value>
+  <data name="tsmiToolsGameList.Size" type="System.Drawing.Size, System.Drawing">
+    <value>62, 20</value>
   </data>
-  <data name="tabMainDisc.Text" xml:space="preserve">
-    <value>Files (Destination)</value>
+  <data name="tsmiToolsGameList.Text" xml:space="preserve">
+    <value>Tools</value>
+  </data>
+  <data name="mstripFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>870, 24</value>
+  </data>
+  <data name="tabMainFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>876, 514</value>
+  </data>
+  <data name="tabMainFile.Text" xml:space="preserve">
+    <value>Files (Source)</value>
+  </data>
+  <data name="lblAbortDestination.Text" xml:space="preserve">
+    <value>Stop</value>
+  </data>
+  <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>88, 13</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>Games Found:</value>
   </data>
   <data name="lblSpaceAvailabeOnDevice.Location" type="System.Drawing.Point, System.Drawing">
     <value>519, 265</value>
@@ -919,9 +958,6 @@
   <data name="label2.Text" xml:space="preserve">
     <value>NOTE:</value>
   </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>Details</value>
-  </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Region:</value>
   </data>
@@ -931,8 +967,8 @@
   <data name="label6.Text" xml:space="preserve">
     <value>Title:</value>
   </data>
-  <data name="mstripDisc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>864, 27</value>
+  <data name="grpDetailsDestiny.Text" xml:space="preserve">
+    <value>Details</value>
   </data>
   <data name="tscbDiscDrive.Items" xml:space="preserve">
     <value>Inactive</value>
@@ -949,11 +985,11 @@
   <data name="tsmiReloadGameListDisc.Text" xml:space="preserve">
     <value>Reload List</value>
   </data>
-  <data name="tsmiSelectGameDisc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>50, 23</value>
+  <data name="tsmiClearListDestination.Size" type="System.Drawing.Size, System.Drawing">
+    <value>83, 23</value>
   </data>
-  <data name="tsmiSelectGameDisc.Text" xml:space="preserve">
-    <value>Select</value>
+  <data name="tsmiClearListDestination.Text" xml:space="preserve">
+    <value>Clear List</value>
   </data>
   <data name="tsmiGameDiscSelectAll.Size" type="System.Drawing.Size, System.Drawing">
     <value>103, 22</value>
@@ -967,11 +1003,11 @@
   <data name="tsmiGameDiscSelectNone.Text" xml:space="preserve">
     <value>None</value>
   </data>
-  <data name="tsmiRemoveGameDisc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>62, 23</value>
+  <data name="tsmiSelectGameDisc.Size" type="System.Drawing.Size, System.Drawing">
+    <value>66, 23</value>
   </data>
-  <data name="tsmiRemoveGameDisc.Text" xml:space="preserve">
-    <value>Delete</value>
+  <data name="tsmiSelectGameDisc.Text" xml:space="preserve">
+    <value>Select</value>
   </data>
   <data name="tsmiGameDiscDeleteAllFiles.Size" type="System.Drawing.Size, System.Drawing">
     <value>118, 22</value>
@@ -985,11 +1021,11 @@
   <data name="tsmiGameDiscDeleteSelectedFile.Text" xml:space="preserve">
     <value>Selected</value>
   </data>
-  <data name="tsmiToolsGameDisc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>46, 23</value>
+  <data name="tsmiRemoveGameDisc.Size" type="System.Drawing.Size, System.Drawing">
+    <value>68, 23</value>
   </data>
-  <data name="tsmiToolsGameDisc.Text" xml:space="preserve">
-    <value>Tools</value>
+  <data name="tsmiRemoveGameDisc.Text" xml:space="preserve">
+    <value>Delete</value>
   </data>
   <data name="tsmiGameDiscExportList.Size" type="System.Drawing.Size, System.Drawing">
     <value>161, 22</value>
@@ -999,12 +1035,6 @@
   </data>
   <data name="toolStripMenuItem3.Size" type="System.Drawing.Size, System.Drawing">
     <value>158, 6</value>
-  </data>
-  <data name="tsmiGameDiscSignatureSHA1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>161, 22</value>
-  </data>
-  <data name="tsmiGameDiscSignatureSHA1.Text" xml:space="preserve">
-    <value>SHA-1 Signature</value>
   </data>
   <data name="tsmiGameDiscAllHashSHA1.Size" type="System.Drawing.Size, System.Drawing">
     <value>166, 22</value>
@@ -1018,11 +1048,11 @@
   <data name="tsmiGameDiscHashSHA1.Text" xml:space="preserve">
     <value>Check selected(s)</value>
   </data>
-  <data name="tsmiGameDiscSignatureMD5.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="tsmiGameDiscSignatureSHA1.Size" type="System.Drawing.Size, System.Drawing">
     <value>161, 22</value>
   </data>
-  <data name="tsmiGameDiscSignatureMD5.Text" xml:space="preserve">
-    <value>MD5 Signature</value>
+  <data name="tsmiGameDiscSignatureSHA1.Text" xml:space="preserve">
+    <value>SHA-1 Signature</value>
   </data>
   <data name="tsmiGameDiscAllHashMD5.Size" type="System.Drawing.Size, System.Drawing">
     <value>180, 22</value>
@@ -1051,11 +1081,26 @@
   <data name="tsmiGameDiscRecalculateSelectedGameMD5.Text" xml:space="preserve">
     <value>Recalculate selected</value>
   </data>
-  <data name="tabMainDatabase.Size" type="System.Drawing.Size, System.Drawing">
-    <value>870, 514</value>
+  <data name="tsmiGameDiscSignatureMD5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>161, 22</value>
   </data>
-  <data name="tabMainDatabase.Text" xml:space="preserve">
-    <value>Database</value>
+  <data name="tsmiGameDiscSignatureMD5.Text" xml:space="preserve">
+    <value>MD5 Signature</value>
+  </data>
+  <data name="tsmiToolsGameDisc.Size" type="System.Drawing.Size, System.Drawing">
+    <value>62, 23</value>
+  </data>
+  <data name="tsmiToolsGameDisc.Text" xml:space="preserve">
+    <value>Tools</value>
+  </data>
+  <data name="mstripDisc.Size" type="System.Drawing.Size, System.Drawing">
+    <value>870, 27</value>
+  </data>
+  <data name="tabMainDisc.Size" type="System.Drawing.Size, System.Drawing">
+    <value>876, 514</value>
+  </data>
+  <data name="tabMainDisc.Text" xml:space="preserve">
+    <value>Files (Destination)</value>
   </data>
   <data name="cbFilterDatabase.Items" xml:space="preserve">
     <value>Select an item...</value>
@@ -1072,35 +1117,23 @@
   <data name="lvDatabase.Size" type="System.Drawing.Size, System.Drawing">
     <value>858, 465</value>
   </data>
-  <data name="mstripDatabase.Size" type="System.Drawing.Size, System.Drawing">
-    <value>864, 24</value>
-  </data>
   <data name="tsmiToolDatabase.Size" type="System.Drawing.Size, System.Drawing">
     <value>46, 20</value>
   </data>
   <data name="tsmiToolDatabase.Text" xml:space="preserve">
     <value>Tools</value>
   </data>
-  <data name="tsmiDatabaseUpdateGameTDB.Size" type="System.Drawing.Size, System.Drawing">
-    <value>166, 22</value>
+  <data name="mstripDatabase.Size" type="System.Drawing.Size, System.Drawing">
+    <value>870, 24</value>
   </data>
-  <data name="tsmiDatabaseUpdateGameTDB.Text" xml:space="preserve">
-    <value>GameTDB update</value>
+  <data name="tabMainDatabase.Size" type="System.Drawing.Size, System.Drawing">
+    <value>876, 514</value>
   </data>
-  <data name="tabMainLog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>870, 514</value>
+  <data name="tabMainDatabase.Text" xml:space="preserve">
+    <value>Database</value>
   </data>
   <data name="tbLog.Size" type="System.Drawing.Size, System.Drawing">
     <value>858, 481</value>
-  </data>
-  <data name="mstripLog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>864, 24</value>
-  </data>
-  <data name="tsmiToolLog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>46, 20</value>
-  </data>
-  <data name="tsmiToolLog.Text" xml:space="preserve">
-    <value>Tools</value>
   </data>
   <data name="tsmiClearLog.Size" type="System.Drawing.Size, System.Drawing">
     <value>137, 22</value>
@@ -1117,20 +1150,29 @@
   <data name="tsmiExportLog.Text" xml:space="preserve">
     <value>Export log...</value>
   </data>
+  <data name="tsmiToolLog.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 20</value>
+  </data>
+  <data name="tsmiToolLog.Text" xml:space="preserve">
+    <value>Tools</value>
+  </data>
+  <data name="mstripLog.Size" type="System.Drawing.Size, System.Drawing">
+    <value>870, 24</value>
+  </data>
+  <data name="tabMainLog.Size" type="System.Drawing.Size, System.Drawing">
+    <value>876, 514</value>
+  </data>
+  <data name="tabControlMain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>884, 540</value>
+  </data>
+  <data name="tsmiExit.Text" xml:space="preserve">
+    <value>Exit</value>
+  </data>
   <data name="tsmiFile.Size" type="System.Drawing.Size, System.Drawing">
     <value>37, 20</value>
   </data>
   <data name="tsmiFile.Text" xml:space="preserve">
     <value>File</value>
-  </data>
-  <data name="tsmiExit.Text" xml:space="preserve">
-    <value>Exit</value>
-  </data>
-  <data name="tsmiCovers.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 20</value>
-  </data>
-  <data name="tsmiCovers.Text" xml:space="preserve">
-    <value>Covers</value>
   </data>
   <data name="tsmiDownloadCoversSelectedGame.Size" type="System.Drawing.Size, System.Drawing">
     <value>442, 22</value>
@@ -1168,20 +1210,17 @@
   <data name="tsmiTransferDeviceCovers.Text" xml:space="preserve">
     <value>Transfer downloaded skins to device</value>
   </data>
-  <data name="tsmiDisplay.Size" type="System.Drawing.Size, System.Drawing">
-    <value>57, 20</value>
+  <data name="tsmiCovers.Size" type="System.Drawing.Size, System.Drawing">
+    <value>55, 20</value>
   </data>
-  <data name="tsmiDisplay.Text" xml:space="preserve">
-    <value>Display</value>
+  <data name="tsmiCovers.Text" xml:space="preserve">
+    <value>Covers</value>
   </data>
   <data name="tsmiGameInfo.Size" type="System.Drawing.Size, System.Drawing">
     <value>304, 22</value>
   </data>
   <data name="tsmiGameInfo.Text" xml:space="preserve">
     <value>Detailed information (of the selected game)</value>
-  </data>
-  <data name="boxArtToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>304, 22</value>
   </data>
   <data name="tsmiEnableCoverPanel.Size" type="System.Drawing.Size, System.Drawing">
     <value>112, 22</value>
@@ -1195,11 +1234,14 @@
   <data name="tsmiDisableCoverPanel.Text" xml:space="preserve">
     <value>Disable</value>
   </data>
-  <data name="tsmiOptions.Size" type="System.Drawing.Size, System.Drawing">
-    <value>61, 20</value>
+  <data name="boxArtToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>304, 22</value>
   </data>
-  <data name="tsmiOptions.Text" xml:space="preserve">
-    <value>Options</value>
+  <data name="tsmiDisplay.Size" type="System.Drawing.Size, System.Drawing">
+    <value>57, 20</value>
+  </data>
+  <data name="tsmiDisplay.Text" xml:space="preserve">
+    <value>Display</value>
   </data>
   <data name="tsmiConfigurationMain.Size" type="System.Drawing.Size, System.Drawing">
     <value>125, 22</value>
@@ -1207,20 +1249,23 @@
   <data name="tsmiConfigurationMain.Text" xml:space="preserve">
     <value>Settings...</value>
   </data>
-  <data name="tsmiTools.Size" type="System.Drawing.Size, System.Drawing">
-    <value>46, 20</value>
+  <data name="tsmiOptions.Size" type="System.Drawing.Size, System.Drawing">
+    <value>61, 20</value>
   </data>
-  <data name="tsmiTools.Text" xml:space="preserve">
-    <value>Tools</value>
+  <data name="tsmiOptions.Text" xml:space="preserve">
+    <value>Options</value>
+  </data>
+  <data name="tsmiRenameFolders.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="tsmiRenameFolders.Text" xml:space="preserve">
+    <value>Rename Folders</value>
   </data>
   <data name="tsmiRenameISO.Size" type="System.Drawing.Size, System.Drawing">
-    <value>170, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="tsmiRenameISO.Text" xml:space="preserve">
     <value>Rename ISO/GCM</value>
-  </data>
-  <data name="tsmiMainPlugins.Size" type="System.Drawing.Size, System.Drawing">
-    <value>170, 22</value>
   </data>
   <data name="tsmiMetaXml.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 22</value>
@@ -1252,11 +1297,20 @@
   <data name="tsmiBurnMedia.Text" xml:space="preserve">
     <value>Burn CD/DVD Media</value>
   </data>
-  <data name="tsmiHelp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>44, 20</value>
+  <data name="tsmiMainPlugins.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
   </data>
-  <data name="tsmiHelp.Text" xml:space="preserve">
-    <value>Help</value>
+  <data name="tsmiUpdateDatabase.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="tsmiUpdateDatabase.Text" xml:space="preserve">
+    <value>Update GameTDB</value>
+  </data>
+  <data name="tsmiTools.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 20</value>
+  </data>
+  <data name="tsmiTools.Text" xml:space="preserve">
+    <value>Tools</value>
   </data>
   <data name="tsmiWebsiteFacebook.Size" type="System.Drawing.Size, System.Drawing">
     <value>261, 22</value>
@@ -1291,11 +1345,20 @@
   <data name="tsmiMenuAbout.Text" xml:space="preserve">
     <value>About GameCube Backup Manager</value>
   </data>
+  <data name="tsmiHelp.Size" type="System.Drawing.Size, System.Drawing">
+    <value>44, 20</value>
+  </data>
+  <data name="tsmiHelp.Text" xml:space="preserve">
+    <value>Help</value>
+  </data>
   <data name="lblNetStatus.Size" type="System.Drawing.Size, System.Drawing">
     <value>144, 13</value>
   </data>
   <data name="lblNetStatus.Text" xml:space="preserve">
     <value>Internet connection disabled!</value>
+  </data>
+  <data name="tsmiNotifyExit.Text" xml:space="preserve">
+    <value>Exit</value>
   </data>
   <data name="notifyIcon.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1392,9 +1455,6 @@
         AADAAwAAwAMAAMADAADAAwAAwAMAAMADAAD4HwAA
 </value>
   </data>
-  <data name="tsmiNotifyExit.Text" xml:space="preserve">
-    <value>Exit</value>
-  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAIAICAAAAEAIACoEAAAJgAAABAQAAABACAAaAQAAM4QAAAoAAAAIAAAAEAAAAABACAAAAAAAIAQ
@@ -1489,56 +1549,5 @@
         Af8BAQH/AAAAAAAAAAAAAAAAAAAAAAAAAADgBwAAwAMAAMADAADAAwAAwAMAAMADAADAAwAAwAMAAMAD
         AADAAwAAwAMAAMADAADAAwAAwAMAAMADAAD4HwAA
 </value>
-  </data>
-  <data name="tsmiSearchOnGameTDB.Text" xml:space="preserve">
-    <value>Search GameTDB</value>
-  </data>
-  <data name="tsmiSearchOnGoogle.Text" xml:space="preserve">
-    <value>Search on Google</value>
-  </data>
-  <data name="SearchOnWikipedia.Text" xml:space="preserve">
-    <value>Search in Wikipedia</value>
-  </data>
-  <data name="tsmiSearchOnYoutube.Text" xml:space="preserve">
-    <value>Search on YouTube</value>
-  </data>
-  <data name="tsmiSearchOnGameSpot.Text" xml:space="preserve">
-    <value>Search on GameSpot</value>
-  </data>
-  <data name="tsmiSearchOnVGChartz.Text" xml:space="preserve">
-    <value>Search on VGChartz</value>
-  </data>
-  <data name="grpSearch.Text" xml:space="preserve">
-    <value>Search</value>
-  </data>
-  <data name="grpDetailsDestiny.Text" xml:space="preserve">
-    <value>Details</value>
-  </data>
-  <data name="lblGameCountSource.Text" xml:space="preserve">
-    <value>Games Verified:</value>
-  </data>
-  <data name="tsmiRenameFolders.Text" xml:space="preserve">
-    <value>Rename Folders</value>
-  </data>
-  <data name="tsmiMainPlugins.Text" xml:space="preserve">
-    <value>Plugins</value>
-  </data>
-  <data name="lblAbort.Text" xml:space="preserve">
-    <value>Stop</value>
-  </data>
-  <data name="lblAbortDestination.Text" xml:space="preserve">
-    <value>Stop</value>
-  </data>
-  <data name="labelGameID.Text" xml:space="preserve">
-    <value>Game ID:</value>
-  </data>
-  <data name="label8.Text" xml:space="preserve">
-    <value>Games Found:</value>
-  </data>
-  <data name="tsmiClearListDestination.Text" xml:space="preserve">
-    <value>Clear List</value>
-  </data>
-  <data name="tsmiClearListSource.Text" xml:space="preserve">
-    <value>Clear List</value>
   </data>
 </root>
