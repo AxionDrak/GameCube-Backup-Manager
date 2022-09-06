@@ -1,6 +1,6 @@
 # GameCube Backup Manager
 
-**GCBM (GameCube Backup Manager)** is a program for working with FAT32 *(and NTFS)* drives to convert ISO files for use in Nintendont.
+**GCBM (GameCube Backup Manager)** is a program to work with FAT32, exFAT and NTFS drives *(NTFS devices only work as a backup, they don't work on Nintendont)* allowing you to correctly convert ISO files for use on Nintendont.
 
 Visit GameTDB, a collaborative game database for anyone to contribute and anyone to use in any game-related project. Just click on the link below (image):
 * [![GameTDB](GameTDB-100.png)](https://www.gametdb.com/)
@@ -26,19 +26,19 @@ All Releases: https://github.com/AxionDrak/GameCube-Backup-Manager/releases
 + Cover transfer (USB Loader GX, USB Loader GX Tab MOD).
 + Transferring games with the correct nomenclature (Game Name+ID or ID only).
 ***Available in “Install Game (1:1)” mode using the commercial name via ‘wiitdb.xml’. The “Install Game (Scrub)” mode uses the internal nomenclature provided by the developer, that is, it does not use ‘wiitdb.xml’.***
++ Game transfer via XCopy (1:1 copies - Standard).
 + Game transfer via Scrub (GCReEx and DiscEx).
 + Deleting game files (Source and Destination).
 + Display of game information (region, publisher, genre, etc). ***File ‘wiitdb.xml’ required.***
 + ESRB ratings display. ***File ‘wiitdb.xml’ required.***
 + WiiTDB support for naming. ***File ‘wiitdb.xml’ required.***
-+ Improved GameCube ISO detection (70% accuracy) in 'internal' (Standard) mode.
-+ Improved GameCube ISO detection (100% accuracy) in 'business' mode (GameTDB). ***File ‘wiitdb.xml’ required.***
++ Improved GameCube ISO detection in 'internal' mode (Standard).
++ Improved GameCube ISO detection in 'external' mode (GameTDB). ***The 'wiitdb.xml' file is required.***
 + Global download of Disc and 3D covers (for all games listed!).
 + Individual download of covers for the selected game (Disc and 3D).
-+ Game transfer via XCopy (1:1 copies - Standard).
 + Download the file 'wiitdb.xml' (GameTDB).
-+ MD5 hash Calculation.
-+ SHA-1 Hash Calculation.
++ MD5 hash Calculation (manual option).
++ SHA-1 Hash Calculation (manual option).
 + Automatic creation of 'games' folder (if it doesn't exist).
 + LOG system.
 + Multiple languages supported:
