@@ -10,6 +10,22 @@ namespace GCBM
     /// </summary>
     public partial class frmConfig : Form
     {
+        #region Properties
+
+        private static readonly string TEMP_DIR = Path.DirectorySeparatorChar + "temp";
+        private static readonly string COVERS_DIR = Path.DirectorySeparatorChar + "cover" + Path.DirectorySeparatorChar + "cache";
+        private static readonly string PROG_UPDATE = "07/05/2022";
+        private const string INI_FILE = "config.ini";
+        private static readonly string GET_CURRENT_PATH = Directory.GetCurrentDirectory();
+        private readonly IniFile CONFIG_INI_FILE = new IniFile(INI_FILE);
+        private readonly Assembly assembly = Assembly.GetExecutingAssembly();
+
+        private string GAME_NAME { get; set; }
+        private string GAME_PATH { get; set; }
+        public int RETURN_CONFIRM { get; set; }
+
+        #endregion
+
         #region Main Form
 
         /// <summary>
@@ -458,7 +474,9 @@ namespace GCBM
             }
         }
 
-        #endregion
+        #endregion      
+
+        #region Buttons
 
         private void btnSelectFile_Click(object sender, EventArgs e)
         {
@@ -468,24 +486,6 @@ namespace GCBM
                 tbPathDolphinEmulator.Text = ofdDolphin.FileName;
             }
         }
-
-        #region Properties
-
-        private static readonly string TEMP_DIR = Path.DirectorySeparatorChar + "temp";
-        private static readonly string COVERS_DIR = Path.DirectorySeparatorChar + "cover" + Path.DirectorySeparatorChar + "cache";
-        private static readonly string PROG_UPDATE = "07/05/2022";
-        private const string INI_FILE = "config.ini";
-        private static readonly string GET_CURRENT_PATH = Directory.GetCurrentDirectory();
-        private readonly IniFile CONFIG_INI_FILE = new IniFile(INI_FILE);
-        private readonly Assembly assembly = Assembly.GetExecutingAssembly();
-
-        private string GAME_NAME { get; set; }
-        private string GAME_PATH { get; set; }
-        public int RETURN_CONFIRM { get; set; }
-
-        #endregion
-
-        #region Buttons
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
