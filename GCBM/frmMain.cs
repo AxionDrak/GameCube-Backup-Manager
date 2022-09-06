@@ -34,6 +34,103 @@ namespace GCBM
 {
     public partial class frmMain : Form
     {
+        #region Globals Properties and Variables
+
+        public bool SCANNING = false;
+        public bool CLOSING = false;
+
+        private string loadPath;
+        private string _IDMakerCode;
+        private string _oldNameInternal;
+        private string _IDRegionCode;
+        public Game gameUtilities = new Game();
+        private bool useXmlTitle;
+
+        private static readonly string GET_CURRENT_PATH = sio.Directory.GetCurrentDirectory();
+        private static readonly string GAMES_DIR = "games";
+        private static readonly string TEMP_DIR = sio.Path.DirectorySeparatorChar + "temp";
+        private static readonly string COVERS_DIR = sio.Path.DirectorySeparatorChar + "covers" + sio.Path.DirectorySeparatorChar + "cache";
+        private static readonly string MEDIA_DIR = sio.Path.DirectorySeparatorChar + "media" + sio.Path.DirectorySeparatorChar + "covers";
+        private static readonly string CULTURE_CURRENT = "pt-BR";
+        private static readonly string PROG_UPDATE = "10/07/2022";
+        private static readonly string FAT32 = "FAT32";
+        private static readonly string NTFS = "NTFS";
+        private static readonly string EXFAT_FAT64 = "EXFAT";
+
+        private bool INSTALLING;
+        private bool FINISHEDLAUNCH = false;
+
+        //private static string EXT2                   = "EXT2";
+        //private static string EXT3                   = "EXT3";
+        //private static string EXT4                   = "EXT4";
+        //private static string CURRENT_DIRECTORY;
+        //private static string STANDARD_DIRECTORY;
+        //private static string FILE_TDBXML;
+        //private static string LOG_LEVEL;
+        //private static string CULTURE_LANG;
+        //private static string TRANSLATOR;
+        private static readonly string RES_PATH;
+        private static string IMAGE_PATH;
+        private static string LINK_DOMAIN;
+        private static string FLUSH_SD;
+        private static string SCRUB_ALIGN;
+
+        private static char REGION = 'n';
+
+        //private const string MIN_DB_VERSION          = "1.2.0.0";
+        private const string INI_FILE = "config.ini";
+
+        //private const string GLOBAL_INI_FILE         = "gc_global.ini";
+        //private const string LOG_FILE                = "gcbm.log";
+        //private const string CACHE_DIR               = "cache";
+        //private const string LOCAL_FILES_DB          = "gcbm_Local.xml";
+        private const string WIITDB_FILE = "wiitdb.xml";
+        private const string WIITDB_DOWNLOAD_SITE = "https://www.gametdb.com/";
+        private const string en_US = "en-US";
+
+        //private const string TITLES_FILE             = "titles.txt";
+        //private bool ENABLE_INTERNET                 = true;
+        //private bool ENABLE_UPDATE_PROGRAM           = true;
+        //private bool UPDATE_LOG                      = true;
+        private bool ERROR;
+
+        //private bool NETWORK_CHECK                   = true;
+        //private bool EXPORT_LOG_CHECK                = true;
+        //private bool CLEAR_TEMP_CHECK                = true;
+        //private bool WIITDBXML_CHECK                 = true;
+        private bool SPLASH_SCREEN_DONE;
+        private bool ROOT_OPENED = true;
+        private readonly bool FILENAME_SORT = true;
+
+        private readonly bool RETRIEVE_FILES_INFO = true;
+
+        //private int Reserved;
+        private readonly Assembly assembly = Assembly.GetExecutingAssembly();
+        private readonly IniFile CONFIG_INI_FILE = new IniFile(INI_FILE);
+        private readonly CultureInfo MY_CULTURE = new CultureInfo(CULTURE_CURRENT, false);
+        private readonly ProcessStartInfo START_INFO = new ProcessStartInfo();
+        private readonly WebClient NET_CLIENT = new WebClient();
+        private HttpWebResponse NET_RESPONSE;
+        private frmSplashScreen SPLASH_SCREEN;
+        private readonly string WINTHEME;
+
+        private bool WORKING;
+        private string dgvGameListPath;
+        private string dgvGameListDiscPath;
+        private int intQueueLength;
+        private int intQueuePos;
+        private List<Game> lstInstallQueue = new List<Game>();
+        private Dictionary<int, Game> dSourceGames = new Dictionary<int, Game>();
+        private Dictionary<int, Game> dDestGames = new Dictionary<int, Game>();
+        private Game lastGameLookedUp;
+        private DataGridView dgvSelected = new DataGridView();
+        private Dictionary<int, Game> InstallQueue;
+
+        [DllImport("kernel32.dll")]
+        private static extern EXECUTION_STATE SetThreadExecutionState(EXECUTION_STATE esFlags);
+
+        #endregion
+
         #region Assembly Product
 
         /// <summary>
@@ -51,19 +148,19 @@ namespace GCBM
 
         #endregion
 
-        #region Globals
+        #region Program Version
 
-        public bool SCANNING = false;
-        public bool CLOSING = false;
+        /// <summary>
+        ///     Get the program version directly from the Assembly.
+        /// </summary>
+        /// <returns></returns>
+        private string VERSION()
+        {
+            string PROG_VERSION = assembly.GetName().Version.ToString();
+            return PROG_VERSION;
+        }
 
-        private string loadPath;
-        private string _IDMakerCode;
-        private string _oldNameInternal;
-        private string _IDRegionCode;
-        public Game gameUtilities = new Game();
-        private bool useXmlTitle;
         #endregion
-
 
         #region Main Form Closing
 
@@ -99,21 +196,178 @@ namespace GCBM
             //Cleanup any Threads left lying around
             Dispose();
             Process.GetCurrentProcess().Kill();
-
         }
 
-        #endregion
+        #endregion       
 
-        #region Program Version
+        #region Main Form
 
         /// <summary>
-        ///     Get the program version directly from the Assembly.
+        ///     Main constructor method of the class.
+        ///     No argument parameters.
         /// </summary>
-        /// <returns></returns>
-        private string VERSION()
+        private bool ABORT;
+
+        public frmMain()
         {
-            string PROG_VERSION = assembly.GetName().Version.ToString();
-            return PROG_VERSION;
+            InitializeComponent();
+
+        }
+        // End of Main Constructor
+
+        private void MainCore()
+        {
+            Hide();
+            notifyIcon.Visible = true;
+            InstallQueue = new Dictionary<int, Game>();
+            tbSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(CheckEnterKeyPress);
+            Text = "GameCube Backup Manager 2022 - " + VERSION() + " - 64-bit";
+
+            //Splash Screen
+            //if (CONFIG_INI_FILE.IniReadBool("SEVERAL", "DisableSplash") == false)
+
+            //    Load += HandleFormLoad;
+
+            NetworkCheck();
+            if (!sio.File.Exists(INI_FILE))
+            {
+                DefaultConfigSave();
+                DetectOSLanguage();
+
+                AdjustLanguage();
+                Controls.Clear();
+                InitializeComponent();
+            }
+
+            LoadConfigFile();
+            AboutTranslator();
+            GetAllDrives();
+            //DetectOSLanguage();
+            //AdjustLanguage();
+            //UpdateProgram();
+            //LoadDatabaseXML();
+            DisabeScreensaver();
+            SetupLog();
+            RequiredDirectories();//Do we really need to wait on this?
+            DisableOptionsGame(dgvSource);
+            tscbDiscDrive.SelectedIndex = 0;
+            cbFilterDatabase.SelectedIndex = 0;
+
+            //Check for WiiTDB file and internet connection, download if not found and we're online
+            if (!sio.File.Exists(WIITDB_FILE) && NetworkInterface.GetIsNetworkAvailable())
+            {
+                //frmDownloadGameTDB frmDownload = new frmDownloadGameTDB();
+                //_ = frmDownload.ShowDialog();
+                Show();
+                CheckAndDownloadWiiTdbXml();
+            }
+            else if (!sio.File.Exists(WIITDB_FILE) && !NetworkInterface.GetIsNetworkAvailable())
+            {
+                MessageBox.Show(Resources.NoInternetConnectionFound_String1 + Environment.NewLine +
+                                Resources.NoInternetConnectionFound_String2,
+                                Resources.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            //LoadDatabaseXML();
+
+            // DISABLED
+            DisableOptions();
+
+            //All done, Clean up / Refresh to ensure language and settings are updated.
+
+            //Localization.. but not working @Laetemn
+
+            #region dgvDestination Setup
+
+            PopDgv();
+
+            #endregion
+
+            Thread.CurrentThread.CurrentUICulture.ClearCachedData();
+            Thread.CurrentThread.CurrentCulture.ClearCachedData();
+
+            //foreach in this.Controls.Results 
+            mstripMain.Refresh();
+            Form SplashScreen = Program.SplashScreen;
+            if (SplashScreen != null && !SplashScreen.Disposing && !SplashScreen.IsDisposed)
+                SplashScreen.Invoke(new Action(() => SplashScreen.Close()));
+            wait(500);
+            Show();
+
+            Activate();
+            try
+            {
+                LoadDatabaseXML();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, Resources.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void CheckEnterKeyPress(object sender, System.Windows.Forms.KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Return)
+
+            {
+                btnSearch.PerformClick();
+            }
+        }
+
+        private void DisableOptions()
+        {
+            tsmiExportCSV.Enabled = false;
+            tsmiExportHTML.Enabled = false;
+            //tsmiElfDol.Enabled = false;
+            //tsmiDolphinEmulator.Enabled = false;
+            tsmiBurnMedia.Enabled = false;
+            tsmiManageApp.Enabled = false;
+            tsmiCreatePackage.Enabled = false;
+            // HIDE
+            tsmiExportCSV.Visible = false;
+            tsmiExportHTML.Visible = false;
+            //tsmiElfDol.Visible = false;
+            //tsmiDolphinEmulator.Visible = false;
+            tsmiBurnMedia.Visible = false;
+            tsmiManageApp.Visible = false;
+            tsmiCreatePackage.Visible = false;
+        }
+
+        //Is this function not referenced?
+        //How does it work? Phantom function? :P
+        protected override void OnLoad(EventArgs e)
+        {
+            //base.OnLoad(e);
+            notifyIcon.Visible = true;
+            //Do Work
+            MainCore();
+            FINISHEDLAUNCH = true;
+        }
+
+        private void PopDgv()
+        {
+            DataGridViewCheckBoxColumn cb = new DataGridViewCheckBoxColumn();
+
+            dgvSource.Columns.Clear();
+            _ = dgvSource.Columns.Add(cb);
+            _ = dgvSource.Columns.Add("Title", Resources.LoadDatabase_GameTitle);
+            _ = dgvSource.Columns.Add("ID", Resources.LoadDatabase_IDGameCode);
+            _ = dgvSource.Columns.Add("Region", Resources.LoadDatabase_Region);
+            _ = dgvSource.Columns.Add("Type", Resources.LoadDatabase_Type);
+            _ = dgvSource.Columns.Add("Size", Resources.DisplayFilesSelected_Size);
+            _ = dgvSource.Columns.Add("Path", Resources.DisplayFilesSelected_FilePath);
+            dgvSource.Refresh();
+
+            DataGridViewCheckBoxColumn cbd = new DataGridViewCheckBoxColumn();
+            dgvDestination.Columns.Clear();
+            _ = dgvDestination.Columns.Add(cbd);
+            _ = dgvDestination.Columns.Add("Title", Resources.LoadDatabase_GameTitle);
+            _ = dgvDestination.Columns.Add("ID", Resources.LoadDatabase_IDGameCode);
+            _ = dgvDestination.Columns.Add("Region", Resources.LoadDatabase_Region);
+            _ = dgvDestination.Columns.Add("Type", Resources.LoadDatabase_Type);
+            _ = dgvDestination.Columns.Add("Size", Resources.DisplayFilesSelected_Size);
+            _ = dgvDestination.Columns.Add("Path", Resources.DisplayFilesSelected_FilePath);
+            dgvDestination.Refresh();
         }
 
         #endregion
@@ -207,108 +461,109 @@ namespace GCBM
 
         #endregion
 
+        //Remove the "Update Program" function if it no longer needs to exist.
         #region Update Program
 
         /// <summary>
         ///     Adjust program update system
         /// </summary>
-        private void UpdateProgram()
-        {
-            if (CONFIG_INI_FILE.IniReadBool("UPDATES", "UpdateServerProxy"))
-            {
-                if (CONFIG_INI_FILE.IniReadString("UPDATES", "ServerProxy", "") != string.Empty &&
-                    CONFIG_INI_FILE.IniReadString("UPDATES", "UserProxy", "") != string.Empty &&
-                    CONFIG_INI_FILE.IniReadString("UPDATES", "PassProxy", "") != string.Empty)
-                {
-                    WebProxy proxy = new WebProxy(CONFIG_INI_FILE.IniReadString("UPDATES", "ServerProxy", ""), true)
-                    {
-                        Credentials = new NetworkCredential(CONFIG_INI_FILE.IniReadString("UPDATES", "UserProxy", ""),
-                            CONFIG_INI_FILE.IniReadString("UPDATES", "PassProxy", ""))
-                    };
-                    AutoUpdater.Proxy = proxy;
-                }
-            }
+        //private void UpdateProgram()
+        //{
+        //    if (CONFIG_INI_FILE.IniReadBool("UPDATES", "UpdateServerProxy"))
+        //    {
+        //        if (CONFIG_INI_FILE.IniReadString("UPDATES", "ServerProxy", "") != string.Empty &&
+        //            CONFIG_INI_FILE.IniReadString("UPDATES", "UserProxy", "") != string.Empty &&
+        //            CONFIG_INI_FILE.IniReadString("UPDATES", "PassProxy", "") != string.Empty)
+        //        {
+        //            WebProxy proxy = new WebProxy(CONFIG_INI_FILE.IniReadString("UPDATES", "ServerProxy", ""), true)
+        //            {
+        //                Credentials = new NetworkCredential(CONFIG_INI_FILE.IniReadString("UPDATES", "UserProxy", ""),
+        //                    CONFIG_INI_FILE.IniReadString("UPDATES", "PassProxy", ""))
+        //            };
+        //            AutoUpdater.Proxy = proxy;
+        //        }
+        //    }
 
-            // Enable support for updates.
-            if (CONFIG_INI_FILE.IniReadBool("UPDATES", "UpdateVerifyStart"))
-            {
-                int timeInterval = 0;
+        //    // Enable support for updates.
+        //    if (CONFIG_INI_FILE.IniReadBool("UPDATES", "UpdateVerifyStart"))
+        //    {
+        //        int timeInterval = 0;
 
-                if (CONFIG_INI_FILE.IniReadInt("UPDATES", "VerificationInterval") == 0)
-                {
-                    timeInterval = 10; // 5 minutes
-                }
-                else if (CONFIG_INI_FILE.IniReadInt("UPDATES", "VerificationInterval") == 1)
-                {
-                    timeInterval = 20; // 10 minutes
-                }
-                else if (CONFIG_INI_FILE.IniReadInt("UPDATES", "VerificationInterval") == 2)
-                {
-                    timeInterval = 30; // 15 minutes
-                }
-                else if (CONFIG_INI_FILE.IniReadInt("UPDATES", "VerificationInterval") == 3)
-                {
-                    timeInterval = 60; // 30 minutes
-                }
-                else if (CONFIG_INI_FILE.IniReadInt("UPDATES", "VerificationInterval") == 4)
-                {
-                    timeInterval = 120; // 1 hour
-                }
-                else if (CONFIG_INI_FILE.IniReadInt("UPDATES", "VerificationInterval") == 5)
-                {
-                    timeInterval = 240; // 2 hours
-                }
-                else if (CONFIG_INI_FILE.IniReadInt("UPDATES", "VerificationInterval") == 6)
-                {
-                    timeInterval = 360; // 3 hours
-                }
-                else
-                {
-                    timeInterval = 480; // 4 hours
-                }
+        //        if (CONFIG_INI_FILE.IniReadInt("UPDATES", "VerificationInterval") == 0)
+        //        {
+        //            timeInterval = 10; // 5 minutes
+        //        }
+        //        else if (CONFIG_INI_FILE.IniReadInt("UPDATES", "VerificationInterval") == 1)
+        //        {
+        //            timeInterval = 20; // 10 minutes
+        //        }
+        //        else if (CONFIG_INI_FILE.IniReadInt("UPDATES", "VerificationInterval") == 2)
+        //        {
+        //            timeInterval = 30; // 15 minutes
+        //        }
+        //        else if (CONFIG_INI_FILE.IniReadInt("UPDATES", "VerificationInterval") == 3)
+        //        {
+        //            timeInterval = 60; // 30 minutes
+        //        }
+        //        else if (CONFIG_INI_FILE.IniReadInt("UPDATES", "VerificationInterval") == 4)
+        //        {
+        //            timeInterval = 120; // 1 hour
+        //        }
+        //        else if (CONFIG_INI_FILE.IniReadInt("UPDATES", "VerificationInterval") == 5)
+        //        {
+        //            timeInterval = 240; // 2 hours
+        //        }
+        //        else if (CONFIG_INI_FILE.IniReadInt("UPDATES", "VerificationInterval") == 6)
+        //        {
+        //            timeInterval = 360; // 3 hours
+        //        }
+        //        else
+        //        {
+        //            timeInterval = 480; // 4 hours
+        //        }
 
-                // Support Beta channel updates.
-                if (CONFIG_INI_FILE.IniReadBool("UPDATES", "UpdateBetaChannel"))
-                {
-                    Timer timer = new Timer
-                    {
-                        Interval = 2 * 15000 * timeInterval,
-                        SynchronizingObject = this
-                    };
+        //        // Support Beta channel updates.
+        //        if (CONFIG_INI_FILE.IniReadBool("UPDATES", "UpdateBetaChannel"))
+        //        {
+        //            Timer timer = new Timer
+        //            {
+        //                Interval = 2 * 15000 * timeInterval,
+        //                SynchronizingObject = this
+        //            };
 
-                    timer.Elapsed += delegate
-                    {
-                        AutoUpdater.Start(
-                            "https://raw.githubusercontent.com/AxionDrak/GameCube-Backup-Manager/main/BetaChannel/AutoUpdaterBeta.xml");
-                        AutoUpdater.ShowRemindLaterButton = false;
-                        AutoUpdater.RunUpdateAsAdmin = false;
-                        AutoUpdater.ReportErrors = true;
-                        //AutoUpdater.UpdateFormSize = new Size(500, 400);
-                    };
-                    timer.Start();
-                }
-                else
-                {
-                    // Support for Release (Default) channel updates.
-                    Timer timer = new Timer
-                    {
-                        Interval = 2 * 15000 * timeInterval,
-                        SynchronizingObject = this
-                    };
+        //            timer.Elapsed += delegate
+        //            {
+        //                AutoUpdater.Start(
+        //                    "https://raw.githubusercontent.com/AxionDrak/GameCube-Backup-Manager/main/BetaChannel/AutoUpdaterBeta.xml");
+        //                AutoUpdater.ShowRemindLaterButton = false;
+        //                AutoUpdater.RunUpdateAsAdmin = false;
+        //                AutoUpdater.ReportErrors = true;
+        //                //AutoUpdater.UpdateFormSize = new Size(500, 400);
+        //            };
+        //            timer.Start();
+        //        }
+        //        else
+        //        {
+        //            // Support for Release (Default) channel updates.
+        //            Timer timer = new Timer
+        //            {
+        //                Interval = 2 * 15000 * timeInterval,
+        //                SynchronizingObject = this
+        //            };
 
-                    timer.Elapsed += delegate
-                    {
-                        AutoUpdater.Start(
-                            "https://raw.githubusercontent.com/AxionDrak/GameCube-Backup-Manager/main/AutoUpdaterRelease.xml");
-                        AutoUpdater.ShowRemindLaterButton = false;
-                        AutoUpdater.RunUpdateAsAdmin = false;
-                        AutoUpdater.ReportErrors = true;
-                        //AutoUpdater.UpdateFormSize = new Size(500, 400);
-                    };
-                    timer.Start();
-                }
-            }
-        }
+        //            timer.Elapsed += delegate
+        //            {
+        //                AutoUpdater.Start(
+        //                    "https://raw.githubusercontent.com/AxionDrak/GameCube-Backup-Manager/main/AutoUpdaterRelease.xml");
+        //                AutoUpdater.ShowRemindLaterButton = false;
+        //                AutoUpdater.RunUpdateAsAdmin = false;
+        //                AutoUpdater.ReportErrors = true;
+        //                //AutoUpdater.UpdateFormSize = new Size(500, 400);
+        //            };
+        //            timer.Start();
+        //        }
+        //    }
+        //}
 
         #endregion
 
@@ -346,9 +601,21 @@ namespace GCBM
 
         #endregion
 
-        //Rewrite this function (Network Check) and create a connection verification system for
-        //every attempt to download or perform any other action over the Internet
-        //or local area network.
+        #region Flag Attributes Screensaver
+
+        /// <summary>
+        ///     Flag Attributes Screensaver
+        /// </summary>
+        [FlagsAttribute]
+        private enum EXECUTION_STATE : uint
+        {
+            ES_AWAYMODE_REQUIRED = 0x00000040,
+            ES_CONTINUOUS = 0x80000000,
+            ES_DISPLAY_REQUIRED = 0x00000002,
+            ES_SYSTEM_REQUIRED = 0x00000001
+        }
+
+        #endregion
 
         #region Network Check
 
@@ -748,10 +1015,10 @@ namespace GCBM
 
         //Rewrite Function 
         //Populate the textboxes in the details panel with information from the selected game.
-        private async void PopDetails(DataGridView dgv)
-        {
+        //private async void PopDetails(DataGridView dgv)
+        //{
 
-        }
+        //}
 
         #region Reload DataGridView List
 
@@ -819,6 +1086,7 @@ namespace GCBM
         #endregion
 
         #region Display Source Files List
+
         /// <summary>
         ///     Display Source Files
         ///     --sjohnson1021-bookmark
@@ -935,9 +1203,11 @@ namespace GCBM
             }
             SCANNING = false;
         }
+
         #endregion
 
         #region Display Destination Files List
+
         /// <summary>
         ///     Display Source Files
         ///     --sjohnson1021-bookmark
@@ -1027,6 +1297,7 @@ namespace GCBM
             SCANNING = false;
 
         }
+
         #endregion
 
         #region Get Files Folder
@@ -1199,6 +1470,7 @@ namespace GCBM
 
         #endregion
 
+        //Remove the "Build Game list as List<Game>" function if it no longer needs to exist.
         #region Build Game list as List<Game>
 
         /// <summary>
@@ -1520,7 +1792,6 @@ namespace GCBM
         #endregion
         
         // REWRITE FUNCTION - Download Only Disc & 3D Cover Selected Game
-
         #region Download Only Disc & 3D Cover Selected Game
 
         /// <summary>
@@ -1651,7 +1922,6 @@ namespace GCBM
         #endregion
 
         // REWRITE FUNCTION - Clear temporary folder
-
         #region Clear Temp
 
         /// <summary>
@@ -2228,7 +2498,6 @@ namespace GCBM
         #endregion
 
         // REWRITE FUNCTION - Check Cover Transfer
-
         #region Check Cover Transfer
 
         /// <summary>
@@ -2400,8 +2669,10 @@ namespace GCBM
 
         #endregion
 
+        //ORGANIZE THE EXTRA FUNCTIONS SECTION
         // Extras Functions
 
+        //Remove the "dgvSource Click" function if it no longer needs to exist.
         #region dgvSource Click
 
         /// <summary>
@@ -2409,10 +2680,10 @@ namespace GCBM
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void dgvSource_Click(object sender, EventArgs e)
-        {
-            ReloadDataGridViewGameList(dgvSource);
-        }
+        //private void dgvSource_Click(object sender, EventArgs e)
+        //{
+        //    ReloadDataGridViewGameList(dgvSource);
+        //}
 
         #endregion
 
@@ -2575,12 +2846,13 @@ namespace GCBM
 
         #endregion
 
+        //Remove the "dgvGameListDisc_Click" function if it no longer needs to exist.
         #region dgvGameListDisc_Click
 
-        private void dgvGameListDisc_Click(object sender, EventArgs e)
-        {
-            ReloadDataGridViewGameList(dgvDestination);
-        }
+        //private void dgvGameListDisc_Click(object sender, EventArgs e)
+        //{
+        //    ReloadDataGridViewGameList(dgvDestination);
+        //}
 
         #endregion
 
@@ -2621,8 +2893,7 @@ namespace GCBM
 
         #endregion
 
-        // VERIFICAR, REWRITE AND ORGANIZE!!!
-
+        // CHECK, REWRITE AND ORGANIZE!!!
         #region lvDatabase_Click
 
         private void lvDatabase_Click(object sender, EventArgs e)
@@ -2722,6 +2993,7 @@ namespace GCBM
 
         #endregion
 
+        #region tabControlMain_SelectedIndexChanged
 
         private void tabControlMain_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -2734,6 +3006,8 @@ namespace GCBM
                 dgvSelected = dgvDestination;
             }
         }
+
+        #endregion
 
         // Buttons
 
@@ -2872,277 +3146,7 @@ namespace GCBM
         }
         #endregion
 
-        #region Flag Attributes Screensaver
-
-        /// <summary>
-        ///     Flag Attributes Screensaver
-        /// </summary>
-        [FlagsAttribute]
-        private enum EXECUTION_STATE : uint
-        {
-            ES_AWAYMODE_REQUIRED = 0x00000040,
-            ES_CONTINUOUS = 0x80000000,
-            ES_DISPLAY_REQUIRED = 0x00000002,
-            ES_SYSTEM_REQUIRED = 0x00000001
-        }
-
-        #endregion
-
-        #region Main Form
-        private void CheckEnterKeyPress(object sender, System.Windows.Forms.KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)Keys.Return)
-
-            {
-                btnSearch.PerformClick();
-            }
-        }
-        /// <summary>
-        ///     Main constructor method of the class.
-        ///     No argument parameters.
-        /// </summary>
-        private bool ABORT;
-        public frmMain()
-        {
-            InitializeComponent();
-
-        }
-        // End of Main Constructor
-
-        private void MainCore()
-        {
-            Hide();
-            notifyIcon.Visible = true;
-            InstallQueue = new Dictionary<int, Game>();
-            tbSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(CheckEnterKeyPress);
-            Text = "GameCube Backup Manager 2022 - " + VERSION() + " - 64-bit";
-
-            //Splash Screen
-            //if (CONFIG_INI_FILE.IniReadBool("SEVERAL", "DisableSplash") == false)
-
-            //    Load += HandleFormLoad;
-
-            NetworkCheck();
-            if (!sio.File.Exists(INI_FILE))
-            {
-                DefaultConfigSave();
-                DetectOSLanguage();
-
-                AdjustLanguage();
-                Controls.Clear();
-                InitializeComponent();
-            }
-
-            LoadConfigFile();
-            AboutTranslator();
-            GetAllDrives();
-            //DetectOSLanguage();
-            //AdjustLanguage();
-            //UpdateProgram();
-            //LoadDatabaseXML();
-            DisabeScreensaver();
-            SetupLog();
-            RequiredDirectories();//Do we really need to wait on this?
-            DisableOptionsGame(dgvSource);
-            tscbDiscDrive.SelectedIndex = 0;
-            cbFilterDatabase.SelectedIndex = 0;
-
-
-
-            //Check for WiiTDB file and internet connection, download if not found and we're online
-            if (!sio.File.Exists(WIITDB_FILE) && NetworkInterface.GetIsNetworkAvailable())
-            {
-                //frmDownloadGameTDB frmDownload = new frmDownloadGameTDB();
-                //_ = frmDownload.ShowDialog();
-                Show();
-                CheckAndDownloadWiiTdbXml();
-            }
-            else if (!sio.File.Exists(WIITDB_FILE) && !NetworkInterface.GetIsNetworkAvailable())
-            {
-                MessageBox.Show(Resources.NoInternetConnectionFound_String1 + Environment.NewLine +
-                                Resources.NoInternetConnectionFound_String2,
-                                Resources.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-            //LoadDatabaseXML();
-
-            // DISABLED
-            DisableOptions();
-
-            //All done, Clean up / Refresh to ensure language and settings are updated.
-
-            //Localization.. but not working @Laetemn
-
-            #region dgvDestination Setup
-
-            PopDgv();
-
-            #endregion
-
-            Thread.CurrentThread.CurrentUICulture.ClearCachedData();
-            Thread.CurrentThread.CurrentCulture.ClearCachedData();
-
-            //foreach in this.Controls.Results 
-            mstripMain.Refresh();
-            Form SplashScreen = Program.SplashScreen;
-            if (SplashScreen != null && !SplashScreen.Disposing && !SplashScreen.IsDisposed)
-                SplashScreen.Invoke(new Action(() => SplashScreen.Close()));
-            wait(500);
-            Show();
-
-            Activate();
-            try
-            {
-                LoadDatabaseXML();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, Resources.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void DisableOptions()
-        {
-            tsmiExportCSV.Enabled = false;
-            tsmiExportHTML.Enabled = false;
-            //tsmiElfDol.Enabled = false;
-            //tsmiDolphinEmulator.Enabled = false;
-            tsmiBurnMedia.Enabled = false;
-            tsmiManageApp.Enabled = false;
-            tsmiCreatePackage.Enabled = false;
-            // HIDE
-            tsmiExportCSV.Visible = false;
-            tsmiExportHTML.Visible = false;
-            //tsmiElfDol.Visible = false;
-            //tsmiDolphinEmulator.Visible = false;
-            tsmiBurnMedia.Visible = false;
-            tsmiManageApp.Visible = false;
-            tsmiCreatePackage.Visible = false;
-        }
-
-        protected override void OnLoad(EventArgs e)
-        {
-            //base.OnLoad(e);
-            notifyIcon.Visible = true;
-            //Do Work
-            MainCore();
-            FINISHEDLAUNCH = true;
-        }
-        private void PopDgv()
-        {
-            DataGridViewCheckBoxColumn cb = new DataGridViewCheckBoxColumn();
-
-            dgvSource.Columns.Clear();
-            _ = dgvSource.Columns.Add(cb);
-            _ = dgvSource.Columns.Add("Title", Resources.LoadDatabase_GameTitle);
-            _ = dgvSource.Columns.Add("ID", Resources.LoadDatabase_IDGameCode);
-            _ = dgvSource.Columns.Add("Region", Resources.LoadDatabase_Region);
-            _ = dgvSource.Columns.Add("Type", Resources.LoadDatabase_Type);
-            _ = dgvSource.Columns.Add("Size", Resources.DisplayFilesSelected_Size);
-            _ = dgvSource.Columns.Add("Path", Resources.DisplayFilesSelected_FilePath);
-            dgvSource.Refresh();
-
-            DataGridViewCheckBoxColumn cbd = new DataGridViewCheckBoxColumn();
-            dgvDestination.Columns.Clear();
-            _ = dgvDestination.Columns.Add(cbd);
-            _ = dgvDestination.Columns.Add("Title", Resources.LoadDatabase_GameTitle);
-            _ = dgvDestination.Columns.Add("ID", Resources.LoadDatabase_IDGameCode);
-            _ = dgvDestination.Columns.Add("Region", Resources.LoadDatabase_Region);
-            _ = dgvDestination.Columns.Add("Type", Resources.LoadDatabase_Type);
-            _ = dgvDestination.Columns.Add("Size", Resources.DisplayFilesSelected_Size);
-            _ = dgvDestination.Columns.Add("Path", Resources.DisplayFilesSelected_FilePath);
-            dgvDestination.Refresh();
-        }
-
-        #endregion
-
-        #region Properties
-
-        private static readonly string GET_CURRENT_PATH = sio.Directory.GetCurrentDirectory();
-        private static readonly string GAMES_DIR = "games";
-        private static readonly string TEMP_DIR = sio.Path.DirectorySeparatorChar + "temp";
-        private static readonly string COVERS_DIR = sio.Path.DirectorySeparatorChar + "covers" + sio.Path.DirectorySeparatorChar + "cache";
-        private static readonly string MEDIA_DIR = sio.Path.DirectorySeparatorChar + "media" + sio.Path.DirectorySeparatorChar + "covers";
-        private static readonly string CULTURE_CURRENT = "pt-BR";
-        private static readonly string PROG_UPDATE = "10/07/2022";
-        private static readonly string FAT32 = "FAT32";
-        private static readonly string NTFS = "NTFS";
-        private static readonly string EXFAT_FAT64 = "EXFAT";
-
-        private bool INSTALLING;
-        private bool FINISHEDLAUNCH = false;
-
-        //private static string EXT2                   = "EXT2";
-        //private static string EXT3                   = "EXT3";
-        //private static string EXT4                   = "EXT4";
-        //private static string CURRENT_DIRECTORY;
-        //private static string STANDARD_DIRECTORY;
-        //private static string FILE_TDBXML;
-        //private static string LOG_LEVEL;
-        //private static string CULTURE_LANG;
-        //private static string TRANSLATOR;
-        private static readonly string RES_PATH;
-        private static string IMAGE_PATH;
-        private static string LINK_DOMAIN;
-        private static string FLUSH_SD;
-        private static string SCRUB_ALIGN;
-
-        private static char REGION = 'n';
-
-        //private const string MIN_DB_VERSION          = "1.2.0.0";
-        private const string INI_FILE = "config.ini";
-
-        //private const string GLOBAL_INI_FILE         = "gc_global.ini";
-        //private const string LOG_FILE                = "gcbm.log";
-        //private const string CACHE_DIR               = "cache";
-        //private const string LOCAL_FILES_DB          = "gcbm_Local.xml";
-        private const string WIITDB_FILE = "wiitdb.xml";
-        private const string WIITDB_DOWNLOAD_SITE = "https://www.gametdb.com/";
-        private const string en_US = "en-US";
-
-        //private const string TITLES_FILE             = "titles.txt";
-        //private bool ENABLE_INTERNET                 = true;
-        //private bool ENABLE_UPDATE_PROGRAM           = true;
-        //private bool UPDATE_LOG                      = true;
-        private bool ERROR;
-
-        //private bool NETWORK_CHECK                   = true;
-        //private bool EXPORT_LOG_CHECK                = true;
-        //private bool CLEAR_TEMP_CHECK                = true;
-        //private bool WIITDBXML_CHECK                 = true;
-        private bool SPLASH_SCREEN_DONE;
-        private bool ROOT_OPENED = true;
-        private readonly bool FILENAME_SORT = true;
-
-        private readonly bool RETRIEVE_FILES_INFO = true;
-
-        //private int Reserved;
-        private readonly Assembly assembly = Assembly.GetExecutingAssembly();
-        private readonly IniFile CONFIG_INI_FILE = new IniFile(INI_FILE);
-        private readonly CultureInfo MY_CULTURE = new CultureInfo(CULTURE_CURRENT, false);
-        private readonly ProcessStartInfo START_INFO = new ProcessStartInfo();
-        private readonly WebClient NET_CLIENT = new WebClient();
-        private HttpWebResponse NET_RESPONSE;
-        private frmSplashScreen SPLASH_SCREEN;
-        private readonly string WINTHEME;
-
-        private bool WORKING;
-        private string dgvGameListPath;
-        private string dgvGameListDiscPath;
-        private int intQueueLength;
-        private int intQueuePos;
-        private List<Game> lstInstallQueue = new List<Game>();
-        private Dictionary<int, Game> dSourceGames = new Dictionary<int, Game>();
-        private Dictionary<int, Game> dDestGames = new Dictionary<int, Game>();
-        private Game lastGameLookedUp;
-        private DataGridView dgvSelected = new DataGridView();
-        private Dictionary<int, Game> InstallQueue;
-
-        [DllImport("kernel32.dll")]
-        private static extern EXECUTION_STATE SetThreadExecutionState(EXECUTION_STATE esFlags);
-
-        #endregion
-
+        //Remove the "Splash Ssreen" function if it no longer needs to exist.
         #region Splash Ssreen
 
         /// <summary>
@@ -3206,7 +3210,6 @@ namespace GCBM
         #endregion
 
         // REWRITE FUNCTION- Directory Open
-
         #region Directory Open
 
         /// <summary>
@@ -3311,224 +3314,225 @@ namespace GCBM
 
         #region OLD TRANSFER SYSTEM
 
-        #region Install Game Scrub
+        //Remove the "Install Game Scrub - OLD" function if it no longer needs to exist.
+        #region Install Game Scrub - OLD
 
         /// <summary>
         ///     Function to install an copy of the file in Scrub mode.
         /// </summary>
-        private void InstallGameScrub()
-        {
-            //Make sure pbCopy is Continuous
-            pbCopy.Style = ProgressBarStyle.Continuous;
-            const string quote = "\"";
-            string _source = InstallQueue[intQueuePos].Path;
+        //private void InstallGameScrub()
+        //{
+        //    //Make sure pbCopy is Continuous
+        //    pbCopy.Style = ProgressBarStyle.Continuous;
+        //    const string quote = "\"";
+        //    string _source = InstallQueue[intQueuePos].Path;
 
-            START_INFO.CreateNoWindow = true;
-            START_INFO.UseShellExecute = true;
-            // GCIT
-            START_INFO.FileName = GET_CURRENT_PATH + sio.Path.DirectorySeparatorChar + "bin" + sio.Path.DirectorySeparatorChar + "gcit.exe ";
+        //    START_INFO.CreateNoWindow = true;
+        //    START_INFO.UseShellExecute = true;
+        //    // GCIT
+        //    START_INFO.FileName = GET_CURRENT_PATH + sio.Path.DirectorySeparatorChar + "bin" + sio.Path.DirectorySeparatorChar + "gcit.exe ";
 
 
-            bool boolCaseSwitch = CONFIG_INI_FILE.IniReadBool("TRANSFERSYSTEM", "ScrubFlushSD");
-            int intCaseSwitch = CONFIG_INI_FILE.IniReadInt("TRANSFERSYSTEM", "ScrubAlign");
+        //    bool boolCaseSwitch = CONFIG_INI_FILE.IniReadBool("TRANSFERSYSTEM", "ScrubFlushSD");
+        //    int intCaseSwitch = CONFIG_INI_FILE.IniReadInt("TRANSFERSYSTEM", "ScrubAlign");
 
-            switch (boolCaseSwitch)
-            {
-                case true:
-                    FLUSH_SD = " - flush";
-                    break;
-                case false:
-                    FLUSH_SD = "";
-                    break;
-            }
+        //    switch (boolCaseSwitch)
+        //    {
+        //        case true:
+        //            FLUSH_SD = " - flush";
+        //            break;
+        //        case false:
+        //            FLUSH_SD = "";
+        //            break;
+        //    }
 
-            switch (intCaseSwitch)
-            {
-                case 0:
-                    SCRUB_ALIGN = "";
-                    break;
-                case 1:
-                    SCRUB_ALIGN = " -a 4";
-                    break;
-                case 2:
-                    SCRUB_ALIGN = " -a 32";
-                    break;
-                default:
-                    SCRUB_ALIGN = " -a 32K";
-                    break;
-            }
+        //    switch (intCaseSwitch)
+        //    {
+        //        case 0:
+        //            SCRUB_ALIGN = "";
+        //            break;
+        //        case 1:
+        //            SCRUB_ALIGN = " -a 4";
+        //            break;
+        //        case 2:
+        //            SCRUB_ALIGN = " -a 32";
+        //            break;
+        //        default:
+        //            SCRUB_ALIGN = " -a 32K";
+        //            break;
+        //    }
 
-            //if (CONFIG_INI_FILE.IniReadBool("TRANSFERSYSTEM", "ScrubFlushSD") == true)
-            //{
-            //    FLUSH_SD = " - flush";
-            //}
-            //else
-            //{
-            //    FLUSH_SD = "";
-            //}
+        //    //if (CONFIG_INI_FILE.IniReadBool("TRANSFERSYSTEM", "ScrubFlushSD") == true)
+        //    //{
+        //    //    FLUSH_SD = " - flush";
+        //    //}
+        //    //else
+        //    //{
+        //    //    FLUSH_SD = "";
+        //    //}
 
-            //if (CONFIG_INI_FILE.IniReadInt("TRANSFERSYSTEM", "ScrubAlign") == 0)
-            //{
-            //    SCRUB_ALIGN = "";
-            //}
-            //else if (CONFIG_INI_FILE.IniReadInt("TRANSFERSYSTEM", "ScrubAlign") == 1)
-            //{
-            //    SCRUB_ALIGN = " -a 4";
-            //}
-            //else if (CONFIG_INI_FILE.IniReadInt("TRANSFERSYSTEM", "ScrubAlign") == 2)
-            //{
-            //    SCRUB_ALIGN = " -a 32";
-            //}
-            //else
-            //{
-            //    SCRUB_ALIGN = " -a 32K";
-            //}
+        //    //if (CONFIG_INI_FILE.IniReadInt("TRANSFERSYSTEM", "ScrubAlign") == 0)
+        //    //{
+        //    //    SCRUB_ALIGN = "";
+        //    //}
+        //    //else if (CONFIG_INI_FILE.IniReadInt("TRANSFERSYSTEM", "ScrubAlign") == 1)
+        //    //{
+        //    //    SCRUB_ALIGN = " -a 4";
+        //    //}
+        //    //else if (CONFIG_INI_FILE.IniReadInt("TRANSFERSYSTEM", "ScrubAlign") == 2)
+        //    //{
+        //    //    SCRUB_ALIGN = " -a 32";
+        //    //}
+        //    //else
+        //    //{
+        //    //    SCRUB_ALIGN = " -a 32K";
+        //    //}
 
-            START_INFO.Arguments = quote + _source + quote + " -aq " + SCRUB_ALIGN + FLUSH_SD + " -f " +
-                                   CONFIG_INI_FILE.IniReadString("TRANSFERSYSTEM", "ScrubFormat", "") + " -d " +
-                                   tscbDiscDrive.SelectedItem + GAMES_DIR;
-            START_INFO.WindowStyle = ProcessWindowStyle.Hidden;
+        //    START_INFO.Arguments = quote + _source + quote + " -aq " + SCRUB_ALIGN + FLUSH_SD + " -f " +
+        //                           CONFIG_INI_FILE.IniReadString("TRANSFERSYSTEM", "ScrubFormat", "") + " -d " +
+        //                           tscbDiscDrive.SelectedItem + GAMES_DIR;
+        //    START_INFO.WindowStyle = ProcessWindowStyle.Hidden;
 
-            using (Process myProcess = Process.Start(START_INFO))
-            {
-                int i = 0;
-                // Display the process statistics until
-                // the user closes the program.
-                do
-                {
-                    if (!myProcess.HasExited)
-                    {
-                        // Refresh the current process property values.
-                        myProcess.Refresh();
-                        // Display current process statistics.
-                        tbLog.AppendText($"{myProcess} -");
-                        //toolStripStatusLabel3.Text = $"{myProcess} -";
-                        tbLog.AppendText(Environment.NewLine + "-------------------------------------" +
-                                         Environment.NewLine + Environment.NewLine);
+        //    using (Process myProcess = Process.Start(START_INFO))
+        //    {
+        //        int i = 0;
+        //        // Display the process statistics until
+        //        // the user closes the program.
+        //        do
+        //        {
+        //            if (!myProcess.HasExited)
+        //            {
+        //                // Refresh the current process property values.
+        //                myProcess.Refresh();
+        //                // Display current process statistics.
+        //                tbLog.AppendText($"{myProcess} -");
+        //                //toolStripStatusLabel3.Text = $"{myProcess} -";
+        //                tbLog.AppendText(Environment.NewLine + "-------------------------------------" +
+        //                                 Environment.NewLine + Environment.NewLine);
 
-                        if (myProcess.Responding)
-                        {
-                            lblCopy.Visible = true;
-                            lblInstallGame.Visible = true;
-                            lblPercent.Visible = true;
-                            pbCopy.Visible = true;
+        //                if (myProcess.Responding)
+        //                {
+        //                    lblCopy.Visible = true;
+        //                    lblInstallGame.Visible = true;
+        //                    lblPercent.Visible = true;
+        //                    pbCopy.Visible = true;
 
-                            DisableOptionsGame(dgvSource);
+        //                    DisableOptionsGame(dgvSource);
 
-                            lblCopy.Text = Resources.InstallGameScrub_String1;
-                            lblInstallGame.Text = Resources.InstallGameScrub_String2 + i++;
-                            pbCopy.PerformStep();
-                            int incrementValue = i++ / 2;
-                            pbCopy.Value = incrementValue;
-                            lblPercent.Text = incrementValue + "%"; //i++.ToString() + "%";
-                            //progressBarGameCopy.Maximum = i++ * 5;
-                        }
-                        else
-                        {
-                            lblInstallGame.Visible = true;
-                            lblInstallGame.Text = Resources.InstallGameScrub_String3;
-                        }
-                    }
-                    //progressBar1.Value += 5;
-                } while (!myProcess.WaitForExit(1000));
+        //                    lblCopy.Text = Resources.InstallGameScrub_String1;
+        //                    lblInstallGame.Text = Resources.InstallGameScrub_String2 + i++;
+        //                    pbCopy.PerformStep();
+        //                    int incrementValue = i++ / 2;
+        //                    pbCopy.Value = incrementValue;
+        //                    lblPercent.Text = incrementValue + "%"; //i++.ToString() + "%";
+        //                    //progressBarGameCopy.Maximum = i++ * 5;
+        //                }
+        //                else
+        //                {
+        //                    lblInstallGame.Visible = true;
+        //                    lblInstallGame.Text = Resources.InstallGameScrub_String3;
+        //                }
+        //            }
+        //            //progressBar1.Value += 5;
+        //        } while (!myProcess.WaitForExit(1000));
 
-                //textLog.AppendText($">> Código de saída do processo : {myProcess.ExitCode}");
+        //        //textLog.AppendText($">> Código de saída do processo : {myProcess.ExitCode}");
 
-                int _StatusExit = myProcess.ExitCode;
-                if (_StatusExit == 0)
-                {
-                    lblInstallGame.Visible = true;
-                    lblPercent.Visible = true;
-                    pbCopy.Visible = true;
+        //        int _StatusExit = myProcess.ExitCode;
+        //        if (_StatusExit == 0)
+        //        {
+        //            lblInstallGame.Visible = true;
+        //            lblPercent.Visible = true;
+        //            pbCopy.Visible = true;
 
-                    EnableOptionsGameList();
+        //            EnableOptionsGameList();
 
-                    lblPercent.Text = "100%";
-                    pbCopy.Value = 100;
-                    lblInstallGame.Text = Resources.InstallGameScrub_String4;
+        //            lblPercent.Text = "100%";
+        //            pbCopy.Value = 100;
+        //            lblInstallGame.Text = Resources.InstallGameScrub_String4;
 
-                    if (tbIDDiscID.Text == "0x00")
-                    {
-                        //GlobalNotifications(Resources.InstallGameScrub_String5, ToolTipIcon.Info);
-                        //MessageBox.Show(GCBM.Properties.Resources.InstallGameScrub_String5, GCBM.Properties.Resources.Information, MessageBoxButtons.OK, MessageBoxIcon.Information);
+        //            if (tbIDDiscID.Text == "0x00")
+        //            {
+        //                //GlobalNotifications(Resources.InstallGameScrub_String5, ToolTipIcon.Info);
+        //                //MessageBox.Show(GCBM.Properties.Resources.InstallGameScrub_String5, GCBM.Properties.Resources.Information, MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                        lblCopy.Visible = false;
-                        lblInstallGame.Visible = false;
-                        lblPercent.Visible = false;
-                        pbCopy.Visible = false;
-                    }
+        //                lblCopy.Visible = false;
+        //                lblInstallGame.Visible = false;
+        //                lblPercent.Visible = false;
+        //                pbCopy.Visible = false;
+        //            }
 
-                    if (tbIDDiscID.Text == "0x01")
-                    {
-                        // Usar nome intermo
-                        if (CONFIG_INI_FILE.IniReadBool("TITLES", "GameInternalName"))
-                        {
-                            // Renomear game.iso -> disc2.iso
-                            string myOrigem = tscbDiscDrive.SelectedItem + GAMES_DIR + sio.Path.DirectorySeparatorChar + tbIDName.Text + " [" +
-                                           tbIDGame.Text + "2]" + sio.Path.DirectorySeparatorChar + "game.iso";
-                            string myDestiny = tscbDiscDrive.SelectedItem + GAMES_DIR + sio.Path.DirectorySeparatorChar +
-                                            tbIDName.Text.Replace("disc2 ", "") + " [" + tbIDGame.Text + "2]" +
-                                            sio.Path.DirectorySeparatorChar + "disc2.iso";
+        //            if (tbIDDiscID.Text == "0x01")
+        //            {
+        //                // Usar nome intermo
+        //                if (CONFIG_INI_FILE.IniReadBool("TITLES", "GameInternalName"))
+        //                {
+        //                    // Renomear game.iso -> disc2.iso
+        //                    string myOrigem = tscbDiscDrive.SelectedItem + GAMES_DIR + sio.Path.DirectorySeparatorChar + tbIDName.Text + " [" +
+        //                                   tbIDGame.Text + "2]" + sio.Path.DirectorySeparatorChar + "game.iso";
+        //                    string myDestiny = tscbDiscDrive.SelectedItem + GAMES_DIR + sio.Path.DirectorySeparatorChar +
+        //                                    tbIDName.Text.Replace("disc2 ", "") + " [" + tbIDGame.Text + "2]" +
+        //                                    sio.Path.DirectorySeparatorChar + "disc2.iso";
 
-                            //MessageBox.Show("MYORIGEM: " + Environment.NewLine
-                            //    + myOrigem +
-                            //    "\n\nMYDESTINY: " + Environment.NewLine
-                            //    + myDestiny, "DISC2", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            /*
-                            * MYORIGEM:     c:\games\resident evil 4 disc2 (2) [G4BE082]\game.iso
-                            * MYDESTINY:    c:\games\resident evil 4 disc2 (2) [G4BE082]\disc2.iso
-                            * MYNEWDESTINY: c:\games\resident evil 4 [G4BE08]\
-                            */
+        //                    //MessageBox.Show("MYORIGEM: " + Environment.NewLine
+        //                    //    + myOrigem +
+        //                    //    "\n\nMYDESTINY: " + Environment.NewLine
+        //                    //    + myDestiny, "DISC2", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        //                    /*
+        //                    * MYORIGEM:     c:\games\resident evil 4 disc2 (2) [G4BE082]\game.iso
+        //                    * MYDESTINY:    c:\games\resident evil 4 disc2 (2) [G4BE082]\disc2.iso
+        //                    * MYNEWDESTINY: c:\games\resident evil 4 [G4BE08]\
+        //                    */
 
-                            sio.File.Move(myOrigem, myDestiny);
+        //                    sio.File.Move(myOrigem, myDestiny);
 
-                            //GlobalNotifications(Resources.InstallGameScrub_String6, ToolTipIcon.Info);
-                            //MessageBox.Show(GCBM.Properties.Resources.InstallGameScrub_String6, GCBM.Properties.Resources.Information, MessageBoxButtons.OK, MessageBoxIcon.Information);
+        //                    //GlobalNotifications(Resources.InstallGameScrub_String6, ToolTipIcon.Info);
+        //                    //MessageBox.Show(GCBM.Properties.Resources.InstallGameScrub_String6, GCBM.Properties.Resources.Information, MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                            lblCopy.Visible = false;
-                            lblInstallGame.Visible = false;
-                            lblPercent.Visible = false;
-                            pbCopy.Visible = false;
-                            //GC.Collect();
-                        } // Usar WiiTDB.xml
-                        else
-                        {
-                            // Renomear game.iso -> disc2.iso
-                            string myOrigem = tscbDiscDrive.SelectedItem + GAMES_DIR + sio.Path.DirectorySeparatorChar + tbIDName.Text + " [" +
-                                           _IDMakerCode + "2]" + sio.Path.DirectorySeparatorChar + "game.iso";
-                            string myDestiny = tscbDiscDrive.SelectedItem + GAMES_DIR + sio.Path.DirectorySeparatorChar +
-                                            tbIDName.Text.Replace("disc2 ", "") + " [" + _IDMakerCode + "2]" +
-                                            sio.Path.DirectorySeparatorChar + "disc2.iso";
+        //                    lblCopy.Visible = false;
+        //                    lblInstallGame.Visible = false;
+        //                    lblPercent.Visible = false;
+        //                    pbCopy.Visible = false;
+        //                    //GC.Collect();
+        //                } // Usar WiiTDB.xml
+        //                else
+        //                {
+        //                    // Renomear game.iso -> disc2.iso
+        //                    string myOrigem = tscbDiscDrive.SelectedItem + GAMES_DIR + sio.Path.DirectorySeparatorChar + tbIDName.Text + " [" +
+        //                                   _IDMakerCode + "2]" + sio.Path.DirectorySeparatorChar + "game.iso";
+        //                    string myDestiny = tscbDiscDrive.SelectedItem + GAMES_DIR + sio.Path.DirectorySeparatorChar +
+        //                                    tbIDName.Text.Replace("disc2 ", "") + " [" + _IDMakerCode + "2]" +
+        //                                    sio.Path.DirectorySeparatorChar + "disc2.iso";
 
-                            //MessageBox.Show("MYORIGEM: " + Environment.NewLine
-                            //    + myOrigem +
-                            //    "\n\nMYDESTINY: " + Environment.NewLine
-                            //    + myDestiny, "DISC2", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            /*
-                            * MYORIGEM:     c:\games\resident evil 4 disc2 (2) [G4BE082]\game.iso
-                            * MYDESTINY:    c:\games\resident evil 4 disc2 (2) [G4BE082]\disc2.iso
-                            * MYNEWDESTINY: c:\games\resident evil 4 [G4BE08]\
-                            */
+        //                    //MessageBox.Show("MYORIGEM: " + Environment.NewLine
+        //                    //    + myOrigem +
+        //                    //    "\n\nMYDESTINY: " + Environment.NewLine
+        //                    //    + myDestiny, "DISC2", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        //                    /*
+        //                    * MYORIGEM:     c:\games\resident evil 4 disc2 (2) [G4BE082]\game.iso
+        //                    * MYDESTINY:    c:\games\resident evil 4 disc2 (2) [G4BE082]\disc2.iso
+        //                    * MYNEWDESTINY: c:\games\resident evil 4 [G4BE08]\
+        //                    */
 
-                            sio.File.Move(myOrigem, myDestiny);
+        //                    sio.File.Move(myOrigem, myDestiny);
 
-                            //GlobalNotifications(Resources.InstallGameScrub_String6, ToolTipIcon.Info);
-                            //MessageBox.Show(GCBM.Properties.Resources.InstallGameScrub_String6, GCBM.Properties.Resources.Information, MessageBoxButtons.OK, MessageBoxIcon.Information);
+        //                    //GlobalNotifications(Resources.InstallGameScrub_String6, ToolTipIcon.Info);
+        //                    //MessageBox.Show(GCBM.Properties.Resources.InstallGameScrub_String6, GCBM.Properties.Resources.Information, MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                            lblCopy.Visible = false;
-                            lblInstallGame.Visible = false;
-                            lblPercent.Visible = false;
-                            pbCopy.Visible = false;
-                            //GC.Collect();
-                        }
-                    }
-                }
-                //if (_StatusExit == 3)
-                //{
-                //    //tsslStatusInformation.Text = "Status: ERRO! -> " + "{" + _StatusExit.ToString() + "}" + " Por favor, verifique se exitem espaços no nome do arquivo!";
-                //}
-            }
-        }
+        //                    lblCopy.Visible = false;
+        //                    lblInstallGame.Visible = false;
+        //                    lblPercent.Visible = false;
+        //                    pbCopy.Visible = false;
+        //                    //GC.Collect();
+        //                }
+        //            }
+        //        }
+        //        //if (_StatusExit == 3)
+        //        //{
+        //        //    //tsslStatusInformation.Text = "Status: ERRO! -> " + "{" + _StatusExit.ToString() + "}" + " Por favor, verifique se exitem espaços no nome do arquivo!";
+        //        //}
+        //    }
+        //}
 
         #endregion
 
@@ -4222,6 +4226,9 @@ namespace GCBM
 
         #endregion
 
+        //OBSOLETE?
+        //Will it no longer be implemented before version 3.0?
+        //Remove the "Export CSV" function if it no longer needs to exist.
         #region Export CSV
 
         /// <summary>
@@ -4292,7 +4299,6 @@ namespace GCBM
         #endregion
 
         // Tool Strip Menu Item
-
         #region TSMI
 
         #region tsmiDeleteSelectedFile_Click
@@ -5408,7 +5414,6 @@ namespace GCBM
         }
 
         #endregion
-
 
         #region BatchInstall1to1 from 2.5
 
