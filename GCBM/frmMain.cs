@@ -5715,7 +5715,8 @@ namespace GCBM
                 if (result == DialogResult.Yes)
                 {
                     //download the file
-                    Application.Run(new frmDownloadGameTDB());
+                    frmDownloadGameTDB dl = new frmDownloadGameTDB();
+                    dl.ShowDialog();
                 }
             }
         }
