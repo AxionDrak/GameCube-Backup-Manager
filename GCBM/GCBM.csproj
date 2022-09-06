@@ -79,7 +79,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AutoUpdater.NET">
-      <HintPath>..\AutoUpdater.NET-1.7.0\net45\AutoUpdater.NET.dll</HintPath>
+      <HintPath>..\AutoUpdater.NET-1.7.5\net45\AutoUpdater.NET.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
