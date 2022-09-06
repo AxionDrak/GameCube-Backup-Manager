@@ -193,6 +193,26 @@ namespace GCBM.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bell_24 {
+            get {
+                object obj = ResourceManager.GetObject("bell-24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bell_off_24 {
+            get {
+                object obj = ResourceManager.GetObject("bell-off-24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap box_16 {
             get {
                 object obj = ResourceManager.GetObject("box_16", resourceCulture);
@@ -2056,6 +2076,15 @@ namespace GCBM.Properties {
             get {
                 object obj = ResourceManager.GetObject("transfer_0002", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Concluída a transferência de {0} arquivos..
+        /// </summary>
+        internal static string TransferCompleteAll {
+            get {
+                return ResourceManager.GetString("TransferCompleteAll", resourceCulture);
             }
         }
         

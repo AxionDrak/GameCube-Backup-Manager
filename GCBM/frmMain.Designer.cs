@@ -39,41 +39,9 @@ namespace GCBM
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.spcMain = new System.Windows.Forms.SplitContainer();
-            this.grpSearch = new System.Windows.Forms.GroupBox();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.tbSearch = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.pbGameCover3D = new System.Windows.Forms.PictureBox();
-            this.pbGameDisc = new System.Windows.Forms.PictureBox();
             this.tabControlMain = new System.Windows.Forms.TabControl();
             this.tabMainFile = new System.Windows.Forms.TabPage();
-            this.pbSource = new System.Windows.Forms.ProgressBar();
-            this.lblSourceCount = new System.Windows.Forms.Label();
-            this.lblGameCountSource = new System.Windows.Forms.Label();
-            this.lblAbort = new System.Windows.Forms.Label();
-            this.pbCopy = new System.Windows.Forms.ProgressBar();
-            this.lblCopy = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnAbort = new System.Windows.Forms.Button();
-            this.lblPercent = new System.Windows.Forms.Label();
-            this.btnSelectFolder = new System.Windows.Forms.Button();
-            this.lblInstallGame = new System.Windows.Forms.Label();
-            this.grpDetailsSource = new System.Windows.Forms.GroupBox();
-            this.lblTypeDisc = new System.Windows.Forms.Label();
-            this.label34 = new System.Windows.Forms.Label();
-            this.tbIDMakerCode = new System.Windows.Forms.TextBox();
-            this.tbIDDiscID = new System.Windows.Forms.TextBox();
-            this.label29 = new System.Windows.Forms.Label();
-            this.pbWebGameID = new System.Windows.Forms.PictureBox();
-            this.grpOperations = new System.Windows.Forms.GroupBox();
-            this.btnGameInstallScrub = new System.Windows.Forms.Button();
-            this.btnGameInstallExactCopy = new System.Windows.Forms.Button();
-            this.labelGameID = new System.Windows.Forms.Label();
-            this.labelFile = new System.Windows.Forms.Label();
-            this.labelTitle = new System.Windows.Forms.Label();
-            this.tbIDGame = new System.Windows.Forms.TextBox();
-            this.tbIDRegion = new System.Windows.Forms.TextBox();
-            this.tbIDName = new System.Windows.Forms.TextBox();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.dgvSource = new System.Windows.Forms.DataGridView();
             this.clmChk = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.clmTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -94,6 +62,7 @@ namespace GCBM
             this.tsmiSearchOnYoutube = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiSearchOnGameSpot = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiSearchOnVGChartz = new System.Windows.Forms.ToolStripMenuItem();
+            this.tbSearch = new System.Windows.Forms.TextBox();
             this.mstripFile = new System.Windows.Forms.MenuStrip();
             this.tsmiReloadGameList = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiClearListSource = new System.Windows.Forms.ToolStripMenuItem();
@@ -174,6 +143,37 @@ namespace GCBM
             this.tsmiClearLog = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.tsmiExportLog = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnGameInstallScrub = new System.Windows.Forms.Button();
+            this.btnGameInstallExactCopy = new System.Windows.Forms.Button();
+            this.grpDetailsSource = new System.Windows.Forms.GroupBox();
+            this.lblTypeDisc = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.pbGameDisc = new System.Windows.Forms.PictureBox();
+            this.pbGameCover3D = new System.Windows.Forms.PictureBox();
+            this.tbIDName = new System.Windows.Forms.TextBox();
+            this.label34 = new System.Windows.Forms.Label();
+            this.tbIDRegion = new System.Windows.Forms.TextBox();
+            this.tbIDGame = new System.Windows.Forms.TextBox();
+            this.tbIDMakerCode = new System.Windows.Forms.TextBox();
+            this.labelTitle = new System.Windows.Forms.Label();
+            this.labelFile = new System.Windows.Forms.Label();
+            this.labelGameID = new System.Windows.Forms.Label();
+            this.tbIDDiscID = new System.Windows.Forms.TextBox();
+            this.pbWebGameID = new System.Windows.Forms.PictureBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.grpOperations = new System.Windows.Forms.GroupBox();
+            this.lblInstallStatusPercent = new System.Windows.Forms.Label();
+            this.lblCurrentGameIndex = new System.Windows.Forms.Label();
+            this.lblBrowse = new System.Windows.Forms.Label();
+            this.lblSourceCount = new System.Windows.Forms.Label();
+            this.pbSource = new System.Windows.Forms.ProgressBar();
+            this.btnSelectFolder = new System.Windows.Forms.Button();
+            this.lblSourceGameCount = new System.Windows.Forms.Label();
+            this.btnAbort = new System.Windows.Forms.Button();
+            this.pbCopy = new System.Windows.Forms.ProgressBar();
+            this.lblInstallStatusText = new System.Windows.Forms.Label();
+            this.lblCurrentGameTitle = new System.Windows.Forms.Label();
+            this.cbNotificationToggle = new System.Windows.Forms.CheckBox();
             this.sstripMain = new System.Windows.Forms.StatusStrip();
             this.tsslCurrentYear = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblScan = new System.Windows.Forms.ToolStripStatusLabel();
@@ -221,21 +221,14 @@ namespace GCBM
             this.cmsNotifyIcon = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiNotifyExit = new System.Windows.Forms.ToolStripMenuItem();
             this.pbNetStatus = new System.Windows.Forms.PictureBox();
-            this.gameBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.process1 = new System.Diagnostics.Process();
+            this.gameBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.spcMain)).BeginInit();
             this.spcMain.Panel1.SuspendLayout();
             this.spcMain.Panel2.SuspendLayout();
             this.spcMain.SuspendLayout();
-            this.grpSearch.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbGameCover3D)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbGameDisc)).BeginInit();
             this.tabControlMain.SuspendLayout();
             this.tabMainFile.SuspendLayout();
-            this.grpDetailsSource.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbWebGameID)).BeginInit();
-            this.grpOperations.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSource)).BeginInit();
             this.cmsMain.SuspendLayout();
             this.mstripFile.SuspendLayout();
@@ -248,6 +241,12 @@ namespace GCBM
             this.mstripDatabase.SuspendLayout();
             this.tabMainLog.SuspendLayout();
             this.mstripLog.SuspendLayout();
+            this.grpDetailsSource.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbGameDisc)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbGameCover3D)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbWebGameID)).BeginInit();
+            this.grpOperations.SuspendLayout();
             this.sstripMain.SuspendLayout();
             this.mstripMain.SuspendLayout();
             this.cmsNotifyIcon.SuspendLayout();
@@ -263,20 +262,35 @@ namespace GCBM
             // 
             // spcMain.Panel1
             // 
-            this.spcMain.Panel1.Controls.Add(this.grpSearch);
-            this.spcMain.Panel1.Controls.Add(this.groupBox1);
+            this.spcMain.Panel1.Controls.Add(this.tabControlMain);
             // 
             // spcMain.Panel2
             // 
-            this.spcMain.Panel2.Controls.Add(this.tabControlMain);
+            this.spcMain.Panel2.Controls.Add(this.btnGameInstallScrub);
+            this.spcMain.Panel2.Controls.Add(this.btnGameInstallExactCopy);
+            this.spcMain.Panel2.Controls.Add(this.grpDetailsSource);
+            this.spcMain.Panel2.Controls.Add(this.grpOperations);
             // 
-            // grpSearch
+            // tabControlMain
             // 
-            this.grpSearch.Controls.Add(this.btnSearch);
-            this.grpSearch.Controls.Add(this.tbSearch);
-            resources.ApplyResources(this.grpSearch, "grpSearch");
-            this.grpSearch.Name = "grpSearch";
-            this.grpSearch.TabStop = false;
+            this.tabControlMain.Controls.Add(this.tabMainFile);
+            this.tabControlMain.Controls.Add(this.tabMainDisc);
+            this.tabControlMain.Controls.Add(this.tabMainDatabase);
+            this.tabControlMain.Controls.Add(this.tabMainLog);
+            resources.ApplyResources(this.tabControlMain, "tabControlMain");
+            this.tabControlMain.Name = "tabControlMain";
+            this.tabControlMain.SelectedIndex = 0;
+            this.tabControlMain.SelectedIndexChanged += new System.EventHandler(this.tabControlMain_SelectedIndexChanged);
+            // 
+            // tabMainFile
+            // 
+            this.tabMainFile.Controls.Add(this.btnSearch);
+            this.tabMainFile.Controls.Add(this.dgvSource);
+            this.tabMainFile.Controls.Add(this.tbSearch);
+            this.tabMainFile.Controls.Add(this.mstripFile);
+            resources.ApplyResources(this.tabMainFile, "tabMainFile");
+            this.tabMainFile.Name = "tabMainFile";
+            this.tabMainFile.UseVisualStyleBackColor = true;
             // 
             // btnSearch
             // 
@@ -286,235 +300,6 @@ namespace GCBM
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.Search_Click);
             this.btnSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.btnSearch_KeyPress);
-            // 
-            // tbSearch
-            // 
-            resources.ApplyResources(this.tbSearch, "tbSearch");
-            this.tbSearch.Name = "tbSearch";
-            this.tbSearch.TextChanged += new System.EventHandler(this.Search_Click);
-            // 
-            // groupBox1
-            // 
-            resources.ApplyResources(this.groupBox1, "groupBox1");
-            this.groupBox1.Controls.Add(this.pbGameCover3D);
-            this.groupBox1.Controls.Add(this.pbGameDisc);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.TabStop = false;
-            // 
-            // pbGameCover3D
-            // 
-            resources.ApplyResources(this.pbGameCover3D, "pbGameCover3D");
-            this.pbGameCover3D.Name = "pbGameCover3D";
-            this.pbGameCover3D.TabStop = false;
-            // 
-            // pbGameDisc
-            // 
-            resources.ApplyResources(this.pbGameDisc, "pbGameDisc");
-            this.pbGameDisc.Name = "pbGameDisc";
-            this.pbGameDisc.TabStop = false;
-            // 
-            // tabControlMain
-            // 
-            resources.ApplyResources(this.tabControlMain, "tabControlMain");
-            this.tabControlMain.Controls.Add(this.tabMainFile);
-            this.tabControlMain.Controls.Add(this.tabMainDisc);
-            this.tabControlMain.Controls.Add(this.tabMainDatabase);
-            this.tabControlMain.Controls.Add(this.tabMainLog);
-            this.tabControlMain.Name = "tabControlMain";
-            this.tabControlMain.SelectedIndex = 0;
-            this.tabControlMain.SelectedIndexChanged += new System.EventHandler(this.tabControlMain_SelectedIndexChanged);
-            // 
-            // tabMainFile
-            // 
-            this.tabMainFile.Controls.Add(this.pbSource);
-            this.tabMainFile.Controls.Add(this.lblSourceCount);
-            this.tabMainFile.Controls.Add(this.lblGameCountSource);
-            this.tabMainFile.Controls.Add(this.lblAbort);
-            this.tabMainFile.Controls.Add(this.pbCopy);
-            this.tabMainFile.Controls.Add(this.lblCopy);
-            this.tabMainFile.Controls.Add(this.label1);
-            this.tabMainFile.Controls.Add(this.btnAbort);
-            this.tabMainFile.Controls.Add(this.lblPercent);
-            this.tabMainFile.Controls.Add(this.btnSelectFolder);
-            this.tabMainFile.Controls.Add(this.lblInstallGame);
-            this.tabMainFile.Controls.Add(this.grpDetailsSource);
-            this.tabMainFile.Controls.Add(this.dgvSource);
-            this.tabMainFile.Controls.Add(this.mstripFile);
-            resources.ApplyResources(this.tabMainFile, "tabMainFile");
-            this.tabMainFile.Name = "tabMainFile";
-            this.tabMainFile.UseVisualStyleBackColor = true;
-            // 
-            // pbSource
-            // 
-            resources.ApplyResources(this.pbSource, "pbSource");
-            this.pbSource.Name = "pbSource";
-            // 
-            // lblSourceCount
-            // 
-            resources.ApplyResources(this.lblSourceCount, "lblSourceCount");
-            this.lblSourceCount.Name = "lblSourceCount";
-            // 
-            // lblGameCountSource
-            // 
-            resources.ApplyResources(this.lblGameCountSource, "lblGameCountSource");
-            this.lblGameCountSource.Name = "lblGameCountSource";
-            // 
-            // lblAbort
-            // 
-            resources.ApplyResources(this.lblAbort, "lblAbort");
-            this.lblAbort.Name = "lblAbort";
-            // 
-            // pbCopy
-            // 
-            resources.ApplyResources(this.pbCopy, "pbCopy");
-            this.pbCopy.Name = "pbCopy";
-            // 
-            // lblCopy
-            // 
-            resources.ApplyResources(this.lblCopy, "lblCopy");
-            this.lblCopy.Name = "lblCopy";
-            // 
-            // label1
-            // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.Name = "label1";
-            // 
-            // btnAbort
-            // 
-            resources.ApplyResources(this.btnAbort, "btnAbort");
-            this.btnAbort.FlatAppearance.BorderSize = 0;
-            this.btnAbort.Image = global::GCBM.Properties.Resources.cancel_32;
-            this.btnAbort.Name = "btnAbort";
-            this.btnAbort.UseVisualStyleBackColor = true;
-            this.btnAbort.Click += new System.EventHandler(this.btnAbort_Click);
-            // 
-            // lblPercent
-            // 
-            resources.ApplyResources(this.lblPercent, "lblPercent");
-            this.lblPercent.BackColor = System.Drawing.Color.Transparent;
-            this.lblPercent.Name = "lblPercent";
-            // 
-            // btnSelectFolder
-            // 
-            resources.ApplyResources(this.btnSelectFolder, "btnSelectFolder");
-            this.btnSelectFolder.Image = global::GCBM.Properties.Resources.open_folder_64;
-            this.btnSelectFolder.Name = "btnSelectFolder";
-            this.btnSelectFolder.UseVisualStyleBackColor = true;
-            this.btnSelectFolder.Click += new System.EventHandler(this.btnSelectFolder_Click);
-            // 
-            // lblInstallGame
-            // 
-            resources.ApplyResources(this.lblInstallGame, "lblInstallGame");
-            this.lblInstallGame.Name = "lblInstallGame";
-            // 
-            // grpDetailsSource
-            // 
-            resources.ApplyResources(this.grpDetailsSource, "grpDetailsSource");
-            this.grpDetailsSource.Controls.Add(this.lblTypeDisc);
-            this.grpDetailsSource.Controls.Add(this.label34);
-            this.grpDetailsSource.Controls.Add(this.tbIDMakerCode);
-            this.grpDetailsSource.Controls.Add(this.tbIDDiscID);
-            this.grpDetailsSource.Controls.Add(this.label29);
-            this.grpDetailsSource.Controls.Add(this.pbWebGameID);
-            this.grpDetailsSource.Controls.Add(this.grpOperations);
-            this.grpDetailsSource.Controls.Add(this.labelGameID);
-            this.grpDetailsSource.Controls.Add(this.labelFile);
-            this.grpDetailsSource.Controls.Add(this.labelTitle);
-            this.grpDetailsSource.Controls.Add(this.tbIDGame);
-            this.grpDetailsSource.Controls.Add(this.tbIDRegion);
-            this.grpDetailsSource.Controls.Add(this.tbIDName);
-            this.grpDetailsSource.Name = "grpDetailsSource";
-            this.grpDetailsSource.TabStop = false;
-            // 
-            // lblTypeDisc
-            // 
-            resources.ApplyResources(this.lblTypeDisc, "lblTypeDisc");
-            this.lblTypeDisc.Name = "lblTypeDisc";
-            // 
-            // label34
-            // 
-            resources.ApplyResources(this.label34, "label34");
-            this.label34.Name = "label34";
-            // 
-            // tbIDMakerCode
-            // 
-            resources.ApplyResources(this.tbIDMakerCode, "tbIDMakerCode");
-            this.tbIDMakerCode.Name = "tbIDMakerCode";
-            this.tbIDMakerCode.ReadOnly = true;
-            // 
-            // tbIDDiscID
-            // 
-            resources.ApplyResources(this.tbIDDiscID, "tbIDDiscID");
-            this.tbIDDiscID.Name = "tbIDDiscID";
-            this.tbIDDiscID.ReadOnly = true;
-            // 
-            // label29
-            // 
-            resources.ApplyResources(this.label29, "label29");
-            this.label29.Name = "label29";
-            // 
-            // pbWebGameID
-            // 
-            resources.ApplyResources(this.pbWebGameID, "pbWebGameID");
-            this.pbWebGameID.Image = global::GCBM.Properties.Resources.globe_earth_grayscale_64;
-            this.pbWebGameID.Name = "pbWebGameID";
-            this.pbWebGameID.TabStop = false;
-            this.pbWebGameID.Click += new System.EventHandler(this.pbWebGameID_Click);
-            // 
-            // grpOperations
-            // 
-            this.grpOperations.Controls.Add(this.btnGameInstallScrub);
-            this.grpOperations.Controls.Add(this.btnGameInstallExactCopy);
-            resources.ApplyResources(this.grpOperations, "grpOperations");
-            this.grpOperations.Name = "grpOperations";
-            this.grpOperations.TabStop = false;
-            // 
-            // btnGameInstallScrub
-            // 
-            resources.ApplyResources(this.btnGameInstallScrub, "btnGameInstallScrub");
-            this.btnGameInstallScrub.Name = "btnGameInstallScrub";
-            this.btnGameInstallScrub.UseVisualStyleBackColor = true;
-            this.btnGameInstallScrub.Click += new System.EventHandler(this.btnGameInstallScrub_Click);
-            // 
-            // btnGameInstallExactCopy
-            // 
-            resources.ApplyResources(this.btnGameInstallExactCopy, "btnGameInstallExactCopy");
-            this.btnGameInstallExactCopy.Name = "btnGameInstallExactCopy";
-            this.btnGameInstallExactCopy.UseVisualStyleBackColor = true;
-            this.btnGameInstallExactCopy.Click += new System.EventHandler(this.btnGameInstallExactCopy_Click);
-            // 
-            // labelGameID
-            // 
-            resources.ApplyResources(this.labelGameID, "labelGameID");
-            this.labelGameID.Name = "labelGameID";
-            // 
-            // labelFile
-            // 
-            resources.ApplyResources(this.labelFile, "labelFile");
-            this.labelFile.Name = "labelFile";
-            // 
-            // labelTitle
-            // 
-            resources.ApplyResources(this.labelTitle, "labelTitle");
-            this.labelTitle.Name = "labelTitle";
-            // 
-            // tbIDGame
-            // 
-            resources.ApplyResources(this.tbIDGame, "tbIDGame");
-            this.tbIDGame.Name = "tbIDGame";
-            this.tbIDGame.ReadOnly = true;
-            // 
-            // tbIDRegion
-            // 
-            resources.ApplyResources(this.tbIDRegion, "tbIDRegion");
-            this.tbIDRegion.Name = "tbIDRegion";
-            this.tbIDRegion.ReadOnly = true;
-            // 
-            // tbIDName
-            // 
-            resources.ApplyResources(this.tbIDName, "tbIDName");
-            this.tbIDName.Name = "tbIDName";
-            this.tbIDName.ReadOnly = true;
             // 
             // dgvSource
             // 
@@ -669,6 +454,12 @@ namespace GCBM
             this.tsmiSearchOnVGChartz.Name = "tsmiSearchOnVGChartz";
             resources.ApplyResources(this.tsmiSearchOnVGChartz, "tsmiSearchOnVGChartz");
             this.tsmiSearchOnVGChartz.Click += new System.EventHandler(this.tsmiSearchOnVGChartz_Click);
+            // 
+            // tbSearch
+            // 
+            resources.ApplyResources(this.tbSearch, "tbSearch");
+            this.tbSearch.Name = "tbSearch";
+            this.tbSearch.TextChanged += new System.EventHandler(this.Search_Click);
             // 
             // mstripFile
             // 
@@ -1280,6 +1071,217 @@ namespace GCBM
             resources.ApplyResources(this.tsmiExportLog, "tsmiExportLog");
             this.tsmiExportLog.Click += new System.EventHandler(this.tsmiExportLog_Click);
             // 
+            // btnGameInstallScrub
+            // 
+            resources.ApplyResources(this.btnGameInstallScrub, "btnGameInstallScrub");
+            this.btnGameInstallScrub.Name = "btnGameInstallScrub";
+            this.btnGameInstallScrub.UseVisualStyleBackColor = true;
+            this.btnGameInstallScrub.Click += new System.EventHandler(this.btnGameInstallScrub_Click);
+            // 
+            // btnGameInstallExactCopy
+            // 
+            resources.ApplyResources(this.btnGameInstallExactCopy, "btnGameInstallExactCopy");
+            this.btnGameInstallExactCopy.Name = "btnGameInstallExactCopy";
+            this.btnGameInstallExactCopy.UseVisualStyleBackColor = true;
+            this.btnGameInstallExactCopy.Click += new System.EventHandler(this.btnGameInstallExactCopy_Click);
+            // 
+            // grpDetailsSource
+            // 
+            resources.ApplyResources(this.grpDetailsSource, "grpDetailsSource");
+            this.grpDetailsSource.Controls.Add(this.lblTypeDisc);
+            this.grpDetailsSource.Controls.Add(this.groupBox1);
+            this.grpDetailsSource.Controls.Add(this.tbIDName);
+            this.grpDetailsSource.Controls.Add(this.label34);
+            this.grpDetailsSource.Controls.Add(this.tbIDRegion);
+            this.grpDetailsSource.Controls.Add(this.tbIDGame);
+            this.grpDetailsSource.Controls.Add(this.tbIDMakerCode);
+            this.grpDetailsSource.Controls.Add(this.labelTitle);
+            this.grpDetailsSource.Controls.Add(this.labelFile);
+            this.grpDetailsSource.Controls.Add(this.labelGameID);
+            this.grpDetailsSource.Controls.Add(this.tbIDDiscID);
+            this.grpDetailsSource.Controls.Add(this.pbWebGameID);
+            this.grpDetailsSource.Controls.Add(this.label29);
+            this.grpDetailsSource.Name = "grpDetailsSource";
+            this.grpDetailsSource.TabStop = false;
+            // 
+            // lblTypeDisc
+            // 
+            resources.ApplyResources(this.lblTypeDisc, "lblTypeDisc");
+            this.lblTypeDisc.Name = "lblTypeDisc";
+            // 
+            // groupBox1
+            // 
+            resources.ApplyResources(this.groupBox1, "groupBox1");
+            this.groupBox1.Controls.Add(this.pbGameDisc);
+            this.groupBox1.Controls.Add(this.pbGameCover3D);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.TabStop = false;
+            // 
+            // pbGameDisc
+            // 
+            resources.ApplyResources(this.pbGameDisc, "pbGameDisc");
+            this.pbGameDisc.BackColor = System.Drawing.Color.Transparent;
+            this.pbGameDisc.Name = "pbGameDisc";
+            this.pbGameDisc.TabStop = false;
+            // 
+            // pbGameCover3D
+            // 
+            resources.ApplyResources(this.pbGameCover3D, "pbGameCover3D");
+            this.pbGameCover3D.Name = "pbGameCover3D";
+            this.pbGameCover3D.TabStop = false;
+            // 
+            // tbIDName
+            // 
+            resources.ApplyResources(this.tbIDName, "tbIDName");
+            this.tbIDName.Name = "tbIDName";
+            this.tbIDName.ReadOnly = true;
+            // 
+            // label34
+            // 
+            resources.ApplyResources(this.label34, "label34");
+            this.label34.Name = "label34";
+            // 
+            // tbIDRegion
+            // 
+            resources.ApplyResources(this.tbIDRegion, "tbIDRegion");
+            this.tbIDRegion.Name = "tbIDRegion";
+            this.tbIDRegion.ReadOnly = true;
+            // 
+            // tbIDGame
+            // 
+            resources.ApplyResources(this.tbIDGame, "tbIDGame");
+            this.tbIDGame.Name = "tbIDGame";
+            this.tbIDGame.ReadOnly = true;
+            // 
+            // tbIDMakerCode
+            // 
+            resources.ApplyResources(this.tbIDMakerCode, "tbIDMakerCode");
+            this.tbIDMakerCode.Name = "tbIDMakerCode";
+            this.tbIDMakerCode.ReadOnly = true;
+            // 
+            // labelTitle
+            // 
+            resources.ApplyResources(this.labelTitle, "labelTitle");
+            this.labelTitle.Name = "labelTitle";
+            // 
+            // labelFile
+            // 
+            resources.ApplyResources(this.labelFile, "labelFile");
+            this.labelFile.Name = "labelFile";
+            // 
+            // labelGameID
+            // 
+            resources.ApplyResources(this.labelGameID, "labelGameID");
+            this.labelGameID.Name = "labelGameID";
+            // 
+            // tbIDDiscID
+            // 
+            resources.ApplyResources(this.tbIDDiscID, "tbIDDiscID");
+            this.tbIDDiscID.Name = "tbIDDiscID";
+            this.tbIDDiscID.ReadOnly = true;
+            // 
+            // pbWebGameID
+            // 
+            resources.ApplyResources(this.pbWebGameID, "pbWebGameID");
+            this.pbWebGameID.Image = global::GCBM.Properties.Resources.globe_earth_grayscale_64;
+            this.pbWebGameID.Name = "pbWebGameID";
+            this.pbWebGameID.TabStop = false;
+            this.pbWebGameID.Click += new System.EventHandler(this.pbWebGameID_Click);
+            // 
+            // label29
+            // 
+            resources.ApplyResources(this.label29, "label29");
+            this.label29.Name = "label29";
+            // 
+            // grpOperations
+            // 
+            resources.ApplyResources(this.grpOperations, "grpOperations");
+            this.grpOperations.Controls.Add(this.lblInstallStatusPercent);
+            this.grpOperations.Controls.Add(this.lblCurrentGameIndex);
+            this.grpOperations.Controls.Add(this.lblBrowse);
+            this.grpOperations.Controls.Add(this.lblSourceCount);
+            this.grpOperations.Controls.Add(this.pbSource);
+            this.grpOperations.Controls.Add(this.btnSelectFolder);
+            this.grpOperations.Controls.Add(this.lblSourceGameCount);
+            this.grpOperations.Controls.Add(this.btnAbort);
+            this.grpOperations.Controls.Add(this.pbCopy);
+            this.grpOperations.Controls.Add(this.lblInstallStatusText);
+            this.grpOperations.Controls.Add(this.lblCurrentGameTitle);
+            this.grpOperations.Name = "grpOperations";
+            this.grpOperations.TabStop = false;
+            // 
+            // lblInstallStatusPercent
+            // 
+            resources.ApplyResources(this.lblInstallStatusPercent, "lblInstallStatusPercent");
+            this.lblInstallStatusPercent.Name = "lblInstallStatusPercent";
+            // 
+            // lblCurrentGameIndex
+            // 
+            resources.ApplyResources(this.lblCurrentGameIndex, "lblCurrentGameIndex");
+            this.lblCurrentGameIndex.Name = "lblCurrentGameIndex";
+            // 
+            // lblBrowse
+            // 
+            resources.ApplyResources(this.lblBrowse, "lblBrowse");
+            this.lblBrowse.Name = "lblBrowse";
+            // 
+            // lblSourceCount
+            // 
+            resources.ApplyResources(this.lblSourceCount, "lblSourceCount");
+            this.lblSourceCount.Name = "lblSourceCount";
+            // 
+            // pbSource
+            // 
+            resources.ApplyResources(this.pbSource, "pbSource");
+            this.pbSource.Name = "pbSource";
+            // 
+            // btnSelectFolder
+            // 
+            resources.ApplyResources(this.btnSelectFolder, "btnSelectFolder");
+            this.btnSelectFolder.Image = global::GCBM.Properties.Resources.open_folder_64;
+            this.btnSelectFolder.Name = "btnSelectFolder";
+            this.btnSelectFolder.UseVisualStyleBackColor = true;
+            this.btnSelectFolder.Click += new System.EventHandler(this.btnSelectFolder_Click);
+            // 
+            // lblSourceGameCount
+            // 
+            resources.ApplyResources(this.lblSourceGameCount, "lblSourceGameCount");
+            this.lblSourceGameCount.Name = "lblSourceGameCount";
+            // 
+            // btnAbort
+            // 
+            resources.ApplyResources(this.btnAbort, "btnAbort");
+            this.btnAbort.FlatAppearance.BorderSize = 0;
+            this.btnAbort.Image = global::GCBM.Properties.Resources.cancel_32;
+            this.btnAbort.Name = "btnAbort";
+            this.btnAbort.UseVisualStyleBackColor = true;
+            this.btnAbort.Click += new System.EventHandler(this.btnAbort_Click);
+            // 
+            // pbCopy
+            // 
+            resources.ApplyResources(this.pbCopy, "pbCopy");
+            this.pbCopy.Name = "pbCopy";
+            // 
+            // lblInstallStatusText
+            // 
+            resources.ApplyResources(this.lblInstallStatusText, "lblInstallStatusText");
+            this.lblInstallStatusText.Name = "lblInstallStatusText";
+            // 
+            // lblCurrentGameTitle
+            // 
+            resources.ApplyResources(this.lblCurrentGameTitle, "lblCurrentGameTitle");
+            this.lblCurrentGameTitle.Name = "lblCurrentGameTitle";
+            // 
+            // cbNotificationToggle
+            // 
+            resources.ApplyResources(this.cbNotificationToggle, "cbNotificationToggle");
+            this.cbNotificationToggle.BackColor = System.Drawing.Color.Transparent;
+            this.cbNotificationToggle.Image = global::GCBM.Properties.Resources.bell_24;
+            this.cbNotificationToggle.Name = "cbNotificationToggle";
+            this.cbNotificationToggle.UseVisualStyleBackColor = false;
+            this.cbNotificationToggle.CheckedChanged += new System.EventHandler(this.cbNotificationToggle_click);
+            this.cbNotificationToggle.Click += new System.EventHandler(this.cbNotificationToggle_click);
+            // 
             // sstripMain
             // 
             this.sstripMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -1623,6 +1625,7 @@ namespace GCBM
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.cbNotificationToggle);
             this.Controls.Add(this.pbNetStatus);
             this.Controls.Add(this.lblNetStatus);
             this.Controls.Add(this.spcMain);
@@ -1635,18 +1638,9 @@ namespace GCBM
             this.spcMain.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.spcMain)).EndInit();
             this.spcMain.ResumeLayout(false);
-            this.grpSearch.ResumeLayout(false);
-            this.grpSearch.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbGameCover3D)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbGameDisc)).EndInit();
             this.tabControlMain.ResumeLayout(false);
             this.tabMainFile.ResumeLayout(false);
             this.tabMainFile.PerformLayout();
-            this.grpDetailsSource.ResumeLayout(false);
-            this.grpDetailsSource.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbWebGameID)).EndInit();
-            this.grpOperations.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSource)).EndInit();
             this.cmsMain.ResumeLayout(false);
             this.mstripFile.ResumeLayout(false);
@@ -1667,6 +1661,14 @@ namespace GCBM
             this.tabMainLog.PerformLayout();
             this.mstripLog.ResumeLayout(false);
             this.mstripLog.PerformLayout();
+            this.grpDetailsSource.ResumeLayout(false);
+            this.grpDetailsSource.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbGameDisc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbGameCover3D)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbWebGameID)).EndInit();
+            this.grpOperations.ResumeLayout(false);
+            this.grpOperations.PerformLayout();
             this.sstripMain.ResumeLayout(false);
             this.sstripMain.PerformLayout();
             this.mstripMain.ResumeLayout(false);
@@ -1743,11 +1745,10 @@ namespace GCBM
         private ToolStripMenuItem tsmiDolphinEmulator;
         private TabControl tabControlMain;
         private TabPage tabMainFile;
-        private Label lblInstallGame;
-        private Label lblPercent;
-        private Label lblCopy;
+        private Label lblInstallStatusText;
+        private Label lblCurrentGameTitle;
         private ProgressBar pbCopy;
-        private Label label1;
+        private Label lblBrowse;
         private Button btnSelectFolder;
         private GroupBox grpDetailsSource;
         private Label lblTypeDisc;
@@ -1758,7 +1759,6 @@ namespace GCBM
         private PictureBox pbWebGameID;
         private GroupBox grpOperations;
         private Button btnGameInstallScrub;
-        private Button btnGameInstallExactCopy;
         private Label labelGameID;
         private Label labelFile;
         private Label labelTitle;
@@ -1850,12 +1850,10 @@ namespace GCBM
         private DataGridViewTextBoxColumn clmDiscExtension;
         private DataGridViewTextBoxColumn clmDiscSize;
         private DataGridViewTextBoxColumn clmDiscPath;
-        private GroupBox grpSearch;
         private Process process1;
         private Button btnAbort;
-        private Label lblAbort;
         private Label lblSourceCount;
-        private Label lblGameCountSource;
+        private Label lblSourceGameCount;
         private ToolStripStatusLabel lblScan;
         private Label lblDestinationCount;
         private Label label8;
@@ -1866,6 +1864,10 @@ namespace GCBM
         private ToolStripMenuItem tsmiClearListDestination;
         private ToolStripMenuItem toolStripMenuItem11;
         private ProgressBar pbSource;
+        private CheckBox cbNotificationToggle;
+        private Button btnGameInstallExactCopy;
+        private Label lblCurrentGameIndex;
+        private Label lblInstallStatusPercent;
     }
 }
 

@@ -513,4 +513,7 @@
   <data name="AskDownloadWiiTDB" xml:space="preserve">
     <value>WiiTDB.zip not found, would you like to download it now?</value>
   </data>
+  <data name="TransferCompleteAll" xml:space="preserve">
+    <value>Done transferring {0} files.</value>
+  </data>
 </root>

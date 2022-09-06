@@ -513,4 +513,7 @@
   <data name="AskDownloadWiiTDB" xml:space="preserve">
     <value>WiiTDB.zip을 찾을 수 없습니다. 지금 다운로드하시겠습니까?</value>
   </data>
+  <data name="TransferCompleteAll" xml:space="preserve">
+    <value>{0} 파일 전송을 완료했습니다.</value>
+  </data>
 </root>

@@ -660,7 +660,6 @@ namespace GCBM
                 return false;
             }
 
-            error = GenerateTreeView(FILENAME_SORT);
 
             ROOT_OPENED = false;
             LoadInfo(!ROOT_OPENED);

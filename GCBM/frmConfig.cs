@@ -128,6 +128,7 @@ namespace GCBM
             CONFIG_INI_FILE.IniWriteBool("SEVERAL", "Screensaver", chkScreensaver.Checked);
             CONFIG_INI_FILE.IniWriteBool("SEVERAL", "LoadDatabase", chkLoadDatabase.Checked);
             CONFIG_INI_FILE.IniWriteBool("SEVERAL", "MultipleInstances", chkMultipleInstances.Checked);
+            CONFIG_INI_FILE.IniWriteBool("GENERAL", "IsSilenced", IsSilenced);
 
             // TransferSystem
             CONFIG_INI_FILE.IniWriteBool("TRANSFERSYSTEM", "FST", rbTransferSystemFST.Checked);
@@ -250,6 +251,11 @@ namespace GCBM
                 chkScreensaver.Checked = CONFIG_INI_FILE.IniReadBool("SEVERAL", "Screensaver");
                 chkLoadDatabase.Checked = CONFIG_INI_FILE.IniReadBool("SEVERAL", "LoadDatabase");
                 chkMultipleInstances.Checked = CONFIG_INI_FILE.IniReadBool("SEVERAL", "MultipleInstances");
+                IsSilenced = CONFIG_INI_FILE.IniReadBool("SEVERAL", "IsSilenced");
+                cbNotificationToggle.Image = IsSilenced ? Resources.bell_off_24 : Resources.bell_24;
+                cbNotificationToggle.Checked = IsSilenced;
+                cbNotificationToggle.CheckState = IsSilenced ? CheckState.Unchecked : CheckState.Checked;
+                cbNotificationToggle.Update();
 
                 // TransferSystem
                 rbTransferSystemFST.Checked = CONFIG_INI_FILE.IniReadBool("TRANSFERSYSTEM", "FST");
@@ -578,5 +584,15 @@ namespace GCBM
         }
 
         #endregion
+
+        private bool IsSilenced;
+        private void cbNotificationToggle_CheckChanged(object sender, EventArgs e)
+        {
+            IsSilenced = !IsSilenced;
+            cbNotificationToggle.Image = IsSilenced ? Resources.bell_off_24 : Resources.bell_24;
+            cbNotificationToggle.Checked = IsSilenced;
+            cbNotificationToggle.Update();
+        }
+
     }
 }
