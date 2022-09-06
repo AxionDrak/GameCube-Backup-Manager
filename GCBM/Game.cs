@@ -660,7 +660,7 @@ namespace GCBM
                 return false;
             }
 
-            error = GenerateTreeView(FILENAME_SORT);
+            //        private void DisplaySourceFiles(string sourceFolder)
 
             ROOT_OPENED = false;
             LoadInfo(!ROOT_OPENED);
@@ -859,7 +859,7 @@ namespace GCBM
                 return false;
             }
 
-            error = GenerateTreeView(FILENAME_SORT);
+            //        private void DisplaySourceFiles(string sourceFolder)
 
             ROOT_OPENED = false;
             LoadInfo(!ROOT_OPENED);

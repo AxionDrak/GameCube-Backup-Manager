@@ -1168,7 +1168,8 @@ namespace GCBM
                         break;
                     }
 
-                    Game game = gameUtilities.GetGameInfo(file,useXmlTitle).Result;
+                    Game game = new Game();
+                    game = game.GetGameInfo(file,useXmlTitle).Result;
                     if (game.DiscID == "0x01")
                         game.Title += " (2)";
                     FileInfo _f = new FileInfo(file);
@@ -1193,8 +1194,6 @@ namespace GCBM
                     //done with loop
 
                     dSourceGames.Add(counter, game);
-                    dgvSourcetemp.Update();
-                    wait(100);//Stop Windows from Panicking
                 }
                 EnableOptionsGameList();
 
