@@ -1,3 +1,11 @@
+
+### GameCube Backup Manager 2.6.0.10 (September 6, 2022)
+
+[Change] AutoUpdater.NET v1.7.0 to AutoUpdater.NET v1.7.5
+[Change] AutoUpdater.NET: now using temp folder as WebView2 user data folder to avoid problems when using it with VSTO add-in.
+[Fixed] AutoUpdater.NET: issue where command line arguments with spaces are not passed correctly to ZipExtractor.
+[Fixed] AutoUpdater.NET: issue causing crash due to version mismatch of WebView2 (the issue may re-emerge due to this change, so avoid updating the WebView2 package if there is a new package available in the future).
+
 ### GameCube Backup Manager 2.6.0.9 (September 1, 2022)
 
 [Fixed] should it be a little more stable now?
@@ -10,7 +18,7 @@
 [Improved] minor translation improvements.
 [Changed] naming "Remove" to "Delete" for clarity.
 
-### GameCube Backup Manager 2.6.0.7 (28 Aug 2022)
+### GameCube Backup Manager 2.6.0.7 (Aug 28, 2022)
 
 [Added] clicking the network status indicator now rechecks for a network connection and will prompt you to download WiiTDB.
 [Fixed] some minor glitches in the interface.
@@ -18,12 +26,12 @@
 [Improved] selecting a target drive responds MUCH faster now (should prevent the possibility of interface locks).
 [Changed] WiiTDB download form is now displayed on first launch if a network connection is detected (visually explaining to the user what we are doing).
 
-### GameCube Backup Manager 2.6.0.6 (27 Aug 2022)
+### GameCube Backup Manager 2.6.0.6 (Aug 27, 2022)
 
 [Corrected] I hope several things.
 [Improved] progress bar to display the scan progress of the chosen directory.
 
-### GameCube Backup Manager 2.6.0.5 (24 Aug 2022)
+### GameCube Backup Manager 2.6.0.5 (Aug 24, 2022)
 
 [Added] display of progress when loading a directory.
 
