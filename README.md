@@ -26,6 +26,7 @@ All Releases: https://github.com/AxionDrak/GameCube-Backup-Manager/releases
 + Cover transfer (USB Loader GX, USB Loader GX Tab MOD).
 + Transferring games with the correct nomenclature (Game Name+ID or ID only).
 ***Available in “Install Game (1:1)” mode using the commercial name via ‘wiitdb.xml’. The “Install Game (Scrub)” mode uses the internal nomenclature provided by the developer, that is, it does not use ‘wiitdb.xml’.***
++ Game transfer via XCopy (1:1 copies - Standard).
 + Game transfer via Scrub (GCReEx and DiscEx).
 + Deleting game files (Source and Destination).
 + Display of game information (region, publisher, genre, etc). ***File ‘wiitdb.xml’ required.***
@@ -35,7 +36,6 @@ All Releases: https://github.com/AxionDrak/GameCube-Backup-Manager/releases
 + Improved GameCube ISO detection in 'external' mode (GameTDB). ***The 'wiitdb.xml' file is required.***
 + Global download of Disc and 3D covers (for all games listed!).
 + Individual download of covers for the selected game (Disc and 3D).
-+ Game transfer via XCopy (1:1 copies - Standard).
 + Download the file 'wiitdb.xml' (GameTDB).
 + MD5 hash Calculation (manual option).
 + SHA-1 Hash Calculation (manual option).
