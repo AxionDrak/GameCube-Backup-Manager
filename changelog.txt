@@ -1,42 +1,37 @@
-### GameCube Backup Manager 2.6.0.9 (1º de setembro de 2022)
+### GameCube Backup Manager 2.6.0.9 (1 de setembro de 2022)
 
-[Alterado] Alterações internas no código.
-[Correção] Deveria ser um pouco mais estável agora?
-
-### GameCube Backup Manager 2.6.0.8 (29 de agosto de 2022)
-
-[Cambiado] Cambios internos al código.
-[Solucionado] ¿Debería ser un poco más estable ahora?
+[Corrigido] deveria ser um pouco mais estável agora?
+[Melhorado] melhorias internas no código.
 
 ### GameCube Backup Manager 2.6.0.8 (29 de agosto de 2022)
 
-[Correção] A exclusão de todos os jogos de origem funciona mais uma vez. Embora com algum comportamento estranho com a atualização do DGV toda vez que um arquivo é excluído. Pode ser otimizado posteriormente.
-[Alterado] Alterado "Remover" para "Excluir" por motivos de esclarecimento.
-[Adicionado] Botão para limpar a lista, embora isso possa ser inútil. Demorou 3 segundos, pode remover.
-[Tradução] Pequenas melhorias nas traduções.
+[Adicionado] botão para limpar a lista, embora isso possa ser inútil (Demorou 3 segundos, pode remover).
+[Corrigido] exclusão de todos os jogos de origem funciona novamente (Embora com algum comportamento estranho com a atualização do DGV toda vez que um arquivo é excluído. Pode ser otimizado posteriormente).
+[Melhorado] pequenas melhorias nas traduções.
+[Alterado] nomenclatura "Remover" para "Excluir" por motivos de esclarecimento.
 
 ### GameCube Backup Manager 2.6.0.7 (28 de agosto de 2022)
 
-[Melhoria] A seleção de uma unidade de destino responde MUITO mais rápido agora. Deve negar a possibilidade de bloqueios de interface.
-[Alterado] O formulário de download do WiiTDB agora é exibido na primeira inicialização se uma conexão de rede for detectada, explicando visualmente ao usuário o que estamos fazendo.
-[Correção] Algumas pequenas correções de interface.
-[Adicionado] Clicar no indicador de status da rede agora verifica novamente se há uma conexão de rede e solicitará o download do WiiTDB.
-[Melhoria] Melhorias de estabilidade, adicionadas algumas proteções contra falhas.
+[Adicionado] clicar no indicador de status da rede agora verifica novamente se há uma conexão de rede e solicitará o download do WiiTDB.
+[Corrigido] algumas pequenas falhas nainterface.
+[Melhorado] estabilidade geral do programa, adicionadas algumas proteções contra falhas.
+[Melhorado] seleção de uma unidade de destino responde MUITO mais rápido agora (deve impedir a possibilidade de bloqueios de interface).
+[Alterado] formulário de download do WiiTDB agora é exibido na primeira inicialização se uma conexão de rede for detectada (explicando visualmente ao usuário o que estamos fazendo).
 
 ### GameCube Backup Manager 2.6.0.6 (27 de agosto de 2022)
 
-[Melhoria] Barra de progresso para exibir o progresso da verificação do diretório escolhido.
-[Correção] Espero que várias coisas.
+[Corrigido] espero que várias coisas.
+[Melhorado] barra de progresso para exibir o progresso da verificação do diretório escolhido.
 
 ### GameCube Backup Manager 2.6.0.5 (24 de agosto de 2022)
 
-[Adicionado] Exibe o progresso ao carregar o diretório.
+[Adicionado] exibição do progresso ao carregar um diretório.
 
 ### GameCube Backup Manager 2.6.0.3 (17 de agosto de 2022)
 
-[Adicionado] Tenta baixar WiiTDB.xml em segundo plano no lançamento.
-[Correção] Vários erros de tradução e erros gramaticais.
-[Melhoria] Várias adições de novos colaboradores
+[Adicionado] download do arquivo WiiTDB.xml em segundo plano no lançamento.
+[Corrigido] vários erros de tradução e erros gramaticais.
+[Melhorado] várias adições de novos colaboradores
 
 ### GameCube Backup Manager 2.6.0.2 (13 de julho de 2022)
 
@@ -46,10 +41,10 @@
 ### GameCube Backup Manager 2.6.0.1 (12 de julho de 2022)
 
 [Adicionado] botão para cancelar a fila de transferência.
-[Alterado] verificação da Internet na inicialização por padrão.
 [Corrigido] outras correções.
 [Melhorado] estabilidade geral do programa.
 [Melhorado] UI mais responsiva.
+[Alterado] verificação da Internet na inicialização por padrão.
 
 ### GameCube Backup Manager 2.6.0.0 (12 de julho, 2022)
 
