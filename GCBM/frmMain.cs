@@ -2372,9 +2372,10 @@ namespace GCBM
         {
             int selectedRowCount = dgv.Rows.GetRowCount(DataGridViewElementStates.Selected);
 
-            if (selectedRowCount == 0)
+            if (getSelectedGamePaths(dgv).Length == 0)
             {
                 SelectGameFromList();
+                return;
             }
             else
             {
@@ -2400,33 +2401,12 @@ namespace GCBM
                             }
                             else // Install Scrub
                             {
-                                btnAbort.Visible = true;
-                                lblAbort.Visible = true;
-                                BuildInstallQueue();
-                                if (lstInstallQueue.Count == 0 || lstInstallQueue == null)
-                                {
-                                    //probably unreachable
-                                    _ = MessageBox.Show("Select a game");
-                                }
-
-                                if (lstInstallQueue.Count == 1)
-                                {
-                                    INSTALLING = true;
-                                    InstallGameScrub(intQueuePos);
-                                }
-                                else
-                                {
-                                    if (intQueuePos <= intQueueLength)
-                                    {
-                                        INSTALLING = true;
-                                        InstallGameScrub(intQueuePos);
-                                    }
-                                    //MessageBox.Show("Currently we only support 1 game to scrub at a time.");
-                                }
+                                StartScrub();
                             }
                         }
                         catch
                         {
+                            // ignored
                         }
                     }
                 }
@@ -3044,8 +3024,8 @@ namespace GCBM
         private void btnGameInstallScrub_Click(object sender, EventArgs e)
         {
 
-            ABORT = false;
-            StartScrub();
+            ABORT = false;            
+            GlobalInstall(dgvSource, 1);
         }
 
         #endregion
@@ -3865,9 +3845,10 @@ namespace GCBM
             lblInstallStatusPercent.Visible = true;
             lblInstallStatusText.Visible = true;
             pbCopy.Value = x;
-            lblInstallStatusGameTitle.Text = tbIDName.Text;;
+            lblInstallStatusGameTitle.Text = tbIDName.Text;
             lblInstallStatusText.Text = Resources.CopyTask_String1;
             lblInstallStatusPercent.Text = x + "%";
+            tabMainFile.Update();
         }
 
 
@@ -5482,8 +5463,6 @@ namespace GCBM
             if (intQueuePos <= InstallQueue.Count - 1 && !ABORT)
             {
                 FileInfo _file = new sio.FileInfo(path);
-                loadPath = _file.FullName;
-                DirectoryOpenGameList(loadPath);
                 int? selectedRowCount = Convert.ToInt32(dgvSource.Rows.GetRowCount(DataGridViewElementStates.Selected));
 
                 if (dgvSource.RowCount == 0)
@@ -5692,8 +5671,8 @@ namespace GCBM
                         lblInstallStatusText.Visible = true;
                         if (x < pbCopy.Value)
                             pbCopy.Value = x;
-                        lblInstallStatusGameTitle.Text = Resources.CopyTask_String1;
-                        lblInstallStatusText.Text = Resources.CopyTask_String2 + tbIDName.Text;
+                        lblInstallStatusGameTitle.Text = InstallQueue[intQueuePos].Title;
+                        lblInstallStatusText.Text = Resources.CopyTask_String1;
                         lblInstallStatusPercent.Text = x + "%";
                     })));
                 }).GetAwaiter().OnCompleted(() => pbCopy.BeginInvoke(new Action(() =>

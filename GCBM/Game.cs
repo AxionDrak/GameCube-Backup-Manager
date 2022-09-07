@@ -124,24 +124,7 @@ namespace GCBM
                 game.Title = game.InternalName;
             }
 
-            if (useXmlTitle)
-            {
-                if (sio.File.Exists(WIITDB_FILE))
-                {
-                    XElement root = XElement.Load(WIITDB_FILE);
-                    IEnumerable<XElement> tests = from el in root.Elements("game")
-                                                  where (string)el.Element("id") == game.IDGameCode + game.IDMakerCode //GameID
-                                                  select el;
-                    foreach (XElement el in tests)
-                    {
-                        game.Title = (string)el.Element("locale").Element("title");
-                    }
-                }
-                else
-                {
-                    CheckWiiTdbXml();
-                }
-            }
+            getXmlTitle(useXmlTitle, game);
             br.Close();
             fs.Close();
 
@@ -168,6 +151,27 @@ namespace GCBM
             br.Close();
             fs.Close();
             return Task.FromResult(game);
+        }
+
+        private void getXmlTitle(bool useXmlTitle, Game game)
+        {
+            if (useXmlTitle)
+            {
+                if (sio.File.Exists(WIITDB_FILE))
+                {
+                    XElement root = XElement.Load(WIITDB_FILE);
+                    IEnumerable<XElement> tests = root.Elements("game").AsParallel()
+                        .Where(el => (string)el.Element("id") == game.IDGameCode + game.IDMakerCode);
+                    foreach (XElement el in tests)
+                    {
+                        game.Title = (string)el.Element("locale")?.Element("title");
+                    }
+                }
+                else
+                {
+                    CheckWiiTdbXml();
+                }
+            }
         }
 
         public Game(string Title, string ID, string Region, string Extension, int Size, string Path)
