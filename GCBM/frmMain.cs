@@ -3479,7 +3479,7 @@ public partial class frmMain : Form
         scrubStopwatch.Reset();
         InstallType = "SCRUB";
         pbCopy.Style = ProgressBarStyle.Continuous;
-        //if (ABORT) return;
+        if (ABORT) return;//I know we already checked, but just in case.. one more time just to be extra careful. We are writing data after all.
         const string quote = "\"";
         var _source = InstallQueue[x].Path;
 
@@ -4891,12 +4891,13 @@ public partial class frmMain : Form
     #region SJohnson1021's Playground
 
     private void StartScrub()
-    {
+    { 
         btnAbort.Visible = true;
         lblAbort.Visible = true;
         DisableOptionsGame(dgvSource);
         BuildInstallQueue();
-        foreach (var game in InstallQueue) InstallGameScrub(intQueuePos);
+        foreach (var game in InstallQueue) if (!ABORT) InstallGameScrub(intQueuePos);
+
 
         GlobalNotifications("Successfully installed " + InstallQueue.Count + " games.", ToolTipIcon.Info);
         pbCopy.Hide();
