@@ -1,185 +1,171 @@
-﻿using GCBM.Properties;
-using System;
+﻿using System;
 using System.ComponentModel;
-using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.IO.Compression;
 using System.Net;
 using System.Runtime.InteropServices;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GCBM.Properties;
 
-namespace GCBM
+namespace GCBM;
+
+public partial class frmDownloadGameTDB : Form
 {
-    public partial class frmDownloadGameTDB : Form
+    private const string WIITDB_FILE = "wiitdb.xml";
+    private const string WIITDB_ZIP_FILE = "wiitdb.zip";
+
+    private const int MF_BYPOSITION = 0x400;
+    private static readonly string GET_CURRENT_PATH = Directory.GetCurrentDirectory();
+    private static readonly string DOWNLOAD_FILE = Resources.DownloadingWiiTDB_String1;
+    private static readonly string EXTRACT_FILE = Resources.DownloadingWiiTDB_String2;
+
+    public frmDownloadGameTDB()
     {
-        private const string WIITDB_FILE = "wiitdb.xml";
-        private const string WIITDB_ZIP_FILE = "wiitdb.zip";
+        InitializeComponent();
 
-        private const int MF_BYPOSITION = 0x400;
-        private static readonly string GET_CURRENT_PATH = Directory.GetCurrentDirectory();
-        private static readonly string DOWNLOAD_FILE = Resources.DownloadingWiiTDB_String1;
-        private static readonly string EXTRACT_FILE = Resources.DownloadingWiiTDB_String2;
-        public frmDownloadGameTDB()
+        GameTDB();
+    }
+
+    public int RETURN_CONFIRM { get; set; }
+
+    public async void GameTDB()
+    {
+        try
         {
-            InitializeComponent();
-
-            GameTDB();
-
-        }
-
-        public int RETURN_CONFIRM { get; set; }
-
-        public async void GameTDB()
-        {
-            try
-            {
-                WebClient webClient = new WebClient();
-                webClient.DownloadFileCompleted += Completed;
-                webClient.DownloadProgressChanged += ProgressChanged;
-                webClient.DownloadFileAsync(new Uri("https://www.gametdb.com/wiitdb.zip"), WIITDB_ZIP_FILE);
-                if (File.Exists(WIITDB_FILE))
-                {
-                    try
-                    {
-                        File.Delete(GET_CURRENT_PATH + @"\" + WIITDB_FILE);
-                        ZipFile.ExtractToDirectory(GET_CURRENT_PATH + @"\" + WIITDB_ZIP_FILE, GET_CURRENT_PATH);
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message);
-                    }
-                }
-
-            }
-            catch (Exception ex)
-            {
-                _ = MessageBox.Show(ex.Message);
-            }
-        }
-
-        public static async void GameTDBAsynchronous()
-        {
-            try
-            {
-                WebClient webClient = new WebClient();
-                webClient.DownloadFileAsync(new Uri("https://www.gametdb.com/wiitdb.zip"), WIITDB_ZIP_FILE);
-
+            var webClient = new WebClient();
+            webClient.DownloadFileCompleted += Completed;
+            webClient.DownloadProgressChanged += ProgressChanged;
+            webClient.DownloadFileAsync(new Uri("https://www.gametdb.com/wiitdb.zip"), WIITDB_ZIP_FILE);
+            if (File.Exists(WIITDB_FILE))
                 try
                 {
-                    bool deleteFile = false;
-                    if (File.Exists(WIITDB_FILE))
-                    {
-                        deleteFile = true;
-                    }
-                    try
-                    {
-                        if (deleteFile){
-                        File.Delete(GET_CURRENT_PATH + @"\" + WIITDB_FILE);
-                        }
-                        ZipFile.ExtractToDirectory(GET_CURRENT_PATH + @"\" + WIITDB_ZIP_FILE, GET_CURRENT_PATH);
-                    }
-                    catch (Exception ex)
-                    {
-                        _ = MessageBox.Show(ex.Message);
-                    }
-                    finally
-                    {
-                        File.Delete(GET_CURRENT_PATH + @"\" + WIITDB_ZIP_FILE);
-                    }
-                    //}
+                    File.Delete(GET_CURRENT_PATH + @"\" + WIITDB_FILE);
+                    ZipFile.ExtractToDirectory(GET_CURRENT_PATH + @"\" + WIITDB_ZIP_FILE, GET_CURRENT_PATH);
                 }
                 catch (Exception ex)
                 {
-                    _ = ex.Message.ToString();
+                    MessageBox.Show(ex.Message);
+                }
+        }
+        catch (Exception ex)
+        {
+            _ = MessageBox.Show(ex.Message);
+        }
+    }
+
+    public static async void GameTDBAsynchronous()
+    {
+        try
+        {
+            var webClient = new WebClient();
+            webClient.DownloadFileAsync(new Uri("https://www.gametdb.com/wiitdb.zip"), WIITDB_ZIP_FILE);
+
+            try
+            {
+                var deleteFile = false;
+                if (File.Exists(WIITDB_FILE)) deleteFile = true;
+                try
+                {
+                    if (deleteFile) File.Delete(GET_CURRENT_PATH + @"\" + WIITDB_FILE);
+                    ZipFile.ExtractToDirectory(GET_CURRENT_PATH + @"\" + WIITDB_ZIP_FILE, GET_CURRENT_PATH);
+                }
+                catch (Exception ex)
+                {
+                    _ = MessageBox.Show(ex.Message);
                 }
                 finally
                 {
                     File.Delete(GET_CURRENT_PATH + @"\" + WIITDB_ZIP_FILE);
                 }
+                //}
             }
             catch (Exception ex)
             {
-                _ = ex.Message.ToString();
-            }
-        }
-
-        private void ProgressChanged(object sender, DownloadProgressChangedEventArgs e)
-        {
-            lblDownload.Font = new Font(lblDownload.Font, FontStyle.Bold);
-            lblDownload.Text = DOWNLOAD_FILE + e.ProgressPercentage + "%";
-            pbGameTDB.Value = e.ProgressPercentage;
-        }
-
-           
-        
-        private async void Completed(object sender, AsyncCompletedEventArgs e)
-        {
-            lblExtracting.Font = new Font(lblExtracting.Font, FontStyle.Bold);
-            lblExtracting.Text = EXTRACT_FILE;
-
-            try
-            {
-                ZipFile.ExtractToDirectory(GET_CURRENT_PATH + Path.DirectorySeparatorChar + WIITDB_ZIP_FILE, GET_CURRENT_PATH);
-            }
-            catch (Exception ex)
-            {
-                _ = MessageBox.Show(ex.Message);
+                _ = ex.Message;
             }
             finally
             {
+                File.Delete(GET_CURRENT_PATH + @"\" + WIITDB_ZIP_FILE);
+            }
+        }
+        catch (Exception ex)
+        {
+            _ = ex.Message;
+        }
+    }
+
+    private void ProgressChanged(object sender, DownloadProgressChangedEventArgs e)
+    {
+        lblDownload.Font = new Font(lblDownload.Font, FontStyle.Bold);
+        lblDownload.Text = DOWNLOAD_FILE + e.ProgressPercentage + "%";
+        pbGameTDB.Value = e.ProgressPercentage;
+    }
 
 
-                await ProcessTaskDelay().ConfigureAwait(false);
-                File.Delete(GET_CURRENT_PATH + Path.DirectorySeparatorChar + WIITDB_ZIP_FILE);
+    private async void Completed(object sender, AsyncCompletedEventArgs e)
+    {
+        lblExtracting.Font = new Font(lblExtracting.Font, FontStyle.Bold);
+        lblExtracting.Text = EXTRACT_FILE;
 
-                FileInfo fileinfo = new FileInfo(GET_CURRENT_PATH + Path.DirectorySeparatorChar + WIITDB_FILE);
-                if (fileinfo.Length >= 31035000) //31035596
-                {
-                    //lblConverting.Font = new Font(lblConverting.Font, FontStyle.Bold);
-                    //lblConverting.Text = PROCESS_COMPLETED;
-                    //btnCancelWork.Enabled = true;
-                    DialogResult = DialogResult.OK;
-                    RETURN_CONFIRM = 1;
-                }
-                GC.Collect();
+        try
+        {
+            ZipFile.ExtractToDirectory(GET_CURRENT_PATH + Path.DirectorySeparatorChar + WIITDB_ZIP_FILE,
+                GET_CURRENT_PATH);
+        }
+        catch (Exception ex)
+        {
+            _ = MessageBox.Show(ex.Message);
+        }
+        finally
+        {
+            await ProcessTaskDelay().ConfigureAwait(false);
+            File.Delete(GET_CURRENT_PATH + Path.DirectorySeparatorChar + WIITDB_ZIP_FILE);
+
+            var fileinfo = new FileInfo(GET_CURRENT_PATH + Path.DirectorySeparatorChar + WIITDB_FILE);
+            if (fileinfo.Length >= 31035000) //31035596
+            {
+                //lblConverting.Font = new Font(lblConverting.Font, FontStyle.Bold);
+                //lblConverting.Text = PROCESS_COMPLETED;
+                //btnCancelWork.Enabled = true;
+                DialogResult = DialogResult.OK;
+                RETURN_CONFIRM = 1;
             }
 
+            GC.Collect();
         }
+    }
 
-        private async Task ProcessTaskDelay()
-        {
-             
-            await Task.Delay(2500);
-        }
+    private async Task ProcessTaskDelay()
+    {
+        await Task.Delay(2500);
+    }
 
-        private void btnCancelWork_Click(object sender, EventArgs e)
-        {
-            //SaveConfigFile();
+    private void btnCancelWork_Click(object sender, EventArgs e)
+    {
+        //SaveConfigFile();
 
-            //MessageBox.Show("Deseja mesmo sair?", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            DialogResult = DialogResult.OK;
-            RETURN_CONFIRM = 1;
-            Close();
-            Dispose();
-        }
+        //MessageBox.Show("Deseja mesmo sair?", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        DialogResult = DialogResult.OK;
+        RETURN_CONFIRM = 1;
+        Close();
+        Dispose();
+    }
 
-        [DllImport("User32")]
-        private static extern int RemoveMenu(IntPtr hMenu, int nPosition, int wFlags);
+    [DllImport("User32")]
+    private static extern int RemoveMenu(IntPtr hMenu, int nPosition, int wFlags);
 
-        [DllImport("User32")]
-        private static extern IntPtr GetSystemMenu(IntPtr hWnd, bool bRevert);
+    [DllImport("User32")]
+    private static extern IntPtr GetSystemMenu(IntPtr hWnd, bool bRevert);
 
-        [DllImport("User32")]
-        private static extern int GetMenuItemCount(IntPtr hWnd);
+    [DllImport("User32")]
+    private static extern int GetMenuItemCount(IntPtr hWnd);
 
-        private void frmDownloadGameTDB_Load(object sender, EventArgs e)
-        {
-            IntPtr hMenu = GetSystemMenu(Handle, false);
-            int MenuItemCount = GetMenuItemCount(hMenu);
-            _ = RemoveMenu(hMenu, MenuItemCount - 1, MF_BYPOSITION);
-        }
+    private void frmDownloadGameTDB_Load(object sender, EventArgs e)
+    {
+        var hMenu = GetSystemMenu(Handle, false);
+        var MenuItemCount = GetMenuItemCount(hMenu);
+        _ = RemoveMenu(hMenu, MenuItemCount - 1, MF_BYPOSITION);
     }
 }

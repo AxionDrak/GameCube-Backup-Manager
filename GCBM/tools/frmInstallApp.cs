@@ -1,12 +1,11 @@
 ﻿using System.Windows.Forms;
 
-namespace GCBM.tools
+namespace GCBM.tools;
+
+public partial class frmInstallApp : Form
 {
-    public partial class frmInstallApp : Form
+    public frmInstallApp()
     {
-        public frmInstallApp()
-        {
-            InitializeComponent();
-        }
+        InitializeComponent();
     }
 }

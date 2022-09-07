@@ -1,13 +1,12 @@
 ﻿using System.Runtime.InteropServices;
 
-namespace GCBM.tools.Interop
+namespace GCBM.tools.Interop;
+
+[ComEventInterface(typeof(DDiscFormat2RawCDEvents), typeof(DiscFormat2RawCD_EventProvider))]
+[TypeLibType(TypeLibTypeFlags.FHidden)]
+[ComVisible(false)]
+public interface DiscFormat2RawCD_Event
 {
-    [ComEventInterface(typeof(DDiscFormat2RawCDEvents), typeof(DiscFormat2RawCD_EventProvider))]
-    [TypeLibType(TypeLibTypeFlags.FHidden)]
-    [ComVisible(false)]
-    public interface DiscFormat2RawCD_Event
-    {
-        // Events
-        event DiscFormat2RawCD_EventHandler Update;
-    }
+    // Events
+    event DiscFormat2RawCD_EventHandler Update;
 }

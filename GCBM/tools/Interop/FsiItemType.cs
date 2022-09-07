@@ -1,9 +1,8 @@
-﻿namespace GCBM.tools.Interop
+﻿namespace GCBM.tools.Interop;
+
+public enum FsiItemType
 {
-    public enum FsiItemType
-    {
-        FsiItemNotFound,
-        FsiItemDirectory,
-        FsiItemFile
-    }
+    FsiItemNotFound,
+    FsiItemDirectory,
+    FsiItemFile
 }

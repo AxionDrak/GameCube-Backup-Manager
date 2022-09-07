@@ -1,11 +1,10 @@
 ﻿using System.Runtime.InteropServices;
 
-namespace GCBM.tools.Interop
+namespace GCBM.tools.Interop;
+
+[StructLayout(LayoutKind.Sequential, Pack = 4)]
+public struct tagCONNECTDATA
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 4)]
-    public struct tagCONNECTDATA
-    {
-        [MarshalAs(UnmanagedType.IUnknown)] public object pUnk;
-        public uint dwCookie;
-    }
+    [MarshalAs(UnmanagedType.IUnknown)] public object pUnk;
+    public uint dwCookie;
 }

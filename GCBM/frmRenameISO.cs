@@ -3,132 +3,132 @@ using System.IO;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
-namespace GCBM
+namespace GCBM;
+
+public partial class frmRenameISO : Form
 {
-    public partial class frmRenameISO : Form
+    #region Rename ISO
+
+    private void RenameISO()
     {
-        #region Rename ISO
+        var _directoryName = Path.GetDirectoryName(NEW_NAME);
+        var _fileName = Path.GetFileName(NEW_NAME);
+        var ret = Regex.Replace(_fileName,
+                @"[^0-9a-zA-ZéúíóáÉÚÍÓÁèùìòàÈÙÌÒÀõãñÕÃÑêûîôâÊÛÎÔÂëÿüïöäËYÜÏÖÄçÇ[\]\-().]+?", string.Empty)
+            .Replace("/", "&");
 
-        private void RenameISO()
+        if (chkRenameISO.Checked)
         {
-            string _directoryName = Path.GetDirectoryName(NEW_NAME);
-            string _fileName = Path.GetFileName(NEW_NAME);
-            string ret = Regex.Replace(_fileName,
-                @"[^0-9a-zA-ZéúíóáÉÚÍÓÁèùìòàÈÙÌÒÀõãñÕÃÑêûîôâÊÛÎÔÂëÿüïöäËYÜÏÖÄçÇ[\]\-().]+?", string.Empty).Replace("/", "&");
-
-            if (chkRenameISO.Checked)
+            if (File.Exists(NEW_NAME))
             {
-                if (File.Exists(NEW_NAME))
+                var newFilename = ret;
+
+                if (!string.IsNullOrEmpty(newFilename))
                 {
-                    string newFilename = ret;
-
-                    if (!string.IsNullOrEmpty(newFilename))
+                    //File.Move(_oldName + Path.DirectorySeparatorChar + _newName, _oldName + Path.DirectorySeparatorChar + newFilename);
+                    File.Move(NEW_NAME, _directoryName + Path.DirectorySeparatorChar + newFilename);
+                    if (File.Exists(_directoryName + Path.DirectorySeparatorChar + newFilename))
                     {
-                        //File.Move(_oldName + Path.DirectorySeparatorChar + _newName, _oldName + Path.DirectorySeparatorChar + newFilename);
-                        File.Move(NEW_NAME, _directoryName + Path.DirectorySeparatorChar + newFilename);
-                        if (File.Exists(_directoryName + Path.DirectorySeparatorChar + newFilename))
-                        {
-                            ConfirmRename(newFilename);
+                        ConfirmRename(newFilename);
 
-                            DialogResult = DialogResult.OK;
-                            RETURN_CONFIRM = 1;
-                            Close();
-                        }
-                    }
-                }
-            }
-            else
-            {
-                if (File.Exists(NEW_NAME))
-                {
-                    string newFilename = tbRenameISO.Text;
-                    if (!string.IsNullOrEmpty(newFilename))
-                    {
-                        File.Move(NEW_NAME, _directoryName + Path.DirectorySeparatorChar + newFilename);
-                        if (File.Exists(_directoryName + Path.DirectorySeparatorChar + newFilename))
-                        {
-                            ConfirmRename(newFilename);
-
-                            DialogResult = DialogResult.OK;
-                            RETURN_CONFIRM = 1;
-                            Close();
-                        }
-                    }
-                    else
-                    {
-                        NameNeeded();
+                        DialogResult = DialogResult.OK;
+                        RETURN_CONFIRM = 1;
+                        Close();
                     }
                 }
             }
         }
-
-        #endregion
-
-        #region chkRenameISO_CheckedChanged
-
-        private void chkRenameISO_CheckedChanged(object sender, EventArgs e)
+        else
         {
-            tbRenameISO.Enabled = !chkRenameISO.Checked;
+            if (File.Exists(NEW_NAME))
+            {
+                var newFilename = tbRenameISO.Text;
+                if (!string.IsNullOrEmpty(newFilename))
+                {
+                    File.Move(NEW_NAME, _directoryName + Path.DirectorySeparatorChar + newFilename);
+                    if (File.Exists(_directoryName + Path.DirectorySeparatorChar + newFilename))
+                    {
+                        ConfirmRename(newFilename);
+
+                        DialogResult = DialogResult.OK;
+                        RETURN_CONFIRM = 1;
+                        Close();
+                    }
+                }
+                else
+                {
+                    NameNeeded();
+                }
+            }
         }
+    }
 
-        #endregion
+    #endregion
 
-        #region Properties
+    #region chkRenameISO_CheckedChanged
 
-        public string NEW_NAME { get; }
-        public string OLD_NAME { get; }
-        public int RETURN_CONFIRM { get; set; }
+    private void chkRenameISO_CheckedChanged(object sender, EventArgs e)
+    {
+        tbRenameISO.Enabled = !chkRenameISO.Checked;
+    }
 
-        #endregion
+    #endregion
 
-        #region Main Form
+    #region Properties
 
-        public frmRenameISO()
-        {
-            InitializeComponent();
-        }
+    public string NEW_NAME { get; }
+    public string OLD_NAME { get; }
+    public int RETURN_CONFIRM { get; set; }
 
-        public frmRenameISO(string fbd, string pathImage)
-        {
-            InitializeComponent();
+    #endregion
 
-            NEW_NAME = pathImage;
-            OLD_NAME = fbd;
-            tbRenameISO.Text = Path.GetFileName(NEW_NAME);
-        }
+    #region Main Form
 
-        #endregion
+    public frmRenameISO()
+    {
+        InitializeComponent();
+    }
 
-        #region Notifications
+    public frmRenameISO(string fbd, string pathImage)
+    {
+        InitializeComponent();
 
-        private void ConfirmRename(string newFilename)
-        {
-            _ = MessageBox.Show("Arquivo renomeado para: " +
+        NEW_NAME = pathImage;
+        OLD_NAME = fbd;
+        tbRenameISO.Text = Path.GetFileName(NEW_NAME);
+    }
+
+    #endregion
+
+    #region Notifications
+
+    private void ConfirmRename(string newFilename)
+    {
+        _ = MessageBox.Show("Arquivo renomeado para: " +
                             Environment.NewLine + Environment.NewLine +
                             newFilename, "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
-        private void NameNeeded()
-        {
-            _ = MessageBox.Show("Por favor, digite um nome para o arquivo!",
-                "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
-        #endregion
-
-        #region Buttons
-
-        private void btnConfirm_Click(object sender, EventArgs e)
-        {
-            RenameISO();
-        }
-
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            Close();
-            Dispose();
-        }
-
-        #endregion
     }
+
+    private void NameNeeded()
+    {
+        _ = MessageBox.Show("Por favor, digite um nome para o arquivo!",
+            "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+    }
+
+    #endregion
+
+    #region Buttons
+
+    private void btnConfirm_Click(object sender, EventArgs e)
+    {
+        RenameISO();
+    }
+
+    private void btnCancel_Click(object sender, EventArgs e)
+    {
+        Close();
+        Dispose();
+    }
+
+    #endregion
 }

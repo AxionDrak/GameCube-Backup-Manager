@@ -1,14 +1,13 @@
 ﻿using System;
 
-namespace GCBM
-{
-    public class HardWorkerEventArgs : EventArgs
-    {
-        public HardWorkerEventArgs(int progress)
-        {
-            Progress = progress;
-        }
+namespace GCBM;
 
-        public int Progress { get; }
+public class HardWorkerEventArgs : EventArgs
+{
+    public HardWorkerEventArgs(int progress)
+    {
+        Progress = progress;
     }
+
+    public int Progress { get; }
 }
