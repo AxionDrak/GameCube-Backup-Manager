@@ -19,7 +19,7 @@ All Releases: https://github.com/AxionDrak/GameCube-Backup-Manager/releases
 + Reads ISO / GCM / NKit (ISO only - not GCZ)
 + Writes ISO
 + Execution of multiple instances of the program.
-+ Upload the 'wiitdb.xml' file in the 'Database' tab.
++ Load the 'wiitdb.xml' file in the 'Database' tab and preview its contents (A good option for discovering new games!)
 + Automatic update system.
 + Proxy system.
 + Cover transfer (WiiFlow, WiiFlow Lite, WiiFlow Fusion).
