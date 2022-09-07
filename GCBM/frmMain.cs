@@ -3475,11 +3475,12 @@ public partial class frmMain : Form
     /// </summary>
     private void InstallGameScrub(int x)
     {
+
         scrubStopwatch.Stop();
         scrubStopwatch.Reset();
         InstallType = "SCRUB";
         pbCopy.Style = ProgressBarStyle.Continuous;
-        //if (ABORT) return;
+        if (ABORT) return;
         const string quote = "\"";
         var _source = InstallQueue[x].Path;
 
@@ -4896,7 +4897,7 @@ public partial class frmMain : Form
         lblAbort.Visible = true;
         DisableOptionsGame(dgvSource);
         BuildInstallQueue();
-        foreach (var game in InstallQueue) InstallGameScrub(intQueuePos);
+        foreach (var game in InstallQueue) if (!ABORT) InstallGameScrub(intQueuePos);
 
         GlobalNotifications("Successfully installed " + InstallQueue.Count + " games.", ToolTipIcon.Info);
         pbCopy.Hide();
