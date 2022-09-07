@@ -1,13 +1,12 @@
 ﻿using System.Runtime.InteropServices;
 
-namespace GCBM.tools.Interop
+namespace GCBM.tools.Interop;
+
+[ComVisible(false)]
+[TypeLibType(TypeLibTypeFlags.FHidden)]
+[ComEventInterface(typeof(DDiscFormat2TrackAtOnceEvents), typeof(DiscFormat2TrackAtOnce_EventProvider))]
+public interface DiscFormat2TrackAtOnce_Event
 {
-    [ComVisible(false)]
-    [TypeLibType(TypeLibTypeFlags.FHidden)]
-    [ComEventInterface(typeof(DDiscFormat2TrackAtOnceEvents), typeof(DiscFormat2TrackAtOnce_EventProvider))]
-    public interface DiscFormat2TrackAtOnce_Event
-    {
-        // Events
-        event DiscFormat2TrackAtOnce_EventHandler Update;
-    }
+    // Events
+    event DiscFormat2TrackAtOnce_EventHandler Update;
 }

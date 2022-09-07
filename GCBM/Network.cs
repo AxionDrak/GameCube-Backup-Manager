@@ -1,6 +1,5 @@
-﻿namespace GCBM
+﻿namespace GCBM;
+
+internal class Network
 {
-    internal class Network
-    {
-    }
 }

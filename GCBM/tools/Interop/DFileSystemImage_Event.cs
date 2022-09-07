@@ -1,13 +1,12 @@
 ﻿using System.Runtime.InteropServices;
 
-namespace GCBM.tools.Interop
+namespace GCBM.tools.Interop;
+
+[ComVisible(false)]
+[ComEventInterface(typeof(DFileSystemImageEvents), typeof(DFileSystemImage_EventProvider))]
+[TypeLibType(TypeLibTypeFlags.FHidden)]
+public interface DFileSystemImage_Event
 {
-    [ComVisible(false)]
-    [ComEventInterface(typeof(DFileSystemImageEvents), typeof(DFileSystemImage_EventProvider))]
-    [TypeLibType(TypeLibTypeFlags.FHidden)]
-    public interface DFileSystemImage_Event
-    {
-        // Events
-        event DFileSystemImage_EventHandler Update;
-    }
+    // Events
+    event DFileSystemImage_EventHandler Update;
 }
