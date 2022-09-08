@@ -478,50 +478,50 @@ public partial class frmMain : Form
         if (sio.File.Exists(WIITDB_FILE))
             if (CONFIG_INI_FILE.IniReadBool("SEVERAL", "LoadDatabase"))
                 // PERFECT - DO NOT CHANGE!!!
-                    tabMainDatabase.BeginInvoke(new Action(() =>
+                tabMainDatabase.BeginInvoke(new Action(() =>
+                {
+                    try
                     {
-                        try
+                        lvDatabase.View = View.Details;
+                        lvDatabase.GridLines = true;
+                        lvDatabase.FullRowSelect = true;
+                        _ = lvDatabase.Columns.Add(Resources.LoadDatabase_IDGameCode, 70);
+                        _ = lvDatabase.Columns.Add(Resources.LoadDatabase_GameTitle, 210);
+                        _ = lvDatabase.Columns.Add(Resources.LoadDatabase_Region, 70);
+                        _ = lvDatabase.Columns.Add(Resources.LoadDatabase_Type, 80);
+                        _ = lvDatabase.Columns.Add(Resources.LoadDatabase_Developer, 200);
+                        _ = lvDatabase.Columns.Add(Resources.LoadDatabase_Editor, 200);
+
+                        using var ds = new DataSet();
+                        _ = ds.ReadXml(WIITDB_FILE);
+
+                        foreach (DataRow dr in ds.Tables["game"].Rows)
                         {
-                            lvDatabase.View = View.Details;
-                            lvDatabase.GridLines = true;
-                            lvDatabase.FullRowSelect = true;
-                            _ = lvDatabase.Columns.Add(Resources.LoadDatabase_IDGameCode, 70);
-                            _ = lvDatabase.Columns.Add(Resources.LoadDatabase_GameTitle, 210);
-                            _ = lvDatabase.Columns.Add(Resources.LoadDatabase_Region, 70);
-                            _ = lvDatabase.Columns.Add(Resources.LoadDatabase_Type, 80);
-                            _ = lvDatabase.Columns.Add(Resources.LoadDatabase_Developer, 200);
-                            _ = lvDatabase.Columns.Add(Resources.LoadDatabase_Editor, 200);
-
-                            using var ds = new DataSet();
-                            _ = ds.ReadXml(WIITDB_FILE);
-
-                            foreach (DataRow dr in ds.Tables["game"].Rows)
+                            var itemXml = new ListViewItem(new[]
                             {
-                                var itemXml = new ListViewItem(new[]
-                                {
                                     dr["id"].ToString(),
                                     dr["name"].ToString(),
                                     dr["region"].ToString(),
                                     dr["type"].ToString(),
                                     dr["developer"].ToString(),
                                     dr["publisher"].ToString()
-                                });
+                            });
 
-                                _ = lvDatabase.Items.Add(itemXml);
-                            }
-
-                            foreach (DataRow dr in ds.Tables["WiiTDB"].Rows) lblDatabaseTotal.Text = dr["games"] + " Total";
-
-                            ds.Dispose();
-                            ds.Clear();
-                        }
-                        catch (Exception ex)
-                        {
-                            //CheckWiiTdbXml();
-                            GlobalNotifications(ex.Message, ToolTipIcon.Error);
+                            _ = lvDatabase.Items.Add(itemXml);
                         }
 
-                    }));
+                        foreach (DataRow dr in ds.Tables["WiiTDB"].Rows) lblDatabaseTotal.Text = dr["games"] + " Total";
+
+                        ds.Dispose();
+                        ds.Clear();
+                    }
+                    catch (Exception ex)
+                    {
+                        //CheckWiiTdbXml();
+                        GlobalNotifications(ex.Message, ToolTipIcon.Error);
+                    }
+
+                }));
 
         Monitor.Exit(lvDatabase);
     }
@@ -539,6 +539,7 @@ public partial class frmMain : Form
         {
             useXmlTitle = CONFIG_INI_FILE.IniReadBool("TITLES", "GameXmlName");
             if (CONFIG_INI_FILE.IniReadBool("SEVERAL", "WindowMaximized")) WindowState = FormWindowState.Maximized;
+            CONFIG_INI_FILE.IniWriteString("GCBM", "ProgVersion", VERSION());
         }
     }
 
@@ -549,97 +550,6 @@ public partial class frmMain : Form
     /// <summary>
     ///     Default Config Save
     /// </summary>
-    private void DefaultConfigSave()
-    {
-        // GCBM
-        CONFIG_INI_FILE.IniWriteString("GCBM", "ProgUpdated", PROG_UPDATE);
-        CONFIG_INI_FILE.IniWriteString("GCBM", "ProgVersion", VERSION());
-        CONFIG_INI_FILE.IniWriteString("GCBM", "ConfigUpdated", DateTime.Now.ToString("dd/MM/yyyy"));
-        CONFIG_INI_FILE.IniWriteString("GCBM", "Language", Resources.GCBM_Language);
-        CONFIG_INI_FILE.IniWriteString("GCBM", "TranslatedBy", Resources.GCBM_TranslatedBy);
-        // General
-        CONFIG_INI_FILE.IniWriteBool("GENERAL", "DiscClean", true);
-        CONFIG_INI_FILE.IniWriteBool("GENERAL", "DiscDelete", false);
-        CONFIG_INI_FILE.IniWriteBool("GENERAL", "ExtractZip", false);
-        CONFIG_INI_FILE.IniWriteBool("GENERAL", "Extract7z", false);
-        CONFIG_INI_FILE.IniWriteBool("GENERAL", "ExtractRar", false);
-        CONFIG_INI_FILE.IniWriteBool("GENERAL", "ExtractBZip2", false);
-        CONFIG_INI_FILE.IniWriteBool("GENERAL", "ExtractSplitFile", false);
-        CONFIG_INI_FILE.IniWriteBool("GENERAL", "ExtractNwb", false);
-        CONFIG_INI_FILE.IniWriteInt("GENERAL", "FileSize", 0);
-        CONFIG_INI_FILE.IniWriteString("GENERAL", "TemporaryFolder", GET_CURRENT_PATH + TEMP_DIR);
-        // Several
-        CONFIG_INI_FILE.IniWriteInt("SEVERAL", "AppointmentStyle", 0);
-        CONFIG_INI_FILE.IniWriteBool("SEVERAL", "CheckMD5", false);
-        CONFIG_INI_FILE.IniWriteBool("SEVERAL", "CheckSHA1", false);
-        CONFIG_INI_FILE.IniWriteBool("SEVERAL", "CheckNotify", true);
-        CONFIG_INI_FILE.IniWriteBool("SEVERAL", "NetVerify", true);
-        CONFIG_INI_FILE.IniWriteBool("SEVERAL", "RecursiveMode", true);
-        CONFIG_INI_FILE.IniWriteBool("SEVERAL", "TemporaryBuffer", false);
-        CONFIG_INI_FILE.IniWriteBool("SEVERAL", "WindowMaximized", false);
-        CONFIG_INI_FILE.IniWriteBool("SEVERAL", "DisableSplash", false);
-        CONFIG_INI_FILE.IniWriteBool("SEVERAL", "Screensaver", false);
-        CONFIG_INI_FILE.IniWriteBool("SEVERAL", "LoadDatabase", true);
-        CONFIG_INI_FILE.IniWriteBool("SEVERAL", "MultipleInstances", false);
-        CONFIG_INI_FILE.IniWriteBool("SEVERAL", "LaunchedOnce", true);
-        // TransferSystem
-        CONFIG_INI_FILE.IniWriteBool("TRANSFERSYSTEM", "FST", false);
-        CONFIG_INI_FILE.IniWriteBool("TRANSFERSYSTEM", "ScrubFlushSD", false);
-        CONFIG_INI_FILE.IniWriteInt("TRANSFERSYSTEM", "ScrubAlign", 0);
-        CONFIG_INI_FILE.IniWriteString("TRANSFERSYSTEM", "ScrubFormat", "DiscEx");
-        CONFIG_INI_FILE.IniWriteInt("TRANSFERSYSTEM", "ScrubFormatIndex", 1);
-        CONFIG_INI_FILE.IniWriteBool("TRANSFERSYSTEM", "Wipe", false);
-        CONFIG_INI_FILE.IniWriteBool("TRANSFERSYSTEM", "XCopy", true);
-        // Covers
-        CONFIG_INI_FILE.IniWriteBool("COVERS", "DeleteCovers", false);
-        CONFIG_INI_FILE.IniWriteBool("COVERS", "CoverRecursiveSearch", false);
-        CONFIG_INI_FILE.IniWriteBool("COVERS", "TransferCovers", false);
-        CONFIG_INI_FILE.IniWriteBool("COVERS", "WiiFlowCoverUSBLoader", false);
-        CONFIG_INI_FILE.IniWriteBool("COVERS", "GXCoverUSBLoader", true);
-        CONFIG_INI_FILE.IniWriteString("COVERS", "CoverDirectoryCache", GET_CURRENT_PATH + COVERS_DIR);
-        CONFIG_INI_FILE.IniWriteString("COVERS", "WiiFlowCoverDirectoryDisc", "");
-        CONFIG_INI_FILE.IniWriteString("COVERS", "WiiFlowCoverDirectory2D", "");
-        CONFIG_INI_FILE.IniWriteString("COVERS", "WiiFlowCoverDirectory3D", "");
-        CONFIG_INI_FILE.IniWriteString("COVERS", "WiiFlowCoverDirectoryFull", "");
-        CONFIG_INI_FILE.IniWriteString("COVERS", "GXCoverDirectoryDisc", "");
-        CONFIG_INI_FILE.IniWriteString("COVERS", "GXCoverDirectory2D", "");
-        CONFIG_INI_FILE.IniWriteString("COVERS", "GXCoverDirectory3D", "");
-        CONFIG_INI_FILE.IniWriteString("COVERS", "GXCoverDirectoryFull", "");
-        // Titles
-        CONFIG_INI_FILE.IniWriteBool("TITLES", "GameCustomTitles", false);
-        CONFIG_INI_FILE.IniWriteBool("TITLES", "GameTdbTitles", false);
-        CONFIG_INI_FILE.IniWriteBool("TITLES", "GameInternalName", true);
-        CONFIG_INI_FILE.IniWriteBool("TITLES", "GameXmlName", false);
-        CONFIG_INI_FILE.IniWriteString("TITLES", "LocationTitles",
-            "%APP%" + sio.Path.DirectorySeparatorChar + "titles.txt");
-        CONFIG_INI_FILE.IniWriteString("TITLES", "LocationCustomTitles",
-            "%APP%" + sio.Path.DirectorySeparatorChar + "custom-titles.txt");
-        CONFIG_INI_FILE.IniWriteInt("TITLES", "TitleLanguage", 0);
-        // Dolphin Emulator
-        CONFIG_INI_FILE.IniWriteString("DOLPHIN", "DolphinFolder", "");
-        CONFIG_INI_FILE.IniWriteBool("DOLPHIN", "DolphinDX11", true);
-        CONFIG_INI_FILE.IniWriteBool("DOLPHIN", "DolphinDX12", false);
-        CONFIG_INI_FILE.IniWriteBool("DOLPHIN", "DolphinVKGL", false);
-        CONFIG_INI_FILE.IniWriteBool("DOLPHIN", "DolphinLLE", false);
-        CONFIG_INI_FILE.IniWriteBool("DOLPHIN", "DolphinHLE", true);
-        // Updates
-        CONFIG_INI_FILE.IniWriteBool("UPDATES", "UpdateVerifyStart", false);
-        CONFIG_INI_FILE.IniWriteBool("UPDATES", "UpdateBetaChannel", false);
-        CONFIG_INI_FILE.IniWriteBool("UPDATES", "UpdateFileLog", false);
-        CONFIG_INI_FILE.IniWriteBool("UPDATES", "UpdateServerProxy", false);
-        CONFIG_INI_FILE.IniWriteString("UPDATES", "ServerProxy", "");
-        CONFIG_INI_FILE.IniWriteString("UPDATES", "UserProxy", "");
-        CONFIG_INI_FILE.IniWriteString("UPDATES", "PassProxy", "");
-        CONFIG_INI_FILE.IniWriteInt("UPDATES", "VerificationInterval", 0);
-        // Manager Log
-        CONFIG_INI_FILE.IniWriteInt("MANAGERLOG", "LogLevel", 0);
-        CONFIG_INI_FILE.IniWriteBool("MANAGERLOG", "LogSystemConsole", false);
-        CONFIG_INI_FILE.IniWriteBool("MANAGERLOG", "LogDebugConsole", false);
-        CONFIG_INI_FILE.IniWriteBool("MANAGERLOG", "LogWindow", false);
-        CONFIG_INI_FILE.IniWriteBool("MANAGERLOG", "LogFile", true);
-        // Language
-        CONFIG_INI_FILE.IniWriteInt("LANGUAGE", "ConfigLanguage", 1);
-    }
 
     #endregion
 
@@ -2897,12 +2807,17 @@ public partial class frmMain : Form
         NetworkCheck();
         if (!sio.File.Exists(INI_FILE))
         {
-            DefaultConfigSave();
+            Program.DefaultConfigSave();
             Program.DetectOSLanguage();
 
             Program.AdjustLanguage(Thread.CurrentThread);
             Controls.Clear();
             InitializeComponent();
+        }
+
+        if (!CONFIG_INI_FILE.IniReadBool("SEVERAL", "LaunchedOnce"))
+        {
+            Program.DefaultConfigSave();
         }
 
         LoadConfigFile();
@@ -4500,6 +4415,9 @@ public partial class frmMain : Form
         {
             var _code = form.RETURN_CONFIRM;
             if (_code == 1) NetworkCheck();
+            LoadConfigFile();
+            Program.AdjustLanguage(Thread.CurrentThread);
+            this.Refresh();
         }
     }
 
@@ -5760,7 +5678,7 @@ public partial class frmMain : Form
 
     private void dgvSource_CellContentClick(object sender, DataGridViewCellEventArgs e)
     {
-        if (e.ColumnIndex == 0 && e.RowIndex >= 0)
+        if (e.ColumnIndex == 0 && e.RowIndex >= 0 && !SCANNING)
         {
             /*
              * e.ColumnIndex = 0 
@@ -5784,11 +5702,15 @@ public partial class frmMain : Form
 
     private void dgvDestination_CurrentCellChanged(object sender, EventArgs e)
     {
-        ReloadDataGridViewGameList(dgvDestination, dDestGames);
+        if (!SCANNING)
+        {
+            ReloadDataGridViewGameList(dgvDestination, dDestGames);
+        }
     }
 
     private void dgvSource_CurrentCellChanged(object sender, EventArgs e)
     {
+        if (!SCANNING)
         {
             ReloadDataGridViewGameList(dgvSource, dSourceGames);
         }
