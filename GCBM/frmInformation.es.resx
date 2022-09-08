@@ -233,4 +233,7 @@
   <data name="grpDetailsSource.Text" xml:space="preserve">
     <value>Detalles</value>
   </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>Idioma:</value>
+  </data>
 </root>

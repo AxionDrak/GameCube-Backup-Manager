@@ -404,4 +404,7 @@
   <data name="tsslCurrentYear.Text" xml:space="preserve">
     <value>Copyright © 2019 - </value>
   </data>
+  <data name="lblStartSplashScreen.Text" xml:space="preserve">
+    <value>Inicializando...</value>
+  </data>
 </root>

@@ -117,29 +117,94 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnConvertELF.Text" xml:space="preserve">
-    <value>Convertir</value>
+  <data name="label7.Text" xml:space="preserve">
+    <value>Accès AHB :</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>424, 39</value>
+  <data name="ofdBanner.Title" xml:space="preserve">
+    <value>Sélectionnez le fichier image :</value>
   </data>
-  <data name="label4.Text" xml:space="preserve">
-    <value>Otra solución, ofrecida por Cheapo, es renombrar (no convertir) cada 'boot.elf' válido a 'boot.dol'. HBC aún debería cargar el archivo perfectamente y este programa ignorará el archivo. No es lo ideal, pero aquí todos somos hackers, ¿verdad?</value>
+  <data name="cbMountUSB.Items" xml:space="preserve">
+    <value>DÉSACTIVÉ</value>
   </data>
-  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>426, 13</value>
+  <data name="ofdXml.Filter" xml:space="preserve">
+    <value>Fichiers XML|meta.xml</value>
   </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>Puede utilizar prácticamente cualquier archivo .ELF publicado antes de octubre de 2008.</value>
+  <data name="cbAppNoReloadIOS.Items" xml:space="preserve">
+    <value>DÉSACTIVÉ</value>
+  </data>
+  <data name="btnClose.Text" xml:space="preserve">
+    <value>proche</value>
+  </data>
+  <data name="btnSearch.Text" xml:space="preserve">
+    <value>Chercher...</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Convertir ELF -&gt; DOL</value>
+    <value>Lire/Modifier 'meta.xml'</value>
   </data>
-  <data name="labelLogELFtoDOL.Text" xml:space="preserve">
-    <value>Tronco:</value>
+  <data name="lblMountUsb.Text" xml:space="preserve">
+    <value>Monter USB :</value>
   </data>
-  <data name="btnCancel.Text" xml:space="preserve">
-    <value>Cancelar</value>
+  <data name="cbAppAhbAccess.Items1" xml:space="preserve">
+    <value>ACTIVÉ</value>
+  </data>
+  <data name="cbAppAhbAccess.Items" xml:space="preserve">
+    <value>DÉSACTIVÉ</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Date de sortie:</value>
+  </data>
+  <data name="btnSave.Text" xml:space="preserve">
+    <value>sauvegarder</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Nom:</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Descriptif (court) :</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Développeur:</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>Bannière:</value>
+  </data>
+  <data name="ofdXml.Title" xml:space="preserve">
+    <value>Sélectionnez le fichier 'meta.xml' :</value>
+  </data>
+  <data name="ofdBanner.Filter" xml:space="preserve">
+    <value>Fichiers PNG|*.png</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Créer/Modifier</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Descriptif (Long):</value>
+  </data>
+  <data name="cbPortUSB.Items" xml:space="preserve">
+    <value>DÉSACTIVÉ</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Version:</value>
+  </data>
+  <data name="chkEnableArguments.Text" xml:space="preserve">
+    <value>Activer les arguments</value>
+  </data>
+  <data name="lblUsbPort.Text" xml:space="preserve">
+    <value>Port USB:</value>
+  </data>
+  <data name="cbAppNoReloadIOS.Items1" xml:space="preserve">
+    <value>ACTIVÉ</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>Ne rechargez pas IOS :</value>
+  </data>
+  <data name="lblAttentionImageNotFound.Text" xml:space="preserve">
+    <value>ATTENTION!</value>
+  </data>
+  <data name="btnClear.Text" xml:space="preserve">
+    <value>Nettoyer</value>
+  </data>
+  <data name="lblImageNotFound.Text" xml:space="preserve">
+    <value>Image non trouvée! Vous pouvez enregistrer en utilisant l'image ci-dessus, sélectionner une nouvelle image ou supprimer complètement l'image. Taille de l'image : 128 (largeur) x 48 (hauteur).</value>
   </data>
 </root>

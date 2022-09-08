@@ -323,4 +323,10 @@
   <data name="lblPublisher.Text" xml:space="preserve">
     <value>EDITOR:</value>
   </data>
+  <data name="lblType.Text" xml:space="preserve">
+    <value>ESCRIBE:</value>
+  </data>
+  <data name="lblLanguage.Text" xml:space="preserve">
+    <value>IDIOMA:</value>
+  </data>
 </root>

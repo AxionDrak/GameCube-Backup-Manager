@@ -393,4 +393,10 @@
   <data name="ofdBanner.Title" xml:space="preserve">
     <value>Seleccione el archivo de imagen:</value>
   </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>Bandera:</value>
+  </data>
+  <data name="chkEnableArguments.Text" xml:space="preserve">
+    <value>Habilitar argumentos</value>
+  </data>
 </root>

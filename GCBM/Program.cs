@@ -1,8 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
 using System.IO;
-using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
 using GCBM.Properties;
@@ -14,27 +14,27 @@ internal static class Program
     public static Form SplashScreen;
     private static Form MainForm;
 
+    public enum Language
+    {
+        Portuguese, English, Spanish, Korean, French, German, Japanese
+    }
+    public static Dictionary<string, int> Translations = new()
+        {
+            {"pt-BR" ,0},//Portuguese
+            {"en-US" ,1},//English
+            {"es"    ,2},//Spanish
+            {"ko"    ,3},//Korean
+            {"fr"    ,4},//French
+            {"de"    ,5},//German
+            {"ja"    ,6}//Japanese
+        };
+
     /// <summary>
     ///     Ponto de entrada principal para o aplicativo.
     /// </summary>
     [STAThread]
     private static void Main()
     {
-        #region Adjust Language
-
-        var sysLocale = CultureInfo.CurrentCulture;
-
-        string[] aryLocales = { "pt-BR", "en-US", "es", "ko" };
-
-        //  See if we have that translation
-        var isTranslated = aryLocales.Contains(sysLocale.ToString());
-        if (isTranslated)
-        {
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(sysLocale.ToString());
-            CultureInfo.CurrentUICulture = new CultureInfo(sysLocale.ToString());
-        }
-
-        #endregion
 
         var configIniFile = new IniFile("config.ini");
 
@@ -82,7 +82,80 @@ internal static class Program
             }
         }
     }
+    #region Detect OS Language
 
+    /// <summary>
+    ///     Automatic detection of operating system default language
+    /// </summary>
+    public static void DetectOSLanguage()
+    {
+        var configIniFile = new IniFile("config.ini");
+
+        var sysLocale = Thread.CurrentThread.CurrentCulture;
+
+        //  See if we have that translation
+        var isTranslated = Translations.ContainsKey(sysLocale.ToString());
+
+        //  Write the corresponding number to INI
+        if (isTranslated)
+            configIniFile.IniWriteInt("LANGUAGE", "ConfigLanguage",
+                Translations[sysLocale.ToString()]);
+        else //Default to english
+            configIniFile.IniWriteInt("LANGUAGE", "ConfigLanguage", 1); //en-US
+    }
+
+    public static void AdjustLanguage()
+    {
+
+        var configIniFile = new IniFile("config.ini");
+        //Get current system Locale -- Thread.CurrentThread.CurrentUICulture.Name
+        if (configIniFile.IniReadBool("SEVERAL", "LaunchedOnce"))
+        {
+            switch (configIniFile.IniReadInt("LANGUAGE", "ConfigLanguage"))
+            {
+                case 0:
+                    CultureInfo.CurrentUICulture = new CultureInfo("pt-BR");
+                    break;
+                case 1:
+                    CultureInfo.CurrentUICulture = new CultureInfo("en-US");
+                    break;
+                case 2:
+                    CultureInfo.CurrentUICulture = new CultureInfo("es");
+                    break;
+                case 3:
+                    CultureInfo.CurrentUICulture = new CultureInfo("ko");
+                    break;
+                case 4:
+                    CultureInfo.CurrentCulture = new CultureInfo("fr");
+                    break;
+                case 5:
+                    CultureInfo.CurrentCulture = new CultureInfo("de");
+                    break;
+                case 6:
+                    CultureInfo.CurrentCulture = new CultureInfo("ja");
+                    break;
+                default:
+                    CultureInfo.CurrentCulture = new CultureInfo("en-US");
+                    break;
+            }
+        }
+        else
+        {
+            #region Adjust Language
+
+            var sysLocale = CultureInfo.CurrentCulture;
+            //  See if we have that translation
+            var isTranslated = Translations.ContainsKey(sysLocale.ToString());
+            if (isTranslated)
+            {
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo(sysLocale.ToString());
+                CultureInfo.CurrentUICulture = new CultureInfo(sysLocale.ToString());
+            }
+
+            #endregion
+        }
+    }
+    #endregion
     private static void Start()
     {
         Application.EnableVisualStyles();

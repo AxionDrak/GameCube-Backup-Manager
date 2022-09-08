@@ -350,4 +350,7 @@ No olvides enviarme un correo electrónico para que pueda agradecerte.</value>
   <data name="labelCopyright.Text" xml:space="preserve">
     <value>Copyright</value>
   </data>
+  <data name="lblAboutProgramName.Text" xml:space="preserve">
+    <value>Administrador de copia de seguridad de GameCube</value>
+  </data>
 </root>

@@ -14,7 +14,7 @@ public partial class frmSplashScreen : Form
     public frmSplashScreen()
     {
         var configIniFile = new IniFile("config.ini");
-        AdjustLanguage();
+        Program.AdjustLanguage();
 
         InitializeComponent();
 
@@ -33,46 +33,7 @@ public partial class frmSplashScreen : Form
 
     #region Adjust Language
 
-    private void AdjustLanguage()
-    {
-        //Get current system Locale -- Thread.CurrentThread.CurrentUICulture.Name
-        if (CONFIG_INI_FILE.IniReadBool("SEVERAL", "LaunchedOnce"))
-        {
-            switch (CONFIG_INI_FILE.IniReadInt("LANGUAGE", "ConfigLanguage"))
-            {
-                case 0:
-                    CultureInfo.CurrentUICulture = new CultureInfo("pt-BR");
-                    break;
-                case 1:
-                    CultureInfo.CurrentUICulture = new CultureInfo("en-US");
-                    break;
-                case 2:
-                    CultureInfo.CurrentUICulture = new CultureInfo("es");
-                    break;
-                case 3:
-                    CultureInfo.CurrentUICulture = new CultureInfo("ko");
-                    break;
-            }
-        }
-        else
-        {
-            #region Adjust Language
 
-            var sysLocale = CultureInfo.CurrentCulture;
-
-            string[] aryLocales = { "pt-BR", "en-US", "es", "ko" };
-
-            //  See if we have that translation
-            var isTranslated = aryLocales.Contains(sysLocale.ToString());
-            if (isTranslated)
-            {
-                Thread.CurrentThread.CurrentUICulture = new CultureInfo(sysLocale.ToString());
-                CultureInfo.CurrentUICulture = new CultureInfo(sysLocale.ToString());
-            }
-
-            #endregion
-        }
-    }
 
     #endregion
 

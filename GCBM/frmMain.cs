@@ -119,62 +119,6 @@ public partial class frmMain : Form
 
     #endregion
 
-    #region Adjust Language
-
-    /// <summary>
-    ///     Set the selected language
-    /// </summary>
-    private void AdjustLanguage()
-    {
-        switch (CONFIG_INI_FILE.IniReadInt("LANGUAGE", "ConfigLanguage"))
-        {
-            case 0:
-                Thread.CurrentThread.CurrentUICulture = new CultureInfo("pt-BR");
-                Controls.Clear();
-                InitializeComponent();
-                break;
-            case 1:
-                Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
-                Controls.Clear();
-                InitializeComponent();
-                break;
-            case 2:
-                Thread.CurrentThread.CurrentUICulture = new CultureInfo("es");
-                Controls.Clear();
-                InitializeComponent();
-                break;
-            case 3:
-                Thread.CurrentThread.CurrentUICulture = new CultureInfo("ko");
-                Controls.Clear();
-                InitializeComponent();
-                break;
-        }
-    }
-
-    #endregion
-
-    #region Detect OS Language
-
-    /// <summary>
-    ///     Automatic detection of operating system default language
-    /// </summary>
-    private void DetectOSLanguage()
-    {
-        var sysLocale = Thread.CurrentThread.CurrentCulture;
-        string[] aryLocales = { "pt-BR", "en-US", "es", "ko" };
-
-        //  See if we have that translation
-        var isTranslated = aryLocales.Contains(sysLocale.ToString());
-
-        //  Write the corresponding number to INI
-        if (isTranslated)
-            CONFIG_INI_FILE.IniWriteInt("LANGUAGE", "ConfigLanguage",
-                Array.FindIndex(aryLocales, l => l == sysLocale.Name));
-        else //Default to english
-            CONFIG_INI_FILE.IniWriteInt("LANGUAGE", "ConfigLanguage", 1); //en-US
-    }
-
-    #endregion
 
     //Remove the "Update Program" function if it no longer needs to exist.
 
@@ -456,9 +400,9 @@ public partial class frmMain : Form
             tsmiSyncDownloadDiscOnly3DCovers.Enabled = true;
             tsmiGameInfo.Enabled = true;
             tsmiTransferDeviceCovers.Enabled = true;
-            dgvSource.Enabled = true;    
+            dgvSource.Enabled = true;
         }));
-        
+
     }
 
     #endregion
@@ -636,7 +580,7 @@ public partial class frmMain : Form
         CONFIG_INI_FILE.IniWriteBool("SEVERAL", "Screensaver", false);
         CONFIG_INI_FILE.IniWriteBool("SEVERAL", "LoadDatabase", true);
         CONFIG_INI_FILE.IniWriteBool("SEVERAL", "MultipleInstances", false);
-        CONFIG_INI_FILE.IniWriteBool("SEVERAL","LaunchedOnce",true);
+        CONFIG_INI_FILE.IniWriteBool("SEVERAL", "LaunchedOnce", true);
         // TransferSystem
         CONFIG_INI_FILE.IniWriteBool("TRANSFERSYSTEM", "FST", false);
         CONFIG_INI_FILE.IniWriteBool("TRANSFERSYSTEM", "ScrubFlushSD", false);
@@ -713,7 +657,7 @@ public partial class frmMain : Form
     /// <summary>
     ///     Reloads the contents of the DataGridView Games List.
     /// </summary>
-    private async void ReloadDataGridViewGameList(DataGridView dgv,Dictionary<int,Game> dGames)
+    private async void ReloadDataGridViewGameList(DataGridView dgv, Dictionary<int, Game> dGames)
     {
         if (dgv == dgvSource)
             dGames = dSourceGames;
@@ -726,8 +670,8 @@ public partial class frmMain : Form
         {
             if (dgv.CurrentRow == null) return;
             Game game = (from g in dGames.Values
-                where dgv.CurrentRow.Cells["ID"].Value.ToString() == g.ID
-                select g).First();
+                         where dgv.CurrentRow.Cells["ID"].Value.ToString() == g.ID
+                         select g).First();
             LoadCover(game.ID);
             // pictureBox GameID
             if (pbWebGameID.Enabled == false)
@@ -883,7 +827,7 @@ public partial class frmMain : Form
 
             EnableOptionsGameList();
 
-            ReloadDataGridViewGameList(dgvSourcetemp,dSourceGames);
+            ReloadDataGridViewGameList(dgvSourcetemp, dSourceGames);
         }
 
         SCANNING = false;
@@ -968,7 +912,7 @@ public partial class frmMain : Form
                 var _getSize = DisplayFormatFileSize(_f.Length, CONFIG_INI_FILE.IniReadInt("GENERAL", "FileSize"));
                 _ = dgvDestinationtemp.Rows.Add(false, game.Title, game.ID, game.Region,
                     _f.Extension.Substring(1, 3).Trim().ToUpper(MY_CULTURE), _getSize, _f.FullName);
-                dDestGames.Add(counter,game);
+                dDestGames.Add(counter, game);
 
                 //Clean up Interface
                 lblDestinationCount.Text = files.Length.ToString();
@@ -981,7 +925,7 @@ public partial class frmMain : Form
 
             EnableOptionsGameList();
 
-            ReloadDataGridViewGameList(dgvDestinationtemp,dDestGames);
+            ReloadDataGridViewGameList(dgvDestinationtemp, dDestGames);
         }
 
         SCANNING = false;
@@ -1035,8 +979,8 @@ public partial class frmMain : Form
         _ = tscbDiscDrive.Items.Add(Resources.GetAllDrives_Inactive);
         tscbDiscDrive.SelectedIndex = 0;
         foreach (var d in from sio.DriveInfo d in sio.DriveInfo.GetDrives()/*.AsParallel()*/
-                 where d.IsReady
-                 select d)
+                          where d.IsReady
+                          select d)
         {
             _ = tscbDiscDrive.Items.Add(d.Name);
             callback(d.Name);
@@ -1631,190 +1575,190 @@ public partial class frmMain : Form
                 _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar +
                                                   "US" + sio.Path.DirectorySeparatorChar + "2d" +
                                                   sio.Path.DirectorySeparatorChar); // 2D
-                callback(Convert.ToInt32(progressCheckpoint +( incr / 2)));
+                callback(Convert.ToInt32(progressCheckpoint + (incr / 2)));
 
                 _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar +
                                                   "US" + sio.Path.DirectorySeparatorChar + "3d" +
                                                   sio.Path.DirectorySeparatorChar); // 3D
-                callback(Convert.ToInt32(progressCheckpoint +( incr / 2)));
+                callback(Convert.ToInt32(progressCheckpoint + (incr / 2)));
 
                 _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar +
                                                   "US" + sio.Path.DirectorySeparatorChar + "disc" +
                                                   sio.Path.DirectorySeparatorChar); // Disc
-                callback(Convert.ToInt32(progressCheckpoint +( incr / 2)));
+                callback(Convert.ToInt32(progressCheckpoint + (incr / 2)));
 
                 _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar +
                                                   "US" + sio.Path.DirectorySeparatorChar + "full" +
                                                   sio.Path.DirectorySeparatorChar); // Full
-                callback(Convert.ToInt32(progressCheckpoint +( incr / 2)));
+                callback(Convert.ToInt32(progressCheckpoint + (incr / 2)));
 
                 // JA - Covers Directory
                 _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar +
                                                   "JA" + sio.Path.DirectorySeparatorChar + "2d" +
                                                   sio.Path.DirectorySeparatorChar); // 2D
-                callback(Convert.ToInt32(progressCheckpoint +( incr / 2)));
+                callback(Convert.ToInt32(progressCheckpoint + (incr / 2)));
 
                 _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar +
                                                   "JA" + sio.Path.DirectorySeparatorChar + "3d" +
                                                   sio.Path.DirectorySeparatorChar); // 3D
-                callback(Convert.ToInt32(progressCheckpoint +( incr / 2)));
+                callback(Convert.ToInt32(progressCheckpoint + (incr / 2)));
 
                 _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar +
                                                   "JA" + sio.Path.DirectorySeparatorChar + "disc" +
                                                   sio.Path.DirectorySeparatorChar); // Disc
-                callback(Convert.ToInt32(progressCheckpoint +( incr / 2)));
+                callback(Convert.ToInt32(progressCheckpoint + (incr / 2)));
 
                 _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar +
                                                   "JA" + sio.Path.DirectorySeparatorChar + "full" +
                                                   sio.Path.DirectorySeparatorChar); // Full
-                callback(Convert.ToInt32(progressCheckpoint +( incr / 2)));
+                callback(Convert.ToInt32(progressCheckpoint + (incr / 2)));
 
                 // EN - Covers Directory
                 _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar +
                                                   "EN" + sio.Path.DirectorySeparatorChar + "2d" +
                                                   sio.Path.DirectorySeparatorChar); // 2D
-                callback(Convert.ToInt32(progressCheckpoint +( incr / 2)));
+                callback(Convert.ToInt32(progressCheckpoint + (incr / 2)));
 
                 _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar +
                                                   "EN" + sio.Path.DirectorySeparatorChar + "3d" +
                                                   sio.Path.DirectorySeparatorChar); // 3D
-                callback(Convert.ToInt32(progressCheckpoint +( incr / 2)));
+                callback(Convert.ToInt32(progressCheckpoint + (incr / 2)));
 
                 _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar +
                                                   "EN" + sio.Path.DirectorySeparatorChar + "disc" +
                                                   sio.Path.DirectorySeparatorChar); // Disc
-                callback(Convert.ToInt32(progressCheckpoint +( incr / 2)));
+                callback(Convert.ToInt32(progressCheckpoint + (incr / 2)));
 
                 _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar +
                                                   "EN" + sio.Path.DirectorySeparatorChar + "full" +
                                                   sio.Path.DirectorySeparatorChar); // Full
-                callback(Convert.ToInt32(progressCheckpoint +( incr / 2)));
+                callback(Convert.ToInt32(progressCheckpoint + (incr / 2)));
 
                 // DE - Covers Directory
                 _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar +
                                                   "DE" + sio.Path.DirectorySeparatorChar + "2d" +
                                                   sio.Path.DirectorySeparatorChar); // 2D
-                callback(Convert.ToInt32(progressCheckpoint +( incr / 2)));
+                callback(Convert.ToInt32(progressCheckpoint + (incr / 2)));
 
                 _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar +
                                                   "DE" + sio.Path.DirectorySeparatorChar + "3d" +
                                                   sio.Path.DirectorySeparatorChar); // 3D
-                callback(Convert.ToInt32(progressCheckpoint +( incr / 2)));
+                callback(Convert.ToInt32(progressCheckpoint + (incr / 2)));
 
                 _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar +
                                                   "DE" + sio.Path.DirectorySeparatorChar + "disc" +
                                                   sio.Path.DirectorySeparatorChar); // Disc
-                callback(Convert.ToInt32(progressCheckpoint +( incr / 2)));
+                callback(Convert.ToInt32(progressCheckpoint + (incr / 2)));
 
                 _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar +
                                                   "DE" + sio.Path.DirectorySeparatorChar + "full" +
                                                   sio.Path.DirectorySeparatorChar); // Full
-                callback(Convert.ToInt32(progressCheckpoint +( incr / 2)));
+                callback(Convert.ToInt32(progressCheckpoint + (incr / 2)));
 
                 // ES - Covers Directory
                 _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar +
                                                   "ES" + sio.Path.DirectorySeparatorChar + "2d" +
                                                   sio.Path.DirectorySeparatorChar); // 2D
-                callback(Convert.ToInt32(progressCheckpoint +( incr / 2)));
+                callback(Convert.ToInt32(progressCheckpoint + (incr / 2)));
 
                 _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar +
                                                   "ES" + sio.Path.DirectorySeparatorChar + "3d" +
                                                   sio.Path.DirectorySeparatorChar); // 3D
-                callback(Convert.ToInt32(progressCheckpoint +( incr / 2)));
+                callback(Convert.ToInt32(progressCheckpoint + (incr / 2)));
 
                 _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar +
                                                   "ES" + sio.Path.DirectorySeparatorChar + "disc" +
                                                   sio.Path.DirectorySeparatorChar); // Disc
-                callback(Convert.ToInt32(progressCheckpoint +( incr / 2)));
+                callback(Convert.ToInt32(progressCheckpoint + (incr / 2)));
 
                 _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar +
                                                   "ES" + sio.Path.DirectorySeparatorChar + "full" +
                                                   sio.Path.DirectorySeparatorChar); // Full
-                callback(Convert.ToInt32(progressCheckpoint +( incr / 2)));
+                callback(Convert.ToInt32(progressCheckpoint + (incr / 2)));
 
                 // IT - Covers Directory
                 _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar +
                                                   "IT" + sio.Path.DirectorySeparatorChar + "2d" +
                                                   sio.Path.DirectorySeparatorChar); // 2D
-                callback(Convert.ToInt32(progressCheckpoint +( incr / 2)));
+                callback(Convert.ToInt32(progressCheckpoint + (incr / 2)));
 
                 _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar +
                                                   "IT" + sio.Path.DirectorySeparatorChar + "3d" +
                                                   sio.Path.DirectorySeparatorChar); // 3D
-                callback(Convert.ToInt32(progressCheckpoint +( incr / 2)));
+                callback(Convert.ToInt32(progressCheckpoint + (incr / 2)));
 
                 _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar +
                                                   "IT" + sio.Path.DirectorySeparatorChar + "disc" +
                                                   sio.Path.DirectorySeparatorChar); // Disc
-                callback(Convert.ToInt32(progressCheckpoint +( incr / 2)));
+                callback(Convert.ToInt32(progressCheckpoint + (incr / 2)));
 
                 _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar +
                                                   "IT" + sio.Path.DirectorySeparatorChar + "full" +
                                                   sio.Path.DirectorySeparatorChar); // Full
-                callback(Convert.ToInt32(progressCheckpoint +( incr / 2)));
+                callback(Convert.ToInt32(progressCheckpoint + (incr / 2)));
 
                 // AU - Covers Directory
                 _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar +
                                                   "AU" + sio.Path.DirectorySeparatorChar + "2d" +
                                                   sio.Path.DirectorySeparatorChar); // 2D
-                callback(Convert.ToInt32(progressCheckpoint +( incr / 2)));
+                callback(Convert.ToInt32(progressCheckpoint + (incr / 2)));
 
                 _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar +
                                                   "AU" + sio.Path.DirectorySeparatorChar + "3d" +
                                                   sio.Path.DirectorySeparatorChar); // 3D
-                callback(Convert.ToInt32(progressCheckpoint +( incr / 2)));
+                callback(Convert.ToInt32(progressCheckpoint + (incr / 2)));
 
                 _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar +
                                                   "AU" + sio.Path.DirectorySeparatorChar + "disc" +
                                                   sio.Path.DirectorySeparatorChar); // Disc
-                callback(Convert.ToInt32(progressCheckpoint +( incr / 2)));
+                callback(Convert.ToInt32(progressCheckpoint + (incr / 2)));
 
                 _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar +
                                                   "AU" + sio.Path.DirectorySeparatorChar + "full" +
                                                   sio.Path.DirectorySeparatorChar); // Full
-                callback(Convert.ToInt32(progressCheckpoint +( incr / 2)));
+                callback(Convert.ToInt32(progressCheckpoint + (incr / 2)));
 
                 // NL - Covers Directory
                 _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar +
                                                   "NL" + sio.Path.DirectorySeparatorChar + "2d" +
                                                   sio.Path.DirectorySeparatorChar); // 2D
-                callback(Convert.ToInt32(progressCheckpoint +( incr / 2)));
+                callback(Convert.ToInt32(progressCheckpoint + (incr / 2)));
 
                 _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar +
                                                   "NL" + sio.Path.DirectorySeparatorChar + "3d" +
                                                   sio.Path.DirectorySeparatorChar); // 3D
-                callback(Convert.ToInt32(progressCheckpoint +( incr / 2)));
+                callback(Convert.ToInt32(progressCheckpoint + (incr / 2)));
 
                 _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar +
                                                   "NL" + sio.Path.DirectorySeparatorChar + "disc" +
                                                   sio.Path.DirectorySeparatorChar); // Disc
-                callback(Convert.ToInt32(progressCheckpoint +( incr / 2)));
+                callback(Convert.ToInt32(progressCheckpoint + (incr / 2)));
 
                 _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar +
                                                   "NL" + sio.Path.DirectorySeparatorChar + "full" +
                                                   sio.Path.DirectorySeparatorChar); // Full
-                callback(Convert.ToInt32(progressCheckpoint +( incr / 2)));
+                callback(Convert.ToInt32(progressCheckpoint + (incr / 2)));
 
                 // FR - Covers Directory
                 _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar +
                                                   "FR" + sio.Path.DirectorySeparatorChar + "2d" +
                                                   sio.Path.DirectorySeparatorChar); // 2D
-                callback(Convert.ToInt32(progressCheckpoint +( incr / 2)));
+                callback(Convert.ToInt32(progressCheckpoint + (incr / 2)));
 
                 _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar +
                                                   "FR" + sio.Path.DirectorySeparatorChar + "3d" +
                                                   sio.Path.DirectorySeparatorChar); // 3D
-                callback(Convert.ToInt32(progressCheckpoint +( incr / 2)));
+                callback(Convert.ToInt32(progressCheckpoint + (incr / 2)));
 
                 _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar +
                                                   "FR" + sio.Path.DirectorySeparatorChar + "disc" +
                                                   sio.Path.DirectorySeparatorChar); // Disc
-                callback(Convert.ToInt32(progressCheckpoint +( incr / 2)));
+                callback(Convert.ToInt32(progressCheckpoint + (incr / 2)));
 
                 _ = sio.Directory.CreateDirectory(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar +
                                                   "FR" + sio.Path.DirectorySeparatorChar + "full" +
                                                   sio.Path.DirectorySeparatorChar); // Full
-                callback(Convert.ToInt32(progressCheckpoint +( incr / 2)));
+                callback(Convert.ToInt32(progressCheckpoint + (incr / 2)));
 
             }).ConfigureAwait(false);
 
@@ -2918,7 +2862,7 @@ public partial class frmMain : Form
     /// </summary>
     private bool ABORT;
 
-    public frmMain(Action<string,int> callback)
+    public frmMain(Action<string, int> callback)
     {
         this.Hide();
 
@@ -2931,7 +2875,7 @@ public partial class frmMain : Form
     }
     // End of Main Constructor
 
-    private void MainCore(Action<string,int> callback)
+    private void MainCore(Action<string, int> callback)
     {
         Hide();
         notifyIcon.Visible = true;
@@ -2944,23 +2888,23 @@ public partial class frmMain : Form
 
         //    Load += HandleFormLoad;
 
-        callback(Resources.SplashNetworkCheck,10);
+        callback(Resources.SplashNetworkCheck, 10);
         NetworkCheck();
         if (!sio.File.Exists(INI_FILE))
         {
             DefaultConfigSave();
-            DetectOSLanguage();
+            Program.DetectOSLanguage();
 
-            AdjustLanguage();
+            Program.AdjustLanguage();
             Controls.Clear();
             InitializeComponent();
         }
 
         LoadConfigFile();
         AboutTranslator();
-        callback(Resources.SplashPopulatingDrives,20);
+        callback(Resources.SplashPopulatingDrives, 20);
         int progressCheckpoint = 20;
-        GetAllDrives(new Action<string>(s => callback(Resources.SplashFoundDrive + " " + s,progressCheckpoint+= 5) ));
+        GetAllDrives(new Action<string>(s => callback(Resources.SplashFoundDrive + " " + s, progressCheckpoint += 5)));
         //callback(Resources.SplashDirectories,progressCheckpoint);
 
         //DetectOSLanguage();
@@ -3009,10 +2953,10 @@ public partial class frmMain : Form
 
         Thread.CurrentThread.CurrentUICulture.ClearCachedData();
         Thread.CurrentThread.CurrentCulture.ClearCachedData();
-        callback(Resources.SplashFinishing,95);
+        callback(Resources.SplashFinishing, 95);
         //foreach in this.Controls.Results 
         mstripMain.Refresh();
-        callback(Resources.SplashFinished,100);
+        callback(Resources.SplashFinished, 100);
         var SplashScreen = Program.SplashScreen;
         if (SplashScreen != null && !SplashScreen.Disposing && !SplashScreen.IsDisposed)
             SplashScreen.Invoke(new Action(() => SplashScreen.Close()));
@@ -3679,7 +3623,7 @@ public partial class frmMain : Form
         myProcess.Start();
         Thread.Sleep(1000);
         ShowWindow(myProcess.MainWindowHandle, 0);
-        
+
         scrubStopwatch.Start();
         while (!myProcess.HasExited && !ABORT)
         {
@@ -3816,7 +3760,7 @@ public partial class frmMain : Form
         {
             pbCopy.Style = ProgressBarStyle.Marquee;
             lblInstallStatusPercent.Hide();
-            lblInstallStatusText.Text = Resources.InstallGameScrub_String2 +" -- This is taking a while, but we are still responding.";
+            lblInstallStatusText.Text = Resources.InstallGameScrub_String2 + " -- This is taking a while, but we are still responding.";
             pbCopy.Value = pbCopy.Maximum;
         }
         else
@@ -3828,7 +3772,7 @@ public partial class frmMain : Form
             lblInstallStatusText.Text = Resources.InstallGameScrub_String2;
             pbCopy.Value = incrementValue;
         }
-      
+
     }
 
     #endregion
@@ -3910,28 +3854,28 @@ public partial class frmMain : Form
             lblInstallStatusPercent.Text = x + "%";
             tabMainFile.Update();
         }));
-        
+
     }
 
 
     private void FinishedInstalling()
     {
-        
+
         tabMainFile.BeginInvoke(new Action(() =>
         {
-        pbCopy.Value = 100;
-        lblInstallStatusGameTitle.Text = Resources.CopyTask_String3;
-        lblInstallStatusText.Text = Resources.CopyTask_String4;
-        lblInstallStatusPercent.Text = Resources.CopyTask_String5;
-        //GlobalNotifications(Resources.InstallGameScrub_String5, ToolTipIcon.Info);
-        EnableOptionsGameList();
-        dgvSource.Enabled = true;
-        pbCopy.Visible = false;
-        lblInstallStatusGameTitle.Visible = false;
-        lblInstallStatusPercent.Visible = false;
-        lblInstallStatusText.Visible = false;
-        intQueuePos++;
-        WORKING = false;
+            pbCopy.Value = 100;
+            lblInstallStatusGameTitle.Text = Resources.CopyTask_String3;
+            lblInstallStatusText.Text = Resources.CopyTask_String4;
+            lblInstallStatusPercent.Text = Resources.CopyTask_String5;
+            //GlobalNotifications(Resources.InstallGameScrub_String5, ToolTipIcon.Info);
+            EnableOptionsGameList();
+            dgvSource.Enabled = true;
+            pbCopy.Visible = false;
+            lblInstallStatusGameTitle.Visible = false;
+            lblInstallStatusPercent.Visible = false;
+            lblInstallStatusText.Visible = false;
+            intQueuePos++;
+            WORKING = false;
         }));
 
     }
@@ -4579,7 +4523,7 @@ public partial class frmMain : Form
     /// <param name="e"></param>
     private void tsmiReloadDeviceDrive_Click(object sender, EventArgs e)
     {
-        GetAllDrives(new Action<string>(s =>{} ));//unused callback
+        GetAllDrives(new Action<string>(s => { }));//unused callback
         dgvDestination.DataSource = null;
     }
 
@@ -5022,8 +4966,9 @@ public partial class frmMain : Form
 
     #region SJohnson1021's Playground
 
+
     private void StartScrub()
-    { 
+    {
         btnAbort.Visible = true;
         lblAbort.Visible = true;
         DisableOptionsGame(dgvSource);
@@ -5740,7 +5685,7 @@ public partial class frmMain : Form
                     lblInstallStatusText.Visible = true;
                     pbCopy.Value = x;
                     lblInstallStatusGameTitle.Text = InstallQueue[intQueuePos].Title;
-                    lblInstallStatusText.Text = Resources.CopyTask_String2 ;
+                    lblInstallStatusText.Text = Resources.CopyTask_String2;
                     lblInstallStatusPercent.Text = x + "%";
                 })));
             }).GetAwaiter().OnCompleted(() => pbCopy.BeginInvoke(new Action(() =>
@@ -5845,13 +5790,13 @@ public partial class frmMain : Form
 
     private void dgvDestination_CurrentCellChanged(object sender, EventArgs e)
     {
-        ReloadDataGridViewGameList(dgvDestination,dDestGames);
+        ReloadDataGridViewGameList(dgvDestination, dDestGames);
     }
 
     private void dgvSource_CurrentCellChanged(object sender, EventArgs e)
     {
         {
-            ReloadDataGridViewGameList(dgvSource,dSourceGames);
+            ReloadDataGridViewGameList(dgvSource, dSourceGames);
         }
     }
 

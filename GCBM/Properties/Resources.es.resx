@@ -519,4 +519,19 @@
   <data name="SplashDirectories" xml:space="preserve">
     <value>Configurando los directorios requeridos...</value>
   </data>
+  <data name="LoadDatabase_Type" xml:space="preserve">
+    <value>Escribe</value>
+  </data>
+  <data name="DisplayFilesSelected_Found_String3" xml:space="preserve">
+    <value>Fundar</value>
+  </data>
+  <data name="Info" xml:space="preserve">
+    <value>[INFORMACIÓN]</value>
+  </data>
+  <data name="DisplayFilesSelected_Found_String1" xml:space="preserve">
+    <value>[INFO] Encontrado</value>
+  </data>
+  <data name="Notice" xml:space="preserve">
+    <value>AVISO</value>
+  </data>
 </root>

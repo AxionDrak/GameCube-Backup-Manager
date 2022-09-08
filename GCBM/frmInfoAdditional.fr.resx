@@ -117,29 +117,94 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnConvertELF.Text" xml:space="preserve">
-    <value>Convertir</value>
+  <data name="lblVersion.Text" xml:space="preserve">
+    <value>VERSION:</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>424, 39</value>
+  <data name="lblRequirements.Text" xml:space="preserve">
+    <value>CONDITIONS:</value>
   </data>
-  <data name="label4.Text" xml:space="preserve">
-    <value>Otra solución, ofrecida por Cheapo, es renombrar (no convertir) cada 'boot.elf' válido a 'boot.dol'. HBC aún debería cargar el archivo perfectamente y este programa ignorará el archivo. No es lo ideal, pero aquí todos somos hackers, ¿verdad?</value>
+  <data name="lblPlayersOnline.Text" xml:space="preserve">
+    <value>JOUEURS EN LIGNE :</value>
   </data>
-  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>426, 13</value>
+  <data name="lblPlayers.Text" xml:space="preserve">
+    <value>JOUEURS:</value>
   </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>Puede utilizar prácticamente cualquier archivo .ELF publicado antes de octubre de 2008.</value>
+  <data name="lblContent.Text" xml:space="preserve">
+    <value>CONTENU:</value>
+  </data>
+  <data name="lblType.Text" xml:space="preserve">
+    <value>TAPER:</value>
+  </data>
+  <data name="lblDateGlobal.Text" xml:space="preserve">
+    <value>(Jour mois année)</value>
+  </data>
+  <data name="lblInternalName.Text" xml:space="preserve">
+    <value>NOM INTERNE:</value>
+  </data>
+  <data name="lblSynopsis.Text" xml:space="preserve">
+    <value>SYNOPSIS:</value>
+  </data>
+  <data name="lblRegion.Text" xml:space="preserve">
+    <value>RÉGION:</value>
+  </data>
+  <data name="lblDate.Text" xml:space="preserve">
+    <value>LANCEMENT:</value>
+  </data>
+  <data name="lblGenre.Text" xml:space="preserve">
+    <value>GENRE:</value>
+  </data>
+  <data name="lblLanguage.Text" xml:space="preserve">
+    <value>LANGUE:</value>
+  </data>
+  <data name="lblRating.Text" xml:space="preserve">
+    <value>ÉVALUATION:</value>
+  </data>
+  <data name="lblDeveloper.Text" xml:space="preserve">
+    <value>DÉVELOPPEUR:</value>
+  </data>
+  <data name="lblPublisher.Text" xml:space="preserve">
+    <value>ÉDITEUR:</value>
+  </data>
+  <data name="grpInfo.Text" xml:space="preserve">
+    <value>Informations Complémentaires</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Convertir ELF -&gt; DOL</value>
+    <value>Informations Complémentaires</value>
   </data>
-  <data name="labelLogELFtoDOL.Text" xml:space="preserve">
-    <value>Tronco:</value>
+  <data name="label12.Text" xml:space="preserve">
+    <value>(Jour mois année)</value>
   </data>
-  <data name="btnCancel.Text" xml:space="preserve">
-    <value>Cancelar</value>
+  <data name="label14.Text" xml:space="preserve">
+    <value>CONTENU:</value>
+  </data>
+  <data name="label15.Text" xml:space="preserve">
+    <value>JOUEURS:</value>
+  </data>
+  <data name="label17.Text" xml:space="preserve">
+    <value>CONDITIONS:</value>
+  </data>
+  <data name="label18.Text" xml:space="preserve">
+    <value>VERSION:</value>
+  </data>
+  <data name="labelRegion.Text" xml:space="preserve">
+    <value>Région:</value>
+  </data>
+  <data name="labelRating.Text" xml:space="preserve">
+    <value>Évaluation:</value>
+  </data>
+  <data name="labelPublisher.Text" xml:space="preserve">
+    <value>Éditeur:</value>
+  </data>
+  <data name="labelDeveloper.Text" xml:space="preserve">
+    <value>Développeur:</value>
+  </data>
+  <data name="labelDate.Text" xml:space="preserve">
+    <value>Date:</value>
+  </data>
+  <data name="labelGenre.Text" xml:space="preserve">
+    <value>Genre:</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>SYNOPSIS:</value>
   </data>
 </root>

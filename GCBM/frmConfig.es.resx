@@ -849,4 +849,85 @@
   <data name="lblLOG.Text" xml:space="preserve">
     <value>Nível de LOG:</value>
   </data>
+  <data name="cbGeneralFileSize.Items" xml:space="preserve">
+    <value>Automático</value>
+  </data>
+  <data name="tabSettingsNomenclature.Text" xml:space="preserve">
+    <value>Nomenclatura</value>
+  </data>
+  <data name="cbScrubAlign.Items" xml:space="preserve">
+    <value>Automático</value>
+  </data>
+  <data name="grbGeneralScrub.Text" xml:space="preserve">
+    <value>Maleza</value>
+  </data>
+  <data name="tabCoverDisc.Text" xml:space="preserve">
+    <value>Desct</value>
+  </data>
+  <data name="tabCoverFull.Text" xml:space="preserve">
+    <value>Completo</value>
+  </data>
+  <data name="grpCoversSynchronize.Text" xml:space="preserve">
+    <value>Sincronizar</value>
+  </data>
+  <data name="cbTitleLanguage.Items4" xml:space="preserve">
+    <value>italiano</value>
+  </data>
+  <data name="cbTitleLanguage.Items9" xml:space="preserve">
+    <value>Coreano</value>
+  </data>
+  <data name="tabSettingsTitle.Text" xml:space="preserve">
+    <value>Títulos</value>
+  </data>
+  <data name="grbDolphin.Text" xml:space="preserve">
+    <value>Configurar emulador</value>
+  </data>
+  <data name="cbVerificationInterval.Items" xml:space="preserve">
+    <value>5 minutos</value>
+  </data>
+  <data name="cbVerificationInterval.Items1" xml:space="preserve">
+    <value>10 minutos</value>
+  </data>
+  <data name="cbVerificationInterval.Items2" xml:space="preserve">
+    <value>15 minutos</value>
+  </data>
+  <data name="cbVerificationInterval.Items3" xml:space="preserve">
+    <value>30 minutos</value>
+  </data>
+  <data name="cbVerificationInterval.Items4" xml:space="preserve">
+    <value>1 hora</value>
+  </data>
+  <data name="cbVerificationInterval.Items5" xml:space="preserve">
+    <value>2 horas</value>
+  </data>
+  <data name="cbVerificationInterval.Items6" xml:space="preserve">
+    <value>3 horas</value>
+  </data>
+  <data name="cbVerificationInterval.Items7" xml:space="preserve">
+    <value>4 horas</value>
+  </data>
+  <data name="lblLanguage.Text" xml:space="preserve">
+    <value>Idioma:</value>
+  </data>
+  <data name="tabSettingsLanguage.Text" xml:space="preserve">
+    <value>Idiomas</value>
+  </data>
+  <data name="cbLevelLog.Items" xml:space="preserve">
+    <value>Informativo</value>
+  </data>
+  <data name="cbLevelLog.Items2" xml:space="preserve">
+    <value>Completo</value>
+  </data>
+  <data name="grbLog.Text" xml:space="preserve">
+    <value>Registro</value>
+  </data>
+  <data name="tabSettingsLog.Text" xml:space="preserve">
+    <value>Registro</value>
+  </data>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="btnApply.Text" xml:space="preserve">
+    <value>Aplicar</value>
+  </data>
 </root>

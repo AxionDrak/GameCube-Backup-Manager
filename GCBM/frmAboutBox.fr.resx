@@ -117,29 +117,78 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnConvertELF.Text" xml:space="preserve">
-    <value>Convertir</value>
+  <data name="labelProductName.Text" xml:space="preserve">
+    <value>Nom du produit</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>424, 39</value>
+  <data name="labelVersion.Text" xml:space="preserve">
+    <value>Version</value>
   </data>
-  <data name="label4.Text" xml:space="preserve">
-    <value>Otra solución, ofrecida por Cheapo, es renombrar (no convertir) cada 'boot.elf' válido a 'boot.dol'. HBC aún debería cargar el archivo perfectamente y este programa ignorará el archivo. No es lo ideal, pero aquí todos somos hackers, ¿verdad?</value>
+  <data name="labelCopyright.Text" xml:space="preserve">
+    <value>droits d'auteur</value>
   </data>
-  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>426, 13</value>
+  <data name="labelCompanyName.Text" xml:space="preserve">
+    <value>Nom de l'entreprise</value>
   </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>Puede utilizar prácticamente cualquier archivo .ELF publicado antes de octubre de 2008.</value>
+  <data name="textBoxDescription.Text" xml:space="preserve">
+    <value>La description</value>
+  </data>
+  <data name="lblAboutCurrentLanguage.Text" xml:space="preserve">
+    <value>Langue courante:</value>
+  </data>
+  <data name="lblAboutTranslator.Text" xml:space="preserve">
+    <value>Traduit par:</value>
+  </data>
+  <data name="lblAboutProgramName.Text" xml:space="preserve">
+    <value>Gestionnaire de sauvegarde GameCube</value>
+  </data>
+  <data name="tbTranslator.Text" xml:space="preserve">
+    <value>Traduction</value>
+  </data>
+  <data name="rtbAboutGameTDB.Text" xml:space="preserve">
+    <value>GameTDB est une base de données de jeux collaborative à laquelle quiconque peut contribuer et que quiconque peut utiliser dans n'importe quel projet de jeu.
+
+Sur le site Web, vous pouvez parcourir la base de données, la télécharger et y contribuer en ajoutant des informations sur le jeu et en téléchargeant des skins.
+
+Sur votre Wii ou votre ordinateur, vous pouvez utiliser GameTDB pour effectuer les actions suivantes :
+
+- afficher des titres adaptés à votre jeu ("Wii Sports" au lieu de "SPORTS PACK FOR REVOLUTION"), sans jamais avoir à vous renommer.
+
+- affichez la pochette qui correspond à votre région.
+
+- afficher des informations complémentaires sur vos jeux (joueurs, modes en ligne, accessoires, éditeur, développeur...).
+
+- si vous avez une grande bibliothèque, vous triez à froid les jeux, par exemple, par nombre de joueurs pour regrouper rapidement vos titres multijoueurs.
+
+- recherchez des jeux GameCube et Wii, par éditeur, développeur, qui correspondent à un certain classement ou qui sont sortis une certaine année.</value>
+  </data>
+  <data name="rtbAboutThanks.Text" xml:space="preserve">
+    <value>Merci aux personnes suivantes pour les tests, la traduction et l'aide générale pendant le développement :
+
+- Valclark Junior - Tests / Expérience Utilisateur
+- Équipe Dolphin Emulator - Informations GameCube / Wii / RVZ
+-Wim
+- WIT (Wiimms ISO Tools)
+- Wii Brew
+- DDinghoya - traducteur officiel de langue coréenne
+
+En plus de toutes les personnes impliquées dans la communauté de préservation du jeu.</value>
+  </data>
+  <data name="tbThanks.Text" xml:space="preserve">
+    <value>Merci</value>
+  </data>
+  <data name="rtbAboutDonations.Text" xml:space="preserve">
+    <value>GameCube Backup Manager est un logiciel gratuit.
+
+Beaucoup d'efforts ont été et seront déployés pour le rendre aussi stable et riche en fonctionnalités que possible. Si vous le trouvez utile et que vous voulez montrer votre appréciation, n'hésitez pas à me laisser tomber un dollar ou deux. Tout argent reçu m'aidera beaucoup!
+
+Vous pouvez également envoyer des dons à laetemn@gmail.com via PayPal si le lien ci-dessus ne fonctionne pas pour vous.
+
+N'oubliez pas de m'envoyer un mail pour que je puisse vous remercier.</value>
+  </data>
+  <data name="tbDonate.Text" xml:space="preserve">
+    <value>Des dons</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Convertir ELF -&gt; DOL</value>
-  </data>
-  <data name="labelLogELFtoDOL.Text" xml:space="preserve">
-    <value>Tronco:</value>
-  </data>
-  <data name="btnCancel.Text" xml:space="preserve">
-    <value>Cancelar</value>
+    <value>À propos de...</value>
   </data>
 </root>

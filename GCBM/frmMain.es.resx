@@ -1526,4 +1526,28 @@
         AADAAwAAwAMAAMADAADAAwAAwAMAAMADAAD4HwAA
 </value>
   </data>
+  <data name="tsmiGameListDeleteAllFiles.Text" xml:space="preserve">
+    <value>Todos</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>Juegos encontrados:</value>
+  </data>
+  <data name="labelTitle.Text" xml:space="preserve">
+    <value>Título:</value>
+  </data>
+  <data name="lblTypeDisc.Text" xml:space="preserve">
+    <value>Desct...</value>
+  </data>
+  <data name="tsmiGameDiscSelectAll.Text" xml:space="preserve">
+    <value>Todos</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Título:</value>
+  </data>
+  <data name="tsmiGameListSelectAll.Text" xml:space="preserve">
+    <value>Todos</value>
+  </data>
+  <data name="tsmiGameDiscDeleteAllFiles.Text" xml:space="preserve">
+    <value>Todos</value>
+  </data>
 </root>

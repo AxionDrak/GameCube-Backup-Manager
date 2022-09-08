@@ -145,4 +145,7 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Renombrar ISO/GCM</value>
   </data>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
 </root>

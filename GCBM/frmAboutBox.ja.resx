@@ -117,29 +117,78 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnConvertELF.Text" xml:space="preserve">
-    <value>Convertir</value>
+  <data name="rtbAboutGameTDB.Text" xml:space="preserve">
+    <value>GameTDB は、誰でも貢献でき、あらゆるゲーム プロジェクトで誰でも使用できる共同ゲーム データベースです。
+
+Web サイトでは、データベースを参照してダウンロードし、ゲーム情報を追加してスキンをアップロードすることでデータベースに貢献できます。
+
+Wii またはコンピューターで、GameTDB を使用して次のことができます。
+
+- 自分の名前を変更することなく、ゲームに適したタイトルを表示します (「SPORTS PACK FOR REVOLUTION」ではなく「Wii Sports」)。
+
+- お住まいの地域に合ったカバー アートを表示します。
+
+- ゲームに関する追加情報を表示します (プレーヤー、オンライン モード、アクセサリ、発行元、開発者など)。
+
+- 大規模なライブラリがある場合は、マルチプレイヤー タイトルをすばやくグループ化するために、ゲームをプレイヤー数などでコールド ソートします。
+
+- 特定のレーティングに一致する、または特定の年にリリースされたゲームキューブおよび Wii ゲームをパブリッシャー、開発者別に検索します。</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>424, 39</value>
+  <data name="labelProductName.Text" xml:space="preserve">
+    <value>商品名</value>
   </data>
-  <data name="label4.Text" xml:space="preserve">
-    <value>Otra solución, ofrecida por Cheapo, es renombrar (no convertir) cada 'boot.elf' válido a 'boot.dol'. HBC aún debería cargar el archivo perfectamente y este programa ignorará el archivo. No es lo ideal, pero aquí todos somos hackers, ¿verdad?</value>
+  <data name="labelVersion.Text" xml:space="preserve">
+    <value>バージョン</value>
   </data>
-  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>426, 13</value>
+  <data name="labelCopyright.Text" xml:space="preserve">
+    <value>著作権</value>
   </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>Puede utilizar prácticamente cualquier archivo .ELF publicado antes de octubre de 2008.</value>
+  <data name="labelCompanyName.Text" xml:space="preserve">
+    <value>会社名</value>
+  </data>
+  <data name="textBoxDescription.Text" xml:space="preserve">
+    <value>説明</value>
+  </data>
+  <data name="lblAboutCurrentLanguage.Text" xml:space="preserve">
+    <value>現在の言語:</value>
+  </data>
+  <data name="lblAboutTranslator.Text" xml:space="preserve">
+    <value>によって翻訳された：</value>
+  </data>
+  <data name="lblAboutProgramName.Text" xml:space="preserve">
+    <value>ゲームキューブ バックアップ マネージャー</value>
+  </data>
+  <data name="tbTranslator.Text" xml:space="preserve">
+    <value>翻訳</value>
+  </data>
+  <data name="rtbAboutThanks.Text" xml:space="preserve">
+    <value>開発中のテスト、翻訳、および一般的な支援について、次の方々に感謝します。
+
+- Valclark Junior - テスト/ユーザー エクスペリエンス
+- Dolphin Emulator Team - ゲームキューブ / Wii / RVZ 情報
+- ウィーム
+- WIT (Wiimms ISO ツール)
+- Wiiブリュー
+- DDinghoya - 公式韓国語翻訳者
+
+ゲーム保存コミュニティに関わるすべての人に加えて。</value>
+  </data>
+  <data name="tbThanks.Text" xml:space="preserve">
+    <value>ありがとう</value>
+  </data>
+  <data name="rtbAboutDonations.Text" xml:space="preserve">
+    <value>GameCube Backup Manager はフリー ソフトウェアです。
+
+可能な限り安定して機能豊富にするために、多くの努力が払われてきました。お役に立ち、感謝の気持ちを表したい場合は、お気軽に 1 ドルか 2 ドルお支払いください。受け取ったお金は私を大いに助けてくれます！
+
+上記のリンクが機能しない場合は、PayPal 経由で laetemn@gmail.com に寄付を送ることもできます。
+
+お礼のメールを忘れずに送ってください。</value>
+  </data>
+  <data name="tbDonate.Text" xml:space="preserve">
+    <value>寄付</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Convertir ELF -&gt; DOL</value>
-  </data>
-  <data name="labelLogELFtoDOL.Text" xml:space="preserve">
-    <value>Tronco:</value>
-  </data>
-  <data name="btnCancel.Text" xml:space="preserve">
-    <value>Cancelar</value>
+    <value>約...</value>
   </data>
 </root>

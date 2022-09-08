@@ -117,29 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnConvertELF.Text" xml:space="preserve">
-    <value>Convertir</value>
+  <data name="tsslCurrentYear.Text" xml:space="preserve">
+    <value>著作権 © 2019 -</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>424, 39</value>
+  <data name="lblAllRightsReserved.Text" xml:space="preserve">
+    <value>全著作権所有。</value>
   </data>
-  <data name="label4.Text" xml:space="preserve">
-    <value>Otra solución, ofrecida por Cheapo, es renombrar (no convertir) cada 'boot.elf' válido a 'boot.dol'. HBC aún debería cargar el archivo perfectamente y este programa ignorará el archivo. No es lo ideal, pero aquí todos somos hackers, ¿verdad?</value>
-  </data>
-  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>426, 13</value>
-  </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>Puede utilizar prácticamente cualquier archivo .ELF publicado antes de octubre de 2008.</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Convertir ELF -&gt; DOL</value>
-  </data>
-  <data name="labelLogELFtoDOL.Text" xml:space="preserve">
-    <value>Tronco:</value>
-  </data>
-  <data name="btnCancel.Text" xml:space="preserve">
-    <value>Cancelar</value>
+  <data name="lblStartSplashScreen.Text" xml:space="preserve">
+    <value>初期化中...</value>
   </data>
 </root>

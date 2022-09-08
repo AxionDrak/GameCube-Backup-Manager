@@ -224,4 +224,10 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Transferir Cubre</value>
   </data>
+  <data name="rbEurope.Text" xml:space="preserve">
+    <value>Europa</value>
+  </data>
+  <data name="btnTaskIndeterminate.Text" xml:space="preserve">
+    <value>Transferir</value>
+  </data>
 </root>

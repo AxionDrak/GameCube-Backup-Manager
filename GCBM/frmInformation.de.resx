@@ -117,29 +117,52 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnConvertELF.Text" xml:space="preserve">
-    <value>Convertir</value>
+  <data name="label11.Text" xml:space="preserve">
+    <value>Beschreibung:</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>424, 39</value>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>Banner-Details</value>
   </data>
-  <data name="label4.Text" xml:space="preserve">
-    <value>Otra solución, ofrecida por Cheapo, es renombrar (no convertir) cada 'boot.elf' válido a 'boot.dol'. HBC aún debería cargar el archivo perfectamente y este programa ignorará el archivo. No es lo ideal, pero aquí todos somos hackers, ¿verdad?</value>
+  <data name="label10.Text" xml:space="preserve">
+    <value>Entwickler:</value>
   </data>
-  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>426, 13</value>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Region:</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Entwickler:</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>Sprache:</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Weg:</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>Apploader-Datum:</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>Name:</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Dateidetails</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Datei Format:</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
-    <value>Puede utilizar prácticamente cualquier archivo .ELF publicado antes de octubre de 2008.</value>
+    <value>Name:</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Convertir ELF -&gt; DOL</value>
+  <data name="btnClose.Text" xml:space="preserve">
+    <value>Nah dran</value>
   </data>
-  <data name="labelLogELFtoDOL.Text" xml:space="preserve">
-    <value>Tronco:</value>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Spieldetails</value>
   </data>
-  <data name="btnCancel.Text" xml:space="preserve">
-    <value>Cancelar</value>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Spiel-ID:</value>
+  </data>
+  <data name="grpDetailsSource.Text" xml:space="preserve">
+    <value>Einzelheiten</value>
   </data>
 </root>

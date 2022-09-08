@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>Proche</value>
+  </data>
+  <data name="btnApply.Text" xml:space="preserve">
+    <value>Appliquer</value>
+  </data>
+  <data name="grbGeneralTemporaryFolder.Text" xml:space="preserve">
+    <value>Dossier temporaire</value>
+  </data>
+  <data name="chkGeneralExtractNwb.Text" xml:space="preserve">
+    <value>Fichiers NWB (*.nwb)</value>
+  </data>
+  <data name="chkGeneralExtractSplitFile.Text" xml:space="preserve">
+    <value>Diviser les fichiers (*.001)</value>
+  </data>
+  <data name="chkGeneralExtractBZip2.Text" xml:space="preserve">
+    <value>Fichiers BZip2 (*.bz;*.bzip2)</value>
+  </data>
+  <data name="chkGeneralExtractRar.Text" xml:space="preserve">
+    <value>Fichiers RAR (*.rar)</value>
+  </data>
+  <data name="chkGeneralExtract7z.Text" xml:space="preserve">
+    <value>Fichiers 7Zip (*.7z;*.7zip)</value>
+  </data>
+  <data name="chkGeneralExtractZip.Text" xml:space="preserve">
+    <value>Fichiers zip (*.zip)</value>
+  </data>
+  <data name="lblGeneralExtract.Text" xml:space="preserve">
+    <value>Extraire chaque fois que nécessaire.</value>
+  </data>
+  <data name="grbGeneralFiles.Text" xml:space="preserve">
+    <value>Des dossiers</value>
+  </data>
+  <data name="cbGeneralFileSize.Items" xml:space="preserve">
+    <value>Automatique</value>
+  </data>
+  <data name="grbGeneralFileSize.Text" xml:space="preserve">
+    <value>Afficher la taille</value>
+  </data>
+  <data name="rbGeneralDiscDelete.Text" xml:space="preserve">
+    <value>Conserver uniquement le dossier du disque 1 et supprimer le dossier du disque 2 (expérimental)</value>
+  </data>
+  <data name="rbGeneralDiscClean.Text" xml:space="preserve">
+    <value>Gardez tous les dossiers séparés pour le disque 1 et le disque 2 (par défaut)</value>
+  </data>
+  <data name="grbGeneralPartitions.Text" xml:space="preserve">
+    <value>Ajuster les répertoires de jeu</value>
+  </data>
+  <data name="tabSettingsGeneral.Text" xml:space="preserve">
+    <value>Général</value>
+  </data>
+  <data name="lblCommentsScrubCopy.Text" xml:space="preserve">
+    <value>Pour la méthode Scrub, le "Titre [Code du jeu]" par défaut sera toujours utilisé, basé sur le nom interne (défini par le développeur). En mode de copie Scrub, les disques 1 et 2 seront toujours stockés dans des dossiers séparés, sauf dans des cas spécifiques, où la méthode de détection peut identifier les noms communs donnés par le développeur, auquel cas, les disques 1 et 2 seront stockés dans le même dossier .</value>
+  </data>
+  <data name="lblCommentsExactCopy.Text" xml:space="preserve">
+    <value>Le style de nommage ne fonctionne actuellement qu'avec une copie exacte des fichiers (1:1) et peut utiliser à la fois le nom interne et le nom commercial (via wiitdb.xml). Cette option peut être configurée par l'utilisateur, dans l'onglet 'Titres'. En mode copie exacte (1:1), les disques 1 et 2 seront toujours stockés dans le même dossier.</value>
+  </data>
+  <data name="lblComments.Text" xml:space="preserve">
+    <value>COMMENTAIRES:</value>
+  </data>
+  <data name="cbAdjustNamingStyle.Items" xml:space="preserve">
+    <value>Titre [Code du jeu]</value>
+  </data>
+  <data name="cbAdjustNamingStyle.Items1" xml:space="preserve">
+    <value>[Code du jeu]</value>
+  </data>
+  <data name="lblNomenclature.Text" xml:space="preserve">
+    <value>Style de nommage :</value>
+  </data>
+  <data name="grpNomenclatureFolderFormat.Text" xml:space="preserve">
+    <value>Format de dossier</value>
+  </data>
+  <data name="tabSettingsNomenclature.Text" xml:space="preserve">
+    <value>Nomenclature</value>
+  </data>
+  <data name="chkMultipleInstances.Text" xml:space="preserve">
+    <value>Autoriser l'exécution de plusieurs instances du programme</value>
+  </data>
+  <data name="chkLoadDatabase.Text" xml:space="preserve">
+    <value>Charger la base de données au démarrage du programme (augmente l'heure de démarrage du programme)</value>
+  </data>
+  <data name="chkNotify.Text" xml:space="preserve">
+    <value>Activer les notifications de la barre des tâches (les notifications par défaut continueront de s'afficher normalement)</value>
+  </data>
+  <data name="chkScreensaver.Text" xml:space="preserve">
+    <value>Désactiver l'économiseur d'écran (Screensaver)</value>
+  </data>
+  <data name="chkNetVerify.Text" xml:space="preserve">
+    <value>Vérifier la connexion Internet au démarrage du programme</value>
+  </data>
+  <data name="chkStartWindowMaximized.Text" xml:space="preserve">
+    <value>Fenêtre de démarrage agrandie</value>
+  </data>
+  <data name="chkGeneralSHA1.Text" xml:space="preserve">
+    <value>Vérifier la signature SHA-1 lors des transferts</value>
+  </data>
+  <data name="chkGeneralRecursiva.Text" xml:space="preserve">
+    <value>Rechercher les répertoires de manière récursive (uniquement pour la fenêtre "Fichiers (Source)")</value>
+  </data>
+  <data name="chkGeneralTemporaryBuffer.Text" xml:space="preserve">
+    <value>Utiliser les transferts en mémoire temporaire (buffer)</value>
+  </data>
+  <data name="chkGeneralMD5.Text" xml:space="preserve">
+    <value>Calculer la signature MD5 lors des transferts</value>
+  </data>
+  <data name="grbGeneralDiverse.Text" xml:space="preserve">
+    <value>Plusieurs</value>
+  </data>
+  <data name="tabSettingsSeveral.Text" xml:space="preserve">
+    <value>Plusieurs</value>
+  </data>
+  <data name="lblFormat.Text" xml:space="preserve">
+    <value>Format:</value>
+  </data>
+  <data name="lblAlignment.Text" xml:space="preserve">
+    <value>Alignement:</value>
+  </data>
+  <data name="cbScrubAlign.Items" xml:space="preserve">
+    <value>Automatique</value>
+  </data>
+  <data name="chkGeneralScrubFlushSD.Text" xml:space="preserve">
+    <value>Effacez les tampons de fichiers afin que la carte SD puisse être éjectée presque immédiatement</value>
+  </data>
+  <data name="grbGeneralScrub.Text" xml:space="preserve">
+    <value>Frotter</value>
+  </data>
+  <data name="label28.Text" xml:space="preserve">
+    <value>FST (FileSystem Table) est un système de fichiers extrait dans un répertoire qui contient tous les fichiers réels et virtuels d'une archive. Nintendont utilise les fichiers FST pour créer une image ISO virtuelle interne et charger le jeu à partir de cette ISO virtuelle.</value>
+  </data>
+  <data name="label31.Text" xml:space="preserve">
+    <value>Supprime les données inutiles (ordures) en les remplaçant par une valeur d'octet constante (0xff ou 0x00). Le fichier a une taille plus petite, cependant, en préservant l'intégrité des données.</value>
+  </data>
+  <data name="label20.Text" xml:space="preserve">
+    <value>Similaire à XCopy, à la différence que les données parasites (garbage) existant à l'intérieur des fichiers sont nettoyées. La taille du fichier d'origine est conservée. Les données inutiles sont supprimées tout en préservant l'intégrité des autres données.</value>
+  </data>
+  <data name="label17.Text" xml:space="preserve">
+    <value>Copie un ou plusieurs fichiers d'un emplacement (source) à un autre (destination). Le fichier n'est pas compressé, ne fait partie d'aucun conteneur et aucune donnée inutile n'est supprimée.</value>
+  </data>
+  <data name="rbTransferSystemXCopy.Text" xml:space="preserve">
+    <value>XCopy (par défaut)</value>
+  </data>
+  <data name="grbTransferSystem.Text" xml:space="preserve">
+    <value>Système de transfert à utiliser</value>
+  </data>
+  <data name="tabSettingsTransfer.Text" xml:space="preserve">
+    <value>Transfert de jeu</value>
+  </data>
+  <data name="grpTitlesCoverFolder.Text" xml:space="preserve">
+    <value>Dossier Couvertures (Cache -&gt; Origine)</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>Emplacement du dossier :</value>
+  </data>
+  <data name="tabCoverDisc.Text" xml:space="preserve">
+    <value>Disque</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Emplacement du dossier :</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>Emplacement du dossier :</value>
+  </data>
+  <data name="label35.Text" xml:space="preserve">
+    <value>Emplacement du dossier :</value>
+  </data>
+  <data name="tabCoverFull.Text" xml:space="preserve">
+    <value>Complet</value>
+  </data>
+  <data name="grbCoverTransfer.Text" xml:space="preserve">
+    <value>Configuration du chargeur USB (Transfer Covers -&gt; Destination)</value>
+  </data>
+  <data name="chkCoverRecursiveSearch.Text" xml:space="preserve">
+    <value>Utiliser la recherche de peau récursive (recherche dans toutes les régions)</value>
+  </data>
+  <data name="chkCoverEnableTransfer.Text" xml:space="preserve">
+    <value>Activer le transfert de skins entre appareils</value>
+  </data>
+  <data name="chkCoverSynchronizeDelete.Text" xml:space="preserve">
+    <value>Supprimer les skins des jeux qui ne figurent pas dans la liste</value>
+  </data>
+  <data name="grpCoversSynchronize.Text" xml:space="preserve">
+    <value>Synchroniser</value>
+  </data>
+  <data name="tabSettingsCovers.Text" xml:space="preserve">
+    <value>Couvertures</value>
+  </data>
+  <data name="cbTitleLanguage.Items" xml:space="preserve">
+    <value>Anglais</value>
+  </data>
+  <data name="cbTitleLanguage.Items1" xml:space="preserve">
+    <value>Français</value>
+  </data>
+  <data name="cbTitleLanguage.Items2" xml:space="preserve">
+    <value>Allemand</value>
+  </data>
+  <data name="cbTitleLanguage.Items3" xml:space="preserve">
+    <value>Espagnol</value>
+  </data>
+  <data name="cbTitleLanguage.Items4" xml:space="preserve">
+    <value>italien</value>
+  </data>
+  <data name="cbTitleLanguage.Items5" xml:space="preserve">
+    <value>Néerlandais</value>
+  </data>
+  <data name="cbTitleLanguage.Items6" xml:space="preserve">
+    <value>Portugais</value>
+  </data>
+  <data name="cbTitleLanguage.Items7" xml:space="preserve">
+    <value>Japonais</value>
+  </data>
+  <data name="cbTitleLanguage.Items8" xml:space="preserve">
+    <value>russe</value>
+  </data>
+  <data name="cbTitleLanguage.Items9" xml:space="preserve">
+    <value>coréen</value>
+  </data>
+  <data name="cbTitleLanguage.Items10" xml:space="preserve">
+    <value>Chinois traditionnel</value>
+  </data>
+  <data name="cbTitleLanguage.Items11" xml:space="preserve">
+    <value>Chinois simplifié</value>
+  </data>
+  <data name="grbTitleLanguage.Text" xml:space="preserve">
+    <value>Langue du titre</value>
+  </data>
+  <data name="grbTitleFileLocation.Text" xml:space="preserve">
+    <value>Emplacement du fichier</value>
+  </data>
+  <data name="rbGameXmlName.Text" xml:space="preserve">
+    <value>Utiliser le nom commercial du jeu via wiitdb.xml (RECOMMANDÉ ! - nécessite le fichier wiitdb.xml)</value>
+  </data>
+  <data name="rbGameInternalName.Text" xml:space="preserve">
+    <value>Utiliser le nom de production interne pour le jeu (75 % pris en charge)</value>
+  </data>
+  <data name="chkGameTitleCustom.Text" xml:space="preserve">
+    <value>Utiliser des titres personnalisés (custom-titles.txt)</value>
+  </data>
+  <data name="chkGameTitle.Text" xml:space="preserve">
+    <value>Utilisez GameTDB (titres.txt)</value>
+  </data>
+  <data name="grbTitleDiverse.Text" xml:space="preserve">
+    <value>Divers (redémarrage du programme nécessaire pour prendre effet)</value>
+  </data>
+  <data name="tabSettingsTitle.Text" xml:space="preserve">
+    <value>Titres</value>
+  </data>
+  <data name="grbDolphinFolder.Text" xml:space="preserve">
+    <value>Chemin d'accès à l'émulateur</value>
+  </data>
+  <data name="rbDSPHLE.Text" xml:space="preserve">
+    <value>DSP HLE (par défaut)</value>
+  </data>
+  <data name="grbDolphinAudio.Text" xml:space="preserve">
+    <value>l'audio</value>
+  </data>
+  <data name="grbDolphinVideo.Text" xml:space="preserve">
+    <value>Vidéo</value>
+  </data>
+  <data name="grbDolphin.Text" xml:space="preserve">
+    <value>Configurer l'émulateur</value>
+  </data>
+  <data name="lblTimeInterval.Text" xml:space="preserve">
+    <value>REMARQUE : Le réglage du paramètre d'intervalle de temps ne prendra effet qu'après le redémarrage du programme.</value>
+  </data>
+  <data name="cbVerificationInterval.Items" xml:space="preserve">
+    <value>5 minutes</value>
+  </data>
+  <data name="cbVerificationInterval.Items1" xml:space="preserve">
+    <value>10 minutes</value>
+  </data>
+  <data name="cbVerificationInterval.Items2" xml:space="preserve">
+    <value>15 minutes</value>
+  </data>
+  <data name="cbVerificationInterval.Items3" xml:space="preserve">
+    <value>30 minutes</value>
+  </data>
+  <data name="cbVerificationInterval.Items4" xml:space="preserve">
+    <value>1 heure</value>
+  </data>
+  <data name="cbVerificationInterval.Items5" xml:space="preserve">
+    <value>2 heures</value>
+  </data>
+  <data name="cbVerificationInterval.Items6" xml:space="preserve">
+    <value>3 heures</value>
+  </data>
+  <data name="cbVerificationInterval.Items7" xml:space="preserve">
+    <value>4 heures</value>
+  </data>
+  <data name="lblUpdateInterval.Text" xml:space="preserve">
+    <value>Intervalle de vérification :</value>
+  </data>
+  <data name="lblPass.Text" xml:space="preserve">
+    <value>Mot de passe:</value>
+  </data>
+  <data name="lblUser.Text" xml:space="preserve">
+    <value>Utilisateur:</value>
+  </data>
+  <data name="lblServerProxy.Text" xml:space="preserve">
+    <value>Serveur proxy:</value>
+  </data>
+  <data name="chkUpdateServerProxy.Text" xml:space="preserve">
+    <value>Utiliser le serveur proxy</value>
+  </data>
+  <data name="chkUpdateFileLog.Text" xml:space="preserve">
+    <value>Ajouter les mises à jour au fichier journal</value>
+  </data>
+  <data name="chkUpdateBetaChannel.Text" xml:space="preserve">
+    <value>Passer aux mises à jour de la chaîne BETA</value>
+  </data>
+  <data name="chkUpdateVerifyStart.Text" xml:space="preserve">
+    <value>Vérifier les mises à jour au démarrage</value>
+  </data>
+  <data name="grbUpdate.Text" xml:space="preserve">
+    <value>Mettre à jour les paramètres</value>
+  </data>
+  <data name="tabSettingsUpdates.Text" xml:space="preserve">
+    <value>Mises à jour</value>
+  </data>
+  <data name="lblLanguageComments.Text" xml:space="preserve">
+    <value>REMARQUE : Le réglage du paramètre de langue ne prendra effet qu'après le redémarrage du programme.</value>
+  </data>
+  <data name="lblLanguage.Text" xml:space="preserve">
+    <value>Langue:</value>
+  </data>
+  <data name="cbLanguage.Items" xml:space="preserve">
+    <value>Portugais [Brésil]</value>
+  </data>
+  <data name="cbLanguage.Items1" xml:space="preserve">
+    <value>Anglais [États-Unis]</value>
+  </data>
+  <data name="cbLanguage.Items2" xml:space="preserve">
+    <value>Espagnol [Espagne]</value>
+  </data>
+  <data name="cbLanguage.Items3" xml:space="preserve">
+    <value>coréen</value>
+  </data>
+  <data name="grbLanguage.Text" xml:space="preserve">
+    <value>Sélectionnez la langue par défaut :</value>
+  </data>
+  <data name="tabSettingsLanguage.Text" xml:space="preserve">
+    <value>Langues</value>
+  </data>
+  <data name="lblLOG.Text" xml:space="preserve">
+    <value>Niveau de journal :</value>
+  </data>
+  <data name="chkManagerLogFile.Text" xml:space="preserve">
+    <value>Enregistrer dans un fichier</value>
+  </data>
+  <data name="chkManagerLogWindow.Text" xml:space="preserve">
+    <value>Inscription pour la fenêtre</value>
+  </data>
+  <data name="chkManagerLogDebugConsole.Text" xml:space="preserve">
+    <value>Journal pour la console de débogage</value>
+  </data>
+  <data name="chkManagerLogSystemConsole.Text" xml:space="preserve">
+    <value>Enregistrement pour la console système</value>
+  </data>
+  <data name="cbLevelLog.Items" xml:space="preserve">
+    <value>Informatif</value>
+  </data>
+  <data name="cbLevelLog.Items1" xml:space="preserve">
+    <value>Résumé</value>
+  </data>
+  <data name="cbLevelLog.Items2" xml:space="preserve">
+    <value>Complet</value>
+  </data>
+  <data name="grbLog.Text" xml:space="preserve">
+    <value>Enregistrement</value>
+  </data>
+  <data name="tabSettingsLog.Text" xml:space="preserve">
+    <value>Enregistrement</value>
+  </data>
+  <data name="btnRestore.Text" xml:space="preserve">
+    <value>Restaurer les paramètres</value>
+  </data>
+  <data name="fbd.Description" xml:space="preserve">
+    <value>Créez ou sélectionnez un répertoire :</value>
+  </data>
+  <data name="ofdDolphin.Filter" xml:space="preserve">
+    <value>Émulateur Dolphin|dolphin.exe</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Réglages</value>
+  </data>
+  <data name="chkWelcome.Text" xml:space="preserve">
+    <value>Désactiver l'écran d'accueil au démarrage du programme (Splashscreen)</value>
+  </data>
+</root>
