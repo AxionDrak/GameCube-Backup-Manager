@@ -55,7 +55,7 @@ namespace GCBM
             // 
             resources.ApplyResources(this.pbSplashScreen, "pbSplashScreen");
             this.pbSplashScreen.Name = "pbSplashScreen";
-            this.pbSplashScreen.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
+            this.pbSplashScreen.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             // 
             // lblStartSplashScreen
             // 
@@ -72,6 +72,7 @@ namespace GCBM
             this.Controls.Add(this.pbSplashScreen);
             this.Controls.Add(this.lblAllRightsReserved);
             this.Controls.Add(this.tsslCurrentYear);
+            this.Cursor = System.Windows.Forms.Cursors.AppStarting;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -79,6 +80,7 @@ namespace GCBM
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmSplashScreen_FormClosing);
+            this.Load += new System.EventHandler(this.frmSplashScreen_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

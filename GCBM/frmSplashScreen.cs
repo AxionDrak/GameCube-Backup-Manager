@@ -18,8 +18,13 @@ public partial class frmSplashScreen : Form
         InitializeComponent();
 
         CurrentYear();
-        pbSplashScreen.Maximum = 100;
-        del = UpdateProgressInternal;
+        
+        Thread t = new Thread(() => Application.Run(new frmMain(new Action<string,int>((s, i) =>
+        {
+            pbSplashScreen.Invoke(new Action(() => pbSplashScreen.Value=i));
+            lblStartSplashScreen.Invoke(new Action(() => lblStartSplashScreen.Text = s));
+        }))));
+        t.Start();
     }
 
     #endregion
@@ -129,4 +134,8 @@ public partial class frmSplashScreen : Form
     private readonly ProgressDelegate del;
 
     #endregion
+
+    private void frmSplashScreen_Load(object sender, EventArgs e)
+    {
+    }
 }

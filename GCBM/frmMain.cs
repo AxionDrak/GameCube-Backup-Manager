@@ -787,6 +787,7 @@ public partial class frmMain : Form
             SCANNING = true;
             string[] filters = { "iso", "gcm" };
             var isRecursive = false;
+            this.UseWaitCursor = true;
 
             //if(dgv == dgvSource)
             if (dgvSourcetemp.RowCount == 0) EnableOptionsGameList();
@@ -834,6 +835,7 @@ public partial class frmMain : Form
             pbSource.Visible = true;
             dgvSourcetemp.Rows.Clear();
             btnAbort.Visible = true;
+            this.UseWaitCursor = false;
 
             //Loop through files
             var counter = 0;
@@ -899,6 +901,7 @@ public partial class frmMain : Form
             SCANNING = true;
             string[] filters = { "iso", "gcm" };
             var isRecursive = true;
+            this.UseWaitCursor = true;
 
             var files = GetFilesFolder(sourceFolder, filters, isRecursive).Result;
 
@@ -939,6 +942,7 @@ public partial class frmMain : Form
             pbDestination.Visible = true;
             dgvDestinationtemp.Rows.Clear();
             btnAbortDestination.Visible = true;
+            this.UseWaitCursor = false;
 
             //Loop through files
             foreach (var file in files)
@@ -1012,15 +1016,20 @@ public partial class frmMain : Form
     /// <summary>
     ///     Gets a list of all connected drives.
     /// </summary>
-    private async void GetAllDrives()
+    private async void GetAllDrives(Action<string> callback)
     {
         tscbDiscDrive.Items.Clear();
         _ = tscbDiscDrive.Items.Add(Resources.GetAllDrives_Inactive);
         tscbDiscDrive.SelectedIndex = 0;
-        foreach (var d in from sio.DriveInfo d in sio.DriveInfo.GetDrives().AsParallel()
-                          where d.IsReady
-                          select d)
+        foreach (var d in from sio.DriveInfo d in sio.DriveInfo.GetDrives()/*.AsParallel()*/
+                 where d.IsReady
+                 select d)
+        {
             _ = tscbDiscDrive.Items.Add(d.Name);
+            callback(d.Name);
+        }
+
+        callback("Finishing up");
     }
 
     #endregion
@@ -2580,7 +2589,9 @@ public partial class frmMain : Form
             if (result == DialogResult.OK)
             {
                 dgvGameListPath = fbd1.SelectedPath;
+                this.UseWaitCursor = true;
                 await DisplaySourceFilesAsync(fbd1.SelectedPath, dgvSource).ConfigureAwait(false);
+                this.UseWaitCursor = false;
                 ListIsoFile();
             }
         }
@@ -2815,13 +2826,20 @@ public partial class frmMain : Form
     /// </summary>
     private bool ABORT;
 
-    public frmMain()
+    public frmMain(Action<string,int> callback)
     {
+        this.Hide();
+
         InitializeComponent();
+        //Do Work
+        MainCore(callback);
+        FINISHEDLAUNCH = true;
+        Show();
+        Activate();
     }
     // End of Main Constructor
 
-    private void MainCore()
+    private void MainCore(Action<string,int> callback)
     {
         Hide();
         notifyIcon.Visible = true;
@@ -2834,6 +2852,7 @@ public partial class frmMain : Form
 
         //    Load += HandleFormLoad;
 
+        callback("Checking for network...",10);
         NetworkCheck();
         if (!sio.File.Exists(INI_FILE))
         {
@@ -2847,7 +2866,11 @@ public partial class frmMain : Form
 
         LoadConfigFile();
         AboutTranslator();
-        GetAllDrives();
+        callback("Populating drive list...",20);
+        int progressCheckpoint = 20;
+        GetAllDrives(new Action<string>(s => callback("Found drive: " + s,progressCheckpoint+= 5) ));
+        callback("Setting up...",progressCheckpoint);
+
         //DetectOSLanguage();
         //AdjustLanguage();
         //UpdateProgram();
@@ -2860,6 +2883,8 @@ public partial class frmMain : Form
         cbFilterDatabase.SelectedIndex = 0;
 
         //Check for WiiTDB file and internet connection, download if not found and we're online
+
+        callback("Checking for 'WiiTDB.Xml'...", 90);
         if (!sio.File.Exists(WIITDB_FILE) && NetworkInterface.GetIsNetworkAvailable())
         {
             //frmDownloadGameTDB frmDownload = new frmDownloadGameTDB();
@@ -2891,9 +2916,10 @@ public partial class frmMain : Form
 
         Thread.CurrentThread.CurrentUICulture.ClearCachedData();
         Thread.CurrentThread.CurrentCulture.ClearCachedData();
-
+        callback("Finishing up...",95);
         //foreach in this.Controls.Results 
         mstripMain.Refresh();
+        callback("Finished.",100);
         var SplashScreen = Program.SplashScreen;
         if (SplashScreen != null && !SplashScreen.Disposing && !SplashScreen.IsDisposed)
             SplashScreen.Invoke(new Action(() => SplashScreen.Close()));
@@ -2941,9 +2967,7 @@ public partial class frmMain : Form
     {
         //base.OnLoad(e);
         notifyIcon.Visible = true;
-        //Do Work
-        MainCore();
-        FINISHEDLAUNCH = true;
+
     }
 
     private void PopDgv()
@@ -3560,9 +3584,10 @@ public partial class frmMain : Form
         };
 
         myProcess.Start();
-        scrubStopwatch.Start();
         Thread.Sleep(1000);
         ShowWindow(myProcess.MainWindowHandle, 0);
+        
+        scrubStopwatch.Start();
         while (!myProcess.HasExited && !ABORT)
         {
             UpdateProgressScrub(scrubStopwatch.ElapsedMilliseconds);
@@ -3686,29 +3711,31 @@ public partial class frmMain : Form
     private void UpdateProgressScrub(long i)
     {
         //Make sure pbCopy is Continuous
-        pbCopy.Style = ProgressBarStyle.Continuous;
         lblInstallStatusGameTitle.Visible = true;
         lblInstallStatusText.Visible = true;
         lblInstallStatusPercent.Visible = true;
-        pbCopy.Visible = true;
-
-        DisableOptionsGame(dgvSource);
-
         lblInstallStatusGameTitle.Text = InstallQueue[intQueuePos].Title;
         lblInstallStatusGameIndex.Text = intQueuePos + "  /  " + InstallQueue.Count;
-        lblInstallStatusText.Text = Resources.InstallGameScrub_String2;
-        pbCopy.PerformStep();
+        pbCopy.Visible = true;
+        DisableOptionsGame(dgvSource);
         var incrementValue = Convert.ToInt32(i / 333);
         if (incrementValue >= 100)
         {
-            pbCopy.Hide();
-            lblInstallStatusPercent.Text = "This is taking a while, but we are still responding.";
+            pbCopy.Style = ProgressBarStyle.Marquee;
+            lblInstallStatusPercent.Hide();
+            lblInstallStatusText.Text = Resources.InstallGameScrub_String2 +" -- This is taking a while, but we are still responding.";
+            pbCopy.Value = pbCopy.Maximum;
         }
         else
         {
+            pbCopy.Style = ProgressBarStyle.Continuous;
+            lblInstallStatusPercent.Show();
             lblInstallStatusPercent.Text = incrementValue + "%"; //i++.ToString() + "%";
+            lblInstallStatusText.Show();
+            lblInstallStatusText.Text = Resources.InstallGameScrub_String2;
             pbCopy.Value = incrementValue;
         }
+      
     }
 
     #endregion
@@ -4447,7 +4474,7 @@ public partial class frmMain : Form
     /// <param name="e"></param>
     private void tsmiReloadDeviceDrive_Click(object sender, EventArgs e)
     {
-        GetAllDrives();
+        GetAllDrives(new Action<string>(s =>{} ));//unused callback
         dgvDestination.DataSource = null;
     }
 

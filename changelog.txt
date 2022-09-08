@@ -1,3 +1,8 @@
+### GameCube Backup Manager 2.6.0.11 (7 de setembro de 2022)
+[Melhoria] Melhoria perceptível na capacidade de resposta da interface durante as instalações do scrub.
+[Melhoria] Acelerou a varredura do diretório escolhido. Isso é especialmente aparente usando títulos de jogos internos.
+[Correção] A opção de selecionar todos os jogos e limpar todos os jogos selecionados foi corrigida.
+[Alterado] Ligeira mudança nos rótulos e terminologia ao instalar jogos.
 
 ### GameCube Backup Manager 2.6.0.10 (6 de setembro, 2022)
 

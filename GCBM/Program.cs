@@ -95,10 +95,6 @@ internal static class Program
         splashThread.SetApartmentState(ApartmentState.STA);
         splashThread.Start();
 
-        //Create and Show Main Form
-        MainForm = new frmMain();
-        MainForm.Load += MainForm_LoadCompleted;
-        Application.Run(new frmMain());
     }
 
     private static void MainForm_LoadCompleted(object sender, EventArgs e)
