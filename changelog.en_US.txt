@@ -1,6 +1,9 @@
 ### GameCube Backup Manager 2.6.0.11 (September 7, 2022)
+
+[Improved] Splash screen now informs user of program's launch progress.
 [Improved] Noticeable imrpovement in interface responsiveness during scrub installs.
 [Improved] Sped up scanning the chosen directory. This is especially apparent using internal game titles.
+[Changed] Changed the way startup is handled.
 [Fixed] The option for selecting all games and clearing all selected games has been fixed.
 [Changed] Slight change to labels and terminology when installing games.
 

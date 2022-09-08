@@ -713,13 +713,19 @@ public partial class frmMain : Form
     /// <summary>
     ///     Reloads the contents of the DataGridView Games List.
     /// </summary>
-    private async void ReloadDataGridViewGameList(DataGridView dgv)
+    private async void ReloadDataGridViewGameList(DataGridView dgv,Dictionary<int,Game> dGames)
     {
+        if (dgv == dgvSource)
+            dGames = dSourceGames;
+        else
+        {
+            dGames = dDestGames;
+        }
         if (dgv.RowCount == 0) return;
         try
         {
             if (dgv.CurrentRow == null) return;
-            Game game = (from g in dSourceGames.Values
+            Game game = (from g in dGames.Values
                 where dgv.CurrentRow.Cells["ID"].Value.ToString() == g.ID
                 select g).First();
             LoadCover(game.ID);
@@ -877,7 +883,7 @@ public partial class frmMain : Form
 
             EnableOptionsGameList();
 
-            ReloadDataGridViewGameList(dgvSourcetemp);
+            ReloadDataGridViewGameList(dgvSourcetemp,dSourceGames);
         }
 
         SCANNING = false;
@@ -950,6 +956,7 @@ public partial class frmMain : Form
             this.UseWaitCursor = false;
 
             //Loop through files
+            int counter = 0;
             foreach (var file in files)
             {
                 if (ABORT) break;
@@ -961,11 +968,12 @@ public partial class frmMain : Form
                 var _getSize = DisplayFormatFileSize(_f.Length, CONFIG_INI_FILE.IniReadInt("GENERAL", "FileSize"));
                 _ = dgvDestinationtemp.Rows.Add(false, game.Title, game.ID, game.Region,
                     _f.Extension.Substring(1, 3).Trim().ToUpper(MY_CULTURE), _getSize, _f.FullName);
-
+                dDestGames.Add(counter,game);
 
                 //Clean up Interface
                 lblDestinationCount.Text = files.Length.ToString();
                 pbDestination.Value++;
+                counter++;
                 //done with loop
                 tabMainDisc.Update(); //Force tab to redraw updated controls (progress bar, label, and grid)
                 Application.DoEvents();
@@ -973,7 +981,7 @@ public partial class frmMain : Form
 
             EnableOptionsGameList();
 
-            ReloadDataGridViewGameList(dgvDestinationtemp);
+            ReloadDataGridViewGameList(dgvDestinationtemp,dDestGames);
         }
 
         SCANNING = false;
@@ -2952,7 +2960,7 @@ public partial class frmMain : Form
         AboutTranslator();
         callback(Resources.SplashPopulatingDrives,20);
         int progressCheckpoint = 20;
-        GetAllDrives(new Action<string>(s => callback(Resources.SplashFoundDrive + s,progressCheckpoint+= 5) ));
+        GetAllDrives(new Action<string>(s => callback(Resources.SplashFoundDrive + " " + s,progressCheckpoint+= 5) ));
         //callback(Resources.SplashDirectories,progressCheckpoint);
 
         //DetectOSLanguage();
@@ -5837,12 +5845,14 @@ public partial class frmMain : Form
 
     private void dgvDestination_CurrentCellChanged(object sender, EventArgs e)
     {
-        ReloadDataGridViewGameList(dgvDestination);
+        ReloadDataGridViewGameList(dgvDestination,dDestGames);
     }
 
     private void dgvSource_CurrentCellChanged(object sender, EventArgs e)
     {
-        ReloadDataGridViewGameList(dgvSource);
+        {
+            ReloadDataGridViewGameList(dgvSource,dSourceGames);
+        }
     }
 
     private void toolStripStatusLabel1_Click(object sender, EventArgs e)
