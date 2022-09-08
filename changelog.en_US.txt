@@ -1,3 +1,11 @@
+### GameCube Backup Manager 2.6.1.0 (September 8, 2022)
+
+[Translation] 3 New languages added via Google cloud services, 
+	[Note] If you would like to contribute to improving localization or suggest the next language(s) feel free to reach out via github or elsewhere.
+[Improved] The splash screen now gives an even more meaningful explanation of the program's launch progress.
+
+
+
 ### GameCube Backup Manager 2.6.0.11 (September 7, 2022)
 
 [Improved] Splash screen now informs user of program's launch progress.
