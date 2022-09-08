@@ -25,6 +25,7 @@ public partial class frmSplashScreen : Form
             pbSplashScreen.Invoke(new Action(() => pbSplashScreen.Value=i));
             lblStartSplashScreen.Invoke(new Action(() => lblStartSplashScreen.Text = s));
         }))));
+        t.SetApartmentState(ApartmentState.STA);
         t.Start();
     }
 

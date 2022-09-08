@@ -101,6 +101,7 @@ public partial class frmDownloadGameTDB : Form
         lblDownload.Font = new Font(lblDownload.Font, FontStyle.Bold);
         lblDownload.Text = DOWNLOAD_FILE + e.ProgressPercentage + "%";
         pbGameTDB.Value = e.ProgressPercentage;
+        Application.DoEvents();
     }
 
 
