@@ -439,22 +439,26 @@ public partial class frmMain : Form
     /// </summary>
     private void EnableOptionsGameList()
     {
-        // Main Menu Game
-        btnGameInstallExactCopy.Enabled = true;
-        btnGameInstallScrub.Enabled = true;
-        tsmiReloadGameList.Enabled = true;
-        tsmiSelectGameList.Enabled = true;
-        tsmiGameListDeleteAllFiles.Enabled = true;
-        tsmiGameListDeleteSelectedFile.Enabled = true;
-        tsmiGameListHashSHA1.Enabled = true;
-        tsmiSyncDownloadAllDiscOnly3DCovers.Enabled = true;
-        tsmiSyncDownloadAllCovers.Enabled = true;
-        //tsmiLanguage.Enabled = true;
-        tsmiDownloadCoversSelectedGame.Enabled = true;
-        tsmiSyncDownloadDiscOnly3DCovers.Enabled = true;
-        tsmiGameInfo.Enabled = true;
-        tsmiTransferDeviceCovers.Enabled = true;
-        dgvSource.Enabled = true;
+        tabMainFile.Invoke(new Action(() =>
+        {
+            // Main Menu Game
+            btnGameInstallExactCopy.Enabled = true;
+            btnGameInstallScrub.Enabled = true;
+            tsmiReloadGameList.Enabled = true;
+            tsmiSelectGameList.Enabled = true;
+            tsmiGameListDeleteAllFiles.Enabled = true;
+            tsmiGameListDeleteSelectedFile.Enabled = true;
+            tsmiGameListHashSHA1.Enabled = true;
+            tsmiSyncDownloadAllDiscOnly3DCovers.Enabled = true;
+            tsmiSyncDownloadAllCovers.Enabled = true;
+            //tsmiLanguage.Enabled = true;
+            tsmiDownloadCoversSelectedGame.Enabled = true;
+            tsmiSyncDownloadDiscOnly3DCovers.Enabled = true;
+            tsmiGameInfo.Enabled = true;
+            tsmiTransferDeviceCovers.Enabled = true;
+            dgvSource.Enabled = true;    
+        }));
+        
     }
 
     #endregion
@@ -3882,21 +3886,31 @@ public partial class frmMain : Form
 
     private void UpdateProgressExact(int x)
     {
-        dgvSource.Enabled = false;
-        pbCopy.Visible = true;
-        lblInstallStatusGameTitle.Visible = true;
-        lblInstallStatusPercent.Visible = true;
-        lblInstallStatusText.Visible = true;
-        pbCopy.Value = x;
-        lblInstallStatusGameTitle.Text = tbIDName.Text;
-        lblInstallStatusText.Text = Resources.CopyTask_String1;
-        lblInstallStatusPercent.Text = x + "%";
-        tabMainFile.Update();
+        tabMainFile.BeginInvoke(new Action(() =>
+        {
+            dgvSource.Enabled = false;
+            pbCopy.Visible = true;
+            lblInstallStatusGameTitle.Visible = true;
+            lblInstallStatusPercent.Visible = true;
+            lblInstallStatusText.Visible = true;
+            pbCopy.BeginInvoke(new Action(() =>
+            {
+                pbCopy.Value = x;
+            }));
+            lblInstallStatusGameTitle.Text = tbIDName.Text;
+            lblInstallStatusText.Text = Resources.CopyTask_String1;
+            lblInstallStatusPercent.Text = x + "%";
+            tabMainFile.Update();
+        }));
+        
     }
 
 
     private void FinishedInstalling()
     {
+        
+        tabMainFile.BeginInvoke(new Action(() =>
+        {
         pbCopy.Value = 100;
         lblInstallStatusGameTitle.Text = Resources.CopyTask_String3;
         lblInstallStatusText.Text = Resources.CopyTask_String4;
@@ -3910,6 +3924,8 @@ public partial class frmMain : Form
         lblInstallStatusText.Visible = false;
         intQueuePos++;
         WORKING = false;
+        }));
+
     }
 
     #endregion
@@ -5571,12 +5587,10 @@ public partial class frmMain : Form
                     GlobalNotifications(ex.Message, ToolTipIcon.Error);
                 }
         }
-
-        if (intQueuePos + 1 != InstallQueue.Count) return;
-
-        GlobalNotifications("Successfully installed " + InstallQueue.Count + " games.", ToolTipIcon.Info);
-        btnAbort.Visible = false;
-        EnableOptionsGameList();
+        else
+        {
+            FinishedInstalling();
+        }
     }
 
     #endregion
@@ -5717,14 +5731,13 @@ public partial class frmMain : Form
                     lblInstallStatusPercent.Visible = true;
                     lblInstallStatusText.Visible = true;
                     pbCopy.Value = x;
-                    lblInstallStatusGameTitle.Text = Resources.CopyTask_String1;
-                    lblInstallStatusText.Text = Resources.CopyTask_String2 + tbIDName.Text;
+                    lblInstallStatusGameTitle.Text = InstallQueue[intQueuePos].Title;
+                    lblInstallStatusText.Text = Resources.CopyTask_String2 ;
                     lblInstallStatusPercent.Text = x + "%";
                 })));
             }).GetAwaiter().OnCompleted(() => pbCopy.BeginInvoke(new Action(() =>
             {
                 pbCopy.Value = 100;
-                lblInstallStatusGameTitle.Text = Resources.CopyTask_String6;
                 lblInstallStatusText.Text = Resources.CopyTask_String4;
                 lblInstallStatusPercent.Text = Resources.CopyTask_String5;
                 GlobalNotifications(Resources.InstallGameScrub_String6, ToolTipIcon.Info);
