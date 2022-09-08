@@ -1,8 +1,8 @@
-﻿using System;
+﻿using GCBM.Properties;
+using System;
 using System.Diagnostics;
 using System.IO;
 using System.Windows.Forms;
-using GCBM.Properties;
 
 namespace GCBM.tools;
 
@@ -55,31 +55,29 @@ public partial class frmConvertELFtoDOL : Form
 
         //MessageBox.Show(startInfo.FileName.ToString() + startInfo.Arguments.ToString());
 
-        using (var myProcess = Process.Start(startInfo))
+        using var myProcess = Process.Start(startInfo);
+        do
         {
-            do
+            if (!myProcess.HasExited)
             {
-                if (!myProcess.HasExited)
-                {
-                    // Refresh the current process property values.
-                    myProcess.Refresh();
-                    // Display current process statistics.
-                    textBoxLogELFtoDOL.AppendText("ELF->DOL");
-                    textBoxLogELFtoDOL.AppendText(Environment.NewLine + "---------------" + Environment.NewLine +
-                                                  Environment.NewLine);
+                // Refresh the current process property values.
+                myProcess.Refresh();
+                // Display current process statistics.
+                textBoxLogELFtoDOL.AppendText("ELF->DOL");
+                textBoxLogELFtoDOL.AppendText(Environment.NewLine + "---------------" + Environment.NewLine +
+                                              Environment.NewLine);
 
-                    if (myProcess.Responding)
-                        textBoxLogELFtoDOL.AppendText(Resources.ConvertElfDol_String1 + Environment.NewLine);
-                    else
-                        textBoxLogELFtoDOL.AppendText(Resources.ConvertElfDol_String2 + Environment.NewLine);
-                }
-            } while (!myProcess.WaitForExit(1000));
+                if (myProcess.Responding)
+                    textBoxLogELFtoDOL.AppendText(Resources.ConvertElfDol_String1 + Environment.NewLine);
+                else
+                    textBoxLogELFtoDOL.AppendText(Resources.ConvertElfDol_String2 + Environment.NewLine);
+            }
+        } while (!myProcess.WaitForExit(1000));
 
-            var _StatusExit = myProcess.ExitCode;
-            if (_StatusExit == 0) textBoxLogELFtoDOL.AppendText(Resources.ConvertElfDol_String3 + Environment.NewLine);
+        var _StatusExit = myProcess.ExitCode;
+        if (_StatusExit == 0) textBoxLogELFtoDOL.AppendText(Resources.ConvertElfDol_String3 + Environment.NewLine);
 
-            if (_StatusExit == 1) textBoxLogELFtoDOL.AppendText(Resources.ConvertElfDol_String4 + Environment.NewLine);
-        }
+        if (_StatusExit == 1) textBoxLogELFtoDOL.AppendText(Resources.ConvertElfDol_String4 + Environment.NewLine);
     }
 
     private void btnCancel_Click(object sender, EventArgs e)

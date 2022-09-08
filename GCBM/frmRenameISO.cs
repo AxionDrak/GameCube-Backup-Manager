@@ -21,15 +21,13 @@ public partial class frmRenameISO : Form
         {
             if (File.Exists(NEW_NAME))
             {
-                var newFilename = ret;
-
-                if (!string.IsNullOrEmpty(newFilename))
+                if (!string.IsNullOrEmpty(ret))
                 {
                     //File.Move(_oldName + Path.DirectorySeparatorChar + _newName, _oldName + Path.DirectorySeparatorChar + newFilename);
-                    File.Move(NEW_NAME, _directoryName + Path.DirectorySeparatorChar + newFilename);
-                    if (File.Exists(_directoryName + Path.DirectorySeparatorChar + newFilename))
+                    File.Move(NEW_NAME, _directoryName + Path.DirectorySeparatorChar + ret);
+                    if (File.Exists(_directoryName + Path.DirectorySeparatorChar + ret))
                     {
-                        ConfirmRename(newFilename);
+                        ConfirmRename(ret);
 
                         DialogResult = DialogResult.OK;
                         RETURN_CONFIRM = 1;

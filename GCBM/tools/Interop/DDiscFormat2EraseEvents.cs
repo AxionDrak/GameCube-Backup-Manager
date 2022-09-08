@@ -14,6 +14,6 @@ public interface DDiscFormat2EraseEvents
     // Update to current progress
     [DispId(0x200)] // DISPID_IDISCFORMAT2ERASEEVENTS_UPDATE 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    void Update([In] [MarshalAs(UnmanagedType.IDispatch)] object sender, [In] int elapsedSeconds,
+    void Update([In][MarshalAs(UnmanagedType.IDispatch)] object sender, [In] int elapsedSeconds,
         [In] int estimatedTotalSeconds);
 }

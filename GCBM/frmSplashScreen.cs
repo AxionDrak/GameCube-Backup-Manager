@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Diagnostics;
-using System.Globalization;
-using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -14,18 +12,19 @@ public partial class frmSplashScreen : Form
     public frmSplashScreen()
     {
         var configIniFile = new IniFile("config.ini");
-        Program.AdjustLanguage();
+        Program.AdjustLanguage(Thread.CurrentThread);
 
         InitializeComponent();
 
         CurrentYear();
-        
-        Thread t = new Thread(() => Application.Run(new frmMain(new Action<string,int>((s, i) =>
+
+        Thread t = new Thread(() => Application.Run(new frmMain(new Action<string, int>((s, i) =>
         {
-            pbSplashScreen.Invoke(new Action(() => pbSplashScreen.Value=i));
+            pbSplashScreen.Invoke(new Action(() => pbSplashScreen.Value = i));
             lblStartSplashScreen.Invoke(new Action(() => lblStartSplashScreen.Text = s));
         }))));
         t.SetApartmentState(ApartmentState.STA);
+        Program.AdjustLanguage(t);
         t.Start();
     }
 

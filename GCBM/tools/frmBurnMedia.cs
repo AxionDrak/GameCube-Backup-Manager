@@ -1,4 +1,6 @@
-﻿using System;
+﻿using GCBM.tools.Interop;
+using GCBM.tools.MediaItem;
+using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.IO;
@@ -6,8 +8,6 @@ using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Windows.Forms;
-using GCBM.tools.Interop;
-using GCBM.tools.MediaItem;
 
 namespace GCBM.tools;
 
@@ -625,7 +625,7 @@ public partial class frmBurnMedia : Form
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="progress"></param>
-    private void discFormatData_Update([In] [MarshalAs(UnmanagedType.IDispatch)] object sender,
+    private void discFormatData_Update([In][MarshalAs(UnmanagedType.IDispatch)] object sender,
         [In] [MarshalAs(UnmanagedType.IDispatch)]
         object progress)
     {
@@ -853,8 +853,8 @@ public partial class frmBurnMedia : Form
     /// <param name="currentFile"></param>
     /// <param name="copiedSectors"></param>
     /// <param name="totalSectors"></param>
-    private void fileSystemImage_Update([In] [MarshalAs(UnmanagedType.IDispatch)] object sender,
-        [In] [MarshalAs(UnmanagedType.BStr)] string currentFile, [In] int copiedSectors, [In] int totalSectors)
+    private void fileSystemImage_Update([In][MarshalAs(UnmanagedType.IDispatch)] object sender,
+        [In][MarshalAs(UnmanagedType.BStr)] string currentFile, [In] int copiedSectors, [In] int totalSectors)
     {
         var percentProgress = 0;
         if (copiedSectors > 0 && totalSectors > 0) percentProgress = copiedSectors * 100 / totalSectors;
@@ -1087,7 +1087,7 @@ public partial class frmBurnMedia : Form
     /// <param name="sender"></param>
     /// <param name="elapsedSeconds"></param>
     /// <param name="estimatedTotalSeconds"></param>
-    private void discFormatErase_Update([In] [MarshalAs(UnmanagedType.IDispatch)] object sender, int elapsedSeconds,
+    private void discFormatErase_Update([In][MarshalAs(UnmanagedType.IDispatch)] object sender, int elapsedSeconds,
         int estimatedTotalSeconds)
     {
         var percent = elapsedSeconds * 100 / estimatedTotalSeconds;

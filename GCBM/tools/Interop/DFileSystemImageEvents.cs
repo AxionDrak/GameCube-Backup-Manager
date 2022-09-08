@@ -14,6 +14,6 @@ public interface DFileSystemImageEvents
     // Update to current progress
     [DispId(0x100)] // DISPID_DFILESYSTEMIMAGEEVENTS_UPDATE 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    void Update([In] [MarshalAs(UnmanagedType.IDispatch)] object sender, string currentFile, [In] int copiedSectors,
+    void Update([In][MarshalAs(UnmanagedType.IDispatch)] object sender, string currentFile, [In] int copiedSectors,
         [In] int totalSectors);
 }

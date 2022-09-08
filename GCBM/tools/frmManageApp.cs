@@ -32,18 +32,18 @@ public partial class frmManageApp : Form
         var curFile = Path.DirectorySeparatorChar + "boot.elf";
 
         foreach (var dir in Directory.GetDirectories(folder, "*", SearchOption.TopDirectoryOnly))
-        foreach (var file in Directory.GetFiles(dir, "*", SearchOption.TopDirectoryOnly))
-            if (File.Exists(dir + curFile))
-                try
-                {
-                    File.Move(file, file.Replace("boot.elf", "boot.dol"));
-                }
-                catch (FileNotFoundException ex)
-                {
-                    GlobalNotifications(ex.Message);
-                }
-            else
-                DisplayFilesFolder(folder, dgvAppList);
+            foreach (var file in Directory.GetFiles(dir, "*", SearchOption.TopDirectoryOnly))
+                if (File.Exists(dir + curFile))
+                    try
+                    {
+                        File.Move(file, file.Replace("boot.elf", "boot.dol"));
+                    }
+                    catch (FileNotFoundException ex)
+                    {
+                        GlobalNotifications(ex.Message);
+                    }
+                else
+                    DisplayFilesFolder(folder, dgvAppList);
     }
 
     #endregion
@@ -134,13 +134,10 @@ public partial class frmManageApp : Form
             _ = _table.Columns.Add("Tamanho");
             _ = _table.Columns.Add("Caminho do Arquivo");
 
-            FileInfo _fileXML = null;
-            FileInfo _fileDOL = null;
-
             for (var i = 0; i < filesDOL.Length; i++)
             {
-                _fileXML = new FileInfo(filesXML[i]);
-                _fileDOL = new FileInfo(filesDOL[i]);
+                var _fileXML = new FileInfo(filesXML[i]);
+                var _fileDOL = new FileInfo(filesDOL[i]);
 
                 xmlDoc.Load(_fileXML.FullName);
                 var xnList = xmlDoc.GetElementsByTagName("app");

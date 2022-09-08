@@ -10,7 +10,7 @@ public interface DFileSystemImageImportEvents
 {
     [DispId(0x101)] // DISPID_DFILESYSTEMIMAGEIMPORTEVENTS_UPDATEIMPORT 
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    void UpdateImport([In] [MarshalAs(UnmanagedType.IDispatch)] object sender, FsiFileSystems fileSystem,
+    void UpdateImport([In][MarshalAs(UnmanagedType.IDispatch)] object sender, FsiFileSystems fileSystem,
         string currentItem, int importedDirectoryItems, int totalDirectoryItems, int importedFileItems,
         int totalFileItems);
 }

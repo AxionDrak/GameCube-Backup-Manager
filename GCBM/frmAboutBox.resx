@@ -1015,4 +1015,7 @@ Não se esqueça de me enviar um e-mail para que eu possa agradecer.</value>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="Game_GenerateTreeView_GenerateTreeView___error__dir2dir_not_found" xml:space="preserve">
+	  <value>GenerateTreeView() error: dir2dir not found</value>
+  </data>
 </root>

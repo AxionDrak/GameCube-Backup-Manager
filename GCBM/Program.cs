@@ -1,11 +1,11 @@
-﻿using System;
+﻿using GCBM.Properties;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.Threading;
 using System.Windows.Forms;
-using GCBM.Properties;
 
 namespace GCBM;
 
@@ -104,57 +104,51 @@ internal static class Program
             configIniFile.IniWriteInt("LANGUAGE", "ConfigLanguage", 1); //en-US
     }
 
-    public static void AdjustLanguage()
+    public static void AdjustLanguage(Thread t)
     {
-
-        var configIniFile = new IniFile("config.ini");
-        //Get current system Locale -- Thread.CurrentThread.CurrentUICulture.Name
-        if (configIniFile.IniReadBool("SEVERAL", "LaunchedOnce"))
+        while (true)
         {
-            switch (configIniFile.IniReadInt("LANGUAGE", "ConfigLanguage"))
+            var configIniFile = new IniFile("config.ini");
+            //Get current system Locale -- Thread.CurrentThread.CurrentUICulture.Name
+            if (configIniFile.IniReadBool("SEVERAL", "LaunchedOnce"))
             {
-                case 0:
-                    CultureInfo.CurrentUICulture = new CultureInfo("pt-BR");
-                    break;
-                case 1:
-                    CultureInfo.CurrentUICulture = new CultureInfo("en-US");
-                    break;
-                case 2:
-                    CultureInfo.CurrentUICulture = new CultureInfo("es");
-                    break;
-                case 3:
-                    CultureInfo.CurrentUICulture = new CultureInfo("ko");
-                    break;
-                case 4:
-                    CultureInfo.CurrentCulture = new CultureInfo("fr");
-                    break;
-                case 5:
-                    CultureInfo.CurrentCulture = new CultureInfo("de");
-                    break;
-                case 6:
-                    CultureInfo.CurrentCulture = new CultureInfo("ja");
-                    break;
-                default:
-                    CultureInfo.CurrentCulture = new CultureInfo("en-US");
-                    break;
+                switch (configIniFile.IniReadInt("LANGUAGE", "ConfigLanguage"))
+                {
+                    case 0:
+                        t.CurrentUICulture = new CultureInfo("pt-BR");
+                        break;
+                    case 1:
+                        t.CurrentUICulture = new CultureInfo("en-US");
+                        break;
+                    case 2:
+                        t.CurrentUICulture = new CultureInfo("es");
+                        break;
+                    case 3:
+                        t.CurrentUICulture = new CultureInfo("ko");
+                        break;
+                    case 4:
+                        t.CurrentUICulture = new CultureInfo("fr");
+                        break;
+                    case 5:
+                        t.CurrentUICulture = new CultureInfo("de");
+                        break;
+                    case 6:
+                        t.CurrentUICulture = new CultureInfo("ja");
+                        break;
+                    default:
+                        t.CurrentUICulture = new CultureInfo("en-US");
+                        break;
+                }
             }
-        }
-        else
-        {
-            #region Adjust Language
-
-            var sysLocale = CultureInfo.CurrentCulture;
-            //  See if we have that translation
-            var isTranslated = Translations.ContainsKey(sysLocale.ToString());
-            if (isTranslated)
+            else
             {
-                Thread.CurrentThread.CurrentUICulture = new CultureInfo(sysLocale.ToString());
-                CultureInfo.CurrentUICulture = new CultureInfo(sysLocale.ToString());
+                DetectOSLanguage();
             }
 
-            #endregion
+            break;
         }
     }
+
     #endregion
     private static void Start()
     {

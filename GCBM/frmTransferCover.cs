@@ -150,11 +150,10 @@ public partial class frmTransferCover : Form
                 var _files = Directory.GetFiles(CONFIG_INI_FILE.IniReadString("COVERS", "CoverDirectoryCache", "") +
                                                 Path.DirectorySeparatorChar + REGION_GAME +
                                                 Path.DirectorySeparatorChar + "3d");
-                var _destFiles = "";
 
                 foreach (var source in _files)
                 {
-                    _destFiles = Path.GetFileName(source);
+                    var _destFiles = Path.GetFileName(source);
                     File.Copy(source, _target3DCovers + Path.DirectorySeparatorChar + _destFiles, true);
                 }
             }
@@ -169,11 +168,10 @@ public partial class frmTransferCover : Form
                 var _files = Directory.GetFiles(CONFIG_INI_FILE.IniReadString("COVERS", "CoverDirectoryCache", "") +
                                                 Path.DirectorySeparatorChar + REGION_GAME +
                                                 Path.DirectorySeparatorChar + "full");
-                var _destFiles = "";
 
                 foreach (var source in _files)
                 {
-                    _destFiles = Path.GetFileName(source);
+                    var _destFiles = Path.GetFileName(source);
                     File.Copy(source, _targetBoxCovers + Path.DirectorySeparatorChar + _destFiles, true);
                 }
             }
@@ -217,11 +215,10 @@ public partial class frmTransferCover : Form
                 var _files = Directory.GetFiles(CONFIG_INI_FILE.IniReadString("COVERS", "CoverDirectoryCache", "") +
                                                 Path.DirectorySeparatorChar + REGION_GAME +
                                                 Path.DirectorySeparatorChar + "disc");
-                var _destFiles = "";
 
                 foreach (var source in _files)
                 {
-                    _destFiles = Path.GetFileName(source);
+                    var _destFiles = Path.GetFileName(source);
                     File.Copy(source, _targetDisc + Path.DirectorySeparatorChar + _destFiles, true);
                 }
             }
@@ -236,11 +233,10 @@ public partial class frmTransferCover : Form
                 var _files = Directory.GetFiles(CONFIG_INI_FILE.IniReadString("COVERS", "CoverDirectoryCache", "") +
                                                 Path.DirectorySeparatorChar + REGION_GAME +
                                                 Path.DirectorySeparatorChar + "2d");
-                var _destFiles = "";
 
                 foreach (var source in _files)
                 {
-                    _destFiles = Path.GetFileName(source);
+                    var _destFiles = Path.GetFileName(source);
                     File.Copy(source, _target2D + Path.DirectorySeparatorChar + _destFiles, true);
                 }
             }
@@ -255,11 +251,10 @@ public partial class frmTransferCover : Form
                 var _files = Directory.GetFiles(CONFIG_INI_FILE.IniReadString("COVERS", "CoverDirectoryCache", "") +
                                                 Path.DirectorySeparatorChar + REGION_GAME +
                                                 Path.DirectorySeparatorChar + "3d");
-                var _destFiles = "";
 
                 foreach (var source in _files)
                 {
-                    _destFiles = Path.GetFileName(source);
+                    var _destFiles = Path.GetFileName(source);
                     File.Copy(source, _target3D + Path.DirectorySeparatorChar + _destFiles, true);
                 }
             }
@@ -274,11 +269,10 @@ public partial class frmTransferCover : Form
                 var _files = Directory.GetFiles(CONFIG_INI_FILE.IniReadString("COVERS", "CoverDirectoryCache", "") +
                                                 Path.DirectorySeparatorChar + REGION_GAME +
                                                 Path.DirectorySeparatorChar + "full");
-                var _destFiles = "";
 
                 foreach (var source in _files)
                 {
-                    _destFiles = Path.GetFileName(source);
+                    var _destFiles = Path.GetFileName(source);
                     File.Copy(source, _targetFull + Path.DirectorySeparatorChar + _destFiles, true);
                 }
             }
@@ -295,11 +289,10 @@ public partial class frmTransferCover : Form
                 var _files = Directory.GetFiles(CONFIG_INI_FILE.IniReadString("COVERS", "CoverDirectoryCache", "") +
                                                 Path.DirectorySeparatorChar + REGION_GAME +
                                                 Path.DirectorySeparatorChar + "3d");
-                var _destFiles = "";
 
                 foreach (var source in _files)
                 {
-                    _destFiles = Path.GetFileName(source);
+                    var _destFiles = Path.GetFileName(source);
                     File.Copy(source, _target3DCovers + Path.DirectorySeparatorChar + _destFiles, true);
                 }
             }
@@ -314,11 +307,10 @@ public partial class frmTransferCover : Form
                 var _files = Directory.GetFiles(CONFIG_INI_FILE.IniReadString("COVERS", "CoverDirectoryCache", "") +
                                                 Path.DirectorySeparatorChar + REGION_GAME +
                                                 Path.DirectorySeparatorChar + "full");
-                var _destFiles = "";
 
                 foreach (var source in _files)
                 {
-                    _destFiles = Path.GetFileName(source);
+                    var _destFiles = Path.GetFileName(source);
                     File.Copy(source, _targetBoxCovers + Path.DirectorySeparatorChar + _destFiles, true);
                 }
             }

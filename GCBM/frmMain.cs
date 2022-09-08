@@ -1,5 +1,8 @@
 #region Using
 
+using AutoUpdaterDotNET;
+using GCBM.Properties;
+using GCBM.tools;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,9 +21,6 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
-using AutoUpdaterDotNET;
-using GCBM.Properties;
-using GCBM.tools;
 using static System.Threading.Tasks.Task;
 using sio = System.IO;
 using ste = System.Text.Encoding;
@@ -478,49 +478,50 @@ public partial class frmMain : Form
         if (sio.File.Exists(WIITDB_FILE))
             if (CONFIG_INI_FILE.IniReadBool("SEVERAL", "LoadDatabase"))
                 // PERFECT - DO NOT CHANGE!!!
-                try
-                {
-                    lvDatabase.View = View.Details;
-                    lvDatabase.GridLines = true;
-                    lvDatabase.FullRowSelect = true;
-                    _ = lvDatabase.Columns.Add(Resources.LoadDatabase_IDGameCode, 70);
-                    _ = lvDatabase.Columns.Add(Resources.LoadDatabase_GameTitle, 210);
-                    _ = lvDatabase.Columns.Add(Resources.LoadDatabase_Region, 70);
-                    _ = lvDatabase.Columns.Add(Resources.LoadDatabase_Type, 80);
-                    _ = lvDatabase.Columns.Add(Resources.LoadDatabase_Developer, 200);
-                    _ = lvDatabase.Columns.Add(Resources.LoadDatabase_Editor, 200);
-
-                    using (var ds = new DataSet())
+                    tabMainDatabase.BeginInvoke(new Action(() =>
                     {
-                        ListViewItem itemXml;
-                        _ = ds.ReadXml(WIITDB_FILE);
-
-                        foreach (DataRow dr in ds.Tables["game"].Rows)
+                        try
                         {
-                            itemXml = new ListViewItem(new[]
-                            {
-                                dr["id"].ToString(),
-                                dr["name"].ToString(),
-                                dr["region"].ToString(),
-                                dr["type"].ToString(),
-                                dr["developer"].ToString(),
-                                dr["publisher"].ToString()
-                            });
+                            lvDatabase.View = View.Details;
+                            lvDatabase.GridLines = true;
+                            lvDatabase.FullRowSelect = true;
+                            _ = lvDatabase.Columns.Add(Resources.LoadDatabase_IDGameCode, 70);
+                            _ = lvDatabase.Columns.Add(Resources.LoadDatabase_GameTitle, 210);
+                            _ = lvDatabase.Columns.Add(Resources.LoadDatabase_Region, 70);
+                            _ = lvDatabase.Columns.Add(Resources.LoadDatabase_Type, 80);
+                            _ = lvDatabase.Columns.Add(Resources.LoadDatabase_Developer, 200);
+                            _ = lvDatabase.Columns.Add(Resources.LoadDatabase_Editor, 200);
 
-                            _ = lvDatabase.Items.Add(itemXml);
+                            using var ds = new DataSet();
+                            _ = ds.ReadXml(WIITDB_FILE);
+
+                            foreach (DataRow dr in ds.Tables["game"].Rows)
+                            {
+                                var itemXml = new ListViewItem(new[]
+                                {
+                                    dr["id"].ToString(),
+                                    dr["name"].ToString(),
+                                    dr["region"].ToString(),
+                                    dr["type"].ToString(),
+                                    dr["developer"].ToString(),
+                                    dr["publisher"].ToString()
+                                });
+
+                                _ = lvDatabase.Items.Add(itemXml);
+                            }
+
+                            foreach (DataRow dr in ds.Tables["WiiTDB"].Rows) lblDatabaseTotal.Text = dr["games"] + " Total";
+
+                            ds.Dispose();
+                            ds.Clear();
+                        }
+                        catch (Exception ex)
+                        {
+                            //CheckWiiTdbXml();
+                            GlobalNotifications(ex.Message, ToolTipIcon.Error);
                         }
 
-                        foreach (DataRow dr in ds.Tables["WiiTDB"].Rows) lblDatabaseTotal.Text = dr["games"] + " Total";
-
-                        ds.Dispose();
-                        ds.Clear();
-                    }
-                }
-                catch (Exception ex)
-                {
-                    //CheckWiiTdbXml();
-                    GlobalNotifications(ex.Message, ToolTipIcon.Error);
-                }
+                    }));
 
         Monitor.Exit(lvDatabase);
     }
@@ -657,6 +658,14 @@ public partial class frmMain : Form
     /// <summary>
     ///     Reloads the contents of the DataGridView Games List.
     /// </summary>
+    private void ReloadDataGridViewGameList(DataGridView dgv)
+    {
+        ReloadDataGridViewGameList(dgv, null);
+    }
+
+    /// <summary>
+    ///     Reloads the contents of the DataGridView Games List.
+    /// </summary>
     private async void ReloadDataGridViewGameList(DataGridView dgv, Dictionary<int, Game> dGames)
     {
         if (dgv == dgvSource)
@@ -733,7 +742,7 @@ public partial class frmMain : Form
         dSourceGames.Clear();
         pbSource.Value = 0;
         //Check for an empty string first, and return a completed task if it is
-        if (sourceFolder != string.Empty && sourceFolder != "" && sourceFolder != null)
+        if (sourceFolder != string.Empty && !string.IsNullOrEmpty(sourceFolder))
         {
             //Store the passed dgv locally to prevent errors
             var dgvSourcetemp = dgv;
@@ -741,7 +750,7 @@ public partial class frmMain : Form
             ABORT = false;
             SCANNING = true;
             string[] filters = { "iso", "gcm" };
-            var isRecursive = false;
+            var isRecursive = true;
             this.UseWaitCursor = true;
 
             //if(dgv == dgvSource)
@@ -770,10 +779,9 @@ public partial class frmMain : Form
                 .Select(arq => sio.Path.GetExtension(arq).TrimStart('.').ToLower(MY_CULTURE)).GroupBy(x => x,
                     (ext, extCnt) =>
                         new { _fileExtension = ext, Counter = extCnt.Count() });
-            var filesGroupedByExtension = enumerable;
 
             // Scroll through the result and display the values.
-            foreach (var _files in filesGroupedByExtension)
+            foreach (var _files in enumerable)
             {
                 tbLog.AppendText("[" + DateString() + "]" + Resources.DisplayFilesSelected_Found_String1 +
                                  _files.Counter +
@@ -794,9 +802,8 @@ public partial class frmMain : Form
 
             //Loop through files
             var counter = 0;
-            for (var i = 0; i < files.Length; i++)
+            foreach (var file in files)
             {
-                var file = files[i];
                 if (ABORT) break;
 
                 var game = new Game();
@@ -877,10 +884,9 @@ public partial class frmMain : Form
                 .Select(arq => sio.Path.GetExtension(arq).TrimStart('.').ToLower(MY_CULTURE)).GroupBy(x => x,
                     (ext, extCnt) =>
                         new { _fileExtension = ext, Counter = extCnt.Count() });
-            var filesGroupedByExtension = enumerable;
 
             // Scroll through the result and display the values.
-            foreach (var _files in filesGroupedByExtension)
+            foreach (var _files in enumerable)
             {
                 tbLog.AppendText("[" + DateString() + "]" + Resources.DisplayFilesSelected_Found_String1 +
                                  _files.Counter +
@@ -1085,7 +1091,6 @@ public partial class frmMain : Form
     /// <returns></returns>
     public static string BytesToGB(long bytes)
     {
-        string result;
         double _bytes = bytes;
         var array_fs = new string[5] { "B", "KB", "MB", "GB", "TB" };
         var num2_fs = 0;
@@ -1096,7 +1101,7 @@ public partial class frmMain : Form
             _bytes /= 1024.0;
         }
 
-        result = $"{_bytes:0.##} {array_fs[num2_fs]}";
+        var result = $"{_bytes:0.##} {array_fs[num2_fs]}";
 
         return result;
     }
@@ -2072,28 +2077,28 @@ public partial class frmMain : Form
 
                 //SHA-1
                 if (algorithm == "SHA-1")
-                    using (var sha1Hash = SHA1.Create())
-                    {
-                        var hash = GetHash(sha1Hash, source);
+                {
+                    using var sha1Hash = SHA1.Create();
+                    var hash = GetHash(sha1Hash, source);
 
-                        if (VerifyHash(sha1Hash, source, hash))
-                            ListHash("SHA-1", hash);
-                        else
-                            tbLog.AppendText("[" + DateString() + "]" + Resources.HashesAreNotSame +
-                                             Environment.NewLine);
-                    }
+                    if (VerifyHash(sha1Hash, source, hash))
+                        ListHash("SHA-1", hash);
+                    else
+                        tbLog.AppendText("[" + DateString() + "]" + Resources.HashesAreNotSame +
+                                         Environment.NewLine);
+                }
                 else if (algorithm == "MD5")
-                    //MD5
-                    using (var md5Hash = MD5.Create())
-                    {
-                        var hash = GetHash(md5Hash, source);
+                //MD5
+                {
+                    using var md5Hash = MD5.Create();
+                    var hash = GetHash(md5Hash, source);
 
-                        if (VerifyHash(md5Hash, source, hash))
-                            ListHash("MD5", hash);
-                        else
-                            tbLog.AppendText("[" + DateString() + "]" + Resources.HashesAreNotSame +
-                                             Environment.NewLine);
-                    }
+                    if (VerifyHash(md5Hash, source, hash))
+                        ListHash("MD5", hash);
+                    else
+                        tbLog.AppendText("[" + DateString() + "]" + Resources.HashesAreNotSame +
+                                         Environment.NewLine);
+                }
             }
             catch (Exception ex)
             {
@@ -2302,7 +2307,7 @@ public partial class frmMain : Form
             try
             {
                 var allDrives = sio.DriveInfo.GetDrives();
-                var d = allDrives.Where(a => a.Name == tscbDiscDrive.Text).First();
+                var d = allDrives.First(a => a.Name == tscbDiscDrive.Text);
                 //foreach (DriveInfo d in allDrives)
                 //{
                 if (d.DriveType == sio.DriveType.Removable && d.Name == tscbDiscDrive.SelectedItem.ToString())
@@ -2895,7 +2900,7 @@ public partial class frmMain : Form
             DefaultConfigSave();
             Program.DetectOSLanguage();
 
-            Program.AdjustLanguage();
+            Program.AdjustLanguage(Thread.CurrentThread);
             Controls.Clear();
             InitializeComponent();
         }
@@ -3592,10 +3597,9 @@ public partial class frmMain : Form
                                                         + "bin" + sio.Path.DirectorySeparatorChar + "gcit.exe ";
         /*gcit.exe proccesses/trims excess data (padding) from a file*/
         var i = 0;
-        var _StatusExit = 3;
         myProcess.Exited += (s, evt) =>
         {
-            _StatusExit = myProcess.ExitCode;
+            var _StatusExit = myProcess.ExitCode;
             if (_StatusExit == 0) //exit success
             {
                 lblInstallStatusText.Visible = true;
@@ -4422,17 +4426,15 @@ public partial class frmMain : Form
         {
             if (!Monitor.TryEnter(lvDatabase)) return;
 
-            using (var form = new frmDownloadGameTDB())
+            using var form = new frmDownloadGameTDB();
+            var _returnRename = form.ShowDialog();
+            Monitor.Exit(lvDatabase);
+            if (_returnRename == DialogResult.OK)
             {
-                var _returnRename = form.ShowDialog();
-                Monitor.Exit(lvDatabase);
-                if (_returnRename == DialogResult.OK)
-                {
-                    var _code = form.RETURN_CONFIRM;
-                    if (_code == 1)
-                        if (sio.File.Exists(WIITDB_FILE))
-                            LoadDatabaseXML();
-                }
+                var _code = form.RETURN_CONFIRM;
+                if (_code == 1)
+                    if (sio.File.Exists(WIITDB_FILE))
+                        LoadDatabaseXML();
             }
         }
         else
@@ -4492,14 +4494,12 @@ public partial class frmMain : Form
 
     private void tsmiConfigurationMain_Click(object sender, EventArgs e)
     {
-        using (var form = new frmConfig())
+        using var form = new frmConfig();
+        var _returnRename = form.ShowDialog();
+        if (_returnRename == DialogResult.OK)
         {
-            var _returnRename = form.ShowDialog();
-            if (_returnRename == DialogResult.OK)
-            {
-                var _code = form.RETURN_CONFIRM;
-                if (_code == 1) NetworkCheck();
-            }
+            var _code = form.RETURN_CONFIRM;
+            if (_code == 1) NetworkCheck();
         }
     }
 
@@ -4559,15 +4559,13 @@ public partial class frmMain : Form
             {
                 var pathImage = dgvSource.CurrentRow.Cells["Path"].Value.ToString();
 
-                using (var form = new frmRenameISO(fbd1.SelectedPath, pathImage))
+                using var form = new frmRenameISO(fbd1.SelectedPath, pathImage);
+                var _returnRename = form.ShowDialog();
+                if (_returnRename == DialogResult.OK)
                 {
-                    var _returnRename = form.ShowDialog();
-                    if (_returnRename == DialogResult.OK)
-                    {
-                        var _code = form.RETURN_CONFIRM;
-                        if (_code == 1)
-                            await DisplaySourceFilesAsync(fbd1.SelectedPath, dgvSource).ConfigureAwait(false);
-                    }
+                    var _code = form.RETURN_CONFIRM;
+                    if (_code == 1)
+                        await DisplaySourceFilesAsync(fbd1.SelectedPath, dgvSource).ConfigureAwait(false);
                 }
             }
         }
@@ -4786,8 +4784,6 @@ public partial class frmMain : Form
             else
                 try
                 {
-                    var VideoDX = "";
-                    var AudioDSP = "";
                     var _sourceGame = dgvSource.CurrentRow.Cells["Path"].Value.ToString();
 
                     START_INFO.CreateNoWindow = true;
@@ -4795,13 +4791,13 @@ public partial class frmMain : Form
                     // DOLPHIN
                     START_INFO.FileName = CONFIG_INI_FILE.IniReadString("DOLPHIN", "DolphinFolder", "");
 
-                    VideoDX = CONFIG_INI_FILE.IniReadBool("DOLPHIN", "DolphinDX11")
+                    var VideoDX = CONFIG_INI_FILE.IniReadBool("DOLPHIN", "DolphinDX11")
                         ? " --video_backend=D3D"
                         : CONFIG_INI_FILE.IniReadBool("DOLPHIN", "DolphinDX12")
                             ? " --video_backend=D3D"
                             : " --video_backend=OGL";
 
-                    AudioDSP = CONFIG_INI_FILE.IniReadBool("DOLPHIN", "DolphinLLE")
+                    var AudioDSP = CONFIG_INI_FILE.IniReadBool("DOLPHIN", "DolphinLLE")
                         ? " --audio_emulation=LLE"
                         : " --audio_emulation=HLE";
 
@@ -5281,105 +5277,103 @@ public partial class frmMain : Form
                                tscbDiscDrive.SelectedItem + GAMES_DIR;
         START_INFO.WindowStyle = ProcessWindowStyle.Hidden;
 
-        using (var myProcess = Process.Start(START_INFO))
+        using var myProcess = Process.Start(START_INFO);
+        // unused var i = 0;
+        // Display the process statistics until
+        // the user closes the program.
+        do
         {
-            // unused var i = 0;
-            // Display the process statistics until
-            // the user closes the program.
-            do
+            if (!myProcess.HasExited)
             {
-                if (!myProcess.HasExited)
+                // Refresh the current process property values.
+                myProcess.Refresh();
+                // Display current process statistics.
+                tbLog.AppendText($"{myProcess} -");
+                //toolStripStatusLabel3.Text = $"{myProcess} -";
+                tbLog.AppendText(Environment.NewLine + "-------------------------------------" +
+                                 Environment.NewLine + Environment.NewLine);
+
+                if (myProcess.Responding)
                 {
-                    // Refresh the current process property values.
-                    myProcess.Refresh();
-                    // Display current process statistics.
-                    tbLog.AppendText($"{myProcess} -");
-                    //toolStripStatusLabel3.Text = $"{myProcess} -";
-                    tbLog.AppendText(Environment.NewLine + "-------------------------------------" +
-                                     Environment.NewLine + Environment.NewLine);
-
-                    if (myProcess.Responding)
-                    {
-                        //HideLabels
-                        //Disable Controls
-                        //Update Progress
-                    }
+                    //HideLabels
+                    //Disable Controls
+                    //Update Progress
                 }
-                //progressBar1.Value += 5;
-            } while (!myProcess.WaitForExit(500));
+            }
+            //progressBar1.Value += 5;
+        } while (!myProcess.WaitForExit(500));
 
 
-            var _StatusExit = myProcess.ExitCode;
-            if (_StatusExit == 0)
+        var _StatusExit = myProcess.ExitCode;
+        if (_StatusExit == 0)
+        {
+            //Exit Successfully
+            //Enable Controls
+            //Tell them we're done
+
+            if (tbIDDiscID.Text == "0x00") //We installed disc 1
             {
-                //Exit Successfully
-                //Enable Controls
-                //Tell them we're done
+            }
 
-                if (tbIDDiscID.Text == "0x00") //We installed disc 1
+            if (tbIDDiscID.Text == "0x01") //We installed disc 2
+            {
+                // Usar nome intermo - Use Internal Name
+                if (CONFIG_INI_FILE.IniReadBool("TITLES", "GameInternalName"))
                 {
+                    // Renomear - Rename game.iso -> disc2.iso
+                    var myOrigem = tscbDiscDrive.SelectedItem + GAMES_DIR + sio.Path.DirectorySeparatorChar +
+                                   tbIDName.Text + " [" +
+                                   tbIDGame.Text + "2]" + sio.Path.DirectorySeparatorChar + "game.iso";
+                    var myDestiny = tscbDiscDrive.SelectedItem + GAMES_DIR + sio.Path.DirectorySeparatorChar +
+                                    tbIDName.Text.Replace("disc2 ", "") + " [" + tbIDGame.Text + "2]" +
+                                    sio.Path.DirectorySeparatorChar + "disc2.iso";
+
+
+                    sio.File.Move(myOrigem, myDestiny);
+
+                    //GlobalNotifications(Resources.InstallGameScrub_String6, ToolTipIcon.Info);
+                    //We moved the file
+
+                    //GC.Collect();
                 }
-
-                if (tbIDDiscID.Text == "0x01") //We installed disc 2
+                // Usar WiiTDB.xml
+                else
                 {
-                    // Usar nome intermo - Use Internal Name
-                    if (CONFIG_INI_FILE.IniReadBool("TITLES", "GameInternalName"))
-                    {
-                        // Renomear - Rename game.iso -> disc2.iso
-                        var myOrigem = tscbDiscDrive.SelectedItem + GAMES_DIR + sio.Path.DirectorySeparatorChar +
-                                       tbIDName.Text + " [" +
-                                       tbIDGame.Text + "2]" + sio.Path.DirectorySeparatorChar + "game.iso";
-                        var myDestiny = tscbDiscDrive.SelectedItem + GAMES_DIR + sio.Path.DirectorySeparatorChar +
-                                        tbIDName.Text.Replace("disc2 ", "") + " [" + tbIDGame.Text + "2]" +
-                                        sio.Path.DirectorySeparatorChar + "disc2.iso";
+                    // Renomear game.iso -> disc2.iso
+                    var myOrigem = tscbDiscDrive.SelectedItem + GAMES_DIR + sio.Path.DirectorySeparatorChar +
+                                   _oldNameInternal + " [" +
+                                   tbIDGame.Text + "2]" + sio.Path.DirectorySeparatorChar + "game.iso";
+                    var myDestiny = tscbDiscDrive.SelectedItem + GAMES_DIR + sio.Path.DirectorySeparatorChar +
+                                    _oldNameInternal.Replace("disc2 ", "") + " [" + tbIDGame.Text + "2]" +
+                                    sio.Path.DirectorySeparatorChar + "disc2.iso";
 
-
-                        sio.File.Move(myOrigem, myDestiny);
-
-                        //GlobalNotifications(Resources.InstallGameScrub_String6, ToolTipIcon.Info);
-                        //We moved the file
-
-                        //GC.Collect();
-                    }
-                    // Usar WiiTDB.xml
-                    else
-                    {
-                        // Renomear game.iso -> disc2.iso
-                        var myOrigem = tscbDiscDrive.SelectedItem + GAMES_DIR + sio.Path.DirectorySeparatorChar +
-                                       _oldNameInternal + " [" +
-                                       tbIDGame.Text + "2]" + sio.Path.DirectorySeparatorChar + "game.iso";
-                        var myDestiny = tscbDiscDrive.SelectedItem + GAMES_DIR + sio.Path.DirectorySeparatorChar +
-                                        _oldNameInternal.Replace("disc2 ", "") + " [" + tbIDGame.Text + "2]" +
-                                        sio.Path.DirectorySeparatorChar + "disc2.iso";
-
-                        //MessageBox.Show("MYORIGEM: " + Environment.NewLine
-                        //    + myOrigem +
-                        //    "\n\nMYDESTINY: " + Environment.NewLine
-                        //    + myDestiny, "DISC2", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        /*
+                    //MessageBox.Show("MYORIGEM: " + Environment.NewLine
+                    //    + myOrigem +
+                    //    "\n\nMYDESTINY: " + Environment.NewLine
+                    //    + myDestiny, "DISC2", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    /*
                         * MYORIGEM:     c:\games\resident evil 4 disc2 (2) [G4BE082]\game.iso
                         * MYDESTINY:    c:\games\resident evil 4 disc2 (2) [G4BE082]\disc2.iso
                         * MYNEWDESTINY: c:\games\resident evil 4 [G4BE08]\
                         */
 
-                        sio.File.Move(myOrigem, myDestiny);
+                    sio.File.Move(myOrigem, myDestiny);
 
-                        //GlobalNotifications(Resources.InstallGameScrub_String6, ToolTipIcon.Info);
-                        //MessageBox.Show(GCBM.Properties.Resources.InstallGameScrub_String6, GCBM.Properties.Resources.Information, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //GlobalNotifications(Resources.InstallGameScrub_String6, ToolTipIcon.Info);
+                    //MessageBox.Show(GCBM.Properties.Resources.InstallGameScrub_String6, GCBM.Properties.Resources.Information, MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                        lblInstallStatusGameTitle.Visible = false;
-                        lblInstallStatusText.Visible = false;
-                        lblInstallStatusPercent.Visible = false;
-                        pbCopy.Visible = false;
-                        //GC.Collect();
-                    }
+                    lblInstallStatusGameTitle.Visible = false;
+                    lblInstallStatusText.Visible = false;
+                    lblInstallStatusPercent.Visible = false;
+                    pbCopy.Visible = false;
+                    //GC.Collect();
                 }
-            } //done
-            //if (_StatusExit == 3)
-            //{
-            //    //tsslStatusInformation.Text = "Status: ERRO! -> " + "{" + _StatusExit.ToString() + "}" + " Por favor, verifique se exitem espaços no nome do arquivo!";
-            //}
-        }
+            }
+        } //done
+        //if (_StatusExit == 3)
+        //{
+        //    //tsslStatusInformation.Text = "Status: ERRO! -> " + "{" + _StatusExit.ToString() + "}" + " Por favor, verifique se exitem espaços no nome do arquivo!";
+        //}
     }
 
     #endregion
@@ -5808,5 +5802,11 @@ public partial class frmMain : Form
     #endregion
 
     #endregion
+
+    private void tsmiRenameFolders_Click(object sender, EventArgs e)
+    {
+        Program.AdjustLanguage(Thread.CurrentThread);
+        this.Refresh();
+    }
 } // frmMain Form
   // namespace GCBM

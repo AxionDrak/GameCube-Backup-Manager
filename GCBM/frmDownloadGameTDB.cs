@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GCBM.Properties;
+using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.IO;
@@ -7,7 +8,6 @@ using System.Net;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using GCBM.Properties;
 
 namespace GCBM;
 
@@ -39,15 +39,20 @@ public partial class frmDownloadGameTDB : Form
             webClient.DownloadProgressChanged += ProgressChanged;
             webClient.DownloadFileAsync(new Uri("https://www.gametdb.com/wiitdb.zip"), WIITDB_ZIP_FILE);
             if (File.Exists(WIITDB_FILE))
-                try
+                await Task.Run(() =>
                 {
-                    File.Delete(GET_CURRENT_PATH + @"\" + WIITDB_FILE);
-                    ZipFile.ExtractToDirectory(GET_CURRENT_PATH + @"\" + WIITDB_ZIP_FILE, GET_CURRENT_PATH);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
+
+                    try
+                    {
+                        File.Delete(GET_CURRENT_PATH + @"\" + WIITDB_FILE);
+                        ZipFile.ExtractToDirectory(GET_CURRENT_PATH + @"\" + WIITDB_ZIP_FILE, GET_CURRENT_PATH);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+
+                }).ConfigureAwait(false);
         }
         catch (Exception ex)
         {
@@ -59,36 +64,40 @@ public partial class frmDownloadGameTDB : Form
     {
         try
         {
-            var webClient = new WebClient();
-            webClient.DownloadFileAsync(new Uri("https://www.gametdb.com/wiitdb.zip"), WIITDB_ZIP_FILE);
-
-            try
+            await Task.Run(() =>
             {
-                var deleteFile = false;
-                if (File.Exists(WIITDB_FILE)) deleteFile = true;
+
+                var webClient = new WebClient();
+                webClient.DownloadFileAsync(new Uri("https://www.gametdb.com/wiitdb.zip"), WIITDB_ZIP_FILE);
+
                 try
                 {
-                    if (deleteFile) File.Delete(GET_CURRENT_PATH + @"\" + WIITDB_FILE);
-                    ZipFile.ExtractToDirectory(GET_CURRENT_PATH + @"\" + WIITDB_ZIP_FILE, GET_CURRENT_PATH);
+                    bool deleteFile = File.Exists(WIITDB_FILE);
+                    try
+                    {
+                        if (deleteFile) File.Delete(GET_CURRENT_PATH + @"\" + WIITDB_FILE);
+                        ZipFile.ExtractToDirectory(GET_CURRENT_PATH + @"\" + WIITDB_ZIP_FILE, GET_CURRENT_PATH);
+                    }
+                    catch (Exception ex)
+                    {
+                        _ = MessageBox.Show(ex.Message);
+                    }
+                    finally
+                    {
+                        File.Delete(GET_CURRENT_PATH + @"\" + WIITDB_ZIP_FILE);
+                    }
+                    //}
                 }
                 catch (Exception ex)
                 {
-                    _ = MessageBox.Show(ex.Message);
+                    _ = ex.Message;
                 }
                 finally
                 {
                     File.Delete(GET_CURRENT_PATH + @"\" + WIITDB_ZIP_FILE);
                 }
-                //}
-            }
-            catch (Exception ex)
-            {
-                _ = ex.Message;
-            }
-            finally
-            {
-                File.Delete(GET_CURRENT_PATH + @"\" + WIITDB_ZIP_FILE);
-            }
+
+            }).ConfigureAwait(false);
         }
         catch (Exception ex)
         {

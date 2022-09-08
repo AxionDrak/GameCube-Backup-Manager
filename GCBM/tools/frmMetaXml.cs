@@ -1,8 +1,8 @@
-﻿using System;
+﻿using GCBM.Properties;
+using System;
 using System.IO;
 using System.Security;
 using System.Windows.Forms;
-using GCBM.Properties;
 
 namespace GCBM.tools;
 
@@ -113,7 +113,7 @@ public partial class frmMetaXml : Form
         cbAppNoReloadIOS.Enabled = true;
         //chkEnableArguments.Enabled = true;
 
-        var startindex = xmlfile.IndexOf(start);
+        var startindex = xmlfile.IndexOf(start, StringComparison.Ordinal);
         var endindex = xmlfile.IndexOf(end, startindex);
         var length = endindex - (startindex + start.Length);
         return xmlfile.Substring(startindex + start.Length, length);
@@ -125,9 +125,8 @@ public partial class frmMetaXml : Form
 
     public bool CheckEverything()
     {
-        var result = true;
+        bool result = tbAppVersion.Text != "";
         //if (xmlfilebox.Text == null) result = false; not for all...
-        if (tbAppVersion.Text == "") result = false;
 
         if (tbAppName.Text == "") result = false;
 

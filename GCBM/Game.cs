@@ -1,10 +1,10 @@
-﻿using System;
+﻿using GCBM.Properties;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
-using GCBM.Properties;
 using sio = System.IO;
 using ste = System.Text.Encoding;
 
@@ -39,37 +39,32 @@ public class Game
 
     public void GetFilDirInfo(sio.DirectoryInfo pDir, ref int itemNum, ref int filePos)
     {
-        sio.DirectoryInfo di;
-        sio.DirectoryInfo[] dirs;
-        sio.FileInfo[] fils;
         TOCItemFil tif;
         var tocDirIdx = itemNum - 1;
 
-        dirs = pDir.GetDirectories();
+        var dirs = pDir.GetDirectories();
         for (var cnt = 0; cnt < dirs.Length; cnt++)
             if (dirs[cnt].Name.ToLower() == "&&systemdata")
             {
-                di = dirs[0];
-                dirs[0] = dirs[cnt];
-                dirs[cnt] = di;
+                (dirs[0], dirs[cnt]) = (dirs[cnt], dirs[0]);
                 break;
             }
 
-        for (var cnt = 0; cnt < dirs.Length; cnt++)
+        foreach (var t in dirs)
         {
             tif = new TOCItemFil(itemNum, tocDirIdx, tocDirIdx, 0, true,
-                dirs[cnt].Name, dirs[cnt].FullName.Replace(RES_PATH, ""), dirs[cnt].FullName);
+                t.Name, t.FullName.Replace(RES_PATH, ""), t.FullName);
             toc.fils.Add(tif);
             itemNum += 1;
             toc.dirCount += 1;
-            GetFilDirInfo(dirs[cnt], ref itemNum, ref filePos);
+            GetFilDirInfo(t, ref itemNum, ref filePos);
         }
 
-        fils = pDir.GetFiles();
-        for (var cnt = 0; cnt < fils.Length; cnt++)
+        var fils = pDir.GetFiles();
+        foreach (var t in fils)
         {
-            tif = new TOCItemFil(itemNum, tocDirIdx, filePos, (int)fils[cnt].Length, false,
-                fils[cnt].Name, fils[cnt].FullName.Replace(RES_PATH, ""), fils[cnt].FullName);
+            tif = new TOCItemFil(itemNum, tocDirIdx, filePos, (int)t.Length, false,
+                t.Name, t.FullName.Replace(RES_PATH, ""), t.FullName);
             toc.fils.Add(tif);
             toc.fils[0].len = toc.fils.Count;
             filePos += 2;
@@ -83,11 +78,9 @@ public class Game
     public bool GenerateTreeView(bool fileNameSort)
     {
         var tns = new List<TreeNode>();
-        TreeNode tn, tnn;
-        int idx;
-        int j;
+        TreeNode tnn;
 
-        tn = new TreeNode(toc.fils[0].name, 0, 0)
+        var tn = new TreeNode(toc.fils[0].name, 0, 0)
         {
             Name = toc.fils[0].TOCIdx.ToString(),
             ToolTipText = RES_PATH
@@ -98,6 +91,8 @@ public class Game
         if (fileNameSort)
         {
             for (var i = 1; i < toc.fils.Count; i++)
+            {
+                int j;
                 if (toc.fils[i].isDir)
                 {
                     for (j = 0; j < tns.Count; j++)
@@ -145,10 +140,11 @@ public class Game
                     toc.fils[i].node = tnn;
                     _ = tn.Nodes.Add(tnn);
                 }
+            }
         }
         else
         {
-            idx = 2;
+            var idx = 2;
             for (var i = 1; i < toc.fils.Count; i++)
                 if (!toc.fils[i].isDir)
                 {
@@ -173,36 +169,21 @@ public class Game
 
     public bool ReadImageTOC()
     {
-        TOCItemFil tif;
         sio.FileStream fsr;
-        sio.BinaryReader brr;
-        sio.MemoryStream msr;
-        sio.BinaryReader mbr;
-        long prevPos, newPos;
 
-        int namesTableEntryCount;
-        int namesTableStart;
-        int itemNamePtr;
         var itemIsDir = false;
-        int itemPos;
-        int itemLen;
-        string itemName;
         var itemGamePath = "";
-        string itemPath;
 
-        int itemNum;
-        int shift;
         var dirEntry = new int[512];
         var dirEntryCount = 0;
         dirEntry[1] = 99999999;
 
         var error = false;
         var errorText = "";
-        int i, j;
 
         toc = new TOCClass(RES_PATH);
-        itemNum = toc.fils.Count;
-        shift = toc.fils.Count - 1;
+        var itemNum = toc.fils.Count;
+        var shift = toc.fils.Count - 1;
 
         try
         {
@@ -215,7 +196,7 @@ public class Game
             return false;
         }
 
-        brr = new sio.BinaryReader(fsr, ste.Default);
+        var brr = new sio.BinaryReader(fsr, ste.Default);
 
         if (fsr.Length > 0x0438)
         {
@@ -250,10 +231,10 @@ public class Game
         if (!error)
         {
             fsr.Position = toc.fils[5].pos;
-            msr = new sio.MemoryStream(brr.ReadBytes(toc.fils[5].len));
-            mbr = new sio.BinaryReader(msr, ste.Default);
+            var msr = new sio.MemoryStream(brr.ReadBytes(toc.fils[5].len));
+            var mbr = new sio.BinaryReader(msr, ste.Default);
 
-            i = mbr.ReadInt32();
+            var i = mbr.ReadInt32();
             if (i != 1)
             {
                 error = true;
@@ -267,21 +248,21 @@ public class Game
                 errorText = Resources.ReadImage_String2;
             }
 
-            namesTableEntryCount = mbr.ReadInt32BE() - 1;
-            namesTableStart = namesTableEntryCount * 12 + 12;
+            var namesTableEntryCount = mbr.ReadInt32BE() - 1;
+            var namesTableStart = namesTableEntryCount * 12 + 12;
 
             for (var cnt = 0; cnt < namesTableEntryCount; cnt++)
             {
-                itemNamePtr = mbr.ReadInt32BE();
+                var itemNamePtr = mbr.ReadInt32BE();
                 if (itemNamePtr >> 0x18 == 1) itemIsDir = true;
 
                 itemNamePtr &= 0x00ffffff;
-                itemPos = mbr.ReadInt32BE();
-                itemLen = mbr.ReadInt32BE();
-                prevPos = msr.Position;
-                newPos = namesTableStart + itemNamePtr;
+                var itemPos = mbr.ReadInt32BE();
+                var itemLen = mbr.ReadInt32BE();
+                var prevPos = msr.Position;
+                long newPos = namesTableStart + itemNamePtr;
                 msr.Position = newPos;
-                itemName = mbr.ReadStringNT();
+                var itemName = mbr.ReadStringNT();
                 msr.Position = prevPos;
 
                 while (dirEntry[dirEntryCount + 1] <= itemNum) dirEntryCount -= 2;
@@ -300,8 +281,8 @@ public class Game
                     toc.filCount += 1;
                 }
 
-                itemPath = itemName;
-                j = dirEntry[dirEntryCount];
+                var itemPath = itemName;
+                var j = dirEntry[dirEntryCount];
                 for (i = 0; i < 256; i++)
                     if (j == 0)
                     {
@@ -329,7 +310,7 @@ public class Game
                     if (error) break;
                 }
 
-                tif = new TOCItemFil(itemNum, dirEntry[dirEntryCount], itemPos, itemLen, itemIsDir, itemName,
+                var tif = new TOCItemFil(itemNum, dirEntry[dirEntryCount], itemPos, itemLen, itemIsDir, itemName,
                     itemGamePath, itemPath);
                 toc.fils.Add(tif);
                 toc.fils[0].len = toc.fils.Count;
@@ -367,39 +348,22 @@ public class Game
     //*****************************
     public bool ReadImageDiscTOC()
     {
-        TOCItemFil tif;
-        sio.FileStream fsr;
-        sio.BinaryReader brr;
-        sio.MemoryStream msr;
-        sio.BinaryReader mbr;
-        long prevPos, newPos;
-
-        int namesTableEntryCount;
-        int namesTableStart;
-        int itemNamePtr;
         var itemIsDir = false;
-        int itemPos;
-        int itemLen;
-        string itemName;
         var itemGamePath = "";
-        string itemPath;
 
-        int itemNum;
-        int shift;
         var dirEntry = new int[512];
         var dirEntryCount = 0;
         dirEntry[1] = 99999999;
 
         var error = false;
         var errorText = "";
-        int i, j;
 
         toc = new TOCClass(RES_PATH);
-        itemNum = toc.fils.Count;
-        shift = toc.fils.Count - 1;
+        var itemNum = toc.fils.Count;
+        var shift = toc.fils.Count - 1;
 
-        fsr = new sio.FileStream(IMAGE_PATH, sio.FileMode.Open, sio.FileAccess.Read, sio.FileShare.Read);
-        brr = new sio.BinaryReader(fsr, ste.Default);
+        var fsr = new sio.FileStream(IMAGE_PATH, sio.FileMode.Open, sio.FileAccess.Read, sio.FileShare.Read);
+        var brr = new sio.BinaryReader(fsr, ste.Default);
 
         if (fsr.Length > 0x0438)
         {
@@ -434,10 +398,10 @@ public class Game
         if (!error)
         {
             fsr.Position = toc.fils[5].pos;
-            msr = new sio.MemoryStream(brr.ReadBytes(toc.fils[5].len));
-            mbr = new sio.BinaryReader(msr, ste.Default);
+            var msr = new sio.MemoryStream(brr.ReadBytes(toc.fils[5].len));
+            var mbr = new sio.BinaryReader(msr, ste.Default);
 
-            i = mbr.ReadInt32();
+            var i = mbr.ReadInt32();
             if (i != 1)
             {
                 error = true;
@@ -451,21 +415,21 @@ public class Game
                 errorText = Resources.ReadImage_String2;
             }
 
-            namesTableEntryCount = mbr.ReadInt32BE() - 1;
-            namesTableStart = namesTableEntryCount * 12 + 12;
+            var namesTableEntryCount = mbr.ReadInt32BE() - 1;
+            var namesTableStart = namesTableEntryCount * 12 + 12;
 
             for (var cnt = 0; cnt < namesTableEntryCount; cnt++)
             {
-                itemNamePtr = mbr.ReadInt32BE();
+                var itemNamePtr = mbr.ReadInt32BE();
                 if (itemNamePtr >> 0x18 == 1) itemIsDir = true;
 
                 itemNamePtr &= 0x00ffffff;
-                itemPos = mbr.ReadInt32BE();
-                itemLen = mbr.ReadInt32BE();
-                prevPos = msr.Position;
-                newPos = namesTableStart + itemNamePtr;
+                var itemPos = mbr.ReadInt32BE();
+                var itemLen = mbr.ReadInt32BE();
+                var prevPos = msr.Position;
+                long newPos = namesTableStart + itemNamePtr;
                 msr.Position = newPos;
-                itemName = mbr.ReadStringNT();
+                var itemName = mbr.ReadStringNT();
                 msr.Position = prevPos;
 
                 while (dirEntry[dirEntryCount + 1] <= itemNum) dirEntryCount -= 2;
@@ -484,8 +448,8 @@ public class Game
                     toc.filCount += 1;
                 }
 
-                itemPath = itemName;
-                j = dirEntry[dirEntryCount];
+                var itemPath = itemName;
+                var j = dirEntry[dirEntryCount];
                 for (i = 0; i < 256; i++)
                     if (j == 0)
                     {
@@ -513,7 +477,7 @@ public class Game
                     if (error) break;
                 }
 
-                tif = new TOCItemFil(itemNum, dirEntry[dirEntryCount], itemPos, itemLen, itemIsDir, itemName,
+                var tif = new TOCItemFil(itemNum, dirEntry[dirEntryCount], itemPos, itemLen, itemIsDir, itemName,
                     itemGamePath, itemPath);
                 toc.fils.Add(tif);
                 toc.fils[0].len = toc.fils.Count;
@@ -770,9 +734,7 @@ public class Game
 
         public object Clone()
         {
-            TOCClass res;
-
-            res = new TOCClass(fils[0].path);
+            var res = new TOCClass(fils[0].path);
             res.fils.Clear();
             res.dirCount = dirCount;
             res.filCount = filCount;

@@ -134,7 +134,7 @@ public class IniFile
     private string corrigeFileName(string fileName)
     {
         fileName = fileName.ToLower();
-        if (fileName.IndexOf(".ini") == -1) fileName += ".ini";
+        if (fileName.IndexOf(".ini", StringComparison.Ordinal) == -1) fileName += ".ini";
 
         return fileName;
     }

@@ -14,10 +14,10 @@ public interface DDiscMaster2Events
     // A device was added to the system
     [DispId(0x100)] // DISPID_DDISCMASTER2EVENTS_DEVICEADDED
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    void NotifyDeviceAdded([In] [MarshalAs(UnmanagedType.IDispatch)] object sender, string uniqueId);
+    void NotifyDeviceAdded([In][MarshalAs(UnmanagedType.IDispatch)] object sender, string uniqueId);
 
     // A device was removed from the system
     [DispId(0x101)] // DISPID_DDISCMASTER2EVENTS_DEVICEREMOVED
     [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
-    void NotifyDeviceRemoved([In] [MarshalAs(UnmanagedType.IDispatch)] object sender, string uniqueId);
+    void NotifyDeviceRemoved([In][MarshalAs(UnmanagedType.IDispatch)] object sender, string uniqueId);
 }
