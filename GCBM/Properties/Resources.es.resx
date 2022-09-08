@@ -501,4 +501,22 @@
   <data name="AskDownloadWiiTDB" xml:space="preserve">
     <value>WiiTDB.zip no encontrado, ¿quieres descargarlo ahora?</value>
   </data>
+  <data name="SplashNetworkCheck" xml:space="preserve">
+    <value>Comprobando la conexión a Internet...</value>
+  </data>
+  <data name="SplashPopulatingDrives" xml:space="preserve">
+    <value>Completando la lista de unidades...</value>
+  </data>
+  <data name="SplashFoundDrive" xml:space="preserve">
+    <value>Unidad encontrada:</value>
+  </data>
+  <data name="SplashFinishing" xml:space="preserve">
+    <value>Terminando...</value>
+  </data>
+  <data name="SplashFinished" xml:space="preserve">
+    <value>Acabado.</value>
+  </data>
+  <data name="SplashDirectories" xml:space="preserve">
+    <value>Configurando los directorios requeridos...</value>
+  </data>
 </root>

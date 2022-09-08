@@ -13,6 +13,7 @@ public partial class frmSplashScreen : Form
 
     public frmSplashScreen()
     {
+        var configIniFile = new IniFile("config.ini");
         AdjustLanguage();
 
         InitializeComponent();

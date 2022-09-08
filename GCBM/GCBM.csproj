@@ -442,9 +442,6 @@
     <EmbeddedResource Include="frmMain.ko.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmMain.quc.resx">
-      <DependentUpon>frmMain.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -490,6 +487,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.es.resx" />
     <EmbeddedResource Include="Properties\Resources.ko.resx" />
+    <EmbeddedResource Include="Properties\Resources.quc.resx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>

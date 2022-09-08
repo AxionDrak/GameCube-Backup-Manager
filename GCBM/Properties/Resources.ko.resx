@@ -513,4 +513,22 @@
   <data name="AskDownloadWiiTDB" xml:space="preserve">
     <value>WiiTDB.zip을 찾을 수 없습니다. 지금 다운로드하시겠습니까?</value>
   </data>
+  <data name="SplashNetworkCheck" xml:space="preserve">
+    <value>인터넷 연결 확인 중...</value>
+  </data>
+  <data name="SplashPopulatingDrives" xml:space="preserve">
+    <value>드라이브 목록을 채우는 중...</value>
+  </data>
+  <data name="SplashFoundDrive" xml:space="preserve">
+    <value>찾은 드라이브:</value>
+  </data>
+  <data name="SplashFinishing" xml:space="preserve">
+    <value>마무리 중...</value>
+  </data>
+  <data name="SplashFinished" xml:space="preserve">
+    <value>완성된.</value>
+  </data>
+  <data name="SplashDirectories" xml:space="preserve">
+    <value>필수 폴더 설정 중...</value>
+  </data>
 </root>

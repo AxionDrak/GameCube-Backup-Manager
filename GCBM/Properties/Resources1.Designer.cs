@@ -2040,6 +2040,78 @@ namespace GCBM.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Configurando diretórios necessários....
+        /// </summary>
+        internal static string SplashDirectories {
+            get {
+                return ResourceManager.GetString("SplashDirectories", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Finalizado..
+        /// </summary>
+        internal static string SplashFinished {
+            get {
+                return ResourceManager.GetString("SplashFinished", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Terminando....
+        /// </summary>
+        internal static string SplashFinishing {
+            get {
+                return ResourceManager.GetString("SplashFinishing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unidade encontrada:.
+        /// </summary>
+        internal static string SplashFoundDrive {
+            get {
+                return ResourceManager.GetString("SplashFoundDrive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Verificando conexão com a internet....
+        /// </summary>
+        internal static string SplashNetworkCheck {
+            get {
+                return ResourceManager.GetString("SplashNetworkCheck", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Preenchendo a lista de unidades....
+        /// </summary>
+        internal static string SplashPopulatingDrives {
+            get {
+                return ResourceManager.GetString("SplashPopulatingDrives", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string SplashSettingUp {
+            get {
+                return ResourceManager.GetString("SplashSettingUp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string SplashWiiTDB {
+            get {
+                return ResourceManager.GetString("SplashWiiTDB", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap sync_16 {

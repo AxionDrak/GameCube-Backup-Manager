@@ -632,6 +632,7 @@ public partial class frmMain : Form
         CONFIG_INI_FILE.IniWriteBool("SEVERAL", "Screensaver", false);
         CONFIG_INI_FILE.IniWriteBool("SEVERAL", "LoadDatabase", true);
         CONFIG_INI_FILE.IniWriteBool("SEVERAL", "MultipleInstances", false);
+        CONFIG_INI_FILE.IniWriteBool("SEVERAL","LaunchedOnce",true);
         // TransferSystem
         CONFIG_INI_FILE.IniWriteBool("TRANSFERSYSTEM", "FST", false);
         CONFIG_INI_FILE.IniWriteBool("TRANSFERSYSTEM", "ScrubFlushSD", false);
@@ -2852,7 +2853,7 @@ public partial class frmMain : Form
 
         //    Load += HandleFormLoad;
 
-        callback("Checking for network...",10);
+        callback(Resources.SplashNetworkCheck,10);
         NetworkCheck();
         if (!sio.File.Exists(INI_FILE))
         {
@@ -2866,10 +2867,10 @@ public partial class frmMain : Form
 
         LoadConfigFile();
         AboutTranslator();
-        callback("Populating drive list...",20);
+        callback(Resources.SplashPopulatingDrives,20);
         int progressCheckpoint = 20;
-        GetAllDrives(new Action<string>(s => callback("Found drive: " + s,progressCheckpoint+= 5) ));
-        callback("Setting up...",progressCheckpoint);
+        GetAllDrives(new Action<string>(s => callback(Resources.SplashFoundDrive + s,progressCheckpoint+= 5) ));
+        callback(Resources.SplashDirectories,progressCheckpoint);
 
         //DetectOSLanguage();
         //AdjustLanguage();
@@ -2884,7 +2885,7 @@ public partial class frmMain : Form
 
         //Check for WiiTDB file and internet connection, download if not found and we're online
 
-        callback("Checking for 'WiiTDB.Xml'...", 90);
+        callback(Resources.SplashWiiTDB, 90);
         if (!sio.File.Exists(WIITDB_FILE) && NetworkInterface.GetIsNetworkAvailable())
         {
             //frmDownloadGameTDB frmDownload = new frmDownloadGameTDB();
@@ -2916,10 +2917,10 @@ public partial class frmMain : Form
 
         Thread.CurrentThread.CurrentUICulture.ClearCachedData();
         Thread.CurrentThread.CurrentCulture.ClearCachedData();
-        callback("Finishing up...",95);
+        callback(Resources.SplashFinishing,95);
         //foreach in this.Controls.Results 
         mstripMain.Refresh();
-        callback("Finished.",100);
+        callback(Resources.SplashFinished,100);
         var SplashScreen = Program.SplashScreen;
         if (SplashScreen != null && !SplashScreen.Disposing && !SplashScreen.IsDisposed)
             SplashScreen.Invoke(new Action(() => SplashScreen.Close()));
