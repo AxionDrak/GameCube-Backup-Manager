@@ -369,22 +369,22 @@
   <data name="PluginDisplay_String1" xml:space="preserve">
     <value>Are you sure you want to delete the plugin?</value>
   </data>
-  <data name="InstallGameScrub_String1" xml:space="preserve">
+  <data name="InstallGameScrub_Transferring" xml:space="preserve">
     <value>Transferring...</value>
   </data>
-  <data name="InstallGameScrub_String2" xml:space="preserve">
+  <data name="InstallGameScrub_Scrubbing" xml:space="preserve">
     <value>Status: Scrubbing... </value>
   </data>
-  <data name="InstallGameScrub_String3" xml:space="preserve">
+  <data name="InstallGameScrub_Unresponsive" xml:space="preserve">
     <value>Status: Not responding!</value>
   </data>
-  <data name="InstallGameScrub_String4" xml:space="preserve">
+  <data name="InstallGameScrub_Complete" xml:space="preserve">
     <value>Status: Complete!</value>
   </data>
-  <data name="InstallGameScrub_String5" xml:space="preserve">
+  <data name="InstallGameScrub_GameInstalled" xml:space="preserve">
     <value>Game installed successfully!</value>
   </data>
-  <data name="InstallGameScrub_String6" xml:space="preserve">
+  <data name="InstallGameScrub_TrasnferredDisc2" xml:space="preserve">
     <value>Disc 2 transferred successfully!</value>
   </data>
   <data name="CopyTask_String1" xml:space="preserve">
@@ -533,5 +533,8 @@
   </data>
   <data name="InstallGameScrub_TransferDisc2" xml:space="preserve">
     <value>Transferring {0} Disc 2...</value>
+  </data>
+  <data name="InstallGameScrub_DoneScrubbing" xml:space="preserve">
+    <value>Finished scrubbing...</value>
   </data>
 </root>

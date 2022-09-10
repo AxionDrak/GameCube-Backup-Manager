@@ -162,7 +162,7 @@
   <data name="frmMain_Resize_Program" xml:space="preserve">
     <value>バックグラウンドで実行中のプログラム！</value>
   </data>
-  <data name="InstallGameScrub_String3" xml:space="preserve">
+  <data name="InstallGameScrub_Unresponsive" xml:space="preserve">
     <value>ステータス: 応答なし!</value>
   </data>
   <data name="OverwriteWiiTDBBody" xml:space="preserve">
@@ -210,7 +210,7 @@
   <data name="InvalidDrive_String1" xml:space="preserve">
     <value>これは有効なデバイスではありません!</value>
   </data>
-  <data name="InstallGameScrub_String2" xml:space="preserve">
+  <data name="InstallGameScrub_Scrubbing" xml:space="preserve">
     <value>ステータス: スクラブ中...</value>
   </data>
   <data name="Attention" xml:space="preserve">
@@ -270,7 +270,7 @@
   <data name="ReadImage_String2" xml:space="preserve">
     <value>複数の FST 画像?\r\nこの画像に関する情報を送ってください。</value>
   </data>
-  <data name="InstallGameScrub_String6" xml:space="preserve">
+  <data name="InstallGameScrub_TrasnferredDisc2" xml:space="preserve">
     <value>ディスク 2 が正常に転送されました!</value>
   </data>
   <data name="AboutTranslatorContact" xml:space="preserve">
@@ -366,7 +366,7 @@
   <data name="CopyTask_String1" xml:space="preserve">
     <value>ファイルを転送しています...</value>
   </data>
-  <data name="InstallGameScrub_String5" xml:space="preserve">
+  <data name="InstallGameScrub_GameInstalled" xml:space="preserve">
     <value>ゲームが正常にインストールされました!</value>
   </data>
   <data name="OverwriteWiiTDBCaption" xml:space="preserve">
@@ -426,7 +426,7 @@
   <data name="CopyTask_String2" xml:space="preserve">
     <value>ゲームをインストールしています...</value>
   </data>
-  <data name="InstallGameScrub_String4" xml:space="preserve">
+  <data name="InstallGameScrub_Complete" xml:space="preserve">
     <value>状態：完成！</value>
   </data>
   <data name="DisplayFilesSelected_Found_String1" xml:space="preserve">
@@ -447,7 +447,7 @@
   <data name="DialogResultDeleteGame_ReallyDeleteFile_String2" xml:space="preserve">
     <value>この手順は元に戻すことができず、ファイルを回復することはできません!</value>
   </data>
-  <data name="InstallGameScrub_String1" xml:space="preserve">
+  <data name="InstallGameScrub_Transferring" xml:space="preserve">
     <value>転送中...</value>
   </data>
   <data name="ServerReported3DCoverNotFound" xml:space="preserve">
@@ -533,5 +533,8 @@
   </data>
   <data name="InstallGameScrub_TransferDisc2" xml:space="preserve">
     <value>{0} ディスク 2 を転送しています...</value>
+  </data>
+  <data name="InstallGameScrub_DoneScrubbing" xml:space="preserve">
+    <value>拭き取り終了…</value>
   </data>
 </root>

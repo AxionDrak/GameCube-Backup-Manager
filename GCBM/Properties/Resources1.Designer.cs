@@ -1265,56 +1265,38 @@ namespace GCBM.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Transferindo....
-        /// </summary>
-        internal static string InstallGameScrub_String1 {
-            get {
-                return ResourceManager.GetString("InstallGameScrub_String1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Status: Scrubbing... .
-        /// </summary>
-        internal static string InstallGameScrub_String2 {
-            get {
-                return ResourceManager.GetString("InstallGameScrub_String2", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Status: Não respondendo!.
-        /// </summary>
-        internal static string InstallGameScrub_String3 {
-            get {
-                return ResourceManager.GetString("InstallGameScrub_String3", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Status: Completo!.
         /// </summary>
-        internal static string InstallGameScrub_String4 {
+        internal static string InstallGameScrub_Complete {
             get {
-                return ResourceManager.GetString("InstallGameScrub_String4", resourceCulture);
+                return ResourceManager.GetString("InstallGameScrub_Complete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Esfoliação finalizada....
+        /// </summary>
+        internal static string InstallGameScrub_DoneScrubbing {
+            get {
+                return ResourceManager.GetString("InstallGameScrub_DoneScrubbing", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Jogo instalado com sucesso!.
         /// </summary>
-        internal static string InstallGameScrub_String5 {
+        internal static string InstallGameScrub_GameInstalled {
             get {
-                return ResourceManager.GetString("InstallGameScrub_String5", resourceCulture);
+                return ResourceManager.GetString("InstallGameScrub_GameInstalled", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Disco 2 transferido com sucesso!.
+        ///   Looks up a localized string similar to Status: Scrubbing... .
         /// </summary>
-        internal static string InstallGameScrub_String6 {
+        internal static string InstallGameScrub_Scrubbing {
             get {
-                return ResourceManager.GetString("InstallGameScrub_String6", resourceCulture);
+                return ResourceManager.GetString("InstallGameScrub_Scrubbing", resourceCulture);
             }
         }
         
@@ -1324,6 +1306,33 @@ namespace GCBM.Properties {
         internal static string InstallGameScrub_TransferDisc2 {
             get {
                 return ResourceManager.GetString("InstallGameScrub_TransferDisc2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Transferindo....
+        /// </summary>
+        internal static string InstallGameScrub_Transferring {
+            get {
+                return ResourceManager.GetString("InstallGameScrub_Transferring", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Disco 2 transferido com sucesso!.
+        /// </summary>
+        internal static string InstallGameScrub_TrasnferredDisc2 {
+            get {
+                return ResourceManager.GetString("InstallGameScrub_TrasnferredDisc2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Status: Não respondendo!.
+        /// </summary>
+        internal static string InstallGameScrub_Unresponsive {
+            get {
+                return ResourceManager.GetString("InstallGameScrub_Unresponsive", resourceCulture);
             }
         }
         

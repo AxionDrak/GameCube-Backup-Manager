@@ -17,9 +17,6 @@ public partial class frmDolphinEmulator : Form
         lblGame.Text = gameName;
     }
 
-    private string GAME_NAME { get; set; }
-    private string GAME_PATH { get; set; }
-
     private void btnClose_Click(object sender, EventArgs e)
     {
         Close();

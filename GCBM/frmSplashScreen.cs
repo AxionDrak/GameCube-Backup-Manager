@@ -45,15 +45,7 @@ public partial class frmSplashScreen : Form
     }
 
     #endregion
-
     #region Update Progress Internal
-
-    private void UpdateProgressInternal(int progress)
-    {
-        if (Handle == null) return;
-
-        pbSplashScreen.Value = progress;
-    }
 
     #endregion
 

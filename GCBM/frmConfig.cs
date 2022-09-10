@@ -469,8 +469,6 @@ public partial class frmConfig : Form
     private readonly IniFile CONFIG_INI_FILE = new(INI_FILE);
     private readonly Assembly assembly = Assembly.GetExecutingAssembly();
 
-    private string GAME_NAME { get; set; }
-    private string GAME_PATH { get; set; }
     public int RETURN_CONFIRM { get; set; }
 
     #endregion

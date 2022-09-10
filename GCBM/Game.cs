@@ -27,9 +27,6 @@ public class Game
     private const string WIITDB_FILE = "wiitdb.xml";
     private static readonly string RES_PATH;
     private static string IMAGE_PATH;
-    private static string INI_FILE = "config.ini";
-    private readonly bool FILENAME_SORT = true;
-
     private readonly bool RETRIEVE_FILES_INFO = true;
     private char REGION;
     private bool ROOT_OPENED = true;

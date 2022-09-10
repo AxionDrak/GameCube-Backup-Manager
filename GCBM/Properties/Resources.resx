@@ -169,7 +169,7 @@
   <data name="gbatemp_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\gbatemp_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="InstallGameScrub_String3" xml:space="preserve">
+  <data name="InstallGameScrub_Unresponsive" xml:space="preserve">
     <value>Status: Não respondendo!</value>
   </data>
   <data name="format_dvd_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -238,7 +238,7 @@
   <data name="InvalidDrive_String1" xml:space="preserve">
     <value>Este não é um dispositivo válido!</value>
   </data>
-  <data name="InstallGameScrub_String2" xml:space="preserve">
+  <data name="InstallGameScrub_Scrubbing" xml:space="preserve">
     <value>Status: Scrubbing... </value>
   </data>
   <data name="Attention" xml:space="preserve">
@@ -379,7 +379,7 @@
   <data name="ReadImage_String2" xml:space="preserve">
     <value>Várias imagens FST?\r\nPor favor, envie-me informações sobre esta imagem.</value>
   </data>
-  <data name="InstallGameScrub_String6" xml:space="preserve">
+  <data name="InstallGameScrub_TrasnferredDisc2" xml:space="preserve">
     <value>Disco 2 transferido com sucesso!</value>
   </data>
   <data name="Misc-Download-Database-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -544,7 +544,7 @@
   <data name="CopyTask_String1" xml:space="preserve">
     <value>Transferindo arquivo...</value>
   </data>
-  <data name="InstallGameScrub_String5" xml:space="preserve">
+  <data name="InstallGameScrub_GameInstalled" xml:space="preserve">
     <value>Jogo instalado com sucesso!</value>
   </data>
   <data name="OverwriteWiiTDBCaption" xml:space="preserve">
@@ -649,7 +649,7 @@
   <data name="CopyTask_String2" xml:space="preserve">
     <value>Instalando jogo... </value>
   </data>
-  <data name="InstallGameScrub_String4" xml:space="preserve">
+  <data name="InstallGameScrub_Complete" xml:space="preserve">
     <value>Status: Completo!</value>
   </data>
   <data name="DisplayFilesSelected_Found_String1" xml:space="preserve">
@@ -673,7 +673,7 @@
   <data name="DialogResultDeleteGame_ReallyDeleteFile_String2" xml:space="preserve">
     <value>Esse procedimento é irreversível e não será possivel recuperar o(s) arquivo(s)!</value>
   </data>
-  <data name="InstallGameScrub_String1" xml:space="preserve">
+  <data name="InstallGameScrub_Transferring" xml:space="preserve">
     <value>Transferindo...</value>
   </data>
   <data name="ServerReported3DCoverNotFound" xml:space="preserve">
@@ -813,5 +813,8 @@
   </data>
   <data name="InstallGameScrub_TransferDisc2" xml:space="preserve">
     <value>Transferindo {0} Disco 2...</value>
+  </data>
+  <data name="InstallGameScrub_DoneScrubbing" xml:space="preserve">
+    <value>Esfoliação finalizada...</value>
   </data>
 </root>

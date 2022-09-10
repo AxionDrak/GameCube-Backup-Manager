@@ -162,7 +162,7 @@
   <data name="frmMain_Resize_Program" xml:space="preserve">
     <value>Programme exécuté en arrière-plan !</value>
   </data>
-  <data name="InstallGameScrub_String3" xml:space="preserve">
+  <data name="InstallGameScrub_Unresponsive" xml:space="preserve">
     <value>Statut : Ne répond pas !</value>
   </data>
   <data name="OverwriteWiiTDBBody" xml:space="preserve">
@@ -210,7 +210,7 @@
   <data name="InvalidDrive_String1" xml:space="preserve">
     <value>Ce n'est pas un appareil valide !</value>
   </data>
-  <data name="InstallGameScrub_String2" xml:space="preserve">
+  <data name="InstallGameScrub_Scrubbing" xml:space="preserve">
     <value>Statut : Nettoyage...</value>
   </data>
   <data name="Attention" xml:space="preserve">
@@ -270,7 +270,7 @@
   <data name="ReadImage_String2" xml:space="preserve">
     <value>Plusieurs images FST ?\r\nVeuillez m'envoyer des informations sur cette image.</value>
   </data>
-  <data name="InstallGameScrub_String6" xml:space="preserve">
+  <data name="InstallGameScrub_TrasnferredDisc2" xml:space="preserve">
     <value>Disque 2 transféré avec succès !</value>
   </data>
   <data name="AboutTranslatorContact" xml:space="preserve">
@@ -366,7 +366,7 @@
   <data name="CopyTask_String1" xml:space="preserve">
     <value>Transfert de fichier...</value>
   </data>
-  <data name="InstallGameScrub_String5" xml:space="preserve">
+  <data name="InstallGameScrub_GameInstalled" xml:space="preserve">
     <value>Jeu installé avec succès !</value>
   </data>
   <data name="OverwriteWiiTDBCaption" xml:space="preserve">
@@ -426,7 +426,7 @@
   <data name="CopyTask_String2" xml:space="preserve">
     <value>Installation du jeu...</value>
   </data>
-  <data name="InstallGameScrub_String4" xml:space="preserve">
+  <data name="InstallGameScrub_Complete" xml:space="preserve">
     <value>Statut : terminé !</value>
   </data>
   <data name="DisplayFilesSelected_Found_String1" xml:space="preserve">
@@ -447,7 +447,7 @@
   <data name="DialogResultDeleteGame_ReallyDeleteFile_String2" xml:space="preserve">
     <value>Cette procédure est irréversible et il ne sera pas possible de récupérer le(s) fichier(s) !</value>
   </data>
-  <data name="InstallGameScrub_String1" xml:space="preserve">
+  <data name="InstallGameScrub_Transferring" xml:space="preserve">
     <value>Transfert...</value>
   </data>
   <data name="ServerReported3DCoverNotFound" xml:space="preserve">
@@ -533,5 +533,8 @@
   </data>
   <data name="InstallGameScrub_TransferDisc2" xml:space="preserve">
     <value>Transfert de {0} disque 2...</value>
+  </data>
+  <data name="InstallGameScrub_DoneScrubbing" xml:space="preserve">
+    <value>Fini le gommage...</value>
   </data>
 </root>

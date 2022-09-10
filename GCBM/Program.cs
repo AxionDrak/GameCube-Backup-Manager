@@ -15,8 +15,6 @@ internal static class Program
     public static Form SplashScreen;
     private static Form MainForm;
     private static readonly string GET_CURRENT_PATH = Directory.GetCurrentDirectory();
-    
-    private static readonly string GAMES_DIR = "games";
     private static readonly string TEMP_DIR = System.IO.Path.DirectorySeparatorChar + "temp";
 
     private static readonly string COVERS_DIR =
