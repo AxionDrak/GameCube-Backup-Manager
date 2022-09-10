@@ -1319,6 +1319,15 @@ namespace GCBM.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Transferindo {0} Disco 2....
+        /// </summary>
+        internal static string InstallGameScrub_TransferDisc2 {
+            get {
+                return ResourceManager.GetString("InstallGameScrub_TransferDisc2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Este não é um dispositivo válido!.
         /// </summary>
         internal static string InvalidDrive_String1 {

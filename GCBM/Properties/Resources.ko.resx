@@ -531,4 +531,7 @@
   <data name="SplashDirectories" xml:space="preserve">
     <value>필수 폴더 설정 중...</value>
   </data>
+  <data name="InstallGameScrub_TransferDisc2" xml:space="preserve">
+    <value>{0} 디스크 2 전송 중...</value>
+  </data>
 </root>

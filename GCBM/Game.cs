@@ -611,9 +611,11 @@ public class Game
 
         game.InternalName = br.ReadStringNT();
 
-        if (!useXmlTitle) game.Title = game.InternalName;
+        game.Title = game.InternalName;
+        game.ID = game.IDGameCode + game.IDMakerCode; // GameID (IDGameCode + IDMakerCode)
+        //Catch GAMEID here
 
-        getXmlTitle(useXmlTitle, game);
+        if (useXmlTitle) game.Title = getXmlTitle(game.ID);
         br.Close();
         fs.Close();
 
@@ -627,8 +629,6 @@ public class Game
         //}
 
         game.Date = br.ReadStringNT();
-        game.ID = game.IDGameCode + game.IDMakerCode; // GameID (IDGameCode + IDMakerCode)
-        //Catch GAMEID here
 
         br.Close();
         fs.Close();
@@ -642,22 +642,24 @@ public class Game
         return Task.FromResult(game);
     }
 
-    private void getXmlTitle(bool useXmlTitle, Game game)
+    public string getXmlTitle(string id)
     {
-        if (useXmlTitle)
-        {
+        string title = "";
             if (sio.File.Exists(WIITDB_FILE))
             {
                 var root = XElement.Load(WIITDB_FILE);
                 IEnumerable<XElement> tests = root.Elements("game").AsParallel()
-                    .Where(el => (string)el.Element("id") == game.IDGameCode + game.IDMakerCode);
-                foreach (var el in tests) game.Title = (string)el.Element("locale")?.Element("title");
+                    .Where(el => (string)el.Element("id") == id);
+                foreach (var el in tests) title = (string)el.Element("locale")?.Element("title");
             }
             else
             {
                 CheckWiiTdbXml();
+                title = "error";
             }
-        }
+
+            return title;
+
     }
 
     public Game(string Title, string ID, string Region, string Extension, int Size, string Path)
