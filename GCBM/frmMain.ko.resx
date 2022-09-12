@@ -1038,7 +1038,7 @@
     <value>71, 20</value>
   </data>
   <data name="tsmiRemoveGameList.Text" xml:space="preserve">
-    <value>지우다</value>
+    <value>삭제</value>
   </data>
   <data name="tsmiGameListHashSHA1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
