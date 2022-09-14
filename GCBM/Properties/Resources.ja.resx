@@ -532,7 +532,7 @@
     <value>必要なディレクトリを設定しています...</value>
   </data>
   <data name="InstallGameScrub_TransferDisc2" xml:space="preserve">
-    <value>{0} ディスク 2 を転送しています...</value>
+    <value>2 番目のディスクを移動しています...</value>
   </data>
   <data name="InstallGameScrub_DoneScrubbing" xml:space="preserve">
     <value>拭き取り終了…</value>

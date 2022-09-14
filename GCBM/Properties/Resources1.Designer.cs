@@ -1301,7 +1301,7 @@ namespace GCBM.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Transferindo {0} Disco 2....
+        ///   Looks up a localized string similar to Movendo o disco 2....
         /// </summary>
         internal static string InstallGameScrub_TransferDisc2 {
             get {

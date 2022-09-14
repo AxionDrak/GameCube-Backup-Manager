@@ -8,13 +8,16 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
+using System.Diagnostics.Contracts;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Net;
 using System.Net.NetworkInformation;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Security.AccessControl;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading;
@@ -360,7 +363,8 @@ public partial class frmMain : Form
         else
         {
             // Main Menu Game Disc
-            //tsmiReloadGameListDisc.Enabled = false;
+            tscbDiscDrive.Enabled = false;
+            tsmiReloadGameListDisc.Enabled = false;
             tsmiSelectGameDisc.Enabled = false;
             tsmiGameDiscDeleteAllFiles.Enabled = false;
             tsmiGameDiscDeleteSelectedFile.Enabled = false;
@@ -383,7 +387,7 @@ public partial class frmMain : Form
     /// </summary>
     private void EnableOptionsGameList()
     {
-        tabMainFile.BeginInvoke(new Action(() =>
+        tabMainFile.Invoke(new Action(() =>
         {
             // Main Menu Game
             btnGameInstallExactCopy.Enabled = true;
@@ -402,6 +406,14 @@ public partial class frmMain : Form
             tsmiTransferDeviceCovers.Enabled = true;
             dgvSource.Enabled = true;
         }));
+        tabMainDisc.Invoke(() =>
+        {
+            tscbDiscDrive.Enabled = true;
+
+            tsmiReloadDeviceDrive.Enabled = true;
+            tsmiReloadGameListDisc.Enabled = true;
+
+        });
 
     }
 
@@ -562,7 +574,7 @@ public partial class frmMain : Form
         {
             if (dgv.CurrentRow == null) return;
             Game game = (from g in dGames.Values
-                         where dgv.CurrentRow.Cells["ID"].Value.ToString() == g.ID
+                         where dgv.CurrentRow.Cells["Path"].Value.ToString() == g.Path
                          select g).First();
             LoadCover(game.ID);
             // pictureBox GameID
@@ -590,7 +602,7 @@ public partial class frmMain : Form
                 tbIDMakerCode.Text = game.IDMakerCode;
                 tbIDDiscID.Text = game.DiscID;
                 lblSourceCount.Text = dgv.Rows.Count.ToString();
-                if (string.Format("0x{0:x2}", game.DiscID) == "0x00")
+                if (game.DiscID == "0x00")
                 {
                     lblTypeDisc.Visible = true;
                     lblTypeDisc.Text = Resources.LoadISOInfo_String1;
@@ -2787,20 +2799,22 @@ public partial class frmMain : Form
         //Check for WiiTDB file and internet connection, download if not found and we're online
 
         callback(Resources.SplashWiiTDB, 90);
-        if (!sio.File.Exists(WIITDB_FILE) && NetworkInterface.GetIsNetworkAvailable())
+        if (CONFIG_INI_FILE.IniReadBool("SEVERAL", "LoadDatabase"))
         {
-            //frmDownloadGameTDB frmDownload = new frmDownloadGameTDB();
-            //_ = frmDownload.ShowDialog();
-            Show();
-            CheckAndDownloadWiiTdbXml();
+            if (!sio.File.Exists(WIITDB_FILE) && NetworkInterface.GetIsNetworkAvailable())
+            {
+                //frmDownloadGameTDB frmDownload = new frmDownloadGameTDB();
+                //_ = frmDownload.ShowDialog();
+                Show();
+                CheckAndDownloadWiiTdbXml();
+            }
+            else if (!sio.File.Exists(WIITDB_FILE) && !NetworkInterface.GetIsNetworkAvailable())
+            {
+                MessageBox.Show(Resources.NoInternetConnectionFound_String1 + Environment.NewLine +
+                                Resources.NoInternetConnectionFound_String2,
+                    Resources.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
-        else if (!sio.File.Exists(WIITDB_FILE) && !NetworkInterface.GetIsNetworkAvailable())
-        {
-            MessageBox.Show(Resources.NoInternetConnectionFound_String1 + Environment.NewLine +
-                            Resources.NoInternetConnectionFound_String2,
-                Resources.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
-        }
-
         //LoadDatabaseXML();
 
         // DISABLED
@@ -3136,53 +3150,6 @@ public partial class frmMain : Form
 
     #region Transfer System
 
-
-    #region isGCITRunning
-
-    /// <summary />
-    /// <returns></returns>
-    public static bool isGCITRunning()
-    {
-        var procs = Process.GetCurrentProcess().GetChildProcesses();
-
-        if (procs != null)
-            if (procs.Count != 0)
-                foreach (var proc in procs)
-                    if (proc.ProcessName.Contains("gcit"))
-                        return true;
-
-        return false;
-    }
-
-    #endregion
-    private void StartScrub()
-    {
-        btnAbort.Visible = true;
-        lblAbort.Visible = true;
-        DisableOptionsGame(dgvSource);
-        BuildInstallQueue();
-        foreach (var game in InstallQueue) if (!ABORT) InstallGameScrub(InstallQueue[intQueuePos]);
-
-        foreach (var game in _listSecondDiscs)
-            if (!ABORT)
-            {
-                pbCopy.Visible = true;
-                lblInstallStatusText.Visible = true;
-                lblInstallStatusGameTitle.Visible = true;
-                lblInstallStatusPercent.Visible = true;
-                lblInstallStatusGameIndex.Visible = true;
-                RenameDisc2(game);
-
-            }
-
-        GlobalNotifications("Successfully installed " + InstallQueue.Count + " games.", ToolTipIcon.Info);
-        pbCopy.Hide();
-        lblInstallStatusPercent.Hide();
-        lblInstallStatusText.Hide();
-        lblInstallStatusGameTitle.Hide();
-        EnableOptionsGameList();
-    }
-
     #region Build Install Queue
 
     private string[] getSelectedGamePaths(DataGridView dgv)
@@ -3227,6 +3194,7 @@ public partial class frmMain : Form
 
     #endregion
 
+    #region Exact Copy
     #region Check Install Queue and Tell CopyTask to begin
 
     private void CheckAndCallCopyTask(Game game)
@@ -3323,12 +3291,6 @@ public partial class frmMain : Form
             EnableOptionsGameList();
         }
     }
-
-    #endregion
-
-
-
-    #region Build Exact Copy Install Queue
 
     #endregion
 
@@ -3589,6 +3551,59 @@ public partial class frmMain : Form
 
     #endregion
 
+    #endregion
+
+    #region Scrub
+    #region isGCITRunning
+
+    /// <summary />
+    /// <returns></returns>
+    public static bool isGCITRunning()
+    {
+        var procs = Process.GetCurrentProcess().GetChildProcesses();
+
+        if (procs != null)
+            if (procs.Count != 0)
+                foreach (var proc in procs)
+                    if (proc.ProcessName.Contains("gcit"))
+                        return true;
+
+        return false;
+    }
+
+    #endregion
+    private async void StartScrub()
+    {
+        DisableOptionsGame(dgvDestination);
+        btnAbort.Visible = true;
+        lblAbort.Visible = true;
+        intQueuePos = 0;
+        DisableOptionsGame(dgvSource);
+        BuildInstallQueue();
+        foreach (Game game in InstallQueue.Values) if (!ABORT)
+                await InstallGameScrub(InstallQueue[intQueuePos]).ConfigureAwait(false);
+
+        int d2counter = 0;
+        foreach (Game game in _listSecondDiscs)
+        {
+            d2counter++;
+            lblInstallStatusText.Text = Resources.InstallGameScrub_TransferDisc2;
+            lblInstallStatusGameTitle.Text = game.Title;
+            lblInstallStatusGameIndex.Text = d2counter.ToString();
+            await RenameDisc2(game).ConfigureAwait(false);
+        }
+        GlobalNotifications("Successfully installed " + InstallQueue.Count + " games.", ToolTipIcon.Info);
+        pbCopy.BeginInvoke(() =>
+        {
+            pbCopy.Hide();
+            lblInstallStatusPercent.Hide();
+            lblInstallStatusText.Hide();
+            lblInstallStatusGameTitle.Hide();
+        });
+
+        EnableOptionsGameList();
+    }
+
 
     #region Install Game Scrub
 
@@ -3597,7 +3612,7 @@ public partial class frmMain : Form
     /// <summary>
     ///     Function to install an copy of the file in Scrub mode.
     /// </summary>
-    private void InstallGameScrub(Game game)
+    private async Task InstallGameScrub(Game game)
     {
         scrubStopwatch.Stop();
         scrubStopwatch.Reset();
@@ -3667,7 +3682,7 @@ public partial class frmMain : Form
                 pbCopy.Value = 100;
                 lblInstallStatusText.Text = Resources.InstallGameScrub_DoneScrubbing;
                 Game game = InstallQueue[intQueuePos];
-                CheckDisc1Or2Scrub(game);
+                CheckDisc1Or2Scrub(game).ConfigureAwait(false);
 
                 #endregion
             }
@@ -3698,7 +3713,7 @@ public partial class frmMain : Form
     }
 
 
-    private async void CheckDisc1Or2Scrub(Game game)
+    private async Task CheckDisc1Or2Scrub(Game game)
     {
         #region Disc 1
 
@@ -3712,11 +3727,14 @@ public partial class frmMain : Form
                                " [" + game.ID + "]" +
                                sio.Path.DirectorySeparatorChar + "game.iso";
 
+                var _SwapCharacter = game.Title.Replace(":", " - ").Replace(";", " - ").Replace(",", " - ")
+                    .Replace(" -  ", " - ").Replace("/", "&");
 
                 var myDestiny = strDestinationDrive + GAMES_DIR + sio.Path.DirectorySeparatorChar +
-                                game.Title +
+                                _SwapCharacter +
                                 " [" + game.ID + "]" +
                                 sio.Path.DirectorySeparatorChar + "game.iso";
+
                 //MessageBox.Show("MYORIGEM: " + Environment.NewLine
                 //    + myOrigem +
                 //    "\n\nMYDESTINY: " + Environment.NewLine
@@ -3730,17 +3748,26 @@ public partial class frmMain : Form
                 //sio.File.Move(myOrigem, myDestiny);
                 var o = new sio.FileInfo(myOrigem);
                 var d = new sio.FileInfo(myDestiny);
+                var Source = new sio.DirectoryInfo(strDestinationDrive + GAMES_DIR + sio.Path.DirectorySeparatorChar +
+                                                    game.InternalName + " [" + game.ID + "]");
+                var Destination = new sio.DirectoryInfo(strDestinationDrive + GAMES_DIR + sio.Path.DirectorySeparatorChar +
+                                              _SwapCharacter + " [" + game.ID + "]");
 
-                //o.MoveTo(myDestiny);
-                //    q => pbCopy.BeginInvoke(new Action(() =>
-                //{
-                //    //DisableOptionsGame(dgvSource);
-                //    UpdateProgressExact(q);
-                //})));
-                await Task.Run(() =>
+                await Run(() =>
                 {
-                    if (!o.Directory.Exists) o.Directory.Create();
-                    if (!o.Exists) o.CopyTo(d, x => pbCopy.BeginInvoke(new Action(() => UpdateProgressScrubDisc2(x))));
+                    if (Destination.Exists)
+                    {
+                        Destination.Delete();
+                    }
+
+                    try
+                    {
+                        Source.MoveTo(Destination.FullName);
+                    }
+                    catch (Exception ex)
+                    {
+                        GlobalNotifications(ex.Message, ToolTipIcon.Error);
+                    }
 
                 }).ContinueWith(task =>
                 {
@@ -3760,11 +3787,7 @@ public partial class frmMain : Form
                     //Delete folder at   strDestinationDrive + GAMES_DIR + sio.Path.DirectorySeparatorChar +
                     //                   game.Title +
                     //                   " [" + game.ID + "2]" +
-                    if (o.FullName != d.FullName) //Did we move the file?
-                    {
-                        o.Directory.Delete(true); //Clean up the old
-                    }
-                });
+                }).ConfigureAwait(false);
             }
 
         }
@@ -3776,130 +3799,145 @@ public partial class frmMain : Form
 
         if (game.DiscID == "0x01")
         {
+
             _listSecondDiscs.Add(game);
         }
+        #endregion
+
     }
 
-    private async void RenameDisc2(Game game)
+    private async Task RenameDisc2(Game game)
     {
         // Usar nome intermo
-        if (!useXmlTitle)
+
+        if (useXmlTitle)
         {
-            // Renomear game.iso -> disc2.iso
+
             var myOrigem = strDestinationDrive + GAMES_DIR + sio.Path.DirectorySeparatorChar +
                            game.InternalName +
-                           " (2) [" + game.ID + "2]" +
+                           " [" + game.ID + "]" +
                            sio.Path.DirectorySeparatorChar + "game.iso";
 
+            var _SwapCharacter = game.Title.Replace(":", " - ").Replace(";", " - ").Replace(",", " - ")
+                .Replace(" -  ", " - ").Replace("/", "&");
 
             var myDestiny = strDestinationDrive + GAMES_DIR + sio.Path.DirectorySeparatorChar +
-                            game.InternalName +
+                            _SwapCharacter +
                             " [" + game.ID + "]" +
-                            sio.Path.DirectorySeparatorChar + "disc2.iso";
+                            sio.Path.DirectorySeparatorChar + "game.iso";
 
             //MessageBox.Show("MYORIGEM: " + Environment.NewLine
             //    + myOrigem +
             //    "\n\nMYDESTINY: " + Environment.NewLine
             //    + myDestiny, "DISC2", MessageBoxButtons.OK, MessageBoxIcon.Information);
             /*
-                        * MYORIGEM:     c:\games\resident evil 4 disc2 (2) [G4BE082]\game.iso
-                        * MYDESTINY:    c:\games\resident evil 4 disc2 (2) [G4BE082]\disc2.iso
-                        * MYNEWDESTINY: c:\games\resident evil 4 [G4BE08]\
-                        */
+                    * MYORIGEM:     c:\games\resident evil 4 disc2 (2) [G4BE082]\game.iso
+                    * MYDESTINY:    c:\games\resident evil 4 disc2 (2) [G4BE082]\disc2.iso
+                    * MYNEWDESTINY: c:\games\resident evil 4 [G4BE08]\
+                    */
 
             //sio.File.Move(myOrigem, myDestiny);
             var o = new sio.FileInfo(myOrigem);
             var d = new sio.FileInfo(myDestiny);
+            var Source = new sio.DirectoryInfo(strDestinationDrive + GAMES_DIR + sio.Path.DirectorySeparatorChar +
+                                               game.InternalName + " (2) [" + game.ID + "2]");
+            var Destination = new sio.DirectoryInfo(strDestinationDrive + GAMES_DIR + sio.Path.DirectorySeparatorChar +
+                                                    _SwapCharacter + " [" + game.ID + "]");
 
-            //o.MoveTo(myDestiny);
-            //    q => pbCopy.BeginInvoke(new Action(() =>
-            //{
-            //    //DisableOptionsGame(dgvSource);
-            //    UpdateProgressExact(q);
-            //})));
-            await Task.Run(() =>
+
+            await Run(() =>
             {
-                if (!d.Directory.Exists) d.Directory.Create();
-                if (o is { Exists: false }) o.CopyTo(d, x => pbCopy.BeginInvoke(new Action(() => UpdateProgressScrubDisc2(x))));
+                if (Destination.Exists)
+                {
+                    try
+                    {
+                        var file = Source.EnumerateFiles("*.iso").First();
+                        file.CopyTo(new sio.FileInfo(sio.Path.Combine(Destination.FullName, "disc2.iso")),
+                            UpdateTransfer);
+                        file.Directory.Delete(true);
+                    }
+                    catch (Exception ex)
+                    {
+                        GlobalNotifications(ex.Message, ToolTipIcon.Error);
+                    }
+                }
 
-                ;
+                else
+                {
+                    Source.MoveTo(Destination.FullName);
+                }
+
             }).ContinueWith(task =>
             {
-
                 GlobalNotifications(Resources.InstallGameScrub_GameInstalled, ToolTipIcon.Info);
+
+                //MessageBox.Show(GCBM.Properties.Resources.InstallGameScrub_String6, GCBM.Properties.Resources.Information, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 tabMainFile.BeginInvoke(() =>
                 {
                     lblInstallStatusGameTitle.Visible = false;
-                        lblInstallStatusGameIndex.Visible = false;
+                    lblInstallStatusGameIndex.Visible = false;
                     lblInstallStatusText.Visible = false;
                     lblInstallStatusPercent.Visible = false;
                     pbCopy.Visible = false;
-
                 });
-                //MessageBox.Show(GCBM.Properties.Resources.InstallGameScrub_String6, GCBM.Properties.Resources.Information, MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 //GC.Collect();
                 //Delete folder at   strDestinationDrive + GAMES_DIR + sio.Path.DirectorySeparatorChar +
                 //                   game.Title +
                 //                   " [" + game.ID + "2]" +
-                if (o.Directory != null) o.Directory.Delete(true);
-            });
-        } // Usar WiiTDB.xml
+            }).ConfigureAwait(false);
+        }
         else
         {
-            var myOrigem = strDestinationDrive + GAMES_DIR + sio.Path.DirectorySeparatorChar +
-                           game.InternalName +
-                           " (2) [" + game.ID + "2]" +
-                           sio.Path.DirectorySeparatorChar + "game.iso";
 
-
-            var myDestiny = strDestinationDrive + GAMES_DIR + sio.Path.DirectorySeparatorChar +
-                            game.Title +
-                            " [" + game.ID + "]" +
-                            sio.Path.DirectorySeparatorChar + "disc2.iso";
             //MessageBox.Show("MYORIGEM: " + Environment.NewLine
             //    + myOrigem +
             //    "\n\nMYDESTINY: " + Environment.NewLine
             //    + myDestiny, "DISC2", MessageBoxButtons.OK, MessageBoxIcon.Information);
             /*
-                        * MYORIGEM:     c:\games\resident evil 4 disc2 (2) [G4BE082]\game.iso
-                        * MYDESTINY:    c:\games\resident evil 4 disc2 (2) [G4BE082]\disc2.iso
-                        * MYNEWDESTINY: c:\games\resident evil 4 [G4BE08]\
-                        */
-
-            //sio.File.Move(myOrigem, myDestiny);
-            var d = new sio.FileInfo(myDestiny);
-            var o = new sio.FileInfo(myOrigem);
-            //o.MoveTo(myDestiny);
-            //    q => pbCopy.BeginInvoke(new Action(() =>
-            //{
-            //    //DisableOptionsGame(dgvSource);
-            //    UpdateProgressExact(q);
-            //})));
-            await Task.Run(() =>
+                    * MYORIGEM:     c:\games\resident evil 4 disc2 (2) [G4BE082]\game.iso
+                    * MYDESTINY:    c:\games\resident evil 4 disc2 (2) [G4BE082]\disc2.iso
+                    * MYNEWDESTINY: c:\games\resident evil 4 [G4BE08]\
+                    */
+            var Source = new sio.DirectoryInfo(strDestinationDrive + GAMES_DIR + sio.Path.DirectorySeparatorChar +
+                                               game.InternalName + " (2) [" + game.ID + "2]");
+            var Destination = new sio.DirectoryInfo(strDestinationDrive + GAMES_DIR + sio.Path.DirectorySeparatorChar +
+                                                    game.InternalName + " [" + game.ID + "]");
+            await Run(() =>
             {
-                if (d.Directory is { Exists: false }) d.Directory.Create();
-                try
-                { 
-                    o.CopyTo(d, x => pbCopy.BeginInvoke(new Action(() => UpdateProgressExact(x))));
-                }
-                catch
+                if (Destination.Exists)
                 {
-
+                    try
+                    {
+                        var file = Source.EnumerateFiles("*.iso").First();
+                        file.CopyTo(new sio.FileInfo(sio.Path.Combine(Destination.FullName, "disc2.iso")),
+                            UpdateTransfer);
+                        file.Directory.Delete(true);
+                    }
+                    catch (Exception ex)
+                    {
+                        GlobalNotifications(ex.Message, ToolTipIcon.Error);
+                    }
                 }
+                else
+                {
+                    Source.MoveTo(Destination.FullName);
+                }
+
             }).ContinueWith(task =>
             {
-
                 GlobalNotifications(Resources.InstallGameScrub_GameInstalled, ToolTipIcon.Info);
+
+                //MessageBox.Show(GCBM.Properties.Resources.InstallGameScrub_String6, GCBM.Properties.Resources.Information, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 tabMainFile.BeginInvoke(() =>
-                    {
-                        lblInstallStatusGameTitle.Visible = false;
-                        lblInstallStatusGameIndex.Visible = false;
-                        lblInstallStatusText.Visible = false;
-                        lblInstallStatusPercent.Visible = false;
-                        pbCopy.Visible = false;
-                    });
-                o.Directory.Delete(true);
-            });
+                {
+                    lblInstallStatusGameTitle.Visible = false;
+                    lblInstallStatusGameIndex.Visible = false;
+                    lblInstallStatusText.Visible = false;
+                    lblInstallStatusPercent.Visible = false;
+                    pbCopy.Visible = false;
+                });
+            }).ConfigureAwait(false);
         }
     }
 
@@ -3936,23 +3974,23 @@ public partial class frmMain : Form
             }
         });
     }
-    private void UpdateProgressScrubDisc2(int i)
+    private void UpdateProgressScrubDisc2(string title, int i)
     {
         tabMainFile.BeginInvoke(() =>
         {
             //Make sure pbCopy is Continuous
+            lblInstallStatusGameIndex.Visible = true;
             lblInstallStatusGameTitle.Visible = true;
             lblInstallStatusText.Visible = true;
             lblInstallStatusPercent.Visible = true;
-            lblInstallStatusGameTitle.Text = InstallQueue[intQueuePos].Title;
-            lblInstallStatusGameIndex.Text = intQueuePos + "  /  " + InstallQueue.Count;
+            lblInstallStatusGameTitle.Text = title;
             pbCopy.Visible = true;
             DisableOptionsGame(dgvSource);
             if (i >= 100)
             {
                 pbCopy.Style = ProgressBarStyle.Marquee;
                 lblInstallStatusPercent.Hide();
-                lblInstallStatusText.Text = string.Format(Resources.InstallGameScrub_TransferDisc2, InstallQueue[intQueuePos].Title) + " -- This is taking a while, but we are still responding.";
+                lblInstallStatusText.Text = string.Format(Resources.InstallGameScrub_TransferDisc2, title) + " -- This is taking a while, but we are still responding.";
                 pbCopy.Value = pbCopy.Maximum;
             }
             else
@@ -3961,13 +3999,15 @@ public partial class frmMain : Form
                 lblInstallStatusPercent.Show();
                 lblInstallStatusPercent.Text = i + "%"; //i++.ToString() + "%";
                 lblInstallStatusText.Show();
-                lblInstallStatusText.Text = string.Format(Resources.InstallGameScrub_TransferDisc2, InstallQueue[intQueuePos].Title);
+                lblInstallStatusText.Text = string.Format(Resources.InstallGameScrub_TransferDisc2, title);
                 pbCopy.Value = i;
             }
 
         });
 
     }
+
+    #endregion
 
     #endregion
 
@@ -4038,6 +4078,21 @@ public partial class frmMain : Form
         }));
 
     }
+    private void UpdateTransfer(int x)
+    {
+        tabMainFile.BeginInvoke(new Action(() =>
+        {
+            dgvSource.Enabled = false;
+            pbCopy.Visible = true;
+            lblInstallStatusPercent.Visible = true;
+            pbCopy.Value = x;
+            lblInstallStatusPercent.Text = x + "%";
+            lblInstallStatusText.Visible = true;
+            lblInstallStatusGameIndex.Visible = true;
+            tabMainFile.Update();
+        }));
+
+    }
 
 
     private void FinishedInstalling()
@@ -4064,7 +4119,6 @@ public partial class frmMain : Form
 
     #endregion
 
-    #endregion
 
     #region Notifications
 
@@ -4075,9 +4129,12 @@ public partial class frmMain : Form
     /// <param name="icon"></param>
     private void GlobalNotifications(string message, ToolTipIcon icon)
     {
-        if (intQueuePos + 1 == InstallQueue.Count && WORKING == false) EnableOptionsGameList();
+        if (CONFIG_INI_FILE.IniReadBool("SEVERAL", "CheckNotify"))
+        {
+            if (intQueuePos + 1 == InstallQueue.Count && WORKING == false) EnableOptionsGameList();
 
-        notifyIcon.ShowBalloonTip(5, "GameCube Backup Manager", message, icon);
+            notifyIcon.ShowBalloonTip(5, "GameCube Backup Manager", message, icon);
+        }
     }
 
     /// <summary>
@@ -5194,7 +5251,7 @@ public partial class frmMain : Form
                 dgvSelected != dgvSource &&
                 dgvSelected != dgvDestination)
                 dgvSelected = dgvSource; //We haven't chosen one.. but.. clicked. Set selected dgv to source
-            //There's a way to do this in a single line.. but
+                                         //There's a way to do this in a single line.. but
             if (dgvSelected != null && dgvSelected.Rows[e.RowIndex].Cells[0].Value.ToString() == "False")
             {
                 if (dgvSelected != null) dgvSelected.Rows[e.RowIndex].Cells[0].Value = true;

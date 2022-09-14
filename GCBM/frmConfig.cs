@@ -546,4 +546,9 @@ public partial class frmConfig : Form
     }
 
     #endregion
+
+    private void cbLoadDatabase_CheckedChanged(object sender, EventArgs e)
+    {
+
+    }
 }

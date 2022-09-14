@@ -616,18 +616,6 @@
   <data name="lblLanguage.Text" xml:space="preserve">
     <value>언어:</value>
   </data>
-  <data name="cbLanguage.Items" xml:space="preserve">
-    <value>포르투갈어 [브라질 - BR]</value>
-  </data>
-  <data name="cbLanguage.Items1" xml:space="preserve">
-    <value>영어 [미국 - US]</value>
-  </data>
-  <data name="cbLanguage.Items2" xml:space="preserve">
-    <value>스페인어 [스페인 - ES]</value>
-  </data>
-  <data name="cbLanguage.Items3" xml:space="preserve">
-    <value>한국어 [대한민국 - KR]</value>
-  </data>
   <data name="grbLog.Text" xml:space="preserve">
     <value>기록</value>
   </data>
@@ -766,5 +754,26 @@
   </data>
   <data name="grbGeneralScrub.Text" xml:space="preserve">
     <value>없애다</value>
+  </data>
+  <data name="cbGeneralFileSize.Items1" xml:space="preserve">
+    <value>킬로바이트</value>
+  </data>
+  <data name="cbGeneralFileSize.Items2" xml:space="preserve">
+    <value>메가바이트</value>
+  </data>
+  <data name="cbGeneralFileSize.Items3" xml:space="preserve">
+    <value>기가바이트</value>
+  </data>
+  <data name="cbGeneralFileSize.Items4" xml:space="preserve">
+    <value>테라바이트</value>
+  </data>
+  <data name="btnOK.Text" xml:space="preserve">
+    <value>확인</value>
+  </data>
+  <data name="cbNotificationsToggle.Text" xml:space="preserve">
+    <value>무음 알림.</value>
+  </data>
+  <data name="cbLoadDatabase.Text" xml:space="preserve">
+    <value>시작할 때 데이터베이스를 로드합니다.</value>
   </data>
 </root>

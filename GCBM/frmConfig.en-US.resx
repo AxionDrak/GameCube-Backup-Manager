@@ -117,38 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="tabSettingsGeneral.Text" xml:space="preserve">
-    <value>General</value>
-  </data>
-  <data name="tabSettingsNomenclature.Text" xml:space="preserve">
-    <value>Nomenclature</value>
-  </data>
-  <data name="tabSettingsSeveral.Text" xml:space="preserve">
-    <value>Several</value>
-  </data>
-  <data name="tabSettingsTransfer.Text" xml:space="preserve">
-    <value>Game Transfer</value>
-  </data>
-  <data name="tabSettingsCovers.Text" xml:space="preserve">
-    <value>Covers</value>
-  </data>
-  <data name="tabSettingsTitle.Text" xml:space="preserve">
-    <value>Titles</value>
-  </data>
-  <data name="tabSettingsUpdates.Text" xml:space="preserve">
-    <value>Updates</value>
-  </data>
-  <data name="tabSettingsLanguage.Text" xml:space="preserve">
-    <value>Languages</value>
-  </data>
-  <data name="tabSettingsLog.Text" xml:space="preserve">
-    <value>Record</value>
-  </data>
   <data name="grbGeneralTemporaryFolder.Text" xml:space="preserve">
     <value>Temporary folder</value>
-  </data>
-  <data name="grbGeneralFiles.Text" xml:space="preserve">
-    <value>Files</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="chkGeneralExtractNwb.Size" type="System.Drawing.Size, System.Drawing">
@@ -193,14 +163,20 @@
   <data name="lblGeneralExtract.Text" xml:space="preserve">
     <value>Extract whenever necessary.</value>
   </data>
-  <data name="grbGeneralFileSize.Text" xml:space="preserve">
-    <value>Show size</value>
+  <data name="grbGeneralFiles.Text" xml:space="preserve">
+    <value>Files</value>
   </data>
   <data name="cbGeneralFileSize.Items" xml:space="preserve">
     <value>Automatic</value>
   </data>
-  <data name="grbGeneralPartitions.Text" xml:space="preserve">
-    <value>Adjust game directories</value>
+  <data name="cbGeneralFileSize.Items2" xml:space="preserve">
+    <value>Megabyte</value>
+  </data>
+  <data name="cbGeneralFileSize.Items3" xml:space="preserve">
+    <value>Gigabyte</value>
+  </data>
+  <data name="grbGeneralFileSize.Text" xml:space="preserve">
+    <value>Show size</value>
   </data>
   <data name="rbGeneralDiscDelete.Size" type="System.Drawing.Size, System.Drawing">
     <value>372, 19</value>
@@ -213,6 +189,12 @@
   </data>
   <data name="rbGeneralDiscClean.Text" xml:space="preserve">
     <value>Keep all folders separate for disk 1 and disk 2 (Default)</value>
+  </data>
+  <data name="grbGeneralPartitions.Text" xml:space="preserve">
+    <value>Adjust game directories</value>
+  </data>
+  <data name="tabSettingsGeneral.Text" xml:space="preserve">
+    <value>General</value>
   </data>
   <data name="lblCommentsScrubCopy.Size" type="System.Drawing.Size, System.Drawing">
     <value>538, 52</value>
@@ -232,9 +214,6 @@
   <data name="lblComments.Text" xml:space="preserve">
     <value>COMMENTS:</value>
   </data>
-  <data name="grpNomenclatureFolderFormat.Text" xml:space="preserve">
-    <value>Folder format</value>
-  </data>
   <data name="cbAdjustNamingStyle.Items" xml:space="preserve">
     <value>Title [Game Code]</value>
   </data>
@@ -247,8 +226,11 @@
   <data name="lblNomenclature.Text" xml:space="preserve">
     <value>Naming style:</value>
   </data>
-  <data name="grbGeneralDiverse.Text" xml:space="preserve">
-    <value>Several</value>
+  <data name="grpNomenclatureFolderFormat.Text" xml:space="preserve">
+    <value>Folder format</value>
+  </data>
+  <data name="tabSettingsNomenclature.Text" xml:space="preserve">
+    <value>Nomenclature</value>
   </data>
   <data name="chkMultipleInstances.Size" type="System.Drawing.Size, System.Drawing">
     <value>246, 17</value>
@@ -273,12 +255,6 @@
   </data>
   <data name="chkScreensaver.Text" xml:space="preserve">
     <value>Disable the screensaver (Screensaver)</value>
-  </data>
-  <data name="chkWelcome.Size" type="System.Drawing.Size, System.Drawing">
-    <value>357, 17</value>
-  </data>
-  <data name="chkWelcome.Text" xml:space="preserve">
-    <value>Disable the welcome screen when starting the program (Splashscreen)</value>
   </data>
   <data name="chkNetVerify.Size" type="System.Drawing.Size, System.Drawing">
     <value>258, 17</value>
@@ -315,6 +291,12 @@
   </data>
   <data name="chkGeneralMD5.Text" xml:space="preserve">
     <value>Calculate MD5 signature during transfers</value>
+  </data>
+  <data name="grbGeneralDiverse.Text" xml:space="preserve">
+    <value>Several</value>
+  </data>
+  <data name="tabSettingsSeveral.Text" xml:space="preserve">
+    <value>Several</value>
   </data>
   <data name="lblFormat.Size" type="System.Drawing.Size, System.Drawing">
     <value>42, 13</value>
@@ -361,26 +343,26 @@
   <data name="label17.Text" xml:space="preserve">
     <value>Copies one or more files from one location (source) to another (destination). The file is not compressed, not part of any container, and no garbage data is removed.</value>
   </data>
-  <data name="grbTransferSystem.Text" xml:space="preserve">
-    <value>Transfer system to be used</value>
-  </data>
   <data name="rbTransferSystemXCopy.Text" xml:space="preserve">
     <value>XCopy (Default)</value>
   </data>
+  <data name="grbTransferSystem.Text" xml:space="preserve">
+    <value>Transfer system to be used</value>
+  </data>
+  <data name="tabSettingsTransfer.Text" xml:space="preserve">
+    <value>Game Transfer</value>
+  </data>
   <data name="grpTitlesCoverFolder.Text" xml:space="preserve">
     <value>Covers folder (Cache -&gt; Origin)</value>
-  </data>
-  <data name="grbCoverTransfer.Text" xml:space="preserve">
-    <value>USB charger setup (Transfer Covers -&gt; Destination)</value>
-  </data>
-  <data name="tabCoverDisc.Text" xml:space="preserve">
-    <value>Disc</value>
   </data>
   <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
     <value>79, 13</value>
   </data>
   <data name="label8.Text" xml:space="preserve">
     <value>Folder location:</value>
+  </data>
+  <data name="tabCoverDisc.Text" xml:space="preserve">
+    <value>Disc</value>
   </data>
   <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
     <value>79, 13</value>
@@ -394,17 +376,17 @@
   <data name="label9.Text" xml:space="preserve">
     <value>Folder location:</value>
   </data>
-  <data name="tabCoverFull.Text" xml:space="preserve">
-    <value>Complete</value>
-  </data>
   <data name="label35.Size" type="System.Drawing.Size, System.Drawing">
     <value>79, 13</value>
   </data>
   <data name="label35.Text" xml:space="preserve">
     <value>Folder location:</value>
   </data>
-  <data name="grpCoversSynchronize.Text" xml:space="preserve">
-    <value>Synchronize</value>
+  <data name="tabCoverFull.Text" xml:space="preserve">
+    <value>Complete</value>
+  </data>
+  <data name="grbCoverTransfer.Text" xml:space="preserve">
+    <value>USB charger setup (Transfer Covers -&gt; Destination)</value>
   </data>
   <data name="chkCoverRecursiveSearch.Size" type="System.Drawing.Size, System.Drawing">
     <value>250, 17</value>
@@ -424,8 +406,11 @@
   <data name="chkCoverSynchronizeDelete.Text" xml:space="preserve">
     <value>Delete skins for games not on the list</value>
   </data>
-  <data name="grbTitleLanguage.Text" xml:space="preserve">
-    <value>Title language</value>
+  <data name="grpCoversSynchronize.Text" xml:space="preserve">
+    <value>Synchronize</value>
+  </data>
+  <data name="tabSettingsCovers.Text" xml:space="preserve">
+    <value>Covers</value>
   </data>
   <data name="cbTitleLanguage.Items" xml:space="preserve">
     <value>English</value>
@@ -463,11 +448,11 @@
   <data name="cbTitleLanguage.Items11" xml:space="preserve">
     <value>Simplified Chinese</value>
   </data>
+  <data name="grbTitleLanguage.Text" xml:space="preserve">
+    <value>Title language</value>
+  </data>
   <data name="grbTitleFileLocation.Text" xml:space="preserve">
     <value>File location</value>
-  </data>
-  <data name="grbTitleDiverse.Text" xml:space="preserve">
-    <value>Miscellaneous (program restart required to take effect)</value>
   </data>
   <data name="rbGameXmlName.Size" type="System.Drawing.Size, System.Drawing">
     <value>417, 17</value>
@@ -493,14 +478,14 @@
   <data name="chkGameTitle.Text" xml:space="preserve">
     <value>Use GameTDB (titles.txt)</value>
   </data>
-  <data name="grbDolphin.Text" xml:space="preserve">
-    <value>Configure Emulator</value>
+  <data name="grbTitleDiverse.Text" xml:space="preserve">
+    <value>Miscellaneous (program restart required to take effect)</value>
+  </data>
+  <data name="tabSettingsTitle.Text" xml:space="preserve">
+    <value>Titles</value>
   </data>
   <data name="grbDolphinFolder.Text" xml:space="preserve">
     <value>Path to emulator</value>
-  </data>
-  <data name="grbDolphinAudio.Text" xml:space="preserve">
-    <value>Audio</value>
   </data>
   <data name="rbDSPHLE.Size" type="System.Drawing.Size, System.Drawing">
     <value>112, 17</value>
@@ -508,8 +493,14 @@
   <data name="rbDSPHLE.Text" xml:space="preserve">
     <value>DSP HLE (default)</value>
   </data>
+  <data name="grbDolphinAudio.Text" xml:space="preserve">
+    <value>Audio</value>
+  </data>
   <data name="grbDolphinVideo.Text" xml:space="preserve">
     <value>Video</value>
+  </data>
+  <data name="grbDolphin.Text" xml:space="preserve">
+    <value>Configure Emulator</value>
   </data>
   <data name="lblTimeInterval.Location" type="System.Drawing.Point, System.Drawing">
     <value>53, 246</value>
@@ -519,9 +510,6 @@
   </data>
   <data name="lblTimeInterval.Text" xml:space="preserve">
     <value>NOTE: Adjusting the time interval setting will only take effect after restarting the program.</value>
-  </data>
-  <data name="grbUpdate.Text" xml:space="preserve">
-    <value>Update Settings</value>
   </data>
   <data name="cbVerificationInterval.Items" xml:space="preserve">
     <value>5 minutes</value>
@@ -595,14 +583,17 @@
   <data name="chkUpdateVerifyStart.Text" xml:space="preserve">
     <value>Check for updates on startup</value>
   </data>
+  <data name="grbUpdate.Text" xml:space="preserve">
+    <value>Update Settings</value>
+  </data>
+  <data name="tabSettingsUpdates.Text" xml:space="preserve">
+    <value>Updates</value>
+  </data>
   <data name="lblLanguageComments.Size" type="System.Drawing.Size, System.Drawing">
     <value>422, 13</value>
   </data>
   <data name="lblLanguageComments.Text" xml:space="preserve">
     <value>NOTE: The language setting adjustment will only take effect after restarting the program.</value>
-  </data>
-  <data name="grbLanguage.Text" xml:space="preserve">
-    <value>Select default language:</value>
   </data>
   <data name="lblLanguage.Location" type="System.Drawing.Point, System.Drawing">
     <value>106, 33</value>
@@ -613,20 +604,11 @@
   <data name="lblLanguage.Text" xml:space="preserve">
     <value>Language:</value>
   </data>
-  <data name="cbLanguage.Items" xml:space="preserve">
-    <value>Portuguese [Brazil]</value>
+  <data name="grbLanguage.Text" xml:space="preserve">
+    <value>Select default language:</value>
   </data>
-  <data name="cbLanguage.Items1" xml:space="preserve">
-    <value>English [US]</value>
-  </data>
-  <data name="cbLanguage.Items2" xml:space="preserve">
-    <value>Spanish [Spain]</value>
-  </data>
-  <data name="cbLanguage.Items3" xml:space="preserve">
-    <value>Korean</value>
-  </data>
-  <data name="grbLog.Text" xml:space="preserve">
-    <value>Record</value>
+  <data name="tabSettingsLanguage.Text" xml:space="preserve">
+    <value>Languages</value>
   </data>
   <data name="lblLOG.Size" type="System.Drawing.Size, System.Drawing">
     <value>57, 13</value>
@@ -666,6 +648,12 @@
   </data>
   <data name="cbLevelLog.Items2" xml:space="preserve">
     <value>Complete</value>
+  </data>
+  <data name="grbLog.Text" xml:space="preserve">
+    <value>Record</value>
+  </data>
+  <data name="tabSettingsLog.Text" xml:space="preserve">
+    <value>Record</value>
   </data>
   <data name="btnRestore.Text" xml:space="preserve">
     <value>Restore Settings</value>
@@ -755,13 +743,10 @@
         cACAAfAAgADwAIAA8ACAAfAAwAP4Afwf/w8=
 </value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Settings</value>
-  </data>
   <data name="ofdDolphin.Filter" xml:space="preserve">
     <value>Dolphin Emulator|dolphin.exe</value>
   </data>
-  <data name="grbGeneralScrub.Text" xml:space="preserve">
-    <value>Scrub</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Settings</value>
   </data>
 </root>

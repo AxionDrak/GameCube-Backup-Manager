@@ -1,3 +1,8 @@
+### GameCube Backup Manager 2.6.1.1 (September 10, 2022)
+
+[Improved] Better handling of multi-disc games when scrub-installing games. The program now places disc2.iso in the same directory as disc 1's game.iso.
+[Imrpoved] Uses XML titles if chosen when installing via scrub.
+
 ### GameCube Backup Manager 2.6.1.0 (September 8, 2022)
 
 [Translation] 3 New languages added via Google cloud services, 

@@ -227,6 +227,7 @@ namespace GCBM
             // 
             // tabSettings
             // 
+            resources.ApplyResources(this.tabSettings, "tabSettings");
             this.tabSettings.Controls.Add(this.tabSettingsGeneral);
             this.tabSettings.Controls.Add(this.tabSettingsNomenclature);
             this.tabSettings.Controls.Add(this.tabSettingsSeveral);
@@ -237,25 +238,24 @@ namespace GCBM
             this.tabSettings.Controls.Add(this.tabSettingsUpdates);
             this.tabSettings.Controls.Add(this.tabSettingsLanguage);
             this.tabSettings.Controls.Add(this.tabSettingsLog);
-            resources.ApplyResources(this.tabSettings, "tabSettings");
             this.tabSettings.Name = "tabSettings";
             this.tabSettings.SelectedIndex = 0;
             // 
             // tabSettingsGeneral
             // 
+            resources.ApplyResources(this.tabSettingsGeneral, "tabSettingsGeneral");
             this.tabSettingsGeneral.Controls.Add(this.grbGeneralTemporaryFolder);
             this.tabSettingsGeneral.Controls.Add(this.grbGeneralFiles);
             this.tabSettingsGeneral.Controls.Add(this.grbGeneralFileSize);
             this.tabSettingsGeneral.Controls.Add(this.grbGeneralPartitions);
-            resources.ApplyResources(this.tabSettingsGeneral, "tabSettingsGeneral");
             this.tabSettingsGeneral.Name = "tabSettingsGeneral";
             this.tabSettingsGeneral.UseVisualStyleBackColor = true;
             // 
             // grbGeneralTemporaryFolder
             // 
+            resources.ApplyResources(this.grbGeneralTemporaryFolder, "grbGeneralTemporaryFolder");
             this.grbGeneralTemporaryFolder.Controls.Add(this.btnTemporaryFolder);
             this.grbGeneralTemporaryFolder.Controls.Add(this.tbGeneralTempPath);
-            resources.ApplyResources(this.grbGeneralTemporaryFolder, "grbGeneralTemporaryFolder");
             this.grbGeneralTemporaryFolder.ForeColor = System.Drawing.SystemColors.ControlText;
             this.grbGeneralTemporaryFolder.Name = "grbGeneralTemporaryFolder";
             this.grbGeneralTemporaryFolder.TabStop = false;
@@ -275,6 +275,7 @@ namespace GCBM
             // 
             // grbGeneralFiles
             // 
+            resources.ApplyResources(this.grbGeneralFiles, "grbGeneralFiles");
             this.grbGeneralFiles.Controls.Add(this.chkGeneralExtractNwb);
             this.grbGeneralFiles.Controls.Add(this.chkGeneralExtractSplitFile);
             this.grbGeneralFiles.Controls.Add(this.chkGeneralExtractBZip2);
@@ -282,7 +283,6 @@ namespace GCBM
             this.grbGeneralFiles.Controls.Add(this.chkGeneralExtract7z);
             this.grbGeneralFiles.Controls.Add(this.chkGeneralExtractZip);
             this.grbGeneralFiles.Controls.Add(this.lblGeneralExtract);
-            resources.ApplyResources(this.grbGeneralFiles, "grbGeneralFiles");
             this.grbGeneralFiles.Name = "grbGeneralFiles";
             this.grbGeneralFiles.TabStop = false;
             // 
@@ -329,13 +329,14 @@ namespace GCBM
             // 
             // grbGeneralFileSize
             // 
-            this.grbGeneralFileSize.Controls.Add(this.cbGeneralFileSize);
             resources.ApplyResources(this.grbGeneralFileSize, "grbGeneralFileSize");
+            this.grbGeneralFileSize.Controls.Add(this.cbGeneralFileSize);
             this.grbGeneralFileSize.Name = "grbGeneralFileSize";
             this.grbGeneralFileSize.TabStop = false;
             // 
             // cbGeneralFileSize
             // 
+            resources.ApplyResources(this.cbGeneralFileSize, "cbGeneralFileSize");
             this.cbGeneralFileSize.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbGeneralFileSize.FormattingEnabled = true;
             this.cbGeneralFileSize.Items.AddRange(new object[] {
@@ -344,14 +345,13 @@ namespace GCBM
             resources.GetString("cbGeneralFileSize.Items2"),
             resources.GetString("cbGeneralFileSize.Items3"),
             resources.GetString("cbGeneralFileSize.Items4")});
-            resources.ApplyResources(this.cbGeneralFileSize, "cbGeneralFileSize");
             this.cbGeneralFileSize.Name = "cbGeneralFileSize";
             // 
             // grbGeneralPartitions
             // 
+            resources.ApplyResources(this.grbGeneralPartitions, "grbGeneralPartitions");
             this.grbGeneralPartitions.Controls.Add(this.rbGeneralDiscDelete);
             this.grbGeneralPartitions.Controls.Add(this.rbGeneralDiscClean);
-            resources.ApplyResources(this.grbGeneralPartitions, "grbGeneralPartitions");
             this.grbGeneralPartitions.ForeColor = System.Drawing.SystemColors.ControlText;
             this.grbGeneralPartitions.Name = "grbGeneralPartitions";
             this.grbGeneralPartitions.TabStop = false;
@@ -373,11 +373,11 @@ namespace GCBM
             // 
             // tabSettingsNomenclature
             // 
+            resources.ApplyResources(this.tabSettingsNomenclature, "tabSettingsNomenclature");
             this.tabSettingsNomenclature.Controls.Add(this.lblCommentsScrubCopy);
             this.tabSettingsNomenclature.Controls.Add(this.lblCommentsExactCopy);
             this.tabSettingsNomenclature.Controls.Add(this.lblComments);
             this.tabSettingsNomenclature.Controls.Add(this.grpNomenclatureFolderFormat);
-            resources.ApplyResources(this.tabSettingsNomenclature, "tabSettingsNomenclature");
             this.tabSettingsNomenclature.Name = "tabSettingsNomenclature";
             this.tabSettingsNomenclature.UseVisualStyleBackColor = true;
             // 
@@ -398,20 +398,20 @@ namespace GCBM
             // 
             // grpNomenclatureFolderFormat
             // 
+            resources.ApplyResources(this.grpNomenclatureFolderFormat, "grpNomenclatureFolderFormat");
             this.grpNomenclatureFolderFormat.Controls.Add(this.cbAdjustNamingStyle);
             this.grpNomenclatureFolderFormat.Controls.Add(this.lblNomenclature);
-            resources.ApplyResources(this.grpNomenclatureFolderFormat, "grpNomenclatureFolderFormat");
             this.grpNomenclatureFolderFormat.Name = "grpNomenclatureFolderFormat";
             this.grpNomenclatureFolderFormat.TabStop = false;
             // 
             // cbAdjustNamingStyle
             // 
+            resources.ApplyResources(this.cbAdjustNamingStyle, "cbAdjustNamingStyle");
             this.cbAdjustNamingStyle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbAdjustNamingStyle.FormattingEnabled = true;
             this.cbAdjustNamingStyle.Items.AddRange(new object[] {
             resources.GetString("cbAdjustNamingStyle.Items"),
             resources.GetString("cbAdjustNamingStyle.Items1")});
-            resources.ApplyResources(this.cbAdjustNamingStyle, "cbAdjustNamingStyle");
             this.cbAdjustNamingStyle.Name = "cbAdjustNamingStyle";
             // 
             // lblNomenclature
@@ -421,13 +421,14 @@ namespace GCBM
             // 
             // tabSettingsSeveral
             // 
-            this.tabSettingsSeveral.Controls.Add(this.grbGeneralDiverse);
             resources.ApplyResources(this.tabSettingsSeveral, "tabSettingsSeveral");
+            this.tabSettingsSeveral.Controls.Add(this.grbGeneralDiverse);
             this.tabSettingsSeveral.Name = "tabSettingsSeveral";
             this.tabSettingsSeveral.UseVisualStyleBackColor = true;
             // 
             // grbGeneralDiverse
             // 
+            resources.ApplyResources(this.grbGeneralDiverse, "grbGeneralDiverse");
             this.grbGeneralDiverse.Controls.Add(this.chkMultipleInstances);
             this.grbGeneralDiverse.Controls.Add(this.chkLoadDatabase);
             this.grbGeneralDiverse.Controls.Add(this.chkNotify);
@@ -439,7 +440,6 @@ namespace GCBM
             this.grbGeneralDiverse.Controls.Add(this.chkGeneralRecursiva);
             this.grbGeneralDiverse.Controls.Add(this.chkGeneralTemporaryBuffer);
             this.grbGeneralDiverse.Controls.Add(this.chkGeneralMD5);
-            resources.ApplyResources(this.grbGeneralDiverse, "grbGeneralDiverse");
             this.grbGeneralDiverse.Name = "grbGeneralDiverse";
             this.grbGeneralDiverse.TabStop = false;
             // 
@@ -518,6 +518,7 @@ namespace GCBM
             // 
             // tabSettingsTransfer
             // 
+            resources.ApplyResources(this.tabSettingsTransfer, "tabSettingsTransfer");
             this.tabSettingsTransfer.Controls.Add(this.grbGeneralScrub);
             this.tabSettingsTransfer.Controls.Add(this.label28);
             this.tabSettingsTransfer.Controls.Add(this.label31);
@@ -528,18 +529,17 @@ namespace GCBM
             this.tabSettingsTransfer.Controls.Add(this.lblXCopy);
             this.tabSettingsTransfer.Controls.Add(this.label17);
             this.tabSettingsTransfer.Controls.Add(this.grbTransferSystem);
-            resources.ApplyResources(this.tabSettingsTransfer, "tabSettingsTransfer");
             this.tabSettingsTransfer.Name = "tabSettingsTransfer";
             this.tabSettingsTransfer.UseVisualStyleBackColor = true;
             // 
             // grbGeneralScrub
             // 
+            resources.ApplyResources(this.grbGeneralScrub, "grbGeneralScrub");
             this.grbGeneralScrub.Controls.Add(this.lblFormat);
             this.grbGeneralScrub.Controls.Add(this.lblAlignment);
             this.grbGeneralScrub.Controls.Add(this.cbScrubFormat);
             this.grbGeneralScrub.Controls.Add(this.cbScrubAlign);
             this.grbGeneralScrub.Controls.Add(this.chkGeneralScrubFlushSD);
-            resources.ApplyResources(this.grbGeneralScrub, "grbGeneralScrub");
             this.grbGeneralScrub.Name = "grbGeneralScrub";
             this.grbGeneralScrub.TabStop = false;
             // 
@@ -555,16 +555,17 @@ namespace GCBM
             // 
             // cbScrubFormat
             // 
+            resources.ApplyResources(this.cbScrubFormat, "cbScrubFormat");
             this.cbScrubFormat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbScrubFormat.FormattingEnabled = true;
             this.cbScrubFormat.Items.AddRange(new object[] {
             resources.GetString("cbScrubFormat.Items"),
             resources.GetString("cbScrubFormat.Items1")});
-            resources.ApplyResources(this.cbScrubFormat, "cbScrubFormat");
             this.cbScrubFormat.Name = "cbScrubFormat";
             // 
             // cbScrubAlign
             // 
+            resources.ApplyResources(this.cbScrubAlign, "cbScrubAlign");
             this.cbScrubAlign.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbScrubAlign.FormattingEnabled = true;
             this.cbScrubAlign.Items.AddRange(new object[] {
@@ -572,7 +573,6 @@ namespace GCBM
             resources.GetString("cbScrubAlign.Items1"),
             resources.GetString("cbScrubAlign.Items2"),
             resources.GetString("cbScrubAlign.Items3")});
-            resources.ApplyResources(this.cbScrubAlign, "cbScrubAlign");
             this.cbScrubAlign.Name = "cbScrubAlign";
             // 
             // chkGeneralScrubFlushSD
@@ -623,10 +623,10 @@ namespace GCBM
             // 
             // grbTransferSystem
             // 
+            resources.ApplyResources(this.grbTransferSystem, "grbTransferSystem");
             this.grbTransferSystem.Controls.Add(this.rbTransferSystemFST);
             this.grbTransferSystem.Controls.Add(this.rbTransferSystemWipe);
             this.grbTransferSystem.Controls.Add(this.rbTransferSystemXCopy);
-            resources.ApplyResources(this.grbTransferSystem, "grbTransferSystem");
             this.grbTransferSystem.Name = "grbTransferSystem";
             this.grbTransferSystem.TabStop = false;
             // 
@@ -661,9 +661,9 @@ namespace GCBM
             // 
             // grpTitlesCoverFolder
             // 
+            resources.ApplyResources(this.grpTitlesCoverFolder, "grpTitlesCoverFolder");
             this.grpTitlesCoverFolder.Controls.Add(this.btnCoverDirectory);
             this.grpTitlesCoverFolder.Controls.Add(this.tbDirectoryCoverCache);
-            resources.ApplyResources(this.grpTitlesCoverFolder, "grpTitlesCoverFolder");
             this.grpTitlesCoverFolder.Name = "grpTitlesCoverFolder";
             this.grpTitlesCoverFolder.TabStop = false;
             // 
@@ -682,10 +682,10 @@ namespace GCBM
             // 
             // grbCoverTransfer
             // 
+            resources.ApplyResources(this.grbCoverTransfer, "grbCoverTransfer");
             this.grbCoverTransfer.Controls.Add(this.rbCoverUSBLoaderGX);
             this.grbCoverTransfer.Controls.Add(this.tabControl2);
             this.grbCoverTransfer.Controls.Add(this.rbCoverWiiFlow);
-            resources.ApplyResources(this.grbCoverTransfer, "grbCoverTransfer");
             this.grbCoverTransfer.Name = "grbCoverTransfer";
             this.grbCoverTransfer.TabStop = false;
             // 
@@ -700,20 +700,20 @@ namespace GCBM
             // 
             // tabControl2
             // 
+            resources.ApplyResources(this.tabControl2, "tabControl2");
             this.tabControl2.Controls.Add(this.tabCoverDisc);
             this.tabControl2.Controls.Add(this.tabCoverFront);
             this.tabControl2.Controls.Add(this.tabCover3D);
             this.tabControl2.Controls.Add(this.tabCoverFull);
-            resources.ApplyResources(this.tabControl2, "tabControl2");
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
             // 
             // tabCoverDisc
             // 
+            resources.ApplyResources(this.tabCoverDisc, "tabCoverDisc");
             this.tabCoverDisc.Controls.Add(this.btnDirectoryCoverDisc);
             this.tabCoverDisc.Controls.Add(this.tbDirectoryCoverDisc);
             this.tabCoverDisc.Controls.Add(this.label8);
-            resources.ApplyResources(this.tabCoverDisc, "tabCoverDisc");
             this.tabCoverDisc.Name = "tabCoverDisc";
             this.tabCoverDisc.UseVisualStyleBackColor = true;
             // 
@@ -737,10 +737,10 @@ namespace GCBM
             // 
             // tabCoverFront
             // 
+            resources.ApplyResources(this.tabCoverFront, "tabCoverFront");
             this.tabCoverFront.Controls.Add(this.btnDirectoryCover2D);
             this.tabCoverFront.Controls.Add(this.tbDirectoryCover2D);
             this.tabCoverFront.Controls.Add(this.label6);
-            resources.ApplyResources(this.tabCoverFront, "tabCoverFront");
             this.tabCoverFront.Name = "tabCoverFront";
             this.tabCoverFront.UseVisualStyleBackColor = true;
             // 
@@ -764,10 +764,10 @@ namespace GCBM
             // 
             // tabCover3D
             // 
+            resources.ApplyResources(this.tabCover3D, "tabCover3D");
             this.tabCover3D.Controls.Add(this.btnDirectoryCover3D);
             this.tabCover3D.Controls.Add(this.tbDirectoryCover3D);
             this.tabCover3D.Controls.Add(this.label9);
-            resources.ApplyResources(this.tabCover3D, "tabCover3D");
             this.tabCover3D.Name = "tabCover3D";
             this.tabCover3D.UseVisualStyleBackColor = true;
             // 
@@ -791,10 +791,10 @@ namespace GCBM
             // 
             // tabCoverFull
             // 
+            resources.ApplyResources(this.tabCoverFull, "tabCoverFull");
             this.tabCoverFull.Controls.Add(this.btnDirectoryCoverFull);
             this.tabCoverFull.Controls.Add(this.tbDirectoryCoverFull);
             this.tabCoverFull.Controls.Add(this.label35);
-            resources.ApplyResources(this.tabCoverFull, "tabCoverFull");
             this.tabCoverFull.Name = "tabCoverFull";
             this.tabCoverFull.UseVisualStyleBackColor = true;
             // 
@@ -825,10 +825,10 @@ namespace GCBM
             // 
             // grpCoversSynchronize
             // 
+            resources.ApplyResources(this.grpCoversSynchronize, "grpCoversSynchronize");
             this.grpCoversSynchronize.Controls.Add(this.chkCoverRecursiveSearch);
             this.grpCoversSynchronize.Controls.Add(this.chkCoverEnableTransfer);
             this.grpCoversSynchronize.Controls.Add(this.chkCoverSynchronizeDelete);
-            resources.ApplyResources(this.grpCoversSynchronize, "grpCoversSynchronize");
             this.grpCoversSynchronize.Name = "grpCoversSynchronize";
             this.grpCoversSynchronize.TabStop = false;
             // 
@@ -853,18 +853,18 @@ namespace GCBM
             // 
             // tabSettingsTitle
             // 
+            resources.ApplyResources(this.tabSettingsTitle, "tabSettingsTitle");
             this.tabSettingsTitle.Controls.Add(this.grbTitleLanguage);
             this.tabSettingsTitle.Controls.Add(this.grbTitleFileLocation);
             this.tabSettingsTitle.Controls.Add(this.grbTitleDiverse);
-            resources.ApplyResources(this.tabSettingsTitle, "tabSettingsTitle");
             this.tabSettingsTitle.Name = "tabSettingsTitle";
             this.tabSettingsTitle.UseVisualStyleBackColor = true;
             // 
             // grbTitleLanguage
             // 
+            resources.ApplyResources(this.grbTitleLanguage, "grbTitleLanguage");
             this.grbTitleLanguage.Controls.Add(this.btnTitleDownload);
             this.grbTitleLanguage.Controls.Add(this.cbTitleLanguage);
-            resources.ApplyResources(this.grbTitleLanguage, "grbTitleLanguage");
             this.grbTitleLanguage.Name = "grbTitleLanguage";
             this.grbTitleLanguage.TabStop = false;
             // 
@@ -876,6 +876,7 @@ namespace GCBM
             // 
             // cbTitleLanguage
             // 
+            resources.ApplyResources(this.cbTitleLanguage, "cbTitleLanguage");
             this.cbTitleLanguage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTitleLanguage.FormattingEnabled = true;
             this.cbTitleLanguage.Items.AddRange(new object[] {
@@ -891,18 +892,17 @@ namespace GCBM
             resources.GetString("cbTitleLanguage.Items9"),
             resources.GetString("cbTitleLanguage.Items10"),
             resources.GetString("cbTitleLanguage.Items11")});
-            resources.ApplyResources(this.cbTitleLanguage, "cbTitleLanguage");
             this.cbTitleLanguage.Name = "cbTitleLanguage";
             // 
             // grbTitleFileLocation
             // 
+            resources.ApplyResources(this.grbTitleFileLocation, "grbTitleFileLocation");
             this.grbTitleFileLocation.Controls.Add(this.label5);
             this.grbTitleFileLocation.Controls.Add(this.label4);
             this.grbTitleFileLocation.Controls.Add(this.btnTitleCustom);
             this.grbTitleFileLocation.Controls.Add(this.btnTitle);
             this.grbTitleFileLocation.Controls.Add(this.tbTitleCustom);
             this.grbTitleFileLocation.Controls.Add(this.tbTitle);
-            resources.ApplyResources(this.grbTitleFileLocation, "grbTitleFileLocation");
             this.grbTitleFileLocation.Name = "grbTitleFileLocation";
             this.grbTitleFileLocation.TabStop = false;
             // 
@@ -940,11 +940,11 @@ namespace GCBM
             // 
             // grbTitleDiverse
             // 
+            resources.ApplyResources(this.grbTitleDiverse, "grbTitleDiverse");
             this.grbTitleDiverse.Controls.Add(this.rbGameXmlName);
             this.grbTitleDiverse.Controls.Add(this.rbGameInternalName);
             this.grbTitleDiverse.Controls.Add(this.chkGameTitleCustom);
             this.grbTitleDiverse.Controls.Add(this.chkGameTitle);
-            resources.ApplyResources(this.grbTitleDiverse, "grbTitleDiverse");
             this.grbTitleDiverse.Name = "grbTitleDiverse";
             this.grbTitleDiverse.TabStop = false;
             // 
@@ -977,25 +977,25 @@ namespace GCBM
             // 
             // tabSettingsDolphin
             // 
-            this.tabSettingsDolphin.Controls.Add(this.grbDolphin);
             resources.ApplyResources(this.tabSettingsDolphin, "tabSettingsDolphin");
+            this.tabSettingsDolphin.Controls.Add(this.grbDolphin);
             this.tabSettingsDolphin.Name = "tabSettingsDolphin";
             this.tabSettingsDolphin.UseVisualStyleBackColor = true;
             // 
             // grbDolphin
             // 
+            resources.ApplyResources(this.grbDolphin, "grbDolphin");
             this.grbDolphin.Controls.Add(this.grbDolphinFolder);
             this.grbDolphin.Controls.Add(this.grbDolphinAudio);
             this.grbDolphin.Controls.Add(this.grbDolphinVideo);
-            resources.ApplyResources(this.grbDolphin, "grbDolphin");
             this.grbDolphin.Name = "grbDolphin";
             this.grbDolphin.TabStop = false;
             // 
             // grbDolphinFolder
             // 
+            resources.ApplyResources(this.grbDolphinFolder, "grbDolphinFolder");
             this.grbDolphinFolder.Controls.Add(this.btnSelectFile);
             this.grbDolphinFolder.Controls.Add(this.tbPathDolphinEmulator);
-            resources.ApplyResources(this.grbDolphinFolder, "grbDolphinFolder");
             this.grbDolphinFolder.Name = "grbDolphinFolder";
             this.grbDolphinFolder.TabStop = false;
             // 
@@ -1008,16 +1008,16 @@ namespace GCBM
             // 
             // tbPathDolphinEmulator
             // 
-            this.tbPathDolphinEmulator.BackColor = System.Drawing.Color.White;
             resources.ApplyResources(this.tbPathDolphinEmulator, "tbPathDolphinEmulator");
+            this.tbPathDolphinEmulator.BackColor = System.Drawing.Color.White;
             this.tbPathDolphinEmulator.Name = "tbPathDolphinEmulator";
             this.tbPathDolphinEmulator.ReadOnly = true;
             // 
             // grbDolphinAudio
             // 
+            resources.ApplyResources(this.grbDolphinAudio, "grbDolphinAudio");
             this.grbDolphinAudio.Controls.Add(this.rbDSPHLE);
             this.grbDolphinAudio.Controls.Add(this.rbDSPLLE);
-            resources.ApplyResources(this.grbDolphinAudio, "grbDolphinAudio");
             this.grbDolphinAudio.Name = "grbDolphinAudio";
             this.grbDolphinAudio.TabStop = false;
             // 
@@ -1037,10 +1037,10 @@ namespace GCBM
             // 
             // grbDolphinVideo
             // 
+            resources.ApplyResources(this.grbDolphinVideo, "grbDolphinVideo");
             this.grbDolphinVideo.Controls.Add(this.rbVkGL);
             this.grbDolphinVideo.Controls.Add(this.rbDX11);
             this.grbDolphinVideo.Controls.Add(this.rbDX12);
-            resources.ApplyResources(this.grbDolphinVideo, "grbDolphinVideo");
             this.grbDolphinVideo.Name = "grbDolphinVideo";
             this.grbDolphinVideo.TabStop = false;
             // 
@@ -1066,9 +1066,9 @@ namespace GCBM
             // 
             // tabSettingsUpdates
             // 
+            resources.ApplyResources(this.tabSettingsUpdates, "tabSettingsUpdates");
             this.tabSettingsUpdates.Controls.Add(this.lblTimeInterval);
             this.tabSettingsUpdates.Controls.Add(this.grbUpdate);
-            resources.ApplyResources(this.tabSettingsUpdates, "tabSettingsUpdates");
             this.tabSettingsUpdates.Name = "tabSettingsUpdates";
             this.tabSettingsUpdates.UseVisualStyleBackColor = true;
             // 
@@ -1079,6 +1079,7 @@ namespace GCBM
             // 
             // grbUpdate
             // 
+            resources.ApplyResources(this.grbUpdate, "grbUpdate");
             this.grbUpdate.Controls.Add(this.cbVerificationInterval);
             this.grbUpdate.Controls.Add(this.lblUpdateInterval);
             this.grbUpdate.Controls.Add(this.tbPassProxy);
@@ -1092,14 +1093,13 @@ namespace GCBM
             this.grbUpdate.Controls.Add(this.chkUpdateFileLog);
             this.grbUpdate.Controls.Add(this.chkUpdateBetaChannel);
             this.grbUpdate.Controls.Add(this.chkUpdateVerifyStart);
-            resources.ApplyResources(this.grbUpdate, "grbUpdate");
             this.grbUpdate.Name = "grbUpdate";
             this.grbUpdate.TabStop = false;
             // 
             // cbVerificationInterval
             // 
-            this.cbVerificationInterval.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             resources.ApplyResources(this.cbVerificationInterval, "cbVerificationInterval");
+            this.cbVerificationInterval.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbVerificationInterval.FormattingEnabled = true;
             this.cbVerificationInterval.Items.AddRange(new object[] {
             resources.GetString("cbVerificationInterval.Items"),
@@ -1149,8 +1149,8 @@ namespace GCBM
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::GCBM.Properties.Resources.update_64;
             resources.ApplyResources(this.pictureBox1, "pictureBox1");
+            this.pictureBox1.Image = global::GCBM.Properties.Resources.update_64;
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.TabStop = false;
             // 
@@ -1182,9 +1182,9 @@ namespace GCBM
             // 
             // tabSettingsLanguage
             // 
+            resources.ApplyResources(this.tabSettingsLanguage, "tabSettingsLanguage");
             this.tabSettingsLanguage.Controls.Add(this.lblLanguageComments);
             this.tabSettingsLanguage.Controls.Add(this.grbLanguage);
-            resources.ApplyResources(this.tabSettingsLanguage, "tabSettingsLanguage");
             this.tabSettingsLanguage.Name = "tabSettingsLanguage";
             this.tabSettingsLanguage.UseVisualStyleBackColor = true;
             // 
@@ -1195,9 +1195,9 @@ namespace GCBM
             // 
             // grbLanguage
             // 
+            resources.ApplyResources(this.grbLanguage, "grbLanguage");
             this.grbLanguage.Controls.Add(this.lblLanguage);
             this.grbLanguage.Controls.Add(this.cbLanguage);
-            resources.ApplyResources(this.grbLanguage, "grbLanguage");
             this.grbLanguage.Name = "grbLanguage";
             this.grbLanguage.TabStop = false;
             // 
@@ -1208,6 +1208,7 @@ namespace GCBM
             // 
             // cbLanguage
             // 
+            resources.ApplyResources(this.cbLanguage, "cbLanguage");
             this.cbLanguage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbLanguage.FormattingEnabled = true;
             this.cbLanguage.Items.AddRange(new object[] {
@@ -1218,18 +1219,18 @@ namespace GCBM
             resources.GetString("cbLanguage.Items4"),
             resources.GetString("cbLanguage.Items5"),
             resources.GetString("cbLanguage.Items6")});
-            resources.ApplyResources(this.cbLanguage, "cbLanguage");
             this.cbLanguage.Name = "cbLanguage";
             // 
             // tabSettingsLog
             // 
-            this.tabSettingsLog.Controls.Add(this.grbLog);
             resources.ApplyResources(this.tabSettingsLog, "tabSettingsLog");
+            this.tabSettingsLog.Controls.Add(this.grbLog);
             this.tabSettingsLog.Name = "tabSettingsLog";
             this.tabSettingsLog.UseVisualStyleBackColor = true;
             // 
             // grbLog
             // 
+            resources.ApplyResources(this.grbLog, "grbLog");
             this.grbLog.Controls.Add(this.pictureBox2);
             this.grbLog.Controls.Add(this.lblLOG);
             this.grbLog.Controls.Add(this.chkManagerLogFile);
@@ -1237,14 +1238,13 @@ namespace GCBM
             this.grbLog.Controls.Add(this.chkManagerLogDebugConsole);
             this.grbLog.Controls.Add(this.chkManagerLogSystemConsole);
             this.grbLog.Controls.Add(this.cbLevelLog);
-            resources.ApplyResources(this.grbLog, "grbLog");
             this.grbLog.Name = "grbLog";
             this.grbLog.TabStop = false;
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::GCBM.Properties.Resources.log_64;
             resources.ApplyResources(this.pictureBox2, "pictureBox2");
+            this.pictureBox2.Image = global::GCBM.Properties.Resources.log_64;
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.TabStop = false;
             // 
@@ -1281,13 +1281,13 @@ namespace GCBM
             // 
             // cbLevelLog
             // 
+            resources.ApplyResources(this.cbLevelLog, "cbLevelLog");
             this.cbLevelLog.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbLevelLog.FormattingEnabled = true;
             this.cbLevelLog.Items.AddRange(new object[] {
             resources.GetString("cbLevelLog.Items"),
             resources.GetString("cbLevelLog.Items1"),
             resources.GetString("cbLevelLog.Items2")});
-            resources.ApplyResources(this.cbLevelLog, "cbLevelLog");
             this.cbLevelLog.Name = "cbLevelLog";
             // 
             // btnRestore

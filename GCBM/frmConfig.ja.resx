@@ -435,18 +435,6 @@
   <data name="lblLanguage.Text" xml:space="preserve">
     <value>言語：</value>
   </data>
-  <data name="cbLanguage.Items" xml:space="preserve">
-    <value>ポルトガル語 [ブラジル]</value>
-  </data>
-  <data name="cbLanguage.Items1" xml:space="preserve">
-    <value>英語 [米国]</value>
-  </data>
-  <data name="cbLanguage.Items2" xml:space="preserve">
-    <value>スペイン語 [スペイン]</value>
-  </data>
-  <data name="cbLanguage.Items3" xml:space="preserve">
-    <value>韓国語</value>
-  </data>
   <data name="grbLanguage.Text" xml:space="preserve">
     <value>デフォルトの言語を選択:</value>
   </data>
@@ -503,5 +491,26 @@
   </data>
   <data name="chkWelcome.Text" xml:space="preserve">
     <value>プログラムの起動時にようこそ画面を無効にする (スプラッシュスクリーン)</value>
+  </data>
+  <data name="cbGeneralFileSize.Items1" xml:space="preserve">
+    <value>キロバイト</value>
+  </data>
+  <data name="cbGeneralFileSize.Items2" xml:space="preserve">
+    <value>メガバイト</value>
+  </data>
+  <data name="cbGeneralFileSize.Items3" xml:space="preserve">
+    <value>ギガバイト</value>
+  </data>
+  <data name="cbGeneralFileSize.Items4" xml:space="preserve">
+    <value>テラバイト</value>
+  </data>
+  <data name="btnOK.Text" xml:space="preserve">
+    <value>わかった</value>
+  </data>
+  <data name="cbNotificationsToggle.Text" xml:space="preserve">
+    <value>通知を沈黙させます。</value>
+  </data>
+  <data name="cbLoadDatabase.Text" xml:space="preserve">
+    <value>起動時にデータベースをロードします。</value>
   </data>
 </root>
