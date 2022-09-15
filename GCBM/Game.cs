@@ -546,7 +546,7 @@ public class Game
 
     public async void LoadInfo(string path, bool useXmlTitle)
     {
-        GetGameInfo(path, useXmlTitle);
+        await GetGameInfo(path, useXmlTitle).ConfigureAwait(false);
     }
 
     public async void LoadInfo(bool image)
