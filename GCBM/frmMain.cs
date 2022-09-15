@@ -563,6 +563,8 @@ public partial class frmMain : Form
     /// </summary>
     private async void ReloadDataGridViewGameList(DataGridView dgv, Dictionary<int, Game> dGames)
     {
+        if (SCANNING)
+            return;
         if (dgv == dgvSource)
             dGames = dSourceGames;
         else
@@ -573,9 +575,20 @@ public partial class frmMain : Form
         try
         {
             if (dgv.CurrentRow == null) return;
-            Game game = (from g in dGames.Values
-                         where dgv.CurrentRow.Cells["Path"].Value.ToString() == g.Path
-                         select g).First();
+            Game game = new Game();
+            if (dgv == dgvSource)
+            {
+                game = (from g in dGames.Values
+                    where dgv.CurrentRow.Cells[6].Value.ToString() == g.Path
+                    select g).First();
+            }
+            else
+            {
+                game = (from g in dDestGames.Values
+                    where g.Path == dgv.CurrentRow.Cells["Path"].Value.ToString()
+                    select g).First();
+            }
+
             LoadCover(game.ID);
             // pictureBox GameID
             if (pbWebGameID.Enabled == false)
@@ -749,6 +762,7 @@ public partial class frmMain : Form
     /// <param name="dgv"></param>
     private async Task DisplayDestinationFilesAsync(string sourceFolder, DataGridView dgv)
     {
+        dDestGames.Clear();
         pbDestination.Value = 0;
         //Check for an empty string first, and return if it is
         if (sourceFolder != string.Empty || sourceFolder == "" || sourceFolder == null)
