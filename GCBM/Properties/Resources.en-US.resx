@@ -537,4 +537,19 @@
   <data name="InstallGameScrub_DoneScrubbing" xml:space="preserve">
     <value>Finished scrubbing...</value>
   </data>
+  <data name="ExceptionHelperFileNotFound" xml:space="preserve">
+    <value>[ERROR] Could not locate the file at {0}. Please select {1}. Or click cancel to skip the current file and attempt to continue.</value>
+  </data>
+  <data name="Disc2" xml:space="preserve">
+    <value>Disc 2</value>
+  </data>
+  <data name="Disc1" xml:space="preserve">
+    <value>Disc 1</value>
+  </data>
+  <data name="FinishedInstalling" xml:space="preserve">
+    <value>[SUCCESS] Finished transferring {0} games.</value>
+  </data>
+  <data name="ExceptionHelperFileNotFoundDisc2Scrub" xml:space="preserve">
+    <value>[ERROR] Could not locate file for the secondary disk. Please locate the folder '{1} [{2}2]' containing 'game.iso'.</value>
+  </data>
 </root>

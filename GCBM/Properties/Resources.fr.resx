@@ -309,9 +309,6 @@
   <data name="RegisterHeaderLog_LogicalUnits" xml:space="preserve">
     <value>Unités logiques :</value>
   </data>
-  <data name="FilesDestinationUnit" xml:space="preserve">
-    <value>Fichiers (Destination) - Lecteur (</value>
-  </data>
   <data name="AssemblyInfo_Description" xml:space="preserve">
     <value>Logiciel de gestion de fichiers ISO et GCM Nintendo GameCube.</value>
   </data>
@@ -536,5 +533,23 @@
   </data>
   <data name="InstallGameScrub_DoneScrubbing" xml:space="preserve">
     <value>Fini le gommage...</value>
+  </data>
+  <data name="Disc1" xml:space="preserve">
+    <value>Disque 1</value>
+  </data>
+  <data name="Disc2" xml:space="preserve">
+    <value>Disque 2</value>
+  </data>
+  <data name="FinishedInstalling" xml:space="preserve">
+    <value>[SUCCÈS] Transfert de {0} jeux terminé.</value>
+  </data>
+  <data name="FilesDestinationUnit" xml:space="preserve">
+    <value>Fichiers (Destination) - Lecteur (</value>
+  </data>
+  <data name="ExceptionHelperFileNotFound" xml:space="preserve">
+    <value>[ERREUR] Impossible de localiser le fichier à {0}. Veuillez sélectionner {1}. Ou cliquez sur Annuler pour ignorer le fichier en cours et tenter de continuer.</value>
+  </data>
+  <data name="ExceptionHelperFileNotFoundDisc2Scrub" xml:space="preserve">
+    <value>[ERREUR] Impossible de localiser le fichier pour le disque secondaire. Veuillez localiser le dossier '{1} [{2}2]' contenant 'game.iso'.</value>
   </data>
 </root>

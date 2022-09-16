@@ -279,9 +279,6 @@
   <data name="RegisterHeaderLog_LogicalUnits" xml:space="preserve">
     <value> 논리 단위: </value>
   </data>
-  <data name="FilesDestinationUnit" xml:space="preserve">
-    <value>파일 (대상) - 드라이브(</value>
-  </data>
   <data name="CheckUSBGXFlow_String1" xml:space="preserve">
     <value>옵션'-&gt;'설정'으로 이동하세요.</value>
   </data>
@@ -536,5 +533,26 @@
   </data>
   <data name="InstallGameScrub_DoneScrubbing" xml:space="preserve">
     <value>닦고 끝...</value>
+  </data>
+  <data name="GCBM_TranslatorContact" xml:space="preserve">
+    <value>laetemn@hotmail.com</value>
+  </data>
+  <data name="ExceptionHelperFileNotFound" xml:space="preserve">
+    <value>[오류] {0}에서 지정된 파일을 찾을 수 없습니다. {1}을(를) 선택하십시오. 또는 현재 파일을 건너뛰고 계속하려면 취소를 클릭하십시오.</value>
+  </data>
+  <data name="Disc1" xml:space="preserve">
+    <value>디스크 1</value>
+  </data>
+  <data name="Disc2" xml:space="preserve">
+    <value>디스크 2</value>
+  </data>
+  <data name="FinishedInstalling" xml:space="preserve">
+    <value>[SUCCESS] {0} 게임 전송을 완료했습니다.</value>
+  </data>
+  <data name="FilesDestinationUnit" xml:space="preserve">
+    <value>파일 (대상) - 드라이브(</value>
+  </data>
+  <data name="ExceptionHelperFileNotFoundDisc2Scrub" xml:space="preserve">
+    <value>[오류] 보조 디스크에 대한 파일을 찾을 수 없습니다. 'game.iso'가 포함된 '{1} [{2}2]' 폴더를 찾으십시오.</value>
   </data>
 </root>

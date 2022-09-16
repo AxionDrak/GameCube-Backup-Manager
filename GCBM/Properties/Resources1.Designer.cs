@@ -606,6 +606,24 @@ namespace GCBM.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Disco 1.
+        /// </summary>
+        internal static string Disc1 {
+            get {
+                return ResourceManager.GetString("Disc1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Disco 2.
+        /// </summary>
+        internal static string Disc2 {
+            get {
+                return ResourceManager.GetString("Disc2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Nome do Arquivo.
         /// </summary>
         internal static string DisplayFilesSelected_FileName {
@@ -939,6 +957,24 @@ namespace GCBM.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to [ERRO] Não foi possível localizar o arquivo especificado em {0}. Por favor, selecione {1}. Ou clique em cancelar para pular o arquivo atual e tentar continuar..
+        /// </summary>
+        internal static string ExceptionHelperFileNotFound {
+            get {
+                return ResourceManager.GetString("ExceptionHelperFileNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to [ERRO] Não foi possível localizar o arquivo para o disco secundário. Por favor, localize a pasta &apos;{1} [{2}2]&apos; contendo &apos;game.iso&apos;..
+        /// </summary>
+        internal static string ExceptionHelperFileNotFoundDisc2Scrub {
+            get {
+                return ResourceManager.GetString("ExceptionHelperFileNotFoundDisc2Scrub", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap exit {
@@ -992,6 +1028,15 @@ namespace GCBM.Properties {
         internal static string FilterDatabase_String2 {
             get {
                 return ResourceManager.GetString("FilterDatabase_String2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to [SUCESSO] Transferência de {0} jogos concluída..
+        /// </summary>
+        internal static string FinishedInstalling {
+            get {
+                return ResourceManager.GetString("FinishedInstalling", resourceCulture);
             }
         }
         

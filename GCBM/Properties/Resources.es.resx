@@ -216,9 +216,6 @@
   <data name="Error" xml:space="preserve">
     <value> [ERROR] </value>
   </data>
-  <data name="FilesDestinationUnit" xml:space="preserve">
-    <value>Archivos (Destino) - Unidad (</value>
-  </data>
   <data name="NoInternetConnectionFound_String1" xml:space="preserve">
     <value>¡No se ha encontrado ninguna conexión a Internet!</value>
   </data>
@@ -539,5 +536,8 @@
   </data>
   <data name="InstallGameScrub_DoneScrubbing" xml:space="preserve">
     <value>Terminado de fregar...</value>
+  </data>
+  <data name="FilesDestinationUnit" xml:space="preserve">
+    <value>Archivos (Destino) - Unidad (</value>
   </data>
 </root>

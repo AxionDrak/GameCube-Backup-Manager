@@ -233,7 +233,7 @@ public partial class frmMetaXml : Form
         {
             File.WriteAllText(other + xmlFile, GenerateMetaXML());
             // Save PictureBox
-            if (pbBanner.Image != null) pbBanner.Image.Save(other + Path.DirectorySeparatorChar + "icon.png");
+            pbBanner.Image?.Save(other + Path.DirectorySeparatorChar + "icon.png");
 
             _ = MessageBox.Show(Resources.MetaXml_String2, Resources.Notice, MessageBoxButtons.OK,
                 MessageBoxIcon.Information);

@@ -817,4 +817,19 @@
   <data name="InstallGameScrub_DoneScrubbing" xml:space="preserve">
     <value>Esfoliação finalizada...</value>
   </data>
+  <data name="ExceptionHelperFileNotFound" xml:space="preserve">
+    <value>[ERRO] Não foi possível localizar o arquivo especificado em {0}. Por favor, selecione {1}. Ou clique em cancelar para pular o arquivo atual e tentar continuar.</value>
+  </data>
+  <data name="Disc1" xml:space="preserve">
+    <value>Disco 1</value>
+  </data>
+  <data name="Disc2" xml:space="preserve">
+    <value>Disco 2</value>
+  </data>
+  <data name="FinishedInstalling" xml:space="preserve">
+    <value>[SUCESSO] Transferência de {0} jogos concluída.</value>
+  </data>
+  <data name="ExceptionHelperFileNotFoundDisc2Scrub" xml:space="preserve">
+    <value>[ERRO] Não foi possível localizar o arquivo para o disco secundário. Por favor, localize a pasta '{1} [{2}2]' contendo 'game.iso'.</value>
+  </data>
 </root>

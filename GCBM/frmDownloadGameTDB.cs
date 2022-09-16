@@ -149,7 +149,7 @@ public partial class frmDownloadGameTDB : Form
 
     private async Task ProcessTaskDelay()
     {
-        await Task.Delay(2500);
+        await Task.Delay(2500).ConfigureAwait(false);
     }
 
     private void btnCancelWork_Click(object sender, EventArgs e)

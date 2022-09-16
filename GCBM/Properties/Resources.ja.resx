@@ -537,4 +537,19 @@
   <data name="InstallGameScrub_DoneScrubbing" xml:space="preserve">
     <value>拭き取り終了…</value>
   </data>
+  <data name="ExceptionHelperFileNotFound" xml:space="preserve">
+    <value>[エラー] 指定されたファイルが {0} に見つかりませんでした。 {1}を選択してください。または、キャンセルをクリックして現在のファイルをスキップし、続行を試みます。</value>
+  </data>
+  <data name="Disc1" xml:space="preserve">
+    <value>ディスク1</value>
+  </data>
+  <data name="Disc2" xml:space="preserve">
+    <value>ディスク 2</value>
+  </data>
+  <data name="FinishedInstalling" xml:space="preserve">
+    <value>[成功] {0} ゲームの転送が完了しました。</value>
+  </data>
+  <data name="ExceptionHelperFileNotFoundDisc2Scrub" xml:space="preserve">
+    <value>[エラー] セカンダリ ディスクのファイルが見つかりませんでした。 「game.iso」を含むフォルダー「{1} [{2}2]」を見つけてください。</value>
+  </data>
 </root>

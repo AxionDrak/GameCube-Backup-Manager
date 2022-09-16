@@ -309,9 +309,6 @@
   <data name="RegisterHeaderLog_LogicalUnits" xml:space="preserve">
     <value>Logische Einheiten:</value>
   </data>
-  <data name="FilesDestinationUnit" xml:space="preserve">
-    <value>Dateien (Ziel) - Laufwerk (</value>
-  </data>
   <data name="AssemblyInfo_Description" xml:space="preserve">
     <value>Nintendo GameCube ISO- und GCM-Dateiverwaltungssoftware.</value>
   </data>
@@ -536,5 +533,23 @@
   </data>
   <data name="InstallGameScrub_DoneScrubbing" xml:space="preserve">
     <value>Fertig geschrubbt...</value>
+  </data>
+  <data name="ExceptionHelperFileNotFound" xml:space="preserve">
+    <value>[FEHLER] Konnte die angegebene Datei unter {0} nicht finden. Bitte wählen Sie {1} aus. Oder klicken Sie auf Abbrechen, um die aktuelle Datei zu überspringen und versuchen Sie fortzufahren.</value>
+  </data>
+  <data name="Disc1" xml:space="preserve">
+    <value>Scheibe 1</value>
+  </data>
+  <data name="Disc2" xml:space="preserve">
+    <value>Scheibe 2</value>
+  </data>
+  <data name="FinishedInstalling" xml:space="preserve">
+    <value>[ERFOLG] Übertragung von {0} Spielen abgeschlossen.</value>
+  </data>
+  <data name="FilesDestinationUnit" xml:space="preserve">
+    <value>Dateien (Ziel) - Laufwerk (</value>
+  </data>
+  <data name="ExceptionHelperFileNotFoundDisc2Scrub" xml:space="preserve">
+    <value>[FEHLER] Die Datei für die sekundäre Festplatte konnte nicht gefunden werden. Suchen Sie bitte den Ordner „{1} [{2}2]“, der „game.iso“ enthält.</value>
   </data>
 </root>
