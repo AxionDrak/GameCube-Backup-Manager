@@ -61,6 +61,15 @@ namespace GCBM.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to  [ERRO] Falha ao efetuar download da capa (Disco)!.
+        /// </summary>
+        internal static string _ {
+            get {
+                return ResourceManager.GetString(" ", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Sobre {0}.
         /// </summary>
         internal static string AboutBox_String1 {
@@ -725,7 +734,7 @@ namespace GCBM.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to  [ERRO] Falha ao efetuar download da capa (Disco)!.
+        ///   Looks up a localized string similar to [Falha no descarregamento das capas (Disco).
         /// </summary>
         internal static string DownloadDiscCoverError {
             get {
@@ -1072,7 +1081,7 @@ namespace GCBM.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Portuguese [Brazil].
+        ///   Looks up a localized string similar to Portugês [Brasil].
         /// </summary>
         internal static string GCBM_Language {
             get {
@@ -1387,6 +1396,42 @@ namespace GCBM.Properties {
         internal static string InvalidDrive_String6 {
             get {
                 return ResourceManager.GetString("InvalidDrive_String6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to indonésio.
+        /// </summary>
+        internal static string LanguageIndonesian {
+            get {
+                return ResourceManager.GetString("LanguageIndonesian", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to É esta a língua que gostaria de utilizar?.
+        /// </summary>
+        internal static string LanguagePromptConfirm {
+            get {
+                return ResourceManager.GetString("LanguagePromptConfirm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Consegue compreender isto?.
+        /// </summary>
+        internal static string LanguagePromptConfirmTitle {
+            get {
+                return ResourceManager.GetString("LanguagePromptConfirmTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Seleccione a sua língua:.
+        /// </summary>
+        internal static string LanguagePromptTitle {
+            get {
+                return ResourceManager.GetString("LanguagePromptTitle", resourceCulture);
             }
         }
         
@@ -2018,6 +2063,15 @@ namespace GCBM.Properties {
         internal static string SelectGameFromList {
             get {
                 return ResourceManager.GetString("SelectGameFromList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Por favor, seleccione a sua língua preferida:.
+        /// </summary>
+        internal static string SelectLanguagePrompt {
+            get {
+                return ResourceManager.GetString("SelectLanguagePrompt", resourceCulture);
             }
         }
         

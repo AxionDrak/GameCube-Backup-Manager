@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="cbGeneralFileSize.Items3" xml:space="preserve">
+    <value>Gigabyte</value>
+  </data>
+  <data name="chkManagerLogDebugConsole.Text" xml:space="preserve">
+    <value>Log untuk Konsol Debug</value>
+  </data>
+  <data name="chkCoverEnableTransfer.Text" xml:space="preserve">
+    <value>Mengaktifkan transfer kulit antar perangkat</value>
+  </data>
+  <data name="chkManagerLogFile.Text" xml:space="preserve">
+    <value>Rekam ke Berkas</value>
+  </data>
+  <data name="cbVerificationInterval.Items1" xml:space="preserve">
+    <value>10 menit</value>
+  </data>
+  <data name="cbVerificationInterval.Items6" xml:space="preserve">
+    <value>3 jam</value>
+  </data>
+  <data name="cbVerificationInterval.Items4" xml:space="preserve">
+    <value>1 jam</value>
+  </data>
+  <data name="cbVerificationInterval.Items5" xml:space="preserve">
+    <value>2 jam</value>
+  </data>
+  <data name="chkCoverRecursiveSearch.Text" xml:space="preserve">
+    <value>Gunakan pencarian kulit rekursif (pencarian di semua wilayah)</value>
+  </data>
+  <data name="chkGeneralExtractBZip2.Text" xml:space="preserve">
+    <value>File BZip2 (*.bz; *.bzip2)</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>Lokasi folder:</value>
+  </data>
+  <data name="chkCoverSynchronizeDelete.Text" xml:space="preserve">
+    <value>Hapus skin untuk game yang tidak ada dalam daftar</value>
+  </data>
+  <data name="lblServerProxy.Text" xml:space="preserve">
+    <value>Server proxy:</value>
+  </data>
+  <data name="cbTitleLanguage.Items5" xml:space="preserve">
+    <value>Belanda</value>
+  </data>
+  <data name="label17.Text" xml:space="preserve">
+    <value>Menyalin satu atau lebih file dari satu lokasi (sumber) ke lokasi lain (tujuan). File tidak dikompresi, bukan bagian dari kontainer apa pun, dan tidak ada data sampah yang dihapus.</value>
+  </data>
+  <data name="rbGameXmlName.Text" xml:space="preserve">
+    <value>Gunakan nama dagang untuk game melalui wiitdb.xml (DIREKOMENDASIKAN! - membutuhkan file wiitdb.xml)</value>
+  </data>
+  <data name="cbTitleLanguage.Items11" xml:space="preserve">
+    <value>Bahasa Tionghoa Sederhana</value>
+  </data>
+  <data name="cbTitleLanguage.Items10" xml:space="preserve">
+    <value>Bahasa Tionghoa Tradisional</value>
+  </data>
+  <data name="chkGeneralExtract7z.Text" xml:space="preserve">
+    <value>File 7Zip (*.7z; *.7zip)</value>
+  </data>
+  <data name="grbDolphinFolder.Text" xml:space="preserve">
+    <value>Jalur ke emulator</value>
+  </data>
+  <data name="grbLanguage.Text" xml:space="preserve">
+    <value>Pilih bahasa default:</value>
+  </data>
+  <data name="tabSettingsLanguage.Text" xml:space="preserve">
+    <value>Bahasa</value>
+  </data>
+  <data name="grbLog.Text" xml:space="preserve">
+    <value>Catatan</value>
+  </data>
+  <data name="cbAdjustNamingStyle.Items" xml:space="preserve">
+    <value>Judul [Kode Permainan]</value>
+  </data>
+  <data name="grbDolphinVideo.Text" xml:space="preserve">
+    <value>Video</value>
+  </data>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>Batal</value>
+  </data>
+  <data name="chkMultipleInstances.Text" xml:space="preserve">
+    <value>Memungkinkan menjalankan beberapa instance program</value>
+  </data>
+  <data name="fbd.Description" xml:space="preserve">
+    <value>Buat atau pilih direktori:</value>
+  </data>
+  <data name="grbUpdate.Text" xml:space="preserve">
+    <value>Perbarui Pengaturan</value>
+  </data>
+  <data name="chkGeneralScrubFlushSD.Text" xml:space="preserve">
+    <value>Bersihkan buffer file sehingga kartu SD dapat segera dikeluarkan</value>
+  </data>
+  <data name="rbGameInternalName.Text" xml:space="preserve">
+    <value>Gunakan nama produksi internal untuk game (didukung 75%)</value>
+  </data>
+  <data name="cbTitleLanguage.Items1" xml:space="preserve">
+    <value>Prancis</value>
+  </data>
+  <data name="chkGameTitle.Text" xml:space="preserve">
+    <value>Gunakan GameTDB (titles.txt)</value>
+  </data>
+  <data name="chkGeneralExtractSplitFile.Text" xml:space="preserve">
+    <value>Membagi file (*.001)</value>
+  </data>
+  <data name="rbGeneralDiscDelete.Text" xml:space="preserve">
+    <value>Simpan hanya folder disk 1 dan hapus folder disk 2 (Eksperimental)</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Lokasi folder:</value>
+  </data>
+  <data name="cbVerificationInterval.Items3" xml:space="preserve">
+    <value>30 menit</value>
+  </data>
+  <data name="cbGeneralFileSize.Items" xml:space="preserve">
+    <value>Otomatis</value>
+  </data>
+  <data name="lblPass.Text" xml:space="preserve">
+    <value>Kata sandi:</value>
+  </data>
+  <data name="chkUpdateServerProxy.Text" xml:space="preserve">
+    <value>Gunakan server proxy</value>
+  </data>
+  <data name="lblFormat.Text" xml:space="preserve">
+    <value>Format:</value>
+  </data>
+  <data name="cbTitleLanguage.Items8" xml:space="preserve">
+    <value>Rusia</value>
+  </data>
+  <data name="btnApply.Text" xml:space="preserve">
+    <value>Terapkan</value>
+  </data>
+  <data name="grbTransferSystem.Text" xml:space="preserve">
+    <value>Sistem transfer yang akan digunakan</value>
+  </data>
+  <data name="cbTitleLanguage.Items2" xml:space="preserve">
+    <value>Jerman</value>
+  </data>
+  <data name="lblLOG.Text" xml:space="preserve">
+    <value>Level Log:</value>
+  </data>
+  <data name="grbGeneralDiverse.Text" xml:space="preserve">
+    <value>Beberapa</value>
+  </data>
+  <data name="grbTitleFileLocation.Text" xml:space="preserve">
+    <value>Lokasi berkas</value>
+  </data>
+  <data name="chkUpdateFileLog.Text" xml:space="preserve">
+    <value>Menambahkan pembaruan ke berkas log</value>
+  </data>
+  <data name="chkStartWindowMaximized.Text" xml:space="preserve">
+    <value>Jendela mulai dimaksimalkan</value>
+  </data>
+  <data name="lblUpdateInterval.Text" xml:space="preserve">
+    <value>Periksa interval:</value>
+  </data>
+  <data name="grbTitleLanguage.Text" xml:space="preserve">
+    <value>Bahasa judul</value>
+  </data>
+  <data name="lblLanguage.Text" xml:space="preserve">
+    <value>Bahasa:</value>
+  </data>
+  <data name="chkNotify.Text" xml:space="preserve">
+    <value>Aktifkan notifikasi taskbar (notifikasi default akan terus ditampilkan secara normal)</value>
+  </data>
+  <data name="chkScreensaver.Text" xml:space="preserve">
+    <value>Nonaktifkan screensaver (Screensaver)</value>
+  </data>
+  <data name="grbDolphinAudio.Text" xml:space="preserve">
+    <value>Audio</value>
+  </data>
+  <data name="lblNomenclature.Text" xml:space="preserve">
+    <value>Gaya penamaan:</value>
+  </data>
+  <data name="lblTimeInterval.Text" xml:space="preserve">
+    <value>CATATAN: Menyesuaikan pengaturan interval waktu hanya akan berlaku setelah memulai ulang program.</value>
+  </data>
+  <data name="chkGeneralExtractNwb.Text" xml:space="preserve">
+    <value>File NWB (* .nwb)</value>
+  </data>
+  <data name="cbAdjustNamingStyle.Items1" xml:space="preserve">
+    <value>[Kode Permainan]</value>
+  </data>
+  <data name="label20.Text" xml:space="preserve">
+    <value>Mirip dengan XCopy, dengan perbedaan bahwa data sampah (garbage) yang ada di dalam file dibersihkan. Ukuran file asli dipertahankan. Data sampah dihilangkan sambil mempertahankan integritas data lainnya.</value>
+  </data>
+  <data name="label31.Text" xml:space="preserve">
+    <value>Menghapus data yang tidak perlu (sampah) dengan menggantinya dengan nilai byte konstan (0xff atau 0x00). File memiliki ukuran yang lebih kecil, namun tetap menjaga integritas data.</value>
+  </data>
+  <data name="tabCoverDisc.Text" xml:space="preserve">
+    <value>Cakram</value>
+  </data>
+  <data name="lblCommentsScrubCopy.Text" xml:space="preserve">
+    <value>Untuk metode Scrub, "Title [Game Code]" default akan selalu digunakan, berdasarkan nama internal (yang ditentukan oleh pengembang). Dalam mode Scrub copy, disk 1 dan 2 akan selalu disimpan dalam folder terpisah, kecuali dalam kasus tertentu, di mana metode deteksi dapat mengidentifikasi nama umum yang diberikan oleh pengembang, dalam hal ini, disk 1 dan 2 akan disimpan dalam folder yang sama.</value>
+  </data>
+  <data name="cbTitleLanguage.Items6" xml:space="preserve">
+    <value>Bahasa Portugis</value>
+  </data>
+  <data name="grbGeneralFileSize.Text" xml:space="preserve">
+    <value>Tampilkan ukuran</value>
+  </data>
+  <data name="grbGeneralFiles.Text" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="tabSettingsLog.Text" xml:space="preserve">
+    <value>Catatan</value>
+  </data>
+  <data name="cbLevelLog.Items2" xml:space="preserve">
+    <value>Lengkap</value>
+  </data>
+  <data name="chkUpdateVerifyStart.Text" xml:space="preserve">
+    <value>Memeriksa pembaruan saat startup</value>
+  </data>
+  <data name="cbTitleLanguage.Items7" xml:space="preserve">
+    <value>Bahasa Jepang</value>
+  </data>
+  <data name="chkManagerLogSystemConsole.Text" xml:space="preserve">
+    <value>Pendaftaran untuk Konsol Sistem</value>
+  </data>
+  <data name="cbLevelLog.Items" xml:space="preserve">
+    <value>Informatif</value>
+  </data>
+  <data name="tabCoverFull.Text" xml:space="preserve">
+    <value>Lengkap</value>
+  </data>
+  <data name="grbDolphin.Text" xml:space="preserve">
+    <value>Konfigurasi Emulator</value>
+  </data>
+  <data name="grpCoversSynchronize.Text" xml:space="preserve">
+    <value>Sinkronisasi</value>
+  </data>
+  <data name="lblCommentsExactCopy.Text" xml:space="preserve">
+    <value>Gaya penamaan saat ini hanya bekerja dengan salinan file yang tepat (1:1), dan dapat menggunakan nama internal dan nama komersial (melalui wiitdb.xml). Opsi ini bisa dikonfigurasi oleh pengguna, di tab 'Titles'. Dalam mode exact copy (1:1), disk 1 dan 2 akan selalu disimpan dalam folder yang sama.</value>
+  </data>
+  <data name="label35.Text" xml:space="preserve">
+    <value>Lokasi folder:</value>
+  </data>
+  <data name="grbCoverTransfer.Text" xml:space="preserve">
+    <value>Penyiapan pengisi daya USB (Sampul Transfer -&gt; Tujuan)</value>
+  </data>
+  <data name="chkManagerLogWindow.Text" xml:space="preserve">
+    <value>Pendaftaran untuk Jendela</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>Lokasi folder:</value>
+  </data>
+  <data name="lblComments.Text" xml:space="preserve">
+    <value>KOMENTAR:</value>
+  </data>
+  <data name="tabSettingsNomenclature.Text" xml:space="preserve">
+    <value>Nomenklatur</value>
+  </data>
+  <data name="grpTitlesCoverFolder.Text" xml:space="preserve">
+    <value>Meliputi folder (Cache -&gt; Asal)</value>
+  </data>
+  <data name="grbGeneralPartitions.Text" xml:space="preserve">
+    <value>Sesuaikan direktori game</value>
+  </data>
+  <data name="tabSettingsTitle.Text" xml:space="preserve">
+    <value>Judul</value>
+  </data>
+  <data name="cbGeneralFileSize.Items2" xml:space="preserve">
+    <value>Megabyte</value>
+  </data>
+  <data name="grbTitleDiverse.Text" xml:space="preserve">
+    <value>Lain-lain (diperlukan restart program untuk dapat berlaku)</value>
+  </data>
+  <data name="lblLanguageComments.Text" xml:space="preserve">
+    <value>CATATAN: Penyesuaian pengaturan bahasa hanya akan berlaku setelah memulai ulang program.</value>
+  </data>
+  <data name="cbVerificationInterval.Items2" xml:space="preserve">
+    <value>15 menit</value>
+  </data>
+  <data name="cbLevelLog.Items1" xml:space="preserve">
+    <value>Kesimpulan</value>
+  </data>
+  <data name="chkGeneralTemporaryBuffer.Text" xml:space="preserve">
+    <value>Gunakan transfer dalam memori sementara (buffer)</value>
+  </data>
+  <data name="cbTitleLanguage.Items4" xml:space="preserve">
+    <value>Italia</value>
+  </data>
+  <data name="chkLoadDatabase.Text" xml:space="preserve">
+    <value>Memuat Basis Data pada saat program dimulai (meningkatkan waktu mulai program)</value>
+  </data>
+  <data name="tabSettingsSeveral.Text" xml:space="preserve">
+    <value>Beberapa</value>
+  </data>
+  <data name="cbVerificationInterval.Items" xml:space="preserve">
+    <value>5 menit</value>
+  </data>
+  <data name="chkGeneralExtractRar.Text" xml:space="preserve">
+    <value>File RAR (*.rar)</value>
+  </data>
+  <data name="rbGeneralDiscClean.Text" xml:space="preserve">
+    <value>Pisahkan semua folder untuk disk 1 dan disk 2 (Default)</value>
+  </data>
+  <data name="btnRestore.Text" xml:space="preserve">
+    <value>Pulihkan Pengaturan</value>
+  </data>
+  <data name="tabSettingsTransfer.Text" xml:space="preserve">
+    <value>Transfer Permainan</value>
+  </data>
+  <data name="chkNetVerify.Text" xml:space="preserve">
+    <value>Periksa koneksi internet saat memulai program</value>
+  </data>
+  <data name="chkGameTitleCustom.Text" xml:space="preserve">
+    <value>Gunakan judul khusus (custom-titles.txt)</value>
+  </data>
+  <data name="tabSettingsUpdates.Text" xml:space="preserve">
+    <value>Pembaruan</value>
+  </data>
+  <data name="rbTransferSystemXCopy.Text" xml:space="preserve">
+    <value>XCopy (Default)</value>
+  </data>
+  <data name="label28.Text" xml:space="preserve">
+    <value>FST (FileSystem Table) adalah sistem file yang diekstrak ke direktori yang berisi semua file nyata dan virtual dari sebuah arsip. Nintendont menggunakan file FST untuk membuat gambar ISO virtual internal dan memuat game dari ISO virtual itu.</value>
+  </data>
+  <data name="chkGeneralRecursiva.Text" xml:space="preserve">
+    <value>Cari direktori secara rekursif (hanya untuk jendela "File (Sumber)")</value>
+  </data>
+  <data name="chkUpdateBetaChannel.Text" xml:space="preserve">
+    <value>Beralih ke pembaruan saluran BETA</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Pengaturan</value>
+  </data>
+  <data name="cbTitleLanguage.Items" xml:space="preserve">
+    <value>Bahasa Inggris</value>
+  </data>
+  <data name="chkGeneralExtractZip.Text" xml:space="preserve">
+    <value>File zip (*.zip)</value>
+  </data>
+  <data name="lblAlignment.Text" xml:space="preserve">
+    <value>Keselarasan:</value>
+  </data>
+  <data name="chkGeneralSHA1.Text" xml:space="preserve">
+    <value>Verifikasi tanda tangan SHA-1 selama transfer</value>
+  </data>
+  <data name="lblGeneralExtract.Text" xml:space="preserve">
+    <value>Ekstrak bilamana perlu.</value>
+  </data>
+  <data name="ofdDolphin.Filter" xml:space="preserve">
+    <value>Emulator Dolphin|dolphin.exe</value>
+  </data>
+  <data name="rbDSPHLE.Text" xml:space="preserve">
+    <value>DSP HLE (default)</value>
+  </data>
+  <data name="cbVerificationInterval.Items7" xml:space="preserve">
+    <value>4 jam</value>
+  </data>
+  <data name="grpNomenclatureFolderFormat.Text" xml:space="preserve">
+    <value>Format folder</value>
+  </data>
+  <data name="grbGeneralTemporaryFolder.Text" xml:space="preserve">
+    <value>Folder sementara</value>
+  </data>
+  <data name="tabSettingsCovers.Text" xml:space="preserve">
+    <value>Meliputi</value>
+  </data>
+  <data name="cbTitleLanguage.Items9" xml:space="preserve">
+    <value>Bahasa Korea</value>
+  </data>
+  <data name="cbTitleLanguage.Items3" xml:space="preserve">
+    <value>Bahasa Spanyol</value>
+  </data>
+  <data name="chkGeneralMD5.Text" xml:space="preserve">
+    <value>Hitung tanda tangan MD5 selama transfer</value>
+  </data>
+  <data name="cbScrubAlign.Items" xml:space="preserve">
+    <value>Otomatis</value>
+  </data>
+  <data name="lblUser.Text" xml:space="preserve">
+    <value>Pengguna:</value>
+  </data>
+  <data name="tabSettingsGeneral.Text" xml:space="preserve">
+    <value>Umum</value>
+  </data>
+</root>

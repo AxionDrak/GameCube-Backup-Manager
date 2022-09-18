@@ -280,13 +280,13 @@
     <value>It is recommended to delete or move the file to another location.</value>
   </data>
   <data name="DownloadDiscCover" xml:space="preserve">
-    <value> [INFO] Downloading covers (Disc)...</value>
+    <value> [INFO] Downloading covers (Disc)... </value>
   </data>
-  <data name="DownloadDiscCoverError" xml:space="preserve">
+  <data name=" " xml:space="preserve">
     <value> [ERROR] Failed to download cover (Disc)!</value>
   </data>
   <data name="Download3DCover" xml:space="preserve">
-    <value> [INFO] Downloading covers (3D)...</value>
+    <value> [INFO] Downloading covers (3D)... </value>
   </data>
   <data name="Download3DCoverError" xml:space="preserve">
     <value> [ERROR] Failed to download cover (3D)!</value>
@@ -536,5 +536,27 @@
   </data>
   <data name="InstallGameScrub_DoneScrubbing" xml:space="preserve">
     <value>Finished scrubbing...</value>
+  </data>
+  <data name="SelectLanguagePrompt" xml:space="preserve">
+    <value>Please select your preferred language:</value>
+  </data>
+  <data name="LanguagePromptConfirm" xml:space="preserve">
+    <value>Is this the language you would like to use?</value>
+  </data>
+  <data name="LanguagePromptTitle" xml:space="preserve">
+    <value>Select your language:</value>
+  </data>
+  <data name="LanguagePromptConfirmTitle" xml:space="preserve">
+    <value>Can you understand this?</value>
+  </data>
+  <data name="DownloadDiscCoverError" xml:space="preserve">
+    <value> [ERROR] Failed to Download covers (Disc)
+</value>
+  </data>
+  <data name="LanguageIndonesian" xml:space="preserve">
+    <value>Indonesian</value>
+  </data>
+  <data name="LoadDatabase_Editor" xml:space="preserve">
+    <value>Editor</value>
   </data>
 </root>

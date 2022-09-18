@@ -117,17 +117,17 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="labelCompanyName.Text" xml:space="preserve">
+    <value>Name des Unternehmens</value>
+  </data>
   <data name="labelProductName.Text" xml:space="preserve">
-    <value>Produktname</value>
+    <value>Name des Produkts</value>
   </data>
   <data name="labelVersion.Text" xml:space="preserve">
-    <value>Ausführung</value>
+    <value>Version</value>
   </data>
   <data name="labelCopyright.Text" xml:space="preserve">
-    <value>Urheberrechte ©</value>
-  </data>
-  <data name="labelCompanyName.Text" xml:space="preserve">
-    <value>Name der Firma</value>
+    <value>Urheberrecht</value>
   </data>
   <data name="textBoxDescription.Text" xml:space="preserve">
     <value>Beschreibung</value>
@@ -136,59 +136,59 @@
     <value>Aktuelle Sprache:</value>
   </data>
   <data name="lblAboutTranslator.Text" xml:space="preserve">
-    <value>Übersetzt von:</value>
+    <value>Übersetzer:</value>
   </data>
   <data name="lblAboutProgramName.Text" xml:space="preserve">
-    <value>GameCube-Backup-Manager</value>
+    <value>GameCube Backup Manager</value>
   </data>
   <data name="tbTranslator.Text" xml:space="preserve">
     <value>Übersetzung</value>
   </data>
   <data name="rtbAboutGameTDB.Text" xml:space="preserve">
-    <value>GameTDB ist eine kollaborative Spieledatenbank, an der jeder etwas beitragen und die er in jedem Spielprojekt verwenden kann.
+    <value>GameTDB ist eine kollaborative Spieledatenbank, zu der jeder beitragen und die jeder in jedem Spielprojekt verwenden kann.
 
-Auf der Website können Sie die Datenbank durchsuchen, herunterladen und dazu beitragen, indem Sie Spielinformationen hinzufügen und Skins hochladen.
+Auf der Website können Sie die Datenbank durchsuchen, sie herunterladen und durch Hinzufügen von Spielinformationen und Hochladen von Skins dazu beitragen.
 
 Auf Ihrer Wii oder Ihrem Computer können Sie mit GameTDB Folgendes tun:
 
-- Zeigen Sie passende Titel für Ihr Spiel an ("Wii Sports" statt "SPORTS PACK FOR REVOLUTION"), ohne sich jemals umbenennen zu müssen.
+- passende Titel für Ihr Spiel anzeigen ("Wii Sports" statt "SPORTS PACK FOR REVOLUTION"), ohne dass Sie sich umbenennen müssen.
 
-- Zeigen Sie das Cover an, das zu Ihrer Region passt.
+- das zu Ihrer Region passende Cover anzeigen lassen.
 
-- zusätzliche Informationen zu Ihren Spielen anzeigen (Spieler, Online-Modi, Zubehör, Publisher, Entwickler...).
+- zusätzliche Informationen über Ihre Spiele anzeigen (Spieler, Online-Modi, Zubehör, Herausgeber, Entwickler...).
 
-- Wenn Sie eine große Bibliothek haben, können Sie Spiele zum Beispiel nach Anzahl der Spieler kalt sortieren, um Ihre Multiplayer-Titel schnell zu gruppieren.
+- Wenn Sie eine große Bibliothek haben, können Sie die Spiele z. B. nach der Anzahl der Spieler sortieren, um Ihre Multiplayer-Titel schnell zu gruppieren.
 
-- Suchen Sie nach GameCube- und Wii-Spielen nach Herausgeber, Entwickler, die einer bestimmten Bewertung entsprechen oder in einem bestimmten Jahr veröffentlicht wurden.</value>
+- Suche nach GameCube- und Wii-Spielen, nach Verleger, Entwickler, mit einer bestimmten Bewertung oder aus einem bestimmten Jahr.</value>
   </data>
   <data name="rtbAboutThanks.Text" xml:space="preserve">
-    <value>Vielen Dank an die folgenden Personen für das Testen, Übersetzen und allgemeine Hilfe während der Entwicklung:
+    <value>Vielen Dank an die folgenden Personen für das Testen, Übersetzen und die allgemeine Hilfe während der Entwicklung:
 
 - Valclark Junior - Testen / Benutzererfahrung
-- Dolphin Emulator Team - GameCube / Wii / RVZ-Informationen
-- Wim
-- WIT (Wiimms ISO Tools)
-- Wii-Gebräu
-- DDinghoya - offizieller Koreanisch-Übersetzer
+- Dolphin Emulator Team - GameCube / Wii / RVZ Informationen
+- Wiim
+- WIT (Wiimms ISO-Werkzeuge)
+- Wii Gebräu
+- DDinghoya - offizieller Übersetzer der koreanischen Sprache
 
-Zusätzlich zu allen, die in der Game-Preservation-Community involviert sind.</value>
+Zusätzlich zu allen, die sich für die Erhaltung von Spielen einsetzen.</value>
   </data>
   <data name="tbThanks.Text" xml:space="preserve">
-    <value>Vielen Dank</value>
+    <value>Danke</value>
   </data>
   <data name="rtbAboutDonations.Text" xml:space="preserve">
-    <value>GameCube Backup Manager ist kostenlose Software.
+    <value>GameCube Backup Manager ist eine kostenlose Software.
 
-Es wurde und wird viel Mühe darauf verwendet, es so stabil und funktionsreich wie möglich zu machen. Wenn Sie es hilfreich finden und Ihre Wertschätzung zeigen möchten, können Sie mir gerne ein oder zwei Dollar dalassen. Jedes erhaltene Geld wird mir sehr helfen!
+Es wurden und werden viele Anstrengungen unternommen, um sie so stabil und funktionsreich wie möglich zu machen. Wenn Sie es hilfreich finden und Ihre Wertschätzung zeigen wollen, können Sie mir gerne ein oder zwei Dollar zukommen lassen. Jedes Geld, das ich erhalte, wird mir sehr helfen!
 
-Sie können Spenden auch per PayPal an laetemn@gmail.com senden, wenn der obige Link für Sie nicht funktioniert.
+Sie können auch über PayPal an laetemn@gmail.com spenden, falls der obige Link nicht funktioniert.
 
-Vergiss nicht, mir eine E-Mail zu schicken, damit ich mich bei dir bedanken kann.</value>
+Vergessen Sie nicht, mir eine E-Mail zu schicken, damit ich mich bei Ihnen bedanken kann.</value>
   </data>
   <data name="tbDonate.Text" xml:space="preserve">
     <value>Spenden</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Um...</value>
+    <value>Über...</value>
   </data>
 </root>

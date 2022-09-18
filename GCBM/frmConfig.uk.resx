@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="cbGeneralFileSize.Items3" xml:space="preserve">
+    <value>Гігабайт</value>
+  </data>
+  <data name="chkManagerLogDebugConsole.Text" xml:space="preserve">
+    <value>Журнал для налагоджувальної консолі</value>
+  </data>
+  <data name="chkCoverEnableTransfer.Text" xml:space="preserve">
+    <value>Увімкніть передачу скінів між пристроями</value>
+  </data>
+  <data name="chkManagerLogFile.Text" xml:space="preserve">
+    <value>Запис у файл</value>
+  </data>
+  <data name="cbVerificationInterval.Items1" xml:space="preserve">
+    <value>10 хвилин</value>
+  </data>
+  <data name="cbVerificationInterval.Items6" xml:space="preserve">
+    <value>3 години</value>
+  </data>
+  <data name="cbVerificationInterval.Items4" xml:space="preserve">
+    <value>1 година</value>
+  </data>
+  <data name="cbVerificationInterval.Items5" xml:space="preserve">
+    <value>2 години</value>
+  </data>
+  <data name="chkCoverRecursiveSearch.Text" xml:space="preserve">
+    <value>Використовуйте рекурсивний пошук по шкірі (пошук у всіх регіонах)</value>
+  </data>
+  <data name="chkGeneralExtractBZip2.Text" xml:space="preserve">
+    <value>BZip2 файли (*.bz;*.bzip2)</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>Розташування папки:</value>
+  </data>
+  <data name="chkCoverSynchronizeDelete.Text" xml:space="preserve">
+    <value>Видалення скінів для ігор, яких немає в списку</value>
+  </data>
+  <data name="lblServerProxy.Text" xml:space="preserve">
+    <value>Проксі-сервер:</value>
+  </data>
+  <data name="cbTitleLanguage.Items5" xml:space="preserve">
+    <value>голландська</value>
+  </data>
+  <data name="label17.Text" xml:space="preserve">
+    <value>Копіювання одного або декількох файлів з одного місця (джерела) в інше (місце призначення). Файл не стискається, не входить до складу будь-якого контейнера, сміттєві дані не видаляються.</value>
+  </data>
+  <data name="rbGameXmlName.Text" xml:space="preserve">
+    <value>Використовуйте торгову назву гри через wiitdb.xml (РЕКОМЕНДУЄМО! - потрібен файл wiitdb.xml)</value>
+  </data>
+  <data name="cbTitleLanguage.Items11" xml:space="preserve">
+    <value>Спрощена китайська мова</value>
+  </data>
+  <data name="cbTitleLanguage.Items10" xml:space="preserve">
+    <value>Традиційний китайський</value>
+  </data>
+  <data name="chkGeneralExtract7z.Text" xml:space="preserve">
+    <value>7Zip файли (*.7z;*.7zip)</value>
+  </data>
+  <data name="grbDolphinFolder.Text" xml:space="preserve">
+    <value>Шлях до емулятора</value>
+  </data>
+  <data name="grbLanguage.Text" xml:space="preserve">
+    <value>Виберіть мову за замовчуванням:</value>
+  </data>
+  <data name="tabSettingsLanguage.Text" xml:space="preserve">
+    <value>Мови</value>
+  </data>
+  <data name="grbLog.Text" xml:space="preserve">
+    <value>Рекорд</value>
+  </data>
+  <data name="cbAdjustNamingStyle.Items" xml:space="preserve">
+    <value>Назва [Код гри]</value>
+  </data>
+  <data name="grbDolphinVideo.Text" xml:space="preserve">
+    <value>Відео</value>
+  </data>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>Скасувати</value>
+  </data>
+  <data name="chkMultipleInstances.Text" xml:space="preserve">
+    <value>Дозволити запуск декількох екземплярів програми</value>
+  </data>
+  <data name="fbd.Description" xml:space="preserve">
+    <value>Створіть або виберіть каталог:</value>
+  </data>
+  <data name="grbUpdate.Text" xml:space="preserve">
+    <value>Оновлення налаштувань</value>
+  </data>
+  <data name="chkGeneralScrubFlushSD.Text" xml:space="preserve">
+    <value>Очищення файлових буферів, щоб SD-карту можна було витягти майже миттєво</value>
+  </data>
+  <data name="rbGameInternalName.Text" xml:space="preserve">
+    <value>Використовувати внутрішню виробничу назву для гри (підтримується у 75%)</value>
+  </data>
+  <data name="cbTitleLanguage.Items1" xml:space="preserve">
+    <value>французький</value>
+  </data>
+  <data name="chkGameTitle.Text" xml:space="preserve">
+    <value>Використовуйте GameTDB (titles.txt)</value>
+  </data>
+  <data name="chkGeneralExtractSplitFile.Text" xml:space="preserve">
+    <value>Розділені файли (*.001)</value>
+  </data>
+  <data name="rbGeneralDiscDelete.Text" xml:space="preserve">
+    <value>Зберегти тільки папку диска 1 та видалити папку диска 2 (експериментальний варіант)</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Розташування папки:</value>
+  </data>
+  <data name="cbVerificationInterval.Items3" xml:space="preserve">
+    <value>30 хвилин</value>
+  </data>
+  <data name="cbGeneralFileSize.Items" xml:space="preserve">
+    <value>Автоматичний</value>
+  </data>
+  <data name="lblPass.Text" xml:space="preserve">
+    <value>Пароль:</value>
+  </data>
+  <data name="chkUpdateServerProxy.Text" xml:space="preserve">
+    <value>Використовуйте проксі-сервер</value>
+  </data>
+  <data name="lblFormat.Text" xml:space="preserve">
+    <value>Формат:</value>
+  </data>
+  <data name="cbTitleLanguage.Items8" xml:space="preserve">
+    <value>російська</value>
+  </data>
+  <data name="btnApply.Text" xml:space="preserve">
+    <value>Подати заявку</value>
+  </data>
+  <data name="grbTransferSystem.Text" xml:space="preserve">
+    <value>Система передачі, що буде використовуватися</value>
+  </data>
+  <data name="cbTitleLanguage.Items2" xml:space="preserve">
+    <value>німецька</value>
+  </data>
+  <data name="lblLOG.Text" xml:space="preserve">
+    <value>Рівень журналу:</value>
+  </data>
+  <data name="grbGeneralDiverse.Text" xml:space="preserve">
+    <value>Кілька</value>
+  </data>
+  <data name="grbTitleFileLocation.Text" xml:space="preserve">
+    <value>Розташування файлу</value>
+  </data>
+  <data name="chkUpdateFileLog.Text" xml:space="preserve">
+    <value>Додавання оновлень до лог-файлу</value>
+  </data>
+  <data name="chkStartWindowMaximized.Text" xml:space="preserve">
+    <value>Розгорнуто стартове вікно</value>
+  </data>
+  <data name="lblUpdateInterval.Text" xml:space="preserve">
+    <value>Перевірте інтервал:</value>
+  </data>
+  <data name="grbTitleLanguage.Text" xml:space="preserve">
+    <value>Мова назви</value>
+  </data>
+  <data name="lblLanguage.Text" xml:space="preserve">
+    <value>Мова:</value>
+  </data>
+  <data name="chkNotify.Text" xml:space="preserve">
+    <value>Увімкнути сповіщення на панелі завдань (за замовчуванням сповіщення будуть відображатися у звичайному режимі)</value>
+  </data>
+  <data name="chkScreensaver.Text" xml:space="preserve">
+    <value>Відключити заставку (Screensaver)</value>
+  </data>
+  <data name="grbDolphinAudio.Text" xml:space="preserve">
+    <value>Аудіо</value>
+  </data>
+  <data name="lblNomenclature.Text" xml:space="preserve">
+    <value>Стиль іменування:</value>
+  </data>
+  <data name="lblTimeInterval.Text" xml:space="preserve">
+    <value>ПРИМІТКА: Налаштування часового інтервалу набуде чинності тільки після перезапуску програми.</value>
+  </data>
+  <data name="chkGeneralExtractNwb.Text" xml:space="preserve">
+    <value>NWB файли (*.nwb)</value>
+  </data>
+  <data name="cbAdjustNamingStyle.Items1" xml:space="preserve">
+    <value>[Код гри]</value>
+  </data>
+  <data name="label20.Text" xml:space="preserve">
+    <value>Аналогічно XCopy, з тією різницею, що очищаються сміттєві дані (сміття), що знаходяться всередині файлів. При цьому зберігається початковий розмір файлу. Сміттєві дані видаляються зі збереженням цілісності інших даних.</value>
+  </data>
+  <data name="label31.Text" xml:space="preserve">
+    <value>Видаляє непотрібні дані (сміття), замінюючи їх постійним значенням байта (0xff або 0x00). Файл має менший розмір, проте зберігає цілісність даних.</value>
+  </data>
+  <data name="tabCoverDisc.Text" xml:space="preserve">
+    <value>Диск</value>
+  </data>
+  <data name="lblCommentsScrubCopy.Text" xml:space="preserve">
+    <value>Для методу Scrub завжди буде використовуватися за замовчуванням "Назва [Код гри]", заснована на внутрішній назві (визначеній розробником). У режимі копіювання Scrub диски 1 і 2 завжди будуть зберігатися в окремих папках, за винятком окремих випадків, коли метод виявлення може виявити загальні імена, задані розробником, і в цьому випадку диски 1 і 2 будуть зберігатися в одній папці.</value>
+  </data>
+  <data name="cbTitleLanguage.Items6" xml:space="preserve">
+    <value>Португальська</value>
+  </data>
+  <data name="grbGeneralFileSize.Text" xml:space="preserve">
+    <value>Показати розмір</value>
+  </data>
+  <data name="grbGeneralFiles.Text" xml:space="preserve">
+    <value>Файли</value>
+  </data>
+  <data name="tabSettingsLog.Text" xml:space="preserve">
+    <value>Рекорд</value>
+  </data>
+  <data name="cbLevelLog.Items2" xml:space="preserve">
+    <value>Завершено</value>
+  </data>
+  <data name="chkUpdateVerifyStart.Text" xml:space="preserve">
+    <value>Перевірте наявність оновлень при запуску</value>
+  </data>
+  <data name="cbTitleLanguage.Items7" xml:space="preserve">
+    <value>японський</value>
+  </data>
+  <data name="chkManagerLogSystemConsole.Text" xml:space="preserve">
+    <value>Реєстрація в системній консолі</value>
+  </data>
+  <data name="cbLevelLog.Items" xml:space="preserve">
+    <value>Інформативний</value>
+  </data>
+  <data name="tabCoverFull.Text" xml:space="preserve">
+    <value>Завершено</value>
+  </data>
+  <data name="grbDolphin.Text" xml:space="preserve">
+    <value>Налаштування емулятора</value>
+  </data>
+  <data name="grpCoversSynchronize.Text" xml:space="preserve">
+    <value>Синхронізувати</value>
+  </data>
+  <data name="lblCommentsExactCopy.Text" xml:space="preserve">
+    <value>Стиль іменування наразі працює лише з точними копіями файлів (1:1) і може використовувати як внутрішню назву, так і комерційну назву (через файл wiitdb.xml). Ця опція може бути налаштована користувачем на вкладці "Назви". У режимі точної копії (1:1) диски 1 і 2 завжди будуть зберігатися в одній папці.</value>
+  </data>
+  <data name="label35.Text" xml:space="preserve">
+    <value>Розташування папки:</value>
+  </data>
+  <data name="grbCoverTransfer.Text" xml:space="preserve">
+    <value>Налаштування зарядного пристрою USB (Перехідні кришки -&gt; Призначення)</value>
+  </data>
+  <data name="chkManagerLogWindow.Text" xml:space="preserve">
+    <value>Реєстрація на Window</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>Розташування папки:</value>
+  </data>
+  <data name="lblComments.Text" xml:space="preserve">
+    <value>КОМЕНТАРІ:</value>
+  </data>
+  <data name="tabSettingsNomenclature.Text" xml:space="preserve">
+    <value>Номенклатура</value>
+  </data>
+  <data name="grpTitlesCoverFolder.Text" xml:space="preserve">
+    <value>Папка з обкладинками (Cache -&gt; Origin)</value>
+  </data>
+  <data name="grbGeneralPartitions.Text" xml:space="preserve">
+    <value>Налаштувати каталоги ігор</value>
+  </data>
+  <data name="tabSettingsTitle.Text" xml:space="preserve">
+    <value>Назви</value>
+  </data>
+  <data name="cbGeneralFileSize.Items2" xml:space="preserve">
+    <value>Мегабайт</value>
+  </data>
+  <data name="grbTitleDiverse.Text" xml:space="preserve">
+    <value>Різне (для набуття чинності потрібен перезапуск програми)</value>
+  </data>
+  <data name="lblLanguageComments.Text" xml:space="preserve">
+    <value>ПРИМІТКА: Налаштування мови набуде чинності тільки після перезапуску програми.</value>
+  </data>
+  <data name="cbVerificationInterval.Items2" xml:space="preserve">
+    <value>15 хвилин</value>
+  </data>
+  <data name="cbLevelLog.Items1" xml:space="preserve">
+    <value>Підбито підсумки</value>
+  </data>
+  <data name="chkGeneralTemporaryBuffer.Text" xml:space="preserve">
+    <value>Використання переказів у тимчасовій пам'яті (буфері)</value>
+  </data>
+  <data name="cbTitleLanguage.Items4" xml:space="preserve">
+    <value>Італійська</value>
+  </data>
+  <data name="chkLoadDatabase.Text" xml:space="preserve">
+    <value>Завантажувати базу даних при запуску програми (збільшує час запуску програми)</value>
+  </data>
+  <data name="tabSettingsSeveral.Text" xml:space="preserve">
+    <value>Кілька</value>
+  </data>
+  <data name="cbVerificationInterval.Items" xml:space="preserve">
+    <value>5 хвилин</value>
+  </data>
+  <data name="chkGeneralExtractRar.Text" xml:space="preserve">
+    <value>RAR-файли (*.rar)</value>
+  </data>
+  <data name="rbGeneralDiscClean.Text" xml:space="preserve">
+    <value>Зберігайте всі папки окремо для диска 1 і диска 2 (за замовчуванням)</value>
+  </data>
+  <data name="btnRestore.Text" xml:space="preserve">
+    <value>Відновлення налаштувань</value>
+  </data>
+  <data name="tabSettingsTransfer.Text" xml:space="preserve">
+    <value>Передача гри</value>
+  </data>
+  <data name="chkNetVerify.Text" xml:space="preserve">
+    <value>Перевірте підключення до Інтернету при запуску програми</value>
+  </data>
+  <data name="chkGameTitleCustom.Text" xml:space="preserve">
+    <value>Використовуйте власні заголовки (custom-titles.txt)</value>
+  </data>
+  <data name="tabSettingsUpdates.Text" xml:space="preserve">
+    <value>Оновлення</value>
+  </data>
+  <data name="rbTransferSystemXCopy.Text" xml:space="preserve">
+    <value>XCopy (за замовчуванням)</value>
+  </data>
+  <data name="label28.Text" xml:space="preserve">
+    <value>FST (FileSystem Table) - це файлова система, розпакована в каталог, який містить всі реальні та віртуальні файли архіву. Nintendont використовує файли FST для створення внутрішнього віртуального ISO-образу і завантаження гри з цього віртуального ISO.</value>
+  </data>
+  <data name="chkGeneralRecursiva.Text" xml:space="preserve">
+    <value>Рекурсивний пошук каталогів (тільки для вікна "Файли (Джерело)")</value>
+  </data>
+  <data name="chkUpdateBetaChannel.Text" xml:space="preserve">
+    <value>Переходьте на оновлення БЕТА-каналу</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Налаштування</value>
+  </data>
+  <data name="cbTitleLanguage.Items" xml:space="preserve">
+    <value>Англійська мова</value>
+  </data>
+  <data name="chkGeneralExtractZip.Text" xml:space="preserve">
+    <value>Zip-файли (*.zip)</value>
+  </data>
+  <data name="lblAlignment.Text" xml:space="preserve">
+    <value>Вирівнювання:</value>
+  </data>
+  <data name="chkGeneralSHA1.Text" xml:space="preserve">
+    <value>Перевірка підпису SHA-1 під час переказів</value>
+  </data>
+  <data name="lblGeneralExtract.Text" xml:space="preserve">
+    <value>Витягувати при необхідності.</value>
+  </data>
+  <data name="ofdDolphin.Filter" xml:space="preserve">
+    <value>Емулятор Dolphin|dolphin.exe</value>
+  </data>
+  <data name="rbDSPHLE.Text" xml:space="preserve">
+    <value>DSP HLE (за замовчуванням)</value>
+  </data>
+  <data name="cbVerificationInterval.Items7" xml:space="preserve">
+    <value>4 години</value>
+  </data>
+  <data name="grpNomenclatureFolderFormat.Text" xml:space="preserve">
+    <value>Формат папки</value>
+  </data>
+  <data name="grbGeneralTemporaryFolder.Text" xml:space="preserve">
+    <value>Тимчасова папка</value>
+  </data>
+  <data name="tabSettingsCovers.Text" xml:space="preserve">
+    <value>Обкладинки</value>
+  </data>
+  <data name="cbTitleLanguage.Items9" xml:space="preserve">
+    <value>корейська</value>
+  </data>
+  <data name="cbTitleLanguage.Items3" xml:space="preserve">
+    <value>іспанська</value>
+  </data>
+  <data name="chkGeneralMD5.Text" xml:space="preserve">
+    <value>Розрахунок підпису MD5 під час переказів</value>
+  </data>
+  <data name="cbScrubAlign.Items" xml:space="preserve">
+    <value>Автоматичний</value>
+  </data>
+  <data name="lblUser.Text" xml:space="preserve">
+    <value>Користувач:</value>
+  </data>
+  <data name="tabSettingsGeneral.Text" xml:space="preserve">
+    <value>Генеральний</value>
+  </data>
+</root>

@@ -124,19 +124,19 @@
     <value>Version</value>
   </data>
   <data name="labelCopyright.Text" xml:space="preserve">
-    <value>droits d'auteur</value>
+    <value>Copyright</value>
   </data>
   <data name="labelCompanyName.Text" xml:space="preserve">
-    <value>Nom de l'entreprise</value>
+    <value>Nom de la société</value>
   </data>
   <data name="textBoxDescription.Text" xml:space="preserve">
-    <value>La description</value>
+    <value>Description</value>
   </data>
   <data name="lblAboutCurrentLanguage.Text" xml:space="preserve">
-    <value>Langue courante:</value>
+    <value>Langue actuelle :</value>
   </data>
   <data name="lblAboutTranslator.Text" xml:space="preserve">
-    <value>Traduit par:</value>
+    <value>Traducteur :</value>
   </data>
   <data name="lblAboutProgramName.Text" xml:space="preserve">
     <value>Gestionnaire de sauvegarde GameCube</value>
@@ -145,33 +145,33 @@
     <value>Traduction</value>
   </data>
   <data name="rtbAboutGameTDB.Text" xml:space="preserve">
-    <value>GameTDB est une base de données de jeux collaborative à laquelle quiconque peut contribuer et que quiconque peut utiliser dans n'importe quel projet de jeu.
+    <value>GameTDB est une base de données collaborative de jeux à laquelle tout le monde peut contribuer et que tout le monde peut utiliser dans tout projet de jeu.
 
-Sur le site Web, vous pouvez parcourir la base de données, la télécharger et y contribuer en ajoutant des informations sur le jeu et en téléchargeant des skins.
+Sur le site web, vous pouvez parcourir la base de données, la télécharger et y contribuer en ajoutant des informations sur le jeu et en téléchargeant des skins.
 
-Sur votre Wii ou votre ordinateur, vous pouvez utiliser GameTDB pour effectuer les actions suivantes :
+Sur votre Wii ou votre ordinateur, vous pouvez utiliser GameTDB pour faire ce qui suit :
 
-- afficher des titres adaptés à votre jeu ("Wii Sports" au lieu de "SPORTS PACK FOR REVOLUTION"), sans jamais avoir à vous renommer.
+- afficher des titres appropriés pour votre jeu ("Wii Sports" au lieu de "SPORTS PACK FOR REVOLUTION"), sans jamais avoir à vous renommer.
 
-- affichez la pochette qui correspond à votre région.
+- afficher la jaquette correspondant à votre région.
 
-- afficher des informations complémentaires sur vos jeux (joueurs, modes en ligne, accessoires, éditeur, développeur...).
+- afficher des informations supplémentaires sur vos jeux (joueurs, modes en ligne, accessoires, éditeur, développeur...).
 
-- si vous avez une grande bibliothèque, vous triez à froid les jeux, par exemple, par nombre de joueurs pour regrouper rapidement vos titres multijoueurs.
+- si vous avez une grande bibliothèque, vous pouvez trier les jeux à froid, par exemple, par nombre de joueurs pour regrouper rapidement vos titres multijoueurs.
 
-- recherchez des jeux GameCube et Wii, par éditeur, développeur, qui correspondent à un certain classement ou qui sont sortis une certaine année.</value>
+- rechercher des jeux GameCube et Wii, par éditeur, développeur, correspondant à un certain classement ou sortis une certaine année.</value>
   </data>
   <data name="rtbAboutThanks.Text" xml:space="preserve">
-    <value>Merci aux personnes suivantes pour les tests, la traduction et l'aide générale pendant le développement :
+    <value>Merci aux personnes suivantes pour les tests, les traductions et l'aide générale pendant le développement :
 
-- Valclark Junior - Tests / Expérience Utilisateur
-- Équipe Dolphin Emulator - Informations GameCube / Wii / RVZ
--Wim
+- Valclark Junior - Test / Expérience utilisateur
+- Dolphin Emulator Team - Informations GameCube / Wii / RVZ
+- Wiim
 - WIT (Wiimms ISO Tools)
 - Wii Brew
-- DDinghoya - traducteur officiel de langue coréenne
+- DDinghoya - traducteur officiel en langue coréenne
 
-En plus de toutes les personnes impliquées dans la communauté de préservation du jeu.</value>
+En plus de toutes les personnes impliquées dans la communauté de préservation des jeux.</value>
   </data>
   <data name="tbThanks.Text" xml:space="preserve">
     <value>Merci</value>
@@ -179,16 +179,16 @@ En plus de toutes les personnes impliquées dans la communauté de préservation
   <data name="rtbAboutDonations.Text" xml:space="preserve">
     <value>GameCube Backup Manager est un logiciel gratuit.
 
-Beaucoup d'efforts ont été et seront déployés pour le rendre aussi stable et riche en fonctionnalités que possible. Si vous le trouvez utile et que vous voulez montrer votre appréciation, n'hésitez pas à me laisser tomber un dollar ou deux. Tout argent reçu m'aidera beaucoup!
+Beaucoup d'efforts ont été et seront déployés pour le rendre aussi stable et riche en fonctionnalités que possible. Si vous le trouvez utile et voulez montrer votre appréciation, n'hésitez pas à m'envoyer un dollar ou deux. Tout argent reçu me sera d'une grande aide !
 
 Vous pouvez également envoyer des dons à laetemn@gmail.com via PayPal si le lien ci-dessus ne fonctionne pas pour vous.
 
-N'oubliez pas de m'envoyer un mail pour que je puisse vous remercier.</value>
+N'oubliez pas de m'envoyer un courriel pour que je puisse vous remercier.</value>
   </data>
   <data name="tbDonate.Text" xml:space="preserve">
-    <value>Des dons</value>
+    <value>Dons</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>À propos de...</value>
+    <value>A propos de...</value>
   </data>
 </root>

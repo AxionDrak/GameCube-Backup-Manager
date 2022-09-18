@@ -118,43 +118,43 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="label7.Text" xml:space="preserve">
-    <value>AHB-Zugang:</value>
+    <value>AHB Zugriff:</value>
   </data>
   <data name="ofdBanner.Title" xml:space="preserve">
     <value>Wählen Sie die Bilddatei aus:</value>
   </data>
   <data name="cbMountUSB.Items" xml:space="preserve">
-    <value>DEAKTIVIERT</value>
+    <value>DISABLED</value>
   </data>
   <data name="ofdXml.Filter" xml:space="preserve">
     <value>XML-Dateien|meta.xml</value>
   </data>
   <data name="cbAppNoReloadIOS.Items" xml:space="preserve">
-    <value>DEAKTIVIERT</value>
+    <value>DISABLED</value>
   </data>
   <data name="btnClose.Text" xml:space="preserve">
-    <value>Nah dran</value>
+    <value>Schließen Sie</value>
   </data>
   <data name="btnSearch.Text" xml:space="preserve">
     <value>Suche...</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>'meta.xml' lesen/bearbeiten</value>
+    <value>meta.xml" lesen/bearbeiten</value>
   </data>
   <data name="lblMountUsb.Text" xml:space="preserve">
-    <value>USB montieren:</value>
+    <value>USB anschließen:</value>
   </data>
   <data name="cbAppAhbAccess.Items1" xml:space="preserve">
     <value>AKTIVIERT</value>
   </data>
   <data name="cbAppAhbAccess.Items" xml:space="preserve">
-    <value>DEAKTIVIERT</value>
+    <value>DISABLED</value>
   </data>
   <data name="label4.Text" xml:space="preserve">
-    <value>Veröffentlichungsdatum:</value>
+    <value>Datum der Veröffentlichung:</value>
   </data>
   <data name="btnSave.Text" xml:space="preserve">
-    <value>Speichern</value>
+    <value>Speichern Sie</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Name:</value>
@@ -169,7 +169,7 @@
     <value>Banner:</value>
   </data>
   <data name="ofdXml.Title" xml:space="preserve">
-    <value>Wählen Sie die Datei „meta.xml“ aus:</value>
+    <value>Wählen Sie die Datei "meta.xml" aus:</value>
   </data>
   <data name="ofdBanner.Filter" xml:space="preserve">
     <value>PNG-Dateien|*.png</value>
@@ -181,13 +181,13 @@
     <value>Beschreibung (lang):</value>
   </data>
   <data name="cbPortUSB.Items" xml:space="preserve">
-    <value>DEAKTIVIERT</value>
+    <value>DISABLED</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
-    <value>Ausführung:</value>
+    <value>Version:</value>
   </data>
   <data name="chkEnableArguments.Text" xml:space="preserve">
-    <value>Argumente aktivieren</value>
+    <value>Aktivieren von Argumenten</value>
   </data>
   <data name="lblUsbPort.Text" xml:space="preserve">
     <value>USB-Anschluss:</value>
@@ -199,12 +199,12 @@
     <value>IOS nicht neu laden:</value>
   </data>
   <data name="lblAttentionImageNotFound.Text" xml:space="preserve">
-    <value>AUFMERKSAMKEIT!</value>
+    <value>ACHTUNG!</value>
   </data>
   <data name="btnClear.Text" xml:space="preserve">
     <value>Sauber</value>
   </data>
   <data name="lblImageNotFound.Text" xml:space="preserve">
-    <value>Bild nicht gefunden! Sie können das oben gezeigte Bild verwenden, ein neues Bild auswählen oder das Bild vollständig entfernen. Bildgröße: 128 (Breite) x 48 (Höhe).</value>
+    <value>Bild nicht gefunden! Sie können mit dem oben gezeigten Bild speichern, ein neues Bild auswählen oder das Bild ganz entfernen. Bildgröße: 128 (Breite) x 48 (Höhe).</value>
   </data>
 </root>

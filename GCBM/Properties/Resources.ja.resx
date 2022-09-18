@@ -117,424 +117,445 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AboutTranslator" xml:space="preserve">
-    <value>によって翻訳された：</value>
+  <data name="GCBM_Language" xml:space="preserve">
+    <value>日本語［日本］</value>
   </data>
   <data name="ServerReportedOneCoverOrBothNotFound" xml:space="preserve">
-    <value>サーバーからの報告: カバーの 1 つ (または両方) が見つかりませんでした!</value>
+    <value>サーバーから報告がありました。どちらかのカバー（または両方）が見つかりませんでした。</value>
   </data>
   <data name="NoInternetConnectionFound_String2" xml:space="preserve">
-    <value>プログラム設定で接続が有効になっていることを確認してください。</value>
+    <value>番組設定で接続が有効になっていることを確認してください。</value>
   </data>
   <data name="GetAllDrives_Inactive" xml:space="preserve">
-    <value>非活性</value>
+    <value>活動休止中</value>
   </data>
   <data name="AboutBox_String1" xml:space="preserve">
-    <value>{0}について</value>
+    <value>0}について</value>
   </data>
   <data name="GameListExportedTXT" xml:space="preserve">
-    <value>TXTにエクスポートされたゲームリスト！</value>
+    <value>対局表をTXTに書き出しました</value>
   </data>
   <data name="PluginDisplay_String1" xml:space="preserve">
-    <value>プラグインを削除してもよろしいですか?</value>
-  </data>
-  <data name="GCBM_Language" xml:space="preserve">
-    <value>英語 [米国]</value>
+    <value>本当にプラグインを削除するのですか？</value>
   </data>
   <data name="EmptyGamesList" xml:space="preserve">
-    <value>ゲームリストが空です!</value>
+    <value>ゲームリストが空っぽだ！？</value>
   </data>
   <data name="Download3DCoverError" xml:space="preserve">
-    <value>[エラー] カバー (3D) のダウンロードに失敗しました!</value>
+    <value> [ERROR] カバー（3D）のダウンロードに失敗しました!</value>
   </data>
   <data name="RequiredDirectories_String2" xml:space="preserve">
-    <value>[情報] デフォルトの一時ディレクトリは既に存在します...作成を無視します!</value>
+    <value>[INFO] デフォルトのテンポラリディレクトリはすでに存在しています。</value>
   </data>
   <data name="ClearTemp_String2" xml:space="preserve">
-    <value>一時フォルダをクリアできませんでした!</value>
+    <value>tempフォルダの消去ができない!</value>
   </data>
   <data name="RecommendedDeleteOrMoveFile" xml:space="preserve">
     <value>ファイルを削除するか、別の場所に移動することをお勧めします。</value>
   </data>
   <data name="FoundIsoGcmFiles" xml:space="preserve">
-    <value>[情報] ISO/GCM ファイルが見つかりました:</value>
+    <value>[INFO] ISO/GCMファイル（複数可）が見つかりました。</value>
   </data>
   <data name="frmMain_Resize_Program" xml:space="preserve">
-    <value>バックグラウンドで実行中のプログラム！</value>
+    <value>バックグラウンドで動作するプログラム</value>
   </data>
   <data name="InstallGameScrub_Unresponsive" xml:space="preserve">
-    <value>ステータス: 応答なし!</value>
+    <value>ステータス応答なし!</value>
   </data>
   <data name="OverwriteWiiTDBBody" xml:space="preserve">
-    <value>現在の WiiTDB.xml ファイルを上書きしますか?現在の WiiTDB.xml ファイルを上書きしますか?</value>
+    <value>現在のWiiTDB.xmlファイルを上書きしますか？現在のWiiTDB.xmlファイルを上書きしますか？</value>
   </data>
   <data name="ClearLogNotFound" xml:space="preserve">
-    <value>消去するレジストリ データはありません。</value>
+    <value>レジストリデータをクリアする必要がない!</value>
   </data>
   <data name="ConvertElfDol_String2" xml:space="preserve">
-    <value>&gt;&gt; ステータス: 応答なし!</value>
+    <value>&gt;&gt; ステータス応答なし!</value>
   </data>
   <data name="NoInternetConnectionFound_String1" xml:space="preserve">
-    <value>インターネット接続が見つかりません!</value>
+    <value>インターネット接続が見つかりません</value>
   </data>
   <data name="CannotOpenTwoInstances" xml:space="preserve">
-    <value>このプログラムの 2 つのインスタンスを開くことはできません!</value>
+    <value>このプログラムは2つのインスタンスを開くことができません。</value>
   </data>
   <data name="ConvertElfDol_String4" xml:space="preserve">
-    <value>&gt;&gt; ステータス [エラー]: ファイル形式を認識できません!</value>
+    <value>&gt;&gt; ステータス [ERROR]:認識できないファイル形式です</value>
   </data>
   <data name="InvalidDrive_String3" xml:space="preserve">
-    <value>Nintendont アプリは、FAT32 および exFAT ファイル システムのみをサポートします。</value>
+    <value>ニンテンドースイッチは、FAT32とexFATのファイルシステムのみに対応しています。</value>
   </data>
   <data name="NetworkCheck_NetStatus_Offline" xml:space="preserve">
-    <value>インターネット接続が無効になりました!</value>
+    <value>インターネット接続不可</value>
   </data>
   <data name="GCBM_TranslatedBy" xml:space="preserve">
-    <value>レイテ・メイレレス</value>
+    <value>ディープエル</value>
   </data>
   <data name="LoadDatabase_Region" xml:space="preserve">
-    <value>領域</value>
+    <value>地域</value>
   </data>
   <data name="SelectTargetDrive" xml:space="preserve">
-    <value>対象のドライブを選択してください!</value>
+    <value>対象ドライブを選択してください</value>
   </data>
   <data name="HashesAreNotSame" xml:space="preserve">
-    <value>[情報] ハッシュが同じではありません!</value>
+    <value>[INFO] ハッシュが違う!</value>
   </data>
   <data name="DisplayFilesSelected_Size" xml:space="preserve">
     <value>サイズ</value>
   </data>
   <data name="ProcessTaskDelay_String2" xml:space="preserve">
-    <value>ファイルをダウンロードしてください！</value>
+    <value>ぜひダウンロードしてください</value>
   </data>
   <data name="InvalidDrive_String1" xml:space="preserve">
-    <value>これは有効なデバイスではありません!</value>
+    <value>これは有効なデバイスではありません</value>
   </data>
   <data name="InstallGameScrub_Scrubbing" xml:space="preserve">
-    <value>ステータス: スクラブ中...</value>
+    <value>ステータススクラブ...</value>
   </data>
   <data name="Attention" xml:space="preserve">
-    <value>注意！</value>
+    <value>ATTENTION!</value>
   </data>
   <data name="ReadImage_String3" xml:space="preserve">
     <value>ファイル '{0}' が見つかりません!</value>
   </data>
   <data name="Error" xml:space="preserve">
-    <value>[エラー]</value>
+    <value>ERROR] [エラー</value>
   </data>
   <data name="PluginDisplay_String2" xml:space="preserve">
     <value>アンインストール</value>
   </data>
   <data name="RegisterHeaderLog_CurrentProgramDirectory" xml:space="preserve">
-    <value>[情報] 現在のプログラム ディレクトリ:</value>
+    <value>[INFO] 現在のプログラムディレクトリです。</value>
   </data>
   <data name="ListHash_String2" xml:space="preserve">
-    <value>ファイルハッシュ:</value>
+    <value>ファイルのハッシュ値を指定します。</value>
   </data>
   <data name="Information" xml:space="preserve">
-    <value>情報</value>
+    <value>インフォメーション</value>
   </data>
   <data name="UnknownRegion" xml:space="preserve">
-    <value>未知の地域！</value>
+    <value>未知の領域！？</value>
   </data>
   <data name="SelectGameFromList" xml:space="preserve">
-    <value>リストからゲームを選択してください！</value>
+    <value>リストからゲームを選んでください</value>
   </data>
   <data name="RecordExportedFailed" xml:space="preserve">
-    <value>エクスポートできるデータがありません!</value>
+    <value>エクスポート可能なデータがありません</value>
   </data>
   <data name="CantOpenImage" xml:space="preserve">
-    <value>[エラー] 画像ファイルを開けませんでした。</value>
+    <value>[ERROR] イメージファイルを開くことができませんでした。</value>
   </data>
   <data name="ConvertElfDol_String1" xml:space="preserve">
-    <value>&gt;&gt; ステータス: 作業中...</value>
+    <value>&gt;&gt; ステータス作業中...</value>
   </data>
   <data name="AskDownloadWiiTDB" xml:space="preserve">
-    <value>WiiTDB.zip が見つかりません。今すぐダウンロードしますか?</value>
+    <value>WiiTDB.zip が見つかりません、今すぐダウンロードしますか？</value>
   </data>
   <data name="InvalidDrive_String2" xml:space="preserve">
-    <value>検出されたファイル システムは次のとおりです。</value>
+    <value>検出されたファイルシステムは</value>
   </data>
   <data name="ReadImage_String4" xml:space="preserve">
-    <value>エラー！</value>
+    <value>ERROR!</value>
   </data>
   <data name="DownloadingWiiTDB_String1" xml:space="preserve">
-    <value>&gt;&gt; WiiTDB.zip をダウンロード中 ...</value>
+    <value>&gt;&gt; WiiTDB.zipをダウンロード中 ...</value>
   </data>
   <data name="ServerReportedDiscCoverNotFound" xml:space="preserve">
-    <value>サーバーが報告しました: ディスク カバーが見つかりません!</value>
+    <value>サーバーから報告がありました。ディスクカバーが見つかりません!</value>
   </data>
   <data name="ProcessTaskDelay_String3" xml:space="preserve">
-    <value>このファイルに依存する一部の機能は、ファイルがダウンロードされるまで動作しません!</value>
+    <value>このファイルに依存する一部の機能は、ファイルがダウンロードされるまで動作しません</value>
   </data>
   <data name="ReadImage_String2" xml:space="preserve">
-    <value>複数の FST 画像?\r\nこの画像に関する情報を送ってください。</value>
+    <value>Multiple FST images?╱Please send me information about this image.</value>
   </data>
   <data name="InstallGameScrub_TrasnferredDisc2" xml:space="preserve">
-    <value>ディスク 2 が正常に転送されました!</value>
+    <value>ディスク2の転送に成功しました</value>
   </data>
   <data name="AboutTranslatorContact" xml:space="preserve">
-    <value>コンタクト：</value>
+    <value>連絡先</value>
   </data>
   <data name="MetaXml_String2" xml:space="preserve">
-    <value>データは正常に保存されました!</value>
+    <value>データの保存に成功しました</value>
   </data>
   <data name="RegisterHeaderLog_WorkingSet" xml:space="preserve">
-    <value>ワーキング セット:</value>
+    <value>ワーキングセット。</value>
   </data>
   <data name="AllFilesSuccessfullyDeleted" xml:space="preserve">
-    <value>すべてのファイルが正常に削除されました!</value>
+    <value>すべてのファイルが正常に削除されました</value>
   </data>
   <data name="ClearLog" xml:space="preserve">
-    <value>本当にレジストリ データを消去しますか?</value>
+    <value>本当にレジストリデータを消去するのですか？</value>
   </data>
   <data name="InvalidDrive_String6" xml:space="preserve">
-    <value>ISO/GCM ファイルのバックアップ ストレージとして。</value>
+    <value>ISO/GCMファイルのBACKUPストレージとして。</value>
   </data>
   <data name="RegisterHeaderLog_OSVersion" xml:space="preserve">
-    <value>OS バージョン:</value>
+    <value>OSバージョン。</value>
   </data>
   <data name="LoadISOInfo_String2" xml:space="preserve">
-    <value>セカンダリ ディスク: (disc2)</value>
+    <value>セカンダリーディスク：（disc2）</value>
   </data>
   <data name="DolphinEmulator_Not_Found_String_1" xml:space="preserve">
-    <value>エミュレータが見つかりません!</value>
+    <value>エミュレータが見つかりません</value>
   </data>
   <data name="ListHash_String1" xml:space="preserve">
-    <value>の</value>
+    <value>があります。</value>
   </data>
   <data name="RegisterHeaderLog_ApplicationVersion" xml:space="preserve">
-    <value>アプリケーションのバージョン:</value>
+    <value>アプリケーションのバージョンです。</value>
   </data>
   <data name="RegisterHeaderLog_LogicalUnits" xml:space="preserve">
-    <value>論理ユニット:</value>
+    <value>論理的な単位。</value>
   </data>
   <data name="FilesDestinationUnit" xml:space="preserve">
-    <value>ファイル (宛先) - ドライブ (</value>
+    <value>ファイル（保存先） - ドライブ（保存先</value>
   </data>
   <data name="AssemblyInfo_Description" xml:space="preserve">
-    <value>Nintendo GameCube ISO および GCM ファイル マネージャー ソフトウェア。</value>
+    <value>ニンテンドーゲームキューブのISOとGCMのファイルマネージャーソフト。</value>
   </data>
   <data name="CheckUSBGXFlow_String1" xml:space="preserve">
-    <value>「オプション」-&gt;「設定」に移動してください</value>
+    <value>オプション」→「設定」にてご確認ください。</value>
   </data>
   <data name="AboutCurrentLanguage" xml:space="preserve">
-    <value>現在の言語: </value>
+    <value>現在の言語。</value>
   </data>
   <data name="FilterDatabase_String2" xml:space="preserve">
-    <value>「wiitdb.xml」ファイルが正しくインストールされている場合は、プログラム設定に必要な調整を行います。</value>
+    <value>wiitdb.xml」ファイルが正しくインストールされている場合は、プログラムの設定に必要な調整を行います。</value>
   </data>
   <data name="MetaXml_String1" xml:space="preserve">
-    <value>「meta.xml」ファイルが無効または破損しています!</value>
+    <value>meta.xml'ファイルが無効か破損しています。</value>
   </data>
   <data name="CreateGamesFolder" xml:space="preserve">
-    <value>GAMES フォルダがありません。今すぐフォルダを作成しますか?</value>
+    <value>GAMESフォルダがないのですが、フォルダを作成しますか？</value>
   </data>
   <data name="DisplayFilesSelected_Found_String2" xml:space="preserve">
-    <value>拡張子のファイル。</value>
+    <value>拡張子を持つファイル。</value>
   </data>
   <data name="RecordExportedSuccessfully" xml:space="preserve">
-    <value>レコードが正常にエクスポートされました!</value>
+    <value>レコードのエクスポートに成功しました</value>
   </data>
   <data name="LoadDatabase_Type" xml:space="preserve">
     <value>タイプ</value>
   </data>
   <data name="ProcessTaskDelay_String4" xml:space="preserve">
-    <value>ファイルをダウンロードするには (インターネット接続が必要です)、[データベース] タブに移動し、[ツール] -&gt; [GameTDB アップデート] に移動します。</value>
+    <value>ファイルのダウンロード（インターネット接続が必要）は、「データベース」タブ→「ツール」→「GameTDBアップデート」で行います。</value>
   </data>
   <data name="DownloadingWiiTDB_String2" xml:space="preserve">
-    <value>&gt;&gt; WiiTDB.xml を抽出しています ...</value>
+    <value>&gt;&gt; WiiTDB.xml を抽出中 ...</value>
   </data>
   <data name="SelectFolderContainingIsoGcmFiles" xml:space="preserve">
-    <value>ISO/GCM ファイルを含むフォルダーを選択します。</value>
+    <value>ISO/GCMファイルが格納されているフォルダを選択します。</value>
   </data>
   <data name="DestinyDrive_TotalSpace" xml:space="preserve">
-    <value>合計スペース:</value>
+    <value>総面積</value>
   </data>
   <data name="RequiredDirectories_String4" xml:space="preserve">
-    <value>[情報] スキン ディレクトリが作成されました...</value>
+    <value>[INFO】スキンディレクトリが作成されました...。</value>
   </data>
   <data name="Download3DCover" xml:space="preserve">
-    <value>[情報] カバー (3D) をダウンロードしています...</value>
+    <value> [INFO] カバー（3D）をダウンロード中... </value>
   </data>
   <data name="InvalidDrive_String5" xml:space="preserve">
-    <value>ただし、デバイスを使用することはできます</value>
+    <value>ただし、デバイスの使用は可能です</value>
   </data>
   <data name="LoadDatabase_Developer" xml:space="preserve">
     <value>デベロッパー</value>
   </data>
   <data name="CopyTask_String1" xml:space="preserve">
-    <value>ファイルを転送しています...</value>
+    <value>ファイルを転送する...</value>
   </data>
   <data name="InstallGameScrub_GameInstalled" xml:space="preserve">
-    <value>ゲームが正常にインストールされました!</value>
+    <value>ゲームのインストールに成功しました</value>
   </data>
   <data name="OverwriteWiiTDBCaption" xml:space="preserve">
-    <value>WiiTDB.xml を上書きしますか?</value>
+    <value>WiiTDB.xmlを上書きしますか？</value>
   </data>
   <data name="DialogResultDeleteGame_ReallyDeleteFile_String1" xml:space="preserve">
-    <value>本当にファイルを削除しますか?</value>
+    <value>本当にファイルを削除しますか？</value>
   </data>
   <data name="CreateGamesFolderNow" xml:space="preserve">
-    <value>これは有効なデバイスですが、GAMES フォルダがありません。今すぐフォルダを作成しますか?</value>
+    <value>このデバイスは有効ですが、GAMESフォルダーがありません、今すぐフォルダーを作成してください。</value>
   </data>
-  <data name="DownloadDiscCoverError" xml:space="preserve">
-    <value>[エラー] カバー (ディスク) のダウンロードに失敗しました!</value>
+  <data name="AboutTranslator" xml:space="preserve">
+    <value>翻訳者</value>
+  </data>
+  <data name=" " xml:space="preserve">
+    <value>[ERROR] カバー（Disc）のダウンロードに失敗しました。</value>
   </data>
   <data name="CheckUSBGXFlow_String2" xml:space="preserve">
-    <value>次に、[スキン] -&gt; [同期] に移動し、[デバイス間でのスキンの転送を有効にする] にチェックを入れます。</value>
+    <value>次に、「スキン」→「同期」で、「デバイス間でスキンの転送を有効にする」にチェックを入れてください。</value>
   </data>
   <data name="FilterDatabase_String1" xml:space="preserve">
-    <value>データベース リストが空です!</value>
+    <value>データベースリストが空です</value>
   </data>
   <data name="DolphinEmulator_Not_Found_String_2" xml:space="preserve">
-    <value>Dolphin エミュレータの実行可能ファイル (dolphin.exe) へのパスを設定してください。</value>
+    <value>Dolphinエミュレータの実行ファイル(dolphin.exe)のパスを設定してください。</value>
   </data>
   <data name="CopyTask_String5" xml:space="preserve">
-    <value>100%コンプリート！</value>
+    <value>100%完全版!</value>
   </data>
   <data name="DisplayFilesSelected_FileName" xml:space="preserve">
     <value>ファイル名</value>
   </data>
   <data name="CopyTask_String6" xml:space="preserve">
-    <value>転送完了！</value>
+    <value>転送完了</value>
   </data>
   <data name="DownloadingWiiTDB_String3" xml:space="preserve">
-    <value>&gt;&gt;手続き完了！</value>
+    <value>&gt;&gt; 処理完了</value>
   </data>
   <data name="DisplayFilesSelected_Found_String3" xml:space="preserve">
-    <value>見つかった</value>
+    <value>発見</value>
   </data>
   <data name="RegisterHeaderLog_CLRVersion" xml:space="preserve">
-    <value>CLR バージョン:</value>
+    <value>CLRバージョン。</value>
   </data>
   <data name="AboutVersion" xml:space="preserve">
     <value>バージョン</value>
   </data>
   <data name="Info" xml:space="preserve">
-    <value>[情報]</value>
+    <value>[インフォメーション］</value>
   </data>
   <data name="RequiredDirectories_String5" xml:space="preserve">
-    <value>[情報] カバー ディレクトリは既に存在します...作成を無視します!</value>
+    <value>[INFO] カバーディレクトリはすでに存在しています。</value>
   </data>
   <data name="GCBM_TranslatorContact" xml:space="preserve">
     <value>laetemn@hotmail.com</value>
   </data>
   <data name="InvalidDrive_String4" xml:space="preserve">
-    <value>ゲームキューブ ゲーム、Wii ゲーム、ROM、アプリ、エミュレーター、およびそれらの間のすべてとの互換性を最大限に確保するために、32K クラスターで FAT32 ファイル システムを使用することを強くお勧めします。</value>
+    <value>ゲームキューブのゲーム、Wiiのゲーム、ROM、アプリ、エミュレータなど、あらゆるものの互換性を最大限に確保するために、32KクラスタのFAT32ファイルシステムを使用することを強くお勧めします。</value>
   </data>
   <data name="CopyTask_String2" xml:space="preserve">
-    <value>ゲームをインストールしています...</value>
+    <value>ゲームのインストール...</value>
   </data>
   <data name="InstallGameScrub_Complete" xml:space="preserve">
-    <value>状態：完成！</value>
+    <value>ステータスコンプリート!</value>
   </data>
   <data name="DisplayFilesSelected_Found_String1" xml:space="preserve">
-    <value>[情報] 見つかりました</value>
+    <value>[INFO] 見つかりました。</value>
   </data>
   <data name="AboutBox_String2" xml:space="preserve">
-    <value>バージョン {0}</value>
+    <value>バージョン{0}について</value>
   </data>
   <data name="CopyTask_String3" xml:space="preserve">
-    <value>転送完了！</value>
+    <value>転送完了</value>
   </data>
   <data name="LoadDatabase_GameTitle" xml:space="preserve">
     <value>ゲームタイトル</value>
   </data>
   <data name="CopyTask_String4" xml:space="preserve">
-    <value>ゲーム搭載！</value>
+    <value>ゲームをインストールしました</value>
   </data>
   <data name="DialogResultDeleteGame_ReallyDeleteFile_String2" xml:space="preserve">
-    <value>この手順は元に戻すことができず、ファイルを回復することはできません!</value>
+    <value>この手順は元に戻せず、ファイルを復元することはできません。</value>
   </data>
   <data name="InstallGameScrub_Transferring" xml:space="preserve">
-    <value>転送中...</value>
+    <value>転送...</value>
   </data>
   <data name="ServerReported3DCoverNotFound" xml:space="preserve">
-    <value>サーバーからの報告: 3D カバーが見つかりません!</value>
+    <value>サーバーから報告がありました。3D カバーが見つかりません!</value>
   </data>
   <data name="DisplayFilesSelected_FilePath" xml:space="preserve">
     <value>ファイルパス</value>
   </data>
   <data name="ProcessTaskDelay_String1" xml:space="preserve">
-    <value>ファイル「wiitdb.xml」が見つかりません!</value>
+    <value>ファイル 'wiitdb.xml' が見つかりません!</value>
   </data>
   <data name="ClearTemp_String1" xml:space="preserve">
-    <value>[情報] 一時フォルダーをクリアできませんでした!</value>
+    <value>[INFO] 一時フォルダーをクリアできませんでした。</value>
   </data>
   <data name="LoadDatabase_IDGameCode" xml:space="preserve">
     <value>ID（ゲームコード）</value>
   </data>
   <data name="Notice" xml:space="preserve">
-    <value>知らせ</value>
+    <value>注意事項</value>
   </data>
   <data name="NotNintendoGameCubeFile" xml:space="preserve">
-    <value>[エラー] ニンテンドー ゲームキューブのファイルではありません。</value>
+    <value>[ERROR] ニンテンドーゲームキューブのファイルではありません。</value>
   </data>
   <data name="RequiredDirectories_String1" xml:space="preserve">
-    <value>[情報] デフォルトの一時ディレクトリが作成されました...</value>
+    <value>[INFO] デフォルトのテンポラリディレクトリが作成されました...</value>
   </data>
   <data name="NetworkCheck_NetStatus_Online" xml:space="preserve">
-    <value>インターネット接続確立！</value>
+    <value>インターネット接続が可能になりました</value>
   </data>
   <data name="ConvertElfDol_String3" xml:space="preserve">
-    <value>&gt;&gt; ステータス: 完了!</value>
+    <value>&gt;&gt; ステータス完成しました</value>
   </data>
   <data name="RequiredDirectories_String3" xml:space="preserve">
-    <value>[INFO] カスタム一時ディレクトリを使用しています!</value>
+    <value>[INFO] カスタムテンポラリディレクトリを使用します。</value>
   </data>
   <data name="RegisterHeaderLog_GcbmLogCreated" xml:space="preserve">
-    <value>gcbm.log が作成されます。</value>
+    <value>gcbm.logが作成されます。</value>
   </data>
   <data name="ReadImage_String1" xml:space="preserve">
-    <value>画像が小さすぎる！</value>
+    <value>画像が小さすぎる!</value>
   </data>
   <data name="DestinyDrive_AvailableSpace" xml:space="preserve">
-    <value>利用可能なスペース:</value>
+    <value>利用可能なスペース</value>
   </data>
   <data name="LoadISOInfo_String1" xml:space="preserve">
-    <value>プライマリ ディスク: (disc1)</value>
+    <value>プライマリディスク：（disc1）</value>
   </data>
   <data name="RegisterHeaderLog_ProgramName" xml:space="preserve">
-    <value>プログラム名:</value>
+    <value>プログラム名</value>
   </data>
   <data name="UnableWriteDataDisk" xml:space="preserve">
-    <value>データをディスクに書き込めませんでした!</value>
+    <value>ディスクにデータを書き込めなかった!</value>
   </data>
   <data name="DownloadDiscCover" xml:space="preserve">
-    <value>[情報] カバー (ディスク) をダウンロードしています...</value>
+    <value>[INFO] カバー(ディスク)をダウンロード中... </value>
   </data>
   <data name="MetaXml_String_ERRO" xml:space="preserve">
     <value>エラー</value>
   </data>
   <data name="GameListExportedCSV" xml:space="preserve">
-    <value>ゲームリストをCSVにエクスポート！</value>
+    <value>対局表をCSVで出力できるようになりました</value>
   </data>
   <data name="CheckUSBGXFlow_String3" xml:space="preserve">
-    <value>次に、同じタブで、「USB 充電器構成 (転送カバー)」に移動し、「USB 充電器構成 (転送カバー)」で USB Loader GX または WiiFlow のカバー (ディスク、2D、3D、およびフル) のディレクトリを調整します。 ' 、ターゲット デバイス内のそれぞれのディレクトリを指します。</value>
+    <value>次に、同じタブの「USBチャージャーの設定（Transfer Covers）」で、USB Loader GXまたはWiiFlowのカバー（Disk、2D、3D、Full）のディレクトリを、ターゲットデバイス内のそれぞれのディレクトリに合わせます。</value>
   </data>
   <data name="SplashNetworkCheck" xml:space="preserve">
-    <value>インターネット接続を確認しています...</value>
+    <value>インターネット接続を確認中...</value>
   </data>
   <data name="SplashPopulatingDrives" xml:space="preserve">
-    <value>ドライブ リストを作成しています...</value>
+    <value>ドライブリストへの入力...</value>
   </data>
   <data name="SplashFoundDrive" xml:space="preserve">
-    <value>見つかったドライブ:</value>
+    <value>ドライブを発見。</value>
   </data>
   <data name="SplashFinishing" xml:space="preserve">
-    <value>仕上げ...</value>
+    <value>仕上げに...</value>
   </data>
   <data name="SplashFinished" xml:space="preserve">
-    <value>終了した。</value>
+    <value>終了しました。</value>
   </data>
   <data name="SplashDirectories" xml:space="preserve">
-    <value>必要なディレクトリを設定しています...</value>
+    <value>必要なディレクトリの設定...</value>
   </data>
   <data name="InstallGameScrub_TransferDisc2" xml:space="preserve">
-    <value>2 番目のディスクを移動しています...</value>
+    <value>ムービングディスク2...</value>
   </data>
   <data name="InstallGameScrub_DoneScrubbing" xml:space="preserve">
-    <value>拭き取り終了…</value>
+    <value>スクラブ終了...</value>
+  </data>
+  <data name="SelectLanguagePrompt" xml:space="preserve">
+    <value>ご希望の言語を選択してください。</value>
+  </data>
+  <data name="LanguagePromptConfirm" xml:space="preserve">
+    <value>これは、あなたが使いたい言語ですか？</value>
+  </data>
+  <data name="LanguagePromptTitle" xml:space="preserve">
+    <value>言語を選択します。</value>
+  </data>
+  <data name="LanguagePromptConfirmTitle" xml:space="preserve">
+    <value>これ、わかりますか？</value>
+  </data>
+  <data name="DownloadDiscCoverError" xml:space="preserve">
+    <value>[ERROR] カバー（ディスク）のダウンロードに失敗しました。</value>
+  </data>
+  <data name="LanguageIndonesian" xml:space="preserve">
+    <value>インドネシア語</value>
+  </data>
+  <data name="LoadDatabase_Editor" xml:space="preserve">
+    <value>編集者</value>
   </data>
 </root>

@@ -71,12 +71,12 @@
     <OutputPath>bin\x64\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <Optimize>false</Optimize>
-    <DebugType>none</DebugType>
+    <DebugType>full</DebugType>
     <PlatformTarget>x64</PlatformTarget>
     <LangVersion>latest</LangVersion>
     <ErrorReport>prompt</ErrorReport>
     <Prefer32Bit>true</Prefer32Bit>
-    <DebugSymbols>false</DebugSymbols>
+    <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationManifest>app.manifest</ApplicationManifest>
@@ -115,6 +115,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="HardWorkerEventArgs.cs" />
+    <Compile Include="LanguagePrompt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LanguagePrompt.Designer.cs">
+      <DependentUpon>LanguagePrompt.cs</DependentUpon>
+    </Compile>
     <Compile Include="ProcessExtensions.cs" />
     <Compile Include="ExportDataTableToHTML.cs" />
     <Compile Include="FileInfoExtension.cs" />
@@ -391,10 +397,22 @@
       <DependentUpon>frmAboutBox.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAboutBox.es-MX.resx">
+      <DependentUpon>frmAboutBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAboutBox.es.resx">
       <DependentUpon>frmAboutBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAboutBox.fr.resx">
+      <DependentUpon>frmAboutBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAboutBox.hu.resx">
+      <DependentUpon>frmAboutBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAboutBox.id.resx">
+      <DependentUpon>frmAboutBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAboutBox.it.resx">
       <DependentUpon>frmAboutBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAboutBox.ja.resx">
@@ -406,6 +424,12 @@
     <EmbeddedResource Include="frmAboutBox.resx">
       <DependentUpon>frmAboutBox.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAboutBox.uk.resx">
+      <DependentUpon>frmAboutBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAboutBox.zh.resx">
+      <DependentUpon>frmAboutBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmConfig.de.resx">
       <DependentUpon>frmConfig.cs</DependentUpon>
     </EmbeddedResource>
@@ -413,11 +437,22 @@
       <DependentUpon>frmConfig.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmConfig.es-MX.resx">
+      <DependentUpon>frmConfig.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmConfig.es.resx">
       <DependentUpon>frmConfig.cs</DependentUpon>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="frmConfig.fr.resx">
+      <DependentUpon>frmConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConfig.hu.resx">
+      <DependentUpon>frmConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConfig.id.resx">
+      <DependentUpon>frmConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConfig.it.resx">
       <DependentUpon>frmConfig.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmConfig.ja.resx">
@@ -431,16 +466,34 @@
       <DependentUpon>frmConfig.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmConfig.uk.resx">
+      <DependentUpon>frmConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConfig.zh.resx">
+      <DependentUpon>frmConfig.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDownloadGameTDB.de.resx">
       <DependentUpon>frmDownloadGameTDB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDownloadGameTDB.en-US.resx">
       <DependentUpon>frmDownloadGameTDB.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmDownloadGameTDB.es-MX.resx">
+      <DependentUpon>frmDownloadGameTDB.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDownloadGameTDB.es.resx">
       <DependentUpon>frmDownloadGameTDB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDownloadGameTDB.fr.resx">
+      <DependentUpon>frmDownloadGameTDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDownloadGameTDB.hu.resx">
+      <DependentUpon>frmDownloadGameTDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDownloadGameTDB.id.resx">
+      <DependentUpon>frmDownloadGameTDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDownloadGameTDB.it.resx">
       <DependentUpon>frmDownloadGameTDB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDownloadGameTDB.ja.resx">
@@ -452,10 +505,19 @@
     <EmbeddedResource Include="frmDownloadGameTDB.resx">
       <DependentUpon>frmDownloadGameTDB.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmDownloadGameTDB.uk.resx">
+      <DependentUpon>frmDownloadGameTDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDownloadGameTDB.zh.resx">
+      <DependentUpon>frmDownloadGameTDB.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmInfoAdditional.de.resx">
       <DependentUpon>frmInfoAdditional.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmInfoAdditional.en-US.resx">
+      <DependentUpon>frmInfoAdditional.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInfoAdditional.es-MX.resx">
       <DependentUpon>frmInfoAdditional.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmInfoAdditional.es.resx">
@@ -464,13 +526,25 @@
     <EmbeddedResource Include="frmInfoAdditional.fr.resx">
       <DependentUpon>frmInfoAdditional.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmInfoAdditional.hu.resx">
+      <DependentUpon>frmInfoAdditional.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInfoAdditional.id.resx">
+      <DependentUpon>frmInfoAdditional.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInfoAdditional.it.resx">
+      <DependentUpon>frmInfoAdditional.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmInfoAdditional.ja.resx">
       <DependentUpon>frmInfoAdditional.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmInfoAdditional.ko.resx">
+    <EmbeddedResource Include="frmInfoAdditional.resx">
       <DependentUpon>frmInfoAdditional.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmInfoAdditional.resx">
+    <EmbeddedResource Include="frmInfoAdditional.uk.resx">
+      <DependentUpon>frmInfoAdditional.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInfoAdditional.zh.resx">
       <DependentUpon>frmInfoAdditional.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmInformation.de.resx">
@@ -479,10 +553,22 @@
     <EmbeddedResource Include="frmInformation.en-US.resx">
       <DependentUpon>frmInformation.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmInformation.es-MX.resx">
+      <DependentUpon>frmInformation.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmInformation.es.resx">
       <DependentUpon>frmInformation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmInformation.fr.resx">
+      <DependentUpon>frmInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInformation.hu.resx">
+      <DependentUpon>frmInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInformation.id.resx">
+      <DependentUpon>frmInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInformation.it.resx">
       <DependentUpon>frmInformation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmInformation.ja.resx">
@@ -494,16 +580,34 @@
     <EmbeddedResource Include="frmInformation.resx">
       <DependentUpon>frmInformation.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmInformation.uk.resx">
+      <DependentUpon>frmInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInformation.zh.resx">
+      <DependentUpon>frmInformation.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.de.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.en-US.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.es-MX.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.es.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.fr.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.hu.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.id.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.it.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.ja.resx">
@@ -516,16 +620,34 @@
       <DependentUpon>frmMain.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.uk.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.zh.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmRenameISO.de.resx">
       <DependentUpon>frmRenameISO.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmRenameISO.en-US.resx">
       <DependentUpon>frmRenameISO.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmRenameISO.es-MX.resx">
+      <DependentUpon>frmRenameISO.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmRenameISO.es.resx">
       <DependentUpon>frmRenameISO.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmRenameISO.fr.resx">
+      <DependentUpon>frmRenameISO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRenameISO.hu.resx">
+      <DependentUpon>frmRenameISO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRenameISO.id.resx">
+      <DependentUpon>frmRenameISO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRenameISO.it.resx">
       <DependentUpon>frmRenameISO.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmRenameISO.ja.resx">
@@ -537,16 +659,34 @@
     <EmbeddedResource Include="frmRenameISO.resx">
       <DependentUpon>frmRenameISO.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmRenameISO.uk.resx">
+      <DependentUpon>frmRenameISO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRenameISO.zh.resx">
+      <DependentUpon>frmRenameISO.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmSplashScreen.de.resx">
       <DependentUpon>frmSplashScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSplashScreen.en-US.resx">
       <DependentUpon>frmSplashScreen.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmSplashScreen.es-MX.resx">
+      <DependentUpon>frmSplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmSplashScreen.es.resx">
       <DependentUpon>frmSplashScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSplashScreen.fr.resx">
+      <DependentUpon>frmSplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSplashScreen.hu.resx">
+      <DependentUpon>frmSplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSplashScreen.id.resx">
+      <DependentUpon>frmSplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSplashScreen.it.resx">
       <DependentUpon>frmSplashScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSplashScreen.ja.resx">
@@ -558,16 +698,34 @@
     <EmbeddedResource Include="frmSplashScreen.resx">
       <DependentUpon>frmSplashScreen.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmSplashScreen.uk.resx">
+      <DependentUpon>frmSplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSplashScreen.zh.resx">
+      <DependentUpon>frmSplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmTransferCover.de.resx">
       <DependentUpon>frmTransferCover.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTransferCover.en-US.resx">
       <DependentUpon>frmTransferCover.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmTransferCover.es-MX.resx">
+      <DependentUpon>frmTransferCover.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmTransferCover.es.resx">
       <DependentUpon>frmTransferCover.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTransferCover.fr.resx">
+      <DependentUpon>frmTransferCover.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTransferCover.hu.resx">
+      <DependentUpon>frmTransferCover.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTransferCover.id.resx">
+      <DependentUpon>frmTransferCover.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTransferCover.it.resx">
       <DependentUpon>frmTransferCover.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTransferCover.ja.resx">
@@ -579,12 +737,25 @@
     <EmbeddedResource Include="frmTransferCover.resx">
       <DependentUpon>frmTransferCover.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmTransferCover.uk.resx">
+      <DependentUpon>frmTransferCover.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTransferCover.zh.resx">
+      <DependentUpon>frmTransferCover.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LanguagePrompt.resx">
+      <DependentUpon>LanguagePrompt.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.de.resx" />
     <EmbeddedResource Include="Properties\Resources.en-US.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.es-MX.resx" />
     <EmbeddedResource Include="Properties\Resources.es.resx" />
     <EmbeddedResource Include="Properties\Resources.fr.resx" />
+    <EmbeddedResource Include="Properties\Resources.hu.resx" />
+    <EmbeddedResource Include="Properties\Resources.id.resx" />
+    <EmbeddedResource Include="Properties\Resources.it.resx" />
     <EmbeddedResource Include="Properties\Resources.ja.resx" />
     <EmbeddedResource Include="Properties\Resources.ko.resx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -592,6 +763,8 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.uk.resx" />
+    <EmbeddedResource Include="Properties\Resources.zh.resx" />
     <EmbeddedResource Include="tools\frmBurnMedia.resx">
       <DependentUpon>frmBurnMedia.cs</DependentUpon>
     </EmbeddedResource>
@@ -601,10 +774,22 @@
     <EmbeddedResource Include="tools\frmConvertELFtoDOL.en-US.resx">
       <DependentUpon>frmConvertELFtoDOL.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="tools\frmConvertELFtoDOL.es-MX.resx">
+      <DependentUpon>frmConvertELFtoDOL.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="tools\frmConvertELFtoDOL.es.resx">
       <DependentUpon>frmConvertELFtoDOL.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="tools\frmConvertELFtoDOL.fr.resx">
+      <DependentUpon>frmConvertELFtoDOL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tools\frmConvertELFtoDOL.hu.resx">
+      <DependentUpon>frmConvertELFtoDOL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tools\frmConvertELFtoDOL.id.resx">
+      <DependentUpon>frmConvertELFtoDOL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tools\frmConvertELFtoDOL.it.resx">
       <DependentUpon>frmConvertELFtoDOL.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="tools\frmConvertELFtoDOL.ja.resx">
@@ -614,6 +799,12 @@
       <DependentUpon>frmConvertELFtoDOL.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="tools\frmConvertELFtoDOL.resx">
+      <DependentUpon>frmConvertELFtoDOL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tools\frmConvertELFtoDOL.uk.resx">
+      <DependentUpon>frmConvertELFtoDOL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tools\frmConvertELFtoDOL.zh.resx">
       <DependentUpon>frmConvertELFtoDOL.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="tools\frmCreateAppPackage.resx">
@@ -637,10 +828,22 @@
     <EmbeddedResource Include="tools\frmMetaXml.en-US.resx">
       <DependentUpon>frmMetaXml.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="tools\frmMetaXml.es-MX.resx">
+      <DependentUpon>frmMetaXml.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="tools\frmMetaXml.es.resx">
       <DependentUpon>frmMetaXml.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="tools\frmMetaXml.fr.resx">
+      <DependentUpon>frmMetaXml.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tools\frmMetaXml.hu.resx">
+      <DependentUpon>frmMetaXml.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tools\frmMetaXml.id.resx">
+      <DependentUpon>frmMetaXml.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tools\frmMetaXml.it.resx">
       <DependentUpon>frmMetaXml.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="tools\frmMetaXml.ja.resx">
@@ -650,6 +853,12 @@
       <DependentUpon>frmMetaXml.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="tools\frmMetaXml.resx">
+      <DependentUpon>frmMetaXml.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tools\frmMetaXml.uk.resx">
+      <DependentUpon>frmMetaXml.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tools\frmMetaXml.zh.resx">
       <DependentUpon>frmMetaXml.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.manifest" />

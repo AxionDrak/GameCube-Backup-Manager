@@ -322,7 +322,7 @@
     <value> [정보] 스킨 디렉토리가 생성되었습니다...</value>
   </data>
   <data name="Download3DCover" xml:space="preserve">
-    <value> [정보] 커버(3D) 다운로드 중...</value>
+    <value> [정보] 커버(3D) 다운로드 중... </value>
   </data>
   <data name="InvalidDrive_String5" xml:space="preserve">
     <value>그러나 장치를 사용할 수 있습니다.</value>
@@ -351,7 +351,7 @@
   <data name="NetworkCheck_NetStatus_Offline" xml:space="preserve">
     <value>인터넷 연결이 비활성화되었습니다!</value>
   </data>
-  <data name="DownloadDiscCoverError" xml:space="preserve">
+  <data name=" " xml:space="preserve">
     <value> [오류] 표지(디스크)를 다운로드하지 못했습니다!</value>
   </data>
   <data name="CheckUSBGXFlow_String2" xml:space="preserve">
@@ -442,7 +442,7 @@
     <value>&gt;&gt; 상태: 완료되었습니다!</value>
   </data>
   <data name="DownloadDiscCover" xml:space="preserve">
-    <value> [정보] 커버(디스크) 다운로드 중...</value>
+    <value> [정보] 커버(디스크) 다운로드 중... </value>
   </data>
   <data name="RegisterHeaderLog_GcbmLogCreated" xml:space="preserve">
     <value> gcbm.log가 생성됩니다.</value>
@@ -536,5 +536,26 @@
   </data>
   <data name="InstallGameScrub_DoneScrubbing" xml:space="preserve">
     <value>닦고 끝...</value>
+  </data>
+  <data name="GCBM_TranslatorContact" xml:space="preserve">
+    <value>laetemn@hotmail.com</value>
+  </data>
+  <data name="SelectLanguagePrompt" xml:space="preserve">
+    <value>선호하는 언어를 선택하십시오:</value>
+  </data>
+  <data name="LanguagePromptConfirm" xml:space="preserve">
+    <value>사용하고 싶은 언어입니까?</value>
+  </data>
+  <data name="LanguagePromptTitle" xml:space="preserve">
+    <value>언어 선택:</value>
+  </data>
+  <data name="LanguagePromptConfirmTitle" xml:space="preserve">
+    <value>이거 이해해?</value>
+  </data>
+  <data name="DownloadDiscCoverError" xml:space="preserve">
+    <value>[오류] 표지 다운로드 실패(디스크)</value>
+  </data>
+  <data name="LanguageIndonesian" xml:space="preserve">
+    <value>인도네시아 인</value>
   </data>
 </root>

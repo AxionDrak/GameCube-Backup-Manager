@@ -121,13 +121,13 @@
     <value>WiiTDB.zip herunterladen</value>
   </data>
   <data name="lblExtracting.Text" xml:space="preserve">
-    <value>Extrahieren von WiiTDB.xml</value>
+    <value>WiiTDB.xml extrahieren</value>
   </data>
   <data name="lblConverting.Text" xml:space="preserve">
-    <value>Vorgang abgeschlossen!</value>
+    <value>Prozess abgeschlossen!</value>
   </data>
   <data name="btnCancelWork.Text" xml:space="preserve">
-    <value>Nah dran</value>
+    <value>Schließen Sie</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Aktualisierung der Datenbank</value>

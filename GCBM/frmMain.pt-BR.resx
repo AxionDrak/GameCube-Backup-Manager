@@ -1,0 +1,558 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="boxArtToolStripMenuItem.Text" xml:space="preserve">
+    <value>BoxArt</value>
+  </data>
+  <data name="btnGameInstallExactCopy.Text" xml:space="preserve">
+    <value>Instalar Jogo (1:1)</value>
+  </data>
+  <data name="btnGameInstallScrub.Text" xml:space="preserve">
+    <value>Instalar Jogo (Scrub)</value>
+  </data>
+  <data name="cbFilterDatabase.Items" xml:space="preserve">
+    <value>Selecione um item...</value>
+  </data>
+  <data name="cbFilterDatabase.Items1" xml:space="preserve">
+    <value>GameCube</value>
+  </data>
+  <data name="cbFilterDatabase.Items10" xml:space="preserve">
+    <value>VC-C64</value>
+  </data>
+  <data name="cbFilterDatabase.Items11" xml:space="preserve">
+    <value>VC-MSX</value>
+  </data>
+  <data name="cbFilterDatabase.Items12" xml:space="preserve">
+    <value>VC-Arcade</value>
+  </data>
+  <data name="cbFilterDatabase.Items13" xml:space="preserve">
+    <value>Channel</value>
+  </data>
+  <data name="cbFilterDatabase.Items14" xml:space="preserve">
+    <value>Homebrew</value>
+  </data>
+  <data name="cbFilterDatabase.Items2" xml:space="preserve">
+    <value>WiiWare</value>
+  </data>
+  <data name="cbFilterDatabase.Items3" xml:space="preserve">
+    <value>VC-NES</value>
+  </data>
+  <data name="cbFilterDatabase.Items4" xml:space="preserve">
+    <value>VC-SNES</value>
+  </data>
+  <data name="cbFilterDatabase.Items5" xml:space="preserve">
+    <value>VC-SMS</value>
+  </data>
+  <data name="cbFilterDatabase.Items6" xml:space="preserve">
+    <value>VC-MD</value>
+  </data>
+  <data name="cbFilterDatabase.Items7" xml:space="preserve">
+    <value>VC-N64</value>
+  </data>
+  <data name="cbFilterDatabase.Items8" xml:space="preserve">
+    <value>VC-NEOGEO</value>
+  </data>
+  <data name="cbFilterDatabase.Items9" xml:space="preserve">
+    <value>VC-PCE</value>
+  </data>
+  <data name="clmDiscExtension.HeaderText" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="clmDiscID.HeaderText" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="clmDiscPath.HeaderText" xml:space="preserve">
+    <value>Path</value>
+  </data>
+  <data name="clmDiscRegion.HeaderText" xml:space="preserve">
+    <value>Region</value>
+  </data>
+  <data name="clmDiscSize.HeaderText" xml:space="preserve">
+    <value>Size</value>
+  </data>
+  <data name="clmDiscTitle.HeaderText" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="clmExtension.HeaderText" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="clmID.HeaderText" xml:space="preserve">
+    <value>ID (Game ID)</value>
+  </data>
+  <data name="clmPath.HeaderText" xml:space="preserve">
+    <value>File Path</value>
+  </data>
+  <data name="clmRegion.HeaderText" xml:space="preserve">
+    <value>Region</value>
+  </data>
+  <data name="clmSize.HeaderText" xml:space="preserve">
+    <value>Size</value>
+  </data>
+  <data name="clmTitle.HeaderText" xml:space="preserve">
+    <value>Game Title</value>
+  </data>
+  <data name="exportarListaToolStripMenuItem.Text" xml:space="preserve">
+    <value>Exportar lista como...</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>BoxArt</value>
+  </data>
+  <data name="grpDetailsDestiny.Text" xml:space="preserve">
+    <value>Detalhes</value>
+  </data>
+  <data name="grpDetailsSource.Text" xml:space="preserve">
+    <value>Detalhes</value>
+  </data>
+  <data name="grpOperations.Text" xml:space="preserve">
+    <value>Operações</value>
+  </data>
+  <data name="grpSearch.Text" xml:space="preserve">
+    <value>Pesquisar</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Clique no ícone ao lado e selecione uma pasta para listar todos os arquivos ISO e GCM contidos em seu interior.</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>OBSERVAÇÃO:</value>
+  </data>
+  <data name="label29.Text" xml:space="preserve">
+    <value>Disc ID:</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>A listagem total de arquivos e o tamanho total dos arquivos, não fazem distinção entre arquivos do Disco 1 (game.iso) e Disco 2 (disc2.iso). Os dados servem apenas como amostragem.</value>
+  </data>
+  <data name="label34.Text" xml:space="preserve">
+    <value>MakerCode:</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Game ID:</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Região:</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Título:</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>Filtro:</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>Juegos Encontrados:</value>
+  </data>
+  <data name="labelFile.Text" xml:space="preserve">
+    <value>Região:</value>
+  </data>
+  <data name="labelGameID.Text" xml:space="preserve">
+    <value>ID do jogo:</value>
+  </data>
+  <data name="labelTitle.Text" xml:space="preserve">
+    <value>Título:</value>
+  </data>
+  <data name="lblAbort.Text" xml:space="preserve">
+    <value>Pare</value>
+  </data>
+  <data name="lblAbortDestination.Text" xml:space="preserve">
+    <value>Pare</value>
+  </data>
+  <data name="lblDatabaseTotal.Text" xml:space="preserve">
+    <value>0 Total</value>
+  </data>
+  <data name="lblDestinationCount.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblGamesVerifiedText.Text" xml:space="preserve">
+    <value>Jogos verificados:</value>
+  </data>
+  <data name="lblInstallStatusGameIndex.Text" xml:space="preserve">
+    <value>0  /  0</value>
+  </data>
+  <data name="lblInstallStatusGameTitle.Text" xml:space="preserve">
+    <value>Aguardando...</value>
+  </data>
+  <data name="lblInstallStatusPercent.Text" xml:space="preserve">
+    <value>0 %</value>
+  </data>
+  <data name="lblInstallStatusText.Text" xml:space="preserve">
+    <value>Instalando jogo...</value>
+  </data>
+  <data name="lblNetStatus.Text" xml:space="preserve">
+    <value>Conexão com a Internet desativada!</value>
+  </data>
+  <data name="lblSourceCount.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblSpaceAvailabeOnDevice.Text" xml:space="preserve">
+    <value>Espaço disponível: </value>
+  </data>
+  <data name="lblSpaceTotalOnDevice.Text" xml:space="preserve">
+    <value>Espaço total: </value>
+  </data>
+  <data name="lblTypeDisc.Text" xml:space="preserve">
+    <value>Disco...</value>
+  </data>
+  <data name="notifyIcon.Text" xml:space="preserve">
+    <value>GameCube Backup Manager</value>
+  </data>
+  <data name="SearchOnWikipedia.Text" xml:space="preserve">
+    <value>Pesquisar na Wikipedia</value>
+  </data>
+  <data name="tabMainDatabase.Text" xml:space="preserve">
+    <value>Base de Dados</value>
+  </data>
+  <data name="tabMainDisc.Text" xml:space="preserve">
+    <value>Arquivos (Destino)</value>
+  </data>
+  <data name="tabMainFile.Text" xml:space="preserve">
+    <value>Arquivos (Origem)</value>
+  </data>
+  <data name="tabMainLog.Text" xml:space="preserve">
+    <value>Log</value>
+  </data>
+  <data name="toolStripMenuItem11.Text" xml:space="preserve">
+    <value>Atualização do GameTDB</value>
+  </data>
+  <data name="tscbDiscDrive.Items" xml:space="preserve">
+    <value>Inativo</value>
+  </data>
+  <data name="tsmiBurnMedia.Text" xml:space="preserve">
+    <value>Gravar Mídia CD/DVD</value>
+  </data>
+  <data name="tsmiClearListDestination.Text" xml:space="preserve">
+    <value>Limpar Lista</value>
+  </data>
+  <data name="tsmiClearListSource.Text" xml:space="preserve">
+    <value>Limpar Lista</value>
+  </data>
+  <data name="tsmiClearLog.Text" xml:space="preserve">
+    <value>Limpar log</value>
+  </data>
+  <data name="tsmiConfigurationMain.Text" xml:space="preserve">
+    <value>Configurações...</value>
+  </data>
+  <data name="tsmiCovers.Text" xml:space="preserve">
+    <value>Capas</value>
+  </data>
+  <data name="tsmiCreatePackage.Text" xml:space="preserve">
+    <value>Criar Pacote APP</value>
+  </data>
+  <data name="tsmiDatabaseUpdateGameTDB.Text" xml:space="preserve">
+    <value>Atualização do GameTDB</value>
+  </data>
+  <data name="tsmiDisableCoverPanel.Text" xml:space="preserve">
+    <value>Desabilitar</value>
+  </data>
+  <data name="tsmiDisplay.Text" xml:space="preserve">
+    <value>Exibir</value>
+  </data>
+  <data name="tsmiDolphinEmulator.Text" xml:space="preserve">
+    <value>Testar Jogo (Dolphin Emulator)</value>
+  </data>
+  <data name="tsmiDownloadCoversSelectedGame.Text" xml:space="preserve">
+    <value>Sincronizar e baixar capas (Disco e 3D somente do jogo selecionado)</value>
+  </data>
+  <data name="tsmiElfDol.Text" xml:space="preserve">
+    <value>Converter ELF -&gt; DOL</value>
+  </data>
+  <data name="tsmiEnableCoverPanel.Text" xml:space="preserve">
+    <value>Habilitar</value>
+  </data>
+  <data name="tsmiExit.Text" xml:space="preserve">
+    <value>Sair</value>
+  </data>
+  <data name="tsmiExportCSV.Text" xml:space="preserve">
+    <value>CSV</value>
+  </data>
+  <data name="tsmiExportHTML.Text" xml:space="preserve">
+    <value>HTML</value>
+  </data>
+  <data name="tsmiExportLog.Text" xml:space="preserve">
+    <value>Exportar log...</value>
+  </data>
+  <data name="tsmiExportTXT.Text" xml:space="preserve">
+    <value>TXT</value>
+  </data>
+  <data name="tsmiFile.Text" xml:space="preserve">
+    <value>Arquivo</value>
+  </data>
+  <data name="tsmiGameDiscAllHashMD5.Text" xml:space="preserve">
+    <value>Verificar todos</value>
+  </data>
+  <data name="tsmiGameDiscAllHashSHA1.Text" xml:space="preserve">
+    <value>Verificar todos</value>
+  </data>
+  <data name="tsmiGameDiscDeleteAllFiles.Text" xml:space="preserve">
+    <value>Todos</value>
+  </data>
+  <data name="tsmiGameDiscDeleteSelectedFile.Text" xml:space="preserve">
+    <value>Selecionado(s)</value>
+  </data>
+  <data name="tsmiGameDiscExportList.Text" xml:space="preserve">
+    <value>Exportar lista de jogos</value>
+  </data>
+  <data name="tsmiGameDiscHashMD5.Text" xml:space="preserve">
+    <value>Verificar selecionado(s)</value>
+  </data>
+  <data name="tsmiGameDiscHashSHA1.Text" xml:space="preserve">
+    <value>Verificar selecionado(s)</value>
+  </data>
+  <data name="tsmiGameDiscRecalculateAllMD5.Text" xml:space="preserve">
+    <value>Recalcular tudo</value>
+  </data>
+  <data name="tsmiGameDiscRecalculateSelectedGameMD5.Text" xml:space="preserve">
+    <value>Recalcular selecionados</value>
+  </data>
+  <data name="tsmiGameDiscSelectAll.Text" xml:space="preserve">
+    <value>Todos</value>
+  </data>
+  <data name="tsmiGameDiscSelectNone.Text" xml:space="preserve">
+    <value>Nenhum</value>
+  </data>
+  <data name="tsmiGameDiscSignatureMD5.Text" xml:space="preserve">
+    <value>Assinatura MD5</value>
+  </data>
+  <data name="tsmiGameDiscSignatureSHA1.Text" xml:space="preserve">
+    <value>Assinatura SHA-1</value>
+  </data>
+  <data name="tsmiGameInfo.Text" xml:space="preserve">
+    <value>Informações detalhadas (do jogo selecionado)</value>
+  </data>
+  <data name="tsmiGameListDeleteAllFiles.Text" xml:space="preserve">
+    <value>Todos</value>
+  </data>
+  <data name="tsmiGameListDeleteSelectedFile.Text" xml:space="preserve">
+    <value>Selecionado(s)</value>
+  </data>
+  <data name="tsmiGameListHashSHA1.Text" xml:space="preserve">
+    <value>Verificar selecionado(s)</value>
+  </data>
+  <data name="tsmiGameListSelectAll.Text" xml:space="preserve">
+    <value>Todos</value>
+  </data>
+  <data name="tsmiGameListSelectNone.Text" xml:space="preserve">
+    <value>Nenhum</value>
+  </data>
+  <data name="tsmiGameListSignatureSHA1.Text" xml:space="preserve">
+    <value>Assinatura SHA-1</value>
+  </data>
+  <data name="tsmiHelp.Text" xml:space="preserve">
+    <value>Ajuda</value>
+  </data>
+  <data name="tsmiInfoGame.Text" xml:space="preserve">
+    <value>Informações do Jogo</value>
+  </data>
+  <data name="tsmiMainPlugins.Text" xml:space="preserve">
+    <value>Plugins</value>
+  </data>
+  <data name="tsmiManageApp.Text" xml:space="preserve">
+    <value>Gerenciar APP's</value>
+  </data>
+  <data name="tsmiMenuAbout.Text" xml:space="preserve">
+    <value>Sobre o GameCube Backup Manager</value>
+  </data>
+  <data name="tsmiMetaXml.Text" xml:space="preserve">
+    <value>Ler/Editar 'meta.xml'</value>
+  </data>
+  <data name="tsmiNotifyExit.Text" xml:space="preserve">
+    <value>Sair</value>
+  </data>
+  <data name="tsmiOfficialGBATemp.Text" xml:space="preserve">
+    <value>Post oficial (GBATemp)</value>
+  </data>
+  <data name="tsmiOfficialGitHub.Text" xml:space="preserve">
+    <value>Site oficial (GitHub)</value>
+  </data>
+  <data name="tsmiOptions.Text" xml:space="preserve">
+    <value>Opções</value>
+  </data>
+  <data name="tsmiReloadDeviceDrive.Text" xml:space="preserve">
+    <value>Recarregar Dispositivo(s)</value>
+  </data>
+  <data name="tsmiReloadGameList.Text" xml:space="preserve">
+    <value>Recarregar Lista</value>
+  </data>
+  <data name="tsmiReloadGameListDisc.Text" xml:space="preserve">
+    <value>Regarregar Lista</value>
+  </data>
+  <data name="tsmiRemoveGameDisc.Text" xml:space="preserve">
+    <value>Apagar</value>
+  </data>
+  <data name="tsmiRemoveGameList.Text" xml:space="preserve">
+    <value>Apagar</value>
+  </data>
+  <data name="tsmiRenameFolders.Text" xml:space="preserve">
+    <value>Renomear pastas</value>
+  </data>
+  <data name="tsmiRenameISO.Text" xml:space="preserve">
+    <value>Renomear ISO/GCM</value>
+  </data>
+  <data name="tsmiSearchOnGameSpot.Text" xml:space="preserve">
+    <value>Pesquisar no GameSpot</value>
+  </data>
+  <data name="tsmiSearchOnGameTDB.Text" xml:space="preserve">
+    <value>Pesquisar no GameTDB</value>
+  </data>
+  <data name="tsmiSearchOnGoogle.Text" xml:space="preserve">
+    <value>Pesquisar no Google</value>
+  </data>
+  <data name="tsmiSearchOnVGChartz.Text" xml:space="preserve">
+    <value>Pesquisar no VGChartz</value>
+  </data>
+  <data name="tsmiSearchOnYoutube.Text" xml:space="preserve">
+    <value>Pesquisar no YouTube</value>
+  </data>
+  <data name="tsmiSelectGameDisc.Text" xml:space="preserve">
+    <value>Selecionar</value>
+  </data>
+  <data name="tsmiSelectGameList.Text" xml:space="preserve">
+    <value>Selecionar</value>
+  </data>
+  <data name="tsmiSyncDownloadAllCovers.Text" xml:space="preserve">
+    <value>Sincronizar e baixar capas (todas as capas da biblioteca do GameCube)</value>
+  </data>
+  <data name="tsmiSyncDownloadAllDiscOnly3DCovers.Text" xml:space="preserve">
+    <value>Sincronizar e baixar capas (Disco e 3D de toda a biblioteca do GameCube)</value>
+  </data>
+  <data name="tsmiSyncDownloadDiscOnly3DCovers.Text" xml:space="preserve">
+    <value>Sincronizar e baixar capas (Disco e 3D de todos os jogos listados)</value>
+  </data>
+  <data name="tsmiToolDatabase.Text" xml:space="preserve">
+    <value>Ferramentas</value>
+  </data>
+  <data name="tsmiToolLog.Text" xml:space="preserve">
+    <value>Ferramentas</value>
+  </data>
+  <data name="tsmiTools.Text" xml:space="preserve">
+    <value>Ferramentas</value>
+  </data>
+  <data name="tsmiToolsGameDisc.Text" xml:space="preserve">
+    <value>Ferramentas</value>
+  </data>
+  <data name="tsmiToolsGameList.Text" xml:space="preserve">
+    <value>Ferramentas</value>
+  </data>
+  <data name="tsmiTransferDeviceCovers.Text" xml:space="preserve">
+    <value>Transferir capas baixadas para dispositivo</value>
+  </data>
+  <data name="tsmiVerifyUpdate.Text" xml:space="preserve">
+    <value>Verificar se há Atualizações</value>
+  </data>
+  <data name="tsmiWebsiteFacebook.Text" xml:space="preserve">
+    <value>Nintendo Wii Brasil (Facebook)</value>
+  </data>
+</root>

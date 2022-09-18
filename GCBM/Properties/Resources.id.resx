@@ -1,0 +1,561 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="GCBM_Language" xml:space="preserve">
+    <value>Bahasa Indonesia [Indonesia]</value>
+  </data>
+  <data name="ServerReportedOneCoverOrBothNotFound" xml:space="preserve">
+    <value>Server melaporkan: Salah satu sampul (atau keduanya) tidak ditemukan!</value>
+  </data>
+  <data name="NoInternetConnectionFound_String2" xml:space="preserve">
+    <value>Pastikan koneksi diaktifkan dalam pengaturan program.</value>
+  </data>
+  <data name="GetAllDrives_Inactive" xml:space="preserve">
+    <value>Tidak aktif</value>
+  </data>
+  <data name="AboutBox_String1" xml:space="preserve">
+    <value>Tentang {0}</value>
+  </data>
+  <data name="GameListExportedTXT" xml:space="preserve">
+    <value>Daftar game diekspor ke TXT!</value>
+  </data>
+  <data name="PluginDisplay_String1" xml:space="preserve">
+    <value>Apakah Anda yakin ingin menghapus plugin?</value>
+  </data>
+  <data name="EmptyGamesList" xml:space="preserve">
+    <value>Daftar permainan kosong!</value>
+  </data>
+  <data name="Download3DCoverError" xml:space="preserve">
+    <value> [ERROR] Gagal mengunduh cover (3D)!</value>
+  </data>
+  <data name="RequiredDirectories_String2" xml:space="preserve">
+    <value>[INFO] Direktori sementara default sudah ada... mengabaikan pembuatan!</value>
+  </data>
+  <data name="ClearTemp_String2" xml:space="preserve">
+    <value>Tidak bisa menghapus folder temp!</value>
+  </data>
+  <data name="RecommendedDeleteOrMoveFile" xml:space="preserve">
+    <value>Dianjurkan untuk menghapus atau memindahkan file ke lokasi lain.</value>
+  </data>
+  <data name="FoundIsoGcmFiles" xml:space="preserve">
+    <value>[INFO] File ISO/GCM ditemukan:</value>
+  </data>
+  <data name="frmMain_Resize_Program" xml:space="preserve">
+    <value>Program berjalan di latar belakang!</value>
+  </data>
+  <data name="InstallGameScrub_Unresponsive" xml:space="preserve">
+    <value>Status: Tidak merespons!</value>
+  </data>
+  <data name="OverwriteWiiTDBBody" xml:space="preserve">
+    <value>Apakah Anda ingin menimpa file WiiTDB.xml saat ini? Apakah Anda ingin menimpa file WiiTDB.xml saat ini?</value>
+  </data>
+  <data name="ClearLogNotFound" xml:space="preserve">
+    <value>Tidak ada data registri yang harus dihapus!</value>
+  </data>
+  <data name="ConvertElfDol_String2" xml:space="preserve">
+    <value>&gt;&gt; Status: Tidak merespons!</value>
+  </data>
+  <data name="NoInternetConnectionFound_String1" xml:space="preserve">
+    <value>Tidak ditemukan koneksi internet!</value>
+  </data>
+  <data name="CannotOpenTwoInstances" xml:space="preserve">
+    <value>Tidak dapat membuka dua contoh program ini!</value>
+  </data>
+  <data name="ConvertElfDol_String4" xml:space="preserve">
+    <value>&gt;&gt; Status [ERROR]: Format file tidak dikenali!</value>
+  </data>
+  <data name="InvalidDrive_String3" xml:space="preserve">
+    <value>Aplikasi Nintendont hanya mendukung sistem berkas FAT32 dan exFAT.</value>
+  </data>
+  <data name="NetworkCheck_NetStatus_Offline" xml:space="preserve">
+    <value>Koneksi internet dinonaktifkan!</value>
+  </data>
+  <data name="GCBM_TranslatedBy" xml:space="preserve">
+    <value>DeepL</value>
+  </data>
+  <data name="LoadDatabase_Region" xml:space="preserve">
+    <value>Wilayah</value>
+  </data>
+  <data name="SelectTargetDrive" xml:space="preserve">
+    <value>Pilih drive target!</value>
+  </data>
+  <data name="HashesAreNotSame" xml:space="preserve">
+    <value>[INFO] Hash tidak sama!</value>
+  </data>
+  <data name="DisplayFilesSelected_Size" xml:space="preserve">
+    <value>Ukuran</value>
+  </data>
+  <data name="ProcessTaskDelay_String2" xml:space="preserve">
+    <value>Silakan unduh file!</value>
+  </data>
+  <data name="InvalidDrive_String1" xml:space="preserve">
+    <value>Ini bukan perangkat yang valid!</value>
+  </data>
+  <data name="InstallGameScrub_Scrubbing" xml:space="preserve">
+    <value>Status: Menggosok...</value>
+  </data>
+  <data name="Attention" xml:space="preserve">
+    <value>PERHATIAN!</value>
+  </data>
+  <data name="ReadImage_String3" xml:space="preserve">
+    <value>File '{0}' tidak ditemukan!</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>[ERROR]</value>
+  </data>
+  <data name="PluginDisplay_String2" xml:space="preserve">
+    <value>Copot pemasangan</value>
+  </data>
+  <data name="RegisterHeaderLog_CurrentProgramDirectory" xml:space="preserve">
+    <value>[INFO] Direktori program saat ini:</value>
+  </data>
+  <data name="ListHash_String2" xml:space="preserve">
+    <value>hash file:</value>
+  </data>
+  <data name="Information" xml:space="preserve">
+    <value>Informasi</value>
+  </data>
+  <data name="UnknownRegion" xml:space="preserve">
+    <value>Wilayah yang tidak diketahui!</value>
+  </data>
+  <data name="SelectGameFromList" xml:space="preserve">
+    <value>Silakan pilih game dari daftar!</value>
+  </data>
+  <data name="RecordExportedFailed" xml:space="preserve">
+    <value>Tidak ada data yang tersedia untuk diekspor!</value>
+  </data>
+  <data name="CantOpenImage" xml:space="preserve">
+    <value>[ERROR] Tidak dapat membuka file gambar.</value>
+  </data>
+  <data name="ConvertElfDol_String1" xml:space="preserve">
+    <value>&gt;&gt; Status: Bekerja...</value>
+  </data>
+  <data name="AskDownloadWiiTDB" xml:space="preserve">
+    <value>WiiTDB.zip tidak ditemukan, apakah Anda ingin mengunduhnya sekarang?</value>
+  </data>
+  <data name="InvalidDrive_String2" xml:space="preserve">
+    <value>Sistem berkas yang terdeteksi adalah:</value>
+  </data>
+  <data name="ReadImage_String4" xml:space="preserve">
+    <value>ERROR!</value>
+  </data>
+  <data name="DownloadingWiiTDB_String1" xml:space="preserve">
+    <value>&gt;&gt; Mengunduh WiiTDB.zip ...</value>
+  </data>
+  <data name="ServerReportedDiscCoverNotFound" xml:space="preserve">
+    <value>Server melaporkan: Penutup cakram tidak ditemukan!</value>
+  </data>
+  <data name="ProcessTaskDelay_String3" xml:space="preserve">
+    <value>Beberapa fungsi yang bergantung pada file ini tidak akan berfungsi sampai file diunduh!</value>
+  </data>
+  <data name="ReadImage_String2" xml:space="preserve">
+    <value>Beberapa gambar FST? \r\nSilakan kirimkan saya informasi tentang gambar ini.</value>
+  </data>
+  <data name="InstallGameScrub_TrasnferredDisc2" xml:space="preserve">
+    <value>Disc 2 berhasil ditransfer!</value>
+  </data>
+  <data name="AboutTranslatorContact" xml:space="preserve">
+    <value>Kontak:</value>
+  </data>
+  <data name="MetaXml_String2" xml:space="preserve">
+    <value>Data berhasil disimpan!</value>
+  </data>
+  <data name="RegisterHeaderLog_WorkingSet" xml:space="preserve">
+    <value>Perangkat Kerja:</value>
+  </data>
+  <data name="AllFilesSuccessfullyDeleted" xml:space="preserve">
+    <value>Semua file berhasil dihapus!</value>
+  </data>
+  <data name="ClearLog" xml:space="preserve">
+    <value>Apakah Anda benar-benar ingin menghapus data registri?</value>
+  </data>
+  <data name="InvalidDrive_String6" xml:space="preserve">
+    <value>sebagai penyimpanan BACKUP untuk file ISO/GCM.</value>
+  </data>
+  <data name="RegisterHeaderLog_OSVersion" xml:space="preserve">
+    <value>Versi OS:</value>
+  </data>
+  <data name="LoadISOInfo_String2" xml:space="preserve">
+    <value>Disk sekunder: (disc2)</value>
+  </data>
+  <data name="DolphinEmulator_Not_Found_String_1" xml:space="preserve">
+    <value>Emulator tidak ditemukan!</value>
+  </data>
+  <data name="ListHash_String1" xml:space="preserve">
+    <value>The</value>
+  </data>
+  <data name="RegisterHeaderLog_ApplicationVersion" xml:space="preserve">
+    <value>Versi Aplikasi:</value>
+  </data>
+  <data name="RegisterHeaderLog_LogicalUnits" xml:space="preserve">
+    <value>Unit Logis:</value>
+  </data>
+  <data name="FilesDestinationUnit" xml:space="preserve">
+    <value>File (Tujuan) - Drive (</value>
+  </data>
+  <data name="AssemblyInfo_Description" xml:space="preserve">
+    <value>Nintendo GameCube ISO dan perangkat lunak pengelola file GCM.</value>
+  </data>
+  <data name="CheckUSBGXFlow_String1" xml:space="preserve">
+    <value>Silakan masuk ke 'Options'-&gt;'Settings</value>
+  </data>
+  <data name="AboutCurrentLanguage" xml:space="preserve">
+    <value>Bahasa saat ini:</value>
+  </data>
+  <data name="FilterDatabase_String2" xml:space="preserve">
+    <value>Jika file 'wiitdb.xml' terinstal dengan benar, lakukan penyesuaian yang diperlukan pada pengaturan program.</value>
+  </data>
+  <data name="MetaXml_String1" xml:space="preserve">
+    <value>File 'meta.xml' tidak valid atau rusak!</value>
+  </data>
+  <data name="CreateGamesFolder" xml:space="preserve">
+    <value>Tidak ada folder GAMES, buat folder sekarang?</value>
+  </data>
+  <data name="DisplayFilesSelected_Found_String2" xml:space="preserve">
+    <value>file dengan ekstensi .</value>
+  </data>
+  <data name="RecordExportedSuccessfully" xml:space="preserve">
+    <value>Rekaman berhasil diekspor!</value>
+  </data>
+  <data name="LoadDatabase_Type" xml:space="preserve">
+    <value>Jenis</value>
+  </data>
+  <data name="ProcessTaskDelay_String4" xml:space="preserve">
+    <value>Untuk mengunduh file (diperlukan koneksi internet), buka tab 'Database', lalu 'Tools' -&gt; 'GameTDB Update'.</value>
+  </data>
+  <data name="DownloadingWiiTDB_String2" xml:space="preserve">
+    <value>&gt;&gt; Mengekstrak WiiTDB.xml ...</value>
+  </data>
+  <data name="SelectFolderContainingIsoGcmFiles" xml:space="preserve">
+    <value>Pilih folder yang berisi file ISO/GCM:</value>
+  </data>
+  <data name="DestinyDrive_TotalSpace" xml:space="preserve">
+    <value>Total ruang:</value>
+  </data>
+  <data name="RequiredDirectories_String4" xml:space="preserve">
+    <value>[INFO] Direktori skin telah dibuat...</value>
+  </data>
+  <data name="Download3DCover" xml:space="preserve">
+    <value> [INFO] Mengunduh sampul (3D)... </value>
+  </data>
+  <data name="InvalidDrive_String5" xml:space="preserve">
+    <value>Namun demikian, Anda bisa menggunakan perangkat</value>
+  </data>
+  <data name="LoadDatabase_Developer" xml:space="preserve">
+    <value>Pengembang</value>
+  </data>
+  <data name="CopyTask_String1" xml:space="preserve">
+    <value>Mentransfer file...</value>
+  </data>
+  <data name="InstallGameScrub_GameInstalled" xml:space="preserve">
+    <value>Game berhasil diinstal!</value>
+  </data>
+  <data name="OverwriteWiiTDBCaption" xml:space="preserve">
+    <value>Menimpa WiiTDB.xml?</value>
+  </data>
+  <data name="DialogResultDeleteGame_ReallyDeleteFile_String1" xml:space="preserve">
+    <value>Apakah Anda benar-benar ingin menghapus file?</value>
+  </data>
+  <data name="CreateGamesFolderNow" xml:space="preserve">
+    <value>Ini adalah perangkat yang valid tetapi tidak ada folder GAMES, buat folder sekarang?</value>
+  </data>
+  <data name="AboutTranslator" xml:space="preserve">
+    <value>Penerjemah:</value>
+  </data>
+  <data name=" " xml:space="preserve">
+    <value>[ERROR] Gagal mengunduh cover (Disc)!</value>
+  </data>
+  <data name="CheckUSBGXFlow_String2" xml:space="preserve">
+    <value>Lalu pergi ke 'Skins' -&gt; 'Synchronize' dan centang 'Enable transfer skins between devices'.</value>
+  </data>
+  <data name="FilterDatabase_String1" xml:space="preserve">
+    <value>Daftar basis data kosong!</value>
+  </data>
+  <data name="DolphinEmulator_Not_Found_String_2" xml:space="preserve">
+    <value>Harap atur jalur ke emulator Dolphin yang dapat dieksekusi (dolphin.exe).</value>
+  </data>
+  <data name="CopyTask_String5" xml:space="preserve">
+    <value>100% Lengkap!</value>
+  </data>
+  <data name="DisplayFilesSelected_FileName" xml:space="preserve">
+    <value>Nama File</value>
+  </data>
+  <data name="CopyTask_String6" xml:space="preserve">
+    <value>Transfer selesai!</value>
+  </data>
+  <data name="DownloadingWiiTDB_String3" xml:space="preserve">
+    <value>&gt;&gt; Proses selesai!</value>
+  </data>
+  <data name="DisplayFilesSelected_Found_String3" xml:space="preserve">
+    <value>Ditemukan</value>
+  </data>
+  <data name="RegisterHeaderLog_CLRVersion" xml:space="preserve">
+    <value>Versi CLR:</value>
+  </data>
+  <data name="AboutVersion" xml:space="preserve">
+    <value>Versi</value>
+  </data>
+  <data name="Info" xml:space="preserve">
+    <value>[INFO]</value>
+  </data>
+  <data name="RequiredDirectories_String5" xml:space="preserve">
+    <value>[INFO] Direktori penutup sudah ada... mengabaikan pembuatan!</value>
+  </data>
+  <data name="GCBM_TranslatorContact" xml:space="preserve">
+    <value>DeepL.com</value>
+  </data>
+  <data name="InvalidDrive_String4" xml:space="preserve">
+    <value>Sangat disarankan untuk menggunakan sistem file FAT32 dengan cluster 32K untuk memastikan kompatibilitas maksimum dengan game GameCube, game Wii, ROM, aplikasi, emulator, dan segala sesuatu di antaranya!</value>
+  </data>
+  <data name="CopyTask_String2" xml:space="preserve">
+    <value>Menginstal permainan...</value>
+  </data>
+  <data name="InstallGameScrub_Complete" xml:space="preserve">
+    <value>Status: Lengkap!</value>
+  </data>
+  <data name="DisplayFilesSelected_Found_String1" xml:space="preserve">
+    <value>[INFO] Ditemukan</value>
+  </data>
+  <data name="AboutBox_String2" xml:space="preserve">
+    <value>Versi {0}</value>
+  </data>
+  <data name="CopyTask_String3" xml:space="preserve">
+    <value>Transfer selesai!</value>
+  </data>
+  <data name="LoadDatabase_GameTitle" xml:space="preserve">
+    <value>Judul Permainan</value>
+  </data>
+  <data name="CopyTask_String4" xml:space="preserve">
+    <value>Permainan sudah terpasang!</value>
+  </data>
+  <data name="DialogResultDeleteGame_ReallyDeleteFile_String2" xml:space="preserve">
+    <value>Prosedur ini tidak dapat dipulihkan dan tidak mungkin memulihkan file!</value>
+  </data>
+  <data name="InstallGameScrub_Transferring" xml:space="preserve">
+    <value>Mentransfer...</value>
+  </data>
+  <data name="ServerReported3DCoverNotFound" xml:space="preserve">
+    <value>Server melaporkan: Sampul 3D tidak ditemukan!</value>
+  </data>
+  <data name="DisplayFilesSelected_FilePath" xml:space="preserve">
+    <value>Jalur Berkas</value>
+  </data>
+  <data name="ProcessTaskDelay_String1" xml:space="preserve">
+    <value>File 'wiitdb.xml' tidak ditemukan!</value>
+  </data>
+  <data name="ClearTemp_String1" xml:space="preserve">
+    <value>[INFO] Tidak bisa menghapus folder sementara!</value>
+  </data>
+  <data name="LoadDatabase_IDGameCode" xml:space="preserve">
+    <value>ID (Kode Permainan)</value>
+  </data>
+  <data name="Notice" xml:space="preserve">
+    <value>PEMBERITAHUAN</value>
+  </data>
+  <data name="NotNintendoGameCubeFile" xml:space="preserve">
+    <value>[ERROR] Bukan file Nintendo GameCube.</value>
+  </data>
+  <data name="RequiredDirectories_String1" xml:space="preserve">
+    <value>[INFO] Direktori sementara default telah dibuat...</value>
+  </data>
+  <data name="NetworkCheck_NetStatus_Online" xml:space="preserve">
+    <value>Koneksi internet sudah dibuat!</value>
+  </data>
+  <data name="ConvertElfDol_String3" xml:space="preserve">
+    <value>&gt;&gt; Status: Selesai!</value>
+  </data>
+  <data name="RequiredDirectories_String3" xml:space="preserve">
+    <value>[INFO] Menggunakan direktori sementara khusus!</value>
+  </data>
+  <data name="RegisterHeaderLog_GcbmLogCreated" xml:space="preserve">
+    <value>gcbm.log dibuat.</value>
+  </data>
+  <data name="ReadImage_String1" xml:space="preserve">
+    <value>Gambarnya terlalu kecil!</value>
+  </data>
+  <data name="DestinyDrive_AvailableSpace" xml:space="preserve">
+    <value>Ruang yang tersedia:</value>
+  </data>
+  <data name="LoadISOInfo_String1" xml:space="preserve">
+    <value>Disk utama: (disc1)</value>
+  </data>
+  <data name="RegisterHeaderLog_ProgramName" xml:space="preserve">
+    <value>Nama Program:</value>
+  </data>
+  <data name="UnableWriteDataDisk" xml:space="preserve">
+    <value>Tidak bisa menulis data ke disk!</value>
+  </data>
+  <data name="DownloadDiscCover" xml:space="preserve">
+    <value>[INFO] Mengunduh sampul (Disk)... </value>
+  </data>
+  <data name="MetaXml_String_ERRO" xml:space="preserve">
+    <value>KESALAHAN</value>
+  </data>
+  <data name="GameListExportedCSV" xml:space="preserve">
+    <value>Daftar game diekspor ke CSV!</value>
+  </data>
+  <data name="CheckUSBGXFlow_String3" xml:space="preserve">
+    <value>Kemudian, di tab yang sama, buka 'Konfigurasi pengisi daya USB (Transfer Covers)' dan sesuaikan direktori penutup (Disk, 2D, 3D dan Penuh) dari USB Loader GX atau WiiFlow di 'Konfigurasi pengisi daya USB (Transfer Covers)' , menunjuk ke direktori masing-masing dalam perangkat target.</value>
+  </data>
+  <data name="SplashNetworkCheck" xml:space="preserve">
+    <value>Memeriksa koneksi internet...</value>
+  </data>
+  <data name="SplashPopulatingDrives" xml:space="preserve">
+    <value>Mengisi daftar drive...</value>
+  </data>
+  <data name="SplashFoundDrive" xml:space="preserve">
+    <value>Drive yang ditemukan:</value>
+  </data>
+  <data name="SplashFinishing" xml:space="preserve">
+    <value>Menyelesaikan...</value>
+  </data>
+  <data name="SplashFinished" xml:space="preserve">
+    <value>Selesai.</value>
+  </data>
+  <data name="SplashDirectories" xml:space="preserve">
+    <value>Menyiapkan direktori yang diperlukan...</value>
+  </data>
+  <data name="InstallGameScrub_TransferDisc2" xml:space="preserve">
+    <value>Memindahkan Disc 2...</value>
+  </data>
+  <data name="InstallGameScrub_DoneScrubbing" xml:space="preserve">
+    <value>Selesai menggosok...</value>
+  </data>
+  <data name="SelectLanguagePrompt" xml:space="preserve">
+    <value>Silakan pilih bahasa pilihan Anda:</value>
+  </data>
+  <data name="LanguagePromptConfirm" xml:space="preserve">
+    <value>Apakah ini bahasa yang ingin Anda gunakan?</value>
+  </data>
+  <data name="LanguagePromptTitle" xml:space="preserve">
+    <value>Pilih bahasa Anda:</value>
+  </data>
+  <data name="LanguagePromptConfirmTitle" xml:space="preserve">
+    <value>Dapatkah Anda memahami hal ini?</value>
+  </data>
+  <data name="DownloadDiscCoverError" xml:space="preserve">
+    <value>[ERROR] Gagal Mengunduh sampul (Disk)</value>
+  </data>
+  <data name="LanguageIndonesian" xml:space="preserve">
+    <value>Bahasa Indonesia</value>
+  </data>
+  <data name="LoadDatabase_Editor" xml:space="preserve">
+    <value>Editor</value>
+  </data>
+</root>

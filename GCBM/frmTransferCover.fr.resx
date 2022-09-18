@@ -121,7 +121,7 @@
     <value>Annuler le transfert</value>
   </data>
   <data name="rbEurope.Text" xml:space="preserve">
-    <value>L'Europe </value>
+    <value>Europe</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Régions</value>
@@ -130,7 +130,7 @@
     <value>Japon</value>
   </data>
   <data name="btnClose.Text" xml:space="preserve">
-    <value>proche</value>
+    <value>Fermer</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Couvertures de transfert</value>
@@ -139,9 +139,9 @@
     <value>Attendre...</value>
   </data>
   <data name="btnTaskIndeterminate.Text" xml:space="preserve">
-    <value>Transférer</value>
+    <value>Transfert</value>
   </data>
   <data name="chkTransferAllRegions.Text" xml:space="preserve">
-    <value>Téléchargez des skins de toutes les régions</value>
+    <value>Téléchargez les skins de toutes les régions</value>
   </data>
 </root>

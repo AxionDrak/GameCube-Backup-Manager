@@ -117,441 +117,23 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="tabSettingsGeneral.Text" xml:space="preserve">
-    <value>Allgemein</value>
-  </data>
-  <data name="tabSettingsNomenclature.Text" xml:space="preserve">
-    <value>Nomenklatur</value>
-  </data>
-  <data name="tabSettingsSeveral.Text" xml:space="preserve">
-    <value>Mehrere</value>
-  </data>
-  <data name="tabSettingsTransfer.Text" xml:space="preserve">
-    <value>Spielübertragung</value>
-  </data>
-  <data name="tabSettingsCovers.Text" xml:space="preserve">
-    <value>Abdeckungen</value>
-  </data>
-  <data name="tabSettingsTitle.Text" xml:space="preserve">
-    <value>Titel</value>
-  </data>
-  <data name="tabSettingsUpdates.Text" xml:space="preserve">
-    <value>Aktualisierung</value>
-  </data>
-  <data name="tabSettingsLanguage.Text" xml:space="preserve">
-    <value>Sprachen</value>
-  </data>
-  <data name="tabSettingsLog.Text" xml:space="preserve">
-    <value>Aufzeichnung</value>
-  </data>
-  <data name="grbGeneralTemporaryFolder.Text" xml:space="preserve">
-    <value>Temporärer Ordner</value>
-  </data>
-  <data name="grbGeneralFiles.Text" xml:space="preserve">
-    <value>Dateien</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="chkGeneralExtractNwb.Size" type="System.Drawing.Size, System.Drawing">
-    <value>128, 17</value>
-  </data>
-  <data name="chkGeneralExtractNwb.Text" xml:space="preserve">
-    <value>NWB-Dateien (*.nwb)</value>
-  </data>
-  <data name="chkGeneralExtractSplitFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 17</value>
-  </data>
-  <data name="chkGeneralExtractSplitFile.Text" xml:space="preserve">
-    <value>Dateien teilen (*.001)</value>
-  </data>
-  <data name="chkGeneralExtractBZip2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>156, 17</value>
-  </data>
-  <data name="chkGeneralExtractBZip2.Text" xml:space="preserve">
-    <value>BZip2-Dateien (*.bz;*.bzip2)</value>
-  </data>
-  <data name="chkGeneralExtractRar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>117, 17</value>
-  </data>
-  <data name="chkGeneralExtractRar.Text" xml:space="preserve">
-    <value>RAR-Dateien (*.rar)</value>
-  </data>
-  <data name="chkGeneralExtract7z.Size" type="System.Drawing.Size, System.Drawing">
-    <value>143, 17</value>
-  </data>
-  <data name="chkGeneralExtract7z.Text" xml:space="preserve">
-    <value>7Zip-Dateien (*.7z;*.7zip)</value>
-  </data>
-  <data name="chkGeneralExtractZip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>110, 17</value>
-  </data>
-  <data name="chkGeneralExtractZip.Text" xml:space="preserve">
-    <value>Zip-Dateien (*.zip)</value>
-  </data>
-  <data name="lblGeneralExtract.Size" type="System.Drawing.Size, System.Drawing">
-    <value>114, 13</value>
-  </data>
-  <data name="lblGeneralExtract.Text" xml:space="preserve">
-    <value>Bei Bedarf extrahieren.</value>
-  </data>
-  <data name="grbGeneralFileSize.Text" xml:space="preserve">
-    <value>Größe zeigen</value>
-  </data>
-  <data name="cbGeneralFileSize.Items" xml:space="preserve">
-    <value>Automatisch</value>
-  </data>
-  <data name="cbGeneralFileSize.Items2" xml:space="preserve">
-    <value>Megabyte</value>
-  </data>
   <data name="cbGeneralFileSize.Items3" xml:space="preserve">
     <value>Gigabyte</value>
   </data>
-  <data name="grbGeneralPartitions.Text" xml:space="preserve">
-    <value>Spielverzeichnisse anpassen</value>
-  </data>
-  <data name="rbGeneralDiscDelete.Size" type="System.Drawing.Size, System.Drawing">
-    <value>509, 19</value>
-  </data>
-  <data name="rbGeneralDiscDelete.Text" xml:space="preserve">
-    <value>Nur Datenträger 1-Ordner behalten und Datenträger 2-Ordner löschen (experimentell)</value>
-  </data>
-  <data name="rbGeneralDiscClean.Size" type="System.Drawing.Size, System.Drawing">
-    <value>375, 17</value>
-  </data>
-  <data name="rbGeneralDiscClean.Text" xml:space="preserve">
-    <value>Alle Ordner für Datenträger 1 und Datenträger 2 getrennt halten (Standard)</value>
-  </data>
-  <data name="lblCommentsScrubCopy.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 169</value>
-  </data>
-  <data name="lblCommentsScrubCopy.Size" type="System.Drawing.Size, System.Drawing">
-    <value>539, 65</value>
-  </data>
-  <data name="lblCommentsScrubCopy.Text" xml:space="preserve">
-    <value>Für die Scrub-Methode wird immer der Standard „Title [Game Code]“ verwendet, basierend auf dem internen Namen (vom Entwickler definiert). Im Scrub-Kopiermodus werden die Laufwerke 1 und 2 immer in separaten Ordnern gespeichert, außer in bestimmten Fällen, in denen die Erkennungsmethode vom Entwickler vergebene allgemeine Namen identifizieren kann. In diesem Fall werden die Laufwerke 1 und 2 im selben Ordner gespeichert .</value>
-  </data>
-  <data name="lblCommentsExactCopy.Size" type="System.Drawing.Size, System.Drawing">
-    <value>540, 52</value>
-  </data>
-  <data name="lblCommentsExactCopy.Text" xml:space="preserve">
-    <value>Der Namensstil funktioniert derzeit nur mit exakter Kopie der Dateien (1:1) und kann sowohl den internen Namen als auch den kommerziellen Namen (über wiitdb.xml) verwenden. Diese Option kann vom Benutzer auf der Registerkarte „Titel“ konfiguriert werden. Im exakten Kopiermodus (1:1) werden die Datenträger 1 und 2 immer im selben Ordner gespeichert.</value>
-  </data>
-  <data name="lblComments.Size" type="System.Drawing.Size, System.Drawing">
-    <value>87, 13</value>
-  </data>
-  <data name="lblComments.Text" xml:space="preserve">
-    <value>KOMMENTARE:</value>
-  </data>
-  <data name="grpNomenclatureFolderFormat.Text" xml:space="preserve">
-    <value>Ordnerformat</value>
-  </data>
-  <data name="cbAdjustNamingStyle.Items" xml:space="preserve">
-    <value>Titel [Spielcode]</value>
-  </data>
-  <data name="cbAdjustNamingStyle.Items1" xml:space="preserve">
-    <value>[Spielcode]</value>
-  </data>
-  <data name="lblNomenclature.Size" type="System.Drawing.Size, System.Drawing">
-    <value>61, 13</value>
-  </data>
-  <data name="lblNomenclature.Text" xml:space="preserve">
-    <value>Namensstil:</value>
-  </data>
-  <data name="grbGeneralDiverse.Text" xml:space="preserve">
-    <value>Mehrere</value>
-  </data>
-  <data name="cbNotificationsToggle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>197, 17</value>
-  </data>
-  <data name="cbNotificationsToggle.Text" xml:space="preserve">
-    <value>Benachrichtigungen stummschalten.</value>
-  </data>
-  <data name="cbLoadDatabase.Size" type="System.Drawing.Size, System.Drawing">
-    <value>161, 17</value>
-  </data>
-  <data name="cbLoadDatabase.Text" xml:space="preserve">
-    <value>Datenbank beim Start laden.</value>
-  </data>
-  <data name="chkMultipleInstances.Size" type="System.Drawing.Size, System.Drawing">
-    <value>292, 17</value>
-  </data>
-  <data name="chkMultipleInstances.Text" xml:space="preserve">
-    <value>Ausführung mehrerer Instanzen des Programms zulassen</value>
-  </data>
-  <data name="chkLoadDatabase.Size" type="System.Drawing.Size, System.Drawing">
-    <value>328, 17</value>
-  </data>
-  <data name="chkLoadDatabase.Text" xml:space="preserve">
-    <value>Datenbank beim Programmstart laden (erhöht Programmstartzeit)</value>
-  </data>
-  <data name="chkNotify.Size" type="System.Drawing.Size, System.Drawing">
-    <value>535, 17</value>
-  </data>
-  <data name="chkNotify.Text" xml:space="preserve">
-    <value>Taskleistenbenachrichtigungen aktivieren (Standardbenachrichtigungen werden weiterhin normal angezeigt)</value>
-  </data>
-  <data name="chkScreensaver.Size" type="System.Drawing.Size, System.Drawing">
-    <value>241, 17</value>
-  </data>
-  <data name="chkScreensaver.Text" xml:space="preserve">
-    <value>Bildschirmschoner deaktivieren (Screensaver)</value>
-  </data>
-  <data name="chkNetVerify.Size" type="System.Drawing.Size, System.Drawing">
-    <value>361, 17</value>
-  </data>
-  <data name="chkNetVerify.Text" xml:space="preserve">
-    <value>Überprüfen Sie die Internetverbindung, wenn Sie das Programm starten</value>
-  </data>
-  <data name="chkStartWindowMaximized.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 17</value>
-  </data>
-  <data name="chkStartWindowMaximized.Text" xml:space="preserve">
-    <value>Startfenster maximiert</value>
-  </data>
-  <data name="chkGeneralSHA1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>314, 17</value>
-  </data>
-  <data name="chkGeneralSHA1.Text" xml:space="preserve">
-    <value>Überprüfen Sie die SHA-1-Signatur während der Übertragung</value>
-  </data>
-  <data name="chkGeneralRecursiva.Size" type="System.Drawing.Size, System.Drawing">
-    <value>362, 17</value>
-  </data>
-  <data name="chkGeneralRecursiva.Text" xml:space="preserve">
-    <value>Verzeichnisse rekursiv durchsuchen (nur für Fenster "Dateien (Quelle)")</value>
-  </data>
-  <data name="chkGeneralTemporaryBuffer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>304, 17</value>
-  </data>
-  <data name="chkGeneralTemporaryBuffer.Text" xml:space="preserve">
-    <value>Übertragungen im temporären Speicher (Puffer) verwenden</value>
-  </data>
-  <data name="chkGeneralMD5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>305, 17</value>
-  </data>
-  <data name="chkGeneralMD5.Text" xml:space="preserve">
-    <value>Berechnen Sie die MD5-Signatur während der Übertragung</value>
-  </data>
-  <data name="grbGeneralScrub.Text" xml:space="preserve">
-    <value>Schrubben</value>
-  </data>
-  <data name="lblFormat.Size" type="System.Drawing.Size, System.Drawing">
-    <value>42, 13</value>
-  </data>
-  <data name="lblFormat.Text" xml:space="preserve">
-    <value>Format:</value>
-  </data>
-  <data name="lblAlignment.Size" type="System.Drawing.Size, System.Drawing">
-    <value>66, 13</value>
-  </data>
-  <data name="lblAlignment.Text" xml:space="preserve">
-    <value>Ausrichtung:</value>
-  </data>
-  <data name="cbScrubAlign.Items" xml:space="preserve">
-    <value>Automatisch</value>
-  </data>
-  <data name="chkGeneralScrubFlushSD.Size" type="System.Drawing.Size, System.Drawing">
-    <value>429, 17</value>
-  </data>
-  <data name="chkGeneralScrubFlushSD.Text" xml:space="preserve">
-    <value>Löschen Sie die Dateipuffer, damit die SD-Karte fast sofort ausgeworfen werden kann</value>
-  </data>
-  <data name="label28.Size" type="System.Drawing.Size, System.Drawing">
-    <value>459, 39</value>
-  </data>
-  <data name="label28.Text" xml:space="preserve">
-    <value>FST (FileSystem Table) ist ein Dateisystem, das in ein Verzeichnis extrahiert wird, das alle realen und virtuellen Dateien eines Archivs enthält. Nintendont verwendet die FST-Dateien, um ein internes virtuelles ISO-Image zu erstellen und das Spiel von dieser virtuellen ISO zu laden.</value>
-  </data>
-  <data name="label31.Size" type="System.Drawing.Size, System.Drawing">
-    <value>470, 26</value>
-  </data>
-  <data name="label31.Text" xml:space="preserve">
-    <value>Entfernt unnötige Daten (Müll), indem sie durch einen konstanten Bytewert (0xff oder 0x00) ersetzt werden. Die Datei hat jedoch eine kleinere Größe, wodurch die Datenintegrität gewahrt bleibt.</value>
-  </data>
-  <data name="label20.Size" type="System.Drawing.Size, System.Drawing">
-    <value>440, 39</value>
-  </data>
-  <data name="label20.Text" xml:space="preserve">
-    <value>Ähnlich wie XCopy, mit dem Unterschied, dass die in den Dateien vorhandenen Mülldaten (Garbage) bereinigt werden. Die ursprüngliche Dateigröße wird beibehalten. Garbage-Daten werden entfernt, während die Integrität anderer Daten gewahrt bleibt.</value>
-  </data>
-  <data name="label17.Size" type="System.Drawing.Size, System.Drawing">
-    <value>453, 26</value>
-  </data>
-  <data name="label17.Text" xml:space="preserve">
-    <value>Kopiert eine oder mehrere Dateien von einem Speicherort (Quelle) an einen anderen (Ziel). Die Datei ist nicht komprimiert, nicht Teil eines Containers und es werden keine Datenmüll entfernt.</value>
-  </data>
-  <data name="grbTransferSystem.Text" xml:space="preserve">
-    <value>Transfersystem verwendet werden</value>
-  </data>
-  <data name="rbTransferSystemXCopy.Size" type="System.Drawing.Size, System.Drawing">
-    <value>108, 17</value>
-  </data>
-  <data name="rbTransferSystemXCopy.Text" xml:space="preserve">
-    <value>XCopy (Standard)</value>
-  </data>
-  <data name="grpTitlesCoverFolder.Text" xml:space="preserve">
-    <value>Covers-Ordner (Cache -&gt; Origin)</value>
-  </data>
-  <data name="grbCoverTransfer.Text" xml:space="preserve">
-    <value>Einrichtung des USB-Ladegeräts (Transferabdeckungen -&gt; Ziel)</value>
-  </data>
-  <data name="tabCoverDisc.Text" xml:space="preserve">
-    <value>Rabatt</value>
-  </data>
-  <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>124, 13</value>
-  </data>
-  <data name="label8.Text" xml:space="preserve">
-    <value>Speicherort des Ordners:</value>
-  </data>
-  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>124, 13</value>
-  </data>
-  <data name="label6.Text" xml:space="preserve">
-    <value>Speicherort des Ordners:</value>
-  </data>
-  <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>124, 13</value>
-  </data>
-  <data name="label9.Text" xml:space="preserve">
-    <value>Speicherort des Ordners:</value>
-  </data>
-  <data name="tabCoverFull.Text" xml:space="preserve">
-    <value>Vollständig</value>
-  </data>
-  <data name="label35.Size" type="System.Drawing.Size, System.Drawing">
-    <value>124, 13</value>
-  </data>
-  <data name="label35.Text" xml:space="preserve">
-    <value>Speicherort des Ordners:</value>
-  </data>
-  <data name="grpCoversSynchronize.Text" xml:space="preserve">
-    <value>Synchronisieren</value>
-  </data>
-  <data name="chkCoverRecursiveSearch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>341, 17</value>
-  </data>
-  <data name="chkCoverRecursiveSearch.Text" xml:space="preserve">
-    <value>Verwenden Sie die rekursive Hautsuche (Suche in allen Regionen)</value>
-  </data>
-  <data name="chkCoverEnableTransfer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>308, 17</value>
+  <data name="chkManagerLogDebugConsole.Text" xml:space="preserve">
+    <value>Protokoll für die Debug-Konsole</value>
   </data>
   <data name="chkCoverEnableTransfer.Text" xml:space="preserve">
-    <value>Aktivieren Sie die Übertragung von Skins zwischen Geräten</value>
+    <value>Übertragung von Skins zwischen Geräten ermöglichen</value>
   </data>
-  <data name="chkCoverSynchronizeDelete.Size" type="System.Drawing.Size, System.Drawing">
-    <value>303, 17</value>
-  </data>
-  <data name="chkCoverSynchronizeDelete.Text" xml:space="preserve">
-    <value>Löschen Sie Skins für Spiele, die nicht auf der Liste stehen</value>
-  </data>
-  <data name="grbTitleLanguage.Text" xml:space="preserve">
-    <value>Titelsprache</value>
-  </data>
-  <data name="cbTitleLanguage.Items" xml:space="preserve">
-    <value>Englisch</value>
-  </data>
-  <data name="cbTitleLanguage.Items1" xml:space="preserve">
-    <value>Französisch</value>
-  </data>
-  <data name="cbTitleLanguage.Items2" xml:space="preserve">
-    <value>Deutsch</value>
-  </data>
-  <data name="cbTitleLanguage.Items3" xml:space="preserve">
-    <value>Spanisch</value>
-  </data>
-  <data name="cbTitleLanguage.Items4" xml:space="preserve">
-    <value>Italienisch</value>
-  </data>
-  <data name="cbTitleLanguage.Items5" xml:space="preserve">
-    <value>Niederländisch</value>
-  </data>
-  <data name="cbTitleLanguage.Items6" xml:space="preserve">
-    <value>Portugiesisch</value>
-  </data>
-  <data name="cbTitleLanguage.Items7" xml:space="preserve">
-    <value>japanisch</value>
-  </data>
-  <data name="cbTitleLanguage.Items8" xml:space="preserve">
-    <value>Russisch</value>
-  </data>
-  <data name="cbTitleLanguage.Items9" xml:space="preserve">
-    <value>Koreanisch</value>
-  </data>
-  <data name="cbTitleLanguage.Items10" xml:space="preserve">
-    <value>Traditionelles Chinesisch</value>
-  </data>
-  <data name="cbTitleLanguage.Items11" xml:space="preserve">
-    <value>Vereinfachtes Chinesisch</value>
-  </data>
-  <data name="grbTitleFileLocation.Text" xml:space="preserve">
-    <value>Speicherort</value>
-  </data>
-  <data name="grbTitleDiverse.Text" xml:space="preserve">
-    <value>Verschiedenes (Programmneustart erforderlich, um wirksam zu werden)</value>
-  </data>
-  <data name="rbGameXmlName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>544, 17</value>
-  </data>
-  <data name="rbGameXmlName.Text" xml:space="preserve">
-    <value>Verwenden Sie den Handelsnamen für das Spiel über wiitdb.xml (EMPFOHLEN! - erfordert die Datei wiitdb.xml)</value>
-  </data>
-  <data name="rbGameInternalName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>356, 17</value>
-  </data>
-  <data name="rbGameInternalName.Text" xml:space="preserve">
-    <value>Internen Produktionsnamen für das Spiel verwenden (75 % unterstützt)</value>
-  </data>
-  <data name="chkGameTitleCustom.Size" type="System.Drawing.Size, System.Drawing">
-    <value>271, 17</value>
-  </data>
-  <data name="chkGameTitleCustom.Text" xml:space="preserve">
-    <value>Benutzerdefinierte Titel verwenden (custom-titles.txt)</value>
-  </data>
-  <data name="chkGameTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>195, 17</value>
-  </data>
-  <data name="chkGameTitle.Text" xml:space="preserve">
-    <value>Verwenden Sie GameTDB (titles.txt)</value>
-  </data>
-  <data name="grbDolphin.Text" xml:space="preserve">
-    <value>Emulator konfigurieren</value>
-  </data>
-  <data name="grbDolphinFolder.Text" xml:space="preserve">
-    <value>Pfad zum Emulator</value>
-  </data>
-  <data name="grbDolphinAudio.Text" xml:space="preserve">
-    <value>Audio</value>
-  </data>
-  <data name="rbDSPHLE.Size" type="System.Drawing.Size, System.Drawing">
-    <value>123, 17</value>
-  </data>
-  <data name="rbDSPHLE.Text" xml:space="preserve">
-    <value>DSP-HLE (Standard)</value>
-  </data>
-  <data name="grbDolphinVideo.Text" xml:space="preserve">
-    <value>Video</value>
-  </data>
-  <data name="lblTimeInterval.Size" type="System.Drawing.Size, System.Drawing">
-    <value>470, 26</value>
-  </data>
-  <data name="lblTimeInterval.Text" xml:space="preserve">
-    <value>HINWEIS: Die Anpassung der Zeitintervalleinstellung wird erst nach dem Neustart des Programms wirksam.</value>
-  </data>
-  <data name="grbUpdate.Text" xml:space="preserve">
-    <value>Update Einstellungen</value>
-  </data>
-  <data name="cbVerificationInterval.Items" xml:space="preserve">
-    <value>5 Minuten</value>
+  <data name="chkManagerLogFile.Text" xml:space="preserve">
+    <value>Datensatz zur Datei</value>
   </data>
   <data name="cbVerificationInterval.Items1" xml:space="preserve">
     <value>10 Minuten</value>
   </data>
-  <data name="cbVerificationInterval.Items2" xml:space="preserve">
-    <value>15 Minuten</value>
-  </data>
-  <data name="cbVerificationInterval.Items3" xml:space="preserve">
-    <value>30 Minuten</value>
+  <data name="cbVerificationInterval.Items6" xml:space="preserve">
+    <value>3 Stunden</value>
   </data>
   <data name="cbVerificationInterval.Items4" xml:space="preserve">
     <value>1 Stunde</value>
@@ -559,104 +141,194 @@
   <data name="cbVerificationInterval.Items5" xml:space="preserve">
     <value>2 Stunden</value>
   </data>
-  <data name="cbVerificationInterval.Items6" xml:space="preserve">
-    <value>3 Stunden</value>
+  <data name="chkCoverRecursiveSearch.Text" xml:space="preserve">
+    <value>Rekursive Skin-Suche verwenden (Suche in allen Regionen)</value>
   </data>
-  <data name="cbVerificationInterval.Items7" xml:space="preserve">
-    <value>4 Stunden</value>
+  <data name="chkGeneralExtractBZip2.Text" xml:space="preserve">
+    <value>BZip2-Dateien (*.bz;*.bzip2)</value>
   </data>
-  <data name="lblUpdateInterval.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 13</value>
+  <data name="label8.Text" xml:space="preserve">
+    <value>Speicherort des Ordners:</value>
   </data>
-  <data name="lblUpdateInterval.Text" xml:space="preserve">
-    <value>Prüfintervall:</value>
-  </data>
-  <data name="lblPass.Size" type="System.Drawing.Size, System.Drawing">
-    <value>53, 13</value>
-  </data>
-  <data name="lblPass.Text" xml:space="preserve">
-    <value>Passwort:</value>
-  </data>
-  <data name="lblUser.Size" type="System.Drawing.Size, System.Drawing">
-    <value>52, 13</value>
-  </data>
-  <data name="lblUser.Text" xml:space="preserve">
-    <value>Benutzer:</value>
-  </data>
-  <data name="lblServerProxy.Size" type="System.Drawing.Size, System.Drawing">
-    <value>70, 13</value>
+  <data name="chkCoverSynchronizeDelete.Text" xml:space="preserve">
+    <value>Skins für Spiele löschen, die nicht auf der Liste stehen</value>
   </data>
   <data name="lblServerProxy.Text" xml:space="preserve">
-    <value>Proxy Server:</value>
+    <value>Proxy-Server:</value>
   </data>
-  <data name="chkUpdateServerProxy.Size" type="System.Drawing.Size, System.Drawing">
-    <value>142, 17</value>
+  <data name="cbTitleLanguage.Items5" xml:space="preserve">
+    <value>Niederländisch</value>
   </data>
-  <data name="chkUpdateServerProxy.Text" xml:space="preserve">
-    <value>Proxy-Server verwenden</value>
+  <data name="label17.Text" xml:space="preserve">
+    <value>Kopiert eine oder mehrere Dateien von einem Ort (Quelle) zu einem anderen (Ziel). Die Datei wird nicht komprimiert, ist nicht Teil eines Containers und es werden keine Mülldaten entfernt.</value>
   </data>
-  <data name="chkUpdateFileLog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>237, 17</value>
+  <data name="rbGameXmlName.Text" xml:space="preserve">
+    <value>Handelsname für das Spiel über wiitdb.xml verwenden (EMPFOHLEN! - erfordert die Datei wiitdb.xml)</value>
   </data>
-  <data name="chkUpdateFileLog.Text" xml:space="preserve">
-    <value>Aktualisierungen an Protokolldatei anhängen</value>
+  <data name="cbTitleLanguage.Items11" xml:space="preserve">
+    <value>Vereinfachtes Chinesisch</value>
   </data>
-  <data name="chkUpdateBetaChannel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>210, 17</value>
+  <data name="cbTitleLanguage.Items10" xml:space="preserve">
+    <value>Traditionelles Chinesisch</value>
   </data>
-  <data name="chkUpdateBetaChannel.Text" xml:space="preserve">
-    <value>Wechseln Sie zu BETA-Kanal-Updates</value>
+  <data name="chkGeneralExtract7z.Text" xml:space="preserve">
+    <value>7Zip-Dateien (*.7z;*.7zip)</value>
   </data>
-  <data name="chkUpdateVerifyStart.Size" type="System.Drawing.Size, System.Drawing">
-    <value>182, 17</value>
-  </data>
-  <data name="chkUpdateVerifyStart.Text" xml:space="preserve">
-    <value>Beim Start nach Updates suchen</value>
-  </data>
-  <data name="lblLanguageComments.Size" type="System.Drawing.Size, System.Drawing">
-    <value>499, 13</value>
-  </data>
-  <data name="lblLanguageComments.Text" xml:space="preserve">
-    <value>HINWEIS: Die Anpassung der Spracheinstellung wird erst nach einem Neustart des Programms wirksam.</value>
+  <data name="grbDolphinFolder.Text" xml:space="preserve">
+    <value>Pfad zum Emulator</value>
   </data>
   <data name="grbLanguage.Text" xml:space="preserve">
-    <value>Standardsprache auswählen:</value>
+    <value>Wählen Sie die Standardsprache:</value>
   </data>
-  <data name="lblLanguage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>50, 13</value>
+  <data name="tabSettingsLanguage.Text" xml:space="preserve">
+    <value>Sprachen</value>
+  </data>
+  <data name="grbLog.Text" xml:space="preserve">
+    <value>Datensatz</value>
+  </data>
+  <data name="cbAdjustNamingStyle.Items" xml:space="preserve">
+    <value>Titel [Game Code]</value>
+  </data>
+  <data name="grbDolphinVideo.Text" xml:space="preserve">
+    <value>Video</value>
+  </data>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>Abbrechen</value>
+  </data>
+  <data name="chkMultipleInstances.Text" xml:space="preserve">
+    <value>Ermöglicht die Ausführung mehrerer Instanzen des Programms</value>
+  </data>
+  <data name="fbd.Description" xml:space="preserve">
+    <value>Erstellen oder wählen Sie ein Verzeichnis:</value>
+  </data>
+  <data name="grbUpdate.Text" xml:space="preserve">
+    <value>Einstellungen aktualisieren</value>
+  </data>
+  <data name="chkGeneralScrubFlushSD.Text" xml:space="preserve">
+    <value>Löschen von Dateipuffern, so dass die SD-Karte fast sofort ausgeworfen werden kann</value>
+  </data>
+  <data name="rbGameInternalName.Text" xml:space="preserve">
+    <value>Interne Produktionsbezeichnung für das Spiel verwenden (75% unterstützt)</value>
+  </data>
+  <data name="cbTitleLanguage.Items1" xml:space="preserve">
+    <value>Französisch</value>
+  </data>
+  <data name="chkGameTitle.Text" xml:space="preserve">
+    <value>GameTDB verwenden (titles.txt)</value>
+  </data>
+  <data name="chkGeneralExtractSplitFile.Text" xml:space="preserve">
+    <value>Aufgeteilte Dateien (*.001)</value>
+  </data>
+  <data name="rbGeneralDiscDelete.Text" xml:space="preserve">
+    <value>Nur den Ordner von Laufwerk 1 behalten und den Ordner von Laufwerk 2 löschen (experimentell)</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Speicherort des Ordners:</value>
+  </data>
+  <data name="cbVerificationInterval.Items3" xml:space="preserve">
+    <value>30 Minuten</value>
+  </data>
+  <data name="cbGeneralFileSize.Items" xml:space="preserve">
+    <value>Automatisch</value>
+  </data>
+  <data name="lblPass.Text" xml:space="preserve">
+    <value>Kennwort:</value>
+  </data>
+  <data name="chkUpdateServerProxy.Text" xml:space="preserve">
+    <value>Proxyserver verwenden</value>
+  </data>
+  <data name="lblFormat.Text" xml:space="preserve">
+    <value>Format:</value>
+  </data>
+  <data name="cbTitleLanguage.Items8" xml:space="preserve">
+    <value>Russisch</value>
+  </data>
+  <data name="btnApply.Text" xml:space="preserve">
+    <value>Bewerbung</value>
+  </data>
+  <data name="grbTransferSystem.Text" xml:space="preserve">
+    <value>Zu verwendendes Transfersystem</value>
+  </data>
+  <data name="cbTitleLanguage.Items2" xml:space="preserve">
+    <value>Deutsch</value>
+  </data>
+  <data name="lblLOG.Text" xml:space="preserve">
+    <value>Log Level:</value>
+  </data>
+  <data name="grbGeneralDiverse.Text" xml:space="preserve">
+    <value>Mehrere</value>
+  </data>
+  <data name="grbTitleFileLocation.Text" xml:space="preserve">
+    <value>Speicherort der Datei</value>
+  </data>
+  <data name="chkUpdateFileLog.Text" xml:space="preserve">
+    <value>Aktualisierungen an die Protokolldatei anhängen</value>
+  </data>
+  <data name="chkStartWindowMaximized.Text" xml:space="preserve">
+    <value>Startfenster maximiert</value>
+  </data>
+  <data name="lblUpdateInterval.Text" xml:space="preserve">
+    <value>Intervall prüfen:</value>
+  </data>
+  <data name="grbTitleLanguage.Text" xml:space="preserve">
+    <value>Sprache des Titels</value>
   </data>
   <data name="lblLanguage.Text" xml:space="preserve">
     <value>Sprache:</value>
   </data>
-  <data name="grbLog.Text" xml:space="preserve">
-    <value>Aufzeichnung</value>
+  <data name="chkNotify.Text" xml:space="preserve">
+    <value>Taskleistenbenachrichtigungen aktivieren (Standardbenachrichtigungen werden weiterhin normal angezeigt)</value>
   </data>
-  <data name="lblLOG.Size" type="System.Drawing.Size, System.Drawing">
-    <value>81, 13</value>
+  <data name="chkScreensaver.Text" xml:space="preserve">
+    <value>Deaktivieren Sie den Bildschirmschoner (Screensaver)</value>
   </data>
-  <data name="lblLOG.Text" xml:space="preserve">
-    <value>Protokollebene:</value>
+  <data name="grbDolphinAudio.Text" xml:space="preserve">
+    <value>Audio</value>
   </data>
-  <data name="chkManagerLogFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>119, 17</value>
+  <data name="lblNomenclature.Text" xml:space="preserve">
+    <value>Stil der Namensgebung:</value>
   </data>
-  <data name="chkManagerLogFile.Text" xml:space="preserve">
-    <value>In Datei aufnehmen</value>
+  <data name="lblTimeInterval.Text" xml:space="preserve">
+    <value>HINWEIS: Die Einstellung des Zeitintervalls wird erst nach einem Neustart des Programms wirksam.</value>
   </data>
-  <data name="chkManagerLogWindow.Size" type="System.Drawing.Size, System.Drawing">
-    <value>141, 17</value>
+  <data name="chkGeneralExtractNwb.Text" xml:space="preserve">
+    <value>NWB-Dateien (*.nwb)</value>
   </data>
-  <data name="chkManagerLogWindow.Text" xml:space="preserve">
-    <value>Registrierung für Fenster</value>
+  <data name="cbAdjustNamingStyle.Items1" xml:space="preserve">
+    <value>[Spielcode]</value>
   </data>
-  <data name="chkManagerLogDebugConsole.Size" type="System.Drawing.Size, System.Drawing">
-    <value>175, 17</value>
+  <data name="label20.Text" xml:space="preserve">
+    <value>Ähnlich wie XCopy, mit dem Unterschied, dass die in den Dateien vorhandenen Mülldaten (Garbage) bereinigt werden. Die ursprüngliche Dateigröße wird beibehalten. Mülldaten werden entfernt, während die Integrität der anderen Daten erhalten bleibt.</value>
   </data>
-  <data name="chkManagerLogDebugConsole.Text" xml:space="preserve">
-    <value>Protokoll für die Debug-Konsole</value>
+  <data name="label31.Text" xml:space="preserve">
+    <value>Entfernt unnötige Daten (Garbage), indem sie durch einen konstanten Byte-Wert (0xff oder 0x00) ersetzt werden. Die Datei hat eine geringere Größe, die Datenintegrität bleibt jedoch erhalten.</value>
   </data>
-  <data name="chkManagerLogSystemConsole.Size" type="System.Drawing.Size, System.Drawing">
-    <value>194, 17</value>
+  <data name="tabCoverDisc.Text" xml:space="preserve">
+    <value>Scheibe</value>
+  </data>
+  <data name="lblCommentsScrubCopy.Text" xml:space="preserve">
+    <value>Für die Scrub-Methode wird immer der Standard "Titel [Game Code]" verwendet, der auf dem internen Namen (vom Entwickler definiert) basiert. Im Scrub-Kopiermodus werden die Datenträger 1 und 2 immer in getrennten Ordnern gespeichert, außer in bestimmten Fällen, in denen die Erkennungsmethode gemeinsame, vom Entwickler vergebene Namen identifizieren kann. In diesem Fall werden die Datenträger 1 und 2 im selben Ordner gespeichert.</value>
+  </data>
+  <data name="cbTitleLanguage.Items6" xml:space="preserve">
+    <value>Portugiesisch</value>
+  </data>
+  <data name="grbGeneralFileSize.Text" xml:space="preserve">
+    <value>Größe anzeigen</value>
+  </data>
+  <data name="grbGeneralFiles.Text" xml:space="preserve">
+    <value>Dateien</value>
+  </data>
+  <data name="tabSettingsLog.Text" xml:space="preserve">
+    <value>Datensatz</value>
+  </data>
+  <data name="cbLevelLog.Items2" xml:space="preserve">
+    <value>Vollständig</value>
+  </data>
+  <data name="chkUpdateVerifyStart.Text" xml:space="preserve">
+    <value>Beim Starten auf Aktualisierungen prüfen</value>
+  </data>
+  <data name="cbTitleLanguage.Items7" xml:space="preserve">
+    <value>Japanisch</value>
   </data>
   <data name="chkManagerLogSystemConsole.Text" xml:space="preserve">
     <value>Registrierung für die Systemkonsole</value>
@@ -664,104 +336,160 @@
   <data name="cbLevelLog.Items" xml:space="preserve">
     <value>Informativ</value>
   </data>
+  <data name="tabCoverFull.Text" xml:space="preserve">
+    <value>Vollständig</value>
+  </data>
+  <data name="grbDolphin.Text" xml:space="preserve">
+    <value>Emulator konfigurieren</value>
+  </data>
+  <data name="grpCoversSynchronize.Text" xml:space="preserve">
+    <value>Synchronisieren</value>
+  </data>
+  <data name="lblCommentsExactCopy.Text" xml:space="preserve">
+    <value>Der Benennungsstil funktioniert derzeit nur bei exakten Kopien von Dateien (1:1) und kann sowohl den internen Namen als auch den kommerziellen Namen (über wiitdb.xml) verwenden. Diese Option kann vom Benutzer auf der Registerkarte "Titel" konfiguriert werden. Im Modus der exakten Kopie (1:1) werden die Datenträger 1 und 2 immer im selben Ordner gespeichert.</value>
+  </data>
+  <data name="label35.Text" xml:space="preserve">
+    <value>Speicherort des Ordners:</value>
+  </data>
+  <data name="grbCoverTransfer.Text" xml:space="preserve">
+    <value>USB-Ladegerät einrichten (Abdeckungen übertragen -&gt; Ziel)</value>
+  </data>
+  <data name="chkManagerLogWindow.Text" xml:space="preserve">
+    <value>Anmeldung für Fenster</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>Speicherort des Ordners:</value>
+  </data>
+  <data name="lblComments.Text" xml:space="preserve">
+    <value>KOMMENTARE:</value>
+  </data>
+  <data name="tabSettingsNomenclature.Text" xml:space="preserve">
+    <value>Nomenklatur</value>
+  </data>
+  <data name="grpTitlesCoverFolder.Text" xml:space="preserve">
+    <value>Ordner "Covers" (Cache -&gt; Origin)</value>
+  </data>
+  <data name="grbGeneralPartitions.Text" xml:space="preserve">
+    <value>Spielverzeichnisse anpassen</value>
+  </data>
+  <data name="tabSettingsTitle.Text" xml:space="preserve">
+    <value>Titel</value>
+  </data>
+  <data name="cbGeneralFileSize.Items2" xml:space="preserve">
+    <value>Megabyte</value>
+  </data>
+  <data name="grbTitleDiverse.Text" xml:space="preserve">
+    <value>Sonstiges (Neustart des Programms erforderlich, um wirksam zu werden)</value>
+  </data>
+  <data name="lblLanguageComments.Text" xml:space="preserve">
+    <value>HINWEIS: Die Änderung der Spracheinstellung wird erst nach einem Neustart des Programms wirksam.</value>
+  </data>
+  <data name="cbVerificationInterval.Items2" xml:space="preserve">
+    <value>15 Minuten</value>
+  </data>
   <data name="cbLevelLog.Items1" xml:space="preserve">
     <value>Zusammengefasst</value>
   </data>
-  <data name="cbLevelLog.Items2" xml:space="preserve">
-    <value>Vollständig</value>
+  <data name="chkGeneralTemporaryBuffer.Text" xml:space="preserve">
+    <value>Übertragungen im temporären Speicher (Puffer) verwenden</value>
+  </data>
+  <data name="cbTitleLanguage.Items4" xml:space="preserve">
+    <value>Italienisch</value>
+  </data>
+  <data name="chkLoadDatabase.Text" xml:space="preserve">
+    <value>Datenbank beim Programmstart laden (erhöht die Programmstartzeit)</value>
+  </data>
+  <data name="tabSettingsSeveral.Text" xml:space="preserve">
+    <value>Mehrere</value>
+  </data>
+  <data name="cbVerificationInterval.Items" xml:space="preserve">
+    <value>5 Minuten</value>
+  </data>
+  <data name="chkGeneralExtractRar.Text" xml:space="preserve">
+    <value>RAR-Dateien (*.rar)</value>
+  </data>
+  <data name="rbGeneralDiscClean.Text" xml:space="preserve">
+    <value>Alle Ordner für Laufwerk 1 und Laufwerk 2 getrennt halten (Standard)</value>
   </data>
   <data name="btnRestore.Text" xml:space="preserve">
-    <value>Einstellungen zurücksetzen</value>
+    <value>Einstellungen wiederherstellen</value>
   </data>
-  <data name="btnCancel.Text" xml:space="preserve">
-    <value>Schließen</value>
+  <data name="tabSettingsTransfer.Text" xml:space="preserve">
+    <value>Spiel übertragen</value>
   </data>
-  <data name="fbd.Description" xml:space="preserve">
-    <value>Verzeichnis erstellen oder auswählen:</value>
+  <data name="chkNetVerify.Text" xml:space="preserve">
+    <value>Prüfen Sie die Internetverbindung beim Programmstart</value>
   </data>
-  <data name="btnApply.Text" xml:space="preserve">
-    <value>Anwenden</value>
+  <data name="chkGameTitleCustom.Text" xml:space="preserve">
+    <value>Benutzerdefinierte Titel verwenden (custom-titles.txt)</value>
   </data>
-  <data name="notifyIcon.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        AAABAAEAICAAAAEAIACoEAAAFgAAACgAAAAgAAAAQAAAAAEAIAAAAAAAABAAAN0AAADdAAAAAAAAAAAA
-        AAD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
-        /wD///8A////AP///wD///8AAAAAEgIEB+kAAAD/AAAA/wEBAvsAAAA8////AP///wD///8A////AP//
-        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
-        /wD///8A////AP///wAAAAA7AAAAF////wAAAAApAAAA/zl+rf8/i7//CBAY+QAAAGn///8AAAAABgAA
-        AEcAAAAG////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
-        /wD///8A////AP///wD///8AAAICeQAAAP8CBgfhAAAAggEDBesGDRL6ULH0/1S5//8YM0f4AQID+AAA
-        AJoBBAa4AAAA/wMEB7YAAAAG////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
-        /wD///8A////AP///wD///8A////AAACAnkBAgL9NXSg/xcxRPkIExn3K1+D/0yo6P9Uuf//VLn//1Gy
-        9v80c57/DiEt+AsYIfg6gLH/Bg4T+gMEB7YAAAAG////AP///wD///8A////AP///wD///8A////AP//
-        /wD///8A////AP///wD///8A////AP///wAAAAAHAAAA/yVScf9Uuf//VLn//1S5//9Uuf//VLn//1S5
-        //9Uuf//VLn//1S5//9Uuf//VLn//1S5//86f6//AAAA/wAAAEf///8A////AP///wD///8A////AP//
-        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wAAAgJ7AQID/Uqk4v9Uuf//VLn//1K1
-        +v8yb5n/IUZf/x4+U/8sYYb/Tarr/1S5//9Uuf//VLn//woXH/gBBAa4AAAABv///wD///8A////AP//
-        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AAAAAFoBAwT9Tarq/1S5
-        //9Jot//FCQv/xIUFv9eX2D/bGxs/yQnKf8LERX/PYe6/1S5//9Uuf//DiEt+AAAAJr///8A////AP//
-        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AAAAACIAAABoAQQF1B1C
-        WvxUuf//VLj+/xkvP/84Ojv/6+vr////////////+/v7/2tra/8MExj/T67w/1S5//80cp3/AQID+AAA
-        AGkAAAA8////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8AAwcJwAUL
-        D/sOIS33R53Y/1S5//9BjsT/AwQE/+Hh4f//////////////////////+vr6/yUoKv8tY4j/VLn//1Gy
-        9v8YM0f4CBAY+QEBAvv///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
-        /wAECArIKlx//1S5//9Uuf//VLn//zBrk/8mKiz/////////////////////////////////aWlp/yNI
-        Yf9Uuf//VLn//1S5//8/i7//AAAA/////wD///8A////AP///wD///8A////AP///wD///8A////AP//
-        /wD///8A////AAQICsgmU3P/Tq3u/1S5//9Uuf//NHOe/xseIP//////////////////////////////
-        //+9vsD/MmqQ/1S5//9Uuf//ULH0/zl+rf8AAAD/////AP///wD///8A////AP///wD///8A////AP//
-        /wD///8A////AP///wD///8AAwYJqQAAAP8BAgP9PYe6/1S5//9Gm9b/AQEB/8HBwf//////////////
-        /////////////9Ds//9Uuf//VLn//0yo6P8GDRL6AAAA/wIEB+n///8A////AP///wD///8A////AP//
-        /wD///8A////AP///wD///8A////AP///wAAAAAIAAAAKAEBA7MULT75VLn//1S5//8kTGf/Fxka/8HB
-        wf////////////////+MkZT/RX2k/1S5//9Uuf//LGKH/wIDBewAAAApAAAAEv///wD///8A////AP//
-        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8AAAAAQgAAAP9Jot//VLn//1Gy
-        9f8kTGf/AQEB/xseIP+NmqP/t+H//1uw6/9Ore7/VLn//1S5//8KFx/2AAAAif///wD///8A////AP//
-        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AAAAAAEDBAe2Bw8U+U6t
-        7v9Uuf//VLn//1S5//9Gm9b/NHOe/0WX0P9Uuf//VLn//1S5//9Uuf//VLn//xYvQvkCBAfkAAAAF///
-        /wD///8A////AP///wD///8A////AP///wAAAAA8AAAAoAAAAKAAAACTAAAADP///wD///8AAAAABQEC
-        A/gfRV/+VLn//06s7f9Jot//VLn//1S5//9Uuf//VLn//1S5//9Uuf//T67w/0ul4/9Uuf//NHOf/wAA
-        AP8AAAA7////AP///wD///8A////AAAAABoAAAAO////AAcGBLUpJRz/X1VA/wMDAv0AAABQ////AAAA
-        AB0AAAALAAAAQgEDBPkfRV/+Bg4T+gAAAP8ULT75PYe6/1S5//9Uuf//R53Z/x5EXvwCBQb7AQIC/SVR
-        b/8BAgL9AAICef///wD///8A////AP///wAAAABIAgIC+gcHBd0CAgKnAgIB/Ip8Xv//5a3/JCAY+AQE
-        A+oAAACXAgEB/QcHBdQAAAASAAAAQgECA/gDBAe2AAAAQgEBA7MBAgP9Tq3u/1S5//8OIS33AQIE2AAA
-        AGIAAAB/AAAA/wACAnn///8A////AP///wD///8AAAAARAMCAvt5bFL/SkMy+DozJ/ipmHP//eOs///l
-        rf/q0p//hHda/ysnHfWGeFv/LCge+QcHBdQAAAAOAAAABQAAAAH///8AAAAAKAAAAP8mU3P/Klx//wUL
-        D/sAAABo////AP///wAAAAAH////AP///wD///8A////AP///wACAgCMCQgG/NrElP//5a3//+Wt///l
-        rf/23af/38iX//7krP//5a3//+Wt///lrf+GeFv/AQEB/QAAAC////8A////AP///wAAAAAIAwYJqQQI
-        CsgECArIAwcJwAAAACL///8A////AP///wD///8A////AP///wD///8A////AAAAAAYCAgLzjX9g///l
-        rf/o0J3/VU07/wQEA/8AAAD/EhEO/5KDY//+5Kz//+Wt/ysnHfUAAACd////AP///wD///8A////AP//
-        /wD///8A////AP///wD///8AAwMLnwICBfUCAgX1BAQMr////wD///8A////AP///wAAAAAqAAAAeAEB
-        Af7ex5f//OKr/zUwJv8lJST/l5eX/9HR0f9vb2//CAgH/5KDY///5a3/hHda/wQEA+sAAABQAAAADP//
-        /wD///8A////AP///wAAAAAcAAAAKwAAAEcBAQT0KCht/ywseP8BAQP6AAAAUAAAACEAAAAQ////AAMD
-        AvYIBwX8a19I+f/lrf+xn3j/AAAA/8/Pz/////////////////9vb2//EhEO//7krP/q0p//JiIa+AMD
-        Av0AAACT////AP///wD///8AAAAAAgICB9IAAAD+AAAA/x8fV/tZWfX/W1v6/yMjYvwAAAH+AAAA/gIC
-        COAAAAAFAAAA/7+sgv//5a3//+Wt/39yVv8xMC///////////////////////9HR0f8AAAD/38iX///l
-        rf//5a3/X1VA/wAAAKD///8A////AP///wAAAABjAwMJ+0FBsf9LS87/SkrK/yYmYP8kJFn/R0fE/01N
-        0/9CQrT/BgYP+QAAAHMAAAD/U0s4/76rgf//5a3/m4tp/wkJCP/u7u7/////////////////l5eX/wQE
-        A//23af//eOs/4x+X/8pJRz/AAAAn////wD///8A////AAMDCKoICBf7VVXp/0pKyv8DAwX/XV1g/2Vl
-        Z/8FBQj/RES6/1hY8f8LCx77AgIGzgYGBIEEBAPLDQwJ+fbdp//mz5z/Dw4M/2ZmZv/u7u7//////8/P
-        z/8lJST/VU07///lrf+tm3X/AgIB/AcGBLUAAAA8////AP///wD///8AAAAAEgAAAf5BQbP/JiZg/11d
-        YP///////////25ucP8iIlD/R0fD/wAAAP8AAAAf////AAAAABEDAwL4n49s///lrf+vnXf/Dw4M/wkJ
-        CP8xMC//AAAA/zUwJv/o0J3//+Wt/0Q8LfkDAwGt////AP///wD///8A////AP///wAAAAALAAAB/kFB
-        s/8kJFn/ZWVn////////////dnZ3/x8fSf9HR8P/AAAA/wAAABj///8AAAAATgICAf2vnXf//+Wt///l
-        rf/mz5z/m4tp/39yVv+xn3j//OKr///lrf//5a3/TUU0+QcHBeAAAAAS////AP///wD///8A////AAMD
-        CKUHBxP6VFTm/0dHxP8FBQj/bm5w/3Z2d/8JCQz/QkK0/1dX7/8JCRr6AwMGyf///wACAgCECAcF/M24
-        i/+wnnf/ppVx//jfqP//5a3//+Wt///lrf/jzJr/lIVk/9rElP95bFL/AgIC+gAAACv///8A////AP//
-        /wD///8AAAAAbAUFDfpGRsH/UFDb/0REuv8iIlD/Hx9J/0JCtP9RUd7/R0fE/wgIFvkAAAB8////AAAA
-        AAIFBQOhCAcF/AEBAf0CAgH6Dw0K+sCsgv//5a3/bmNK+gICAf4CAgH3CQgG/AMCAvsAAABI////AP//
-        /wD///8A////AP///wAAAAADAgII2wAAAP8AAAH+IyNi/Fpa9/9cXPz/KCht/QEBA/0AAAD/AgIH5QAA
-        AAj///8A////AAAAAAICAgJzAAAATAAAABMEBAPLU0s4/7+sgv8IBwX8AAAAeQAAAAgCAgJ6AAAAQf//
-        /wD///8A////AP///wD///8A////AP///wAAAAAiAAAANAAAAFcBAQT2LCx5/zExhf8BAQL6AAAAYAAA
-        ACwAAAAY////AP///wD///8A////AP///wD///8A////AAYGBIEAAAD/AAAA/wMDAvYAAAAq////AP//
-        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AAQECq0AAAD/AAAA/wQE
-        C77///8A////AP///wD///8A///gf///IEf//gAD//wAAf/4AAH//AAB//wAA//wAAD/8AAA//AAAP/w
-        AAD/8AAA//AAAP/8AAP/+AAB/BgAAeQQAAPAAAAHgAAgb4AA4H+AAf8PAAB4AQAAcAAAAHAAAABwAAAA
-        cACAAfAAgADwAIAA8ACAAfAAwAP4Afwf/w8=
-</value>
+  <data name="tabSettingsUpdates.Text" xml:space="preserve">
+    <value>Aktualisierungen</value>
+  </data>
+  <data name="rbTransferSystemXCopy.Text" xml:space="preserve">
+    <value>XCopy (Standard)</value>
+  </data>
+  <data name="label28.Text" xml:space="preserve">
+    <value>FST (FileSystem Table) ist ein in ein Verzeichnis extrahiertes Dateisystem, das alle realen und virtuellen Dateien eines Archivs enthält. Nintendont verwendet die FST-Dateien, um ein internes virtuelles ISO-Image zu erstellen und das Spiel von diesem virtuellen ISO zu laden.</value>
+  </data>
+  <data name="chkGeneralRecursiva.Text" xml:space="preserve">
+    <value>Verzeichnisse rekursiv durchsuchen (nur für das Fenster "Dateien (Quelle)")</value>
+  </data>
+  <data name="chkUpdateBetaChannel.Text" xml:space="preserve">
+    <value>Umschalten auf BETA-Kanal-Updates</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Einstellungen</value>
+  </data>
+  <data name="cbTitleLanguage.Items" xml:space="preserve">
+    <value>Englisch</value>
+  </data>
+  <data name="chkGeneralExtractZip.Text" xml:space="preserve">
+    <value>Zip-Dateien (*.zip)</value>
+  </data>
+  <data name="lblAlignment.Text" xml:space="preserve">
+    <value>Ausrichtung:</value>
+  </data>
+  <data name="chkGeneralSHA1.Text" xml:space="preserve">
+    <value>Überprüfung der SHA-1-Signatur bei Übertragungen</value>
+  </data>
+  <data name="lblGeneralExtract.Text" xml:space="preserve">
+    <value>Extrahieren Sie, wenn nötig.</value>
   </data>
   <data name="ofdDolphin.Filter" xml:space="preserve">
     <value>Delphin-Emulator|dolphin.exe</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Einstellungen</value>
+  <data name="rbDSPHLE.Text" xml:space="preserve">
+    <value>DSP HLE (Standard)</value>
+  </data>
+  <data name="cbVerificationInterval.Items7" xml:space="preserve">
+    <value>4 Stunden</value>
+  </data>
+  <data name="grpNomenclatureFolderFormat.Text" xml:space="preserve">
+    <value>Format des Ordners</value>
+  </data>
+  <data name="grbGeneralTemporaryFolder.Text" xml:space="preserve">
+    <value>Temporärer Ordner</value>
+  </data>
+  <data name="tabSettingsCovers.Text" xml:space="preserve">
+    <value>Abdeckungen</value>
+  </data>
+  <data name="cbTitleLanguage.Items9" xml:space="preserve">
+    <value>Koreanisch</value>
+  </data>
+  <data name="cbTitleLanguage.Items3" xml:space="preserve">
+    <value>Spanisch</value>
+  </data>
+  <data name="chkGeneralMD5.Text" xml:space="preserve">
+    <value>Berechnung der MD5-Signatur bei Übertragungen</value>
+  </data>
+  <data name="cbScrubAlign.Items" xml:space="preserve">
+    <value>Automatisch</value>
+  </data>
+  <data name="lblUser.Text" xml:space="preserve">
+    <value>Benutzer:</value>
+  </data>
+  <data name="tabSettingsGeneral.Text" xml:space="preserve">
+    <value>Allgemein</value>
   </data>
 </root>

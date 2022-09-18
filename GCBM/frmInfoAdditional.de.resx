@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="lblVersion.Text" xml:space="preserve">
-    <value>AUSFÜHRUNG:</value>
+    <value>VERSION:</value>
   </data>
   <data name="lblRequirements.Text" xml:space="preserve">
-    <value>BEDARF:</value>
+    <value>VORAUSSETZUNGEN:</value>
   </data>
   <data name="lblPlayersOnline.Text" xml:space="preserve">
     <value>ONLINE-SPIELER:</value>
@@ -136,19 +136,19 @@
     <value>TYP:</value>
   </data>
   <data name="lblDateGlobal.Text" xml:space="preserve">
-    <value>(Tag Monat Jahr)</value>
+    <value>(Tag/Monat/Jahr)</value>
   </data>
   <data name="lblInternalName.Text" xml:space="preserve">
     <value>INTERNER NAME:</value>
   </data>
   <data name="lblSynopsis.Text" xml:space="preserve">
-    <value>ZUSAMMENFASSUNG:</value>
+    <value>SYNOPSIS:</value>
   </data>
   <data name="lblRegion.Text" xml:space="preserve">
     <value>REGION:</value>
   </data>
   <data name="lblDate.Text" xml:space="preserve">
-    <value>START:</value>
+    <value>EINFÜHRUNG:</value>
   </data>
   <data name="lblGenre.Text" xml:space="preserve">
     <value>GENRE:</value>
@@ -163,16 +163,16 @@
     <value>ENTWICKLER:</value>
   </data>
   <data name="lblPublisher.Text" xml:space="preserve">
-    <value>VERLEGER:</value>
+    <value>VERLAG:</value>
   </data>
   <data name="grpInfo.Text" xml:space="preserve">
-    <value>zusätzliche Information</value>
+    <value>Zusätzliche Informationen</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>zusätzliche Information</value>
+    <value>Zusätzliche Informationen</value>
   </data>
   <data name="label12.Text" xml:space="preserve">
-    <value>(Tag Monat Jahr)</value>
+    <value>(Tag/Monat/Jahr)</value>
   </data>
   <data name="label14.Text" xml:space="preserve">
     <value>INHALT:</value>
@@ -181,10 +181,10 @@
     <value>SPIELER:</value>
   </data>
   <data name="label17.Text" xml:space="preserve">
-    <value>BEDARF:</value>
+    <value>VORAUSSETZUNGEN:</value>
   </data>
   <data name="label18.Text" xml:space="preserve">
-    <value>AUSFÜHRUNG:</value>
+    <value>VERSION:</value>
   </data>
   <data name="labelRegion.Text" xml:space="preserve">
     <value>Region:</value>
@@ -193,7 +193,7 @@
     <value>Bewertung:</value>
   </data>
   <data name="labelPublisher.Text" xml:space="preserve">
-    <value>Verleger:</value>
+    <value>Herausgeber:</value>
   </data>
   <data name="labelDeveloper.Text" xml:space="preserve">
     <value>Entwickler:</value>
@@ -205,6 +205,6 @@
     <value>Genre:</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>ZUSAMMENFASSUNG:</value>
+    <value>SYNOPSIS:</value>
   </data>
 </root>

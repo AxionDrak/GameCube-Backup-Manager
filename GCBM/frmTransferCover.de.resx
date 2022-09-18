@@ -130,18 +130,18 @@
     <value>Japan</value>
   </data>
   <data name="btnClose.Text" xml:space="preserve">
-    <value>Nah dran</value>
+    <value>Schließen Sie</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Übertragen Sie Abdeckungen</value>
+    <value>Abdeckungen übertragen</value>
   </data>
   <data name="lblTransferStatus.Text" xml:space="preserve">
-    <value>Warten...</value>
+    <value>Ich warte...</value>
   </data>
   <data name="btnTaskIndeterminate.Text" xml:space="preserve">
-    <value>Transfer</value>
+    <value>Übertragung</value>
   </data>
   <data name="chkTransferAllRegions.Text" xml:space="preserve">
-    <value>Laden Sie Skins aus allen Regionen herunter</value>
+    <value>Skins aus allen Regionen herunterladen</value>
   </data>
 </root>

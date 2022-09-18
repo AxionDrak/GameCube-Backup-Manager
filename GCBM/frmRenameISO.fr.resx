@@ -118,18 +118,18 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="chkRenameISO.Text" xml:space="preserve">
-    <value>Supprimer automatiquement les espaces et conserver le nom d'origine</value>
+    <value>Supprimez automatiquement les espaces et conservez le nom original.</value>
   </data>
   <data name="btnCancel.Text" xml:space="preserve">
-    <value>Proche</value>
+    <value>Annuler</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Saisissez le nouveau nom du fichier (n'oubliez pas d'inclure l'extension) :</value>
+    <value>Saisissez le nouveau nom du fichier (n'oubliez pas d'inclure l'extension) :</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Renommer ISO/GCM</value>
+    <value>Renommer l'ISO/GCM</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>ATTENTION : si vous avez l'intention d'utiliser la méthode de transfert Scrub, NE LAISSEZ PAS d'espaces vides dans le nom du fichier !</value>
+    <value>ATTENTION : Si vous avez l'intention d'utiliser la méthode de transfert Scrub, NE laissez PAS d'espaces vides dans le nom du fichier !</value>
   </data>
 </root>

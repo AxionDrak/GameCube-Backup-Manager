@@ -118,49 +118,49 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="label11.Text" xml:space="preserve">
-    <value>La description:</value>
+    <value>Description :</value>
   </data>
   <data name="groupBox3.Text" xml:space="preserve">
     <value>Détails de la bannière</value>
   </data>
   <data name="label10.Text" xml:space="preserve">
-    <value>Développeur:</value>
+    <value>Développeur :</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
-    <value>Région:</value>
+    <value>Région :</value>
   </data>
   <data name="label6.Text" xml:space="preserve">
-    <value>Développeur:</value>
+    <value>Développeur :</value>
   </data>
   <data name="label8.Text" xml:space="preserve">
-    <value>Langue:</value>
+    <value>Langue :</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Chemin:</value>
+    <value>Chemin :</value>
   </data>
   <data name="label7.Text" xml:space="preserve">
-    <value>Date de chargement de l'application :</value>
+    <value>Apploader Date :</value>
   </data>
   <data name="label9.Text" xml:space="preserve">
-    <value>Nom:</value>
+    <value>Nom :</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Détails du fichier</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>Format de fichier:</value>
+    <value>Format de fichier :</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
-    <value>Nom:</value>
+    <value>Nom :</value>
   </data>
   <data name="btnClose.Text" xml:space="preserve">
-    <value>proche</value>
+    <value>Fermer</value>
   </data>
   <data name="groupBox2.Text" xml:space="preserve">
     <value>Détails du jeu</value>
   </data>
   <data name="label4.Text" xml:space="preserve">
-    <value>Identifiant de jeu:</value>
+    <value>ID du jeu :</value>
   </data>
   <data name="grpDetailsSource.Text" xml:space="preserve">
     <value>Détails</value>

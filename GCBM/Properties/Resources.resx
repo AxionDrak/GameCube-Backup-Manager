@@ -140,7 +140,7 @@
     <value>Tem certeza de que deseja excluir o plugin?</value>
   </data>
   <data name="GCBM_Language" xml:space="preserve">
-    <value>Portuguese [Brazil]</value>
+    <value>Portugês [Brasil]</value>
   </data>
   <data name="EmptyGamesList" xml:space="preserve">
     <value>A lista de jogos está vazia!</value>
@@ -580,7 +580,7 @@
   <data name="AboutTranslator" xml:space="preserve">
     <value>Tradutor: </value>
   </data>
-  <data name="DownloadDiscCoverError" xml:space="preserve">
+  <data name=" " xml:space="preserve">
     <value> [ERRO] Falha ao efetuar download da capa (Disco)!</value>
   </data>
   <data name="CheckUSBGXFlow_String2" xml:space="preserve">
@@ -816,5 +816,23 @@
   </data>
   <data name="InstallGameScrub_DoneScrubbing" xml:space="preserve">
     <value>Esfoliação finalizada...</value>
+  </data>
+  <data name="SelectLanguagePrompt" xml:space="preserve">
+    <value>Por favor, seleccione a sua língua preferida:</value>
+  </data>
+  <data name="LanguagePromptConfirm" xml:space="preserve">
+    <value>É esta a língua que gostaria de utilizar?</value>
+  </data>
+  <data name="LanguagePromptTitle" xml:space="preserve">
+    <value>Seleccione a sua língua:</value>
+  </data>
+  <data name="DownloadDiscCoverError" xml:space="preserve">
+    <value>[Falha no descarregamento das capas (Disco)</value>
+  </data>
+  <data name="LanguagePromptConfirmTitle" xml:space="preserve">
+    <value>Consegue compreender isto?</value>
+  </data>
+  <data name="LanguageIndonesian" xml:space="preserve">
+    <value>indonésio</value>
   </data>
 </root>

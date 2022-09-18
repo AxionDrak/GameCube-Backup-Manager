@@ -118,19 +118,19 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="labelLogELFtoDOL.Text" xml:space="preserve">
-    <value>Enregistrer:</value>
+    <value>Journal :</value>
   </data>
   <data name="btnCancel.Text" xml:space="preserve">
-    <value>Proche</value>
+    <value>Annuler</value>
   </data>
   <data name="btnConvertELF.Text" xml:space="preserve">
     <value>Convertir</value>
   </data>
   <data name="label4.Text" xml:space="preserve">
-    <value>Une autre solution, proposée par Cheapo, est de renommer (et non de convertir) chaque 'boot.elf' valide en 'boot.dol'. HBC devrait toujours charger le fichier parfaitement et ce programme ignorera le fichier. Ce n'est pas idéal, mais nous sommes tous des hackers ici, n'est-ce pas ?</value>
+    <value>Une autre solution, proposée par Cheapo, consiste à renommer (et non à convertir) chaque fichier 'boot.elf' valide en 'boot.dol'. HBC devrait toujours charger le fichier parfaitement et ce programme ignorera le fichier. Ce n'est pas idéal, mais nous sommes tous des hackers ici, non ?</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
-    <value>Vous pouvez utiliser pratiquement n'importe quel fichier .ELF publié avant octobre 2008.</value>
+    <value>Vous pouvez utiliser pratiquement tous les fichiers .ELF publiés avant octobre 2008.</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Convertir ELF -&gt; DOL</value>

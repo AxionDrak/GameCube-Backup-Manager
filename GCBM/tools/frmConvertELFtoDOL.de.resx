@@ -121,13 +121,13 @@
     <value>Protokoll:</value>
   </data>
   <data name="btnCancel.Text" xml:space="preserve">
-    <value>Schließen</value>
+    <value>Abbrechen</value>
   </data>
   <data name="btnConvertELF.Text" xml:space="preserve">
     <value>Konvertieren</value>
   </data>
   <data name="label4.Text" xml:space="preserve">
-    <value>Eine andere von Cheapo angebotene Lösung besteht darin, jede gültige „boot.elf“ in „boot.dol“ umzubenennen (nicht zu konvertieren). HBC sollte die Datei immer noch perfekt laden und dieses Programm wird die Datei ignorieren. Es ist nicht ideal, aber wir sind hier alle Hacker, richtig?</value>
+    <value>Eine andere, von Cheapo angebotene Lösung besteht darin, jede gültige "boot.elf" in "boot.dol" umzubenennen (nicht zu konvertieren). HBC sollte die Datei immer noch perfekt laden und dieses Programm wird die Datei ignorieren. Das ist nicht ideal, aber wir sind ja alle Hacker, oder?</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
     <value>Sie können praktisch jede .ELF-Datei verwenden, die vor Oktober 2008 veröffentlicht wurde.</value>

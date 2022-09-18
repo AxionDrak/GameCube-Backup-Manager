@@ -1539,4 +1539,25 @@
   <data name="label18.Text" xml:space="preserve">
     <value>VERSIÓN:</value>
   </data>
+  <data name="labelRegion.Text" xml:space="preserve">
+    <value>Região:</value>
+  </data>
+  <data name="labelRating.Text" xml:space="preserve">
+    <value>Classificação:</value>
+  </data>
+  <data name="labelPublisher.Text" xml:space="preserve">
+    <value>Editora:</value>
+  </data>
+  <data name="labelDeveloper.Text" xml:space="preserve">
+    <value>Desenvolvedor:</value>
+  </data>
+  <data name="labelDate.Text" xml:space="preserve">
+    <value>Data:</value>
+  </data>
+  <data name="labelGenre.Text" xml:space="preserve">
+    <value>Género:</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>SINOPSE:</value>
+  </data>
 </root>

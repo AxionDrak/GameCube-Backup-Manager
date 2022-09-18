@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="cbGeneralFileSize.Items3" xml:space="preserve">
+    <value>Gigabyte</value>
+  </data>
+  <data name="chkManagerLogDebugConsole.Text" xml:space="preserve">
+    <value>Napló a hibakereső konzolhoz</value>
+  </data>
+  <data name="chkCoverEnableTransfer.Text" xml:space="preserve">
+    <value>A bőrök eszközök közötti átvitelének lehetővé tétele</value>
+  </data>
+  <data name="chkManagerLogFile.Text" xml:space="preserve">
+    <value>Record to File</value>
+  </data>
+  <data name="cbVerificationInterval.Items1" xml:space="preserve">
+    <value>10 perc</value>
+  </data>
+  <data name="cbVerificationInterval.Items6" xml:space="preserve">
+    <value>3 óra</value>
+  </data>
+  <data name="cbVerificationInterval.Items4" xml:space="preserve">
+    <value>1 óra</value>
+  </data>
+  <data name="cbVerificationInterval.Items5" xml:space="preserve">
+    <value>2 óra</value>
+  </data>
+  <data name="chkCoverRecursiveSearch.Text" xml:space="preserve">
+    <value>Rekurzív bőrkeresés használata (keresés minden régióban)</value>
+  </data>
+  <data name="chkGeneralExtractBZip2.Text" xml:space="preserve">
+    <value>BZip2 fájlok (*.bz;*.bzip2)</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>A mappa helye:</value>
+  </data>
+  <data name="chkCoverSynchronizeDelete.Text" xml:space="preserve">
+    <value>A listán nem szereplő játékok bőrének törlése</value>
+  </data>
+  <data name="lblServerProxy.Text" xml:space="preserve">
+    <value>Proxy-kiszolgáló:</value>
+  </data>
+  <data name="cbTitleLanguage.Items5" xml:space="preserve">
+    <value>Holland</value>
+  </data>
+  <data name="label17.Text" xml:space="preserve">
+    <value>Egy vagy több fájl másolása egy helyről (forrás) egy másik helyre (cél). A fájl nincs tömörítve, nem része semmilyen tárolónak, és nem távolít el szemétadatokat.</value>
+  </data>
+  <data name="rbGameXmlName.Text" xml:space="preserve">
+    <value>Használja a játék kereskedelmi nevét a wiitdb.xml fájlon keresztül (AJÁNLOTT! - wiitdb.xml fájl szükséges)</value>
+  </data>
+  <data name="cbTitleLanguage.Items11" xml:space="preserve">
+    <value>Egyszerűsített kínai</value>
+  </data>
+  <data name="cbTitleLanguage.Items10" xml:space="preserve">
+    <value>Hagyományos kínai</value>
+  </data>
+  <data name="chkGeneralExtract7z.Text" xml:space="preserve">
+    <value>7Zip fájlok (*.7z;*.7zip)</value>
+  </data>
+  <data name="grbDolphinFolder.Text" xml:space="preserve">
+    <value>Az emulátor elérési útvonala</value>
+  </data>
+  <data name="grbLanguage.Text" xml:space="preserve">
+    <value>Válassza ki az alapértelmezett nyelvet:</value>
+  </data>
+  <data name="tabSettingsLanguage.Text" xml:space="preserve">
+    <value>Nyelvek</value>
+  </data>
+  <data name="grbLog.Text" xml:space="preserve">
+    <value>Rekord</value>
+  </data>
+  <data name="cbAdjustNamingStyle.Items" xml:space="preserve">
+    <value>Cím [Játékkód]</value>
+  </data>
+  <data name="grbDolphinVideo.Text" xml:space="preserve">
+    <value>Videó</value>
+  </data>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>Törölje</value>
+  </data>
+  <data name="chkMultipleInstances.Text" xml:space="preserve">
+    <value>Lehetővé teszi a program több példányának futtatását</value>
+  </data>
+  <data name="fbd.Description" xml:space="preserve">
+    <value>Hozzon létre vagy válasszon ki egy könyvtárat:</value>
+  </data>
+  <data name="grbUpdate.Text" xml:space="preserve">
+    <value>Beállítások frissítése</value>
+  </data>
+  <data name="chkGeneralScrubFlushSD.Text" xml:space="preserve">
+    <value>A fájlpufferek törlése, így az SD-kártya szinte azonnal kivehető</value>
+  </data>
+  <data name="rbGameInternalName.Text" xml:space="preserve">
+    <value>Belső gyártási név használata a játékhoz (75%-ban támogatott)</value>
+  </data>
+  <data name="cbTitleLanguage.Items1" xml:space="preserve">
+    <value>Francia</value>
+  </data>
+  <data name="chkGameTitle.Text" xml:space="preserve">
+    <value>GameTDB használata (titles.txt)</value>
+  </data>
+  <data name="chkGeneralExtractSplitFile.Text" xml:space="preserve">
+    <value>Osztott fájlok (*.001)</value>
+  </data>
+  <data name="rbGeneralDiscDelete.Text" xml:space="preserve">
+    <value>Csak az 1. lemez mappáját tartsa meg, és törölje a 2. lemez mappáját (kísérleti)</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>A mappa helye:</value>
+  </data>
+  <data name="cbVerificationInterval.Items3" xml:space="preserve">
+    <value>30 perc</value>
+  </data>
+  <data name="cbGeneralFileSize.Items" xml:space="preserve">
+    <value>Automatikus</value>
+  </data>
+  <data name="lblPass.Text" xml:space="preserve">
+    <value>Jelszó:</value>
+  </data>
+  <data name="chkUpdateServerProxy.Text" xml:space="preserve">
+    <value>Proxy-kiszolgáló használata</value>
+  </data>
+  <data name="lblFormat.Text" xml:space="preserve">
+    <value>Formátum:</value>
+  </data>
+  <data name="cbTitleLanguage.Items8" xml:space="preserve">
+    <value>Orosz</value>
+  </data>
+  <data name="btnApply.Text" xml:space="preserve">
+    <value>Alkalmazás</value>
+  </data>
+  <data name="grbTransferSystem.Text" xml:space="preserve">
+    <value>Használandó átviteli rendszer</value>
+  </data>
+  <data name="cbTitleLanguage.Items2" xml:space="preserve">
+    <value>Német</value>
+  </data>
+  <data name="lblLOG.Text" xml:space="preserve">
+    <value>Naplózási szint:</value>
+  </data>
+  <data name="grbGeneralDiverse.Text" xml:space="preserve">
+    <value>Több</value>
+  </data>
+  <data name="grbTitleFileLocation.Text" xml:space="preserve">
+    <value>Fájl helye</value>
+  </data>
+  <data name="chkUpdateFileLog.Text" xml:space="preserve">
+    <value>Frissítések csatolása a naplófájlhoz</value>
+  </data>
+  <data name="chkStartWindowMaximized.Text" xml:space="preserve">
+    <value>Start ablak maximalizálva</value>
+  </data>
+  <data name="lblUpdateInterval.Text" xml:space="preserve">
+    <value>Ellenőrzési időköz:</value>
+  </data>
+  <data name="grbTitleLanguage.Text" xml:space="preserve">
+    <value>A cím nyelve</value>
+  </data>
+  <data name="lblLanguage.Text" xml:space="preserve">
+    <value>Nyelv:</value>
+  </data>
+  <data name="chkNotify.Text" xml:space="preserve">
+    <value>Feladatsáv-értesítések engedélyezése (az alapértelmezett értesítések továbbra is normál módon jelennek meg)</value>
+  </data>
+  <data name="chkScreensaver.Text" xml:space="preserve">
+    <value>A képernyővédő kikapcsolása (Screensaver)</value>
+  </data>
+  <data name="grbDolphinAudio.Text" xml:space="preserve">
+    <value>Audio</value>
+  </data>
+  <data name="lblNomenclature.Text" xml:space="preserve">
+    <value>Elnevezési stílus:</value>
+  </data>
+  <data name="lblTimeInterval.Text" xml:space="preserve">
+    <value>MEGJEGYZÉS: Az időintervallum beállítása csak a program újraindítása után lép hatályba.</value>
+  </data>
+  <data name="chkGeneralExtractNwb.Text" xml:space="preserve">
+    <value>NWB fájlok (*.nwb)</value>
+  </data>
+  <data name="cbAdjustNamingStyle.Items1" xml:space="preserve">
+    <value>[Játékkód]</value>
+  </data>
+  <data name="label20.Text" xml:space="preserve">
+    <value>Hasonló az XCopy-hoz, azzal a különbséggel, hogy a fájlokban lévő szemét adatokat (garbage) megtisztítja. Az eredeti fájlméret megmarad. A szemét adatok eltávolítása a többi adat integritásának megőrzése mellett történik.</value>
+  </data>
+  <data name="label31.Text" xml:space="preserve">
+    <value>Eltávolítja a felesleges adatokat (garbage) egy konstans bájtértékkel (0xff vagy 0x00) való helyettesítéssel. A fájl mérete kisebb, az adatok integritása azonban megmarad.</value>
+  </data>
+  <data name="tabCoverDisc.Text" xml:space="preserve">
+    <value>Lemez</value>
+  </data>
+  <data name="lblCommentsScrubCopy.Text" xml:space="preserve">
+    <value>A Scrub módszer esetében mindig az alapértelmezett "Title [Game Code]" (cím [játékkód]) lesz használva, a belső név alapján (a fejlesztő által meghatározott). Scrub másolási módban az 1. és 2. lemez mindig külön mappákban lesz tárolva, kivéve azokat a különleges eseteket, amikor az észlelési módszer képes azonosítani a fejlesztő által megadott közös neveket, ebben az esetben az 1. és 2. lemezek ugyanabban a mappában lesznek tárolva.</value>
+  </data>
+  <data name="cbTitleLanguage.Items6" xml:space="preserve">
+    <value>Portugál</value>
+  </data>
+  <data name="grbGeneralFileSize.Text" xml:space="preserve">
+    <value>Méret megjelenítése</value>
+  </data>
+  <data name="grbGeneralFiles.Text" xml:space="preserve">
+    <value>Fájlok</value>
+  </data>
+  <data name="tabSettingsLog.Text" xml:space="preserve">
+    <value>Rekord</value>
+  </data>
+  <data name="cbLevelLog.Items2" xml:space="preserve">
+    <value>Teljes</value>
+  </data>
+  <data name="chkUpdateVerifyStart.Text" xml:space="preserve">
+    <value>Frissítések keresése indításkor</value>
+  </data>
+  <data name="cbTitleLanguage.Items7" xml:space="preserve">
+    <value>Japán</value>
+  </data>
+  <data name="chkManagerLogSystemConsole.Text" xml:space="preserve">
+    <value>Regisztráció a rendszerkonzolhoz</value>
+  </data>
+  <data name="cbLevelLog.Items" xml:space="preserve">
+    <value>Informatív</value>
+  </data>
+  <data name="tabCoverFull.Text" xml:space="preserve">
+    <value>Teljes</value>
+  </data>
+  <data name="grbDolphin.Text" xml:space="preserve">
+    <value>Emulátor konfigurálása</value>
+  </data>
+  <data name="grpCoversSynchronize.Text" xml:space="preserve">
+    <value>Szinkronizálás</value>
+  </data>
+  <data name="lblCommentsExactCopy.Text" xml:space="preserve">
+    <value>A névadási stílus jelenleg csak a fájlok pontos másolásával működik (1:1), és mind a belső nevet, mind a kereskedelmi nevet használhatja (a wiitdb.xml fájlon keresztül). Ezt az opciót a felhasználó konfigurálhatja a 'Címek' fülön. Pontos másolás (1:1) módban az 1. és 2. lemez mindig ugyanabban a mappában lesz tárolva.</value>
+  </data>
+  <data name="label35.Text" xml:space="preserve">
+    <value>A mappa helye:</value>
+  </data>
+  <data name="grbCoverTransfer.Text" xml:space="preserve">
+    <value>USB-töltő beállítása (Átviteli fedelek -&gt; Célállomás)</value>
+  </data>
+  <data name="chkManagerLogWindow.Text" xml:space="preserve">
+    <value>Regisztráció az ablakra</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>A mappa helye:</value>
+  </data>
+  <data name="lblComments.Text" xml:space="preserve">
+    <value>MEGJEGYZÉSEK:</value>
+  </data>
+  <data name="tabSettingsNomenclature.Text" xml:space="preserve">
+    <value>Nómenklatúra</value>
+  </data>
+  <data name="grpTitlesCoverFolder.Text" xml:space="preserve">
+    <value>Covers mappa (Cache -&gt; Origin)</value>
+  </data>
+  <data name="grbGeneralPartitions.Text" xml:space="preserve">
+    <value>Játékkönyvtárak beállítása</value>
+  </data>
+  <data name="tabSettingsTitle.Text" xml:space="preserve">
+    <value>Címek</value>
+  </data>
+  <data name="cbGeneralFileSize.Items2" xml:space="preserve">
+    <value>Megabájt</value>
+  </data>
+  <data name="grbTitleDiverse.Text" xml:space="preserve">
+    <value>Egyéb (a program újraindítása szükséges a hatálybalépéshez)</value>
+  </data>
+  <data name="lblLanguageComments.Text" xml:space="preserve">
+    <value>MEGJEGYZÉS: A nyelvi beállítások módosítása csak a program újraindítása után lép hatályba.</value>
+  </data>
+  <data name="cbVerificationInterval.Items2" xml:space="preserve">
+    <value>15 perc</value>
+  </data>
+  <data name="cbLevelLog.Items1" xml:space="preserve">
+    <value>Összefoglalva</value>
+  </data>
+  <data name="chkGeneralTemporaryBuffer.Text" xml:space="preserve">
+    <value>Az ideiglenes memóriában (pufferben) történő átvitel használata</value>
+  </data>
+  <data name="cbTitleLanguage.Items4" xml:space="preserve">
+    <value>Olasz</value>
+  </data>
+  <data name="chkLoadDatabase.Text" xml:space="preserve">
+    <value>Adatbázis betöltése a program indításakor (növeli a program indítási idejét)</value>
+  </data>
+  <data name="tabSettingsSeveral.Text" xml:space="preserve">
+    <value>Több</value>
+  </data>
+  <data name="cbVerificationInterval.Items" xml:space="preserve">
+    <value>5 perc</value>
+  </data>
+  <data name="chkGeneralExtractRar.Text" xml:space="preserve">
+    <value>RAR fájlok (*.rar)</value>
+  </data>
+  <data name="rbGeneralDiscClean.Text" xml:space="preserve">
+    <value>Minden mappa külön marad az 1. és a 2. lemezen (alapértelmezett)</value>
+  </data>
+  <data name="btnRestore.Text" xml:space="preserve">
+    <value>Beállítások visszaállítása</value>
+  </data>
+  <data name="tabSettingsTransfer.Text" xml:space="preserve">
+    <value>Játék átadása</value>
+  </data>
+  <data name="chkNetVerify.Text" xml:space="preserve">
+    <value>Ellenőrizze az internetkapcsolatot a program indításakor</value>
+  </data>
+  <data name="chkGameTitleCustom.Text" xml:space="preserve">
+    <value>Egyéni címek használata (custom-titles.txt)</value>
+  </data>
+  <data name="tabSettingsUpdates.Text" xml:space="preserve">
+    <value>Frissítések</value>
+  </data>
+  <data name="rbTransferSystemXCopy.Text" xml:space="preserve">
+    <value>XCopy (alapértelmezett)</value>
+  </data>
+  <data name="label28.Text" xml:space="preserve">
+    <value>Az FST (FileSystem Table) egy olyan fájlrendszer, amely egy olyan könyvtárba van kivonva, amely tartalmazza az archívum összes valós és virtuális fájlját. A Nintendont az FST fájlokat egy belső virtuális ISO-kép létrehozásához és a játék betöltéséhez használja.</value>
+  </data>
+  <data name="chkGeneralRecursiva.Text" xml:space="preserve">
+    <value>Könyvtárak rekurzív keresése (csak a "Fájlok (Forrás)" ablakban)</value>
+  </data>
+  <data name="chkUpdateBetaChannel.Text" xml:space="preserve">
+    <value>BETA csatorna frissítésekre váltás</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Beállítások</value>
+  </data>
+  <data name="cbTitleLanguage.Items" xml:space="preserve">
+    <value>Angol</value>
+  </data>
+  <data name="chkGeneralExtractZip.Text" xml:space="preserve">
+    <value>Zip-fájlok (*.zip)</value>
+  </data>
+  <data name="lblAlignment.Text" xml:space="preserve">
+    <value>Kijelölés:</value>
+  </data>
+  <data name="chkGeneralSHA1.Text" xml:space="preserve">
+    <value>SHA-1 aláírás ellenőrzése az átvitel során</value>
+  </data>
+  <data name="lblGeneralExtract.Text" xml:space="preserve">
+    <value>Szükség esetén húzza ki.</value>
+  </data>
+  <data name="ofdDolphin.Filter" xml:space="preserve">
+    <value>Delfin emulátor|dolphin.exe</value>
+  </data>
+  <data name="rbDSPHLE.Text" xml:space="preserve">
+    <value>DSP HLE (alapértelmezett)</value>
+  </data>
+  <data name="cbVerificationInterval.Items7" xml:space="preserve">
+    <value>4 óra</value>
+  </data>
+  <data name="grpNomenclatureFolderFormat.Text" xml:space="preserve">
+    <value>Mappa formátum</value>
+  </data>
+  <data name="grbGeneralTemporaryFolder.Text" xml:space="preserve">
+    <value>Ideiglenes mappa</value>
+  </data>
+  <data name="tabSettingsCovers.Text" xml:space="preserve">
+    <value>Fedezetek</value>
+  </data>
+  <data name="cbTitleLanguage.Items9" xml:space="preserve">
+    <value>Koreai</value>
+  </data>
+  <data name="cbTitleLanguage.Items3" xml:space="preserve">
+    <value>Spanyol</value>
+  </data>
+  <data name="chkGeneralMD5.Text" xml:space="preserve">
+    <value>MD5 aláírás kiszámítása az átvitel során</value>
+  </data>
+  <data name="cbScrubAlign.Items" xml:space="preserve">
+    <value>Automatikus</value>
+  </data>
+  <data name="lblUser.Text" xml:space="preserve">
+    <value>Felhasználó:</value>
+  </data>
+  <data name="tabSettingsGeneral.Text" xml:space="preserve">
+    <value>Általános</value>
+  </data>
+</root>

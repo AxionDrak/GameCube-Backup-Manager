@@ -1,0 +1,561 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="GCBM_Language" xml:space="preserve">
+    <value>Magyar [Magyarország]</value>
+  </data>
+  <data name="ServerReportedOneCoverOrBothNotFound" xml:space="preserve">
+    <value>A szerver jelentette: Az egyik borítót (vagy mindkettőt) nem találták meg!</value>
+  </data>
+  <data name="NoInternetConnectionFound_String2" xml:space="preserve">
+    <value>Győződjön meg róla, hogy a program beállításaiban engedélyezve van a kapcsolat.</value>
+  </data>
+  <data name="GetAllDrives_Inactive" xml:space="preserve">
+    <value>Inaktív</value>
+  </data>
+  <data name="AboutBox_String1" xml:space="preserve">
+    <value>A {0}</value>
+  </data>
+  <data name="GameListExportedTXT" xml:space="preserve">
+    <value>Játéklista TXT-be exportálva!</value>
+  </data>
+  <data name="PluginDisplay_String1" xml:space="preserve">
+    <value>Biztos, hogy törölni szeretné a plugint?</value>
+  </data>
+  <data name="EmptyGamesList" xml:space="preserve">
+    <value>A játéklista üres!</value>
+  </data>
+  <data name="Download3DCoverError" xml:space="preserve">
+    <value> [ERROR] Nem sikerült letölteni a borítót (3D)!</value>
+  </data>
+  <data name="RequiredDirectories_String2" xml:space="preserve">
+    <value>[INFO] Az alapértelmezett ideiglenes könyvtár már létezik... létrehozás figyelmen kívül hagyása!</value>
+  </data>
+  <data name="ClearTemp_String2" xml:space="preserve">
+    <value>Nem tudta törölni a temp mappát!</value>
+  </data>
+  <data name="RecommendedDeleteOrMoveFile" xml:space="preserve">
+    <value>Javasoljuk, hogy törölje vagy helyezze át a fájlt egy másik helyre.</value>
+  </data>
+  <data name="FoundIsoGcmFiles" xml:space="preserve">
+    <value>[INFO] ISO/GCM fájl(ok) találtak:</value>
+  </data>
+  <data name="frmMain_Resize_Program" xml:space="preserve">
+    <value>Program fut a háttérben!</value>
+  </data>
+  <data name="InstallGameScrub_Unresponsive" xml:space="preserve">
+    <value>Állapot: Nem válaszol!</value>
+  </data>
+  <data name="OverwriteWiiTDBBody" xml:space="preserve">
+    <value>Szeretné felülírni a jelenlegi WiiTDB.xml fájlt?Szeretné felülírni a jelenlegi WiiTDB.xml fájlt?</value>
+  </data>
+  <data name="ClearLogNotFound" xml:space="preserve">
+    <value>Nincs törlendő nyilvántartási adat!</value>
+  </data>
+  <data name="ConvertElfDol_String2" xml:space="preserve">
+    <value>&gt;&gt; Állapot: Nem válaszol!</value>
+  </data>
+  <data name="NoInternetConnectionFound_String1" xml:space="preserve">
+    <value>Nincs internetkapcsolat!</value>
+  </data>
+  <data name="CannotOpenTwoInstances" xml:space="preserve">
+    <value>A program két példányát nem lehet megnyitni!</value>
+  </data>
+  <data name="ConvertElfDol_String4" xml:space="preserve">
+    <value>&gt;&gt; Állapot [HIBA]: Nem ismert fájlformátum!</value>
+  </data>
+  <data name="InvalidDrive_String3" xml:space="preserve">
+    <value>A Nintendont alkalmazás csak a FAT32 és exFAT fájlrendszereket támogatja.</value>
+  </data>
+  <data name="NetworkCheck_NetStatus_Offline" xml:space="preserve">
+    <value>Internetkapcsolat letiltva!</value>
+  </data>
+  <data name="GCBM_TranslatedBy" xml:space="preserve">
+    <value>DeepL</value>
+  </data>
+  <data name="LoadDatabase_Region" xml:space="preserve">
+    <value>Régió</value>
+  </data>
+  <data name="SelectTargetDrive" xml:space="preserve">
+    <value>Kérjük, válasszon ki egy célmeghajtót!</value>
+  </data>
+  <data name="HashesAreNotSame" xml:space="preserve">
+    <value>[INFO] A hash-ok nem egyformák!</value>
+  </data>
+  <data name="DisplayFilesSelected_Size" xml:space="preserve">
+    <value>Méret</value>
+  </data>
+  <data name="ProcessTaskDelay_String2" xml:space="preserve">
+    <value>Kérjük, töltse le a fájlt!</value>
+  </data>
+  <data name="InvalidDrive_String1" xml:space="preserve">
+    <value>Ez nem érvényes eszköz!</value>
+  </data>
+  <data name="InstallGameScrub_Scrubbing" xml:space="preserve">
+    <value>Állapot: Súrolás...</value>
+  </data>
+  <data name="Attention" xml:space="preserve">
+    <value>FIGYELEM!</value>
+  </data>
+  <data name="ReadImage_String3" xml:space="preserve">
+    <value>'{0}' fájl nem található!</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>[HIBA]</value>
+  </data>
+  <data name="PluginDisplay_String2" xml:space="preserve">
+    <value>A  eltávolítása</value>
+  </data>
+  <data name="RegisterHeaderLog_CurrentProgramDirectory" xml:space="preserve">
+    <value>[INFO] Aktuális programkönyvtár:</value>
+  </data>
+  <data name="ListHash_String2" xml:space="preserve">
+    <value>fájl hash:</value>
+  </data>
+  <data name="Information" xml:space="preserve">
+    <value>Információ</value>
+  </data>
+  <data name="UnknownRegion" xml:space="preserve">
+    <value>Ismeretlen régió!</value>
+  </data>
+  <data name="SelectGameFromList" xml:space="preserve">
+    <value>Kérjük, válasszon egy játékot a listából!</value>
+  </data>
+  <data name="RecordExportedFailed" xml:space="preserve">
+    <value>Nincs exportálható adat!</value>
+  </data>
+  <data name="CantOpenImage" xml:space="preserve">
+    <value>[ERROR] Nem sikerült megnyitni a képfájlt.</value>
+  </data>
+  <data name="ConvertElfDol_String1" xml:space="preserve">
+    <value>&gt;&gt; Állapot: Állapot: Munka...</value>
+  </data>
+  <data name="AskDownloadWiiTDB" xml:space="preserve">
+    <value>WiiTDB.zip nem található, szeretné letölteni most?</value>
+  </data>
+  <data name="InvalidDrive_String2" xml:space="preserve">
+    <value>Az észlelt fájlrendszer a következő:</value>
+  </data>
+  <data name="ReadImage_String4" xml:space="preserve">
+    <value>HIBA!</value>
+  </data>
+  <data name="DownloadingWiiTDB_String1" xml:space="preserve">
+    <value>&gt;&gt; WiiTDB.zip letöltése ...</value>
+  </data>
+  <data name="ServerReportedDiscCoverNotFound" xml:space="preserve">
+    <value>A szerver jelentette: A lemezborító nem található!</value>
+  </data>
+  <data name="ProcessTaskDelay_String3" xml:space="preserve">
+    <value>Néhány funkció, amely ettől a fájltól függ, nem fog működni, amíg a fájl le nem töltődik!</value>
+  </data>
+  <data name="ReadImage_String2" xml:space="preserve">
+    <value>Több FST kép?\r\nKérlek, küldj nekem információt erről a képről.</value>
+  </data>
+  <data name="InstallGameScrub_TrasnferredDisc2" xml:space="preserve">
+    <value>A 2. lemez sikeresen átkerült!</value>
+  </data>
+  <data name="AboutTranslatorContact" xml:space="preserve">
+    <value>Kapcsolat:</value>
+  </data>
+  <data name="MetaXml_String2" xml:space="preserve">
+    <value>Az adatok sikeresen mentve!</value>
+  </data>
+  <data name="RegisterHeaderLog_WorkingSet" xml:space="preserve">
+    <value>Munkakészlet:</value>
+  </data>
+  <data name="AllFilesSuccessfullyDeleted" xml:space="preserve">
+    <value>Minden fájl sikeresen törlődött!</value>
+  </data>
+  <data name="ClearLog" xml:space="preserve">
+    <value>Tényleg törölni szeretné a rendszerleíró adatbázis adatait?</value>
+  </data>
+  <data name="InvalidDrive_String6" xml:space="preserve">
+    <value>az ISO/GCM fájlok BACKUP tárolására.</value>
+  </data>
+  <data name="RegisterHeaderLog_OSVersion" xml:space="preserve">
+    <value>OS verzió:</value>
+  </data>
+  <data name="LoadISOInfo_String2" xml:space="preserve">
+    <value>Másodlagos lemez: (disc2)</value>
+  </data>
+  <data name="DolphinEmulator_Not_Found_String_1" xml:space="preserve">
+    <value>Emulátor nem található!</value>
+  </data>
+  <data name="ListHash_String1" xml:space="preserve">
+    <value>A</value>
+  </data>
+  <data name="RegisterHeaderLog_ApplicationVersion" xml:space="preserve">
+    <value>Alkalmazási verzió:</value>
+  </data>
+  <data name="RegisterHeaderLog_LogicalUnits" xml:space="preserve">
+    <value>Logikai egységek:</value>
+  </data>
+  <data name="FilesDestinationUnit" xml:space="preserve">
+    <value>Fájlok (Cél) - Meghajtó (</value>
+  </data>
+  <data name="AssemblyInfo_Description" xml:space="preserve">
+    <value>Nintendo GameCube ISO és GCM fájlkezelő szoftver.</value>
+  </data>
+  <data name="CheckUSBGXFlow_String1" xml:space="preserve">
+    <value>Kérjük, menjen a 'Beállítások'-&gt;'Beállítások</value>
+  </data>
+  <data name="AboutCurrentLanguage" xml:space="preserve">
+    <value>Jelenlegi nyelv:</value>
+  </data>
+  <data name="FilterDatabase_String2" xml:space="preserve">
+    <value>Ha a 'wiitdb.xml' fájl helyesen van telepítve, végezze el a szükséges módosításokat a program beállításaiban.</value>
+  </data>
+  <data name="MetaXml_String1" xml:space="preserve">
+    <value>Érvénytelen vagy sérült 'meta.xml' fájl!</value>
+  </data>
+  <data name="CreateGamesFolder" xml:space="preserve">
+    <value>Nincs GAMES mappa, hozzon létre mappát most?</value>
+  </data>
+  <data name="DisplayFilesSelected_Found_String2" xml:space="preserve">
+    <value>kiterjesztésű fájl(ok) .</value>
+  </data>
+  <data name="RecordExportedSuccessfully" xml:space="preserve">
+    <value>A felvétel sikeresen exportált!</value>
+  </data>
+  <data name="LoadDatabase_Type" xml:space="preserve">
+    <value>Típus</value>
+  </data>
+  <data name="ProcessTaskDelay_String4" xml:space="preserve">
+    <value>A fájl letöltéséhez (internetkapcsolat szükséges), menj az 'Adatbázis' fülre, majd az 'Eszközök' -&gt; 'GameTDB frissítés' menüpontra.</value>
+  </data>
+  <data name="DownloadingWiiTDB_String2" xml:space="preserve">
+    <value>&gt;&gt; WiiTDB.xml kivonása ...</value>
+  </data>
+  <data name="SelectFolderContainingIsoGcmFiles" xml:space="preserve">
+    <value>Válassza ki az ISO/GCM fájlokat tartalmazó mappát:</value>
+  </data>
+  <data name="DestinyDrive_TotalSpace" xml:space="preserve">
+    <value>Teljes hely:</value>
+  </data>
+  <data name="RequiredDirectories_String4" xml:space="preserve">
+    <value>[INFO] A skin könyvtárak létrehozásra kerültek...</value>
+  </data>
+  <data name="Download3DCover" xml:space="preserve">
+    <value> [INFO] Borítók letöltése (3D)... </value>
+  </data>
+  <data name="InvalidDrive_String5" xml:space="preserve">
+    <value>Használhat azonban eszközöket</value>
+  </data>
+  <data name="LoadDatabase_Developer" xml:space="preserve">
+    <value>Fejlesztő</value>
+  </data>
+  <data name="CopyTask_String1" xml:space="preserve">
+    <value>Fájl átvitele...</value>
+  </data>
+  <data name="InstallGameScrub_GameInstalled" xml:space="preserve">
+    <value>A játék sikeresen települt!</value>
+  </data>
+  <data name="OverwriteWiiTDBCaption" xml:space="preserve">
+    <value>WiiTDB.xml felülírása?</value>
+  </data>
+  <data name="DialogResultDeleteGame_ReallyDeleteFile_String1" xml:space="preserve">
+    <value>Tényleg törölni szeretné a fájl(ok)at?</value>
+  </data>
+  <data name="CreateGamesFolderNow" xml:space="preserve">
+    <value>Ez egy érvényes eszköz, de nincs GAMES mappa, hozzon létre mappát most?</value>
+  </data>
+  <data name="AboutTranslator" xml:space="preserve">
+    <value>Fordító:</value>
+  </data>
+  <data name=" " xml:space="preserve">
+    <value>[ERROR] Nem sikerült letölteni a borítót (lemez)!</value>
+  </data>
+  <data name="CheckUSBGXFlow_String2" xml:space="preserve">
+    <value>Ezután menjen a 'Bőrök' -&gt; 'Szinkronizálás' menüpontra, és jelölje be a 'Bőrök átvitelének engedélyezése az eszközök között' opciót.</value>
+  </data>
+  <data name="FilterDatabase_String1" xml:space="preserve">
+    <value>Az adatbázis lista üres!</value>
+  </data>
+  <data name="DolphinEmulator_Not_Found_String_2" xml:space="preserve">
+    <value>Kérjük, adja meg a Dolphin emulátor futtatható fájljának (dolphin.exe) elérési útvonalát.</value>
+  </data>
+  <data name="CopyTask_String5" xml:space="preserve">
+    <value>100%-ban teljes!</value>
+  </data>
+  <data name="DisplayFilesSelected_FileName" xml:space="preserve">
+    <value>Fájlnév</value>
+  </data>
+  <data name="CopyTask_String6" xml:space="preserve">
+    <value>Transzfer befejezve!</value>
+  </data>
+  <data name="DownloadingWiiTDB_String3" xml:space="preserve">
+    <value>&gt;&gt; A folyamat befejeződött!</value>
+  </data>
+  <data name="DisplayFilesSelected_Found_String3" xml:space="preserve">
+    <value>Megtaláltam</value>
+  </data>
+  <data name="RegisterHeaderLog_CLRVersion" xml:space="preserve">
+    <value>CLR verzió:</value>
+  </data>
+  <data name="AboutVersion" xml:space="preserve">
+    <value>Verzió</value>
+  </data>
+  <data name="Info" xml:space="preserve">
+    <value>[INFO]</value>
+  </data>
+  <data name="RequiredDirectories_String5" xml:space="preserve">
+    <value>[INFO] A fedőkönyvtárak már léteznek... létrehozás figyelmen kívül hagyása!</value>
+  </data>
+  <data name="GCBM_TranslatorContact" xml:space="preserve">
+    <value>DeepL.com</value>
+  </data>
+  <data name="InvalidDrive_String4" xml:space="preserve">
+    <value>Nagyon ajánlott a FAT32 fájlrendszer használata 32K klaszterekkel, hogy biztosítsuk a maximális kompatibilitást a GameCube-játékokkal, Wii-játékokkal, ROM-okkal, alkalmazásokkal, emulátorokkal és mindennel a kettő között!</value>
+  </data>
+  <data name="CopyTask_String2" xml:space="preserve">
+    <value>A játék telepítése...</value>
+  </data>
+  <data name="InstallGameScrub_Complete" xml:space="preserve">
+    <value>Állapot: Befejezve!</value>
+  </data>
+  <data name="DisplayFilesSelected_Found_String1" xml:space="preserve">
+    <value>[INFO] Megtaláltam</value>
+  </data>
+  <data name="AboutBox_String2" xml:space="preserve">
+    <value>Verzió {0}</value>
+  </data>
+  <data name="CopyTask_String3" xml:space="preserve">
+    <value>Transzfer befejezve!</value>
+  </data>
+  <data name="LoadDatabase_GameTitle" xml:space="preserve">
+    <value>Játék címe</value>
+  </data>
+  <data name="CopyTask_String4" xml:space="preserve">
+    <value>A játék telepítve!</value>
+  </data>
+  <data name="DialogResultDeleteGame_ReallyDeleteFile_String2" xml:space="preserve">
+    <value>Ez az eljárás visszafordíthatatlan, és a fájl(ok) nem állíthatók helyre!</value>
+  </data>
+  <data name="InstallGameScrub_Transferring" xml:space="preserve">
+    <value>Áthelyezés...</value>
+  </data>
+  <data name="ServerReported3DCoverNotFound" xml:space="preserve">
+    <value>A szerver jelentette: 3D borító nem található!</value>
+  </data>
+  <data name="DisplayFilesSelected_FilePath" xml:space="preserve">
+    <value>Fájl elérési útvonal</value>
+  </data>
+  <data name="ProcessTaskDelay_String1" xml:space="preserve">
+    <value>A 'wiitdb.xml' fájl nem található!</value>
+  </data>
+  <data name="ClearTemp_String1" xml:space="preserve">
+    <value>[INFO] Nem sikerült törölni az ideiglenes mappát!</value>
+  </data>
+  <data name="LoadDatabase_IDGameCode" xml:space="preserve">
+    <value>ID (játékkód)</value>
+  </data>
+  <data name="Notice" xml:space="preserve">
+    <value>MEGJEGYZÉS</value>
+  </data>
+  <data name="NotNintendoGameCubeFile" xml:space="preserve">
+    <value>[ERROR] Nem Nintendo GameCube fájl.</value>
+  </data>
+  <data name="RequiredDirectories_String1" xml:space="preserve">
+    <value>[INFO] Az alapértelmezett ideiglenes könyvtár létrehozásra került...</value>
+  </data>
+  <data name="NetworkCheck_NetStatus_Online" xml:space="preserve">
+    <value>Internetkapcsolat létrejött!</value>
+  </data>
+  <data name="ConvertElfDol_String3" xml:space="preserve">
+    <value>&gt;&gt; Állapot: Befejezve!</value>
+  </data>
+  <data name="RequiredDirectories_String3" xml:space="preserve">
+    <value>[INFO] Egyéni ideiglenes könyvtár használata!</value>
+  </data>
+  <data name="RegisterHeaderLog_GcbmLogCreated" xml:space="preserve">
+    <value>A gcbm.log létrejön.</value>
+  </data>
+  <data name="ReadImage_String1" xml:space="preserve">
+    <value>A kép túl kicsi!</value>
+  </data>
+  <data name="DestinyDrive_AvailableSpace" xml:space="preserve">
+    <value>Rendelkezésre álló hely:</value>
+  </data>
+  <data name="LoadISOInfo_String1" xml:space="preserve">
+    <value>Elsődleges lemez: (disc1)</value>
+  </data>
+  <data name="RegisterHeaderLog_ProgramName" xml:space="preserve">
+    <value>Program neve:</value>
+  </data>
+  <data name="UnableWriteDataDisk" xml:space="preserve">
+    <value>Nem sikerült adatot írni a lemezre!</value>
+  </data>
+  <data name="DownloadDiscCover" xml:space="preserve">
+    <value>[INFO] Borítók letöltése (lemez)... </value>
+  </data>
+  <data name="MetaXml_String_ERRO" xml:space="preserve">
+    <value>HIBA</value>
+  </data>
+  <data name="GameListExportedCSV" xml:space="preserve">
+    <value>Játéklista exportálva CSV-be!</value>
+  </data>
+  <data name="CheckUSBGXFlow_String3" xml:space="preserve">
+    <value>Ezután ugyanezen a lapon lépjen az "USB töltő konfigurációja (Borítók átvitele)" menüpontba, és állítsa be az USB Loader GX vagy WiiFlow borítók (Lemez, 2D, 3D és Teljes) könyvtárait az "USB töltő konfigurációja (Borítók átvitele)" menüpontban, a céleszközön belüli megfelelő könyvtárakra mutatva.</value>
+  </data>
+  <data name="SplashNetworkCheck" xml:space="preserve">
+    <value>Internetkapcsolat ellenőrzése...</value>
+  </data>
+  <data name="SplashPopulatingDrives" xml:space="preserve">
+    <value>Meghajtólista feltöltése...</value>
+  </data>
+  <data name="SplashFoundDrive" xml:space="preserve">
+    <value>Megtaláltam a meghajtót:</value>
+  </data>
+  <data name="SplashFinishing" xml:space="preserve">
+    <value>Befejezés...</value>
+  </data>
+  <data name="SplashFinished" xml:space="preserve">
+    <value>Befejeztem.</value>
+  </data>
+  <data name="SplashDirectories" xml:space="preserve">
+    <value>A szükséges könyvtárak beállítása...</value>
+  </data>
+  <data name="InstallGameScrub_TransferDisc2" xml:space="preserve">
+    <value>Moving Disc 2...</value>
+  </data>
+  <data name="InstallGameScrub_DoneScrubbing" xml:space="preserve">
+    <value>Befejeztem a súrolást...</value>
+  </data>
+  <data name="SelectLanguagePrompt" xml:space="preserve">
+    <value>Kérjük, válassza ki a kívánt nyelvet:</value>
+  </data>
+  <data name="LanguagePromptConfirm" xml:space="preserve">
+    <value>Ezt a nyelvet szeretné használni?</value>
+  </data>
+  <data name="LanguagePromptTitle" xml:space="preserve">
+    <value>Válassza ki a nyelvet:</value>
+  </data>
+  <data name="LanguagePromptConfirmTitle" xml:space="preserve">
+    <value>Meg tudod ezt érteni?</value>
+  </data>
+  <data name="DownloadDiscCoverError" xml:space="preserve">
+    <value>[ERROR] Nem sikerült letölteni a borítókat (lemez)</value>
+  </data>
+  <data name="LanguageIndonesian" xml:space="preserve">
+    <value>Indonéz</value>
+  </data>
+  <data name="LoadDatabase_Editor" xml:space="preserve">
+    <value>Szerkesztő</value>
+  </data>
+</root>

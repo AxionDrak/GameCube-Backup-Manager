@@ -117,275 +117,23 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="grbGeneralTemporaryFolder.Text" xml:space="preserve">
-    <value>一時フォルダー</value>
+  <data name="cbGeneralFileSize.Items3" xml:space="preserve">
+    <value>ギガバイト</value>
   </data>
-  <data name="chkGeneralExtractNwb.Text" xml:space="preserve">
-    <value>NWB ファイル (*.nwb)</value>
-  </data>
-  <data name="chkGeneralExtractSplitFile.Text" xml:space="preserve">
-    <value>分割ファイル (*.001)</value>
-  </data>
-  <data name="chkGeneralExtractBZip2.Text" xml:space="preserve">
-    <value>BZip2 ファイル (*.bz;*.bzip2)</value>
-  </data>
-  <data name="chkGeneralExtractRar.Text" xml:space="preserve">
-    <value>RAR ファイル (*.rar)</value>
-  </data>
-  <data name="chkGeneralExtract7z.Text" xml:space="preserve">
-    <value>7Zip ファイル (*.7z;*.7zip)</value>
-  </data>
-  <data name="chkGeneralExtractZip.Text" xml:space="preserve">
-    <value>zip ファイル (*.zip)</value>
-  </data>
-  <data name="lblGeneralExtract.Text" xml:space="preserve">
-    <value>必要に応じて抽出します。</value>
-  </data>
-  <data name="grbGeneralFiles.Text" xml:space="preserve">
-    <value>ファイル</value>
-  </data>
-  <data name="cbGeneralFileSize.Items" xml:space="preserve">
-    <value>自動</value>
-  </data>
-  <data name="grbGeneralFileSize.Text" xml:space="preserve">
-    <value>サイズを表示</value>
-  </data>
-  <data name="rbGeneralDiscDelete.Text" xml:space="preserve">
-    <value>ディスク 1 フォルダーのみを保持し、ディスク 2 フォルダーを削除 (実験的)</value>
-  </data>
-  <data name="rbGeneralDiscClean.Text" xml:space="preserve">
-    <value>ディスク 1 とディスク 2 のすべてのフォルダーを別々に保持する (デフォルト)</value>
-  </data>
-  <data name="grbGeneralPartitions.Text" xml:space="preserve">
-    <value>ゲームディレクトリを調整する</value>
-  </data>
-  <data name="tabSettingsGeneral.Text" xml:space="preserve">
-    <value>全般的</value>
-  </data>
-  <data name="lblCommentsScrubCopy.Text" xml:space="preserve">
-    <value>Scrub メソッドの場合、(開発者によって定義された) 内部名に基づいて、既定の "タイトル [ゲーム コード]" が常に使用されます。スクラブ コピー モードでは、ディスク 1 と 2 は常に別々のフォルダーに保存されます。ただし、開発者が指定した共通名を検出方法で識別できる特定のケースを除きます。この場合、ディスク 1 と 2 は同じフォルダーに保存されます。 .</value>
-  </data>
-  <data name="lblCommentsExactCopy.Text" xml:space="preserve">
-    <value>命名スタイルは現在、ファイルの正確なコピー (1:1) でのみ機能し、内部名と商用名 (wiitdb.xml 経由) の両方を使用できます。このオプションは、[タイトル] タブでユーザーが設定できます。完全コピー (1:1) モードでは、ディスク 1 と 2 は常に同じフォルダーに格納されます。</value>
-  </data>
-  <data name="lblComments.Text" xml:space="preserve">
-    <value>コメント:</value>
-  </data>
-  <data name="cbAdjustNamingStyle.Items" xml:space="preserve">
-    <value>タイトル【ゲームコード】</value>
-  </data>
-  <data name="cbAdjustNamingStyle.Items1" xml:space="preserve">
-    <value>【ゲームコード】</value>
-  </data>
-  <data name="lblNomenclature.Text" xml:space="preserve">
-    <value>命名スタイル:</value>
-  </data>
-  <data name="grpNomenclatureFolderFormat.Text" xml:space="preserve">
-    <value>フォルダ形式</value>
-  </data>
-  <data name="tabSettingsNomenclature.Text" xml:space="preserve">
-    <value>命名法</value>
-  </data>
-  <data name="chkMultipleInstances.Text" xml:space="preserve">
-    <value>プログラムの複数インスタンスの実行を許可する</value>
-  </data>
-  <data name="chkLoadDatabase.Text" xml:space="preserve">
-    <value>プログラムの開始時にデータベースをロードします (プログラムの開始時間が長くなります)</value>
-  </data>
-  <data name="chkNotify.Text" xml:space="preserve">
-    <value>タスクバー通知を有効にする (デフォルトの通知は引き続き通常どおり表示されます)</value>
-  </data>
-  <data name="chkScreensaver.Text" xml:space="preserve">
-    <value>スクリーンセーバーを無効にする (スクリーンセーバー)</value>
-  </data>
-  <data name="chkNetVerify.Text" xml:space="preserve">
-    <value>プログラムの起動時にインターネット接続を確認する</value>
-  </data>
-  <data name="chkStartWindowMaximized.Text" xml:space="preserve">
-    <value>開始ウィンドウを最大化</value>
-  </data>
-  <data name="chkGeneralSHA1.Text" xml:space="preserve">
-    <value>転送中に SHA-1 署名を検証する</value>
-  </data>
-  <data name="chkGeneralRecursiva.Text" xml:space="preserve">
-    <value>ディレクトリを再帰的に検索する (「ファイル (ソース)」ウィンドウのみ)</value>
-  </data>
-  <data name="chkGeneralTemporaryBuffer.Text" xml:space="preserve">
-    <value>一時メモリ (バッファ) で転送を使用する</value>
-  </data>
-  <data name="chkGeneralMD5.Text" xml:space="preserve">
-    <value>転送中に MD5 署名を計算する</value>
-  </data>
-  <data name="grbGeneralDiverse.Text" xml:space="preserve">
-    <value>いくつかの</value>
-  </data>
-  <data name="tabSettingsSeveral.Text" xml:space="preserve">
-    <value>いくつかの</value>
-  </data>
-  <data name="lblFormat.Text" xml:space="preserve">
-    <value>フォーマット：</value>
-  </data>
-  <data name="lblAlignment.Text" xml:space="preserve">
-    <value>アライメント:</value>
-  </data>
-  <data name="cbScrubAlign.Items" xml:space="preserve">
-    <value>自動</value>
-  </data>
-  <data name="chkGeneralScrubFlushSD.Text" xml:space="preserve">
-    <value>ファイルバッファをクリアして、SDカードをすぐに取り出せるようにします</value>
-  </data>
-  <data name="grbGeneralScrub.Text" xml:space="preserve">
-    <value>スクラブ</value>
-  </data>
-  <data name="label28.Text" xml:space="preserve">
-    <value>FST (FileSystem Table) は、アーカイブのすべての実ファイルと仮想ファイルを含むディレクトリに抽出されたファイル システムです。 Nintendont は FST ファイルを使用して内部仮想 ISO イメージを作成し、その仮想 ISO からゲームをロードします。</value>
-  </data>
-  <data name="label31.Text" xml:space="preserve">
-    <value>不要なデータ (ガベージ) を定数のバイト値 (0xff または 0x00) に置き換えることによって削除します。ファイルのサイズは小さくなりますが、データの整合性は維持されます。</value>
-  </data>
-  <data name="label20.Text" xml:space="preserve">
-    <value>XCopy に似ていますが、ファイル内に存在するガベージ データ (ガベージ) がクリーンアップされるという違いがあります。元のファイル サイズが維持されます。ガベージ データは、他のデータの整合性を維持しながら削除されます。</value>
-  </data>
-  <data name="label17.Text" xml:space="preserve">
-    <value>1 つまたは複数のファイルをある場所 (ソース) から別の場所 (宛先) にコピーします。ファイルは圧縮されず、コンテナの一部ではなく、ガベージ データは削除されません。</value>
-  </data>
-  <data name="rbTransferSystemXCopy.Text" xml:space="preserve">
-    <value>XCopy (デフォルト)</value>
-  </data>
-  <data name="grbTransferSystem.Text" xml:space="preserve">
-    <value>使用する転送システム</value>
-  </data>
-  <data name="tabSettingsTransfer.Text" xml:space="preserve">
-    <value>ゲーム転送</value>
-  </data>
-  <data name="grpTitlesCoverFolder.Text" xml:space="preserve">
-    <value>Covers フォルダ (キャッシュ -&gt; オリジン)</value>
-  </data>
-  <data name="label8.Text" xml:space="preserve">
-    <value>フォルダの場所:</value>
-  </data>
-  <data name="tabCoverDisc.Text" xml:space="preserve">
-    <value>ディスク</value>
-  </data>
-  <data name="label6.Text" xml:space="preserve">
-    <value>フォルダの場所:</value>
-  </data>
-  <data name="label9.Text" xml:space="preserve">
-    <value>フォルダの場所:</value>
-  </data>
-  <data name="label35.Text" xml:space="preserve">
-    <value>フォルダの場所:</value>
-  </data>
-  <data name="tabCoverFull.Text" xml:space="preserve">
-    <value>完了</value>
-  </data>
-  <data name="grbCoverTransfer.Text" xml:space="preserve">
-    <value>USB 充電器のセットアップ (転送カバー -&gt; 宛先)</value>
-  </data>
-  <data name="chkCoverRecursiveSearch.Text" xml:space="preserve">
-    <value>再帰的なスキン検索を使用する (すべての領域で検索)</value>
+  <data name="chkManagerLogDebugConsole.Text" xml:space="preserve">
+    <value>デバッグコンソール用ログ</value>
   </data>
   <data name="chkCoverEnableTransfer.Text" xml:space="preserve">
-    <value>デバイス間でのスキンの転送を有効にする</value>
+    <value>デバイス間のスキンの転送を可能にする</value>
   </data>
-  <data name="chkCoverSynchronizeDelete.Text" xml:space="preserve">
-    <value>リストにないゲームのスキンを削除する</value>
-  </data>
-  <data name="grpCoversSynchronize.Text" xml:space="preserve">
-    <value>同期する</value>
-  </data>
-  <data name="tabSettingsCovers.Text" xml:space="preserve">
-    <value>カバー</value>
-  </data>
-  <data name="cbTitleLanguage.Items" xml:space="preserve">
-    <value>英語</value>
-  </data>
-  <data name="cbTitleLanguage.Items1" xml:space="preserve">
-    <value>フランス語</value>
-  </data>
-  <data name="cbTitleLanguage.Items2" xml:space="preserve">
-    <value>ドイツ人</value>
-  </data>
-  <data name="cbTitleLanguage.Items3" xml:space="preserve">
-    <value>スペイン語</value>
-  </data>
-  <data name="cbTitleLanguage.Items4" xml:space="preserve">
-    <value>イタリアの</value>
-  </data>
-  <data name="cbTitleLanguage.Items5" xml:space="preserve">
-    <value>オランダの</value>
-  </data>
-  <data name="cbTitleLanguage.Items6" xml:space="preserve">
-    <value>ポルトガル語</value>
-  </data>
-  <data name="cbTitleLanguage.Items7" xml:space="preserve">
-    <value>日本</value>
-  </data>
-  <data name="cbTitleLanguage.Items8" xml:space="preserve">
-    <value>ロシア</value>
-  </data>
-  <data name="cbTitleLanguage.Items9" xml:space="preserve">
-    <value>韓国語</value>
-  </data>
-  <data name="cbTitleLanguage.Items10" xml:space="preserve">
-    <value>繁体字中国語</value>
-  </data>
-  <data name="cbTitleLanguage.Items11" xml:space="preserve">
-    <value>簡体字中国語</value>
-  </data>
-  <data name="grbTitleLanguage.Text" xml:space="preserve">
-    <value>タイトル言語</value>
-  </data>
-  <data name="grbTitleFileLocation.Text" xml:space="preserve">
-    <value>ファイルの場所</value>
-  </data>
-  <data name="rbGameXmlName.Text" xml:space="preserve">
-    <value>wiitdb.xml 経由でゲームの商号を使用する (推奨! - wiitdb.xml ファイルが必要)</value>
-  </data>
-  <data name="rbGameInternalName.Text" xml:space="preserve">
-    <value>ゲームの内部プロダクション名を使用します (75% がサポートされています)</value>
-  </data>
-  <data name="chkGameTitleCustom.Text" xml:space="preserve">
-    <value>カスタム タイトルを使用する (custom-titles.txt)</value>
-  </data>
-  <data name="chkGameTitle.Text" xml:space="preserve">
-    <value>GameTDB (titles.txt) を使用する</value>
-  </data>
-  <data name="grbTitleDiverse.Text" xml:space="preserve">
-    <value>その他 (有効にするにはプログラムの再起動が必要)</value>
-  </data>
-  <data name="tabSettingsTitle.Text" xml:space="preserve">
-    <value>タイトル</value>
-  </data>
-  <data name="grbDolphinFolder.Text" xml:space="preserve">
-    <value>エミュレータへのパス</value>
-  </data>
-  <data name="rbDSPHLE.Text" xml:space="preserve">
-    <value>DSP HLE (デフォルト)</value>
-  </data>
-  <data name="grbDolphinAudio.Text" xml:space="preserve">
-    <value>オーディオ</value>
-  </data>
-  <data name="grbDolphinVideo.Text" xml:space="preserve">
-    <value>ビデオ</value>
-  </data>
-  <data name="grbDolphin.Text" xml:space="preserve">
-    <value>エミュレーターの構成</value>
-  </data>
-  <data name="lblTimeInterval.Text" xml:space="preserve">
-    <value>注: 時間間隔設定の調整は、プログラムの再起動後にのみ有効になります。</value>
-  </data>
-  <data name="cbVerificationInterval.Items" xml:space="preserve">
-    <value>5分</value>
+  <data name="chkManagerLogFile.Text" xml:space="preserve">
+    <value>レコードからファイルへ</value>
   </data>
   <data name="cbVerificationInterval.Items1" xml:space="preserve">
     <value>10分</value>
   </data>
-  <data name="cbVerificationInterval.Items2" xml:space="preserve">
-    <value>15分</value>
-  </data>
-  <data name="cbVerificationInterval.Items3" xml:space="preserve">
-    <value>30分</value>
+  <data name="cbVerificationInterval.Items6" xml:space="preserve">
+    <value>3時間</value>
   </data>
   <data name="cbVerificationInterval.Items4" xml:space="preserve">
     <value>1時間</value>
@@ -393,124 +141,355 @@
   <data name="cbVerificationInterval.Items5" xml:space="preserve">
     <value>2時間</value>
   </data>
-  <data name="cbVerificationInterval.Items6" xml:space="preserve">
-    <value>3時間</value>
+  <data name="chkCoverRecursiveSearch.Text" xml:space="preserve">
+    <value>再帰的皮膚検索を使用する（全領域を検索する）</value>
   </data>
-  <data name="cbVerificationInterval.Items7" xml:space="preserve">
-    <value>4時間</value>
+  <data name="chkGeneralExtractBZip2.Text" xml:space="preserve">
+    <value>BZip2ファイル(*.bz;*.bzip2)</value>
   </data>
-  <data name="lblUpdateInterval.Text" xml:space="preserve">
-    <value>チェック間隔:</value>
+  <data name="label8.Text" xml:space="preserve">
+    <value>フォルダの場所</value>
   </data>
-  <data name="lblPass.Text" xml:space="preserve">
-    <value>パスワード：</value>
-  </data>
-  <data name="lblUser.Text" xml:space="preserve">
-    <value>ユーザー：</value>
+  <data name="chkCoverSynchronizeDelete.Text" xml:space="preserve">
+    <value>リストにないゲームのスキンを削除する</value>
   </data>
   <data name="lblServerProxy.Text" xml:space="preserve">
-    <value>プロキシ サーバー:</value>
+    <value>プロキシサーバーです。</value>
   </data>
-  <data name="chkUpdateServerProxy.Text" xml:space="preserve">
-    <value>プロキシ サーバーを使用する</value>
+  <data name="cbTitleLanguage.Items5" xml:space="preserve">
+    <value>オランダ語</value>
   </data>
-  <data name="chkUpdateFileLog.Text" xml:space="preserve">
-    <value>更新をログ ファイルに追加する</value>
+  <data name="label17.Text" xml:space="preserve">
+    <value>1つまたは複数のファイルを、ある場所（ソース）から別の場所（デスティネーション）にコピーします。ファイルは圧縮されず、どのコンテナにも属さず、ガベージデータも削除されない。</value>
   </data>
-  <data name="chkUpdateBetaChannel.Text" xml:space="preserve">
-    <value>BETA チャネルの更新に切り替える</value>
+  <data name="rbGameXmlName.Text" xml:space="preserve">
+    <value>wiitdb.xmlでゲームのトレードネームを使用する (推奨! - wiitdb.xmlファイルが必要です)</value>
   </data>
-  <data name="chkUpdateVerifyStart.Text" xml:space="preserve">
-    <value>起動時に更新を確認する</value>
+  <data name="cbTitleLanguage.Items11" xml:space="preserve">
+    <value>簡体字中国語</value>
   </data>
-  <data name="grbUpdate.Text" xml:space="preserve">
-    <value>設定を更新</value>
+  <data name="cbTitleLanguage.Items10" xml:space="preserve">
+    <value>中国語（繁体字</value>
   </data>
-  <data name="tabSettingsUpdates.Text" xml:space="preserve">
-    <value>アップデート</value>
+  <data name="chkGeneralExtract7z.Text" xml:space="preserve">
+    <value>7Zipファイル(*.7z;*.7zip)</value>
   </data>
-  <data name="lblLanguageComments.Text" xml:space="preserve">
-    <value>注: 言語設定の調整は、プログラムの再起動後にのみ有効になります。</value>
-  </data>
-  <data name="lblLanguage.Text" xml:space="preserve">
-    <value>言語：</value>
+  <data name="grbDolphinFolder.Text" xml:space="preserve">
+    <value>エミュレータへのパス</value>
   </data>
   <data name="grbLanguage.Text" xml:space="preserve">
-    <value>デフォルトの言語を選択:</value>
+    <value>デフォルトの言語を選択します。</value>
   </data>
   <data name="tabSettingsLanguage.Text" xml:space="preserve">
     <value>言語</value>
   </data>
-  <data name="lblLOG.Text" xml:space="preserve">
-    <value>ログ レベル:</value>
-  </data>
-  <data name="chkManagerLogFile.Text" xml:space="preserve">
-    <value>ファイルに記録</value>
-  </data>
-  <data name="chkManagerLogWindow.Text" xml:space="preserve">
-    <value>窓口登録</value>
-  </data>
-  <data name="chkManagerLogDebugConsole.Text" xml:space="preserve">
-    <value>デバッグ コンソールのログ</value>
-  </data>
-  <data name="chkManagerLogSystemConsole.Text" xml:space="preserve">
-    <value>システムコンソールへの登録</value>
-  </data>
-  <data name="cbLevelLog.Items" xml:space="preserve">
-    <value>有益な</value>
-  </data>
-  <data name="cbLevelLog.Items1" xml:space="preserve">
-    <value>要約する</value>
-  </data>
-  <data name="cbLevelLog.Items2" xml:space="preserve">
-    <value>完了</value>
-  </data>
   <data name="grbLog.Text" xml:space="preserve">
     <value>記録</value>
   </data>
-  <data name="tabSettingsLog.Text" xml:space="preserve">
-    <value>記録</value>
+  <data name="cbAdjustNamingStyle.Items" xml:space="preserve">
+    <value>タイトル [ゲームコード］</value>
   </data>
-  <data name="btnRestore.Text" xml:space="preserve">
-    <value>設定の復元</value>
+  <data name="grbDolphinVideo.Text" xml:space="preserve">
+    <value>動画</value>
   </data>
   <data name="btnCancel.Text" xml:space="preserve">
     <value>キャンセル</value>
   </data>
+  <data name="chkMultipleInstances.Text" xml:space="preserve">
+    <value>プログラムの複数インスタンスの実行を可能にする</value>
+  </data>
   <data name="fbd.Description" xml:space="preserve">
     <value>ディレクトリを作成または選択します。</value>
   </data>
+  <data name="grbUpdate.Text" xml:space="preserve">
+    <value>アップデート設定</value>
+  </data>
+  <data name="chkGeneralScrubFlushSD.Text" xml:space="preserve">
+    <value>ファイルバッファをクリアして、SDカードをすぐに取り出せるようにする。</value>
+  </data>
+  <data name="rbGameInternalName.Text" xml:space="preserve">
+    <value>ゲームの内部制作名を使用する（75％対応）</value>
+  </data>
+  <data name="cbTitleLanguage.Items1" xml:space="preserve">
+    <value>フレンチ</value>
+  </data>
+  <data name="chkGameTitle.Text" xml:space="preserve">
+    <value>GameTDB（titles.txt）を使用する。</value>
+  </data>
+  <data name="chkGeneralExtractSplitFile.Text" xml:space="preserve">
+    <value>スプリットファイル（*.001）</value>
+  </data>
+  <data name="rbGeneralDiscDelete.Text" xml:space="preserve">
+    <value>ディスク1フォルダのみを残し、ディスク2フォルダを削除（実験中）</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>フォルダの場所</value>
+  </data>
+  <data name="cbVerificationInterval.Items3" xml:space="preserve">
+    <value>30分</value>
+  </data>
+  <data name="cbGeneralFileSize.Items" xml:space="preserve">
+    <value>自動</value>
+  </data>
+  <data name="lblPass.Text" xml:space="preserve">
+    <value>パスワード</value>
+  </data>
+  <data name="chkUpdateServerProxy.Text" xml:space="preserve">
+    <value>プロキシサーバーを使用する</value>
+  </data>
+  <data name="lblFormat.Text" xml:space="preserve">
+    <value>フォーマット</value>
+  </data>
+  <data name="cbTitleLanguage.Items8" xml:space="preserve">
+    <value>ロシア語</value>
+  </data>
   <data name="btnApply.Text" xml:space="preserve">
-    <value>申し込み</value>
+    <value>適用</value>
   </data>
-  <data name="ofdDolphin.Filter" xml:space="preserve">
-    <value>ドルフィン エミュレーター|dolphin.exe</value>
+  <data name="grbTransferSystem.Text" xml:space="preserve">
+    <value>使用する転送方式</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>設定</value>
+  <data name="cbTitleLanguage.Items2" xml:space="preserve">
+    <value>ジャーマン</value>
   </data>
-  <data name="chkWelcome.Text" xml:space="preserve">
-    <value>プログラムの起動時にようこそ画面を無効にする (スプラッシュスクリーン)</value>
+  <data name="lblLOG.Text" xml:space="preserve">
+    <value>ログレベル。</value>
   </data>
-  <data name="cbGeneralFileSize.Items1" xml:space="preserve">
-    <value>キロバイト</value>
+  <data name="grbGeneralDiverse.Text" xml:space="preserve">
+    <value>数名</value>
+  </data>
+  <data name="grbTitleFileLocation.Text" xml:space="preserve">
+    <value>ファイルの場所</value>
+  </data>
+  <data name="chkUpdateFileLog.Text" xml:space="preserve">
+    <value>ログファイルへの更新の追記</value>
+  </data>
+  <data name="chkStartWindowMaximized.Text" xml:space="preserve">
+    <value>スタートウィンドウの最大化</value>
+  </data>
+  <data name="lblUpdateInterval.Text" xml:space="preserve">
+    <value>チェック間隔。</value>
+  </data>
+  <data name="grbTitleLanguage.Text" xml:space="preserve">
+    <value>タイトル言語</value>
+  </data>
+  <data name="lblLanguage.Text" xml:space="preserve">
+    <value>言語</value>
+  </data>
+  <data name="chkNotify.Text" xml:space="preserve">
+    <value>タスクバーの通知を有効にする（デフォルトの通知は通常通り表示されます）</value>
+  </data>
+  <data name="chkScreensaver.Text" xml:space="preserve">
+    <value>スクリーンセーバーを解除する（スクリーンセーバー）</value>
+  </data>
+  <data name="grbDolphinAudio.Text" xml:space="preserve">
+    <value>オーディオ</value>
+  </data>
+  <data name="lblNomenclature.Text" xml:space="preserve">
+    <value>ネーミングのスタイル。</value>
+  </data>
+  <data name="lblTimeInterval.Text" xml:space="preserve">
+    <value>注：時間間隔設定の調整は、プログラムを再起動した後に有効になります。</value>
+  </data>
+  <data name="chkGeneralExtractNwb.Text" xml:space="preserve">
+    <value>NWBファイル(*.nwb)</value>
+  </data>
+  <data name="cbAdjustNamingStyle.Items1" xml:space="preserve">
+    <value>[ゲームコード］</value>
+  </data>
+  <data name="label20.Text" xml:space="preserve">
+    <value>XCopyと似ていますが、ファイル内に存在するゴミデータ（ガーベッジ）をクリーニングする点が異なります。元のファイルサイズは維持される。他のデータの整合性を維持したまま、ガベージデータを削除する。</value>
+  </data>
+  <data name="label31.Text" xml:space="preserve">
+    <value>不要なデータ（ゴミ）を定数バイト値（0xffまたは0x00）に置き換えて削除します。ただし、ファイルサイズは小さくなり、データの整合性は保たれる。</value>
+  </data>
+  <data name="tabCoverDisc.Text" xml:space="preserve">
+    <value>ディスク</value>
+  </data>
+  <data name="lblCommentsScrubCopy.Text" xml:space="preserve">
+    <value>スクラブ方式では、内部名称(開発者によって定義されたもの)に基づいて、常にデフォルトの "Title [Game Code]" が使用されます。スクラブコピーモードでは、ディスク1と2は常に別々のフォルダーに格納されます。ただし、検出方法が開発者によって与えられた共通の名前を識別できる特定の場合は、ディスク1と2は同じフォルダーに格納されます。</value>
+  </data>
+  <data name="cbTitleLanguage.Items6" xml:space="preserve">
+    <value>ポルトガル語</value>
+  </data>
+  <data name="grbGeneralFileSize.Text" xml:space="preserve">
+    <value>表示サイズ</value>
+  </data>
+  <data name="grbGeneralFiles.Text" xml:space="preserve">
+    <value>ファイル</value>
+  </data>
+  <data name="tabSettingsLog.Text" xml:space="preserve">
+    <value>記録</value>
+  </data>
+  <data name="cbLevelLog.Items2" xml:space="preserve">
+    <value>コンプリート</value>
+  </data>
+  <data name="chkUpdateVerifyStart.Text" xml:space="preserve">
+    <value>起動時にアップデートを確認する</value>
+  </data>
+  <data name="cbTitleLanguage.Items7" xml:space="preserve">
+    <value>やまと</value>
+  </data>
+  <data name="chkManagerLogSystemConsole.Text" xml:space="preserve">
+    <value>システムコンソールの登録</value>
+  </data>
+  <data name="cbLevelLog.Items" xml:space="preserve">
+    <value>情報提供</value>
+  </data>
+  <data name="tabCoverFull.Text" xml:space="preserve">
+    <value>コンプリート</value>
+  </data>
+  <data name="grbDolphin.Text" xml:space="preserve">
+    <value>エミュレータの設定</value>
+  </data>
+  <data name="grpCoversSynchronize.Text" xml:space="preserve">
+    <value>シンクロナイズ</value>
+  </data>
+  <data name="lblCommentsExactCopy.Text" xml:space="preserve">
+    <value>この命名方法は現在、ファイルの完全コピー（1:1）のみで機能し、内部名と商用名（wiitdb.xml経由）の両方を使用することが可能です。このオプションは、ユーザーが'Titles'タブで設定することができます。完全コピー（1:1）モードでは、ディスク1と2は常に同じフォルダーに格納されます。</value>
+  </data>
+  <data name="label35.Text" xml:space="preserve">
+    <value>フォルダの場所</value>
+  </data>
+  <data name="grbCoverTransfer.Text" xml:space="preserve">
+    <value>USBチャージャーの設定（Transfer Covers -&gt; Destination）</value>
+  </data>
+  <data name="chkManagerLogWindow.Text" xml:space="preserve">
+    <value>ウィンドウズ登録</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>フォルダの場所</value>
+  </data>
+  <data name="lblComments.Text" xml:space="preserve">
+    <value>COMMENTS</value>
+  </data>
+  <data name="tabSettingsNomenclature.Text" xml:space="preserve">
+    <value>命名法</value>
+  </data>
+  <data name="grpTitlesCoverFolder.Text" xml:space="preserve">
+    <value>Coversフォルダ（Cache -&gt; Origin）</value>
+  </data>
+  <data name="grbGeneralPartitions.Text" xml:space="preserve">
+    <value>ゲームディレクトリの調整</value>
+  </data>
+  <data name="tabSettingsTitle.Text" xml:space="preserve">
+    <value>タイトル</value>
   </data>
   <data name="cbGeneralFileSize.Items2" xml:space="preserve">
     <value>メガバイト</value>
   </data>
-  <data name="cbGeneralFileSize.Items3" xml:space="preserve">
-    <value>ギガバイト</value>
+  <data name="grbTitleDiverse.Text" xml:space="preserve">
+    <value>その他（効果を発揮するためにはプログラムの再起動が必要です）</value>
   </data>
-  <data name="cbGeneralFileSize.Items4" xml:space="preserve">
-    <value>テラバイト</value>
+  <data name="lblLanguageComments.Text" xml:space="preserve">
+    <value>注：言語設定の調整は、プログラムを再起動した後に有効になります。</value>
   </data>
-  <data name="btnOK.Text" xml:space="preserve">
-    <value>わかった</value>
+  <data name="cbVerificationInterval.Items2" xml:space="preserve">
+    <value>15分</value>
   </data>
-  <data name="cbNotificationsToggle.Text" xml:space="preserve">
-    <value>通知を沈黙させます。</value>
+  <data name="cbLevelLog.Items1" xml:space="preserve">
+    <value>まとめ</value>
   </data>
-  <data name="cbLoadDatabase.Text" xml:space="preserve">
-    <value>起動時にデータベースをロードします。</value>
+  <data name="chkGeneralTemporaryBuffer.Text" xml:space="preserve">
+    <value>一時記憶（バッファ）内の転送を利用する</value>
+  </data>
+  <data name="cbTitleLanguage.Items4" xml:space="preserve">
+    <value>イタリアン</value>
+  </data>
+  <data name="chkLoadDatabase.Text" xml:space="preserve">
+    <value>番組開始時にデータベースをロードする（番組開始時間が長くなる）</value>
+  </data>
+  <data name="tabSettingsSeveral.Text" xml:space="preserve">
+    <value>数名</value>
+  </data>
+  <data name="cbVerificationInterval.Items" xml:space="preserve">
+    <value>5分</value>
+  </data>
+  <data name="chkGeneralExtractRar.Text" xml:space="preserve">
+    <value>RARファイル(*.rar)</value>
+  </data>
+  <data name="rbGeneralDiscClean.Text" xml:space="preserve">
+    <value>ディスク1とディスク2ですべてのフォルダーを別々にする（デフォルト）</value>
+  </data>
+  <data name="btnRestore.Text" xml:space="preserve">
+    <value>設定の復元</value>
+  </data>
+  <data name="tabSettingsTransfer.Text" xml:space="preserve">
+    <value>ゲームの転送</value>
+  </data>
+  <data name="chkNetVerify.Text" xml:space="preserve">
+    <value>プログラム起動時にインターネット接続を確認する</value>
+  </data>
+  <data name="chkGameTitleCustom.Text" xml:space="preserve">
+    <value>カスタムタイトル(custom-titles.txt)を使用する。</value>
+  </data>
+  <data name="tabSettingsUpdates.Text" xml:space="preserve">
+    <value>更新情報</value>
+  </data>
+  <data name="rbTransferSystemXCopy.Text" xml:space="preserve">
+    <value>XCopy（デフォルト）</value>
+  </data>
+  <data name="label28.Text" xml:space="preserve">
+    <value>FST (FileSystem Table) は、アーカイブの実ファイルと仮想ファイルをすべて含むディレクトリに展開されるファイルシステムです。ニンテンドースイッチは、このFSTファイルを使って、内部の仮想ISOイメージを作成し、その仮想ISOからゲームをロードする。</value>
+  </data>
+  <data name="chkGeneralRecursiva.Text" xml:space="preserve">
+    <value>ディレクトリの再帰的検索（「ファイル（ソース）」ウィンドウの場合のみ）</value>
+  </data>
+  <data name="chkUpdateBetaChannel.Text" xml:space="preserve">
+    <value>BETAチャンネルのアップデートに切り替わる</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>設定</value>
+  </data>
+  <data name="cbTitleLanguage.Items" xml:space="preserve">
+    <value>イングリッシュ</value>
+  </data>
+  <data name="chkGeneralExtractZip.Text" xml:space="preserve">
+    <value>Zipファイル(*.zip)</value>
+  </data>
+  <data name="lblAlignment.Text" xml:space="preserve">
+    <value>アライメント</value>
+  </data>
+  <data name="chkGeneralSHA1.Text" xml:space="preserve">
+    <value>転送時のSHA-1署名の検証</value>
+  </data>
+  <data name="lblGeneralExtract.Text" xml:space="preserve">
+    <value>必要なときに抽出する。</value>
+  </data>
+  <data name="ofdDolphin.Filter" xml:space="preserve">
+    <value>ドルフィンエミュレータ|dolphin.exe</value>
+  </data>
+  <data name="rbDSPHLE.Text" xml:space="preserve">
+    <value>DSP HLE（デフォルト）</value>
+  </data>
+  <data name="cbVerificationInterval.Items7" xml:space="preserve">
+    <value>4時間</value>
+  </data>
+  <data name="grpNomenclatureFolderFormat.Text" xml:space="preserve">
+    <value>フォルダー形式</value>
+  </data>
+  <data name="grbGeneralTemporaryFolder.Text" xml:space="preserve">
+    <value>テンポラリーフォルダ</value>
+  </data>
+  <data name="tabSettingsCovers.Text" xml:space="preserve">
+    <value>カバー</value>
+  </data>
+  <data name="cbTitleLanguage.Items9" xml:space="preserve">
+    <value>コリアン</value>
+  </data>
+  <data name="cbTitleLanguage.Items3" xml:space="preserve">
+    <value>スパニッシュ</value>
+  </data>
+  <data name="chkGeneralMD5.Text" xml:space="preserve">
+    <value>転送時にMD5署名を計算する</value>
+  </data>
+  <data name="cbScrubAlign.Items" xml:space="preserve">
+    <value>自動</value>
+  </data>
+  <data name="lblUser.Text" xml:space="preserve">
+    <value>ユーザーです。</value>
+  </data>
+  <data name="tabSettingsGeneral.Text" xml:space="preserve">
+    <value>一般</value>
   </data>
 </root>

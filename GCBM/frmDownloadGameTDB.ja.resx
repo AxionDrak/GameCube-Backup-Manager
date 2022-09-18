@@ -118,16 +118,16 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="lblDownload.Text" xml:space="preserve">
-    <value>WiiTDB.zip のダウンロード</value>
+    <value>WiiTDB.zipのダウンロード</value>
   </data>
   <data name="lblExtracting.Text" xml:space="preserve">
-    <value>WiiTDB.xml の抽出</value>
+    <value>WiiTDB.xmlを展開する</value>
   </data>
   <data name="lblConverting.Text" xml:space="preserve">
-    <value>手続き完了！</value>
+    <value>プロセス終了</value>
   </data>
   <data name="btnCancelWork.Text" xml:space="preserve">
-    <value>近い</value>
+    <value>閉じる</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>データベースの更新</value>

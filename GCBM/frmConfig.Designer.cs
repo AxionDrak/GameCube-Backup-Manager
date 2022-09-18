@@ -1211,14 +1211,6 @@ namespace GCBM
             resources.ApplyResources(this.cbLanguage, "cbLanguage");
             this.cbLanguage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbLanguage.FormattingEnabled = true;
-            this.cbLanguage.Items.AddRange(new object[] {
-            resources.GetString("cbLanguage.Items"),
-            resources.GetString("cbLanguage.Items1"),
-            resources.GetString("cbLanguage.Items2"),
-            resources.GetString("cbLanguage.Items3"),
-            resources.GetString("cbLanguage.Items4"),
-            resources.GetString("cbLanguage.Items5"),
-            resources.GetString("cbLanguage.Items6")});
             this.cbLanguage.Name = "cbLanguage";
             // 
             // tabSettingsLog

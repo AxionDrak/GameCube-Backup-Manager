@@ -24,21 +24,40 @@ internal static class Program
         System.IO.Path.DirectorySeparatorChar + "media" + System.IO.Path.DirectorySeparatorChar + "covers";
 
     private const string INI_FILE = "config.ini";
+    public static IniFile ConfigFile = new IniFile(GET_CURRENT_PATH + System.IO.Path.DirectorySeparatorChar + INI_FILE);
     private static readonly string PROG_UPDATE = "10/07/2022";
-    public enum Language
+
+    //public enum Language
+    //{
+    //    ICHINESE,
+    //    IENGLISH,
+    //    IGERMAN,
+    //    IHUNGARIAN,
+    //    IINDONESIAN,
+    //    IITALIAN,
+    //    IJAPANESE,
+    //    IKOREAN,
+    //    IPORTUGUESE,
+    //    IUKRAINIAN
+    //};
+
+    public static CultureInfo[] cultureInfos = new[]
     {
-        Portuguese, English, Spanish, Korean, French, German, Japanese
-    }
-    public static Dictionary<string, int> Translations = new()
-        {
-            {"pt-BR" ,0},//Portuguese
-            {"en-US" ,1},//English
-            {"es"    ,2},//Spanish
-            {"ko"    ,3},//Korean
-            {"fr"    ,4},//French
-            {"de"    ,5},//German
-            {"ja"    ,6}//Japanese
-        };
+        new CultureInfo("en-US"), //English [US]
+        new CultureInfo("pt-BR"), //Portuguese
+        new CultureInfo("ko"), //Korean
+        new CultureInfo("es"), //Spanish [Spain]
+        new CultureInfo("es-MX"), //Spanish [Mexico]
+        new CultureInfo("zh"), //Chinese Simplified
+        new CultureInfo("de"), //German [Germany]
+        new CultureInfo("hu"), //Hungarian
+        new CultureInfo("id"), //Indonesian
+        new CultureInfo("it"), //Italian
+        new CultureInfo("ja"), //Japanese
+        new CultureInfo("uk"), //Ukrainian
+
+    };
+
 
     /// <summary>
     ///     Ponto de entrada principal para o aplicativo.
@@ -46,9 +65,6 @@ internal static class Program
     [STAThread]
     private static void Main()
     {
-
-        var configIniFile = new IniFile("config.ini");
-
         //Pega o nome do processo deste programa
         var nomeProcesso = Process.GetCurrentProcess().ProcessName;
         //Busca os processos com este nome que estão em execução
@@ -56,7 +72,7 @@ internal static class Program
 
         if (File.Exists("config.ini"))
         {
-            if (configIniFile.IniReadBool("SEVERAL", "MultipleInstances") == false)
+            if (ConfigFile.IniReadBool("SEVERAL", "MultipleInstances") == false)
             {
                 //Pega o nome do processo deste programa
                 //string nomeProcesso = Process.GetCurrentProcess().ProcessName;
@@ -187,76 +203,118 @@ internal static class Program
             CONFIG_INI_FILE.IniWriteBool("MANAGERLOG", "LogWindow", false);
             CONFIG_INI_FILE.IniWriteBool("MANAGERLOG", "LogFile", true);
             // Language
-            CONFIG_INI_FILE.IniWriteInt("LANGUAGE", "ConfigLanguage", 1);
+
+            if(IsTranslated(DetectOSLanguage()))
+                CONFIG_INI_FILE.IniWriteString("LANGUAGE", "ConfigLanguage", DetectOSLanguage());
+            else
+            {
+                frmLanguagePrompt frmPrompt = new frmLanguagePrompt();
+                DialogResult result = frmPrompt.DialogResult;
+                frmPrompt.ShowDialog();
+
+            }
         }
     }
 
+    /// <summary>
+    ///     Check cultureInfos and see if the language is supported.
+    /// </summary>
+    public static bool IsTranslated(string language)
+    {
+        foreach (CultureInfo cultureInfo in cultureInfos)
+        {
+            if (cultureInfo.Name == language)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    
     #region Detect OS Language
 
     /// <summary>
     ///     Automatic detection of operating system default language
     /// </summary>
-    public static void DetectOSLanguage()
+    public static string DetectOSLanguage()
     {
-        var configIniFile = new IniFile("config.ini");
-
         var sysLocale = Thread.CurrentThread.CurrentCulture;
-
-        //  See if we have that translation
-        var isTranslated = Translations.ContainsKey(sysLocale.ToString());
-
-        //  Write the corresponding number to INI
-        if (isTranslated)
-            configIniFile.IniWriteInt("LANGUAGE", "ConfigLanguage",
-                Translations[sysLocale.ToString()]);
-        else //Default to english
-            configIniFile.IniWriteInt("LANGUAGE", "ConfigLanguage", 1); //en-US
+        var sysLang = sysLocale.TwoLetterISOLanguageName;
+        return sysLang;
     }
 
+    /// <summary>
+    ///     Check the config file to see which language is specified, or default to the OS language if supported, else default to english
+    /// </summary>
     public static void AdjustLanguage(Thread t)
     {
-        while (true)
+        if (ConfigFile.IniReadString("LANGUAGE", "ConfigLanguage", "") == "")
         {
-            var configIniFile = new IniFile("config.ini");
-            //Get current system Locale -- Thread.CurrentThread.CurrentUICulture.Name
-            if (configIniFile.IniReadBool("SEVERAL", "LaunchedOnce"))
+            var sysLocale = Thread.CurrentThread.CurrentCulture;
+            var sysLang = CultureInfo.CurrentUICulture.Name;
+            if (IsTranslated(sysLang))
             {
-                switch (configIniFile.IniReadInt("LANGUAGE", "ConfigLanguage"))
-                {
-                    case 0:
-                        t.CurrentUICulture = new CultureInfo("pt-BR");
-                        break;
-                    case 1:
-                        t.CurrentUICulture = new CultureInfo("en-US");
-                        break;
-                    case 2:
-                        t.CurrentUICulture = new CultureInfo("es");
-                        break;
-                    case 3:
-                        t.CurrentUICulture = new CultureInfo("ko");
-                        break;
-                    case 4:
-                        t.CurrentUICulture = new CultureInfo("fr");
-                        break;
-                    case 5:
-                        t.CurrentUICulture = new CultureInfo("de");
-                        break;
-                    case 6:
-                        t.CurrentUICulture = new CultureInfo("ja");
-                        break;
-                    default:
-                        t.CurrentUICulture = new CultureInfo("en-US");
-                        break;
-                }
+                t.CurrentUICulture = new CultureInfo(sysLang);
             }
             else
             {
-                DetectOSLanguage();
+                t.CurrentUICulture = new CultureInfo("en");
             }
-
-            break;
+        }
+        else
+        {
+            t.CurrentUICulture = new CultureInfo(ConfigFile.IniReadString("LANGUAGE", "ConfigLanguage", ""));
         }
     }
+    
+    //public static void AdjustLanguage(Thread t)
+    //{
+    //    while (true)
+    //    {
+    //        var ConfigFile = new IniFile("config.ini");
+    //        //Get current system Locale -- Thread.CurrentThread.CurrentUICulture.Name
+    //        if (ConfigFile.IniReadBool("SEVERAL", "LaunchedOnce"))
+    //        {
+    //            switch (ConfigFile.IniReadString("LANGUAGE", "ConfigLanguage"))
+    //            {
+    //                case "pt-BR":
+    //                    t.CurrentUICulture = new CultureInfo("pt-BR");
+    //                    break;
+    //                case "en-US":
+    //                    t.CurrentUICulture = new CultureInfo("en-US");
+    //                    break;
+    //                case "es":
+    //                    t.CurrentUICulture = new CultureInfo("es");
+    //                    break;
+    //                case "ko":
+    //                    t.CurrentUICulture = new CultureInfo("ko");
+    //                    break;
+    //                case "fr":
+    //                    t.CurrentUICulture = new CultureInfo("fr");
+    //                    break;
+    //                case "de":
+    //                    t.CurrentUICulture = new CultureInfo("de");
+    //                    break;
+    //                case "ja":
+    //                    t.CurrentUICulture = new CultureInfo("ja");
+    //                    break;
+    //                case "zh":
+    //                    t.CurrentUICulture = new CultureInfo("zh");
+    //                    break;
+    //                default:
+    //                    t.CurrentUICulture = new CultureInfo("en-US");
+    //                    break;
+    //            }
+    //        }
+    //        else
+    //        {
+    //            DetectOSLanguage();
+    //        }
+
+    //        break;
+    //    }
+    //}
 
     #endregion
     private static void Start()

@@ -118,93 +118,93 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="label7.Text" xml:space="preserve">
-    <value>AHB アクセス:</value>
+    <value>AHBアクセス。</value>
   </data>
   <data name="ofdBanner.Title" xml:space="preserve">
-    <value>イメージ ファイルを選択します。</value>
+    <value>画像ファイルを選択する。</value>
   </data>
   <data name="cbMountUSB.Items" xml:space="preserve">
-    <value>無効</value>
+    <value>ディサブド</value>
   </data>
   <data name="ofdXml.Filter" xml:space="preserve">
-    <value>XML ファイル|meta.xml</value>
+    <value>XMLファイル|meta.xml</value>
   </data>
   <data name="cbAppNoReloadIOS.Items" xml:space="preserve">
-    <value>無効</value>
+    <value>ディサブド</value>
   </data>
   <data name="btnClose.Text" xml:space="preserve">
-    <value>近い</value>
+    <value>閉じる</value>
   </data>
   <data name="btnSearch.Text" xml:space="preserve">
-    <value>探す...</value>
+    <value>検索...</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>「meta.xml」の読み取り/編集</value>
+    <value>meta.xml」の読み取り/編集を行う。</value>
   </data>
   <data name="lblMountUsb.Text" xml:space="preserve">
-    <value>USB マウント:</value>
+    <value>マウントUSB。</value>
   </data>
   <data name="cbAppAhbAccess.Items1" xml:space="preserve">
-    <value>有効</value>
+    <value>ENABLED</value>
   </data>
   <data name="cbAppAhbAccess.Items" xml:space="preserve">
-    <value>無効</value>
+    <value>ディサブド</value>
   </data>
   <data name="label4.Text" xml:space="preserve">
-    <value>発売日：</value>
+    <value>発売日</value>
   </data>
   <data name="btnSave.Text" xml:space="preserve">
-    <value>保存</value>
+    <value>セーブ</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>名前：</value>
+    <value>名前</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
-    <value>説明 (短い):</value>
+    <value>説明（ショート）。</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>デベロッパー：</value>
+    <value>デベロッパー</value>
   </data>
   <data name="label8.Text" xml:space="preserve">
-    <value>バナー：</value>
+    <value>バナーです。</value>
   </data>
   <data name="ofdXml.Title" xml:space="preserve">
-    <value>「meta.xml」ファイルを選択します。</value>
+    <value>meta.xml」ファイルを選択します。</value>
   </data>
   <data name="ofdBanner.Filter" xml:space="preserve">
-    <value>PNG ファイル|*.png</value>
+    <value>PNGファイル|*.png</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
-    <value>作成・編集</value>
+    <value>作成/編集</value>
   </data>
   <data name="label6.Text" xml:space="preserve">
-    <value>説明 (長い):</value>
+    <value>説明（長い）。</value>
   </data>
   <data name="cbPortUSB.Items" xml:space="preserve">
-    <value>無効</value>
+    <value>ディサブド</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
-    <value>バージョン：</value>
+    <value>バージョン</value>
   </data>
   <data name="chkEnableArguments.Text" xml:space="preserve">
     <value>引数を有効にする</value>
   </data>
   <data name="lblUsbPort.Text" xml:space="preserve">
-    <value>USBポート：</value>
+    <value>USBポートです。</value>
   </data>
   <data name="cbAppNoReloadIOS.Items1" xml:space="preserve">
-    <value>有効</value>
+    <value>ENABLED</value>
   </data>
   <data name="label9.Text" xml:space="preserve">
-    <value>IOS をリロードしない:</value>
+    <value>IOSをリロードしないでください。</value>
   </data>
   <data name="lblAttentionImageNotFound.Text" xml:space="preserve">
-    <value>注意！</value>
+    <value>ATTENTION!</value>
   </data>
   <data name="btnClear.Text" xml:space="preserve">
-    <value>掃除</value>
+    <value>クリーン</value>
   </data>
   <data name="lblImageNotFound.Text" xml:space="preserve">
-    <value>画像が見つかりません!上記の画像を使用して保存したり、新しい画像を選択したり、画像を完全に削除したりできます。画像サイズ: 128 (幅) x 48 (高さ)。</value>
+    <value>画像が見つかりませんでした上記の画像を使用して保存するか、新しい画像を選択するか、または画像を完全に削除することができます。画像サイズ：横128×縦48。</value>
   </data>
 </root>

@@ -118,18 +118,18 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="chkRenameISO.Text" xml:space="preserve">
-    <value>Leerzeichen automatisch entfernen und ursprünglichen Namen beibehalten</value>
+    <value>Automatisches Entfernen von Leerzeichen und Beibehaltung des ursprünglichen Namens</value>
   </data>
   <data name="btnCancel.Text" xml:space="preserve">
-    <value>Schließen</value>
+    <value>Abbrechen</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Geben Sie den neuen Namen für die Datei ein (denken Sie daran, die Erweiterung einzuschließen):</value>
+    <value>Geben Sie den neuen Namen für die Datei ein (vergessen Sie nicht, die Erweiterung anzugeben):</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ISO/GCM umbenennen</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>ACHTUNG: Wenn Sie beabsichtigen, die Scrub-Übertragungsmethode zu verwenden, lassen Sie KEINE Leerzeichen im Dateinamen!</value>
+    <value>ACHTUNG: Wenn Sie die Scrub-Übertragungsmethode verwenden wollen, lassen Sie KEINE Leerzeichen im Dateinamen!</value>
   </data>
 </root>

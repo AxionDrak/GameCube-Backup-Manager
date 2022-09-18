@@ -1,0 +1,561 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="GCBM_Language" xml:space="preserve">
+    <value>Українська[Україна]</value>
+  </data>
+  <data name="ServerReportedOneCoverOrBothNotFound" xml:space="preserve">
+    <value>Сервер повідомив: Одна з обкладинок (або обидві) не знайдена!</value>
+  </data>
+  <data name="NoInternetConnectionFound_String2" xml:space="preserve">
+    <value>Переконайтеся, що з'єднання ввімкнено в налаштуваннях програми.</value>
+  </data>
+  <data name="GetAllDrives_Inactive" xml:space="preserve">
+    <value>Неактивний</value>
+  </data>
+  <data name="AboutBox_String1" xml:space="preserve">
+    <value>Про {0}</value>
+  </data>
+  <data name="GameListExportedTXT" xml:space="preserve">
+    <value>Список ігор експортовано в TXT!</value>
+  </data>
+  <data name="PluginDisplay_String1" xml:space="preserve">
+    <value>Ви впевнені, що хочете видалити плагін?</value>
+  </data>
+  <data name="EmptyGamesList" xml:space="preserve">
+    <value>Список ігор порожній!</value>
+  </data>
+  <data name="Download3DCoverError" xml:space="preserve">
+    <value> [ОШИБКА] Не вдалося завантажити обкладинку (3D)!</value>
+  </data>
+  <data name="RequiredDirectories_String2" xml:space="preserve">
+    <value>[INFO] Тимчасовий каталог за замовчуванням вже існує... ігноруючи створення!</value>
+  </data>
+  <data name="ClearTemp_String2" xml:space="preserve">
+    <value>Не вдалося очистити тимчасову папку!</value>
+  </data>
+  <data name="RecommendedDeleteOrMoveFile" xml:space="preserve">
+    <value>Рекомендується видалити або перемістити файл в інше місце.</value>
+  </data>
+  <data name="FoundIsoGcmFiles" xml:space="preserve">
+    <value>[INFO] Знайдено файл(и) ISO/GCM:</value>
+  </data>
+  <data name="frmMain_Resize_Program" xml:space="preserve">
+    <value>Програма працює у фоновому режимі!</value>
+  </data>
+  <data name="InstallGameScrub_Unresponsive" xml:space="preserve">
+    <value>Статус: Не відповідає!</value>
+  </data>
+  <data name="OverwriteWiiTDBBody" xml:space="preserve">
+    <value>Ви хочете замінити поточний файл WiiTDB.xml? Ви хочете замінити поточний файл WiiTDB.xml?</value>
+  </data>
+  <data name="ClearLogNotFound" xml:space="preserve">
+    <value>Очищати дані реєстру не потрібно!</value>
+  </data>
+  <data name="ConvertElfDol_String2" xml:space="preserve">
+    <value>&gt;&gt; Статус: Не відповідає!</value>
+  </data>
+  <data name="NoInternetConnectionFound_String1" xml:space="preserve">
+    <value>Не знайдено з'єднання з Інтернетом!</value>
+  </data>
+  <data name="CannotOpenTwoInstances" xml:space="preserve">
+    <value>Не можу відкрити два екземпляри цієї програми!</value>
+  </data>
+  <data name="ConvertElfDol_String4" xml:space="preserve">
+    <value>&gt;&gt; Статус [ERROR]: Нерозпізнаний формат файлу!</value>
+  </data>
+  <data name="InvalidDrive_String3" xml:space="preserve">
+    <value>Додаток Nintendont підтримує тільки файлові системи FAT32 і exFAT.</value>
+  </data>
+  <data name="NetworkCheck_NetStatus_Offline" xml:space="preserve">
+    <value>Інтернет-зв'язок відключено!</value>
+  </data>
+  <data name="GCBM_TranslatedBy" xml:space="preserve">
+    <value>DeepL</value>
+  </data>
+  <data name="LoadDatabase_Region" xml:space="preserve">
+    <value>Регіон</value>
+  </data>
+  <data name="SelectTargetDrive" xml:space="preserve">
+    <value>Будь ласка, оберіть цільовий диск!</value>
+  </data>
+  <data name="HashesAreNotSame" xml:space="preserve">
+    <value>[ІНФОРМАЦІЯ] Хеші не збігаються!</value>
+  </data>
+  <data name="DisplayFilesSelected_Size" xml:space="preserve">
+    <value>Розмір</value>
+  </data>
+  <data name="ProcessTaskDelay_String2" xml:space="preserve">
+    <value>Будь ласка, завантажте файл!</value>
+  </data>
+  <data name="InvalidDrive_String1" xml:space="preserve">
+    <value>Це не дійсний пристрій!</value>
+  </data>
+  <data name="InstallGameScrub_Scrubbing" xml:space="preserve">
+    <value>Статус: Очищення...</value>
+  </data>
+  <data name="Attention" xml:space="preserve">
+    <value>УВАГА!</value>
+  </data>
+  <data name="ReadImage_String3" xml:space="preserve">
+    <value>Файл '{0}' не знайдено!</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>[ПОМИЛКА]</value>
+  </data>
+  <data name="PluginDisplay_String2" xml:space="preserve">
+    <value>Видалити</value>
+  </data>
+  <data name="RegisterHeaderLog_CurrentProgramDirectory" xml:space="preserve">
+    <value>[INFO] Поточний каталог програми:</value>
+  </data>
+  <data name="ListHash_String2" xml:space="preserve">
+    <value>хеш файлу:</value>
+  </data>
+  <data name="Information" xml:space="preserve">
+    <value>Інформація</value>
+  </data>
+  <data name="UnknownRegion" xml:space="preserve">
+    <value>Невідомий регіон!</value>
+  </data>
+  <data name="SelectGameFromList" xml:space="preserve">
+    <value>Будь ласка, оберіть гру зі списку!</value>
+  </data>
+  <data name="RecordExportedFailed" xml:space="preserve">
+    <value>Дані для експорту недоступні!</value>
+  </data>
+  <data name="CantOpenImage" xml:space="preserve">
+    <value>[ERROR] Не вдалося відкрити файл зображення.</value>
+  </data>
+  <data name="ConvertElfDol_String1" xml:space="preserve">
+    <value>&gt;&gt; Статус: Працюю...</value>
+  </data>
+  <data name="AskDownloadWiiTDB" xml:space="preserve">
+    <value>WiiTDB.zip не знайдено, хочете завантажити зараз?</value>
+  </data>
+  <data name="InvalidDrive_String2" xml:space="preserve">
+    <value>Виявлена файлова система:</value>
+  </data>
+  <data name="ReadImage_String4" xml:space="preserve">
+    <value>ПОМИЛКА!</value>
+  </data>
+  <data name="DownloadingWiiTDB_String1" xml:space="preserve">
+    <value>&gt;&gt; Завантаження WiiTDB.zip ...</value>
+  </data>
+  <data name="ServerReportedDiscCoverNotFound" xml:space="preserve">
+    <value>Сервер повідомив: Обкладинку диска не знайдено!</value>
+  </data>
+  <data name="ProcessTaskDelay_String3" xml:space="preserve">
+    <value>Деякі функції, які залежать від цього файлу, не будуть працювати, поки він не буде завантажений!</value>
+  </data>
+  <data name="ReadImage_String2" xml:space="preserve">
+    <value>Кілька зображень FST? Будь ласка, надішліть мені інформацію про це зображення.</value>
+  </data>
+  <data name="InstallGameScrub_TrasnferredDisc2" xml:space="preserve">
+    <value>Диск 2 передано успішно!</value>
+  </data>
+  <data name="AboutTranslatorContact" xml:space="preserve">
+    <value>Контакт:</value>
+  </data>
+  <data name="MetaXml_String2" xml:space="preserve">
+    <value>Дані успішно збережено!</value>
+  </data>
+  <data name="RegisterHeaderLog_WorkingSet" xml:space="preserve">
+    <value>Робочий набір:</value>
+  </data>
+  <data name="AllFilesSuccessfullyDeleted" xml:space="preserve">
+    <value>Всі файли успішно видалено!</value>
+  </data>
+  <data name="ClearLog" xml:space="preserve">
+    <value>Ви дійсно хочете очистити дані реєстру?</value>
+  </data>
+  <data name="InvalidDrive_String6" xml:space="preserve">
+    <value>як резервне сховище для файлів ISO/GCM.</value>
+  </data>
+  <data name="RegisterHeaderLog_OSVersion" xml:space="preserve">
+    <value>Версія операційної системи:</value>
+  </data>
+  <data name="LoadISOInfo_String2" xml:space="preserve">
+    <value>Додатковий диск: (disc2)</value>
+  </data>
+  <data name="DolphinEmulator_Not_Found_String_1" xml:space="preserve">
+    <value>Емулятор не знайдено!</value>
+  </data>
+  <data name="ListHash_String1" xml:space="preserve">
+    <value>На сьогоднішній день, на жаль, це не так.</value>
+  </data>
+  <data name="RegisterHeaderLog_ApplicationVersion" xml:space="preserve">
+    <value>Версія програми:</value>
+  </data>
+  <data name="RegisterHeaderLog_LogicalUnits" xml:space="preserve">
+    <value>Логічні одиниці:</value>
+  </data>
+  <data name="FilesDestinationUnit" xml:space="preserve">
+    <value>Файли (Призначення) - Диск (</value>
+  </data>
+  <data name="AssemblyInfo_Description" xml:space="preserve">
+    <value>Програмне забезпечення для керування файлами Nintendo GameCube ISO та GCM.</value>
+  </data>
+  <data name="CheckUSBGXFlow_String1" xml:space="preserve">
+    <value>Будь ласка, перейдіть в розділ "Параметри"-&gt;"Налаштування</value>
+  </data>
+  <data name="AboutCurrentLanguage" xml:space="preserve">
+    <value>Поточна мова:</value>
+  </data>
+  <data name="FilterDatabase_String2" xml:space="preserve">
+    <value>Якщо файл "wiitdb.xml" встановлено коректно, внесіть необхідні корективи в налаштування програми.</value>
+  </data>
+  <data name="MetaXml_String1" xml:space="preserve">
+    <value>Невірний або пошкоджений файл 'meta.xml'!</value>
+  </data>
+  <data name="CreateGamesFolder" xml:space="preserve">
+    <value>Немає папки GAMES, створити папку зараз?</value>
+  </data>
+  <data name="DisplayFilesSelected_Found_String2" xml:space="preserve">
+    <value>файл(и) з розширенням .</value>
+  </data>
+  <data name="RecordExportedSuccessfully" xml:space="preserve">
+    <value>Рекорд успішно експортовано!</value>
+  </data>
+  <data name="LoadDatabase_Type" xml:space="preserve">
+    <value>Тип</value>
+  </data>
+  <data name="ProcessTaskDelay_String4" xml:space="preserve">
+    <value>Щоб завантажити файл (потрібне підключення до Інтернету), перейдіть на вкладку "База даних", потім "Інструменти" -&gt; "Оновлення GameTDB".</value>
+  </data>
+  <data name="DownloadingWiiTDB_String2" xml:space="preserve">
+    <value>&gt;&gt; Витягнення WiiTDB.xml ...</value>
+  </data>
+  <data name="SelectFolderContainingIsoGcmFiles" xml:space="preserve">
+    <value>Виберіть папку, що містить файли ISO/GCM:</value>
+  </data>
+  <data name="DestinyDrive_TotalSpace" xml:space="preserve">
+    <value>Загальний простір:</value>
+  </data>
+  <data name="RequiredDirectories_String4" xml:space="preserve">
+    <value>[ІНФОРМАЦІЯ] Створено каталоги скінів...</value>
+  </data>
+  <data name="Download3DCover" xml:space="preserve">
+    <value> [ІНФОРМАЦІЯ] Завантаження обкладинок (3D)... </value>
+  </data>
+  <data name="InvalidDrive_String5" xml:space="preserve">
+    <value>Разом з тим, ви можете використовувати пристрої</value>
+  </data>
+  <data name="LoadDatabase_Developer" xml:space="preserve">
+    <value>Розробник</value>
+  </data>
+  <data name="CopyTask_String1" xml:space="preserve">
+    <value>Передача файлу...</value>
+  </data>
+  <data name="InstallGameScrub_GameInstalled" xml:space="preserve">
+    <value>Гру успішно встановлено!</value>
+  </data>
+  <data name="OverwriteWiiTDBCaption" xml:space="preserve">
+    <value>Перезаписати WiiTDB.xml?</value>
+  </data>
+  <data name="DialogResultDeleteGame_ReallyDeleteFile_String1" xml:space="preserve">
+    <value>Ви дійсно хочете видалити файл(и)?</value>
+  </data>
+  <data name="CreateGamesFolderNow" xml:space="preserve">
+    <value>Це дійсний пристрій, але немає папки GAMES, створити папку зараз?</value>
+  </data>
+  <data name="AboutTranslator" xml:space="preserve">
+    <value>Перекладач:</value>
+  </data>
+  <data name=" " xml:space="preserve">
+    <value>[Помилка] Не вдалося завантажити обкладинку (Диск)!</value>
+  </data>
+  <data name="CheckUSBGXFlow_String2" xml:space="preserve">
+    <value>Потім перейдіть в "Скіни" -&gt; "Синхронізувати" і встановіть галочку "Увімкнути передачу скінів між пристроями".</value>
+  </data>
+  <data name="FilterDatabase_String1" xml:space="preserve">
+    <value>Список баз даних порожній!</value>
+  </data>
+  <data name="DolphinEmulator_Not_Found_String_2" xml:space="preserve">
+    <value>Будь ласка, вкажіть шлях до виконуваного файлу емулятора Dolphin (dolphin.exe).</value>
+  </data>
+  <data name="CopyTask_String5" xml:space="preserve">
+    <value>Завершено на 100%!</value>
+  </data>
+  <data name="DisplayFilesSelected_FileName" xml:space="preserve">
+    <value>Ім'я файлу</value>
+  </data>
+  <data name="CopyTask_String6" xml:space="preserve">
+    <value>Передача завершена!</value>
+  </data>
+  <data name="DownloadingWiiTDB_String3" xml:space="preserve">
+    <value>&gt;&gt; Процес завершено!</value>
+  </data>
+  <data name="DisplayFilesSelected_Found_String3" xml:space="preserve">
+    <value>Знайдено</value>
+  </data>
+  <data name="RegisterHeaderLog_CLRVersion" xml:space="preserve">
+    <value>Версія CLR:</value>
+  </data>
+  <data name="AboutVersion" xml:space="preserve">
+    <value>Версія</value>
+  </data>
+  <data name="Info" xml:space="preserve">
+    <value>[ІНФОРМАЦІЯ].</value>
+  </data>
+  <data name="RequiredDirectories_String5" xml:space="preserve">
+    <value>[ІНФОРМАЦІЯ] Каталоги обкладинок вже існують... ігноруючи творчість!</value>
+  </data>
+  <data name="GCBM_TranslatorContact" xml:space="preserve">
+    <value>DeepL.com</value>
+  </data>
+  <data name="InvalidDrive_String4" xml:space="preserve">
+    <value>Настійно рекомендується використовувати файлову систему FAT32 з 32K кластерами для забезпечення максимальної сумісності з іграми GameCube, Wii, ROM, додатками, емуляторами і всім, що знаходиться між ними!</value>
+  </data>
+  <data name="CopyTask_String2" xml:space="preserve">
+    <value>Встановлення гри...</value>
+  </data>
+  <data name="InstallGameScrub_Complete" xml:space="preserve">
+    <value>Статус: Завершено!</value>
+  </data>
+  <data name="DisplayFilesSelected_Found_String1" xml:space="preserve">
+    <value>[ІНФОРМАЦІЯ] Знайдено</value>
+  </data>
+  <data name="AboutBox_String2" xml:space="preserve">
+    <value>Версія {0}</value>
+  </data>
+  <data name="CopyTask_String3" xml:space="preserve">
+    <value>Передача завершена!</value>
+  </data>
+  <data name="LoadDatabase_GameTitle" xml:space="preserve">
+    <value>Назва гри</value>
+  </data>
+  <data name="CopyTask_String4" xml:space="preserve">
+    <value>Гру встановлено!</value>
+  </data>
+  <data name="DialogResultDeleteGame_ReallyDeleteFile_String2" xml:space="preserve">
+    <value>Ця процедура є незворотною і відновити файл(и) буде неможливо!</value>
+  </data>
+  <data name="InstallGameScrub_Transferring" xml:space="preserve">
+    <value>Передача...</value>
+  </data>
+  <data name="ServerReported3DCoverNotFound" xml:space="preserve">
+    <value>Сервер повідомив: 3D обкладинка не знайдена!</value>
+  </data>
+  <data name="DisplayFilesSelected_FilePath" xml:space="preserve">
+    <value>Шлях до файлу</value>
+  </data>
+  <data name="ProcessTaskDelay_String1" xml:space="preserve">
+    <value>Файл 'wiitdb.xml' не знайдено!</value>
+  </data>
+  <data name="ClearTemp_String1" xml:space="preserve">
+    <value>[INFO] Не вдалося очистити тимчасову папку!</value>
+  </data>
+  <data name="LoadDatabase_IDGameCode" xml:space="preserve">
+    <value>ID (ігровий код)</value>
+  </data>
+  <data name="Notice" xml:space="preserve">
+    <value>ПОВІДОМЛЕННЯ</value>
+  </data>
+  <data name="NotNintendoGameCubeFile" xml:space="preserve">
+    <value>[ПОМИЛКА] Не файл для Nintendo GameCube.</value>
+  </data>
+  <data name="RequiredDirectories_String1" xml:space="preserve">
+    <value>[INFO] Створено тимчасовий каталог за замовчуванням...</value>
+  </data>
+  <data name="NetworkCheck_NetStatus_Online" xml:space="preserve">
+    <value>Підключення до мережі Інтернет встановлено!</value>
+  </data>
+  <data name="ConvertElfDol_String3" xml:space="preserve">
+    <value>&gt;&gt; Статус: Завершено!</value>
+  </data>
+  <data name="RequiredDirectories_String3" xml:space="preserve">
+    <value>[ІНФОРМАЦІЯ] Використання користувацького тимчасового каталогу!</value>
+  </data>
+  <data name="RegisterHeaderLog_GcbmLogCreated" xml:space="preserve">
+    <value>створюється файл gcbm.log.</value>
+  </data>
+  <data name="ReadImage_String1" xml:space="preserve">
+    <value>Зображення занадто мале!</value>
+  </data>
+  <data name="DestinyDrive_AvailableSpace" xml:space="preserve">
+    <value>Вільне місце:</value>
+  </data>
+  <data name="LoadISOInfo_String1" xml:space="preserve">
+    <value>Основний диск: (disc1)</value>
+  </data>
+  <data name="RegisterHeaderLog_ProgramName" xml:space="preserve">
+    <value>Назва програми:</value>
+  </data>
+  <data name="UnableWriteDataDisk" xml:space="preserve">
+    <value>Не вдалося записати дані на диск!</value>
+  </data>
+  <data name="DownloadDiscCover" xml:space="preserve">
+    <value>[INFO] Завантаження обкладинок (Диск)... </value>
+  </data>
+  <data name="MetaXml_String_ERRO" xml:space="preserve">
+    <value>ПОМИЛКА</value>
+  </data>
+  <data name="GameListExportedCSV" xml:space="preserve">
+    <value>Список ігор експортовано в CSV!</value>
+  </data>
+  <data name="CheckUSBGXFlow_String3" xml:space="preserve">
+    <value>Потім на тій же вкладці перейдіть до "Конфігурація зарядного пристрою USB (Transfer Covers)" і налаштуйте каталоги кришок (Disk, 2D, 3D і Full) USB Loader GX або WiiFlow в "Конфігурація зарядного пристрою USB (Transfer Covers)", вказуючи на відповідні каталоги на цільовому пристрої.</value>
+  </data>
+  <data name="SplashNetworkCheck" xml:space="preserve">
+    <value>Перевірка підключення до мережі Інтернет...</value>
+  </data>
+  <data name="SplashPopulatingDrives" xml:space="preserve">
+    <value>Заповнення списку дисків...</value>
+  </data>
+  <data name="SplashFoundDrive" xml:space="preserve">
+    <value>Знайшов флешку:</value>
+  </data>
+  <data name="SplashFinishing" xml:space="preserve">
+    <value>Закінчую...</value>
+  </data>
+  <data name="SplashFinished" xml:space="preserve">
+    <value>Готово.</value>
+  </data>
+  <data name="SplashDirectories" xml:space="preserve">
+    <value>Налаштування необхідних каталогів...</value>
+  </data>
+  <data name="InstallGameScrub_TransferDisc2" xml:space="preserve">
+    <value>Рухомий диск 2...</value>
+  </data>
+  <data name="InstallGameScrub_DoneScrubbing" xml:space="preserve">
+    <value>Закінчили скрабування...</value>
+  </data>
+  <data name="SelectLanguagePrompt" xml:space="preserve">
+    <value>Будь ласка, оберіть мову, якою ви бажаєте користуватися:</value>
+  </data>
+  <data name="LanguagePromptConfirm" xml:space="preserve">
+    <value>Це та мова, якою ви хотіли б користуватися?</value>
+  </data>
+  <data name="LanguagePromptTitle" xml:space="preserve">
+    <value>Виберіть свою мову:</value>
+  </data>
+  <data name="LanguagePromptConfirmTitle" xml:space="preserve">
+    <value>Ви можете це зрозуміти?</value>
+  </data>
+  <data name="DownloadDiscCoverError" xml:space="preserve">
+    <value>[Помилка] Не вдалося завантажити обкладинки (Диск)</value>
+  </data>
+  <data name="LanguageIndonesian" xml:space="preserve">
+    <value>індонезійська</value>
+  </data>
+  <data name="LoadDatabase_Editor" xml:space="preserve">
+    <value>редактор</value>
+  </data>
+</root>

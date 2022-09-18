@@ -1,5 +1,6 @@
 ﻿using GCBM.Properties;
 using System;
+using System.Globalization;
 using System.IO;
 using System.Reflection;
 using System.Windows.Forms;
@@ -24,11 +25,12 @@ public partial class frmConfig : Form
 
     #endregion
 
+
+
     #region ConfigStart
 
     private void ConfigStart()
     {
-        cbLanguage.SelectedIndex = 0;
         cbAdjustNamingStyle.SelectedIndex = 0;
         cbGeneralFileSize.SelectedIndex = 0;
         cbScrubAlign.SelectedIndex = 0;
@@ -42,6 +44,11 @@ public partial class frmConfig : Form
         //rbDSPHLE.Checked = true;
         tbGeneralTempPath.Text = GET_CURRENT_PATH + TEMP_DIR;
         tbDirectoryCoverCache.Text = GET_CURRENT_PATH + COVERS_DIR;
+
+        foreach (CultureInfo c in Program.cultureInfos)
+        {
+            cbLanguage.Items.Add(c.NativeName + " [" + c.Name + "]");
+        }
     }
 
     #endregion
@@ -207,7 +214,7 @@ public partial class frmConfig : Form
         CONFIG_INI_FILE.IniWriteBool("MANAGERLOG", "LogFile", chkManagerLogFile.Checked);
 
         // Language
-        CONFIG_INI_FILE.IniWriteInt("LANGUAGE", "ConfigLanguage", cbLanguage.SelectedIndex);
+        CONFIG_INI_FILE.IniWriteString("LANGUAGE", "ConfigLanguage", Program.cultureInfos[cbLanguage.SelectedIndex].Name);
     }
 
     #endregion

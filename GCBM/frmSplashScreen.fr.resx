@@ -121,7 +121,7 @@
     <value>Copyright © 2019 -</value>
   </data>
   <data name="lblAllRightsReserved.Text" xml:space="preserve">
-    <value>Tous les droits sont réservés.</value>
+    <value>Tous droits réservés.</value>
   </data>
   <data name="lblStartSplashScreen.Text" xml:space="preserve">
     <value>Initialisation...</value>

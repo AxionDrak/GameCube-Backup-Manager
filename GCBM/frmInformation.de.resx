@@ -121,7 +121,7 @@
     <value>Beschreibung:</value>
   </data>
   <data name="groupBox3.Text" xml:space="preserve">
-    <value>Banner-Details</value>
+    <value>Banner Details</value>
   </data>
   <data name="label10.Text" xml:space="preserve">
     <value>Entwickler:</value>
@@ -136,28 +136,28 @@
     <value>Sprache:</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Weg:</value>
+    <value>Pfad:</value>
   </data>
   <data name="label7.Text" xml:space="preserve">
-    <value>Apploader-Datum:</value>
+    <value>Apploader Datum:</value>
   </data>
   <data name="label9.Text" xml:space="preserve">
     <value>Name:</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
-    <value>Dateidetails</value>
+    <value>Datei-Details</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>Datei Format:</value>
+    <value>Dateiformat:</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
     <value>Name:</value>
   </data>
   <data name="btnClose.Text" xml:space="preserve">
-    <value>Nah dran</value>
+    <value>Schließen Sie</value>
   </data>
   <data name="groupBox2.Text" xml:space="preserve">
-    <value>Spieldetails</value>
+    <value>Details zum Spiel</value>
   </data>
   <data name="label4.Text" xml:space="preserve">
     <value>Spiel-ID:</value>

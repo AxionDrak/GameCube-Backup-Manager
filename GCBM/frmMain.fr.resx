@@ -117,301 +117,301 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="tsmiGameDiscSignatureSHA1.Text" xml:space="preserve">
-    <value>Signature SHA-1</value>
-  </data>
-  <data name="tsmiToolDatabase.Text" xml:space="preserve">
-    <value>Outils</value>
-  </data>
-  <data name="tsmiSearchOnGoogle.Text" xml:space="preserve">
-    <value>Recherche sur Google</value>
-  </data>
-  <data name="tsmiSearchOnVGChartz.Text" xml:space="preserve">
-    <value>Rechercher sur VGChartz</value>
-  </data>
-  <data name="cbFilterDatabase.Items" xml:space="preserve">
-    <value>Sélectionnez un élément...</value>
-  </data>
   <data name="grpSearch.Text" xml:space="preserve">
-    <value>Chercher</value>
+    <value>Recherche</value>
   </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>La liste totale des fichiers et la taille totale des fichiers ne font pas la distinction entre les fichiers du disque 1 (game.iso) et du disque 2 (disc2.iso). Les données sont uniquement à des fins d'échantillonnage.</value>
+  <data name="lblGamesVerifiedText.Text" xml:space="preserve">
+    <value>Jeux vérifiés :</value>
   </data>
-  <data name="tsmiGameListDeleteAllFiles.Text" xml:space="preserve">
-    <value>Tout</value>
+  <data name="lblAbort.Text" xml:space="preserve">
+    <value>Stop</value>
   </data>
-  <data name="tsmiReloadGameList.Text" xml:space="preserve">
-    <value>Recharger la liste</value>
-  </data>
-  <data name="tsmiGameDiscRecalculateSelectedGameMD5.Text" xml:space="preserve">
-    <value>Recalculer sélectionné</value>
-  </data>
-  <data name="tsmiMetaXml.Text" xml:space="preserve">
-    <value>Lire/Modifier 'meta.xml'</value>
-  </data>
-  <data name="tsmiEnableCoverPanel.Text" xml:space="preserve">
-    <value>Activer</value>
-  </data>
-  <data name="label8.Text" xml:space="preserve">
-    <value>Jeux trouvés :</value>
-  </data>
-  <data name="tsmiGameDiscSelectNone.Text" xml:space="preserve">
-    <value>Aucun</value>
-  </data>
-  <data name="tsmiTools.Text" xml:space="preserve">
-    <value>Outils</value>
-  </data>
-  <data name="labelTitle.Text" xml:space="preserve">
-    <value>Titre:</value>
-  </data>
-  <data name="tsmiSelectGameList.Text" xml:space="preserve">
-    <value>Sélectionner</value>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Cliquez sur l'icône sur le côté et sélectionnez un dossier pour afficher la liste de tous les fichiers ISO et GCM qu'il contient.</value>
   </data>
   <data name="lblTypeDisc.Text" xml:space="preserve">
     <value>Disque...</value>
   </data>
+  <data name="btnGameInstallScrub.Text" xml:space="preserve">
+    <value>Installer le jeu (Scrub)</value>
+  </data>
   <data name="btnGameInstallExactCopy.Text" xml:space="preserve">
     <value>Installer le jeu (1:1)</value>
-  </data>
-  <data name="tsmiConfigurationMain.Text" xml:space="preserve">
-    <value>Réglages...</value>
-  </data>
-  <data name="tsmiGameDiscSelectAll.Text" xml:space="preserve">
-    <value>Tout</value>
-  </data>
-  <data name="tsmiDatabaseUpdateGameTDB.Text" xml:space="preserve">
-    <value>Mise à jour GameTDB</value>
-  </data>
-  <data name="tsmiClearListSource.Text" xml:space="preserve">
-    <value>Effacer la liste</value>
-  </data>
-  <data name="tsmiExportLog.Text" xml:space="preserve">
-    <value>Exporter le journal...</value>
-  </data>
-  <data name="label6.Text" xml:space="preserve">
-    <value>Titre:</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Cliquez sur l'icône sur le côté et sélectionnez un dossier pour répertorier tous les fichiers ISO et GCM qu'il contient.</value>
   </data>
   <data name="grpOperations.Text" xml:space="preserve">
     <value>Opérations</value>
   </data>
-  <data name="tsmiGameListSelectNone.Text" xml:space="preserve">
-    <value>Aucun</value>
+  <data name="labelGameID.Text" xml:space="preserve">
+    <value>ID du jeu :</value>
   </data>
-  <data name="tabMainDatabase.Text" xml:space="preserve">
-    <value>Base de données</value>
+  <data name="labelFile.Text" xml:space="preserve">
+    <value>Région :</value>
   </data>
-  <data name="tsmiSyncDownloadAllDiscOnly3DCovers.Text" xml:space="preserve">
-    <value>Synchroniser et télécharger des skins (disque et 3D de toute la bibliothèque GameCube)</value>
-  </data>
-  <data name="lblAbort.Text" xml:space="preserve">
-    <value>Arrêt</value>
-  </data>
-  <data name="tsmiSearchOnGameTDB.Text" xml:space="preserve">
-    <value>Rechercher GameTDB</value>
-  </data>
-  <data name="tsmiGameDiscAllHashSHA1.Text" xml:space="preserve">
-    <value>Vérifie tout</value>
-  </data>
-  <data name="tsmiGameListSelectAll.Text" xml:space="preserve">
-    <value>Tout</value>
-  </data>
-  <data name="lblNetStatus.Text" xml:space="preserve">
-    <value>Connexion Internet désactivée !</value>
-  </data>
-  <data name="tsmiGameDiscAllHashMD5.Text" xml:space="preserve">
-    <value>Vérifie tout</value>
-  </data>
-  <data name="tsmiDisableCoverPanel.Text" xml:space="preserve">
-    <value>Désactiver</value>
-  </data>
-  <data name="tsmiToolsGameList.Text" xml:space="preserve">
-    <value>Outils</value>
-  </data>
-  <data name="tscbDiscDrive.Items" xml:space="preserve">
-    <value>Inactif</value>
-  </data>
-  <data name="tsmiTransferDeviceCovers.Text" xml:space="preserve">
-    <value>Transférer les skins téléchargés sur l'appareil</value>
+  <data name="labelTitle.Text" xml:space="preserve">
+    <value>Titre :</value>
   </data>
   <data name="tsmiInfoGame.Text" xml:space="preserve">
     <value>Informations sur le jeu</value>
   </data>
-  <data name="tsmiRenameFolders.Text" xml:space="preserve">
-    <value>Renommer les dossiers</value>
+  <data name="tsmiDolphinEmulator.Text" xml:space="preserve">
+    <value>Jeu de test (Emulateur Dolphin)</value>
   </data>
-  <data name="tsmiGameDiscRecalculateAllMD5.Text" xml:space="preserve">
-    <value>Tout recalculer</value>
+  <data name="tsmiSearchOnGameTDB.Text" xml:space="preserve">
+    <value>Recherche dans GameTDB</value>
   </data>
-  <data name="grpDetailsDestiny.Text" xml:space="preserve">
-    <value>Détails</value>
-  </data>
-  <data name="lblSpaceAvailabeOnDevice.Text" xml:space="preserve">
-    <value>Espace disponible:</value>
-  </data>
-  <data name="tsmiBurnMedia.Text" xml:space="preserve">
-    <value>Graver un média CD/DVD</value>
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>REMARQUE:</value>
-  </data>
-  <data name="tsmiGameDiscHashMD5.Text" xml:space="preserve">
-    <value>Cochez la ou les sélection(s)</value>
-  </data>
-  <data name="tsmiGameListHashSHA1.Text" xml:space="preserve">
-    <value>Cochez la ou les sélection(s)</value>
-  </data>
-  <data name="labelFile.Text" xml:space="preserve">
-    <value>Région:</value>
-  </data>
-  <data name="tabMainFile.Text" xml:space="preserve">
-    <value>Fichiers (Sources)</value>
-  </data>
-  <data name="btnGameInstallScrub.Text" xml:space="preserve">
-    <value>Installer le jeu (Scrub)</value>
-  </data>
-  <data name="tsmiSyncDownloadAllCovers.Text" xml:space="preserve">
-    <value>Synchroniser et télécharger des skins (tous les skins de la bibliothèque GameCube)</value>
-  </data>
-  <data name="tsmiReloadGameListDisc.Text" xml:space="preserve">
-    <value>Recharger la liste</value>
-  </data>
-  <data name="tsmiGameDiscDeleteSelectedFile.Text" xml:space="preserve">
-    <value>Choisi</value>
-  </data>
-  <data name="tsmiOfficialGBATemp.Text" xml:space="preserve">
-    <value>Poste officiel (GBATemp)</value>
-  </data>
-  <data name="tsmiCreatePackage.Text" xml:space="preserve">
-    <value>Créer un package d'application</value>
-  </data>
-  <data name="tsmiGameDiscSignatureMD5.Text" xml:space="preserve">
-    <value>Signature MD5</value>
-  </data>
-  <data name="lblGamesVerifiedText.Text" xml:space="preserve">
-    <value>Jeux vérifiés :</value>
-  </data>
-  <data name="tsmiFile.Text" xml:space="preserve">
-    <value>Dossier</value>
-  </data>
-  <data name="tsmiRemoveGameList.Text" xml:space="preserve">
-    <value>Effacer</value>
-  </data>
-  <data name="tsmiReloadDeviceDrive.Text" xml:space="preserve">
-    <value>Recharger le ou les appareils</value>
-  </data>
-  <data name="label5.Text" xml:space="preserve">
-    <value>Région:</value>
-  </data>
-  <data name="tsmiVerifyUpdate.Text" xml:space="preserve">
-    <value>Vérifier les mises à jour</value>
-  </data>
-  <data name="tsmiGameDiscExportList.Text" xml:space="preserve">
-    <value>Exporter la liste des jeux</value>
-  </data>
-  <data name="tsmiClearLog.Text" xml:space="preserve">
-    <value>Effacer le journal</value>
-  </data>
-  <data name="exportarListaToolStripMenuItem.Text" xml:space="preserve">
-    <value>Exporter la liste sous...</value>
-  </data>
-  <data name="tsmiOptions.Text" xml:space="preserve">
-    <value>Choix</value>
-  </data>
-  <data name="tsmiOfficialGitHub.Text" xml:space="preserve">
-    <value>Site officiel (GitHub)</value>
-  </data>
-  <data name="tsmiSyncDownloadDiscOnly3DCovers.Text" xml:space="preserve">
-    <value>Synchronisez et téléchargez des skins (Disque et 3D de tous les jeux répertoriés)</value>
-  </data>
-  <data name="tsmiNotifyExit.Text" xml:space="preserve">
-    <value>Sortir</value>
-  </data>
-  <data name="lblSpaceTotalOnDevice.Text" xml:space="preserve">
-    <value>Espace total:</value>
-  </data>
-  <data name="tsmiDisplay.Text" xml:space="preserve">
-    <value>Affichage</value>
-  </data>
-  <data name="tsmiToolsGameDisc.Text" xml:space="preserve">
-    <value>Outils</value>
-  </data>
-  <data name="tsmiClearListDestination.Text" xml:space="preserve">
-    <value>Effacer la liste</value>
-  </data>
-  <data name="labelGameID.Text" xml:space="preserve">
-    <value>Identifiant de jeu:</value>
-  </data>
-  <data name="tsmiRemoveGameDisc.Text" xml:space="preserve">
-    <value>Effacer</value>
-  </data>
-  <data name="tsmiElfDol.Text" xml:space="preserve">
-    <value>Convertir ELF -&gt; DOL</value>
-  </data>
-  <data name="tsmiGameInfo.Text" xml:space="preserve">
-    <value>Informations détaillées (du jeu sélectionné)</value>
+  <data name="tsmiSearchOnGoogle.Text" xml:space="preserve">
+    <value>Recherche sur Google</value>
   </data>
   <data name="SearchOnWikipedia.Text" xml:space="preserve">
-    <value>Rechercher dans Wikipédia</value>
+    <value>Recherche dans Wikipédia</value>
+  </data>
+  <data name="tsmiSearchOnYoutube.Text" xml:space="preserve">
+    <value>Recherche sur YouTube</value>
+  </data>
+  <data name="tsmiSearchOnGameSpot.Text" xml:space="preserve">
+    <value>Recherche sur GameSpot</value>
+  </data>
+  <data name="tsmiSearchOnVGChartz.Text" xml:space="preserve">
+    <value>Recherche sur VGChartz</value>
+  </data>
+  <data name="tsmiReloadGameList.Text" xml:space="preserve">
+    <value>Liste de rechargement</value>
+  </data>
+  <data name="tsmiClearListSource.Text" xml:space="preserve">
+    <value>Liste claire</value>
+  </data>
+  <data name="tsmiGameListSelectAll.Text" xml:space="preserve">
+    <value>Tous</value>
+  </data>
+  <data name="tsmiGameListSelectNone.Text" xml:space="preserve">
+    <value>Aucun</value>
+  </data>
+  <data name="tsmiSelectGameList.Text" xml:space="preserve">
+    <value>Sélectionnez</value>
+  </data>
+  <data name="tsmiGameListDeleteAllFiles.Text" xml:space="preserve">
+    <value>Tous</value>
+  </data>
+  <data name="tsmiGameListDeleteSelectedFile.Text" xml:space="preserve">
+    <value>Sélectionné</value>
+  </data>
+  <data name="tsmiRemoveGameList.Text" xml:space="preserve">
+    <value>Supprimer</value>
+  </data>
+  <data name="tsmiGameListHashSHA1.Text" xml:space="preserve">
+    <value>Cocher le(s) critère(s) sélectionné(s)</value>
   </data>
   <data name="tsmiGameListSignatureSHA1.Text" xml:space="preserve">
     <value>Signature SHA-1</value>
   </data>
-  <data name="tsmiSelectGameDisc.Text" xml:space="preserve">
-    <value>Sélectionner</value>
+  <data name="exportarListaToolStripMenuItem.Text" xml:space="preserve">
+    <value>Exporter la liste en tant que...</value>
   </data>
-  <data name="tsmiExit.Text" xml:space="preserve">
-    <value>Sortir</value>
-  </data>
-  <data name="tsmiToolLog.Text" xml:space="preserve">
+  <data name="tsmiToolsGameList.Text" xml:space="preserve">
     <value>Outils</value>
   </data>
+  <data name="tabMainFile.Text" xml:space="preserve">
+    <value>Fichiers (Source)</value>
+  </data>
   <data name="lblAbortDestination.Text" xml:space="preserve">
-    <value>Arrêt</value>
+    <value>Stop</value>
   </data>
-  <data name="tsmiMenuAbout.Text" xml:space="preserve">
-    <value>À propos du gestionnaire de sauvegarde GameCube</value>
+  <data name="label8.Text" xml:space="preserve">
+    <value>Jeux trouvés :</value>
   </data>
-  <data name="tsmiSearchOnYoutube.Text" xml:space="preserve">
-    <value>Rechercher sur YouTube</value>
+  <data name="lblSpaceAvailabeOnDevice.Text" xml:space="preserve">
+    <value>Espace disponible :</value>
+  </data>
+  <data name="lblSpaceTotalOnDevice.Text" xml:space="preserve">
+    <value>Espace total :</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>La liste totale des fichiers et la taille totale des fichiers ne font pas de distinction entre les fichiers du disque 1 (game.iso) et du disque 2 (disc2.iso). Ces données sont fournies à des fins d'échantillonnage uniquement.</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>NOTE :</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Région :</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Titre :</value>
+  </data>
+  <data name="grpDetailsDestiny.Text" xml:space="preserve">
+    <value>Détails</value>
+  </data>
+  <data name="tscbDiscDrive.Items" xml:space="preserve">
+    <value>Inactif</value>
+  </data>
+  <data name="tsmiReloadDeviceDrive.Text" xml:space="preserve">
+    <value>Rechargez le(s) dispositif(s)</value>
+  </data>
+  <data name="tsmiReloadGameListDisc.Text" xml:space="preserve">
+    <value>Liste de rechargement</value>
+  </data>
+  <data name="tsmiClearListDestination.Text" xml:space="preserve">
+    <value>Liste claire</value>
+  </data>
+  <data name="tsmiGameDiscSelectAll.Text" xml:space="preserve">
+    <value>Tous</value>
+  </data>
+  <data name="tsmiGameDiscSelectNone.Text" xml:space="preserve">
+    <value>Aucun</value>
+  </data>
+  <data name="tsmiSelectGameDisc.Text" xml:space="preserve">
+    <value>Sélectionnez</value>
   </data>
   <data name="tsmiGameDiscDeleteAllFiles.Text" xml:space="preserve">
-    <value>Tout</value>
+    <value>Tous</value>
   </data>
-  <data name="tsmiRenameISO.Text" xml:space="preserve">
-    <value>Renommer ISO/GCM</value>
+  <data name="tsmiGameDiscDeleteSelectedFile.Text" xml:space="preserve">
+    <value>Sélectionné</value>
+  </data>
+  <data name="tsmiRemoveGameDisc.Text" xml:space="preserve">
+    <value>Supprimer</value>
+  </data>
+  <data name="tsmiGameDiscExportList.Text" xml:space="preserve">
+    <value>Exporter la liste des jeux</value>
+  </data>
+  <data name="tsmiGameDiscAllHashSHA1.Text" xml:space="preserve">
+    <value>Vérifiez tout</value>
   </data>
   <data name="tsmiGameDiscHashSHA1.Text" xml:space="preserve">
-    <value>Cochez la ou les sélection(s)</value>
+    <value>Cocher le(s) critère(s) sélectionné(s)</value>
   </data>
-  <data name="tsmiHelp.Text" xml:space="preserve">
-    <value>Aider</value>
+  <data name="tsmiGameDiscSignatureSHA1.Text" xml:space="preserve">
+    <value>Signature SHA-1</value>
   </data>
-  <data name="tsmiGameListDeleteSelectedFile.Text" xml:space="preserve">
-    <value>Choisi</value>
+  <data name="tsmiGameDiscAllHashMD5.Text" xml:space="preserve">
+    <value>Vérifiez tout</value>
+  </data>
+  <data name="tsmiGameDiscHashMD5.Text" xml:space="preserve">
+    <value>Cocher le(s) critère(s) sélectionné(s)</value>
+  </data>
+  <data name="tsmiGameDiscRecalculateAllMD5.Text" xml:space="preserve">
+    <value>Recalculer tous les</value>
+  </data>
+  <data name="tsmiGameDiscRecalculateSelectedGameMD5.Text" xml:space="preserve">
+    <value>Recalculer la sélection</value>
+  </data>
+  <data name="tsmiGameDiscSignatureMD5.Text" xml:space="preserve">
+    <value>Signature MD5</value>
+  </data>
+  <data name="tsmiToolsGameDisc.Text" xml:space="preserve">
+    <value>Outils</value>
   </data>
   <data name="tabMainDisc.Text" xml:space="preserve">
     <value>Fichiers (Destination)</value>
   </data>
-  <data name="tsmiCovers.Text" xml:space="preserve">
-    <value>Couvertures</value>
-  </data>
-  <data name="tsmiDolphinEmulator.Text" xml:space="preserve">
-    <value>Jeu de test (émulateur Dolphin)</value>
-  </data>
-  <data name="tsmiSearchOnGameSpot.Text" xml:space="preserve">
-    <value>Rechercher sur GameSpot</value>
-  </data>
-  <data name="tsmiDownloadCoversSelectedGame.Text" xml:space="preserve">
-    <value>Synchroniser et télécharger des skins (disque et 3D pour le jeu sélectionné uniquement)</value>
-  </data>
-  <data name="tsmiManageApp.Text" xml:space="preserve">
-    <value>Gérer les applications</value>
+  <data name="cbFilterDatabase.Items" xml:space="preserve">
+    <value>Sélectionnez un article...</value>
   </data>
   <data name="label7.Text" xml:space="preserve">
-    <value>Filtre:</value>
+    <value>Filtre :</value>
+  </data>
+  <data name="tsmiDatabaseUpdateGameTDB.Text" xml:space="preserve">
+    <value>Mise à jour de GameTDB</value>
+  </data>
+  <data name="tsmiToolDatabase.Text" xml:space="preserve">
+    <value>Outils</value>
+  </data>
+  <data name="tabMainDatabase.Text" xml:space="preserve">
+    <value>Base de données</value>
+  </data>
+  <data name="tsmiClearLog.Text" xml:space="preserve">
+    <value>Effacer le journal</value>
+  </data>
+  <data name="tsmiExportLog.Text" xml:space="preserve">
+    <value>Exporter le journal...</value>
+  </data>
+  <data name="tsmiToolLog.Text" xml:space="preserve">
+    <value>Outils</value>
+  </data>
+  <data name="tsmiExit.Text" xml:space="preserve">
+    <value>Sortie</value>
+  </data>
+  <data name="tsmiFile.Text" xml:space="preserve">
+    <value>Fichier</value>
+  </data>
+  <data name="tsmiDownloadCoversSelectedGame.Text" xml:space="preserve">
+    <value>Synchronisation et téléchargement de skins (disque et 3D pour le jeu sélectionné uniquement)</value>
+  </data>
+  <data name="tsmiSyncDownloadDiscOnly3DCovers.Text" xml:space="preserve">
+    <value>Synchronisation et téléchargement de skins (disque et 3D de tous les jeux répertoriés)</value>
+  </data>
+  <data name="tsmiSyncDownloadAllDiscOnly3DCovers.Text" xml:space="preserve">
+    <value>Synchronisation et téléchargement de skins (disque et 3D de toute la bibliothèque GameCube)</value>
+  </data>
+  <data name="tsmiSyncDownloadAllCovers.Text" xml:space="preserve">
+    <value>Synchronisation et téléchargement de skins (tous les skins de la bibliothèque GameCube)</value>
+  </data>
+  <data name="tsmiTransferDeviceCovers.Text" xml:space="preserve">
+    <value>Transférer les skins téléchargés sur l'appareil</value>
+  </data>
+  <data name="tsmiCovers.Text" xml:space="preserve">
+    <value>Couvre</value>
+  </data>
+  <data name="tsmiGameInfo.Text" xml:space="preserve">
+    <value>Informations détaillées (du jeu sélectionné)</value>
+  </data>
+  <data name="tsmiEnableCoverPanel.Text" xml:space="preserve">
+    <value>Activer</value>
+  </data>
+  <data name="tsmiDisableCoverPanel.Text" xml:space="preserve">
+    <value>Désactiver</value>
+  </data>
+  <data name="tsmiDisplay.Text" xml:space="preserve">
+    <value>Afficher</value>
+  </data>
+  <data name="tsmiConfigurationMain.Text" xml:space="preserve">
+    <value>Les paramètres...</value>
+  </data>
+  <data name="tsmiOptions.Text" xml:space="preserve">
+    <value>Options</value>
+  </data>
+  <data name="tsmiRenameFolders.Text" xml:space="preserve">
+    <value>Renommer les dossiers</value>
+  </data>
+  <data name="tsmiRenameISO.Text" xml:space="preserve">
+    <value>Renommer l'ISO/GCM</value>
+  </data>
+  <data name="tsmiMetaXml.Text" xml:space="preserve">
+    <value>Lire/éditer 'meta.xml' (en anglais)</value>
+  </data>
+  <data name="tsmiManageApp.Text" xml:space="preserve">
+    <value>Gérer les APP</value>
+  </data>
+  <data name="tsmiElfDol.Text" xml:space="preserve">
+    <value>Convertir ELF -&gt; DOL</value>
+  </data>
+  <data name="tsmiCreatePackage.Text" xml:space="preserve">
+    <value>Créer un paquet APP</value>
+  </data>
+  <data name="tsmiBurnMedia.Text" xml:space="preserve">
+    <value>Graver des supports CD/DVD</value>
+  </data>
+  <data name="tsmiTools.Text" xml:space="preserve">
+    <value>Outils</value>
+  </data>
+  <data name="tsmiOfficialGitHub.Text" xml:space="preserve">
+    <value>Site officiel (GitHub)</value>
+  </data>
+  <data name="tsmiOfficialGBATemp.Text" xml:space="preserve">
+    <value>Poste officiel (GBATemp)</value>
+  </data>
+  <data name="tsmiVerifyUpdate.Text" xml:space="preserve">
+    <value>Vérifier les mises à jour</value>
+  </data>
+  <data name="tsmiMenuAbout.Text" xml:space="preserve">
+    <value>À propos de GameCube Backup Manager</value>
+  </data>
+  <data name="tsmiHelp.Text" xml:space="preserve">
+    <value>Aide</value>
+  </data>
+  <data name="lblNetStatus.Text" xml:space="preserve">
+    <value>Connexion Internet désactivée !</value>
+  </data>
+  <data name="tsmiNotifyExit.Text" xml:space="preserve">
+    <value>Sortie</value>
   </data>
 </root>
