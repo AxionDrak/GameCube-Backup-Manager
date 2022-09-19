@@ -390,6 +390,7 @@ public partial class frmMain : Form
     /// </summary>
     public void EnableOptionsGameList()
     {
+        grpStatus.Visible = true;
         //    tabMainFile.BeginInvoke(new Action(() =>
         //    {
         // Main Menu Game
@@ -555,9 +556,9 @@ public partial class frmMain : Form
         if (SCANNING)
             return;
         if (dgv == dgvSource)
-            dGames = dSourceGames;
+            dGames = QueueManager.SourceGames;
         else
-            dGames = dDestGames;
+            dGames = QueueManager.DestinationGames;
         if (dgv.RowCount == 0) return;
         try
         {
@@ -568,7 +569,7 @@ public partial class frmMain : Form
                         where dgv.CurrentRow.Cells[6].Value.ToString() == g.Path
                         select g).First();
             else
-                game = (from g in dDestGames.Values
+                game = (from g in QueueManager.DestinationGames.Values
                         where g.Path == dgv.CurrentRow.Cells["Path"].Value.ToString()
                         select g).First();
 
@@ -630,7 +631,7 @@ public partial class frmMain : Form
     /// <param name="dgv"></param>
     private async Task DisplaySourceFilesAsync(string sourceFolder, DataGridView dgv)
     {
-        dSourceGames.Clear();
+        QueueManager.SourceGames.Clear();
         pbSource.Value = 0;
         //Check for an empty string first, and return a completed task if it is
         if (sourceFolder != string.Empty && !string.IsNullOrEmpty(sourceFolder))
@@ -721,13 +722,13 @@ public partial class frmMain : Form
                 lblSourceCount.Text = counter + "/" + files.Length;
                 //done with loop
                 tabMainFile.Update();
-                dSourceGames.Add(counter, game);
+                QueueManager.SourceGames.Add(counter, game);
                 Application.DoEvents();
             }
 
             EnableOptionsGameList();
 
-            ReloadDataGridViewGameList(dgvSourcetemp, dSourceGames);
+            ReloadDataGridViewGameList(dgvSourcetemp, QueueManager.SourceGames);
         }
 
         SCANNING = false;
@@ -745,7 +746,7 @@ public partial class frmMain : Form
     /// <param name="dgv"></param>
     private async Task DisplayDestinationFilesAsync(string sourceFolder, DataGridView dgv)
     {
-        dDestGames.Clear();
+        QueueManager.DestinationGames.Clear();
         pbDestination.Value = 0;
         //Check for an empty string first, and return if it is
         if (sourceFolder != string.Empty || sourceFolder == "" || sourceFolder == null)
@@ -815,7 +816,7 @@ public partial class frmMain : Form
                 var _getSize = DisplayFormatFileSize(_f.Length, CONFIG_INI_FILE.IniReadInt("GENERAL", "FileSize"));
                 _ = dgvDestinationtemp.Rows.Add(false, displayTitle, game.ID, game.Region,
                     _f.Extension.Substring(1, 3).Trim().ToUpper(MY_CULTURE), _getSize, _f.FullName);
-                dDestGames.Add(counter, game);
+                QueueManager.DestinationGames.Add(counter, game);
 
                 //Clean up Interface
                 lblDestinationCount.Text = files.Length.ToString();
@@ -828,7 +829,7 @@ public partial class frmMain : Form
 
             EnableOptionsGameList();
 
-            ReloadDataGridViewGameList(dgvDestinationtemp, dDestGames);
+            ReloadDataGridViewGameList(dgvDestinationtemp, QueueManager.DestinationGames);
         }
 
         SCANNING = false;
@@ -845,7 +846,7 @@ public partial class frmMain : Form
     /// <param name="filters"></param>
     /// <param name="isRecursive"></param>
     /// <returns></returns>
-    private Task<string[]> GetFilesFolder(string rootFolder, string[] filters, bool isRecursive)
+    public Task<string[]> GetFilesFolder(string rootFolder, string[] filters, bool isRecursive)
     {
         var filesFound = new List<string>();
         // Sets options for displaying root folder images.
@@ -2763,8 +2764,6 @@ public partial class frmMain : Form
     private string dgvGameListDiscPath;
     private int intQueueLength;
     private int intQueuePos;
-    private readonly Dictionary<int, Game> dSourceGames = new();
-    private readonly Dictionary<int, Game> dDestGames = new();
     private DataGridView dgvSelected = new();
     public static String SelectedDrive = ""; // Selected Drive
     public static GroupBox StatusGroupBox = new GroupBox();
@@ -4410,12 +4409,12 @@ public partial class frmMain : Form
 
     private void dgvDestination_CurrentCellChanged(object sender, EventArgs e)
     {
-        if (!SCANNING) ReloadDataGridViewGameList(dgvDestination, dDestGames);
+        if (!SCANNING) ReloadDataGridViewGameList(dgvDestination, QueueManager.DestinationGames);
     }
 
     private void dgvSource_CurrentCellChanged(object sender, EventArgs e)
     {
-        if (!SCANNING) ReloadDataGridViewGameList(dgvSource, dSourceGames);
+        if (!SCANNING) ReloadDataGridViewGameList(dgvSource, QueueManager.SourceGames);
     }
 
     private void toolStripStatusLabel1_Click(object sender, EventArgs e)

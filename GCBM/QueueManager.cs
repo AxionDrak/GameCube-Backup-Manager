@@ -9,6 +9,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using GCBM.Properties;
+using GCBM.tools;
 using Microsoft.VisualBasic.Logging;
 using sio = System.IO;
 namespace GCBM
@@ -16,12 +17,18 @@ namespace GCBM
     /// <summary>
     /// Class to facilitate working with the Queue
     /// </summary>
-    internal class QueueManager
+    public class QueueManager
     {
-
+        public static QueueManager qmInstance = new()
+        {
+            
+        };
         #region Variables
 
-        public static Dictionary<int, Game> InstallQueue = new Dictionary<int, Game>();
+        public Dictionary<int, Game> InstallQueue = new Dictionary<int, Game>();
+        public static Dictionary<int, Game> SourceGames = new Dictionary<int, Game>();
+        public static Dictionary<int, Game> DestinationGames = new Dictionary<int, Game>();
+        public static Game[] GameList;
         public static int intQueuePos = 0;
         public static int intQueueCount = 0;
         public static bool blnQueuePaused = false;
@@ -31,19 +38,17 @@ namespace GCBM
         public static bool blnQueueErrorHandledByProgram = false;
         public static bool blnQueueRunning = false;
         public static bool blnAbort = false;
-        public static readonly Dictionary<int, Game> dSourceGames = new();
-        public static readonly Dictionary<int, Game> dDestGames = new();
         private static readonly string GAMES_DIR = "games";
         public static DataGridView dgvSelected = new();
 
         private static string FLUSH_SD;
         private static string SCRUB_ALIGN;
         public GroupBox grpStatus = frmMain.StatusGroupBox;
-        private static Label lblAbort, lblInstallStatusGameTitle, lblInstallStatusGameIndex, lblInstallStatusText, lblInstallStatusPercent;//, lblInstallStatusTime, lblInstallStatusETA, lblInstallStatusSpeed;
-        private static Button btnAbort;
-        private static ProgressBar pbInstallStatus;
-        public static Stopwatch sw = new();
-        public static  frmMain frm = frmMain.ActiveForm as frmMain;
+        private Label lblAbort,lblInstallStatusGameTitle,lblInstallStatusGameIndex, lblInstallStatusText,lblInstallStatusPercent = new Label();//, lblInstallStatusTime, lblInstallStatusETA, lblInstallStatusSpeed;
+        private Button btnAbort = new();
+        private ProgressBar pbInstallStatus = new();
+        public Stopwatch sw = new();
+        public frmMain frm = frmMain.ActiveForm as frmMain;
 
         //IMPORT USED TO HIDE GCIT's windows when launched. I know, ProccesWindows.Style Hidden .. Didn't like when i changed the way it was launched
         [DllImport("user32.dll")]
@@ -56,6 +61,28 @@ namespace GCBM
             return result;
         }
 
+        public void AssignControls()
+        {
+            #region Labels
+            lblAbort =qmInstance.frm.Controls["lblAbort"] as Label;
+           qmInstance.lblInstallStatusGameTitle =qmInstance.frm.Controls["lblInstallStatusGameTitle"] as Label;
+            lblInstallStatusGameIndex =qmInstance.frm.Controls["lblInstallStatusGameIndex"] as Label;
+            qmInstance.lblInstallStatusText =qmInstance.frm.Controls["qmInstance.lblInstallStatusText"] as Label;
+           qmInstance.lblInstallStatusPercent =qmInstance.frm.Controls["lblInstallStatusPercent"] as Label;
+            //lblInstallStatusTime =qmInstance.frm.Controls["lblInstallStatusTime"] as Label;
+            //lblInstallStatusETA =qmInstance.frm.Controls["lblInstallStatusETA"] as Label;
+            //lblInstallStatusSpeed =qmInstance.frm.Controls["lblInstallStatusSpeed"] as Label;
+            #endregion
+
+            #region Buttons
+
+            btnAbort =qmInstance.frm.Controls["btnAbort"] as Button;
+            #endregion
+
+            #region ProgressBars
+           qmInstance.pbInstallStatus =qmInstance.frm.Controls["pbInstallStatus"] as ProgressBar;
+            #endregion
+        }
 
         #region isGCITRunning
 
@@ -78,7 +105,10 @@ namespace GCBM
 
         #endregion
 
+        #region Constructors
 
+
+        #endregion
 
         #region Build Install Queue
 
@@ -90,7 +120,35 @@ namespace GCBM
         /// <summary>
         ///     Get selected games and add them to a queue.
         /// </summary>
-        public static void BuildInstallQueue(DataGridView dgv)
+        public void BuildInstallQueue(DataGridView dgv)
+        {
+            qmInstance.AssignControls();
+            strDestinationDrive = frmMain.SelectedDrive;
+            //Get # selected games - Done
+            //Set QueueLength - Done
+            //Reset QueuePos - Done
+
+            //Start First Disc - done
+            //On completion
+            //Working = false - done
+            //Q++ - done
+            //Next Disc - done
+            //Check if we're done
+            intQueuePos = 0;
+            InstallQueue.Clear();
+            var num = 0;
+
+            
+            foreach (var path in GetSelectedGamePaths(dgv))
+            {
+                var g = SourceGames.AsParallel().First(x => x.Value.Path == path);
+                InstallQueue.Add(num, g.Value);
+                num++;
+            }
+
+            
+        }
+        public void BuildInstallQueue(string[] pathStrings)
         {
             strDestinationDrive = frmMain.SelectedDrive;
             //Get # selected games - Done
@@ -107,14 +165,15 @@ namespace GCBM
             InstallQueue.Clear();
             var num = 0;
 
-            foreach (var path in GetSelectedGamePaths(dgv))
+            
+            foreach (var path in pathStrings)
             {
-                var g = dSourceGames.AsParallel().First(x => x.Value.Path == path)
-                    .Value; //Ensure we are talking about the same file not just the same game
-
-                InstallQueue.Add(num, g);
+                var g = SourceGames.AsParallel().First(x => x.Value.Path == path);
+                InstallQueue.Add(num, g.Value);
                 num++;
             }
+
+            
         }
 
         #endregion
@@ -175,16 +234,22 @@ namespace GCBM
                             }
                         }
 
-                        BuildInstallQueue(dgv);
-                        //Light the fire
+                        qmInstance.BuildInstallQueue(dgv);
+                        //Start the first game in the queue
+                        InstallGameExactCopy(qmInstance.InstallQueue[intQueuePos].Path);
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        if (ex.GetBaseException() is sio.FileNotFoundException)
+                        {
+                            ExceptionHelper helper = new ExceptionHelper();
+                            helper.NewFileNotFoundException(ex,intQueuePos);
+                        }
 
                     }
                 else // Install Scrub
                 {
-                    StartScrub(dgv,installType,controlsBox);
+                    StartScrub(dgv, installType, controlsBox);
                 }
             }
             //Lets Build the Install Queue
@@ -247,33 +312,33 @@ namespace GCBM
 
         private async static void StartScrub(DataGridView dgv, int installType, GroupBox controlsBox)
         {
-            frm.DisableOptionsGame((DataGridView)frm.Controls["dgvDestination"]);
-            btnAbort.Visible = true;
-            lblAbort.Visible = true;
+            qmInstance.frm.DisableOptionsGame((DataGridView)qmInstance.frm.Controls["dgvDestination"]);
+           qmInstance.btnAbort.Visible = true;
+           qmInstance.lblAbort.Visible = true;
             intQueuePos = 0;
-            
-            QueueManager.BuildInstallQueue((DataGridView)frmMain.ActiveForm.Controls["dgvSource"]);
-            foreach (var game in QueueManager.InstallQueue.Values)
+
+            qmInstance.BuildInstallQueue((DataGridView)frmMain.ActiveForm.Controls["dgvSource"]);
+            foreach (var game in qmInstance.InstallQueue.Values)
                 if (!blnAbort)
-                    await InstallGameScrub(QueueManager.InstallQueue[intQueuePos],frmMain.StatusGroupBox,sw).ConfigureAwait(false);
+                    await InstallGameScrub(qmInstance.InstallQueue[intQueuePos], frmMain.StatusGroupBox, qmInstance.sw).ConfigureAwait(false);
 
             var d2counter = 0;
             foreach (var game in _listSecondDiscs)
             {
                 d2counter++;
-                lblInstallStatusText.Text = Resources.InstallGameScrub_TransferDisc2;
-                lblInstallStatusGameTitle.Text = game.Title;
-                lblInstallStatusGameIndex.Text = d2counter.ToString();
+                qmInstance.lblInstallStatusText.Text = Resources.InstallGameScrub_TransferDisc2;
+                qmInstance.lblInstallStatusGameTitle.Text = game.Title;
+                qmInstance.lblInstallStatusGameIndex.Text = d2counter.ToString();
                 await RenameDisc2(game).ConfigureAwait(false);
             }
 
-            Notifications.GlobalNotifications("Successfully installed " + QueueManager.InstallQueue.Count + " games.", ToolTipIcon.Info);
-            pbInstallStatus.BeginInvoke(() =>
+            Notifications.GlobalNotifications("Successfully installed " + qmInstance.InstallQueue.Count + " games.", ToolTipIcon.Info);
+            qmInstance.pbInstallStatus.BeginInvoke(() =>
             {
-                pbInstallStatus.Hide();
-                lblInstallStatusPercent.Hide();
-                lblInstallStatusText.Hide();
-                lblInstallStatusGameTitle.Hide();
+                qmInstance.pbInstallStatus.Hide();
+                qmInstance.lblInstallStatusPercent.Hide();
+                qmInstance.lblInstallStatusText.Hide();
+                qmInstance.lblInstallStatusGameTitle.Hide();
             });
 
         }
@@ -286,7 +351,7 @@ namespace GCBM
         /// <summary>
         ///     Function to install an copy of the file in Scrub mode.
         /// </summary>
-        private static async Task  InstallGameScrub(Game game, GroupBox controlsBox, Stopwatch scrubStopwatch)
+        private static async Task InstallGameScrub(Game game, GroupBox controlsBox, Stopwatch scrubStopwatch)
         {
 
 
@@ -295,44 +360,18 @@ namespace GCBM
             scrubStopwatch.Stop();
             scrubStopwatch.Reset();
             QueueManager.InstallType = "SCRUB";
-            pbInstallStatus.Style = ProgressBarStyle.Continuous;
+            qmInstance.pbInstallStatus.Style = ProgressBarStyle.Continuous;
             if (blnAbort)
                 return; //I know we already checked, but just in case.. one more time just to be extra careful. We are writing data after all.
             const string quote = "\"";
             var _source = game.Path;
 
-            // GCIT
+        // GCIT
 
-            //setup vars
+        //setup vars
 
 
-            var boolCaseSwitch = Program.ConfigFile.IniReadBool("TRANSFERSYSTEM", "ScrubFlushSD");
-            var intCaseSwitch = Program.ConfigFile.IniReadInt("TRANSFERSYSTEM", "ScrubAlign");
-            switch (boolCaseSwitch)
-            {
-                case true:
-                    FLUSH_SD = " - flush";
-                    break;
-                case false:
-                    FLUSH_SD = "";
-                    break;
-            }
-
-            switch (intCaseSwitch)
-            {
-                case 0:
-                    SCRUB_ALIGN = "";
-                    break;
-                case 1:
-                    SCRUB_ALIGN = " -a 4";
-                    break;
-                case 2:
-                    SCRUB_ALIGN = " -a 32";
-                    break;
-                default:
-                    SCRUB_ALIGN = " -a 32K";
-                    break;
-            }
+        GetTransferVars();
 
             //START_INFO
             var myProcess = new Process();
@@ -353,13 +392,13 @@ namespace GCBM
                 var _StatusExit = myProcess.ExitCode;
                 if (_StatusExit == 0) //exit success
                 {
-                    lblInstallStatusText.Visible = true;
-                    lblInstallStatusPercent.Visible = true;
-                    pbInstallStatus.Visible = true;
-                    lblInstallStatusPercent.Text = "100%";
-                    pbInstallStatus.Value = 100;
-                    lblInstallStatusText.Text = Resources.InstallGameScrub_DoneScrubbing;
-                    var game = QueueManager.InstallQueue[intQueuePos];
+                    qmInstance.lblInstallStatusText.Visible = true;
+                    qmInstance.lblInstallStatusPercent.Visible = true;
+                    qmInstance.pbInstallStatus.Visible = true;
+                    qmInstance.lblInstallStatusPercent.Text = "100%";
+                    qmInstance.pbInstallStatus.Value = 100;
+                    qmInstance.lblInstallStatusText.Text = Resources.InstallGameScrub_DoneScrubbing;
+                    var game = qmInstance.InstallQueue[intQueuePos];
                     CheckDisc1Or2Scrub(game).ConfigureAwait(false);
 
                 }
@@ -386,6 +425,37 @@ namespace GCBM
             {
                 UpdateProgressScrub(scrubStopwatch.ElapsedMilliseconds);
                 Application.DoEvents();
+            }
+        }
+
+        public static void GetTransferVars()
+        {
+            var boolCaseSwitch = Program.ConfigFile.IniReadBool("TRANSFERSYSTEM", "ScrubFlushSD");
+            var intCaseSwitch = Program.ConfigFile.IniReadInt("TRANSFERSYSTEM", "ScrubAlign");
+            switch (boolCaseSwitch)
+            {
+                case true:
+                    FLUSH_SD = " - flush";
+                    break;
+                case false:
+                    FLUSH_SD = "";
+                    break;
+            }
+
+            switch (intCaseSwitch)
+            {
+                case 0:
+                    SCRUB_ALIGN = "";
+                    break;
+                case 1:
+                    SCRUB_ALIGN = " -a 4";
+                    break;
+                case 2:
+                    SCRUB_ALIGN = " -a 32";
+                    break;
+                default:
+                    SCRUB_ALIGN = " -a 32K";
+                    break;
             }
         }
 
@@ -447,11 +517,11 @@ namespace GCBM
                         //MessageBox.Show(GCBM.Properties.Resources.InstallGameScrub_String6, GCBM.Properties.Resources.Information, MessageBoxButtons.OK, MessageBoxIcon.Information);
                         frmMain.ActiveForm.Controls["tabMainFile"].BeginInvoke(() =>
                         {
-                            lblInstallStatusGameTitle.Visible = false;
-                            lblInstallStatusGameIndex.Visible = false;
-                            lblInstallStatusText.Visible = false;
-                            lblInstallStatusPercent.Visible = false;
-                            pbInstallStatus.Visible = false;
+                            qmInstance.lblInstallStatusGameTitle.Visible = false;
+                            qmInstance.lblInstallStatusGameIndex.Visible = false;
+                            qmInstance.lblInstallStatusText.Visible = false;
+                            qmInstance.lblInstallStatusPercent.Visible = false;
+                            qmInstance.pbInstallStatus.Visible = false;
                         });
                         //GC.Collect();
                         //Delete folder at   frmMain.SelectedDrive + GAMES_DIR + sio.Path.DirectorySeparatorChar +
@@ -514,7 +584,7 @@ namespace GCBM
                         {
                             var file = Source.EnumerateFiles("*.iso").First();
                             file.CopyTo(new sio.FileInfo(sio.Path.Combine(Destination.FullName, "disc2.iso")),
-                                frm.UpdateTransfer);
+                                qmInstance.frm.UpdateTransfer);
                             file.Directory.Delete(true);
                         }
                         catch (Exception ex)
@@ -531,11 +601,11 @@ namespace GCBM
                     //MessageBox.Show(GCBM.Properties.Resources.InstallGameScrub_String6, GCBM.Properties.Resources.Information, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     frmMain.ActiveForm.Controls["tabMainFile"].BeginInvoke(() =>
                     {
-                        lblInstallStatusGameTitle.Visible = false;
-                        lblInstallStatusGameIndex.Visible = false;
-                        lblInstallStatusText.Visible = false;
-                        lblInstallStatusPercent.Visible = false;
-                        pbInstallStatus.Visible = false;
+                        qmInstance.lblInstallStatusGameTitle.Visible = false;
+                        qmInstance.lblInstallStatusGameIndex.Visible = false;
+                        qmInstance.lblInstallStatusText.Visible = false;
+                        qmInstance.lblInstallStatusPercent.Visible = false;
+                        qmInstance.pbInstallStatus.Visible = false;
                     });
 
                     //GC.Collect();
@@ -566,7 +636,7 @@ namespace GCBM
                         {
                             var file = Source.EnumerateFiles("*.iso").First();
                             file.CopyTo(new sio.FileInfo(sio.Path.Combine(Destination.FullName, "disc2.iso")),
-                                frm.UpdateTransfer);
+                                qmInstance.frm.UpdateTransfer);
                             file.Directory.Delete(true);
                         }
                         catch (Exception ex)
@@ -582,11 +652,11 @@ namespace GCBM
                     //MessageBox.Show(GCBM.Properties.Resources.InstallGameScrub_String6, GCBM.Properties.Resources.Information, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     frmMain.ActiveForm.Controls["tabMainFile"].BeginInvoke(() =>
                     {
-                        lblInstallStatusGameTitle.Visible = false;
-                        lblInstallStatusGameIndex.Visible = false;
-                        lblInstallStatusText.Visible = false;
-                        lblInstallStatusPercent.Visible = false;
-                        pbInstallStatus.Visible = false;
+                        qmInstance.lblInstallStatusGameTitle.Visible = false;
+                        qmInstance.lblInstallStatusGameIndex.Visible = false;
+                        qmInstance.lblInstallStatusText.Visible = false;
+                        qmInstance.lblInstallStatusPercent.Visible = false;
+                        qmInstance.pbInstallStatus.Visible = false;
                     });
                 }).ConfigureAwait(false);
             }
@@ -598,31 +668,31 @@ namespace GCBM
         {
             frmMain.ActiveForm.Controls["tabMainFile"].BeginInvoke(() =>
             {
-                //Make sure pbInstallStatus is Continuous
-                lblInstallStatusGameTitle.Visible = true;
-                lblInstallStatusText.Visible = true;
-                lblInstallStatusPercent.Visible = true;
-                lblInstallStatusGameTitle.Text = QueueManager.InstallQueue[intQueuePos].Title;
-                lblInstallStatusGameIndex.Text = intQueuePos + "  /  " + QueueManager.InstallQueue.Count;
-                pbInstallStatus.Visible = true;
-                frm.DisableOptionsGame((DataGridView)frmMain.ActiveForm.Controls["dgvSource"]);
+                //Make sureqmInstance.pbInstallStatus. is Continuous
+                qmInstance.lblInstallStatusGameTitle.Visible = true;
+                qmInstance.lblInstallStatusText.Visible = true;
+                qmInstance.lblInstallStatusPercent.Visible = true;
+                qmInstance.lblInstallStatusGameTitle.Text = qmInstance.InstallQueue[intQueuePos].Title;
+                qmInstance.lblInstallStatusGameIndex.Text = intQueuePos + "  /  " + qmInstance.InstallQueue.Count;
+                qmInstance.pbInstallStatus.Visible = true;
+                qmInstance.frm.DisableOptionsGame((DataGridView)frmMain.ActiveForm.Controls["dgvSource"]);
                 var incrementValue = Convert.ToInt32(i / 333);
                 if (incrementValue >= 100)
                 {
-                    pbInstallStatus.Style = ProgressBarStyle.Marquee;
-                    lblInstallStatusPercent.Hide();
-                    lblInstallStatusText.Text = Resources.InstallGameScrub_Scrubbing +
-                                                " -- This is taking a while, but we are still responding.";
-                    pbInstallStatus.Value = pbInstallStatus.Maximum;
+                    qmInstance.pbInstallStatus.Style = ProgressBarStyle.Marquee;
+                    qmInstance.lblInstallStatusPercent.Hide();
+                    qmInstance.lblInstallStatusText.Text = Resources.InstallGameScrub_Scrubbing +
+                                                           " -- This is taking a while, but we are still responding.";
+                    qmInstance.pbInstallStatus.Value = qmInstance.pbInstallStatus.Maximum;
                 }
                 else
                 {
-                    pbInstallStatus.Style = ProgressBarStyle.Continuous;
-                    lblInstallStatusPercent.Show();
-                    lblInstallStatusPercent.Text = incrementValue + "%"; //i++.ToString() + "%";
-                    lblInstallStatusText.Show();
-                    lblInstallStatusText.Text = Resources.InstallGameScrub_Scrubbing;
-                    pbInstallStatus.Value = incrementValue;
+                    qmInstance.pbInstallStatus.Style = ProgressBarStyle.Continuous;
+                   qmInstance.lblInstallStatusPercent.Show();
+                   qmInstance.lblInstallStatusPercent.Text = incrementValue + "%"; //i++.ToString() + "%";
+                    qmInstance.lblInstallStatusText.Show();
+                    qmInstance.lblInstallStatusText.Text = Resources.InstallGameScrub_Scrubbing;
+                    qmInstance.pbInstallStatus.Value = incrementValue;
                 }
             });
         }
@@ -631,30 +701,30 @@ namespace GCBM
         {
             frmMain.ActiveForm.Controls["tabMainFile"].BeginInvoke(() =>
             {
-                //Make sure pbInstallStatus is Continuous
-                lblInstallStatusGameIndex.Visible = true;
-                lblInstallStatusGameTitle.Visible = true;
-                lblInstallStatusText.Visible = true;
-                lblInstallStatusPercent.Visible = true;
-                lblInstallStatusGameTitle.Text = title;
-                pbInstallStatus.Visible = true;
-                frm.DisableOptionsGame((DataGridView)frmMain.ActiveForm.Controls["dgvSource"]);
+                //Make sureqmInstance.pbInstallStatus. is Continuous
+               qmInstance.lblInstallStatusGameIndex.Visible = true;
+               qmInstance.lblInstallStatusGameTitle.Visible = true;
+                qmInstance.lblInstallStatusText.Visible = true;
+               qmInstance.lblInstallStatusPercent.Visible = true;
+               qmInstance.lblInstallStatusGameTitle.Text = title;
+               qmInstance.pbInstallStatus.Visible = true;
+               qmInstance.frm.DisableOptionsGame((DataGridView)frmMain.ActiveForm.Controls["dgvSource"]);
                 if (i >= 100)
                 {
-                    pbInstallStatus.Style = ProgressBarStyle.Marquee;
-                    lblInstallStatusPercent.Hide();
-                    lblInstallStatusText.Text = string.Format(Resources.InstallGameScrub_TransferDisc2, title) +
+                   qmInstance.pbInstallStatus.Style = ProgressBarStyle.Marquee;
+                   qmInstance.lblInstallStatusPercent.Hide();
+                    qmInstance.lblInstallStatusText.Text = string.Format(Resources.InstallGameScrub_TransferDisc2, title) +
                                                 " -- This is taking a while, but we are still responding.";
-                    pbInstallStatus.Value = pbInstallStatus.Maximum;
+                   qmInstance.pbInstallStatus.Value =qmInstance.pbInstallStatus.Maximum;
                 }
                 else
                 {
-                    pbInstallStatus.Style = ProgressBarStyle.Continuous;
-                    lblInstallStatusPercent.Show();
-                    lblInstallStatusPercent.Text = i + "%"; //i++.ToString() + "%";
-                    lblInstallStatusText.Show();
-                    lblInstallStatusText.Text = string.Format(Resources.InstallGameScrub_TransferDisc2, title);
-                    pbInstallStatus.Value = i;
+                   qmInstance.pbInstallStatus.Style = ProgressBarStyle.Continuous;
+                   qmInstance.lblInstallStatusPercent.Show();
+                   qmInstance.lblInstallStatusPercent.Text = i + "%"; //i++.ToString() + "%";
+                    qmInstance.lblInstallStatusText.Show();
+                    qmInstance.lblInstallStatusText.Text = string.Format(Resources.InstallGameScrub_TransferDisc2, title);
+                   qmInstance.pbInstallStatus.Value = i;
                 }
             });
         }
@@ -665,271 +735,271 @@ namespace GCBM
         #region Exact Copy
 
 
-            #region This part writes the file
+        #region This part writes the file
 
-    //InstallGameExactCopy(row);
-    private void InstallGameExactCopy(string path)
-    {
-        //Make sure pbCopy is Continuous
-        pbInstallStatus.Style = ProgressBarStyle.Continuous;
-        btnAbort.Visible = true;
-        lblAbort.Visible = true;
-        if (intQueuePos <= QueueManager.InstallQueue.Count - 1 && !blnAbort)
+        //InstallGameExactCopy(row);
+        private static void InstallGameExactCopy(string path)
         {
-            var _file = new sio.FileInfo(path);
-            int? selectedRowCount = Convert.ToInt32(((DataGridView)frmMain.ActiveForm.Controls["dgvSource"]).Rows.GetRowCount(DataGridViewElementStates.Selected));
-
-            if (((DataGridView)frmMain.ActiveForm.Controls["dgvSource"]).RowCount == 0)
-                Notifications.EmptyGamesList();
-            else if (selectedRowCount > 0)
-                try
-                {
-                    blnQueueRunning = true;
-
-                    // Removes blank spaces
-                    //string ret = Regex.Replace(txtGameTitle.Text, @"[^0-9a-zA-ZéúíóáÉÚÍÓÁèùìòàÈÙÌÒÀõãñÕÃÑêûîôâÊÛÎÔÂëÿüïöäËYÜÏÖÄçÇ\s]+?", string.Empty);
-                    // Removes whitespace
-                    //string ret = Regex.Replace(txtGameTitle.Text, @"[^0-9a-zA-ZéúíóáÉÚÍÓÁèùìòàÈÙÌÒÀõãñÕÃÑêûîôâÊÛÎÔÂëÿüïöäËYÜÏÖÄçÇ]+?", string.Empty);
-                    // Replaces
-                    //string _SwapCharacter = tbIDName.Text.Replace(" disc1", "").Replace(" disc2", "").Replace(" 1", "").Replace(" 2", "")
-                    //.Replace(" (2)", "").Replace(":", " - ").Replace(";", " - ").Replace(",", " - ")
-                    //.Replace(" -  ", " - ").Replace(" FOR NINTENDO GAMECUBE", "").Replace(" GameCube", "");
-                    // Nome do jogo
-                    var _SwapCharacter = QueueManager.InstallQueue[intQueuePos].Title.Replace(":", " - ").Replace(";", " - ")
-                        .Replace(",", " - ").Replace(" -  ", " - ").Replace("/", "&");
-
-                    //string strResult = "";
-                    //bool firstCharacter = true;
-                    //if (_SwapCharacter.Length > 0)
-                    //{
-                    //    for (int intCont = 0; intCont <= _SwapCharacter.Length - 1; intCont++)
-                    //    {
-                    //        if ((firstCharacter) && (!_SwapCharacter.Substring(intCont, 1).Equals(" ")))
-                    //        {
-                    //            strResult += _SwapCharacter.Substring(intCont, 1).ToUpper();
-                    //            firstCharacter = false;
-                    //        }
-                    //        else
-                    //        {
-                    //            strResult += _SwapCharacter.Substring(intCont, 1).ToLower();
-                    //            if (_SwapCharacter.Substring(intCont, 1).Equals(" "))
-                    //            {
-                    //                firstCharacter = true;
-                    //            }
-                    //        }
-                    //    }
-                    //}
-                    var _source =
-                        new sio.FileInfo(sio.Path.Combine(frm.fbdSourceFolderDialog.SelectedPath, QueueManager.InstallQueue[intQueuePos].Path));
-
-                    // Disc 1 (0 -> 0) - Title [ID Game]
-                    if (InstallQueue[intQueuePos].DiscID == "0x00" && Program.ConfigFile.IniReadInt("SEVERAL", "AppointmentStyle") == 0)
-                    {
-                        if (!sio.Directory.Exists(frmMain.SelectedDrive + GAMES_DIR +
-                                                  sio.Path.DirectorySeparatorChar +
-                                                  _SwapCharacter + " [" + QueueManager.InstallQueue[intQueuePos].ID + "]"))
-                            sio.Directory.CreateDirectory(frmMain.SelectedDrive + GAMES_DIR +
-                                                          sio.Path.DirectorySeparatorChar +
-                                                          _SwapCharacter + " [" + QueueManager.InstallQueue[intQueuePos].ID + "]");
-                        var _destination = new sio.FileInfo(frmMain.SelectedDrive + GAMES_DIR +
-                                                            sio.Path.DirectorySeparatorChar +
-                                                            _SwapCharacter + " [" + QueueManager.InstallQueue[intQueuePos].ID +
-                                                            "]" + sio.Path.DirectorySeparatorChar + "game.iso");
-                        oldCopyTask(_source, _destination);
-                    } // Disc 2 (1 -> 0) - Title [ID Game]
-                    else if (InstallQueue[intQueuePos].DiscID == "0x01" &&
-                             Program.ConfigFile.IniReadInt("SEVERAL", "AppointmentStyle") == 0)
-                    {
-                        if (!sio.Directory.Exists(frmMain.SelectedDrive + GAMES_DIR +
-                                                  sio.Path.DirectorySeparatorChar +
-                                                  _SwapCharacter + " [" + QueueManager.InstallQueue[intQueuePos].ID + "]"))
-                            sio.Directory.CreateDirectory(frmMain.SelectedDrive + GAMES_DIR +
-                                                          sio.Path.DirectorySeparatorChar +
-                                                          _SwapCharacter + " [" + QueueManager.InstallQueue[intQueuePos].ID + "]");
-                        var _destination = new sio.FileInfo(frmMain.SelectedDrive + GAMES_DIR +
-                                                            sio.Path.DirectorySeparatorChar +
-                                                            _SwapCharacter + " [" + QueueManager.InstallQueue[intQueuePos].ID +
-                                                            "]" + sio.Path.DirectorySeparatorChar + "disc2.iso");
-                        oldCopyTask(_source, _destination);
-                    } // Disc 1 (0 -> 1) - [ID Game]
-                    else if (InstallQueue[intQueuePos].DiscID == "0x00" &&
-                             Program.ConfigFile.IniReadInt("SEVERAL", "AppointmentStyle") == 1)
-                    {
-                        if (!sio.Directory.Exists(frmMain.SelectedDrive + GAMES_DIR +
-                                                  sio.Path.DirectorySeparatorChar + "[" +
-                                                  QueueManager.InstallQueue[intQueuePos].ID + "]"))
-                            sio.Directory.CreateDirectory(frmMain.SelectedDrive + GAMES_DIR +
-                                                          sio.Path.DirectorySeparatorChar + "[" +
-                                                          QueueManager.InstallQueue[intQueuePos].ID + "]");
-                        var _destination = new sio.FileInfo(frmMain.SelectedDrive + GAMES_DIR +
-                                                            sio.Path.DirectorySeparatorChar + "[" +
-                                                            QueueManager.InstallQueue[intQueuePos].ID + "]" +
-                                                            sio.Path.DirectorySeparatorChar + "game.iso");
-                        oldCopyTask(_source, _destination);
-                    } // Disc 2 (1 -> 1) - [ID Game]
-                    else if (InstallQueue[intQueuePos].DiscID == "0x01" &&
-                             Program.ConfigFile.IniReadInt("SEVERAL", "AppointmentStyle") == 1)
-                    {
-                        if (!sio.Directory.Exists(frmMain.SelectedDrive + GAMES_DIR +
-                                                  sio.Path.DirectorySeparatorChar + "[" +
-                                                  QueueManager.InstallQueue[intQueuePos].ID + "]"))
-                            sio.Directory.CreateDirectory(frmMain.SelectedDrive + GAMES_DIR +
-                                                          sio.Path.DirectorySeparatorChar + "[" +
-                                                          QueueManager.InstallQueue[intQueuePos].ID + "]");
-                        var _destination = new sio.FileInfo(frmMain.SelectedDrive + GAMES_DIR +
-                                                            sio.Path.DirectorySeparatorChar + "[" +
-                                                            QueueManager.InstallQueue[intQueuePos].ID + "]" +
-                                                            sio.Path.DirectorySeparatorChar +
-                                                            "disc2.iso");
-                        oldCopyTask(_source, _destination);
-                    }
-                    // Título [Código do Jogo] -> 0
-                    // [Código do Jogo]        -> 1
-                }
-                catch (Exception ex)
-                    {
-                    ((TextBox)frm.Controls["tbLog"]).AppendText("[" + frm.DateString() + "]" + Resources.Error + ex.Message + Environment.NewLine);
-                    ((TextBox)frm.Controls["tbLog"]).AppendText(ex.StackTrace);
-                    Notifications.GlobalNotifications(ex.Message, ToolTipIcon.Error);
-                }
-        }
-        else
-        {
-            frm.FinishedInstalling();
-        }
-    }
-
-    #endregion
-
-    #region Copy Task
-
-    /// <summary>
-    ///     Function for the copy job.
-    /// </summary>
-    /// <param name="_source"></param>
-    /// <param name="_destination"></param>
-    private void oldCopyTask(sio.FileInfo _source, sio.FileInfo _destination)
-    {
-        //Make sure pbCopy is Continuous
-        pbInstallStatus.Style = ProgressBarStyle.Continuous;
-        // Disc 1
-        //if (textBoxDiscID.Text == "00" && comboBoxSettingsNomenclatureAppointmentStyle.SelectedIndex  == 0)
-        if (InstallQueue[intQueuePos].DiscID == "0x00")
-        {
-            if (_destination.Exists) _destination.Delete();
-            //Create a tast to run copy file
-            Task.Run(() =>
+            //Make sure pbCopy is Continuous
+            qmInstance.pbInstallStatus.Style = ProgressBarStyle.Continuous;
+            qmInstance.btnAbort.Visible = true;
+            qmInstance.lblAbort.Visible = true;
+            if (intQueuePos <= qmInstance.InstallQueue.Count - 1 && !blnAbort)
             {
-                //_source.CopyTo(_destination, true);
-                _source.CopyTo(_destination, x => pbInstallStatus.BeginInvoke(new Action(() =>
-                {
-                    //DisableOptionsGame((DataGridView)frmMain.ActiveForm.Controls["dgvSource"]);
-                    frm.Controls["dgvSource"].Enabled = false;
-                    pbInstallStatus.Visible = true;
-                    lblInstallStatusGameTitle.Visible = true;
-                    lblInstallStatusPercent.Visible = true;
-                    lblInstallStatusText.Visible = true;
-                    if (x < pbInstallStatus.Value)
-                        pbInstallStatus.Value = x;
-                    lblInstallStatusGameTitle.Text = QueueManager.InstallQueue[intQueuePos].Title;
-                    lblInstallStatusText.Text = Resources.CopyTask_String1;
-                    lblInstallStatusPercent.Text = x + "%";
-                })));
-            }).GetAwaiter().OnCompleted(() => pbInstallStatus.BeginInvoke(new Action(() =>
-            {
-                pbInstallStatus.Maximum = 100;
-                pbInstallStatus.Value = 100;
-                lblInstallStatusGameTitle.Text = Resources.CopyTask_String3;
-                lblInstallStatusText.Text = Resources.CopyTask_String4;
-                lblInstallStatusPercent.Text = Resources.CopyTask_String5;
-                Notifications.GlobalNotifications(Resources.InstallGameScrub_Complete, ToolTipIcon.Info);
+                var _file = new sio.FileInfo(path);
+                int? selectedRowCount = Convert.ToInt32(((DataGridView)frmMain.ActiveForm.Controls["dgvSource"]).Rows.GetRowCount(DataGridViewElementStates.Selected));
 
-                pbInstallStatus.Visible = false;
-                lblInstallStatusGameTitle.Visible = false;
-                lblInstallStatusPercent.Visible = false;
-                lblInstallStatusText.Visible = false;
-                intQueuePos++;
-                blnQueueRunning = false;
-                frm.EnableOptionsGameList();
-
-                if (intQueuePos <= QueueManager.InstallQueue.Count - 1)
-                {
+                if (((DataGridView)frmMain.ActiveForm.Controls["dgvSource"]).RowCount == 0)
+                    Notifications.EmptyGamesList();
+                else if (selectedRowCount > 0)
                     try
                     {
-                        InstallGameExactCopy(QueueManager.InstallQueue[intQueuePos].Path);
+                        blnQueueRunning = true;
+
+                        // Removes blank spaces
+                        //string ret = Regex.Replace(txtGameTitle.Text, @"[^0-9a-zA-ZéúíóáÉÚÍÓÁèùìòàÈÙÌÒÀõãñÕÃÑêûîôâÊÛÎÔÂëÿüïöäËYÜÏÖÄçÇ\s]+?", string.Empty);
+                        // Removes whitespace
+                        //string ret = Regex.Replace(txtGameTitle.Text, @"[^0-9a-zA-ZéúíóáÉÚÍÓÁèùìòàÈÙÌÒÀõãñÕÃÑêûîôâÊÛÎÔÂëÿüïöäËYÜÏÖÄçÇ]+?", string.Empty);
+                        // Replaces
+                        //string _SwapCharacter = tbIDName.Text.Replace(" disc1", "").Replace(" disc2", "").Replace(" 1", "").Replace(" 2", "")
+                        //.Replace(" (2)", "").Replace(":", " - ").Replace(";", " - ").Replace(",", " - ")
+                        //.Replace(" -  ", " - ").Replace(" FOR NINTENDO GAMECUBE", "").Replace(" GameCube", "");
+                        // Nome do jogo
+                        var _SwapCharacter = qmInstance.InstallQueue[intQueuePos].Title.Replace(":", " - ").Replace(";", " - ")
+                            .Replace(",", " - ").Replace(" -  ", " - ").Replace("/", "&");
+
+                        //string strResult = "";
+                        //bool firstCharacter = true;
+                        //if (_SwapCharacter.Length > 0)
+                        //{
+                        //    for (int intCont = 0; intCont <= _SwapCharacter.Length - 1; intCont++)
+                        //    {
+                        //        if ((firstCharacter) && (!_SwapCharacter.Substring(intCont, 1).Equals(" ")))
+                        //        {
+                        //            strResult += _SwapCharacter.Substring(intCont, 1).ToUpper();
+                        //            firstCharacter = false;
+                        //        }
+                        //        else
+                        //        {
+                        //            strResult += _SwapCharacter.Substring(intCont, 1).ToLower();
+                        //            if (_SwapCharacter.Substring(intCont, 1).Equals(" "))
+                        //            {
+                        //                firstCharacter = true;
+                        //            }
+                        //        }
+                        //    }
+                        //}
+                        var _source =
+                            new sio.FileInfo(sio.Path.Combine(qmInstance.frm.fbdSourceFolderDialog.SelectedPath, qmInstance.InstallQueue[intQueuePos].Path));
+
+                        // Disc 1 (0 -> 0) - Title [ID Game]
+                        if (qmInstance.InstallQueue[intQueuePos].DiscID == "0x00" && Program.ConfigFile.IniReadInt("SEVERAL", "AppointmentStyle") == 0)
+                        {
+                            if (!sio.Directory.Exists(frmMain.SelectedDrive + GAMES_DIR +
+                                                      sio.Path.DirectorySeparatorChar +
+                                                      _SwapCharacter + " [" + qmInstance.InstallQueue[intQueuePos].ID + "]"))
+                                sio.Directory.CreateDirectory(frmMain.SelectedDrive + GAMES_DIR +
+                                                              sio.Path.DirectorySeparatorChar +
+                                                              _SwapCharacter + " [" + qmInstance.InstallQueue[intQueuePos].ID + "]");
+                            var _destination = new sio.FileInfo(frmMain.SelectedDrive + GAMES_DIR +
+                                                                sio.Path.DirectorySeparatorChar +
+                                                                _SwapCharacter + " [" + qmInstance.InstallQueue[intQueuePos].ID +
+                                                                "]" + sio.Path.DirectorySeparatorChar + "game.iso");
+                            oldCopyTask(_source, _destination);
+                        } // Disc 2 (1 -> 0) - Title [ID Game]
+                        else if (qmInstance.InstallQueue[intQueuePos].DiscID == "0x01" &&
+                                 Program.ConfigFile.IniReadInt("SEVERAL", "AppointmentStyle") == 0)
+                        {
+                            if (!sio.Directory.Exists(frmMain.SelectedDrive + GAMES_DIR +
+                                                      sio.Path.DirectorySeparatorChar +
+                                                      _SwapCharacter + " [" + qmInstance.InstallQueue[intQueuePos].ID + "]"))
+                                sio.Directory.CreateDirectory(frmMain.SelectedDrive + GAMES_DIR +
+                                                              sio.Path.DirectorySeparatorChar +
+                                                              _SwapCharacter + " [" + qmInstance.InstallQueue[intQueuePos].ID + "]");
+                            var _destination = new sio.FileInfo(frmMain.SelectedDrive + GAMES_DIR +
+                                                                sio.Path.DirectorySeparatorChar +
+                                                                _SwapCharacter + " [" + qmInstance.InstallQueue[intQueuePos].ID +
+                                                                "]" + sio.Path.DirectorySeparatorChar + "disc2.iso");
+                            oldCopyTask(_source, _destination);
+                        } // Disc 1 (0 -> 1) - [ID Game]
+                        else if (qmInstance.InstallQueue[intQueuePos].DiscID == "0x00" &&
+                                 Program.ConfigFile.IniReadInt("SEVERAL", "AppointmentStyle") == 1)
+                        {
+                            if (!sio.Directory.Exists(frmMain.SelectedDrive + GAMES_DIR +
+                                                      sio.Path.DirectorySeparatorChar + "[" +
+                                                      qmInstance.InstallQueue[intQueuePos].ID + "]"))
+                                sio.Directory.CreateDirectory(frmMain.SelectedDrive + GAMES_DIR +
+                                                              sio.Path.DirectorySeparatorChar + "[" +
+                                                              qmInstance.InstallQueue[intQueuePos].ID + "]");
+                            var _destination = new sio.FileInfo(frmMain.SelectedDrive + GAMES_DIR +
+                                                                sio.Path.DirectorySeparatorChar + "[" +
+                                                                qmInstance.InstallQueue[intQueuePos].ID + "]" +
+                                                                sio.Path.DirectorySeparatorChar + "game.iso");
+                            oldCopyTask(_source, _destination);
+                        } // Disc 2 (1 -> 1) - [ID Game]
+                        else if (qmInstance.InstallQueue[intQueuePos].DiscID == "0x01" &&
+                                 Program.ConfigFile.IniReadInt("SEVERAL", "AppointmentStyle") == 1)
+                        {
+                            if (!sio.Directory.Exists(frmMain.SelectedDrive + GAMES_DIR +
+                                                      sio.Path.DirectorySeparatorChar + "[" +
+                                                      qmInstance.InstallQueue[intQueuePos].ID + "]"))
+                                sio.Directory.CreateDirectory(frmMain.SelectedDrive + GAMES_DIR +
+                                                              sio.Path.DirectorySeparatorChar + "[" +
+                                                              qmInstance.InstallQueue[intQueuePos].ID + "]");
+                            var _destination = new sio.FileInfo(frmMain.SelectedDrive + GAMES_DIR +
+                                                                sio.Path.DirectorySeparatorChar + "[" +
+                                                                qmInstance.InstallQueue[intQueuePos].ID + "]" +
+                                                                sio.Path.DirectorySeparatorChar +
+                                                                "disc2.iso");
+                            oldCopyTask(_source, _destination);
+                        }
+                        // Título [Código do Jogo] -> 0
+                        // [Código do Jogo]        -> 1
                     }
                     catch (Exception ex)
                     {
-                        ((TextBox)frm.Controls["tbLog"]).AppendText("[" + DateTime.Now + "] Error Installing: " + Environment.NewLine +
-                                         ex.Message + Environment.NewLine);
-                        ((TextBox)frm.Controls["tbLog"]).AppendText(ex.StackTrace);
+                        ((TextBox)qmInstance.frm.Controls["tbLog"]).AppendText("[" + qmInstance.frm.DateString() + "]" + Resources.Error + ex.Message + Environment.NewLine);
+                        ((TextBox)qmInstance.frm.Controls["tbLog"]).AppendText(ex.StackTrace);
+                        Notifications.GlobalNotifications(ex.Message, ToolTipIcon.Error);
                     }
-                }
-                else
-                {
-                    frm.EnableOptionsGameList();
-                    frm.Controls["dgvSource"].Enabled = true;
-                }
-            })));
+            }
+            else
+            {
+                qmInstance.frm.FinishedInstalling();
+            }
         }
-        // Disc 2
-        else if (InstallQueue[intQueuePos].DiscID == "0x01")
+
+        #endregion
+
+        #region Copy Task
+
+        /// <summary>
+        ///     Function for the copy job.
+        /// </summary>
+        /// <param name="_source"></param>
+        /// <param name="_destination"></param>
+        private static void oldCopyTask(sio.FileInfo _source, sio.FileInfo _destination)
         {
-            if (_destination.Exists) _destination.Delete();
-            //Create a tast to run copy file
-            Task.Run(() =>
+            //Make sure pbCopy is Continuous
+            qmInstance.pbInstallStatus.Style = ProgressBarStyle.Continuous;
+            // Disc 1
+            //if (textBoxDiscID.Text == "00" && comboBoxSettingsNomenclatureAppointmentStyle.SelectedIndex  == 0)
+            if (qmInstance.InstallQueue[intQueuePos].DiscID == "0x00")
             {
-                _source.CopyTo(_destination, x => pbInstallStatus.BeginInvoke(new Action(() =>
+                if (_destination.Exists) _destination.Delete();
+                //Create a tast to run copy file
+                Task.Run(() =>
                 {
-                    //DisableOptionsGame((DataGridView)frmMain.ActiveForm.Controls["dgvSource"]);
-                    pbInstallStatus.Visible = true;
-                    lblInstallStatusGameTitle.Visible = true;
-                    lblInstallStatusPercent.Visible = true;
-                    lblInstallStatusText.Visible = true;
-                    pbInstallStatus.Value = x;
-                    lblInstallStatusGameTitle.Text = QueueManager.InstallQueue[intQueuePos].Title;
-                    lblInstallStatusText.Text = Resources.CopyTask_String2;
-                    lblInstallStatusPercent.Text = x + "%";
+                    //_source.CopyTo(_destination, true);
+                    _source.CopyTo(_destination, x => qmInstance.pbInstallStatus.BeginInvoke(new Action(() =>
+                    {
+                        //DisableOptionsGame((DataGridView)frmMain.ActiveForm.Controls["dgvSource"]);
+                        qmInstance.frm.Controls["dgvSource"].Enabled = false;
+                        qmInstance.pbInstallStatus.Visible = true;
+                        qmInstance.lblInstallStatusGameTitle.Visible = true;
+                        qmInstance.lblInstallStatusPercent.Visible = true;
+                        qmInstance.lblInstallStatusText.Visible = true;
+                        if (x < qmInstance.pbInstallStatus.Value)
+                            qmInstance.pbInstallStatus.Value = x;
+                       qmInstance.lblInstallStatusGameTitle.Text = qmInstance.InstallQueue[intQueuePos].Title;
+                        qmInstance.lblInstallStatusText.Text = Resources.CopyTask_String1;
+                       qmInstance.lblInstallStatusPercent.Text = x + "%";
+                    })));
+                }).GetAwaiter().OnCompleted(() =>qmInstance.pbInstallStatus.BeginInvoke(new Action(() =>
+                {
+                   qmInstance.pbInstallStatus.Maximum = 100;
+                   qmInstance.pbInstallStatus.Value = 100;
+                   qmInstance.lblInstallStatusGameTitle.Text = Resources.CopyTask_String3;
+                    qmInstance.lblInstallStatusText.Text = Resources.CopyTask_String4;
+                   qmInstance.lblInstallStatusPercent.Text = Resources.CopyTask_String5;
+                    Notifications.GlobalNotifications(Resources.InstallGameScrub_Complete, ToolTipIcon.Info);
+
+                   qmInstance.pbInstallStatus.Visible = false;
+                   qmInstance.lblInstallStatusGameTitle.Visible = false;
+                   qmInstance.lblInstallStatusPercent.Visible = false;
+                    qmInstance.lblInstallStatusText.Visible = false;
+                    intQueuePos++;
+                    blnQueueRunning = false;
+                   qmInstance.frm.EnableOptionsGameList();
+
+                    if (intQueuePos <= qmInstance.InstallQueue.Count - 1)
+                    {
+                        try
+                        {
+                            InstallGameExactCopy(qmInstance.InstallQueue[intQueuePos].Path);
+                        }
+                        catch (Exception ex)
+                        {
+                            ((TextBox)qmInstance.frm.Controls["tbLog"]).AppendText("[" + DateTime.Now + "] Error Installing: " + Environment.NewLine +
+                                             ex.Message + Environment.NewLine);
+                            ((TextBox)qmInstance.frm.Controls["tbLog"]).AppendText(ex.StackTrace);
+                        }
+                    }
+                    else
+                    {
+                       qmInstance.frm.EnableOptionsGameList();
+                       qmInstance.frm.Controls["dgvSource"].Enabled = true;
+                    }
                 })));
-            }).GetAwaiter().OnCompleted(() => pbInstallStatus.BeginInvoke(new Action(() =>
+            }
+            // Disc 2
+            else if (qmInstance.InstallQueue[intQueuePos].DiscID == "0x01")
             {
-                pbInstallStatus.Value = 100;
-                lblInstallStatusText.Text = Resources.CopyTask_String4;
-                lblInstallStatusPercent.Text = Resources.CopyTask_String5;
-                Notifications.GlobalNotifications(Resources.InstallGameScrub_TrasnferredDisc2, ToolTipIcon.Info);
-                pbInstallStatus.Visible = false;
-                lblInstallStatusGameTitle.Visible = false;
-                lblInstallStatusPercent.Visible = false;
-                lblInstallStatusText.Visible = false;
-                intQueuePos++;
-                blnQueueRunning = false;
-                if (intQueuePos <= QueueManager.InstallQueue.Count)
+                if (_destination.Exists) _destination.Delete();
+                //Create a tast to run copy file
+                Task.Run(() =>
                 {
-                    try
+                    _source.CopyTo(_destination, x =>qmInstance.pbInstallStatus.BeginInvoke(new Action(() =>
                     {
-                        InstallGameExactCopy(QueueManager.InstallQueue[intQueuePos].Path);
-                    }
-                    catch (Exception ex)
-                    {
-                        ((TextBox)frm.Controls["tbLog"]).AppendText("[" + DateTime.Now + "] Error Installing: " + Environment.NewLine +
-                                         ex.Message + Environment.NewLine);
-                    }
-                }
-                else
+                        //DisableOptionsGame((DataGridView)frmMain.ActiveForm.Controls["dgvSource"]);
+                       qmInstance.pbInstallStatus.Visible = true;
+                       qmInstance.lblInstallStatusGameTitle.Visible = true;
+                       qmInstance.lblInstallStatusPercent.Visible = true;
+                        qmInstance.lblInstallStatusText.Visible = true;
+                       qmInstance.pbInstallStatus.Value = x;
+                       qmInstance.lblInstallStatusGameTitle.Text = qmInstance.InstallQueue[intQueuePos].Title;
+                        qmInstance.lblInstallStatusText.Text = Resources.CopyTask_String2;
+                       qmInstance.lblInstallStatusPercent.Text = x + "%";
+                    })));
+                }).GetAwaiter().OnCompleted(() =>qmInstance.pbInstallStatus.BeginInvoke(new Action(() =>
                 {
-                    frm.EnableOptionsGameList();
-                    ((DataGridView)frm.Controls["dgvSource"]).Enabled = true;
-                }
-            })));
+                   qmInstance.pbInstallStatus.Value = 100;
+                    qmInstance.lblInstallStatusText.Text = Resources.CopyTask_String4;
+                   qmInstance.lblInstallStatusPercent.Text = Resources.CopyTask_String5;
+                    Notifications.GlobalNotifications(Resources.InstallGameScrub_TrasnferredDisc2, ToolTipIcon.Info);
+                   qmInstance.pbInstallStatus.Visible = false;
+                   qmInstance.lblInstallStatusGameTitle.Visible = false;
+                   qmInstance.lblInstallStatusPercent.Visible = false;
+                    qmInstance.lblInstallStatusText.Visible = false;
+                    intQueuePos++;
+                    blnQueueRunning = false;
+                    if (intQueuePos <= qmInstance.InstallQueue.Count)
+                    {
+                        try
+                        {
+                            InstallGameExactCopy(qmInstance.InstallQueue[intQueuePos].Path);
+                        }
+                        catch (Exception ex)
+                        {
+                            ((TextBox)qmInstance.frm.Controls["tbLog"]).AppendText("[" + DateTime.Now + "] Error Installing: " + Environment.NewLine +
+                                             ex.Message + Environment.NewLine);
+                        }
+                    }
+                    else
+                    {
+                       qmInstance.frm.EnableOptionsGameList();
+                        ((DataGridView)qmInstance.frm.Controls["dgvSource"]).Enabled = true;
+                    }
+                })));
+            }
+
+           qmInstance.frm.EnableOptionsGameList();
         }
 
-        frm.EnableOptionsGameList();
-    }
-
-    #endregion
+        #endregion
 
 
-        
+
 
         #endregion
     }

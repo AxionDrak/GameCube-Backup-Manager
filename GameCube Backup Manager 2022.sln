@@ -5,6 +5,8 @@ VisualStudioVersion = 17.2.32616.157
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GCBM", "GCBM\GCBM.csproj", "{FC3F3E82-283B-4CA0-B076-9B2737CB2773}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GCBMTests", "GCBMTests\GCBMTests.csproj", "{6D572C7B-2206-4E41-A39F-1FD0047D8EE3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,12 +23,20 @@ Global
 		{FC3F3E82-283B-4CA0-B076-9B2737CB2773}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FC3F3E82-283B-4CA0-B076-9B2737CB2773}.Release|x64.ActiveCfg = Release|x64
 		{FC3F3E82-283B-4CA0-B076-9B2737CB2773}.Release|x64.Build.0 = Release|x64
+		{6D572C7B-2206-4E41-A39F-1FD0047D8EE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D572C7B-2206-4E41-A39F-1FD0047D8EE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D572C7B-2206-4E41-A39F-1FD0047D8EE3}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{6D572C7B-2206-4E41-A39F-1FD0047D8EE3}.Debug|x64.Build.0 = Debug|Any CPU
+		{6D572C7B-2206-4E41-A39F-1FD0047D8EE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D572C7B-2206-4E41-A39F-1FD0047D8EE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D572C7B-2206-4E41-A39F-1FD0047D8EE3}.Release|x64.ActiveCfg = Release|Any CPU
+		{6D572C7B-2206-4E41-A39F-1FD0047D8EE3}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		RESX_NeutralResourcesLanguage = pt-BR
 		SolutionGuid = {11AF1734-B56F-491E-99F1-E6DCF1F9701B}
+		RESX_NeutralResourcesLanguage = pt-BR
 	EndGlobalSection
 EndGlobal
