@@ -215,7 +215,7 @@ namespace GCBM
             this.tsmiVerifyUpdate = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.tsmiMenuAbout = new System.Windows.Forms.ToolStripMenuItem();
-            this.fbd1 = new System.Windows.Forms.FolderBrowserDialog();
+            FolderBrowserDialog fbdSourceFolderDialog = new System.Windows.Forms.FolderBrowserDialog();
             this.fbd2 = new System.Windows.Forms.FolderBrowserDialog();
             this.ofd1 = new System.Windows.Forms.OpenFileDialog();
             this.lblNetStatus = new System.Windows.Forms.Label();
@@ -1554,9 +1554,9 @@ namespace GCBM
             resources.ApplyResources(this.tsmiMenuAbout, "tsmiMenuAbout");
             this.tsmiMenuAbout.Click += new System.EventHandler(this.tsmiMenuAbout_Click);
             // 
-            // fbd1
+            // fbdSourceFolderDialog
             // 
-            this.fbd1.RootFolder = System.Environment.SpecialFolder.MyComputer;
+            fbdSourceFolderDialog.RootFolder = System.Environment.SpecialFolder.MyComputer;
             // 
             // fbd2
             // 
@@ -1693,7 +1693,7 @@ namespace GCBM
         private PictureBox pbGameCover3D;
         private PictureBox pbGameDisc;
         private ToolStripStatusLabel tsslCurrentYear;
-        private FolderBrowserDialog fbd1;
+        public static FolderBrowserDialog fbdSourceFolderDialog;
         private ToolStripSeparator toolStripMenuItem5;
         private ToolStripMenuItem tsmiSyncDownloadAllDiscOnly3DCovers;
         private ToolStripMenuItem tsmiSyncDownloadAllCovers;

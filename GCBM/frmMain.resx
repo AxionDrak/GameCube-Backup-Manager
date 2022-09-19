@@ -3740,7 +3740,7 @@
   <data name="&gt;&gt;mstripMain.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <metadata name="fbd1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="fbdSourceFolderDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>912, 13</value>
   </metadata>
   <metadata name="fbd2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
@@ -4582,10 +4582,10 @@
   <data name="&gt;&gt;tsmiMenuAbout.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;fbd1.Name" xml:space="preserve">
-    <value>fbd1</value>
+  <data name="&gt;&gt;fbdSourceFolderDialog.Name" xml:space="preserve">
+    <value>fbdSourceFolderDialog</value>
   </data>
-  <data name="&gt;&gt;fbd1.Type" xml:space="preserve">
+  <data name="&gt;&gt;fbdSourceFolderDialog.Type" xml:space="preserve">
     <value>System.Windows.Forms.FolderBrowserDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;fbd2.Name" xml:space="preserve">

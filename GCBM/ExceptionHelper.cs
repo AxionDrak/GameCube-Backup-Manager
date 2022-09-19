@@ -73,7 +73,7 @@ namespace GCBM
                 }
                 else
                 {
-                    return NewFileNotFoundException(ex, intQueuePos);
+                    return null;
                 }
             }
             else
