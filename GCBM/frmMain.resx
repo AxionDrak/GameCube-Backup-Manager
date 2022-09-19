@@ -836,35 +836,8 @@
   <data name="tabControlMain.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
-  <data name="lblInstallStatusGameIndex.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblInstallStatusGameIndex.Location" type="System.Drawing.Point, System.Drawing">
-    <value>713, 331</value>
-  </data>
-  <data name="lblInstallStatusGameIndex.Size" type="System.Drawing.Size, System.Drawing">
-    <value>36, 13</value>
-  </data>
-  <data name="lblInstallStatusGameIndex.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
-  </data>
-  <data name="lblInstallStatusGameIndex.Text" xml:space="preserve">
-    <value>0  /  0</value>
-  </data>
-  <data name="lblInstallStatusGameIndex.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;lblInstallStatusGameIndex.Name" xml:space="preserve">
-    <value>lblInstallStatusGameIndex</value>
-  </data>
-  <data name="&gt;&gt;lblInstallStatusGameIndex.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblInstallStatusGameIndex.Parent" xml:space="preserve">
-    <value>tabMainFile</value>
-  </data>
-  <data name="&gt;&gt;lblInstallStatusGameIndex.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="grpScan.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
   </data>
   <data name="pbSource.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -873,10 +846,10 @@
     <value>NoControl</value>
   </data>
   <data name="pbSource.Location" type="System.Drawing.Point, System.Drawing">
-    <value>514, 377</value>
+    <value>113, 13</value>
   </data>
   <data name="pbSource.Size" type="System.Drawing.Size, System.Drawing">
-    <value>339, 23</value>
+    <value>222, 26</value>
   </data>
   <data name="pbSource.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
@@ -891,297 +864,10 @@
     <value>System.Windows.Forms.ProgressBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;pbSource.Parent" xml:space="preserve">
-    <value>tabMainFile</value>
+    <value>grpScan</value>
   </data>
   <data name="&gt;&gt;pbSource.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="lblSourceCount.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
-  </data>
-  <data name="lblSourceCount.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblSourceCount.Location" type="System.Drawing.Point, System.Drawing">
-    <value>643, 407</value>
-  </data>
-  <data name="lblSourceCount.Size" type="System.Drawing.Size, System.Drawing">
-    <value>13, 13</value>
-  </data>
-  <data name="lblSourceCount.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
-  </data>
-  <data name="lblSourceCount.Text" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="lblSourceCount.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="&gt;&gt;lblSourceCount.Name" xml:space="preserve">
-    <value>lblSourceCount</value>
-  </data>
-  <data name="&gt;&gt;lblSourceCount.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblSourceCount.Parent" xml:space="preserve">
-    <value>tabMainFile</value>
-  </data>
-  <data name="&gt;&gt;lblSourceCount.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="lblGamesVerifiedText.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
-  </data>
-  <data name="lblGamesVerifiedText.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblGamesVerifiedText.Location" type="System.Drawing.Point, System.Drawing">
-    <value>514, 407</value>
-  </data>
-  <data name="lblGamesVerifiedText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>92, 13</value>
-  </data>
-  <data name="lblGamesVerifiedText.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
-  <data name="lblGamesVerifiedText.Text" xml:space="preserve">
-    <value>Jogos verificados:</value>
-  </data>
-  <data name="&gt;&gt;lblGamesVerifiedText.Name" xml:space="preserve">
-    <value>lblGamesVerifiedText</value>
-  </data>
-  <data name="&gt;&gt;lblGamesVerifiedText.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblGamesVerifiedText.Parent" xml:space="preserve">
-    <value>tabMainFile</value>
-  </data>
-  <data name="&gt;&gt;lblGamesVerifiedText.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="lblAbort.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
-  <data name="lblAbort.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblAbort.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblAbort.Location" type="System.Drawing.Point, System.Drawing">
-    <value>776, 321</value>
-  </data>
-  <data name="lblAbort.Size" type="System.Drawing.Size, System.Drawing">
-    <value>29, 13</value>
-  </data>
-  <data name="lblAbort.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
-  </data>
-  <data name="lblAbort.Text" xml:space="preserve">
-    <value>Pare</value>
-  </data>
-  <data name="lblAbort.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;lblAbort.Name" xml:space="preserve">
-    <value>lblAbort</value>
-  </data>
-  <data name="&gt;&gt;lblAbort.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblAbort.Parent" xml:space="preserve">
-    <value>tabMainFile</value>
-  </data>
-  <data name="&gt;&gt;lblAbort.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="pbCopy.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
-  <data name="pbCopy.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="pbCopy.Location" type="System.Drawing.Point, System.Drawing">
-    <value>514, 348</value>
-  </data>
-  <data name="pbCopy.Size" type="System.Drawing.Size, System.Drawing">
-    <value>339, 23</value>
-  </data>
-  <data name="pbCopy.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="pbCopy.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;pbCopy.Name" xml:space="preserve">
-    <value>pbCopy</value>
-  </data>
-  <data name="&gt;&gt;pbCopy.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ProgressBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pbCopy.Parent" xml:space="preserve">
-    <value>tabMainFile</value>
-  </data>
-  <data name="&gt;&gt;pbCopy.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="lblInstallStatusGameTitle.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
-  </data>
-  <data name="lblInstallStatusGameTitle.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblInstallStatusGameTitle.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblInstallStatusGameTitle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>517, 312</value>
-  </data>
-  <data name="lblInstallStatusGameTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>74, 13</value>
-  </data>
-  <data name="lblInstallStatusGameTitle.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="lblInstallStatusGameTitle.Text" xml:space="preserve">
-    <value>Aguardando...</value>
-  </data>
-  <data name="lblInstallStatusGameTitle.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;lblInstallStatusGameTitle.Name" xml:space="preserve">
-    <value>lblInstallStatusGameTitle</value>
-  </data>
-  <data name="&gt;&gt;lblInstallStatusGameTitle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblInstallStatusGameTitle.Parent" xml:space="preserve">
-    <value>tabMainFile</value>
-  </data>
-  <data name="&gt;&gt;lblInstallStatusGameTitle.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="label1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
-  </data>
-  <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>517, 444</value>
-  </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>264, 55</value>
-  </data>
-  <data name="label1.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Clique no ícone ao lado e selecione uma pasta para listar todos os arquivos ISO e GCM contidos em seu interior.</value>
-  </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
-    <value>tabMainFile</value>
-  </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="btnAbort.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
-  <data name="btnAbort.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="btnAbort.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
-        4wAAAOMBD+bfpwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAO/SURBVFhHzZdL
-        TFNBFIbbyENolQJtKS0tLUWUirW3rQkgyMNoYjQaiSQuJNHE6N6dGve6MDFx48qElZqYGBWUKCoqCAq+
-        UCjGRxPjQgTxBYmPxe85F2+9fdBOjRib/OntzJn5vzlnpvdeDX1MizMWXMrQar/RNf6F2Eun1XbStVHD
-        5q1FBd+f1a3EmwZpXvSyfiV6gh5Ii3Kxv8yK3spyrMvNZYgODdOw+fTaVfOuU95y1OUvwmSdhPM2G2fi
-        K2VBI1MmGvC3dVFaSlnQYWqNH1dLSpSS/KcAE00BDNd649pT6QtpqLoKn5vj+4QBXtX74CkwIDcrCweW
-        OKL6kulDcxBbSizIoXEbbUWYagpG9QsBhGXzfOxqa8Po6CicxcXY5y6JmiiR2Hyz1Ywavx/hcBgNNTVY
-        T7/fqyCEADbZLNjZtgPT09OYmZnByMgIHJYiHCi3R2JiJZvTilcHgxgfH5fHTUxMoJpgDqnghQD2uGyo
-        DQQiE6WCSGSujLEXmXHC44rECgF8oglb7RZUS1LUhGNjY7PlKPu9InXa1bGhUEiOjd0/wptQBCJdc5Yw
-        ACtZarkcFYY86osvFad9rpOTFgArAhGzJ3iXt7e3Y3JyMsac9kmSY5s2AIvLsY3KUeOPLodaydKu1h8B
-        sJRMbG9pwZepKbwbGkK4qwujHZ14cvkKXMVW7CkowN3SUgw4HBgodWDQ6cR9twvDFW6EllfgleTBmcoy
-        +OiOmDbA2zof1psKsampGQ9HnuHh2IsoOWmy3fn5s+ZJdNxshleXIwbwmf7BXgerMFjuQmNeHnzLq9B7
-        /3GcOevyjVuwmcxoSwEhBPCxIYDn3mW45yxFr92OJjKXqlag78FwxLC7tx+Hjx7DwKOnkbaO7h5YCo3Y
-        TaVIZM5KCvCJ7n4v2PhXHdm8Mc8AaYU3ypyNio1GOHV66osGSwUxJ0Ao4MGQyxkJvENaZzDEpV1JNRuI
-        xKjNWXMC8A8lKJ2JU8YWFkZiWUIA28jAF1NzJe2JVpWsVBYCOKSCEAJYQyvaurUFD0LPU5orSgTR/+iJ
-        nJm9qpMhBNBF1269Hi0E0XmtZ856xkpdju6+AazyB1BLJ+g2wSkxQgCsS/TIzBALMzOFzBXJx5Ygsmlc
-        PX2rzVnCAKybNPis1RrXnkr9pNN0X+CMxPalBTAf+j8BsrTaHxeo5okG/G0dMZloY+rp1cz3+9XMnJlx
-        bYNeJzcw1XzoHO2lk/Sw4snOxsEyG25XupWX04tcAqMpM+N6NmVCTsk/EK981lxj/AkP3lQ07ON38gAA
-        AABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="btnAbort.Location" type="System.Drawing.Point, System.Drawing">
-    <value>814, 309</value>
-  </data>
-  <data name="btnAbort.Size" type="System.Drawing.Size, System.Drawing">
-    <value>39, 36</value>
-  </data>
-  <data name="btnAbort.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="btnAbort.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;btnAbort.Name" xml:space="preserve">
-    <value>btnAbort</value>
-  </data>
-  <data name="&gt;&gt;btnAbort.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnAbort.Parent" xml:space="preserve">
-    <value>tabMainFile</value>
-  </data>
-  <data name="&gt;&gt;btnAbort.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="lblInstallStatusPercent.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="lblInstallStatusPercent.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblInstallStatusPercent.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="lblInstallStatusPercent.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblInstallStatusPercent.Location" type="System.Drawing.Point, System.Drawing">
-    <value>643, 331</value>
-  </data>
-  <data name="lblInstallStatusPercent.Size" type="System.Drawing.Size, System.Drawing">
-    <value>24, 13</value>
-  </data>
-  <data name="lblInstallStatusPercent.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="lblInstallStatusPercent.Text" xml:space="preserve">
-    <value>0 %</value>
-  </data>
-  <data name="lblInstallStatusPercent.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;lblInstallStatusPercent.Name" xml:space="preserve">
-    <value>lblInstallStatusPercent</value>
-  </data>
-  <data name="&gt;&gt;lblInstallStatusPercent.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblInstallStatusPercent.Parent" xml:space="preserve">
-    <value>tabMainFile</value>
-  </data>
-  <data name="&gt;&gt;lblInstallStatusPercent.ZOrder" xml:space="preserve">
-    <value>9</value>
   </data>
   <data name="btnSelectFolder.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -1227,10 +913,10 @@
     <value>NoControl</value>
   </data>
   <data name="btnSelectFolder.Location" type="System.Drawing.Point, System.Drawing">
-    <value>781, 424</value>
+    <value>265, 51</value>
   </data>
   <data name="btnSelectFolder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 75</value>
+    <value>69, 61</value>
   </data>
   <data name="btnSelectFolder.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -1242,10 +928,193 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btnSelectFolder.Parent" xml:space="preserve">
-    <value>tabMainFile</value>
+    <value>grpScan</value>
   </data>
   <data name="&gt;&gt;btnSelectFolder.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="label1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 51</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>257, 64</value>
+  </data>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Clique no ícone ao lado e selecione uma pasta para listar todos os arquivos ISO e GCM contidos em seu interior.</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>grpScan</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="lblSourceCount.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="lblSourceCount.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblSourceCount.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblSourceCount.Location" type="System.Drawing.Point, System.Drawing">
+    <value>46, 35</value>
+  </data>
+  <data name="lblSourceCount.Size" type="System.Drawing.Size, System.Drawing">
+    <value>13, 13</value>
+  </data>
+  <data name="lblSourceCount.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="lblSourceCount.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblSourceCount.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;lblSourceCount.Name" xml:space="preserve">
+    <value>lblSourceCount</value>
+  </data>
+  <data name="&gt;&gt;lblSourceCount.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblSourceCount.Parent" xml:space="preserve">
+    <value>grpScan</value>
+  </data>
+  <data name="&gt;&gt;lblSourceCount.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="lblGamesVerifiedText.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="lblGamesVerifiedText.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblGamesVerifiedText.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 19</value>
+  </data>
+  <data name="lblGamesVerifiedText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>92, 13</value>
+  </data>
+  <data name="lblGamesVerifiedText.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="lblGamesVerifiedText.Text" xml:space="preserve">
+    <value>Jogos verificados:</value>
+  </data>
+  <data name="&gt;&gt;lblGamesVerifiedText.Name" xml:space="preserve">
+    <value>lblGamesVerifiedText</value>
+  </data>
+  <data name="&gt;&gt;lblGamesVerifiedText.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblGamesVerifiedText.Parent" xml:space="preserve">
+    <value>grpScan</value>
+  </data>
+  <data name="&gt;&gt;lblGamesVerifiedText.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="grpScan.Location" type="System.Drawing.Point, System.Drawing">
+    <value>545, 396</value>
+  </data>
+  <data name="grpScan.Size" type="System.Drawing.Size, System.Drawing">
+    <value>341, 118</value>
+  </data>
+  <data name="grpScan.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="grpScan.Text" xml:space="preserve">
+    <value>Scan</value>
+  </data>
+  <data name="&gt;&gt;grpScan.Name" xml:space="preserve">
+    <value>grpScan</value>
+  </data>
+  <data name="&gt;&gt;grpScan.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grpScan.Parent" xml:space="preserve">
+    <value>tabMainFile</value>
+  </data>
+  <data name="&gt;&gt;grpScan.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="grpStatus.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="pbInstallStatus.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="pbInstallStatus.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="pbInstallStatus.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 56</value>
+  </data>
+  <data name="pbInstallStatus.Size" type="System.Drawing.Size, System.Drawing">
+    <value>325, 26</value>
+  </data>
+  <data name="pbInstallStatus.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
+  </data>
+  <data name="pbInstallStatus.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;pbInstallStatus.Name" xml:space="preserve">
+    <value>pbInstallStatus</value>
+  </data>
+  <data name="&gt;&gt;pbInstallStatus.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ProgressBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pbInstallStatus.Parent" xml:space="preserve">
+    <value>grpStatus</value>
+  </data>
+  <data name="&gt;&gt;pbInstallStatus.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblInstallStatusGameIndex.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblInstallStatusGameIndex.Location" type="System.Drawing.Point, System.Drawing">
+    <value>208, 26</value>
+  </data>
+  <data name="lblInstallStatusGameIndex.Size" type="System.Drawing.Size, System.Drawing">
+    <value>36, 13</value>
+  </data>
+  <data name="lblInstallStatusGameIndex.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="lblInstallStatusGameIndex.Text" xml:space="preserve">
+    <value>0  /  0</value>
+  </data>
+  <data name="lblInstallStatusGameIndex.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;lblInstallStatusGameIndex.Name" xml:space="preserve">
+    <value>lblInstallStatusGameIndex</value>
+  </data>
+  <data name="&gt;&gt;lblInstallStatusGameIndex.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblInstallStatusGameIndex.Parent" xml:space="preserve">
+    <value>grpStatus</value>
+  </data>
+  <data name="&gt;&gt;lblInstallStatusGameIndex.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="lblInstallStatusText.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -1257,7 +1126,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblInstallStatusText.Location" type="System.Drawing.Point, System.Drawing">
-    <value>517, 331</value>
+    <value>22, 37</value>
   </data>
   <data name="lblInstallStatusText.Size" type="System.Drawing.Size, System.Drawing">
     <value>88, 13</value>
@@ -1278,10 +1147,198 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblInstallStatusText.Parent" xml:space="preserve">
-    <value>tabMainFile</value>
+    <value>grpStatus</value>
   </data>
   <data name="&gt;&gt;lblInstallStatusText.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="lblInstallStatusPercent.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="lblInstallStatusPercent.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblInstallStatusPercent.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="lblInstallStatusPercent.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblInstallStatusPercent.Location" type="System.Drawing.Point, System.Drawing">
+    <value>132, 37</value>
+  </data>
+  <data name="lblInstallStatusPercent.Size" type="System.Drawing.Size, System.Drawing">
+    <value>24, 13</value>
+  </data>
+  <data name="lblInstallStatusPercent.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="lblInstallStatusPercent.Text" xml:space="preserve">
+    <value>0 %</value>
+  </data>
+  <data name="lblInstallStatusPercent.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;lblInstallStatusPercent.Name" xml:space="preserve">
+    <value>lblInstallStatusPercent</value>
+  </data>
+  <data name="&gt;&gt;lblInstallStatusPercent.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblInstallStatusPercent.Parent" xml:space="preserve">
+    <value>grpStatus</value>
+  </data>
+  <data name="&gt;&gt;lblInstallStatusPercent.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="btnAbort.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="btnAbort.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnAbort.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
+        4wAAAOMBD+bfpwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAO/SURBVFhHzZdL
+        TFNBFIbbyENolQJtKS0tLUWUirW3rQkgyMNoYjQaiSQuJNHE6N6dGve6MDFx48qElZqYGBWUKCoqCAq+
+        UCjGRxPjQgTxBYmPxe85F2+9fdBOjRib/OntzJn5vzlnpvdeDX1MizMWXMrQar/RNf6F2Eun1XbStVHD
+        5q1FBd+f1a3EmwZpXvSyfiV6gh5Ii3Kxv8yK3spyrMvNZYgODdOw+fTaVfOuU95y1OUvwmSdhPM2G2fi
+        K2VBI1MmGvC3dVFaSlnQYWqNH1dLSpSS/KcAE00BDNd649pT6QtpqLoKn5vj+4QBXtX74CkwIDcrCweW
+        OKL6kulDcxBbSizIoXEbbUWYagpG9QsBhGXzfOxqa8Po6CicxcXY5y6JmiiR2Hyz1Ywavx/hcBgNNTVY
+        T7/fqyCEADbZLNjZtgPT09OYmZnByMgIHJYiHCi3R2JiJZvTilcHgxgfH5fHTUxMoJpgDqnghQD2uGyo
+        DQQiE6WCSGSujLEXmXHC44rECgF8oglb7RZUS1LUhGNjY7PlKPu9InXa1bGhUEiOjd0/wptQBCJdc5Yw
+        ACtZarkcFYY86osvFad9rpOTFgArAhGzJ3iXt7e3Y3JyMsac9kmSY5s2AIvLsY3KUeOPLodaydKu1h8B
+        sJRMbG9pwZepKbwbGkK4qwujHZ14cvkKXMVW7CkowN3SUgw4HBgodWDQ6cR9twvDFW6EllfgleTBmcoy
+        +OiOmDbA2zof1psKsampGQ9HnuHh2IsoOWmy3fn5s+ZJdNxshleXIwbwmf7BXgerMFjuQmNeHnzLq9B7
+        /3GcOevyjVuwmcxoSwEhBPCxIYDn3mW45yxFr92OJjKXqlag78FwxLC7tx+Hjx7DwKOnkbaO7h5YCo3Y
+        TaVIZM5KCvCJ7n4v2PhXHdm8Mc8AaYU3ypyNio1GOHV66osGSwUxJ0Ao4MGQyxkJvENaZzDEpV1JNRuI
+        xKjNWXMC8A8lKJ2JU8YWFkZiWUIA28jAF1NzJe2JVpWsVBYCOKSCEAJYQyvaurUFD0LPU5orSgTR/+iJ
+        nJm9qpMhBNBF1269Hi0E0XmtZ856xkpdju6+AazyB1BLJ+g2wSkxQgCsS/TIzBALMzOFzBXJx5Ygsmlc
+        PX2rzVnCAKybNPis1RrXnkr9pNN0X+CMxPalBTAf+j8BsrTaHxeo5okG/G0dMZloY+rp1cz3+9XMnJlx
+        bYNeJzcw1XzoHO2lk/Sw4snOxsEyG25XupWX04tcAqMpM+N6NmVCTsk/EK981lxj/AkP3lQ07ON38gAA
+        AABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="btnAbort.Location" type="System.Drawing.Point, System.Drawing">
+    <value>295, 16</value>
+  </data>
+  <data name="btnAbort.Size" type="System.Drawing.Size, System.Drawing">
+    <value>39, 36</value>
+  </data>
+  <data name="btnAbort.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="btnAbort.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;btnAbort.Name" xml:space="preserve">
+    <value>btnAbort</value>
+  </data>
+  <data name="&gt;&gt;btnAbort.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnAbort.Parent" xml:space="preserve">
+    <value>grpStatus</value>
+  </data>
+  <data name="&gt;&gt;btnAbort.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="lblInstallStatusGameTitle.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="lblInstallStatusGameTitle.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblInstallStatusGameTitle.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblInstallStatusGameTitle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>22, 16</value>
+  </data>
+  <data name="lblInstallStatusGameTitle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>74, 13</value>
+  </data>
+  <data name="lblInstallStatusGameTitle.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
+  </data>
+  <data name="lblInstallStatusGameTitle.Text" xml:space="preserve">
+    <value>Aguardando...</value>
+  </data>
+  <data name="lblInstallStatusGameTitle.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;lblInstallStatusGameTitle.Name" xml:space="preserve">
+    <value>lblInstallStatusGameTitle</value>
+  </data>
+  <data name="&gt;&gt;lblInstallStatusGameTitle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblInstallStatusGameTitle.Parent" xml:space="preserve">
+    <value>grpStatus</value>
+  </data>
+  <data name="&gt;&gt;lblInstallStatusGameTitle.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="lblAbort.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="lblAbort.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblAbort.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblAbort.Location" type="System.Drawing.Point, System.Drawing">
+    <value>257, 26</value>
+  </data>
+  <data name="lblAbort.Size" type="System.Drawing.Size, System.Drawing">
+    <value>29, 13</value>
+  </data>
+  <data name="lblAbort.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="lblAbort.Text" xml:space="preserve">
+    <value>Pare</value>
+  </data>
+  <data name="lblAbort.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;lblAbort.Name" xml:space="preserve">
+    <value>lblAbort</value>
+  </data>
+  <data name="&gt;&gt;lblAbort.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblAbort.Parent" xml:space="preserve">
+    <value>grpStatus</value>
+  </data>
+  <data name="&gt;&gt;lblAbort.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="grpStatus.Location" type="System.Drawing.Point, System.Drawing">
+    <value>545, 302</value>
+  </data>
+  <data name="grpStatus.Size" type="System.Drawing.Size, System.Drawing">
+    <value>340, 96</value>
+  </data>
+  <data name="grpStatus.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="grpStatus.Text" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="&gt;&gt;grpStatus.Name" xml:space="preserve">
+    <value>grpStatus</value>
+  </data>
+  <data name="&gt;&gt;grpStatus.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grpStatus.Parent" xml:space="preserve">
+    <value>tabMainFile</value>
+  </data>
+  <data name="&gt;&gt;grpStatus.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="grpDetailsSource.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -1326,7 +1383,7 @@
     <value>NoControl</value>
   </data>
   <data name="label34.Location" type="System.Drawing.Point, System.Drawing">
-    <value>188, 59</value>
+    <value>192, 59</value>
   </data>
   <data name="label34.Size" type="System.Drawing.Size, System.Drawing">
     <value>65, 13</value>
@@ -1350,7 +1407,7 @@
     <value>1</value>
   </data>
   <data name="tbIDMakerCode.Location" type="System.Drawing.Point, System.Drawing">
-    <value>259, 56</value>
+    <value>263, 56</value>
   </data>
   <data name="tbIDMakerCode.Size" type="System.Drawing.Size, System.Drawing">
     <value>40, 20</value>
@@ -1542,7 +1599,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnGameInstallScrub.Location" type="System.Drawing.Point, System.Drawing">
-    <value>100, 67</value>
+    <value>79, 67</value>
   </data>
   <data name="btnGameInstallScrub.Size" type="System.Drawing.Size, System.Drawing">
     <value>140, 40</value>
@@ -1602,7 +1659,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnGameInstallExactCopy.Location" type="System.Drawing.Point, System.Drawing">
-    <value>100, 21</value>
+    <value>79, 21</value>
   </data>
   <data name="btnGameInstallExactCopy.Size" type="System.Drawing.Size, System.Drawing">
     <value>140, 40</value>
@@ -1632,10 +1689,10 @@
     <value>1</value>
   </data>
   <data name="grpOperations.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 147</value>
+    <value>25, 147</value>
   </data>
   <data name="grpOperations.Size" type="System.Drawing.Size, System.Drawing">
-    <value>342, 119</value>
+    <value>274, 119</value>
   </data>
   <data name="grpOperations.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -1761,7 +1818,7 @@
     <value>86, 82</value>
   </data>
   <data name="tbIDGame.Size" type="System.Drawing.Size, System.Drawing">
-    <value>96, 20</value>
+    <value>83, 20</value>
   </data>
   <data name="tbIDGame.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1785,7 +1842,7 @@
     <value>86, 56</value>
   </data>
   <data name="tbIDRegion.Size" type="System.Drawing.Size, System.Drawing">
-    <value>96, 20</value>
+    <value>83, 20</value>
   </data>
   <data name="tbIDRegion.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1809,7 +1866,7 @@
     <value>86, 30</value>
   </data>
   <data name="tbIDName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>262, 20</value>
+    <value>249, 20</value>
   </data>
   <data name="tbIDName.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1827,10 +1884,10 @@
     <value>12</value>
   </data>
   <data name="grpDetailsSource.Location" type="System.Drawing.Point, System.Drawing">
-    <value>508, 30</value>
+    <value>545, 30</value>
   </data>
   <data name="grpDetailsSource.Size" type="System.Drawing.Size, System.Drawing">
-    <value>354, 272</value>
+    <value>341, 280</value>
   </data>
   <data name="grpDetailsSource.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -1848,7 +1905,7 @@
     <value>tabMainFile</value>
   </data>
   <data name="&gt;&gt;grpDetailsSource.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>2</value>
   </data>
   <data name="dgvSource.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -1986,7 +2043,7 @@
     <value>6, 30</value>
   </data>
   <data name="dgvSource.Size" type="System.Drawing.Size, System.Drawing">
-    <value>496, 478</value>
+    <value>539, 484</value>
   </data>
   <data name="dgvSource.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -2001,7 +2058,7 @@
     <value>tabMainFile</value>
   </data>
   <data name="&gt;&gt;dgvSource.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>3</value>
   </data>
   <metadata name="mstripFile.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>365, 11</value>
@@ -2172,7 +2229,7 @@
     <value>3, 3</value>
   </data>
   <data name="mstripFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>952, 24</value>
+    <value>879, 24</value>
   </data>
   <data name="mstripFile.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -2187,7 +2244,7 @@
     <value>tabMainFile</value>
   </data>
   <data name="&gt;&gt;mstripFile.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>4</value>
   </data>
   <data name="tabMainFile.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
@@ -2196,7 +2253,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabMainFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>958, 514</value>
+    <value>885, 514</value>
   </data>
   <data name="tabMainFile.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2988,7 +3045,7 @@
     <value>3, 3</value>
   </data>
   <data name="mstripDisc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>952, 27</value>
+    <value>879, 27</value>
   </data>
   <data name="mstripDisc.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -3012,7 +3069,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabMainDisc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>958, 514</value>
+    <value>885, 514</value>
   </data>
   <data name="tabMainDisc.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -3210,7 +3267,7 @@
     <value>3, 3</value>
   </data>
   <data name="mstripDatabase.Size" type="System.Drawing.Size, System.Drawing">
-    <value>952, 24</value>
+    <value>879, 24</value>
   </data>
   <data name="mstripDatabase.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -3234,7 +3291,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabMainDatabase.Size" type="System.Drawing.Size, System.Drawing">
-    <value>958, 514</value>
+    <value>885, 514</value>
   </data>
   <data name="tabMainDatabase.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -3312,7 +3369,7 @@
     <value>3, 3</value>
   </data>
   <data name="mstripLog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>952, 24</value>
+    <value>879, 24</value>
   </data>
   <data name="mstripLog.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -3336,7 +3393,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabMainLog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>958, 514</value>
+    <value>885, 514</value>
   </data>
   <data name="tabMainLog.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -3360,7 +3417,7 @@
     <value>3, 3</value>
   </data>
   <data name="tabControlMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>966, 540</value>
+    <value>893, 540</value>
   </data>
   <data name="tabControlMain.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>

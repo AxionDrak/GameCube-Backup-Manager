@@ -18,7 +18,7 @@ public partial class frmSplashScreen : Form
 
         CurrentYear();
 
-        Thread t = new Thread(() => Application.Run(frmMain.frmMainInstance(pbSplashScreen, lblStartSplashScreen)));
+        Thread t = new Thread(() => Application.Run(frmMain.MainFormInstance(pbSplashScreen, lblStartSplashScreen)));
         t.SetApartmentState(ApartmentState.STA);
         Program.AdjustLanguage(t);
         t.Start();

@@ -47,18 +47,19 @@ namespace GCBM
             this.pbGameDisc = new System.Windows.Forms.PictureBox();
             this.tabControlMain = new System.Windows.Forms.TabControl();
             this.tabMainFile = new System.Windows.Forms.TabPage();
-            this.lblInstallStatusGameIndex = new System.Windows.Forms.Label();
+            this.grpScan = new System.Windows.Forms.GroupBox();
             this.pbSource = new System.Windows.Forms.ProgressBar();
-            this.lblSourceCount = new System.Windows.Forms.Label();
-            this.lblGamesVerifiedText = new System.Windows.Forms.Label();
-            this.lblAbort = new System.Windows.Forms.Label();
-            this.pbCopy = new System.Windows.Forms.ProgressBar();
-            this.lblInstallStatusGameTitle = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnAbort = new System.Windows.Forms.Button();
-            this.lblInstallStatusPercent = new System.Windows.Forms.Label();
             this.btnSelectFolder = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblGamesVerifiedText = new System.Windows.Forms.Label();
+            this.grpStatus = new System.Windows.Forms.GroupBox();
+            this.pbInstallStatus = new System.Windows.Forms.ProgressBar();
+            this.lblInstallStatusGameIndex = new System.Windows.Forms.Label();
             this.lblInstallStatusText = new System.Windows.Forms.Label();
+            this.lblInstallStatusPercent = new System.Windows.Forms.Label();
+            this.btnAbort = new System.Windows.Forms.Button();
+            this.lblInstallStatusGameTitle = new System.Windows.Forms.Label();
+            this.lblAbort = new System.Windows.Forms.Label();
             this.grpDetailsSource = new System.Windows.Forms.GroupBox();
             this.lblTypeDisc = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
@@ -223,6 +224,7 @@ namespace GCBM
             this.pbNetStatus = new System.Windows.Forms.PictureBox();
             this.gameBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.process1 = new System.Diagnostics.Process();
+            this.lblSourceCount = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.spcMain)).BeginInit();
             this.spcMain.Panel1.SuspendLayout();
             this.spcMain.Panel2.SuspendLayout();
@@ -233,6 +235,8 @@ namespace GCBM
             ((System.ComponentModel.ISupportInitialize)(this.pbGameDisc)).BeginInit();
             this.tabControlMain.SuspendLayout();
             this.tabMainFile.SuspendLayout();
+            this.grpScan.SuspendLayout();
+            this.grpStatus.SuspendLayout();
             this.grpDetailsSource.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbWebGameID)).BeginInit();
             this.grpOperations.SuspendLayout();
@@ -326,18 +330,8 @@ namespace GCBM
             // 
             // tabMainFile
             // 
-            this.tabMainFile.Controls.Add(this.lblInstallStatusGameIndex);
-            this.tabMainFile.Controls.Add(this.pbSource);
-            this.tabMainFile.Controls.Add(this.lblSourceCount);
-            this.tabMainFile.Controls.Add(this.lblGamesVerifiedText);
-            this.tabMainFile.Controls.Add(this.lblAbort);
-            this.tabMainFile.Controls.Add(this.pbCopy);
-            this.tabMainFile.Controls.Add(this.lblInstallStatusGameTitle);
-            this.tabMainFile.Controls.Add(this.label1);
-            this.tabMainFile.Controls.Add(this.btnAbort);
-            this.tabMainFile.Controls.Add(this.lblInstallStatusPercent);
-            this.tabMainFile.Controls.Add(this.btnSelectFolder);
-            this.tabMainFile.Controls.Add(this.lblInstallStatusText);
+            this.tabMainFile.Controls.Add(this.grpScan);
+            this.tabMainFile.Controls.Add(this.grpStatus);
             this.tabMainFile.Controls.Add(this.grpDetailsSource);
             this.tabMainFile.Controls.Add(this.dgvSource);
             this.tabMainFile.Controls.Add(this.mstripFile);
@@ -345,45 +339,72 @@ namespace GCBM
             this.tabMainFile.Name = "tabMainFile";
             this.tabMainFile.UseVisualStyleBackColor = true;
             // 
-            // lblInstallStatusGameIndex
+            // grpScan
             // 
-            resources.ApplyResources(this.lblInstallStatusGameIndex, "lblInstallStatusGameIndex");
-            this.lblInstallStatusGameIndex.Name = "lblInstallStatusGameIndex";
+            resources.ApplyResources(this.grpScan, "grpScan");
+            this.grpScan.Controls.Add(this.pbSource);
+            this.grpScan.Controls.Add(this.btnSelectFolder);
+            this.grpScan.Controls.Add(this.label1);
+            this.grpScan.Controls.Add(this.lblSourceCount);
+            this.grpScan.Controls.Add(this.lblGamesVerifiedText);
+            this.grpScan.Name = "grpScan";
+            this.grpScan.TabStop = false;
             // 
             // pbSource
             // 
             resources.ApplyResources(this.pbSource, "pbSource");
             this.pbSource.Name = "pbSource";
             // 
-            // lblSourceCount
+            // btnSelectFolder
             // 
-            resources.ApplyResources(this.lblSourceCount, "lblSourceCount");
-            this.lblSourceCount.Name = "lblSourceCount";
+            resources.ApplyResources(this.btnSelectFolder, "btnSelectFolder");
+            this.btnSelectFolder.Name = "btnSelectFolder";
+            this.btnSelectFolder.UseVisualStyleBackColor = true;
+            this.btnSelectFolder.Click += new System.EventHandler(this.btnSelectFolder_Click);
+            // 
+            // label1
+            // 
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.Name = "label1";
             // 
             // lblGamesVerifiedText
             // 
             resources.ApplyResources(this.lblGamesVerifiedText, "lblGamesVerifiedText");
             this.lblGamesVerifiedText.Name = "lblGamesVerifiedText";
             // 
-            // lblAbort
+            // grpStatus
             // 
-            resources.ApplyResources(this.lblAbort, "lblAbort");
-            this.lblAbort.Name = "lblAbort";
+            resources.ApplyResources(this.grpStatus, "grpStatus");
+            this.grpStatus.Controls.Add(this.pbInstallStatus);
+            this.grpStatus.Controls.Add(this.lblInstallStatusGameIndex);
+            this.grpStatus.Controls.Add(this.lblInstallStatusText);
+            this.grpStatus.Controls.Add(this.lblInstallStatusPercent);
+            this.grpStatus.Controls.Add(this.btnAbort);
+            this.grpStatus.Controls.Add(this.lblInstallStatusGameTitle);
+            this.grpStatus.Controls.Add(this.lblAbort);
+            this.grpStatus.Name = "grpStatus";
+            this.grpStatus.TabStop = false;
             // 
-            // pbCopy
+            // pbInstallStatus
             // 
-            resources.ApplyResources(this.pbCopy, "pbCopy");
-            this.pbCopy.Name = "pbCopy";
+            resources.ApplyResources(this.pbInstallStatus, "pbInstallStatus");
+            this.pbInstallStatus.Name = "pbInstallStatus";
             // 
-            // lblInstallStatusGameTitle
+            // lblInstallStatusGameIndex
             // 
-            resources.ApplyResources(this.lblInstallStatusGameTitle, "lblInstallStatusGameTitle");
-            this.lblInstallStatusGameTitle.Name = "lblInstallStatusGameTitle";
+            resources.ApplyResources(this.lblInstallStatusGameIndex, "lblInstallStatusGameIndex");
+            this.lblInstallStatusGameIndex.Name = "lblInstallStatusGameIndex";
             // 
-            // label1
+            // lblInstallStatusText
             // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.Name = "label1";
+            resources.ApplyResources(this.lblInstallStatusText, "lblInstallStatusText");
+            this.lblInstallStatusText.Name = "lblInstallStatusText";
+            // 
+            // lblInstallStatusPercent
+            // 
+            resources.ApplyResources(this.lblInstallStatusPercent, "lblInstallStatusPercent");
+            this.lblInstallStatusPercent.BackColor = System.Drawing.Color.Transparent;
+            this.lblInstallStatusPercent.Name = "lblInstallStatusPercent";
             // 
             // btnAbort
             // 
@@ -393,23 +414,15 @@ namespace GCBM
             this.btnAbort.UseVisualStyleBackColor = true;
             this.btnAbort.Click += new System.EventHandler(this.btnAbort_Click);
             // 
-            // lblInstallStatusPercent
+            // lblInstallStatusGameTitle
             // 
-            resources.ApplyResources(this.lblInstallStatusPercent, "lblInstallStatusPercent");
-            this.lblInstallStatusPercent.BackColor = System.Drawing.Color.Transparent;
-            this.lblInstallStatusPercent.Name = "lblInstallStatusPercent";
+            resources.ApplyResources(this.lblInstallStatusGameTitle, "lblInstallStatusGameTitle");
+            this.lblInstallStatusGameTitle.Name = "lblInstallStatusGameTitle";
             // 
-            // btnSelectFolder
+            // lblAbort
             // 
-            resources.ApplyResources(this.btnSelectFolder, "btnSelectFolder");
-            this.btnSelectFolder.Name = "btnSelectFolder";
-            this.btnSelectFolder.UseVisualStyleBackColor = true;
-            this.btnSelectFolder.Click += new System.EventHandler(this.btnSelectFolder_Click);
-            // 
-            // lblInstallStatusText
-            // 
-            resources.ApplyResources(this.lblInstallStatusText, "lblInstallStatusText");
-            this.lblInstallStatusText.Name = "lblInstallStatusText";
+            resources.ApplyResources(this.lblAbort, "lblAbort");
+            this.lblAbort.Name = "lblAbort";
             // 
             // grpDetailsSource
             // 
@@ -1587,6 +1600,11 @@ namespace GCBM
             this.process1.StartInfo.UserName = "";
             this.process1.SynchronizingObject = this;
             // 
+            // lblSourceCount
+            // 
+            resources.ApplyResources(this.lblSourceCount, "lblSourceCount");
+            this.lblSourceCount.Name = "lblSourceCount";
+            // 
             // frmMain
             // 
             resources.ApplyResources(this, "$this");
@@ -1611,6 +1629,10 @@ namespace GCBM
             this.tabControlMain.ResumeLayout(false);
             this.tabMainFile.ResumeLayout(false);
             this.tabMainFile.PerformLayout();
+            this.grpScan.ResumeLayout(false);
+            this.grpScan.PerformLayout();
+            this.grpStatus.ResumeLayout(false);
+            this.grpStatus.PerformLayout();
             this.grpDetailsSource.ResumeLayout(false);
             this.grpDetailsSource.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbWebGameID)).EndInit();
@@ -1713,7 +1735,7 @@ namespace GCBM
         private Label lblInstallStatusText;
         private Label lblInstallStatusPercent;
         private Label lblInstallStatusGameTitle;
-        private ProgressBar pbCopy;
+        private ProgressBar pbInstallStatus;
         private Label label1;
         private Button btnSelectFolder;
         private GroupBox grpDetailsSource;
@@ -1821,7 +1843,6 @@ namespace GCBM
         private Process process1;
         private Button btnAbort;
         private Label lblAbort;
-        private Label lblSourceCount;
         private Label lblGamesVerifiedText;
         private ToolStripStatusLabel lblScan;
         private Label lblDestinationCount;
@@ -1834,6 +1855,9 @@ namespace GCBM
         private ToolStripMenuItem toolStripMenuItem11;
         private ProgressBar pbSource;
         private Label lblInstallStatusGameIndex;
+        private GroupBox grpScan;
+        private GroupBox grpStatus;
+        private Label lblSourceCount;
     }
 }
 
