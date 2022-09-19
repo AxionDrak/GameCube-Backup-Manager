@@ -205,7 +205,7 @@
     <value>Este no es un dispositivo válido.</value>
   </data>
   <data name="InstallGameScrub_Scrubbing" xml:space="preserve">
-    <value>Estado: Fregando...</value>
+    <value>Estado: Fregando... </value>
   </data>
   <data name="Attention" xml:space="preserve">
     <value>¡ATENCIÓN!</value>
@@ -551,9 +551,6 @@
   </data>
   <data name="DownloadDiscCoverError" xml:space="preserve">
     <value>[ERROR] Fallo en la descarga de carátulas (disco)</value>
-  </data>
-  <data name="LanguageIndonesian" xml:space="preserve">
-    <value>Indonesia</value>
   </data>
   <data name="LoadDatabase_Editor" xml:space="preserve">
     <value>Editor</value>

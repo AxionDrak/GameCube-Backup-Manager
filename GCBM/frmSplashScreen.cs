@@ -11,7 +11,7 @@ public partial class frmSplashScreen : Form
 
     public frmSplashScreen()
     {
-        var configIniFile = new IniFile("config.ini");
+        var configIniFile = Program.ConfigFile;
         Program.AdjustLanguage(Thread.CurrentThread);
 
         InitializeComponent();

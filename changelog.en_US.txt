@@ -1,3 +1,10 @@
+### GameCube Backup Manager 2.6.1.2 (September 18, 2022)
+
+[Localization] Added DeepL as an AI-driven translation agent for localization.
+[Localization] Added 5 new Languages, translated via DeepL.
+[Localization] Hopefully improved existing German, French, Japanese, and French translations
+[Localization] Credits to CDreamer of GBATemp for assisting with localizing for es-MX [Spanish (Mexico)]
+
 ### GameCube Backup Manager 2.6.1.1 (September 14, 2022)
 
 [Improved] Better handling of multi-disc games when scrub-installing games. The program now places disc2.iso in the same directory as disc 1's game.iso.

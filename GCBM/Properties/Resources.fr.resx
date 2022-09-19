@@ -208,7 +208,7 @@
     <value>Ce n'est pas un appareil valide !</value>
   </data>
   <data name="InstallGameScrub_Scrubbing" xml:space="preserve">
-    <value>Statut : Scrubbing...</value>
+    <value>Statut : Scrubbing... </value>
   </data>
   <data name="Attention" xml:space="preserve">
     <value>ATTENTION !</value>
@@ -551,9 +551,6 @@
   </data>
   <data name="DownloadDiscCoverError" xml:space="preserve">
     <value>[ERROR] Échec du téléchargement des couvertures (disque)</value>
-  </data>
-  <data name="LanguageIndonesian" xml:space="preserve">
-    <value>Indonésien</value>
   </data>
   <data name="LoadDatabase_Editor" xml:space="preserve">
     <value>Éditeur</value>

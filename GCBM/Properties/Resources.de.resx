@@ -208,7 +208,7 @@
     <value>Dies ist kein gültiges Gerät!</value>
   </data>
   <data name="InstallGameScrub_Scrubbing" xml:space="preserve">
-    <value>Status: Schrubben...</value>
+    <value>Status: Schrubben... </value>
   </data>
   <data name="Attention" xml:space="preserve">
     <value>ACHTUNG!</value>
@@ -551,9 +551,6 @@
   </data>
   <data name="DownloadDiscCoverError" xml:space="preserve">
     <value>[ERROR] Download von Covern fehlgeschlagen (Disc)</value>
-  </data>
-  <data name="LanguageIndonesian" xml:space="preserve">
-    <value>Indonesisch</value>
   </data>
   <data name="LoadDatabase_Editor" xml:space="preserve">
     <value>Editor</value>

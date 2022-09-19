@@ -208,7 +208,7 @@
     <value>这不是一个有效的设备!</value>
   </data>
   <data name="InstallGameScrub_Scrubbing" xml:space="preserve">
-    <value>状态。擦洗...</value>
+    <value>状态。擦洗... </value>
   </data>
   <data name="Attention" xml:space="preserve">
     <value>请注意!</value>
@@ -551,9 +551,6 @@
   </data>
   <data name="DownloadDiscCoverError" xml:space="preserve">
     <value>[ERROR] 下载封面（光盘）失败。</value>
-  </data>
-  <data name="LanguageIndonesian" xml:space="preserve">
-    <value>印度尼西亚</value>
   </data>
   <data name="LoadDatabase_Editor" xml:space="preserve">
     <value>编辑</value>

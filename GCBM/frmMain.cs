@@ -63,6 +63,7 @@ public partial class frmMain : Form
 
     #endregion
 
+
     #region Main Form Closing
 
     /// <summary>
@@ -72,27 +73,27 @@ public partial class frmMain : Form
     /// <param name="e"></param>
     private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
     {
-        CLOSING = true;
-        if (notifyIcon != null)
-        {
-            notifyIcon.Visible = false;
-            notifyIcon.Icon = null;
-            notifyIcon.Dispose();
-        }
+            CLOSING = true;
+            if (notifyIcon != null)
+            {
+                notifyIcon.Visible = false;
+                notifyIcon.Icon = null;
+                notifyIcon.Dispose();
+            }
 
-        ClearTemp();
-        ExportLOG(1);
-        if (Process.GetCurrentProcess().GetChildProcesses() != null &&
-            Process.GetCurrentProcess().GetChildProcesses().Count != 0)
-            foreach (var process in Process.GetCurrentProcess().GetChildProcesses())
-                //Kill GCIT and others
-                process.Kill();
+            ClearTemp();
+            ExportLOG(1);
+            if (Process.GetCurrentProcess().GetChildProcesses() != null &&
+                Process.GetCurrentProcess().GetChildProcesses().Count != 0)
+                foreach (var process in Process.GetCurrentProcess().GetChildProcesses())
+                    //Kill GCIT and others
+                    process.Kill();
 
-        //Garbage Collector
-        GC.Collect();
-        //Cleanup any Threads left lying around
-        Dispose();
-        Process.GetCurrentProcess().Kill();
+            //Garbage Collector
+            GC.Collect();
+            //Cleanup any Threads left lying around
+            Dispose();
+            Process.GetCurrentProcess().Kill();
     }
 
     #endregion
@@ -4722,6 +4723,13 @@ public partial class frmMain : Form
             LoadConfigFile();
             Program.AdjustLanguage(Thread.CurrentThread);
             CultureInfo.CurrentUICulture = new CultureInfo(CONFIG_INI_FILE.IniReadString("LANGUAGE", "ConfigLanguage", "en-US"));
+            foreach (Control c in this.Controls)
+            {
+                c.Text = Resources.ResourceManager.GetString(c.Name, CultureInfo.CurrentUICulture);
+                c.Invalidate();
+                c.Refresh();
+            }
+
             this.Invalidate();
             this.Refresh();
         }

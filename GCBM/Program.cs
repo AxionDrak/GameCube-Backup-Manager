@@ -65,6 +65,8 @@ internal static class Program
     [STAThread]
     private static void Main()
     {
+        
+
         //Pega o nome do processo deste programa
         var nomeProcesso = Process.GetCurrentProcess().ProcessName;
         //Busca os processos com este nome que estão em execução
@@ -72,6 +74,9 @@ internal static class Program
 
         if (File.Exists("config.ini"))
         {
+            //We changed the variable that stores the selected language from an int to the culture string, this causes a crash when we try
+            //to call CurrentUICulture = new CultureInfo(0)... etc. So we have to make sure that either they have a working/upated INI file.
+            //Chosen to do this by presenting the user a new LanguagePrompt form, which will also appear upon first launch, If no supported language has been found.
             if (ConfigFile.IniReadBool("SEVERAL", "MultipleInstances") == false)
             {
                 //Pega o nome do processo deste programa
@@ -208,9 +213,7 @@ internal static class Program
                 CONFIG_INI_FILE.IniWriteString("LANGUAGE", "ConfigLanguage", DetectOSLanguage());
             else
             {
-                frmLanguagePrompt frmPrompt = new frmLanguagePrompt();
-                DialogResult result = frmPrompt.DialogResult;
-                frmPrompt.ShowDialog();
+                LanguagePrompt();
 
             }
         }
@@ -231,7 +234,12 @@ internal static class Program
         return false;
     }
 
-    
+    public static void LanguagePrompt()
+    {
+        frmLanguagePrompt frmPrompt = new frmLanguagePrompt();
+        DialogResult result = frmPrompt.DialogResult;
+        frmPrompt.ShowDialog();
+    }
     #region Detect OS Language
 
     /// <summary>
@@ -249,22 +257,33 @@ internal static class Program
     /// </summary>
     public static void AdjustLanguage(Thread t)
     {
-        if (ConfigFile.IniReadString("LANGUAGE", "ConfigLanguage", "") == "")
+        try
         {
-            var sysLocale = Thread.CurrentThread.CurrentCulture;
-            var sysLang = CultureInfo.CurrentUICulture.Name;
-            if (IsTranslated(sysLang))
+            if (ConfigFile.IniReadString("LANGUAGE", "ConfigLanguage", "") == "")
             {
-                t.CurrentUICulture = new CultureInfo(sysLang);
+                var sysLocale = Thread.CurrentThread.CurrentCulture;
+                var sysLang = CultureInfo.CurrentUICulture.Name;
+                if (IsTranslated(sysLang))
+                {
+                    t.CurrentUICulture = new CultureInfo(sysLang);
+                }
+                else
+                {
+                    t.CurrentUICulture = new CultureInfo("en");
+                }
             }
             else
             {
-                t.CurrentUICulture = new CultureInfo("en");
+                t.CurrentUICulture = new CultureInfo(ConfigFile.IniReadString("LANGUAGE", "ConfigLanguage", ""));
             }
         }
-        else
+        catch(Exception exception)
         {
-            t.CurrentUICulture = new CultureInfo(ConfigFile.IniReadString("LANGUAGE", "ConfigLanguage", ""));
+            if (exception.GetBaseException() is CultureNotFoundException)
+            {
+             File.Delete("config.ini");
+             DefaultConfigSave();
+            }
         }
     }
     

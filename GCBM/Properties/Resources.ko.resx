@@ -555,7 +555,4 @@
   <data name="DownloadDiscCoverError" xml:space="preserve">
     <value>[오류] 표지 다운로드 실패(디스크)</value>
   </data>
-  <data name="LanguageIndonesian" xml:space="preserve">
-    <value>인도네시아 인</value>
-  </data>
 </root>

@@ -1400,15 +1400,6 @@ namespace GCBM.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to indonésio.
-        /// </summary>
-        internal static string LanguageIndonesian {
-            get {
-                return ResourceManager.GetString("LanguageIndonesian", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to É esta a língua que gostaria de utilizar?.
         /// </summary>
         internal static string LanguagePromptConfirm {

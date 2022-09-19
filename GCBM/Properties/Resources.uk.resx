@@ -208,7 +208,7 @@
     <value>Це не дійсний пристрій!</value>
   </data>
   <data name="InstallGameScrub_Scrubbing" xml:space="preserve">
-    <value>Статус: Очищення...</value>
+    <value>Статус: Очищення... </value>
   </data>
   <data name="Attention" xml:space="preserve">
     <value>УВАГА!</value>
@@ -551,9 +551,6 @@
   </data>
   <data name="DownloadDiscCoverError" xml:space="preserve">
     <value>[Помилка] Не вдалося завантажити обкладинки (Диск)</value>
-  </data>
-  <data name="LanguageIndonesian" xml:space="preserve">
-    <value>індонезійська</value>
   </data>
   <data name="LoadDatabase_Editor" xml:space="preserve">
     <value>редактор</value>

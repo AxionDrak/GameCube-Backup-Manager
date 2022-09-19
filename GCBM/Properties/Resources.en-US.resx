@@ -553,9 +553,6 @@
     <value> [ERROR] Failed to Download covers (Disc)
 </value>
   </data>
-  <data name="LanguageIndonesian" xml:space="preserve">
-    <value>Indonesian</value>
-  </data>
   <data name="LoadDatabase_Editor" xml:space="preserve">
     <value>Editor</value>
   </data>

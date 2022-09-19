@@ -832,7 +832,4 @@
   <data name="LanguagePromptConfirmTitle" xml:space="preserve">
     <value>Consegue compreender isto?</value>
   </data>
-  <data name="LanguageIndonesian" xml:space="preserve">
-    <value>indonésio</value>
-  </data>
 </root>

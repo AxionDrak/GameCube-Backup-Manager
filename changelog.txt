@@ -1,3 +1,10 @@
+### GameCube Backup Manager 2.6.1.2 (18 de Setembro de 2022)
+
+[Acrescentada DeepL como agente de tradução orientada por IA para a localização.
+[Localização] Acrescentadas 5 novas Línguas, traduzidas via DeepL.
+[Localização] Espera-se que tenha melhorado as traduções existentes para alemão, francês, japonês, e francês.
+[Créditos para CDreamer do GBATemp por ajudar na localização para es-MX [Espanhol (México)]
+
 ### GameCube Backup Manager 2.6.1.1 (14 de setembro de 2022)
 
 [Melhoria] Melhor manuseio de jogos multi-disco ao instalar jogos com scrub. O programa agora coloca o disco2.iso no mesmo diretório que o game.iso do disco 1.
