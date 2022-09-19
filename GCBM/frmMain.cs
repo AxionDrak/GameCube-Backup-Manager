@@ -64,6 +64,16 @@ public partial class frmMain : Form
     #endregion
 
 
+    public static frmMain frmMainInstance(ProgressBar pb, Label lbl)
+    {
+        return new frmMain(((s, i) =>
+            {
+                pb.Invoke(new Action(() => pb.Value = i));
+                lbl.Invoke(new Action(() => lbl.Text = s));
+            })
+        );
+    }
+
     #region Main Form Closing
 
     /// <summary>
@@ -74,12 +84,6 @@ public partial class frmMain : Form
     private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
     {
             CLOSING = true;
-            if (notifyIcon != null)
-            {
-                notifyIcon.Visible = false;
-                notifyIcon.Icon = null;
-                notifyIcon.Dispose();
-            }
 
             ClearTemp();
             ExportLOG(1);
@@ -2182,6 +2186,7 @@ public partial class frmMain : Form
     /// <param name="e"></param>
     private async void tscbDiscDrive_SelectedIndexChanged(object sender, EventArgs e)
     {
+        SelectedDrive = tscbDiscDrive.SelectedItem.ToString();
         if (FINISHEDLAUNCH)
         {
             if (tscbDiscDrive.SelectedIndex != 0)
@@ -2770,11 +2775,10 @@ public partial class frmMain : Form
     private string dgvGameListDiscPath;
     private int intQueueLength;
     private int intQueuePos;
-    private readonly List<Game> lstInstallQueue = new();
     private readonly Dictionary<int, Game> dSourceGames = new();
     private readonly Dictionary<int, Game> dDestGames = new();
     private DataGridView dgvSelected = new();
-    private Dictionary<int, Game> InstallQueue;
+    public static String SelectedDrive = ""; // Selected Drive
 
     [DllImport("kernel32.dll")]
     private static extern EXECUTION_STATE SetThreadExecutionState(EXECUTION_STATE esFlags);
@@ -2809,8 +2813,6 @@ public partial class frmMain : Form
     private void MainCore(Action<string, int> callback)
     {
         Hide();
-        notifyIcon.Visible = true;
-        InstallQueue = new Dictionary<int, Game>();
         tbSearch.KeyPress += CheckEnterKeyPress;
         Text = "GameCube Backup Manager 2022 - " + VERSION() + " - 64-bit";
 
@@ -2938,7 +2940,6 @@ public partial class frmMain : Form
     protected override void OnLoad(EventArgs e)
     {
         //base.OnLoad(e);
-        notifyIcon.Visible = true;
     }
 
     private void PopDgv()
@@ -3003,56 +3004,6 @@ public partial class frmMain : Form
 
     #endregion
 
-    #region Global Install
-
-    private string InstallType = "";
-
-    /// <summary>
-    ///     Global Install
-    /// </summary>
-    /// <param name="dgv"></param>
-    /// <param name="typeInstall"></param>
-    private void GlobalInstall(DataGridView dgv, int typeInstall)
-    {
-        var selectedRowCount = dgv.Rows.GetRowCount(DataGridViewElementStates.Selected);
-
-        if (getSelectedGamePaths(dgv).Length == 0)
-        {
-            SelectGameFromList();
-            return;
-        }
-
-        if (tscbDiscDrive.SelectedIndex == 0)
-        {
-            SelectTargetDrive();
-        }
-        else
-        {
-            if (!isGCITRunning())
-                try
-                {
-                    if (typeInstall == 0) // Install Exact Copy
-                    {
-                        InstallType = "COPY";
-                        btnAbort.Visible = true;
-                        lblAbort.Visible = true;
-                        BuildInstallQueue();
-                        DisableOptionsGame(dgvSource);
-                        INSTALLING = true;
-                        InstallGameExactCopy(InstallQueue[intQueuePos].Path);
-                    }
-                    else // Install Scrub
-                    {
-                        StartScrub();
-                    }
-                }
-                catch
-                {
-                    GlobalNotifications(Resources.Error, ToolTipIcon.Error);
-                    // ignored
-                }
-        }
-    }
 
     #endregion
 
@@ -3152,49 +3103,6 @@ public partial class frmMain : Form
 
     #region Transfer System
 
-    #region Build Install Queue
-
-    private string[] getSelectedGamePaths(DataGridView dgv)
-    {
-        var result = dgv.Rows.Cast<DataGridViewRow>().Where(x => (bool)x.Cells[0].Value)
-            .Select(x => (string)x.Cells[6].Value).ToArray();
-        return result;
-    }
-
-
-    private string strDestinationDrive;
-
-    /// <summary>
-    ///     Get selected games and add them to a queue.
-    /// </summary>
-    private void BuildInstallQueue()
-    {
-        strDestinationDrive = tscbDiscDrive.SelectedItem.ToString();
-        //Get # selected games - Done
-        //Set QueueLength - Done
-        //Reset QueuePos - Done
-
-        //Start First Disc - done
-        //On completion
-        //Working = false - done
-        //Q++ - done
-        //Next Disc - done
-        //Check if we're done
-        intQueuePos = 0;
-        InstallQueue.Clear();
-        var num = 0;
-
-        foreach (var path in getSelectedGamePaths(dgvSource))
-        {
-            var g = dSourceGames.AsParallel().First(x => x.Value.Path == path)
-                .Value; //Ensure we are talking about the same file not just the same game
-
-            InstallQueue.Add(num, g);
-            num++;
-        }
-    }
-
-    #endregion
 
     #region Exact Copy
 
@@ -4105,162 +4013,6 @@ public partial class frmMain : Form
     #endregion
 
 
-    #region Notifications
-
-    /// <summary>
-    ///     Global Notifications
-    /// </summary>
-    /// <param name="message"></param>
-    /// <param name="icon"></param>
-    private void GlobalNotifications(string message, ToolTipIcon icon)
-    {
-        if (CONFIG_INI_FILE.IniReadBool("SEVERAL", "CheckNotify"))
-        {
-            if (intQueuePos + 1 == InstallQueue.Count && WORKING == false) EnableOptionsGameList();
-
-            notifyIcon.ShowBalloonTip(5, "GameCube Backup Manager", message, icon);
-        }
-    }
-
-    /// <summary>
-    ///     Informs if the file list is empty.
-    /// </summary>
-    private static void EmptyGamesList()
-    {
-        _ = MessageBox.Show(Resources.EmptyGamesList, Resources.Information, MessageBoxButtons.OK,
-            MessageBoxIcon.Exclamation);
-    }
-
-    /// <summary>
-    ///     Informs if it is necessary to select a game from the list.
-    /// </summary>
-    private static void SelectGameFromList()
-    {
-        _ = MessageBox.Show(Resources.SelectGameFromList, Resources.Information, MessageBoxButtons.OK,
-            MessageBoxIcon.Exclamation);
-    }
-
-    /// <summary>
-    /// </summary>
-    private void SelectTargetDrive()
-    {
-        _ = MessageBox.Show(Resources.SelectTargetDrive, Resources.Information, MessageBoxButtons.OK,
-            MessageBoxIcon.Exclamation);
-    }
-
-    /// <summary>
-    ///     Informs about deleting files.
-    ///     This procedure is irreversible.
-    /// </summary>
-    /// <returns></returns>
-    private static DialogResult DialogResultDeleteGame()
-    {
-        var dr = MessageBox.Show(Resources.DialogResultDeleteGame_ReallyDeleteFile_String1 + Environment.NewLine +
-                                 Environment.NewLine + Resources.DialogResultDeleteGame_ReallyDeleteFile_String2,
-            Resources.Notice, MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-        return dr;
-    }
-
-    /// <summary>
-    ///     It informs you about the need to configure the USB Loader GX and WiiFlow cover transfer system.
-    /// </summary>
-    private static void CheckUSBGXFlow()
-    {
-        _ = MessageBox.Show(Resources.CheckUSBGXFlow_String1 +
-                            Environment.NewLine + Environment.NewLine +
-                            Resources.CheckUSBGXFlow_String2 +
-                            Environment.NewLine + Environment.NewLine +
-                            Resources.CheckUSBGXFlow_String3,
-            Resources.Notice, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-    }
-
-    /// <summary>
-    /// </summary>
-    private async void CheckAndDownloadWiiTdbXml()
-    {
-        if (sio.File.Exists(WIITDB_FILE)) return;
-
-        if (CONFIG_INI_FILE.IniReadBool("SEVERAL", "NetVerify"))
-        {
-            if (!Monitor.TryEnter(lvDatabase)) Process.GetCurrentProcess().Kill();
-
-            //frmDownloadGameTDB.GameTDBAsynchronous();
-            //await ProcessTaskDelay();
-            //Monitor.Exit(lvDatabase);
-
-            //Ask the user via Dialog if they want to download, if Yes, run a new frmDownloadGameTDB in a task, and wait for it to finish
-            Show();
-            Activate();
-            var result = MessageBox.Show(Resources.AskDownloadWiiTDB, Resources.ProcessTaskDelay_String1,
-                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result == DialogResult.Yes)
-            {
-                var dl = new frmDownloadGameTDB();
-                dl.ShowDialog();
-                await Delay(5000).ConfigureAwait(false);
-            }
-
-            if (sio.File.Exists(WIITDB_FILE))
-            {
-                try
-                {
-                    LoadDatabaseXML();
-                }
-                catch (Exception ex)
-                {
-                    _ = MessageBox.Show(ex.Message, Resources.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-
-                return;
-            }
-        }
-
-        CheckWiiTdbXml();
-    }
-
-    /// <summary>
-    /// </summary>
-    private async void CheckWiiTdbXml()
-    {
-        await ProcessTaskDelay().ConfigureAwait(false);
-        _ = MessageBox.Show(Resources.ProcessTaskDelay_String1 + Environment.NewLine +
-                            Resources.ProcessTaskDelay_String2 +
-                            Environment.NewLine + Environment.NewLine +
-                            Resources.ProcessTaskDelay_String3 +
-                            Environment.NewLine + Environment.NewLine +
-                            Resources.ProcessTaskDelay_String4,
-            Resources.Notice, MessageBoxButtons.OK, MessageBoxIcon.Information);
-    }
-
-    /// <summary>
-    /// </summary>
-    /// <param name="typeDrive"></param>
-    private void InvalidDrive(string typeDrive)
-    {
-        _ = MessageBox.Show(Resources.InvalidDrive_String1 + Environment.NewLine +
-                            Resources.InvalidDrive_String2 + typeDrive +
-                            Environment.NewLine + Environment.NewLine +
-                            Resources.InvalidDrive_String3 +
-                            Environment.NewLine + Environment.NewLine +
-                            Resources.InvalidDrive_String4 +
-                            Environment.NewLine + Environment.NewLine +
-                            Resources.InvalidDrive_String5 + typeDrive +
-                            Resources.InvalidDrive_String6,
-            Resources.Attention, MessageBoxButtons.OK, MessageBoxIcon.Warning);
-    }
-
-    /// <summary>
-    /// </summary>
-    /// <param name="typehash"></param>
-    /// <param name="listhash"></param>
-    private void ListHash(string typehash, string listhash)
-    {
-        _ = MessageBox.Show(Resources.ListHash_String1 + typehash + Resources.ListHash_String2 + Environment.NewLine +
-                            Environment.NewLine
-                            + listhash, Resources.Information, MessageBoxButtons.OK, MessageBoxIcon.Information);
-    }
-
-    #endregion
 
     #region Export HTML
 
@@ -4615,14 +4367,8 @@ public partial class frmMain : Form
 
     private void tsmiExit_Click(object sender, EventArgs e)
     {
-        if (notifyIcon != null)
-        {
-            notifyIcon.Visible = false;
-            notifyIcon.Icon = null;
-            notifyIcon.Dispose();
-        }
 
-        ClearTemp();
+            ClearTemp();
         Application.Exit();
     }
 

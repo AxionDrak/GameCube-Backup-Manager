@@ -218,7 +218,6 @@ namespace GCBM
             this.fbd2 = new System.Windows.Forms.FolderBrowserDialog();
             this.ofd1 = new System.Windows.Forms.OpenFileDialog();
             this.lblNetStatus = new System.Windows.Forms.Label();
-            this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.cmsNotifyIcon = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiNotifyExit = new System.Windows.Forms.ToolStripMenuItem();
             this.pbNetStatus = new System.Windows.Forms.PictureBox();
@@ -1557,11 +1556,6 @@ namespace GCBM
             this.lblNetStatus.Name = "lblNetStatus";
             this.lblNetStatus.Click += new System.EventHandler(this.lblNetStatus_Click);
             // 
-            // notifyIcon
-            // 
-            this.notifyIcon.ContextMenuStrip = this.cmsNotifyIcon;
-            resources.ApplyResources(this.notifyIcon, "notifyIcon");
-            // 
             // cmsNotifyIcon
             // 
             this.cmsNotifyIcon.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -1690,7 +1684,6 @@ namespace GCBM
         private Label lblNetStatus;
         private PictureBox pbNetStatus;
         private ToolStripMenuItem tsmiRenameISO;
-        private NotifyIcon notifyIcon;
         private ContextMenuStrip cmsNotifyIcon;
         private ToolStripMenuItem tsmiNotifyExit;
         private ContextMenuStrip cmsMain;

@@ -25,7 +25,7 @@ internal static class Program
 
     private const string INI_FILE = "config.ini";
     public static IniFile ConfigFile = new IniFile(GET_CURRENT_PATH + System.IO.Path.DirectorySeparatorChar + INI_FILE);
-    private static readonly string PROG_UPDATE = "10/07/2022";
+    private static readonly string PROG_UPDATE = "09/18/2022";
 
     //public enum Language
     //{
@@ -359,6 +359,9 @@ internal static class Program
         MainForm.Activate();
         //MainForm.TopMost = false;
     }
+
+
+
 }
 
 //Create and Show Main Form

@@ -127,10 +127,10 @@
     <value>Convertir</value>
   </data>
   <data name="label4.Text" xml:space="preserve">
-    <value>Otra solución, ofrecida por Cheapo, es renombrar (no convertir) cada 'boot.elf' válido a 'boot.dol'. HBC debería seguir cargando el archivo perfectamente y este programa ignorará el archivo. No es lo ideal, pero aquí todos somos hackers, ¿no?</value>
+    <value>Otra solución ofrecida por Cheapo, es renombrar (no convertir) cada 'boot.elf' válido a 'boot.dol'. HBC aún cargará el archivo perfectamente y este programa ignorará el archivo. No es lo ideal, pero aquí todos somos hackers, ¿verdad?</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
-    <value>Puede utilizar prácticamente cualquier archivo .ELF publicado antes de octubre de 2008.</value>
+    <value>Puedes utilizar prácticamente cualquier archivo .ELF publicado antes de octubre de 2008.</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Convertir ELF -&gt; DOL</value>

@@ -18,24 +18,14 @@ public partial class frmSplashScreen : Form
 
         CurrentYear();
 
-        Thread t = new Thread(() => Application.Run(new frmMain(new Action<string, int>((s, i) =>
-        {
-            pbSplashScreen.Invoke(new Action(() => pbSplashScreen.Value = i));
-            lblStartSplashScreen.Invoke(new Action(() => lblStartSplashScreen.Text = s));
-        }))));
+        Thread t = new Thread(() => Application.Run(frmMain.frmMainInstance(pbSplashScreen, lblStartSplashScreen)));
         t.SetApartmentState(ApartmentState.STA);
         Program.AdjustLanguage(t);
         t.Start();
     }
 
     #endregion
-
-    #region Adjust Language
-
-
-
-    #endregion
-
+    
     #region Current Year
 
     private void CurrentYear()

@@ -124,6 +124,6 @@
     <value>Todos los derechos reservados.</value>
   </data>
   <data name="lblStartSplashScreen.Text" xml:space="preserve">
-    <value>Iniciando...</value>
+    <value>Inicializando...</value>
   </data>
 </root>

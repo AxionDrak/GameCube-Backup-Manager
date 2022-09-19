@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="btnTaskCancel.Text" xml:space="preserve">
-    <value>Cancelar la transferencia</value>
+    <value>Cancelar Transferencia</value>
   </data>
   <data name="rbEurope.Text" xml:space="preserve">
     <value>Europa</value>
@@ -133,13 +133,13 @@
     <value>Cerrar</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Cubiertas de transferencia</value>
+    <value>Transferir Portada</value>
   </data>
   <data name="lblTransferStatus.Text" xml:space="preserve">
     <value>Esperando...</value>
   </data>
   <data name="btnTaskIndeterminate.Text" xml:space="preserve">
-    <value>Transferencia</value>
+    <value>Transferir</value>
   </data>
   <data name="chkTransferAllRegions.Text" xml:space="preserve">
     <value>Descargar skins de todas las regiones</value>
