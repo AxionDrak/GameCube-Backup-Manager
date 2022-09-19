@@ -846,16 +846,13 @@
     <value>NoControl</value>
   </data>
   <data name="pbSource.Location" type="System.Drawing.Point, System.Drawing">
-    <value>113, 13</value>
+    <value>102, 16</value>
   </data>
   <data name="pbSource.Size" type="System.Drawing.Size, System.Drawing">
-    <value>222, 26</value>
+    <value>136, 23</value>
   </data>
   <data name="pbSource.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
-  </data>
-  <data name="pbSource.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="&gt;&gt;pbSource.Name" xml:space="preserve">
     <value>pbSource</value>
@@ -869,11 +866,11 @@
   <data name="&gt;&gt;pbSource.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="btnSelectFolder.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
-  </data>
   <data name="btnSelectFolder.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Zoom</value>
+    <value>Center</value>
+  </data>
+  <data name="btnSelectFolder.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Right</value>
   </data>
   <data name="btnSelectFolder.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Popup</value>
@@ -913,10 +910,10 @@
     <value>NoControl</value>
   </data>
   <data name="btnSelectFolder.Location" type="System.Drawing.Point, System.Drawing">
-    <value>265, 51</value>
+    <value>244, 16</value>
   </data>
   <data name="btnSelectFolder.Size" type="System.Drawing.Size, System.Drawing">
-    <value>69, 61</value>
+    <value>81, 92</value>
   </data>
   <data name="btnSelectFolder.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -933,34 +930,34 @@
   <data name="&gt;&gt;btnSelectFolder.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="label1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="lblScanDescription.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
-  <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="lblScanDescription.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 51</value>
+  <data name="lblScanDescription.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 45</value>
   </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>257, 64</value>
+  <data name="lblScanDescription.Size" type="System.Drawing.Size, System.Drawing">
+    <value>232, 62</value>
   </data>
-  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+  <data name="lblScanDescription.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
-  <data name="label1.Text" xml:space="preserve">
+  <data name="lblScanDescription.Text" xml:space="preserve">
     <value>Clique no ícone ao lado e selecione uma pasta para listar todos os arquivos ISO e GCM contidos em seu interior.</value>
   </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
+  <data name="&gt;&gt;lblScanDescription.Name" xml:space="preserve">
+    <value>lblScanDescription</value>
   </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+  <data name="&gt;&gt;lblScanDescription.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;lblScanDescription.Parent" xml:space="preserve">
     <value>grpScan</value>
   </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;lblScanDescription.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
   <data name="lblSourceCount.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
@@ -973,7 +970,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblSourceCount.Location" type="System.Drawing.Point, System.Drawing">
-    <value>46, 35</value>
+    <value>40, 32</value>
   </data>
   <data name="lblSourceCount.Size" type="System.Drawing.Size, System.Drawing">
     <value>13, 13</value>
@@ -1006,7 +1003,7 @@
     <value>True</value>
   </data>
   <data name="lblGamesVerifiedText.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 19</value>
+    <value>9, 16</value>
   </data>
   <data name="lblGamesVerifiedText.Size" type="System.Drawing.Size, System.Drawing">
     <value>92, 13</value>
@@ -1030,10 +1027,10 @@
     <value>4</value>
   </data>
   <data name="grpScan.Location" type="System.Drawing.Point, System.Drawing">
-    <value>545, 396</value>
+    <value>551, 400</value>
   </data>
   <data name="grpScan.Size" type="System.Drawing.Size, System.Drawing">
-    <value>341, 118</value>
+    <value>328, 111</value>
   </data>
   <data name="grpScan.TabIndex" type="System.Int32, mscorlib">
     <value>20</value>
@@ -1063,16 +1060,13 @@
     <value>NoControl</value>
   </data>
   <data name="pbInstallStatus.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 56</value>
+    <value>6, 52</value>
   </data>
   <data name="pbInstallStatus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>325, 26</value>
+    <value>316, 26</value>
   </data>
   <data name="pbInstallStatus.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
-  </data>
-  <data name="pbInstallStatus.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="&gt;&gt;pbInstallStatus.Name" xml:space="preserve">
     <value>pbInstallStatus</value>
@@ -1090,7 +1084,7 @@
     <value>True</value>
   </data>
   <data name="lblInstallStatusGameIndex.Location" type="System.Drawing.Point, System.Drawing">
-    <value>208, 26</value>
+    <value>241, 36</value>
   </data>
   <data name="lblInstallStatusGameIndex.Size" type="System.Drawing.Size, System.Drawing">
     <value>36, 13</value>
@@ -1100,9 +1094,6 @@
   </data>
   <data name="lblInstallStatusGameIndex.Text" xml:space="preserve">
     <value>0  /  0</value>
-  </data>
-  <data name="lblInstallStatusGameIndex.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="&gt;&gt;lblInstallStatusGameIndex.Name" xml:space="preserve">
     <value>lblInstallStatusGameIndex</value>
@@ -1126,7 +1117,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblInstallStatusText.Location" type="System.Drawing.Point, System.Drawing">
-    <value>22, 37</value>
+    <value>6, 36</value>
   </data>
   <data name="lblInstallStatusText.Size" type="System.Drawing.Size, System.Drawing">
     <value>88, 13</value>
@@ -1136,9 +1127,6 @@
   </data>
   <data name="lblInstallStatusText.Text" xml:space="preserve">
     <value>Instalando jogo...</value>
-  </data>
-  <data name="lblInstallStatusText.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="&gt;&gt;lblInstallStatusText.Name" xml:space="preserve">
     <value>lblInstallStatusText</value>
@@ -1165,7 +1153,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblInstallStatusPercent.Location" type="System.Drawing.Point, System.Drawing">
-    <value>132, 37</value>
+    <value>145, 36</value>
   </data>
   <data name="lblInstallStatusPercent.Size" type="System.Drawing.Size, System.Drawing">
     <value>24, 13</value>
@@ -1175,9 +1163,6 @@
   </data>
   <data name="lblInstallStatusPercent.Text" xml:space="preserve">
     <value>0 %</value>
-  </data>
-  <data name="lblInstallStatusPercent.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="&gt;&gt;lblInstallStatusPercent.Name" xml:space="preserve">
     <value>lblInstallStatusPercent</value>
@@ -1221,16 +1206,13 @@
 </value>
   </data>
   <data name="btnAbort.Location" type="System.Drawing.Point, System.Drawing">
-    <value>295, 16</value>
+    <value>283, 10</value>
   </data>
   <data name="btnAbort.Size" type="System.Drawing.Size, System.Drawing">
     <value>39, 36</value>
   </data>
   <data name="btnAbort.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
-  </data>
-  <data name="btnAbort.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="&gt;&gt;btnAbort.Name" xml:space="preserve">
     <value>btnAbort</value>
@@ -1254,7 +1236,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblInstallStatusGameTitle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>22, 16</value>
+    <value>6, 20</value>
   </data>
   <data name="lblInstallStatusGameTitle.Size" type="System.Drawing.Size, System.Drawing">
     <value>74, 13</value>
@@ -1264,9 +1246,6 @@
   </data>
   <data name="lblInstallStatusGameTitle.Text" xml:space="preserve">
     <value>Aguardando...</value>
-  </data>
-  <data name="lblInstallStatusGameTitle.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="&gt;&gt;lblInstallStatusGameTitle.Name" xml:space="preserve">
     <value>lblInstallStatusGameTitle</value>
@@ -1290,7 +1269,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblAbort.Location" type="System.Drawing.Point, System.Drawing">
-    <value>257, 26</value>
+    <value>248, 20</value>
   </data>
   <data name="lblAbort.Size" type="System.Drawing.Size, System.Drawing">
     <value>29, 13</value>
@@ -1300,9 +1279,6 @@
   </data>
   <data name="lblAbort.Text" xml:space="preserve">
     <value>Pare</value>
-  </data>
-  <data name="lblAbort.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="&gt;&gt;lblAbort.Name" xml:space="preserve">
     <value>lblAbort</value>
@@ -1317,16 +1293,19 @@
     <value>6</value>
   </data>
   <data name="grpStatus.Location" type="System.Drawing.Point, System.Drawing">
-    <value>545, 302</value>
+    <value>551, 302</value>
   </data>
   <data name="grpStatus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>340, 96</value>
+    <value>328, 89</value>
   </data>
   <data name="grpStatus.TabIndex" type="System.Int32, mscorlib">
     <value>19</value>
   </data>
   <data name="grpStatus.Text" xml:space="preserve">
     <value>Status</value>
+  </data>
+  <data name="grpStatus.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="&gt;&gt;grpStatus.Name" xml:space="preserve">
     <value>grpStatus</value>
@@ -1599,7 +1578,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnGameInstallScrub.Location" type="System.Drawing.Point, System.Drawing">
-    <value>79, 67</value>
+    <value>64, 62</value>
   </data>
   <data name="btnGameInstallScrub.Size" type="System.Drawing.Size, System.Drawing">
     <value>140, 40</value>
@@ -1659,7 +1638,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnGameInstallExactCopy.Location" type="System.Drawing.Point, System.Drawing">
-    <value>79, 21</value>
+    <value>64, 16</value>
   </data>
   <data name="btnGameInstallExactCopy.Size" type="System.Drawing.Size, System.Drawing">
     <value>140, 40</value>
@@ -1692,7 +1671,7 @@
     <value>25, 147</value>
   </data>
   <data name="grpOperations.Size" type="System.Drawing.Size, System.Drawing">
-    <value>274, 119</value>
+    <value>274, 108</value>
   </data>
   <data name="grpOperations.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -1818,7 +1797,7 @@
     <value>86, 82</value>
   </data>
   <data name="tbIDGame.Size" type="System.Drawing.Size, System.Drawing">
-    <value>83, 20</value>
+    <value>70, 20</value>
   </data>
   <data name="tbIDGame.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1842,7 +1821,7 @@
     <value>86, 56</value>
   </data>
   <data name="tbIDRegion.Size" type="System.Drawing.Size, System.Drawing">
-    <value>83, 20</value>
+    <value>70, 20</value>
   </data>
   <data name="tbIDRegion.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1866,7 +1845,7 @@
     <value>86, 30</value>
   </data>
   <data name="tbIDName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>249, 20</value>
+    <value>236, 20</value>
   </data>
   <data name="tbIDName.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1884,10 +1863,10 @@
     <value>12</value>
   </data>
   <data name="grpDetailsSource.Location" type="System.Drawing.Point, System.Drawing">
-    <value>545, 30</value>
+    <value>551, 30</value>
   </data>
   <data name="grpDetailsSource.Size" type="System.Drawing.Size, System.Drawing">
-    <value>341, 280</value>
+    <value>328, 266</value>
   </data>
   <data name="grpDetailsSource.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -2229,7 +2208,7 @@
     <value>3, 3</value>
   </data>
   <data name="mstripFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>879, 24</value>
+    <value>885, 24</value>
   </data>
   <data name="mstripFile.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -2253,7 +2232,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabMainFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>885, 514</value>
+    <value>891, 514</value>
   </data>
   <data name="tabMainFile.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -3045,7 +3024,7 @@
     <value>3, 3</value>
   </data>
   <data name="mstripDisc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>879, 27</value>
+    <value>885, 27</value>
   </data>
   <data name="mstripDisc.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -3069,7 +3048,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabMainDisc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>885, 514</value>
+    <value>891, 514</value>
   </data>
   <data name="tabMainDisc.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -3267,7 +3246,7 @@
     <value>3, 3</value>
   </data>
   <data name="mstripDatabase.Size" type="System.Drawing.Size, System.Drawing">
-    <value>879, 24</value>
+    <value>885, 24</value>
   </data>
   <data name="mstripDatabase.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -3291,7 +3270,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabMainDatabase.Size" type="System.Drawing.Size, System.Drawing">
-    <value>885, 514</value>
+    <value>891, 514</value>
   </data>
   <data name="tabMainDatabase.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -3369,7 +3348,7 @@
     <value>3, 3</value>
   </data>
   <data name="mstripLog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>879, 24</value>
+    <value>885, 24</value>
   </data>
   <data name="mstripLog.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -3393,7 +3372,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabMainLog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>885, 514</value>
+    <value>891, 514</value>
   </data>
   <data name="tabMainLog.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -3417,7 +3396,7 @@
     <value>3, 3</value>
   </data>
   <data name="tabControlMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>893, 540</value>
+    <value>899, 540</value>
   </data>
   <data name="tabControlMain.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>

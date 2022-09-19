@@ -50,7 +50,8 @@ namespace GCBM
             this.grpScan = new System.Windows.Forms.GroupBox();
             this.pbSource = new System.Windows.Forms.ProgressBar();
             this.btnSelectFolder = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblScanDescription = new System.Windows.Forms.Label();
+            this.lblSourceCount = new System.Windows.Forms.Label();
             this.lblGamesVerifiedText = new System.Windows.Forms.Label();
             this.grpStatus = new System.Windows.Forms.GroupBox();
             this.pbInstallStatus = new System.Windows.Forms.ProgressBar();
@@ -215,7 +216,7 @@ namespace GCBM
             this.tsmiVerifyUpdate = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.tsmiMenuAbout = new System.Windows.Forms.ToolStripMenuItem();
-            FolderBrowserDialog fbdSourceFolderDialog = new System.Windows.Forms.FolderBrowserDialog();
+            this.fbdSourceFolderDialog = new System.Windows.Forms.FolderBrowserDialog();
             this.fbd2 = new System.Windows.Forms.FolderBrowserDialog();
             this.ofd1 = new System.Windows.Forms.OpenFileDialog();
             this.lblNetStatus = new System.Windows.Forms.Label();
@@ -224,7 +225,6 @@ namespace GCBM
             this.pbNetStatus = new System.Windows.Forms.PictureBox();
             this.gameBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.process1 = new System.Diagnostics.Process();
-            this.lblSourceCount = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.spcMain)).BeginInit();
             this.spcMain.Panel1.SuspendLayout();
             this.spcMain.Panel2.SuspendLayout();
@@ -344,7 +344,7 @@ namespace GCBM
             resources.ApplyResources(this.grpScan, "grpScan");
             this.grpScan.Controls.Add(this.pbSource);
             this.grpScan.Controls.Add(this.btnSelectFolder);
-            this.grpScan.Controls.Add(this.label1);
+            this.grpScan.Controls.Add(this.lblScanDescription);
             this.grpScan.Controls.Add(this.lblSourceCount);
             this.grpScan.Controls.Add(this.lblGamesVerifiedText);
             this.grpScan.Name = "grpScan";
@@ -362,10 +362,15 @@ namespace GCBM
             this.btnSelectFolder.UseVisualStyleBackColor = true;
             this.btnSelectFolder.Click += new System.EventHandler(this.btnSelectFolder_Click);
             // 
-            // label1
+            // lblScanDescription
             // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.Name = "label1";
+            resources.ApplyResources(this.lblScanDescription, "lblScanDescription");
+            this.lblScanDescription.Name = "lblScanDescription";
+            // 
+            // lblSourceCount
+            // 
+            resources.ApplyResources(this.lblSourceCount, "lblSourceCount");
+            this.lblSourceCount.Name = "lblSourceCount";
             // 
             // lblGamesVerifiedText
             // 
@@ -1556,7 +1561,7 @@ namespace GCBM
             // 
             // fbdSourceFolderDialog
             // 
-            fbdSourceFolderDialog.RootFolder = System.Environment.SpecialFolder.MyComputer;
+            this.fbdSourceFolderDialog.RootFolder = System.Environment.SpecialFolder.MyComputer;
             // 
             // fbd2
             // 
@@ -1599,11 +1604,6 @@ namespace GCBM
             this.process1.StartInfo.StandardOutputEncoding = null;
             this.process1.StartInfo.UserName = "";
             this.process1.SynchronizingObject = this;
-            // 
-            // lblSourceCount
-            // 
-            resources.ApplyResources(this.lblSourceCount, "lblSourceCount");
-            this.lblSourceCount.Name = "lblSourceCount";
             // 
             // frmMain
             // 
@@ -1693,7 +1693,6 @@ namespace GCBM
         private PictureBox pbGameCover3D;
         private PictureBox pbGameDisc;
         private ToolStripStatusLabel tsslCurrentYear;
-        public static FolderBrowserDialog fbdSourceFolderDialog;
         private ToolStripSeparator toolStripMenuItem5;
         private ToolStripMenuItem tsmiSyncDownloadAllDiscOnly3DCovers;
         private ToolStripMenuItem tsmiSyncDownloadAllCovers;
@@ -1736,7 +1735,7 @@ namespace GCBM
         private Label lblInstallStatusPercent;
         private Label lblInstallStatusGameTitle;
         private ProgressBar pbInstallStatus;
-        private Label label1;
+        private Label lblScanDescription;
         private Button btnSelectFolder;
         private GroupBox grpDetailsSource;
         private Label lblTypeDisc;
@@ -1858,6 +1857,7 @@ namespace GCBM
         private GroupBox grpScan;
         private GroupBox grpStatus;
         private Label lblSourceCount;
+        public FolderBrowserDialog fbdSourceFolderDialog;
     }
 }
 

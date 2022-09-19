@@ -720,7 +720,7 @@ namespace GCBM
                     //    }
                     //}
                     var _source =
-                        new sio.FileInfo(sio.Path.Combine(frmMain.fbdSourceFolderDialog.SelectedPath, QueueManager.InstallQueue[intQueuePos].Path));
+                        new sio.FileInfo(sio.Path.Combine(frm.fbdSourceFolderDialog.SelectedPath, QueueManager.InstallQueue[intQueuePos].Path));
 
                     // Disc 1 (0 -> 0) - Title [ID Game]
                     if (InstallQueue[intQueuePos].DiscID == "0x00" && Program.ConfigFile.IniReadInt("SEVERAL", "AppointmentStyle") == 0)
