@@ -54,7 +54,8 @@ public partial class frmMain : Form
     ///     Get the program version directly from the Assembly.
     /// </summary>
     /// <returns></returns>
-    private string VERSION()
+    /// 
+    private static string VERSION()
     {
         var PROG_VERSION = assembly.GetName().Version.ToString();
         return PROG_VERSION;
@@ -62,15 +63,57 @@ public partial class frmMain : Form
 
     #endregion
 
+    private IntPtr[] GetWindowHandlesForThread(int threadHandle)
+    {
+        _results.Clear();
+        EnumWindows(WindowEnum, threadHandle);
+        return _results.ToArray();
+    }
 
+    public delegate int EnumWindowsProc(IntPtr hwnd, int lParam);
+
+    [DllImport("user32.Dll")]
+    public static extern int EnumWindows(EnumWindowsProc x, int y);
+    [DllImport("user32.dll")]
+    public static extern int GetWindowThreadProcessId(IntPtr handle, out int processId);
+
+    public List<IntPtr> _results = new List<IntPtr>();
+
+    public int WindowEnum(IntPtr hWnd, int lParam)
+    {
+        int processID = 0;
+        int threadID = GetWindowThreadProcessId(hWnd, out processID);
+        if (threadID == lParam) _results.Add(hWnd);
+        return 1;
+    }
     public static frmMain MainFormInstance(ProgressBar pb, Label lbl)
     {
-        return new frmMain((s, i) =>
+
+        var mainForm = new frmMain((s, i) =>
+        {
+            ;
+            if (ActiveForm != null)
+                if (pb.InvokeRequired)
+                {
+                    pb.Invoke(new Action(() => pb.Value = i));
+                    lbl.Invoke(new Action(() => lbl.Text = s));
+                }
+                else
+                {
+                    pb.Value = i;
+                    lbl.Text = s;
+                }
+            // Execution continues from here only once WriteToForm has completed and returned.
+            else
             {
-                pb.Invoke(new Action(() => pb.Value = i));
-                lbl.Invoke(new Action(() => lbl.Text = s));
+                
+                // Handle the error case, or do nothing.
             }
+
+        }
         );
+        return mainForm;
+
     }
 
     public static IContainer mainContainer = new Container();
@@ -84,21 +127,21 @@ public partial class frmMain : Form
     /// <param name="e"></param>
     private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
     {
-            CLOSING = true;
+        CLOSING = true;
 
-            ClearTemp();
-            ExportLOG(1);
-            if (Process.GetCurrentProcess().GetChildProcesses() != null &&
-                Process.GetCurrentProcess().GetChildProcesses().Count != 0)
-                foreach (var process in Process.GetCurrentProcess().GetChildProcesses())
-                    //Kill GCIT and others
-                    process.Kill();
+        ClearTemp();
+        ExportLOG(1);
+        if (Process.GetCurrentProcess().GetChildProcesses() != null &&
+            Process.GetCurrentProcess().GetChildProcesses().Count != 0)
+            foreach (var process in Process.GetCurrentProcess().GetChildProcesses())
+                //Kill GCIT and others
+                process.Kill();
 
-            //Garbage Collector
-            GC.Collect();
-            //Cleanup any Threads left lying around
-            Dispose();
-            Process.GetCurrentProcess().Kill();
+        //Garbage Collector
+        GC.Collect();
+        //Cleanup any Threads left lying around
+        Dispose();
+        Process.GetCurrentProcess().Kill();
     }
 
     #endregion
@@ -112,14 +155,14 @@ public partial class frmMain : Form
     {
         if (sio.File.Exists("config.ini"))
         {
-            if (CONFIG_INI_FILE.IniReadString("GCBM", "ProgVersion", "") != VERSION())
-                CONFIG_INI_FILE.IniWriteString("GCBM", "ProgVersion", VERSION());
+            if (Program.ConfigFile.IniReadString("GCBM", "ProgVersion", "") != VERSION())
+                Program.ConfigFile.IniWriteString("GCBM", "ProgVersion", VERSION());
 
-            if (CONFIG_INI_FILE.IniReadString("GCBM", "Language", "") != Resources.GCBM_Language)
-                CONFIG_INI_FILE.IniWriteString("GCBM", "Language", Resources.GCBM_Language);
+            if (Program.ConfigFile.IniReadString("GCBM", "Language", "") != Resources.GCBM_Language)
+                Program.ConfigFile.IniWriteString("GCBM", "Language", Resources.GCBM_Language);
 
-            if (CONFIG_INI_FILE.IniReadString("GCBM", "TranslatedBy", "") != Resources.GCBM_TranslatedBy)
-                CONFIG_INI_FILE.IniWriteString("GCBM", "TranslatedBy", Resources.GCBM_TranslatedBy);
+            if (Program.ConfigFile.IniReadString("GCBM", "TranslatedBy", "") != Resources.GCBM_TranslatedBy)
+                Program.ConfigFile.IniWriteString("GCBM", "TranslatedBy", Resources.GCBM_TranslatedBy);
         }
     }
 
@@ -135,51 +178,51 @@ public partial class frmMain : Form
     /// </summary>
     //private void UpdateProgram()
     //{
-    //    if (CONFIG_INI_FILE.IniReadBool("UPDATES", "UpdateServerProxy"))
+    //    if (Program.ConfigFile.IniReadBool("UPDATES", "UpdateServerProxy"))
     //    {
-    //        if (CONFIG_INI_FILE.IniReadString("UPDATES", "ServerProxy", "") != string.Empty &&
-    //            CONFIG_INI_FILE.IniReadString("UPDATES", "UserProxy", "") != string.Empty &&
-    //            CONFIG_INI_FILE.IniReadString("UPDATES", "PassProxy", "") != string.Empty)
+    //        if (Program.ConfigFile.IniReadString("UPDATES", "ServerProxy", "") != string.Empty &&
+    //            Program.ConfigFile.IniReadString("UPDATES", "UserProxy", "") != string.Empty &&
+    //            Program.ConfigFile.IniReadString("UPDATES", "PassProxy", "") != string.Empty)
     //        {
-    //            WebProxy proxy = new WebProxy(CONFIG_INI_FILE.IniReadString("UPDATES", "ServerProxy", ""), true)
+    //            WebProxy proxy = new WebProxy(Program.ConfigFile.IniReadString("UPDATES", "ServerProxy", ""), true)
     //            {
-    //                Credentials = new NetworkCredential(CONFIG_INI_FILE.IniReadString("UPDATES", "UserProxy", ""),
-    //                    CONFIG_INI_FILE.IniReadString("UPDATES", "PassProxy", ""))
+    //                Credentials = new NetworkCredential(Program.ConfigFile.IniReadString("UPDATES", "UserProxy", ""),
+    //                    Program.ConfigFile.IniReadString("UPDATES", "PassProxy", ""))
     //            };
     //            AutoUpdater.Proxy = proxy;
     //        }
     //    }
 
     //    // Enable support for updates.
-    //    if (CONFIG_INI_FILE.IniReadBool("UPDATES", "UpdateVerifyStart"))
+    //    if (Program.ConfigFile.IniReadBool("UPDATES", "UpdateVerifyStart"))
     //    {
     //        int timeInterval = 0;
 
-    //        if (CONFIG_INI_FILE.IniReadInt("UPDATES", "VerificationInterval") == 0)
+    //        if (Program.ConfigFile.IniReadInt("UPDATES", "VerificationInterval") == 0)
     //        {
     //            timeInterval = 10; // 5 minutes
     //        }
-    //        else if (CONFIG_INI_FILE.IniReadInt("UPDATES", "VerificationInterval") == 1)
+    //        else if (Program.ConfigFile.IniReadInt("UPDATES", "VerificationInterval") == 1)
     //        {
     //            timeInterval = 20; // 10 minutes
     //        }
-    //        else if (CONFIG_INI_FILE.IniReadInt("UPDATES", "VerificationInterval") == 2)
+    //        else if (Program.ConfigFile.IniReadInt("UPDATES", "VerificationInterval") == 2)
     //        {
     //            timeInterval = 30; // 15 minutes
     //        }
-    //        else if (CONFIG_INI_FILE.IniReadInt("UPDATES", "VerificationInterval") == 3)
+    //        else if (Program.ConfigFile.IniReadInt("UPDATES", "VerificationInterval") == 3)
     //        {
     //            timeInterval = 60; // 30 minutes
     //        }
-    //        else if (CONFIG_INI_FILE.IniReadInt("UPDATES", "VerificationInterval") == 4)
+    //        else if (Program.ConfigFile.IniReadInt("UPDATES", "VerificationInterval") == 4)
     //        {
     //            timeInterval = 120; // 1 hour
     //        }
-    //        else if (CONFIG_INI_FILE.IniReadInt("UPDATES", "VerificationInterval") == 5)
+    //        else if (Program.ConfigFile.IniReadInt("UPDATES", "VerificationInterval") == 5)
     //        {
     //            timeInterval = 240; // 2 hours
     //        }
-    //        else if (CONFIG_INI_FILE.IniReadInt("UPDATES", "VerificationInterval") == 6)
+    //        else if (Program.ConfigFile.IniReadInt("UPDATES", "VerificationInterval") == 6)
     //        {
     //            timeInterval = 360; // 3 hours
     //        }
@@ -189,7 +232,7 @@ public partial class frmMain : Form
     //        }
 
     //        // Support Beta channel updates.
-    //        if (CONFIG_INI_FILE.IniReadBool("UPDATES", "UpdateBetaChannel"))
+    //        if (Program.ConfigFile.IniReadBool("UPDATES", "UpdateBetaChannel"))
     //        {
     //            Timer timer = new Timer
     //            {
@@ -253,7 +296,7 @@ public partial class frmMain : Form
     // Disable screen saver
     private void DisabeScreensaver()
     {
-        if (CONFIG_INI_FILE.IniReadBool("SEVERAL", "Screensaver"))
+        if (Program.ConfigFile.IniReadBool("SEVERAL", "Screensaver"))
             // Disable the screensaver.
             _ = SetThreadExecutionState(EXECUTION_STATE.ES_DISPLAY_REQUIRED | EXECUTION_STATE.ES_CONTINUOUS);
         else
@@ -270,7 +313,7 @@ public partial class frmMain : Form
     /// </summary>
     private void NetworkCheck()
     {
-        if (CONFIG_INI_FILE.IniReadBool("SEVERAL", "NetVerify"))
+        if (Program.ConfigFile.IniReadBool("SEVERAL", "NetVerify"))
         {
             if (!NetworkInterface.GetIsNetworkAvailable())
             {
@@ -408,7 +451,7 @@ public partial class frmMain : Form
         tsmiSyncDownloadDiscOnly3DCovers.Enabled = true;
         tsmiGameInfo.Enabled = true;
         tsmiTransferDeviceCovers.Enabled = true;
-        dgvSource.Invoke(()=>dgvSource.Enabled = true);
+        dgvSource.Invoke(() => dgvSource.Enabled = true);
         //}));
         //tabMainFile.Update();
         //tabMainDisc.Invoke(() =>
@@ -478,7 +521,7 @@ public partial class frmMain : Form
         if (!Monitor.TryEnter(lvDatabase)) return;
 
         if (sio.File.Exists(WIITDB_FILE))
-            if (CONFIG_INI_FILE.IniReadBool("SEVERAL", "LoadDatabase"))
+            if (Program.ConfigFile.IniReadBool("SEVERAL", "LoadDatabase"))
                 // PERFECT - DO NOT CHANGE!!!
                 tabMainDatabase.BeginInvoke(new Action(() =>
                 {
@@ -534,13 +577,13 @@ public partial class frmMain : Form
     /// <summary>
     ///     Reads and loads the contents of the INI file.
     /// </summary>
-    private void LoadConfigFile()
+    public static void LoadConfigFile()
     {
         if (sio.File.Exists(GET_CURRENT_PATH + sio.Path.DirectorySeparatorChar + INI_FILE))
         {
-            useXmlTitle = CONFIG_INI_FILE.IniReadBool("TITLES", "GameXmlName");
-            if (CONFIG_INI_FILE.IniReadBool("SEVERAL", "WindowMaximized")) WindowState = FormWindowState.Maximized;
-            CONFIG_INI_FILE.IniWriteString("GCBM", "ProgVersion", VERSION());
+            useXmlTitle = Program.ConfigFile.IniReadBool("TITLES", "GameXmlName");
+            if (Program.ConfigFile.IniReadBool("SEVERAL", "WindowMaximized")) ActiveForm.WindowState = FormWindowState.Maximized;
+            Program.ConfigFile.IniWriteString("GCBM", "ProgVersion", VERSION());
         }
     }
 
@@ -705,7 +748,7 @@ public partial class frmMain : Form
                 if (game.DiscID == "0x01")
                     displayTitle += " (2)";
                 var _f = new sio.FileInfo(file);
-                var _getSize = DisplayFormatFileSize(_f.Length, CONFIG_INI_FILE.IniReadInt("GENERAL", "FileSize"));
+                var _getSize = DisplayFormatFileSize(_f.Length, Program.ConfigFile.IniReadInt("GENERAL", "FileSize"));
                 //Title - ID - Region - Extension - Size - Path
                 _ = dgvSourcetemp.Rows.Add(false, displayTitle, game.ID, game.Region,
                     _f.Extension.Substring(1, 3).Trim().ToUpper(MY_CULTURE), _getSize, _f.FullName);
@@ -813,7 +856,7 @@ public partial class frmMain : Form
                 if (game.DiscID == "0x01")
                     displayTitle += " (2)";
                 var _f = new sio.FileInfo(file);
-                var _getSize = DisplayFormatFileSize(_f.Length, CONFIG_INI_FILE.IniReadInt("GENERAL", "FileSize"));
+                var _getSize = DisplayFormatFileSize(_f.Length, Program.ConfigFile.IniReadInt("GENERAL", "FileSize"));
                 _ = dgvDestinationtemp.Rows.Add(false, displayTitle, game.ID, game.Region,
                     _f.Extension.Substring(1, 3).Trim().ToUpper(MY_CULTURE), _getSize, _f.FullName);
                 QueueManager.DestinationGames.Add(counter, game);
@@ -846,12 +889,12 @@ public partial class frmMain : Form
     /// <param name="filters"></param>
     /// <param name="isRecursive"></param>
     /// <returns></returns>
-    public Task<string[]> GetFilesFolder(string rootFolder, string[] filters, bool isRecursive)
+    public static Task<string[]> GetFilesFolder(string rootFolder, string[] filters, bool isRecursive)
     {
         var filesFound = new List<string>();
         // Sets options for displaying root folder images.
 
-        isRecursive = CONFIG_INI_FILE.IniReadBool("SEVERAL", "RecursiveMode");
+        isRecursive = Program.ConfigFile.IniReadBool("SEVERAL", "RecursiveMode");
 
         var optionSearch = isRecursive ? sio.SearchOption.AllDirectories : sio.SearchOption.TopDirectoryOnly;
         foreach (var filter in filters)
@@ -864,7 +907,7 @@ public partial class frmMain : Form
             {
                 // Not used.
                 // Just to avoid mistakes.
-                tbLog.AppendText(ex.Message + Environment.NewLine + ex.StackTrace);
+                Log.AppendText(ex.Message + Environment.NewLine + ex.StackTrace);
             }
 
         return FromResult(filesFound.ToArray());
@@ -1413,9 +1456,9 @@ public partial class frmMain : Form
     {
         try
         {
-            if (sio.Directory.Exists(CONFIG_INI_FILE.IniReadString("GENERAL", "TemporaryFolder", "")))
+            if (sio.Directory.Exists(Program.ConfigFile.IniReadString("GENERAL", "TemporaryFolder", "")))
             {
-                var dir = new sio.DirectoryInfo(CONFIG_INI_FILE.IniReadString("GENERAL", "TemporaryFolder", ""));
+                var dir = new sio.DirectoryInfo(Program.ConfigFile.IniReadString("GENERAL", "TemporaryFolder", ""));
                 foreach (var fi in dir.GetFiles("*.*", sio.SearchOption.AllDirectories))
                 {
                     fi.Delete();
@@ -1450,9 +1493,9 @@ public partial class frmMain : Form
     private async Task RequiredDirectories(Action<int> callback, int progressCheckpoint)
     {
         // Temporary directory default
-        if (!sio.Directory.Exists(CONFIG_INI_FILE.IniReadString("GENERAL", "TemporaryFolder", "")))
+        if (!sio.Directory.Exists(Program.ConfigFile.IniReadString("GENERAL", "TemporaryFolder", "")))
         {
-            _ = sio.Directory.CreateDirectory(CONFIG_INI_FILE.IniReadString("GENERAL", "TemporaryFolder", ""));
+            _ = sio.Directory.CreateDirectory(Program.ConfigFile.IniReadString("GENERAL", "TemporaryFolder", ""));
             tbLog.AppendText("[" + DateString() + "]" + Resources.RequiredDirectories_String1 +
                              Environment.NewLine);
         }
@@ -1889,7 +1932,7 @@ public partial class frmMain : Form
                         //    MessageBox.Show("Todos os arquivos foram excluídos com sucesso!", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         //}
                     } // DELETAR JOGO DO DISPOSITIVO DE DESTINO
-                    //else if (dgv == dgvSource) <-- Uh.. No..?
+                      //else if (dgv == dgvSource) <-- Uh.. No..?
                     else if (dgv == dgvDestination)
                     {
                         var files = await GetFilesFolder(
@@ -2013,12 +2056,12 @@ public partial class frmMain : Form
     private void CheckCoverTransfer()
     {
         //USB Loader GX
-        if (CONFIG_INI_FILE.IniReadBool("COVERS", "GXCoverUSBLoader"))
+        if (Program.ConfigFile.IniReadBool("COVERS", "GXCoverUSBLoader"))
         {
-            if (CONFIG_INI_FILE.IniReadString("COVERS", "GXCoverDirectoryDisc", "") == string.Empty ||
-                CONFIG_INI_FILE.IniReadString("COVERS", "GXCoverDirectory2D", "") == string.Empty
-                || CONFIG_INI_FILE.IniReadString("COVERS", "GXCoverDirectory3D", "") == string.Empty ||
-                CONFIG_INI_FILE.IniReadString("COVERS", "GXCoverDirectoryFull", "") == string.Empty)
+            if (Program.ConfigFile.IniReadString("COVERS", "GXCoverDirectoryDisc", "") == string.Empty ||
+                Program.ConfigFile.IniReadString("COVERS", "GXCoverDirectory2D", "") == string.Empty
+                || Program.ConfigFile.IniReadString("COVERS", "GXCoverDirectory3D", "") == string.Empty ||
+                Program.ConfigFile.IniReadString("COVERS", "GXCoverDirectoryFull", "") == string.Empty)
             {
                 Notifications.CheckUSBGXFlow();
             }
@@ -2029,10 +2072,10 @@ public partial class frmMain : Form
                 _frmTransfer.Dispose();
             }
         } // WiiFlow
-        else if (CONFIG_INI_FILE.IniReadBool("COVERS", "WiiFlowCoverUSBLoader"))
+        else if (Program.ConfigFile.IniReadBool("COVERS", "WiiFlowCoverUSBLoader"))
         {
-            if (CONFIG_INI_FILE.IniReadString("COVERS", "WiiFlowCoverDirectory2D", "") == string.Empty ||
-                CONFIG_INI_FILE.IniReadString("COVERS", "WiiFlowCoverDirectoryFull", "") == string.Empty)
+            if (Program.ConfigFile.IniReadString("COVERS", "WiiFlowCoverDirectory2D", "") == string.Empty ||
+                Program.ConfigFile.IniReadString("COVERS", "WiiFlowCoverDirectoryFull", "") == string.Empty)
             {
                 Notifications.CheckUSBGXFlow();
             }
@@ -2147,7 +2190,7 @@ public partial class frmMain : Form
 
     private void SearchOnWeb(string link)
     {
-        if (CONFIG_INI_FILE.IniReadBool("TITLES", "GameXmlName"))
+        if (Program.ConfigFile.IniReadBool("TITLES", "GameXmlName"))
         {
             if (sio.File.Exists(WIITDB_FILE))
             {
@@ -2487,7 +2530,7 @@ public partial class frmMain : Form
     private void btnGameInstallExactCopy_Click(object sender, EventArgs e)
     {
         ABORT = false;
-        QueueManager.StartQueue(dgvSource, 0,grpStatus);
+        QueueManager.StartQueue(dgvSource, 0, grpStatus);
     }
 
     #endregion
@@ -2502,7 +2545,7 @@ public partial class frmMain : Form
     private void btnGameInstallScrub_Click(object sender, EventArgs e)
     {
         ABORT = false;
-        QueueManager.StartQueue(dgvSource, 1,grpStatus);
+        QueueManager.StartQueue(dgvSource, 1, grpStatus);
     }
 
     #endregion
@@ -2662,7 +2705,7 @@ public partial class frmMain : Form
         if (CheckImage())
             if (gameUtilities.ReadImageTOC())
             {
-                if (CONFIG_INI_FILE.IniReadBool("TITLES", "GameXmlName"))
+                if (Program.ConfigFile.IniReadBool("TITLES", "GameXmlName"))
                 {
                     if (sio.File.Exists(WIITDB_FILE))
                     {
@@ -2753,8 +2796,7 @@ public partial class frmMain : Form
     private bool ROOT_OPENED = true;
 
     //private int Reserved;
-    private readonly Assembly assembly = Assembly.GetExecutingAssembly();
-    private readonly IniFile CONFIG_INI_FILE = Program.ConfigFile;
+    private static readonly Assembly assembly = Assembly.GetExecutingAssembly();
     private readonly CultureInfo MY_CULTURE = new(CULTURE_CURRENT, false);
     private readonly ProcessStartInfo START_INFO = new();
     private readonly WebClient NET_CLIENT = new();
@@ -2767,10 +2809,10 @@ public partial class frmMain : Form
     private DataGridView dgvSelected = new();
     public static String SelectedDrive = ""; // Selected Drive
     public static GroupBox StatusGroupBox = new GroupBox();
+    public static TextBox Log = new TextBox();
 
 
 
-    
     [DllImport("kernel32.dll")]
     private static extern EXECUTION_STATE SetThreadExecutionState(EXECUTION_STATE esFlags);
 
@@ -2796,6 +2838,7 @@ public partial class frmMain : Form
         Show();
         Activate();
         StatusGroupBox = grpStatus;
+        Log = tbLog;
     }
     // End of Main Constructor
 
@@ -2806,7 +2849,7 @@ public partial class frmMain : Form
         Text = "GameCube Backup Manager 2022 - " + VERSION() + " - 64-bit";
 
         //Splash Screen
-        //if (CONFIG_INI_FILE.IniReadBool("SEVERAL", "DisableSplash") == false)
+        //if (Program.ConfigFile.IniReadBool("SEVERAL", "DisableSplash") == false)
 
         //    Load += HandleFormLoad;
 
@@ -2822,7 +2865,7 @@ public partial class frmMain : Form
             InitializeComponent();
         }
 
-        if (!CONFIG_INI_FILE.IniReadBool("SEVERAL", "LaunchedOnce")) Program.DefaultConfigSave();
+        if (!Program.ConfigFile.IniReadBool("SEVERAL", "LaunchedOnce")) Program.DefaultConfigSave();
 
         LoadConfigFile();
         AboutTranslator();
@@ -2846,7 +2889,7 @@ public partial class frmMain : Form
         //Check for WiiTDB file and internet connection, download if not found and we're online
 
         callback(Resources.SplashWiiTDB, 90);
-        if (CONFIG_INI_FILE.IniReadBool("SEVERAL", "LoadDatabase"))
+        if (Program.ConfigFile.IniReadBool("SEVERAL", "LoadDatabase"))
         {
             if (!sio.File.Exists(WIITDB_FILE) && NetworkInterface.GetIsNetworkAvailable())
             {
@@ -3167,7 +3210,7 @@ public partial class frmMain : Form
     //                    new sio.FileInfo(sio.Path.Combine(fbdSourceFolderDialog.SelectedPath, QueueManager.InstallQueue[intQueuePos].Path));
 
     //                // Disc 1 (0 -> 0) - Title [ID Game]
-    //                if (tbIDDiscID.Text == "0x00" && CONFIG_INI_FILE.IniReadInt("SEVERAL", "AppointmentStyle") == 0)
+    //                if (tbIDDiscID.Text == "0x00" && Program.ConfigFile.IniReadInt("SEVERAL", "AppointmentStyle") == 0)
     //                {
     //                    _ = sio.Directory.CreateDirectory(SelectedDrive + GAMES_DIR +
     //                                                      sio.Path.DirectorySeparatorChar +
@@ -3179,7 +3222,7 @@ public partial class frmMain : Form
     //                    oldCopyTask(_source, _destination);
     //                } // Disc 2 (1 -> 0) - Title [ID Game]
     //                else if (tbIDDiscID.Text == "0x01" &&
-    //                         CONFIG_INI_FILE.IniReadInt("SEVERAL", "AppointmentStyle") == 0)
+    //                         Program.ConfigFile.IniReadInt("SEVERAL", "AppointmentStyle") == 0)
     //                {
     //                    _ = sio.Directory.CreateDirectory(SelectedDrive + GAMES_DIR +
     //                                                      sio.Path.DirectorySeparatorChar +
@@ -3191,7 +3234,7 @@ public partial class frmMain : Form
     //                    oldCopyTask(_source, _destination);
     //                } // Disc 1 (0 -> 1) - [ID Game]
     //                else if (tbIDDiscID.Text == "0x00" &&
-    //                         CONFIG_INI_FILE.IniReadInt("SEVERAL", "AppointmentStyle") == 1)
+    //                         Program.ConfigFile.IniReadInt("SEVERAL", "AppointmentStyle") == 1)
     //                {
     //                    _ = sio.Directory.CreateDirectory(SelectedDrive + GAMES_DIR +
     //                                                      sio.Path.DirectorySeparatorChar + "[" +
@@ -3203,7 +3246,7 @@ public partial class frmMain : Form
     //                    oldCopyTask(_source, _destination);
     //                } // Disc 2 (1 -> 1) - [ID Game]
     //                else if (tbIDDiscID.Text == "0x01" &&
-    //                         CONFIG_INI_FILE.IniReadInt("SEVERAL", "AppointmentStyle") == 1)
+    //                         Program.ConfigFile.IniReadInt("SEVERAL", "AppointmentStyle") == 1)
     //                {
     //                    _ = sio.Directory.CreateDirectory(SelectedDrive + GAMES_DIR +
     //                                                      sio.Path.DirectorySeparatorChar + "[" +
@@ -3238,7 +3281,7 @@ public partial class frmMain : Form
 
     #endregion
 
-    
+
 
     #endregion
 
@@ -3675,7 +3718,7 @@ public partial class frmMain : Form
 
     private void tsmiDownloadCoversSelectedGame_Click(object sender, EventArgs e)
     {
-        if (CONFIG_INI_FILE.IniReadBool("SEVERAL", "NetVerify"))
+        if (Program.ConfigFile.IniReadBool("SEVERAL", "NetVerify"))
             DownloadOnlyDisc3DCoverSelectedGame(dgvSource);
         else
             Notifications.GlobalNotifications(Resources.NoInternetConnectionFound_String1 + Environment.NewLine +
@@ -3688,7 +3731,7 @@ public partial class frmMain : Form
 
     private void tsmiSyncDownloadDiscOnly3DCovers_Click(object sender, EventArgs e)
     {
-        if (CONFIG_INI_FILE.IniReadBool("SEVERAL", "NetVerify"))
+        if (Program.ConfigFile.IniReadBool("SEVERAL", "NetVerify"))
             DownloadOnlyDisc3DCover(dgvSource);
         else
             Notifications.GlobalNotifications(Resources.NoInternetConnectionFound_String1 + Environment.NewLine +
@@ -3702,7 +3745,7 @@ public partial class frmMain : Form
     private void tsmiExit_Click(object sender, EventArgs e)
     {
 
-            ClearTemp();
+        ClearTemp();
         Application.Exit();
     }
 
@@ -3722,7 +3765,7 @@ public partial class frmMain : Form
 
     private async void tsmiDatabaseUpdateGameTDB_Click(object sender, EventArgs e)
     {
-        if (CONFIG_INI_FILE.IniReadBool("SEVERAL", "NetVerify"))
+        if (Program.ConfigFile.IniReadBool("SEVERAL", "NetVerify"))
         {
             if (!Monitor.TryEnter(lvDatabase)) return;
 
@@ -3802,7 +3845,7 @@ public partial class frmMain : Form
             if (_code == 1) NetworkCheck();
             LoadConfigFile();
             Program.AdjustLanguage(Thread.CurrentThread);
-            CultureInfo.CurrentUICulture = new CultureInfo(CONFIG_INI_FILE.IniReadString("LANGUAGE", "ConfigLanguage", "en-US"));
+            CultureInfo.CurrentUICulture = new CultureInfo(Program.ConfigFile.IniReadString("LANGUAGE", "ConfigLanguage", "en-US"));
             foreach (Control c in this.Controls)
             {
                 c.Text = Resources.ResourceManager.GetString(c.Name, CultureInfo.CurrentUICulture);
@@ -4088,7 +4131,7 @@ public partial class frmMain : Form
         }
         else if (selectedRowCount > 0)
         {
-            if (CONFIG_INI_FILE.IniReadString("DOLPHIN", "DolphinFolder", "") == string.Empty)
+            if (Program.ConfigFile.IniReadString("DOLPHIN", "DolphinFolder", "") == string.Empty)
                 _ = MessageBox.Show(Resources.DolphinEmulator_Not_Found_String_1 + Environment.NewLine +
                                     Environment.NewLine +
                                     Resources.DolphinEmulator_Not_Found_String_2, Resources.MetaXml_String_ERRO,
@@ -4101,15 +4144,15 @@ public partial class frmMain : Form
                     START_INFO.CreateNoWindow = true;
                     START_INFO.UseShellExecute = true;
                     // DOLPHIN
-                    START_INFO.FileName = CONFIG_INI_FILE.IniReadString("DOLPHIN", "DolphinFolder", "");
+                    START_INFO.FileName = Program.ConfigFile.IniReadString("DOLPHIN", "DolphinFolder", "");
 
-                    var VideoDX = CONFIG_INI_FILE.IniReadBool("DOLPHIN", "DolphinDX11")
+                    var VideoDX = Program.ConfigFile.IniReadBool("DOLPHIN", "DolphinDX11")
                         ? " --video_backend=D3D"
-                        : CONFIG_INI_FILE.IniReadBool("DOLPHIN", "DolphinDX12")
+                        : Program.ConfigFile.IniReadBool("DOLPHIN", "DolphinDX12")
                             ? " --video_backend=D3D"
                             : " --video_backend=OGL";
 
-                    var AudioDSP = CONFIG_INI_FILE.IniReadBool("DOLPHIN", "DolphinLLE")
+                    var AudioDSP = Program.ConfigFile.IniReadBool("DOLPHIN", "DolphinLLE")
                         ? " --audio_emulation=LLE"
                         : " --audio_emulation=HLE";
 
@@ -4183,7 +4226,7 @@ public partial class frmMain : Form
         if (sio.File.Exists("config.ini"))
         {
             // Suporte as atualizações do canal Beta
-            if (CONFIG_INI_FILE.IniReadBool("UPDATES", "UpdateBetaChannel"))
+            if (Program.ConfigFile.IniReadBool("UPDATES", "UpdateBetaChannel"))
             {
                 AutoUpdater.Start(
                     "https://raw.githubusercontent.com/AxionDrak/GameCube-Backup-Manager/main/BetaChannel/AutoUpdaterBeta.xml");
@@ -4286,13 +4329,13 @@ public partial class frmMain : Form
                         |  $$$$$$//$$|  $$$$$$/|  $$$$$$/| $$  | $$| $$  | $$ /$$$$$$$/|  $$$$$$/| $$  | $$ /$$$$$$|  $$$$$$/| $$$$$$$$ /$$$$$$ /$$$$$$$/      
                          \______/|__/ \______/  \______/ |__/  |__/|__/  |__/|_______/  \______/ |__/  |__/|______/ \______/ |________/|______/|_______/  
 
-                                                                                                                                                                                                            
+
                                                                                        .*((((*.        .,((((*.                                                                                         
                                                                ,/(((*. .°/(((*       *(,    .,°/(/. *(/**.    ,(/        *(((/.  ,/(((*.                                                                
-  ,&@@#(((((((((((((((((((((((((((((((((((((((((((((((((((((((##.    /&#.   .//      (*        ./(%%(/,        .(,     .(*    ,%%,    *#((((((((((((((((((((((((((((((((((((((((((((((((((((((((%@@(.   
+    ,&@@#(((((((((((((((((((((((((((((((((((((((((((((((((((((((##.    /&#.   .//      (*        ./(%%(/,        .(,     .(*    ,%%,    *#((((((((((((((((((((((((((((((((((((((((((((((((((((((((%@@(.   
     .                                                          ./(((/. .*((((,       .((,.   .,(((##/((*.   ../#,       .*(((/,  ,/(((*.                                                         .      
                                                                                          ..,..°/*.   °/*..,,.                                                                                           
-    
+
                                              /$$$$$$$                               /$$$$$$                                                /$$
                                             | $$__  $$                             /$$__  $$                                              | $$
                                             | $$  \ $$  /$$$$$$  /$$    /$$       | $$  \__/  /$$$$$$   /$$$$$$  /$$   /$$ /$$$$$$$   /$$$$$$$
@@ -4395,7 +4438,7 @@ public partial class frmMain : Form
                 dgvSelected != dgvSource &&
                 dgvSelected != dgvDestination)
                 dgvSelected = dgvSource; //We haven't chosen one.. but.. clicked. Set selected dgv to source
-            //There's a way to do this in a single line.. but
+                                         //There's a way to do this in a single line.. but
             if (dgvSelected != null && dgvSelected.Rows[e.RowIndex].Cells[0].Value.ToString() == "False")
             {
                 if (dgvSelected != null) dgvSelected.Rows[e.RowIndex].Cells[0].Value = true;

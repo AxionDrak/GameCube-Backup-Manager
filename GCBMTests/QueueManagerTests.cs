@@ -15,10 +15,11 @@ namespace GCBM.Tests
         [TestMethod()]
         public void BuildInstallQueueTest()
         {
+            frmSplashScreen frmStartup = new frmSplashScreen();
+            frmMain mainForm = frmStartup.GetMainForm();
+            frmMain.LoadConfigFile();
             QueueManager qm = QueueManager.qmInstance;
-            ProgressBar pb = new ProgressBar();
-            Label lbl = new Label();
-            string[] paths = frmMain.MainFormInstance(pb,lbl).GetFilesFolder(@"D:\Nintendo\Roms\Gamecube\Animal Crossing [GAFE01]",new []{"*.iso"}, true).Result;
+            string[] paths = frmMain.GetFilesFolder(@"D:\Nintendo\Roms\Gamecube\Animal Crossing [GAFE01]",new []{"*.iso"}, true).Result;
             qm.BuildInstallQueue(paths);
             Assert.IsTrue(qm.InstallQueue.Count > 0);
         }

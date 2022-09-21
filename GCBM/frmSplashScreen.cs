@@ -8,7 +8,6 @@ namespace GCBM;
 public partial class frmSplashScreen : Form
 {
     #region Main Form
-
     public frmSplashScreen()
     {
         var configIniFile = Program.ConfigFile;
@@ -24,6 +23,21 @@ public partial class frmSplashScreen : Form
         t.Start();
     }
 
+    public frmMain GetMainForm()
+    {
+        frmMain mainForm;
+        var configIniFile = Program.ConfigFile;
+        Program.AdjustLanguage(Thread.CurrentThread);
+
+        InitializeComponent();
+        mainForm = frmMain.MainFormInstance(pbSplashScreen, lblStartSplashScreen);
+        CurrentYear();
+        Thread t = new Thread(() => Application.Run(mainForm));
+        t.SetApartmentState(ApartmentState.STA);
+        Program.AdjustLanguage(t);
+        t.Start();
+        return mainForm;
+    }
     #endregion
     
     #region Current Year
@@ -70,12 +84,9 @@ public partial class frmSplashScreen : Form
 
     #region Properties
 
-    private const string INI_FILE = "config.ini";
-    private readonly IniFile CONFIG_INI_FILE = new(INI_FILE);
+    public delegate void ProgressDelegate(int progress);
 
-    private delegate void ProgressDelegate(int progress);
-
-    private readonly ProgressDelegate del;
+    public readonly ProgressDelegate del;
 
     #endregion
 

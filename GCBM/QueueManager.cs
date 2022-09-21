@@ -64,23 +64,23 @@ namespace GCBM
         public void AssignControls()
         {
             #region Labels
-            lblAbort =qmInstance.frm.Controls["lblAbort"] as Label;
-           qmInstance.lblInstallStatusGameTitle =qmInstance.frm.Controls["lblInstallStatusGameTitle"] as Label;
-            lblInstallStatusGameIndex =qmInstance.frm.Controls["lblInstallStatusGameIndex"] as Label;
-            qmInstance.lblInstallStatusText =qmInstance.frm.Controls["qmInstance.lblInstallStatusText"] as Label;
-           qmInstance.lblInstallStatusPercent =qmInstance.frm.Controls["lblInstallStatusPercent"] as Label;
-            //lblInstallStatusTime =qmInstance.frm.Controls["lblInstallStatusTime"] as Label;
-            //lblInstallStatusETA =qmInstance.frm.Controls["lblInstallStatusETA"] as Label;
-            //lblInstallStatusSpeed =qmInstance.frm.Controls["lblInstallStatusSpeed"] as Label;
+            lblAbort =frmMain.StatusGroupBox.Controls["lblAbort"] as Label;
+           lblInstallStatusGameTitle =frmMain.StatusGroupBox.Controls["lblInstallStatusGameTitle"] as Label;
+            lblInstallStatusGameIndex =frmMain.StatusGroupBox.Controls["lblInstallStatusGameIndex"] as Label;
+            lblInstallStatusText =frmMain.StatusGroupBox.Controls["qmInstance.lblInstallStatusText"] as Label;
+           lblInstallStatusPercent =frmMain.StatusGroupBox.Controls["lblInstallStatusPercent"] as Label;
+            //lblInstallStatusTime =frmMain.StatusGroupBox.Controls["lblInstallStatusTime"] as Label;
+            //lblInstallStatusETA =frmMain.StatusGroupBox.Controls["lblInstallStatusETA"] as Label;
+            //lblInstallStatusSpeed =frmMain.StatusGroupBox.Controls["lblInstallStatusSpeed"] as Label;
             #endregion
 
             #region Buttons
 
-            btnAbort =qmInstance.frm.Controls["btnAbort"] as Button;
+            btnAbort =frmMain.StatusGroupBox.Controls["btnAbort"] as Button;
             #endregion
 
             #region ProgressBars
-           qmInstance.pbInstallStatus =qmInstance.frm.Controls["pbInstallStatus"] as ProgressBar;
+            pbInstallStatus =frmMain.StatusGroupBox.Controls["pbInstallStatus"] as ProgressBar;
             #endregion
         }
 
@@ -312,7 +312,7 @@ namespace GCBM
 
         private async static void StartScrub(DataGridView dgv, int installType, GroupBox controlsBox)
         {
-            qmInstance.frm.DisableOptionsGame((DataGridView)qmInstance.frm.Controls["dgvDestination"]);
+            qmInstance.frm.DisableOptionsGame((DataGridView)frmMain.StatusGroupBox.Controls["dgvDestination"]);
            qmInstance.btnAbort.Visible = true;
            qmInstance.lblAbort.Visible = true;
             intQueuePos = 0;
@@ -741,7 +741,9 @@ namespace GCBM
         private static void InstallGameExactCopy(string path)
         {
             //Make sure pbCopy is Continuous
-            qmInstance.pbInstallStatus.Style = ProgressBarStyle.Continuous;
+            if(qmInstance.pbInstallStatus==null)
+                qmInstance.AssignControls();
+                qmInstance.pbInstallStatus.Style = ProgressBarStyle.Continuous;
             qmInstance.btnAbort.Visible = true;
             qmInstance.lblAbort.Visible = true;
             if (intQueuePos <= qmInstance.InstallQueue.Count - 1 && !blnAbort)
@@ -858,8 +860,8 @@ namespace GCBM
                     }
                     catch (Exception ex)
                     {
-                        ((TextBox)qmInstance.frm.Controls["tbLog"]).AppendText("[" + qmInstance.frm.DateString() + "]" + Resources.Error + ex.Message + Environment.NewLine);
-                        ((TextBox)qmInstance.frm.Controls["tbLog"]).AppendText(ex.StackTrace);
+                        ((TextBox)frmMain.StatusGroupBox.Controls["tbLog"]).AppendText("[" + qmInstance.frm.DateString() + "]" + Resources.Error + ex.Message + Environment.NewLine);
+                        ((TextBox)frmMain.StatusGroupBox.Controls["tbLog"]).AppendText(ex.StackTrace);
                         Notifications.GlobalNotifications(ex.Message, ToolTipIcon.Error);
                     }
             }
@@ -894,7 +896,7 @@ namespace GCBM
                     _source.CopyTo(_destination, x => qmInstance.pbInstallStatus.BeginInvoke(new Action(() =>
                     {
                         //DisableOptionsGame((DataGridView)frmMain.ActiveForm.Controls["dgvSource"]);
-                        qmInstance.frm.Controls["dgvSource"].Enabled = false;
+                        frmMain.StatusGroupBox.Controls["dgvSource"].Enabled = false;
                         qmInstance.pbInstallStatus.Visible = true;
                         qmInstance.lblInstallStatusGameTitle.Visible = true;
                         qmInstance.lblInstallStatusPercent.Visible = true;
@@ -930,15 +932,15 @@ namespace GCBM
                         }
                         catch (Exception ex)
                         {
-                            ((TextBox)qmInstance.frm.Controls["tbLog"]).AppendText("[" + DateTime.Now + "] Error Installing: " + Environment.NewLine +
+                            ((TextBox)frmMain.StatusGroupBox.Controls["tbLog"]).AppendText("[" + DateTime.Now + "] Error Installing: " + Environment.NewLine +
                                              ex.Message + Environment.NewLine);
-                            ((TextBox)qmInstance.frm.Controls["tbLog"]).AppendText(ex.StackTrace);
+                            ((TextBox)frmMain.StatusGroupBox.Controls["tbLog"]).AppendText(ex.StackTrace);
                         }
                     }
                     else
                     {
                        qmInstance.frm.EnableOptionsGameList();
-                       qmInstance.frm.Controls["dgvSource"].Enabled = true;
+                       frmMain.StatusGroupBox.Controls["dgvSource"].Enabled = true;
                     }
                 })));
             }
@@ -981,14 +983,14 @@ namespace GCBM
                         }
                         catch (Exception ex)
                         {
-                            ((TextBox)qmInstance.frm.Controls["tbLog"]).AppendText("[" + DateTime.Now + "] Error Installing: " + Environment.NewLine +
+                            ((TextBox)frmMain.StatusGroupBox.Controls["tbLog"]).AppendText("[" + DateTime.Now + "] Error Installing: " + Environment.NewLine +
                                              ex.Message + Environment.NewLine);
                         }
                     }
                     else
                     {
                        qmInstance.frm.EnableOptionsGameList();
-                        ((DataGridView)qmInstance.frm.Controls["dgvSource"]).Enabled = true;
+                        ((DataGridView)frmMain.StatusGroupBox.Controls["dgvSource"]).Enabled = true;
                     }
                 })));
             }
