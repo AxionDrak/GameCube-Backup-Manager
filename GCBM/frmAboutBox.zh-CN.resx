@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="$this.Text" xml:space="preserve">
+    <value>关于...</value>
+  </data>
+  <data name="labelCompanyName.Text" xml:space="preserve">
+    <value>公司名称</value>
+  </data>
+  <data name="labelCopyright.Text" xml:space="preserve">
+    <value>版权所有</value>
+  </data>
+  <data name="lblAboutCurrentLanguage.Text" xml:space="preserve">
+    <value>目前语言：</value>
+  </data>
+  <data name="textBoxDescription.Text" xml:space="preserve">
+    <value>描述</value>
+  </data>
+  <data name="tbDonate.Text" xml:space="preserve">
+    <value>捐赠</value>
+  </data>
+  <data name="lblAboutProgramName.Text" xml:space="preserve">
+    <value>GameCube Backup Manager</value>
+  </data>
+  <data name="rtbAboutDonations.Text" xml:space="preserve">
+    <value>GameCube Backup Manager 是自由软件。
+
+我们花了很多精力才将本软件打造成现有的稳定并功能齐全的版本，并将继续努力加入更多功能。如果本软件帮助到你，请考虑捐赠几美元，对我的帮助将会很大！
+
+如上面链结无法使用，你也可以将捐款使用 PayPal 发送到 laetemn@gmail.com。
+
+请别忘记在捐助后用电邮告诉我（请使用英文或葡萄牙文），我将会好好的感谢你。</value>
+  </data>
+  <data name="rtbAboutGameTDB.Text" xml:space="preserve">
+    <value>GameTDB 是一个协作游戏数据库，任何人都可以贡献并在任何游戏项目中使用。
+
+在网站上，您可以浏览数据库、下载数据库并通过添加游戏信息和上传封面来为数据库做出贡献。
+
+在您的 Wii 或电脑上，您可以使用 GameTDB 运行以下操作：
+
+- 为您的游戏显示适当的标题（“Wii Sports”而不是“SPORTS PACK FOR REVOLUTION”），而无需重新命名。
+
+- 显示与您所在地区相匹配的封面。
+
+- 显示有关您游戏的额外信息（玩家、在线模式、配件、发行商、开发商……）。
+
+- 如果您有大量游戏，您可以对游戏进行排序，例如，按玩家数量快速对您的多人游戏进行分组。
+
+- 按发行商、开发商搜索符合特定评级或在特定年份发布的 GameCube 和 Wii 游戏。</value>
+  </data>
+  <data name="labelProductName.Text" xml:space="preserve">
+    <value>产品名称</value>
+  </data>
+  <data name="tbThanks.Text" xml:space="preserve">
+    <value>感谢</value>
+  </data>
+  <data name="rtbAboutThanks.Text" xml:space="preserve">
+    <value>感谢以下人员在开发过程中的测试、翻译和帮助：
+
+- Valclark Junior - 测试/用户体验
+- Dolphin 模拟器团队 - GameCube / Wii / RVZ 信息
+- Wiim
+- WIT (Wiimms ISO Tools)
+- Wii Brew
+- DDinghoya - 官方韩语翻译
+
+以及参与游戏典藏社区的每个人。</value>
+  </data>
+  <data name="tbTranslator.Text" xml:space="preserve">
+    <value>翻译</value>
+  </data>
+  <data name="lblAboutTranslator.Text" xml:space="preserve">
+    <value>翻译者：</value>
+  </data>
+  <data name="labelVersion.Text" xml:space="preserve">
+    <value>版本</value>
+  </data>
+</root>

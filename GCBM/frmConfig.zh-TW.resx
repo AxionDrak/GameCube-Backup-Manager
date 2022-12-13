@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="$this.Text" xml:space="preserve">
+    <value>設定</value>
+  </data>
+  <data name="btnApply.Text" xml:space="preserve">
+    <value>套用</value>
+  </data>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="btnRestore.Text" xml:space="preserve">
+    <value>還原到預設設定</value>
+  </data>
+  <data name="cbAdjustNamingStyle.Items" xml:space="preserve">
+    <value>標題 [遊戲編號]</value>
+  </data>
+  <data name="cbAdjustNamingStyle.Items1" xml:space="preserve">
+    <value>[遊戲編號]</value>
+  </data>
+  <data name="cbVerificationInterval.Items4" xml:space="preserve">
+    <value>1 小時</value>
+  </data>
+  <data name="cbVerificationInterval.Items1" xml:space="preserve">
+    <value>10 分鐘</value>
+  </data>
+  <data name="cbVerificationInterval.Items2" xml:space="preserve">
+    <value>15 分鐘</value>
+  </data>
+  <data name="cbVerificationInterval.Items5" xml:space="preserve">
+    <value>2 小時</value>
+  </data>
+  <data name="cbVerificationInterval.Items6" xml:space="preserve">
+    <value>3 小時</value>
+  </data>
+  <data name="cbVerificationInterval.Items3" xml:space="preserve">
+    <value>30 分鐘</value>
+  </data>
+  <data name="cbVerificationInterval.Items7" xml:space="preserve">
+    <value>4 小時</value>
+  </data>
+  <data name="cbVerificationInterval.Items" xml:space="preserve">
+    <value>5 分鐘</value>
+  </data>
+  <data name="chkGeneralExtract7z.Text" xml:space="preserve">
+    <value>7zip 檔案 (*.7z;*.7zip)</value>
+  </data>
+  <data name="grbGeneralPartitions.Text" xml:space="preserve">
+    <value>更改遊戲目錄</value>
+  </data>
+  <data name="lblAlignment.Text" xml:space="preserve">
+    <value>對齊：</value>
+  </data>
+  <data name="chkMultipleInstances.Text" xml:space="preserve">
+    <value>允許同時開啟多個本軟件視窗</value>
+  </data>
+  <data name="grbDolphinAudio.Text" xml:space="preserve">
+    <value>聲音</value>
+  </data>
+  <data name="cbScrubAlign.Items" xml:space="preserve">
+    <value>自動選擇</value>
+  </data>
+  <data name="cbGeneralFileSize.Items" xml:space="preserve">
+    <value>自動選擇</value>
+  </data>
+  <data name="chkGeneralExtractBZip2.Text" xml:space="preserve">
+    <value>BZip2 檔案 (*.bz;*.bzip2)</value>
+  </data>
+  <data name="chkGeneralMD5.Text" xml:space="preserve">
+    <value>傳輸時計算 MD5 雜湊</value>
+  </data>
+  <data name="chkUpdateVerifyStart.Text" xml:space="preserve">
+    <value>打開軟體時檢查更新</value>
+  </data>
+  <data name="chkNetVerify.Text" xml:space="preserve">
+    <value>打開軟體時檢查網際網路連線</value>
+  </data>
+  <data name="lblUpdateInterval.Text" xml:space="preserve">
+    <value>檢查頻率：</value>
+  </data>
+  <data name="chkGeneralScrubFlushSD.Text" xml:space="preserve">
+    <value>清除 SD 卡的檔案緩衝以減少退出裝置所需的時間</value>
+  </data>
+  <data name="lblComments.Text" xml:space="preserve">
+    <value>簡介：</value>
+  </data>
+  <data name="tabCoverFull.Text" xml:space="preserve">
+    <value>完整</value>
+  </data>
+  <data name="cbLevelLog.Items2" xml:space="preserve">
+    <value>完整</value>
+  </data>
+  <data name="grbDolphin.Text" xml:space="preserve">
+    <value>模擬器設定</value>
+  </data>
+  <data name="label17.Text" xml:space="preserve">
+    <value>從來源複製一或多個檔案至目的地</value>
+  </data>
+  <data name="tabSettingsCovers.Text" xml:space="preserve">
+    <value>封面</value>
+  </data>
+  <data name="grpTitlesCoverFolder.Text" xml:space="preserve">
+    <value>封面資料夾（暫存 -&gt; 來源）</value>
+  </data>
+  <data name="fbd.Description" xml:space="preserve">
+    <value>建立或選擇資料夾：</value>
+  </data>
+  <data name="chkCoverSynchronizeDelete.Text" xml:space="preserve">
+    <value>刪除不在列表中的遊戲封面</value>
+  </data>
+  <data name="chkScreensaver.Text" xml:space="preserve">
+    <value>停用熒幕保護程式</value>
+  </data>
+  <data name="tabCoverDisc.Text" xml:space="preserve">
+    <value>光碟</value>
+  </data>
+  <data name="ofdDolphin.Filter" xml:space="preserve">
+    <value>Dolphin Emulator|dolphin.exe</value>
+  </data>
+  <data name="rbDSPHLE.Text" xml:space="preserve">
+    <value>DSP HLE (預設)</value>
+  </data>
+  <data name="cbTitleLanguage.Items5" xml:space="preserve">
+    <value>荷蘭文</value>
+  </data>
+  <data name="chkNotify.Text" xml:space="preserve">
+    <value>啟用工作列通知（預設通知將正常顯示）</value>
+  </data>
+  <data name="chkCoverEnableTransfer.Text" xml:space="preserve">
+    <value>啟用裝置間傳輸封面</value>
+  </data>
+  <data name="cbTitleLanguage.Items" xml:space="preserve">
+    <value>英文</value>
+  </data>
+  <data name="lblGeneralExtract.Text" xml:space="preserve">
+    <value>當需要時解壓縮。</value>
+  </data>
+  <data name="grbTitleFileLocation.Text" xml:space="preserve">
+    <value>檔案位置</value>
+  </data>
+  <data name="grbGeneralFiles.Text" xml:space="preserve">
+    <value>檔案</value>
+  </data>
+  <data name="grpNomenclatureFolderFormat.Text" xml:space="preserve">
+    <value>資料夾格式</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>資料夾位置：</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>資料夾位置：</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>資料夾位置：</value>
+  </data>
+  <data name="label35.Text" xml:space="preserve">
+    <value>資料夾位置：</value>
+  </data>
+  <data name="lblCommentsScrubCopy.Text" xml:space="preserve">
+    <value>使用「輕量化」時將會使用預設的「名稱 [遊戲編碼]」命名方式，並將會使用遊戲開發者設定的內部遊戲名稱。除了少數例外情況外，光碟 1 和 2 將會分開資料夾存放。若軟件能透過遊戲名稱偵測到兩光碟遊戲，光碟 1 和 2 將會存放在同一資料夾。</value>
+  </data>
+  <data name="lblFormat.Text" xml:space="preserve">
+    <value>格式：</value>
+  </data>
+  <data name="cbTitleLanguage.Items1" xml:space="preserve">
+    <value>法文</value>
+  </data>
+  <data name="label28.Text" xml:space="preserve">
+    <value>FST (FileSystem Table) 是將遊戲光碟檔案系統的所有實體及虛擬檔案存放在一個資料夾。Nintendont 使用 FST 檔案建立一個內部虛擬 ISO 檔案並從該檔案載入遊戲。</value>
+  </data>
+  <data name="tabSettingsTransfer.Text" xml:space="preserve">
+    <value>遊戲傳輸</value>
+  </data>
+  <data name="tabSettingsGeneral.Text" xml:space="preserve">
+    <value>一般</value>
+  </data>
+  <data name="cbTitleLanguage.Items2" xml:space="preserve">
+    <value>德文</value>
+  </data>
+  <data name="cbGeneralFileSize.Items3" xml:space="preserve">
+    <value>GB</value>
+  </data>
+  <data name="cbLevelLog.Items" xml:space="preserve">
+    <value>資訊</value>
+  </data>
+  <data name="cbTitleLanguage.Items4" xml:space="preserve">
+    <value>法文</value>
+  </data>
+  <data name="cbTitleLanguage.Items7" xml:space="preserve">
+    <value>日文</value>
+  </data>
+  <data name="rbGeneralDiscClean.Text" xml:space="preserve">
+    <value>將光碟 1 和光碟 2 的資料夾分開（預設）</value>
+  </data>
+  <data name="rbGeneralDiscDelete.Text" xml:space="preserve">
+    <value>只保留光碟 1 資料夾並刪除光碟 2 資料夾（實驗性）</value>
+  </data>
+  <data name="cbTitleLanguage.Items9" xml:space="preserve">
+    <value>韓文</value>
+  </data>
+  <data name="lblLanguage.Text" xml:space="preserve">
+    <value>語言：</value>
+  </data>
+  <data name="tabSettingsLanguage.Text" xml:space="preserve">
+    <value>語言</value>
+  </data>
+  <data name="chkLoadDatabase.Text" xml:space="preserve">
+    <value>啟動軟體時載入資料庫（增加啟動時間）</value>
+  </data>
+  <data name="cbGeneralFileSize.Items2" xml:space="preserve">
+    <value>MB</value>
+  </data>
+  <data name="grbTitleDiverse.Text" xml:space="preserve">
+    <value>雜項（軟體重新啟動後生效）</value>
+  </data>
+  <data name="lblNomenclature.Text" xml:space="preserve">
+    <value>命名格式：</value>
+  </data>
+  <data name="tabSettingsNomenclature.Text" xml:space="preserve">
+    <value>命名</value>
+  </data>
+  <data name="lblTimeInterval.Text" xml:space="preserve">
+    <value>留意：更改時間間隔將會在程式重新啟動後生效。</value>
+  </data>
+  <data name="lblLanguageComments.Text" xml:space="preserve">
+    <value>留意：更改語言設定將會在程式重新啟動後生效。</value>
+  </data>
+  <data name="chkGeneralExtractNwb.Text" xml:space="preserve">
+    <value>NWB 檔案 (*.nwb)</value>
+  </data>
+  <data name="lblPass.Text" xml:space="preserve">
+    <value>密碼：</value>
+  </data>
+  <data name="grbDolphinFolder.Text" xml:space="preserve">
+    <value>模擬器路徑</value>
+  </data>
+  <data name="cbTitleLanguage.Items6" xml:space="preserve">
+    <value>葡萄牙文</value>
+  </data>
+  <data name="lblServerProxy.Text" xml:space="preserve">
+    <value>代理伺服器：</value>
+  </data>
+  <data name="chkGeneralExtractRar.Text" xml:space="preserve">
+    <value>RAR 檔案 (*.rar)</value>
+  </data>
+  <data name="tabSettingsLog.Text" xml:space="preserve">
+    <value>記錄檔</value>
+  </data>
+  <data name="grbLog.Text" xml:space="preserve">
+    <value>記錄檔</value>
+  </data>
+  <data name="label31.Text" xml:space="preserve">
+    <value>將不需要的垃圾資料以 0xff 或 0x00 填零處理以在不影響遊戲資料完整性的前提下減少檔案大小。</value>
+  </data>
+  <data name="cbTitleLanguage.Items8" xml:space="preserve">
+    <value>俄文</value>
+  </data>
+  <data name="chkGeneralRecursiva.Text" xml:space="preserve">
+    <value>搜尋子資料夾（只適用於「檔案（來源）」視窗）</value>
+  </data>
+  <data name="grbLanguage.Text" xml:space="preserve">
+    <value>選擇預設語言：</value>
+  </data>
+  <data name="grbGeneralFileSize.Text" xml:space="preserve">
+    <value>顯示大小</value>
+  </data>
+  <data name="label20.Text" xml:space="preserve">
+    <value>與 XCopy 類似，但檔案內的垃圾資料將被清理。原有檔案大小將不變。垃圾資料將被移除並確保其他資料的完整性。</value>
+  </data>
+  <data name="cbTitleLanguage.Items11" xml:space="preserve">
+    <value>簡體中文</value>
+  </data>
+  <data name="cbTitleLanguage.Items3" xml:space="preserve">
+    <value>西班牙文</value>
+  </data>
+  <data name="chkGeneralExtractSplitFile.Text" xml:space="preserve">
+    <value>分割檔案 (*.001)</value>
+  </data>
+  <data name="chkStartWindowMaximized.Text" xml:space="preserve">
+    <value>啟動軟體時最小化視窗</value>
+  </data>
+  <data name="chkUpdateBetaChannel.Text" xml:space="preserve">
+    <value>接收測試版更新</value>
+  </data>
+  <data name="grpCoversSynchronize.Text" xml:space="preserve">
+    <value>同步</value>
+  </data>
+  <data name="grbGeneralTemporaryFolder.Text" xml:space="preserve">
+    <value>暫存資料夾</value>
+  </data>
+  <data name="lblCommentsExactCopy.Text" xml:space="preserve">
+    <value>本命名方式目前只適用於 1:1 安裝的遊戲，並可使用遊戲內部名稱或 wiitdb.xml 的正式名稱（可在「遊戲名稱」標籤頁設定）。在 1:1 安裝模式下，光碟 1 和 2 將會存放在同一資料夾。</value>
+  </data>
+  <data name="grbTitleLanguage.Text" xml:space="preserve">
+    <value>遊戲語言</value>
+  </data>
+  <data name="tabSettingsTitle.Text" xml:space="preserve">
+    <value>遊戲名稱</value>
+  </data>
+  <data name="chkGameTitleCustom.Text" xml:space="preserve">
+    <value>使用自訂標題 (custom-titles.txt)</value>
+  </data>
+  <data name="chkGameTitle.Text" xml:space="preserve">
+    <value>使用 GameTDB (titles.txt)</value>
+  </data>
+  <data name="cbTitleLanguage.Items10" xml:space="preserve">
+    <value>正體中文</value>
+  </data>
+  <data name="grbTransferSystem.Text" xml:space="preserve">
+    <value>傳輸方式</value>
+  </data>
+  <data name="grbUpdate.Text" xml:space="preserve">
+    <value>更新設定</value>
+  </data>
+  <data name="tabSettingsUpdates.Text" xml:space="preserve">
+    <value>更新</value>
+  </data>
+  <data name="grbCoverTransfer.Text" xml:space="preserve">
+    <value>USB 載入器設定（傳輸封面 -&gt; 目的地）</value>
+  </data>
+  <data name="rbGameInternalName.Text" xml:space="preserve">
+    <value>使用內部遊戲名稱（支援約 75%）</value>
+  </data>
+  <data name="chkUpdateServerProxy.Text" xml:space="preserve">
+    <value>使用代理伺服器</value>
+  </data>
+  <data name="chkCoverRecursiveSearch.Text" xml:space="preserve">
+    <value>搜尋所有地區的封面</value>
+  </data>
+  <data name="rbGameXmlName.Text" xml:space="preserve">
+    <value>使用遊戲正式名稱（建議使用！需要 wiitdb.xml 檔案）</value>
+  </data>
+  <data name="chkGeneralTemporaryBuffer.Text" xml:space="preserve">
+    <value>使用暫存記憶體進行傳輸</value>
+  </data>
+  <data name="lblUser.Text" xml:space="preserve">
+    <value>使用者：</value>
+  </data>
+  <data name="tabSettingsSeveral.Text" xml:space="preserve">
+    <value>雜項</value>
+  </data>
+  <data name="grbGeneralDiverse.Text" xml:space="preserve">
+    <value>雜項</value>
+  </data>
+  <data name="chkGeneralSHA1.Text" xml:space="preserve">
+    <value>傳輸時檢查 SHA-1 雜湊</value>
+  </data>
+  <data name="grbDolphinVideo.Text" xml:space="preserve">
+    <value>畫面</value>
+  </data>
+  <data name="rbTransferSystemXCopy.Text" xml:space="preserve">
+    <value>XCopy（預設）</value>
+  </data>
+  <data name="chkGeneralExtractZip.Text" xml:space="preserve">
+    <value>Zip 檔案 (*.zip)</value>
+  </data>
+</root>
