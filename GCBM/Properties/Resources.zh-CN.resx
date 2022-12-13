@@ -1,0 +1,558 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AboutBox_String1" xml:space="preserve">
+    <value>关于 {0}</value>
+  </data>
+  <data name="AboutBox_String2" xml:space="preserve">
+    <value>版本 {0}</value>
+  </data>
+  <data name="AboutCurrentLanguage" xml:space="preserve">
+    <value>目前语言：</value>
+  </data>
+  <data name="AboutTranslator" xml:space="preserve">
+    <value>翻译者：</value>
+  </data>
+  <data name="AboutTranslatorContact" xml:space="preserve">
+    <value>联系方式：</value>
+  </data>
+  <data name="AboutVersion" xml:space="preserve">
+    <value>版本 </value>
+  </data>
+  <data name="AllFilesSuccessfullyDeleted" xml:space="preserve">
+    <value>已成功删除所有文件！</value>
+  </data>
+  <data name="AskDownloadWiiTDB" xml:space="preserve">
+    <value>找不到 WiiTDB.zip，是否下载？</value>
+  </data>
+  <data name="AssemblyInfo_Description" xml:space="preserve">
+    <value>Nintendo GameCube ISO 及 GCM 文件管理器。</value>
+  </data>
+  <data name="Attention" xml:space="preserve">
+    <value>注意！</value>
+  </data>
+  <data name="CannotOpenTwoInstances" xml:space="preserve">
+    <value>本软件不能打开两次！</value>
+  </data>
+  <data name="CantOpenImage" xml:space="preserve">
+    <value>[错误] 无法打开映像文件。</value>
+  </data>
+  <data name="ClearLog" xml:space="preserve">
+    <value>确定要清除记录文件？</value>
+  </data>
+  <data name="ClearLogNotFound" xml:space="preserve">
+    <value>没有可清除的记录文件！</value>
+  </data>
+  <data name="ClearTemp_String1" xml:space="preserve">
+    <value> [信息] 无法清除暂存文件夹！</value>
+  </data>
+  <data name="ClearTemp_String2" xml:space="preserve">
+    <value>无法清除暂存文件夹！</value>
+  </data>
+  <data name="ConvertElfDol_String1" xml:space="preserve">
+    <value>&gt;&gt; 状态：运作中...</value>
+  </data>
+  <data name="ConvertElfDol_String2" xml:space="preserve">
+    <value>&gt;&gt; 状态：没有回应！</value>
+  </data>
+  <data name="ConvertElfDol_String3" xml:space="preserve">
+    <value>&gt;&gt; 状态：已完成！</value>
+  </data>
+  <data name="ConvertElfDol_String4" xml:space="preserve">
+    <value>&gt;&gt; 状态 [错误]：不明文件格式！</value>
+  </data>
+  <data name="CopyTask_String1" xml:space="preserve">
+    <value>正在传输文件...</value>
+  </data>
+  <data name="CopyTask_String2" xml:space="preserve">
+    <value>正在安装游戏... </value>
+  </data>
+  <data name="CopyTask_String3" xml:space="preserve">
+    <value>传输完成！</value>
+  </data>
+  <data name="CopyTask_String4" xml:space="preserve">
+    <value>已安装游戏！</value>
+  </data>
+  <data name="CopyTask_String5" xml:space="preserve">
+    <value>100% 完成！</value>
+  </data>
+  <data name="CopyTask_String6" xml:space="preserve">
+    <value>传输完成！</value>
+  </data>
+  <data name="CreateGamesFolder" xml:space="preserve">
+    <value>没有 GAMES 文件夹，是否创建？</value>
+  </data>
+  <data name="CreateGamesFolderNow" xml:space="preserve">
+    <value>此设备有效，但找不到 GAMES 文件夹，是否创建？</value>
+  </data>
+  <data name="DestinyDrive_AvailableSpace" xml:space="preserve">
+    <value>可用空间：</value>
+  </data>
+  <data name="DestinyDrive_TotalSpace" xml:space="preserve">
+    <value>大小总计：</value>
+  </data>
+  <data name="DialogResultDeleteGame_ReallyDeleteFile_String1" xml:space="preserve">
+    <value>确定要删除文件？</value>
+  </data>
+  <data name="DialogResultDeleteGame_ReallyDeleteFile_String2" xml:space="preserve">
+    <value>运行此操作后将无法复原文件！</value>
+  </data>
+  <data name="DisplayFilesSelected_FileName" xml:space="preserve">
+    <value>文件名称</value>
+  </data>
+  <data name="DisplayFilesSelected_FilePath" xml:space="preserve">
+    <value>文件路径</value>
+  </data>
+  <data name="DisplayFilesSelected_Found_String1" xml:space="preserve">
+    <value> [信息] 找到 </value>
+  </data>
+  <data name="DisplayFilesSelected_Found_String2" xml:space="preserve">
+    <value> 个有扩展名的文件。</value>
+  </data>
+  <data name="DisplayFilesSelected_Found_String3" xml:space="preserve">
+    <value>找到 </value>
+  </data>
+  <data name="DisplayFilesSelected_Size" xml:space="preserve">
+    <value>大小</value>
+  </data>
+  <data name="DolphinEmulator_Not_Found_String_1" xml:space="preserve">
+    <value>找不到模拟器！</value>
+  </data>
+  <data name="DolphinEmulator_Not_Found_String_2" xml:space="preserve">
+    <value>请设置 Dolphin 模拟器运行文件 (dolphin.exe) 的路径。</value>
+  </data>
+  <data name="Download3DCover" xml:space="preserve">
+    <value> [信息] 正在下载 3D 封面... </value>
+  </data>
+  <data name="Download3DCoverError" xml:space="preserve">
+    <value> [信息] 下载 3D 封面失败！</value>
+  </data>
+  <data name="DownloadDiscCover" xml:space="preserve">
+    <value> [信息] 正在下载光盘封面... </value>
+  </data>
+  <data name="DownloadDiscCoverError" xml:space="preserve">
+    <value>[信息] 下载光盘封面失败！</value>
+  </data>
+  <data name="DownloadingWiiTDB_String1" xml:space="preserve">
+    <value>&gt;&gt; 正在下载 WiiTDB.zip ... </value>
+  </data>
+  <data name="DownloadingWiiTDB_String2" xml:space="preserve">
+    <value>&gt;&gt; 正在解压缩 WiiTDB.xml ...</value>
+  </data>
+  <data name="DownloadingWiiTDB_String3" xml:space="preserve">
+    <value>&gt;&gt; 完成！</value>
+  </data>
+  <data name="EmptyGamesList" xml:space="preserve">
+    <value>空白游戏列表！</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value> [错误] </value>
+  </data>
+  <data name="FilesDestinationUnit" xml:space="preserve">
+    <value>文件（目的地） - 设备（</value>
+  </data>
+  <data name="FilterDatabase_String1" xml:space="preserve">
+    <value>空白数据库列表！</value>
+  </data>
+  <data name="FilterDatabase_String2" xml:space="preserve">
+    <value>如果 wiitdb.xml 已正确安装，请检查软件设置并作出相应调整。</value>
+  </data>
+  <data name="FoundIsoGcmFiles" xml:space="preserve">
+    <value> [信息] 找到的 ISO/GCM 文件：</value>
+  </data>
+  <data name="frmMain_Resize_Program" xml:space="preserve">
+    <value>软件正在背景运行！</value>
+  </data>
+  <data name="GameListExportedCSV" xml:space="preserve">
+    <value>已导出 CSV 格式的游戏列表！</value>
+  </data>
+  <data name="GameListExportedTXT" xml:space="preserve">
+    <value>已导出 TXT 格式的游戏列表！</value>
+  </data>
+  <data name="GetAllDrives_Inactive" xml:space="preserve">
+    <value>已停用</value>
+  </data>
+  <data name="HashesAreNotSame" xml:space="preserve">
+    <value> [信息] 哈希值不同！</value>
+  </data>
+  <data name="Info" xml:space="preserve">
+    <value> [信息] </value>
+  </data>
+  <data name="Information" xml:space="preserve">
+    <value>信息</value>
+  </data>
+  <data name="InvalidDrive_String1" xml:space="preserve">
+    <value>本设备无效！</value>
+  </data>
+  <data name="InvalidDrive_String2" xml:space="preserve">
+    <value>侦测到的文件系统为：</value>
+  </data>
+  <data name="InvalidDrive_String3" xml:space="preserve">
+    <value>Nintendont 只支持 FAT32 和 exFAT 文件系统。</value>
+  </data>
+  <data name="InvalidDrive_String4" xml:space="preserve">
+    <value>为保证与 GameCube 游戏、Wii 游戏、ROM、软件、模拟器等的最大兼容性，强烈建议使用 FAT32 文件系统并使用 32K 的配置单位！</value>
+  </data>
+  <data name="InvalidDrive_String5" xml:space="preserve">
+    <value>不过，你可以使用 </value>
+  </data>
+  <data name="InvalidDrive_String6" xml:space="preserve">
+    <value> 设备为 ISO/GCM 文件备份之用。</value>
+  </data>
+  <data name="ListHash_String2" xml:space="preserve">
+    <value>哈希：</value>
+  </data>
+  <data name="ListHash_String1" xml:space="preserve">
+    <value>本文件的 </value>
+  </data>
+  <data name="LoadDatabase_Developer" xml:space="preserve">
+    <value>开发者</value>
+  </data>
+  <data name="LoadDatabase_GameTitle" xml:space="preserve">
+    <value>游戏名称</value>
+  </data>
+  <data name="LoadDatabase_IDGameCode" xml:space="preserve">
+    <value>ID （游戏编号）</value>
+  </data>
+  <data name="LoadDatabase_Region" xml:space="preserve">
+    <value>地区</value>
+  </data>
+  <data name="LoadDatabase_Type" xml:space="preserve">
+    <value>种类</value>
+  </data>
+  <data name="LoadISOInfo_String1" xml:space="preserve">
+    <value>主光盘：（光盘 1）</value>
+  </data>
+  <data name="LoadISOInfo_String2" xml:space="preserve">
+    <value>副光盘：（光盘 2）</value>
+  </data>
+  <data name="MetaXml_String_ERRO" xml:space="preserve">
+    <value>错误</value>
+  </data>
+  <data name="MetaXml_String1" xml:space="preserve">
+    <value>无效或损毁的 meta.xml 文件！</value>
+  </data>
+  <data name="MetaXml_String2" xml:space="preserve">
+    <value>数据保存成功！</value>
+  </data>
+  <data name="NetworkCheck_NetStatus_Offline" xml:space="preserve">
+    <value>已停用互联网连接！</value>
+  </data>
+  <data name="NetworkCheck_NetStatus_Online" xml:space="preserve">
+    <value>已连上互联网！</value>
+  </data>
+  <data name="NoInternetConnectionFound_String1" xml:space="preserve">
+    <value>找不到互联网连接！</value>
+  </data>
+  <data name="NoInternetConnectionFound_String2" xml:space="preserve">
+    <value>请确定在程序设置中已激活连接。</value>
+  </data>
+  <data name="Notice" xml:space="preserve">
+    <value>通知</value>
+  </data>
+  <data name="NotNintendoGameCubeFile" xml:space="preserve">
+    <value> [错误] 不是 Nintendo GameCube 文件。</value>
+  </data>
+  <data name="OverwriteWiiTDBBody" xml:space="preserve">
+    <value>是否取代原有的 WiiTDB.xml 文件？</value>
+  </data>
+  <data name="OverwriteWiiTDBCaption" xml:space="preserve">
+    <value>取代 WiiTDB.xml？</value>
+  </data>
+  <data name="PluginDisplay_String1" xml:space="preserve">
+    <value>是否确定要删除本插件程序？</value>
+  </data>
+  <data name="PluginDisplay_String2" xml:space="preserve">
+    <value>卸载</value>
+  </data>
+  <data name="ProcessTaskDelay_String1" xml:space="preserve">
+    <value>找不到 wiitdb.xml 文件！</value>
+  </data>
+  <data name="ProcessTaskDelay_String2" xml:space="preserve">
+    <value>请下载此文件！</value>
+  </data>
+  <data name="ProcessTaskDelay_String3" xml:space="preserve">
+    <value>如果不下载此文件，一些需要本文件的功能将无法运作！</value>
+  </data>
+  <data name="ProcessTaskDelay_String4" xml:space="preserve">
+    <value>请到“数据库”分页，然后选择“工具”-&gt;“GameTDB 更新”以下载此文件（需要网络连接）</value>
+  </data>
+  <data name="ReadImage_String1" xml:space="preserve">
+    <value>此映像档太小！</value>
+  </data>
+  <data name="ReadImage_String2" xml:space="preserve">
+    <value>找到多个 FST，请联系开发者。</value>
+  </data>
+  <data name="ReadImage_String3" xml:space="preserve">
+    <value>找不到文件 '{0}'！</value>
+  </data>
+  <data name="ReadImage_String4" xml:space="preserve">
+    <value>错误！</value>
+  </data>
+  <data name="RecommendedDeleteOrMoveFile" xml:space="preserve">
+    <value>建议删除或移动本文件到其他位置。</value>
+  </data>
+  <data name="RecordExportedFailed" xml:space="preserve">
+    <value>没有可导出的数据！</value>
+  </data>
+  <data name="RecordExportedSuccessfully" xml:space="preserve">
+    <value>记录导出成功！</value>
+  </data>
+  <data name="RegisterHeaderLog_ApplicationVersion" xml:space="preserve">
+    <value> 应用程序版本：</value>
+  </data>
+  <data name="RegisterHeaderLog_CLRVersion" xml:space="preserve">
+    <value> CLR 版本：</value>
+  </data>
+  <data name="RegisterHeaderLog_CurrentProgramDirectory" xml:space="preserve">
+    <value> [信息] 目前程序目录：</value>
+  </data>
+  <data name="RegisterHeaderLog_GcbmLogCreated" xml:space="preserve">
+    <value> 已创建 gcbm.log。</value>
+  </data>
+  <data name="RegisterHeaderLog_LogicalUnits" xml:space="preserve">
+    <value>逻辑单元：</value>
+  </data>
+  <data name="RegisterHeaderLog_OSVersion" xml:space="preserve">
+    <value>操作系统版本：</value>
+  </data>
+  <data name="RegisterHeaderLog_ProgramName" xml:space="preserve">
+    <value>程序名称：</value>
+  </data>
+  <data name="RegisterHeaderLog_WorkingSet" xml:space="preserve">
+    <value>工作集：</value>
+  </data>
+  <data name="RequiredDirectories_String1" xml:space="preserve">
+    <value> [信息] 已创建默认暂存目录...</value>
+  </data>
+  <data name="RequiredDirectories_String2" xml:space="preserve">
+    <value> [信息] 默认暂存目录已经存在... 略过创建！</value>
+  </data>
+  <data name="RequiredDirectories_String3" xml:space="preserve">
+    <value> [信息] 使用自定暂存目录！</value>
+  </data>
+  <data name="RequiredDirectories_String4" xml:space="preserve">
+    <value> [信息] 已创建封面保存目录...</value>
+  </data>
+  <data name="RequiredDirectories_String5" xml:space="preserve">
+    <value> [信息] 封面保存目录已经存在... 略过创建！</value>
+  </data>
+  <data name="SelectFolderContainingIsoGcmFiles" xml:space="preserve">
+    <value>选择一个含有 ISO/GCM 文件的文件夹：</value>
+  </data>
+  <data name="SelectGameFromList" xml:space="preserve">
+    <value>请从列表中选择一个游戏！</value>
+  </data>
+  <data name="SelectTargetDrive" xml:space="preserve">
+    <value>请选择一个目标设备！</value>
+  </data>
+  <data name="ServerReported3DCoverNotFound" xml:space="preserve">
+    <value>服务器回应：找不到3D封面！</value>
+  </data>
+  <data name="ServerReportedDiscCoverNotFound" xml:space="preserve">
+    <value>服务器回应：找不到光碟封面！</value>
+  </data>
+  <data name="ServerReportedOneCoverOrBothNotFound" xml:space="preserve">
+    <value>服务器回应：找不到一个或两个封面！</value>
+  </data>
+  <data name="UnableWriteDataDisk" xml:space="preserve">
+    <value>无法写入到磁盘！</value>
+  </data>
+  <data name="UnknownRegion" xml:space="preserve">
+    <value>未知地区！</value>
+  </data>
+  <data name=" " xml:space="preserve">
+    <value> [错误] 下载光盘封面失败！</value>
+  </data>
+  <data name="CheckUSBGXFlow_String1" xml:space="preserve">
+    <value>请前往“选项”-&gt;“设置”</value>
+  </data>
+  <data name="CheckUSBGXFlow_String2" xml:space="preserve">
+    <value>然后在“封面”-&gt;“同步”并勾选“在设备之间传输封面”。</value>
+  </data>
+  <data name="CheckUSBGXFlow_String3" xml:space="preserve">
+    <value>然后在同一页面调整 USB 加载器的设置，选择您使用的加载器并将路径指向目标设备的相应位置。</value>
+  </data>
+  <data name="GCBM_Language" xml:space="preserve">
+    <value>简体中文（中国）</value>
+  </data>
+  <data name="GCBM_TranslatedBy" xml:space="preserve">
+    <value>Fei Kuan</value>
+  </data>
+  <data name="GCBM_TranslatorContact" xml:space="preserve">
+    <value>kuan@iatfei.com</value>
+  </data>
+  <data name="InstallGameScrub_Complete" xml:space="preserve">
+    <value>状态：完成！</value>
+  </data>
+  <data name="InstallGameScrub_DoneScrubbing" xml:space="preserve">
+    <value>轻量化完成...</value>
+  </data>
+  <data name="InstallGameScrub_GameInstalled" xml:space="preserve">
+    <value>游戏安装完成！</value>
+  </data>
+  <data name="InstallGameScrub_Scrubbing" xml:space="preserve">
+    <value>状态：轻量化中... </value>
+  </data>
+  <data name="InstallGameScrub_TransferDisc2" xml:space="preserve">
+    <value>正在移动光盘 2...</value>
+  </data>
+  <data name="LoadDatabase_Editor" xml:space="preserve">
+    <value>编辑者</value>
+  </data>
+  <data name="InstallGameScrub_Transferring" xml:space="preserve">
+    <value>传输中...</value>
+  </data>
+  <data name="InstallGameScrub_TrasnferredDisc2" xml:space="preserve">
+    <value>光盘 2 传输成功！</value>
+  </data>
+  <data name="InstallGameScrub_Unresponsive" xml:space="preserve">
+    <value>状态：没有回应！</value>
+  </data>
+  <data name="LanguagePromptConfirm" xml:space="preserve">
+    <value>这是你想使用的语言吗？</value>
+  </data>
+  <data name="LanguagePromptConfirmTitle" xml:space="preserve">
+    <value>你看得懂吗？</value>
+  </data>
+  <data name="LanguagePromptTitle" xml:space="preserve">
+    <value>请选择语言：</value>
+  </data>
+  <data name="SelectLanguagePrompt" xml:space="preserve">
+    <value>请选择你偏好的语言：</value>
+  </data>
+  <data name="SplashDirectories" xml:space="preserve">
+    <value>正在设置所需的文件夹...</value>
+  </data>
+  <data name="SplashFinished" xml:space="preserve">
+    <value>完成。</value>
+  </data>
+  <data name="SplashFinishing" xml:space="preserve">
+    <value>正在完成...</value>
+  </data>
+  <data name="SplashFoundDrive" xml:space="preserve">
+    <value>找到设备：</value>
+  </data>
+  <data name="SplashNetworkCheck" xml:space="preserve">
+    <value>正在测试互联网链接...</value>
+  </data>
+  <data name="SplashPopulatingDrives" xml:space="preserve">
+    <value>正在列出设备列表...</value>
+  </data>
+</root>

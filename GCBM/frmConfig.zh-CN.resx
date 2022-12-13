@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="$this.Text" xml:space="preserve">
+    <value>设置</value>
+  </data>
+  <data name="btnApply.Text" xml:space="preserve">
+    <value>套用</value>
+  </data>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="btnRestore.Text" xml:space="preserve">
+    <value>还原到默认设置</value>
+  </data>
+  <data name="cbAdjustNamingStyle.Items" xml:space="preserve">
+    <value>标题 [游戏编号]</value>
+  </data>
+  <data name="cbAdjustNamingStyle.Items1" xml:space="preserve">
+    <value>[游戏编号]</value>
+  </data>
+  <data name="cbVerificationInterval.Items4" xml:space="preserve">
+    <value>1 小时</value>
+  </data>
+  <data name="cbVerificationInterval.Items1" xml:space="preserve">
+    <value>10 分钟</value>
+  </data>
+  <data name="cbVerificationInterval.Items2" xml:space="preserve">
+    <value>15 分钟</value>
+  </data>
+  <data name="cbVerificationInterval.Items5" xml:space="preserve">
+    <value>2 小时</value>
+  </data>
+  <data name="cbVerificationInterval.Items6" xml:space="preserve">
+    <value>3 小时</value>
+  </data>
+  <data name="cbVerificationInterval.Items3" xml:space="preserve">
+    <value>30 分钟</value>
+  </data>
+  <data name="cbVerificationInterval.Items7" xml:space="preserve">
+    <value>4 小时</value>
+  </data>
+  <data name="cbVerificationInterval.Items" xml:space="preserve">
+    <value>5 分钟</value>
+  </data>
+  <data name="chkGeneralExtract7z.Text" xml:space="preserve">
+    <value>7zip 文件 (*.7z;*.7zip)</value>
+  </data>
+  <data name="grbGeneralPartitions.Text" xml:space="preserve">
+    <value>更改游戏目录</value>
+  </data>
+  <data name="lblAlignment.Text" xml:space="preserve">
+    <value>对齐：</value>
+  </data>
+  <data name="chkMultipleInstances.Text" xml:space="preserve">
+    <value>允许同时打开多个本软件窗口</value>
+  </data>
+  <data name="grbDolphinAudio.Text" xml:space="preserve">
+    <value>声音</value>
+  </data>
+  <data name="cbScrubAlign.Items" xml:space="preserve">
+    <value>自动选择</value>
+  </data>
+  <data name="cbGeneralFileSize.Items" xml:space="preserve">
+    <value>自动选择</value>
+  </data>
+  <data name="chkGeneralExtractBZip2.Text" xml:space="preserve">
+    <value>BZip2 文件 (*.bz;*.bzip2)</value>
+  </data>
+  <data name="chkGeneralMD5.Text" xml:space="preserve">
+    <value>传输时计算 MD5 哈希</value>
+  </data>
+  <data name="chkUpdateVerifyStart.Text" xml:space="preserve">
+    <value>打开软件时检查更新</value>
+  </data>
+  <data name="chkNetVerify.Text" xml:space="preserve">
+    <value>打开软件时检查互联网连接</value>
+  </data>
+  <data name="lblUpdateInterval.Text" xml:space="preserve">
+    <value>检查频率：</value>
+  </data>
+  <data name="chkGeneralScrubFlushSD.Text" xml:space="preserve">
+    <value>清除 SD 卡的文件缓冲以减少退出设备所需的时间</value>
+  </data>
+  <data name="lblComments.Text" xml:space="preserve">
+    <value>简介：</value>
+  </data>
+  <data name="tabCoverFull.Text" xml:space="preserve">
+    <value>完整</value>
+  </data>
+  <data name="cbLevelLog.Items2" xml:space="preserve">
+    <value>完整</value>
+  </data>
+  <data name="grbDolphin.Text" xml:space="preserve">
+    <value>模拟器设置</value>
+  </data>
+  <data name="label17.Text" xml:space="preserve">
+    <value>从来源拷贝一或多个文件至目的地</value>
+  </data>
+  <data name="tabSettingsCovers.Text" xml:space="preserve">
+    <value>封面</value>
+  </data>
+  <data name="grpTitlesCoverFolder.Text" xml:space="preserve">
+    <value>封面文件夹（暂存 -&gt; 来源）</value>
+  </data>
+  <data name="fbd.Description" xml:space="preserve">
+    <value>创建或选择文件夹：</value>
+  </data>
+  <data name="chkCoverSynchronizeDelete.Text" xml:space="preserve">
+    <value>删除不在列表中的游戏封面</value>
+  </data>
+  <data name="chkScreensaver.Text" xml:space="preserve">
+    <value>停用荧幕保护程序</value>
+  </data>
+  <data name="tabCoverDisc.Text" xml:space="preserve">
+    <value>光盘</value>
+  </data>
+  <data name="ofdDolphin.Filter" xml:space="preserve">
+    <value>Dolphin Emulator|dolphin.exe</value>
+  </data>
+  <data name="rbDSPHLE.Text" xml:space="preserve">
+    <value>DSP HLE (默认)</value>
+  </data>
+  <data name="cbTitleLanguage.Items5" xml:space="preserve">
+    <value>荷兰文</value>
+  </data>
+  <data name="chkNotify.Text" xml:space="preserve">
+    <value>激活任务栏通知（默认通知将正常显示）</value>
+  </data>
+  <data name="chkCoverEnableTransfer.Text" xml:space="preserve">
+    <value>激活设备间传输封面</value>
+  </data>
+  <data name="cbTitleLanguage.Items" xml:space="preserve">
+    <value>英文</value>
+  </data>
+  <data name="lblGeneralExtract.Text" xml:space="preserve">
+    <value>当需要时解压缩。</value>
+  </data>
+  <data name="grbTitleFileLocation.Text" xml:space="preserve">
+    <value>文件位置</value>
+  </data>
+  <data name="grbGeneralFiles.Text" xml:space="preserve">
+    <value>文件</value>
+  </data>
+  <data name="grpNomenclatureFolderFormat.Text" xml:space="preserve">
+    <value>文件夹格式</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>文件夹位置：</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>文件夹位置：</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>文件夹位置：</value>
+  </data>
+  <data name="label35.Text" xml:space="preserve">
+    <value>文件夹位置：</value>
+  </data>
+  <data name="lblCommentsScrubCopy.Text" xml:space="preserve">
+    <value>使用“轻量化”时将会使用默认的“名称 [游戏编码]”命名方式，并将会使用游戏开发者设置的内部游戏名称。除了少数例外情况外，光盘 1 和 2 将会分开文件夹存放。若软件能通过游戏名称侦测到两光盘游戏，光盘 1 和 2 将会存放在同一文件夹。</value>
+  </data>
+  <data name="lblFormat.Text" xml:space="preserve">
+    <value>格式：</value>
+  </data>
+  <data name="cbTitleLanguage.Items1" xml:space="preserve">
+    <value>法文</value>
+  </data>
+  <data name="label28.Text" xml:space="preserve">
+    <value>FST (FileSystem Table) 是将游戏光盘文件系统的所有实体及虚拟文件存放在一个文件夹。Nintendont 使用 FST 文件创建一个内部虚拟 ISO 文件并从该文件加载游戏。</value>
+  </data>
+  <data name="tabSettingsTransfer.Text" xml:space="preserve">
+    <value>游戏传输</value>
+  </data>
+  <data name="tabSettingsGeneral.Text" xml:space="preserve">
+    <value>一般</value>
+  </data>
+  <data name="cbTitleLanguage.Items2" xml:space="preserve">
+    <value>德文</value>
+  </data>
+  <data name="cbGeneralFileSize.Items3" xml:space="preserve">
+    <value>GB</value>
+  </data>
+  <data name="cbLevelLog.Items" xml:space="preserve">
+    <value>信息</value>
+  </data>
+  <data name="cbTitleLanguage.Items4" xml:space="preserve">
+    <value>法文</value>
+  </data>
+  <data name="cbTitleLanguage.Items7" xml:space="preserve">
+    <value>日文</value>
+  </data>
+  <data name="rbGeneralDiscClean.Text" xml:space="preserve">
+    <value>将光盘 1 和光盘 2 的文件夹分开（默认）</value>
+  </data>
+  <data name="rbGeneralDiscDelete.Text" xml:space="preserve">
+    <value>只保留光盘 1 文件夹并删除光盘 2 文件夹（实验性）</value>
+  </data>
+  <data name="cbTitleLanguage.Items9" xml:space="preserve">
+    <value>韩文</value>
+  </data>
+  <data name="lblLanguage.Text" xml:space="preserve">
+    <value>语言：</value>
+  </data>
+  <data name="tabSettingsLanguage.Text" xml:space="preserve">
+    <value>语言</value>
+  </data>
+  <data name="chkLoadDatabase.Text" xml:space="preserve">
+    <value>启动软件时加载数据库（增加启动时间）</value>
+  </data>
+  <data name="cbGeneralFileSize.Items2" xml:space="preserve">
+    <value>MB</value>
+  </data>
+  <data name="grbTitleDiverse.Text" xml:space="preserve">
+    <value>杂项（软件重新启动后生效）</value>
+  </data>
+  <data name="lblNomenclature.Text" xml:space="preserve">
+    <value>命名格式：</value>
+  </data>
+  <data name="tabSettingsNomenclature.Text" xml:space="preserve">
+    <value>命名</value>
+  </data>
+  <data name="lblTimeInterval.Text" xml:space="preserve">
+    <value>留意：更改时间间隔将会在程序重新启动后生效。</value>
+  </data>
+  <data name="lblLanguageComments.Text" xml:space="preserve">
+    <value>留意：更改语言设置将会在程序重新启动后生效。</value>
+  </data>
+  <data name="chkGeneralExtractNwb.Text" xml:space="preserve">
+    <value>NWB 文件 (*.nwb)</value>
+  </data>
+  <data name="lblPass.Text" xml:space="preserve">
+    <value>密码：</value>
+  </data>
+  <data name="grbDolphinFolder.Text" xml:space="preserve">
+    <value>模拟器路径</value>
+  </data>
+  <data name="cbTitleLanguage.Items6" xml:space="preserve">
+    <value>葡萄牙文</value>
+  </data>
+  <data name="lblServerProxy.Text" xml:space="preserve">
+    <value>代理服务器：</value>
+  </data>
+  <data name="chkGeneralExtractRar.Text" xml:space="preserve">
+    <value>RAR 文件 (*.rar)</value>
+  </data>
+  <data name="tabSettingsLog.Text" xml:space="preserve">
+    <value>记录档</value>
+  </data>
+  <data name="grbLog.Text" xml:space="preserve">
+    <value>记录档</value>
+  </data>
+  <data name="label31.Text" xml:space="preserve">
+    <value>将不需要的垃圾数据以 0xff 或 0x00 填零处理以在不影响游戏数据完整性的前提下减少文件大小。</value>
+  </data>
+  <data name="cbTitleLanguage.Items8" xml:space="preserve">
+    <value>俄文</value>
+  </data>
+  <data name="chkGeneralRecursiva.Text" xml:space="preserve">
+    <value>搜索子文件夹（只适用于“文件（来源）”窗口）</value>
+  </data>
+  <data name="grbLanguage.Text" xml:space="preserve">
+    <value>选择默认语言：</value>
+  </data>
+  <data name="grbGeneralFileSize.Text" xml:space="preserve">
+    <value>显示大小</value>
+  </data>
+  <data name="label20.Text" xml:space="preserve">
+    <value>与 XCopy 类似，但文件内的垃圾数据将被清理。原有文件大小将不变。垃圾数据将被移除并确保其他数据的完整性。</value>
+  </data>
+  <data name="cbTitleLanguage.Items11" xml:space="preserve">
+    <value>简体中文</value>
+  </data>
+  <data name="cbTitleLanguage.Items3" xml:space="preserve">
+    <value>西班牙文</value>
+  </data>
+  <data name="chkGeneralExtractSplitFile.Text" xml:space="preserve">
+    <value>分割文件 (*.001)</value>
+  </data>
+  <data name="chkStartWindowMaximized.Text" xml:space="preserve">
+    <value>启动软件时最小化窗口</value>
+  </data>
+  <data name="chkUpdateBetaChannel.Text" xml:space="preserve">
+    <value>接收测试版更新</value>
+  </data>
+  <data name="grpCoversSynchronize.Text" xml:space="preserve">
+    <value>同步</value>
+  </data>
+  <data name="grbGeneralTemporaryFolder.Text" xml:space="preserve">
+    <value>暂存文件夹</value>
+  </data>
+  <data name="lblCommentsExactCopy.Text" xml:space="preserve">
+    <value>本命名方式目前只适用于 1:1 安装的游戏，并可使用游戏内部名称或 wiitdb.xml 的正式名称（可在“游戏名称”标签页设置）。在 1:1 安装模式下，光盘 1 和 2 将会存放在同一文件夹。</value>
+  </data>
+  <data name="grbTitleLanguage.Text" xml:space="preserve">
+    <value>游戏语言</value>
+  </data>
+  <data name="tabSettingsTitle.Text" xml:space="preserve">
+    <value>游戏名称</value>
+  </data>
+  <data name="chkGameTitleCustom.Text" xml:space="preserve">
+    <value>使用自订标题 (custom-titles.txt)</value>
+  </data>
+  <data name="chkGameTitle.Text" xml:space="preserve">
+    <value>使用 GameTDB (titles.txt)</value>
+  </data>
+  <data name="cbTitleLanguage.Items10" xml:space="preserve">
+    <value>正体中文</value>
+  </data>
+  <data name="grbTransferSystem.Text" xml:space="preserve">
+    <value>传输方式</value>
+  </data>
+  <data name="grbUpdate.Text" xml:space="preserve">
+    <value>更新设置</value>
+  </data>
+  <data name="tabSettingsUpdates.Text" xml:space="preserve">
+    <value>更新</value>
+  </data>
+  <data name="grbCoverTransfer.Text" xml:space="preserve">
+    <value>USB 加载器设置（传输封面 -&gt; 目的地）</value>
+  </data>
+  <data name="rbGameInternalName.Text" xml:space="preserve">
+    <value>使用内部游戏名称（支持约 75%）</value>
+  </data>
+  <data name="chkUpdateServerProxy.Text" xml:space="preserve">
+    <value>使用代理服务器</value>
+  </data>
+  <data name="chkCoverRecursiveSearch.Text" xml:space="preserve">
+    <value>搜索所有地区的封面</value>
+  </data>
+  <data name="rbGameXmlName.Text" xml:space="preserve">
+    <value>使用游戏正式名称（建议使用！需要 wiitdb.xml 文件）</value>
+  </data>
+  <data name="chkGeneralTemporaryBuffer.Text" xml:space="preserve">
+    <value>使用暂存内存进行传输</value>
+  </data>
+  <data name="lblUser.Text" xml:space="preserve">
+    <value>用户：</value>
+  </data>
+  <data name="tabSettingsSeveral.Text" xml:space="preserve">
+    <value>杂项</value>
+  </data>
+  <data name="grbGeneralDiverse.Text" xml:space="preserve">
+    <value>杂项</value>
+  </data>
+  <data name="chkGeneralSHA1.Text" xml:space="preserve">
+    <value>传输时检查 SHA-1 哈希</value>
+  </data>
+  <data name="grbDolphinVideo.Text" xml:space="preserve">
+    <value>画面</value>
+  </data>
+  <data name="rbTransferSystemXCopy.Text" xml:space="preserve">
+    <value>XCopy（默认）</value>
+  </data>
+  <data name="chkGeneralExtractZip.Text" xml:space="preserve">
+    <value>Zip 文件 (*.zip)</value>
+  </data>
+</root>

@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="btnGameInstallExactCopy.Text" xml:space="preserve">
+    <value>安裝遊戲 (1:1)</value>
+  </data>
+  <data name="btnGameInstallScrub.Text" xml:space="preserve">
+    <value>安裝遊戲（輕量化）</value>
+  </data>
+  <data name="tsmiMenuAbout.Text" xml:space="preserve">
+    <value>關於 GameCube Backup Manager</value>
+  </data>
+  <data name="tsmiGameDiscSelectAll.Text" xml:space="preserve">
+    <value>全部</value>
+  </data>
+  <data name="tsmiGameListSelectAll.Text" xml:space="preserve">
+    <value>全部</value>
+  </data>
+  <data name="tsmiGameListDeleteAllFiles.Text" xml:space="preserve">
+    <value>全部</value>
+  </data>
+  <data name="tsmiGameDiscDeleteAllFiles.Text" xml:space="preserve">
+    <value>全部</value>
+  </data>
+  <data name="cbFilterDatabase.Items" xml:space="preserve">
+    <value>選擇一個項目...</value>
+  </data>
+  <data name="lblSpaceAvailabeOnDevice.Text" xml:space="preserve">
+    <value>可用空間：</value>
+  </data>
+  <data name="tsmiBurnMedia.Text" xml:space="preserve">
+    <value>燒錄 CD/DVD 光碟</value>
+  </data>
+  <data name="tsmiGameDiscAllHashMD5.Text" xml:space="preserve">
+    <value>選擇全部</value>
+  </data>
+  <data name="tsmiGameDiscAllHashSHA1.Text" xml:space="preserve">
+    <value>選擇全部</value>
+  </data>
+  <data name="tsmiVerifyUpdate.Text" xml:space="preserve">
+    <value>檢查更新</value>
+  </data>
+  <data name="tsmiGameDiscHashMD5.Text" xml:space="preserve">
+    <value>檢查選取的遊戲的雜湊</value>
+  </data>
+  <data name="tsmiGameListHashSHA1.Text" xml:space="preserve">
+    <value>檢查選取的遊戲的雜湊</value>
+  </data>
+  <data name="tsmiGameDiscHashSHA1.Text" xml:space="preserve">
+    <value>檢查選取的遊戲的雜湊</value>
+  </data>
+  <data name="tsmiClearListDestination.Text" xml:space="preserve">
+    <value>清除列表</value>
+  </data>
+  <data name="tsmiClearListSource.Text" xml:space="preserve">
+    <value>清除列表</value>
+  </data>
+  <data name="tsmiClearLog.Text" xml:space="preserve">
+    <value>清除記錄檔案</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>請按下旁邊的按鈕並選擇一個資料夾以列出資料夾內的所有 ISO 和 GCM 檔案。</value>
+  </data>
+  <data name="tsmiElfDol.Text" xml:space="preserve">
+    <value>轉換 ELF 檔案至 DOL 檔案</value>
+  </data>
+  <data name="tsmiCovers.Text" xml:space="preserve">
+    <value>封面</value>
+  </data>
+  <data name="tsmiCreatePackage.Text" xml:space="preserve">
+    <value>建立 APP 封包</value>
+  </data>
+  <data name="tabMainDatabase.Text" xml:space="preserve">
+    <value>資料庫</value>
+  </data>
+  <data name="tsmiRemoveGameList.Text" xml:space="preserve">
+    <value>刪除</value>
+  </data>
+  <data name="tsmiRemoveGameDisc.Text" xml:space="preserve">
+    <value>刪除</value>
+  </data>
+  <data name="tsmiGameInfo.Text" xml:space="preserve">
+    <value>選擇的遊戲的詳細資料</value>
+  </data>
+  <data name="grpDetailsDestiny.Text" xml:space="preserve">
+    <value>詳細資料</value>
+  </data>
+  <data name="tsmiDisableCoverPanel.Text" xml:space="preserve">
+    <value>停用</value>
+  </data>
+  <data name="lblTypeDisc.Text" xml:space="preserve">
+    <value>光碟...</value>
+  </data>
+  <data name="tsmiDisplay.Text" xml:space="preserve">
+    <value>顯示</value>
+  </data>
+  <data name="tsmiEnableCoverPanel.Text" xml:space="preserve">
+    <value>啟用</value>
+  </data>
+  <data name="tsmiExit.Text" xml:space="preserve">
+    <value>退出</value>
+  </data>
+  <data name="tsmiNotifyExit.Text" xml:space="preserve">
+    <value>退出</value>
+  </data>
+  <data name="tsmiGameDiscExportList.Text" xml:space="preserve">
+    <value>匯出遊戲列表</value>
+  </data>
+  <data name="exportarListaToolStripMenuItem.Text" xml:space="preserve">
+    <value>匯出列表為...</value>
+  </data>
+  <data name="tsmiExportLog.Text" xml:space="preserve">
+    <value>匯出記錄...</value>
+  </data>
+  <data name="tsmiFile.Text" xml:space="preserve">
+    <value>檔案</value>
+  </data>
+  <data name="tabMainDisc.Text" xml:space="preserve">
+    <value>檔案（目的地）</value>
+  </data>
+  <data name="tabMainFile.Text" xml:space="preserve">
+    <value>檔案（來源）</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>篩選：</value>
+  </data>
+  <data name="labelGameID.Text" xml:space="preserve">
+    <value>遊戲編號：</value>
+  </data>
+  <data name="tsmiInfoGame.Text" xml:space="preserve">
+    <value>遊戲資訊</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>找到遊戲：</value>
+  </data>
+  <data name="lblGamesVerifiedText.Text" xml:space="preserve">
+    <value>校驗完畢：</value>
+  </data>
+  <data name="tsmiDatabaseUpdateGameTDB.Text" xml:space="preserve">
+    <value>GameTDB 更新</value>
+  </data>
+  <data name="tsmiHelp.Text" xml:space="preserve">
+    <value>幫助</value>
+  </data>
+  <data name="tscbDiscDrive.Items" xml:space="preserve">
+    <value>已停用</value>
+  </data>
+  <data name="lblNetStatus.Text" xml:space="preserve">
+    <value>已停用網際網路連線！</value>
+  </data>
+  <data name="tsmiManageApp.Text" xml:space="preserve">
+    <value>管理 APP</value>
+  </data>
+  <data name="tsmiGameDiscSignatureMD5.Text" xml:space="preserve">
+    <value>MD5 雜湊</value>
+  </data>
+  <data name="tsmiGameDiscSelectNone.Text" xml:space="preserve">
+    <value>無</value>
+  </data>
+  <data name="tsmiGameListSelectNone.Text" xml:space="preserve">
+    <value>無</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>留意：</value>
+  </data>
+  <data name="tsmiOfficialGBATemp.Text" xml:space="preserve">
+    <value>官方貼文 (GBATemp)</value>
+  </data>
+  <data name="tsmiOfficialGitHub.Text" xml:space="preserve">
+    <value>官方頁面 (GitHub)</value>
+  </data>
+  <data name="grpOperations.Text" xml:space="preserve">
+    <value>操作</value>
+  </data>
+  <data name="tsmiOptions.Text" xml:space="preserve">
+    <value>選項</value>
+  </data>
+  <data name="tsmiMetaXml.Text" xml:space="preserve">
+    <value>檢視/編輯 'meta.xml'</value>
+  </data>
+  <data name="tsmiGameDiscRecalculateAllMD5.Text" xml:space="preserve">
+    <value>重新計算全部</value>
+  </data>
+  <data name="tsmiGameDiscRecalculateSelectedGameMD5.Text" xml:space="preserve">
+    <value>重新計算選擇項目</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>地區：</value>
+  </data>
+  <data name="labelFile.Text" xml:space="preserve">
+    <value>地區：</value>
+  </data>
+  <data name="tsmiReloadDeviceDrive.Text" xml:space="preserve">
+    <value>重新載入裝置</value>
+  </data>
+  <data name="tsmiReloadGameList.Text" xml:space="preserve">
+    <value>重新載入列表</value>
+  </data>
+  <data name="tsmiReloadGameListDisc.Text" xml:space="preserve">
+    <value>重新載入列表</value>
+  </data>
+  <data name="tsmiRenameFolders.Text" xml:space="preserve">
+    <value>重新命名資料夾</value>
+  </data>
+  <data name="tsmiRenameISO.Text" xml:space="preserve">
+    <value>重新命名 ISO/GCM 檔案</value>
+  </data>
+  <data name="grpSearch.Text" xml:space="preserve">
+    <value>搜尋</value>
+  </data>
+  <data name="tsmiSearchOnGameTDB.Text" xml:space="preserve">
+    <value>搜尋 GameTDB</value>
+  </data>
+  <data name="SearchOnWikipedia.Text" xml:space="preserve">
+    <value>搜尋維基百科</value>
+  </data>
+  <data name="tsmiSearchOnGameSpot.Text" xml:space="preserve">
+    <value>搜尋 GameSpot</value>
+  </data>
+  <data name="tsmiSearchOnGoogle.Text" xml:space="preserve">
+    <value>搜尋 Google</value>
+  </data>
+  <data name="tsmiSearchOnVGChartz.Text" xml:space="preserve">
+    <value>搜尋 VGChartz</value>
+  </data>
+  <data name="tsmiSearchOnYoutube.Text" xml:space="preserve">
+    <value>搜尋 YouTube</value>
+  </data>
+  <data name="tsmiSelectGameDisc.Text" xml:space="preserve">
+    <value>選擇</value>
+  </data>
+  <data name="tsmiSelectGameList.Text" xml:space="preserve">
+    <value>選擇</value>
+  </data>
+  <data name="tsmiGameListDeleteSelectedFile.Text" xml:space="preserve">
+    <value>已選擇</value>
+  </data>
+  <data name="tsmiGameDiscDeleteSelectedFile.Text" xml:space="preserve">
+    <value>已選擇</value>
+  </data>
+  <data name="tsmiConfigurationMain.Text" xml:space="preserve">
+    <value>設定...</value>
+  </data>
+  <data name="tsmiGameListSignatureSHA1.Text" xml:space="preserve">
+    <value>SHA-1 雜湊</value>
+  </data>
+  <data name="tsmiGameDiscSignatureSHA1.Text" xml:space="preserve">
+    <value>SHA-1 雜湊</value>
+  </data>
+  <data name="lblAbortDestination.Text" xml:space="preserve">
+    <value>停止</value>
+  </data>
+  <data name="lblAbort.Text" xml:space="preserve">
+    <value>停止</value>
+  </data>
+  <data name="tsmiSyncDownloadAllCovers.Text" xml:space="preserve">
+    <value>同步並下載所有封面（所有 GameCube 遊戲）</value>
+  </data>
+  <data name="tsmiDownloadCoversSelectedGame.Text" xml:space="preserve">
+    <value>同步並下載光碟及 3D 封面（選取的遊戲）</value>
+  </data>
+  <data name="tsmiSyncDownloadDiscOnly3DCovers.Text" xml:space="preserve">
+    <value>同步並下載光碟及 3D 封面（列表內的所有遊戲）</value>
+  </data>
+  <data name="tsmiSyncDownloadAllDiscOnly3DCovers.Text" xml:space="preserve">
+    <value>同步並下載光碟及 3D 封面（所有 GameCube 遊戲）</value>
+  </data>
+  <data name="tsmiDolphinEmulator.Text" xml:space="preserve">
+    <value>測試遊戲（Dolphin 模擬器）</value>
+  </data>
+  <data name="labelTitle.Text" xml:space="preserve">
+    <value>名稱：</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>名稱：</value>
+  </data>
+  <data name="tsmiToolDatabase.Text" xml:space="preserve">
+    <value>工具</value>
+  </data>
+  <data name="tsmiTools.Text" xml:space="preserve">
+    <value>工具</value>
+  </data>
+  <data name="tsmiToolLog.Text" xml:space="preserve">
+    <value>工具</value>
+  </data>
+  <data name="tsmiToolsGameList.Text" xml:space="preserve">
+    <value>工具</value>
+  </data>
+  <data name="tsmiToolsGameDisc.Text" xml:space="preserve">
+    <value>工具</value>
+  </data>
+  <data name="lblSpaceTotalOnDevice.Text" xml:space="preserve">
+    <value>大小總計：</value>
+  </data>
+  <data name="tsmiTransferDeviceCovers.Text" xml:space="preserve">
+    <value>傳輸已下載的封面到裝置</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>遊戲總數及總大小並不區分光碟 1 (game.iso) 及光碟 2 (disc2.iso) 檔案。資料僅供參考。</value>
+  </data>
+</root>

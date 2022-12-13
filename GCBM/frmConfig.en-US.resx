@@ -293,10 +293,10 @@
     <value>Calculate MD5 signature during transfers</value>
   </data>
   <data name="grbGeneralDiverse.Text" xml:space="preserve">
-    <value>Several</value>
+    <value>Various</value>
   </data>
   <data name="tabSettingsSeveral.Text" xml:space="preserve">
-    <value>Several</value>
+    <value>Various</value>
   </data>
   <data name="lblFormat.Size" type="System.Drawing.Size, System.Drawing">
     <value>42, 13</value>
@@ -386,7 +386,7 @@
     <value>Complete</value>
   </data>
   <data name="grbCoverTransfer.Text" xml:space="preserve">
-    <value>USB charger setup (Transfer Covers -&gt; Destination)</value>
+    <value>USB loader setup (Transfer Covers -&gt; Destination)</value>
   </data>
   <data name="chkCoverRecursiveSearch.Size" type="System.Drawing.Size, System.Drawing">
     <value>250, 17</value>
