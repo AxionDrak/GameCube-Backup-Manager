@@ -55,6 +55,8 @@ internal static class Program
         new CultureInfo("it"), //Italian
         new CultureInfo("ja"), //Japanese
         new CultureInfo("uk"), //Ukrainian
+        new CultureInfo("zh-CN"), //Chinese (Simplified)
+        new CultureInfo("zh-TW"), //Chinese (Traditional)
 
     };
 
