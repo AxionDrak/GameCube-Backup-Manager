@@ -48,7 +48,6 @@ internal static class Program
         new CultureInfo("ko"), //Korean
         new CultureInfo("es"), //Spanish [Spain]
         new CultureInfo("es-MX"), //Spanish [Mexico]
-        new CultureInfo("zh"), //Chinese Simplified
         new CultureInfo("de"), //German [Germany]
         new CultureInfo("hu"), //Hungarian
         new CultureInfo("id"), //Indonesian
@@ -120,7 +119,7 @@ internal static class Program
 
     public static void DefaultConfigSave()
     {
-        if (System.IO.File.Exists(GET_CURRENT_PATH + System.IO.Path.DirectorySeparatorChar + INI_FILE))
+        if (!System.IO.File.Exists(GET_CURRENT_PATH + System.IO.Path.DirectorySeparatorChar + INI_FILE))
         {
             var CONFIG_INI_FILE = new IniFile("config.ini");
             // GCBM
@@ -226,6 +225,8 @@ internal static class Program
     /// </summary>
     public static bool IsTranslated(string language)
     {
+        Application.SetCompatibleTextRenderingDefault(false);
+
         foreach (CultureInfo cultureInfo in cultureInfos)
         {
             if (cultureInfo.Name == language)
@@ -238,6 +239,7 @@ internal static class Program
 
     public static void LanguagePrompt()
     {
+
         frmLanguagePrompt frmPrompt = new frmLanguagePrompt();
         DialogResult result = frmPrompt.DialogResult;
         frmPrompt.ShowDialog();
@@ -341,7 +343,6 @@ internal static class Program
     private static void Start()
     {
         Application.EnableVisualStyles();
-        Application.SetCompatibleTextRenderingDefault(false);
         //Show Splash Form
         SplashScreen = new frmSplashScreen();
 

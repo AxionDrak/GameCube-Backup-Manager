@@ -577,20 +577,48 @@ public class Game
 
         switch (Convert.ToString(ste.Default.GetChars(new[] { bb[3] })[0]).ToLower())
         {
-            case "e":
+            //case "e":
+            //    game.Region = "USA/NTSC-U";
+            //    REGION = 'u';
+            //    break;
+            //case "j":
+            //    game.Region = "JAP/NTSC-J";
+            //    REGION = 'j';
+            //    break;
+            //case "p":
+            //    game.Region = "EUR/PAL";
+            //    REGION = 'e';
+            //    break;
+            //default:
+            //    game.Region = "UNK";
+            //    REGION = 'n';
+            //    break;
+            case "e": // AMERICA - USA
                 game.Region = "USA/NTSC-U";
                 REGION = 'u';
                 break;
-            case "j":
+            case "j": // ASIA - JAPAN
+            case "t": // ASIA - TAIWAN
+            case "k": // ASIA - KOREA
                 game.Region = "JAP/NTSC-J";
                 REGION = 'j';
                 break;
-            case "p":
+            case "p": // EUROPE - ALL
+            case "f": // EUROPE - FRANCE
+            case "d": // EUROPE - GERMANY
+            case "s": // EUROPE - SPAIN
+            case "i": // EUROPE - ITALY
+            case "r": // EUROPE - RUSSIA
+            case "y": // EUROPE - France, Belgium, Netherlands ???
                 game.Region = "EUR/PAL";
                 REGION = 'e';
                 break;
+            case "u": // AUSTRALIA
+                game.Region = "AUS/PAL";
+                REGION = 'e';
+                break;
             default:
-                game.Region = "UNK";
+                game.Region = "UNK (EUR/PAL?)";
                 REGION = 'n';
                 break;
         }

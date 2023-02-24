@@ -1,3 +1,13 @@
+### GameCube Backup Manager 2.6.1.4 (February, 23, 2023)
+
+[Fixed] Details on the destination tab are working again.
+[Fixed] Fixed an issue with the drop down list to select drives bugging out.
+
+### GameCube Backup Manager 2.6.1.3 (February, 23, 2023)
+
+[Fixed] Downloading covers works again
+[Localization] Integrated Chinese Simplified and Traditional thanks to fei0316 on GitHub.
+
 ### GameCube Backup Manager 2.6.1.2 (September 18, 2022)
 
 [Localization] Added DeepL as an AI-driven translation agent for localization.

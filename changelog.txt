@@ -1,3 +1,13 @@
+### GameCube Backup Manager 2.6.1.4 (23 de fevereiro de 2023)
+
+[Correção] Os detalhes na guia de destino estão funcionando novamente.
+[Correção] Corrigido um problema com a lista suspensa para selecionar as unidades com erros.
+
+### GameCube Backup Manager 2.6.1.3 (23 de fevereiro de 2023)
+
+[Correção] O download da arte da capa funciona novamente
+[Localização] Chinês simplificado e tradicional integrado graças a fei0316 no GitHub.
+
 ### GameCube Backup Manager 2.6.1.2 (18 de Setembro de 2022)
 
 [Acrescentada DeepL como agente de tradução orientada por IA para a localização.
