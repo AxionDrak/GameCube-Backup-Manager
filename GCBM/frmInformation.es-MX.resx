@@ -121,7 +121,7 @@
     <value>Descripción:</value>
   </data>
   <data name="groupBox3.Text" xml:space="preserve">
-    <value>Detalles de la pancarta</value>
+    <value>Detalles del rótulo</value>
   </data>
   <data name="label10.Text" xml:space="preserve">
     <value>Desarrollador:</value>
@@ -133,22 +133,22 @@
     <value>Desarrollador:</value>
   </data>
   <data name="label8.Text" xml:space="preserve">
-    <value>El idioma:</value>
+    <value>Idioma:</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Camino:</value>
+    <value>Ruta:</value>
   </data>
   <data name="label7.Text" xml:space="preserve">
-    <value>Fecha de Apploader:</value>
+    <value>Fecha del Apploader:</value>
   </data>
   <data name="label9.Text" xml:space="preserve">
     <value>Nombre:</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
-    <value>Detalles del archivo</value>
+    <value>Detalles del Archivo</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>Formato de archivo:</value>
+    <value>Formato de Archivo:</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
     <value>Nombre:</value>
@@ -157,10 +157,10 @@
     <value>Cerrar</value>
   </data>
   <data name="groupBox2.Text" xml:space="preserve">
-    <value>Detalles del juego</value>
+    <value>Detalles del Juego</value>
   </data>
   <data name="label4.Text" xml:space="preserve">
-    <value>Identificación del juego:</value>
+    <value>ID del Juego:</value>
   </data>
   <data name="grpDetailsSource.Text" xml:space="preserve">
     <value>Detalles</value>

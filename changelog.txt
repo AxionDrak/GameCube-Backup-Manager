@@ -1,3 +1,12 @@
+### GameCube Backup Manager 2.6.1.6 (25 de fevereiro de 2023)
+
+[Localização] Tradução es-MX atualizada graças ao CDreamer.
+[Alterado] Adicionado detalhes ausentes na guia de destino que estavam presentes na guia de origem.
+
+### GameCube Backup Manager 2.6.1.5 (23 de fevereiro de 2023)
+
+[Correção] A lógica duplicada durante a instalação estava incorretamente assumindo o primeiro disco na verificação redundante. O disco 2 é nomeado corretamente ao transferir agora.
+
 ### GameCube Backup Manager 2.6.1.4 (23 de fevereiro de 2023)
 
 [Correção] Os detalhes na guia de destino estão funcionando novamente.

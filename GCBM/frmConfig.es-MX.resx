@@ -121,13 +121,13 @@
     <value>Gigabyte</value>
   </data>
   <data name="chkManagerLogDebugConsole.Text" xml:space="preserve">
-    <value>Registro para la consola de depuración</value>
+    <value>Registro para la Consola de Depuración</value>
   </data>
   <data name="chkCoverEnableTransfer.Text" xml:space="preserve">
-    <value>Permitir la transferencia de pieles entre dispositivos</value>
+    <value>Habilitar la transferencia de skins entre dispositivos</value>
   </data>
   <data name="chkManagerLogFile.Text" xml:space="preserve">
-    <value>Registro en el archivo</value>
+    <value>Registro para la Archivo</value>
   </data>
   <data name="cbVerificationInterval.Items1" xml:space="preserve">
     <value>10 minutos</value>
@@ -142,7 +142,7 @@
     <value>2 horas</value>
   </data>
   <data name="chkCoverRecursiveSearch.Text" xml:space="preserve">
-    <value>Utilizar la búsqueda recursiva de pieles (buscar en todas las regiones)</value>
+    <value>Utilizar la búsqueda recursiva de skins (buscar en todas las regiones)</value>
   </data>
   <data name="chkGeneralExtractBZip2.Text" xml:space="preserve">
     <value>Archivos BZip2 (*.bz;*.bzip2)</value>
@@ -151,7 +151,7 @@
     <value>Ubicación de la carpeta:</value>
   </data>
   <data name="chkCoverSynchronizeDelete.Text" xml:space="preserve">
-    <value>Borrar los skins de los juegos que no están en la lista</value>
+    <value>Eliminar skins de juegos que no están en la lista</value>
   </data>
   <data name="lblServerProxy.Text" xml:space="preserve">
     <value>Servidor proxy:</value>
@@ -160,25 +160,25 @@
     <value>Holandés</value>
   </data>
   <data name="label17.Text" xml:space="preserve">
-    <value>Copia uno o más archivos de una ubicación (origen) a otra (destino). El archivo no se comprime, no forma parte de ningún contenedor y no se eliminan datos basura.</value>
+    <value>Copia uno o más archivos de una ubicación (fuente) a otra (destino). El archivo no está comprimido, no forma parte de ningún contenedor y no se eliminan datos basura.</value>
   </data>
   <data name="rbGameXmlName.Text" xml:space="preserve">
-    <value>Utilizar el nombre comercial del juego a través de wiitdb.xml (¡RECOMENDADO! - requiere el archivo wiitdb.xml)</value>
+    <value>Usa el nombre comercial del juego (¡RECOMENDADO! - requiere el archivo wiitdb.xml)</value>
   </data>
   <data name="cbTitleLanguage.Items11" xml:space="preserve">
-    <value>Chino simplificado</value>
+    <value>Chino Simplificado</value>
   </data>
   <data name="cbTitleLanguage.Items10" xml:space="preserve">
-    <value>Chino tradicional</value>
+    <value>Chino Tradicional</value>
   </data>
   <data name="chkGeneralExtract7z.Text" xml:space="preserve">
     <value>Archivos 7Zip (*.7z;*.7zip)</value>
   </data>
   <data name="grbDolphinFolder.Text" xml:space="preserve">
-    <value>Ruta de acceso al emulador</value>
+    <value>Ruta al emulador</value>
   </data>
   <data name="grbLanguage.Text" xml:space="preserve">
-    <value>Seleccione el idioma por defecto:</value>
+    <value>Seleccione el idioma predeterminado:</value>
   </data>
   <data name="tabSettingsLanguage.Text" xml:space="preserve">
     <value>Idiomas</value>
@@ -187,40 +187,40 @@
     <value>Registro</value>
   </data>
   <data name="cbAdjustNamingStyle.Items" xml:space="preserve">
-    <value>Título [Código del juego]</value>
+    <value>Título [Código del Juego]</value>
   </data>
   <data name="grbDolphinVideo.Text" xml:space="preserve">
-    <value>Vídeo</value>
+    <value>Video</value>
   </data>
   <data name="btnCancel.Text" xml:space="preserve">
     <value>Cancelar</value>
   </data>
   <data name="chkMultipleInstances.Text" xml:space="preserve">
-    <value>Permitir la ejecución de múltiples instancias del programa</value>
+    <value>Permitir instancias múltiples del programa</value>
   </data>
   <data name="fbd.Description" xml:space="preserve">
     <value>Crea o selecciona un directorio:</value>
   </data>
   <data name="grbUpdate.Text" xml:space="preserve">
-    <value>Actualizar la configuración</value>
+    <value>Ajustes de actualización</value>
   </data>
   <data name="chkGeneralScrubFlushSD.Text" xml:space="preserve">
-    <value>Borra los búferes de archivos para poder expulsar la tarjeta SD casi inmediatamente</value>
+    <value>Limpiar la memoria intermedia de archivos para que la tarjeta SD se pueda expulsar casi de inmediato</value>
   </data>
   <data name="rbGameInternalName.Text" xml:space="preserve">
-    <value>Utilizar un nombre de producción interna para el juego (75% de apoyo)</value>
+    <value>Usar un nombre de producción interno para el juego (75 % compatible)</value>
   </data>
   <data name="cbTitleLanguage.Items1" xml:space="preserve">
     <value>Francés</value>
   </data>
   <data name="chkGameTitle.Text" xml:space="preserve">
-    <value>Utilizar GameTDB (titles.txt)</value>
+    <value>Usar la GameTDB (titles.txt)</value>
   </data>
   <data name="chkGeneralExtractSplitFile.Text" xml:space="preserve">
-    <value>Dividir archivos (*.001)</value>
+    <value>Archivos separados (*.001)</value>
   </data>
   <data name="rbGeneralDiscDelete.Text" xml:space="preserve">
-    <value>Mantener sólo la carpeta del disco 1 y eliminar la carpeta del disco 2 (Experimental)</value>
+    <value>Mantener solo la carpeta del disco 1 y eliminar la carpeta del disco 2 (Experimental)</value>
   </data>
   <data name="label6.Text" xml:space="preserve">
     <value>Ubicación de la carpeta:</value>
@@ -232,7 +232,7 @@
     <value>Automático</value>
   </data>
   <data name="lblPass.Text" xml:space="preserve">
-    <value>Contraseña:</value>
+    <value>Clave:</value>
   </data>
   <data name="chkUpdateServerProxy.Text" xml:space="preserve">
     <value>Utilizar un servidor proxy</value>
@@ -253,61 +253,61 @@
     <value>Alemán</value>
   </data>
   <data name="lblLOG.Text" xml:space="preserve">
-    <value>Nivel de registro:</value>
+    <value>Nivel de LOG:</value>
   </data>
   <data name="grbGeneralDiverse.Text" xml:space="preserve">
     <value>Varios</value>
   </data>
   <data name="grbTitleFileLocation.Text" xml:space="preserve">
-    <value>Ubicación del archivo</value>
+    <value>Ubicación de archivos</value>
   </data>
   <data name="chkUpdateFileLog.Text" xml:space="preserve">
-    <value>Anexar las actualizaciones al archivo de registro</value>
+    <value>Agregar actualizaciones al archivo de registro</value>
   </data>
   <data name="chkStartWindowMaximized.Text" xml:space="preserve">
     <value>Ventana de inicio maximizada</value>
   </data>
   <data name="lblUpdateInterval.Text" xml:space="preserve">
-    <value>Compruebe el intervalo:</value>
+    <value>Intervalo de verificación:</value>
   </data>
   <data name="grbTitleLanguage.Text" xml:space="preserve">
-    <value>Idioma del título</value>
+    <value>Idioma de los títulos</value>
   </data>
   <data name="lblLanguage.Text" xml:space="preserve">
-    <value>El idioma:</value>
+    <value>Idioma:</value>
   </data>
   <data name="chkNotify.Text" xml:space="preserve">
-    <value>Habilitar las notificaciones de la barra de tareas (las notificaciones por defecto seguirán mostrándose normalmente)</value>
+    <value>Habilitar las notificaciones en la barra de tareas (las notificaciones ordinarias aparecerán normalmente)</value>
   </data>
   <data name="chkScreensaver.Text" xml:space="preserve">
-    <value>Desactivar el salvapantallas (Screensaver)</value>
+    <value>Deshabilitar el protector de pantalla (Screensaver)</value>
   </data>
   <data name="grbDolphinAudio.Text" xml:space="preserve">
     <value>Audio</value>
   </data>
   <data name="lblNomenclature.Text" xml:space="preserve">
-    <value>El estilo de los nombres:</value>
+    <value>Estilo de nomenclatura:</value>
   </data>
   <data name="lblTimeInterval.Text" xml:space="preserve">
-    <value>NOTA: El ajuste del intervalo de tiempo sólo tendrá efecto después de reiniciar el programa.</value>
+    <value>NOTA: El ajuste de la configuración del intervalo de tiempo solo tendrá efecto después de reiniciar el programa.</value>
   </data>
   <data name="chkGeneralExtractNwb.Text" xml:space="preserve">
     <value>Archivos NWB (*.nwb)</value>
   </data>
   <data name="cbAdjustNamingStyle.Items1" xml:space="preserve">
-    <value>[Código del juego]</value>
+    <value>[Código del Juego]</value>
   </data>
   <data name="label20.Text" xml:space="preserve">
-    <value>Es similar a XCopy, con la diferencia de que se limpian los datos basura (garbage) existentes dentro de los archivos. Se mantiene el tamaño original del archivo. Los datos basura se eliminan manteniendo la integridad de los demás datos.</value>
+    <value>Similar a XCopy, con la diferencia de que se limpian los datos basura existentes dentro de los archivos. Se mantiene el tamaño del archivo original. Los datos basura se eliminan mientras se mantiene la integridad de otros datos.</value>
   </data>
   <data name="label31.Text" xml:space="preserve">
-    <value>Elimina los datos innecesarios (basura) sustituyéndolos por un valor de byte constante (0xff o 0x00). Sin embargo, el archivo tiene un tamaño menor, manteniendo la integridad de los datos.</value>
+    <value>Elimina datos innecesarios (basura) reemplazándolos con un valor de byte constante (0xff o 0x00). El archivo tiene un tamaño más pequeño, sin embargo, mantiene la integridad de los datos.</value>
   </data>
   <data name="tabCoverDisc.Text" xml:space="preserve">
     <value>Disco</value>
   </data>
   <data name="lblCommentsScrubCopy.Text" xml:space="preserve">
-    <value>Para el método Scrub, siempre se utilizará el "Título [Código de Juego]" por defecto, basado en el nombre interno (definido por el desarrollador). En el modo de copia Scrub, los discos 1 y 2 se almacenarán siempre en carpetas separadas, excepto en casos específicos, en los que el método de detección puede identificar nombres comunes dados por el desarrollador, en cuyo caso, los discos 1 y 2 se almacenarán en la misma carpeta.</value>
+    <value>Para el método Scrub, siempre se utilizará el "Título [Código del juego]" predeterminado, según el nombre interno (definido por el desarrollador). En el modo de copia Scrub, los discos 1 y 2 siempre se almacenarán en carpetas separadas, excepto en casos específicos, donde el método de detección puede identificar nombres comunes dados por el desarrollador, en cuyo caso, los discos 1 y 2 se almacenarán en la misma carpeta.</value>
   </data>
   <data name="cbTitleLanguage.Items6" xml:space="preserve">
     <value>Portugués</value>
@@ -322,55 +322,55 @@
     <value>Registro</value>
   </data>
   <data name="cbLevelLog.Items2" xml:space="preserve">
-    <value>Completa</value>
+    <value>Completo</value>
   </data>
   <data name="chkUpdateVerifyStart.Text" xml:space="preserve">
-    <value>Comprobación de las actualizaciones al inicio</value>
+    <value>Buscar actualizaciones al inicio</value>
   </data>
   <data name="cbTitleLanguage.Items7" xml:space="preserve">
     <value>Japonés</value>
   </data>
   <data name="chkManagerLogSystemConsole.Text" xml:space="preserve">
-    <value>Registro para la consola del sistema</value>
+    <value>Registro para la Consola del Sistema</value>
   </data>
   <data name="cbLevelLog.Items" xml:space="preserve">
     <value>Informativo</value>
   </data>
   <data name="tabCoverFull.Text" xml:space="preserve">
-    <value>Completa</value>
+    <value>Completo</value>
   </data>
   <data name="grbDolphin.Text" xml:space="preserve">
-    <value>Configurar el emulador</value>
+    <value>Configurar emulador</value>
   </data>
   <data name="grpCoversSynchronize.Text" xml:space="preserve">
     <value>Sincronizar</value>
   </data>
   <data name="lblCommentsExactCopy.Text" xml:space="preserve">
-    <value>El estilo de nomenclatura actualmente sólo funciona con la copia exacta de los archivos (1:1), y puede utilizar tanto el nombre interno como el nombre comercial (a través de wiitdb.xml). Esta opción puede ser configurada por el usuario, en la pestaña "Títulos". En el modo de copia exacta (1:1), los discos 1 y 2 se almacenarán siempre en la misma carpeta.</value>
+    <value>Actualmente, el estilo de nombre solo funciona con una copia exacta de los archivos (1:1) y puede usar tanto el nombre interno como el nombre comercial (a través de wiitdb.xml). Esta opción puede ser configurada por el usuario, en la pestaña 'Títulos'. En el modo de copia exacta (1:1), los discos 1 y 2 siempre se almacenarán en la misma carpeta.</value>
   </data>
   <data name="label35.Text" xml:space="preserve">
     <value>Ubicación de la carpeta:</value>
   </data>
   <data name="grbCoverTransfer.Text" xml:space="preserve">
-    <value>Configuración del cargador USB (Transfer Covers -&gt; Destino)</value>
+    <value>Configuración del cargador USB (Transferir Portadas -&gt; Destino)</value>
   </data>
   <data name="chkManagerLogWindow.Text" xml:space="preserve">
-    <value>Registro para la ventana</value>
+    <value>Registro para la Ventana</value>
   </data>
   <data name="label9.Text" xml:space="preserve">
     <value>Ubicación de la carpeta:</value>
   </data>
   <data name="lblComments.Text" xml:space="preserve">
-    <value>OBSERVACIONES:</value>
+    <value>COMENTARIOS:</value>
   </data>
   <data name="tabSettingsNomenclature.Text" xml:space="preserve">
     <value>Nomenclatura</value>
   </data>
   <data name="grpTitlesCoverFolder.Text" xml:space="preserve">
-    <value>Carpeta de cubiertas (Caché -&gt; Origen)</value>
+    <value>Carpeta de portadas (Caché -&gt; Origen)</value>
   </data>
   <data name="grbGeneralPartitions.Text" xml:space="preserve">
-    <value>Ajustar los directorios del juego</value>
+    <value>Ajustar directorios de juegos</value>
   </data>
   <data name="tabSettingsTitle.Text" xml:space="preserve">
     <value>Títulos</value>
@@ -379,25 +379,25 @@
     <value>Megabyte</value>
   </data>
   <data name="grbTitleDiverse.Text" xml:space="preserve">
-    <value>Varios (es necesario reiniciar el programa para que surta efecto)</value>
+    <value>Varios (Se requiere reiniciar el programa para que surja efecto)</value>
   </data>
   <data name="lblLanguageComments.Text" xml:space="preserve">
-    <value>NOTA: El ajuste de la configuración del idioma sólo tendrá efecto después de reiniciar el programa.</value>
+    <value>NOTA: El ajuste de la configuración de idioma solo tendrá efecto después de reiniciar el programa.</value>
   </data>
   <data name="cbVerificationInterval.Items2" xml:space="preserve">
     <value>15 minutos</value>
   </data>
   <data name="cbLevelLog.Items1" xml:space="preserve">
-    <value>Resumiendo</value>
+    <value>Resumido</value>
   </data>
   <data name="chkGeneralTemporaryBuffer.Text" xml:space="preserve">
-    <value>Utilizar las transferencias en la memoria temporal (buffer)</value>
+    <value>Usar transferencias en la memoria intermedia (buffer)</value>
   </data>
   <data name="cbTitleLanguage.Items4" xml:space="preserve">
-    <value>Italiano</value>
+    <value>italiano</value>
   </data>
   <data name="chkLoadDatabase.Text" xml:space="preserve">
-    <value>Cargar la base de datos al inicio del programa (aumenta el tiempo de inicio del programa)</value>
+    <value>Cargar base de datos al iniciar el programa (aumenta el tiempo de inicio)</value>
   </data>
   <data name="tabSettingsSeveral.Text" xml:space="preserve">
     <value>Varios</value>
@@ -409,43 +409,43 @@
     <value>Archivos RAR (*.rar)</value>
   </data>
   <data name="rbGeneralDiscClean.Text" xml:space="preserve">
-    <value>Mantener todas las carpetas separadas para el disco 1 y el disco 2 (por defecto)</value>
+    <value>Mantenga todas las carpetas separadas para el disco 1 y el disco 2 (Predeterminado)</value>
   </data>
   <data name="btnRestore.Text" xml:space="preserve">
-    <value>Restaurar la configuración</value>
+    <value>Restaurar Configuracion</value>
   </data>
   <data name="tabSettingsTransfer.Text" xml:space="preserve">
-    <value>Transferencia de juegos</value>
+    <value>Transferencia de Juegos</value>
   </data>
   <data name="chkNetVerify.Text" xml:space="preserve">
     <value>Comprobar la conexión a Internet al iniciar el programa</value>
   </data>
   <data name="chkGameTitleCustom.Text" xml:space="preserve">
-    <value>Utilizar títulos personalizados (custom-titles.txt)</value>
+    <value>Usar títulos personalizados (custom-titles.txt)</value>
   </data>
   <data name="tabSettingsUpdates.Text" xml:space="preserve">
     <value>Actualizaciones</value>
   </data>
   <data name="rbTransferSystemXCopy.Text" xml:space="preserve">
-    <value>XCopy (por defecto)</value>
+    <value>XCopy (Predeterminado)</value>
   </data>
   <data name="label28.Text" xml:space="preserve">
-    <value>FST (FileSystem Table) es un sistema de archivos extraído a un directorio que contiene todos los archivos reales y virtuales de un archivo. Nintendont utiliza los archivos FST para crear una imagen ISO virtual interna y cargar el juego desde esa ISO virtual.</value>
+    <value>FST (FileSystem Table) es un sistema de archivos extraído a un directorio, que contiene todos los archivos reales y virtuales. Nintendont usa los archivos FST para crear una imagen ISO virtual interna y cargar el juego desde ella.</value>
   </data>
   <data name="chkGeneralRecursiva.Text" xml:space="preserve">
-    <value>Búsqueda de directorios de forma recursiva (sólo para la ventana "Archivos (Fuente)")</value>
+    <value>Buscar directorios recursivamente (solo para la ventana "Archivos (Fuente)")</value>
   </data>
   <data name="chkUpdateBetaChannel.Text" xml:space="preserve">
-    <value>Cambiar a las actualizaciones del canal BETA</value>
+    <value>Cambiar a actualizaciones del canal BETA</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Ajustes</value>
+    <value>Configuraciones</value>
   </data>
   <data name="cbTitleLanguage.Items" xml:space="preserve">
     <value>Inglés</value>
   </data>
   <data name="chkGeneralExtractZip.Text" xml:space="preserve">
-    <value>Archivos zip (*.zip)</value>
+    <value>Archivos Zip (*.zip)</value>
   </data>
   <data name="lblAlignment.Text" xml:space="preserve">
     <value>Alineación:</value>
@@ -457,22 +457,22 @@
     <value>Extraer siempre que sea necesario.</value>
   </data>
   <data name="ofdDolphin.Filter" xml:space="preserve">
-    <value>Emulador de Dolphin|dolphin.exe</value>
+    <value>Emulador Dolphin|dolphin.exe</value>
   </data>
   <data name="rbDSPHLE.Text" xml:space="preserve">
-    <value>DSP HLE (por defecto)</value>
+    <value>DSP HLE (estándar)</value>
   </data>
   <data name="cbVerificationInterval.Items7" xml:space="preserve">
     <value>4 horas</value>
   </data>
   <data name="grpNomenclatureFolderFormat.Text" xml:space="preserve">
-    <value>Formato de la carpeta</value>
+    <value>Formato de carpeta</value>
   </data>
   <data name="grbGeneralTemporaryFolder.Text" xml:space="preserve">
     <value>Carpeta temporal</value>
   </data>
   <data name="tabSettingsCovers.Text" xml:space="preserve">
-    <value>Cubre</value>
+    <value>Portadas</value>
   </data>
   <data name="cbTitleLanguage.Items9" xml:space="preserve">
     <value>Coreano</value>
@@ -491,5 +491,26 @@
   </data>
   <data name="tabSettingsGeneral.Text" xml:space="preserve">
     <value>General</value>
+  </data>
+  <data name="btnOK.Text" xml:space="preserve">
+    <value>Aceptar</value>
+  </data>
+  <data name="btnTitleDownload.Text" xml:space="preserve">
+    <value>Descargar titles.txt</value>
+  </data>
+  <data name="cbLoadDatabase.Text" xml:space="preserve">
+    <value>Cargar Base de Datos no inicializada</value>
+  </data>
+  <data name="cbNotificationsToggle.Text" xml:space="preserve">
+    <value>Silenciar notificaciones</value>
+  </data>
+  <data name="chkSplash.Text" xml:space="preserve">
+    <value>Deshabilitar la pantalla de inicio (Splashscreen)</value>
+  </data>
+  <data name="chkWelcome.Text" xml:space="preserve">
+    <value>Deshabilitar la pantalla de inicio (Splashscreen)</value>
+  </data>
+  <data name="grbGeneralScrub.Text" xml:space="preserve">
+    <value>Depurar</value>
   </data>
 </root>

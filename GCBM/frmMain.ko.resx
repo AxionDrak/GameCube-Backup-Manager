@@ -3104,4 +3104,7 @@
         AADAAwAAwAMAAMADAADAAwAAwAMAAMADAAD4HwAA
 </value>
   </data>
+  <data name="lblTypeDiscDest.Text" xml:space="preserve">
+    <value>디스크...</value>
+  </data>
 </root>

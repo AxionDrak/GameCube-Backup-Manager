@@ -118,70 +118,70 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="GCBM_Language" xml:space="preserve">
-    <value>Español [España]</value>
+    <value>Spanish [Spain]</value>
   </data>
   <data name="ServerReportedOneCoverOrBothNotFound" xml:space="preserve">
-    <value>El servidor informó: ¡Una de las tapas (o ambas) no fue encontrada!</value>
+    <value>El servidor informó: ¡No se encontró una de las portadas (o ambas)!</value>
   </data>
   <data name="NoInternetConnectionFound_String2" xml:space="preserve">
-    <value>Asegúrese de que la conexión está activada en la configuración del programa.</value>
+    <value>Asegúrese de que la conexión esté habilitada en la configuración del programa.</value>
   </data>
   <data name="GetAllDrives_Inactive" xml:space="preserve">
     <value>Inactivo</value>
   </data>
   <data name="AboutBox_String1" xml:space="preserve">
-    <value>Sobre {0}</value>
+    <value>Acerca de {0}</value>
   </data>
   <data name="GameListExportedTXT" xml:space="preserve">
-    <value>Lista de juegos exportada a TXT</value>
+    <value>¡Lista de juegos exportada a TXT!</value>
   </data>
   <data name="PluginDisplay_String1" xml:space="preserve">
-    <value>¿Estás seguro de que quieres eliminar el plugin?</value>
+    <value>¿Está seguro de que desea eliminar el complemento?</value>
   </data>
   <data name="EmptyGamesList" xml:space="preserve">
-    <value>La lista de juegos está vacía.</value>
+    <value>¡La lista de juegos está vacía!</value>
   </data>
   <data name="Download3DCoverError" xml:space="preserve">
-    <value> [ERROR] ¡No se ha podido descargar la portada (3D)!</value>
+    <value> [ERROR] ¡Error al descargar la máscara (3D)!</value>
   </data>
   <data name="RequiredDirectories_String2" xml:space="preserve">
-    <value>[INFO] El directorio temporal por defecto ya existe... ¡ignorando la creación!</value>
+    <value> [INFO] El directorio temporal predeterminado ya existe... ¡ignorando la creación!</value>
   </data>
   <data name="ClearTemp_String2" xml:space="preserve">
-    <value>No se ha podido borrar la carpeta temporal.</value>
+    <value>¡No se pudo borrar la carpeta temporal!</value>
   </data>
   <data name="RecommendedDeleteOrMoveFile" xml:space="preserve">
-    <value>Se recomienda borrar o mover el archivo a otra ubicación.</value>
+    <value>Se recomienda eliminar o mover el archivo a otra ubicación.</value>
   </data>
   <data name="FoundIsoGcmFiles" xml:space="preserve">
-    <value>[INFO] Archivo(s) ISO/GCM encontrado(s):</value>
+    <value> [INFO] Archivos ISO/GCM encontrados: </value>
   </data>
   <data name="frmMain_Resize_Program" xml:space="preserve">
-    <value>¡Programa funcionando en segundo plano!</value>
+    <value>¡Programa ejecutándose en segundo plano!</value>
   </data>
   <data name="InstallGameScrub_Unresponsive" xml:space="preserve">
     <value>Estado: ¡No responde!</value>
   </data>
   <data name="OverwriteWiiTDBBody" xml:space="preserve">
-    <value>¿Quieres sobrescribir el archivo WiiTDB.xml actual? ¿Quieres sobrescribir el archivo WiiTDB.xml actual?</value>
+    <value>¿Quieres sobrescribir el archivo WiiTDB.xml actual? ¿Quieres sobrescribir el WiiTDB actual?</value>
   </data>
   <data name="ClearLogNotFound" xml:space="preserve">
-    <value>No hay datos de registro que borrar.</value>
+    <value>¡No hay datos de registro para borrar!</value>
   </data>
   <data name="ConvertElfDol_String2" xml:space="preserve">
-    <value>&gt;&gt; Estado: No responde.</value>
+    <value>&gt;&gt; Estado: ¡No responde!</value>
   </data>
   <data name="NoInternetConnectionFound_String1" xml:space="preserve">
-    <value>No se ha encontrado conexión a Internet.</value>
+    <value>¡No se ha encontrado ninguna conexión a Internet!</value>
   </data>
   <data name="CannotOpenTwoInstances" xml:space="preserve">
-    <value>No se pueden abrir dos instancias de este programa.</value>
+    <value>¡No se pueden abrir dos instancias de este programa!</value>
   </data>
   <data name="ConvertElfDol_String4" xml:space="preserve">
     <value>&gt;&gt; Estado [ERROR]: ¡Formato de archivo no reconocido!</value>
   </data>
   <data name="InvalidDrive_String3" xml:space="preserve">
-    <value>La aplicación Nintendont sólo es compatible con los sistemas de archivos FAT32 y exFAT.</value>
+    <value>La aplicación de Nintendont solo es compatible con los sistemas de archivos FAT32 y exFAT.</value>
   </data>
   <data name="NetworkCheck_NetStatus_Offline" xml:space="preserve">
     <value>¡Conexión a Internet desactivada!</value>
@@ -190,22 +190,22 @@
     <value>Región</value>
   </data>
   <data name="SelectTargetDrive" xml:space="preserve">
-    <value>Por favor, seleccione una unidad de destino.</value>
+    <value>¡Seleccione una unidad de destino!</value>
   </data>
   <data name="HashesAreNotSame" xml:space="preserve">
-    <value>[INFO] ¡Los hashes no son iguales!</value>
+    <value> [INFO] ¡Los hashes no son los mismos!</value>
   </data>
   <data name="DisplayFilesSelected_Size" xml:space="preserve">
-    <value>Tamaño</value>
+    <value>Talla</value>
   </data>
   <data name="ProcessTaskDelay_String2" xml:space="preserve">
-    <value>Por favor, descargue el archivo.</value>
+    <value>¡Descarga el archivo!</value>
   </data>
   <data name="InvalidDrive_String1" xml:space="preserve">
-    <value>Este no es un dispositivo válido.</value>
+    <value>¡Este no es un dispositivo válido!</value>
   </data>
   <data name="InstallGameScrub_Scrubbing" xml:space="preserve">
-    <value>Estado: Fregando... </value>
+    <value>Estado: Scrubbing... </value>
   </data>
   <data name="Attention" xml:space="preserve">
     <value>¡ATENCIÓN!</value>
@@ -214,16 +214,16 @@
     <value>¡Archivo '{0}' no encontrado!</value>
   </data>
   <data name="Error" xml:space="preserve">
-    <value>[ERROR]</value>
+    <value> [ERROR] </value>
   </data>
   <data name="PluginDisplay_String2" xml:space="preserve">
     <value>Desinstalar</value>
   </data>
   <data name="RegisterHeaderLog_CurrentProgramDirectory" xml:space="preserve">
-    <value>[INFO] Directorio actual del programa:</value>
+    <value> [INFO] Directorio del programa actual: </value>
   </data>
   <data name="ListHash_String2" xml:space="preserve">
-    <value>hash del archivo:</value>
+    <value>hash de archivo: </value>
   </data>
   <data name="Information" xml:space="preserve">
     <value>Información</value>
@@ -232,10 +232,10 @@
     <value>¡Región desconocida!</value>
   </data>
   <data name="SelectGameFromList" xml:space="preserve">
-    <value>Seleccione un juego de la lista.</value>
+    <value>¡Selecciona un juego de la lista!</value>
   </data>
   <data name="RecordExportedFailed" xml:space="preserve">
-    <value>No hay datos disponibles para exportar.</value>
+    <value>¡No hay datos disponibles para exportar!</value>
   </data>
   <data name="CantOpenImage" xml:space="preserve">
     <value>[ERROR] No se pudo abrir el archivo de imagen.</value>
@@ -244,49 +244,49 @@
     <value>&gt;&gt; Estado: Trabajando...</value>
   </data>
   <data name="AskDownloadWiiTDB" xml:space="preserve">
-    <value>WiiTDB.zip no se encuentra, ¿quieres descargarlo ahora?</value>
+    <value>WiiTDB.zip no encontrado, ¿quieres descargarlo ahora?</value>
   </data>
   <data name="InvalidDrive_String2" xml:space="preserve">
-    <value>El sistema de archivos detectado es:</value>
+    <value>El sistema de archivos detectado es: </value>
   </data>
   <data name="ReadImage_String4" xml:space="preserve">
     <value>¡ERROR!</value>
   </data>
   <data name="DownloadingWiiTDB_String1" xml:space="preserve">
-    <value>&gt;&gt; Descargando WiiTDB.zip ...</value>
+    <value>&gt;&gt; Descargando WiiTDB.zip... </value>
   </data>
   <data name="ServerReportedDiscCoverNotFound" xml:space="preserve">
-    <value>El servidor informó: ¡Tapa del disco no encontrada!</value>
+    <value>Servidor informó: ¡No se encontró la portada del disco!</value>
   </data>
   <data name="ProcessTaskDelay_String3" xml:space="preserve">
-    <value>Algunas funciones que dependen de este archivo no funcionarán hasta que se descargue el archivo.</value>
+    <value>¡Algunas funciones que dependen de este archivo no funcionarán hasta que se descargue el archivo!</value>
   </data>
   <data name="ReadImage_String2" xml:space="preserve">
-    <value>¿Múltiples imágenes FST? Por favor, envíenme información sobre esta imagen.</value>
+    <value>¿Múltiples imágenes FST?\r\nEnvíenme información sobre esta imagen.</value>
   </data>
   <data name="InstallGameScrub_TrasnferredDisc2" xml:space="preserve">
-    <value>El disco 2 se ha transferido con éxito.</value>
+    <value>¡El disco 2 se transfirió con éxito!</value>
   </data>
   <data name="AboutTranslatorContact" xml:space="preserve">
-    <value>Contacto:</value>
+    <value>Contacto: </value>
   </data>
   <data name="MetaXml_String2" xml:space="preserve">
-    <value>¡Datos guardados con éxito!</value>
+    <value>¡Datos guardados exitosamente!</value>
   </data>
   <data name="RegisterHeaderLog_WorkingSet" xml:space="preserve">
-    <value>Conjunto de trabajo:</value>
+    <value> Conjunto de Trabajo: </value>
   </data>
   <data name="AllFilesSuccessfullyDeleted" xml:space="preserve">
-    <value>Todos los archivos se han eliminado con éxito.</value>
+    <value>¡Todos los archivos fueron eliminados con éxito!</value>
   </data>
   <data name="ClearLog" xml:space="preserve">
-    <value>¿Realmente quieres borrar los datos del registro?</value>
+    <value>¿Realmente desea borrar los datos del registro?</value>
   </data>
   <data name="InvalidDrive_String6" xml:space="preserve">
-    <value>como almacenamiento de BACKUP para archivos ISO/GCM.</value>
+    <value> como almacenamiento de RESPALDO para archivos ISO/GCM.</value>
   </data>
   <data name="RegisterHeaderLog_OSVersion" xml:space="preserve">
-    <value>Versión del sistema operativo:</value>
+    <value> OS Versión: </value>
   </data>
   <data name="LoadISOInfo_String2" xml:space="preserve">
     <value>Disco secundario: (disco2)</value>
@@ -295,13 +295,13 @@
     <value>¡Emulador no encontrado!</value>
   </data>
   <data name="ListHash_String1" xml:space="preserve">
-    <value>El</value>
+    <value>La </value>
   </data>
   <data name="RegisterHeaderLog_ApplicationVersion" xml:space="preserve">
-    <value>Versión de la aplicación:</value>
+    <value> Versión de la aplicación: </value>
   </data>
   <data name="RegisterHeaderLog_LogicalUnits" xml:space="preserve">
-    <value>Unidades lógicas:</value>
+    <value> Unidades Lógicas: </value>
   </data>
   <data name="FilesDestinationUnit" xml:space="preserve">
     <value>Archivos (Destino) - Unidad (</value>
@@ -310,88 +310,88 @@
     <value>Software de gestión de archivos ISO y GCM de Nintendo GameCube.</value>
   </data>
   <data name="CheckUSBGXFlow_String1" xml:space="preserve">
-    <value>Por favor, vaya a 'Opciones'-&gt;'Configuración</value>
+    <value>Vaya a 'Opciones'-&gt;'Configuración</value>
   </data>
   <data name="AboutCurrentLanguage" xml:space="preserve">
-    <value>Idioma actual:</value>
+    <value>Idioma Actual: </value>
   </data>
   <data name="FilterDatabase_String2" xml:space="preserve">
     <value>Si el archivo 'wiitdb.xml' está instalado correctamente, realice los ajustes necesarios en la configuración del programa.</value>
   </data>
   <data name="MetaXml_String1" xml:space="preserve">
-    <value>Archivo 'meta.xml' inválido o dañado.</value>
+    <value>¡Archivo 'meta.xml' no válido o dañado!</value>
   </data>
   <data name="CreateGamesFolder" xml:space="preserve">
     <value>No hay carpeta GAMES, ¿crear carpeta ahora?</value>
   </data>
   <data name="DisplayFilesSelected_Found_String2" xml:space="preserve">
-    <value>archivo(s) con extensión .</value>
+    <value> archivo(s) con extensión .</value>
   </data>
   <data name="RecordExportedSuccessfully" xml:space="preserve">
     <value>¡Registro exportado con éxito!</value>
   </data>
   <data name="LoadDatabase_Type" xml:space="preserve">
-    <value>Tipo</value>
+    <value>Escribe</value>
   </data>
   <data name="ProcessTaskDelay_String4" xml:space="preserve">
-    <value>Para descargar el archivo (se requiere conexión a Internet), ve a la pestaña "Base de datos" y luego a "Herramientas" -&gt; "Actualización de GameTDB".</value>
+    <value>Para descargar el archivo (se requiere conexión a Internet), vaya a la pestaña 'Base de datos', luego 'Herramientas' -&gt; 'Actualización de GameTDB'.</value>
   </data>
   <data name="DownloadingWiiTDB_String2" xml:space="preserve">
-    <value>&gt;&gt; Extrayendo WiiTDB.xml ...</value>
+    <value>&gt;&gt; Extrayendo WiiTDB.xml...</value>
   </data>
   <data name="SelectFolderContainingIsoGcmFiles" xml:space="preserve">
     <value>Seleccione una carpeta que contenga archivos ISO/GCM:</value>
   </data>
   <data name="DestinyDrive_TotalSpace" xml:space="preserve">
-    <value>Espacio total:</value>
+    <value>Espacio total: </value>
   </data>
   <data name="RequiredDirectories_String4" xml:space="preserve">
-    <value>[INFO] Los directorios de la piel fueron creados...</value>
+    <value> [INFO] Los directorios de skins fueron creados...</value>
   </data>
   <data name="Download3DCover" xml:space="preserve">
-    <value> [INFO] Descargando cubiertas (3D)... </value>
+    <value> [INFO] Descargando máscaras (3D)...</value>
   </data>
   <data name="InvalidDrive_String5" xml:space="preserve">
-    <value>Sin embargo, puedes utilizar dispositivos</value>
+    <value>Sin embargo, puede utilizar dispositivos </value>
   </data>
   <data name="LoadDatabase_Developer" xml:space="preserve">
     <value>Desarrollador</value>
   </data>
   <data name="CopyTask_String1" xml:space="preserve">
-    <value>Transferencia de archivos...</value>
+    <value>Transfiriendo archivo...</value>
   </data>
   <data name="InstallGameScrub_GameInstalled" xml:space="preserve">
-    <value>El juego se ha instalado correctamente.</value>
+    <value>¡Juego instalado con éxito!</value>
   </data>
   <data name="OverwriteWiiTDBCaption" xml:space="preserve">
-    <value>¿Sobreescribir WiiTDB.xml?</value>
+    <value>"¿Sobrescribir WiiTDB.xml?"</value>
   </data>
   <data name="DialogResultDeleteGame_ReallyDeleteFile_String1" xml:space="preserve">
-    <value>¿Realmente quieres eliminar el/los archivo/s?</value>
+    <value>¿Realmente desea eliminar los archivos? </value>
   </data>
   <data name="CreateGamesFolderNow" xml:space="preserve">
-    <value>Este es un dispositivo válido pero no hay carpeta GAMES, ¿crear carpeta ahora?</value>
+    <value>Este es un dispositivo válido pero no hay una carpeta JUEGOS, ¿crear carpeta ahora?</value>
   </data>
   <data name="AboutTranslator" xml:space="preserve">
-    <value>Traductor:</value>
+    <value>Traductor: </value>
   </data>
   <data name=" " xml:space="preserve">
     <value>[ERROR] ¡No se ha podido descargar la carátula (disco)!</value>
   </data>
   <data name="CheckUSBGXFlow_String2" xml:space="preserve">
-    <value>A continuación, ve a "Skins" -&gt; "Sincronizar" y marca la opción "Activar la transferencia de skins entre dispositivos".</value>
+    <value>Luego vaya a 'Máscaras' -&gt; 'Sincronizar' y marque 'Habilitar transferencia de máscaras entre dispositivos'.</value>
   </data>
   <data name="FilterDatabase_String1" xml:space="preserve">
-    <value>La lista de la base de datos está vacía.</value>
+    <value>¡La lista de la Base de Datos está vacía!</value>
   </data>
   <data name="DolphinEmulator_Not_Found_String_2" xml:space="preserve">
-    <value>Por favor, establezca la ruta del ejecutable del emulador de Dolphin (dolphin.exe).</value>
+    <value>Establezca la ruta al ejecutable del emulador Dolphin (dolphin.exe).</value>
   </data>
   <data name="CopyTask_String5" xml:space="preserve">
-    <value>¡100% completo!</value>
+    <value>100% completo!</value>
   </data>
   <data name="DisplayFilesSelected_FileName" xml:space="preserve">
-    <value>Nombre del archivo</value>
+    <value>Nombre del Archivo</value>
   </data>
   <data name="CopyTask_String6" xml:space="preserve">
     <value>¡Transferencia completa!</value>
@@ -400,25 +400,25 @@
     <value>&gt;&gt; ¡Proceso completado!</value>
   </data>
   <data name="DisplayFilesSelected_Found_String3" xml:space="preserve">
-    <value>Encontrado</value>
+    <value>Fundar</value>
   </data>
   <data name="RegisterHeaderLog_CLRVersion" xml:space="preserve">
-    <value>Versión CLR:</value>
+    <value> CLR Versión: </value>
   </data>
   <data name="AboutVersion" xml:space="preserve">
-    <value>Versión</value>
+    <value>Versión </value>
   </data>
   <data name="Info" xml:space="preserve">
-    <value>[INFO]</value>
+    <value>[INFORMACIÓN]</value>
   </data>
   <data name="RequiredDirectories_String5" xml:space="preserve">
-    <value>[INFO] Los directorios de cobertura ya existen... ¡ignorando la creación!</value>
+    <value> [INFO] Los directorios de portadas ya existen... ignorando la creación!</value>
   </data>
   <data name="InvalidDrive_String4" xml:space="preserve">
-    <value>Se recomienda encarecidamente utilizar el sistema de archivos FAT32 con clústeres de 32K para garantizar la máxima compatibilidad con los juegos de GameCube, los juegos de Wii, las ROM, las aplicaciones, los emuladores y todo lo demás.</value>
+    <value>Se recomienda encarecidamente utilizar el sistema de archivos FAT32 con clústeres de 32K para garantizar la máxima compatibilidad con juegos de GameCube, juegos de Wii, ROM, aplicaciones, emuladores y todo lo demás.</value>
   </data>
   <data name="CopyTask_String2" xml:space="preserve">
-    <value>Instalando el juego...</value>
+    <value>Instalando juego... </value>
   </data>
   <data name="InstallGameScrub_Complete" xml:space="preserve">
     <value>Estado: ¡Completado!</value>
@@ -433,70 +433,70 @@
     <value>¡Transferencia completa!</value>
   </data>
   <data name="LoadDatabase_GameTitle" xml:space="preserve">
-    <value>Título del juego</value>
+    <value>Título del Juego</value>
   </data>
   <data name="CopyTask_String4" xml:space="preserve">
-    <value>Juego instalado.</value>
+    <value>¡Juego instalado!</value>
   </data>
   <data name="DialogResultDeleteGame_ReallyDeleteFile_String2" xml:space="preserve">
-    <value>Este procedimiento es irreversible y no será posible recuperar los archivos.</value>
+    <value>¡Este procedimiento es irreversible y no será posible recuperar los archivos!</value>
   </data>
   <data name="InstallGameScrub_Transferring" xml:space="preserve">
-    <value>Transfiriendo...</value>
+    <value>Transferiendo...</value>
   </data>
   <data name="ServerReported3DCoverNotFound" xml:space="preserve">
-    <value>El servidor informó: ¡Cubierta 3D no encontrada!</value>
+    <value>Servidor informado: ¡No se encontró la portada 3d!</value>
   </data>
   <data name="DisplayFilesSelected_FilePath" xml:space="preserve">
-    <value>Ruta del archivo</value>
+    <value>Caminho do Arquivo</value>
   </data>
   <data name="ProcessTaskDelay_String1" xml:space="preserve">
-    <value>¡Archivo 'wiitdb.xml' no encontrado!</value>
+    <value>¡No se encontró el archivo 'wiitdb.xml'!</value>
   </data>
   <data name="ClearTemp_String1" xml:space="preserve">
-    <value>[INFO] ¡No se ha podido borrar la carpeta temporal!</value>
+    <value> [INFO] ¡No se pudo borrar la carpeta temporal!</value>
   </data>
   <data name="LoadDatabase_IDGameCode" xml:space="preserve">
-    <value>ID (Código de juego)</value>
+    <value>ID (Código de Juego)</value>
   </data>
   <data name="Notice" xml:space="preserve">
     <value>AVISO</value>
   </data>
   <data name="NotNintendoGameCubeFile" xml:space="preserve">
-    <value>[ERROR] No es un archivo de Nintendo GameCube.</value>
+    <value> [ERROR] No es un archivo de Nintendo GameCube.</value>
   </data>
   <data name="RequiredDirectories_String1" xml:space="preserve">
-    <value>[INFO] Se ha creado el directorio temporal por defecto...</value>
+    <value> [INFO] Se ha creado el directorio temporal predeterminado...</value>
   </data>
   <data name="NetworkCheck_NetStatus_Online" xml:space="preserve">
-    <value>Conexión a Internet establecida.</value>
+    <value>¡Conexión a Internet establecida!</value>
   </data>
   <data name="ConvertElfDol_String3" xml:space="preserve">
     <value>&gt;&gt; Estado: ¡Completado!</value>
   </data>
   <data name="RequiredDirectories_String3" xml:space="preserve">
-    <value>[INFO] ¡Utilizando un directorio temporal personalizado!</value>
+    <value> [INFO] ¡Usando un directorio temporal personalizado!</value>
   </data>
   <data name="RegisterHeaderLog_GcbmLogCreated" xml:space="preserve">
-    <value>Se crea gcbm.log.</value>
+    <value> Se crea gcbm.log.</value>
   </data>
   <data name="ReadImage_String1" xml:space="preserve">
-    <value>La imagen es demasiado pequeña.</value>
+    <value>¡La imagen es demasiado pequeña!</value>
   </data>
   <data name="DestinyDrive_AvailableSpace" xml:space="preserve">
-    <value>Espacio disponible:</value>
+    <value>Espacio disponible: </value>
   </data>
   <data name="LoadISOInfo_String1" xml:space="preserve">
-    <value>Disco primario: (disco1)</value>
+    <value>Disco principal: (disco1)</value>
   </data>
   <data name="RegisterHeaderLog_ProgramName" xml:space="preserve">
-    <value>Nombre del programa:</value>
+    <value> Nombre del Programa: </value>
   </data>
   <data name="UnableWriteDataDisk" xml:space="preserve">
-    <value>No se han podido escribir datos en el disco.</value>
+    <value>¡No se pudieron escribir datos en el disco!</value>
   </data>
   <data name="DownloadDiscCover" xml:space="preserve">
-    <value>[INFO] Descargando carátulas (disco)... </value>
+    <value> [INFO] Descargando máscaras (Disco)...</value>
   </data>
   <data name="MetaXml_String_ERRO" xml:space="preserve">
     <value>ERROR</value>
@@ -505,31 +505,31 @@
     <value>¡Lista de juegos exportada a CSV!</value>
   </data>
   <data name="CheckUSBGXFlow_String3" xml:space="preserve">
-    <value>A continuación, en la misma pestaña, ve a 'Configuración del cargador USB (Transferir carátulas)' y ajusta los directorios de las carátulas (Disco, 2D, 3D y Completa) del USB Loader GX o WiiFlow en 'Configuración del cargador USB (Transferir carátulas)' , apuntando a los respectivos directorios dentro del dispositivo de destino.</value>
+    <value>Luego, en la misma pestaña, ve a 'Configuración del cargador USB (Transfer Covers)' y ajusta los directorios de las carátulas (Disco, 2D, 3D y Full) del USB Loader GX o WiiFlow en 'Configuración del cargador USB (Transfer Covers) ', apuntando a los directorios respectivos dentro del dispositivo de destino.</value>
   </data>
   <data name="SplashNetworkCheck" xml:space="preserve">
     <value>Comprobando la conexión a Internet...</value>
   </data>
   <data name="SplashPopulatingDrives" xml:space="preserve">
-    <value>Rellenando la lista de unidades...</value>
+    <value>Completando la lista de unidades...</value>
   </data>
   <data name="SplashFoundDrive" xml:space="preserve">
-    <value>Encontré la unidad:</value>
+    <value>Unidad encontrada:</value>
   </data>
   <data name="SplashFinishing" xml:space="preserve">
     <value>Terminando...</value>
   </data>
   <data name="SplashFinished" xml:space="preserve">
-    <value>Terminado.</value>
+    <value>Acabado.</value>
   </data>
   <data name="SplashDirectories" xml:space="preserve">
-    <value>Configurar los directorios necesarios...</value>
+    <value>Configurando los directorios requeridos...</value>
   </data>
   <data name="InstallGameScrub_TransferDisc2" xml:space="preserve">
-    <value>Disco móvil 2...</value>
+    <value>Moviendo disco 2...</value>
   </data>
   <data name="InstallGameScrub_DoneScrubbing" xml:space="preserve">
-    <value>Terminé de fregar...</value>
+    <value>Terminado de fregar...</value>
   </data>
   <data name="GCBM_TranslatedBy" xml:space="preserve">
     <value>Laete Meireles</value>
@@ -550,7 +550,7 @@
     <value>¿Puedes entender esto?</value>
   </data>
   <data name="DownloadDiscCoverError" xml:space="preserve">
-    <value>[ERROR] Fallo en la descarga de carátulas (disco)</value>
+    <value> [ERROR] ¡Error al descargar la carátula (disco)!</value>
   </data>
   <data name="LoadDatabase_Editor" xml:space="preserve">
     <value>Editor</value>

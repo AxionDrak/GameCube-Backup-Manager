@@ -61,7 +61,7 @@ namespace GCBM
             this.lblInstallStatusText = new System.Windows.Forms.Label();
             this.grpDetailsSource = new System.Windows.Forms.GroupBox();
             this.lblTypeDisc = new System.Windows.Forms.Label();
-            this.label34 = new System.Windows.Forms.Label();
+            this.lblMakerCode = new System.Windows.Forms.Label();
             this.tbIDMakerCode = new System.Windows.Forms.TextBox();
             this.tbIDDiscID = new System.Windows.Forms.TextBox();
             this.label29 = new System.Windows.Forms.Label();
@@ -224,6 +224,11 @@ namespace GCBM
             this.pbNetStatus = new System.Windows.Forms.PictureBox();
             this.gameBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.process1 = new System.Diagnostics.Process();
+            this.tbDestDiscID = new System.Windows.Forms.TextBox();
+            this.lblDestinationDiscID = new System.Windows.Forms.Label();
+            this.lblMakerCodeDest = new System.Windows.Forms.Label();
+            this.tbIDMakerCodeDest = new System.Windows.Forms.TextBox();
+            this.lblTypeDiscDest = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.spcMain)).BeginInit();
             this.spcMain.Panel1.SuspendLayout();
             this.spcMain.Panel2.SuspendLayout();
@@ -416,7 +421,7 @@ namespace GCBM
             // 
             resources.ApplyResources(this.grpDetailsSource, "grpDetailsSource");
             this.grpDetailsSource.Controls.Add(this.lblTypeDisc);
-            this.grpDetailsSource.Controls.Add(this.label34);
+            this.grpDetailsSource.Controls.Add(this.lblMakerCode);
             this.grpDetailsSource.Controls.Add(this.tbIDMakerCode);
             this.grpDetailsSource.Controls.Add(this.tbIDDiscID);
             this.grpDetailsSource.Controls.Add(this.label29);
@@ -436,10 +441,10 @@ namespace GCBM
             resources.ApplyResources(this.lblTypeDisc, "lblTypeDisc");
             this.lblTypeDisc.Name = "lblTypeDisc";
             // 
-            // label34
+            // lblMakerCode
             // 
-            resources.ApplyResources(this.label34, "label34");
-            this.label34.Name = "label34";
+            resources.ApplyResources(this.lblMakerCode, "lblMakerCode");
+            this.lblMakerCode.Name = "lblMakerCode";
             // 
             // tbIDMakerCode
             // 
@@ -855,6 +860,11 @@ namespace GCBM
             // grpDetailsDestiny
             // 
             resources.ApplyResources(this.grpDetailsDestiny, "grpDetailsDestiny");
+            this.grpDetailsDestiny.Controls.Add(this.lblTypeDiscDest);
+            this.grpDetailsDestiny.Controls.Add(this.lblMakerCodeDest);
+            this.grpDetailsDestiny.Controls.Add(this.tbIDMakerCodeDest);
+            this.grpDetailsDestiny.Controls.Add(this.tbDestDiscID);
+            this.grpDetailsDestiny.Controls.Add(this.lblDestinationDiscID);
             this.grpDetailsDestiny.Controls.Add(this.pbWebGameDiscID);
             this.grpDetailsDestiny.Controls.Add(this.label4);
             this.grpDetailsDestiny.Controls.Add(this.label5);
@@ -1593,6 +1603,33 @@ namespace GCBM
             this.process1.StartInfo.UserName = "";
             this.process1.SynchronizingObject = this;
             // 
+            // tbDestDiscID
+            // 
+            resources.ApplyResources(this.tbDestDiscID, "tbDestDiscID");
+            this.tbDestDiscID.Name = "tbDestDiscID";
+            this.tbDestDiscID.ReadOnly = true;
+            // 
+            // lblDestinationDiscID
+            // 
+            resources.ApplyResources(this.lblDestinationDiscID, "lblDestinationDiscID");
+            this.lblDestinationDiscID.Name = "lblDestinationDiscID";
+            // 
+            // lblMakerCodeDest
+            // 
+            resources.ApplyResources(this.lblMakerCodeDest, "lblMakerCodeDest");
+            this.lblMakerCodeDest.Name = "lblMakerCodeDest";
+            // 
+            // tbIDMakerCodeDest
+            // 
+            resources.ApplyResources(this.tbIDMakerCodeDest, "tbIDMakerCodeDest");
+            this.tbIDMakerCodeDest.Name = "tbIDMakerCodeDest";
+            this.tbIDMakerCodeDest.ReadOnly = true;
+            // 
+            // lblTypeDiscDest
+            // 
+            resources.ApplyResources(this.lblTypeDiscDest, "lblTypeDiscDest");
+            this.lblTypeDiscDest.Name = "lblTypeDiscDest";
+            // 
             // frmMain
             // 
             resources.ApplyResources(this, "$this");
@@ -1725,7 +1762,7 @@ namespace GCBM
         private Button btnSelectFolder;
         private GroupBox grpDetailsSource;
         private Label lblTypeDisc;
-        private Label label34;
+        private Label lblMakerCode;
         private TextBox tbIDMakerCode;
         private TextBox tbIDDiscID;
         private Label label29;
@@ -1841,6 +1878,11 @@ namespace GCBM
         private ToolStripMenuItem toolStripMenuItem11;
         private ProgressBar pbSource;
         private Label lblInstallStatusGameIndex;
+        private TextBox tbDestDiscID;
+        private Label lblDestinationDiscID;
+        private Label lblTypeDiscDest;
+        private Label lblMakerCodeDest;
+        private TextBox tbIDMakerCodeDest;
     }
 }
 

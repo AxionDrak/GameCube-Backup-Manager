@@ -280,13 +280,13 @@
     <value>It is recommended to delete or move the file to another location.</value>
   </data>
   <data name="DownloadDiscCover" xml:space="preserve">
-    <value> [INFO] Downloading covers (Disc)... </value>
+    <value> [INFO] Downloading covers (Disc)...</value>
   </data>
   <data name=" " xml:space="preserve">
     <value> [ERROR] Failed to download cover (Disc)!</value>
   </data>
   <data name="Download3DCover" xml:space="preserve">
-    <value> [INFO] Downloading covers (3D)... </value>
+    <value> [INFO] Downloading covers (3D)...</value>
   </data>
   <data name="Download3DCoverError" xml:space="preserve">
     <value> [ERROR] Failed to download cover (3D)!</value>
@@ -304,13 +304,13 @@
     <value>This procedure is irreversible and it will not be possible to recover the file(s)!</value>
   </data>
   <data name="CheckUSBGXFlow_String1" xml:space="preserve">
-    <value>Please go to 'Options'-&gt;'Settings'</value>
+    <value>Please go to 'Options'-&gt;'Settings</value>
   </data>
   <data name="CheckUSBGXFlow_String2" xml:space="preserve">
-    <value>Then go to 'Covers' -&gt; 'Synchronize' and check the 'Enable transfer of skins between devices'.</value>
+    <value>Then go to 'Skins' -&gt; 'Synchronize' and check the 'Enable transfer of skins between devices'.</value>
   </data>
   <data name="CheckUSBGXFlow_String3" xml:space="preserve">
-    <value>Then, in the same tab, go to 'USB loader configuration (Transfer Covers)' and adjust the directories of the covers (Disk, 2D, 3D and Full) of the USB Loader GX or WiiFlow in 'USB charger configuration (Transfer Covers)' , pointing to the respective directories within the target device.</value>
+    <value>Then, in the same tab, go to 'USB charger configuration (Transfer Covers)' and adjust the directories of the covers (Disk, 2D, 3D and Full) of the USB Loader GX or WiiFlow in 'USB charger configuration (Transfer Covers)' , pointing to the respective directories within the target device.</value>
   </data>
   <data name="ProcessTaskDelay_String1" xml:space="preserve">
     <value>File 'wiitdb.xml' not found!</value>
@@ -502,7 +502,7 @@
     <value>Please set the path to the Dolphin emulator executable (dolphin.exe).</value>
   </data>
   <data name="OverwriteWiiTDBBody" xml:space="preserve">
-    <value>Do you want to overwrite the current WiiTDB.xml file?</value>
+    <value>Do you want to overwrite the current WiiTDB.xml file?Do you want to overwrite the current WiiTDB.xml file?</value>
   </data>
   <data name="OverwriteWiiTDBCaption" xml:space="preserve">
     <value>Overwrite WiiTDB.xml?</value>
@@ -550,8 +550,7 @@
     <value>Can you understand this?</value>
   </data>
   <data name="DownloadDiscCoverError" xml:space="preserve">
-    <value> [ERROR] Failed to Download covers (Disc)!
-</value>
+    <value> [ERROR] Failed to download cover (Disc)!</value>
   </data>
   <data name="LoadDatabase_Editor" xml:space="preserve">
     <value>Editor</value>

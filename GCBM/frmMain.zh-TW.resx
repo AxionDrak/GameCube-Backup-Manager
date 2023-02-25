@@ -414,4 +414,7 @@
   <data name="label3.Text" xml:space="preserve">
     <value>遊戲總數及總大小並不區分光碟 1 (game.iso) 及光碟 2 (disc2.iso) 檔案。資料僅供參考。</value>
   </data>
+  <data name="lblTypeDiscDest.Text" xml:space="preserve">
+    <value>光碟...</value>
+  </data>
 </root>

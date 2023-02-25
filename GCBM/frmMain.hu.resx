@@ -414,4 +414,7 @@
   <data name="tsmiNotifyExit.Text" xml:space="preserve">
     <value>Kilépés</value>
   </data>
+  <data name="lblTypeDiscDest.Text" xml:space="preserve">
+    <value>Disc...</value>
+  </data>
 </root>

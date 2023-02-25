@@ -734,7 +734,7 @@ namespace GCBM.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [Falha no descarregamento das capas (Disco).
+        ///   Looks up a localized string similar to  [ERRO] Falha ao efetuar download da capa (Disco)!.
         /// </summary>
         internal static string DownloadDiscCoverError {
             get {
@@ -1081,7 +1081,7 @@ namespace GCBM.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Portugês [Brasil].
+        ///   Looks up a localized string similar to Portuguese [Brazil].
         /// </summary>
         internal static string GCBM_Language {
             get {

@@ -140,7 +140,7 @@
     <value>Tem certeza de que deseja excluir o plugin?</value>
   </data>
   <data name="GCBM_Language" xml:space="preserve">
-    <value>Portugês [Brasil]</value>
+    <value>Portuguese [Brazil]</value>
   </data>
   <data name="EmptyGamesList" xml:space="preserve">
     <value>A lista de jogos está vazia!</value>
@@ -827,7 +827,7 @@
     <value>Seleccione a sua língua:</value>
   </data>
   <data name="DownloadDiscCoverError" xml:space="preserve">
-    <value>[Falha no descarregamento das capas (Disco)</value>
+    <value> [ERRO] Falha ao efetuar download da capa (Disco)!</value>
   </data>
   <data name="LanguagePromptConfirmTitle" xml:space="preserve">
     <value>Consegue compreender isto?</value>

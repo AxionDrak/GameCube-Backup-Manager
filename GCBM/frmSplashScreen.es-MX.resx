@@ -118,12 +118,12 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="tsslCurrentYear.Text" xml:space="preserve">
-    <value>Copyright © 2019 -</value>
+    <value>Copyright © 2019 - </value>
   </data>
   <data name="lblAllRightsReserved.Text" xml:space="preserve">
     <value>Todos los derechos reservados.</value>
   </data>
   <data name="lblStartSplashScreen.Text" xml:space="preserve">
-    <value>Iniciando...</value>
+    <value>Inicializando...</value>
   </data>
 </root>

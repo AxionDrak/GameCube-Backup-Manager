@@ -1319,38 +1319,38 @@
   <data name="&gt;&gt;lblTypeDisc.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="label34.AutoSize" type="System.Boolean, mscorlib">
+  <data name="lblMakerCode.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="label34.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="lblMakerCode.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="label34.Location" type="System.Drawing.Point, System.Drawing">
-    <value>188, 59</value>
+  <data name="lblMakerCode.Location" type="System.Drawing.Point, System.Drawing">
+    <value>185, 59</value>
   </data>
-  <data name="label34.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="lblMakerCode.Size" type="System.Drawing.Size, System.Drawing">
     <value>65, 13</value>
   </data>
-  <data name="label34.TabIndex" type="System.Int32, mscorlib">
+  <data name="lblMakerCode.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
   </data>
-  <data name="label34.Text" xml:space="preserve">
+  <data name="lblMakerCode.Text" xml:space="preserve">
     <value>MakerCode:</value>
   </data>
-  <data name="&gt;&gt;label34.Name" xml:space="preserve">
-    <value>label34</value>
+  <data name="&gt;&gt;lblMakerCode.Name" xml:space="preserve">
+    <value>lblMakerCode</value>
   </data>
-  <data name="&gt;&gt;label34.Type" xml:space="preserve">
+  <data name="&gt;&gt;lblMakerCode.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label34.Parent" xml:space="preserve">
+  <data name="&gt;&gt;lblMakerCode.Parent" xml:space="preserve">
     <value>grpDetailsSource</value>
   </data>
-  <data name="&gt;&gt;label34.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;lblMakerCode.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="tbIDMakerCode.Location" type="System.Drawing.Point, System.Drawing">
-    <value>259, 56</value>
+    <value>256, 56</value>
   </data>
   <data name="tbIDMakerCode.Size" type="System.Drawing.Size, System.Drawing">
     <value>40, 20</value>
@@ -2172,7 +2172,7 @@
     <value>3, 3</value>
   </data>
   <data name="mstripFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>949, 24</value>
+    <value>952, 24</value>
   </data>
   <data name="mstripFile.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -2196,7 +2196,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabMainFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>955, 514</value>
+    <value>958, 514</value>
   </data>
   <data name="tabMainFile.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2534,6 +2534,141 @@
   <data name="grpDetailsDestiny.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
+  <data name="lblTypeDiscDest.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblTypeDiscDest.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblTypeDiscDest.Location" type="System.Drawing.Point, System.Drawing">
+    <value>133, 111</value>
+  </data>
+  <data name="lblTypeDiscDest.Size" type="System.Drawing.Size, System.Drawing">
+    <value>43, 13</value>
+  </data>
+  <data name="lblTypeDiscDest.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="lblTypeDiscDest.Text" xml:space="preserve">
+    <value>Disco...</value>
+  </data>
+  <data name="lblTypeDiscDest.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;lblTypeDiscDest.Name" xml:space="preserve">
+    <value>lblTypeDiscDest</value>
+  </data>
+  <data name="&gt;&gt;lblTypeDiscDest.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblTypeDiscDest.Parent" xml:space="preserve">
+    <value>grpDetailsDestiny</value>
+  </data>
+  <data name="&gt;&gt;lblTypeDiscDest.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblMakerCodeDest.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblMakerCodeDest.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblMakerCodeDest.Location" type="System.Drawing.Point, System.Drawing">
+    <value>185, 59</value>
+  </data>
+  <data name="lblMakerCodeDest.Size" type="System.Drawing.Size, System.Drawing">
+    <value>65, 13</value>
+  </data>
+  <data name="lblMakerCodeDest.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="lblMakerCodeDest.Text" xml:space="preserve">
+    <value>MakerCode:</value>
+  </data>
+  <data name="&gt;&gt;lblMakerCodeDest.Name" xml:space="preserve">
+    <value>lblMakerCodeDest</value>
+  </data>
+  <data name="&gt;&gt;lblMakerCodeDest.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblMakerCodeDest.Parent" xml:space="preserve">
+    <value>grpDetailsDestiny</value>
+  </data>
+  <data name="&gt;&gt;lblMakerCodeDest.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tbIDMakerCodeDest.Location" type="System.Drawing.Point, System.Drawing">
+    <value>256, 56</value>
+  </data>
+  <data name="tbIDMakerCodeDest.Size" type="System.Drawing.Size, System.Drawing">
+    <value>40, 20</value>
+  </data>
+  <data name="tbIDMakerCodeDest.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;tbIDMakerCodeDest.Name" xml:space="preserve">
+    <value>tbIDMakerCodeDest</value>
+  </data>
+  <data name="&gt;&gt;tbIDMakerCodeDest.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbIDMakerCodeDest.Parent" xml:space="preserve">
+    <value>grpDetailsDestiny</value>
+  </data>
+  <data name="&gt;&gt;tbIDMakerCodeDest.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="tbDestDiscID.Location" type="System.Drawing.Point, System.Drawing">
+    <value>87, 108</value>
+  </data>
+  <data name="tbDestDiscID.Size" type="System.Drawing.Size, System.Drawing">
+    <value>40, 20</value>
+  </data>
+  <data name="tbDestDiscID.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;tbDestDiscID.Name" xml:space="preserve">
+    <value>tbDestDiscID</value>
+  </data>
+  <data name="&gt;&gt;tbDestDiscID.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbDestDiscID.Parent" xml:space="preserve">
+    <value>grpDetailsDestiny</value>
+  </data>
+  <data name="&gt;&gt;tbDestDiscID.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="lblDestinationDiscID.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblDestinationDiscID.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblDestinationDiscID.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 111</value>
+  </data>
+  <data name="lblDestinationDiscID.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 13</value>
+  </data>
+  <data name="lblDestinationDiscID.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="lblDestinationDiscID.Text" xml:space="preserve">
+    <value>Disc ID:</value>
+  </data>
+  <data name="&gt;&gt;lblDestinationDiscID.Name" xml:space="preserve">
+    <value>lblDestinationDiscID</value>
+  </data>
+  <data name="&gt;&gt;lblDestinationDiscID.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblDestinationDiscID.Parent" xml:space="preserve">
+    <value>grpDetailsDestiny</value>
+  </data>
+  <data name="&gt;&gt;lblDestinationDiscID.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
   <data name="pbWebGameDiscID.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -2568,7 +2703,7 @@
     <value>grpDetailsDestiny</value>
   </data>
   <data name="&gt;&gt;pbWebGameDiscID.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>5</value>
   </data>
   <data name="label4.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -2601,7 +2736,7 @@
     <value>grpDetailsDestiny</value>
   </data>
   <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>6</value>
   </data>
   <data name="label5.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -2634,7 +2769,7 @@
     <value>grpDetailsDestiny</value>
   </data>
   <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>7</value>
   </data>
   <data name="label6.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -2667,7 +2802,7 @@
     <value>grpDetailsDestiny</value>
   </data>
   <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>8</value>
   </data>
   <data name="tbIDGameDisc.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -2691,7 +2826,7 @@
     <value>grpDetailsDestiny</value>
   </data>
   <data name="&gt;&gt;tbIDGameDisc.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>9</value>
   </data>
   <data name="tbIDRegionDisc.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -2715,7 +2850,7 @@
     <value>grpDetailsDestiny</value>
   </data>
   <data name="&gt;&gt;tbIDRegionDisc.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>10</value>
   </data>
   <data name="tbIDNameDisc.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -2739,13 +2874,13 @@
     <value>grpDetailsDestiny</value>
   </data>
   <data name="&gt;&gt;tbIDNameDisc.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>11</value>
   </data>
   <data name="grpDetailsDestiny.Location" type="System.Drawing.Point, System.Drawing">
     <value>508, 30</value>
   </data>
   <data name="grpDetailsDestiny.Size" type="System.Drawing.Size, System.Drawing">
-    <value>354, 116</value>
+    <value>354, 142</value>
   </data>
   <data name="grpDetailsDestiny.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -2988,7 +3123,7 @@
     <value>3, 3</value>
   </data>
   <data name="mstripDisc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>949, 27</value>
+    <value>952, 27</value>
   </data>
   <data name="mstripDisc.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -3012,7 +3147,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabMainDisc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>955, 514</value>
+    <value>958, 514</value>
   </data>
   <data name="tabMainDisc.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -3210,7 +3345,7 @@
     <value>3, 3</value>
   </data>
   <data name="mstripDatabase.Size" type="System.Drawing.Size, System.Drawing">
-    <value>949, 24</value>
+    <value>952, 24</value>
   </data>
   <data name="mstripDatabase.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -3234,7 +3369,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabMainDatabase.Size" type="System.Drawing.Size, System.Drawing">
-    <value>955, 514</value>
+    <value>958, 514</value>
   </data>
   <data name="tabMainDatabase.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -3312,7 +3447,7 @@
     <value>3, 3</value>
   </data>
   <data name="mstripLog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>949, 24</value>
+    <value>952, 24</value>
   </data>
   <data name="mstripLog.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -3336,7 +3471,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabMainLog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>955, 514</value>
+    <value>958, 514</value>
   </data>
   <data name="tabMainLog.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -3360,7 +3495,7 @@
     <value>3, 3</value>
   </data>
   <data name="tabControlMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>963, 540</value>
+    <value>966, 540</value>
   </data>
   <data name="tabControlMain.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>

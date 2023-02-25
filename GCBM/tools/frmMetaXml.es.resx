@@ -124,13 +124,13 @@
     <value>Seleccione el archivo de imagen:</value>
   </data>
   <data name="cbMountUSB.Items" xml:space="preserve">
-    <value>DISABLED</value>
+    <value>DESACTIVADO</value>
   </data>
   <data name="ofdXml.Filter" xml:space="preserve">
     <value>Archivos XML|meta.xml</value>
   </data>
   <data name="cbAppNoReloadIOS.Items" xml:space="preserve">
-    <value>DISABLED</value>
+    <value>DESACTIVADO</value>
   </data>
   <data name="btnClose.Text" xml:space="preserve">
     <value>Cerrar</value>
@@ -139,19 +139,19 @@
     <value>Buscar...</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Leer/editar 'meta.xml'</value>
+    <value>Leer/Editar 'meta.xml'</value>
   </data>
   <data name="lblMountUsb.Text" xml:space="preserve">
-    <value>Monta el USB:</value>
+    <value>Montaje USB:</value>
   </data>
   <data name="cbAppAhbAccess.Items1" xml:space="preserve">
-    <value>HABILITADO</value>
+    <value>ACTIVADO</value>
   </data>
   <data name="cbAppAhbAccess.Items" xml:space="preserve">
-    <value>DISABLED</value>
+    <value>DESACTIVADO</value>
   </data>
   <data name="label4.Text" xml:space="preserve">
-    <value>Fecha de publicación:</value>
+    <value>Fecha Lanzamiento:</value>
   </data>
   <data name="btnSave.Text" xml:space="preserve">
     <value>Guardar</value>
@@ -160,7 +160,7 @@
     <value>Nombre:</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
-    <value>Descripción (breve):</value>
+    <value>Descripción (corta):</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>Desarrollador:</value>
@@ -181,7 +181,7 @@
     <value>Descripción (larga):</value>
   </data>
   <data name="cbPortUSB.Items" xml:space="preserve">
-    <value>DISABLED</value>
+    <value>DESACTIVADO</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
     <value>Versión:</value>
@@ -193,18 +193,18 @@
     <value>Puerto USB:</value>
   </data>
   <data name="cbAppNoReloadIOS.Items1" xml:space="preserve">
-    <value>HABILITADO</value>
+    <value>ACTIVADO</value>
   </data>
   <data name="label9.Text" xml:space="preserve">
-    <value>No recargue el IOS:</value>
+    <value>No recargar IOS:</value>
   </data>
   <data name="lblAttentionImageNotFound.Text" xml:space="preserve">
     <value>¡ATENCIÓN!</value>
   </data>
   <data name="btnClear.Text" xml:space="preserve">
-    <value>Limpia</value>
+    <value>Limpio</value>
   </data>
   <data name="lblImageNotFound.Text" xml:space="preserve">
-    <value>¡Imagen no encontrada! Puede guardar usando la imagen mostrada arriba, seleccionar una nueva imagen, o eliminar la imagen completamente. Tamaño de la imagen: 128 (ancho) x 48 (alto).</value>
+    <value>¡Imagen no encontrada! Puede guardar usando la imagen que se muestra arriba, seleccionar una nueva imagen o eliminar la imagen por completo. Tamaño de la imagen: 128 (ancho) x 48 (alto).</value>
   </data>
 </root>
