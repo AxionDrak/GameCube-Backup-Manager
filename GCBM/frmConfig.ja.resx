@@ -117,20 +117,20 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="grbGeneralTemporaryFolder.Text" xml:space="preserve">
-    <value>Temporary folder</value>
+    <value>一時フォルダー</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="chkGeneralExtractNwb.Size" type="System.Drawing.Size, System.Drawing">
     <value>109, 17</value>
   </data>
   <data name="chkGeneralExtractNwb.Text" xml:space="preserve">
-    <value>NWB files (*.nwb)</value>
+    <value>NWBファイル （*.nwb）</value>
   </data>
   <data name="chkGeneralExtractSplitFile.Size" type="System.Drawing.Size, System.Drawing">
     <value>101, 17</value>
   </data>
   <data name="chkGeneralExtractSplitFile.Text" xml:space="preserve">
-    <value>Split files (*.001)</value>
+    <value>ファイルを分割 (*.001)</value>
   </data>
   <data name="chkGeneralExtractBZip2.Size" type="System.Drawing.Size, System.Drawing">
     <value>137, 17</value>
@@ -142,7 +142,7 @@
     <value>98, 17</value>
   </data>
   <data name="chkGeneralExtractRar.Text" xml:space="preserve">
-    <value>RAR files (*.rar)</value>
+    <value>RARファイル (*.rar)</value>
   </data>
   <data name="chkGeneralExtract7z.Size" type="System.Drawing.Size, System.Drawing">
     <value>124, 17</value>
@@ -154,58 +154,58 @@
     <value>91, 17</value>
   </data>
   <data name="chkGeneralExtractZip.Text" xml:space="preserve">
-    <value>Zip files (*.zip)</value>
+    <value>Zipファイル (*.zip)</value>
   </data>
   <data name="lblGeneralExtract.Size" type="System.Drawing.Size, System.Drawing">
     <value>144, 13</value>
   </data>
   <data name="lblGeneralExtract.Text" xml:space="preserve">
-    <value>Extract whenever necessary.</value>
+    <value>必要に応じて抽出します。</value>
   </data>
   <data name="grbGeneralFiles.Text" xml:space="preserve">
-    <value>Files</value>
+    <value>ファイル</value>
   </data>
   <data name="cbGeneralFileSize.Items" xml:space="preserve">
-    <value>Automatic</value>
+    <value>自動</value>
   </data>
   <data name="cbGeneralFileSize.Items2" xml:space="preserve">
-    <value>Megabyte</value>
+    <value>メガバイト</value>
   </data>
   <data name="cbGeneralFileSize.Items3" xml:space="preserve">
-    <value>Gigabyte</value>
+    <value>ギガバイト</value>
   </data>
   <data name="grbGeneralFileSize.Text" xml:space="preserve">
-    <value>Show size</value>
+    <value>ファイルのサイズを表示</value>
   </data>
   <data name="rbGeneralDiscDelete.Size" type="System.Drawing.Size, System.Drawing">
     <value>372, 19</value>
   </data>
   <data name="rbGeneralDiscDelete.Text" xml:space="preserve">
-    <value>Keep only disk 1 folder and delete disk 2 folder (Experimental)</value>
+    <value>ディスク１フォルダーのみを保持し、ディスク２フォルダーを削除する (実験的な機能)</value>
   </data>
   <data name="rbGeneralDiscClean.Size" type="System.Drawing.Size, System.Drawing">
     <value>282, 17</value>
   </data>
   <data name="rbGeneralDiscClean.Text" xml:space="preserve">
-    <value>Keep all folders separate for disk 1 and disk 2 (Default)</value>
+    <value>ディスク１とディスク２のすべてのフォルダーを別々に保持する (デフォルト)</value>
   </data>
   <data name="grbGeneralPartitions.Text" xml:space="preserve">
-    <value>Adjust game directories</value>
+    <value>ゲームディレクトリを調整する</value>
   </data>
   <data name="tabSettingsGeneral.Text" xml:space="preserve">
-    <value>General</value>
+    <value>一般</value>
   </data>
   <data name="lblCommentsScrubCopy.Size" type="System.Drawing.Size, System.Drawing">
     <value>538, 52</value>
   </data>
   <data name="lblCommentsScrubCopy.Text" xml:space="preserve">
-    <value>For the Scrub method, the default "Title [Game Code]" will always be used, based on the internal name (defined by the developer). In Scrub copy mode, disks 1 and 2 will always be stored in separate folders, except in specific cases, where the detection method can identify common names given by the developer, in which case, disks 1 and 2 will be stored in the same folder.</value>
+    <value>Scrub メソッドの場合、(開発者によって定義された) 内部名に基づいて、既定の "タイトル［ゲームコード］" が常に使用されます。 スクラブコピーモードでは、ディスク１とディスク２は常に別々のフォルダーに保存されます。ただし、開発者によって指定された内部名を検出方法で識別できる特定のケースを除きます。この場合、ディスク１とディスク２は同じフォルダーに保存されます。</value>
   </data>
   <data name="lblCommentsExactCopy.Size" type="System.Drawing.Size, System.Drawing">
     <value>538, 39</value>
   </data>
   <data name="lblCommentsExactCopy.Text" xml:space="preserve">
-    <value>The naming style currently only works with exact copy of files (1:1), and can use both the internal name and the commercial name (via wiitdb.xml). This option can be configured by the user, in the 'Titles' tab. In exact copy (1:1) mode, disks 1 and 2 will always be stored in the same folder.</value>
+    <value>命名スタイルは現在、ファイルの正確なコピー（1:1）でのみ機能し、内部名と商用名 (wiitdb.xml経由) の両方を使用できます。 このオプションは、［タイトル］タブでユーザーが設定できます。 完全コピー（1:1）モードでは、ディスク１と ディスク２は常に同じフォルダーに格納されます。</value>
   </data>
   <data name="lblComments.Size" type="System.Drawing.Size, System.Drawing">
     <value>72, 13</value>
