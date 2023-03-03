@@ -130,31 +130,31 @@
     <value>101, 17</value>
   </data>
   <data name="chkGeneralExtractSplitFile.Text" xml:space="preserve">
-    <value>ファイルを分割 (*.001)</value>
+    <value>ファイルを分割（*.001）</value>
   </data>
   <data name="chkGeneralExtractBZip2.Size" type="System.Drawing.Size, System.Drawing">
     <value>137, 17</value>
   </data>
   <data name="chkGeneralExtractBZip2.Text" xml:space="preserve">
-    <value>BZip2 files (*.bz;*.bzip2)</value>
+    <value>BZip2 files（*.bz;*.bzip2）</value>
   </data>
   <data name="chkGeneralExtractRar.Size" type="System.Drawing.Size, System.Drawing">
     <value>98, 17</value>
   </data>
   <data name="chkGeneralExtractRar.Text" xml:space="preserve">
-    <value>RARファイル (*.rar)</value>
+    <value>RARファイル （*.rar）</value>
   </data>
   <data name="chkGeneralExtract7z.Size" type="System.Drawing.Size, System.Drawing">
     <value>124, 17</value>
   </data>
   <data name="chkGeneralExtract7z.Text" xml:space="preserve">
-    <value>7Zip files (*.7z;*.7zip)</value>
+    <value>7Zip files （*.7z;*.7zip）</value>
   </data>
   <data name="chkGeneralExtractZip.Size" type="System.Drawing.Size, System.Drawing">
     <value>91, 17</value>
   </data>
   <data name="chkGeneralExtractZip.Text" xml:space="preserve">
-    <value>Zipファイル (*.zip)</value>
+    <value>Zipファイル（*.zip）</value>
   </data>
   <data name="lblGeneralExtract.Size" type="System.Drawing.Size, System.Drawing">
     <value>144, 13</value>
@@ -181,13 +181,13 @@
     <value>372, 19</value>
   </data>
   <data name="rbGeneralDiscDelete.Text" xml:space="preserve">
-    <value>ディスク１フォルダーのみを保持し、ディスク２フォルダーを削除する (実験的な機能)</value>
+    <value>ディスク１フォルダーのみを保持し、ディスク２フォルダーを削除する（実験的な機能）</value>
   </data>
   <data name="rbGeneralDiscClean.Size" type="System.Drawing.Size, System.Drawing">
     <value>282, 17</value>
   </data>
   <data name="rbGeneralDiscClean.Text" xml:space="preserve">
-    <value>ディスク１とディスク２のすべてのフォルダーを別々に保持する (デフォルト)</value>
+    <value>ディスク１とディスク２のすべてのフォルダーを別々に保持する（デフォルト）</value>
   </data>
   <data name="grbGeneralPartitions.Text" xml:space="preserve">
     <value>ゲームディレクトリを調整する</value>
@@ -199,13 +199,13 @@
     <value>538, 52</value>
   </data>
   <data name="lblCommentsScrubCopy.Text" xml:space="preserve">
-    <value>Scrub メソッドの場合、(開発者によって定義された) 内部名に基づいて、既定の "タイトル［ゲームコード］" が常に使用されます。 スクラブコピーモードでは、ディスク１とディスク２は常に別々のフォルダーに保存されます。ただし、開発者によって指定された内部名を検出方法で識別できる特定のケースを除きます。この場合、ディスク１とディスク２は同じフォルダーに保存されます。</value>
+    <value>Scrub メソッドの場合、（開発者によって定義された）内部名に基づいて、既定の "タイトル［ゲームコード］" が常に使用されます。 スクラブコピーモードでは、ディスク１とディスク２は常に別々のフォルダーに保存されます。ただし、開発者によって指定された内部名を検出方法で識別できる特定のケースを除きます。この場合、ディスク１とディスク２は同じフォルダーに保存されます。</value>
   </data>
   <data name="lblCommentsExactCopy.Size" type="System.Drawing.Size, System.Drawing">
     <value>538, 39</value>
   </data>
   <data name="lblCommentsExactCopy.Text" xml:space="preserve">
-    <value>命名スタイルは現在、ファイルの正確なコピー（1:1）でのみ機能し、内部名と商用名 (wiitdb.xml経由) の両方を使用できます。 このオプションは、［タイトル］タブでユーザーが設定できます。 完全コピー（1:1）モードでは、ディスク１と ディスク２は常に同じフォルダーに格納されます。</value>
+    <value>命名スタイルは現在、ファイルの正確なコピー（1:1）でのみ機能し、内部名と商用名 （wiitdb.xml経由）の両方を使用できます。 このオプションは、［タイトル］タブでユーザーが設定できます。 完全コピー（1:1）モードでは、ディスク１と ディスク２は常に同じフォルダーに格納されます。</value>
   </data>
   <data name="lblComments.Size" type="System.Drawing.Size, System.Drawing">
     <value>72, 13</value>
@@ -277,229 +277,229 @@
     <value>323, 17</value>
   </data>
   <data name="chkGeneralRecursiva.Text" xml:space="preserve">
-    <value>Search directories recursively (only for "Files (Source)" window)</value>
+    <value>ディレクトリを再帰的に検索する (「ファイル (ソース)」ウィンドウのみ)</value>
   </data>
   <data name="chkGeneralTemporaryBuffer.Size" type="System.Drawing.Size, System.Drawing">
     <value>223, 17</value>
   </data>
   <data name="chkGeneralTemporaryBuffer.Text" xml:space="preserve">
-    <value>Use transfers in temporary memory (buffer)</value>
+    <value>一時メモリ（バッファ）で転送を使用する</value>
   </data>
   <data name="chkGeneralMD5.Size" type="System.Drawing.Size, System.Drawing">
     <value>217, 17</value>
   </data>
   <data name="chkGeneralMD5.Text" xml:space="preserve">
-    <value>Calculate MD5 signature during transfers</value>
+    <value>転送中にMD5署名を計算する</value>
   </data>
   <data name="grbGeneralDiverse.Text" xml:space="preserve">
-    <value>Several</value>
+    <value>いくつか</value>
   </data>
   <data name="tabSettingsSeveral.Text" xml:space="preserve">
-    <value>Several</value>
+    <value>いくつか</value>
   </data>
   <data name="lblFormat.Size" type="System.Drawing.Size, System.Drawing">
     <value>42, 13</value>
   </data>
   <data name="lblFormat.Text" xml:space="preserve">
-    <value>Format:</value>
+    <value>形式：</value>
   </data>
   <data name="lblAlignment.Size" type="System.Drawing.Size, System.Drawing">
     <value>56, 13</value>
   </data>
   <data name="lblAlignment.Text" xml:space="preserve">
-    <value>Alignment:</value>
+    <value>アライメント：</value>
   </data>
   <data name="cbScrubAlign.Items" xml:space="preserve">
-    <value>Automatic</value>
+    <value>自動</value>
   </data>
   <data name="chkGeneralScrubFlushSD.Size" type="System.Drawing.Size, System.Drawing">
     <value>321, 17</value>
   </data>
   <data name="chkGeneralScrubFlushSD.Text" xml:space="preserve">
-    <value>Clear file buffers so SD card can be ejected almost immediately</value>
+    <value>ファイルバッファをクリアして、SDカードをすぐに取り出せるようにします</value>
   </data>
   <data name="label28.Size" type="System.Drawing.Size, System.Drawing">
     <value>467, 39</value>
   </data>
   <data name="label28.Text" xml:space="preserve">
-    <value>FST (FileSystem Table) is a file system extracted to a directory that contains all the real and virtual files of an archive. Nintendont uses the FST files to create an internal virtual ISO image and load the game from that virtual ISO.</value>
+    <value>FST （FileSystem Table） は、アーカイブの全ての実際のファイルと仮想ファイルを含むディレクトリに抽出されたファイル システムです。NintendontはFSTファイルを使用して内部仮想ISOイメージを作成し、その仮想ISOファイルからゲームを読み込みます。</value>
   </data>
   <data name="label31.Size" type="System.Drawing.Size, System.Drawing">
     <value>474, 26</value>
   </data>
   <data name="label31.Text" xml:space="preserve">
-    <value>Removes unnecessary data (garbage) by replacing it with a constant byte value (0xff or 0x00). The file has a smaller size, however, maintaining data integrity.</value>
+    <value>不要なデータ（ガベージ）を定数のバイト値（0xff または 0x00）に置き換えることによって削除します。 ファイルのサイズは小さくなりますが、データの整合性は維持されます。</value>
   </data>
   <data name="label20.Size" type="System.Drawing.Size, System.Drawing">
     <value>449, 39</value>
   </data>
   <data name="label20.Text" xml:space="preserve">
-    <value>Similar to XCopy, with the difference that the garbage data (garbage) existing inside the files is cleaned. The original file size is maintained. Garbage data is removed while maintaining the integrity of other data.</value>
+    <value>Xコピーに似ていますが、ファイル内に存在するガベージデータ（ガベージ）がクリーンアップされるという違いがあります。 元のファイルサイズが維持されます。 ガベージデータは、他のデータの整合性を維持しながら削除されます。</value>
   </data>
   <data name="label17.Size" type="System.Drawing.Size, System.Drawing">
     <value>427, 26</value>
   </data>
   <data name="label17.Text" xml:space="preserve">
-    <value>Copies one or more files from one location (source) to another (destination). The file is not compressed, not part of any container, and no garbage data is removed.</value>
+    <value>１つまたは複数のファイルをある場所（ソース）から別の場所（宛先）にコピーします。 ファイルは圧縮されず、コンテナの一部ではなく、ガベージデータは削除されません。</value>
   </data>
   <data name="rbTransferSystemXCopy.Text" xml:space="preserve">
-    <value>XCopy (Default)</value>
+    <value>Xコピー （デフォルト）</value>
   </data>
   <data name="grbTransferSystem.Text" xml:space="preserve">
-    <value>Transfer system to be used</value>
+    <value>使用する転送システム</value>
   </data>
   <data name="tabSettingsTransfer.Text" xml:space="preserve">
-    <value>Game Transfer</value>
+    <value>ゲームの転送</value>
   </data>
   <data name="grpTitlesCoverFolder.Text" xml:space="preserve">
-    <value>Covers folder (Cache -&gt; Origin)</value>
+    <value>カバーのフォルダ （キャッシュ -&gt; 原点）</value>
   </data>
   <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
     <value>79, 13</value>
   </data>
   <data name="label8.Text" xml:space="preserve">
-    <value>Folder location:</value>
+    <value>フォルダーの場所：</value>
   </data>
   <data name="tabCoverDisc.Text" xml:space="preserve">
-    <value>Disc</value>
+    <value>ディスク</value>
   </data>
   <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
     <value>79, 13</value>
   </data>
   <data name="label6.Text" xml:space="preserve">
-    <value>Folder location:</value>
+    <value>フォルダーの場所：</value>
   </data>
   <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
     <value>79, 13</value>
   </data>
   <data name="label9.Text" xml:space="preserve">
-    <value>Folder location:</value>
+    <value>フォルダーの場所：</value>
   </data>
   <data name="label35.Size" type="System.Drawing.Size, System.Drawing">
     <value>79, 13</value>
   </data>
   <data name="label35.Text" xml:space="preserve">
-    <value>Folder location:</value>
+    <value>フォルダーの場所：</value>
   </data>
   <data name="tabCoverFull.Text" xml:space="preserve">
-    <value>Complete</value>
+    <value>完了</value>
   </data>
   <data name="grbCoverTransfer.Text" xml:space="preserve">
-    <value>USB charger setup (Transfer Covers -&gt; Destination)</value>
+    <value>USB 充電器のセットアップ （転送カバー -&gt; 転送先）</value>
   </data>
   <data name="chkCoverRecursiveSearch.Size" type="System.Drawing.Size, System.Drawing">
     <value>250, 17</value>
   </data>
   <data name="chkCoverRecursiveSearch.Text" xml:space="preserve">
-    <value>Use recursive skin search (search in all regions)</value>
+    <value>再帰的なスキン検索を使用する （全ての地域で検索）</value>
   </data>
   <data name="chkCoverEnableTransfer.Size" type="System.Drawing.Size, System.Drawing">
     <value>220, 17</value>
   </data>
   <data name="chkCoverEnableTransfer.Text" xml:space="preserve">
-    <value>Enable transfer of skins between devices</value>
+    <value>デバイス間でのスキンの転送を有効にする</value>
   </data>
   <data name="chkCoverSynchronizeDelete.Size" type="System.Drawing.Size, System.Drawing">
     <value>199, 17</value>
   </data>
   <data name="chkCoverSynchronizeDelete.Text" xml:space="preserve">
-    <value>Delete skins for games not on the list</value>
+    <value>リストにないゲームのスキンを削除する</value>
   </data>
   <data name="grpCoversSynchronize.Text" xml:space="preserve">
-    <value>Synchronize</value>
+    <value>同期する</value>
   </data>
   <data name="tabSettingsCovers.Text" xml:space="preserve">
-    <value>Covers</value>
+    <value>カバー</value>
   </data>
   <data name="cbTitleLanguage.Items" xml:space="preserve">
-    <value>English</value>
+    <value>英語</value>
   </data>
   <data name="cbTitleLanguage.Items1" xml:space="preserve">
-    <value>French</value>
+    <value>フランス語</value>
   </data>
   <data name="cbTitleLanguage.Items2" xml:space="preserve">
-    <value>German</value>
+    <value>ドイツ語</value>
   </data>
   <data name="cbTitleLanguage.Items3" xml:space="preserve">
-    <value>Spanish</value>
+    <value>スペイン語</value>
   </data>
   <data name="cbTitleLanguage.Items4" xml:space="preserve">
-    <value>Italian</value>
+    <value>イタリア語</value>
   </data>
   <data name="cbTitleLanguage.Items5" xml:space="preserve">
-    <value>Dutch</value>
+    <value>オランダ語</value>
   </data>
   <data name="cbTitleLanguage.Items6" xml:space="preserve">
-    <value>Portuguese</value>
+    <value>ポルトガル語</value>
   </data>
   <data name="cbTitleLanguage.Items7" xml:space="preserve">
-    <value>Japanese</value>
+    <value>日本語</value>
   </data>
   <data name="cbTitleLanguage.Items8" xml:space="preserve">
-    <value>Russian</value>
+    <value>ロシア語</value>
   </data>
   <data name="cbTitleLanguage.Items9" xml:space="preserve">
-    <value>Korean</value>
+    <value>韓国語</value>
   </data>
   <data name="cbTitleLanguage.Items10" xml:space="preserve">
-    <value>Traditional Chinese</value>
+    <value>繁体字中国語</value>
   </data>
   <data name="cbTitleLanguage.Items11" xml:space="preserve">
-    <value>Simplified Chinese</value>
+    <value>簡体字中国語</value>
   </data>
   <data name="grbTitleLanguage.Text" xml:space="preserve">
-    <value>Title language</value>
+    <value>タイトルの言語</value>
   </data>
   <data name="grbTitleFileLocation.Text" xml:space="preserve">
-    <value>File location</value>
+    <value>ファイルの場所</value>
   </data>
   <data name="rbGameXmlName.Size" type="System.Drawing.Size, System.Drawing">
     <value>417, 17</value>
   </data>
   <data name="rbGameXmlName.Text" xml:space="preserve">
-    <value>Use trade name for game via wiitdb.xml (RECOMMENDED! - requires wiitdb.xml file)</value>
+    <value>wiitdb.xml経由でゲームの商号を使用する （推奨！ - wiitdb.xml ファイルが必要）</value>
   </data>
   <data name="rbGameInternalName.Size" type="System.Drawing.Size, System.Drawing">
     <value>304, 17</value>
   </data>
   <data name="rbGameInternalName.Text" xml:space="preserve">
-    <value>Use internal production name for the game (75% supported)</value>
+    <value>ゲームの内部プロダクション名を使用 （75%サポート）</value>
   </data>
   <data name="chkGameTitleCustom.Size" type="System.Drawing.Size, System.Drawing">
     <value>187, 17</value>
   </data>
   <data name="chkGameTitleCustom.Text" xml:space="preserve">
-    <value>Use custom titles (custom-titles.txt)</value>
+    <value>カスタムタイトルを使用 （custom-titles.txt）</value>
   </data>
   <data name="chkGameTitle.Size" type="System.Drawing.Size, System.Drawing">
     <value>142, 17</value>
   </data>
   <data name="chkGameTitle.Text" xml:space="preserve">
-    <value>Use GameTDB (titles.txt)</value>
+    <value>GameTDBを使用 （titles.txt）</value>
   </data>
   <data name="grbTitleDiverse.Text" xml:space="preserve">
-    <value>Miscellaneous (program restart required to take effect)</value>
+    <value>その他 （有効にするにはプログラムの再起動が必要です）</value>
   </data>
   <data name="tabSettingsTitle.Text" xml:space="preserve">
-    <value>Titles</value>
+    <value>タイトル</value>
   </data>
   <data name="grbDolphinFolder.Text" xml:space="preserve">
-    <value>Path to emulator</value>
+    <value>エミュレータへのパス</value>
   </data>
   <data name="rbDSPHLE.Size" type="System.Drawing.Size, System.Drawing">
     <value>112, 17</value>
   </data>
   <data name="rbDSPHLE.Text" xml:space="preserve">
-    <value>DSP HLE (default)</value>
+    <value>DSP HLE （デフォルト）</value>
   </data>
   <data name="grbDolphinAudio.Text" xml:space="preserve">
-    <value>Audio</value>
+    <value>オーディオ</value>
   </data>
   <data name="grbDolphinVideo.Text" xml:space="preserve">
-    <value>Video</value>
+    <value>ビデオ</value>
   </data>
   <data name="grbDolphin.Text" xml:space="preserve">
-    <value>Configure Emulator</value>
+    <value>エミュレーターの構成</value>
   </data>
   <data name="lblTimeInterval.Location" type="System.Drawing.Point, System.Drawing">
     <value>53, 246</value>
@@ -508,91 +508,91 @@
     <value>422, 13</value>
   </data>
   <data name="lblTimeInterval.Text" xml:space="preserve">
-    <value>NOTE: Adjusting the time interval setting will only take effect after restarting the program.</value>
+    <value>注意： 時間間隔の設定の調整は、プログラムの再起動後にのみ有効になります。</value>
   </data>
   <data name="cbVerificationInterval.Items" xml:space="preserve">
-    <value>5 minutes</value>
+    <value>5分</value>
   </data>
   <data name="cbVerificationInterval.Items1" xml:space="preserve">
-    <value>10 minutes</value>
+    <value>10分</value>
   </data>
   <data name="cbVerificationInterval.Items2" xml:space="preserve">
-    <value>15 minutes</value>
+    <value>15分</value>
   </data>
   <data name="cbVerificationInterval.Items3" xml:space="preserve">
-    <value>30 minutes</value>
+    <value>30分</value>
   </data>
   <data name="cbVerificationInterval.Items4" xml:space="preserve">
-    <value>1 hour</value>
+    <value>1時間</value>
   </data>
   <data name="cbVerificationInterval.Items5" xml:space="preserve">
-    <value>2 hours</value>
+    <value>2時間</value>
   </data>
   <data name="cbVerificationInterval.Items6" xml:space="preserve">
-    <value>3 hours</value>
+    <value>3時間</value>
   </data>
   <data name="cbVerificationInterval.Items7" xml:space="preserve">
-    <value>4 hours</value>
+    <value>4時間</value>
   </data>
   <data name="lblUpdateInterval.Size" type="System.Drawing.Size, System.Drawing">
     <value>78, 13</value>
   </data>
   <data name="lblUpdateInterval.Text" xml:space="preserve">
-    <value>Check interval:</value>
+    <value>チェックの間隔：</value>
   </data>
   <data name="lblPass.Size" type="System.Drawing.Size, System.Drawing">
     <value>56, 13</value>
   </data>
   <data name="lblPass.Text" xml:space="preserve">
-    <value>Password:</value>
+    <value>パスワード：</value>
   </data>
   <data name="lblUser.Size" type="System.Drawing.Size, System.Drawing">
     <value>32, 13</value>
   </data>
   <data name="lblUser.Text" xml:space="preserve">
-    <value>User:</value>
+    <value>ユーザー：</value>
   </data>
   <data name="lblServerProxy.Size" type="System.Drawing.Size, System.Drawing">
     <value>68, 13</value>
   </data>
   <data name="lblServerProxy.Text" xml:space="preserve">
-    <value>Proxy server:</value>
+    <value>プロキシサーバー：</value>
   </data>
   <data name="chkUpdateServerProxy.Size" type="System.Drawing.Size, System.Drawing">
     <value>105, 17</value>
   </data>
   <data name="chkUpdateServerProxy.Text" xml:space="preserve">
-    <value>Use proxy server</value>
+    <value>プロキシサーバーを使用する</value>
   </data>
   <data name="chkUpdateFileLog.Size" type="System.Drawing.Size, System.Drawing">
     <value>149, 17</value>
   </data>
   <data name="chkUpdateFileLog.Text" xml:space="preserve">
-    <value>Append updates to log file</value>
+    <value>更新をログファイルに追加する</value>
   </data>
   <data name="chkUpdateBetaChannel.Size" type="System.Drawing.Size, System.Drawing">
     <value>183, 17</value>
   </data>
   <data name="chkUpdateBetaChannel.Text" xml:space="preserve">
-    <value>Switch to BETA channel updates</value>
+    <value>BETAチャンネルの更新に切り替える</value>
   </data>
   <data name="chkUpdateVerifyStart.Size" type="System.Drawing.Size, System.Drawing">
     <value>163, 17</value>
   </data>
   <data name="chkUpdateVerifyStart.Text" xml:space="preserve">
-    <value>Check for updates on startup</value>
+    <value>起動時に更新を確認する</value>
   </data>
   <data name="grbUpdate.Text" xml:space="preserve">
-    <value>Update Settings</value>
+    <value>更新の設定</value>
   </data>
   <data name="tabSettingsUpdates.Text" xml:space="preserve">
-    <value>Updates</value>
+    <value>更新</value>
   </data>
   <data name="lblLanguageComments.Size" type="System.Drawing.Size, System.Drawing">
     <value>422, 13</value>
   </data>
   <data name="lblLanguageComments.Text" xml:space="preserve">
-    <value>NOTE: The language setting adjustment will only take effect after restarting the program.</value>
+    <value>注意：言語の設定の適用は、プログラムの再起動後にのみ有効になります。</value>
   </data>
   <data name="lblLanguage.Location" type="System.Drawing.Point, System.Drawing">
     <value>106, 33</value>
@@ -601,70 +601,70 @@
     <value>58, 13</value>
   </data>
   <data name="lblLanguage.Text" xml:space="preserve">
-    <value>Language:</value>
+    <value>言語：</value>
   </data>
   <data name="grbLanguage.Text" xml:space="preserve">
-    <value>Select default language:</value>
+    <value>デフォルトの言語を選択：</value>
   </data>
   <data name="tabSettingsLanguage.Text" xml:space="preserve">
-    <value>Languages</value>
+    <value>言語</value>
   </data>
   <data name="lblLOG.Size" type="System.Drawing.Size, System.Drawing">
     <value>57, 13</value>
   </data>
   <data name="lblLOG.Text" xml:space="preserve">
-    <value>Log Level:</value>
+    <value>ログレベル：</value>
   </data>
   <data name="chkManagerLogFile.Size" type="System.Drawing.Size, System.Drawing">
     <value>92, 17</value>
   </data>
   <data name="chkManagerLogFile.Text" xml:space="preserve">
-    <value>Record to File</value>
+    <value>ファイルに記録</value>
   </data>
   <data name="chkManagerLogWindow.Size" type="System.Drawing.Size, System.Drawing">
     <value>139, 17</value>
   </data>
   <data name="chkManagerLogWindow.Text" xml:space="preserve">
-    <value>Registration for Window</value>
+    <value>ウィンドウの登録</value>
   </data>
   <data name="chkManagerLogDebugConsole.Size" type="System.Drawing.Size, System.Drawing">
     <value>135, 17</value>
   </data>
   <data name="chkManagerLogDebugConsole.Text" xml:space="preserve">
-    <value>Log for Debug Console</value>
+    <value>デバッグコンソールのログ</value>
   </data>
   <data name="chkManagerLogSystemConsole.Size" type="System.Drawing.Size, System.Drawing">
     <value>175, 17</value>
   </data>
   <data name="chkManagerLogSystemConsole.Text" xml:space="preserve">
-    <value>Registration for System Console</value>
+    <value>システムコンソールへの登録</value>
   </data>
   <data name="cbLevelLog.Items" xml:space="preserve">
-    <value>Informative</value>
+    <value>情報提供</value>
   </data>
   <data name="cbLevelLog.Items1" xml:space="preserve">
-    <value>Summed up</value>
+    <value>要約する</value>
   </data>
   <data name="cbLevelLog.Items2" xml:space="preserve">
-    <value>Complete</value>
+    <value>完了</value>
   </data>
   <data name="grbLog.Text" xml:space="preserve">
-    <value>Record</value>
+    <value>記録</value>
   </data>
   <data name="tabSettingsLog.Text" xml:space="preserve">
-    <value>Record</value>
+    <value>記録</value>
   </data>
   <data name="btnRestore.Text" xml:space="preserve">
-    <value>Restore Settings</value>
+    <value>復元の設定</value>
   </data>
   <data name="btnCancel.Text" xml:space="preserve">
-    <value>Cancel</value>
+    <value>キャンセル</value>
   </data>
   <data name="fbd.Description" xml:space="preserve">
-    <value>Create or select a directory:</value>
+    <value>ディレクトリを作成または選択する：</value>
   </data>
   <data name="btnApply.Text" xml:space="preserve">
-    <value>Apply</value>
+    <value>適用する</value>
   </data>
   <data name="notifyIcon.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -746,6 +746,6 @@
     <value>Dolphin Emulator|dolphin.exe</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Settings</value>
+    <value>設定</value>
   </data>
 </root>
