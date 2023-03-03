@@ -211,67 +211,67 @@
     <value>72, 13</value>
   </data>
   <data name="lblComments.Text" xml:space="preserve">
-    <value>COMMENTS:</value>
+    <value>コメント：</value>
   </data>
   <data name="cbAdjustNamingStyle.Items" xml:space="preserve">
-    <value>Title [Game Code]</value>
+    <value>タイトル ［ゲームコード］</value>
   </data>
   <data name="cbAdjustNamingStyle.Items1" xml:space="preserve">
-    <value>[Game Code]</value>
+    <value>［ゲームコード］</value>
   </data>
   <data name="lblNomenclature.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 13</value>
   </data>
   <data name="lblNomenclature.Text" xml:space="preserve">
-    <value>Naming style:</value>
+    <value>命名のスタイル：</value>
   </data>
   <data name="grpNomenclatureFolderFormat.Text" xml:space="preserve">
-    <value>Folder format</value>
+    <value>フォルダーの形式</value>
   </data>
   <data name="tabSettingsNomenclature.Text" xml:space="preserve">
-    <value>Nomenclature</value>
+    <value>命名法</value>
   </data>
   <data name="chkMultipleInstances.Size" type="System.Drawing.Size, System.Drawing">
     <value>246, 17</value>
   </data>
   <data name="chkMultipleInstances.Text" xml:space="preserve">
-    <value>Allow running multiple instances of the program</value>
+    <value>プログラムの複数インスタンスの実行を許可する</value>
   </data>
   <data name="chkLoadDatabase.Size" type="System.Drawing.Size, System.Drawing">
     <value>315, 17</value>
   </data>
   <data name="chkLoadDatabase.Text" xml:space="preserve">
-    <value>Load Database at program start (increases program start time)</value>
+    <value>プログラムの開始時にデータベースをロードします（プログラムの開始時間が長くなります）</value>
   </data>
   <data name="chkNotify.Size" type="System.Drawing.Size, System.Drawing">
     <value>405, 17</value>
   </data>
   <data name="chkNotify.Text" xml:space="preserve">
-    <value>Enable taskbar notifications (default notifications will continue to display normally)</value>
+    <value>タスクバーでの通知を有効にする（デフォルトの通知は引き続き通常どおり表示されます）</value>
   </data>
   <data name="chkScreensaver.Size" type="System.Drawing.Size, System.Drawing">
     <value>209, 17</value>
   </data>
   <data name="chkScreensaver.Text" xml:space="preserve">
-    <value>Disable the screensaver (Screensaver)</value>
+    <value>スクリーンセーバーを無効にする（スクリーンセーバー）</value>
   </data>
   <data name="chkNetVerify.Size" type="System.Drawing.Size, System.Drawing">
     <value>258, 17</value>
   </data>
   <data name="chkNetVerify.Text" xml:space="preserve">
-    <value>Check internet connection when starting program</value>
+    <value>プログラムの起動時にインターネット接続を確認する</value>
   </data>
   <data name="chkStartWindowMaximized.Size" type="System.Drawing.Size, System.Drawing">
     <value>138, 17</value>
   </data>
   <data name="chkStartWindowMaximized.Text" xml:space="preserve">
-    <value>Start window maximized</value>
+    <value>開始時のウィンドウを最大化</value>
   </data>
   <data name="chkGeneralSHA1.Size" type="System.Drawing.Size, System.Drawing">
     <value>207, 17</value>
   </data>
   <data name="chkGeneralSHA1.Text" xml:space="preserve">
-    <value>Verify SHA-1 signature during transfers</value>
+    <value>転送中にSHA-1署名を検証する</value>
   </data>
   <data name="chkGeneralRecursiva.Size" type="System.Drawing.Size, System.Drawing">
     <value>323, 17</value>
