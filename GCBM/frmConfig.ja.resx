@@ -136,7 +136,7 @@
     <value>137, 17</value>
   </data>
   <data name="chkGeneralExtractBZip2.Text" xml:space="preserve">
-    <value>BZip2 files（*.bz;*.bzip2）</value>
+    <value>BZip2ファイル（*.bz;*.bzip2）</value>
   </data>
   <data name="chkGeneralExtractRar.Size" type="System.Drawing.Size, System.Drawing">
     <value>98, 17</value>
@@ -148,7 +148,7 @@
     <value>124, 17</value>
   </data>
   <data name="chkGeneralExtract7z.Text" xml:space="preserve">
-    <value>7Zip files （*.7z;*.7zip）</value>
+    <value>7Zipファイル （*.7z;*.7zip）</value>
   </data>
   <data name="chkGeneralExtractZip.Size" type="System.Drawing.Size, System.Drawing">
     <value>91, 17</value>
