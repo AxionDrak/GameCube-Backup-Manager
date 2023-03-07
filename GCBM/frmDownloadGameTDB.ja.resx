@@ -53,6 +53,7 @@
     value   : The object must be serialized with 
             : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
             : and then encoded with base64 encoding.
+
     mimetype: application/x-microsoft.net.object.bytearray.base64
     value   : The object must be serialized into a byte array 
             : using a System.ComponentModel.TypeConverter
@@ -126,7 +127,7 @@
     <value>WiiTDB.zipをダウンロード</value>
   </data>
   <data name="lblExtracting.Text" xml:space="preserve">
-    <value>WiiTDB.xmlの抽出</value>
+    <value>WiiTDB.xmlを抽出</value>
   </data>
   <data name="lblConverting.Text" xml:space="preserve">
     <value>プロセスが完了しました！</value>
