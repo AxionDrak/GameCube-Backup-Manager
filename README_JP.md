@@ -19,15 +19,15 @@ GameCube Backup Managerが気に入った場合は、PayPal経由で任意の金
 + ISO / GCM / NKitの読み取り（ISO のみ-GCZではありません）
 + ISOの書き込み
 + プログラムの複数のインスタンスの実行。
-+ 「データベース」タブで「wiitdb.xml」ファイルをロードし、その内容をプレビューします (新しいゲームを発見するための良いオプションです!)
-+ Automatic update system.
-+ Proxy system.
-+ Cover transfer (WiiFlow, WiiFlow Lite, WiiFlow Fusion).
-+ Cover transfer (USB Loader GX, USB Loader GX Tab MOD).
-+ Transferring games with the correct nomenclature (Game Name+ID or ID only).
-***Available in “Install Game (1:1)” mode using the commercial name via ‘wiitdb.xml’. The “Install Game (Scrub)” mode uses the internal nomenclature provided by the developer, that is, it does not use ‘wiitdb.xml’.***
-+ Game transfer via XCopy (1:1 copies - Standard).
-+ Game transfer via Scrub (GCReEx and DiscEx).
++ 「データベース」タブで「wiitdb.xml」ファイルをロードし、その内容をプレビューします （新しいゲームを発見するための良いオプションです！）
++ 自動更新システム
++ プロキシーシステム
++ カバーの転送（WiiFlow、WiiFlow Lite、WiiFlow Fusion）
++ カバーの転送（USB Loader GX、USB Loader GX Tab MOD）
++ 正しい名称でゲームを転送（ゲーム名 + IDまたはIDのみ）
+***「wiitdb.xml」経由でゲーム名を使用して、「Install Game （1:1）」モードで利用できます。「Install Game (Scrub)」モードは、開発者によって提供された内部命の名前を使用します。つまり、「wiitdb.xml」は使用しません。***
++ XCopyによるゲーム転送 （1:1 コピー - 標準）
++ Scrub （GCReEx および DiscEx）によるゲーム転送
 + Deleting game files (Source and Destination).
 + Display of game information (region, publisher, genre, etc). ***File ‘wiitdb.xml’ required.***
 + ESRB ratings display. ***File ‘wiitdb.xml’ required.***
@@ -41,11 +41,11 @@ GameCube Backup Managerが気に入った場合は、PayPal経由で任意の金
 + SHA-1 Hash Calculation (manual option).
 + Automatic creation of 'games' folder (if it doesn't exist).
 + LOG system.
-+ Multiple languages supported：
-  + Portuguese (Brazil)
-  + English (United States)
-  + Spanish (Spain)
-  + Korean (Korea)
++ 複数の言語をサポート：
+  + ポルトガル語 (ブラジル)
+  + 英語 (アメリカ)
+  + スペイン語 (スペイン)
+  + 韓国語 (韓国)
 + More polished and functional graphical interface (UI).
 
 ### Requirements
