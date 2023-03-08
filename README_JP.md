@@ -1,1 +1,67 @@
+# GameCube Backup Manager
 
+**GCBM (GameCube Backup Manager)** は、FAT32、exFAT、および NTFS ドライブで動作するプログラムです *(NTFS デバイスはバックアップとしてのみ動作し、Nintendontでは動作しません)* Nintendontで使用するためにISOファイルを正しく変換できます。
+
+GameTDBにアクセスしてください。これは、誰でも貢献でき、誰でもゲーム関連のプロジェクトで使用できる共同ゲームデータベースです。下の画像をクリックするだけです（画像）：
+* [![GameTDB](GameTDB-100.png)](https://www.gametdb.com/)
+
+GameCube Backup Managerが気に入った場合は、PayPal経由で任意の金額を寄付してください。 下の画像をクリックするだけです（画像）：
+* [![paypal](donate.gif)](https://www.paypal.com/donate/?hosted_button_id=MP4WGLJHAP8H2)
+
+#### ソフトウェアは「現状有姿」で提供され、商品性、特定の目的への適合性、および非侵害の保証を含むがこれらに限定されない、明示または黙示を問わず、いかなる種類の保証もありません。 作者または著作権所有者は、契約、不法行為、またはその他の行為によるものであるかにかかわらず、本ソフトウェアまたは本ソフトウェアの使用またはその他の取引に起因または関連して、いかなる請求、損害、またはその他の責任に対しても責任を負わないものとします。
+
+### ダウンロード：
+全てのリリース： https://github.com/AxionDrak/GameCube-Backup-Manager/releases
+
+### 特徴：
+
++ 個別またはバッチファイル転送（v2.5.0.0 以降）
++ ISO / GCM / NKitの読み取り（ISO のみ-GCZではありません）
++ ISOの書き込み
++ プログラムの複数のインスタンスの実行。
++ 「データベース」タブで「wiitdb.xml」ファイルをロードし、その内容をプレビューします (新しいゲームを発見するための良いオプションです!)
++ Automatic update system.
++ Proxy system.
++ Cover transfer (WiiFlow, WiiFlow Lite, WiiFlow Fusion).
++ Cover transfer (USB Loader GX, USB Loader GX Tab MOD).
++ Transferring games with the correct nomenclature (Game Name+ID or ID only).
+***Available in “Install Game (1:1)” mode using the commercial name via ‘wiitdb.xml’. The “Install Game (Scrub)” mode uses the internal nomenclature provided by the developer, that is, it does not use ‘wiitdb.xml’.***
++ Game transfer via XCopy (1:1 copies - Standard).
++ Game transfer via Scrub (GCReEx and DiscEx).
++ Deleting game files (Source and Destination).
++ Display of game information (region, publisher, genre, etc). ***File ‘wiitdb.xml’ required.***
++ ESRB ratings display. ***File ‘wiitdb.xml’ required.***
++ WiiTDB support for naming. ***File ‘wiitdb.xml’ required.***
++ Improved GameCube ISO detection in 'internal' mode (Standard).
++ Improved GameCube ISO detection in 'external' mode (GameTDB). ***The 'wiitdb.xml' file is required.***
++ Global download of Disc and 3D covers (for all games listed!).
++ Individual download of covers for the selected game (Disc and 3D).
++ Download the file 'wiitdb.xml' (GameTDB).
++ MD5 hash Calculation (manual option).
++ SHA-1 Hash Calculation (manual option).
++ Automatic creation of 'games' folder (if it doesn't exist).
++ LOG system.
++ Multiple languages supported：
+  + Portuguese (Brazil)
+  + English (United States)
+  + Spanish (Spain)
+  + Korean (Korea)
++ More polished and functional graphical interface (UI).
+
+### Requirements
+* .NET Framework 4.6 (version 2.5.x.x or lower)
+* .NET Framework 4.8 (version 2.6.x.x or higher)
+* Microsoft Windows 64-bit (32-bit not supported!)
+
+### Screenshots
+
+![main](imgs/gcbm001.png)
+![main](imgs/gcbm002.png)
+![main](imgs/gcbm003.png)
+![main](imgs/gcbm004.png)
+
+### Notes
+
++ The Wii and Wii U SD card slot is known to be slow. If you're using an SD card and are having performance issues, consider either using a USB SD reader or a USB hard drive (Highly recommended!).
++ USB flash drives are known to be problematic.
++ Nintendont runs best with storage devices formatted with 32 KB clusters. Use either FAT32 or exFAT (FAT32 highly recommended!).
