@@ -28,4 +28,4 @@ GameCube Backup Managerは、道を切り開き、コードと知識を共有し
 注意： 貢献者の完全な(またはほとんど)リストは、プロジェクトの公式GitHubで入手できます：https://github.com/AxionDrak/GameCube-Backup-Manager
 
 著作権 (C) 2019-2022 Laete Meireles 'a.k.a Axion Drak'.
-全著作権所有。
+全著作権所有
