@@ -1,6 +1,6 @@
-#### その他のの言語
-[英語](README.md)
-[琉球諸語](README_RYU.md)
+# その他のの言語
+* [英語](README.md)
+* [琉球諸語](README_RYU.md)
 
 # GameCube Backup Manager
 
