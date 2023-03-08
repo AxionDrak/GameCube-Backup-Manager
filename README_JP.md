@@ -1,3 +1,7 @@
+#### その他のの言語
+[英語](README.md)
+[琉球諸語](README_RYU.md)
+
 # GameCube Backup Manager
 
 **GCBM (GameCube Backup Manager)** は、FAT32、exFAT、および NTFS ドライブで動作するプログラムです *(NTFS デバイスはバックアップとしてのみ動作し、Nintendontでは動作しません)* Nintendontで使用するためにISOファイルを正しく変換できます。
