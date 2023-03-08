@@ -117,50 +117,50 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="label11.Text" xml:space="preserve">
-    <value>説明</value>
-  </data>
-  <data name="groupBox3.Text" xml:space="preserve">
-    <value>バナー詳細</value>
-  </data>
-  <data name="label10.Text" xml:space="preserve">
-    <value>デベロッパー</value>
-  </data>
-  <data name="label5.Text" xml:space="preserve">
-    <value>地域</value>
-  </data>
-  <data name="label6.Text" xml:space="preserve">
-    <value>デベロッパー</value>
-  </data>
-  <data name="label8.Text" xml:space="preserve">
-    <value>言語</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>パス</value>
-  </data>
-  <data name="label7.Text" xml:space="preserve">
-    <value>Apploader Date:</value>
-  </data>
-  <data name="label9.Text" xml:space="preserve">
-    <value>名前</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>ファイル詳細</value>
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>ファイル形式。</value>
-  </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>名前</value>
-  </data>
   <data name="btnClose.Text" xml:space="preserve">
     <value>閉じる</value>
   </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>説明：</value>
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>バナーの詳細</value>
+  </data>
+  <data name="label10.Text" xml:space="preserve">
+    <value>開発者：</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>リージョン：</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>開発者：</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>言語：</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>パス：</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>アップローダーの日付：</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>名前：</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>ファイルの詳細</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>ファイルの形式：</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>名前：</value>
+  </data>
   <data name="groupBox2.Text" xml:space="preserve">
-    <value>ゲーム内容</value>
+    <value>ゲームの詳細</value>
   </data>
   <data name="label4.Text" xml:space="preserve">
-    <value>ゲームIDです。</value>
+    <value>ゲームID：</value>
   </data>
   <data name="grpDetailsSource.Text" xml:space="preserve">
     <value>詳細</value>
