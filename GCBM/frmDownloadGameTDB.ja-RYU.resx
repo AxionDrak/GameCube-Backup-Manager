@@ -127,7 +127,7 @@
     <value>WiiTDB.zipダウンロード</value>
   </data>
   <data name="lblExtracting.Text" xml:space="preserve">
-    <value>WiiTDB.xmlを抽出</value>
+    <valueWiiTDB.xml抽出</value>
   </data>
   <data name="lblConverting.Text" xml:space="preserve">
     <value>プロセスぬしーうわやびたん！</value>
