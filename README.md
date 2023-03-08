@@ -1,6 +1,6 @@
-#### Other languages
-[Japanese](README_JP.md)
-[Ryukyuan](README_RYU.md)
+# Other languages
+* [Japanese](README_JP.md)
+* [Ryukyuan](README_RYU.md)
 
 # GameCube Backup Manager
 
