@@ -920,25 +920,25 @@
     <value>232, 22</value>
   </data>
   <data name="SearchOnWikipedia.Text" xml:space="preserve">
-    <value>Search in Wikipedia</value>
+    <value>ウィキペディアで検索</value>
   </data>
   <data name="tsmiSearchOnYoutube.Size" type="System.Drawing.Size, System.Drawing">
     <value>232, 22</value>
   </data>
   <data name="tsmiSearchOnYoutube.Text" xml:space="preserve">
-    <value>Search on YouTube</value>
+    <value>YouTubeで検索</value>
   </data>
   <data name="tsmiSearchOnGameSpot.Size" type="System.Drawing.Size, System.Drawing">
     <value>232, 22</value>
   </data>
   <data name="tsmiSearchOnGameSpot.Text" xml:space="preserve">
-    <value>Search on GameSpot</value>
+    <value>GameSpotで検索</value>
   </data>
   <data name="tsmiSearchOnVGChartz.Size" type="System.Drawing.Size, System.Drawing">
     <value>232, 22</value>
   </data>
   <data name="tsmiSearchOnVGChartz.Text" xml:space="preserve">
-    <value>Search on VGChartz</value>
+    <value>VGChartzで検索</value>
   </data>
   <data name="cmsMain.Size" type="System.Drawing.Size, System.Drawing">
     <value>233, 198</value>
@@ -964,7 +964,7 @@
     <value>92, 20</value>
   </data>
   <data name="tsmiReloadGameList.Text" xml:space="preserve">
-    <value>Reload List</value>
+    <value>リロードリスト</value>
   </data>
   <data name="tsmiClearListSource.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -987,19 +987,19 @@
     <value>83, 20</value>
   </data>
   <data name="tsmiClearListSource.Text" xml:space="preserve">
-    <value>Clear List</value>
+    <value>クリアリスト</value>
   </data>
   <data name="tsmiGameListSelectAll.Size" type="System.Drawing.Size, System.Drawing">
     <value>103, 22</value>
   </data>
   <data name="tsmiGameListSelectAll.Text" xml:space="preserve">
-    <value>All</value>
+    <value>全て</value>
   </data>
   <data name="tsmiGameListSelectNone.Size" type="System.Drawing.Size, System.Drawing">
     <value>103, 22</value>
   </data>
   <data name="tsmiGameListSelectNone.Text" xml:space="preserve">
-    <value>None</value>
+    <value>無し</value>
   </data>
   <data name="tsmiSelectGameList.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1015,19 +1015,19 @@
     <value>66, 20</value>
   </data>
   <data name="tsmiSelectGameList.Text" xml:space="preserve">
-    <value>Select</value>
+    <value>選択</value>
   </data>
   <data name="tsmiGameListDeleteAllFiles.Size" type="System.Drawing.Size, System.Drawing">
     <value>118, 22</value>
   </data>
   <data name="tsmiGameListDeleteAllFiles.Text" xml:space="preserve">
-    <value>All</value>
+    <value>全て</value>
   </data>
   <data name="tsmiGameListDeleteSelectedFile.Size" type="System.Drawing.Size, System.Drawing">
     <value>118, 22</value>
   </data>
   <data name="tsmiGameListDeleteSelectedFile.Text" xml:space="preserve">
-    <value>Selected</value>
+    <value>選択済み</value>
   </data>
   <data name="tsmiRemoveGameList.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1046,25 +1046,25 @@
     <value>68, 20</value>
   </data>
   <data name="tsmiRemoveGameList.Text" xml:space="preserve">
-    <value>Delete</value>
+    <value>消去</value>
   </data>
   <data name="tsmiGameListHashSHA1.Size" type="System.Drawing.Size, System.Drawing">
     <value>166, 22</value>
   </data>
   <data name="tsmiGameListHashSHA1.Text" xml:space="preserve">
-    <value>Check selected(s)</value>
+    <value>選択したものをチェック</value>
   </data>
   <data name="tsmiGameListSignatureSHA1.Size" type="System.Drawing.Size, System.Drawing">
     <value>160, 22</value>
   </data>
   <data name="tsmiGameListSignatureSHA1.Text" xml:space="preserve">
-    <value>SHA-1 signature</value>
+    <value>SHA-1 署名</value>
   </data>
   <data name="exportarListaToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>160, 22</value>
   </data>
   <data name="exportarListaToolStripMenuItem.Text" xml:space="preserve">
-    <value>Export list as...</value>
+    <value>リストをエクスポート...</value>
   </data>
   <data name="tsmiToolsGameList.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1085,7 +1085,7 @@
     <value>62, 20</value>
   </data>
   <data name="tsmiToolsGameList.Text" xml:space="preserve">
-    <value>Tools</value>
+    <value>ツール</value>
   </data>
   <data name="mstripFile.Size" type="System.Drawing.Size, System.Drawing">
     <value>876, 24</value>
@@ -1094,10 +1094,10 @@
     <value>882, 514</value>
   </data>
   <data name="tabMainFile.Text" xml:space="preserve">
-    <value>Files (Source)</value>
+    <value>ファイル （ソース）</value>
   </data>
   <data name="lblAbortDestination.Text" xml:space="preserve">
-    <value>Stop</value>
+    <value>ストップ</value>
   </data>
   <data name="btnAbortDestination.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1126,7 +1126,7 @@
     <value>88, 13</value>
   </data>
   <data name="label8.Text" xml:space="preserve">
-    <value>Games Found:</value>
+    <value>ゲームが見つかりました：</value>
   </data>
   <data name="lblSpaceAvailabeOnDevice.Location" type="System.Drawing.Point, System.Drawing">
     <value>519, 265</value>
@@ -1135,7 +1135,7 @@
     <value>105, 13</value>
   </data>
   <data name="lblSpaceAvailabeOnDevice.Text" xml:space="preserve">
-    <value>Available space: </value>
+    <value>利用可能なスペース： </value>
   </data>
   <data name="lblSpaceTotalOnDevice.Location" type="System.Drawing.Point, System.Drawing">
     <value>519, 284</value>
@@ -1144,7 +1144,7 @@
     <value>82, 13</value>
   </data>
   <data name="lblSpaceTotalOnDevice.Text" xml:space="preserve">
-    <value>Total space: </value>
+    <value>合計のスペース： </value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
     <value>515, 182</value>
@@ -1153,7 +1153,7 @@
     <value>347, 39</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
-    <value>The total file listing and total file size do not distinguish between Disc 1 (game.iso) and Disc 2 (disc2.iso) files. The data is for sampling purposes only.</value>
+    <value>合計ファイルリストと合計ファイルサイズは、ディスク１（game.iso）ファイルとディスク２（disc2.iso）ファイルを区別しません。 データはサンプリングのみを目的としています。</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
     <value>515, 164</value>
@@ -1162,7 +1162,7 @@
     <value>45, 13</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>NOTE:</value>
+    <value>備考：</value>
   </data>
   <data name="pbWebGameDiscID.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1203,79 +1203,79 @@
 </value>
   </data>
   <data name="label5.Text" xml:space="preserve">
-    <value>Region:</value>
+    <value>リージョン：</value>
   </data>
   <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
     <value>30, 13</value>
   </data>
   <data name="label6.Text" xml:space="preserve">
-    <value>Title:</value>
+    <value>タイトル：</value>
   </data>
   <data name="grpDetailsDestiny.Text" xml:space="preserve">
-    <value>Details</value>
+    <value>詳細</value>
   </data>
   <data name="tscbDiscDrive.Items" xml:space="preserve">
-    <value>Inactive</value>
+    <value>非活性</value>
   </data>
   <data name="tsmiReloadDeviceDrive.Size" type="System.Drawing.Size, System.Drawing">
     <value>106, 23</value>
   </data>
   <data name="tsmiReloadDeviceDrive.Text" xml:space="preserve">
-    <value>Reload Device(s)</value>
+    <value>デバイスをリロード</value>
   </data>
   <data name="tsmiReloadGameListDisc.Size" type="System.Drawing.Size, System.Drawing">
     <value>76, 23</value>
   </data>
   <data name="tsmiReloadGameListDisc.Text" xml:space="preserve">
-    <value>Reload List</value>
+    <value>リロードリスト</value>
   </data>
   <data name="tsmiClearListDestination.Size" type="System.Drawing.Size, System.Drawing">
     <value>67, 23</value>
   </data>
   <data name="tsmiClearListDestination.Text" xml:space="preserve">
-    <value>Clear List</value>
+    <value>クリアリスト</value>
   </data>
   <data name="tsmiGameDiscSelectAll.Size" type="System.Drawing.Size, System.Drawing">
     <value>103, 22</value>
   </data>
   <data name="tsmiGameDiscSelectAll.Text" xml:space="preserve">
-    <value>All</value>
+    <value>全て</value>
   </data>
   <data name="tsmiGameDiscSelectNone.Size" type="System.Drawing.Size, System.Drawing">
     <value>103, 22</value>
   </data>
   <data name="tsmiGameDiscSelectNone.Text" xml:space="preserve">
-    <value>None</value>
+    <value>無し</value>
   </data>
   <data name="tsmiSelectGameDisc.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 23</value>
   </data>
   <data name="tsmiSelectGameDisc.Text" xml:space="preserve">
-    <value>Select</value>
+    <value>選択</value>
   </data>
   <data name="tsmiGameDiscDeleteAllFiles.Size" type="System.Drawing.Size, System.Drawing">
     <value>118, 22</value>
   </data>
   <data name="tsmiGameDiscDeleteAllFiles.Text" xml:space="preserve">
-    <value>All</value>
+    <value>全て</value>
   </data>
   <data name="tsmiGameDiscDeleteSelectedFile.Size" type="System.Drawing.Size, System.Drawing">
     <value>118, 22</value>
   </data>
   <data name="tsmiGameDiscDeleteSelectedFile.Text" xml:space="preserve">
-    <value>Selected</value>
+    <value>選択済み</value>
   </data>
   <data name="tsmiRemoveGameDisc.Size" type="System.Drawing.Size, System.Drawing">
     <value>52, 23</value>
   </data>
   <data name="tsmiRemoveGameDisc.Text" xml:space="preserve">
-    <value>Delete</value>
+    <value>消去</value>
   </data>
   <data name="tsmiGameDiscExportList.Size" type="System.Drawing.Size, System.Drawing">
     <value>161, 22</value>
   </data>
   <data name="tsmiGameDiscExportList.Text" xml:space="preserve">
-    <value>Export game list</value>
+    <value>ゲームリストのエクスポート</value>
   </data>
   <data name="toolStripMenuItem3.Size" type="System.Drawing.Size, System.Drawing">
     <value>158, 6</value>
@@ -1284,31 +1284,31 @@
     <value>166, 22</value>
   </data>
   <data name="tsmiGameDiscAllHashSHA1.Text" xml:space="preserve">
-    <value>Check all</value>
+    <value>全てチェック</value>
   </data>
   <data name="tsmiGameDiscHashSHA1.Size" type="System.Drawing.Size, System.Drawing">
     <value>166, 22</value>
   </data>
   <data name="tsmiGameDiscHashSHA1.Text" xml:space="preserve">
-    <value>Check selected(s)</value>
+    <value>選択したものをチェック</value>
   </data>
   <data name="tsmiGameDiscSignatureSHA1.Size" type="System.Drawing.Size, System.Drawing">
     <value>161, 22</value>
   </data>
   <data name="tsmiGameDiscSignatureSHA1.Text" xml:space="preserve">
-    <value>SHA-1 Signature</value>
+    <value>SHA-1署名</value>
   </data>
   <data name="tsmiGameDiscAllHashMD5.Size" type="System.Drawing.Size, System.Drawing">
     <value>180, 22</value>
   </data>
   <data name="tsmiGameDiscAllHashMD5.Text" xml:space="preserve">
-    <value>Check all</value>
+    <value>全てチェック</value>
   </data>
   <data name="tsmiGameDiscHashMD5.Size" type="System.Drawing.Size, System.Drawing">
     <value>180, 22</value>
   </data>
   <data name="tsmiGameDiscHashMD5.Text" xml:space="preserve">
-    <value>Check selected(s)</value>
+    <value>選択したものをチェック</value>
   </data>
   <data name="toolStripMenuItem4.Size" type="System.Drawing.Size, System.Drawing">
     <value>177, 6</value>
@@ -1317,25 +1317,25 @@
     <value>180, 22</value>
   </data>
   <data name="tsmiGameDiscRecalculateAllMD5.Text" xml:space="preserve">
-    <value>Recalculate all</value>
+    <value>全て再計算</value>
   </data>
   <data name="tsmiGameDiscRecalculateSelectedGameMD5.Size" type="System.Drawing.Size, System.Drawing">
     <value>180, 22</value>
   </data>
   <data name="tsmiGameDiscRecalculateSelectedGameMD5.Text" xml:space="preserve">
-    <value>Recalculate selected</value>
+    <value>選択したものを再計算</value>
   </data>
   <data name="tsmiGameDiscSignatureMD5.Size" type="System.Drawing.Size, System.Drawing">
     <value>161, 22</value>
   </data>
   <data name="tsmiGameDiscSignatureMD5.Text" xml:space="preserve">
-    <value>MD5 Signature</value>
+    <value>MD5署名</value>
   </data>
   <data name="tsmiToolsGameDisc.Size" type="System.Drawing.Size, System.Drawing">
     <value>46, 23</value>
   </data>
   <data name="tsmiToolsGameDisc.Text" xml:space="preserve">
-    <value>Tools</value>
+    <value>ツール</value>
   </data>
   <data name="mstripDisc.Size" type="System.Drawing.Size, System.Drawing">
     <value>876, 27</value>
@@ -1344,10 +1344,10 @@
     <value>882, 514</value>
   </data>
   <data name="tabMainDisc.Text" xml:space="preserve">
-    <value>Files (Destination)</value>
+    <value>ファイル (宛先)</value>
   </data>
   <data name="cbFilterDatabase.Items" xml:space="preserve">
-    <value>Select an item...</value>
+    <value>アイテムを選択してください...</value>
   </data>
   <data name="cbFilterDatabase.Location" type="System.Drawing.Point, System.Drawing">
     <value>497, 5</value>
@@ -1356,7 +1356,7 @@
     <value>459, 8</value>
   </data>
   <data name="label7.Text" xml:space="preserve">
-    <value>Filter:</value>
+    <value>フィルター：</value>
   </data>
   <data name="lvDatabase.Size" type="System.Drawing.Size, System.Drawing">
     <value>858, 465</value>
@@ -1365,13 +1365,13 @@
     <value>166, 22</value>
   </data>
   <data name="tsmiDatabaseUpdateGameTDB.Text" xml:space="preserve">
-    <value>GameTDB update</value>
+    <value>GameTDBの更新</value>
   </data>
   <data name="tsmiToolDatabase.Size" type="System.Drawing.Size, System.Drawing">
     <value>46, 20</value>
   </data>
   <data name="tsmiToolDatabase.Text" xml:space="preserve">
-    <value>Tools</value>
+    <value>ツール</value>
   </data>
   <data name="mstripDatabase.Size" type="System.Drawing.Size, System.Drawing">
     <value>876, 24</value>
@@ -1380,7 +1380,7 @@
     <value>882, 514</value>
   </data>
   <data name="tabMainDatabase.Text" xml:space="preserve">
-    <value>Database</value>
+    <value>データベース</value>
   </data>
   <data name="tbLog.Size" type="System.Drawing.Size, System.Drawing">
     <value>858, 481</value>
