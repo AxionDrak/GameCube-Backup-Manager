@@ -117,23 +117,23 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="$this.Text" xml:space="preserve">
+    <value>カバーを転送</value>
+  </data>
+  <data name="btnClose.Text" xml:space="preserve">
+    <value>閉じる</value>
+  </data>
   <data name="btnTaskCancel.Text" xml:space="preserve">
-    <value>転送をキャンセルする</value>
+    <value>転送をキャンセル</value>
   </data>
   <data name="rbEurope.Text" xml:space="preserve">
     <value>ヨーロッパ</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
-    <value>地域</value>
+    <value>地</value>
   </data>
   <data name="rbJapan.Text" xml:space="preserve">
     <value>日本</value>
-  </data>
-  <data name="btnClose.Text" xml:space="preserve">
-    <value>閉じる</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>トランスファーカバー</value>
   </data>
   <data name="lblTransferStatus.Text" xml:space="preserve">
     <value>待機中...</value>
@@ -142,6 +142,6 @@
     <value>転送</value>
   </data>
   <data name="chkTransferAllRegions.Text" xml:space="preserve">
-    <value>全地域のスキンをダウンロード</value>
+    <value>全ての地域のスキンをダウンロード</value>
   </data>
 </root>
