@@ -124,7 +124,7 @@
     <value>キャンセル</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>ファイルの新しい名前を入力します（拡張子も忘れずに入力してください）：</value>
+    <value>ファイルの新しい名前を入力してください（拡張子も忘れずに入力してください）：</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>注意：Scrub転送を使用する場合は、ファイル名に空白を残さないでください！</value>
