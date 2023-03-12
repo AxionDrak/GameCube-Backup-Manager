@@ -32,39 +32,39 @@ GameCube Backup Managerが気に入った場合は、PayPal経由で任意の金
 ***「wiitdb.xml」経由でゲーム名を使用して、「Install Game （1:1）」モードで利用できます。「Install Game (Scrub)」モードは、開発者によって提供された内部命の名前を使用します。つまり、「wiitdb.xml」は使用しません。***
 + XCopyによるゲーム転送 （1:1 コピー - 標準）
 + Scrub （GCReEx および DiscEx）によるゲーム転送
-+ Deleting game files (Source and Destination).
-+ Display of game information (region, publisher, genre, etc). ***File ‘wiitdb.xml’ required.***
-+ ESRB ratings display. ***File ‘wiitdb.xml’ required.***
-+ WiiTDB support for naming. ***File ‘wiitdb.xml’ required.***
++ ゲームファイルの削除（ソースと宛先）
++ ゲーム情報（地域、パブリッシャー、ジャンルなど）の表示。 ***「wiitdb.xml」ファイルが必要です。***
++ ESRB評価の表示 ***「wiitdb.xml」ファイルが必要です。***
++ WiiTDBのネーミングのサポート。 ***「wiitdb.xml」ファイルが必要です。***
 + Improved GameCube ISO detection in 'internal' mode (Standard).
-+ Improved GameCube ISO detection in 'external' mode (GameTDB). ***The 'wiitdb.xml' file is required.***
++ Improved GameCube ISO detection in 'external' mode (GameTDB). ***「wiitdb.xml」ファイルが必要です。***
 + Global download of Disc and 3D covers (for all games listed!).
 + Individual download of covers for the selected game (Disc and 3D).
 + Download the file 'wiitdb.xml' (GameTDB).
 + MD5 hash Calculation (manual option).
-+ SHA-1 Hash Calculation (manual option).
-+ Automatic creation of 'games' folder (if it doesn't exist).
-+ LOG system.
++ SHA-1 ハッシュ計算（手動オプション）
++ 「ゲーム」フォルダーの自動作成（存在しない場合）
++ ログシステム
 + 複数の言語をサポート：
-  + ポルトガル語 (ブラジル)
-  + 英語 (アメリカ)
-  + スペイン語 (スペイン)
-  + 韓国語 (韓国)
+  + ポルトガル語（ブラジル）
+  + 英語（アメリカ）
+  + スペイン語（スペイン）
+  + 韓国語（韓国）
 + More polished and functional graphical interface (UI).
 
-### Requirements
+### 要件
 * .NET Framework 4.6 (version 2.5.x.x or lower)
 * .NET Framework 4.8 (version 2.6.x.x or higher)
 * Microsoft Windows 64-bit (32-bit not supported!)
 
-### Screenshots
+### スクリーンショット
 
 ![main](imgs/gcbm001.png)
 ![main](imgs/gcbm002.png)
 ![main](imgs/gcbm003.png)
 ![main](imgs/gcbm004.png)
 
-### Notes
+### ノート
 
 + The Wii and Wii U SD card slot is known to be slow. If you're using an SD card and are having performance issues, consider either using a USB SD reader or a USB hard drive (Highly recommended!).
 + USB flash drives are known to be problematic.
