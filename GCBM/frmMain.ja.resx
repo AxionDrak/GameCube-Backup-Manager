@@ -1144,7 +1144,7 @@
     <value>82, 13</value>
   </data>
   <data name="lblSpaceTotalOnDevice.Text" xml:space="preserve">
-    <value>合計のスペース： </value>
+    <value>スペースの合計： </value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
     <value>515, 182</value>
@@ -1389,7 +1389,7 @@
     <value>137, 22</value>
   </data>
   <data name="tsmiClearLog.Text" xml:space="preserve">
-    <value>Clear log</value>
+    <value>クリアログ</value>
   </data>
   <data name="toolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
     <value>134, 6</value>
@@ -1398,13 +1398,13 @@
     <value>137, 22</value>
   </data>
   <data name="tsmiExportLog.Text" xml:space="preserve">
-    <value>Export log...</value>
+    <value>ログをエクスポート...</value>
   </data>
   <data name="tsmiToolLog.Size" type="System.Drawing.Size, System.Drawing">
     <value>46, 20</value>
   </data>
   <data name="tsmiToolLog.Text" xml:space="preserve">
-    <value>Tools</value>
+    <value>ツール</value>
   </data>
   <data name="mstripLog.Size" type="System.Drawing.Size, System.Drawing">
     <value>876, 24</value>
@@ -1416,25 +1416,25 @@
     <value>890, 540</value>
   </data>
   <data name="tsmiExit.Text" xml:space="preserve">
-    <value>Exit</value>
+    <value>ファイル</value>
   </data>
   <data name="tsmiFile.Size" type="System.Drawing.Size, System.Drawing">
     <value>37, 20</value>
   </data>
   <data name="tsmiFile.Text" xml:space="preserve">
-    <value>File</value>
+    <value>ファイル</value>
   </data>
   <data name="tsmiDownloadCoversSelectedGame.Size" type="System.Drawing.Size, System.Drawing">
     <value>442, 22</value>
   </data>
   <data name="tsmiDownloadCoversSelectedGame.Text" xml:space="preserve">
-    <value>Sync and Download Skins (Disc and 3D for selected game only)</value>
+    <value>スキンの同期とダウンロード（選択したゲームのディスクと3Dのみ）</value>
   </data>
   <data name="tsmiSyncDownloadDiscOnly3DCovers.Size" type="System.Drawing.Size, System.Drawing">
     <value>442, 22</value>
   </data>
   <data name="tsmiSyncDownloadDiscOnly3DCovers.Text" xml:space="preserve">
-    <value>Sync and download skins (Disc and 3D of all games listed)</value>
+    <value>スキンの同期とダウンロード（リストされている全てのゲームのディスクと3D）</value>
   </data>
   <data name="toolStripMenuItem5.Size" type="System.Drawing.Size, System.Drawing">
     <value>439, 6</value>
@@ -1443,13 +1443,13 @@
     <value>442, 22</value>
   </data>
   <data name="tsmiSyncDownloadAllDiscOnly3DCovers.Text" xml:space="preserve">
-    <value>Sync and Download Skins (Disc and 3D from entire GameCube library)</value>
+    <value>スキンの同期とダウンロード (GameCube library全体からのディスクと3D）</value>
   </data>
   <data name="tsmiSyncDownloadAllCovers.Size" type="System.Drawing.Size, System.Drawing">
     <value>442, 22</value>
   </data>
   <data name="tsmiSyncDownloadAllCovers.Text" xml:space="preserve">
-    <value>Sync and download skins (all skins in the GameCube library)</value>
+    <value>スキンの同期とダウンロード（GameCube library内の全てのスキン）</value>
   </data>
   <data name="toolStripMenuItem6.Size" type="System.Drawing.Size, System.Drawing">
     <value>439, 6</value>
@@ -1458,31 +1458,31 @@
     <value>442, 22</value>
   </data>
   <data name="tsmiTransferDeviceCovers.Text" xml:space="preserve">
-    <value>Transfer downloaded skins to device</value>
+    <value>ダウンロードしたスキンをデバイスに転送する</value>
   </data>
   <data name="tsmiCovers.Size" type="System.Drawing.Size, System.Drawing">
     <value>55, 20</value>
   </data>
   <data name="tsmiCovers.Text" xml:space="preserve">
-    <value>Covers</value>
+    <value>カバー</value>
   </data>
   <data name="tsmiGameInfo.Size" type="System.Drawing.Size, System.Drawing">
     <value>304, 22</value>
   </data>
   <data name="tsmiGameInfo.Text" xml:space="preserve">
-    <value>Detailed information (of the selected game)</value>
+    <value>詳細情報（選択したゲームの）</value>
   </data>
   <data name="tsmiEnableCoverPanel.Size" type="System.Drawing.Size, System.Drawing">
     <value>112, 22</value>
   </data>
   <data name="tsmiEnableCoverPanel.Text" xml:space="preserve">
-    <value>Enable</value>
+    <value>有効</value>
   </data>
   <data name="tsmiDisableCoverPanel.Size" type="System.Drawing.Size, System.Drawing">
     <value>112, 22</value>
   </data>
   <data name="tsmiDisableCoverPanel.Text" xml:space="preserve">
-    <value>Disable</value>
+    <value>無効</value>
   </data>
   <data name="boxArtToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>304, 22</value>
@@ -1491,19 +1491,19 @@
     <value>57, 20</value>
   </data>
   <data name="tsmiDisplay.Text" xml:space="preserve">
-    <value>Display</value>
+    <value>ディスプレイ</value>
   </data>
   <data name="tsmiConfigurationMain.Size" type="System.Drawing.Size, System.Drawing">
     <value>125, 22</value>
   </data>
   <data name="tsmiConfigurationMain.Text" xml:space="preserve">
-    <value>Settings...</value>
+    <value>設定...</value>
   </data>
   <data name="tsmiOptions.Size" type="System.Drawing.Size, System.Drawing">
     <value>61, 20</value>
   </data>
   <data name="tsmiOptions.Text" xml:space="preserve">
-    <value>Options</value>
+    <value>オプション</value>
   </data>
   <data name="tsmiRenameFolders.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1522,7 +1522,7 @@
 </value>
   </data>
   <data name="tsmiRenameFolders.Text" xml:space="preserve">
-    <value>Rename Folders</value>
+    <value>フォルダーの名前を変更</value>
   </data>
   <data name="tsmiRenameISO.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1534,37 +1534,37 @@
 </value>
   </data>
   <data name="tsmiRenameISO.Text" xml:space="preserve">
-    <value>Rename ISO/GCM</value>
+    <value>ISO/GCMの名前を変更</value>
   </data>
   <data name="tsmiMetaXml.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 22</value>
   </data>
   <data name="tsmiMetaXml.Text" xml:space="preserve">
-    <value>Read/Edit 'meta.xml'</value>
+    <value>'meta.xml'の読み取り/編集</value>
   </data>
   <data name="tsmiManageApp.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 22</value>
   </data>
   <data name="tsmiManageApp.Text" xml:space="preserve">
-    <value>Manage APP's</value>
+    <value>アプリの管理</value>
   </data>
   <data name="tsmiElfDol.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 22</value>
   </data>
   <data name="tsmiElfDol.Text" xml:space="preserve">
-    <value>Convert ELF -&gt; DOL</value>
+    <value>ELF変換 -&gt; DOL</value>
   </data>
   <data name="tsmiCreatePackage.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 22</value>
   </data>
   <data name="tsmiCreatePackage.Text" xml:space="preserve">
-    <value>Create APP Package</value>
+    <value>アプリパッケージの作成</value>
   </data>
   <data name="tsmiBurnMedia.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 22</value>
   </data>
   <data name="tsmiBurnMedia.Text" xml:space="preserve">
-    <value>Burn CD/DVD Media</value>
+    <value>CD/DVDメディアの書き込み</value>
   </data>
   <data name="tsmiMainPlugins.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1607,7 +1607,7 @@
     <value>46, 20</value>
   </data>
   <data name="tsmiTools.Text" xml:space="preserve">
-    <value>Tools</value>
+    <value>ツール</value>
   </data>
   <data name="tsmiWebsiteFacebook.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1638,7 +1638,7 @@
     <value>261, 22</value>
   </data>
   <data name="tsmiOfficialGitHub.Text" xml:space="preserve">
-    <value>Official site (GitHub)</value>
+    <value>公式サイト（GitHub）</value>
   </data>
   <data name="tsmiOfficialGBATemp.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1661,7 +1661,7 @@
     <value>261, 22</value>
   </data>
   <data name="tsmiOfficialGBATemp.Text" xml:space="preserve">
-    <value>Official post (GBATemp)</value>
+    <value>公式の投稿 (GBATemp)</value>
   </data>
   <data name="toolStripMenuItem7.Size" type="System.Drawing.Size, System.Drawing">
     <value>258, 6</value>
@@ -1670,7 +1670,7 @@
     <value>261, 22</value>
   </data>
   <data name="tsmiVerifyUpdate.Text" xml:space="preserve">
-    <value>Check for Updates</value>
+    <value>更新を確認</value>
   </data>
   <data name="toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
     <value>258, 6</value>
@@ -1679,22 +1679,22 @@
     <value>261, 22</value>
   </data>
   <data name="tsmiMenuAbout.Text" xml:space="preserve">
-    <value>About GameCube Backup Manager</value>
+    <value>GameCube Backup Managerについて</value>
   </data>
   <data name="tsmiHelp.Size" type="System.Drawing.Size, System.Drawing">
     <value>44, 20</value>
   </data>
   <data name="tsmiHelp.Text" xml:space="preserve">
-    <value>Help</value>
+    <value>ヘルプ</value>
   </data>
   <data name="lblNetStatus.Size" type="System.Drawing.Size, System.Drawing">
     <value>144, 13</value>
   </data>
   <data name="lblNetStatus.Text" xml:space="preserve">
-    <value>Internet connection disabled!</value>
+    <value>インターネット接続が無効になっています！</value>
   </data>
   <data name="tsmiNotifyExit.Text" xml:space="preserve">
-    <value>Exit</value>
+    <value>終了</value>
   </data>
   <data name="notifyIcon.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1902,6 +1902,6 @@
 </value>
   </data>
   <data name="lblTypeDiscDest.Text" xml:space="preserve">
-    <value>Disc...</value>
+    <value>ディスク...</value>
   </data>
 </root>
