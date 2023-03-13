@@ -36,12 +36,12 @@ GameCube Backup Managerが気に入った場合は、PayPal経由で任意の金
 + ゲーム情報（地域、パブリッシャー、ジャンルなど）の表示。 ***「wiitdb.xml」ファイルが必要です。***
 + ESRB評価の表示 ***「wiitdb.xml」ファイルが必要です。***
 + WiiTDBのネーミングのサポート。 ***「wiitdb.xml」ファイルが必要です。***
-+ Improved GameCube ISO detection in 'internal' mode (Standard).
-+ Improved GameCube ISO detection in 'external' mode (GameTDB). ***「wiitdb.xml」ファイルが必要です。***
-+ Global download of Disc and 3D covers (for all games listed!).
-+ Individual download of covers for the selected game (Disc and 3D).
-+ Download the file 'wiitdb.xml' (GameTDB).
-+ MD5 hash Calculation (manual option).
++ 「内部」モード（標準）でのゲームキューブISO検出の改善
++ 「外部」モード（GameTDB）でのゲームキューブのISO検出の改善 ***「wiitdb.xml」ファイルが必要です。***
++ ディスクと3Dカバーのグローバルダウンロード（リストされている全てのゲーム用！）
++ 選択したゲーム（ディスクおよび3D）のカバーの個別ダウンロード
++ ファイル「wiitdb.xml」（GameTDB）のダウンロード
++ MD5ハッシュ計算（手動オプション）
 + SHA-1 ハッシュ計算（手動オプション）
 + 「ゲーム」フォルダーの自動作成（存在しない場合）
 + ログシステム
@@ -50,7 +50,7 @@ GameCube Backup Managerが気に入った場合は、PayPal経由で任意の金
   + 英語（アメリカ）
   + スペイン語（スペイン）
   + 韓国語（韓国）
-+ More polished and functional graphical interface (UI).
++ より洗練された機能的なグラフィカルインターフェイス（UI）
 
 ### 要件
 * .NET Framework 4.6 (version 2.5.x.x or lower)
@@ -66,6 +66,6 @@ GameCube Backup Managerが気に入った場合は、PayPal経由で任意の金
 
 ### ノート
 
-+ The Wii and Wii U SD card slot is known to be slow. If you're using an SD card and are having performance issues, consider either using a USB SD reader or a USB hard drive (Highly recommended!).
-+ USB flash drives are known to be problematic.
-+ Nintendont runs best with storage devices formatted with 32 KB clusters. Use either FAT32 or exFAT (FAT32 highly recommended!).
++ WiiおよびWiiUのSDカードスロットは遅いことが知られています。 SDカードを使用していてパフォーマンスに問題がある場合は、USB SDリーダーまたはUSB ハードドライブの使用を検討してください。（強くお勧めします！）
++ USB フラッシュドライブには問題があることが知られています。
++ Nintendontは、32KBクラスターでフォーマットされたストレージデバイスで最適に動作します。 FAT32またはexFATを使用してください。 (FAT32を強くお勧めします!)
