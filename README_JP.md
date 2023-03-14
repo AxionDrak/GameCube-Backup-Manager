@@ -23,15 +23,15 @@ GameCube Backup Managerが気に入った場合は、PayPal経由で任意の金
 + ISO / GCM / NKitの読み取り（ISO のみ-GCZではありません）
 + ISOの書き込み
 + プログラムの複数のインスタンスの実行。
-+ 「データベース」タブで「wiitdb.xml」ファイルをロードし、その内容をプレビューします （新しいゲームを発見するための良いオプションです！）
++ 「データベース」タブで「wiitdb.xml」ファイルをロードし、その内容をプレビューします（新しいゲームを発見するための良いオプションです！）
 + 自動更新システム
 + プロキシーシステム
 + カバーの転送（WiiFlow、WiiFlow Lite、WiiFlow Fusion）
 + カバーの転送（USB Loader GX、USB Loader GX Tab MOD）
 + 正しい名称でゲームを転送（ゲーム名 + IDまたはIDのみ）
-***「wiitdb.xml」経由でゲーム名を使用して、「Install Game （1:1）」モードで利用できます。「Install Game (Scrub)」モードは、開発者によって提供された内部命の名前を使用します。つまり、「wiitdb.xml」は使用しません。***
+***「wiitdb.xml」経由でゲーム名を使用して、「Install Game（1:1）」モードで利用できます。「Install Game（Scrub）」モードは、開発者によって提供された内部命の名前を使用します。つまり、「wiitdb.xml」は使用しません。***
 + XCopyによるゲーム転送 （1:1 コピー - 標準）
-+ Scrub （GCReEx および DiscEx）によるゲーム転送
++ Scrub（GCReEx および DiscEx）によるゲーム転送
 + ゲームファイルの削除（ソースと宛先）
 + ゲーム情報（地域、パブリッシャー、ジャンルなど）の表示。 ***「wiitdb.xml」ファイルが必要です。***
 + ESRB評価の表示 ***「wiitdb.xml」ファイルが必要です。***
@@ -53,9 +53,9 @@ GameCube Backup Managerが気に入った場合は、PayPal経由で任意の金
 + より洗練された機能的なグラフィカルインターフェイス（UI）
 
 ### 要件
-* .NET Framework 4.6 (version 2.5.x.x or lower)
-* .NET Framework 4.8 (version 2.6.x.x or higher)
-* Microsoft Windows 64-bit (32-bit not supported!)
+* .NET Framework 4.6 (バージョン 2.5.x.x 以下）
+* .NET Framework 4.8 （バージョン 2.6.x.x 以降）
+* Microsoft Windows 64-bit （32-bitはサポートされていません！）
 
 ### スクリーンショット
 
@@ -68,4 +68,4 @@ GameCube Backup Managerが気に入った場合は、PayPal経由で任意の金
 
 + WiiおよびWiiUのSDカードスロットは遅いことが知られています。 SDカードを使用していてパフォーマンスに問題がある場合は、USB SDリーダーまたはUSB ハードドライブの使用を検討してください。（強くお勧めします！）
 + USB フラッシュドライブには問題があることが知られています。
-+ Nintendontは、32KBクラスターでフォーマットされたストレージデバイスで最適に動作します。 FAT32またはexFATを使用してください。 (FAT32を強くお勧めします!)
++ Nintendontは、32KBクラスターでフォーマットされたストレージデバイスで最適に動作します。 FAT32またはexFATを使用してください。(FAT32を強くお勧めします!）
