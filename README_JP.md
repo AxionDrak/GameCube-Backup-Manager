@@ -53,9 +53,9 @@ GameCube Backup Managerが気に入った場合は、PayPal経由で任意の金
 + より洗練された機能的なグラフィカルインターフェイス（UI）
 
 ### 要件
-* .NET Framework 4.6 (バージョン 2.5.x.x 以下）
+* .NET Framework 4.6 （バージョン 2.5.x.x 以下）
 * .NET Framework 4.8 （バージョン 2.6.x.x 以降）
-* Microsoft Windows 64-bit （32-bitはサポートされていません！）
+* Microsoft Windows 64-bit（32-bitはサポートされていません！）
 
 ### スクリーンショット
 
