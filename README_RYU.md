@@ -53,9 +53,9 @@ GameCube Backup Managerが気に入たるばーや、PayPal経由っし任意ぬ
 + ゆり洗練さったる機能的なグラフィカルインターフェイス（UI）
 
 ### 要件
-* .NET Framework 4.6 (version 2.5.x.x or lower)
-* .NET Framework 4.8 (version 2.6.x.x or higher)
-* Microsoft Windows 64-bit (32-bit not supported!)
+* .NET Framework 4.6（バージョン 2.5.x.x 以下)
+* .NET Framework 4.8（バージョン 2.6.x.x 以降）
+* Microsoft Windows 64-bit（32-bitーサポートさりやびらん！）
 
 ### スクリーンショット
 
@@ -68,5 +68,5 @@ GameCube Backup Managerが気に入たるばーや、PayPal経由っし任意ぬ
 
 + WiiうゆびWiiUぬSDカードスロットーにーさるくとぅが知らりとーいびーん。 SDカード使用そーてぃパフォーマンスんかい問題があるばーや、USB SDリーダーあらんでぃUSB ハードドライブぬ使用検討しみそーれー。（ちゅーくう勧めいさびーん！）
 + USB フラッシュドライブんかえー問題があるくとぅが知らりとーいびーん。
-+ Nintendontー、32KBクラスターっしフォーマットさったるストレージデバイスっし最適んかい動作さびーん。 FAT32あらんでぃexFAT使用しみそーれー。 (FAT32ちゅーくう勧めいさびーん!)
++ Nintendontー、32KBクラスターっしフォーマットさったるストレージデバイスっし最適んかい動作さびーん。 FAT32あらんでぃexFAT使用しみそーれー。（FAT32ちゅーくう勧めいさびーん!）
 
