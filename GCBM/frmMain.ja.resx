@@ -1058,7 +1058,7 @@
     <value>160, 22</value>
   </data>
   <data name="tsmiGameListSignatureSHA1.Text" xml:space="preserve">
-    <value>SHA-1 署名</value>
+    <value>SHA-1署名</value>
   </data>
   <data name="exportarListaToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>160, 22</value>
@@ -1094,7 +1094,7 @@
     <value>882, 514</value>
   </data>
   <data name="tabMainFile.Text" xml:space="preserve">
-    <value>ファイル （ソース）</value>
+    <value>ファイル（ソース）</value>
   </data>
   <data name="lblAbortDestination.Text" xml:space="preserve">
     <value>ストップ</value>
@@ -1443,7 +1443,7 @@
     <value>442, 22</value>
   </data>
   <data name="tsmiSyncDownloadAllDiscOnly3DCovers.Text" xml:space="preserve">
-    <value>スキンの同期とダウンロード (GameCube library全体からのディスクと3D）</value>
+    <value>スキンの同期とダウンロード（GameCube library全体からのディスクと3D）</value>
   </data>
   <data name="tsmiSyncDownloadAllCovers.Size" type="System.Drawing.Size, System.Drawing">
     <value>442, 22</value>
@@ -1661,7 +1661,7 @@
     <value>261, 22</value>
   </data>
   <data name="tsmiOfficialGBATemp.Text" xml:space="preserve">
-    <value>公式の投稿 (GBATemp)</value>
+    <value>公式の投稿（GBATemp）</value>
   </data>
   <data name="toolStripMenuItem7.Size" type="System.Drawing.Size, System.Drawing">
     <value>258, 6</value>
