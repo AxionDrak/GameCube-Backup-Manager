@@ -117,19 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="chkRenameISO.Text" xml:space="preserve">
-    <value>自動的に空白を削除し、元の名前を維持する</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ISO/GCMの名前を変更</value>
   </data>
   <data name="btnCancel.Text" xml:space="preserve">
     <value>キャンセル</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>ファイルの新しい名前を入力します（拡張子も忘れずに）。</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>ISO/GCMの名前を変更する</value>
+    <value>ファイルの新しい名前を入力してください（拡張子も忘れずに入力してください）：</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>注意：スクラブ転送を使用する場合、ファイル名に空白を入れないようにしてください。</value>
+    <value>注意：Scrub転送を使用する場合は、ファイル名に空白を残さないでください！</value>
+  </data>
+  <data name="chkRenameISO.Text" xml:space="preserve">
+    <value>空白を自動的に削除し、元の名前を保持</value>
   </data>
 </root>

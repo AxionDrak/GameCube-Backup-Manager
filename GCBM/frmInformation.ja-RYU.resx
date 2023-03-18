@@ -117,19 +117,52 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="$this.Text" xml:space="preserve">
-    <value>データベースを更新</value>
+  <data name="btnClose.Text" xml:space="preserve">
+    <value>くーいん</value>
   </data>
-  <data name="btnCancelWork.Text" xml:space="preserve">
-    <value>閉じる</value>
+  <data name="label11.Text" xml:space="preserve">
+    <value>説明：</value>
   </data>
-  <data name="lblDownload.Text" xml:space="preserve">
-    <value>WiiTDB.zipをダウンロード</value>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>バナーぬ詳細</value>
   </data>
-  <data name="lblExtracting.Text" xml:space="preserve">
-    <value>WiiTDB.xmlを抽出</value>
+  <data name="label10.Text" xml:space="preserve">
+    <value>開発者：</value>
   </data>
-  <data name="lblConverting.Text" xml:space="preserve">
-    <value>プロセスが完了しました！</value>
+  <data name="label5.Text" xml:space="preserve">
+    <value>リージョン：</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>開発者：</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>言語：</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>パス：</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>アップローダーぬ日付：</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>なめー：</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>ファイルぬ詳細</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>ファイルぬ形式：</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>なめー：</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>ゲームぬ詳細</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>ゲームID：</value>
+  </data>
+  <data name="grpDetailsSource.Text" xml:space="preserve">
+    <value>詳細</value>
   </data>
 </root>

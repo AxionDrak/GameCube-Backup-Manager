@@ -118,18 +118,18 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>データベースを更新</value>
+    <value>ISO/GCMぬなめー変更</value>
   </data>
-  <data name="btnCancelWork.Text" xml:space="preserve">
-    <value>閉じる</value>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>キャンセル</value>
   </data>
-  <data name="lblDownload.Text" xml:space="preserve">
-    <value>WiiTDB.zipをダウンロード</value>
+  <data name="label1.Text" xml:space="preserve">
+    <value>ファイルぬみーさるなめー入力しみそーれー（拡張子んわしらじんかい入力しみそーれー）：</value>
   </data>
-  <data name="lblExtracting.Text" xml:space="preserve">
-    <value>WiiTDB.xmlを抽出</value>
+  <data name="label2.Text" xml:space="preserve">
+    <value>注意：Scrub転送使用するばーや、ファイル名んかい空白ぬくさんぐーとぅーくぃみそーれー！</value>
   </data>
-  <data name="lblConverting.Text" xml:space="preserve">
-    <value>プロセスが完了しました！</value>
+  <data name="chkRenameISO.Text" xml:space="preserve">
+    <value>空白自動的に削除しー、元ぬなめー保持</value>
   </data>
 </root>

@@ -118,18 +118,30 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>データベースを更新</value>
+    <value>カバー転送</value>
   </data>
-  <data name="btnCancelWork.Text" xml:space="preserve">
-    <value>閉じる</value>
+  <data name="btnClose.Text" xml:space="preserve">
+    <value>くーいん</value>
   </data>
-  <data name="lblDownload.Text" xml:space="preserve">
-    <value>WiiTDB.zipをダウンロード</value>
+  <data name="btnTaskCancel.Text" xml:space="preserve">
+    <value>転送キャンセル</value>
   </data>
-  <data name="lblExtracting.Text" xml:space="preserve">
-    <value>WiiTDB.xmlを抽出</value>
+  <data name="rbEurope.Text" xml:space="preserve">
+    <value>ヨーロッパ</value>
   </data>
-  <data name="lblConverting.Text" xml:space="preserve">
-    <value>プロセスが完了しました！</value>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>地域</value>
+  </data>
+  <data name="rbJapan.Text" xml:space="preserve">
+    <value>やまとぅ</value>
+  </data>
+  <data name="lblTransferStatus.Text" xml:space="preserve">
+    <value>待機中...</value>
+  </data>
+  <data name="btnTaskIndeterminate.Text" xml:space="preserve">
+    <value>転送</value>
+  </data>
+  <data name="chkTransferAllRegions.Text" xml:space="preserve">
+    <value>まじりぬ地域ぬスキンダウンロード</value>
   </data>
 </root>

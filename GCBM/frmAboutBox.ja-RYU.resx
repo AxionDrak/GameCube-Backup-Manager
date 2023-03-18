@@ -301,7 +301,7 @@
     <value>98, 13</value>
   </data>
   <data name="lblAboutCurrentLanguage.Text" xml:space="preserve">
-    <value>現在の言語： </value>
+    <value>現在ぬ言語： </value>
   </data>
   <data name="lblAboutTranslator.Location" type="System.Drawing.Point, System.Drawing">
     <value>138, 183</value>
@@ -316,21 +316,21 @@
     <value>427, 276</value>
   </data>
   <data name="rtbAboutGameTDB.Text" xml:space="preserve">
-    <value>GameTDBは、誰でも貢献でき、あらゆるゲームプロジェクトで誰でも使用できる共同のゲームデータベースです。
+    <value>GameTDBー、たーやてぃん貢献ない、あらゆるゲームプロジェクトっしたーやてぃん使用ないる共同ぬゲームデータベースやいびーん。
 
-Webサイトでは、データベースを参照してダウンロードし、ゲーム情報を追加してスキンをアップロードすることでデータベースに貢献できます。
+Webサイトっしぇー、データベース参照しダウンロードしー、ゲーム情報いりしーてぃスキンアップロードするくとぅっしデータベースんかい貢献なやびーん。
 
-Wiiまたはコンピューターで、GameTDBを使用して次のことができます：
+Wiiあらんでぃコンピューターっし、GameTDB使用し次ぬくとぅがなやびーん：
 
-- 自分の名前を変更することなく、ゲームに適したタイトルを表示します (「SPORTS PACK FOR REVOLUTION」ではなく「Wii Sports」)。
+- どぅーぬなめー変更するくとぅなく、ゲームんかい適ちゃるタイトル表示さびーん (「SPORTS PACK FOR REVOLUTION」っしぇーなく「Wii Sports」)。
 
-- お住まいの地域に合ったカバーアートを表示します。
+- う住まいぬ地域んかい合ーたるカバーアート表示さびーん。
 
-- ゲームに関する追加情報を表示します (プレーヤー、オンライン モード、アクセサリ、パブリッシャー、開発者など)。
+- ゲームに関する追加情報表示さびーん (プレーヤー、オンライン モード、アクセサリ、パブリッシャー、開発者んでー)。
 
-- 大規模なライブラリがある場合は、マルチプレイヤータイトルをすばやくグループ化するために、ゲームをプレイヤー数などでソートします。
+- 大規模なライブラリぬあるばーや、マルチプレイヤータイトルぐるくグループ化すんでぃ、ゲームプレイヤー数んでーっしソートさびーん。
 
-- 特定のレーティングに一致する、または特定の年にリリースされたゲームキューブおよびWiiゲームをパブリッシャー、開発者別に検索します。</value>
+- 特定ぬレーティングんかい一致すん、あらんでぃ特定ぬとぅしにリリースさったるゲームキューブうゆびWiiゲームパブリッシャー、開発者別んかい検索さびーん。</value>
   </data>
   <data name="tbThanks.Size" type="System.Drawing.Size, System.Drawing">
     <value>427, 276</value>
@@ -339,7 +339,7 @@ Wiiまたはコンピューターで、GameTDBを使用して次のことがで�
     <value>感謝</value>
   </data>
   <data name="rtbAboutThanks.Text" xml:space="preserve">
-    <value>開発中のテスト、翻訳者、および一般的な支援について、次の人々に感謝をします。
+    <value>開発中ぬテスト、翻訳者、うゆび一般的な支援にちいてぃ、次ぬ人々んかい感謝さびーん。
 
 - Valclark Junior - テスト / ユーザー体験
 - Dolphin Emulator Team - ゲームキューブ / Wii / RVZ Information
@@ -348,7 +348,7 @@ Wiiまたはコンピューターで、GameTDBを使用して次のことがで�
 - Wii Brew
 - DDinghoya - 韓国語翻訳者
 
-ゲーム保存コミュニティに関わる全ての人に加えて。</value>
+ゲーム保存コミュニティんかい関わいるまじりぬっちゅんかいわーち。</value>
   </data>
   <data name="tbDonate.Size" type="System.Drawing.Size, System.Drawing">
     <value>427, 276</value>
@@ -357,19 +357,19 @@ Wiiまたはコンピューターで、GameTDBを使用して次のことがで�
     <value>寄付</value>
   </data>
   <data name="rtbAboutDonations.Text" xml:space="preserve">
-    <value>GameCube Backup Managerはフリーソフトウェアです。
+    <value>GameCube Backup Managerーフリーソフトウェアやいびーん。
 
-可能な限り安定して機能を豊富にするために、多くの努力が払われてきました。 お役に立ち、感謝の気持ちを表したい場合は、お気軽に1ドルか2ドルをお支払いください。 受け取ったお金はどんなに少額でも私を大いに助けます！
+可能やる限り安定し機能豊富なすんでぃ、うふぉーくぬ努力ぬ払らってぃちゃびたん。 う役に立ち、感謝ぬちむぐくる表しぶさるばーや、う気軽に1ドルが2ドルう支払いくぃみそーれー。 受きとぅったるじのーどぅんなに少額やてぃんわんだてーんたしきやびーん！
 
-上記のリンクが機能しない場合は、PayPal 経由でlaetemn@gmail.comに寄付を送ることもできます。
+上記ぬリンクぬ機能さんばーや、PayPal 経由っしlaetemn@gmail.comんかい寄付うくいしんなやびーん。
 
-お礼のメールを忘れずに送ってください。</value>
+う礼ぬメールわしらじんかいうくてぃくぃみそーれー。</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>455, 320</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>について...</value>
+    <value>にちいてぃ...</value>
   </data>
   <data name="lblAboutProgramName.Text" xml:space="preserve">
     <value>GameCube Backup Manager</value>
