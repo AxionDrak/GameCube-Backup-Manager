@@ -417,4 +417,10 @@
   <data name="lblTypeDiscDest.Text" xml:space="preserve">
     <value>光碟...</value>
   </data>
+  <data name="tsmi_DownloadGameTDB.Text" xml:space="preserve">
+    <value>GameTDB 更新</value>
+  </data>
+  <data name="tsmiMoreDirectories.Text" xml:space="preserve">
+    <value>更多文件夾</value>
+  </data>
 </root>

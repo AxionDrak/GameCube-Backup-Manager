@@ -17,6 +17,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 using System.Xml.Linq;
 using AutoUpdaterDotNET;
 using GCBM.Properties;
@@ -73,27 +74,27 @@ public partial class frmMain : Form
     /// <param name="e"></param>
     private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
     {
-            CLOSING = true;
-            if (notifyIcon != null)
-            {
-                notifyIcon.Visible = false;
-                notifyIcon.Icon = null;
-                notifyIcon.Dispose();
-            }
+        CLOSING = true;
+        if (notifyIcon != null)
+        {
+            notifyIcon.Visible = false;
+            notifyIcon.Icon = null;
+            notifyIcon.Dispose();
+        }
 
-            ClearTemp();
-            ExportLOG(1);
-            if (Process.GetCurrentProcess().GetChildProcesses() != null &&
-                Process.GetCurrentProcess().GetChildProcesses().Count != 0)
-                foreach (var process in Process.GetCurrentProcess().GetChildProcesses())
-                    //Kill GCIT and others
-                    process.Kill();
+        ClearTemp();
+        ExportLOG(1);
+        if (Process.GetCurrentProcess().GetChildProcesses() != null &&
+            Process.GetCurrentProcess().GetChildProcesses().Count != 0)
+            foreach (var process in Process.GetCurrentProcess().GetChildProcesses())
+                //Kill GCIT and others
+                process.Kill();
 
-            //Garbage Collector
-            GC.Collect();
-            //Cleanup any Threads left lying around
-            Dispose();
-            Process.GetCurrentProcess().Kill();
+        //Garbage Collector
+        GC.Collect();
+        //Cleanup any Threads left lying around
+        Dispose();
+        Process.GetCurrentProcess().Kill();
     }
 
     #endregion
@@ -402,7 +403,7 @@ public partial class frmMain : Form
         tsmiSyncDownloadDiscOnly3DCovers.Enabled = true;
         tsmiGameInfo.Enabled = true;
         tsmiTransferDeviceCovers.Enabled = true;
-        dgvSource.Invoke(()=>dgvSource.Enabled = true);
+        dgvSource.Invoke(() => dgvSource.Enabled = true);
         //}));
         //tabMainFile.Update();
         //tabMainDisc.Invoke(() =>
@@ -523,6 +524,8 @@ public partial class frmMain : Form
 
                         ds.Dispose();
                         ds.Clear();
+                        GC.Collect();
+                        GC.WaitForPendingFinalizers();
                     }
                     catch (Exception ex)
                     {
@@ -533,7 +536,10 @@ public partial class frmMain : Form
 
         Monitor.Exit(lvDatabase);
     }
+    private async void UnLoadDatabaseXML()
+    {
 
+    }
     #endregion
 
     #region Load Config File
@@ -580,7 +586,7 @@ public partial class frmMain : Form
                         where dgv.CurrentRow.Cells[6].Value.ToString() == g.Path
                         select g).First();
 
-            LoadCover(game);
+            LoadCover(game.ID);
             // pictureBox GameID
             if (pbWebGameID.Enabled == false)
             {
@@ -670,7 +676,7 @@ public partial class frmMain : Form
             //    isRecursive = true;
             //else
             //    isRecursive = false;
-            var files = GetFilesFolder(sourceFolder, filters, isRecursive).Result;
+            var files = await GetFilesFolder(sourceFolder, filters, isRecursive);
 
             //if (dgv == dgvDestination)
             //    //tsmiReloadGameListDisc.Enabled = true;
@@ -716,9 +722,8 @@ public partial class frmMain : Form
             {
                 if (ABORT) break;
 
-                var game = new Game();
+                var game = new Game(file, useXmlTitle);
                 var displayTitle = "";
-                game = game.GetGameInfo(file, useXmlTitle).Result;
                 displayTitle = game.Title;
                 if (game.DiscID == "0x01")
                     displayTitle += " (2)";
@@ -778,7 +783,7 @@ public partial class frmMain : Form
             var isRecursive = true;
             UseWaitCursor = true;
 
-            var files = GetFilesFolder(sourceFolder, filters, isRecursive).Result;
+            var files = await GetFilesFolder(sourceFolder, filters, isRecursive);
 
             //if (dgv == dgvDestination)
             tsmiReloadGameListDisc.Enabled = true;
@@ -825,8 +830,7 @@ public partial class frmMain : Form
                 if (ABORT) break;
 
                 var displayTitle = "";
-                var game = new Game();
-                game = game.GetGameInfo(file, useXmlTitle).Result;
+                var game = new Game(file, useXmlTitle);
                 displayTitle = game.Title;
                 if (game.DiscID == "0x01")
                     displayTitle += " (2)";
@@ -899,7 +903,6 @@ public partial class frmMain : Form
     {
         tscbDiscDrive.Items.Clear();
         _ = tscbDiscDrive.Items.Add(Resources.GetAllDrives_Inactive);
-        tscbDiscDrive.SelectedIndex = 0;
         foreach (var d in from sio.DriveInfo d in sio.DriveInfo.GetDrives() /*.AsParallel()*/
                           where d.IsReady
                           select d)
@@ -1082,11 +1085,10 @@ public partial class frmMain : Form
     ///     Loads the respective Disk and 2D image files into the loaded ISO/GCM file.
     /// </summary>
     //private void LoadCover()
-    private async void LoadCover(Game game)
+    private async void LoadCover(string _idGame)
     {
-        try
-        {
-            switch (game.IDRegionCode)
+            // Set LINK_DOMAIN based on the game's IDRegionCode
+            switch (_idGame.Substring(3, 1).ToLowerInvariant())
             {
                 case "e": // AMERICA - USA
                     LINK_DOMAIN = "US";
@@ -1122,31 +1124,31 @@ public partial class frmMain : Form
                     LINK_DOMAIN = "US";
                     //GlobalNotifications(GCBM.Properties.Resources.UnknownRegion, ToolTipIcon.Info);
                     break;
-            }
         }
-        catch (Exception ex)
+
+        // Load game disc image
+        string discCoverPath = GET_CURRENT_PATH + sio.Path.Combine( COVERS_DIR, LINK_DOMAIN, "disc", $"{_idGame}.png");
+        if (sio.File.Exists(discCoverPath))
         {
-            tbLog.AppendText(ex.Message + Environment.NewLine + ex.StackTrace);
+            pbGameDisc.LoadAsync(discCoverPath);
+        }
+        else
+        {
+            pbGameDisc.LoadAsync(GET_CURRENT_PATH + sio.Path.Combine( MEDIA_DIR, "disc.png"));
         }
 
-        if (sio.File.Exists(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + LINK_DOMAIN +
-                            sio.Path.DirectorySeparatorChar + "disc" + sio.Path.DirectorySeparatorChar + game.ID +
-                            ".png"))
-            pbGameDisc.LoadAsync(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + LINK_DOMAIN +
-                                 sio.Path.DirectorySeparatorChar + "disc" + sio.Path.DirectorySeparatorChar + game.ID +
-                                 ".png");
+        // Load game 3D cover image
+        string cover3DPath = GET_CURRENT_PATH + sio.Path.Combine( COVERS_DIR, LINK_DOMAIN, "3d", $"{_idGame}.png");
+        if (sio.File.Exists(cover3DPath))
+        {
+            pbGameCover3D.LoadAsync(cover3DPath);
+        }
         else
-            pbGameDisc.LoadAsync(GET_CURRENT_PATH + MEDIA_DIR + sio.Path.DirectorySeparatorChar + "disc.png");
-
-        if (sio.File.Exists(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + LINK_DOMAIN +
-                            sio.Path.DirectorySeparatorChar + "3d" + sio.Path.DirectorySeparatorChar + game.ID +
-                            ".png"))
-            pbGameCover3D.LoadAsync(GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + LINK_DOMAIN +
-                                    sio.Path.DirectorySeparatorChar + "3d" + sio.Path.DirectorySeparatorChar + game.ID +
-                                    ".png");
-        else
-            pbGameCover3D.LoadAsync(GET_CURRENT_PATH + MEDIA_DIR + sio.Path.DirectorySeparatorChar + "3d.png");
+        {
+            pbGameCover3D.LoadAsync(GET_CURRENT_PATH + sio.Path.Combine( MEDIA_DIR, "3d.png"));
+        }
     }
+
 
     #endregion
 
@@ -1155,145 +1157,15 @@ public partial class frmMain : Form
     /// <summary>
     ///     Only downloads Disc and 3D files from listed ISO/GCM files.
     /// </summary>
-    private void DownloadOnlyDisc3DCover(DataGridView dgv)
+    private async Task DownloadOnlyDisc3DCoverAsync(DataGridView dgv)
     {
-        foreach (DataGridViewRow dgvResultRow in dgv.Rows)
-        {
-            var gamePath = dgv.Rows[dgvResultRow.Index].Cells[6].Value.ToString();
-            //VerifyGame(_IDGameCode);
-            Game game = gameUtilities.GetGameInfo(gamePath, useXmlTitle).Result;
 
-            //tbLog.AppendText(_IDRegionCode + Environment.NewLine);
+        //foreach (DataGridViewRow row in dgv.Rows)
+        //{
 
-            switch (game.IDRegionCode)
-            {
-                case "e": // AMERICA - USA
-                    LINK_DOMAIN = "US";
-                    break;
-                case "p": // EUROPE - ALL
-                case "r": // EUROPE - RUSSIA                   
-                    LINK_DOMAIN = "EN";
-                    break;
-                case "j": // ASIA - JAPAN
-                case "t": // ASIA - TAIWAN
-                case "k": // ASIA - KOREA
-                    LINK_DOMAIN = "JA";
-                    break;
-                case "d": // EUROPE - GERMANY
-                    LINK_DOMAIN = "DE";
-                    break;
-                case "s": // EUROPE - SPAIN
-                    LINK_DOMAIN = "ES";
-                    break;
-                case "i": // EUROPE - ITALY
-                    LINK_DOMAIN = "IT";
-                    break;
-                case "u": // AUSTRALIA
-                    LINK_DOMAIN = "AU";
-                    break;
-                case "y": // EUROPE - Netherlands ???
-                    LINK_DOMAIN = "NL";
-                    break;
-                case "f": // EUROPE - FRANCE
-                    LINK_DOMAIN = "FR";
-                    break;
-                default:
-                    LINK_DOMAIN = "US";
-                    //GlobalNotifications(GCBM.Properties.Resources.UnknownRegion, ToolTipIcon.Info);
-                    break;
-            }
-
-            try
-            {
-                // Download Disc cover
-                var myLinkCoverDisc = new Uri(@"https://art.gametdb.com/wii/disc/" + LINK_DOMAIN + "/" +
-                                              game.ID + ".png");
-                var request = (HttpWebRequest)WebRequest.Create(myLinkCoverDisc);
-                request.Method = "HEAD";
-                NET_RESPONSE = (HttpWebResponse)request.GetResponse();
-
-                if (NET_RESPONSE.StatusCode == HttpStatusCode.OK)
-                {
-                    tbLog.AppendText("[" + DateString() + "]" + Resources.DownloadDiscCover + game.ID +
-                                     ".png" + Environment.NewLine);
-                    NET_CLIENT.DownloadFileAsync(myLinkCoverDisc,
-                        GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + LINK_DOMAIN +
-                        sio.Path.DirectorySeparatorChar + "disc" + sio.Path.DirectorySeparatorChar + game.ID +
-                        ".png");
-                    while (NET_CLIENT.IsBusy) Application.DoEvents();
-                }
-            }
-            catch (WebException ex)
-            {
-                tbLog.AppendText("[" + DateString() + "]" + Resources.DownloadDiscCoverError + Environment.NewLine +
-                                 Resources.Error + ex.Message + Environment.NewLine);
-                tbLog.AppendText(ex.StackTrace);
-            }
-            finally
-            {
-                if (NET_RESPONSE != null) NET_RESPONSE.Close();
-            }
-
-            //try
-            //{
-            //    // Download Disc cover
-            //    Uri myLinkCoverDisc = new Uri(@"https://art.gametdb.com/wii/disc/" + LINK_DOMAIN + "/" + _IDMakerCode + ".png");
-            //    var request = (HttpWebRequest)WebRequest.Create(myLinkCoverDisc);
-            //    request.Method = "HEAD";
-            //    NET_RESPONSE = (HttpWebResponse)request.GetResponse();
-
-            //    if (NET_RESPONSE.StatusCode == HttpStatusCode.OK)
-            //    {
-            //        tbLog.AppendText("[" + DateString() + "]" + GCBM.Properties.Resources.DownloadDiscCover + _IDMakerCode + ".png" + Environment.NewLine);
-            //        NET_CLIENT.DownloadFileAsync(myLinkCoverDisc, GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + LINK_DOMAIN + sio.Path.DirectorySeparatorChar + "disc" + sio.Path.DirectorySeparatorChar + _IDMakerCode + ".png");
-            //        while (NET_CLIENT.IsBusy) { Application.DoEvents(); }
-            //    }
-            //}
-            //catch (WebException ex)
-            //{
-            //    tbLog.AppendText("[" + DateString() + "]" + GCBM.Properties.Resources.DownloadDiscCoverError + Environment.NewLine +
-            //        GCBM.Properties.Resources.Error + ex.Message + Environment.NewLine);
-            //    tbLob.AppendText(ex.StackTrace);
-            //}
-            //finally
-            //{
-            //    if (NET_RESPONSE != null)
-            //    {
-            //        NET_RESPONSE.Close();
-            //    }
-            //}
-
-            try
-            {
-                // Download 3D cover
-                var myLinkCover3D = new Uri(@"https://art.gametdb.com/wii/cover3D/" + LINK_DOMAIN + "/" +
-                                            game.ID + ".png");
-                var request3D = (HttpWebRequest)WebRequest.Create(myLinkCover3D);
-                request3D.Method = "HEAD";
-                NET_RESPONSE = (HttpWebResponse)request3D.GetResponse();
-
-                if (NET_RESPONSE.StatusCode == HttpStatusCode.OK)
-                {
-                    tbLog.AppendText("[" + DateString() + "]" + Resources.Download3DCover + game.ID + ".png" +
-                                     Environment.NewLine);
-                    NET_CLIENT.DownloadFileAsync(myLinkCover3D,
-                        GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + LINK_DOMAIN +
-                        sio.Path.DirectorySeparatorChar + "3d" + sio.Path.DirectorySeparatorChar + game.ID +
-                        ".png");
-                    while (NET_CLIENT.IsBusy) Application.DoEvents();
-                }
-            }
-            catch (WebException ex)
-            {
-                tbLog.AppendText("[" + DateString() + "]" + Resources.Download3DCoverError + Environment.NewLine +
-                                 Resources.Error + ex.Message + Environment.NewLine);
-                tbLog.AppendText(ex.StackTrace);
-            }
-            finally
-            {
-                if (NET_RESPONSE != null) NET_RESPONSE.Close();
-            }
-        }
+        //    var gameID = row.Cells[2].Value.ToString();
+        //    DownloadOnlyDisc3DCoverSelectedGame(gameID);
+        //}
     }
 
     #endregion
@@ -1305,120 +1177,75 @@ public partial class frmMain : Form
     /// <summary>
     ///     Downloads Disc and 3D files from the selected ISO/GCM file only.
     /// </summary>
-    private void DownloadOnlyDisc3DCoverSelectedGame(DataGridView dgv)
+    private async Task DownloadOnlyDisc3DCoverSelectedGame(string gameID)
     {
-      
-        var _selectedGameRowCount = dgv.Rows.GetRowCount(DataGridViewElementStates.Selected);
-        Game game = gameUtilities.GetGameInfo(dgv.SelectedRows[0].Cells[6].Value.ToString(), useXmlTitle).Result;
-        if (_selectedGameRowCount == 0)
+        var regionToLinkDomain = new Dictionary<string, string>
+    {
+        {"e", "US"}, // AMERICA - USA
+        {"p", "EN"}, // EUROPE - ALL
+        {"r", "EN"}, // EUROPE - RUSSIA                   
+        {"j", "JA"}, // ASIA - JAPAN
+        {"t", "JA"}, // ASIA - TAIWAN
+        {"k", "JA"}, // ASIA - KOREA
+        {"d", "DE"}, // EUROPE - GERMANY
+        {"s", "ES"}, // EUROPE - SPAIN
+        {"i", "IT"}, // EUROPE - ITALY
+        {"u", "AU"}, // AUSTRALIA
+        {"y", "NL"}, // EUROPE - Netherlands ???
+        {"f", "FR"}, // EUROPE - FRANCE
+    };
+        //VerifyGame(gameID);
+        var regionCode = gameID.Substring(3, 1);
+        string linkDomain = "";
+        regionToLinkDomain.TryGetValue(regionCode.ToLowerInvariant(), out linkDomain);
+        try
         {
-            SelectGameFromList();
-        }
-        else
-        {
-            switch (game.IDRegionCode)
+            // Download Disc cover
+            var linkCoverDisc = new Uri($"https://art.gametdb.com/wii/disc/{linkDomain}/{gameID}.png");
+            var request = (HttpWebRequest)WebRequest.Create(linkCoverDisc);
+            request.Method = "HEAD";
+            using (var response = (HttpWebResponse)await request.GetResponseAsync())
             {
-                case "e": // AMERICA - USA
-                    LINK_DOMAIN = "US";
-                    break;
-                case "p": // EUROPE - ALL
-                case "r": // EUROPE - RUSSIA                   
-                    LINK_DOMAIN = "EN";
-                    break;
-                case "j": // ASIA - JAPAN
-                case "t": // ASIA - TAIWAN
-                case "k": // ASIA - KOREA
-                    LINK_DOMAIN = "JA";
-                    break;
-                case "d": // EUROPE - GERMANY
-                    LINK_DOMAIN = "DE";
-                    break;
-                case "s": // EUROPE - SPAIN
-                    LINK_DOMAIN = "ES";
-                    break;
-                case "i": // EUROPE - ITALY
-                    LINK_DOMAIN = "IT";
-                    break;
-                case "u": // AUSTRALIA
-                    LINK_DOMAIN = "AU";
-                    break;
-                case "y": // EUROPE - Netherlands ???
-                    LINK_DOMAIN = "NL";
-                    break;
-                case "f": // EUROPE - FRANCE
-                    LINK_DOMAIN = "FR";
-                    break;
-                default:
-                    LINK_DOMAIN = "US";
-                    //GlobalNotifications(GCBM.Properties.Resources.UnknownRegion, ToolTipIcon.Info);
-                    break;
-            }
-
-            try
-            {
-                // Download Disc cover
-                var myLinkCoverDisc = new Uri(@"https://art.gametdb.com/wii/disc/" + LINK_DOMAIN + "/" +
-                                              game.ID + ".png");
-                var request = (HttpWebRequest)WebRequest.Create(myLinkCoverDisc);
-                request.Method = "HEAD";
-                NET_RESPONSE = (HttpWebResponse)request.GetResponse();
-
-                if (NET_RESPONSE.StatusCode == HttpStatusCode.OK)
+                if (response.StatusCode == HttpStatusCode.OK)
                 {
-                    tbLog.AppendText("[" + DateString() + "]" + Resources.DownloadDiscCover + game.ID +
-                                     ".png" + Environment.NewLine);
-                    NET_CLIENT.DownloadFileAsync(myLinkCoverDisc,
-                        GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + LINK_DOMAIN +
-                        sio.Path.DirectorySeparatorChar + "disc" + sio.Path.DirectorySeparatorChar + game.ID +
-                        ".png");
-                    while (NET_CLIENT.IsBusy) Application.DoEvents();
+                    tbLog.AppendText($"[{DateString()}] {Resources.DownloadDiscCover} {gameID}.png{Environment.NewLine}");
+                    var discCoverPath = sio.Path.Combine(COVERS_DIR, linkDomain, "disc", $"{gameID}.png");
+                    NET_CLIENT.DownloadFile(linkCoverDisc, GET_CURRENT_PATH + discCoverPath);
                 }
             }
-            catch (WebException ex)
+        }
+        catch (WebException ex)
+        {
+            tbLog.AppendText($"[{DateString()}] {Resources.DownloadDiscCoverError}{Environment.NewLine}{Resources.Error} {ex.Message}{Environment.NewLine}");
+            tbLog.AppendText(ex.StackTrace);
+        }
+        try
+        {
+            // Download 3D cover
+            var linkCover3D = new Uri($"https://art.gametdb.com/wii/cover3D/{linkDomain}/{gameID}.png");
+            var request3D = (HttpWebRequest)WebRequest.Create(linkCover3D);
+            request3D.Method = "HEAD";
+            using (var response = (HttpWebResponse)await request3D.GetResponseAsync())
             {
-                //MessageBox.Show("ARQUIVO: " + _netResponse.ToString() + " not found!");
-                tbLog.AppendText("[" + DateString() + "]" + Resources.DownloadDiscCoverError + Environment.NewLine +
-                                 "[" + DateString() + "]" + Resources.Error + ex.Message + Environment.NewLine);
-                tbLog.AppendText(ex.StackTrace);
-            }
-            finally
-            {
-                if (NET_RESPONSE != null) NET_RESPONSE.Close();
-            }
-
-            try
-            {
-                // Download 3D cover
-                var myLinkCover3D = new Uri(@"https://art.gametdb.com/wii/cover3D/" + LINK_DOMAIN + "/" +
-                                            game.ID + ".png");
-                var request3D = (HttpWebRequest)WebRequest.Create(myLinkCover3D);
-                request3D.Method = "HEAD";
-                NET_RESPONSE = (HttpWebResponse)request3D.GetResponse();
-
-                if (NET_RESPONSE.StatusCode == HttpStatusCode.OK)
+                if (response.StatusCode == HttpStatusCode.OK)
                 {
-                    tbLog.AppendText("[" + DateString() + "]" + Resources.Download3DCover + game.ID + ".png" +
-                                     Environment.NewLine);
-                    NET_CLIENT.DownloadFileAsync(myLinkCover3D,
-                        GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + LINK_DOMAIN +
-                        sio.Path.DirectorySeparatorChar + "3d" + sio.Path.DirectorySeparatorChar + game.ID +
-                        ".png");
-                    while (NET_CLIENT.IsBusy) Application.DoEvents();
+                    tbLog.AppendText($"[{DateString()}] {Resources.Download3DCover} {gameID}.png{Environment.NewLine}");
+                    var _3DCoverPath = sio.Path.Combine(COVERS_DIR, linkDomain, "3d", $"{gameID}.png");
+                    NET_CLIENT.DownloadFile(linkCover3D, GET_CURRENT_PATH + _3DCoverPath);
                 }
             }
-            catch (WebException ex)
-            {
-                //MessageBox.Show("ARQUIVO: " + _netResponse.ToString() + " not found!");
-                tbLog.AppendText("[" + DateString() + "]" + Resources.Download3DCoverError + Environment.NewLine +
-                                 "[" + DateString() + "]" + Resources.Error + ex.Message + Environment.NewLine);
-                tbLog.AppendText(ex.StackTrace);
-            }
-            finally
-            {
-                if (NET_RESPONSE != null) NET_RESPONSE.Close();
-            }
         }
-    }
+        catch (WebException ex)
+        {
+            tbLog.AppendText($"[{DateString()}] {Resources.Download3DCoverError}{Environment.NewLine}{Resources.Error} {ex.Message}{Environment.NewLine}");
+            tbLog.AppendText(ex.StackTrace);
+        }
+        finally
+        {
+            if (NET_RESPONSE != null) NET_RESPONSE.Close();
+        }
+    
+}
 
     #endregion
 
@@ -2171,16 +1998,21 @@ public partial class frmMain : Form
         {
             if (sio.File.Exists(WIITDB_FILE))
             {
-                var root = XElement.Load(WIITDB_FILE);
-                var tests = from el in root.Elements("game")
-                            where (string)el.Element("id") == tbIDGame.Text
-                            select el;
-                foreach (var el in tests) ExternalSite(link, (string)el.Element("locale").Element("title"));
+                using (var stream = sio.File.OpenRead(WIITDB_FILE))
+                using (var reader = XmlReader.Create(stream, new XmlReaderSettings { CloseInput = false }))
+                {
+                    var root = XElement.Load(reader);
+                    var tests = from el in root.Elements("game")
+                                where (string)el.Element("id") == tbIDGame.Text
+                                select el;
+                    foreach (var el in tests) ExternalSite(link, (string)el.Element("locale").Element("title"));
+                }
             }
             else
             {
                 CheckWiiTdbXml();
             }
+
         }
     }
 
@@ -2551,6 +2383,7 @@ public partial class frmMain : Form
         try
         {
             fbd1.Description = Resources.SelectFolderContainingIsoGcmFiles;
+            fbd1.RootFolder = Environment.SpecialFolder.MyComputer;
             fbd1.ShowNewFolderButton = false;
             var result = fbd1.ShowDialog();
             if (result == DialogResult.OK)
@@ -2665,56 +2498,7 @@ public partial class frmMain : Form
 
     // REWRITE FUNCTION- Directory Open
 
-    #region Directory Open
-
-    /// <summary>
-    ///     Checks the consistency of the listed ISO and GCM files.
-    /// </summary>
-    /// <param name="path"></param>
-    private void VerifyGame(string path)
-    {
-        //OpenFileDialog ofd;
-
-        //if (path.Length == 0)
-        //{
-        //    ofd = new OpenFileDialog() { Filter = "GameCube ISO (*.iso)|*.iso|GameCube Image File (*.gcm)|*.gcm|All files (*.*)|*.*", Title = "Open image" };
-        //    if (imgPath != "")
-        //        ofd.FileName = imgPath;
-        //    if (ofd.ShowDialog() == DialogResult.OK)
-        //    {
-        //        imgPath = ofd.FileName;
-        //        path = imgPath;
-        //    }
-        //}
-
-        if (path.Length == 0) return;
-
-        IMAGE_PATH = path;
-
-        if (CheckImage())
-            if (gameUtilities.ReadImageTOC())
-            {
-                if (CONFIG_INI_FILE.IniReadBool("TITLES", "GameXmlName"))
-                {
-                    if (sio.File.Exists(WIITDB_FILE))
-                    {
-                        var root = XElement.Load(WIITDB_FILE);
-                        var tests = from el in root.Elements("game")
-                                    where (string)el.Element("id") == tbIDGame.Text
-                                    select el;
-                        foreach (var el in tests) tbIDName.Text = (string)el.Element("locale").Element("title");
-                    }
-                    else
-                    {
-                        CheckWiiTdbXml();
-                    }
-                }
-
-                ROOT_OPENED = false;
-            }
-    }
-
-    #endregion
+ 
 
     private void tsmiRenameFolders_Click(object sender, EventArgs e)
     {
@@ -3472,116 +3256,62 @@ public partial class frmMain : Form
     {
         //Make sure pbCopy is Continuous
         pbCopy.Style = ProgressBarStyle.Continuous;
-        // Disc 1
-        //if (textBoxDiscID.Text == "00" && comboBoxSettingsNomenclatureAppointmentStyle.SelectedIndex  == 0)
-        //if (game.DiscID == "0x00")
-        //{
-            if (_destination.Exists) _destination.Delete();
-            //Create a tast to run copy file
-            Run(() =>
+        if (_destination.Exists) _destination.Delete();
+        //Create a task to copy file
+        Run(() =>
+        {
+            //_source.CopyTo(_destination, true);
+            _source.CopyTo(_destination, x => pbCopy.BeginInvoke(new Action(() =>
             {
-                //_source.CopyTo(_destination, true);
-                _source.CopyTo(_destination, x => pbCopy.BeginInvoke(new Action(() =>
-                {
-                    //DisableOptionsGame(dgvSource);
-                    dgvSource.Enabled = false;
-                    pbCopy.Visible = true;
-                    lblInstallStatusGameTitle.Visible = true;
-                    lblInstallStatusPercent.Visible = true;
-                    lblInstallStatusText.Visible = true;
-                    if (x < pbCopy.Value)
-                        pbCopy.Value = x;
-                    lblInstallStatusGameTitle.Text = InstallQueue[intQueuePos].Title;
-                    lblInstallStatusText.Text = Resources.CopyTask_String1;
-                    lblInstallStatusPercent.Text = x + "%";
-                })));
-            }).GetAwaiter().OnCompleted(() => pbCopy.BeginInvoke(new Action(() =>
-            {
-                pbCopy.Maximum = 100;
-                pbCopy.Value = 100;
-                lblInstallStatusGameTitle.Text = Resources.CopyTask_String3;
-                lblInstallStatusText.Text = Resources.CopyTask_String4;
-                lblInstallStatusPercent.Text = Resources.CopyTask_String5;
-                GlobalNotifications(Resources.InstallGameScrub_Complete, ToolTipIcon.Info);
-
-                pbCopy.Visible = false;
-                lblInstallStatusGameTitle.Visible = false;
-                lblInstallStatusPercent.Visible = false;
-                lblInstallStatusText.Visible = false;
-                intQueuePos++;
-                WORKING = false;
-                EnableOptionsGameList();
-
-                if (intQueuePos <= InstallQueue.Count - 1)
-                {
-                    try
-                    {
-                        InstallGameExactCopy(InstallQueue[intQueuePos]);
-                    }
-                    catch (Exception ex)
-                    {
-                        tbLog.AppendText("[" + DateTime.Now + "] Error Installing: " + Environment.NewLine +
-                                         ex.Message + Environment.NewLine);
-                        tbLog.AppendText(ex.StackTrace);
-                    }
-                }
-                else
-                {
-                    EnableOptionsGameList();
-                    dgvSource.Enabled = true;
-                }
+                //DisableOptionsGame(dgvSource);
+                dgvSource.Enabled = false;
+                pbCopy.Visible = true;
+                lblInstallStatusGameTitle.Visible = true;
+                lblInstallStatusPercent.Visible = true;
+                lblInstallStatusText.Visible = true;
+                if (x < pbCopy.Value)
+                    pbCopy.Value = x;
+                lblInstallStatusGameTitle.Text = InstallQueue[intQueuePos].Title;
+                lblInstallStatusText.Text = Resources.CopyTask_String1;
+                lblInstallStatusPercent.Text = x + "%";
             })));
-        //}
-        // Disc 2
-        //else if (game.DiscID == "0x01")
-        //{
-        //    if (_destination.Exists) _destination.Delete();
-        //    //Create a tast to run copy file
-        //    Run(() =>
-        //    {
-        //        _source.CopyTo(_destination, x => pbCopy.BeginInvoke(new Action(() =>
-        //        {
-        //            //DisableOptionsGame(dgvSource);
-        //            pbCopy.Visible = true;
-        //            lblInstallStatusGameTitle.Visible = true;
-        //            lblInstallStatusPercent.Visible = true;
-        //            lblInstallStatusText.Visible = true;
-        //            pbCopy.Value = x;
-        //            lblInstallStatusGameTitle.Text = InstallQueue[intQueuePos].Title;
-        //            lblInstallStatusText.Text = Resources.CopyTask_String2;
-        //            lblInstallStatusPercent.Text = x + "%";
-        //        })));
-        //    }).GetAwaiter().OnCompleted(() => pbCopy.BeginInvoke(new Action(() =>
-        //    {
-        //        pbCopy.Value = 100;
-        //        lblInstallStatusText.Text = Resources.CopyTask_String4;
-        //        lblInstallStatusPercent.Text = Resources.CopyTask_String5;
-        //        GlobalNotifications(Resources.InstallGameScrub_TrasnferredDisc2, ToolTipIcon.Info);
-        //        pbCopy.Visible = false;
-        //        lblInstallStatusGameTitle.Visible = false;
-        //        lblInstallStatusPercent.Visible = false;
-        //        lblInstallStatusText.Visible = false;
-        //        intQueuePos++;
-        //        WORKING = false;
-        //        if (intQueuePos <= InstallQueue.Count)
-        //        {
-        //            try
-        //            {
-        //                InstallGameExactCopy(InstallQueue[intQueuePos].Path);
-        //            }
-        //            catch (Exception ex)
-        //            {
-        //                tbLog.AppendText("[" + DateTime.Now + "] Error Installing: " + Environment.NewLine +
-        //                                 ex.Message + Environment.NewLine);
-        //            }
-        //        }
-        //        else
-        //        {
-        //            EnableOptionsGameList();
-        //            dgvSource.Enabled = true;
-        //        }
-        //    })));
-        //}
+        }).GetAwaiter().OnCompleted(() => pbCopy.BeginInvoke(new Action(() =>
+        {
+            pbCopy.Maximum = 100;
+            pbCopy.Value = 100;
+            lblInstallStatusGameTitle.Text = Resources.CopyTask_String3;
+            lblInstallStatusText.Text = Resources.CopyTask_String4;
+            lblInstallStatusPercent.Text = Resources.CopyTask_String5;
+            GlobalNotifications(Resources.InstallGameScrub_Complete, ToolTipIcon.Info);
+
+            pbCopy.Visible = false;
+            lblInstallStatusGameTitle.Visible = false;
+            lblInstallStatusPercent.Visible = false;
+            lblInstallStatusText.Visible = false;
+            intQueuePos++;
+            WORKING = false;
+            EnableOptionsGameList();
+
+            if (intQueuePos <= InstallQueue.Count - 1)
+            {
+                try
+                {
+                    InstallGameExactCopy(InstallQueue[intQueuePos]);
+                }
+                catch (Exception ex)
+                {
+                    tbLog.AppendText("[" + DateTime.Now + "] Error Installing: " + Environment.NewLine +
+                                     ex.Message + Environment.NewLine);
+                    tbLog.AppendText(ex.StackTrace);
+                }
+            }
+            else
+            {
+                EnableOptionsGameList();
+                dgvSource.Enabled = true;
+            }
+        })));
+
 
         EnableOptionsGameList();
     }
@@ -4027,54 +3757,6 @@ public partial class frmMain : Form
 
     #endregion
 
-    #region Copy Task
-
-    /// <summary>
-    ///     Function for the copy job.
-    /// </summary>
-    /// <param name="_source"></param>
-    /// <param name="_destination"></param>
-    //private void CopyTask(sio.FileInfo _source, sio.FileInfo _destination)
-    //{
-    //    // Disc 1
-    //    //if (textBoxDiscID.Text == "00" && comboBoxSettingsNomenclatureAppointmentStyle.SelectedIndex  == 0)
-    //    if (tbIDDiscID.Text == "0x00")
-    //    {
-    //        if (_destination.Exists) _destination.Delete();
-    //        //Create a tast to run copy file
-    //        Run(() =>
-    //        {
-    //            //_source.CopyTo(_destination, true);
-    //            _source.CopyTo(_destination, x => pbCopy.BeginInvoke(new Action(() => UpdateProgressExact(x))));
-    //        }).GetAwaiter().OnCompleted(() => pbCopy.BeginInvoke(new Action(() =>
-    //        {
-    //            if (intQueuePos <= intQueueLength)
-    //                try
-    //                {
-    //                    CheckAndCallCopyTask(InstallQueue[intQueuePos]);
-    //                }
-    //                catch (Exception ex)
-    //                {
-    //                    tbLog.AppendText("[" + DateTime.Now + "] Error Installing: " + Environment.NewLine +
-    //                                     ex.Message + Environment.NewLine);
-    //                    tbLog.AppendText(ex.StackTrace);
-    //                }
-    //        })));
-    //    }
-    //    // Disc 2
-    //    else if (tbIDDiscID.Text == "0x01")
-    //    {
-    //        if (_destination.Exists) _destination.Delete();
-    //        //Create a tast to run copy file
-    //        Run(() =>
-    //        {
-    //            _source.CopyTo(_destination, x => pbCopy.BeginInvoke(new Action(() => UpdateProgressExact(x))));
-    //        }).GetAwaiter().OnCompleted(() => pbCopy.BeginInvoke(new Action(() =>
-    //        {
-    //            CheckAndCallCopyTask(InstallQueue[intQueuePos]);
-    //        })));
-    //    }
-    //}
     private void UpdateProgressExact(int x)
     {
         tabMainFile.BeginInvoke(new Action(() =>
@@ -4129,7 +3811,6 @@ public partial class frmMain : Form
         EnableOptionsGameList();
     }
 
-    #endregion
 
 
     #region Notifications
@@ -4614,23 +4295,36 @@ public partial class frmMain : Form
 
     #region tsmiDownloadCoversSelectedGame_Click
 
-    private void tsmiDownloadCoversSelectedGame_Click(object sender, EventArgs e)
+    private async void tsmiDownloadCoversSelectedGame_Click(object sender, EventArgs e)
     {
-        if (CONFIG_INI_FILE.IniReadBool("SEVERAL", "NetVerify"))
-            DownloadOnlyDisc3DCoverSelectedGame(dgvSelected);
-        else
-            GlobalNotifications(Resources.NoInternetConnectionFound_String1 + Environment.NewLine +
-                                Resources.NoInternetConnectionFound_String2, ToolTipIcon.Info);
+        if (dgvSelected.SelectedRows.Count > 0)
+        {
+            string gameID = dgvSelected.CurrentRow.Cells["ID"].Value.ToString();
+
+            if (CONFIG_INI_FILE.IniReadBool("SEVERAL", "NetVerify"))
+                await DownloadOnlyDisc3DCoverSelectedGame(gameID);
+            else
+                GlobalNotifications(Resources.NoInternetConnectionFound_String1 + Environment.NewLine +
+                                    Resources.NoInternetConnectionFound_String2, ToolTipIcon.Info);
+        }
     }
 
     #endregion
 
     #region tsmiSyncDownloadDiscOnly3DCovers_Click
 
-    private void tsmiSyncDownloadDiscOnly3DCovers_Click(object sender, EventArgs e)
+    private async void tsmiSyncDownloadDiscOnly3DCovers_Click(object sender, EventArgs e)
     {
         if (CONFIG_INI_FILE.IniReadBool("SEVERAL", "NetVerify"))
-            DownloadOnlyDisc3DCover(dgvSelected);
+        {
+            foreach (DataGridViewRow row in dgvSource.Rows)
+            {
+
+                var gameID = row.Cells[2].Value.ToString();
+                await DownloadOnlyDisc3DCoverSelectedGame(gameID);
+            }
+        }
+            //await DownloadOnlyDisc3DCoverAsync(dgvSelected);
         else
             GlobalNotifications(Resources.NoInternetConnectionFound_String1 + Environment.NewLine +
                                 Resources.NoInternetConnectionFound_String2, ToolTipIcon.Info);
@@ -5369,8 +5063,32 @@ public partial class frmMain : Form
         ResetOptions();
     }
 
+
     #endregion
 
+    private async void browseNetworkToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            fbd1.Description = Resources.SelectFolderContainingIsoGcmFiles;
+            fbd1.ShowNewFolderButton = false;
+            fbd1.RootFolder = Environment.SpecialFolder.Desktop;
 
+            DialogResult result = fbd1.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                dgvGameListPath = fbd1.SelectedPath;
+                UseWaitCursor = true;
+                await DisplaySourceFilesAsync(fbd1.SelectedPath, dgvSource).ConfigureAwait(false);
+                UseWaitCursor = false;
+                ListIsoFile();
+            }
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+    }
 } // frmMain Form
   // namespace GCBM

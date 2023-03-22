@@ -417,4 +417,10 @@
   <data name="lblTypeDiscDest.Text" xml:space="preserve">
     <value>Диск...</value>
   </data>
+  <data name="tsmi_DownloadGameTDB.Text" xml:space="preserve">
+    <value>Оновлення GameTDB</value>
+  </data>
+  <data name="tsmiMoreDirectories.Text" xml:space="preserve">
+    <value>Більше папок</value>
+  </data>
 </root>

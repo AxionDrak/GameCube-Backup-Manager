@@ -358,10 +358,10 @@
     <value>ERROR!</value>
   </data>
   <data name="LoadISOInfo_String1" xml:space="preserve">
-    <value>Primary disk: (disc1)</value>
+    <value>Primary disc: (disc1)</value>
   </data>
   <data name="LoadISOInfo_String2" xml:space="preserve">
-    <value>Secondary disk: (disc2)</value>
+    <value>Secondary disc: (disc2)</value>
   </data>
   <data name="PluginDisplay_String2" xml:space="preserve">
     <value>Uninstall</value>

@@ -117,11 +117,17 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="grpSearch.Text" xml:space="preserve">
+    <value>Search</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="tabControlMain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>899, 540</value>
+  </data>
   <data name="btnSearch.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
-        cwAAAHMBY8FD/gAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAE8SURBVDhPndLN
+        cAAAAHABznhikwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAE8SURBVDhPndLN
         KwVRGMfxI0pZWclKspEN6iZEkVDqhu69EhvKShZeUl4jivKSHXmNWGBHWfrjfL+Dcpjo+tWn6czMOfOc
         50z4JU04xR1ucYNr9OHPrGEfrVjHGXbRjTm4cDlSs4gJ7GAP9ShDDXx2hR646I/U4gRWkPNGSppxiVn0
         e+NrttCG82QUpwNWZpbQCfsSxWaNIpuMQtiAvRiGlfnlOlSgCr4fxRVn0JKMQnhBF+xFLy5QAmNFqRUM
@@ -129,9 +135,6 @@
         baxgEquIMoJXPMFFrMTteCLT8Mvt8AdaQBQnW5J/m4sYt+Nva6dtrg3bhO9EycPJHo9XFysqz/j3ZHMM
         F7GSIhPCG//KOXir8+EgAAAAAElFTkSuQmCC
 </value>
-  </data>
-  <data name="grpSearch.Text" xml:space="preserve">
-    <value>Search</value>
   </data>
   <data name="pbGameCover3D.ErrorImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -663,6 +666,12 @@
         n3322V7suxX6ASKjfQ71h8j4/4Z4I7FIJPofI1bqEdzG6zMAAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="tabMainFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>891, 514</value>
+  </data>
+  <data name="tabMainFile.Text" xml:space="preserve">
+    <value>Files (Source)</value>
+  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="lblInstallStatusGameIndex.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -691,7 +700,7 @@
   <data name="btnAbort.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
-        6AAAAOgBhtX2rwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAO/SURBVFhHzZdL
+        5QAAAOUBj+WbPAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAO/SURBVFhHzZdL
         TFNBFIbbyENolQJtKS0tLUWUirW3rQkgyMNoYjQaiSQuJNHE6N6dGve6MDFx48qElZqYGBWUKCoqCAq+
         UCjGRxPjQgTxBYmPxe85F2+9fdBOjRib/OntzJn5vzlnpvdeDX1MizMWXMrQar/RNf6F2Eun1XbStVHD
         5q1FBd+f1a3EmwZpXvSyfiV6gh5Ii3Kxv8yK3spyrMvNZYgODdOw+fTaVfOuU95y1OUvwmSdhPM2G2fi
@@ -760,7 +769,7 @@
   <data name="pbWebGameID.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vwAADr8BOAVTJAAACxNJREFUeF7tm9lyJUcRhucKc4F5BMAYh5/C4EfADq7twHeEg4u5wNiSZt/3fZdm
+        vAAADrwBlbxySQAACxNJREFUeF7tm9lyJUcRhucKc4F5BMAYh5/C4EfADq7twHeEg4u5wNiSZt/3fZdm
         lWbfF2n2TZpdmnkCJrjHEAF4hiU8NPlV1H8i1Sf7nD5H0ngglBF/nFZ3dXX+WZlZWdWtObMyKzMnc+fO
         /X5vb++Hhi8New33+/r6nhv+Yvh3BsfPuZbbfGl//8LwVu7mf0vmz5//Q1P+MyNyzX5fGoouwb1XDb+m
         z9z9myum5PuMYFa8QWTBggWN46VLlxaHDh0qjh49Whw7dqyBoaGhYt++fcWuXbuKjRs3FkuWLGncA6zf
@@ -809,6 +818,9 @@
         OiR3YAC5dLTbIxhp1vP9r/2/Q7oRI/K2KfypKTxiSJsrXQJDDhs+MdTbzHjThBi13PCBGeQLI4F3jBn+
         YPizgXeRgGPOjRr6acs9b0R8z8qszMr/ucyZ81+6CoIePcowKAAAAABJRU5ErkJggg==
 </value>
+  </data>
+  <data name="grpOperations.Text" xml:space="preserve">
+    <value>Operations</value>
   </data>
   <data name="btnGameInstallScrub.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -865,9 +877,6 @@
   <data name="btnGameInstallExactCopy.Text" xml:space="preserve">
     <value>Install Game (1:1)</value>
   </data>
-  <data name="grpOperations.Text" xml:space="preserve">
-    <value>Operations</value>
-  </data>
   <data name="labelGameID.Size" type="System.Drawing.Size, System.Drawing">
     <value>52, 13</value>
   </data>
@@ -882,6 +891,9 @@
   </data>
   <data name="labelTitle.Text" xml:space="preserve">
     <value>Title:</value>
+  </data>
+  <data name="cmsMain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>233, 198</value>
   </data>
   <data name="tsmiInfoGame.Size" type="System.Drawing.Size, System.Drawing">
     <value>232, 22</value>
@@ -940,8 +952,8 @@
   <data name="tsmiSearchOnVGChartz.Text" xml:space="preserve">
     <value>Search on VGChartz</value>
   </data>
-  <data name="cmsMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>233, 198</value>
+  <data name="mstripFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>885, 24</value>
   </data>
   <data name="tsmiReloadGameList.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -989,18 +1001,6 @@
   <data name="tsmiClearListSource.Text" xml:space="preserve">
     <value>Clear List</value>
   </data>
-  <data name="tsmiGameListSelectAll.Size" type="System.Drawing.Size, System.Drawing">
-    <value>103, 22</value>
-  </data>
-  <data name="tsmiGameListSelectAll.Text" xml:space="preserve">
-    <value>All</value>
-  </data>
-  <data name="tsmiGameListSelectNone.Size" type="System.Drawing.Size, System.Drawing">
-    <value>103, 22</value>
-  </data>
-  <data name="tsmiGameListSelectNone.Text" xml:space="preserve">
-    <value>None</value>
-  </data>
   <data name="tsmiSelectGameList.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAPNJREFUOE+1
@@ -1017,22 +1017,22 @@
   <data name="tsmiSelectGameList.Text" xml:space="preserve">
     <value>Select</value>
   </data>
-  <data name="tsmiGameListDeleteAllFiles.Size" type="System.Drawing.Size, System.Drawing">
-    <value>118, 22</value>
+  <data name="tsmiGameListSelectAll.Size" type="System.Drawing.Size, System.Drawing">
+    <value>103, 22</value>
   </data>
-  <data name="tsmiGameListDeleteAllFiles.Text" xml:space="preserve">
+  <data name="tsmiGameListSelectAll.Text" xml:space="preserve">
     <value>All</value>
   </data>
-  <data name="tsmiGameListDeleteSelectedFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>118, 22</value>
+  <data name="tsmiGameListSelectNone.Size" type="System.Drawing.Size, System.Drawing">
+    <value>103, 22</value>
   </data>
-  <data name="tsmiGameListDeleteSelectedFile.Text" xml:space="preserve">
-    <value>Selected</value>
+  <data name="tsmiGameListSelectNone.Text" xml:space="preserve">
+    <value>None</value>
   </data>
   <data name="tsmiRemoveGameList.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
-        cgAAAHIBsYahGgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAGUSURBVDhPdVJN
+        cAAAAHABznhikwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAGUSURBVDhPdVJN
         LwNRFJ0N/oiVj1X1DXb6itjZ+AeWYudnVDRtKiGWEolYEPERWosSTSqIqhANS7Y6M6SdN73uffPRN53O
         TU5yc889p3Nfj9ZbZnpq3OR61uTsGWF6wD65YcxNjHlr0YKF4SErxQq47CAgBsLiyTwsjQ56MrdIjGQp
         WJydBGuRh0CzgOesGDIx0mxTIaG1nYfeam3lVAOw0iwnxe7N3c/+XV2Gv7WVviDO30MIYyY5qnkPFhAd
@@ -1048,23 +1048,17 @@
   <data name="tsmiRemoveGameList.Text" xml:space="preserve">
     <value>Delete</value>
   </data>
-  <data name="tsmiGameListHashSHA1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>166, 22</value>
+  <data name="tsmiGameListDeleteAllFiles.Size" type="System.Drawing.Size, System.Drawing">
+    <value>118, 22</value>
   </data>
-  <data name="tsmiGameListHashSHA1.Text" xml:space="preserve">
-    <value>Check selected(s)</value>
+  <data name="tsmiGameListDeleteAllFiles.Text" xml:space="preserve">
+    <value>All</value>
   </data>
-  <data name="tsmiGameListSignatureSHA1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 22</value>
+  <data name="tsmiGameListDeleteSelectedFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>118, 22</value>
   </data>
-  <data name="tsmiGameListSignatureSHA1.Text" xml:space="preserve">
-    <value>SHA-1 signature</value>
-  </data>
-  <data name="exportarListaToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 22</value>
-  </data>
-  <data name="exportarListaToolStripMenuItem.Text" xml:space="preserve">
-    <value>Export list as...</value>
+  <data name="tsmiGameListDeleteSelectedFile.Text" xml:space="preserve">
+    <value>Selected</value>
   </data>
   <data name="tsmiToolsGameList.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1087,40 +1081,32 @@
   <data name="tsmiToolsGameList.Text" xml:space="preserve">
     <value>Tools</value>
   </data>
-  <data name="mstripFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>876, 24</value>
+  <data name="tsmiGameListSignatureSHA1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 22</value>
   </data>
-  <data name="tabMainFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>882, 514</value>
+  <data name="tsmiGameListSignatureSHA1.Text" xml:space="preserve">
+    <value>SHA-1 signature</value>
   </data>
-  <data name="tabMainFile.Text" xml:space="preserve">
-    <value>Files (Source)</value>
+  <data name="tsmiGameListHashSHA1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>166, 22</value>
+  </data>
+  <data name="tsmiGameListHashSHA1.Text" xml:space="preserve">
+    <value>Check selected(s)</value>
+  </data>
+  <data name="exportarListaToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 22</value>
+  </data>
+  <data name="exportarListaToolStripMenuItem.Text" xml:space="preserve">
+    <value>Export list as...</value>
+  </data>
+  <data name="tabMainDisc.Size" type="System.Drawing.Size, System.Drawing">
+    <value>891, 514</value>
+  </data>
+  <data name="tabMainDisc.Text" xml:space="preserve">
+    <value>Files (Destination)</value>
   </data>
   <data name="lblAbortDestination.Text" xml:space="preserve">
     <value>Stop</value>
-  </data>
-  <data name="btnAbortDestination.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
-        6QAAAOkBVJIUSwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAO/SURBVFhHzZdL
-        TFNBFIbbyENolQJtKS0tLUWUirW3rQkgyMNoYjQaiSQuJNHE6N6dGve6MDFx48qElZqYGBWUKCoqCAq+
-        UCjGRxPjQgTxBYmPxe85F2+9fdBOjRib/OntzJn5vzlnpvdeDX1MizMWXMrQar/RNf6F2Eun1XbStVHD
-        5q1FBd+f1a3EmwZpXvSyfiV6gh5Ii3Kxv8yK3spyrMvNZYgODdOw+fTaVfOuU95y1OUvwmSdhPM2G2fi
-        K2VBI1MmGvC3dVFaSlnQYWqNH1dLSpSS/KcAE00BDNd649pT6QtpqLoKn5vj+4QBXtX74CkwIDcrCweW
-        OKL6kulDcxBbSizIoXEbbUWYagpG9QsBhGXzfOxqa8Po6CicxcXY5y6JmiiR2Hyz1Ywavx/hcBgNNTVY
-        T7/fqyCEADbZLNjZtgPT09OYmZnByMgIHJYiHCi3R2JiJZvTilcHgxgfH5fHTUxMoJpgDqnghQD2uGyo
-        DQQiE6WCSGSujLEXmXHC44rECgF8oglb7RZUS1LUhGNjY7PlKPu9InXa1bGhUEiOjd0/wptQBCJdc5Yw
-        ACtZarkcFYY86osvFad9rpOTFgArAhGzJ3iXt7e3Y3JyMsac9kmSY5s2AIvLsY3KUeOPLodaydKu1h8B
-        sJRMbG9pwZepKbwbGkK4qwujHZ14cvkKXMVW7CkowN3SUgw4HBgodWDQ6cR9twvDFW6EllfgleTBmcoy
-        +OiOmDbA2zof1psKsampGQ9HnuHh2IsoOWmy3fn5s+ZJdNxshleXIwbwmf7BXgerMFjuQmNeHnzLq9B7
-        /3GcOevyjVuwmcxoSwEhBPCxIYDn3mW45yxFr92OJjKXqlag78FwxLC7tx+Hjx7DwKOnkbaO7h5YCo3Y
-        TaVIZM5KCvCJ7n4v2PhXHdm8Mc8AaYU3ypyNio1GOHV66osGSwUxJ0Ao4MGQyxkJvENaZzDEpV1JNRuI
-        xKjNWXMC8A8lKJ2JU8YWFkZiWUIA28jAF1NzJe2JVpWsVBYCOKSCEAJYQyvaurUFD0LPU5orSgTR/+iJ
-        nJm9qpMhBNBF1269Hi0E0XmtZ856xkpdju6+AazyB1BLJ+g2wSkxQgCsS/TIzBALMzOFzBXJx5Ygsmlc
-        PX2rzVnCAKybNPis1RrXnkr9pNN0X+CMxPalBTAf+j8BsrTaHxeo5okG/G0dMZloY+rp1cz3+9XMnJlx
-        bYNeJzcw1XzoHO2lk/Sw4snOxsEyG25XupWX04tcAqMpM+N6NmVCTsk/EK981lxj/AkP3lQ07ON38gAA
-        AABJRU5ErkJggg==
-</value>
   </data>
   <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
     <value>88, 13</value>
@@ -1164,43 +1150,14 @@
   <data name="label2.Text" xml:space="preserve">
     <value>NOTE:</value>
   </data>
-  <data name="pbWebGameDiscID.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        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
-</value>
+  <data name="grpDetailsDestiny.Text" xml:space="preserve">
+    <value>Details</value>
+  </data>
+  <data name="lblTypeDiscDest.Size" type="System.Drawing.Size, System.Drawing">
+    <value>37, 13</value>
+  </data>
+  <data name="lblTypeDiscDest.Text" xml:space="preserve">
+    <value>Disc...</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Region:</value>
@@ -1211,8 +1168,8 @@
   <data name="label6.Text" xml:space="preserve">
     <value>Title:</value>
   </data>
-  <data name="grpDetailsDestiny.Text" xml:space="preserve">
-    <value>Details</value>
+  <data name="mstripDisc.Size" type="System.Drawing.Size, System.Drawing">
+    <value>885, 27</value>
   </data>
   <data name="tscbDiscDrive.Items" xml:space="preserve">
     <value>Inactive</value>
@@ -1235,6 +1192,12 @@
   <data name="tsmiClearListDestination.Text" xml:space="preserve">
     <value>Clear List</value>
   </data>
+  <data name="tsmiSelectGameDisc.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 23</value>
+  </data>
+  <data name="tsmiSelectGameDisc.Text" xml:space="preserve">
+    <value>Select</value>
+  </data>
   <data name="tsmiGameDiscSelectAll.Size" type="System.Drawing.Size, System.Drawing">
     <value>103, 22</value>
   </data>
@@ -1247,11 +1210,11 @@
   <data name="tsmiGameDiscSelectNone.Text" xml:space="preserve">
     <value>None</value>
   </data>
-  <data name="tsmiSelectGameDisc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>50, 23</value>
+  <data name="tsmiRemoveGameDisc.Size" type="System.Drawing.Size, System.Drawing">
+    <value>52, 23</value>
   </data>
-  <data name="tsmiSelectGameDisc.Text" xml:space="preserve">
-    <value>Select</value>
+  <data name="tsmiRemoveGameDisc.Text" xml:space="preserve">
+    <value>Delete</value>
   </data>
   <data name="tsmiGameDiscDeleteAllFiles.Size" type="System.Drawing.Size, System.Drawing">
     <value>118, 22</value>
@@ -1265,11 +1228,11 @@
   <data name="tsmiGameDiscDeleteSelectedFile.Text" xml:space="preserve">
     <value>Selected</value>
   </data>
-  <data name="tsmiRemoveGameDisc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>52, 23</value>
+  <data name="tsmiToolsGameDisc.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 23</value>
   </data>
-  <data name="tsmiRemoveGameDisc.Text" xml:space="preserve">
-    <value>Delete</value>
+  <data name="tsmiToolsGameDisc.Text" xml:space="preserve">
+    <value>Tools</value>
   </data>
   <data name="tsmiGameDiscExportList.Size" type="System.Drawing.Size, System.Drawing">
     <value>161, 22</value>
@@ -1279,6 +1242,12 @@
   </data>
   <data name="toolStripMenuItem3.Size" type="System.Drawing.Size, System.Drawing">
     <value>158, 6</value>
+  </data>
+  <data name="tsmiGameDiscSignatureSHA1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>161, 22</value>
+  </data>
+  <data name="tsmiGameDiscSignatureSHA1.Text" xml:space="preserve">
+    <value>SHA-1 Signature</value>
   </data>
   <data name="tsmiGameDiscAllHashSHA1.Size" type="System.Drawing.Size, System.Drawing">
     <value>166, 22</value>
@@ -1292,11 +1261,11 @@
   <data name="tsmiGameDiscHashSHA1.Text" xml:space="preserve">
     <value>Check selected(s)</value>
   </data>
-  <data name="tsmiGameDiscSignatureSHA1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="tsmiGameDiscSignatureMD5.Size" type="System.Drawing.Size, System.Drawing">
     <value>161, 22</value>
   </data>
-  <data name="tsmiGameDiscSignatureSHA1.Text" xml:space="preserve">
-    <value>SHA-1 Signature</value>
+  <data name="tsmiGameDiscSignatureMD5.Text" xml:space="preserve">
+    <value>MD5 Signature</value>
   </data>
   <data name="tsmiGameDiscAllHashMD5.Size" type="System.Drawing.Size, System.Drawing">
     <value>180, 22</value>
@@ -1325,26 +1294,11 @@
   <data name="tsmiGameDiscRecalculateSelectedGameMD5.Text" xml:space="preserve">
     <value>Recalculate selected</value>
   </data>
-  <data name="tsmiGameDiscSignatureMD5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>161, 22</value>
+  <data name="tabMainDatabase.Size" type="System.Drawing.Size, System.Drawing">
+    <value>891, 514</value>
   </data>
-  <data name="tsmiGameDiscSignatureMD5.Text" xml:space="preserve">
-    <value>MD5 Signature</value>
-  </data>
-  <data name="tsmiToolsGameDisc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>46, 23</value>
-  </data>
-  <data name="tsmiToolsGameDisc.Text" xml:space="preserve">
-    <value>Tools</value>
-  </data>
-  <data name="mstripDisc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>876, 27</value>
-  </data>
-  <data name="tabMainDisc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>882, 514</value>
-  </data>
-  <data name="tabMainDisc.Text" xml:space="preserve">
-    <value>Files (Destination)</value>
+  <data name="tabMainDatabase.Text" xml:space="preserve">
+    <value>Database</value>
   </data>
   <data name="cbFilterDatabase.Items" xml:space="preserve">
     <value>Select an item...</value>
@@ -1361,11 +1315,8 @@
   <data name="lvDatabase.Size" type="System.Drawing.Size, System.Drawing">
     <value>858, 465</value>
   </data>
-  <data name="tsmiDatabaseUpdateGameTDB.Size" type="System.Drawing.Size, System.Drawing">
-    <value>166, 22</value>
-  </data>
-  <data name="tsmiDatabaseUpdateGameTDB.Text" xml:space="preserve">
-    <value>GameTDB update</value>
+  <data name="mstripDatabase.Size" type="System.Drawing.Size, System.Drawing">
+    <value>885, 24</value>
   </data>
   <data name="tsmiToolDatabase.Size" type="System.Drawing.Size, System.Drawing">
     <value>46, 20</value>
@@ -1373,17 +1324,26 @@
   <data name="tsmiToolDatabase.Text" xml:space="preserve">
     <value>Tools</value>
   </data>
-  <data name="mstripDatabase.Size" type="System.Drawing.Size, System.Drawing">
-    <value>876, 24</value>
+  <data name="tsmiDatabaseUpdateGameTDB.Size" type="System.Drawing.Size, System.Drawing">
+    <value>166, 22</value>
   </data>
-  <data name="tabMainDatabase.Size" type="System.Drawing.Size, System.Drawing">
-    <value>882, 514</value>
+  <data name="tsmiDatabaseUpdateGameTDB.Text" xml:space="preserve">
+    <value>GameTDB update</value>
   </data>
-  <data name="tabMainDatabase.Text" xml:space="preserve">
-    <value>Database</value>
+  <data name="tabMainLog.Size" type="System.Drawing.Size, System.Drawing">
+    <value>891, 514</value>
   </data>
   <data name="tbLog.Size" type="System.Drawing.Size, System.Drawing">
     <value>858, 481</value>
+  </data>
+  <data name="mstripLog.Size" type="System.Drawing.Size, System.Drawing">
+    <value>885, 24</value>
+  </data>
+  <data name="tsmiToolLog.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 20</value>
+  </data>
+  <data name="tsmiToolLog.Text" xml:space="preserve">
+    <value>Tools</value>
   </data>
   <data name="tsmiClearLog.Size" type="System.Drawing.Size, System.Drawing">
     <value>137, 22</value>
@@ -1400,29 +1360,20 @@
   <data name="tsmiExportLog.Text" xml:space="preserve">
     <value>Export log...</value>
   </data>
-  <data name="tsmiToolLog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>46, 20</value>
-  </data>
-  <data name="tsmiToolLog.Text" xml:space="preserve">
-    <value>Tools</value>
-  </data>
-  <data name="mstripLog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>876, 24</value>
-  </data>
-  <data name="tabMainLog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>882, 514</value>
-  </data>
-  <data name="tabControlMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>890, 540</value>
-  </data>
-  <data name="tsmiExit.Text" xml:space="preserve">
-    <value>Exit</value>
-  </data>
   <data name="tsmiFile.Size" type="System.Drawing.Size, System.Drawing">
     <value>37, 20</value>
   </data>
   <data name="tsmiFile.Text" xml:space="preserve">
     <value>File</value>
+  </data>
+  <data name="tsmiExit.Text" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <data name="tsmiCovers.Size" type="System.Drawing.Size, System.Drawing">
+    <value>55, 20</value>
+  </data>
+  <data name="tsmiCovers.Text" xml:space="preserve">
+    <value>Covers</value>
   </data>
   <data name="tsmiDownloadCoversSelectedGame.Size" type="System.Drawing.Size, System.Drawing">
     <value>442, 22</value>
@@ -1460,17 +1411,20 @@
   <data name="tsmiTransferDeviceCovers.Text" xml:space="preserve">
     <value>Transfer downloaded skins to device</value>
   </data>
-  <data name="tsmiCovers.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 20</value>
+  <data name="tsmiDisplay.Size" type="System.Drawing.Size, System.Drawing">
+    <value>57, 20</value>
   </data>
-  <data name="tsmiCovers.Text" xml:space="preserve">
-    <value>Covers</value>
+  <data name="tsmiDisplay.Text" xml:space="preserve">
+    <value>Display</value>
   </data>
   <data name="tsmiGameInfo.Size" type="System.Drawing.Size, System.Drawing">
     <value>304, 22</value>
   </data>
   <data name="tsmiGameInfo.Text" xml:space="preserve">
     <value>Detailed information (of the selected game)</value>
+  </data>
+  <data name="boxArtToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>304, 22</value>
   </data>
   <data name="tsmiEnableCoverPanel.Size" type="System.Drawing.Size, System.Drawing">
     <value>112, 22</value>
@@ -1484,14 +1438,11 @@
   <data name="tsmiDisableCoverPanel.Text" xml:space="preserve">
     <value>Disable</value>
   </data>
-  <data name="boxArtToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>304, 22</value>
+  <data name="tsmiOptions.Size" type="System.Drawing.Size, System.Drawing">
+    <value>61, 20</value>
   </data>
-  <data name="tsmiDisplay.Size" type="System.Drawing.Size, System.Drawing">
-    <value>57, 20</value>
-  </data>
-  <data name="tsmiDisplay.Text" xml:space="preserve">
-    <value>Display</value>
+  <data name="tsmiOptions.Text" xml:space="preserve">
+    <value>Options</value>
   </data>
   <data name="tsmiConfigurationMain.Size" type="System.Drawing.Size, System.Drawing">
     <value>125, 22</value>
@@ -1499,11 +1450,11 @@
   <data name="tsmiConfigurationMain.Text" xml:space="preserve">
     <value>Settings...</value>
   </data>
-  <data name="tsmiOptions.Size" type="System.Drawing.Size, System.Drawing">
-    <value>61, 20</value>
+  <data name="tsmiTools.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 20</value>
   </data>
-  <data name="tsmiOptions.Text" xml:space="preserve">
-    <value>Options</value>
+  <data name="tsmiTools.Text" xml:space="preserve">
+    <value>Tools</value>
   </data>
   <data name="tsmiRenameFolders.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1521,20 +1472,46 @@
         3u0G6z4CgIJ/d9d7lJmxxQQAAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="tsmiRenameFolders.Size" type="System.Drawing.Size, System.Drawing">
+    <value>183, 22</value>
+  </data>
   <data name="tsmiRenameFolders.Text" xml:space="preserve">
     <value>Rename Folders</value>
   </data>
   <data name="tsmiRenameISO.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vwAADr8BOAVTJAAAAJZJREFUOE9jGDrAzMFX3tzB19TM3kcSyDYBsrmgUsQDU0cfFqDmGCiXPAB0gS+U
+        vAAADrwBlbxySQAAAJZJREFUOE9jGDrAzMFX3tzB19TM3kcSyDYBsrmgUsQDU0cfFqDmGCiXPAB0gS+U
         CQG7jpypvPPw6XFi8cIV62/A2CC9DJdu3pv54df//7c/4ccgNSBw+NgpCAMIQHrBBjz/9v//oRf4MUgN
         CNDGAIq8QHEgkgowopFUYOZApgFmDn6gpGwJTImRQGxhau/DDZUaUMDAAADjo2QWCTKbrwAAAABJRU5E
         rkJggg==
 </value>
   </data>
+  <data name="tsmiRenameISO.Size" type="System.Drawing.Size, System.Drawing">
+    <value>183, 22</value>
+  </data>
   <data name="tsmiRenameISO.Text" xml:space="preserve">
     <value>Rename ISO/GCM</value>
+  </data>
+  <data name="tsmiMainPlugins.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
+        cAAAAHABznhikwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAJgSURBVDhPY8AB
+        BHkllBKFFEz6QRjEBooJADELEHODFOACYqKqVqs1fSseuree/xc898t/EHZrPffPLHXuTSX71E4uTvYN
+        JrpK/VD1CMAlomIkZxFxPXjOp//hS/6Dcci8r0D8Dc43Dmv431Sa+m3VxMKvilLivlCtYCAG0hy++B9c
+        MQjbhqT8d6zeD+f7Trj73zco4r+Pp+sPAR4OB6heBgZRdes1yDaDcMD01/+tLJRRDADhsIW//7tNePVf
+        xDDsCFQ7gyDIz8iKQNgpJvf/qimWGAbAsJR3+zegXmEGUAi7t134hywJsj0v2+n//mUO/w2iev47VOwG
+        Y1CYwNSolVz4z6domc0gpGA0IXjOZ7gECDvH5v1/fdbv//frQf93L7YDYy93nf+BM97A1eh0fvsvqOu9
+        jEFAXn8SckiDFIEUwzSCDAEZBjIUpgaEVRvf/xfWD1rCwCuulOTRfgnuBZAzYU4GOR/kDZB3QN6CqfGZ
+        +/+/bM7p//yqDumgQBTRCqh5AJNExqAAXDPN8r9LXD6KuOnE///F3Rt/APXyggxgEFGzXhUw7dX/0IW/
+        UBSCDABFJbLtrrP+/1esff1fxDjyEFgzCAjzczv7ebl89Q2OACcWZANsQ1NRNKu1//kvbJXxEaiND6Ib
+        CIDJ0g+UPBtK037qBtXDNYDCA5QXQH4GOVup4cN/EcuMjwIqdoZQrQhgrKM4EZRRZH3b1svHLf+iUnDq
+        v3bru/8qDW//y2Qd+y/h2fIT6OzDQKUiEB3YASirgrIsL7+qU4awQfBiQV2/lfxqTilAMVB2RgMMDABc
+        c9d7b4Z1cQAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="tsmiMainPlugins.Size" type="System.Drawing.Size, System.Drawing">
+    <value>183, 22</value>
   </data>
   <data name="tsmiMetaXml.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 22</value>
@@ -1566,24 +1543,7 @@
   <data name="tsmiBurnMedia.Text" xml:space="preserve">
     <value>Burn CD/DVD Media</value>
   </data>
-  <data name="tsmiMainPlugins.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
-        cwAAAHMBY8FD/gAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAJgSURBVDhPY8AB
-        BHkllBKFFEz6QRjEBooJADELEHODFOACYqKqVqs1fSseuree/xc898t/EHZrPffPLHXuTSX71E4uTvYN
-        JrpK/VD1CMAlomIkZxFxPXjOp//hS/6Dcci8r0D8Dc43Dmv431Sa+m3VxMKvilLivlCtYCAG0hy++B9c
-        MQjbhqT8d6zeD+f7Trj73zco4r+Pp+sPAR4OB6heBgZRdes1yDaDcMD01/+tLJRRDADhsIW//7tNePVf
-        xDDsCFQ7gyDIz8iKQNgpJvf/qimWGAbAsJR3+zegXmEGUAi7t134hywJsj0v2+n//mUO/w2iev47VOwG
-        Y1CYwNSolVz4z6domc0gpGA0IXjOZ7gECDvH5v1/fdbv//frQf93L7YDYy93nf+BM97A1eh0fvsvqOu9
-        jEFAXn8SckiDFIEUwzSCDAEZBjIUpgaEVRvf/xfWD1rCwCuulOTRfgnuBZAzYU4GOR/kDZB3QN6CqfGZ
-        +/+/bM7p//yqDumgQBTRCqh5AJNExqAAXDPN8r9LXD6KuOnE///F3Rt/APXyggxgEFGzXhUw7dX/0IW/
-        UBSCDABFJbLtrrP+/1esff1fxDjyEFgzCAjzczv7ebl89Q2OACcWZANsQ1NRNKu1//kvbJXxEaiND6Ib
-        CIDJ0g+UPBtK037qBtXDNYDCA5QXQH4GOVup4cN/EcuMjwIqdoZQrQhgrKM4EZRRZH3b1svHLf+iUnDq
-        v3bru/8qDW//y2Qd+y/h2fIT6OzDQKUiEB3YASirgrIsL7+qU4awQfBiQV2/lfxqTilAMVB2RgMMDABc
-        c9d7b4Z1cQAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="toolStripMenuItem11.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="tsmi_DownloadGameTDB.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAA11JREFUOE91
         k2tMk1ccxo8gSKb1EmemiTNbvGzaflqiM7bGicYMXaSoEdEEo5uvGjME4yUYYy1GC5gBQkEUaSmlFEop
@@ -1603,16 +1563,19 @@
         vnwDORcTR76M7iCEvAe1fBomVHn4LwAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="tsmiTools.Size" type="System.Drawing.Size, System.Drawing">
-    <value>46, 20</value>
+  <data name="tsmi_DownloadGameTDB.Text" xml:space="preserve">
+    <value>Download GameTDB</value>
   </data>
-  <data name="tsmiTools.Text" xml:space="preserve">
-    <value>Tools</value>
+  <data name="tsmiHelp.Size" type="System.Drawing.Size, System.Drawing">
+    <value>44, 20</value>
+  </data>
+  <data name="tsmiHelp.Text" xml:space="preserve">
+    <value>Help</value>
   </data>
   <data name="tsmiWebsiteFacebook.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
-        eQAAAHkBOLWIEgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAACtSURBVDhPY7AK
+        dgAAAHYBTnsmCAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAACtSURBVDhPY7AK
         nf+fEkw3A/4B8U6rsPmpQDoBiDdAxYk0IGSB2////xlgGGhQA0yOGAMuwDRahC/StAqZHwEUWwOTJ2xA
         2LxOmAHWofOfo8sTNiBkfgfMACD/B7o8TgOsw+bPsAyd72ETvlANyQWuIDEgvR2mDqcBliHzC2Aa0bFl
         6LxtMHW4XRCyoBtIG9gGLZaEaTQPXqgHErMKXXAbpo52YQDHowYQMGD+fwBnjjTZP8FwzAAAAABJRU5E
@@ -1643,7 +1606,7 @@
   <data name="tsmiOfficialGBATemp.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAPCAYAAADtc08vAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wAAADsABataJCQAAAoNJREFUOE+NU0tMU1EQfSvRaIwuVBLXupAgiZ+4NSrhZwQlLIhBooEgGjeGBV/F
+        vQAADr0BR/uQrQAAAoNJREFUOE+NU0tMU1EQfSvRaIwuVBLXupAgiZ+4NSrhZwQlLIhBooEgGjeGBV/F
         aAN5fLXIk68QqiIoMbQCxRZKArQC9vtsS/sopfRHi7CAxBgNx/setSmmJp7kLCYzZ2buzFzqfzE5az6s
         NXEJ7LyzMLi6VqjWWrO/2pz7Qu5teHwBmlt0y+s7Pu7m7Rm9Ld7tDZRb7EtamXJuo1kyirK6PtwXSdD+
         dgwut18iCHmoNGxuZ/84BhWzmDXYsrlFj7J/SP0zv7QdZ68+RFxyMU6EeOlGNUg3fq8/mBCSU5TL45ef
@@ -1681,20 +1644,11 @@
   <data name="tsmiMenuAbout.Text" xml:space="preserve">
     <value>About GameCube Backup Manager</value>
   </data>
-  <data name="tsmiHelp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>44, 20</value>
-  </data>
-  <data name="tsmiHelp.Text" xml:space="preserve">
-    <value>Help</value>
-  </data>
   <data name="lblNetStatus.Size" type="System.Drawing.Size, System.Drawing">
     <value>144, 13</value>
   </data>
   <data name="lblNetStatus.Text" xml:space="preserve">
     <value>Internet connection disabled!</value>
-  </data>
-  <data name="tsmiNotifyExit.Text" xml:space="preserve">
-    <value>Exit</value>
   </data>
   <data name="notifyIcon.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1791,20 +1745,8 @@
         AADAAwAAwAMAAMADAADAAwAAwAMAAMADAAD4HwAA
 </value>
   </data>
-  <data name="pbNetStatus.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
-        cwAAAHMBY8FD/gAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAH5SURBVDhPfVJL
-        TxphFGXTH+HGfdcm9TeUzuAjDGRmGBya1MRVf0CXrXujTVc06a71sdFESTTWTRcNMKBQQYfBEKAPsYVC
-        KzNDjNfvfvMxDEI8yc1cLuec+5jxeWFdRAJmSfpiGZGGbcjt3oXyxzKk3Z4hTTHKeEB68VG3JG//Ppnv
-        dAph+J4MQPubAJfaLLTyQYyGZcirjD6KbkncauaDtyhunwpQ+8pRA3z+L4YB6828YJKp3jDJADeG/BQ7
-        I5l1IyYhIKvQZ4dEQ5ujZp1ToQbl6CSTOrg+ExP4J+1KyG7OJviRCkAzF3TyJA9WWX7LpA7+FcMnroiN
-        T3Nm4NQHxua5eMikDsioV0jGoGPfy6txCXILUThWFCfEaCvLx2aYnExQCGfdTkTgzfV3QdB4FTROhZzy
-        Eo5DSzQntV6aV2epQVcXN+t9kWcF7NwXYzR2P0P9/Sf3Nwlb42Ocz9aVx+Tylyhq5QUgN6FGOLaHDFeJ
-        I6h/2BiqZZ6p+3QKU5dek1VsvHZ/CtzXSx5noHELB9QAYeriK3LtKn40v9IzIwY/13egshIfqg0ZIKAS
-        mbAMcdUuSVm89jB5TPBqgklHga+KkOw+uRb/COXlNa/4b4qLPmH08Uhxqp+QLRRk519AJvDcFaf9sWlG
-        exj4qvDauK8Tsb1BZ5/vDg1FE9xkZs8aAAAAAElFTkSuQmCC
-</value>
+  <data name="tsmiNotifyExit.Text" xml:space="preserve">
+    <value>Exit</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1901,7 +1843,21 @@
         AADAAwAAwAMAAMADAADAAwAAwAMAAMADAAD4HwAA
 </value>
   </data>
-  <data name="lblTypeDiscDest.Text" xml:space="preserve">
-    <value>Disc...</value>
+  <data name="browseNetworkToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAATr1AAE69QGXCHZXAAABFklE
+        QVRYR+3XsY4BQRzH8aWhEZ0oLrSS8yquO9UVp0OvoLmX4B7iPMU9g2uRw1tI8P0VkwgzS5ixivkln0R2
+        1///N0t2JDHPmiJeUHOoo4o8vKeJKZb4d1hhhha8poAf7K+0htchtOxz2Jq5aDVG6KLn8IkGckiN7q+W
+        2NboHjss8IbUhBrA+EUZzoQeQLXVw5k4QBwgDhAHiANU8Afbm31QbfVIzRe2sBW4h2oOcTEl6Pk9wbfD
+        GHqymeJ6rWO2a0W1OlBtb9FGwwyg1w9PJgNoF/wBLevpLdAxnbt5p/yKPvRpbLTnG2AD0/iUzumatP2h
+        eqjXWXTSVjQE9TpL5gNkfguuib5gbZjf9jEde0eQv2uBkiQHZIH8hZXMI2sAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="browseNetworkToolStripMenuItem.Text" xml:space="preserve">
+    <value>Browse Network</value>
+  </data>
+  <data name="tsmiMoreDirectories.Text" xml:space="preserve">
+    <value>More Directories</value>
   </data>
 </root>

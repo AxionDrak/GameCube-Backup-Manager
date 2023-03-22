@@ -1,3 +1,8 @@
+### GameCube Backup Manager 2.6.1.7 (March, 18, 2023)
+
+[Localization] Merged kuragehimekurara1's Japanese translation <3
+[Fixed] Reloading destination drive no longer breaks.
+
 ### GameCube Backup Manager 2.6.1.6 (February, 25, 2023)
 
 [Localization] Updated es-MX translation thanks to CDreamer.

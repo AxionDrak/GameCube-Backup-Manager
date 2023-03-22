@@ -24,10 +24,9 @@ public partial class frmDownloadGameTDB : Form
     public frmDownloadGameTDB()
     {
         InitializeComponent();
-
-        GameTDB();
     }
 
+    
     public int RETURN_CONFIRM { get; set; }
 
     public async void GameTDB()
@@ -177,5 +176,8 @@ public partial class frmDownloadGameTDB : Form
         var hMenu = GetSystemMenu(Handle, false);
         var MenuItemCount = GetMenuItemCount(hMenu);
         _ = RemoveMenu(hMenu, MenuItemCount - 1, MF_BYPOSITION);
+
+
+        GameTDB();
     }
 }

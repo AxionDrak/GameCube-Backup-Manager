@@ -432,4 +432,10 @@
   <data name="lblTypeDiscDest.Text" xml:space="preserve">
     <value>Desct...</value>
   </data>
+  <data name="tsmi_DownloadGameTDB.Text" xml:space="preserve">
+    <value>Actualización de GameTDB</value>
+  </data>
+  <data name="tsmiMoreDirectories.Text" xml:space="preserve">
+    <value>Más carpetas</value>
+  </data>
 </root>

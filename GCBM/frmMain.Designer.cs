@@ -111,6 +111,7 @@ namespace GCBM
             this.tsmiExportTXT = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiExportHTML = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiExportCSV = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiMoreDirectories = new System.Windows.Forms.ToolStripMenuItem();
             this.tabMainDisc = new System.Windows.Forms.TabPage();
             this.lblAbortDestination = new System.Windows.Forms.Label();
             this.pbDestination = new System.Windows.Forms.ProgressBar();
@@ -122,6 +123,11 @@ namespace GCBM
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.grpDetailsDestiny = new System.Windows.Forms.GroupBox();
+            this.lblTypeDiscDest = new System.Windows.Forms.Label();
+            this.lblMakerCodeDest = new System.Windows.Forms.Label();
+            this.tbIDMakerCodeDest = new System.Windows.Forms.TextBox();
+            this.tbDestDiscID = new System.Windows.Forms.TextBox();
+            this.lblDestinationDiscID = new System.Windows.Forms.Label();
             this.pbWebGameDiscID = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -205,7 +211,7 @@ namespace GCBM
             this.tsmiElfDol = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiCreatePackage = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiBurnMedia = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem11 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmi_DownloadGameTDB = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiWebsiteFacebook = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiOfficialGitHub = new System.Windows.Forms.ToolStripMenuItem();
@@ -224,11 +230,6 @@ namespace GCBM
             this.pbNetStatus = new System.Windows.Forms.PictureBox();
             this.gameBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.process1 = new System.Diagnostics.Process();
-            this.tbDestDiscID = new System.Windows.Forms.TextBox();
-            this.lblDestinationDiscID = new System.Windows.Forms.Label();
-            this.lblMakerCodeDest = new System.Windows.Forms.Label();
-            this.tbIDMakerCodeDest = new System.Windows.Forms.TextBox();
-            this.lblTypeDiscDest = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.spcMain)).BeginInit();
             this.spcMain.Panel1.SuspendLayout();
             this.spcMain.Panel2.SuspendLayout();
@@ -286,7 +287,6 @@ namespace GCBM
             // 
             // btnSearch
             // 
-            this.btnSearch.Image = global::GCBM.Properties.Resources.search_16;
             resources.ApplyResources(this.btnSearch, "btnSearch");
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.UseVisualStyleBackColor = true;
@@ -686,7 +686,8 @@ namespace GCBM
             this.tsmiClearListSource,
             this.tsmiSelectGameList,
             this.tsmiRemoveGameList,
-            this.tsmiToolsGameList});
+            this.tsmiToolsGameList,
+            this.tsmiMoreDirectories});
             resources.ApplyResources(this.mstripFile, "mstripFile");
             this.mstripFile.Name = "mstripFile";
             // 
@@ -790,6 +791,12 @@ namespace GCBM
             resources.ApplyResources(this.tsmiExportCSV, "tsmiExportCSV");
             this.tsmiExportCSV.Click += new System.EventHandler(this.tsmiExportCSV_Click);
             // 
+            // tsmiMoreDirectories
+            // 
+            resources.ApplyResources(this.tsmiMoreDirectories, "tsmiMoreDirectories");
+            this.tsmiMoreDirectories.Name = "tsmiMoreDirectories";
+            this.tsmiMoreDirectories.Click += new System.EventHandler(this.browseNetworkToolStripMenuItem_Click);
+            // 
             // tabMainDisc
             // 
             this.tabMainDisc.Controls.Add(this.lblAbortDestination);
@@ -874,6 +881,33 @@ namespace GCBM
             this.grpDetailsDestiny.Controls.Add(this.tbIDNameDisc);
             this.grpDetailsDestiny.Name = "grpDetailsDestiny";
             this.grpDetailsDestiny.TabStop = false;
+            // 
+            // lblTypeDiscDest
+            // 
+            resources.ApplyResources(this.lblTypeDiscDest, "lblTypeDiscDest");
+            this.lblTypeDiscDest.Name = "lblTypeDiscDest";
+            // 
+            // lblMakerCodeDest
+            // 
+            resources.ApplyResources(this.lblMakerCodeDest, "lblMakerCodeDest");
+            this.lblMakerCodeDest.Name = "lblMakerCodeDest";
+            // 
+            // tbIDMakerCodeDest
+            // 
+            resources.ApplyResources(this.tbIDMakerCodeDest, "tbIDMakerCodeDest");
+            this.tbIDMakerCodeDest.Name = "tbIDMakerCodeDest";
+            this.tbIDMakerCodeDest.ReadOnly = true;
+            // 
+            // tbDestDiscID
+            // 
+            resources.ApplyResources(this.tbDestDiscID, "tbDestDiscID");
+            this.tbDestDiscID.Name = "tbDestDiscID";
+            this.tbDestDiscID.ReadOnly = true;
+            // 
+            // lblDestinationDiscID
+            // 
+            resources.ApplyResources(this.lblDestinationDiscID, "lblDestinationDiscID");
+            this.lblDestinationDiscID.Name = "lblDestinationDiscID";
             // 
             // pbWebGameDiscID
             // 
@@ -1427,20 +1461,18 @@ namespace GCBM
             this.tsmiRenameFolders,
             this.tsmiRenameISO,
             this.tsmiMainPlugins,
-            this.toolStripMenuItem11});
+            this.tsmi_DownloadGameTDB});
             this.tsmiTools.Name = "tsmiTools";
             resources.ApplyResources(this.tsmiTools, "tsmiTools");
             // 
             // tsmiRenameFolders
             // 
-            this.tsmiRenameFolders.Image = global::GCBM.Properties.Resources.rename_folder_16;
             this.tsmiRenameFolders.Name = "tsmiRenameFolders";
             resources.ApplyResources(this.tsmiRenameFolders, "tsmiRenameFolders");
             this.tsmiRenameFolders.Click += new System.EventHandler(this.tsmiRenameFolders_Click);
             // 
             // tsmiRenameISO
             // 
-            this.tsmiRenameISO.Image = global::GCBM.Properties.Resources.rename_16;
             this.tsmiRenameISO.Name = "tsmiRenameISO";
             resources.ApplyResources(this.tsmiRenameISO, "tsmiRenameISO");
             this.tsmiRenameISO.Click += new System.EventHandler(this.tsmiRenameISO_Click);
@@ -1453,7 +1485,6 @@ namespace GCBM
             this.tsmiElfDol,
             this.tsmiCreatePackage,
             this.tsmiBurnMedia});
-            this.tsmiMainPlugins.Image = global::GCBM.Properties.Resources.plugin_16;
             this.tsmiMainPlugins.Name = "tsmiMainPlugins";
             resources.ApplyResources(this.tsmiMainPlugins, "tsmiMainPlugins");
             // 
@@ -1490,12 +1521,11 @@ namespace GCBM
             resources.ApplyResources(this.tsmiBurnMedia, "tsmiBurnMedia");
             this.tsmiBurnMedia.Click += new System.EventHandler(this.tsmiBurnMedia_Click);
             // 
-            // toolStripMenuItem11
+            // tsmi_DownloadGameTDB
             // 
-            this.toolStripMenuItem11.Image = global::GCBM.Properties.Resources.Misc_Download_Database_icon;
-            this.toolStripMenuItem11.Name = "toolStripMenuItem11";
-            resources.ApplyResources(this.toolStripMenuItem11, "toolStripMenuItem11");
-            this.toolStripMenuItem11.Click += new System.EventHandler(this.tsmiDatabaseUpdateGameTDB_Click);
+            this.tsmi_DownloadGameTDB.Name = "tsmi_DownloadGameTDB";
+            resources.ApplyResources(this.tsmi_DownloadGameTDB, "tsmi_DownloadGameTDB");
+            this.tsmi_DownloadGameTDB.Click += new System.EventHandler(this.tsmiDatabaseUpdateGameTDB_Click);
             // 
             // tsmiHelp
             // 
@@ -1602,33 +1632,6 @@ namespace GCBM
             this.process1.StartInfo.StandardOutputEncoding = null;
             this.process1.StartInfo.UserName = "";
             this.process1.SynchronizingObject = this;
-            // 
-            // tbDestDiscID
-            // 
-            resources.ApplyResources(this.tbDestDiscID, "tbDestDiscID");
-            this.tbDestDiscID.Name = "tbDestDiscID";
-            this.tbDestDiscID.ReadOnly = true;
-            // 
-            // lblDestinationDiscID
-            // 
-            resources.ApplyResources(this.lblDestinationDiscID, "lblDestinationDiscID");
-            this.lblDestinationDiscID.Name = "lblDestinationDiscID";
-            // 
-            // lblMakerCodeDest
-            // 
-            resources.ApplyResources(this.lblMakerCodeDest, "lblMakerCodeDest");
-            this.lblMakerCodeDest.Name = "lblMakerCodeDest";
-            // 
-            // tbIDMakerCodeDest
-            // 
-            resources.ApplyResources(this.tbIDMakerCodeDest, "tbIDMakerCodeDest");
-            this.tbIDMakerCodeDest.Name = "tbIDMakerCodeDest";
-            this.tbIDMakerCodeDest.ReadOnly = true;
-            // 
-            // lblTypeDiscDest
-            // 
-            resources.ApplyResources(this.lblTypeDiscDest, "lblTypeDiscDest");
-            this.lblTypeDiscDest.Name = "lblTypeDiscDest";
             // 
             // frmMain
             // 
@@ -1875,7 +1878,7 @@ namespace GCBM
         private Button btnAbortDestination;
         private ToolStripMenuItem tsmiClearListSource;
         private ToolStripMenuItem tsmiClearListDestination;
-        private ToolStripMenuItem toolStripMenuItem11;
+        private ToolStripMenuItem tsmi_DownloadGameTDB;
         private ProgressBar pbSource;
         private Label lblInstallStatusGameIndex;
         private TextBox tbDestDiscID;
@@ -1883,6 +1886,7 @@ namespace GCBM
         private Label lblTypeDiscDest;
         private Label lblMakerCodeDest;
         private TextBox tbIDMakerCodeDest;
+        private ToolStripMenuItem tsmiMoreDirectories;
     }
 }
 

@@ -457,6 +457,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmConfig.id.resx">
       <DependentUpon>frmConfig.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="frmConfig.it.resx">
       <DependentUpon>frmConfig.cs</DependentUpon>
@@ -633,6 +634,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.ja.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.ko.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
@@ -779,7 +781,9 @@
     <EmbeddedResource Include="LanguagePrompt.resx">
       <DependentUpon>LanguagePrompt.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.de.resx" />
+    <EmbeddedResource Include="Properties\Resources.de.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.en-US.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>

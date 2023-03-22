@@ -1,3 +1,8 @@
+### GameCube Backup Manager 2.6.1.7 (18 de março de 2023)
+
+[Localização] Tradução para o japonês de kuragehimekurara1 mesclada <3
+[Corrigido] A unidade de destino de recarga não quebra mais.
+
 ### GameCube Backup Manager 2.6.1.6 (25 de fevereiro de 2023)
 
 [Localização] Tradução es-MX atualizada graças ao CDreamer.

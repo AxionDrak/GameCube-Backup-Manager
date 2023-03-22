@@ -3107,4 +3107,10 @@
   <data name="lblTypeDiscDest.Text" xml:space="preserve">
     <value>디스크...</value>
   </data>
+  <data name="tsmi_DownloadGameTDB.Text" xml:space="preserve">
+    <value>GameTDB 업데이트</value>
+  </data>
+  <data name="tsmiMoreDirectories.Text" xml:space="preserve">
+    <value>더 많은 폴더</value>
+  </data>
 </root>
