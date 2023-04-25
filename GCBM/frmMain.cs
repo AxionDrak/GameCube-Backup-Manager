@@ -38,7 +38,7 @@ public partial class frmMain : Form
     /// <summary>
     ///     Gets the attributes of the Assembly.
     /// </summary>
-    private static string AssemblyProduct
+    public static string AssemblyProduct
     {
         get
         {
@@ -56,9 +56,9 @@ public partial class frmMain : Form
     ///     Get the program version directly from the Assembly.
     /// </summary>
     /// <returns></returns>
-    private string VERSION()
+    public string VERSION()
     {
-        var PROG_VERSION = assembly.GetName().Version.ToString();
+        var PROG_VERSION = frmMainAssembly.GetName().Version.ToString();
         return PROG_VERSION;
     }
 
@@ -229,20 +229,6 @@ public partial class frmMain : Form
 
     #endregion
 
-    #region Current Year and Date
-
-    // Get the date and time
-    private string DateString()
-    {
-        var dt = DateTime.Now;
-        //int dts = dt.Millisecond;
-        //string dtnew = dt.ToString("yyyy'-'MM'-'dd' 'HH':'mm':'ss") + "." + dts.ToString();
-        tsslCurrentYear.Text = "Copyright © 2019 - " + dt.Year + " Laete Meireles";
-        var dtnew = dt.ToString("yyyy'-'MM'-'dd' 'HH':'mm':'ss");
-        return dtnew;
-    }
-
-    #endregion
 
     #region Disable Screensaver
 
@@ -294,42 +280,7 @@ public partial class frmMain : Form
 
     #endregion
 
-    #region Register Log
 
-    /// <summary>
-    ///     Log record.
-    /// </summary>
-    private void SetupLog()
-    {
-        // Assembly
-        var _version = assembly.GetName();
-        // Log
-        tbLog.AppendText(
-            "[" + DateString() + "]" + Resources.RegisterHeaderLog_GcbmLogCreated + Environment.NewLine);
-        // Version number of the OS
-        tbLog.AppendText("[" + DateString() + "]" + Resources.RegisterHeaderLog_OSVersion + Environment.OSVersion +
-                         Environment.NewLine);
-        // Major, minor, build, and revision numbers of the CLR
-        tbLog.AppendText("[" + DateString() + "]" + Resources.RegisterHeaderLog_CLRVersion + Environment.Version +
-                         Environment.NewLine);
-        // Amount of physical memory mapped to the process context
-        tbLog.AppendText("[" + DateString() + "]" + Resources.RegisterHeaderLog_WorkingSet +
-                         Environment.WorkingSet + Environment.NewLine);
-        // Array of string containing the names of the logical drives
-        tbLog.AppendText("[" + DateString() + "]" + Resources.RegisterHeaderLog_LogicalUnits +
-                         string.Join(", ", Environment.GetLogicalDrives()) + Environment.NewLine);
-        // Gets the name of the program.
-        tbLog.AppendText("[" + DateString() + "]" + Resources.RegisterHeaderLog_ProgramName + AssemblyProduct +
-                         Environment.NewLine);
-        // Gets the program version.
-        tbLog.AppendText("[" + DateString() + "]" + Resources.RegisterHeaderLog_ApplicationVersion + _version +
-                         Environment.NewLine);
-        // Gets the current program directory.
-        tbLog.AppendText("[" + DateString() + "]" + Resources.RegisterHeaderLog_CurrentProgramDirectory +
-                         GET_CURRENT_PATH + Environment.NewLine);
-    }
-
-    #endregion
 
     #region Disable Options
 
@@ -467,10 +418,10 @@ public partial class frmMain : Form
     /// </summary>
     private void ListIsoFile()
     {
-        tbLog.AppendText("[" + DateString() + "]" + Resources.FoundIsoGcmFiles + Environment.NewLine);
+        tbLog.AppendText("[" + utility.TimeStamp() + "]" + Resources.FoundIsoGcmFiles + Environment.NewLine);
 
         foreach (DataGridViewRow dgvResultRow in dgvSource.Rows)
-            tbLog.AppendText("[" + DateString() + "]" + Resources.Info +
+            tbLog.AppendText("[" + utility.TimeStamp() + "]" + Resources.Info +
                              dgvSource.Rows[dgvResultRow.Index].Cells[1].Value + Environment.NewLine);
     }
 
@@ -637,7 +588,7 @@ public partial class frmMain : Form
         }
         catch (Exception ex)
         {
-            tbLog.AppendText("[" + DateString() + "]" + Resources.Info + ex.Message);
+            tbLog.AppendText("[" + utility.TimeStamp() + "]" + Resources.Info + ex.Message);
             tbLog.AppendText(ex.Message + Environment.NewLine + ex.StackTrace);
             GlobalNotifications(ex.Message, ToolTipIcon.Error);
         }
@@ -665,7 +616,7 @@ public partial class frmMain : Form
             //Setup Variables
             ABORT = false;
             SCANNING = true;
-            string[] filters = { "iso", "gcm" };
+            string[] filters = { "iso", "gcm", "ciso" };
             var isRecursive = true;
             UseWaitCursor = true;
 
@@ -699,7 +650,7 @@ public partial class frmMain : Form
             // Scroll through the result and display the values.
             foreach (var _files in enumerable)
             {
-                tbLog.AppendText("[" + DateString() + "]" + Resources.DisplayFilesSelected_Found_String1 +
+                tbLog.AppendText("[" + utility.TimeStamp() + "]" + Resources.DisplayFilesSelected_Found_String1 +
                                  _files.Counter +
                                  Resources.DisplayFilesSelected_Found_String2
                                  + _files._fileExtension.ToUpper(MY_CULTURE) + Environment.NewLine);
@@ -731,7 +682,7 @@ public partial class frmMain : Form
                 var _getSize = DisplayFormatFileSize(_f.Length, CONFIG_INI_FILE.IniReadInt("GENERAL", "FileSize"));
                 //Title - ID - Region - Extension - Size - Path
                 _ = dgvSourcetemp.Rows.Add(false, displayTitle, game.ID, game.Region,
-                    _f.Extension.Substring(1, 3).Trim().ToUpper(MY_CULTURE), _getSize, _f.FullName);
+                    _f.Extension.Substring(1, _f.Extension.Length - 1).Trim().ToUpper(MY_CULTURE), _getSize, _f.FullName);
                 //Update ProgressBar pbCopy, and make sure we don't go over the maximum value
                 if (pbSource.Value < pbSource.Maximum)
                     pbSource.Value++;
@@ -779,7 +730,7 @@ public partial class frmMain : Form
             //Setup Variables
             ABORT = false;
             SCANNING = true;
-            string[] filters = { "iso", "gcm" };
+            string[] filters = { "iso", "gcm", "ciso" };
             var isRecursive = true;
             UseWaitCursor = true;
 
@@ -806,7 +757,7 @@ public partial class frmMain : Form
             // Scroll through the result and display the values.
             foreach (var _files in enumerable)
             {
-                tbLog.AppendText("[" + DateString() + "]" + Resources.DisplayFilesSelected_Found_String1 +
+                tbLog.AppendText("[" + utility.TimeStamp() + "]" + Resources.DisplayFilesSelected_Found_String1 +
                                  _files.Counter +
                                  Resources.DisplayFilesSelected_Found_String2
                                  + _files._fileExtension.ToUpper(MY_CULTURE) + Environment.NewLine);
@@ -837,7 +788,7 @@ public partial class frmMain : Form
                 var _f = new sio.FileInfo(file);
                 var _getSize = DisplayFormatFileSize(_f.Length, CONFIG_INI_FILE.IniReadInt("GENERAL", "FileSize"));
                 _ = dgvDestinationtemp.Rows.Add(false, displayTitle, game.ID, game.Region,
-                    _f.Extension.Substring(1, 3).Trim().ToUpper(MY_CULTURE), _getSize, _f.FullName);
+                    _f.Extension.Substring(1, _f.Extension.Length-1).Trim().ToUpper(MY_CULTURE), _getSize, _f.FullName);
                 dDestGames.Add(counter, game);
 
                 //Clean up Interface
@@ -1046,7 +997,7 @@ public partial class frmMain : Form
             fs.Position = 0x1c;
             if (br.ReadInt32() != 0x3d9f33c2)
             {
-                tbLog.AppendText("[" + DateString() + "]" + Resources.NotNintendoGameCubeFile);
+                tbLog.AppendText("[" + utility.TimeStamp() + "]" + Resources.NotNintendoGameCubeFile);
                 GlobalNotifications(Resources.NotNintendoGameCubeFile + Environment.NewLine +
                                     Resources.RecommendedDeleteOrMoveFile, ToolTipIcon.Info);
 
@@ -1087,65 +1038,65 @@ public partial class frmMain : Form
     //private void LoadCover()
     private async void LoadCover(string _idGame)
     {
-            // Set LINK_DOMAIN based on the game's IDRegionCode
-            switch (_idGame.Substring(3, 1).ToLowerInvariant())
-            {
-                case "e": // AMERICA - USA
-                    LINK_DOMAIN = "US";
-                    break;
-                case "p": // EUROPE - ALL
-                case "r": // EUROPE - RUSSIA                   
-                    LINK_DOMAIN = "EN";
-                    break;
-                case "j": // ASIA - JAPAN
-                case "t": // ASIA - TAIWAN
-                case "k": // ASIA - KOREA
-                    LINK_DOMAIN = "JA";
-                    break;
-                case "d": // EUROPE - GERMANY
-                    LINK_DOMAIN = "DE";
-                    break;
-                case "s": // EUROPE - SPAIN
-                    LINK_DOMAIN = "ES";
-                    break;
-                case "i": // EUROPE - ITALY
-                    LINK_DOMAIN = "IT";
-                    break;
-                case "u": // AUSTRALIA
-                    LINK_DOMAIN = "AU";
-                    break;
-                case "y": // EUROPE - Netherlands ???
-                    LINK_DOMAIN = "NL";
-                    break;
-                case "f": // EUROPE - FRANCE
-                    LINK_DOMAIN = "FR";
-                    break;
-                default:
-                    LINK_DOMAIN = "US";
-                    //GlobalNotifications(GCBM.Properties.Resources.UnknownRegion, ToolTipIcon.Info);
-                    break;
+        // Set LINK_DOMAIN based on the game's IDRegionCode
+        switch (_idGame.Substring(3, 1).ToLowerInvariant())
+        {
+            case "e": // AMERICA - USA
+                LINK_DOMAIN = "US";
+                break;
+            case "p": // EUROPE - ALL
+            case "r": // EUROPE - RUSSIA                   
+                LINK_DOMAIN = "EN";
+                break;
+            case "j": // ASIA - JAPAN
+            case "t": // ASIA - TAIWAN
+            case "k": // ASIA - KOREA
+                LINK_DOMAIN = "JA";
+                break;
+            case "d": // EUROPE - GERMANY
+                LINK_DOMAIN = "DE";
+                break;
+            case "s": // EUROPE - SPAIN
+                LINK_DOMAIN = "ES";
+                break;
+            case "i": // EUROPE - ITALY
+                LINK_DOMAIN = "IT";
+                break;
+            case "u": // AUSTRALIA
+                LINK_DOMAIN = "AU";
+                break;
+            case "y": // EUROPE - Netherlands ???
+                LINK_DOMAIN = "NL";
+                break;
+            case "f": // EUROPE - FRANCE
+                LINK_DOMAIN = "FR";
+                break;
+            default:
+                LINK_DOMAIN = "US";
+                //GlobalNotifications(GCBM.Properties.Resources.UnknownRegion, ToolTipIcon.Info);
+                break;
         }
 
         // Load game disc image
-        string discCoverPath = GET_CURRENT_PATH + sio.Path.Combine( COVERS_DIR, LINK_DOMAIN, "disc", $"{_idGame}.png");
+        string discCoverPath = GET_CURRENT_PATH + sio.Path.Combine(COVERS_DIR, LINK_DOMAIN, "disc", $"{_idGame}.png");
         if (sio.File.Exists(discCoverPath))
         {
             pbGameDisc.LoadAsync(discCoverPath);
         }
         else
         {
-            pbGameDisc.LoadAsync(GET_CURRENT_PATH + sio.Path.Combine( MEDIA_DIR, "disc.png"));
+            pbGameDisc.LoadAsync(GET_CURRENT_PATH + sio.Path.Combine(MEDIA_DIR, "disc.png"));
         }
 
         // Load game 3D cover image
-        string cover3DPath = GET_CURRENT_PATH + sio.Path.Combine( COVERS_DIR, LINK_DOMAIN, "3d", $"{_idGame}.png");
+        string cover3DPath = GET_CURRENT_PATH + sio.Path.Combine(COVERS_DIR, LINK_DOMAIN, "3d", $"{_idGame}.png");
         if (sio.File.Exists(cover3DPath))
         {
             pbGameCover3D.LoadAsync(cover3DPath);
         }
         else
         {
-            pbGameCover3D.LoadAsync(GET_CURRENT_PATH + sio.Path.Combine( MEDIA_DIR, "3d.png"));
+            pbGameCover3D.LoadAsync(GET_CURRENT_PATH + sio.Path.Combine(MEDIA_DIR, "3d.png"));
         }
     }
 
@@ -1208,7 +1159,7 @@ public partial class frmMain : Form
             {
                 if (response.StatusCode == HttpStatusCode.OK)
                 {
-                    tbLog.AppendText($"[{DateString()}] {Resources.DownloadDiscCover} {gameID}.png{Environment.NewLine}");
+                    tbLog.AppendText($"[{utility.TimeStamp()}] {Resources.DownloadDiscCover} {gameID}.png{Environment.NewLine}");
                     var discCoverPath = sio.Path.Combine(COVERS_DIR, linkDomain, "disc", $"{gameID}.png");
                     NET_CLIENT.DownloadFile(linkCoverDisc, GET_CURRENT_PATH + discCoverPath);
                 }
@@ -1216,7 +1167,7 @@ public partial class frmMain : Form
         }
         catch (WebException ex)
         {
-            tbLog.AppendText($"[{DateString()}] {Resources.DownloadDiscCoverError}{Environment.NewLine}{Resources.Error} {ex.Message}{Environment.NewLine}");
+            tbLog.AppendText($"[{utility.TimeStamp()}] {Resources.DownloadDiscCoverError}{Environment.NewLine}{Resources.Error} {ex.Message}{Environment.NewLine}");
             tbLog.AppendText(ex.StackTrace);
         }
         try
@@ -1229,7 +1180,7 @@ public partial class frmMain : Form
             {
                 if (response.StatusCode == HttpStatusCode.OK)
                 {
-                    tbLog.AppendText($"[{DateString()}] {Resources.Download3DCover} {gameID}.png{Environment.NewLine}");
+                    tbLog.AppendText($"[{utility.TimeStamp()}] {Resources.Download3DCover} {gameID}.png{Environment.NewLine}");
                     var _3DCoverPath = sio.Path.Combine(COVERS_DIR, linkDomain, "3d", $"{gameID}.png");
                     NET_CLIENT.DownloadFile(linkCover3D, GET_CURRENT_PATH + _3DCoverPath);
                 }
@@ -1237,15 +1188,57 @@ public partial class frmMain : Form
         }
         catch (WebException ex)
         {
-            tbLog.AppendText($"[{DateString()}] {Resources.Download3DCoverError}{Environment.NewLine}{Resources.Error} {ex.Message}{Environment.NewLine}");
+            tbLog.AppendText($"[{utility.TimeStamp()}] {Resources.Download3DCoverError}{Environment.NewLine}{Resources.Error} {ex.Message}{Environment.NewLine}");
+            tbLog.AppendText(ex.StackTrace);
+        }
+        try
+        {
+            // Download 2D cover
+            var linkCover = new Uri($"https://art.gametdb.com/wii/cover/{linkDomain}/{gameID}.png");
+            var request = (HttpWebRequest)WebRequest.Create(linkCover);
+            request.Method = "HEAD";
+            using (var response = (HttpWebResponse)await request.GetResponseAsync())
+            {
+                if (response.StatusCode == HttpStatusCode.OK)
+                {
+                    tbLog.AppendText($"[{utility.TimeStamp()}] {Resources.Download2DCover} {gameID}.png{Environment.NewLine}");
+                    var _2DCoverPath = sio.Path.Combine(COVERS_DIR, linkDomain, "2d", $"{gameID}.png");
+                    NET_CLIENT.DownloadFile(linkCover, GET_CURRENT_PATH + _2DCoverPath);
+                }
+            }
+        }
+        catch (WebException ex)
+        {
+            tbLog.AppendText($"[{utility.TimeStamp()}] {Resources.Download2DCoverError}{Environment.NewLine}{Resources.Error} {ex.Message}{Environment.NewLine}");
+            tbLog.AppendText(ex.StackTrace);
+        }
+        try
+        {
+            // Download Full cover
+            var linkCover = new Uri($"https://art.gametdb.com/wii/coverfullHQ/{linkDomain}/{gameID}.png");
+            var request = (HttpWebRequest)WebRequest.Create(linkCover);
+            request.Method = "HEAD";
+            using (var response = (HttpWebResponse)await request.GetResponseAsync())
+            {
+                if (response.StatusCode == HttpStatusCode.OK)
+                {
+                    tbLog.AppendText($"[{utility.TimeStamp()}] {Resources.DownloadFullCover} {gameID}.png{Environment.NewLine}");
+                    var _fullCoverPath = sio.Path.Combine(COVERS_DIR, linkDomain, "full", $"{gameID}.png");
+                    NET_CLIENT.DownloadFile(linkCover, GET_CURRENT_PATH + _fullCoverPath);
+                }
+            }
+        }
+        catch (WebException ex)
+        {
+            tbLog.AppendText($"[{utility.TimeStamp()}] {Resources.DownloadFullCoverError}{Environment.NewLine}{Resources.Error} {ex.Message}{Environment.NewLine}");
             tbLog.AppendText(ex.StackTrace);
         }
         finally
         {
             if (NET_RESPONSE != null) NET_RESPONSE.Close();
         }
-    
-}
+
+    }
 
     #endregion
 
@@ -1281,7 +1274,7 @@ public partial class frmMain : Form
         }
         catch (Exception ex)
         {
-            tbLog.AppendText("[" + DateString() + "]" + Resources.ClearTemp_String1 + Environment.NewLine);
+            tbLog.AppendText("[" + utility.TimeStamp() + "]" + Resources.ClearTemp_String1 + Environment.NewLine);
             tbLog.AppendText(ex.StackTrace);
         }
     }
@@ -1300,12 +1293,12 @@ public partial class frmMain : Form
         if (!sio.Directory.Exists(CONFIG_INI_FILE.IniReadString("GENERAL", "TemporaryFolder", "")))
         {
             _ = sio.Directory.CreateDirectory(CONFIG_INI_FILE.IniReadString("GENERAL", "TemporaryFolder", ""));
-            tbLog.AppendText("[" + DateString() + "]" + Resources.RequiredDirectories_String1 +
+            tbLog.AppendText("[" + utility.TimeStamp() + "]" + Resources.RequiredDirectories_String1 +
                              Environment.NewLine);
         }
         else
         {
-            tbLog.AppendText("[" + DateString() + "]" + Resources.RequiredDirectories_String2 +
+            tbLog.AppendText("[" + utility.TimeStamp() + "]" + Resources.RequiredDirectories_String2 +
                              Environment.NewLine);
         }
 
@@ -1507,12 +1500,12 @@ public partial class frmMain : Form
                 callback(Convert.ToInt32(progressCheckpoint + incr / 2));
             }).ConfigureAwait(false);
 
-            tbLog.AppendText("[" + DateString() + "]" + Resources.RequiredDirectories_String4 +
+            tbLog.AppendText("[" + utility.TimeStamp() + "]" + Resources.RequiredDirectories_String4 +
                              Environment.NewLine);
         }
         else
         {
-            tbLog.AppendText("[" + DateString() + "]" + Resources.RequiredDirectories_String5 +
+            tbLog.AppendText("[" + utility.TimeStamp() + "]" + Resources.RequiredDirectories_String5 +
                              Environment.NewLine);
         }
     }
@@ -1538,7 +1531,7 @@ public partial class frmMain : Form
         }
         catch (Exception ex)
         {
-            tbLog.AppendText("[" + DateString() + "]" + Resources.Error + ex.Message + Environment.NewLine);
+            tbLog.AppendText("[" + utility.TimeStamp() + "]" + Resources.Error + ex.Message + Environment.NewLine);
             tbLog.AppendText(ex.StackTrace);
             GlobalNotifications(ex.Message, ToolTipIcon.Error);
         }
@@ -1613,59 +1606,65 @@ public partial class frmMain : Form
                 {
                     if (DialogResultDeleteGame() == DialogResult.Yes)
                     {
-                        LINK_DOMAIN = _IDRegionCode.Equals("e") ? "US" :
-                            _IDRegionCode.Equals("p") ? "EN" :
-                            _IDRegionCode.Equals("j") ? "JA" : "EN";
-
-                        //GlobalNotifications(GCBM.Properties.Resources.UnknownRegion, ToolTipIcon.Info);
-                        var cover2D = GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + LINK_DOMAIN +
-                                      sio.Path.DirectorySeparatorChar
-                                      + "2d" + sio.Path.DirectorySeparatorChar + tbIDGame.Text + ".png";
-                        var cover3D = GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + LINK_DOMAIN +
-                                      sio.Path.DirectorySeparatorChar
-                                      + "3d" + sio.Path.DirectorySeparatorChar + tbIDGame.Text + ".png";
-                        var coverDisc = GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + LINK_DOMAIN +
-                                        sio.Path.DirectorySeparatorChar
-                                        + "disc" + sio.Path.DirectorySeparatorChar + tbIDGame.Text + ".png";
-                        var coverFull = GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + LINK_DOMAIN +
-                                        sio.Path.DirectorySeparatorChar
-                                        + "full" + sio.Path.DirectorySeparatorChar + tbIDGame.Text + ".png";
-
-                        // DELETAR JOGO E CAPA DO DISPOSITIVO DE ORIGEM
-                        if (dgv == dgvSource)
+                        foreach (DataGridViewRow dataGridViewRow in SelectedGames(dgv))
                         {
-                            sio.File.Delete(dgv.CurrentRow.Cells["Path"].Value.ToString());
+                            var regionCode = dataGridViewRow.Cells[2].Value.ToString().Substring(3, 1);
 
-                            // 2D
-                            if (sio.File.Exists(cover2D)) sio.File.Delete(cover2D);
-                            // 3D
-                            if (sio.File.Exists(cover3D)) sio.File.Delete(cover3D);
-                            // Disc
-                            if (sio.File.Exists(coverDisc)) sio.File.Delete(coverDisc);
-                            // Full
-                            if (sio.File.Exists(coverFull)) sio.File.Delete(coverFull);
 
-                            await DisplaySourceFilesAsync(fbd1.SelectedPath, dgvSource).ConfigureAwait(false);
-                        } // DELETE GAME FROM TARGET DEVICE.
-                        else
-                        {
-                            var pasta = sio.Path.GetDirectoryName(dgv.CurrentRow.Cells["Path"].Value.ToString());
-                            sio.Directory.Delete(pasta, true);
-                            await DisplayDestinationFilesAsync(
-                                tscbDiscDrive.SelectedItem + GAMES_DIR + sio.Path.DirectorySeparatorChar,
-                                dgvDestination).ConfigureAwait(false);
+                            LINK_DOMAIN = regionCode.Equals("e") ? "US" :
+                                regionCode.Equals("p") ? "EN" :
+                                regionCode.Equals("j") ? "JA" : "EN";
+
+                            //GlobalNotifications(GCBM.Properties.Resources.UnknownRegion, ToolTipIcon.Info);
+                            var cover2D = GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + LINK_DOMAIN +
+                                          sio.Path.DirectorySeparatorChar
+                                          + "2d" + sio.Path.DirectorySeparatorChar + tbIDGame.Text + ".png";
+                            var cover3D = GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + LINK_DOMAIN +
+                                          sio.Path.DirectorySeparatorChar
+                                          + "3d" + sio.Path.DirectorySeparatorChar + tbIDGame.Text + ".png";
+                            var coverDisc = GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + LINK_DOMAIN +
+                                            sio.Path.DirectorySeparatorChar
+                                            + "disc" + sio.Path.DirectorySeparatorChar + tbIDGame.Text + ".png";
+                            var coverFull = GET_CURRENT_PATH + COVERS_DIR + sio.Path.DirectorySeparatorChar + LINK_DOMAIN +
+                                            sio.Path.DirectorySeparatorChar
+                                            + "full" + sio.Path.DirectorySeparatorChar + tbIDGame.Text + ".png";
+
+                            // DELETAR JOGO E CAPA DO DISPOSITIVO DE ORIGEM
+                            if (dgv == dgvSource)
+                            {
+                                sio.File.Delete(dgv.CurrentRow.Cells["Path"].Value.ToString());
+
+                                // 2D
+                                if (sio.File.Exists(cover2D)) sio.File.Delete(cover2D);
+                                // 3D
+                                if (sio.File.Exists(cover3D)) sio.File.Delete(cover3D);
+                                // Disc
+                                if (sio.File.Exists(coverDisc)) sio.File.Delete(coverDisc);
+                                // Full
+                                if (sio.File.Exists(coverFull)) sio.File.Delete(coverFull);
+
+                                await DisplaySourceFilesAsync(fbd1.SelectedPath, dgvSource).ConfigureAwait(false);
+                            } // DELETE GAME FROM TARGET DEVICE.
+                            else
+                            {
+                                var pasta = sio.Path.GetDirectoryName(dgv.CurrentRow.Cells["Path"].Value.ToString());
+                                sio.Directory.Delete(pasta, true);
+                                await DisplayDestinationFilesAsync(
+                                    tscbDiscDrive.SelectedItem + GAMES_DIR + sio.Path.DirectorySeparatorChar,
+                                    dgvDestination).ConfigureAwait(false);
+                            }
                         }
-                    }
 
-                    if (dgv.RowCount == 0)
-                    {
-                        DisableOptionsGame(dgvSource);
-                        ResetOptions();
+                        if (dgv.RowCount == 0)
+                        {
+                            DisableOptionsGame(dgvSource);
+                            ResetOptions();
+                        }
                     }
                 }
                 catch (Exception ex)
                 {
-                    tbLog.AppendText("[" + DateString() + "]" + Resources.Error + ex.Message + Environment.NewLine);
+                    tbLog.AppendText("[" + utility.TimeStamp() + "]" + Resources.Error + ex.Message + Environment.NewLine);
                     tbLog.AppendText(ex.StackTrace);
                     GlobalNotifications(ex.Message, ToolTipIcon.Error);
                 }
@@ -1789,7 +1788,7 @@ public partial class frmMain : Form
             }
             catch (Exception ex)
             {
-                tbLog.AppendText("[" + DateString() + "]" + Resources.Error + ex.Message + Environment.NewLine);
+                tbLog.AppendText("[" + utility.TimeStamp() + "]" + Resources.Error + ex.Message + Environment.NewLine);
                 tbLog.AppendText(ex.StackTrace);
                 GlobalNotifications(ex.Message, ToolTipIcon.Error);
             }
@@ -1824,7 +1823,7 @@ public partial class frmMain : Form
                     if (VerifyHash(sha1Hash, source, hash))
                         ListHash("SHA-1", hash);
                     else
-                        tbLog.AppendText("[" + DateString() + "]" + Resources.HashesAreNotSame +
+                        tbLog.AppendText("[" + utility.TimeStamp() + "]" + Resources.HashesAreNotSame +
                                          Environment.NewLine);
                 }
                 else if (algorithm == "MD5")
@@ -1836,13 +1835,13 @@ public partial class frmMain : Form
                     if (VerifyHash(md5Hash, source, hash))
                         ListHash("MD5", hash);
                     else
-                        tbLog.AppendText("[" + DateString() + "]" + Resources.HashesAreNotSame +
+                        tbLog.AppendText("[" + utility.TimeStamp() + "]" + Resources.HashesAreNotSame +
                                          Environment.NewLine);
                 }
             }
             catch (Exception ex)
             {
-                tbLog.AppendText("[" + DateString() + "]" + Resources.Error + ex.Message + Environment.NewLine);
+                tbLog.AppendText("[" + utility.TimeStamp() + "]" + Resources.Error + ex.Message + Environment.NewLine);
                 tbLog.AppendText(ex.StackTrace);
                 GlobalNotifications(ex.Message, ToolTipIcon.Error);
             }
@@ -2162,7 +2161,7 @@ public partial class frmMain : Form
                 }
                 catch (Exception ex)
                 {
-                    tbLog.AppendText("[" + DateString() + "]" + Resources.Error + ex.Message + Environment.NewLine);
+                    tbLog.AppendText("[" + utility.TimeStamp() + "]" + Resources.Error + ex.Message + Environment.NewLine);
                     tbLog.AppendText(ex.StackTrace);
                     GlobalNotifications(ex.Message, ToolTipIcon.Error);
                 }
@@ -2397,7 +2396,7 @@ public partial class frmMain : Form
         }
         catch (Exception ex)
         {
-            tbLog.AppendText("[" + DateString() + "]" + Resources.Error + ex.Message + Environment.NewLine);
+            tbLog.AppendText("[" + utility.TimeStamp() + "]" + Resources.Error + ex.Message + Environment.NewLine);
             tbLog.AppendText(ex.StackTrace);
             GlobalNotifications(ex.Message, ToolTipIcon.Error);
         }
@@ -2498,7 +2497,7 @@ public partial class frmMain : Form
 
     // REWRITE FUNCTION- Directory Open
 
- 
+
 
     private void tsmiRenameFolders_Click(object sender, EventArgs e)
     {
@@ -2529,9 +2528,11 @@ public partial class frmMain : Form
     private string _IDMakerCode;
     private string _IDRegionCode;
     public Game gameUtilities = new();
+    private Utility utility = new Utility();
+    public ErrorLog Log = new ErrorLog();
     private bool useXmlTitle;
 
-    private static readonly string GET_CURRENT_PATH = sio.Directory.GetCurrentDirectory();
+    public static readonly string GET_CURRENT_PATH = sio.Directory.GetCurrentDirectory();
     private static readonly string GAMES_DIR = "games";
     private static readonly string TEMP_DIR = sio.Path.DirectorySeparatorChar + "temp";
 
@@ -2569,7 +2570,8 @@ public partial class frmMain : Form
     private bool ROOT_OPENED = true;
 
     //private int Reserved;
-    private readonly Assembly assembly = Assembly.GetExecutingAssembly();
+
+    public readonly Assembly frmMainAssembly = Assembly.GetExecutingAssembly();
     private readonly IniFile CONFIG_INI_FILE = Program.ConfigFile;
     private readonly CultureInfo MY_CULTURE = new(CULTURE_CURRENT, false);
     private readonly ProcessStartInfo START_INFO = new();
@@ -2624,6 +2626,7 @@ public partial class frmMain : Form
         tbSearch.KeyPress += CheckEnterKeyPress;
         Text = "GameCube Backup Manager 2022 - " + VERSION() + " - 64-bit";
 
+        tsslCurrentYear.Text = "Copyright © 2019 - " + DateTime.Now.Year + " Laete Meireles";
         //Splash Screen
         //if (CONFIG_INI_FILE.IniReadBool("SEVERAL", "DisableSplash") == false)
 
@@ -2655,7 +2658,7 @@ public partial class frmMain : Form
         //UpdateProgram();
         //LoadDatabaseXML();
         DisabeScreensaver();
-        SetupLog();
+        Log.WriteHeader(tbLog);
         RequiredDirectories(i => callback(Resources.SplashDirectories, i),
             progressCheckpoint).ConfigureAwait(false); //Do we really need to wait on this?
         DisableOptionsGame(dgvSource);
@@ -2841,14 +2844,16 @@ public partial class frmMain : Form
             if (!isGCITRunning())
                 try
                 {
-                    if (typeInstall == 0) // Install Exact Copy
+                    DisableOptionsGame(dgvSource);
+                    DisableOptionsGame(dgvDestination);
+                    btnAbort.Visible = true;
+                    lblAbort.Visible = true;
+                    intQueuePos = 0;
+                    BuildInstallQueue();
+                    INSTALLING = true;
+
+                    if (typeInstall == 0 || InstallQueue[intQueuePos].Extension == ".ciso") // Install Exact Copy
                     {
-                        InstallType = "COPY";
-                        btnAbort.Visible = true;
-                        lblAbort.Visible = true;
-                        BuildInstallQueue();
-                        DisableOptionsGame(dgvSource);
-                        INSTALLING = true;
                         InstallGameExactCopy(InstallQueue[intQueuePos]);
                     }
                     else // Install Scrub
@@ -2968,6 +2973,11 @@ public partial class frmMain : Form
     {
         var result = dgv.Rows.Cast<DataGridViewRow>().Where(x => (bool)x.Cells[0].Value)
             .Select(x => (string)x.Cells[6].Value).ToArray();
+        return result;
+    }
+    private IEnumerable<DataGridViewRow> SelectedGames(DataGridView dgv)
+    {
+        var result = dgv.Rows.Cast<DataGridViewRow>().Where(x => (bool)x.Cells[0].Value == true);
         return result;
     }
 
@@ -3093,7 +3103,7 @@ public partial class frmMain : Form
     //            }
     //            catch (Exception ex)
     //            {
-    //                tbLog.AppendText("[" + DateString() + "]" + Resources.Error + ex.Message + Environment.NewLine);
+    //                tbLog.AppendText("[" + TimeStamp() + "]" + Resources.Error + ex.Message + Environment.NewLine);
     //                tbLog.AppendText(ex.StackTrace);
     //                GlobalNotifications(ex.Message, ToolTipIcon.Error);
     //            }
@@ -3178,7 +3188,7 @@ public partial class frmMain : Form
                         var _destination = new sio.FileInfo(strDestinationDrive + GAMES_DIR +
                                                             sio.Path.DirectorySeparatorChar +
                                                             _SwapCharacter + " [" + game.ID +
-                                                            "]" + sio.Path.DirectorySeparatorChar + "game.iso");
+                                                            "]" + sio.Path.DirectorySeparatorChar + "game"+game.Extension);
                         oldCopyTask(_source, _destination);
                     } // Disc 2 (1 -> 0) - Title [ID Game]
                     else if (game.DiscID == "0x01" &&
@@ -3193,7 +3203,7 @@ public partial class frmMain : Form
                         var _destination = new sio.FileInfo(strDestinationDrive + GAMES_DIR +
                                                             sio.Path.DirectorySeparatorChar +
                                                             _SwapCharacter + " [" + game.ID +
-                                                            "]" + sio.Path.DirectorySeparatorChar + "disc2.iso");
+                                                            "]" + sio.Path.DirectorySeparatorChar + "disc2"+game.Extension);
                         oldCopyTask(_source, _destination);
                     } // Disc 1 (0 -> 1) - [ID Game]
                     else if (game.DiscID == "0x00" &&
@@ -3208,7 +3218,7 @@ public partial class frmMain : Form
                         var _destination = new sio.FileInfo(strDestinationDrive + GAMES_DIR +
                                                             sio.Path.DirectorySeparatorChar + "[" +
                                                             game.ID + "]" +
-                                                            sio.Path.DirectorySeparatorChar + "game.iso");
+                                                            sio.Path.DirectorySeparatorChar + "game"+game.Extension);
                         oldCopyTask(_source, _destination);
                     } // Disc 2 (1 -> 1) - [ID Game]
                     else if (game.DiscID == "0x01" &&
@@ -3224,7 +3234,7 @@ public partial class frmMain : Form
                                                             sio.Path.DirectorySeparatorChar + "[" +
                                                             game.ID + "]" +
                                                             sio.Path.DirectorySeparatorChar +
-                                                            "disc2.iso");
+                                                            "disc2"+game.Extension);
                         oldCopyTask(_source, _destination);
                     }
                     // Título [Código do Jogo] -> 0
@@ -3232,7 +3242,7 @@ public partial class frmMain : Form
                 }
                 catch (Exception ex)
                 {
-                    tbLog.AppendText("[" + DateString() + "]" + Resources.Error + ex.Message + Environment.NewLine);
+                    tbLog.AppendText("[" + utility.TimeStamp() + "]" + Resources.Error + ex.Message + Environment.NewLine);
                     tbLog.AppendText(ex.StackTrace);
                     GlobalNotifications(ex.Message, ToolTipIcon.Error);
                 }
@@ -3296,6 +3306,10 @@ public partial class frmMain : Form
             {
                 try
                 {
+                    if(InstallType == "SCRUB")
+                    {
+                        StartScrub();//return to scrub loop, this is part of the ciso workaround to avoid running them through GCIT
+                    }
                     InstallGameExactCopy(InstallQueue[intQueuePos]);
                 }
                 catch (Exception ex)
@@ -3343,16 +3357,19 @@ public partial class frmMain : Form
 
     private async void StartScrub()
     {
-        DisableOptionsGame(dgvDestination);
-        btnAbort.Visible = true;
-        lblAbort.Visible = true;
-        intQueuePos = 0;
-        DisableOptionsGame(dgvSource);
-        BuildInstallQueue();
+
         foreach (var game in InstallQueue.Values)
             if (!ABORT)
-                await InstallGameScrub(InstallQueue[intQueuePos]).ConfigureAwait(false);
-
+            {
+                if (game.Extension == ".ciso")//Game is a CISO, don't scrub.
+                {
+                    InstallGameExactCopy(game);
+                }
+                else
+                {
+                    await InstallGameScrub(InstallQueue[intQueuePos]).ConfigureAwait(false);
+                }
+            }
         var d2counter = 0;
         foreach (var game in _listSecondDiscs)
         {
@@ -4207,7 +4224,7 @@ public partial class frmMain : Form
     //                }
     //                catch (Exception ex)
     //                {
-    //                    tbLog.AppendText("[" + DateString() + "]" + GCBM.Properties.Resources.Error + ex.Message + Environment.NewLine);
+    //                    tbLog.AppendText("[" + TimeStamp() + "]" + GCBM.Properties.Resources.Error + ex.Message + Environment.NewLine);
     //                    tbLog.AppendText(ex.StackTrace);
     //                    GlobalNotifications(ex.Message, ToolTipIcon.Error);
     //                }

@@ -334,10 +334,10 @@
     <value>文件</value>
   </data>
   <data name="tsmiDownloadCoversSelectedGame.Text" xml:space="preserve">
-    <value>同步和下载皮肤（光盘和3D仅适用于选定的游戏）。</value>
+    <value>同步並下載 封面（選取的遊戲）</value>
   </data>
   <data name="tsmiSyncDownloadDiscOnly3DCovers.Text" xml:space="preserve">
-    <value>同步和下载皮肤（列出的所有游戏的光盘和3D）。</value>
+    <value>同步和下载皮肤（列出的所有游戏）。</value>
   </data>
   <data name="tsmiSyncDownloadAllDiscOnly3DCovers.Text" xml:space="preserve">
     <value>同步和下载皮肤（来自整个GameCube库的光盘和3D）。</value>

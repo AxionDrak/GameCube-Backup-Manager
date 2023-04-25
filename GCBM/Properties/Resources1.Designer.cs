@@ -707,6 +707,24 @@ namespace GCBM.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to  [INFO] Baixando capas (2D)... .
+        /// </summary>
+        internal static string Download2DCover {
+            get {
+                return ResourceManager.GetString("Download2DCover", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to  [ERRO] Falha ao efetuar download da capa (2D)!.
+        /// </summary>
+        internal static string Download2DCoverError {
+            get {
+                return ResourceManager.GetString("Download2DCoverError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to  [INFO] Baixando capas (3D)... .
         /// </summary>
         internal static string Download3DCover {
@@ -739,6 +757,24 @@ namespace GCBM.Properties {
         internal static string DownloadDiscCoverError {
             get {
                 return ResourceManager.GetString("DownloadDiscCoverError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to  [INFO] Baixando capas (Completa)... .
+        /// </summary>
+        internal static string DownloadFullCover {
+            get {
+                return ResourceManager.GetString("DownloadFullCover", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to  [ERRO] Falha ao efetuar download da capa (Completa)!.
+        /// </summary>
+        internal static string DownloadFullCoverError {
+            get {
+                return ResourceManager.GetString("DownloadFullCoverError", resourceCulture);
             }
         }
         

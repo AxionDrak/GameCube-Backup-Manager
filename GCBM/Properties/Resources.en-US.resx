@@ -280,13 +280,13 @@
     <value>It is recommended to delete or move the file to another location.</value>
   </data>
   <data name="DownloadDiscCover" xml:space="preserve">
-    <value> [INFO] Downloading covers (Disc)...</value>
+    <value> [INFO] Downloading covers (Disc)... </value>
   </data>
   <data name=" " xml:space="preserve">
     <value> [ERROR] Failed to download cover (Disc)!</value>
   </data>
   <data name="Download3DCover" xml:space="preserve">
-    <value> [INFO] Downloading covers (3D)...</value>
+    <value> [INFO] Downloading covers (3D)... </value>
   </data>
   <data name="Download3DCoverError" xml:space="preserve">
     <value> [ERROR] Failed to download cover (3D)!</value>
@@ -554,5 +554,17 @@
   </data>
   <data name="LoadDatabase_Editor" xml:space="preserve">
     <value>Editor</value>
+  </data>
+  <data name="Download2DCoverError" xml:space="preserve">
+    <value> [ERROR] Failed to download cover (2D)!</value>
+  </data>
+  <data name="Download2DCover" xml:space="preserve">
+    <value> [INFO] Downloading covers (2D)... </value>
+  </data>
+  <data name="DownloadFullCoverError" xml:space="preserve">
+    <value> [ERROR] Failed to download cover (Full)!</value>
+  </data>
+  <data name="DownloadFullCover" xml:space="preserve">
+    <value> [INFO] Downloading covers (Full)... </value>
   </data>
 </root>

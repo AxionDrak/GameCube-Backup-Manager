@@ -1428,13 +1428,13 @@
     <value>442, 22</value>
   </data>
   <data name="tsmiDownloadCoversSelectedGame.Text" xml:space="preserve">
-    <value>スキンの同期とダウンロード（選択したゲームのディスクと3Dのみ）</value>
+    <value>カバーの同期とダウンロード (一部のゲーム ディスクと 3D のみ)</value>
   </data>
   <data name="tsmiSyncDownloadDiscOnly3DCovers.Size" type="System.Drawing.Size, System.Drawing">
     <value>442, 22</value>
   </data>
   <data name="tsmiSyncDownloadDiscOnly3DCovers.Text" xml:space="preserve">
-    <value>スキンの同期とダウンロード（リストされている全てのゲームのディスクと3D）</value>
+    <value>カバーの同期とダウンロード (リストされているすべてのゲーム)</value>
   </data>
   <data name="toolStripMenuItem5.Size" type="System.Drawing.Size, System.Drawing">
     <value>439, 6</value>

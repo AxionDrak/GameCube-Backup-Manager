@@ -352,7 +352,7 @@
     <value> [INFO] Los directorios de skins fueron creados...</value>
   </data>
   <data name="Download3DCover" xml:space="preserve">
-    <value> [INFO] Descargando portadas (3D)...</value>
+    <value> [INFO] Descargando portadas (3D)... </value>
   </data>
   <data name="InvalidDrive_String5" xml:space="preserve">
     <value>Sin embargo, puede utilizar dispositivos </value>
@@ -502,7 +502,7 @@
     <value>¡No se pudieron escribir datos en el disco!</value>
   </data>
   <data name="DownloadDiscCover" xml:space="preserve">
-    <value> [INFO] Descargando portadas (Disco)...</value>
+    <value> [INFO] Descargando portadas (Disco)... </value>
   </data>
   <data name="MetaXml_String_ERRO" xml:space="preserve">
     <value>ERROR</value>
@@ -554,5 +554,17 @@
   </data>
   <data name="LoadDatabase_Editor" xml:space="preserve">
     <value>Editor</value>
+  </data>
+  <data name="Download2DCoverError" xml:space="preserve">
+    <value> [ERROR] ¡Error al descargar la portada (2D)!</value>
+  </data>
+  <data name="Download2DCover" xml:space="preserve">
+    <value> [INFO] Descargando portadas (2D)... </value>
+  </data>
+  <data name="DownloadFullCoverError" xml:space="preserve">
+    <value> [ERROR] ¡Error al descargar la portada (Completo)!</value>
+  </data>
+  <data name="DownloadFullCover" xml:space="preserve">
+    <value> [INFO] Descargando portadas (Completo)... </value>
   </data>
 </root>

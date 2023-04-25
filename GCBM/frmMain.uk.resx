@@ -334,10 +334,10 @@
     <value>Файл</value>
   </data>
   <data name="tsmiDownloadCoversSelectedGame.Text" xml:space="preserve">
-    <value>Синхронізація і завантаження скінів (диск і 3D тільки для обраної гри)</value>
+    <value>Синхронізація та завантаження обкладинок (для обраної гри)</value>
   </data>
   <data name="tsmiSyncDownloadDiscOnly3DCovers.Text" xml:space="preserve">
-    <value>Синхронізація і завантаження скінів (Диск і 3D всіх перерахованих ігор)</value>
+    <value>Синхронізація і завантаження скінів (всіх перерахованих ігор)</value>
   </data>
   <data name="tsmiSyncDownloadAllDiscOnly3DCovers.Text" xml:space="preserve">
     <value>Синхронізація і завантаження скінів (дискових і 3D з усієї бібліотеки GameCube)</value>

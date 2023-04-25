@@ -502,7 +502,7 @@
     <value>Nem sikerült adatot írni a lemezre!</value>
   </data>
   <data name="DownloadDiscCover" xml:space="preserve">
-    <value>[INFO] Borítók letöltése (lemez)... </value>
+    <value>[INFO] Borítók letöltése (Lemez)... </value>
   </data>
   <data name="MetaXml_String_ERRO" xml:space="preserve">
     <value>HIBA</value>
@@ -550,9 +550,21 @@
     <value>Meg tudod ezt érteni?</value>
   </data>
   <data name="DownloadDiscCoverError" xml:space="preserve">
-    <value>[ERROR] Nem sikerült letölteni a borítókat (lemez)</value>
+    <value>[ERROR] Nem sikerült letölteni a borítókat (Lemez)</value>
   </data>
   <data name="LoadDatabase_Editor" xml:space="preserve">
     <value>Szerkesztő</value>
+  </data>
+  <data name="Download2DCoverError" xml:space="preserve">
+    <value> [ERROR] Nem sikerült letölteni a borítót (2D)!</value>
+  </data>
+  <data name="Download2DCover" xml:space="preserve">
+    <value> [INFO] Borítók letöltése (2D)... </value>
+  </data>
+  <data name="DownloadFullCoverError" xml:space="preserve">
+    <value> [ERROR] Nem sikerült letölteni a borítót (Teljes)!</value>
+  </data>
+  <data name="DownloadFullCover" xml:space="preserve">
+    <value> [INFO] Borítók letöltése (Teljes)... </value>
   </data>
 </root>

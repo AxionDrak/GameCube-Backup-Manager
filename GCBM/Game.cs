@@ -2,7 +2,9 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.IO;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
@@ -437,9 +439,17 @@ public class Game
     {
         Path = path;
 
+
         using (var fs = new sio.FileStream(path, sio.FileMode.Open, sio.FileAccess.Read, sio.FileShare.Read))
         using (var br = new sio.BinaryReader(fs, ste.Default))
         {
+            if (path.EndsWith(".ciso"))
+            {
+                //CISOReader 
+                //ID = CISOReader.GameID(path);
+                fs.Seek(0x8000, SeekOrigin.Begin);
+            }
+
             var bb = br.ReadBytes(4);
             IDGameCode = SIOExtensions.ToStringC(ste.Default.GetChars(bb));
             string RegionLetter = Convert.ToChar(bb[3]).ToString().ToLower();
@@ -482,7 +492,14 @@ public class Game
             Date = br.ReadStringNT();
             var f = new sio.FileInfo(path);
             Extension = f.Extension;
-            Size = Convert.ToInt32(f.Length);
+            try
+            {
+                Size = Convert.ToInt32(f.Length);
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
         }
     }
 
@@ -530,5 +547,23 @@ public class Game
     }
 
     #endregion
+    public class CISOReader
+    {
+        public static string GameID(string filePath)
+        {
+            if (string.IsNullOrEmpty(filePath))
+                throw new ArgumentNullException(nameof(filePath));
 
+            if (!File.Exists(filePath))
+                throw new FileNotFoundException("CISO file not found.", filePath);
+
+            using (FileStream fs = new FileStream(filePath, FileMode.Open, FileAccess.Read))
+            {
+                byte[] gameIdBytes = new byte[6];
+                fs.Seek(0x8000, SeekOrigin.Begin); // Assuming the CISO header is 32 KB (0x8000) in size
+                fs.Read(gameIdBytes, 0, gameIdBytes.Length);
+                return Encoding.ASCII.GetString(gameIdBytes);
+            }
+        }
+    }
 }

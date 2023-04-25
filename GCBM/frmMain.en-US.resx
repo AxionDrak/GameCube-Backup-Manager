@@ -1379,13 +1379,13 @@
     <value>442, 22</value>
   </data>
   <data name="tsmiDownloadCoversSelectedGame.Text" xml:space="preserve">
-    <value>Sync and Download Skins (Disc and 3D for selected game only)</value>
+    <value>Sync and Download Covers (Selected game)</value>
   </data>
   <data name="tsmiSyncDownloadDiscOnly3DCovers.Size" type="System.Drawing.Size, System.Drawing">
     <value>442, 22</value>
   </data>
   <data name="tsmiSyncDownloadDiscOnly3DCovers.Text" xml:space="preserve">
-    <value>Sync and download skins (Disc and 3D of all games listed)</value>
+    <value>Sync and download covers (of all games listed)</value>
   </data>
   <data name="toolStripMenuItem5.Size" type="System.Drawing.Size, System.Drawing">
     <value>439, 6</value>

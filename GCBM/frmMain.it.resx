@@ -334,10 +334,10 @@
     <value>File</value>
   </data>
   <data name="tsmiDownloadCoversSelectedGame.Text" xml:space="preserve">
-    <value>Sincronizzazione e download di skin (disco e 3D solo per i giochi selezionati)</value>
+    <value>Sincronizzazione e download di copertine (solo per i giochi selezionati)</value>
   </data>
   <data name="tsmiSyncDownloadDiscOnly3DCovers.Text" xml:space="preserve">
-    <value>Sincronizzazione e download di skin (disco e 3D di tutti i giochi elencati)</value>
+    <value>Sincronizza e scarica copertine (tutti i giochi elencati)</value>
   </data>
   <data name="tsmiSyncDownloadAllDiscOnly3DCovers.Text" xml:space="preserve">
     <value>Sincronizzazione e download di skin (disco e 3D dall'intera libreria GameCube)</value>

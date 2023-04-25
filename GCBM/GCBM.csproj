@@ -114,6 +114,8 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CISO.cs" />
+    <Compile Include="ErrorLog.cs" />
     <Compile Include="HardWorkerEventArgs.cs" />
     <Compile Include="LanguagePrompt.cs">
       <SubType>Form</SubType>
@@ -121,6 +123,7 @@
     <Compile Include="LanguagePrompt.Designer.cs">
       <DependentUpon>LanguagePrompt.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utility.cs" />
     <Compile Include="ProcessExtensions.cs" />
     <Compile Include="ExportDataTableToHTML.cs" />
     <Compile Include="FileInfoExtension.cs" />

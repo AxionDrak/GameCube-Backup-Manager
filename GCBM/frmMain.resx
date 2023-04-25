@@ -129,225 +129,6 @@
   <data name="spcMain.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 24</value>
   </data>
-  <data name="&gt;&gt;btnSearch.Name" xml:space="preserve">
-    <value>btnSearch</value>
-  </data>
-  <data name="&gt;&gt;btnSearch.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnSearch.Parent" xml:space="preserve">
-    <value>grpSearch</value>
-  </data>
-  <data name="&gt;&gt;btnSearch.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;tbSearch.Name" xml:space="preserve">
-    <value>tbSearch</value>
-  </data>
-  <data name="&gt;&gt;tbSearch.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tbSearch.Parent" xml:space="preserve">
-    <value>grpSearch</value>
-  </data>
-  <data name="&gt;&gt;tbSearch.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="grpSearch.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 3</value>
-  </data>
-  <data name="grpSearch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>275, 60</value>
-  </data>
-  <data name="grpSearch.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="grpSearch.Text" xml:space="preserve">
-    <value>Pesquisar</value>
-  </data>
-  <data name="&gt;&gt;grpSearch.Name" xml:space="preserve">
-    <value>grpSearch</value>
-  </data>
-  <data name="&gt;&gt;grpSearch.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;grpSearch.Parent" xml:space="preserve">
-    <value>spcMain.Panel1</value>
-  </data>
-  <data name="&gt;&gt;grpSearch.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="groupBox1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left</value>
-  </data>
-  <data name="&gt;&gt;pbGameCover3D.Name" xml:space="preserve">
-    <value>pbGameCover3D</value>
-  </data>
-  <data name="&gt;&gt;pbGameCover3D.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pbGameCover3D.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;pbGameCover3D.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;pbGameDisc.Name" xml:space="preserve">
-    <value>pbGameDisc</value>
-  </data>
-  <data name="&gt;&gt;pbGameDisc.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pbGameDisc.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;pbGameDisc.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 69</value>
-  </data>
-  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>275, 474</value>
-  </data>
-  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>BoxArt</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
-    <value>spcMain.Panel1</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;spcMain.Panel1.Name" xml:space="preserve">
-    <value>spcMain.Panel1</value>
-  </data>
-  <data name="&gt;&gt;spcMain.Panel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;spcMain.Panel1.Parent" xml:space="preserve">
-    <value>spcMain</value>
-  </data>
-  <data name="&gt;&gt;spcMain.Panel1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="tabControlMain.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="&gt;&gt;tabMainFile.Name" xml:space="preserve">
-    <value>tabMainFile</value>
-  </data>
-  <data name="&gt;&gt;tabMainFile.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabMainFile.Parent" xml:space="preserve">
-    <value>tabControlMain</value>
-  </data>
-  <data name="&gt;&gt;tabMainFile.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;tabMainDisc.Name" xml:space="preserve">
-    <value>tabMainDisc</value>
-  </data>
-  <data name="&gt;&gt;tabMainDisc.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabMainDisc.Parent" xml:space="preserve">
-    <value>tabControlMain</value>
-  </data>
-  <data name="&gt;&gt;tabMainDisc.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;tabMainDatabase.Name" xml:space="preserve">
-    <value>tabMainDatabase</value>
-  </data>
-  <data name="&gt;&gt;tabMainDatabase.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabMainDatabase.Parent" xml:space="preserve">
-    <value>tabControlMain</value>
-  </data>
-  <data name="&gt;&gt;tabMainDatabase.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;tabMainLog.Name" xml:space="preserve">
-    <value>tabMainLog</value>
-  </data>
-  <data name="&gt;&gt;tabMainLog.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabMainLog.Parent" xml:space="preserve">
-    <value>tabControlMain</value>
-  </data>
-  <data name="&gt;&gt;tabMainLog.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="tabControlMain.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="tabControlMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>972, 540</value>
-  </data>
-  <data name="tabControlMain.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;tabControlMain.Name" xml:space="preserve">
-    <value>tabControlMain</value>
-  </data>
-  <data name="&gt;&gt;tabControlMain.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabControlMain.Parent" xml:space="preserve">
-    <value>spcMain.Panel2</value>
-  </data>
-  <data name="&gt;&gt;tabControlMain.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;spcMain.Panel2.Name" xml:space="preserve">
-    <value>spcMain.Panel2</value>
-  </data>
-  <data name="&gt;&gt;spcMain.Panel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;spcMain.Panel2.Parent" xml:space="preserve">
-    <value>spcMain</value>
-  </data>
-  <data name="&gt;&gt;spcMain.Panel2.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="spcMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1184, 546</value>
-  </data>
-  <data name="spcMain.SplitterDistance" type="System.Int32, mscorlib">
-    <value>290</value>
-  </data>
-  <data name="spcMain.SplitterWidth" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="spcMain.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;spcMain.Name" xml:space="preserve">
-    <value>spcMain</value>
-  </data>
-  <data name="&gt;&gt;spcMain.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitContainer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;spcMain.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;spcMain.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
   <data name="btnSearch.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -392,6 +173,33 @@
   </data>
   <data name="&gt;&gt;tbSearch.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="grpSearch.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 3</value>
+  </data>
+  <data name="grpSearch.Size" type="System.Drawing.Size, System.Drawing">
+    <value>275, 60</value>
+  </data>
+  <data name="grpSearch.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="grpSearch.Text" xml:space="preserve">
+    <value>Pesquisar</value>
+  </data>
+  <data name="&gt;&gt;grpSearch.Name" xml:space="preserve">
+    <value>grpSearch</value>
+  </data>
+  <data name="&gt;&gt;grpSearch.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grpSearch.Parent" xml:space="preserve">
+    <value>spcMain.Panel1</value>
+  </data>
+  <data name="&gt;&gt;grpSearch.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="groupBox1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left</value>
   </data>
   <data name="pbGameCover3D.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -989,215 +797,44 @@
   <data name="&gt;&gt;pbGameDisc.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <metadata name="mstripFile.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>365, 11</value>
-  </metadata>
-  <data name="&gt;&gt;lblInstallStatusGameIndex.Name" xml:space="preserve">
-    <value>lblInstallStatusGameIndex</value>
+  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 69</value>
   </data>
-  <data name="&gt;&gt;lblInstallStatusGameIndex.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>275, 474</value>
   </data>
-  <data name="&gt;&gt;lblInstallStatusGameIndex.Parent" xml:space="preserve">
-    <value>tabMainFile</value>
-  </data>
-  <data name="&gt;&gt;lblInstallStatusGameIndex.ZOrder" xml:space="preserve">
+  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;pbSource.Name" xml:space="preserve">
-    <value>pbSource</value>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>BoxArt</value>
   </data>
-  <data name="&gt;&gt;pbSource.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ProgressBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
+    <value>groupBox1</value>
   </data>
-  <data name="&gt;&gt;pbSource.Parent" xml:space="preserve">
-    <value>tabMainFile</value>
-  </data>
-  <data name="&gt;&gt;pbSource.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;lblSourceCount.Name" xml:space="preserve">
-    <value>lblSourceCount</value>
-  </data>
-  <data name="&gt;&gt;lblSourceCount.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblSourceCount.Parent" xml:space="preserve">
-    <value>tabMainFile</value>
-  </data>
-  <data name="&gt;&gt;lblSourceCount.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;lblGamesVerifiedText.Name" xml:space="preserve">
-    <value>lblGamesVerifiedText</value>
-  </data>
-  <data name="&gt;&gt;lblGamesVerifiedText.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblGamesVerifiedText.Parent" xml:space="preserve">
-    <value>tabMainFile</value>
-  </data>
-  <data name="&gt;&gt;lblGamesVerifiedText.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;lblAbort.Name" xml:space="preserve">
-    <value>lblAbort</value>
-  </data>
-  <data name="&gt;&gt;lblAbort.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblAbort.Parent" xml:space="preserve">
-    <value>tabMainFile</value>
-  </data>
-  <data name="&gt;&gt;lblAbort.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;pbCopy.Name" xml:space="preserve">
-    <value>pbCopy</value>
-  </data>
-  <data name="&gt;&gt;pbCopy.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ProgressBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pbCopy.Parent" xml:space="preserve">
-    <value>tabMainFile</value>
-  </data>
-  <data name="&gt;&gt;pbCopy.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;lblInstallStatusGameTitle.Name" xml:space="preserve">
-    <value>lblInstallStatusGameTitle</value>
-  </data>
-  <data name="&gt;&gt;lblInstallStatusGameTitle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblInstallStatusGameTitle.Parent" xml:space="preserve">
-    <value>tabMainFile</value>
-  </data>
-  <data name="&gt;&gt;lblInstallStatusGameTitle.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
-    <value>tabMainFile</value>
-  </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;btnAbort.Name" xml:space="preserve">
-    <value>btnAbort</value>
-  </data>
-  <data name="&gt;&gt;btnAbort.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnAbort.Parent" xml:space="preserve">
-    <value>tabMainFile</value>
-  </data>
-  <data name="&gt;&gt;btnAbort.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;lblInstallStatusPercent.Name" xml:space="preserve">
-    <value>lblInstallStatusPercent</value>
-  </data>
-  <data name="&gt;&gt;lblInstallStatusPercent.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblInstallStatusPercent.Parent" xml:space="preserve">
-    <value>tabMainFile</value>
-  </data>
-  <data name="&gt;&gt;lblInstallStatusPercent.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;btnSelectFolder.Name" xml:space="preserve">
-    <value>btnSelectFolder</value>
-  </data>
-  <data name="&gt;&gt;btnSelectFolder.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnSelectFolder.Parent" xml:space="preserve">
-    <value>tabMainFile</value>
-  </data>
-  <data name="&gt;&gt;btnSelectFolder.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;lblInstallStatusText.Name" xml:space="preserve">
-    <value>lblInstallStatusText</value>
-  </data>
-  <data name="&gt;&gt;lblInstallStatusText.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblInstallStatusText.Parent" xml:space="preserve">
-    <value>tabMainFile</value>
-  </data>
-  <data name="&gt;&gt;lblInstallStatusText.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="&gt;&gt;grpDetailsSource.Name" xml:space="preserve">
-    <value>grpDetailsSource</value>
-  </data>
-  <data name="&gt;&gt;grpDetailsSource.Type" xml:space="preserve">
+  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;grpDetailsSource.Parent" xml:space="preserve">
-    <value>tabMainFile</value>
+  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
+    <value>spcMain.Panel1</value>
   </data>
-  <data name="&gt;&gt;grpDetailsSource.ZOrder" xml:space="preserve">
-    <value>12</value>
+  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
-  <data name="&gt;&gt;dgvSource.Name" xml:space="preserve">
-    <value>dgvSource</value>
+  <data name="&gt;&gt;spcMain.Panel1.Name" xml:space="preserve">
+    <value>spcMain.Panel1</value>
   </data>
-  <data name="&gt;&gt;dgvSource.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;spcMain.Panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;dgvSource.Parent" xml:space="preserve">
-    <value>tabMainFile</value>
+  <data name="&gt;&gt;spcMain.Panel1.Parent" xml:space="preserve">
+    <value>spcMain</value>
   </data>
-  <data name="&gt;&gt;dgvSource.ZOrder" xml:space="preserve">
-    <value>13</value>
-  </data>
-  <data name="&gt;&gt;mstripFile.Name" xml:space="preserve">
-    <value>mstripFile</value>
-  </data>
-  <data name="&gt;&gt;mstripFile.Type" xml:space="preserve">
-    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;mstripFile.Parent" xml:space="preserve">
-    <value>tabMainFile</value>
-  </data>
-  <data name="&gt;&gt;mstripFile.ZOrder" xml:space="preserve">
-    <value>14</value>
-  </data>
-  <data name="tabMainFile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
-  </data>
-  <data name="tabMainFile.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tabMainFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>964, 514</value>
-  </data>
-  <data name="tabMainFile.TabIndex" type="System.Int32, mscorlib">
+  <data name="&gt;&gt;spcMain.Panel1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="tabMainFile.Text" xml:space="preserve">
-    <value>Arquivos (Origem)</value>
-  </data>
-  <data name="&gt;&gt;tabMainFile.Name" xml:space="preserve">
-    <value>tabMainFile</value>
-  </data>
-  <data name="&gt;&gt;tabMainFile.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabMainFile.Parent" xml:space="preserve">
-    <value>tabControlMain</value>
-  </data>
-  <data name="&gt;&gt;tabMainFile.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="tabControlMain.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="lblInstallStatusGameIndex.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1649,186 +1286,6 @@
   <data name="grpDetailsSource.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
-  <data name="&gt;&gt;lblTypeDisc.Name" xml:space="preserve">
-    <value>lblTypeDisc</value>
-  </data>
-  <data name="&gt;&gt;lblTypeDisc.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblTypeDisc.Parent" xml:space="preserve">
-    <value>grpDetailsSource</value>
-  </data>
-  <data name="&gt;&gt;lblTypeDisc.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;lblMakerCode.Name" xml:space="preserve">
-    <value>lblMakerCode</value>
-  </data>
-  <data name="&gt;&gt;lblMakerCode.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblMakerCode.Parent" xml:space="preserve">
-    <value>grpDetailsSource</value>
-  </data>
-  <data name="&gt;&gt;lblMakerCode.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;tbIDMakerCode.Name" xml:space="preserve">
-    <value>tbIDMakerCode</value>
-  </data>
-  <data name="&gt;&gt;tbIDMakerCode.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tbIDMakerCode.Parent" xml:space="preserve">
-    <value>grpDetailsSource</value>
-  </data>
-  <data name="&gt;&gt;tbIDMakerCode.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;tbIDDiscID.Name" xml:space="preserve">
-    <value>tbIDDiscID</value>
-  </data>
-  <data name="&gt;&gt;tbIDDiscID.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tbIDDiscID.Parent" xml:space="preserve">
-    <value>grpDetailsSource</value>
-  </data>
-  <data name="&gt;&gt;tbIDDiscID.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;label29.Name" xml:space="preserve">
-    <value>label29</value>
-  </data>
-  <data name="&gt;&gt;label29.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label29.Parent" xml:space="preserve">
-    <value>grpDetailsSource</value>
-  </data>
-  <data name="&gt;&gt;label29.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;pbWebGameID.Name" xml:space="preserve">
-    <value>pbWebGameID</value>
-  </data>
-  <data name="&gt;&gt;pbWebGameID.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pbWebGameID.Parent" xml:space="preserve">
-    <value>grpDetailsSource</value>
-  </data>
-  <data name="&gt;&gt;pbWebGameID.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;grpOperations.Name" xml:space="preserve">
-    <value>grpOperations</value>
-  </data>
-  <data name="&gt;&gt;grpOperations.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;grpOperations.Parent" xml:space="preserve">
-    <value>grpDetailsSource</value>
-  </data>
-  <data name="&gt;&gt;grpOperations.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;labelGameID.Name" xml:space="preserve">
-    <value>labelGameID</value>
-  </data>
-  <data name="&gt;&gt;labelGameID.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelGameID.Parent" xml:space="preserve">
-    <value>grpDetailsSource</value>
-  </data>
-  <data name="&gt;&gt;labelGameID.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;labelFile.Name" xml:space="preserve">
-    <value>labelFile</value>
-  </data>
-  <data name="&gt;&gt;labelFile.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelFile.Parent" xml:space="preserve">
-    <value>grpDetailsSource</value>
-  </data>
-  <data name="&gt;&gt;labelFile.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;labelTitle.Name" xml:space="preserve">
-    <value>labelTitle</value>
-  </data>
-  <data name="&gt;&gt;labelTitle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;labelTitle.Parent" xml:space="preserve">
-    <value>grpDetailsSource</value>
-  </data>
-  <data name="&gt;&gt;labelTitle.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;tbIDGame.Name" xml:space="preserve">
-    <value>tbIDGame</value>
-  </data>
-  <data name="&gt;&gt;tbIDGame.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tbIDGame.Parent" xml:space="preserve">
-    <value>grpDetailsSource</value>
-  </data>
-  <data name="&gt;&gt;tbIDGame.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;tbIDRegion.Name" xml:space="preserve">
-    <value>tbIDRegion</value>
-  </data>
-  <data name="&gt;&gt;tbIDRegion.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tbIDRegion.Parent" xml:space="preserve">
-    <value>grpDetailsSource</value>
-  </data>
-  <data name="&gt;&gt;tbIDRegion.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="&gt;&gt;tbIDName.Name" xml:space="preserve">
-    <value>tbIDName</value>
-  </data>
-  <data name="&gt;&gt;tbIDName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tbIDName.Parent" xml:space="preserve">
-    <value>grpDetailsSource</value>
-  </data>
-  <data name="&gt;&gt;tbIDName.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="grpDetailsSource.Location" type="System.Drawing.Point, System.Drawing">
-    <value>508, 30</value>
-  </data>
-  <data name="grpDetailsSource.Size" type="System.Drawing.Size, System.Drawing">
-    <value>354, 272</value>
-  </data>
-  <data name="grpDetailsSource.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="grpDetailsSource.Text" xml:space="preserve">
-    <value>Detalhes</value>
-  </data>
-  <data name="&gt;&gt;grpDetailsSource.Name" xml:space="preserve">
-    <value>grpDetailsSource</value>
-  </data>
-  <data name="&gt;&gt;grpDetailsSource.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;grpDetailsSource.Parent" xml:space="preserve">
-    <value>tabMainFile</value>
-  </data>
-  <data name="&gt;&gt;grpDetailsSource.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
   <data name="lblTypeDisc.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -2053,54 +1510,6 @@
   <data name="&gt;&gt;pbWebGameID.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="&gt;&gt;btnGameInstallScrub.Name" xml:space="preserve">
-    <value>btnGameInstallScrub</value>
-  </data>
-  <data name="&gt;&gt;btnGameInstallScrub.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnGameInstallScrub.Parent" xml:space="preserve">
-    <value>grpOperations</value>
-  </data>
-  <data name="&gt;&gt;btnGameInstallScrub.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;btnGameInstallExactCopy.Name" xml:space="preserve">
-    <value>btnGameInstallExactCopy</value>
-  </data>
-  <data name="&gt;&gt;btnGameInstallExactCopy.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnGameInstallExactCopy.Parent" xml:space="preserve">
-    <value>grpOperations</value>
-  </data>
-  <data name="&gt;&gt;btnGameInstallExactCopy.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="grpOperations.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 147</value>
-  </data>
-  <data name="grpOperations.Size" type="System.Drawing.Size, System.Drawing">
-    <value>342, 119</value>
-  </data>
-  <data name="grpOperations.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="grpOperations.Text" xml:space="preserve">
-    <value>Operações</value>
-  </data>
-  <data name="&gt;&gt;grpOperations.Name" xml:space="preserve">
-    <value>grpOperations</value>
-  </data>
-  <data name="&gt;&gt;grpOperations.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;grpOperations.Parent" xml:space="preserve">
-    <value>grpDetailsSource</value>
-  </data>
-  <data name="&gt;&gt;grpOperations.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
   <data name="btnGameInstallScrub.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -2221,6 +1630,30 @@
   </data>
   <data name="&gt;&gt;btnGameInstallExactCopy.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="grpOperations.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 147</value>
+  </data>
+  <data name="grpOperations.Size" type="System.Drawing.Size, System.Drawing">
+    <value>342, 119</value>
+  </data>
+  <data name="grpOperations.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="grpOperations.Text" xml:space="preserve">
+    <value>Operações</value>
+  </data>
+  <data name="&gt;&gt;grpOperations.Name" xml:space="preserve">
+    <value>grpOperations</value>
+  </data>
+  <data name="&gt;&gt;grpOperations.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grpOperations.Parent" xml:space="preserve">
+    <value>grpDetailsSource</value>
+  </data>
+  <data name="&gt;&gt;grpOperations.ZOrder" xml:space="preserve">
+    <value>6</value>
   </data>
   <data name="labelGameID.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -2393,6 +1826,30 @@
   <data name="&gt;&gt;tbIDName.ZOrder" xml:space="preserve">
     <value>12</value>
   </data>
+  <data name="grpDetailsSource.Location" type="System.Drawing.Point, System.Drawing">
+    <value>508, 30</value>
+  </data>
+  <data name="grpDetailsSource.Size" type="System.Drawing.Size, System.Drawing">
+    <value>354, 272</value>
+  </data>
+  <data name="grpDetailsSource.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="grpDetailsSource.Text" xml:space="preserve">
+    <value>Detalhes</value>
+  </data>
+  <data name="&gt;&gt;grpDetailsSource.Name" xml:space="preserve">
+    <value>grpDetailsSource</value>
+  </data>
+  <data name="&gt;&gt;grpDetailsSource.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grpDetailsSource.Parent" xml:space="preserve">
+    <value>tabMainFile</value>
+  </data>
+  <data name="&gt;&gt;grpDetailsSource.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
   <data name="dgvSource.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
@@ -2459,36 +1916,6 @@
   <metadata name="cmsMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>812, 13</value>
   </metadata>
-  <data name="cmsMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>237, 198</value>
-  </data>
-  <data name="&gt;&gt;cmsMain.Name" xml:space="preserve">
-    <value>cmsMain</value>
-  </data>
-  <data name="&gt;&gt;cmsMain.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="dgvSource.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 30</value>
-  </data>
-  <data name="dgvSource.Size" type="System.Drawing.Size, System.Drawing">
-    <value>496, 478</value>
-  </data>
-  <data name="dgvSource.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;dgvSource.Name" xml:space="preserve">
-    <value>dgvSource</value>
-  </data>
-  <data name="&gt;&gt;dgvSource.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dgvSource.Parent" xml:space="preserve">
-    <value>tabMainFile</value>
-  </data>
-  <data name="&gt;&gt;dgvSource.ZOrder" xml:space="preserve">
-    <value>13</value>
-  </data>
   <data name="tsmiInfoGame.Size" type="System.Drawing.Size, System.Drawing">
     <value>236, 22</value>
   </data>
@@ -2546,30 +1973,39 @@
   <data name="tsmiSearchOnVGChartz.Text" xml:space="preserve">
     <value>Pesquisar no VGChartz</value>
   </data>
+  <data name="cmsMain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>237, 198</value>
+  </data>
+  <data name="&gt;&gt;cmsMain.Name" xml:space="preserve">
+    <value>cmsMain</value>
+  </data>
+  <data name="&gt;&gt;cmsMain.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="dgvSource.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 30</value>
+  </data>
+  <data name="dgvSource.Size" type="System.Drawing.Size, System.Drawing">
+    <value>496, 478</value>
+  </data>
+  <data name="dgvSource.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;dgvSource.Name" xml:space="preserve">
+    <value>dgvSource</value>
+  </data>
+  <data name="&gt;&gt;dgvSource.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dgvSource.Parent" xml:space="preserve">
+    <value>tabMainFile</value>
+  </data>
+  <data name="&gt;&gt;dgvSource.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
   <metadata name="mstripFile.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>365, 11</value>
   </metadata>
-  <data name="mstripFile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="mstripFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>958, 24</value>
-  </data>
-  <data name="mstripFile.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;mstripFile.Name" xml:space="preserve">
-    <value>mstripFile</value>
-  </data>
-  <data name="&gt;&gt;mstripFile.Type" xml:space="preserve">
-    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;mstripFile.Parent" xml:space="preserve">
-    <value>tabMainFile</value>
-  </data>
-  <data name="&gt;&gt;mstripFile.ZOrder" xml:space="preserve">
-    <value>14</value>
-  </data>
   <data name="tsmiReloadGameList.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAD
@@ -2616,6 +2052,18 @@
   <data name="tsmiClearListSource.Text" xml:space="preserve">
     <value>Limpar Lista</value>
   </data>
+  <data name="tsmiGameListSelectAll.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 22</value>
+  </data>
+  <data name="tsmiGameListSelectAll.Text" xml:space="preserve">
+    <value>Todos</value>
+  </data>
+  <data name="tsmiGameListSelectNone.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 22</value>
+  </data>
+  <data name="tsmiGameListSelectNone.Text" xml:space="preserve">
+    <value>Nenhum</value>
+  </data>
   <data name="tsmiSelectGameList.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAPNJREFUOE+1
@@ -2632,17 +2080,17 @@
   <data name="tsmiSelectGameList.Text" xml:space="preserve">
     <value>Selecionar</value>
   </data>
-  <data name="tsmiGameListSelectAll.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 22</value>
+  <data name="tsmiGameListDeleteAllFiles.Size" type="System.Drawing.Size, System.Drawing">
+    <value>151, 22</value>
   </data>
-  <data name="tsmiGameListSelectAll.Text" xml:space="preserve">
+  <data name="tsmiGameListDeleteAllFiles.Text" xml:space="preserve">
     <value>Todos</value>
   </data>
-  <data name="tsmiGameListSelectNone.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 22</value>
+  <data name="tsmiGameListDeleteSelectedFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>151, 22</value>
   </data>
-  <data name="tsmiGameListSelectNone.Text" xml:space="preserve">
-    <value>Nenhum</value>
+  <data name="tsmiGameListDeleteSelectedFile.Text" xml:space="preserve">
+    <value>Selecionado(s)</value>
   </data>
   <data name="tsmiRemoveGameList.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2663,17 +2111,41 @@
   <data name="tsmiRemoveGameList.Text" xml:space="preserve">
     <value>Apagar</value>
   </data>
-  <data name="tsmiGameListDeleteAllFiles.Size" type="System.Drawing.Size, System.Drawing">
-    <value>151, 22</value>
+  <data name="tsmiGameListHashSHA1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>195, 22</value>
   </data>
-  <data name="tsmiGameListDeleteAllFiles.Text" xml:space="preserve">
-    <value>Todos</value>
+  <data name="tsmiGameListHashSHA1.Text" xml:space="preserve">
+    <value>Verificar selecionado(s)</value>
   </data>
-  <data name="tsmiGameListDeleteSelectedFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>151, 22</value>
+  <data name="tsmiGameListSignatureSHA1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>185, 22</value>
   </data>
-  <data name="tsmiGameListDeleteSelectedFile.Text" xml:space="preserve">
-    <value>Selecionado(s)</value>
+  <data name="tsmiGameListSignatureSHA1.Text" xml:space="preserve">
+    <value>Assinatura SHA-1</value>
+  </data>
+  <data name="tsmiExportTXT.Size" type="System.Drawing.Size, System.Drawing">
+    <value>106, 22</value>
+  </data>
+  <data name="tsmiExportTXT.Text" xml:space="preserve">
+    <value>TXT</value>
+  </data>
+  <data name="tsmiExportHTML.Size" type="System.Drawing.Size, System.Drawing">
+    <value>106, 22</value>
+  </data>
+  <data name="tsmiExportHTML.Text" xml:space="preserve">
+    <value>HTML</value>
+  </data>
+  <data name="tsmiExportCSV.Size" type="System.Drawing.Size, System.Drawing">
+    <value>106, 22</value>
+  </data>
+  <data name="tsmiExportCSV.Text" xml:space="preserve">
+    <value>CSV</value>
+  </data>
+  <data name="exportarListaToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>185, 22</value>
+  </data>
+  <data name="exportarListaToolStripMenuItem.Text" xml:space="preserve">
+    <value>Exportar lista como...</value>
   </data>
   <data name="tsmiToolsGameList.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2696,46 +2168,10 @@
   <data name="tsmiToolsGameList.Text" xml:space="preserve">
     <value>Ferramentas</value>
   </data>
-  <data name="tsmiGameListSignatureSHA1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>185, 22</value>
-  </data>
-  <data name="tsmiGameListSignatureSHA1.Text" xml:space="preserve">
-    <value>Assinatura SHA-1</value>
-  </data>
-  <data name="tsmiGameListHashSHA1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>195, 22</value>
-  </data>
-  <data name="tsmiGameListHashSHA1.Text" xml:space="preserve">
-    <value>Verificar selecionado(s)</value>
-  </data>
-  <data name="exportarListaToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>185, 22</value>
-  </data>
-  <data name="exportarListaToolStripMenuItem.Text" xml:space="preserve">
-    <value>Exportar lista como...</value>
-  </data>
-  <data name="tsmiExportTXT.Size" type="System.Drawing.Size, System.Drawing">
-    <value>106, 22</value>
-  </data>
-  <data name="tsmiExportTXT.Text" xml:space="preserve">
-    <value>TXT</value>
-  </data>
-  <data name="tsmiExportHTML.Size" type="System.Drawing.Size, System.Drawing">
-    <value>106, 22</value>
-  </data>
-  <data name="tsmiExportHTML.Text" xml:space="preserve">
-    <value>HTML</value>
-  </data>
-  <data name="tsmiExportCSV.Size" type="System.Drawing.Size, System.Drawing">
-    <value>106, 22</value>
-  </data>
-  <data name="tsmiExportCSV.Text" xml:space="preserve">
-    <value>CSV</value>
-  </data>
   <data name="tsmiMoreDirectories.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAATr1AAE69QGXCHZXAAABFklE
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAATr0AAE69AFFT5SzAAABFklE
         QVRYR+3XsY4BQRzH8aWhEZ0oLrSS8yquO9UVp0OvoLmX4B7iPMU9g2uRw1tI8P0VkwgzS5ixivkln0R2
         1///N0t2JDHPmiJeUHOoo4o8vKeJKZb4d1hhhha8poAf7K+0htchtOxz2Jq5aDVG6KLn8IkGckiN7q+W
         2NboHjss8IbUhBrA+EUZzoQeQLXVw5k4QBwgDhAHiANU8Afbm31QbfVIzRe2sBW4h2oOcTEl6Pk9wbfD
@@ -2749,179 +2185,53 @@
   <data name="tsmiMoreDirectories.Text" xml:space="preserve">
     <value>Mais pastas</value>
   </data>
-  <metadata name="mstripDisc.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>577, 11</value>
-  </metadata>
-  <data name="&gt;&gt;lblAbortDestination.Name" xml:space="preserve">
-    <value>lblAbortDestination</value>
+  <data name="mstripFile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
   </data>
-  <data name="&gt;&gt;lblAbortDestination.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="mstripFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>961, 24</value>
   </data>
-  <data name="&gt;&gt;lblAbortDestination.Parent" xml:space="preserve">
-    <value>tabMainDisc</value>
-  </data>
-  <data name="&gt;&gt;lblAbortDestination.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;pbDestination.Name" xml:space="preserve">
-    <value>pbDestination</value>
-  </data>
-  <data name="&gt;&gt;pbDestination.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ProgressBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pbDestination.Parent" xml:space="preserve">
-    <value>tabMainDisc</value>
-  </data>
-  <data name="&gt;&gt;pbDestination.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;btnAbortDestination.Name" xml:space="preserve">
-    <value>btnAbortDestination</value>
-  </data>
-  <data name="&gt;&gt;btnAbortDestination.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnAbortDestination.Parent" xml:space="preserve">
-    <value>tabMainDisc</value>
-  </data>
-  <data name="&gt;&gt;btnAbortDestination.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;lblDestinationCount.Name" xml:space="preserve">
-    <value>lblDestinationCount</value>
-  </data>
-  <data name="&gt;&gt;lblDestinationCount.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblDestinationCount.Parent" xml:space="preserve">
-    <value>tabMainDisc</value>
-  </data>
-  <data name="&gt;&gt;lblDestinationCount.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;label8.Name" xml:space="preserve">
-    <value>label8</value>
-  </data>
-  <data name="&gt;&gt;label8.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label8.Parent" xml:space="preserve">
-    <value>tabMainDisc</value>
-  </data>
-  <data name="&gt;&gt;label8.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;lblSpaceAvailabeOnDevice.Name" xml:space="preserve">
-    <value>lblSpaceAvailabeOnDevice</value>
-  </data>
-  <data name="&gt;&gt;lblSpaceAvailabeOnDevice.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblSpaceAvailabeOnDevice.Parent" xml:space="preserve">
-    <value>tabMainDisc</value>
-  </data>
-  <data name="&gt;&gt;lblSpaceAvailabeOnDevice.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;lblSpaceTotalOnDevice.Name" xml:space="preserve">
-    <value>lblSpaceTotalOnDevice</value>
-  </data>
-  <data name="&gt;&gt;lblSpaceTotalOnDevice.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblSpaceTotalOnDevice.Parent" xml:space="preserve">
-    <value>tabMainDisc</value>
-  </data>
-  <data name="&gt;&gt;lblSpaceTotalOnDevice.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;label3.Name" xml:space="preserve">
-    <value>label3</value>
-  </data>
-  <data name="&gt;&gt;label3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
-    <value>tabMainDisc</value>
-  </data>
-  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;label2.Name" xml:space="preserve">
-    <value>label2</value>
-  </data>
-  <data name="&gt;&gt;label2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
-    <value>tabMainDisc</value>
-  </data>
-  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;grpDetailsDestiny.Name" xml:space="preserve">
-    <value>grpDetailsDestiny</value>
-  </data>
-  <data name="&gt;&gt;grpDetailsDestiny.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;grpDetailsDestiny.Parent" xml:space="preserve">
-    <value>tabMainDisc</value>
-  </data>
-  <data name="&gt;&gt;grpDetailsDestiny.ZOrder" xml:space="preserve">
+  <data name="mstripFile.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
   </data>
-  <data name="&gt;&gt;dgvDestination.Name" xml:space="preserve">
-    <value>dgvDestination</value>
+  <data name="&gt;&gt;mstripFile.Name" xml:space="preserve">
+    <value>mstripFile</value>
   </data>
-  <data name="&gt;&gt;dgvDestination.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dgvDestination.Parent" xml:space="preserve">
-    <value>tabMainDisc</value>
-  </data>
-  <data name="&gt;&gt;dgvDestination.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;mstripDisc.Name" xml:space="preserve">
-    <value>mstripDisc</value>
-  </data>
-  <data name="&gt;&gt;mstripDisc.Type" xml:space="preserve">
+  <data name="&gt;&gt;mstripFile.Type" xml:space="preserve">
     <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;mstripDisc.Parent" xml:space="preserve">
-    <value>tabMainDisc</value>
+  <data name="&gt;&gt;mstripFile.Parent" xml:space="preserve">
+    <value>tabMainFile</value>
   </data>
-  <data name="&gt;&gt;mstripDisc.ZOrder" xml:space="preserve">
-    <value>11</value>
+  <data name="&gt;&gt;mstripFile.ZOrder" xml:space="preserve">
+    <value>14</value>
   </data>
-  <data name="tabMainDisc.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="tabMainFile.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
   </data>
-  <data name="tabMainDisc.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="tabMainFile.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
-  <data name="tabMainDisc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>964, 514</value>
+  <data name="tabMainFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>967, 514</value>
   </data>
-  <data name="tabMainDisc.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="tabMainFile.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
-  <data name="tabMainDisc.Text" xml:space="preserve">
-    <value>Arquivos (Destino)</value>
+  <data name="tabMainFile.Text" xml:space="preserve">
+    <value>Arquivos (Origem)</value>
   </data>
-  <data name="&gt;&gt;tabMainDisc.Name" xml:space="preserve">
-    <value>tabMainDisc</value>
+  <data name="&gt;&gt;tabMainFile.Name" xml:space="preserve">
+    <value>tabMainFile</value>
   </data>
-  <data name="&gt;&gt;tabMainDisc.Type" xml:space="preserve">
+  <data name="&gt;&gt;tabMainFile.Type" xml:space="preserve">
     <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tabMainDisc.Parent" xml:space="preserve">
+  <data name="&gt;&gt;tabMainFile.Parent" xml:space="preserve">
     <value>tabControlMain</value>
   </data>
-  <data name="&gt;&gt;tabMainDisc.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="&gt;&gt;tabMainFile.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="lblAbortDestination.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -2994,6 +2304,29 @@
   </data>
   <data name="btnAbortDestination.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
+  </data>
+  <data name="btnAbortDestination.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAAOsAAADrASts18IAAAAZdEVYdFNvZnR3YXJlAHd3dy5pbmtzY2FwZS5vcmeb7jwa
+        AAADv0lEQVRYR82XS0xTQRSG28hDaJUCbSktLS1FlIq1t60JIMjDaGI0GokkLiTRxOjenRr3ujAxcePK
+        hJWamBgVlCgqKggKvlAoxkcT40IE8QWJj8XvORdvvX3QTo0Ym/zp7cyZ+b85Z6b3Xg19TIszFlzK0Gq/
+        0TX+hdhLp9V20rVRw+atRQXfn9WtxJsGaV70sn4leoIeSItysb/Mit7KcqzLzWWIDg3TsPn02lXzrlPe
+        ctTlL8JknYTzNhtn4itlQSNTJhrwt3VRWkpZ0GFqjR9XS0qUkvynABNNAQzXeuPaU+kLaai6Cp+b4/uE
+        AV7V++ApMCA3KwsHljii+pLpQ3MQW0osyKFxG21FmGoKRvULAYRl83zsamvD6OgonMXF2OcuiZookdh8
+        s9WMGr8f4XAYDTU1WE+/36sghAA22SzY2bYD09PTmJmZwcjICByWIhwot0diYiWb04pXB4MYHx+Xx01M
+        TKCaYA6p4IUA9rhsqA0EIhOlgkhkroyxF5lxwuOKxAoBfKIJW+0WVEtS1IRjY2Oz5Sj7vSJ12tWxoVBI
+        jo3dP8KbUAQiXXOWMAArWWq5HBWGPOqLLxWnfa6TkxYAKwIRsyd4l7e3t2NycjLGnPZJkmObNgCLy7GN
+        ylHjjy6HWsnSrtYfAbCUTGxvacGXqSm8GxpCuKsLox2deHL5ClzFVuwpKMDd0lIMOBwYKHVg0OnEfbcL
+        wxVuhJZX4JXkwZnKMvjojpg2wNs6H9abCrGpqRkPR57h4diLKDlpst35+bPmSXTcbIZXlyMG8Jn+wV4H
+        qzBY7kJjXh58y6vQe/9xnDnr8o1bsJnMaEsBIQTwsSGA595luOcsRa/djiYyl6pWoO/BcMSwu7cfh48e
+        w8Cjp5G2ju4eWAqN2E2lSGTOSgrwie5+L9j4Vx3ZvDHPAGmFN8qcjYqNRjh1euqLBksFMSdAKODBkMsZ
+        CbxDWmcwxKVdSTUbiMSozVlzAvAPJSidiVPGFhZGYllCANvIwBdTcyXtiVaVrFQWAjikghACWEMr2rq1
+        BQ9Cz1OaK0oE0f/oiZyZvaqTIQTQRdduvR4tBNF5rWfOesZKXY7uvgGs8gdQSyfoNsEpMUIArEv0yMwQ
+        CzMzhcwVyceWILJpXD19q81ZwgCsmzT4rNUa155K/aTTdF/gjMT2pQUwH/o/AbK02h8XqOaJBvxtHTGZ
+        aGPq6dXM9/vVzJyZcW2DXic3MNV86BztpZP0sOLJzsbBMhtuV7qVl9OLXAKjKTPjejZlQk7JPxCvfNZc
+        Y/wJD95UNOzjd/IAAAAASUVORK5CYII=
+</value>
   </data>
   <data name="btnAbortDestination.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -3241,174 +2574,6 @@
   <data name="grpDetailsDestiny.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
-  <data name="&gt;&gt;lblTypeDiscDest.Name" xml:space="preserve">
-    <value>lblTypeDiscDest</value>
-  </data>
-  <data name="&gt;&gt;lblTypeDiscDest.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblTypeDiscDest.Parent" xml:space="preserve">
-    <value>grpDetailsDestiny</value>
-  </data>
-  <data name="&gt;&gt;lblTypeDiscDest.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;lblMakerCodeDest.Name" xml:space="preserve">
-    <value>lblMakerCodeDest</value>
-  </data>
-  <data name="&gt;&gt;lblMakerCodeDest.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblMakerCodeDest.Parent" xml:space="preserve">
-    <value>grpDetailsDestiny</value>
-  </data>
-  <data name="&gt;&gt;lblMakerCodeDest.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;tbIDMakerCodeDest.Name" xml:space="preserve">
-    <value>tbIDMakerCodeDest</value>
-  </data>
-  <data name="&gt;&gt;tbIDMakerCodeDest.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tbIDMakerCodeDest.Parent" xml:space="preserve">
-    <value>grpDetailsDestiny</value>
-  </data>
-  <data name="&gt;&gt;tbIDMakerCodeDest.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;tbDestDiscID.Name" xml:space="preserve">
-    <value>tbDestDiscID</value>
-  </data>
-  <data name="&gt;&gt;tbDestDiscID.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tbDestDiscID.Parent" xml:space="preserve">
-    <value>grpDetailsDestiny</value>
-  </data>
-  <data name="&gt;&gt;tbDestDiscID.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;lblDestinationDiscID.Name" xml:space="preserve">
-    <value>lblDestinationDiscID</value>
-  </data>
-  <data name="&gt;&gt;lblDestinationDiscID.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblDestinationDiscID.Parent" xml:space="preserve">
-    <value>grpDetailsDestiny</value>
-  </data>
-  <data name="&gt;&gt;lblDestinationDiscID.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;pbWebGameDiscID.Name" xml:space="preserve">
-    <value>pbWebGameDiscID</value>
-  </data>
-  <data name="&gt;&gt;pbWebGameDiscID.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pbWebGameDiscID.Parent" xml:space="preserve">
-    <value>grpDetailsDestiny</value>
-  </data>
-  <data name="&gt;&gt;pbWebGameDiscID.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;label4.Name" xml:space="preserve">
-    <value>label4</value>
-  </data>
-  <data name="&gt;&gt;label4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
-    <value>grpDetailsDestiny</value>
-  </data>
-  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;label5.Name" xml:space="preserve">
-    <value>label5</value>
-  </data>
-  <data name="&gt;&gt;label5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
-    <value>grpDetailsDestiny</value>
-  </data>
-  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;label6.Name" xml:space="preserve">
-    <value>label6</value>
-  </data>
-  <data name="&gt;&gt;label6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label6.Parent" xml:space="preserve">
-    <value>grpDetailsDestiny</value>
-  </data>
-  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;tbIDGameDisc.Name" xml:space="preserve">
-    <value>tbIDGameDisc</value>
-  </data>
-  <data name="&gt;&gt;tbIDGameDisc.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tbIDGameDisc.Parent" xml:space="preserve">
-    <value>grpDetailsDestiny</value>
-  </data>
-  <data name="&gt;&gt;tbIDGameDisc.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;tbIDRegionDisc.Name" xml:space="preserve">
-    <value>tbIDRegionDisc</value>
-  </data>
-  <data name="&gt;&gt;tbIDRegionDisc.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tbIDRegionDisc.Parent" xml:space="preserve">
-    <value>grpDetailsDestiny</value>
-  </data>
-  <data name="&gt;&gt;tbIDRegionDisc.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;tbIDNameDisc.Name" xml:space="preserve">
-    <value>tbIDNameDisc</value>
-  </data>
-  <data name="&gt;&gt;tbIDNameDisc.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tbIDNameDisc.Parent" xml:space="preserve">
-    <value>grpDetailsDestiny</value>
-  </data>
-  <data name="&gt;&gt;tbIDNameDisc.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="grpDetailsDestiny.Location" type="System.Drawing.Point, System.Drawing">
-    <value>508, 30</value>
-  </data>
-  <data name="grpDetailsDestiny.Size" type="System.Drawing.Size, System.Drawing">
-    <value>354, 142</value>
-  </data>
-  <data name="grpDetailsDestiny.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="grpDetailsDestiny.Text" xml:space="preserve">
-    <value>Detalhes</value>
-  </data>
-  <data name="&gt;&gt;grpDetailsDestiny.Name" xml:space="preserve">
-    <value>grpDetailsDestiny</value>
-  </data>
-  <data name="&gt;&gt;grpDetailsDestiny.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;grpDetailsDestiny.Parent" xml:space="preserve">
-    <value>tabMainDisc</value>
-  </data>
-  <data name="&gt;&gt;grpDetailsDestiny.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
   <data name="lblTypeDiscDest.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -3546,6 +2711,44 @@
   </data>
   <data name="pbWebGameDiscID.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
+  </data>
+  <data name="pbWebGameDiscID.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAB
+        iQAAAYkBni4RNQAAB4JJREFUeF7tm1lsVUUYx0s0LtEHY4wPJm7xwUSjMT74oE8st7Qs3dhKAWmhQIGw
+        b6mFtsheKG0JW5u2QIEGaFgKhLY0ZSlEHmxiICpRKAkQxUeDoiEKx+83zBzntvdeetvbcqrnS/65534z
+        d+b7f2fmO3O+mRvniy+++GLLmDFjnoqPj39v6NCh6fKZ6SF8LvhsyJAhL2hTYyuDBg16VkgXCe4JHA/j
+        gaApEAi8pU3vuSQmJr4h3v2eDoYNG+bk5OQ4a9eudTZu3OgZFBUVOYsXL3ZSU1ONI34XpGoKPZIBQr6F
+        RmfMmOG0tbU5t2/f9iza29udDRs2GCfcTUhIeF3z6J5II1k0NmHCBOfatWuqk0uXLjlNTU3OrVu3OhkA
+        WltbnYsXL4YsA+fOnXMuX74csixWWLdunXFCvabSPZG7X0dD9fX1ivC8efNMw86kSZOCiFy/ft2ZPn26
+        W85UuXHjhlt+5coVZ8qUKW758uXL3bJYA1tGjhxJP39mZGQ8relEL+KAdoy9evWq09jYqAyn4XHjxqnr
+        srIyt9O9e/cqHfNw/Pjx6vrgwYNuOXXRjR49WsUSrs+fP++WxxqzZ89WfQg+0HSiFxpISUlRDZaXl6sG
+        ubMFBQXqeuHChW6HK1euVDrKCgsL1fWaNWs6GbR69Wr1O66rqqrc8ljD2CM3MVnTiV5owDiAISxBRTVq
+        cPToUbfDM2fOBJUB+w7v27dP6UwbfNKmKY81LAekaDrRCw0YBwBiwdy5c53Jkyc7u3btcm7evBnUKSSz
+        srKcqVOnqmu7jHiwbds2RxZTKlbU1dUFlccaveKAWCDc0yPWiKkDuHv9DSYO9dgB/R3igBxNJ3oxjSQn
+        J/c7mEetOCBL04leaGDEiBHqGd/fMHPmTOOAnk0B3wG+A3wHhOzA6/Ad4DvAd4DvAN8B/ycH7N69W2Wr
+        ly5dqpIvvMRhv6BNnFAtn/mBQOAToTXgEbsuSH9wwJYtWxRh7NSEH4c74pASwauaZnjhB151QGVlpTNn
+        zpwgcqTrSIuTvjtw4IBz+PBh9UldUnEkcq36vyUkJBQKntd0OwsVveiA4uJik/XFvofr169XSVvS8Y8D
+        WS02USxHfC2j4TVNOVi86IBVq1Y5iYmJyvhFixZ1mXhHMDomTpxonPCT4GNN+1/xmgPIMmuD1eZHKGLR
+        gESutdfxC9uAmvoj8ZIDtm/froY7NpWUlIQkFArsRJGgZdoArtGZ8gsXLjgLFixQTpCp8E3QDrNXHFBT
+        U+NutvCYswlGAmTNJo4NdLW1tW49HEKmmzJxQpmm7x0HmAxvRkaGc/bs2SCS4bB582aXMGl6ngKAa6Nn
+        7WDqnzhxwsSW++KENz3lgLFjxyqDKyoqgkiGA1OE+my+lJaWdirftGmTKh81apTT3Nzs6lesWKH0girP
+        OMBsd7NDzXy1iYRCdXW1S37Hjh0h6wCzVbd161ZXx663TqbeU+sDLzjARGnumk0gHCCUlJQURJ4tOtYK
+        +/fvD6pHu9x1owOzZs1SepkGSZ5wQHp6ujKI57ZtaEecPn3aHSH2SIG8WTHOnz/f1bM6RLds2TJXB6zY
+        UYkD/h4+fHhIw/oCBCmM4cUm0vBnnlOPIGfrbfJsyx8/ftwtM/OdR6P9m0OHDim9oBUHfMuXnTt3hjSw
+        t0HQo39WbLaRNgx55jwbtkYfifyRI0dUxAfscBs9aGhoMA74AQfU8IXTHKEM7G2YeZqdnR1kpAE3hvKO
+        AS8Sea7RUcbK0ugNOOJDmeDXOGlYPh/FgScxCnjVpf9p06Z1MpQ7RbCjvDvkqWPOM9mwzjncMY/CChR0
+        RsKBVVkoY3sDnCChb84UdDSUUUlZbm6uq4tEHjCSKKMOde0yA94WqcOyWDkgEAi8KF9qUQKek0Rmnst9
+        AYY3/drrd2DIMJ+NzqzpQ5EHxAuO8IQjD/bs2aPaEDQoBxgRRZqgVcAhRFOpz2AHOGCGMkPW6BgpwCZ/
+        6tQpNZUikbaRn5+v2hXH52nqwcJ5YRkV70qlj/oIBQK1QLENJfuDnoyP0bW0tASNFHvO2y8/kWBeumTU
+        v68pP1kZOHDgM2LQHYyyhzvPfHQdHWPQlYDXEcQd6gt+1N17Q+RufIFhS5YscY1l6JtXXVZ4DHX0ECUn
+        aM4NRwp4NlhoZWZmGgd0/1BFb8jgwYNfFqPusXDhdJkxmoOYvNFpo520tDT3ZAhgmdvVuW8euYLvmOa6
+        a++IjIIvMZBl8bFjx1zDeZ3lUWjeGUiW8oTgrdAmGAnEEZ0LeCDxLV536Tnh5DobHGpunzx5shMRkiVd
+        eWW2QVxh5NAuU0335U1haIqR6gA30brjOj5asNCSVa7KM0q7tbobbwtPBTG2EaNZJDHPWRaHIhgOBEx+
+        RxsapZ6c9+FE5vlzLFTE8LsQkFf2h+QNCYr2wsgGwZBlfF5enh0o/xBnZutm+59I4HqFuye4rwkpkEMk
+        5UVwJKPE+WWzk6TxlxAvF4TeEepvIpH7bSFVLGgW/KxJdgR/qPpKSOeK497RP/1vijjkJSH7qYC/9wVk
+        unyIThf74osvvnRB4uL+AYkUsxN7nt/IAAAAAElFTkSuQmCC
+</value>
   </data>
   <data name="pbWebGameDiscID.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -3751,50 +2954,32 @@
   <data name="&gt;&gt;tbIDNameDisc.ZOrder" xml:space="preserve">
     <value>11</value>
   </data>
-  <metadata name="dgvMainDiscCheck.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="clmDiscTitle.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="clmDiscID.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="clmDiscRegion.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="clmDiscExtension.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="clmDiscSize.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="clmDiscPath.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="dgvDestination.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
+  <data name="grpDetailsDestiny.Location" type="System.Drawing.Point, System.Drawing">
+    <value>508, 30</value>
   </data>
-  <data name="dgvDestination.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 36</value>
+  <data name="grpDetailsDestiny.Size" type="System.Drawing.Size, System.Drawing">
+    <value>354, 142</value>
   </data>
-  <data name="dgvDestination.Size" type="System.Drawing.Size, System.Drawing">
-    <value>496, 472</value>
+  <data name="grpDetailsDestiny.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
   </data>
-  <data name="dgvDestination.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="grpDetailsDestiny.Text" xml:space="preserve">
+    <value>Detalhes</value>
   </data>
-  <data name="&gt;&gt;dgvDestination.Name" xml:space="preserve">
-    <value>dgvDestination</value>
+  <data name="&gt;&gt;grpDetailsDestiny.Name" xml:space="preserve">
+    <value>grpDetailsDestiny</value>
   </data>
-  <data name="&gt;&gt;dgvDestination.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;grpDetailsDestiny.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;dgvDestination.Parent" xml:space="preserve">
+  <data name="&gt;&gt;grpDetailsDestiny.Parent" xml:space="preserve">
     <value>tabMainDisc</value>
   </data>
-  <data name="&gt;&gt;dgvDestination.ZOrder" xml:space="preserve">
-    <value>10</value>
+  <data name="&gt;&gt;grpDetailsDestiny.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="dgvDestination.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
   </data>
   <metadata name="dgvMainDiscCheck.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -3856,30 +3041,30 @@
   <data name="clmDiscPath.MinimumWidth" type="System.Int32, mscorlib">
     <value>100</value>
   </data>
+  <data name="dgvDestination.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 36</value>
+  </data>
+  <data name="dgvDestination.Size" type="System.Drawing.Size, System.Drawing">
+    <value>496, 472</value>
+  </data>
+  <data name="dgvDestination.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;dgvDestination.Name" xml:space="preserve">
+    <value>dgvDestination</value>
+  </data>
+  <data name="&gt;&gt;dgvDestination.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dgvDestination.Parent" xml:space="preserve">
+    <value>tabMainDisc</value>
+  </data>
+  <data name="&gt;&gt;dgvDestination.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
   <metadata name="mstripDisc.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>577, 11</value>
   </metadata>
-  <data name="mstripDisc.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="mstripDisc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>958, 27</value>
-  </data>
-  <data name="mstripDisc.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;mstripDisc.Name" xml:space="preserve">
-    <value>mstripDisc</value>
-  </data>
-  <data name="&gt;&gt;mstripDisc.Type" xml:space="preserve">
-    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;mstripDisc.Parent" xml:space="preserve">
-    <value>tabMainDisc</value>
-  </data>
-  <data name="&gt;&gt;mstripDisc.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
   <data name="tscbDiscDrive.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Standard</value>
   </data>
@@ -3907,12 +3092,6 @@
   <data name="tsmiClearListDestination.Text" xml:space="preserve">
     <value>Limpar Lista</value>
   </data>
-  <data name="tsmiSelectGameDisc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>73, 23</value>
-  </data>
-  <data name="tsmiSelectGameDisc.Text" xml:space="preserve">
-    <value>Selecionar</value>
-  </data>
   <data name="tsmiGameDiscSelectAll.Size" type="System.Drawing.Size, System.Drawing">
     <value>121, 22</value>
   </data>
@@ -3925,11 +3104,11 @@
   <data name="tsmiGameDiscSelectNone.Text" xml:space="preserve">
     <value>Nenhum</value>
   </data>
-  <data name="tsmiRemoveGameDisc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>57, 23</value>
+  <data name="tsmiSelectGameDisc.Size" type="System.Drawing.Size, System.Drawing">
+    <value>73, 23</value>
   </data>
-  <data name="tsmiRemoveGameDisc.Text" xml:space="preserve">
-    <value>Apagar</value>
+  <data name="tsmiSelectGameDisc.Text" xml:space="preserve">
+    <value>Selecionar</value>
   </data>
   <data name="tsmiGameDiscDeleteAllFiles.Size" type="System.Drawing.Size, System.Drawing">
     <value>151, 22</value>
@@ -3943,11 +3122,11 @@
   <data name="tsmiGameDiscDeleteSelectedFile.Text" xml:space="preserve">
     <value>Selecionado(s)</value>
   </data>
-  <data name="tsmiToolsGameDisc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>84, 23</value>
+  <data name="tsmiRemoveGameDisc.Size" type="System.Drawing.Size, System.Drawing">
+    <value>57, 23</value>
   </data>
-  <data name="tsmiToolsGameDisc.Text" xml:space="preserve">
-    <value>Ferramentas</value>
+  <data name="tsmiRemoveGameDisc.Text" xml:space="preserve">
+    <value>Apagar</value>
   </data>
   <data name="tsmiGameDiscExportList.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -3961,12 +3140,6 @@
   <data name="toolStripMenuItem3.Size" type="System.Drawing.Size, System.Drawing">
     <value>187, 6</value>
   </data>
-  <data name="tsmiGameDiscSignatureSHA1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 22</value>
-  </data>
-  <data name="tsmiGameDiscSignatureSHA1.Text" xml:space="preserve">
-    <value>Assinatura SHA-1</value>
-  </data>
   <data name="tsmiGameDiscAllHashSHA1.Size" type="System.Drawing.Size, System.Drawing">
     <value>195, 22</value>
   </data>
@@ -3979,11 +3152,11 @@
   <data name="tsmiGameDiscHashSHA1.Text" xml:space="preserve">
     <value>Verificar selecionado(s)</value>
   </data>
-  <data name="tsmiGameDiscSignatureMD5.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="tsmiGameDiscSignatureSHA1.Size" type="System.Drawing.Size, System.Drawing">
     <value>190, 22</value>
   </data>
-  <data name="tsmiGameDiscSignatureMD5.Text" xml:space="preserve">
-    <value>Assinatura MD5</value>
+  <data name="tsmiGameDiscSignatureSHA1.Text" xml:space="preserve">
+    <value>Assinatura SHA-1</value>
   </data>
   <data name="tsmiGameDiscAllHashMD5.Size" type="System.Drawing.Size, System.Drawing">
     <value>199, 22</value>
@@ -4012,95 +3185,65 @@
   <data name="tsmiGameDiscRecalculateSelectedGameMD5.Text" xml:space="preserve">
     <value>Recalcular selecionados</value>
   </data>
-  <metadata name="mstripDatabase.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>675, 13</value>
-  </metadata>
-  <data name="&gt;&gt;lblDatabaseTotal.Name" xml:space="preserve">
-    <value>lblDatabaseTotal</value>
+  <data name="tsmiGameDiscSignatureMD5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>190, 22</value>
   </data>
-  <data name="&gt;&gt;lblDatabaseTotal.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="tsmiGameDiscSignatureMD5.Text" xml:space="preserve">
+    <value>Assinatura MD5</value>
   </data>
-  <data name="&gt;&gt;lblDatabaseTotal.Parent" xml:space="preserve">
-    <value>tabMainDatabase</value>
+  <data name="tsmiToolsGameDisc.Size" type="System.Drawing.Size, System.Drawing">
+    <value>84, 23</value>
   </data>
-  <data name="&gt;&gt;lblDatabaseTotal.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="tsmiToolsGameDisc.Text" xml:space="preserve">
+    <value>Ferramentas</value>
   </data>
-  <data name="&gt;&gt;cbFilterDatabase.Name" xml:space="preserve">
-    <value>cbFilterDatabase</value>
+  <data name="mstripDisc.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
   </data>
-  <data name="&gt;&gt;cbFilterDatabase.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="mstripDisc.Size" type="System.Drawing.Size, System.Drawing">
+    <value>961, 27</value>
   </data>
-  <data name="&gt;&gt;cbFilterDatabase.Parent" xml:space="preserve">
-    <value>tabMainDatabase</value>
-  </data>
-  <data name="&gt;&gt;cbFilterDatabase.ZOrder" xml:space="preserve">
+  <data name="mstripDisc.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;label7.Name" xml:space="preserve">
-    <value>label7</value>
+  <data name="&gt;&gt;mstripDisc.Name" xml:space="preserve">
+    <value>mstripDisc</value>
   </data>
-  <data name="&gt;&gt;label7.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label7.Parent" xml:space="preserve">
-    <value>tabMainDatabase</value>
-  </data>
-  <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;lvDatabase.Name" xml:space="preserve">
-    <value>lvDatabase</value>
-  </data>
-  <data name="&gt;&gt;lvDatabase.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lvDatabase.Parent" xml:space="preserve">
-    <value>tabMainDatabase</value>
-  </data>
-  <data name="&gt;&gt;lvDatabase.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;mstripDatabase.Name" xml:space="preserve">
-    <value>mstripDatabase</value>
-  </data>
-  <data name="&gt;&gt;mstripDatabase.Type" xml:space="preserve">
+  <data name="&gt;&gt;mstripDisc.Type" xml:space="preserve">
     <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;mstripDatabase.Parent" xml:space="preserve">
-    <value>tabMainDatabase</value>
+  <data name="&gt;&gt;mstripDisc.Parent" xml:space="preserve">
+    <value>tabMainDisc</value>
   </data>
-  <data name="&gt;&gt;mstripDatabase.ZOrder" xml:space="preserve">
-    <value>4</value>
+  <data name="&gt;&gt;mstripDisc.ZOrder" xml:space="preserve">
+    <value>11</value>
   </data>
-  <data name="tabMainDatabase.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="tabMainDisc.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
   </data>
-  <data name="tabMainDatabase.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="tabMainDisc.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
-  <data name="tabMainDatabase.Size" type="System.Drawing.Size, System.Drawing">
-    <value>964, 514</value>
+  <data name="tabMainDisc.Size" type="System.Drawing.Size, System.Drawing">
+    <value>967, 514</value>
   </data>
-  <data name="tabMainDatabase.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+  <data name="tabMainDisc.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
-  <data name="tabMainDatabase.Text" xml:space="preserve">
-    <value>Base de Dados</value>
+  <data name="tabMainDisc.Text" xml:space="preserve">
+    <value>Arquivos (Destino)</value>
   </data>
-  <data name="&gt;&gt;tabMainDatabase.Name" xml:space="preserve">
-    <value>tabMainDatabase</value>
+  <data name="&gt;&gt;tabMainDisc.Name" xml:space="preserve">
+    <value>tabMainDisc</value>
   </data>
-  <data name="&gt;&gt;tabMainDatabase.Type" xml:space="preserve">
+  <data name="&gt;&gt;tabMainDisc.Type" xml:space="preserve">
     <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tabMainDatabase.Parent" xml:space="preserve">
+  <data name="&gt;&gt;tabMainDisc.Parent" xml:space="preserve">
     <value>tabControlMain</value>
   </data>
-  <data name="&gt;&gt;tabMainDatabase.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="&gt;&gt;tabMainDisc.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="lblDatabaseTotal.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
@@ -4264,11 +3407,23 @@
   <metadata name="mstripDatabase.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>675, 13</value>
   </metadata>
+  <data name="tsmiDatabaseUpdateGameTDB.Size" type="System.Drawing.Size, System.Drawing">
+    <value>207, 22</value>
+  </data>
+  <data name="tsmiDatabaseUpdateGameTDB.Text" xml:space="preserve">
+    <value>Atualização do GameTDB</value>
+  </data>
+  <data name="tsmiToolDatabase.Size" type="System.Drawing.Size, System.Drawing">
+    <value>84, 20</value>
+  </data>
+  <data name="tsmiToolDatabase.Text" xml:space="preserve">
+    <value>Ferramentas</value>
+  </data>
   <data name="mstripDatabase.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 3</value>
   </data>
   <data name="mstripDatabase.Size" type="System.Drawing.Size, System.Drawing">
-    <value>958, 24</value>
+    <value>961, 24</value>
   </data>
   <data name="mstripDatabase.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -4285,71 +3440,32 @@
   <data name="&gt;&gt;mstripDatabase.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="tsmiToolDatabase.Size" type="System.Drawing.Size, System.Drawing">
-    <value>84, 20</value>
-  </data>
-  <data name="tsmiToolDatabase.Text" xml:space="preserve">
-    <value>Ferramentas</value>
-  </data>
-  <data name="tsmiDatabaseUpdateGameTDB.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 22</value>
-  </data>
-  <data name="tsmiDatabaseUpdateGameTDB.Text" xml:space="preserve">
-    <value>Atualização do GameTDB</value>
-  </data>
-  <metadata name="mstripLog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>474, 7</value>
-  </metadata>
-  <data name="&gt;&gt;tbLog.Name" xml:space="preserve">
-    <value>tbLog</value>
-  </data>
-  <data name="&gt;&gt;tbLog.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tbLog.Parent" xml:space="preserve">
-    <value>tabMainLog</value>
-  </data>
-  <data name="&gt;&gt;tbLog.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;mstripLog.Name" xml:space="preserve">
-    <value>mstripLog</value>
-  </data>
-  <data name="&gt;&gt;mstripLog.Type" xml:space="preserve">
-    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;mstripLog.Parent" xml:space="preserve">
-    <value>tabMainLog</value>
-  </data>
-  <data name="&gt;&gt;mstripLog.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="tabMainLog.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="tabMainDatabase.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
   </data>
-  <data name="tabMainLog.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="tabMainDatabase.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
-  <data name="tabMainLog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>964, 514</value>
+  <data name="tabMainDatabase.Size" type="System.Drawing.Size, System.Drawing">
+    <value>967, 514</value>
   </data>
-  <data name="tabMainLog.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+  <data name="tabMainDatabase.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
   </data>
-  <data name="tabMainLog.Text" xml:space="preserve">
-    <value>Log</value>
+  <data name="tabMainDatabase.Text" xml:space="preserve">
+    <value>Base de Dados</value>
   </data>
-  <data name="&gt;&gt;tabMainLog.Name" xml:space="preserve">
-    <value>tabMainLog</value>
+  <data name="&gt;&gt;tabMainDatabase.Name" xml:space="preserve">
+    <value>tabMainDatabase</value>
   </data>
-  <data name="&gt;&gt;tabMainLog.Type" xml:space="preserve">
+  <data name="&gt;&gt;tabMainDatabase.Type" xml:space="preserve">
     <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tabMainLog.Parent" xml:space="preserve">
+  <data name="&gt;&gt;tabMainDatabase.Parent" xml:space="preserve">
     <value>tabControlMain</value>
   </data>
-  <data name="&gt;&gt;tabMainLog.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="&gt;&gt;tabMainDatabase.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="tbLog.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -4384,11 +3500,32 @@
   <metadata name="mstripLog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>474, 7</value>
   </metadata>
+  <data name="tsmiClearLog.Size" type="System.Drawing.Size, System.Drawing">
+    <value>147, 22</value>
+  </data>
+  <data name="tsmiClearLog.Text" xml:space="preserve">
+    <value>Limpar log</value>
+  </data>
+  <data name="toolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>144, 6</value>
+  </data>
+  <data name="tsmiExportLog.Size" type="System.Drawing.Size, System.Drawing">
+    <value>147, 22</value>
+  </data>
+  <data name="tsmiExportLog.Text" xml:space="preserve">
+    <value>Exportar log...</value>
+  </data>
+  <data name="tsmiToolLog.Size" type="System.Drawing.Size, System.Drawing">
+    <value>84, 20</value>
+  </data>
+  <data name="tsmiToolLog.Text" xml:space="preserve">
+    <value>Ferramentas</value>
+  </data>
   <data name="mstripLog.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 3</value>
   </data>
   <data name="mstripLog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>958, 24</value>
+    <value>961, 24</value>
   </data>
   <data name="mstripLog.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -4405,30 +3542,99 @@
   <data name="&gt;&gt;mstripLog.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="tsmiToolLog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>84, 20</value>
+  <data name="tabMainLog.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
   </data>
-  <data name="tsmiToolLog.Text" xml:space="preserve">
-    <value>Ferramentas</value>
+  <data name="tabMainLog.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
   </data>
-  <data name="tsmiClearLog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 22</value>
+  <data name="tabMainLog.Size" type="System.Drawing.Size, System.Drawing">
+    <value>967, 514</value>
   </data>
-  <data name="tsmiClearLog.Text" xml:space="preserve">
-    <value>Limpar log</value>
+  <data name="tabMainLog.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
   </data>
-  <data name="toolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>144, 6</value>
+  <data name="tabMainLog.Text" xml:space="preserve">
+    <value>Log</value>
   </data>
-  <data name="tsmiExportLog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 22</value>
+  <data name="&gt;&gt;tabMainLog.Name" xml:space="preserve">
+    <value>tabMainLog</value>
   </data>
-  <data name="tsmiExportLog.Text" xml:space="preserve">
-    <value>Exportar log...</value>
+  <data name="&gt;&gt;tabMainLog.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabMainLog.Parent" xml:space="preserve">
+    <value>tabControlMain</value>
+  </data>
+  <data name="&gt;&gt;tabMainLog.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="tabControlMain.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="tabControlMain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>975, 540</value>
+  </data>
+  <data name="tabControlMain.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tabControlMain.Name" xml:space="preserve">
+    <value>tabControlMain</value>
+  </data>
+  <data name="&gt;&gt;tabControlMain.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabControlMain.Parent" xml:space="preserve">
+    <value>spcMain.Panel2</value>
+  </data>
+  <data name="&gt;&gt;tabControlMain.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;spcMain.Panel2.Name" xml:space="preserve">
+    <value>spcMain.Panel2</value>
+  </data>
+  <data name="&gt;&gt;spcMain.Panel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;spcMain.Panel2.Parent" xml:space="preserve">
+    <value>spcMain</value>
+  </data>
+  <data name="&gt;&gt;spcMain.Panel2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="spcMain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1184, 546</value>
+  </data>
+  <data name="spcMain.SplitterDistance" type="System.Int32, mscorlib">
+    <value>290</value>
+  </data>
+  <data name="spcMain.SplitterWidth" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="spcMain.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;spcMain.Name" xml:space="preserve">
+    <value>spcMain</value>
+  </data>
+  <data name="&gt;&gt;spcMain.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitContainer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;spcMain.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;spcMain.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <metadata name="sstripMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>128, 19</value>
   </metadata>
+  <data name="tsslCurrentYear.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 17</value>
+  </data>
+  <data name="lblScan.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 17</value>
+  </data>
   <data name="sstripMain.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 570</value>
   </data>
@@ -4450,41 +3656,26 @@
   <data name="&gt;&gt;sstripMain.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="tsslCurrentYear.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 17</value>
-  </data>
-  <data name="lblScan.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 17</value>
-  </data>
   <metadata name="mstripMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>249, 22</value>
   </metadata>
-  <data name="mstripMain.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="mstripMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1184, 24</value>
-  </data>
-  <data name="mstripMain.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;mstripMain.Name" xml:space="preserve">
-    <value>mstripMain</value>
-  </data>
-  <data name="&gt;&gt;mstripMain.Type" xml:space="preserve">
-    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;mstripMain.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;mstripMain.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="tsmiFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>61, 20</value>
-  </data>
-  <data name="tsmiFile.Text" xml:space="preserve">
-    <value>Arquivo</value>
+  <data name="tsmiExit.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAALPSURBVDhPpZNbSFRRFIZLksIwKak0KilNyEbHDNOx0LykU2M6oybmpYuXzEtoRpZRpoiWlmml
+        KYRRPYS9hApe0nRGHyp6C4JKB+d2HM84N0c0hDH+9lk92Gu0YMFe69//d9bZ5+w1AMQsNSz/NQSPWABo
+        FpV9sDRXYq62EHxlFmbL02AsTYax6CRmimSYKYiH4XwUDDlHoE87iO8Jvph+1kQQAQDLw+twvO2C/cUD
+        WFqrYG4sh6muGKbqAphu5YK/kYPZq+kMmgQuNxpTKWIMS7wFKwgwV18C+8tmWDtqYL5XhvnuDqzM22iD
+        ECtWE2xdjWQ2ZEdAnRqM95G7SSMAX3UWlkc36ckL/a9JWBztxVyDMEkJW/dQb767HTpmFiYYjfGlHgFm
+        y1LZFKVwvOmgpvVJDWYKE8FdiIEhK4K9dzDMDaWkWZoqoFYEYuxvgHBg/O08/HLYsTQxyGoFuAIpbRBC
+        nyKCPskfS8oeOI1aqOUBUEbvIY0AM/nHwV/LpIa1vZYB5GyCVQB3WgRO7gdLXT7V00n7oIzaRWsCcOei
+        6DWEIMBlBri0CjBmiGBM8YXtbgHVmkQfqI560ZoA+oxQZpBhxW7G0ocRBkiCsfgEbRCCzw4En+6H5Y8D
+        cBqmoJV6YSJ8C2kE0CnYiOzAbM/vU9PWWcd+onjMXjwGPi8MphwRHG0VpM03l0AX64HxQxupJoBGuheG
+        zHBwebFY6HtFws9PI7C1VMDeUoblz8N/er2dMEk3QRe5AeNBrtQjwHS0N3RyEQxnwtiBxsHaVg0nr6cN
+        Qjg5NRyPr8Ak8wQf6watZB3GDriQRoCv4ZvxI84Hk6cCMKkQY0oRxFLEvvd+aJL9oJXthDZhK7Qx7tBG
+        uOJbyFr0+5OVABr103r0B3tg6PA2DEl2YJDliMQL7yTbMRrmCVWoO1QhbhgTr4dK5IIBZv7Sekfw02X6
+        j+sM8W/vHg8mYeJ73QAAAABJRU5ErkJggg==
+</value>
   </data>
   <data name="tsmiExit.Size" type="System.Drawing.Size, System.Drawing">
     <value>93, 22</value>
@@ -4492,23 +3683,57 @@
   <data name="tsmiExit.Text" xml:space="preserve">
     <value>Sair</value>
   </data>
-  <data name="tsmiCovers.Size" type="System.Drawing.Size, System.Drawing">
-    <value>51, 20</value>
+  <data name="tsmiFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>61, 20</value>
   </data>
-  <data name="tsmiCovers.Text" xml:space="preserve">
-    <value>Capas</value>
+  <data name="tsmiFile.Text" xml:space="preserve">
+    <value>Arquivo</value>
+  </data>
+  <data name="tsmiDownloadCoversSelectedGame.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
+        rwAAAK8BK7AVuQAAAndJREFUOE+Vk19IU3EUxweaEZuztEjbn7Zp+9PctO3BtrYU9q/l/ijhvdptUA/z
+        IbfZxFIoMIhJ0EOFgg/FIEqSCPJBiOilnnz2oXoZPfti2Wj37ip6OudyEYsReOD78Dv3nM8953fOT/Gv
+        wXjYDLlQAbWGWq/ENLt8Qr/ODxifyyG1DUaD9ZgwiypBNjSNoA6YCB8Wh6zKKmvrFxkLR3ECY3ELV87k
+        RNZySUokg/FAAyZ+RC1CNqKS3TUNq1muXG4DYdC0ILsQkAvNofZK9EeHlN4we9MbYYvajq4Vbbvzrrnb
+        f5y+8Qnda4RsCgOGd1IwJtpR36lcOl+IsC5PdLjkZtNgy0zBCU8AWm1uOGXq/KE3u3pF7pxyO9XVzMd1
+        v6qMtY8AjyEbnKJk+rMnOlJqWnwDnaMToF56C6o796HV7QfV5IwEsbp8LRTLJw0FhLwkwBeUj5xUtule
+        ARSrq9ATvwZ1nz5D/XwR2gx2UBSXoDnGArVDsVXGxmArPwmwCfngEQmAPZtvz4Du4RMEpED7aA4ab4xB
+        q9EOai4NLaEkaNqdKxS7zTn0lX7NLgF+QyZ87MCAlOMoH9PsEOAbqkcCHKgF61WaBgFohLfIuf8SHel8
+        rUvc2LvEhH4W9QKXSBpjCfKhRsiEmv4aY3Z6/xg3DBbXRUreSjnVOIFylbH00ZmqmEdRK8/oXGuRLN1e
+        aZHIcITvcZGW5aMEoMcDqP8+mC0O/5w8/UFI6NfElFMpuxGQCZrwAfmwnZMwGa6DXHAEYedxO1Vw3d4g
+        Dp/1YuIDPq4tC4PGV8A5pa2taTAWOITJT1FfUWVM2qGFQcACvspeOUw2heIPDUVf3ZL2OiAAAAAASUVO
+        RK5CYII=
+</value>
   </data>
   <data name="tsmiDownloadCoversSelectedGame.Size" type="System.Drawing.Size, System.Drawing">
     <value>461, 22</value>
   </data>
   <data name="tsmiDownloadCoversSelectedGame.Text" xml:space="preserve">
-    <value>Sincronizar e baixar capas (Disco e 3D somente do jogo selecionado)</value>
+    <value>Sincronizar e baixar capas (do jogo selecionado)</value>
+  </data>
+  <data name="tsmiSyncDownloadDiscOnly3DCovers.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
+        rwAAAK8BK7AVuQAAAndJREFUOE+Vk19IU3EUxweaEZuztEjbn7Zp+9PctO3BtrYU9q/l/ijhvdptUA/z
+        IbfZxFIoMIhJ0EOFgg/FIEqSCPJBiOilnnz2oXoZPfti2Wj37ip6OudyEYsReOD78Dv3nM8953fOT/Gv
+        wXjYDLlQAbWGWq/ENLt8Qr/ODxifyyG1DUaD9ZgwiypBNjSNoA6YCB8Wh6zKKmvrFxkLR3ECY3ELV87k
+        RNZySUokg/FAAyZ+RC1CNqKS3TUNq1muXG4DYdC0ILsQkAvNofZK9EeHlN4we9MbYYvajq4Vbbvzrrnb
+        f5y+8Qnda4RsCgOGd1IwJtpR36lcOl+IsC5PdLjkZtNgy0zBCU8AWm1uOGXq/KE3u3pF7pxyO9XVzMd1
+        v6qMtY8AjyEbnKJk+rMnOlJqWnwDnaMToF56C6o796HV7QfV5IwEsbp8LRTLJw0FhLwkwBeUj5xUtule
+        ARSrq9ATvwZ1nz5D/XwR2gx2UBSXoDnGArVDsVXGxmArPwmwCfngEQmAPZtvz4Du4RMEpED7aA4ab4xB
+        q9EOai4NLaEkaNqdKxS7zTn0lX7NLgF+QyZ87MCAlOMoH9PsEOAbqkcCHKgF61WaBgFohLfIuf8SHel8
+        rUvc2LvEhH4W9QKXSBpjCfKhRsiEmv4aY3Z6/xg3DBbXRUreSjnVOIFylbH00ZmqmEdRK8/oXGuRLN1e
+        aZHIcITvcZGW5aMEoMcDqP8+mC0O/5w8/UFI6NfElFMpuxGQCZrwAfmwnZMwGa6DXHAEYedxO1Vw3d4g
+        Dp/1YuIDPq4tC4PGV8A5pa2taTAWOITJT1FfUWVM2qGFQcACvspeOUw2heIPDUVf3ZL2OiAAAAAASUVO
+        RK5CYII=
+</value>
   </data>
   <data name="tsmiSyncDownloadDiscOnly3DCovers.Size" type="System.Drawing.Size, System.Drawing">
     <value>461, 22</value>
   </data>
   <data name="tsmiSyncDownloadDiscOnly3DCovers.Text" xml:space="preserve">
-    <value>Sincronizar e baixar capas (Disco e 3D de todos os jogos listados)</value>
+    <value>Sincronizar e baixar capas ( jogos listados)</value>
   </data>
   <data name="toolStripMenuItem5.Size" type="System.Drawing.Size, System.Drawing">
     <value>458, 6</value>
@@ -4543,32 +3768,55 @@
   <data name="toolStripMenuItem6.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
+  <data name="tsmiTransferDeviceCovers.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAAHUAAAB1AePCB2UAAAAZdEVYdFNvZnR3YXJlAHd3dy5pbmtzY2FwZS5vcmeb7jwa
+        AAAClklEQVQ4T2PABeRVTAyl9b17JEwi58op2xhDhYkCzDIGvov5/Be8YUp/+J8p7e5/Xs+p38VNYnYB
+        5ZggSvAAWV33Wra4k78Ycj/8h+Oc9//ZQzb+kzSK6IMqQwWK6kZ6Uqahh8Rs827xeU9/xgy0FcUAEM56
+        9Z/PZ+pLUZu8J+LmCbektW30wZoVFBQExKyzbjLkvAUrZMp8/l/TzfG/WGgvmM+aeP6/u1Hof2+TmP/6
+        9hUQw9Ie/hexyvqgoqLCB3SycxFr0hW4TfJ+Wf8j5qn+N0+2+s+WfOE/Z9Se/7tllf+/lVH57ws0CKaO
+        NWznfynD4DoGWX2PPpCtIEH+qFX/XasN/setUfkfu0rlv7qv33/OiJ1YDWCKO/1f0iRiEYO8urEjT/DK
+        DyBBobAZ/3X97MEGBPYq/5e3Dvwv7NwAN8Bd3+8/W/zZ/wzZb//zeE//K6fn6AwOB2kD/4U8was+MWU+
+        /a8ZFgo2wL9T+T936Ib/7upm/58DNYMMWCKv/l/drvg/t8/snxJmsVvBmmFASU3XRVbHZaquo85dmAHy
+        Glb7VLXsti6QV/8IMsRTxeC2lFHIcgUNS3eoNlRgYWqaYO1u8BFmgLOD03N/P//7AeaWbwvVtX/4evu8
+        cnZwyIYqRwXaoto8Pt4+19JyUv4HRnqCcUdX7//JU2f875845X91Sfn/iZOn/ffz9XsPUgvVhgCmJiYz
+        3VzdXnp7er/Ah91c3L7YWlmth2pDAEcHx/05Ofn/U91V/9eEqoFxtJfZf5BYTHQcHKekpv93dXK9D9WG
+        ADaW1vvzC4r+x/g5wHFaTOj/oqLS/1mZOXCcmpL+38He4RpUGwIYamrKW1tYb7K2tNyPD9ta2W7UVlKS
+        g+hiYAAAyjJbUMTJ0ZsAAAAASUVORK5CYII=
+</value>
+  </data>
   <data name="tsmiTransferDeviceCovers.Size" type="System.Drawing.Size, System.Drawing">
     <value>461, 22</value>
   </data>
   <data name="tsmiTransferDeviceCovers.Text" xml:space="preserve">
     <value>Transferir capas baixadas para dispositivo</value>
   </data>
-  <data name="tsmiDisplay.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 20</value>
+  <data name="tsmiCovers.Size" type="System.Drawing.Size, System.Drawing">
+    <value>51, 20</value>
   </data>
-  <data name="tsmiDisplay.Text" xml:space="preserve">
-    <value>Exibir</value>
+  <data name="tsmiCovers.Text" xml:space="preserve">
+    <value>Capas</value>
   </data>
   <data name="tsmiGameInfo.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
+  </data>
+  <data name="tsmiGameInfo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAAHUAAAB1AePCB2UAAAAZdEVYdFNvZnR3YXJlAHd3dy5pbmtzY2FwZS5vcmeb7jwa
+        AAABDUlEQVQ4T4WTS0oDQRBAZxWv4CJ6AfUOQXFl9CaKmL1HCH4TcONF/OEV1BuY7NUsFXxvUgxOUjM+
+        eFDdQ1enqitFwhae4yvOQuMz3MRGVnCEP/iEx9gPjd3z2zV2sIaHH/Ade240sI0TvMdakjF6uFuu2llD
+        k1yVK7Dmb8xuPsLDeVhjBz2z4cLmPBokXIYZzzg0eEOblLEaZpzgi8EX7hkk3IQZ+/hpYAKfKuM2zDjA
+        D4O2EtoSVCXYRIckoy1B1UTH0ydxSBY5DRfZxeoZxfF0OByS/1jHKV6Uq8CxdDxN4pA04c0evsOl/4Mb
+        jqc/zfpskk+lg9jzmzcvHf6LddkcO+wTq7F7Vc1ziuIXFINBd2QEfmMAAAAASUVORK5CYII=
+</value>
   </data>
   <data name="tsmiGameInfo.Size" type="System.Drawing.Size, System.Drawing">
     <value>318, 22</value>
   </data>
   <data name="tsmiGameInfo.Text" xml:space="preserve">
     <value>Informações detalhadas (do jogo selecionado)</value>
-  </data>
-  <data name="boxArtToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>318, 22</value>
-  </data>
-  <data name="boxArtToolStripMenuItem.Text" xml:space="preserve">
-    <value>BoxArt</value>
   </data>
   <data name="tsmiEnableCoverPanel.Size" type="System.Drawing.Size, System.Drawing">
     <value>129, 22</value>
@@ -4582,11 +3830,17 @@
   <data name="tsmiDisableCoverPanel.Text" xml:space="preserve">
     <value>Desabilitar</value>
   </data>
-  <data name="tsmiOptions.Size" type="System.Drawing.Size, System.Drawing">
-    <value>59, 20</value>
+  <data name="boxArtToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>318, 22</value>
   </data>
-  <data name="tsmiOptions.Text" xml:space="preserve">
-    <value>Opções</value>
+  <data name="boxArtToolStripMenuItem.Text" xml:space="preserve">
+    <value>BoxArt</value>
+  </data>
+  <data name="tsmiDisplay.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 20</value>
+  </data>
+  <data name="tsmiDisplay.Text" xml:space="preserve">
+    <value>Exibir</value>
   </data>
   <data name="tsmiConfigurationMain.Size" type="System.Drawing.Size, System.Drawing">
     <value>160, 22</value>
@@ -4594,11 +3848,11 @@
   <data name="tsmiConfigurationMain.Text" xml:space="preserve">
     <value>Configurações...</value>
   </data>
-  <data name="tsmiTools.Size" type="System.Drawing.Size, System.Drawing">
-    <value>84, 20</value>
+  <data name="tsmiOptions.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 20</value>
   </data>
-  <data name="tsmiTools.Text" xml:space="preserve">
-    <value>Ferramentas</value>
+  <data name="tsmiOptions.Text" xml:space="preserve">
+    <value>Opções</value>
   </data>
   <data name="tsmiRenameFolders.Size" type="System.Drawing.Size, System.Drawing">
     <value>207, 22</value>
@@ -4612,12 +3866,6 @@
   <data name="tsmiRenameISO.Text" xml:space="preserve">
     <value>Renomear ISO/GCM</value>
   </data>
-  <data name="tsmiMainPlugins.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 22</value>
-  </data>
-  <data name="tsmiMainPlugins.Text" xml:space="preserve">
-    <value>Plugins</value>
-  </data>
   <data name="tsmiMetaXml.Size" type="System.Drawing.Size, System.Drawing">
     <value>189, 22</value>
   </data>
@@ -4630,11 +3878,42 @@
   <data name="tsmiManageApp.Text" xml:space="preserve">
     <value>Gerenciar APP's</value>
   </data>
+  <data name="tsmiElfDol.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
+        6gAAAOoB+Ss1JgAAAgBJREFUOE9j8PXy+trb3v4DGxYXE2tjIAR6gAon9/b8721vRcHH9u79r6Wh0cbF
+        xxKrYSM4A4TD6pQzeYRYFKBaIQBkwJS+3v99HW0o+Ng+iAFiCpy1njly10A4rF75bd5CnWlQrRAAMmDa
+        hP7/E7q6UPDx/fvBBkCVgQGPIEtlcJXiNygXAkAG7N265f/OTRtR8J3Ll1AMEJHlmAD0wo+S1fr/DD1E
+        PgCFuMESIAP2bdv6f+eG9Sj43tUrKAZw8rOYOMRL3cyYqfVbQomrESoMMWDN0iX/VyxaiIIvnTyJ4QUW
+        FgYhTh5mRygXAtDDYNGc2f//f/0KxiADuHhFUs08cg5gw/IatrsYrCwsDqQlJR3HhoWFhDJEpbXaGlb9
+        /187//7/mrm3/4PY5ZP2gWn3uJ4fUHdAAMh5IGdCuWAAM6C0d9P/os5V/wsnnPifmp2MaQAwvhtAAeSY
+        IH2LW5DVBCoMNqBo4qn/pT3rwQb4J7eCDSiddBDFAG5Q1ICiCBRVoCiDioMNCM3o+F/atQzFgPjMbEwv
+        BFcqfgMlFigXDEAGZDau/l/avQbFgLym2ZgGWIWKnwitU3oLS7qgZOyXMScDOQzS6lZiDwMQ4OFnUZRU
+        5eqAZR5QRrLyLSkAKa6aceZ/xdRjYI2FTdOwG4AN8PCLt7nH9f7AhtVN/L4CAAE4iyssKZBVAAAAAElF
+        TkSuQmCC
+</value>
+  </data>
   <data name="tsmiElfDol.Size" type="System.Drawing.Size, System.Drawing">
     <value>189, 22</value>
   </data>
   <data name="tsmiElfDol.Text" xml:space="preserve">
     <value>Converter ELF -&gt; DOL</value>
+  </data>
+  <data name="tsmiCreatePackage.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAAHUAAAB1AePCB2UAAAAZdEVYdFNvZnR3YXJlAHd3dy5pbmtzY2FwZS5vcmeb7jwa
+        AAACM0lEQVQ4T2PAARi1VIRjgjw0joAwiA0Sg0jhB0zOOorF3obqz/OizX7/uVfz///D2v/H1iX+ignQ
+        PaevJZYBUgNRigpY9NTFC3zt1a4mWBr9+1jZ8P9yTsH/2kDH//Nb/P//vFMFNujc9tRfCaEGF031pEpA
+        esA6HS3kwtxtle5c25v1G6To5bmi/x05Lv97wjz+vy2v/X8rr/h/vZ/T/5k1Pv+/3awEG3R1T+ZvkB6Q
+        XoYwN8Xti+vN/tdmmPy/sD0VrACE310q/d9b4Pa/Pcjt/4uS6v8PCsv/NwU6/+8ucP1fm235f3GH0/8w
+        L7XtDOHuStv+Hw74//eg//9VzRb/q9OM/h9fnwA36NO18v+TSj3/NwU4/y93tvrvq6P8/+/55P//L6b8
+        D/dS2wY3AIb/HQr4v6nL+v+5VUH/L2xL+b9/Rez/3kqH/4vqnf6fiUz8X+tkCdaM0wBkPKfS+P+sejuw
+        4kV1jmADyh3NiDfg8FTb/4cX+IAVL21y+p/hrPt/6wQPTAOuLXH+/2C1G14Dfp9LgmvEMODWctf/k/L1
+        /relaeE0ABuGG/Bmi9f/yQV6KJqJNsDPQT66LFbr3XWgN4g14PqGkP9lyYbv/Jzlo8GpEQiYgpwVqzJD
+        1F6emu2A04BLa4L/l6cYvfOxV+wF6oEkZTTA5GYlm5UWpPrw2EyHfzADzq0M+l+aZPTcxUquHqiGGaIU
+        P2B0sZDODHCUexHgovTCxUo2EyQGkUIGDAwA8wIHZ+SE3gAAAAAASUVORK5CYII=
+</value>
   </data>
   <data name="tsmiCreatePackage.Size" type="System.Drawing.Size, System.Drawing">
     <value>189, 22</value>
@@ -4642,11 +3921,34 @@
   <data name="tsmiCreatePackage.Text" xml:space="preserve">
     <value>Criar Pacote APP</value>
   </data>
+  <data name="tsmiBurnMedia.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
+        2wAAANsB8FDmnAAAAntJREFUOE9tk9tLVFEUxo2gh/6IoOfKIhqcmG7MyEBmQben0OghCJTQLhqBkYNk
+        6TQ1U6llhc1TJHhL6sVHsR7MoYjjMNlDKDNnvJwz5zLHUQa+9rdnjl03LNjsvdZvr/WtvSr+Xrt9/h17
+        DvgfNl5rVUL3wlZH933rys02hWe8K7v9u3ZWBbZ4AzWxWO/TYlbNwMzp0mwzh/WCI/f9A6+K9KFvOay0
+        eHDy3PmJmURiI9C1vGlgfdUpmQApigL6/gEhVZlV4NhmKVAvmSEsb5pYcxyslSH04UOMkcGsq/f5yyLp
+        0sEyYWg6cisa5r59x/yPeRTyAiAgvHMzY6lSE4rDmm0jh1Xblo6zShKhu2G8fjOEoZFxRGI98oxgZmYJ
+        35WlRTC2gmq7VJm2cApHn8DSTaTn09AWNbkn0NIN+YirR0tbu1LBVrkA1sy0+XJmQRV1Hh32VtcML6vL
+        GBt/DzWjygxdQDj22Po/YHAI2XQW+0VwlYAwi5Gxd8iqWQlIpVIoODa6owLwewm2YQjVLUQe9cIx8zJ9
+        lqEvaejoisj0pz/N4PjpY5icmhIl3FakiLq2LNqUl63iC8yCwlFAlsP6v3z+KvVpbLqExckTuNx8kSJG
+        ZRv7B+IbbSSAxtaxhYSxpT3PXiDU2Y1b1wPAdCU+DtYS0CX/gi9YG0smkyVxCCmD+ImoC7vT2HAW8QdB
+        jPYcBN5uAxI+1NVVz0kAv+WZ+gsT/KZuJjR+Y1efG1dPAR8qgdHtQMtmsd+FpoagJgFc7jBxYBhAEAfJ
+        BbR33sFM3AM0b5LGvdcf6CuH/1ruOHOEOcpsMztFwfYd8fe11ntUmuewP7r3UPXWn7NyuxGTUs3bAAAA
+        AElFTkSuQmCC
+</value>
+  </data>
   <data name="tsmiBurnMedia.Size" type="System.Drawing.Size, System.Drawing">
     <value>189, 22</value>
   </data>
   <data name="tsmiBurnMedia.Text" xml:space="preserve">
     <value>Gravar Mídia CD/DVD</value>
+  </data>
+  <data name="tsmiMainPlugins.Size" type="System.Drawing.Size, System.Drawing">
+    <value>207, 22</value>
+  </data>
+  <data name="tsmiMainPlugins.Text" xml:space="preserve">
+    <value>Plugins</value>
   </data>
   <data name="tsmi_DownloadGameTDB.Size" type="System.Drawing.Size, System.Drawing">
     <value>207, 22</value>
@@ -4654,11 +3956,11 @@
   <data name="tsmi_DownloadGameTDB.Text" xml:space="preserve">
     <value>Atualização do GameTDB</value>
   </data>
-  <data name="tsmiHelp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>50, 20</value>
+  <data name="tsmiTools.Size" type="System.Drawing.Size, System.Drawing">
+    <value>84, 20</value>
   </data>
-  <data name="tsmiHelp.Text" xml:space="preserve">
-    <value>Ajuda</value>
+  <data name="tsmiTools.Text" xml:space="preserve">
+    <value>Ferramentas</value>
   </data>
   <data name="tsmiWebsiteFacebook.Size" type="System.Drawing.Size, System.Drawing">
     <value>268, 22</value>
@@ -4681,6 +3983,25 @@
   <data name="toolStripMenuItem7.Size" type="System.Drawing.Size, System.Drawing">
     <value>265, 6</value>
   </data>
+  <data name="tsmiVerifyUpdate.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAAHUAAAB1AePCB2UAAAAZdEVYdFNvZnR3YXJlAHd3dy5pbmtzY2FwZS5vcmeb7jwa
+        AAACu0lEQVQ4T3VTS0wTURSdlTHRRN24Fj8bG5DYSGnfm9eZqUPbaQsznf74KB36sYqB+qFgohutKJho
+        jAsXoiIJLiSSKB8TjC4QU4wLiSHBhWKiAQVWoiYmGsd3h4EoxJPc5N5zztw2977LrIajomKrQ/bcJVro
+        pfNI7aTzUPVb0hB9joJSL0LIYtrWwmKxrMMYb0E+d5akYzPsgeA4jgYGcCTwkCTCo3xLco5vTc0hWeri
+        OG69+dkSkCR2kXT1RypOQ00NGw3hL1gdjh1I9Q0J7dlFFPI/gR80Jdog4O4Vr7b9xAfVSZP6L7Ds7RDy
+        zYsOWeoxiHKB3cufSHxGVZ6ndr/YWFJSssFFULRKxP21PvY1BOTAgWY0CQcG+FPpWTshxQySvb1cS2Ie
+        /iLHlW+rdDsX5Ar2xzlN/NV9XNIhIAcONELKiux2+06+LTWPwoHbDImHX5D6cAE6q5Krc+RyRp+4mdX7
+        8g26FhR/Q0AOHGhBr6sDvM5U7BnRIgWGpGJTOFI5CGRpaenmSjdZbNX8+vlGVQ9LnBGQA5eL+6atVusm
+        8OIaeQDWzDjT1W9wbKkB4HBUfD/SWaM/yMf0a8dkIyAHrqlGfGfaGFyn9NMGUwyOqwWSjI6a/EoDiOsn
+        FSOWa9BMG0O0cIFtiIwxqIoOMZech8GAEFdcHx5dXNsAONDAA17hTGYOB+kqyzDeQxvMLs/BxWFP0MP2
+        aYowkYmIXyDiCv9K9ZB7+3nWDR4UCQzBy7Sx7G6o6So93cLZo9+R4r1kECZsNtsuCLM0QNd+xdXeTL3S
+        DZNaugP6jB8L+aZvOBQY3ofxdlNaQRkhRfQ2hl0Xsl/pQxpZcw9GE0W648wlZ+jRLLDJ6BhbpwzieOg+
+        Hdg4fzqzwOUSn7Ai3frnDlaDDqgYTpetV8dgxbBr+tgKWPX3gGbaTDDMH0RzNH28/OcRAAAAAElFTkSu
+        QmCC
+</value>
+  </data>
   <data name="tsmiVerifyUpdate.Size" type="System.Drawing.Size, System.Drawing">
     <value>268, 22</value>
   </data>
@@ -4690,11 +4011,51 @@
   <data name="toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
     <value>265, 6</value>
   </data>
+  <data name="tsmiMenuAbout.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAAHEAAABxARw/gHcAAAAZdEVYdFNvZnR3YXJlAHd3dy5pbmtzY2FwZS5vcmeb7jwa
+        AAABU0lEQVQ4T5VTwUrDQBBd/6WtggePPXjx4sGDB3/Ab+jFs4ogHvRHvIkkUdHSovQgCJU0jVFBsJhU
+        D7UtGEGEcWbchN1kFzTwwjLvzcvMzkQAgIY5p1uref5W1fWPq54fM/BMMeKKevUwU3F7DUxIEWBBShrS
+        agYUQNIpiBnL7QjcZAxLrUiNO5kJG8gvq4Ic+9EQJQBrnUctTjlsQH1hwFr2wlkAK5f3Ji6lXMEXViYZ
+        20EMweSTqzDxFc/fFPK2NWL+tAeHgxHcjD64/AOLAeUKPNCoNGKxGUL9IoS9u4QNiv0riI0GGZpvUxh/
+        fcPsiZlHoIGhBQIlTTD5/HVa4nJQC7ZLXL164PJ3w6TEZeBLtI1xpx+zAfW/fv3E4yxofseIGuMi0fbR
+        08cxNrrPGkfIF0m+Squ8cTuAo5d3bkWNS+irnJnISv7/M6mgvv7+O4P4AVA7uNYCcfIJAAAAAElFTkSu
+        QmCC
+</value>
+  </data>
   <data name="tsmiMenuAbout.Size" type="System.Drawing.Size, System.Drawing">
     <value>268, 22</value>
   </data>
   <data name="tsmiMenuAbout.Text" xml:space="preserve">
     <value>Sobre o GameCube Backup Manager</value>
+  </data>
+  <data name="tsmiHelp.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 20</value>
+  </data>
+  <data name="tsmiHelp.Text" xml:space="preserve">
+    <value>Ajuda</value>
+  </data>
+  <data name="mstripMain.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="mstripMain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1184, 24</value>
+  </data>
+  <data name="mstripMain.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;mstripMain.Name" xml:space="preserve">
+    <value>mstripMain</value>
+  </data>
+  <data name="&gt;&gt;mstripMain.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;mstripMain.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;mstripMain.ZOrder" xml:space="preserve">
+    <value>6</value>
   </data>
   <metadata name="fbd1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>912, 13</value>
@@ -4747,6 +4108,12 @@
   <metadata name="cmsNotifyIcon.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>7, 20</value>
   </metadata>
+  <data name="tsmiNotifyExit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>93, 22</value>
+  </data>
+  <data name="tsmiNotifyExit.Text" xml:space="preserve">
+    <value>Sair</value>
+  </data>
   <data name="cmsNotifyIcon.Size" type="System.Drawing.Size, System.Drawing">
     <value>94, 26</value>
   </data>
@@ -4854,14 +4221,23 @@
   <data name="notifyIcon.Text" xml:space="preserve">
     <value>GameCube Backup Manager</value>
   </data>
-  <data name="tsmiNotifyExit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>93, 22</value>
-  </data>
-  <data name="tsmiNotifyExit.Text" xml:space="preserve">
-    <value>Sair</value>
-  </data>
   <data name="pbNetStatus.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
+  </data>
+  <data name="pbNetStatus.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAAHUAAAB1AePCB2UAAAAZdEVYdFNvZnR3YXJlAHd3dy5pbmtzY2FwZS5vcmeb7jwa
+        AAAB+UlEQVQ4T31SS08aYRRl0x/hxn3XJvU3lM7gIwxkZhgcmtTEVX9Al617o01XNOmu9bHRREk01k0X
+        DTCgUEGHwRCgD7GFQiszQ4zX737zMQxCPMnNXC7nnPuY8XlhXUQCZkn6YhmRhm3I7d6F8scypN2eIU0x
+        ynhAevFRtyRv/z6Z73QKYfieDED7mwCX2iy08kGMhmXIq4w+im5J3Grmg7cobp8KUPvKUQN8/i+GAevN
+        vGCSqd4wyQA3hvwUOyOZdSMmISCr0GeHREObo2adU6EG5egkkzq4PhMT+CftSshuzib4kQpAMxd08iQP
+        Vll+y6QO/hXDJ66IjU9zZuDUB8bmuXjIpA7IqFdIxqBj38urcQlyC1E4VhQnxGgry8dmmJxMUAhn3U5E
+        4M31d0HQeBU0ToWc8hKOQ0s0J7VemldnqUFXFzfrfZFnBezcF2M0dj9D/f0n9zcJW+NjnM/Wlcfk8pco
+        auUFIDehRji2hwxXiSOof9gYqmWeqft0ClOXXpNVbLx2fwrc10seZ6BxCwfUAGHq4ity7Sp+NL/SMyMG
+        P9d3oLISH6oNGSCgEpmwDHHVLklZvPYweUzwaoJJR4GvipDsPrkW/wjl5TWv+G+Kiz5h9PFIcaqfkC0U
+        ZOdfQCbw3BWn/bFpRnsY+Krw2rivE7G9QWef7w4NRRPcZGbPGgAAAABJRU5ErkJggg==
+</value>
   </data>
   <data name="pbNetStatus.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -4900,7 +4276,7 @@
     <value>True</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>44</value>
+    <value>25</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>

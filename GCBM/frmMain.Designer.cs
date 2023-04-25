@@ -829,7 +829,6 @@ namespace GCBM
             // 
             resources.ApplyResources(this.btnAbortDestination, "btnAbortDestination");
             this.btnAbortDestination.FlatAppearance.BorderSize = 0;
-            this.btnAbortDestination.Image = global::GCBM.Properties.Resources.cancel_32;
             this.btnAbortDestination.Name = "btnAbortDestination";
             this.btnAbortDestination.UseVisualStyleBackColor = true;
             this.btnAbortDestination.Click += new System.EventHandler(this.btnAbort_Click);
@@ -912,7 +911,6 @@ namespace GCBM
             // pbWebGameDiscID
             // 
             resources.ApplyResources(this.pbWebGameDiscID, "pbWebGameDiscID");
-            this.pbWebGameDiscID.Image = global::GCBM.Properties.Resources.website_grayscale;
             this.pbWebGameDiscID.Name = "pbWebGameDiscID";
             this.pbWebGameDiscID.TabStop = false;
             this.pbWebGameDiscID.Click += new System.EventHandler(this.pbWebGameDiscID_Click);
@@ -1346,9 +1344,8 @@ namespace GCBM
             // 
             // tsmiExit
             // 
-            this.tsmiExit.Image = global::GCBM.Properties.Resources.exit;
-            this.tsmiExit.Name = "tsmiExit";
             resources.ApplyResources(this.tsmiExit, "tsmiExit");
+            this.tsmiExit.Name = "tsmiExit";
             this.tsmiExit.Click += new System.EventHandler(this.tsmiExit_Click);
             // 
             // tsmiCovers
@@ -1366,16 +1363,14 @@ namespace GCBM
             // 
             // tsmiDownloadCoversSelectedGame
             // 
-            this.tsmiDownloadCoversSelectedGame.Image = global::GCBM.Properties.Resources.sync_16;
-            this.tsmiDownloadCoversSelectedGame.Name = "tsmiDownloadCoversSelectedGame";
             resources.ApplyResources(this.tsmiDownloadCoversSelectedGame, "tsmiDownloadCoversSelectedGame");
+            this.tsmiDownloadCoversSelectedGame.Name = "tsmiDownloadCoversSelectedGame";
             this.tsmiDownloadCoversSelectedGame.Click += new System.EventHandler(this.tsmiDownloadCoversSelectedGame_Click);
             // 
             // tsmiSyncDownloadDiscOnly3DCovers
             // 
-            this.tsmiSyncDownloadDiscOnly3DCovers.Image = global::GCBM.Properties.Resources.sync_16;
-            this.tsmiSyncDownloadDiscOnly3DCovers.Name = "tsmiSyncDownloadDiscOnly3DCovers";
             resources.ApplyResources(this.tsmiSyncDownloadDiscOnly3DCovers, "tsmiSyncDownloadDiscOnly3DCovers");
+            this.tsmiSyncDownloadDiscOnly3DCovers.Name = "tsmiSyncDownloadDiscOnly3DCovers";
             this.tsmiSyncDownloadDiscOnly3DCovers.Click += new System.EventHandler(this.tsmiSyncDownloadDiscOnly3DCovers_Click);
             // 
             // toolStripMenuItem5
@@ -1400,9 +1395,8 @@ namespace GCBM
             // 
             // tsmiTransferDeviceCovers
             // 
-            this.tsmiTransferDeviceCovers.Image = global::GCBM.Properties.Resources.transfer_0002;
-            this.tsmiTransferDeviceCovers.Name = "tsmiTransferDeviceCovers";
             resources.ApplyResources(this.tsmiTransferDeviceCovers, "tsmiTransferDeviceCovers");
+            this.tsmiTransferDeviceCovers.Name = "tsmiTransferDeviceCovers";
             this.tsmiTransferDeviceCovers.Click += new System.EventHandler(this.tsmiTransferDeviceCovers_Click);
             // 
             // tsmiDisplay
@@ -1416,7 +1410,6 @@ namespace GCBM
             // tsmiGameInfo
             // 
             resources.ApplyResources(this.tsmiGameInfo, "tsmiGameInfo");
-            this.tsmiGameInfo.Image = global::GCBM.Properties.Resources.additional_information_16;
             this.tsmiGameInfo.Name = "tsmiGameInfo";
             this.tsmiGameInfo.Click += new System.EventHandler(this.tsmiGameInfo_Click);
             // 
@@ -1502,23 +1495,20 @@ namespace GCBM
             // 
             // tsmiElfDol
             // 
-            this.tsmiElfDol.Image = global::GCBM.Properties.Resources.convert_16;
-            this.tsmiElfDol.Name = "tsmiElfDol";
             resources.ApplyResources(this.tsmiElfDol, "tsmiElfDol");
+            this.tsmiElfDol.Name = "tsmiElfDol";
             this.tsmiElfDol.Click += new System.EventHandler(this.tsmiElfDol_Click);
             // 
             // tsmiCreatePackage
             // 
-            this.tsmiCreatePackage.Image = global::GCBM.Properties.Resources.box_16;
-            this.tsmiCreatePackage.Name = "tsmiCreatePackage";
             resources.ApplyResources(this.tsmiCreatePackage, "tsmiCreatePackage");
+            this.tsmiCreatePackage.Name = "tsmiCreatePackage";
             this.tsmiCreatePackage.Click += new System.EventHandler(this.tsmiCreatePackage_Click);
             // 
             // tsmiBurnMedia
             // 
-            this.tsmiBurnMedia.Image = global::GCBM.Properties.Resources.burn_cd_16;
-            this.tsmiBurnMedia.Name = "tsmiBurnMedia";
             resources.ApplyResources(this.tsmiBurnMedia, "tsmiBurnMedia");
+            this.tsmiBurnMedia.Name = "tsmiBurnMedia";
             this.tsmiBurnMedia.Click += new System.EventHandler(this.tsmiBurnMedia_Click);
             // 
             // tsmi_DownloadGameTDB
@@ -1565,9 +1555,8 @@ namespace GCBM
             // 
             // tsmiVerifyUpdate
             // 
-            this.tsmiVerifyUpdate.Image = global::GCBM.Properties.Resources.update_16;
-            this.tsmiVerifyUpdate.Name = "tsmiVerifyUpdate";
             resources.ApplyResources(this.tsmiVerifyUpdate, "tsmiVerifyUpdate");
+            this.tsmiVerifyUpdate.Name = "tsmiVerifyUpdate";
             this.tsmiVerifyUpdate.Click += new System.EventHandler(this.tsmiVerifyUpdate_Click);
             // 
             // toolStripMenuItem1
@@ -1577,9 +1566,8 @@ namespace GCBM
             // 
             // tsmiMenuAbout
             // 
-            this.tsmiMenuAbout.Image = global::GCBM.Properties.Resources.info_16;
-            this.tsmiMenuAbout.Name = "tsmiMenuAbout";
             resources.ApplyResources(this.tsmiMenuAbout, "tsmiMenuAbout");
+            this.tsmiMenuAbout.Name = "tsmiMenuAbout";
             this.tsmiMenuAbout.Click += new System.EventHandler(this.tsmiMenuAbout_Click);
             // 
             // fbd1
@@ -1618,7 +1606,6 @@ namespace GCBM
             // pbNetStatus
             // 
             resources.ApplyResources(this.pbNetStatus, "pbNetStatus");
-            this.pbNetStatus.Image = global::GCBM.Properties.Resources.not_conected_16;
             this.pbNetStatus.Name = "pbNetStatus";
             this.pbNetStatus.TabStop = false;
             this.pbNetStatus.Click += new System.EventHandler(this.lblNetStatus_Click);

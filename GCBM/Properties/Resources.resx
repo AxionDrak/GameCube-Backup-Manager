@@ -832,4 +832,16 @@
   <data name="LanguagePromptConfirmTitle" xml:space="preserve">
     <value>Consegue compreender isto?</value>
   </data>
+  <data name="Download2DCoverError" xml:space="preserve">
+    <value> [ERRO] Falha ao efetuar download da capa (2D)!</value>
+  </data>
+  <data name="Download2DCover" xml:space="preserve">
+    <value> [INFO] Baixando capas (2D)... </value>
+  </data>
+  <data name="DownloadFullCover" xml:space="preserve">
+    <value> [INFO] Baixando capas (Completa)... </value>
+  </data>
+  <data name="DownloadFullCoverError" xml:space="preserve">
+    <value> [ERRO] Falha ao efetuar download da capa (Completa)!</value>
+  </data>
 </root>

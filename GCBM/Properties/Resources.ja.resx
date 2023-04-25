@@ -555,4 +555,16 @@
   <data name="LoadDatabase_Editor" xml:space="preserve">
     <value>編集者</value>
   </data>
+  <data name="Download2DCoverError" xml:space="preserve">
+    <value> [ERROR] カバー（2D）のダウンロードに失敗しました!</value>
+  </data>
+  <data name="Download2DCover" xml:space="preserve">
+    <value> [INFO] カバー（2D）をダウンロード中... </value>
+  </data>
+  <data name="DownloadFullCoverError" xml:space="preserve">
+    <value> [ERROR] カバー（全体）のダウンロードに失敗しました!</value>
+  </data>
+  <data name="DownloadFullCover" xml:space="preserve">
+    <value> [INFO] カバー（全体）をダウンロード中... </value>
+  </data>
 </root>

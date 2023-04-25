@@ -555,4 +555,16 @@
   <data name="DownloadDiscCoverError" xml:space="preserve">
     <value>[오류] 표지 다운로드 실패(디스크)</value>
   </data>
+  <data name="Download2DCoverError" xml:space="preserve">
+    <value> [오류] 커버(2D) 다운로드 실패!</value>
+  </data>
+  <data name="Download2DCover" xml:space="preserve">
+    <value> [정보] 커버(2D) 다운로드 중... </value>
+  </data>
+  <data name="DownloadFullCoverError" xml:space="preserve">
+    <value> [오류] 커버(완전한) 다운로드 실패!</value>
+  </data>
+  <data name="DownloadFullCover" xml:space="preserve">
+    <value> [정보] 커버(완전한) 다운로드 중... </value>
+  </data>
 </root>

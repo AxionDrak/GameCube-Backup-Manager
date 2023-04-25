@@ -334,10 +334,10 @@
     <value>Archivo</value>
   </data>
   <data name="tsmiDownloadCoversSelectedGame.Text" xml:space="preserve">
-    <value>Sincronizar y descargar máscaras (disco y 3D solo para juegos seleccionados)</value>
+    <value>Sincronizar y descargar máscaras (solo para juegos seleccionados)</value>
   </data>
   <data name="tsmiSyncDownloadDiscOnly3DCovers.Text" xml:space="preserve">
-    <value>Sincroniza y descarga máscaras (disco y 3D de todos los juegos enumerados)</value>
+    <value>Sincroniza y descarga máscaras (todos los juegos enumerados)</value>
   </data>
   <data name="tsmiSyncDownloadAllDiscOnly3DCovers.Text" xml:space="preserve">
     <value>Sincronizar y descargar máscaras (disco y 3D de toda la biblioteca de GameCube)</value>

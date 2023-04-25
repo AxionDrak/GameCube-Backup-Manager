@@ -1708,7 +1708,7 @@
     <value>435, 22</value>
   </data>
   <data name="tsmiDownloadCoversSelectedGame.Text" xml:space="preserve">
-    <value>스킨 동기화 및 다운로드 (선택한 게임의 경우에만 디스크 및 3D)</value>
+    <value>표지 동기화 및 다운로드(선택한 게임만 해당)</value>
   </data>
   <data name="tsmiSyncDownloadDiscOnly3DCovers.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1731,7 +1731,7 @@
     <value>435, 22</value>
   </data>
   <data name="tsmiSyncDownloadDiscOnly3DCovers.Text" xml:space="preserve">
-    <value>스킨 동기화 및 다운로드 (목록에 있는 모든 게임의 디스크 및 3D)</value>
+    <value>표지 동기화 및 다운로드(목록의 모든 게임용)</value>
   </data>
   <data name="toolStripMenuItem5.Size" type="System.Drawing.Size, System.Drawing">
     <value>432, 6</value>

@@ -334,10 +334,10 @@
     <value>Berkas</value>
   </data>
   <data name="tsmiDownloadCoversSelectedGame.Text" xml:space="preserve">
-    <value>Sinkronisasi dan Unduh Skins (Disc dan 3D hanya untuk game yang dipilih)</value>
+    <value>Sinkronisasi dan Unduh Covers (untuk game yang dipilih)</value>
   </data>
   <data name="tsmiSyncDownloadDiscOnly3DCovers.Text" xml:space="preserve">
-    <value>Sinkronisasi dan unduh skin (Disc dan 3D dari semua game yang terdaftar)</value>
+    <value>Sinkronisasi dan unduh sampul (dari semua game yang terdaftar)</value>
   </data>
   <data name="tsmiSyncDownloadAllDiscOnly3DCovers.Text" xml:space="preserve">
     <value>Sinkronisasi dan Unduh Skins (Disc dan 3D dari seluruh perpustakaan GameCube)</value>

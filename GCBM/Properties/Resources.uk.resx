@@ -555,4 +555,16 @@
   <data name="LoadDatabase_Editor" xml:space="preserve">
     <value>редактор</value>
   </data>
+  <data name="Download2DCoverError" xml:space="preserve">
+    <value> [ОШИБКА] Не вдалося завантажити обкладинку (2D)!</value>
+  </data>
+  <data name="Download2DCover" xml:space="preserve">
+    <value> [ІНФОРМАЦІЯ] Завантаження обкладинок (2D)... </value>
+  </data>
+  <data name="DownloadFullCoverError" xml:space="preserve">
+    <value> [ОШИБКА] Не вдалося завантажити обкладинку (Повний)!</value>
+  </data>
+  <data name="DownloadFullCover" xml:space="preserve">
+    <value> [ІНФОРМАЦІЯ] Завантаження обкладинок (Повний)... </value>
+  </data>
 </root>

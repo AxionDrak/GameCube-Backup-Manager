@@ -334,10 +334,10 @@
     <value>Fájl</value>
   </data>
   <data name="tsmiDownloadCoversSelectedGame.Text" xml:space="preserve">
-    <value>Skins szinkronizálása és letöltése (lemez és 3D csak a kiválasztott játékhoz)</value>
+    <value>Covers szinkronizálása és letöltése (csak a kiválasztott játékhoz)</value>
   </data>
   <data name="tsmiSyncDownloadDiscOnly3DCovers.Text" xml:space="preserve">
-    <value>Szinkronizálás és bőrök letöltése (a felsorolt játékok lemezei és 3D-s változatai)</value>
+    <value>Szinkronizálás és bőrök letöltése (a felsorolt játékok)</value>
   </data>
   <data name="tsmiSyncDownloadAllDiscOnly3DCovers.Text" xml:space="preserve">
     <value>Skins szinkronizálása és letöltése (lemez és 3D a teljes GameCube könyvtárból)</value>

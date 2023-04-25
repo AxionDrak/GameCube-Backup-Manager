@@ -373,10 +373,10 @@
     <value>同步並下載所有封面（所有 GameCube 遊戲）</value>
   </data>
   <data name="tsmiDownloadCoversSelectedGame.Text" xml:space="preserve">
-    <value>同步並下載光碟及 3D 封面（選取的遊戲）</value>
+    <value>同步和下載封面（選定的遊戲）</value>
   </data>
   <data name="tsmiSyncDownloadDiscOnly3DCovers.Text" xml:space="preserve">
-    <value>同步並下載光碟及 3D 封面（列表內的所有遊戲）</value>
+    <value>同步並下載 封面（列表內的所有遊戲）</value>
   </data>
   <data name="tsmiSyncDownloadAllDiscOnly3DCovers.Text" xml:space="preserve">
     <value>同步並下載光碟及 3D 封面（所有 GameCube 遊戲）</value>

@@ -502,7 +502,7 @@
     <value>Tidak bisa menulis data ke disk!</value>
   </data>
   <data name="DownloadDiscCover" xml:space="preserve">
-    <value>[INFO] Mengunduh sampul (Disk)... </value>
+    <value>[INFO] Mengunduh sampul (Cakram)... </value>
   </data>
   <data name="MetaXml_String_ERRO" xml:space="preserve">
     <value>KESALAHAN</value>
@@ -550,9 +550,21 @@
     <value>Dapatkah Anda memahami hal ini?</value>
   </data>
   <data name="DownloadDiscCoverError" xml:space="preserve">
-    <value>[ERROR] Gagal Mengunduh sampul (Disk)</value>
+    <value>[ERROR] Gagal Mengunduh sampul (Cakram)</value>
   </data>
   <data name="LoadDatabase_Editor" xml:space="preserve">
     <value>Editor</value>
+  </data>
+  <data name="Download2DCoverError" xml:space="preserve">
+    <value> [ERROR] Gagal mengunduh cover (2D)!</value>
+  </data>
+  <data name="Download2DCover" xml:space="preserve">
+    <value> [INFO] Mengunduh sampul (2D)... </value>
+  </data>
+  <data name="DownloadFullCoverError" xml:space="preserve">
+    <value> [ERROR] Gagal mengunduh cover (Penuh)!</value>
+  </data>
+  <data name="DownloadFullCover" xml:space="preserve">
+    <value> [INFO] Mengunduh sampul (Penuh)... </value>
   </data>
 </root>
