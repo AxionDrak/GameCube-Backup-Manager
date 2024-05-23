@@ -328,7 +328,7 @@
     <value>Werkzeuge</value>
   </data>
   <data name="tsmiExit.Text" xml:space="preserve">
-    <value>Ausfahrt</value>
+    <value>Beenden</value>
   </data>
   <data name="tsmiFile.Text" xml:space="preserve">
     <value>Datei</value>
