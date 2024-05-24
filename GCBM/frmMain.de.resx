@@ -397,7 +397,7 @@
     <value>Offizielle Website (GitHub)</value>
   </data>
   <data name="tsmiOfficialGBATemp.Text" xml:space="preserve">
-    <value>Amtliche Stelle (GBATemp)</value>
+    <value>Offizieller Forum-Beitrag (GBATemp)</value>
   </data>
   <data name="tsmiVerifyUpdate.Text" xml:space="preserve">
     <value>Nach Updates suchen</value>
@@ -412,7 +412,7 @@
     <value>Internetverbindung deaktiviert!</value>
   </data>
   <data name="tsmiNotifyExit.Text" xml:space="preserve">
-    <value>Ausfahrt</value>
+    <value>Beenden</value>
   </data>
   <data name="lblTypeDiscDest.Text" xml:space="preserve">
     <value>Scheibe...</value>
